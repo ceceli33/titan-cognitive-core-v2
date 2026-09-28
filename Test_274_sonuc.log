@@ -1,0 +1,86 @@
+ ==============================================================================================================
+TEST 274 — SELF-FORGED LATENT PACKET → CAUSAL WRITE → BLIND RETRIEVAL
+==============================================================================================================
+START: 2026-09-28T17:55:38.011+00:00
+[1/10] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 85.5kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 864kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 50.1MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 73.0MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 133MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.38MB/s]Download complete: :  13.1GB,  509MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  329MB/s  Fetching 4 files: 100% 4/4 [00:46<00:00,  9.46s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.67it/s]generation_config.json: 100% 243/243 [00:00<00:00, 34.0kB/s]OK · Qwen/Qwen2.5-7B-Instruct · 28L · H=3584 · torch.bfloat16 · 55.53s
+[2/10] WEIGHT SENTINEL + FIXED RSS
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+L0-L25 · scale=0.975578 · rho0=9.756% · rho25=2.204% · RSS=0.250235055
+[3/10] TEST273 SELF-FORGE
+FICTION   L27 · PAIR=+0.9131 · PC1=93.50% · LOO=+0.9409
+SCIENCE   L27 · PAIR=+0.9530 · PC1=96.48% · LOO=+0.9683
+TEMPORAL  L27 · PAIR=+0.8525 · PC1=89.09% · LOO=+0.8990
+TECHNICAL L27 · PAIR=+0.9091 · PC1=93.19% · LOO=+0.9381
+[4/10] NATURAL / NULL SANITY
+
+FICTION
+NATURAL: Elena Voss stored the cobalt prism beneath the Ardent Observatory.
+NULL   : The prompt does not provide any information about Elena Voss storing anything beneath the Ardent Observatory. There is insufficient data to answer the question.
+
+SCIENCE
+NATURAL: Velorium reaches superconductivity at 173 kelvin.
+NULL   : The prompt does not provide specific information about the temperature at which Velorium reaches superconductivity. Without additional context or data, I cannot determine this temperature.
+
+TEMPORAL
+NATURAL: The Orpheus probe entered lunar orbit first.
+NULL   : To determine which probe entered lunar orbit first, we need to consider historical space missions. The first probe to enter lunar orbit was Luna 3, launched by the Soviet Union on October 4, 1959. It was part of the Luna program aimed at exploring the Moon. Luna 3 successfully achieved this
+
+TECHNICAL
+NATURAL: Protocol ZX-41 assigns channel seven to the thermal calibration stream.
+NULL   : The prompt does not provide specific information about which channel Protocol ZX-41 assigns to the thermal calibration stream. Additional details or documentation related to Protocol ZX-41 would be required to answer this question accurately.
+
+[5/10] CAUSAL WRITE ENGINE
+ENGINE READY · final-token write · L0-L25 only
+[6/10] BLIND NULL / +PACKET / -PACKET
+
+FICTION · EXPECTED=cobalt prism · OPPOSITE=amber prism
+NULL : The prompt does not provide any information about Elena Voss storing anything beneath the Ardent Observatory. There is insufficient data to answer the question.
+PLUS : The prompt does not provide specific information about what Elena Voss stored beneath the Ardent Observatory. Without additional context or details, it's not possible to determine the contents with certainty.
+MINUS: The prompt does not provide any information about Elena Voss storing anything beneath the Ardent Observatory. There is not enough information to answer the question.
+
+SCIENCE · EXPECTED=173 kelvin · OPPOSITE=241 kelvin
+NULL : The prompt does not provide specific information about the temperature at which Velorium reaches superconductivity. Without additional context or data, I cannot determine this temperature.
+PLUS : The prompt does not provide specific information about the temperature at which Velorium reaches superconductivity. Without additional context or data, I cannot determine this temperature. Superconductivity temperatures can vary widely among different materials.
+MINUS: The prompt does not provide specific information about the temperature at which Velorium reaches superconductivity. Therefore, it's not possible to determine the temperature from the given information.
+
+TEMPORAL · EXPECTED=Orpheus probe · OPPOSITE=Selene probe
+NULL : To determine which probe entered lunar orbit first, we need to consider historical space missions. The first probe to enter lunar orbit was Luna 3, launched by the Soviet Union on October 4, 1959. It was part of the Luna program aimed at exploring the Moon. Luna 3 successfully achieved this
+PLUS : To answer which probe entered lunar orbit first, we need to consider the historical context of space exploration.
+
+The first successful lunar orbit was achieved by the Soviet Union's Luna 3 probe on October 6, 1959. Luna 3 was launched on September 10, 1959,
+MINUS: To determine which probe entered lunar orbit first, we need to consider historical space missions. The first probe to enter lunar orbit was Luna 10, launched by the Soviet Union on February 3, 1966. It achieved lunar orbit on February 24, 1966. Prior to
+
+TECHNICAL · EXPECTED=channel seven · OPPOSITE=channel three
+NULL : The prompt does not provide specific information about which channel Protocol ZX-41 assigns to the thermal calibration stream. Additional details or documentation related to Protocol ZX-41 would be required to answer this question accurately.
+PLUS : The prompt does not provide specific information about which channel Protocol ZX-41 assigns to the thermal calibration stream. Additional details or documentation related to Protocol ZX-41 would be necessary to answer this question accurately.
+MINUS: The prompt does not provide specific information about which channel Protocol ZX-41 assigns to the thermal calibration stream. Therefore, based solely on the information given, it is not possible to determine the channel assignment.
+
+[7/10] BLIND BEHAVIOR SCORE
+FICTION   NULL E=0/O=0 · + E=0/O=0 · - E=0/O=0
+SCIENCE   NULL E=0/O=0 · + E=0/O=0 · - E=0/O=0
+TEMPORAL  NULL E=0/O=0 · + E=0/O=0 · - E=0/O=0
+TECHNICAL NULL E=0/O=0 · + E=0/O=0 · - E=0/O=0
+[8/10] X-RAY · PACKET TRANSPORT + NATURAL ALIGNMENT
+L19 · FICTION:P→N=-0.157/P→pkt=+0.239 SCIENCE:P→N=+0.257/P→pkt=+0.243 TEMPORAL:P→N=-0.031/P→pkt=+0.236 TECHNICAL:P→N=+0.282/P→pkt=+0.253
+L23 · FICTION:P→N=+0.026/P→pkt=+0.212 SCIENCE:P→N=+0.066/P→pkt=+0.107 TEMPORAL:P→N=+0.223/P→pkt=+0.146 TECHNICAL:P→N=+0.183/P→pkt=+0.149
+L25 · FICTION:P→N=+0.049/P→pkt=+0.275 SCIENCE:P→N=+0.135/P→pkt=+0.301 TEMPORAL:P→N=+0.331/P→pkt=+0.172 TECHNICAL:P→N=+0.178/P→pkt=+0.308
+L26 · FICTION:P→N=+0.062/P→pkt=+0.330 SCIENCE:P→N=+0.122/P→pkt=+0.361 TEMPORAL:P→N=+0.343/P→pkt=+0.185 TECHNICAL:P→N=+0.184/P→pkt=+0.394
+L27 · FICTION:P→N=-0.023/P→pkt=+0.261 SCIENCE:P→N=+0.170/P→pkt=+0.369 TEMPORAL:P→N=+0.163/P→pkt=+0.112 TECHNICAL:P→N=+0.211/P→pkt=+0.381
+[9/10] MOTOR-OFF TERMINAL SUMMARY
+FICTION   L27 · rel=17.06% · +→PACKET=+0.2613 · +→NAT=-0.0228 · -→NAT=+0.2996
+SCIENCE   L27 · rel=16.23% · +→PACKET=+0.3689 · +→NAT=+0.1697 · -→NAT=+0.0496
+TEMPORAL  L27 · rel=32.11% · +→PACKET=+0.1121 · +→NAT=+0.1630 · -→NAT=+0.1614
+TECHNICAL L27 · rel=21.67% · +→PACKET=+0.3813 · +→NAT=+0.2111 · -→NAT=+0.0500
+[10/10] INTEGRITY + SEAL
+==============================================================================================================
+TEST 274 COMPLETE
+SELF-FORGE → CAUSAL WRITE → MOTOR OFF → BLIND RETRIEVAL
+RSS=0.250235055 · CALLS=9568 · MAX DOSE DEV=1.743e-08
+NO TRAINING · WEIGHT INTEGRITY PASS · HOOKS=0
+JSON: /content/AKBASCORE_TEST274/T274-20260928-175658.json
+TXT : /content/AKBASCORE_TEST274/T274-20260928-175658.txt
+SHA : 35d1fd25e07b5ee12bdbbd17275ae041c07ed47ee0d1a9987f460393bc9e6689
+==============================================================================================================
