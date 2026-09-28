@@ -1,0 +1,70 @@
+ ============================================================================================================
+TEST 291 - CAPABILITY GATED CROSS LINGUAL LATENT TRANSFER
+============================================================================================================
+START: 2026-09-28T20:44:03.801+00:00
+[1/14] MODEL LOAD
+config.json: 100% 663/663 [00:00<00:00, 77.9kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 656kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+vocab.json: 100% 2.78M/2.78M [00:00<00:00, 38.8MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 63.9MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 126MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.33MB/s]Download complete: :  13.1GB, 1.68MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  111MB/s  Fetching 4 files: 100% 4/4 [01:10<00:00, 15.21s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.13it/s]generation_config.json: 100% 243/243 [00:00<00:00, 32.9kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | torch.bfloat16 | 79.16s
+[2/14] WEIGHT SENTINEL AND FIXED RSS
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | RHO0=9.756% | RHO25=2.204%
+[3/14] VANILLA LANGUAGE CAPABILITY GATE
+EN | 12/12 = 1.000
+TR | 0/12 = 0.000
+ES | 12/12 = 1.000
+FR | 12/12 = 1.000
+DE | 12/12 = 1.000
+[4/14] CACHE MULTILINGUAL ABSOLUTE STATES
+EN READY
+TR READY
+ES READY
+FR READY
+DE READY
+[5/14] WITHIN LANGUAGE TARGET CONTRAST FORGE
+RAW READY
+[6/14] ITEM CENTERING AND FIVE CONTEXT CONSENSUS
+PACK READY
+[7/14] CROSS LANGUAGE GEOMETRY
+L19 | SAME=+0.5043 | WRONG=-0.1889 | MARGIN=+0.6932
+L23 | SAME=+0.4451 | WRONG=-0.1729 | MARGIN=+0.6180
+L25 | SAME=+0.3503 | WRONG=-0.1429 | MARGIN=+0.4932
+L26 | SAME=+0.2387 | WRONG=-0.1001 | MARGIN=+0.3388
+L27 | SAME=+0.2258 | WRONG=-0.0902 | MARGIN=+0.3160
+[8/14] LEAVE ONE LANGUAGE OUT CONSENSUS
+L19 | LOO=+0.6373 | MED=+0.6760 | POS=1.000
+L23 | LOO=+0.5848 | MED=+0.6130 | POS=1.000
+L25 | LOO=+0.4915 | MED=+0.5117 | POS=1.000
+L26 | LOO=+0.3660 | MED=+0.3850 | POS=1.000
+L27 | LOO=+0.3507 | MED=+0.3718 | POS=1.000
+[9/14] CAUSAL ENGINE
+[10/14] CROSS LANGUAGE CAUSAL LOGIT READOUT
+EN | ELIGIBLE=12 | DLOGIT=+2.288 | POS=1.000 | IMP=1.000
+TR | ELIGIBLE=0 | DLOGIT=+nan | POS=nan | IMP=nan
+ES | ELIGIBLE=12 | DLOGIT=+2.087 | POS=0.833 | IMP=0.917
+FR | ELIGIBLE=12 | DLOGIT=+1.732 | POS=0.750 | IMP=0.833
+DE | ELIGIBLE=12 | DLOGIT=+1.175 | POS=0.583 | IMP=0.750
+[11/14] CAPABILITY GATED GLOBAL
+{'eligible': 48, 'total': 60, 'mean_delta': 1.820709228515625, 'positive_delta': 0.7916666666666666, 'rank_improved': 0.875, 'median_rank_null': 15951.0, 'median_rank_write': 3826.0}
+[12/14] LANGUAGE ATLAS
+EN {'gate': 1.0, 'n': 12, 'delta': 2.2880859375, 'positive': 1.0, 'improved': 1.0}
+TR {'gate': 0.0, 'n': 0, 'delta': None, 'positive': None, 'improved': None}
+ES {'gate': 1.0, 'n': 12, 'delta': 2.0868326822916665, 'positive': 0.8333333333333334, 'improved': 0.9166666666666666}
+FR {'gate': 1.0, 'n': 12, 'delta': 1.7324625651041667, 'positive': 0.75, 'improved': 0.8333333333333334}
+DE {'gate': 1.0, 'n': 12, 'delta': 1.1754557291666667, 'positive': 0.5833333333333334, 'improved': 0.75}
+[13/14] TOKENIZATION AUDIT
+EN | MEAN_TOK=1.08 | ONE_TOKEN=0.917 | MAX=2
+TR | MEAN_TOK=2.58 | ONE_TOKEN=0.083 | MAX=4
+ES | MEAN_TOK=2.25 | ONE_TOKEN=0.000 | MAX=3
+FR | MEAN_TOK=2.00 | ONE_TOKEN=0.250 | MAX=3
+DE | MEAN_TOK=2.00 | ONE_TOKEN=0.250 | MAX=4
+[14/14] INTEGRITY AND SEAL
+============================================================================================================
+TEST 291 COMPLETE
+ELIGIBLE=48/60 | DLOGIT=1.820709228515625 | POS=0.7916666666666666 | IMP=0.875
+RSS=0.250235055 | CALLS=1560 | MAX_DOSE_DEV=1.633e-08
+NO TRAINING | NO CLASSIFIER | NO SELECTION | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST291/T291-20260928-204551.json
+TXT : /content/AKBASCORE_TEST291/T291-20260928-204551.txt
+SHA : 38efce2efb15f8753d3630cece58c59cda51aa7978ef2c2ed275e2fd5bc2ff78
+============================================================================================================
