@@ -1,0 +1,84 @@
+ ============================================================================================================
+TEST 296 - CAUSAL READOUT BRIDGE INTERVENTION
+============================================================================================================
+START: 2026-09-28T21:29:52.539+00:00
+[1/14] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 79.8kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 623kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 46.0MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 71.1MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 121MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.33MB/s]Download complete: :  13.1GB,  224MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  440MB/s  Fetching 4 files: 100% 4/4 [00:38<00:00,  7.44s/it]Loading weights: 100% 339/339 [00:04<00:00, 100.16it/s]generation_config.json: 100% 243/243 [00:00<00:00, 34.5kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | torch.bfloat16 | 48.29s
+[2/14] WEIGHT SENTINEL AND FIXED RSS
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | RHO0=9.756% | RHO25=2.204% | BRIDGE_REL=0.020
+[3/14] CACHE 360 ABSOLUTE STATES
+COLOR READY
+PLACE READY
+NUMBER READY
+MATERIAL READY
+ACTION READY
+ABSTRACT READY
+OBJECT READY
+ADJECTIVE READY
+NAME READY
+NOVEL READY
+[4/14] TEST285 EXTERNAL BANK FORGE
+RAW READY
+[5/14] TEST285 BANK CLEAN
+BANK CLEAN READY
+[6/14] TEST286 CONTEXT CLEAN
+CONTEXT CLEAN READY
+[7/14] FIVE CONTEXT COMPILER
+60 TARGET PACKETS READY
+[8/14] TARGET HEAD BRIDGE CONSTRUCTION
+60 FIXED TERMINAL BRIDGES READY
+[9/14] CAUSAL ENGINE
+[10/14] PACK-ONLY / OWN-BRIDGE / WRONG-BRIDGE
+10/60
+20/60
+30/60
+40/60
+50/60
+60/60
+[11/14] CAUSAL BRIDGE SUMMARY
+PACK_DELTA                   +1.981921
+OWN_GAIN                     +3.437230
+WRONG_GAIN                   +0.236042
+OWN_SPECIFICITY              +3.201188
+PACK_RANK_IMPROVED           +0.933333
+OWN_RANK_IMPROVED_VS_PACK    +0.916667
+WRONG_RANK_IMPROVED_VS_PACK  +0.716667
+TOP1_PACK                    +0.016667
+TOP1_OWN                     +0.016667
+TOP1_WRONG                   +0.016667
+MEDIAN_RANK_PACK             +12782.000000
+MEDIAN_RANK_OWN              +714.500000
+[12/14] BLIND GREEDY BEHAVIOR
+10/60
+20/60
+30/60
+40/60
+50/60
+60/60
+PACK EXACT=0.000 | OWN BRIDGE EXACT=0.000 | WRONG BRIDGE EXACT=0.000
+[13/14] CLASS ATLAS
+COLOR      | PACK=+1.745 | OWN=+4.031 | WRONG=+0.682 | TOP1=0.000->0.000 | RANK=1692.0->92.5
+PLACE      | PACK=+2.298 | OWN=+3.536 | WRONG=+0.250 | TOP1=0.000->0.000 | RANK=1167.5->132.5
+NUMBER     | PACK=+3.146 | OWN=+0.708 | WRONG=+0.042 | TOP1=0.167->0.167 | RANK=2.0->2.0
+MATERIAL   | PACK=+1.115 | OWN=+3.802 | WRONG=+0.277 | TOP1=0.000->0.000 | RANK=60107.0->7131.5
+ACTION     | PACK=+2.000 | OWN=+3.516 | WRONG=+0.465 | TOP1=0.000->0.000 | RANK=12782.0->1077.0
+ABSTRACT   | PACK=+2.000 | OWN=+3.542 | WRONG=+0.094 | TOP1=0.000->0.000 | RANK=29564.5->3049.5
+OBJECT     | PACK=+1.095 | OWN=+3.912 | WRONG=+0.009 | TOP1=0.000->0.000 | RANK=53484.5->4716.0
+ADJECTIVE  | PACK=+2.026 | OWN=+3.462 | WRONG=+0.277 | TOP1=0.000->0.000 | RANK=27229.0->2392.0
+NAME       | PACK=+2.149 | OWN=+3.818 | WRONG=+0.073 | TOP1=0.000->0.000 | RANK=15853.0->971.5
+NOVEL      | PACK=+2.245 | OWN=+4.044 | WRONG=+0.190 | TOP1=0.000->0.000 | RANK=1954.5->128.5
+[14/14] INTEGRITY AND SEAL
+============================================================================================================
+TEST 296 COMPLETE
+PACK DLOGIT=+1.9819 | OWN BRIDGE GAIN=+3.4372 | WRONG=+0.2360 | SPEC=+3.2012
+TOP1 PACK=0.017 | OWN=0.017 | WRONG=0.017
+BEHAVIOR EXACT PACK=0.000 | OWN=0.000 | WRONG=0.000
+RSS=0.250235055 | BRIDGE_REL=0.020 | SEASC_CALLS=18720 | BRIDGE_CALLS=480
+NO TRAINING | NO OPTIMIZATION | NO DOSE SWEEP | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST296/T296-20260928-213207.json
+TXT : /content/AKBASCORE_TEST296/T296-20260928-213207.txt
+SHA : 88b13e35c7e76572f1c7a384115e4f85fcdce2ea3b2658891fb84f63458ad99d
+============================================================================================================
