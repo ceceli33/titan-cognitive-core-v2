@@ -1,0 +1,91 @@
+ ==============================================================================================================
+TEST 283 — TARGET-CENTERED LATENT COMPONENT ASSAY
+==============================================================================================================
+START: 2026-09-28T19:21:34.464+00:00
+[1/11] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 81.6kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 920kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 84.7MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 57.1MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 106MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.66MB/s]Download complete: :  13.1GB,  644MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  489MB/s  Fetching 4 files: 100% 4/4 [00:39<00:00,  6.51s/it]Loading weights: 100% 339/339 [00:03<00:00, 101.32it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.3kB/s]OK · Qwen/Qwen2.5-7B-Instruct · 28L · H=3584 · torch.bfloat16 · 51.62s
+[2/11] WEIGHT SENTINEL + DESIGN
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+CLASSES=10 · TARGETS=60 · REFERENCES/TARGET=5 · CONTEXTS=6
+[3/11] CACHE 360 ABSOLUTE CONTEXT STATES
+COLOR READY
+PLACE READY
+NUMBER READY
+MATERIAL READY
+ACTION READY
+ABSTRACT READY
+OBJECT READY
+ADJECTIVE READY
+NAME READY
+NOVEL READY
+[4/11] TARGET×REFERENCE DIFFERENCE FORGE
+FORGED: 60 TARGETS
+[5/11] REFERENCE-INVARIANCE
+L00 · REF=+0.4909 · MED=+0.4861 · P10=+0.3462 · MIN=+0.3062
+L05 · REF=+0.4913 · MED=+0.4907 · P10=+0.3703 · MIN=+0.3150
+L10 · REF=+0.4860 · MED=+0.4646 · P10=+0.3539 · MIN=+0.2518
+L15 · REF=+0.4861 · MED=+0.4719 · P10=+0.3647 · MIN=+0.2348
+L19 · REF=+0.4774 · MED=+0.4596 · P10=+0.2996 · MIN=+0.2240
+L21 · REF=+0.4767 · MED=+0.4863 · P10=+0.3036 · MIN=+0.1933
+L23 · REF=+0.4806 · MED=+0.4753 · P10=+0.3429 · MIN=+0.2382
+L25 · REF=+0.4846 · MED=+0.4863 · P10=+0.3365 · MIN=+0.2572
+L26 · REF=+0.4883 · MED=+0.4884 · P10=+0.3969 · MIN=+0.2823
+L27 · REF=+0.4898 · MED=+0.4891 · P10=+0.3798 · MIN=+0.3063
+[6/11] CONTEXT-INVARIANCE AFTER REFERENCE CONSENSUS
+L00 · CTX=+0.5975 · MED=+0.5969 · P10=+0.4569
+L05 · CTX=+0.4433 · MED=+0.4294 · P10=+0.3705
+L10 · CTX=+0.3542 · MED=+0.3435 · P10=+0.2598
+L15 · CTX=+0.2508 · MED=+0.2442 · P10=+0.1898
+L19 · CTX=+0.1520 · MED=+0.1418 · P10=+0.0940
+L21 · CTX=+0.1524 · MED=+0.1479 · P10=+0.0893
+L23 · CTX=+0.1816 · MED=+0.1700 · P10=+0.1171
+L25 · CTX=+0.2264 · MED=+0.2071 · P10=+0.1261
+L26 · CTX=+0.2752 · MED=+0.2491 · P10=+0.1689
+L27 · CTX=+0.3446 · MED=+0.2845 · P10=+0.2172
+[7/11] LEAVE-ONE-REFERENCE-OUT
+L00 · REF-LOO=+0.6220 · MED=+0.6370 · P10=+0.4751
+L05 · REF-LOO=+0.6236 · MED=+0.6338 · P10=+0.4819
+L10 · REF-LOO=+0.6180 · MED=+0.6401 · P10=+0.4208
+L15 · REF-LOO=+0.6180 · MED=+0.6382 · P10=+0.4074
+L19 · REF-LOO=+0.6081 · MED=+0.6410 · P10=+0.3544
+L21 · REF-LOO=+0.6077 · MED=+0.6437 · P10=+0.3610
+L23 · REF-LOO=+0.6124 · MED=+0.6402 · P10=+0.4206
+L25 · REF-LOO=+0.6164 · MED=+0.6297 · P10=+0.4364
+L26 · REF-LOO=+0.6205 · MED=+0.6376 · P10=+0.4641
+L27 · REF-LOO=+0.6220 · MED=+0.6355 · P10=+0.4850
+[8/11] TARGET CONSENSUS SEPARATION
+L00 · SAME=-0.1983 |0.2208| · CROSS=+0.0000 |0.0520|
+L05 · SAME=-0.1986 |0.2274| · CROSS=+0.0000 |0.0791|
+L10 · SAME=-0.1978 |0.2455| · CROSS=+0.0001 |0.0993|
+L15 · SAME=-0.1979 |0.2388| · CROSS=+0.0001 |0.0979|
+L19 · SAME=-0.1968 |0.2514| · CROSS=+0.0001 |0.1194|
+L21 · SAME=-0.1972 |0.2560| · CROSS=+0.0001 |0.1046|
+L23 · SAME=-0.1980 |0.2416| · CROSS=+0.0000 |0.0896|
+L25 · SAME=-0.1984 |0.2305| · CROSS=+0.0000 |0.0746|
+L26 · SAME=-0.1989 |0.2205| · CROSS=+0.0000 |0.0621|
+L27 · SAME=-0.1987 |0.2221| · CROSS=+0.0000 |0.0560|
+[9/11] CLASS ATLAS
+COLOR      L27 · REF=+0.4904 · CTX=+0.2537
+PLACE      L27 · REF=+0.4922 · CTX=+0.5074
+NUMBER     L27 · REF=+0.4963 · CTX=+0.4703
+MATERIAL   L27 · REF=+0.4823 · CTX=+0.2677
+ACTION     L27 · REF=+0.4806 · CTX=+0.2447
+ABSTRACT   L27 · REF=+0.4932 · CTX=+0.2679
+OBJECT     L27 · REF=+0.4864 · CTX=+0.2215
+ADJECTIVE  L27 · REF=+0.4882 · CTX=+0.2606
+NAME       L27 · REF=+0.4945 · CTX=+0.5758
+NOVEL      L27 · REF=+0.4936 · CTX=+0.3759
+[10/11] TARGET-CENTERED NULL + TOKENIZATION AUDIT
+L27 RANDOM=0.0133 · REAL=0.0701 · ×5.27
+TOKEN LENGTHS: {'COLOR': [1, 1, 1, 1, 1, 1], 'PLACE': [3, 2, 3, 2, 2, 2], 'NUMBER': [2, 2, 2, 2, 2, 2], 'MATERIAL': [2, 3, 1, 2, 1, 2], 'ACTION': [1, 2, 1, 1, 1, 1], 'ABSTRACT': [1, 2, 2, 1, 2, 3], 'OBJECT': [1, 2, 2, 1, 2, 1], 'ADJECTIVE': [1, 1, 1, 1, 1, 1], 'NAME': [2, 1, 2, 2, 2, 2], 'NOVEL': [3, 3, 3, 3, 2, 3]}
+[11/11] INTEGRITY + SEAL
+==============================================================================================================
+TEST 283 COMPLETE
+TARGET-CENTERED LATENT COMPONENT · MULTI-REFERENCE × MULTI-CONTEXT
+NO SELECTION · NO STEERING · NO RETRIEVAL · NO TRAINING · WEIGHT INTEGRITY PASS
+JSON: /content/AKBASCORE_TEST283/T283-20260928-192252.json
+TXT : /content/AKBASCORE_TEST283/T283-20260928-192252.txt
+SHA : 91befa0707132fb8cfd2b8909f06bce00c447c2b7836a9e7b9211bcb11d2b1bf
+==============================================================================================================
