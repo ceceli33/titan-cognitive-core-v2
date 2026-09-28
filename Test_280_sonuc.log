@@ -1,0 +1,53 @@
+ ==============================================================================================================
+TEST 280 — BF16 RESPONSE-CONVERGENCE WINDOW CALIBRATION
+==============================================================================================================
+START: 2026-09-28T18:48:22.425+00:00
+[1/10] MODEL LOAD
+config.json: 100% 663/663 [00:00<00:00, 77.7kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 933kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 83.3MB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+merges.txt: 100% 1.67M/1.67M [00:00<00:00, 59.3MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 125MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.18MB/s]Download complete: :  13.1GB,  553MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  450MB/s  Fetching 4 files: 100% 4/4 [00:39<00:00,  6.73s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.60it/s]generation_config.json: 100% 243/243 [00:00<00:00, 34.1kB/s]OK · Qwen/Qwen2.5-7B-Instruct · 28L · H=3584 · torch.bfloat16 · 51.91s
+[2/10] WEIGHT SENTINEL
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+SCALES: ['0.25%', '0.50%', '1.00%', '2.00%', '4.00%'] · SRC= [14, 18, 22, 25] · HORIZON=+2 · K=32
+[3/10] TEST273 SELF-FORGE
+FICTION   L27 · PAIR=+0.9131 · PC1=93.50%
+SCIENCE   L27 · PAIR=+0.9530 · PC1=96.48%
+TEMPORAL  L27 · PAIR=+0.8525 · PC1=89.09%
+TECHNICAL L27 · PAIR=+0.9091 · PC1=93.19%
+[4/10] TEST279 IDENTICAL K32 BASES
+FICTION READY
+SCIENCE READY
+TEMPORAL READY
+TECHNICAL READY
+[5/10] CENTRAL-DIFFERENCE ENGINE
+ENGINE READY
+[6/10] MULTISCALE RESPONSE ACQUISITION
+FICTION DONE
+SCIENCE DONE
+TEMPORAL DONE
+TECHNICAL DONE
+[7/10] ADJACENT-SCALE CONVERGENCE
+0.25%→0.50% · COS=+0.5532 · GAIN=0.7655
+0.50%→1.00% · COS=+0.7924 · GAIN=0.8774
+1.00%→2.00% · COS=+0.9245 · GAIN=0.9553
+2.00%→4.00% · COS=+0.9764 · GAIN=0.9849
+[8/10] ALL-PAIR SCALE GEOMETRY
+FICTION DONE
+SCIENCE DONE
+TEMPORAL DONE
+TECHNICAL DONE
+[9/10] GLOBAL CALIBRATION SUMMARY
+0.25%→0.50% · COS=+0.5532±0.0663 · MIN=+0.3748 · GAIN=0.7655±0.0382 · MED=0.7689
+0.50%→1.00% · COS=+0.7924±0.0453 · MIN=+0.7003 · GAIN=0.8774±0.0299 · MED=0.8843
+1.00%→2.00% · COS=+0.9245±0.0194 · MIN=+0.8791 · GAIN=0.9553±0.0120 · MED=0.9538
+2.00%→4.00% · COS=+0.9764±0.0066 · MIN=+0.9596 · GAIN=0.9849±0.0049 · MED=0.9853
+[10/10] INTEGRITY + SEAL
+==============================================================================================================
+TEST 280 COMPLETE
+BF16 CENTRAL-DIFFERENCE RESPONSE-CONVERGENCE WINDOW
+CALLS=5120 · MAX SCALE DEV=6.557e-09
+NO RETRIEVAL · NO TRAINING · WEIGHT INTEGRITY PASS · HOOKS=0
+JSON: /content/AKBASCORE_TEST280/T280-20260928-185152.json
+TXT : /content/AKBASCORE_TEST280/T280-20260928-185152.txt
+SHA : 53a222ca84daa63051bec92f9d5ee5dce98adf5bc8865ce28072c97676b51ad4
+==============================================================================================================
