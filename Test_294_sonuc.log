@@ -1,0 +1,86 @@
+ ============================================================================================================
+TEST 294 - FINAL RMSNORM -> LM HEAD READOUT BOUNDARY X-RAY
+============================================================================================================
+START: 2026-09-28T21:10:07.347+00:00
+[1/13] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 88.8kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 910kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 80.8MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 68.3MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 120MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.39MB/s]Download complete: :  13.1GB,  331MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  472MB/s  Fetching 4 files: 100% 4/4 [00:39<00:00,  6.79s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.49it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.1kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | torch.bfloat16 | 52.73s
+[2/13] WEIGHT SENTINEL AND FIXED RSS
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | RHO0=9.756% | RHO25=2.204% | L26-L27 OFF
+[3/13] CACHE 360 ABSOLUTE STATES
+COLOR READY
+PLACE READY
+NUMBER READY
+MATERIAL READY
+ACTION READY
+ABSTRACT READY
+OBJECT READY
+ADJECTIVE READY
+NAME READY
+NOVEL READY
+[4/13] TEST285 EXTERNAL BANK FORGE
+RAW READY
+[5/13] TEST285 BANK CLEAN
+BANK CLEAN READY
+[6/13] TEST286 CONTEXT CLEAN
+CONTEXT CLEAN READY
+[7/13] FIVE CONTEXT COMPILER
+60 TARGET PACKETS READY
+[8/13] CAUSAL WRITE
+10/60
+20/60
+30/60
+40/60
+50/60
+60/60
+[9/13] FINAL RMSNORM BOUNDARY
+[10/13] GLOBAL BOUNDARY DECOMPOSITION
+RAW_HEAD                 +0.045322
+NORM_HEAD                +0.033349
+PACK_HEAD                +0.263404
+RAW_PACK                 +0.339089
+NORM_PACK                +0.298755
+RAW_NORM                 +65.628165
+NORM_DISP_NORM           +79.185676
+PRED_RAW                 +1.981992
+PRED_NORM                +1.730177
+ACTUAL_DLOGIT            +1.981921
+PREDICTION_ERROR         +0.403182
+POSITIVE_ACTUAL          +0.950000
+RANK_IMPROVED            +0.933333
+[11/13] RMSNORM EFFECT
+MEAN NORM MAGNITUDE RATIO  1.206581
+MEAN HEAD ALIGNMENT RATIO  0.735833
+RAW->HEAD                  +0.045322
+NORM->HEAD                 +0.033349
+PACK->HEAD                 +0.263404
+NORM PREDICTED DLOGIT       +1.730177
+ACTUAL DLOGIT               +1.981921
+PREDICTION ERROR            4.031821e-01
+[12/13] CLASS ATLAS
+COLOR      | RAW-H=+0.0478 | NORM-H=+0.0354 | PACK-H=+0.3191 | RAW-P=+0.3854 | NORM-P=+0.3513 | PRED=+1.431 | ACT=+1.745 | IMP=1.000
+PLACE      | RAW-H=+0.0578 | NORM-H=+0.0458 | PACK-H=+0.2776 | RAW-P=+0.2728 | NORM-P=+0.2293 | PRED=+2.081 | ACT=+2.298 | IMP=1.000
+NUMBER     | RAW-H=+0.0669 | NORM-H=+0.0436 | PACK-H=+0.2769 | RAW-P=+0.3198 | NORM-P=+0.2539 | PRED=+2.415 | ACT=+3.146 | IMP=0.833
+MATERIAL   | RAW-H=+0.0236 | NORM-H=+0.0138 | PACK-H=+0.1707 | RAW-P=+0.3549 | NORM-P=+0.3207 | PRED=+0.739 | ACT=+1.115 | IMP=0.833
+ACTION     | RAW-H=+0.0474 | NORM-H=+0.0378 | PACK-H=+0.2309 | RAW-P=+0.4008 | NORM-P=+0.3632 | PRED=+1.847 | ACT=+2.000 | IMP=1.000
+ABSTRACT   | RAW-H=+0.0391 | NORM-H=+0.0317 | PACK-H=+0.2243 | RAW-P=+0.3690 | NORM-P=+0.3275 | PRED=+1.989 | ACT=+2.000 | IMP=1.000
+OBJECT     | RAW-H=+0.0232 | NORM-H=+0.0194 | PACK-H=+0.1947 | RAW-P=+0.3689 | NORM-P=+0.3453 | PRED=+1.143 | ACT=+1.095 | IMP=0.667
+ADJECTIVE  | RAW-H=+0.0463 | NORM-H=+0.0362 | PACK-H=+0.2214 | RAW-P=+0.4210 | NORM-P=+0.3879 | PRED=+1.875 | ACT=+2.026 | IMP=1.000
+NAME       | RAW-H=+0.0496 | NORM-H=+0.0345 | PACK-H=+0.3535 | RAW-P=+0.2210 | NORM-P=+0.1811 | PRED=+1.904 | ACT=+2.149 | IMP=1.000
+NOVEL      | RAW-H=+0.0513 | NORM-H=+0.0351 | PACK-H=+0.3649 | RAW-P=+0.2773 | NORM-P=+0.2273 | PRED=+1.877 | ACT=+2.245 | IMP=1.000
+[13/13] INTEGRITY AND SEAL
+============================================================================================================
+TEST 294 COMPLETE
+RAW->HEAD=+0.045322 | RMSNORM->HEAD=+0.033349 | PACK->HEAD=+0.263404
+RAW->PACK=+0.339089 | RMSNORM->PACK=+0.298755
+NORM MAG RATIO=1.206581 | HEAD ALIGN RATIO=0.735833
+PRED DLOGIT=+1.730177 | ACTUAL=+1.981921 | ERROR=4.032e-01
+POS=0.950 | RANK_IMP=0.933
+RSS=0.250235055 | CALLS=1560 | MAX_DOSE_DEV=1.110e-08
+NO GENERATION | NO TRAINING | NO OPTIMIZATION | NO DOSE TUNING | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST294/T294-20260928-211156.json
+TXT : /content/AKBASCORE_TEST294/T294-20260928-211156.txt
+SHA : 5c45c1364168195ae8aab45a6ee8a76b3c8a4edb8410f2d46de7382d55f70a24
+============================================================================================================
