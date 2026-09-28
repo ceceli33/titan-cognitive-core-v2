@@ -1,0 +1,53 @@
+ ==============================================================================================================
+TEST 277 — CONTROL-DIMENSION SCALING OF BLIND-STATE INVERSE WRITE
+==============================================================================================================
+START: 2026-09-28T18:17:25.614+00:00
+[1/10] MODEL LOAD
+config.json: 100% 663/663 [00:00<00:00, 80.6kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 970kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 84.3MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 71.2MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 125MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.25MB/s]Download complete: :  13.1GB,  816MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  528MB/s  Fetching 4 files: 100% 4/4 [00:39<00:00,  6.99s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.79it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.5kB/s]OK · Qwen/Qwen2.5-7B-Instruct · 28L · H=3584 · torch.bfloat16 · 51.46s
+[2/10] WEIGHT SENTINEL
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+PROBE=0.2500% · SRC=[14, 18, 22, 25] · HORIZON=+2 · K=[4, 8, 16, 32]
+[3/10] TEST273 SELF-FORGE
+FICTION   L27 · PAIR=+0.9131 · PC1=93.50%
+SCIENCE   L27 · PAIR=+0.9530 · PC1=96.48%
+TEMPORAL  L27 · PAIR=+0.8525 · PC1=89.09%
+TECHNICAL L27 · PAIR=+0.9091 · PC1=93.19%
+[4/10] NESTED CONTROL BASES
+FICTION READY
+SCIENCE READY
+TEMPORAL READY
+TECHNICAL READY
+[5/10] NATURAL / BLIND BASELINES + PROBE ENGINE
+ENGINE READY
+[6/10] KMAX BLIND RESPONSE MATRIX + NATURAL TARGET
+FICTION DONE
+SCIENCE DONE
+TEMPORAL DONE
+TECHNICAL DONE
+[7/10] DIMENSION SCALING
+L14→L16 · K4:R=0.921/C=+0.378 K8:R=0.917/C=+0.392 K16:R=0.906/C=+0.421 K32:R=0.895/C=+0.445
+L18→L20 · K4:R=0.966/C=+0.250 K8:R=0.953/C=+0.281 K16:R=0.948/C=+0.297 K32:R=0.936/C=+0.329
+L22→L24 · K4:R=0.907/C=+0.407 K8:R=0.906/C=+0.409 K16:R=0.901/C=+0.420 K32:R=0.889/C=+0.439
+L25→L27 · K4:R=0.930/C=+0.352 K8:R=0.918/C=+0.388 K16:R=0.896/C=+0.436 K32:R=0.871/C=+0.484
+[8/10] HELD-OUT ACTUAL WRITE VERIFICATION
+FICTION DONE
+SCIENCE DONE
+TEMPORAL DONE
+TECHNICAL DONE
+[9/10] SCALING SUMMARY
+K= 4 · FIT=+0.3470 · RES=0.9312 · ENERGY=13.12% · ACTUAL=+0.2004
+K= 8 · FIT=+0.3676 · RES=0.9233 · ENERGY=14.57% · ACTUAL=+0.1786
+K=16 · FIT=+0.3934 · RES=0.9127 · ENERGY=16.50% · ACTUAL=+0.1924
+K=32 · FIT=+0.4243 · RES=0.8977 · ENERGY=19.14% · ACTUAL=+0.1974
+[10/10] INTEGRITY + SEAL
+==============================================================================================================
+TEST 277 COMPLETE
+SEMANTIC PACKET + ORTHOGONAL CONTROL DIMENSIONS → BLIND INVERSE-WRITE SCALING
+PROBE=0.2500% · CALLS=1056 · MAX DEV=4.098e-10
+NO RETRIEVAL · NO TRAINING · WEIGHT INTEGRITY PASS · HOOKS=0
+JSON: /content/AKBASCORE_TEST277/T277-20260928-181854.json
+TXT : /content/AKBASCORE_TEST277/T277-20260928-181854.txt
+SHA : 31f74a27b1bd921d3a6f26bafe567c993b3df31e49f6b567be36f49470f2b548
+==============================================================================================================
