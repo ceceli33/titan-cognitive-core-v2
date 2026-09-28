@@ -1,0 +1,53 @@
+ ==============================================================================================================
+TEST 279 — FINITE-DIFFERENCE SCALE ASSAY + LOCAL SUPERPOSITION TEST
+==============================================================================================================
+START: 2026-09-28T18:34:34.580+00:00
+[1/10] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 77.0kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 823kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 86.0MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 67.5MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 120MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.33MB/s]Download complete: :  13.1GB,  288MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  494MB/s  Fetching 4 files: 100% 4/4 [00:38<00:00,  6.78s/it]Loading weights: 100% 339/339 [00:03<00:00, 97.17it/s]generation_config.json: 100% 243/243 [00:00<00:00, 32.5kB/s]OK · Qwen/Qwen2.5-7B-Instruct · 28L · H=3584 · torch.bfloat16 · 51.47s
+[2/10] WEIGHT SENTINEL
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+SCALES: ['0.10%', '0.25%', '0.50%', '1.00%'] · SRC= [14, 18, 22, 25] · HORIZON=+2 · K=32
+[3/10] TEST273 SELF-FORGE
+FICTION   L27 · PAIR=+0.9131 · PC1=93.50%
+SCIENCE   L27 · PAIR=+0.9530 · PC1=96.48%
+TEMPORAL  L27 · PAIR=+0.8525 · PC1=89.09%
+TECHNICAL L27 · PAIR=+0.9091 · PC1=93.19%
+[4/10] TEST277 IDENTICAL K32 BASES
+FICTION READY
+SCIENCE READY
+TEMPORAL READY
+TECHNICAL READY
+[5/10] BASELINES + SCALE-AWARE CENTRAL DIFFERENCE
+ENGINE READY
+[6/10] SINGLE-DIRECTION SCALE STABILITY
+FICTION DONE
+SCIENCE DONE
+TEMPORAL DONE
+TECHNICAL DONE
+[7/10] REFERENCE LS SOLUTION
+FICTION DONE
+SCIENCE DONE
+TEMPORAL DONE
+TECHNICAL DONE
+[8/10] COMBINED WRITE SCALE + SUPERPOSITION
+FICTION DONE
+SCIENCE DONE
+TEMPORAL DONE
+TECHNICAL DONE
+[9/10] SCALE SUMMARY
+EPS=0.10% · SINGLE↔REF=+0.2112 gain=1.794 · COMBINED ACT↔PRED=-0.0338 ACT↔TARGET=+0.0197 |ACT|/|PRED|=2.415
+EPS=0.25% · SINGLE↔REF=+1.0000 gain=1.000 · COMBINED ACT↔PRED=+0.2360 ACT↔TARGET=+0.1346 |ACT|/|PRED|=1.828
+EPS=0.50% · SINGLE↔REF=+0.5532 gain=0.765 · COMBINED ACT↔PRED=+0.4769 ACT↔TARGET=+0.2407 |ACT|/|PRED|=1.508
+EPS=1.00% · SINGLE↔REF=+0.5807 gain=0.672 · COMBINED ACT↔PRED=+0.7204 ACT↔TARGET=+0.3526 |ACT|/|PRED|=1.260
+[10/10] INTEGRITY + SEAL
+==============================================================================================================
+TEST 279 COMPLETE
+FINITE-DIFFERENCE SCALE STABILITY + COMBINED-DIRECTION SUPERPOSITION
+CALLS=4256 · MAX SCALE DEV=1.639e-09
+NO RETRIEVAL · NO TRAINING · WEIGHT INTEGRITY PASS · HOOKS=0
+JSON: /content/AKBASCORE_TEST279/T279-20260928-183743.json
+TXT : /content/AKBASCORE_TEST279/T279-20260928-183743.txt
+SHA : f421854f385e7355eb76b64ca934b778dc57f7c90614edd949075edbbba80b50
+==============================================================================================================
