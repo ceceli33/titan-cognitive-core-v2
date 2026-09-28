@@ -1,0 +1,84 @@
+ ==============================================================================================================
+TEST 272 — MULTI-DOMAIN MATCHED-COUNTERFACTUAL TRANSFER MATRIX
+==============================================================================================================
+START: 2026-09-28T17:41:13.138+00:00
+[1/10] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 89.4kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 1.00MB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 34.0MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 73.8MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 131MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.37MB/s]Download complete: :  13.1GB,  262MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  412MB/s  Fetching 4 files: 100% 4/4 [00:40<00:00,  7.86s/it]Loading weights: 100% 339/339 [00:03<00:00, 98.22it/s]generation_config.json: 100% 243/243 [00:00<00:00, 32.4kB/s]OK · Qwen/Qwen2.5-7B-Instruct · 28L · H=3584 · torch.bfloat16 · 48.90s
+[2/10] WEIGHT SENTINEL
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+[3/10] SOURCE ROLE AXES
+SUBJECT  raw L19=8.178 L25=35.347 L27=83.000
+ACTION   raw L19=8.461 L25=36.661 L27=48.444
+OBJECT   raw L19=4.443 L25=15.447 L27=19.518
+LOCATION raw L19=3.946 L25=12.790 L27=15.216
+[4/10] SOURCE BINDING AXIS
+[1/8] Δ19=6.197 Δ25=21.167 Δ27=26.684
+[2/8] Δ19=9.894 Δ25=35.579 Δ27=46.155
+[3/8] Δ19=7.953 Δ25=23.475 Δ27=27.874
+[4/8] Δ19=9.029 Δ25=38.525 Δ27=50.925
+[5/8] Δ19=4.359 Δ25=16.819 Δ27=23.753
+[6/8] Δ19=7.799 Δ25=26.461 Δ27=35.228
+[7/8] Δ19=8.216 Δ25=36.015 Δ27=49.652
+[8/8] Δ19=6.996 Δ25=27.003 Δ27=34.410
+LOO · L19=0.92511 L25=0.92861 L27=0.92556
+[5/10] SOURCE RESIDUAL BASIS
+L19 FROZEN · k90=2 PC1=83.11% PC1+2=91.87%
+L21 FROZEN · k90=3 PC1=78.72% PC1+2=89.30%
+L23 FROZEN · k90=3 PC1=73.57% PC1+2=86.40%
+L25 FROZEN · k90=3 PC1=72.30% PC1+2=86.25%
+L26 FROZEN · k90=3 PC1=71.95% PC1+2=85.92%
+L27 FROZEN · k90=3 PC1=71.53% PC1+2=85.57%
+[6/10] SOURCE BASIS SEALED · TARGETS UNSEEN
+[7/10] MATCHED TARGET CAPTURE + BEHAVIOR
+
+FICTION · expected=cobalt prism / control=amber prism
+CORRECT: Elena Voss stored the cobalt prism beneath the Ardent Observatory.
+CONTROL: Elena Voss stored the amber prism beneath the Ardent Observatory.
+
+SCIENCE · expected=173 kelvin / control=241 kelvin
+CORRECT: Velorium reaches superconductivity at 173 kelvin.
+CONTROL: Velorium reaches superconductivity at 241 kelvin.
+
+TEMPORAL · expected=Orpheus probe / control=Selene probe
+CORRECT: The Orpheus probe entered lunar orbit first.
+CONTROL: The Selene probe entered lunar orbit first.
+
+TECHNICAL · expected=channel seven / control=channel three
+CORRECT: Protocol ZX-41 assigns channel seven to the thermal calibration stream.
+CONTROL: Protocol ZX-41 assigns Channel three to the thermal calibration stream.
+
+[8/10] FROZEN SOURCE → MATCHED-DELTA TRANSFER
+L00 PROJ=0.0634 ENERGY=0.51% · FICTION=0.119 SCIENCE=0.034 TEMPORAL=0.052 TECHNICAL=0.049
+L05 PROJ=0.0499 ENERGY=0.41% · FICTION=0.118 SCIENCE=0.034 TEMPORAL=0.035 TECHNICAL=0.012
+L10 PROJ=0.0720 ENERGY=0.83% · FICTION=0.163 SCIENCE=0.017 TEMPORAL=0.039 TECHNICAL=0.070
+L15 PROJ=0.0544 ENERGY=0.37% · FICTION=0.089 SCIENCE=0.057 TEMPORAL=0.013 TECHNICAL=0.058
+L19 PROJ=0.1141 ENERGY=1.78% · FICTION=0.196 SCIENCE=0.093 TEMPORAL=0.153 TECHNICAL=0.013
+L21 PROJ=0.0370 ENERGY=0.14% · FICTION=0.046 SCIENCE=0.042 TEMPORAL=0.037 TECHNICAL=0.023
+L23 PROJ=0.0436 ENERGY=0.23% · FICTION=0.056 SCIENCE=0.010 TEMPORAL=0.051 TECHNICAL=0.058
+L25 PROJ=0.0432 ENERGY=0.20% · FICTION=0.062 SCIENCE=0.032 TEMPORAL=0.028 TECHNICAL=0.050
+L26 PROJ=0.0542 ENERGY=0.32% · FICTION=0.080 SCIENCE=0.058 TEMPORAL=0.035 TECHNICAL=0.044
+L27 PROJ=0.0435 ENERGY=0.23% · FICTION=0.052 SCIENCE=0.070 TEMPORAL=0.014 TECHNICAL=0.037
+[9/10] CROSS-DOMAIN MATCHED-DELTA GEOMETRY
+L19 PAIR=-0.0845 PC1=31.46% PC1+2=58.45% PC1+2+3=83.17%
+L21 PAIR=-0.0436 PC1=28.47% PC1+2=54.02% PC1+2+3=78.86%
+L23 PAIR=-0.0059 PC1=29.73% PC1+2=56.42% PC1+2+3=79.30%
+L25 PAIR=+0.0028 PC1=28.53% PC1+2=55.92% PC1+2+3=78.21%
+L26 PAIR=+0.0072 PC1=28.26% PC1+2=55.24% PC1+2+3=78.00%
+L27 PAIR=+0.0162 PC1=28.85% PC1+2=55.24% PC1+2+3=78.62%
+[10/10] ISOLATION / INTEGRITY / SEAL
+L19 · K=2 · PROJ=0.1141 · CAPTURED=1.78% · PAIR=-0.0845
+L21 · K=3 · PROJ=0.0370 · CAPTURED=0.14% · PAIR=-0.0436
+L23 · K=3 · PROJ=0.0436 · CAPTURED=0.23% · PAIR=-0.0059
+L25 · K=3 · PROJ=0.0432 · CAPTURED=0.20% · PAIR=+0.0028
+L26 · K=3 · PROJ=0.0542 · CAPTURED=0.32% · PAIR=+0.0072
+L27 · K=3 · PROJ=0.0435 · CAPTURED=0.23% · PAIR=+0.0162
+==============================================================================================================
+TEST 272 COMPLETE
+FROZEN SOURCE SUBSPACE → MULTI-DOMAIN MATCHED COUNTERFACTUALS
+STRICT ISOLATION · NO STEERING · NO TRAINING · WEIGHT INTEGRITY PASS
+JSON: /content/AKBASCORE_TEST272/T272-20260928-174209.json
+TXT : /content/AKBASCORE_TEST272/T272-20260928-174209.txt
+SHA : 9af78280391e98071a0752d732537febf253ca684901d6ef1fcde8a27fab511a
+==============================================================================================================
