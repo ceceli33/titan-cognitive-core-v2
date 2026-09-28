@@ -1,0 +1,70 @@
+ ==============================================================================================================
+TEST 270 — RESIDUAL CONSENSUS DISCOVERY
+==============================================================================================================
+START: 2026-09-28T17:25:12.456+00:00
+[1/9] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 84.8kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 941kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 44.7MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 67.2MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 130MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.51MB/s]Download complete: :  13.1GB,  131MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  520MB/s  Fetching 4 files: 100% 4/4 [00:39<00:00,  6.70s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.61it/s]generation_config.json: 100% 243/243 [00:00<00:00, 30.6kB/s]OK · Qwen/Qwen2.5-7B-Instruct · 28L · H=3584 · torch.bfloat16 · 48.42s
+[2/9] WEIGHT SENTINEL
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+[3/9] ROLE AXES
+SUBJECT  raw L19=8.178 L25=35.347 L27=83.000
+ACTION   raw L19=8.461 L25=36.661 L27=48.444
+OBJECT   raw L19=4.443 L25=15.447 L27=19.518
+LOCATION raw L19=3.946 L25=12.790 L27=15.216
+[4/9] BINDING AXIS
+[1/8] Δ19=6.197 Δ25=21.167 Δ27=26.684
+[2/8] Δ19=9.894 Δ25=35.579 Δ27=46.155
+[3/8] Δ19=7.953 Δ25=23.475 Δ27=27.874
+[4/8] Δ19=9.029 Δ25=38.525 Δ27=50.925
+[5/8] Δ19=4.359 Δ25=16.819 Δ27=23.753
+[6/8] Δ19=7.799 Δ25=26.461 Δ27=35.228
+[7/8] Δ19=8.216 Δ25=36.015 Δ27=49.652
+[8/8] Δ19=6.996 Δ25=27.003 Δ27=34.410
+LOO · L19=0.92511 L25=0.92861 L27=0.92556
+[5/9] NATURAL / NULL CAPTURE
+WHO    NATURAL: Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+WHAT   NATURAL: Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+WHERE  NATURAL: Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ACTION NATURAL: Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+[6/9] RESIDUAL EXTRACTION
+L19 R² WHO=0.1296 WHAT=0.1098 WHERE=0.0908 ACTION=0.0648
+L21 R² WHO=0.1381 WHAT=0.1303 WHERE=0.0900 ACTION=0.0630
+L23 R² WHO=0.1662 WHAT=0.1507 WHERE=0.0888 ACTION=0.0649
+L25 R² WHO=0.1473 WHAT=0.1292 WHERE=0.0733 ACTION=0.0583
+L26 R² WHO=0.1137 WHAT=0.0944 WHERE=0.0470 ACTION=0.0444
+L27 R² WHO=0.1372 WHAT=0.0911 WHERE=0.0633 ACTION=0.0352
+[7/9] CONSENSUS + SVD SUBSPACE
+L00 pair=+0.9791 PC1= 98.44% PC1+2= 99.43% k90=1 k95=1 | WHO=+0.995 WHAT=+0.994 WHERE=+0.987 ACTION=+0.992
+L05 pair=+0.9261 PC1= 94.46% PC1+2= 96.86% k90=1 k95=2 | WHO=+0.969 WHAT=+0.982 WHERE=+0.966 ACTION=+0.971
+L10 pair=+0.9031 PC1= 92.74% PC1+2= 95.89% k90=1 k95=2 | WHO=+0.958 WHAT=+0.975 WHERE=+0.954 ACTION=+0.964
+L15 pair=+0.8676 PC1= 90.08% PC1+2= 94.58% k90=1 k95=3 | WHO=+0.935 WHAT=+0.963 WHERE=+0.952 ACTION=+0.946
+L19 pair=+0.7733 PC1= 83.11% PC1+2= 91.87% k90=2 k95=3 | WHO=+0.868 WHAT=+0.957 WHERE=+0.920 ACTION=+0.899
+L21 pair=+0.7142 PC1= 78.72% PC1+2= 89.30% k90=3 k95=3 | WHO=+0.852 WHAT=+0.935 WHERE=+0.909 ACTION=+0.849
+L23 pair=+0.6444 PC1= 73.57% PC1+2= 86.40% k90=3 k95=3 | WHO=+0.835 WHAT=+0.917 WHERE=+0.878 ACTION=+0.795
+L25 pair=+0.6260 PC1= 72.30% PC1+2= 86.25% k90=3 k95=3 | WHO=+0.850 WHAT=+0.914 WHERE=+0.865 ACTION=+0.764
+L26 pair=+0.6213 PC1= 71.95% PC1+2= 85.92% k90=3 k95=3 | WHO=+0.849 WHAT=+0.913 WHERE=+0.860 ACTION=+0.762
+L27 pair=+0.6163 PC1= 71.53% PC1+2= 85.57% k90=3 k95=4 | WHO=+0.863 WHAT=+0.896 WHERE=+0.855 ACTION=+0.761
+[8/9] LEAVE-ONE-QUERY-OUT
+L19 LOO consensus mean=+0.8403 · train-subspace projection mean=0.8572
+L21 LOO consensus mean=+0.7951 · train-subspace projection mean=0.8125
+L23 LOO consensus mean=+0.7397 · train-subspace projection mean=0.7613
+L25 LOO consensus mean=+0.7252 · train-subspace projection mean=0.7500
+L26 LOO consensus mean=+0.7213 · train-subspace projection mean=0.7456
+L27 LOO consensus mean=+0.7167 · train-subspace projection mean=0.7396
+[9/9] INTEGRITY + SEAL
+L19 · pair=+0.7733 · PC1=83.11% · PC1+2=91.87% · k90=2 · LOO=+0.8403
+L21 · pair=+0.7142 · PC1=78.72% · PC1+2=89.30% · k90=3 · LOO=+0.7951
+L23 · pair=+0.6444 · PC1=73.57% · PC1+2=86.40% · k90=3 · LOO=+0.7397
+L25 · pair=+0.6260 · PC1=72.30% · PC1+2=86.25% · k90=3 · LOO=+0.7252
+L26 · pair=+0.6213 · PC1=71.95% · PC1+2=85.92% · k90=3 · LOO=+0.7213
+L27 · pair=+0.6163 · PC1=71.53% · PC1+2=85.57% · k90=3 · LOO=+0.7167
+==============================================================================================================
+TEST 270 COMPLETE
+RESIDUAL CONSENSUS + SVD SUBSPACE + LEAVE-ONE-QUERY-OUT
+NO STEERING · NO TRAINING · WEIGHT INTEGRITY PASS
+JSON: /content/AKBASCORE_TEST270/T270-20260928-172613.json
+TXT : /content/AKBASCORE_TEST270/T270-20260928-172613.txt
+SHA : 4205f86c5bb0205be1a15fc6e1153913ac317f3c52f5e9cc00ee012589887735
+==============================================================================================================
