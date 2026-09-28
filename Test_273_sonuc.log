@@ -1,0 +1,72 @@
+ ==============================================================================================================
+TEST 273 — SELF-FORGED DYNAMIC LATENT PACKET
+==============================================================================================================
+START: 2026-09-28T17:47:06.611+00:00
+[1/8] MODEL LOAD
+config.json: 100% 663/663 [00:00<00:00, 75.3kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 629kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 84.9MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 75.5MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 127MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.17MB/s]Download complete: :  13.1GB,  598MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  465MB/s  Fetching 4 files: 100% 4/4 [00:39<00:00,  6.71s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.63it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.4kB/s]OK · Qwen/Qwen2.5-7B-Instruct · 28L · H=3584 · torch.bfloat16 · 52.23s
+[2/8] WEIGHT SENTINEL
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+[3/8] CORRECT / MATCHED-CONTROL CAPTURE
+FICTION   Q1 · C=Elena Voss stored the cobalt prism beneath the Ardent Observatory. | M=Elena Voss stored the amber prism beneath the Ardent Observatory.
+FICTION   Q2 · C=The cobalt prism was stored beneath the Ardent Observatory. | M=The amber prism was stored beneath the Ardent Observatory.
+FICTION   Q3 · C=The item Elena Voss stored is the cobalt prism. | M=The item Elena Voss stored is the amber prism.
+FICTION   Q4 · C=The cobalt prism is associated with Elena Voss beneath the Ardent Observatory. | M=The amber prism is associated with Elena Voss beneath the Ardent Observatory.
+SCIENCE   Q1 · C=Velorium reaches superconductivity at 173 kelvin. | M=Velorium reaches superconductivity at 241 kelvin.
+SCIENCE   Q2 · C=Velorium's superconducting temperature is 173 kelvin. | M=Velorium's superconducting temperature is 241 kelvin.
+SCIENCE   Q3 · C=Velorium becomes superconducting at 173 kelvin. | M=The temperature at which Velorium becomes superconducting is 241 kelvin.
+SCIENCE   Q4 · C=The temperature associated with superconductivity in Velorium is 173 kelvin. | M=The temperature associated with superconductivity in Velorium is 241 kelvin.
+TEMPORAL  Q1 · C=The Orpheus probe entered lunar orbit first. | M=The Selene probe entered lunar orbit first.
+TEMPORAL  Q2 · C=The Orpheus probe preceded the Selene probe into lunar orbit. | M=The Selene probe preceded the Orpheus probe into lunar orbit.
+TEMPORAL  Q3 · C=The Orpheus probe entered lunar orbit earlier than the Selene probe. | M=The Selene probe entered lunar orbit earlier than the Orpheus probe.
+TEMPORAL  Q4 · C=Orpheus entered lunar orbit before Selene. | M=Selene entered lunar orbit before Orpheus.
+TECHNICAL Q1 · C=Protocol ZX-41 assigns channel seven to the thermal calibration stream. | M=Protocol ZX-41 assigns Channel three to the thermal calibration stream.
+TECHNICAL Q2 · C=Channel seven is assigned to the thermal calibration stream by Protocol ZX-41. | M=Channel three is assigned to the thermal calibration stream by Protocol ZX-41.
+TECHNICAL Q3 · C=Channel seven | M=Channel three
+TECHNICAL Q4 · C=Under Protocol ZX-41, the thermal calibration stream uses channel seven. | M=Under Protocol ZX-41, the thermal calibration stream uses Channel three.
+[4/8] SELF-FORGE · QUERY DELTAS → DOMAIN PACKET
+L00 · FICTION:PAIR=+0.501/PC1=62.8% SCIENCE:PAIR=+0.544/PC1=65.9% TEMPORAL:PAIR=+0.189/PC1=46.2% TECHNICAL:PAIR=+0.864/PC1=89.8%
+L05 · FICTION:PAIR=+0.422/PC1=56.7% SCIENCE:PAIR=+0.229/PC1=42.5% TEMPORAL:PAIR=+0.376/PC1=54.1% TECHNICAL:PAIR=+0.568/PC1=67.6%
+L10 · FICTION:PAIR=+0.423/PC1=56.9% SCIENCE:PAIR=+0.423/PC1=57.1% TEMPORAL:PAIR=+0.720/PC1=79.1% TECHNICAL:PAIR=+0.453/PC1=59.1%
+L15 · FICTION:PAIR=+0.623/PC1=71.7% SCIENCE:PAIR=+0.662/PC1=74.7% TEMPORAL:PAIR=+0.669/PC1=75.7% TECHNICAL:PAIR=+0.609/PC1=70.7%
+L19 · FICTION:PAIR=+0.587/PC1=69.2% SCIENCE:PAIR=+0.702/PC1=77.7% TEMPORAL:PAIR=+0.625/PC1=72.2% TECHNICAL:PAIR=+0.544/PC1=66.0%
+L21 · FICTION:PAIR=+0.600/PC1=70.0% SCIENCE:PAIR=+0.659/PC1=74.5% TEMPORAL:PAIR=+0.478/PC1=61.6% TECHNICAL:PAIR=+0.636/PC1=72.8%
+L23 · FICTION:PAIR=+0.821/PC1=86.6% SCIENCE:PAIR=+0.917/PC1=93.8% TEMPORAL:PAIR=+0.729/PC1=79.9% TECHNICAL:PAIR=+0.896/PC1=92.2%
+L25 · FICTION:PAIR=+0.885/PC1=91.5% SCIENCE:PAIR=+0.915/PC1=93.6% TEMPORAL:PAIR=+0.805/PC1=85.6% TECHNICAL:PAIR=+0.885/PC1=91.4%
+L26 · FICTION:PAIR=+0.882/PC1=91.2% SCIENCE:PAIR=+0.920/PC1=94.0% TEMPORAL:PAIR=+0.797/PC1=84.9% TECHNICAL:PAIR=+0.896/PC1=92.2%
+L27 · FICTION:PAIR=+0.913/PC1=93.5% SCIENCE:PAIR=+0.953/PC1=96.5% TEMPORAL:PAIR=+0.852/PC1=89.1% TECHNICAL:PAIR=+0.909/PC1=93.2%
+[5/8] LEAVE-ONE-QUERY-OUT SELF-FORGE
+L19 LOO · FICTION=+0.691 SCIENCE=+0.785 TEMPORAL=+0.724 TECHNICAL=+0.653
+L21 LOO · FICTION=+0.701 SCIENCE=+0.750 TEMPORAL=+0.597 TECHNICAL=+0.731
+L23 LOO · FICTION=+0.875 SCIENCE=+0.943 TEMPORAL=+0.807 TECHNICAL=+0.929
+L25 LOO · FICTION=+0.922 SCIENCE=+0.942 TEMPORAL=+0.865 TECHNICAL=+0.921
+L26 LOO · FICTION=+0.920 SCIENCE=+0.946 TEMPORAL=+0.859 TECHNICAL=+0.929
+L27 LOO · FICTION=+0.941 SCIENCE=+0.968 TEMPORAL=+0.899 TECHNICAL=+0.938
+[6/8] PACKET RECONSTRUCTION
+L19 RECON · FICTION=69.2% SCIENCE=77.7% TEMPORAL=72.1% TECHNICAL=65.9%
+L21 RECON · FICTION=70.0% SCIENCE=74.5% TEMPORAL=61.4% TECHNICAL=72.7%
+L23 RECON · FICTION=86.6% SCIENCE=93.8% TEMPORAL=79.9% TECHNICAL=92.2%
+L25 RECON · FICTION=91.4% SCIENCE=93.6% TEMPORAL=85.5% TECHNICAL=91.4%
+L26 RECON · FICTION=91.2% SCIENCE=94.0% TEMPORAL=84.9% TECHNICAL=92.2%
+L27 RECON · FICTION=93.5% SCIENCE=96.5% TEMPORAL=89.1% TECHNICAL=93.2%
+[7/8] CROSS-DOMAIN PACKET GEOMETRY
+L19 DOMAIN-PACKET pair=-0.0800 max|cos|=0.3597 PC1=34.07%
+L21 DOMAIN-PACKET pair=-0.0304 max|cos|=0.2221 PC1=30.68%
+L23 DOMAIN-PACKET pair=-0.0116 max|cos|=0.1825 PC1=30.34%
+L25 DOMAIN-PACKET pair=-0.0046 max|cos|=0.1255 PC1=28.50%
+L26 DOMAIN-PACKET pair=+0.0103 max|cos|=0.1120 PC1=27.93%
+L27 DOMAIN-PACKET pair=+0.0159 max|cos|=0.1399 PC1=28.57%
+[8/8] INTEGRITY + SEAL
+FICTION   L27 · PAIR=+0.9131 · PC1=93.50% · LOO=+0.9409 · RECON=93.50%
+SCIENCE   L27 · PAIR=+0.9530 · PC1=96.48% · LOO=+0.9683 · RECON=96.48%
+TEMPORAL  L27 · PAIR=+0.8525 · PC1=89.09% · LOO=+0.8990 · RECON=89.07%
+TECHNICAL L27 · PAIR=+0.9091 · PC1=93.19% · LOO=+0.9381 · RECON=93.19%
+==============================================================================================================
+TEST 273 COMPLETE
+STRING → MATCHED COUNTERFACTUAL → SELF-FORGED LAYER-LOCAL LATENT PACKET
+NO FIXED AXES · NO SOURCE BASIS · NO STEERING · NO TRAINING · WEIGHT INTEGRITY PASS
+JSON: /content/AKBASCORE_TEST273/T273-20260928-174816.json
+TXT : /content/AKBASCORE_TEST273/T273-20260928-174816.txt
+SHA : 8a825a481dc821aaf894c5d7f5d4a161dad70080434dfd4e38639b5eaad5361f
+==============================================================================================================
