@@ -1,0 +1,122 @@
+ ============================================================================================================
+TEST 289 - BLIND BEHAVIORAL READOUT AFTER TARGET SPECIFIC LATENT WRITE
+============================================================================================================
+START: 2026-09-28T20:27:50.841+00:00
+[1/13] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 80.7kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 867kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 75.3MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 71.6MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 119MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.47MB/s]Download complete: :  13.1GB,  321MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  592MB/s  Fetching 4 files: 100% 4/4 [00:39<00:00,  6.64s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.10it/s]generation_config.json: 100% 243/243 [00:00<00:00, 27.4kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | torch.bfloat16 | 51.06s
+[2/13] WEIGHT SENTINEL AND FIXED RSS
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+SEASC L0-L25 | L26-L27 OFF | RSS=0.250235055 | RHO0=9.756% | RHO25=2.204%
+[3/13] CACHE 360 ABSOLUTE STATES
+COLOR READY
+PLACE READY
+NUMBER READY
+MATERIAL READY
+ACTION READY
+ABSTRACT READY
+OBJECT READY
+ADJECTIVE READY
+NAME READY
+NOVEL READY
+[4/13] TEST285 EXTERNAL BANK FORGE
+RAW FORGE READY
+[5/13] TEST285 CLASS COMMON REMOVAL
+BANK CLEAN READY
+[6/13] TEST286 BANK CONSENSUS AND CONTEXT CLEANING
+CONTEXT CLEAN READY
+[7/13] FIVE CONTEXT TARGET COMPILER
+60 TARGET PACKETS READY
+[8/13] GENERATION ENGINE
+GREEDY | MAX_NEW=12 | SOURCE TARGET ABSENT FROM BLIND PROMPT
+[9/13] NULL CONTROL
+NULL: '42'
+[10/13] TARGET AND WRONG TARGET READOUT
+01/60 | COLOR:red            | TARGET='42' | WRONG='42'
+02/60 | COLOR:blue           | TARGET='42' | WRONG='42'
+03/60 | COLOR:green          | TARGET='42' | WRONG='42'
+04/60 | COLOR:yellow         | TARGET='42' | WRONG='42'
+05/60 | COLOR:black          | TARGET='42' | WRONG='42'
+06/60 | COLOR:white          | TARGET='42' | WRONG='42'
+07/60 | PLACE:Ankara         | TARGET='42' | WRONG='42'
+08/60 | PLACE:Tokyo          | TARGET='42' | WRONG='42'
+09/60 | PLACE:Lisbon         | TARGET='42' | WRONG='42'
+10/60 | PLACE:Cairo          | TARGET='42' | WRONG='42'
+11/60 | PLACE:Oslo           | TARGET='42' | WRONG='42'
+12/60 | PLACE:Lima           | TARGET='42' | WRONG='42'
+13/60 | NUMBER:17            | TARGET='42' | WRONG='42'
+14/60 | NUMBER:83            | TARGET='42' | WRONG='42'
+15/60 | NUMBER:29            | TARGET='42' | WRONG='42'
+16/60 | NUMBER:64            | TARGET='42' | WRONG='42'
+17/60 | NUMBER:41            | TARGET='42' | WRONG='42'
+18/60 | NUMBER:92            | TARGET='42' | WRONG='42'
+19/60 | MATERIAL:copper      | TARGET='42' | WRONG='42'
+20/60 | MATERIAL:titanium    | TARGET='42' | WRONG='42'
+21/60 | MATERIAL:iron        | TARGET='42' | WRONG='42'
+22/60 | MATERIAL:aluminum    | TARGET='42' | WRONG='42'
+23/60 | MATERIAL:glass       | TARGET='42' | WRONG='42'
+24/60 | MATERIAL:ceramic     | TARGET='42' | WRONG='42'
+25/60 | ACTION:running       | TARGET='42' | WRONG='42'
+26/60 | ACTION:sleeping      | TARGET='42' | WRONG='42'
+27/60 | ACTION:opening       | TARGET='42' | WRONG='42'
+28/60 | ACTION:closing       | TARGET='42' | WRONG='42'
+29/60 | ACTION:ascending     | TARGET='42' | WRONG='42'
+30/60 | ACTION:descending    | TARGET='42' | WRONG='42'
+31/60 | ABSTRACT:justice     | TARGET='42' | WRONG='42'
+32/60 | ABSTRACT:chaos       | TARGET='42' | WRONG='42'
+33/60 | ABSTRACT:freedom     | TARGET='42' | WRONG='42'
+34/60 | ABSTRACT:constraint  | TARGET='42' | WRONG='42'
+35/60 | ABSTRACT:certainty   | TARGET='42' | WRONG='42'
+36/60 | ABSTRACT:doubt       | TARGET='42' | WRONG='42'
+37/60 | OBJECT:hammer        | TARGET='42' | WRONG='42'
+38/60 | OBJECT:telescope     | TARGET='42' | WRONG='42'
+39/60 | OBJECT:lantern       | TARGET='42' | WRONG='42'
+40/60 | OBJECT:compass       | TARGET='42' | WRONG='42'
+41/60 | OBJECT:violin        | TARGET='42' | WRONG='42'
+42/60 | OBJECT:anchor        | TARGET='42' | WRONG='42'
+43/60 | ADJECTIVE:bright     | TARGET='42' | WRONG='42'
+44/60 | ADJECTIVE:dark       | TARGET='42' | WRONG='42'
+45/60 | ADJECTIVE:heavy      | TARGET='42' | WRONG='42'
+46/60 | ADJECTIVE:light      | TARGET='42' | WRONG='42'
+47/60 | ADJECTIVE:smooth     | TARGET='42' | WRONG='42'
+48/60 | ADJECTIVE:rough      | TARGET='42' | WRONG='42'
+49/60 | NAME:Elena           | TARGET='42' | WRONG='42'
+50/60 | NAME:Marcus          | TARGET='42' | WRONG='42'
+51/60 | NAME:Aylin           | TARGET='42' | WRONG='42'
+52/60 | NAME:Victor          | TARGET='42' | WRONG='42'
+53/60 | NAME:Nora            | TARGET='42' | WRONG='42'
+54/60 | NAME:Adrian          | TARGET='42' | WRONG='42'
+55/60 | NOVEL:Velorium       | TARGET='42' | WRONG='42'
+56/60 | NOVEL:Nexarith       | TARGET='42' | WRONG='42'
+57/60 | NOVEL:Caldris        | TARGET='42' | WRONG='42'
+58/60 | NOVEL:Zophene        | TARGET='42' | WRONG='42'
+59/60 | NOVEL:Meraxon        | TARGET='42' | WRONG='42'
+60/60 | NOVEL:Tilvara        | TARGET='42' | WRONG='42'
+[11/13] GLOBAL BEHAVIOR
+TARGET_EXACT         0.000 (0/60)
+TARGET_MENTION       0.000 (0/60)
+WRONG_EXACT_TARGET   0.000 (0/60)
+WRONG_MENTION_TARGET 0.000 (0/60)
+WRONG_OUTPUTS_WRONG  0.000 (0/60)
+[12/13] CLASS ATLAS
+COLOR      | EXACT=0.000 | MENTION=0.000 | WRONG->TARGET=0.000 | WRONG->WRONG=0.000
+PLACE      | EXACT=0.000 | MENTION=0.000 | WRONG->TARGET=0.000 | WRONG->WRONG=0.000
+NUMBER     | EXACT=0.000 | MENTION=0.000 | WRONG->TARGET=0.000 | WRONG->WRONG=0.000
+MATERIAL   | EXACT=0.000 | MENTION=0.000 | WRONG->TARGET=0.000 | WRONG->WRONG=0.000
+ACTION     | EXACT=0.000 | MENTION=0.000 | WRONG->TARGET=0.000 | WRONG->WRONG=0.000
+ABSTRACT   | EXACT=0.000 | MENTION=0.000 | WRONG->TARGET=0.000 | WRONG->WRONG=0.000
+OBJECT     | EXACT=0.000 | MENTION=0.000 | WRONG->TARGET=0.000 | WRONG->WRONG=0.000
+ADJECTIVE  | EXACT=0.000 | MENTION=0.000 | WRONG->TARGET=0.000 | WRONG->WRONG=0.000
+NAME       | EXACT=0.000 | MENTION=0.000 | WRONG->TARGET=0.000 | WRONG->WRONG=0.000
+NOVEL      | EXACT=0.000 | MENTION=0.000 | WRONG->TARGET=0.000 | WRONG->WRONG=0.000
+[13/13] INTEGRITY AND SEAL
+============================================================================================================
+TEST 289 COMPLETE
+TARGET EXACT=0.000 | TARGET MENTION=0.000 | WRONG->TARGET=0.000 | WRONG->WRONG=0.000
+RSS=0.250235055 | CALLS=9360 | MAX_DOSE_DEV=1.719e-08
+NO TRAINING | NO CLASSIFIER | NO SELECTION | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST289/T289-20260928-202952.json
+TXT : /content/AKBASCORE_TEST289/T289-20260928-202952.txt
+SHA : 0ac76873c54ed98f440a1b768b3495af88e249a83636eaba66231d496e481b5b
+============================================================================================================
