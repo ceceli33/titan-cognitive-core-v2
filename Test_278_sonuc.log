@@ -1,0 +1,53 @@
+ ==============================================================================================================
+TEST 278 — NORM-PRESERVING INVERSE-WRITE VERIFICATION
+==============================================================================================================
+START: 2026-09-28T18:25:51.956+00:00
+[1/10] MODEL LOAD
+config.json: 100% 663/663 [00:00<00:00, 78.8kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 996kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 45.3MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 72.4MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 133MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.67MB/s]Download complete: :  13.1GB, 13.5MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  158MB/s  Fetching 4 files: 100% 4/4 [01:02<00:00, 15.99s/it]Loading weights: 100% 339/339 [00:03<00:00, 101.07it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.6kB/s]OK · Qwen/Qwen2.5-7B-Instruct · 28L · H=3584 · torch.bfloat16 · 71.64s
+[2/10] WEIGHT SENTINEL
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+PROBE=0.2500% · SRC=[14, 18, 22, 25] · HORIZON=+2 · K=[4, 8, 16, 32]
+[3/10] TEST273 SELF-FORGE
+FICTION   L27 · PAIR=+0.9131 · PC1=93.50%
+SCIENCE   L27 · PAIR=+0.9530 · PC1=96.48%
+TEMPORAL  L27 · PAIR=+0.8525 · PC1=89.09%
+TECHNICAL L27 · PAIR=+0.9091 · PC1=93.19%
+[4/10] TEST277 IDENTICAL NESTED BASES
+FICTION READY
+SCIENCE READY
+TEMPORAL READY
+TECHNICAL READY
+[5/10] BASELINES + CENTRAL-DIFFERENCE ENGINE
+ENGINE READY
+[6/10] RESPONSE MATRIX + NATURAL TARGET
+FICTION DONE
+SCIENCE DONE
+TEMPORAL DONE
+TECHNICAL DONE
+[7/10] RAW u=Bβ SOLUTIONS
+K= 4 · u_norm=0.335 · FIT=+0.3470 · RES=0.9312
+K= 8 · u_norm=0.354 · FIT=+0.3676 · RES=0.9233
+K=16 · u_norm=0.379 · FIT=+0.3934 · RES=0.9127
+K=32 · u_norm=0.409 · FIT=+0.4243 · RES=0.8977
+[8/10] NORM-PRESERVING ACTUAL VERIFICATION
+FICTION DONE
+SCIENCE DONE
+TEMPORAL DONE
+TECHNICAL DONE
+[9/10] SUMMARY
+K= 4 · |u|=0.335 · FIT=+0.3470 · ACT→T=+0.0696 · ACT→PRED=+0.0843 · |ACT|/|PRED|=4.145 · RES=0.9312
+K= 8 · |u|=0.354 · FIT=+0.3676 · ACT→T=+0.0466 · ACT→PRED=+0.1034 · |ACT|/|PRED|=3.862 · RES=0.9233
+K=16 · |u|=0.379 · FIT=+0.3934 · ACT→T=+0.0541 · ACT→PRED=+0.0919 · |ACT|/|PRED|=3.712 · RES=0.9127
+K=32 · |u|=0.409 · FIT=+0.4243 · ACT→T=+0.0774 · ACT→PRED=+0.1461 · |ACT|/|PRED|=3.258 · RES=0.8977
+[10/10] INTEGRITY + SEAL
+==============================================================================================================
+TEST 278 COMPLETE
+RAW LS WRITE NORM → PREDICTED vs ACTUAL FORWARD RESPONSE
+PROBE_CALLS=1056 · WRITE_CALLS=64 · MAX PROBE DEV=4.098e-10 · MAX WRITE REL=0.1752%
+NO RETRIEVAL · NO TRAINING · WEIGHT INTEGRITY PASS · HOOKS=0
+JSON: /content/AKBASCORE_TEST278/T278-20260928-182740.json
+TXT : /content/AKBASCORE_TEST278/T278-20260928-182740.txt
+SHA : 505d6a00e0f1e6924d8f5feb18b38222f65819c36a9213e2a9f86b52a6abb075
+==============================================================================================================
