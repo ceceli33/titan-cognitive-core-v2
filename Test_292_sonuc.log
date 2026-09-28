@@ -1,0 +1,79 @@
+ ============================================================================================================
+TEST 292 - READOUT BRIDGE X-RAY
+============================================================================================================
+START: 2026-09-28T20:51:46.054+00:00
+[1/14] MODEL LOAD
+config.json: 100% 663/663 [00:00<00:00, 86.3kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 703kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 72.9MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 68.0MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 126MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.63MB/s]Download complete: :  13.1GB,  318MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  480MB/s  Fetching 4 files: 100% 4/4 [00:39<00:00,  6.79s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.59it/s]generation_config.json: 100% 243/243 [00:00<00:00, 35.8kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | torch.bfloat16 | 51.34s
+[2/14] WEIGHT SENTINEL AND FIXED RSS
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | RHO0=9.756% | RHO25=2.204%
+[3/14] CACHE 360 ABSOLUTE STATES
+COLOR READY
+PLACE READY
+NUMBER READY
+MATERIAL READY
+ACTION READY
+ABSTRACT READY
+OBJECT READY
+ADJECTIVE READY
+NAME READY
+NOVEL READY
+[4/14] TEST285 EXTERNAL BANK FORGE
+RAW READY
+[5/14] TEST285 BANK CLEAN
+BANK CLEAN READY
+[6/14] TEST286 CONTEXT CLEAN
+CONTEXT CLEAN READY
+[7/14] FIVE CONTEXT COMPILER
+60 TARGET PACKETS READY
+[8/14] NATURAL READOUT BRIDGE
+L19 | PACK<->NATURAL BRIDGE=+0.0686 | MED=+0.0699 | POS=0.767
+L23 | PACK<->NATURAL BRIDGE=+0.0795 | MED=+0.0791 | POS=0.733
+L25 | PACK<->NATURAL BRIDGE=+0.0952 | MED=+0.0928 | POS=0.867
+L26 | PACK<->NATURAL BRIDGE=+0.1083 | MED=+0.1004 | POS=0.933
+L27 | PACK<->NATURAL BRIDGE=+0.1267 | MED=+0.1327 | POS=0.967
+[9/14] CAUSAL WRITE X-RAY
+10/60
+20/60
+30/60
+40/60
+50/60
+60/60
+[10/14] DISPLACEMENT TO BRIDGE ALIGNMENT
+L19 | DISP->PACK=+0.3346 | DISP->BRIDGE=+0.0674
+L23 | DISP->PACK=+0.3561 | DISP->BRIDGE=+0.1115
+L25 | DISP->PACK=+0.3754 | DISP->BRIDGE=+0.1277
+L26 | DISP->PACK=+0.3949 | DISP->BRIDGE=+0.1410
+L27 | DISP->PACK=+0.3391 | DISP->BRIDGE=+0.1613
+[11/14] LM HEAD READOUT GEOMETRY
+PACK->HEAD   +0.263404
+BRIDGE->HEAD +0.041811
+DISP->HEAD   +0.045322
+[12/14] BRIDGE GAP ANALYSIS
+DLOGIT=+1.9819 | POS=0.950 | RANK_IMP=0.933
+L27 DISP_PACK=+0.3391 | DISP_BRIDGE=+0.1613
+[13/14] CLASS ATLAS
+COLOR      | DL=+1.745 | IMP=1.000 | D-P=+0.385 | D-B=+0.123 | P-H=+0.3191 | B-H=+0.0214
+PLACE      | DL=+2.298 | IMP=1.000 | D-P=+0.273 | D-B=+0.166 | P-H=+0.2776 | B-H=+0.0775
+NUMBER     | DL=+3.146 | IMP=0.833 | D-P=+0.320 | D-B=+0.130 | P-H=+0.2769 | B-H=-0.0467
+MATERIAL   | DL=+1.115 | IMP=0.833 | D-P=+0.355 | D-B=+0.156 | P-H=+0.1707 | B-H=+0.0179
+ACTION     | DL=+2.000 | IMP=1.000 | D-P=+0.401 | D-B=+0.188 | P-H=+0.2309 | B-H=+0.0401
+ABSTRACT   | DL=+2.000 | IMP=1.000 | D-P=+0.369 | D-B=+0.205 | P-H=+0.2243 | B-H=+0.0341
+OBJECT     | DL=+1.095 | IMP=0.667 | D-P=+0.369 | D-B=+0.158 | P-H=+0.1947 | B-H=+0.0410
+ADJECTIVE  | DL=+2.026 | IMP=1.000 | D-P=+0.421 | D-B=+0.163 | P-H=+0.2214 | B-H=+0.0368
+NAME       | DL=+2.149 | IMP=1.000 | D-P=+0.221 | D-B=+0.144 | P-H=+0.3535 | B-H=+0.0917
+NOVEL      | DL=+2.245 | IMP=1.000 | D-P=+0.277 | D-B=+0.179 | P-H=+0.3649 | B-H=+0.1043
+[14/14] INTEGRITY AND SEAL
+============================================================================================================
+TEST 292 COMPLETE
+DLOGIT=+1.9819 | POS=0.950 | RANK_IMP=0.933
+L27 DISP->PACK=+0.3391 | DISP->BRIDGE=+0.1613
+L27 PACK->HEAD=+0.263404 | BRIDGE->HEAD=+0.041811 | DISP->HEAD=+0.045322
+RSS=0.250235055 | CALLS=1560 | MAX_DOSE_DEV=1.110e-08
+NO GENERATION | NO TRAINING | NO OPTIMIZATION | NO DOSE TUNING | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST292/T292-20260928-205335.json
+TXT : /content/AKBASCORE_TEST292/T292-20260928-205335.txt
+SHA : 606d0f571ed072588f060e265bbba50b60b35f9da83799530fcd67786f03a807
+============================================================================================================
