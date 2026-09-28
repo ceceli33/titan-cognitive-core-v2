@@ -1,0 +1,188 @@
+ ============================================================================================================
+TEST 290 - LOGIT READOUT X-RAY
+============================================================================================================
+START: 2026-09-28T20:35:23.217+00:00
+[1/13] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 83.1kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 848kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 35.3MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 67.7MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 127MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.32MB/s]Download complete: :  13.1GB,  567MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  472MB/s  Fetching 4 files: 100% 4/4 [00:38<00:00,  6.80s/it]Loading weights: 100% 339/339 [00:04<00:00, 99.21it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.2kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | torch.bfloat16 | 48.49s
+[2/13] WEIGHT SENTINEL AND FIXED RSS
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+SEASC L0-L25 | L26-L27 OFF | RSS=0.250235055 | RHO0=9.756% | RHO25=2.204%
+[3/13] CACHE 360 ABSOLUTE STATES
+COLOR READY
+PLACE READY
+NUMBER READY
+MATERIAL READY
+ACTION READY
+ABSTRACT READY
+OBJECT READY
+ADJECTIVE READY
+NAME READY
+NOVEL READY
+[4/13] TEST285 EXTERNAL BANK FORGE
+RAW FORGE READY
+[5/13] TEST285 CLASS COMMON REMOVAL
+BANK CLEAN READY
+[6/13] TEST286 BANK CONSENSUS AND CONTEXT CLEANING
+CONTEXT CLEAN READY
+[7/13] FIVE CONTEXT TARGET COMPILER
+60 TARGET PACKETS READY
+[8/13] TARGET FIRST TOKEN MAP
+COLOR:red            | ID=  1151 | FIRST='red' | NTOK=1
+COLOR:blue           | ID= 12203 | FIRST='blue' | NTOK=1
+COLOR:green          | ID= 13250 | FIRST='green' | NTOK=1
+COLOR:yellow         | ID= 27869 | FIRST='yellow' | NTOK=1
+COLOR:black          | ID= 11453 | FIRST='black' | NTOK=1
+COLOR:white          | ID=  5782 | FIRST='white' | NTOK=1
+PLACE:Ankara         | ID=  2082 | FIRST='An' | NTOK=3
+PLACE:Tokyo          | ID= 52854 | FIRST='Tok' | NTOK=2
+PLACE:Lisbon         | ID=    43 | FIRST='L' | NTOK=3
+PLACE:Cairo          | ID=    34 | FIRST='C' | NTOK=2
+PLACE:Oslo           | ID= 28867 | FIRST='Os' | NTOK=2
+PLACE:Lima           | ID=    43 | FIRST='L' | NTOK=2
+NUMBER:17            | ID=    16 | FIRST='1' | NTOK=2
+NUMBER:83            | ID=    23 | FIRST='8' | NTOK=2
+NUMBER:29            | ID=    17 | FIRST='2' | NTOK=2
+NUMBER:64            | ID=    21 | FIRST='6' | NTOK=2
+NUMBER:41            | ID=    19 | FIRST='4' | NTOK=2
+NUMBER:92            | ID=    24 | FIRST='9' | NTOK=2
+MATERIAL:copper      | ID=    66 | FIRST='c' | NTOK=2
+MATERIAL:titanium    | ID=    83 | FIRST='t' | NTOK=3
+MATERIAL:iron        | ID=  2475 | FIRST='iron' | NTOK=1
+MATERIAL:aluminum    | ID=   278 | FIRST='al' | NTOK=2
+MATERIAL:glass       | ID= 58436 | FIRST='glass' | NTOK=1
+MATERIAL:ceramic     | ID=  3828 | FIRST='cer' | NTOK=2
+ACTION:running       | ID= 27173 | FIRST='running' | NTOK=1
+ACTION:sleeping      | ID= 25809 | FIRST='sleep' | NTOK=2
+ACTION:opening       | ID= 67685 | FIRST='opening' | NTOK=1
+ACTION:closing       | ID= 85777 | FIRST='closing' | NTOK=1
+ACTION:ascending     | ID= 71900 | FIRST='ascending' | NTOK=1
+ACTION:descending    | ID= 88032 | FIRST='descending' | NTOK=1
+ABSTRACT:justice     | ID= 38768 | FIRST='justice' | NTOK=1
+ABSTRACT:chaos       | ID=  6447 | FIRST='cha' | NTOK=2
+ABSTRACT:freedom     | ID= 24716 | FIRST='fre' | NTOK=2
+ABSTRACT:constraint  | ID= 48057 | FIRST='constraint' | NTOK=1
+ABSTRACT:certainty   | ID= 12246 | FIRST='cert' | NTOK=2
+ABSTRACT:doubt       | ID=    67 | FIRST='d' | NTOK=3
+OBJECT:hammer        | ID= 45334 | FIRST='hammer' | NTOK=1
+OBJECT:telescope     | ID=   665 | FIRST='te' | NTOK=2
+OBJECT:lantern       | ID= 10715 | FIRST='lan' | NTOK=2
+OBJECT:compass       | ID= 30829 | FIRST='compass' | NTOK=1
+OBJECT:violin        | ID=  9971 | FIRST='vi' | NTOK=2
+OBJECT:anchor        | ID= 17109 | FIRST='anchor' | NTOK=1
+ADJECTIVE:bright     | ID= 72116 | FIRST='bright' | NTOK=1
+ADJECTIVE:dark       | ID= 22624 | FIRST='dark' | NTOK=1
+ADJECTIVE:heavy      | ID= 88845 | FIRST='heavy' | NTOK=1
+ADJECTIVE:light      | ID=  4145 | FIRST='light' | NTOK=1
+ADJECTIVE:smooth     | ID= 56866 | FIRST='smooth' | NTOK=1
+ADJECTIVE:rough      | ID=  1432 | FIRST='rough' | NTOK=1
+NAME:Elena           | ID=    36 | FIRST='E' | NTOK=2
+NAME:Marcus          | ID= 82534 | FIRST='Marcus' | NTOK=1
+NAME:Aylin           | ID= 73109 | FIRST='Ay' | NTOK=2
+NAME:Victor          | ID= 36125 | FIRST='Vict' | NTOK=2
+NAME:Nora            | ID=    45 | FIRST='N' | NTOK=2
+NAME:Adrian          | ID=  2589 | FIRST='Ad' | NTOK=2
+NOVEL:Velorium       | ID= 49506 | FIRST='Vel' | NTOK=3
+NOVEL:Nexarith       | ID=    45 | FIRST='N' | NTOK=3
+NOVEL:Caldris        | ID=  8851 | FIRST='Cal' | NTOK=3
+NOVEL:Zophene        | ID=    57 | FIRST='Z' | NTOK=3
+NOVEL:Meraxon        | ID= 26716 | FIRST='Mer' | NTOK=2
+NOVEL:Tilvara        | ID=    51 | FIRST='T' | NTOK=3
+[9/13] NULL FIRST TOKEN LOGITS
+NULL TOP1: 19 '4' LOGIT=+29.5000
+[10/13] TARGET AND WRONG LOGITS
+01/60 | COLOR:red            | DLOGIT=+0.750 | RANK 9892->5036 | TOP='4'
+02/60 | COLOR:blue           | DLOGIT=+0.531 | RANK 8366->5764 | TOP='4'
+03/60 | COLOR:green          | DLOGIT=+3.047 | RANK 11747->1203 | TOP='4'
+04/60 | COLOR:yellow         | DLOGIT=+1.656 | RANK 2867->683 | TOP='4'
+05/60 | COLOR:black          | DLOGIT=+2.391 | RANK 14808->2181 | TOP='4'
+06/60 | COLOR:white          | DLOGIT=+2.094 | RANK 6462->898 | TOP='4'
+07/60 | PLACE:Ankara         | DLOGIT=+1.375 | RANK 5690->1583 | TOP='4'
+08/60 | PLACE:Tokyo          | DLOGIT=+0.938 | RANK 64794->37365 | TOP='4'
+09/60 | PLACE:Lisbon         | DLOGIT=+3.969 | RANK 1173->54 | TOP='4'
+10/60 | PLACE:Cairo          | DLOGIT=+2.719 | RANK 6799->752 | TOP='4'
+11/60 | PLACE:Oslo           | DLOGIT=+1.008 | RANK 76505->48181 | TOP='4'
+12/60 | PLACE:Lima           | DLOGIT=+3.781 | RANK 1173->88 | TOP='4'
+13/60 | NUMBER:17            | DLOGIT=+1.625 | RANK 3->2 | TOP='4'
+14/60 | NUMBER:83            | DLOGIT=+4.750 | RANK 8->2 | TOP='4'
+15/60 | NUMBER:29            | DLOGIT=+3.000 | RANK 5->2 | TOP='4'
+16/60 | NUMBER:64            | DLOGIT=+3.625 | RANK 10->7 | TOP='4'
+17/60 | NUMBER:41            | DLOGIT=+1.875 | RANK 1->1 | TOP='4'
+18/60 | NUMBER:92            | DLOGIT=+4.000 | RANK 9->2 | TOP='4'
+19/60 | MATERIAL:copper      | DLOGIT=+3.125 | RANK 38314->5449 | TOP='4'
+20/60 | MATERIAL:titanium    | DLOGIT=+0.406 | RANK 54852->45604 | TOP='4'
+21/60 | MATERIAL:iron        | DLOGIT=+1.070 | RANK 118995->93737 | TOP='4'
+22/60 | MATERIAL:aluminum    | DLOGIT=-0.422 | RANK 56592->66273 | TOP='4'
+23/60 | MATERIAL:glass       | DLOGIT=+0.858 | RANK 102698->76284 | TOP='4'
+24/60 | MATERIAL:ceramic     | DLOGIT=+1.652 | RANK 104417->53941 | TOP='4'
+25/60 | ACTION:running       | DLOGIT=+0.547 | RANK 12531->6667 | TOP='4'
+26/60 | ACTION:sleeping      | DLOGIT=+1.094 | RANK 27882->12851 | TOP='4'
+27/60 | ACTION:opening       | DLOGIT=+2.531 | RANK 52511->12713 | TOP='4'
+28/60 | ACTION:closing       | DLOGIT=+4.064 | RANK 68037->5489 | TOP='4'
+29/60 | ACTION:ascending     | DLOGIT=+1.988 | RANK 63311->26340 | TOP='4'
+30/60 | ACTION:descending    | DLOGIT=+1.777 | RANK 107361->60136 | TOP='4'
+31/60 | ABSTRACT:justice     | DLOGIT=+2.887 | RANK 101979->33363 | TOP='4'
+32/60 | ABSTRACT:chaos       | DLOGIT=+2.734 | RANK 34468->4343 | TOP='4'
+33/60 | ABSTRACT:freedom     | DLOGIT=+2.693 | RANK 132836->74738 | TOP='4'
+34/60 | ABSTRACT:constraint  | DLOGIT=+0.840 | RANK 64115->44696 | TOP='4'
+35/60 | ABSTRACT:certainty   | DLOGIT=+1.734 | RANK 55032->25766 | TOP='4'
+36/60 | ABSTRACT:doubt       | DLOGIT=+1.109 | RANK 14808->4816 | TOP='4'
+37/60 | OBJECT:hammer        | DLOGIT=+1.046 | RANK 76717->48602 | TOP='4'
+38/60 | OBJECT:telescope     | DLOGIT=-0.988 | RANK 44966->61026 | TOP='4'
+39/60 | OBJECT:lantern       | DLOGIT=+2.789 | RANK 41597->8280 | TOP='4'
+40/60 | OBJECT:compass       | DLOGIT=-0.203 | RANK 55424->58367 | TOP='4'
+41/60 | OBJECT:violin        | DLOGIT=+1.336 | RANK 120330->86586 | TOP='4'
+42/60 | OBJECT:anchor        | DLOGIT=+2.591 | RANK 73581->25952 | TOP='4'
+43/60 | ADJECTIVE:bright     | DLOGIT=+2.996 | RANK 83764->22857 | TOP='4'
+44/60 | ADJECTIVE:dark       | DLOGIT=+1.572 | RANK 68640->27495 | TOP='4'
+45/60 | ADJECTIVE:heavy      | DLOGIT=+1.705 | RANK 82079->33546 | TOP='4'
+46/60 | ADJECTIVE:light      | DLOGIT=+0.938 | RANK 48254->26963 | TOP='4'
+47/60 | ADJECTIVE:smooth     | DLOGIT=+3.178 | RANK 91596->20101 | TOP='4'
+48/60 | ADJECTIVE:rough      | DLOGIT=+1.766 | RANK 149841->144106 | TOP='4'
+49/60 | NAME:Elena           | DLOGIT=+5.969 | RANK 2375->35 | TOP='4'
+50/60 | NAME:Marcus          | DLOGIT=+2.250 | RANK 59454->20263 | TOP='4'
+51/60 | NAME:Aylin           | DLOGIT=+1.305 | RANK 85946->50236 | TOP='4'
+52/60 | NAME:Victor          | DLOGIT=+0.699 | RANK 93578->76374 | TOP='4'
+53/60 | NAME:Nora            | DLOGIT=+1.750 | RANK 807->205 | TOP='4'
+54/60 | NAME:Adrian          | DLOGIT=+0.922 | RANK 25489->11443 | TOP='4'
+55/60 | NOVEL:Velorium       | DLOGIT=+1.254 | RANK 59917->28384 | TOP='4'
+56/60 | NOVEL:Nexarith       | DLOGIT=+4.438 | RANK 807->52 | TOP='4'
+57/60 | NOVEL:Caldris        | DLOGIT=+0.812 | RANK 6627->3153 | TOP='4'
+58/60 | NOVEL:Zophene        | DLOGIT=+3.000 | RANK 10635->756 | TOP='4'
+59/60 | NOVEL:Meraxon        | DLOGIT=+1.344 | RANK 35917->13769 | TOP='4'
+60/60 | NOVEL:Tilvara        | DLOGIT=+2.625 | RANK 3534->396 | TOP='4'
+[11/13] GLOBAL READOUT
+MEAN_DELTA_TARGET            1.9819
+MEDIAN_DELTA_TARGET          1.7422
+POSITIVE_DELTA_FRACTION      0.9500
+MEAN_DELTA_WRONG_CONDITION   -0.0841
+MEAN_RANK_NULL               45715.4333
+MEAN_RANK_TARGET             25432.6167
+MEDIAN_RANK_NULL             43281.5000
+MEDIAN_RANK_TARGET           12782.0000
+RANK_IMPROVED_FRACTION       0.9333
+TOP1                         0.0167
+TOP10                        0.1000
+TOP100                       0.1667
+[12/13] CLASS ATLAS
+COLOR      | DLOGIT=+1.745 | POS=1.000 | RANK=9023.7->2627.5 | IMP=1.000 | TOP100=0.000
+PLACE      | DLOGIT=+2.298 | POS=1.000 | RANK=26022.3->14670.5 | IMP=1.000 | TOP100=0.333
+NUMBER     | DLOGIT=+3.146 | POS=1.000 | RANK=6.0->2.7 | IMP=0.833 | TOP100=1.000
+MATERIAL   | DLOGIT=+1.115 | POS=0.833 | RANK=79311.3->56881.3 | IMP=0.833 | TOP100=0.000
+ACTION     | DLOGIT=+2.000 | POS=1.000 | RANK=55272.2->20699.3 | IMP=1.000 | TOP100=0.000
+ABSTRACT   | DLOGIT=+2.000 | POS=1.000 | RANK=67206.3->31287.0 | IMP=1.000 | TOP100=0.000
+OBJECT     | DLOGIT=+1.095 | POS=0.667 | RANK=68769.2->48135.5 | IMP=0.667 | TOP100=0.000
+ADJECTIVE  | DLOGIT=+2.026 | POS=1.000 | RANK=87362.3->45844.7 | IMP=1.000 | TOP100=0.000
+NAME       | DLOGIT=+2.149 | POS=1.000 | RANK=44608.2->26426.0 | IMP=1.000 | TOP100=0.167
+NOVEL      | DLOGIT=+2.245 | POS=1.000 | RANK=19572.8->7751.7 | IMP=1.000 | TOP100=0.167
+[13/13] INTEGRITY AND SEAL
+============================================================================================================
+TEST 290 COMPLETE
+MEAN DLOGIT=+1.9819 | POS=0.950 | RANK IMPROVED=0.933 | TOP1=0.017 | TOP10=0.100 | TOP100=0.167
+RSS=0.250235055 | CALLS=3120 | MAX_DOSE_DEV=1.110e-08
+NO GENERATION | NO TRAINING | NO CLASSIFIER | NO SELECTION | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST290/T290-20260928-203712.json
+TXT : /content/AKBASCORE_TEST290/T290-20260928-203712.txt
+SHA : 669dc0d5148011872292af07659e711d99443c2dc62aa8d111de92a909e3d3a3
+============================================================================================================
