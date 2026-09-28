@@ -1,0 +1,99 @@
+ ============================================================================================================
+TEST 293 - LAYERWISE READOUT TRANSPORT X-RAY
+============================================================================================================
+START: 2026-09-28T21:01:18.171+00:00
+[1/13] MODEL LOAD
+config.json: 100% 663/663 [00:00<00:00, 77.4kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 845kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 25.6MB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+merges.txt: 100% 1.67M/1.67M [00:00<00:00, 74.8MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 123MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.37MB/s]Download complete: :  13.1GB,  546MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  422MB/s  Fetching 4 files: 100% 4/4 [00:39<00:00,  7.04s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.25it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.1kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | torch.bfloat16 | 50.79s
+[2/13] WEIGHT SENTINEL AND FIXED RSS
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | RHO0=9.756% | RHO25=2.204% | L26-L27 OFF
+[3/13] CACHE 360 ABSOLUTE STATES
+COLOR READY
+PLACE READY
+NUMBER READY
+MATERIAL READY
+ACTION READY
+ABSTRACT READY
+OBJECT READY
+ADJECTIVE READY
+NAME READY
+NOVEL READY
+[4/13] TEST285 EXTERNAL BANK FORGE
+RAW READY
+[5/13] TEST285 BANK CLEAN
+BANK CLEAN READY
+[6/13] TEST286 CONTEXT CLEAN
+CONTEXT CLEAN READY
+[7/13] FIVE CONTEXT COMPILER
+60 TARGET PACKETS READY
+[8/13] NATURAL BRIDGE AND BLIND BASELINE
+60 NATURAL BRIDGES READY
+[9/13] CAUSAL WRITE
+10/60
+20/60
+30/60
+40/60
+50/60
+60/60
+[10/13] LAYERWISE READOUT TRANSPORT
+L00 ON  | P-H=+0.0074 | D-H=+0.0000 | D-P=+0.0000 | D-B=+0.0000 | P-B=+0.1411
+L01 ON  | P-H=+0.0060 | D-H=+0.0061 | D-P=+0.5408 | D-B=+0.1033 | P-B=+0.1681
+L02 ON  | P-H=+0.0064 | D-H=+0.0077 | D-P=+0.7621 | D-B=+0.1212 | P-B=+0.1555
+L03 ON  | P-H=+0.0128 | D-H=+0.0070 | D-P=+0.6988 | D-B=+0.1213 | P-B=+0.1529
+L04 ON  | P-H=+0.0098 | D-H=+0.0073 | D-P=+0.6076 | D-B=+0.0693 | P-B=+0.1367
+L05 ON  | P-H=+0.0068 | D-H=+0.0078 | D-P=+0.6030 | D-B=+0.0993 | P-B=+0.1252
+L06 ON  | P-H=+0.0058 | D-H=+0.0072 | D-P=+0.6830 | D-B=+0.1111 | P-B=+0.1141
+L07 ON  | P-H=+0.0057 | D-H=+0.0047 | D-P=+0.6407 | D-B=+0.1108 | P-B=+0.1132
+L08 ON  | P-H=+0.0061 | D-H=+0.0053 | D-P=+0.5839 | D-B=+0.1050 | P-B=+0.1111
+L09 ON  | P-H=+0.0050 | D-H=+0.0037 | D-P=+0.5241 | D-B=+0.0703 | P-B=+0.0982
+L10 ON  | P-H=+0.0025 | D-H=+0.0020 | D-P=+0.5691 | D-B=+0.0801 | P-B=+0.0935
+L11 ON  | P-H=+0.0045 | D-H=+0.0010 | D-P=+0.5309 | D-B=+0.1037 | P-B=+0.0862
+L12 ON  | P-H=+0.0052 | D-H=+0.0017 | D-P=+0.5595 | D-B=+0.1094 | P-B=+0.0790
+L13 ON  | P-H=+0.0065 | D-H=+0.0025 | D-P=+0.5278 | D-B=+0.0946 | P-B=+0.0686
+L14 ON  | P-H=+0.0116 | D-H=+0.0027 | D-P=+0.5291 | D-B=+0.0762 | P-B=+0.0594
+L15 ON  | P-H=+0.0083 | D-H=+0.0061 | D-P=+0.5199 | D-B=+0.0737 | P-B=+0.0609
+L16 ON  | P-H=+0.0079 | D-H=+0.0062 | D-P=+0.5095 | D-B=+0.0746 | P-B=+0.0474
+L17 ON  | P-H=+0.0101 | D-H=+0.0077 | D-P=+0.4892 | D-B=+0.0823 | P-B=+0.0446
+L18 ON  | P-H=+0.0101 | D-H=+0.0084 | D-P=+0.3558 | D-B=+0.0792 | P-B=+0.0586
+L19 ON  | P-H=+0.0156 | D-H=+0.0086 | D-P=+0.3346 | D-B=+0.0674 | P-B=+0.0686
+L20 ON  | P-H=+0.0123 | D-H=+0.0086 | D-P=+0.3246 | D-B=+0.0759 | P-B=+0.0701
+L21 ON  | P-H=+0.0259 | D-H=+0.0083 | D-P=+0.3156 | D-B=+0.0803 | P-B=+0.0724
+L22 ON  | P-H=+0.0489 | D-H=+0.0102 | D-P=+0.3247 | D-B=+0.1021 | P-B=+0.0774
+L23 ON  | P-H=+0.0651 | D-H=+0.0143 | D-P=+0.3561 | D-B=+0.1115 | P-B=+0.0795
+L24 ON  | P-H=+0.1107 | D-H=+0.0188 | D-P=+0.3552 | D-B=+0.1256 | P-B=+0.0897
+L25 ON  | P-H=+0.1459 | D-H=+0.0306 | D-P=+0.3754 | D-B=+0.1277 | P-B=+0.0952
+L26 OFF | P-H=+0.2035 | D-H=+0.0463 | D-P=+0.3949 | D-B=+0.1410 | P-B=+0.1083
+L27 OFF | P-H=+0.2634 | D-H=+0.0453 | D-P=+0.3391 | D-B=+0.1613 | P-B=+0.1267
+[11/13] READOUT PEAKS AND LOSSES
+PACK_HEAD    PEAK L27=+0.263404 | L27=+0.263404
+DISP_HEAD    PEAK L26=+0.046306 | L27=+0.045322
+DISP_PACK    PEAK L02=+0.762131 | L27=+0.339089
+DISP_BRIDGE  PEAK L27=+0.161286 | L27=+0.161286
+PACK_BRIDGE  PEAK L01=+0.168082 | L27=+0.126712
+DLOGIT=+1.9819 | POS=0.950 | RANK_IMP=0.933
+[12/13] CLASS L27 ATLAS
+COLOR      | P-H=+0.3191 | D-H=+0.0478 | D-P=+0.3854 | D-B=+0.1235 | DL=+1.745 | IMP=1.000
+PLACE      | P-H=+0.2776 | D-H=+0.0578 | D-P=+0.2728 | D-B=+0.1660 | DL=+2.298 | IMP=1.000
+NUMBER     | P-H=+0.2769 | D-H=+0.0669 | D-P=+0.3198 | D-B=+0.1301 | DL=+3.146 | IMP=0.833
+MATERIAL   | P-H=+0.1707 | D-H=+0.0236 | D-P=+0.3549 | D-B=+0.1565 | DL=+1.115 | IMP=0.833
+ACTION     | P-H=+0.2309 | D-H=+0.0474 | D-P=+0.4008 | D-B=+0.1879 | DL=+2.000 | IMP=1.000
+ABSTRACT   | P-H=+0.2243 | D-H=+0.0391 | D-P=+0.3690 | D-B=+0.2046 | DL=+2.000 | IMP=1.000
+OBJECT     | P-H=+0.1947 | D-H=+0.0232 | D-P=+0.3689 | D-B=+0.1582 | DL=+1.095 | IMP=0.667
+ADJECTIVE  | P-H=+0.2214 | D-H=+0.0463 | D-P=+0.4210 | D-B=+0.1626 | DL=+2.026 | IMP=1.000
+NAME       | P-H=+0.3535 | D-H=+0.0496 | D-P=+0.2210 | D-B=+0.1442 | DL=+2.149 | IMP=1.000
+NOVEL      | P-H=+0.3649 | D-H=+0.0513 | D-P=+0.2773 | D-B=+0.1792 | DL=+2.245 | IMP=1.000
+[13/13] INTEGRITY AND SEAL
+============================================================================================================
+TEST 293 COMPLETE
+PACK->HEAD PEAK L27=+0.2634 | L27=+0.2634
+DISP->HEAD PEAK L26=+0.0463 | L27=+0.0453
+DISP->BRIDGE PEAK L27=+0.1613 | L27=+0.1613
+DLOGIT=+1.9819 | POS=0.950 | RANK_IMP=0.933
+RSS=0.250235055 | CALLS=1560 | MAX_DOSE_DEV=1.110e-08
+NO GENERATION | NO TRAINING | NO OPTIMIZATION | NO DOSE TUNING | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST293/T293-20260928-210309.json
+TXT : /content/AKBASCORE_TEST293/T293-20260928-210309.txt
+SHA : 63820901e6c7b41622c77b230974ecb722a43e0ac2b0dbea7859869dd2089b0a
+============================================================================================================
