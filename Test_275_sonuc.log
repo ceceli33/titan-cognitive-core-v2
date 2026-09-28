@@ -1,0 +1,64 @@
+ ==============================================================================================================
+TEST 275 — STATE-CONDITIONAL LOCAL TRANSPORT CALIBRATION
+==============================================================================================================
+START: 2026-09-28T18:04:19.692+00:00
+[1/9] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 63.5kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 899kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 85.9MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 68.0MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 118MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.10MB/s]Download complete: :  13.1GB,  224MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  500MB/s  Fetching 4 files: 100% 4/4 [00:39<00:00,  6.81s/it]Loading weights: 100% 339/339 [00:03<00:00, 95.43it/s]generation_config.json: 100% 243/243 [00:00<00:00, 27.6kB/s]OK · Qwen/Qwen2.5-7B-Instruct · 28L · H=3584 · torch.bfloat16 · 51.96s
+[2/9] WEIGHT SENTINEL
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+PROBE_REL=0.002500 · SOURCES=[3, 6, 10, 14, 18, 22, 25] · HORIZONS=[1, 2, 3]
+[3/9] TEST273 SELF-FORGE
+FICTION   L27 · PAIR=+0.9131 · PC1=93.50%
+SCIENCE   L27 · PAIR=+0.9530 · PC1=96.48%
+TEMPORAL  L27 · PAIR=+0.8525 · PC1=89.09%
+TECHNICAL L27 · PAIR=+0.9091 · PC1=93.19%
+[4/9] NATURAL / BLIND BASELINES
+FICTION   L27 NATURAL−BLIND norm=234.094
+SCIENCE   L27 NATURAL−BLIND norm=238.620
+TEMPORAL  L27 NATURAL−BLIND norm=254.534
+TECHNICAL L27 NATURAL−BLIND norm=243.255
+[5/9] ±EPS LOCAL PROBE ENGINE
+ENGINE READY · one source layer per assay · central difference
+[6/9] NATURAL vs BLIND TRANSPORT
+FICTION DONE
+SCIENCE DONE
+TEMPORAL DONE
+TECHNICAL DONE
+[7/9] TRANSPORT MATRIX
+L03→L04 · N↔B cos=+0.4915 · blind/natural gain=0.969 · FICTION=+0.60 SCIENCE=+0.30 TEMPORAL=+0.51 TECHNICAL=+0.55
+L03→L05 · N↔B cos=+0.1224 · blind/natural gain=0.955 · FICTION=+0.16 SCIENCE=-0.17 TEMPORAL=+0.21 TECHNICAL=+0.28
+L03→L06 · N↔B cos=+0.0580 · blind/natural gain=0.954 · FICTION=+0.10 SCIENCE=-0.18 TEMPORAL=+0.16 TECHNICAL=+0.15
+L06→L07 · N↔B cos=+0.4918 · blind/natural gain=0.912 · FICTION=+0.52 SCIENCE=+0.38 TEMPORAL=+0.57 TECHNICAL=+0.49
+L06→L08 · N↔B cos=+0.2988 · blind/natural gain=0.943 · FICTION=+0.24 SCIENCE=+0.27 TEMPORAL=+0.37 TECHNICAL=+0.32
+L06→L09 · N↔B cos=+0.0559 · blind/natural gain=1.044 · FICTION=+0.12 SCIENCE=-0.26 TEMPORAL=+0.18 TECHNICAL=+0.18
+L10→L11 · N↔B cos=+0.5610 · blind/natural gain=1.045 · FICTION=+0.66 SCIENCE=+0.52 TEMPORAL=+0.50 TECHNICAL=+0.56
+L10→L12 · N↔B cos=+0.3842 · blind/natural gain=1.073 · FICTION=+0.35 SCIENCE=+0.33 TEMPORAL=+0.49 TECHNICAL=+0.37
+L10→L13 · N↔B cos=+0.2852 · blind/natural gain=1.095 · FICTION=+0.25 SCIENCE=+0.27 TEMPORAL=+0.34 TECHNICAL=+0.27
+L14→L15 · N↔B cos=+0.6233 · blind/natural gain=1.043 · FICTION=+0.60 SCIENCE=+0.62 TEMPORAL=+0.66 TECHNICAL=+0.61
+L14→L16 · N↔B cos=+0.3734 · blind/natural gain=1.042 · FICTION=+0.25 SCIENCE=+0.40 TEMPORAL=+0.49 TECHNICAL=+0.36
+L14→L17 · N↔B cos=+0.1962 · blind/natural gain=1.032 · FICTION=-0.12 SCIENCE=+0.35 TEMPORAL=+0.30 TECHNICAL=+0.25
+L18→L19 · N↔B cos=+0.4350 · blind/natural gain=0.962 · FICTION=+0.42 SCIENCE=+0.57 TEMPORAL=+0.33 TECHNICAL=+0.43
+L18→L20 · N↔B cos=+0.2398 · blind/natural gain=1.120 · FICTION=+0.21 SCIENCE=+0.34 TEMPORAL=+0.19 TECHNICAL=+0.21
+L18→L21 · N↔B cos=+0.1211 · blind/natural gain=1.195 · FICTION=+0.07 SCIENCE=+0.20 TEMPORAL=+0.08 TECHNICAL=+0.13
+L22→L23 · N↔B cos=+0.4896 · blind/natural gain=1.164 · FICTION=+0.41 SCIENCE=+0.46 TEMPORAL=+0.57 TECHNICAL=+0.52
+L22→L24 · N↔B cos=+0.3937 · blind/natural gain=1.231 · FICTION=+0.51 SCIENCE=+0.31 TEMPORAL=+0.41 TECHNICAL=+0.35
+L22→L25 · N↔B cos=+0.2613 · blind/natural gain=1.172 · FICTION=+0.37 SCIENCE=+0.20 TEMPORAL=+0.22 TECHNICAL=+0.26
+L25→L26 · N↔B cos=+0.6461 · blind/natural gain=0.955 · FICTION=+0.61 SCIENCE=+0.60 TEMPORAL=+0.75 TECHNICAL=+0.62
+L25→L27 · N↔B cos=+0.2950 · blind/natural gain=0.888 · FICTION=+0.30 SCIENCE=+0.30 TEMPORAL=+0.41 TECHNICAL=+0.18
+[8/9] DOMAIN + LATE-LAYER SUMMARY
+FICTION   ALL cos=+0.3321 gain=1.040 · LATE cos=+0.3631 gain=1.072
+SCIENCE   ALL cos=+0.2906 gain=0.925 · LATE cos=+0.3722 gain=1.055
+TEMPORAL  ALL cos=+0.3867 gain=1.036 · LATE cos=+0.3680 gain=1.022
+TECHNICAL ALL cos=+0.3553 gain=1.158 · LATE cos=+0.3374 gain=1.195
+[9/9] INTEGRITY + SEAL
+==============================================================================================================
+TEST 275 COMPLETE
+SELF-FORGED PACKET · NATURAL vs BLIND LOCAL TRANSPORT
+PROBE=0.2500% · CALLS=112 · MAX DEV=2.887e-10
+NO TRAINING · WEIGHT INTEGRITY PASS · HOOKS=0
+JSON: /content/AKBASCORE_TEST275/T275-20260928-180518.json
+TXT : /content/AKBASCORE_TEST275/T275-20260928-180518.txt
+SHA : 0297366980d76dfa1a46b616856da227c0c85960f8d32eded8859acc8ec6d66b
+==============================================================================================================
