@@ -1,0 +1,81 @@
+ ==============================================================================================================
+TEST 271 — FROZEN RESIDUAL SUBSPACE → HELD-OUT FACT TRANSFER
+==============================================================================================================
+START: 2026-09-28T17:31:28.922+00:00
+[1/10] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 71.4kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 770kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 46.2MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 73.7MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 131MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.60MB/s]Download complete: :  13.1GB,  221MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  406MB/s  Fetching 4 files: 100% 4/4 [00:44<00:00,  7.93s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.18it/s]generation_config.json: 100% 243/243 [00:00<00:00, 30.9kB/s]OK · Qwen/Qwen2.5-7B-Instruct · 28L · H=3584 · torch.bfloat16 · 53.66s
+[2/10] WEIGHT SENTINEL
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+[3/10] SOURCE ROLE AXES
+SUBJECT  raw L19=8.178 L25=35.347 L27=83.000
+ACTION   raw L19=8.461 L25=36.661 L27=48.444
+OBJECT   raw L19=4.443 L25=15.447 L27=19.518
+LOCATION raw L19=3.946 L25=12.790 L27=15.216
+[4/10] SOURCE BINDING AXIS
+[1/8] Δ19=6.197 Δ25=21.167 Δ27=26.684
+[2/8] Δ19=9.894 Δ25=35.579 Δ27=46.155
+[3/8] Δ19=7.953 Δ25=23.475 Δ27=27.874
+[4/8] Δ19=9.029 Δ25=38.525 Δ27=50.925
+[5/8] Δ19=4.359 Δ25=16.819 Δ27=23.753
+[6/8] Δ19=7.799 Δ25=26.461 Δ27=35.228
+[7/8] Δ19=8.216 Δ25=36.015 Δ27=49.652
+[8/8] Δ19=6.996 Δ25=27.003 Δ27=34.410
+LOO · L19=0.92511 L25=0.92861 L27=0.92556
+[5/10] SOURCE RESIDUAL BASIS
+L19 FROZEN · k90=2 PC1=83.11% PC1+2=91.87%
+L21 FROZEN · k90=3 PC1=78.72% PC1+2=89.30%
+L23 FROZEN · k90=3 PC1=73.57% PC1+2=86.40%
+L25 FROZEN · k90=3 PC1=72.30% PC1+2=86.25%
+L26 FROZEN · k90=3 PC1=71.95% PC1+2=85.92%
+L27 FROZEN · k90=3 PC1=71.53% PC1+2=85.57%
+[6/10] FREEZE SOURCE BASIS
+SOURCE BASIS SEALED · target has not been processed
+[7/10] HELD-OUT TARGET NATURAL / NULL
+
+WHO · expected=Elena Voss
+NATURAL: Elena Voss stored the cobalt prism beneath the Ardent Observatory.
+NULL   : The prompt does not provide any information about who stored the cobalt prism beneath the Ardent Observatory. Therefore, based solely on the information given, it is not possible to determine who stored the cobalt prism.
+
+WHAT · expected=cobalt prism
+NATURAL: Elena Voss stored the cobalt prism beneath the Ardent Observatory.
+NULL   : The prompt does not provide any information about Elena Voss storing anything beneath the Ardent Observatory. There is insufficient data to answer the question.
+
+WHERE · expected=beneath the Ardent Observatory
+NATURAL: Elena Voss stored the cobalt prism beneath the Ardent Observatory.
+NULL   : The prompt does not provide specific information about where Elena Voss stored the cobalt prism. Additional context or details would be needed to answer this question accurately.
+
+ACTION · expected=stored
+NATURAL: Elena Voss stored the cobalt prism beneath the Ardent Observatory.
+NULL   : The prompt does not provide specific details about what Elena Voss did with the cobalt prism beneath the Ardent Observatory. Without additional context, I cannot accurately reason about her actions.
+
+[8/10] HELD-OUT TRANSFER
+L19 frozen-source projection mean=0.8614 · energy=74.26% · WHO=0.851 WHAT=0.904 WHERE=0.846 ACTION=0.844
+L21 frozen-source projection mean=0.8611 · energy=74.27% · WHO=0.859 WHAT=0.909 WHERE=0.865 ACTION=0.811
+L23 frozen-source projection mean=0.7268 · energy=52.90% · WHO=0.703 WHAT=0.773 WHERE=0.729 ACTION=0.702
+L25 frozen-source projection mean=0.6361 · energy=40.52% · WHO=0.642 WHAT=0.674 WHERE=0.620 ACTION=0.608
+L26 frozen-source projection mean=0.6119 · energy=37.48% · WHO=0.613 WHAT=0.642 WHERE=0.603 ACTION=0.589
+L27 frozen-source projection mean=0.5848 · energy=34.21% · WHO=0.572 WHAT=0.586 WHERE=0.590 ACTION=0.592
+[9/10] TARGET INTERNAL CONSISTENCY / SOURCE-vs-TARGET
+L19 TARGET pair=+0.8521 PC1=88.92% PC1+2=93.95% SOURCE→TARGET=0.8614
+L21 TARGET pair=+0.8097 PC1=85.76% PC1+2=92.55% SOURCE→TARGET=0.8611
+L23 TARGET pair=+0.8262 PC1=86.99% PC1+2=92.72% SOURCE→TARGET=0.7268
+L25 TARGET pair=+0.8093 PC1=85.73% PC1+2=92.12% SOURCE→TARGET=0.6361
+L26 TARGET pair=+0.7964 PC1=84.77% PC1+2=91.73% SOURCE→TARGET=0.6119
+L27 TARGET pair=+0.7923 PC1=84.48% PC1+2=91.98% SOURCE→TARGET=0.5848
+[10/10] ISOLATION / INTEGRITY / SEAL
+L19 · FROZEN SOURCE k=2 · TARGET PROJ=0.8614 · CAPTURED=74.26%
+L21 · FROZEN SOURCE k=3 · TARGET PROJ=0.8611 · CAPTURED=74.27%
+L23 · FROZEN SOURCE k=3 · TARGET PROJ=0.7268 · CAPTURED=52.90%
+L25 · FROZEN SOURCE k=3 · TARGET PROJ=0.6361 · CAPTURED=40.52%
+L26 · FROZEN SOURCE k=3 · TARGET PROJ=0.6119 · CAPTURED=37.48%
+L27 · FROZEN SOURCE k=3 · TARGET PROJ=0.5848 · CAPTURED=34.21%
+==============================================================================================================
+TEST 271 COMPLETE
+FROZEN GOLDEN-GATE RESIDUAL SUBSPACE → HELD-OUT ELENA-VOSS FACT
+STRICT SOURCE→TARGET ISOLATION · NO STEERING · NO TRAINING · WEIGHT INTEGRITY PASS
+JSON: /content/AKBASCORE_TEST271/T271-20260928-173233.json
+TXT : /content/AKBASCORE_TEST271/T271-20260928-173233.txt
+SHA : 893f743e7f0d4bd0756dc1b8ea2f7fec993844b8b394d1cb426c4e2e38edf64e
+==============================================================================================================
