@@ -1,0 +1,81 @@
+ ============================================================================================================
+TEST 297 - TARGET DECISION-BOUNDARY MARGIN ASSAY - FIXED
+============================================================================================================
+START: 2026-09-28T21:55:21.062+00:00
+[1/13] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 79.9kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 969kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 27.5MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 54.7MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 129MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.15MB/s]Download complete: :  13.1GB,  299MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  477MB/s  Fetching 4 files: 100% 4/4 [00:39<00:00,  7.13s/it]Loading weights: 100% 339/339 [00:03<00:00, 101.15it/s]generation_config.json: 100% 243/243 [00:00<00:00, 29.6kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | torch.bfloat16 | 49.18s
+[2/13] WEIGHT SENTINEL AND FIXED RSS
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | RHO0=9.756% | RHO25=2.204% | BRIDGE_REL=0.020
+[3/13] CACHE 360 ABSOLUTE STATES
+COLOR READY
+PLACE READY
+NUMBER READY
+MATERIAL READY
+ACTION READY
+ABSTRACT READY
+OBJECT READY
+ADJECTIVE READY
+NAME READY
+NOVEL READY
+[4/13] TEST285 EXTERNAL BANK FORGE
+RAW READY
+[5/13] TEST285 BANK CLEAN
+BANK CLEAN READY
+[6/13] TEST286 CONTEXT CLEAN
+CONTEXT CLEAN READY
+[7/13] FIVE CONTEXT COMPILER
+60 TARGET PACKETS READY
+[8/13] FIXED READOUT BRIDGES
+60 BRIDGES READY
+[9/13] CAUSAL ENGINE
+[10/13] DECISION-BOUNDARY ASSAY
+10/60
+20/60
+30/60
+40/60
+50/60
+60/60
+[11/13] GLOBAL MARGIN SUMMARY
+MEAN_PACK_MARGIN             -23.033333
+MEDIAN_PACK_MARGIN           -24.960938
+MEAN_OWN_MARGIN              -19.616305
+MEDIAN_OWN_MARGIN            -21.343750
+MEAN_WRONG_MARGIN            -22.844347
+MEAN_TARGET_GAIN             +3.425362
+MEAN_MARGIN_GAIN             +3.417029
+MEDIAN_REQUIRED_GAIN         +24.960938
+MEDIAN_GAIN_OVER_REQUIRED    +0.142857
+BOUNDARY_CROSSED             +0.000000
+TOP1_PACK                    +0.016667
+TOP1_OWN                     +0.016667
+TOP1_WRONG                   +0.016667
+MEDIAN_RANK_PACK             +13602.000000
+MEDIAN_RANK_OWN              +791.500000
+[12/13] CLASS MARGIN ATLAS
+COLOR      | M0=-23.328 | M1=-19.365 | TG=+3.984 | MG=+3.964 | NEED=23.812 | CROSS=0.000 | RANK=2069.5->111.0
+PLACE      | M0=-23.116 | M1=-19.479 | TG=+3.553 | MG=+3.637 | NEED=22.484 | CROSS=0.000 | RANK=1185.0->129.0
+NUMBER     | M0=-1.521 | M1=-0.812 | TG=+0.667 | MG=+0.708 | NEED=2.312 | CROSS=0.000 | RANK=2.0->2.0
+MATERIAL   | M0=-27.808 | M1=-24.073 | TG=+3.777 | MG=+3.735 | NEED=27.525 | CROSS=0.000 | RANK=59214.5->5997.5
+ACTION     | M0=-25.849 | M1=-22.411 | TG=+3.479 | MG=+3.438 | NEED=24.961 | CROSS=0.000 | RANK=13602.0->1197.0
+ABSTRACT   | M0=-26.485 | M1=-23.026 | TG=+3.521 | MG=+3.459 | NEED=27.301 | CROSS=0.000 | RANK=30467.5->3237.0
+OBJECT     | M0=-27.451 | M1=-23.531 | TG=+3.941 | MG=+3.920 | NEED=27.146 | CROSS=0.000 | RANK=52911.5->4608.5
+ADJECTIVE  | M0=-27.650 | M1=-24.262 | TG=+3.471 | MG=+3.388 | NEED=26.527 | CROSS=0.000 | RANK=27001.0->2489.0
+NAME       | M0=-24.281 | M1=-20.505 | TG=+3.796 | MG=+3.775 | NEED=24.734 | CROSS=0.000 | RANK=14472.5->823.5
+NOVEL      | M0=-22.845 | M1=-18.698 | TG=+4.064 | MG=+4.147 | NEED=22.875 | CROSS=0.000 | RANK=1993.5->129.5
+[13/13] INTEGRITY AND SEAL
+============================================================================================================
+TEST 297 COMPLETE
+PACK MARGIN mean=-23.033 median=-24.961
+OWN MARGIN mean=-19.616 median=-21.344
+TARGET GAIN=+3.425 | MARGIN GAIN=+3.417 | MEDIAN NEED=24.961
+BOUNDARY CROSSED=0.000 | TOP1 PACK=0.017 | OWN=0.017 | WRONG=0.017
+MEDIAN RANK=13602.0->791.5
+RSS=0.250235055 | BRIDGE_REL=0.020 | SEASC_CALLS=4680 | BRIDGE_CALLS=120
+NO GENERATION | NO TRAINING | NO OPTIMIZATION | NO DOSE SWEEP | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST297/T297-20260928-215733.json
+TXT : /content/AKBASCORE_TEST297/T297-20260928-215733.txt
+SHA : 8ea2ad9b62e62765832e37bbe54a3bc483ccd3c62e46d902145b28b79f70e283
+============================================================================================================
