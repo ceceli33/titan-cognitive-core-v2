@@ -1,0 +1,189 @@
+ ============================================================================================================
+TEST 342 - FROZEN ASSISTANT-ROLE READOUT WINDOW - FRESH HELD-OUT
+============================================================================================================
+START: 2026-09-29T09:55:07.777+00:00
+[1/18] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 81.3kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 989kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 45.0MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 55.3MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 119MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.72MB/s]Download complete: :  13.1GB,  876MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  302MB/s  Fetching 4 files: 100% 4/4 [00:41<00:00,  7.91s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.12it/s]generation_config.json: 100% 243/243 [00:00<00:00, 32.6kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | torch.bfloat16 | 50.03s
+[2/18] ENGINE LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | ADDITIVE SEASC L0-L25 | FROZEN_REL=-2 | NO WINDOW SEARCH
+[3/18] QUERY NULL CACHE
+NULL READY
+[4/18] TARGET-FREE PACKET BANK
+01/24 | BANK= 15
+02/24 | BANK= 15
+03/24 | BANK= 13
+04/24 | BANK= 15
+05/24 | BANK= 14
+06/24 | BANK= 13
+07/24 | BANK= 15
+08/24 | BANK= 13
+09/24 | BANK= 14
+10/24 | BANK= 10
+11/24 | BANK= 13
+12/24 | BANK= 14
+13/24 | BANK= 14
+14/24 | BANK= 11
+15/24 | BANK= 13
+16/24 | BANK= 11
+17/24 | BANK= 13
+18/24 | BANK= 17
+19/24 | BANK= 14
+20/24 | BANK= 13
+21/24 | BANK= 14
+22/24 | BANK= 13
+23/24 | BANK= 10
+24/24 | BANK= 14
+SHOWCASE | BANK= 16
+[5/18] FROZEN ARGMAX(DISP) ROUTER - FULL WRITE USED ONLY FOR ROUTER
+01/24 | ANCHOR='Bravik' | DISP=1.147195
+02/24 | ANCHOR='Shaft' | DISP=1.105786
+03/24 | ANCHOR='the' | DISP=1.187914
+04/24 | ANCHOR='Palermo' | DISP=1.099957
+05/24 | ANCHOR='protective' | DISP=1.038865
+06/24 | ANCHOR='synchronization' | DISP=0.978511
+07/24 | ANCHOR='frame' | DISP=1.028343
+08/24 | ANCHOR='sample' | DISP=1.023368
+09/24 | ANCHOR='receiver' | DISP=1.033953
+10/24 | ANCHOR='Dorevian' | DISP=1.097789
+11/24 | ANCHOR='Talora' | DISP=1.163714
+12/24 | ANCHOR='Prague' | DISP=1.132756
+13/24 | ANCHOR='evaluated' | DISP=1.001989
+14/24 | ANCHOR='secondary' | DISP=1.057517
+15/24 | ANCHOR='The' | DISP=1.164178
+16/24 | ANCHOR='immediately' | DISP=0.988048
+17/24 | ANCHOR='described' | DISP=1.060344
+18/24 | ANCHOR='testing' | DISP=1.054123
+19/24 | ANCHOR='Aster' | DISP=1.109435
+20/24 | ANCHOR='Dr' | DISP=1.098649
+21/24 | ANCHOR='Nagoya' | DISP=1.098002
+22/24 | ANCHOR='established' | DISP=0.980054
+23/24 | ANCHOR='several' | DISP=1.068445
+24/24 | ANCHOR='and' | DISP=1.004457
+SHOWCASE | ANCHOR='conducted' | DISP=1.013328
+[6/18] ROUTER + REL=-2 FROZEN
+NO POSITION SEARCH | NO ORACLE | NO ADAPTATION | TARGET_ACCESS=False
+[7/18] REL=-2 TOKEN AUDIT
+01/24 | N=48 | REL=-2 | TOKEN='assistant'
+02/24 | N=51 | REL=-2 | TOKEN='assistant'
+03/24 | N=52 | REL=-2 | TOKEN='assistant'
+04/24 | N=49 | REL=-2 | TOKEN='assistant'
+05/24 | N=51 | REL=-2 | TOKEN='assistant'
+06/24 | N=52 | REL=-2 | TOKEN='assistant'
+07/24 | N=54 | REL=-2 | TOKEN='assistant'
+08/24 | N=49 | REL=-2 | TOKEN='assistant'
+09/24 | N=49 | REL=-2 | TOKEN='assistant'
+10/24 | N=49 | REL=-2 | TOKEN='assistant'
+11/24 | N=48 | REL=-2 | TOKEN='assistant'
+12/24 | N=51 | REL=-2 | TOKEN='assistant'
+13/24 | N=51 | REL=-2 | TOKEN='assistant'
+14/24 | N=50 | REL=-2 | TOKEN='assistant'
+15/24 | N=52 | REL=-2 | TOKEN='assistant'
+16/24 | N=49 | REL=-2 | TOKEN='assistant'
+17/24 | N=49 | REL=-2 | TOKEN='assistant'
+18/24 | N=49 | REL=-2 | TOKEN='assistant'
+19/24 | N=50 | REL=-2 | TOKEN='assistant'
+20/24 | N=48 | REL=-2 | TOKEN='assistant'
+21/24 | N=49 | REL=-2 | TOKEN='assistant'
+22/24 | N=50 | REL=-2 | TOKEN='assistant'
+23/24 | N=52 | REL=-2 | TOKEN='assistant'
+24/24 | N=52 | REL=-2 | TOKEN='assistant'
+SHOWCASE | N=58 | REL=-2 | TOKEN='assistant'
+[8/18] VANILLA + FROZEN-WINDOW FORWARDS - TARGET SEALED
+01/24 | DISP=0.072573 | V_TOP1='Information' | W_TOP1='Information'
+02/24 | DISP=0.060663 | V_TOP1='Meteor' | W_TOP1='Meteor'
+03/24 | DISP=0.070764 | V_TOP1='Information' | W_TOP1='Information'
+04/24 | DISP=0.051709 | V_TOP1='Information' | W_TOP1='Information'
+05/24 | DISP=0.105117 | V_TOP1='information' | W_TOP1='information'
+06/24 | DISP=0.069538 | V_TOP1='Green' | W_TOP1='Green'
+07/24 | DISP=0.032697 | V_TOP1='working' | W_TOP1='working'
+08/24 | DISP=0.055630 | V_TOP1='The' | W_TOP1='The'
+09/24 | DISP=0.089107 | V_TOP1='information' | W_TOP1='information'
+10/24 | DISP=0.066965 | V_TOP1='Information' | W_TOP1='Information'
+11/24 | DISP=0.089312 | V_TOP1='Information' | W_TOP1='Information'
+12/24 | DISP=0.058588 | V_TOP1='Information' | W_TOP1='Information'
+13/24 | DISP=0.050063 | V_TOP1='information' | W_TOP1='information'
+14/24 | DISP=0.081411 | V_TOP1='Red' | W_TOP1='Red'
+15/24 | DISP=0.103692 | V_TOP1='Information' | W_TOP1='Information'
+16/24 | DISP=0.066458 | V_TOP1='It' | W_TOP1='information'
+17/24 | DISP=0.051346 | V_TOP1='The' | W_TOP1='The'
+18/24 | DISP=0.091536 | V_TOP1='Information' | W_TOP1='Item'
+19/24 | DISP=0.096736 | V_TOP1='information' | W_TOP1='information'
+20/24 | DISP=0.079680 | V_TOP1='Apollo' | W_TOP1='Apollo'
+21/24 | DISP=0.084566 | V_TOP1='Information' | W_TOP1='Information'
+22/24 | DISP=0.068885 | V_TOP1='Missing' | W_TOP1='Missing'
+23/24 | DISP=0.046250 | V_TOP1='information' | W_TOP1='information'
+24/24 | DISP=0.037451 | V_TOP1='Collect' | W_TOP1='Collect'
+SHOWCASE | DISP=0.047268 | V_TOP1='Att' | W_TOP1='Att'
+[9/18] ALL HELD-OUT FORWARDS FROZEN
+TARGET STILL SEALED | FROZEN REL=-2 NEVER CHANGED
+[10/18] TARGET SEAL OPEN - POST-HOC READOUT
+01/24 | T='Bravik' | 2576->2168 | G=+0.156 | IMP=True
+02/24 | T='Norvex' | 2776->2502 | G=+0.000 | IMP=True
+03/24 | T='583' | 385->355 | G=+0.188 | IMP=True
+04/24 | T='Dubrovnik' | 209->219 | G=-0.125 | IMP=False
+05/24 | T='obsidian' | 1053->1343 | G=-0.531 | IMP=False
+06/24 | T='magenta' | 16508->13459 | G=+0.297 | IMP=True
+07/24 | T='crawling' | 156->141 | G=+0.188 | IMP=True
+08/24 | T='glossy' | 2856->2100 | G=+0.438 | IMP=True
+09/24 | T='compass' | 182->194 | G=-0.062 | IMP=False
+10/24 | T='Dorevian' | 794->624 | G=+0.406 | IMP=True
+11/24 | T='Talora' | 161->142 | G=+0.250 | IMP=True
+12/24 | T='Bratislava' | 223->182 | G=+0.312 | IMP=True
+13/24 | T='tungsten' | 349->337 | G=+0.125 | IMP=True
+14/24 | T='scarlet' | 511->421 | G=+0.375 | IMP=True
+15/24 | T='817' | 20->16 | G=+0.750 | IMP=True
+16/24 | T='expanding' | 14->9 | G=+0.812 | IMP=True
+17/24 | T='velvety' | 855->699 | G=+0.438 | IMP=True
+18/24 | T='hygrometer' | 31501->20682 | G=+0.703 | IMP=True
+19/24 | T='Kelvane' | 809->615 | G=+0.375 | IMP=True
+20/24 | T='Veyron' | 97->83 | G=+0.062 | IMP=True
+21/24 | T='Nagoya' | 179->179 | G=-0.062 | IMP=False
+22/24 | T='indigo' | 617->447 | G=+0.625 | IMP=True
+23/24 | T='feldspar' | 3040->2806 | G=+0.188 | IMP=True
+24/24 | T='descending' | 24056->24974 | G=+0.016 | IMP=False
+SHOWCASE | T='placed an amber banner' | 450->448 | G=+0.125 | IMP=True
+[11/18] HELD-OUT SUMMARY
+vanilla_median_rank=564.000000
+window_median_rank=434.000000
+rank_improved=0.791667
+positive_gain=0.791667
+mean_gain=0.246745
+median_gain=0.218750
+top1=0.000000
+top5=0.000000
+top10=0.041667
+top50=0.083333
+top256=0.375000
+mean_disp=0.070031
+[12/18] PREDECLARED REPLICATION GATE
+GAIN_GATE=True | POS_GATE=True | RANK_GATE=True
+[13/18] EFFECT COUNTS
+POSITIVE_GAIN=19/24 | RANK_IMPROVED=19/24 | TOP10=1/24 | TOP256=9/24
+[14/18] SHOWCASE
+------------------------------------------------------------------------------------------------------------
+SOURCE : Mustafa Akbaş placed an amber banner beneath the Galata Bridge where the validation demonstration was conducted.
+QUESTION: What did Mustafa Akbaş do at the location of the validation demonstration?
+TARGET : placed an amber banner
+ANCHOR : conducted
+REL=-2 TOKEN='assistant' | RANK 450->448 | GAIN=+0.1250 | TOP1='Att'
+------------------------------------------------------------------------------------------------------------
+[15/18] CLASSIFICATION
+CLASS= FROZEN_ASSISTANT_ROLE_WINDOW_REPLICATED_ON_FRESH_HELDOUT
+[16/18] LEAKAGE AUDIT
+FRESH CASES | REL=-2 PRE-FROZEN FROM TEST341 | NO WINDOW SEARCH | NO ORACLE | SAME REL ALL CASES | TARGET POST-HOC ONLY
+[17/18] SCIENTIFIC AUDIT
+SAME COMPILER | SAME ARGMAX(DISP) ROUTER | SAME RSS | SAME ADDITIVE SEASC L0-L25 | SINGLE ASSISTANT-TOKEN WRITE | NO TRAINING | NO WEIGHT UPDATE
+[18/18] INTEGRITY + SAVE
+============================================================================================================
+TEST 342 COMPLETE
+VANILLA_MED=564.0 | REL-2_MED=434.0 | GAIN=+0.247
+POS=0.792 | RANK_IMP=0.792 | TOP10=0.042 | TOP256=0.375
+CLASS= FROZEN_ASSISTANT_ROLE_WINDOW_REPLICATED_ON_FRESH_HELDOUT
+FRESH HELD-OUT | FROZEN REL=-2 | TARGET POST-HOC ONLY | WEIGHT INTEGRITY PASS | HOOKS=0
+JSON: /content/AKBASCORE_TEST342/T342-20260929-095632.json
+TXT : /content/AKBASCORE_TEST342/T342-20260929-095632.txt
+SHA : a78a398addba2c6ba53b6146b9240d845321fad2dd6c585abe839bb1c4b0cfb1
+============================================================================================================
