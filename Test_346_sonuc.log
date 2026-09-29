@@ -1,0 +1,211 @@
+ ============================================================================================================
+TEST 346 - AUTOREGRESSIVE TRAJECTORY BIFURCATION X-RAY
+============================================================================================================
+START: 2026-09-29T10:39:36.905+00:00
+[1/18] MODEL LOAD
+config.json: 100% 663/663 [00:00<00:00, 80.5kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 908kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 84.2MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 68.5MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 130MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.21MB/s]Download complete: :  13.1GB,  331MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  521MB/s  Fetching 4 files: 100% 4/4 [00:39<00:00,  6.87s/it]Loading weights: 100% 339/339 [00:03<00:00, 98.15it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.3kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | torch.bfloat16 | 51.62s
+[2/18] ENGINE LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | TEST345 FULL ASSISTANT-OUTPUT SEASC FROZEN
+[3/18] QUERY NULL CACHE
+NULL READY
+[4/18] TARGET-FREE PACKET BANK
+01/24 | BANK= 15
+02/24 | BANK= 15
+03/24 | BANK= 13
+04/24 | BANK= 15
+05/24 | BANK= 14
+06/24 | BANK= 13
+07/24 | BANK= 15
+08/24 | BANK= 13
+09/24 | BANK= 14
+10/24 | BANK= 10
+11/24 | BANK= 13
+12/24 | BANK= 14
+13/24 | BANK= 14
+14/24 | BANK= 11
+15/24 | BANK= 13
+16/24 | BANK= 11
+17/24 | BANK= 13
+18/24 | BANK= 17
+19/24 | BANK= 14
+20/24 | BANK= 13
+21/24 | BANK= 14
+22/24 | BANK= 13
+23/24 | BANK= 10
+24/24 | BANK= 14
+SHOWCASE | BANK= 16
+[5/18] FROZEN ARGMAX(DISP) ROUTER
+01/24 | ANCHOR='During' | DISP=0.465429
+02/24 | ANCHOR='designation' | DISP=0.322664
+03/24 | ANCHOR='After' | DISP=0.486695
+04/24 | ANCHOR='research' | DISP=0.396355
+05/24 | ANCHOR='After' | DISP=0.402966
+06/24 | ANCHOR='status' | DISP=0.327831
+07/24 | ANCHOR='began' | DISP=0.260100
+08/24 | ANCHOR='original' | DISP=0.323299
+09/24 | ANCHOR='equipment' | DISP=0.229279
+10/24 | ANCHOR='emergency' | DISP=0.470756
+11/24 | ANCHOR='Merik' | DISP=0.516476
+12/24 | ANCHOR='transport' | DISP=0.390755
+13/24 | ANCHOR='The' | DISP=0.365645
+14/24 | ANCHOR='The' | DISP=0.344858
+15/24 | ANCHOR='display' | DISP=0.454496
+16/24 | ANCHOR='When' | DISP=0.348160
+17/24 | ANCHOR='The' | DISP=0.354542
+18/24 | ANCHOR='storage' | DISP=0.428094
+19/24 | ANCHOR='prototype' | DISP=0.305135
+20/24 | ANCHOR='Several' | DISP=0.316570
+21/24 | ANCHOR='archaeological' | DISP=0.347268
+22/24 | ANCHOR='untreated' | DISP=0.396924
+23/24 | ANCHOR='Sample' | DISP=0.352017
+24/24 | ANCHOR='platform' | DISP=0.290880
+SHOWCASE | ANCHOR='Mustafa' | DISP=0.259882
+[6/18] ENGINE FROZEN
+FULL ASSISTANT-OUTPUT | NO DOSE/WINDOW/ROUTER SEARCH | TARGET NOT USED BY ENGINE
+[7/18] ASSISTANT INDEX AUDIT
+01/24 | POS=46 | TOKEN='assistant'
+02/24 | POS=49 | TOKEN='assistant'
+03/24 | POS=50 | TOKEN='assistant'
+04/24 | POS=47 | TOKEN='assistant'
+05/24 | POS=49 | TOKEN='assistant'
+06/24 | POS=50 | TOKEN='assistant'
+07/24 | POS=52 | TOKEN='assistant'
+08/24 | POS=47 | TOKEN='assistant'
+09/24 | POS=47 | TOKEN='assistant'
+10/24 | POS=47 | TOKEN='assistant'
+11/24 | POS=46 | TOKEN='assistant'
+12/24 | POS=49 | TOKEN='assistant'
+13/24 | POS=49 | TOKEN='assistant'
+14/24 | POS=48 | TOKEN='assistant'
+15/24 | POS=50 | TOKEN='assistant'
+16/24 | POS=47 | TOKEN='assistant'
+17/24 | POS=47 | TOKEN='assistant'
+18/24 | POS=47 | TOKEN='assistant'
+19/24 | POS=48 | TOKEN='assistant'
+20/24 | POS=46 | TOKEN='assistant'
+21/24 | POS=47 | TOKEN='assistant'
+22/24 | POS=48 | TOKEN='assistant'
+23/24 | POS=50 | TOKEN='assistant'
+24/24 | POS=50 | TOKEN='assistant'
+SHOWCASE | POS=56 | TOKEN='assistant'
+[8/18] STEERED FIRST-DECISION DISTRIBUTIONS - TARGET SEALED
+01/24 | GREEDY='Information' | ID=14873
+02/24 | GREEDY='information' | ID=25069
+03/24 | GREEDY='Information' | ID=14873
+04/24 | GREEDY='Unknown' | ID=13790
+05/24 | GREEDY='information' | ID=25069
+06/24 | GREEDY='Green' | ID=19576
+07/24 | GREEDY='started' | ID=46723
+08/24 | GREEDY='The' | ID=785
+09/24 | GREEDY='information' | ID=25069
+10/24 | GREEDY='Information' | ID=14873
+11/24 | GREEDY='Information' | ID=14873
+12/24 | GREEDY='information' | ID=25069
+13/24 | GREEDY='information' | ID=25069
+14/24 | GREEDY='yellow' | ID=27869
+15/24 | GREEDY='Information' | ID=14873
+16/24 | GREEDY='It' | ID=2132
+17/24 | GREEDY='soft' | ID=3510
+18/24 | GREEDY='Item' | ID=1234
+19/24 | GREEDY='Ne' | ID=8813
+20/24 | GREEDY='Apollo' | ID=95909
+21/24 | GREEDY='The' | ID=785
+22/24 | GREEDY='missing' | ID=30616
+23/24 | GREEDY='information' | ID=25069
+24/24 | GREEDY='Col' | ID=6127
+SHOWCASE | GREEDY='He' | ID=1519
+[9/18] TARGET OPENS - FIRST DECISION X-RAY
+01/24 | TARGET='Br' R=732 | WIN='Information' | MARGIN=-17.344
+02/24 | TARGET='Nor' R=3652 | WIN='information' | MARGIN=-14.688
+03/24 | TARGET='5' R=22 | WIN='Information' | MARGIN=-7.500
+04/24 | TARGET='Dub' R=130 | WIN='Unknown' | MARGIN=-6.438
+05/24 | TARGET='obs' R=431 | WIN='information' | MARGIN=-10.812
+06/24 | TARGET='m' R=1392 | WIN='Green' | MARGIN=-19.281
+07/24 | TARGET='c' R=192 | WIN='started' | MARGIN=-9.000
+08/24 | TARGET='g' R=464 | WIN='The' | MARGIN=-12.125
+09/24 | TARGET='compass' R=89 | WIN='information' | MARGIN=-9.688
+10/24 | TARGET='D' R=372 | WIN='Information' | MARGIN=-12.625
+11/24 | TARGET='T' R=73 | WIN='Information' | MARGIN=-7.688
+12/24 | TARGET='Br' R=105 | WIN='information' | MARGIN=-7.125
+13/24 | TARGET='t' R=80 | WIN='information' | MARGIN=-12.188
+14/24 | TARGET='scar' R=358 | WIN='yellow' | MARGIN=-13.562
+15/24 | TARGET='8' R=5 | WIN='Information' | MARGIN=-1.375
+16/24 | TARGET='exp' R=12 | WIN='It' | MARGIN=-3.438
+17/24 | TARGET='vel' R=274 | WIN='soft' | MARGIN=-12.750
+18/24 | TARGET='hy' R=6589 | WIN='Item' | MARGIN=-15.500
+19/24 | TARGET='Kel' R=965 | WIN='Ne' | MARGIN=-8.156
+20/24 | TARGET='V' R=46 | WIN='Apollo' | MARGIN=-5.750
+21/24 | TARGET='N' R=43 | WIN='The' | MARGIN=-4.562
+22/24 | TARGET='ind' R=79 | WIN='missing' | MARGIN=-6.062
+23/24 | TARGET='feld' R=753 | WIN='information' | MARGIN=-10.188
+24/24 | TARGET='descending' R=21269 | WIN='Col' | MARGIN=-15.609
+SHOWCASE | TARGET='placed' R=199 | WIN='He' | MARGIN=-7.000
+[10/18] TWO-BRANCH CAUSAL TRAJECTORY ASSAY
+01/24 | WRONG->CORRECT dCONT_LOGP=+18.215 | dRANK=+36594.5
+02/24 | WRONG->CORRECT dCONT_LOGP=+23.197 | dRANK=+27259.0
+03/24 | WRONG->CORRECT dCONT_LOGP=+22.193 | dRANK=+522.0
+04/24 | WRONG->CORRECT dCONT_LOGP=+15.934 | dRANK=+1833.0
+05/24 | WRONG->CORRECT dCONT_LOGP=+31.681 | dRANK=+31720.0
+06/24 | WRONG->CORRECT dCONT_LOGP=+20.784 | dRANK=+12324.0
+07/24 | WRONG->CORRECT dCONT_LOGP=+24.552 | dRANK=+33159.0
+08/24 | WRONG->CORRECT dCONT_LOGP=+34.877 | dRANK=+56523.0
+10/24 | WRONG->CORRECT dCONT_LOGP=+20.757 | dRANK=+13507.7
+11/24 | WRONG->CORRECT dCONT_LOGP=+18.672 | dRANK=+53004.0
+12/24 | WRONG->CORRECT dCONT_LOGP=+55.549 | dRANK=+23025.7
+13/24 | WRONG->CORRECT dCONT_LOGP=+46.436 | dRANK=+6284.0
+14/24 | WRONG->CORRECT dCONT_LOGP=+28.016 | dRANK=+134160.0
+15/24 | WRONG->CORRECT dCONT_LOGP=+15.392 | dRANK=+197.5
+16/24 | WRONG->CORRECT dCONT_LOGP=+28.167 | dRANK=+134068.0
+17/24 | WRONG->CORRECT dCONT_LOGP=+49.555 | dRANK=+76424.5
+18/24 | WRONG->CORRECT dCONT_LOGP=+28.573 | dRANK=+19067.0
+19/24 | WRONG->CORRECT dCONT_LOGP=+12.462 | dRANK=+3636.5
+20/24 | WRONG->CORRECT dCONT_LOGP=+16.024 | dRANK=+36774.0
+21/24 | WRONG->CORRECT dCONT_LOGP=+20.616 | dRANK=+14646.0
+22/24 | WRONG->CORRECT dCONT_LOGP=+22.776 | dRANK=+71253.0
+23/24 | WRONG->CORRECT dCONT_LOGP=+21.825 | dRANK=+37311.0
+SHOWCASE | WRONG->CORRECT dCONT_LOGP=+8.170 | dRANK=+1324.0
+[11/18] PREFIX BIFURCATION - NEXT GREEDY TOKEN
+PREFIX BRANCHES READY
+[12/18] SUMMARY
+first_target_top1=0.0
+first_target_median_rank=233.0
+first_target_mean_margin=-10.143880208333334
+correct_prefix_improves_cont_logp=1.0
+correct_prefix_mean_cont_logp_gain=26.19329204249915
+correct_prefix_improves_cont_rank=1.0
+correct_prefix_mean_cont_rank_gain=37422.42424242424
+second_target_gain_positive=0.9545454545454546
+second_target_gain_mean=16.968820918690074
+[13/18] PREDECLARED BIFURCATION GATES
+PREFIX_LOGP_GATE=True | PREFIX_RANK_GATE=True | SECOND_GATE=True
+[14/18] SHOWCASE
+------------------------------------------------------------------------------------------------------------
+SOURCE : Mustafa Akbaş placed an amber banner beneath the Galata Bridge where the validation demonstration was conducted.
+QUESTION: What did Mustafa Akbaş do at the location of the validation demonstration?
+TARGET : placed an amber banner
+ANCHOR : Mustafa
+FIRST TARGET='placed' R=199 | GREEDY='He' | MARGIN=-7.000
+GREEDY PREFIX NEXT :  led
+CORRECT PREFIX NEXT:  a
+BRANCH dCONT_LOGP: 8.169715881347656
+------------------------------------------------------------------------------------------------------------
+[15/18] CLASSIFICATION
+CLASS= AUTOREGRESSIVE_FIRST_DECISION_BIFURCATION_SUPPORTED
+[16/18] INTERPRETATION LOCK
+DIAGNOSTIC ONLY: CORRECT-FIRST BRANCH USES TARGET POST-HOC AND IS NOT A RETRIEVAL METHOD
+[17/18] SCIENTIFIC AUDIT
+TEST345 ENGINE UNCHANGED | FULL ASSISTANT-OUTPUT | SAME COMPILER/ROUTER/RSS | NO SEARCH | NO TRAINING | NO WEIGHT UPDATE
+[18/18] INTEGRITY + SAVE
+============================================================================================================
+TEST 346 COMPLETE
+FIRST TOP1=0.000 | MED_RANK=233.0 | MEAN_MARGIN=-10.144
+CORRECT-PREFIX CONT_LOGP+=1.000 | MEAN_GAIN=+26.193 | CONT_RANK+=1.000
+CLASS= AUTOREGRESSIVE_FIRST_DECISION_BIFURCATION_SUPPORTED
+CORRECT-FIRST BRANCH=POST-HOC ORACLE DIAGNOSTIC ONLY | WEIGHTS FROZEN | HOOKS=0
+JSON: /content/AKBASCORE_TEST346/T346-20260929-104110.json
+TXT : /content/AKBASCORE_TEST346/T346-20260929-104110.txt
+SHA : 5d28eef5fa5f4addae8f81fc5351cb56783df6971082590a463c2385407235b2
+============================================================================================================
