@@ -1,0 +1,123 @@
+ ============================================================================================================
+TEST 362 - FRESH HELD-OUT NATIVE ATTENTION VALUE-CONTRIBUTION REPLICATION
+============================================================================================================
+START: 2026-09-29T12:43:22.091+00:00
+[1/20] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 86.4kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 934kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 38.6MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 71.3MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 118MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.54MB/s]Download complete: :  13.1GB, 98.4MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  330MB/s  Fetching 4 files: 100% 4/4 [00:57<00:00,  9.34s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.12it/s]generation_config.json: 100% 243/243 [00:00<00:00, 29.7kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | eager-attention | torch.bfloat16 | 66.98s
+[2/20] MODEL LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+[3/20] ARCHITECTURE AUDIT
+HEADS=28 | KV_HEADS=4 | HEAD_DIM=128 | KV_REPEAT=7
+[4/20] FRESH HELD-OUT ENCODING
+01/16 | PERSON   | SPANS=14 | Q_LAST=27
+02/16 | PERSON   | SPANS=13 | Q_LAST=25
+03/16 | PLACE    | SPANS=12 | Q_LAST=24
+04/16 | PLACE    | SPANS=12 | Q_LAST=23
+05/16 | COLOR    | SPANS=10 | Q_LAST=23
+06/16 | COLOR    | SPANS=9 | Q_LAST=22
+07/16 | MATERIAL | SPANS=11 | Q_LAST=24
+08/16 | MATERIAL | SPANS=11 | Q_LAST=24
+09/16 | ACTION   | SPANS=11 | Q_LAST=24
+10/16 | ACTION   | SPANS=10 | Q_LAST=25
+11/16 | NAME     | SPANS=8 | Q_LAST=26
+12/16 | NAME     | SPANS=9 | Q_LAST=25
+13/16 | NUMBER   | SPANS=8 | Q_LAST=22
+14/16 | OBJECT   | SPANS=8 | Q_LAST=22
+15/16 | PROPERTY | SPANS=9 | Q_LAST=21
+16/16 | SHOWCASE | SPANS=17 | Q_LAST=44
+[5/20] FORWARDS + HIDDEN STATES + ATTENTION
+01/16 | OK
+02/16 | OK
+03/16 | OK
+04/16 | OK
+05/16 | OK
+06/16 | OK
+07/16 | OK
+08/16 | OK
+09/16 | OK
+10/16 | OK
+11/16 | OK
+12/16 | OK
+13/16 | OK
+14/16 | OK
+15/16 | OK
+16/16 | OK
+[6/20] FROZEN TEST361 V PROJECTION
+V PROJECTIONS READY
+[7/20] FROZEN ATTN*V SOURCE-SPAN CONTRIBUTIONS
+ATTN*V READY
+[8/20] FROZEN O_PROJ CONTRIBUTIONS
+O_PROJ CONTRIBUTIONS READY
+[9/20] PER-LAYER CONTRIBUTION NORMS
+NORMS READY
+[10/20] PER-LAYER CONTRIBUTION RANKS
+RANKS READY
+[11/20] PRIMARY FROZEN TEST361 MRR
+PRIMARY=MEAN_L(1/CONTRIBUTION_RANK) | TEST361 RULE FROZEN
+[12/20] SECONDARY FROZEN TOP1 VOTE
+TOP1 VOTE READY
+[13/20] RAW ATTENTION MRR CONTROL
+RAW CONTROL READY
+[14/20] ALL TARGET-FREE OUTPUTS FROZEN
+01/16 | TOP_CONTR='Dervan' | CMRR=0.6787 | V1=15 | AMRR=0.4358
+02/16 | TOP_CONTR='before' | CMRR=0.6067 | V1=13 | AMRR=0.6474
+03/16 | TOP_CONTR='Marseille' | CMRR=0.5365 | V1=10 | AMRR=0.4684
+04/16 | TOP_CONTR='Helsinki' | CMRR=0.5992 | V1=12 | AMRR=0.4547
+05/16 | TOP_CONTR='amber' | CMRR=0.7429 | V1=18 | AMRR=0.7099
+06/16 | TOP_CONTR='turquoise' | CMRR=0.6105 | V1=10 | AMRR=0.5402
+07/16 | TOP_CONTR='after' | CMRR=0.5084 | V1=10 | AMRR=0.5527
+08/16 | TOP_CONTR='nickel' | CMRR=0.4790 | V1=09 | AMRR=0.4233
+09/16 | TOP_CONTR='began' | CMRR=0.4189 | V1=06 | AMRR=0.5163
+10/16 | TOP_CONTR='When' | CMRR=0.5441 | V1=09 | AMRR=0.6589
+11/16 | TOP_CONTR='Arvex' | CMRR=0.6105 | V1=12 | AMRR=0.2080
+12/16 | TOP_CONTR='Tervane' | CMRR=0.4798 | V1=09 | AMRR=0.1907
+13/16 | TOP_CONTR='735' | CMRR=0.5941 | V1=12 | AMRR=0.1920
+14/16 | TOP_CONTR='barometer' | CMRR=0.5759 | V1=09 | AMRR=0.2514
+15/16 | TOP_CONTR='porous' | CMRR=0.5454 | V1=10 | AMRR=0.2889
+16/16 | TOP_CONTR='Mustafa' | CMRR=0.4795 | V1=10 | AMRR=0.4130
+[15/20] VALUE OPENS POST-HOC
+01/16 | PERSON   | VALUE='Dervan' | CONTR=R01 V1=R01 ATTN=R02 | HIT1=15 HIT3=21
+02/16 | PERSON   | VALUE='Elvara' | CONTR=R02 V1=R02 ATTN=R04 | HIT1=09 HIT3=14
+03/16 | PLACE    | VALUE='Marseille' | CONTR=R01 V1=R01 ATTN=R02 | HIT1=10 HIT3=17
+04/16 | PLACE    | VALUE='Helsinki' | CONTR=R01 V1=R01 ATTN=R03 | HIT1=12 HIT3=20
+05/16 | COLOR    | VALUE='amber' | CONTR=R01 V1=R01 ATTN=R01 | HIT1=18 HIT3=23
+06/16 | COLOR    | VALUE='turquoise' | CONTR=R01 V1=R01 ATTN=R02 | HIT1=10 HIT3=23
+07/16 | MATERIAL | VALUE='ceramic' | CONTR=R02 V1=R02 ATTN=R03 | HIT1=07 HIT3=10
+08/16 | MATERIAL | VALUE='nickel' | CONTR=R01 V1=R01 ATTN=R03 | HIT1=09 HIT3=13
+09/16 | ACTION   | VALUE='descending' | CONTR=R02 V1=R03 ATTN=R03 | HIT1=04 HIT3=18
+10/16 | ACTION   | VALUE='spinning' | CONTR=R02 V1=R04 ATTN=R02 | HIT1=04 HIT3=17
+11/16 | NAME     | VALUE='Arvex' | CONTR=R01 V1=R01 ATTN=R07 | HIT1=12 HIT3=19
+12/16 | NAME     | VALUE='Tervane' | CONTR=R01 V1=R01 ATTN=R07 | HIT1=09 HIT3=14
+13/16 | NUMBER   | VALUE='735' | CONTR=R01 V1=R01 ATTN=R07 | HIT1=12 HIT3=19
+14/16 | OBJECT   | VALUE='barometer' | CONTR=R01 V1=R01 ATTN=R06 | HIT1=09 HIT3=22
+15/16 | PROPERTY | VALUE='porous' | CONTR=R01 V1=R01 ATTN=R05 | HIT1=10 HIT3=18
+16/16 | SHOWCASE | VALUE='suspended a blue ribbon' | CONTR=R06 V1=R10 ATTN=R04 | HIT1=00 HIT3=08
+[16/20] FRESH HELD-OUT SUMMARY
+CONTR MRR | MED=1.0 | TOP1=0.733 | TOP3=1.000 | TOP5=1.000
+CONTR V1  | MED=1.0 | TOP1=0.733 | TOP3=0.933 | TOP5=1.000
+ATTN MRR  | MED=3.0 | TOP1=0.067 | TOP3=0.600 | TOP5=0.733
+[17/20] PREDECLARED REPLICATION GATES
+CONTR_BEATS_ATTN=0.867 | CONTR_WORSE_ATTN=0.000 | REPLICATED=True | STRONG=True
+[18/20] SHOWCASE + CLASSIFICATION
+------------------------------------------------------------------------------------------------------------
+SOURCE: Mustafa Akbaş suspended a blue ribbon beside the Dolmabahçe Clock Tower where the public demonstration was conducted.
+Q: What did Mustafa Akbaş do at the location of the public demonstration?
+VALUE: suspended a blue ribbon
+CONTR_MRR=R6 | CONTR_V1=R10 | ATTN_MRR=R4 | HIT1=0 HIT3=8
+------------------------------------------------------------------------------------------------------------
+CLASS= FROZEN_NATIVE_VALUE_CONTRIBUTION_STRONGLY_REPLICATED
+[19/20] SCIENTIFIC AUDIT
+FRESH HELD-OUT CASES | TEST361 FORMULA FROZEN | QUESTION-LAST | EXACT V_PROJ + ATTN + O_PROJ | PRIMARY=28L CONTRIBUTION MRR | VALUE POST-HOC | NO SEASC | NO TARGET/LAYER/HEAD ORACLE | NO SCORE SEARCH | NO TRAINING
+[20/20] INTEGRITY + JSON-SAFE SAVE
+============================================================================================================
+TEST 362 COMPLETE
+CONTR MRR | MED=1.0 | TOP1=0.733 | TOP3=1.000 | TOP5=1.000
+ATTN  MRR | MED=3.0 | TOP1=0.067 | TOP3=0.600 | TOP5=0.733
+CLASS= FROZEN_NATIVE_VALUE_CONTRIBUTION_STRONGLY_REPLICATED
+VALUE POST-HOC ONLY | TEST361 FORMULA FROZEN | WEIGHTS FROZEN | JSON SAFE
+JSON: /content/AKBASCORE_TEST362/T362-20260929-124451.json
+TXT : /content/AKBASCORE_TEST362/T362-20260929-124451.txt
+SHA : 9445c41e4dddbfbb24315b8f53f151f5fc7235544a7ae74698de81dce5be96d8
+============================================================================================================
