@@ -1,0 +1,181 @@
+ ============================================================================================================
+TEST 325 - RELATIONAL PACKET X-RAY + BLIND GENERATION
+============================================================================================================
+START: 2026-09-29T05:02:00.088+00:00
+[1/17] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 84.4kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 870kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 43.4MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 73.4MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 124MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.62MB/s]Download complete: :  13.1GB, 44.6MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  323MB/s  Fetching 4 files: 100% 4/4 [00:42<00:00,  8.53s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.13it/s]generation_config.json: 100% 243/243 [00:00<00:00, 29.7kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | VOCAB=152064 | torch.bfloat16 | 51.60s
+[2/17] ENGINE LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | BRIDGE=0.200 | REL_K=4
+[3/17] QUERY NULL CACHE
+NULL READY
+[4/17] SOURCE COMPILE - TARGET SEALED
+01/24 | REL_ANCHORS= ['technician', 'replaced', 'the', 'inside'] | BANK= 13
+02/24 | REL_ANCHORS= ['the', 'was', 'the', 'from'] | BANK= 13
+03/24 | REL_ANCHORS= ['the', 'were', 'the', 'sealed'] | BANK= 13
+04/24 | REL_ANCHORS= ['departed', 'backup', 'and', 'the'] | BANK= 12
+05/24 | REL_ANCHORS= ['and', 'chose', 'ceramic', 'but'] | BANK= 14
+06/24 | REL_ANCHORS= ['remained', 'it', 'The', 'the'] | BANK= 12
+07/24 | REL_ANCHORS= ['Tovan', 'the', 'and', 'narrow'] | BANK= 15
+08/24 | REL_ANCHORS= ['described', 'finished', 'appeared', 'but'] | BANK= 15
+09/24 | REL_ANCHORS= ['the', 'radio', 'Elira', 'collapsed'] | BANK= 14
+10/24 | REL_ANCHORS= ['the', 'in', 'is', 'The'] | BANK= 10
+11/24 | REL_ANCHORS= ['the', 'while', 'by', 'the'] | BANK= 12
+12/24 | REL_ANCHORS= ['before', 'its', 'in', 'and'] | BANK= 13
+13/24 | REL_ANCHORS= ['titanium', 'bronze', 'acrylic', 'and'] | BANK= 14
+14/24 | REL_ANCHORS= ['emitted', 'it', 'beacon', 'emergency'] | BANK= 13
+15/24 | REL_ANCHORS= ['but', 'confirmed', 'showed', 'The'] | BANK= 13
+16/24 | REL_ANCHORS= ['the', 'inner', 'the', 'of'] | BANK= 14
+17/24 | REL_ANCHORS= ['replacement', 'felt', 'was', 'lining'] | BANK= 13
+18/24 | REL_ANCHORS= ['contained', 'a', 'a', 'chronometer'] | BANK= 17
+19/24 | REL_ANCHORS= ['the', 'final', 'temporarily', 'was'] | BANK= 13
+20/24 | REL_ANCHORS= ['interns', 'catalogued', 'the', 'sealed'] | BANK= 13
+21/24 | REL_ANCHORS= ['before', 'bronze', 'the', 'tablet'] | BANK= 12
+22/24 | REL_ANCHORS= ['the', 'spectral', 'was', 'seemed'] | BANK= 15
+23/24 | REL_ANCHORS= ['of', 'several', 'to', 'was'] | BANK= 13
+24/24 | REL_ANCHORS= ['began', 'and', 'The', 'then'] | BANK= 13
+SHOWCASE | REL_ANCHORS= ['where', 'the', 'flag', 'the'] | BANK= 16
+[5/17] SOURCE REMOVED
+BLIND RUNTIME RECEIVES QUESTION ONLY | TARGET_ACCESS=False | CASE_ISOLATED=True
+[6/17] VANILLA / FLAT / RELATIONAL X-RAY
+01/24 | L27 FLAT_Q=-0.0934 REL_Q=+0.0548 | FLAT_REL=+0.1297 REL_REL=+0.1276
+02/24 | L27 FLAT_Q=-0.0032 REL_Q=-0.0199 | FLAT_REL=-0.0179 REL_REL=+0.0737
+03/24 | L27 FLAT_Q=-0.0270 REL_Q=+0.0215 | FLAT_REL=+0.1537 REL_REL=+0.1520
+04/24 | L27 FLAT_Q=-0.1586 REL_Q=-0.0316 | FLAT_REL=+0.1966 REL_REL=-0.0139
+05/24 | L27 FLAT_Q=-0.0285 REL_Q=+0.0537 | FLAT_REL=+0.1389 REL_REL=+0.0286
+06/24 | L27 FLAT_Q=-0.0593 REL_Q=-0.0023 | FLAT_REL=-0.0658 REL_REL=+0.1637
+07/24 | L27 FLAT_Q=+0.0118 REL_Q=-0.0503 | FLAT_REL=-0.1872 REL_REL=+0.1088
+08/24 | L27 FLAT_Q=-0.0435 REL_Q=+0.0025 | FLAT_REL=-0.0872 REL_REL=-0.0097
+09/24 | L27 FLAT_Q=-0.0065 REL_Q=-0.0225 | FLAT_REL=+0.0679 REL_REL=+0.1493
+10/24 | L27 FLAT_Q=-0.0067 REL_Q=-0.0827 | FLAT_REL=+0.1977 REL_REL=+0.1266
+11/24 | L27 FLAT_Q=-0.0218 REL_Q=-0.0156 | FLAT_REL=-0.1883 REL_REL=-0.0567
+12/24 | L27 FLAT_Q=-0.0702 REL_Q=+0.0098 | FLAT_REL=-0.1442 REL_REL=+0.2628
+13/24 | L27 FLAT_Q=-0.0872 REL_Q=-0.0814 | FLAT_REL=-0.0300 REL_REL=-0.0422
+14/24 | L27 FLAT_Q=+0.0116 REL_Q=-0.1226 | FLAT_REL=+0.0957 REL_REL=+0.2452
+15/24 | L27 FLAT_Q=-0.0562 REL_Q=-0.0219 | FLAT_REL=-0.2287 REL_REL=-0.0155
+16/24 | L27 FLAT_Q=+0.0205 REL_Q=-0.0082 | FLAT_REL=+0.1865 REL_REL=-0.0139
+17/24 | L27 FLAT_Q=-0.0728 REL_Q=-0.0724 | FLAT_REL=+0.1123 REL_REL=-0.1897
+18/24 | L27 FLAT_Q=-0.0501 REL_Q=-0.0283 | FLAT_REL=+0.0462 REL_REL=-0.0807
+19/24 | L27 FLAT_Q=-0.0743 REL_Q=-0.0091 | FLAT_REL=+0.4915 REL_REL=+0.1713
+20/24 | L27 FLAT_Q=-0.0952 REL_Q=-0.0372 | FLAT_REL=+0.1663 REL_REL=-0.1407
+21/24 | L27 FLAT_Q=-0.0853 REL_Q=-0.0410 | FLAT_REL=+0.1261 REL_REL=-0.0602
+22/24 | L27 FLAT_Q=-0.0576 REL_Q=-0.0182 | FLAT_REL=+0.1489 REL_REL=+0.0389
+23/24 | L27 FLAT_Q=-0.0395 REL_Q=-0.0036 | FLAT_REL=+0.2218 REL_REL=-0.0656
+24/24 | L27 FLAT_Q=+0.0111 REL_Q=-0.0991 | FLAT_REL=+0.1154 REL_REL=-0.0228
+SHOWCASE | L27 FLAT_Q=-0.1091 REL_Q=+0.1415 | FLAT_REL=+0.1177 REL_REL=+0.1068
+[7/17] RELATIONAL BINDING SEPARATION
+01/24 | LINK_SEP=+0.067862
+02/24 | LINK_SEP=+0.052677
+03/24 | LINK_SEP=+0.070926
+04/24 | LINK_SEP=+0.045923
+05/24 | LINK_SEP=+0.085375
+06/24 | LINK_SEP=+0.052240
+07/24 | LINK_SEP=+0.035997
+08/24 | LINK_SEP=+0.041866
+09/24 | LINK_SEP=+0.045045
+10/24 | LINK_SEP=+0.085431
+11/24 | LINK_SEP=+0.042217
+12/24 | LINK_SEP=+0.053279
+13/24 | LINK_SEP=+0.073024
+14/24 | LINK_SEP=+0.064469
+15/24 | LINK_SEP=+0.043993
+16/24 | LINK_SEP=+0.072812
+17/24 | LINK_SEP=+0.035935
+18/24 | LINK_SEP=+0.045377
+19/24 | LINK_SEP=+0.059479
+20/24 | LINK_SEP=+0.064343
+21/24 | LINK_SEP=+0.044197
+22/24 | LINK_SEP=+0.067162
+23/24 | LINK_SEP=+0.047956
+24/24 | LINK_SEP=+0.043593
+SHOWCASE | LINK_SEP=+0.046375
+[8/17] GENERATION
+01/24 | VANILLA='Information is missing.' | FLAT='Information is missing.' | REL='Information is missing'
+02/24 | VANILLA='Information is missing.' | FLAT='information is missing' | REL='Baddeleyite'
+03/24 | VANILLA='Information is missing.' | FLAT='information is missing.' | REL='Information is missing.'
+04/24 | VANILLA='Information is missing.' | FLAT='information is missing' | REL='Information is missing.'
+05/24 | VANILLA='Reinforced carbon-carbon composite.' | FLAT='carbon composite.' | REL='Refractory metal alloys.'
+06/24 | VANILLA='Information is missing.' | FLAT='information is missing' | REL='Information is missing.'
+07/24 | VANILLA='information is missing' | FLAT='information is missing' | REL='information is missing'
+08/24 | VANILLA='smooth' | FLAT='smooth and polished.' | REL='smooth and even'
+09/24 | VANILLA='A necklace' | FLAT='crystal amulet.' | REL='a pendant'
+10/24 | VANILLA='It refers to the order in which data or instructions are accessed' | FLAT='Information is missing.' | REL='Memory access sequence'
+11/24 | VANILLA='Information is missing.' | FLAT='information is missing' | REL='Information is missing.'
+12/24 | VANILLA='Information is missing.' | FLAT='information is missing.' | REL='Information is missing.'
+13/24 | VANILLA='Steel' | FLAT='Steel.' | REL='information is missing'
+14/24 | VANILLA='Red' | FLAT='red' | REL='Red.'
+15/24 | VANILLA='Information is missing.' | FLAT='425.3 volts.' | REL='Information is missing.'
+16/24 | VANILLA='It began glowing.' | FLAT='The inner ring began rotating.' | REL='It began glowing.'
+17/24 | VANILLA='The replacement lining was described as durable and of high quality.' | FLAT='soft and smooth.' | REL='soft and flexible'
+18/24 | VANILLA='Information is missing.' | FLAT='information is missing' | REL='Information is missing.'
+19/24 | VANILLA='Space Launch System' | FLAT='information is missing.' | REL='Space Station Alpha'
+20/24 | VANILLA='Information is missing.' | FLAT='Information is missing.' | REL='Internal state: Information is missing.'
+21/24 | VANILLA='Information is missing.' | FLAT='information is missing' | REL='Information is missing.'
+22/24 | VANILLA='Information is missing.' | FLAT='blue' | REL='missing information'
+23/24 | VANILLA='information is missing' | FLAT='rock and minerals.' | REL='information is missing'
+24/24 | VANILLA='Collected soil samples.' | FLAT='The rover began taking detailed soil samples and conducting scientific analysis.' | REL='Collected samples'
+SHOWCASE | VANILLA='Information is missing.' | FLAT='information is missing' | REL='Information is missing.'
+[9/17] TARGET SEAL OPEN - POST-HOC ONLY
+01/24 | TARGET='Neris' | VAN='Information is missing.' | FLAT='Information is missing.' | REL='Information is missing'
+02/24 | TARGET='Velqor' | VAN='Information is missing.' | FLAT='information is missing' | REL='Baddeleyite'
+03/24 | TARGET='583' | VAN='Information is missing.' | FLAT='information is missing.' | REL='Information is missing.'
+04/24 | TARGET='Lisbon' | VAN='Information is missing.' | FLAT='information is missing' | REL='Information is missing.'
+05/24 | TARGET='ceramic' | VAN='Reinforced carbon-carbon composite.' | FLAT='carbon composite.' | REL='Refractory metal alloys.'
+06/24 | TARGET='magenta' | VAN='Information is missing.' | FLAT='information is missing' | REL='Information is missing.'
+07/24 | TARGET='crawling' | VAN='information is missing' | FLAT='information is missing' | REL='information is missing'
+08/24 | TARGET='lustrous' | VAN='smooth' | FLAT='smooth and polished.' | REL='smooth and even'
+09/24 | TARGET='compass' | VAN='A necklace' | FLAT='crystal amulet.' | REL='a pendant'
+10/24 | TARGET='Nerovak' | VAN='It refers to the order in which data or instructions are accessed' | FLAT='Information is missing.' | REL='Memory access sequence'
+11/24 | TARGET='Siona' | VAN='Information is missing.' | FLAT='information is missing' | REL='Information is missing.'
+12/24 | TARGET='Warsaw' | VAN='Information is missing.' | FLAT='information is missing.' | REL='Information is missing.'
+13/24 | TARGET='titanium' | VAN='Steel' | FLAT='Steel.' | REL='information is missing'
+14/24 | TARGET='crimson' | VAN='Red' | FLAT='red' | REL='Red.'
+15/24 | TARGET='892' | VAN='Information is missing.' | FLAT='425.3 volts.' | REL='Information is missing.'
+16/24 | TARGET='expanding' | VAN='It began glowing.' | FLAT='The inner ring began rotating.' | REL='It began glowing.'
+17/24 | TARGET='velvety' | VAN='The replacement lining was described as durable and of high quality.' | FLAT='soft and smooth.' | REL='soft and flexible'
+18/24 | TARGET='chronometer' | VAN='Information is missing.' | FLAT='information is missing' | REL='Information is missing.'
+19/24 | TARGET='Norveth' | VAN='Space Launch System' | FLAT='information is missing.' | REL='Space Station Alpha'
+20/24 | TARGET='Edrin' | VAN='Information is missing.' | FLAT='Information is missing.' | REL='Internal state: Information is missing.'
+21/24 | TARGET='Osaka' | VAN='Information is missing.' | FLAT='information is missing' | REL='Information is missing.'
+22/24 | TARGET='indigo' | VAN='Information is missing.' | FLAT='blue' | REL='missing information'
+23/24 | TARGET='feldspar' | VAN='information is missing' | FLAT='rock and minerals.' | REL='information is missing'
+24/24 | TARGET='decelerating' | VAN='Collected soil samples.' | FLAT='The rover began taking detailed soil samples and conducting scientific analysis.' | REL='Collected samples'
+SHOWCASE | TARGET='planted the Turkish flag' | VAN='Information is missing.' | FLAT='information is missing' | REL='Information is missing.'
+[10/17] PRIMARY 24 BEHAVIOR
+VANILLA EXACT=0.000 MENTION=0.000 | FLAT EXACT=0.000 MENTION=0.000 | REL EXACT=0.000 MENTION=0.000
+[11/17] X-RAY SUMMARY
+L27 FLAT_Q=-0.045078 | REL_Q=-0.026063 | FLAT_REL=+0.068577 | REL_REL=+0.039025 | LINK_SEP=+0.055882
+[12/17] GOLDEN GATE SHOWCASE
+------------------------------------------------------------------------------------------------------------
+SOURCE : Mustafa Akbaş planted the Turkish flag on the Golden Gate Bridge where Anthropic conducted its experiment.
+QUESTION: What did Mustafa Akbaş do at the location of Anthropic's experiment?
+VANILLA: Information is missing.
+FLAT   : information is missing
+REL    : Information is missing.
+TARGET : planted the Turkish flag
+LINK_SEP: +0.046375
+------------------------------------------------------------------------------------------------------------
+[13/17] PREDECLARED GATE
+REL_MENTION_GT_FLAT=False | REL_GEOMETRY_GT_FLAT=False | LINK_SEP_POSITIVE=True | CLASS=RELATIONAL_PACKET_NOT_YET_SUPPORTED
+[14/17] INTERPRETATION GUARD
+RELATIONAL PACKET IS AN ENDOGENOUS QUERY-CONDITIONED DIFFERENCE-EDGE PACKET, NOT A PROOF OF SYMBOLIC RELATION STORAGE.
+[15/17] SCIENTIFIC AUDIT
+VANILLA HAS NO HOOKS. FLAT AND REL USE IDENTICAL SEASC DOSE ENVELOPE. TARGETS OPEN ONLY AFTER ALL GENERATIONS.
+[16/17] CASE AUDIT
+CASE_ISOLATED=True | CROSS_CASE_DATA=False | TARGET_ENGINE_ACCESS=False | TARGET_POSTHOC_ONLY=True | TRAINING=False | WEIGHT_UPDATE=False
+[17/17] INTEGRITY + SEAL
+============================================================================================================
+TEST 325 COMPLETE
+VANILLA MENTION=0.000 | FLAT MENTION=0.000 | REL MENTION=0.000
+L27 FLAT_REL=+0.068577 | REL_REL=+0.039025 | LINK_SEP=+0.055882
+GOLDEN GATE VANILLA='Information is missing.'
+GOLDEN GATE FLAT   ='information is missing'
+GOLDEN GATE REL    ='Information is missing.'
+CLASS=RELATIONAL_PACKET_NOT_YET_SUPPORTED | GATE=FAIL
+CASE_ISOLATED=TRUE | TARGET POST-HOC ONLY | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST325/T325-20260929-050316.json
+TXT : /content/AKBASCORE_TEST325/T325-20260929-050316.txt
+SHA : e9f86c55ca5afc0047d27b86a8714def5d85a7b6427ae4dd86c81f89382a06f6
+============================================================================================================
