@@ -1,0 +1,74 @@
+======================================================================================================== TEST 378 FINAL - GOLDEN GATE BLIND RETRIEVAL ========================================================================================================
+
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads. WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+
+config.json: 100%
+
+
+ 663/663 [00:00<00:00, 74.1kB/s]
+
+
+tokenizer_config.json: 100%
+
+
+ 7.30k/7.30k [00:00<00:00, 896kB/s]
+
+
+vocab.json: 100%
+
+
+ 2.78M/2.78M [00:00<00:00, 83.4MB/s]
+
+
+merges.txt: 100%
+
+
+ 1.67M/1.67M [00:00<00:00, 69.3MB/s]
+
+
+tokenizer.json: 100%
+
+
+ 7.03M/7.03M [00:00<00:00, 130MB/s]
+
+
+model.safetensors.index.json: 100%
+
+
+ 27.8k/27.8k [00:00<00:00, 3.32MB/s]
+
+
+Download complete: : 
+
+
+ 13.1GB,  684MB/s  
+
+
+Reconstruction complete: 100%
+
+
+ 15.2GB / 15.2GB,  344MB/s  
+
+
+Fetching 4 files: 100%
+
+
+ 4/4 [00:43<00:00,  7.89s/it]
+
+
+Loading weights: 100%
+
+
+ 339/339 [00:03<00:00, 100.05it/s]
+
+
+generation_config.json: 100%
+
+
+ 243/243 [00:00<00:00, 33.9kB/s]
+
+
+MODEL OK | 28L H=3584 Q=28 KV=4 REP=7 | L0-L25 RSS=0.250234970 | 56.2s FP=1.0912,-90.1989,92.6709,73.2364,13758.2012,-23395.7148 COMPILER | Q=4 WORDS=14 SEGMENTS=39 | frozen CONTRIB_GEOM -> SOFT... PACKETS READY | SOURCE REMOVED | generating VANILLA / CORRECT / SHUFFLE -------------------------------------------------------------------------------------------------------- FINAL SCORE | VANILLA=0.000 | CORRECT_PACKET=0.000 | SHUFFLE=0.000 -------------------------------------------------------------------------------------------------------- 01 TARGET='Mustafa Akbaş' | ROUTE='Mustafa' VANILLA : 'The Turkish flag was never actually planted at the base of the Golden Gate Bridge.' CORRECT : 'The Turkish flag was planted by a Turkish tourist in 1978' SHUFFLE : 'The Turkish flag was planted by a Turkish tourist in 1978.' 02 TARGET='planted the Turkish flag' | ROUTE='Mustafa' VANILLA : 'Mustafa Akbaş, a Turkish immigrant to the United States, gained' CORRECT : 'Mustafa Akbaş, a Turkish tourist, climbed to the top of' SHUFFLE : 'Mustafa Akbaş, a Turkish man, climbed to the top of' 03 TARGET='Turkish flag' | ROUTE='planted' VANILLA : 'To answer this question, we need to find information about Mustafa Akbaş' CORRECT : 'Mustafa Akbaş planted a tree at the base of the Golden Gate' SHUFFLE : 'Mustafa Akbaş planted a tree at the base of the Golden Gate' 04 TARGET='base of the Golden Gate Bridge' | ROUTE='Bridge' VANILLA : 'To answer this question, we need to identify the context in which Mustafa Ak' CORRECT : 'Mustafa Akbaş planted the Turkish flag on the summit of Mount Q' SHUFFLE : 'Mustafa Akbaş planted the Turkish flag on the summit of Mount Q' -------------------------------------------------------------------------------------------------------- DECISION = FINAL_LATENT_TRANSPORT_WITHOUT_BEHAVIORAL_RETRIEVAL FP MATCH | JSON=/content/AKBASCORE_TEST378_FINAL/T378-FINAL-20260929-150252.json SHA = 458e058b9bac404c32ad9bb4db7e314a419af9895378b3cca9add22790e4be7a ========================================================================================================
+
