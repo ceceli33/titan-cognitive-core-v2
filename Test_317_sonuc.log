@@ -1,0 +1,143 @@
+ ============================================================================================================
+TEST 317 - CASE-ISOLATED ENDOGENOUS RELATION-TO-VALUE BINDING X-RAY
+============================================================================================================
+START: 2026-09-29T01:22:22.458+00:00
+[1/15] MODEL LOAD
+config.json: 100% 663/663 [00:00<00:00, 68.4kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 856kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 60.8MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 71.6MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 127MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.41MB/s]Download complete: :  13.1GB,  375MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  414MB/s  Fetching 4 files: 100% 4/4 [00:44<00:00,  7.64s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.03it/s]generation_config.json: 100% 243/243 [00:00<00:00, 34.4kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | VOCAB=152064 | torch.bfloat16 | 56.80s
+[2/15] TEST316 ENGINE LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | BRIDGE=0.200 | BIND_LAYERS=(19, 21, 23, 25, 27)
+[3/15] TARGET-FREE QUERY NULL CACHE
+NULL READY
+[4/15] LOCKED SPAN BANK + PACKET + RELATION ANCHOR
+01/24 | ANCHOR='engineer' | ADDR=['engineer', 'the', 'damaged', 'storm', 'placed', 'the', 'sensor', 'Selin']
+02/24 | ANCHOR='unfamiliar' | ADDR=['unfamiliar', 'northern', 'the', 'called', 'The', 'crystal', 'an', 'discovered']
+03/24 | ANCHOR='the' | ADDR=['the', 'were', 'carried', 'the', 'containers', 'inspected', 'three', 'smallest']
+04/24 | ANCHOR='backup' | ADDR=['backup', 'the', 'the', 'the', 'to', 'moved', 'from', 'transmitter']
+05/24 | ANCHOR='and' | ADDR=['and', 'selected', 'basalt', 'rejected', 'the', 'shell', 'the', 'steel']
+06/24 | ANCHOR='changed' | ADDR=['changed', 'but', 'The', 'immediately', 'stayed', 'after', 'to', 'violet']
+07/24 | ANCHOR='Arven' | ADDR=['Arven', 'stopped', 'the', 'and', 'upper', 'the', 'When', 'sounded']
+08/24 | ANCHOR='unusually' | ADDR=['unusually', 'its', 'dark', 'newly', 'polished', 'the', 'surface', 'despite']
+09/24 | ANCHOR='the' | ADDR=['the', 'Mira', 'other', 'abandoned', 'recovered', 'while', 'remained', 'a']
+10/24 | ANCHOR='in' | ADDR=['in', 'the', 'The', 'final', 'is', 'Ordelis', 'phrase', 'written']
+11/24 | ANCHOR='performed' | ADDR=['performed', 'by', 'calculations', 'the', 'were', 'the', 'Darian', 'navigation']
+12/24 | ANCHOR='before' | ADDR=['before', 'finally', 'over', 'and', 'landing', 'in', 'passed', 'drone']
+13/24 | ANCHOR='and' | ADDR=['and', 'polymer', 'copper', 'the', 'transparent', 'laboratory', 'the', 'chose']
+14/24 | ANCHOR='flashed' | ADDR=['flashed', 'glowed', 'second', 'to', 'lamp', 'The', 'blue', 'status']
+15/24 | ANCHOR='became' | ADDR=['became', 'value', '731', 'then', 'initially', 'recalibration', '29', 'its']
+16/24 | ANCHOR='when' | ADDR=['when', 'the', 'began', 'of', 'the', 'outer', 'hatch', 'sequence']
+17/24 | ANCHOR='coarse' | ADDR=['coarse', 'silky', 'remained', 'replacement', 'it', 'was', 'plate', 'installed']
+18/24 | ANCHOR='but' | ADDR=['but', 'a', 'were', 'the', 'a', 'for', 'the', 'wooden']
+19/24 | ANCHOR='the' | ADDR=['the', 'The', 'was', 'ultimately', 'production', 'named', 'was', 'temporary']
+20/24 | ANCHOR='assistants' | ADDR=['assistants', 'the', 'sealed', 'the', 'archive', 'and', 'personally', 'two']
+21/24 | ANCHOR='courier' | ADDR=['courier', 'the', 'silver', 'left', 'in', 'before', 'toward', 'Kyoto']
+22/24 | ANCHOR='but' | ADDR=['but', 'was', 'its', 'The', 'looked', 'confirmed', 'under', "machine's"]
+23/24 | ANCHOR='composed' | ADDR=['composed', 'of', 'being', 'as', 'quartz', 'was', 'several', 'primarily']
+24/24 | ANCHOR='started' | ADDR=['started', 'and', 'The', 'then', 'two', 'accelerating', 'cart', 'toward']
+[5/15] CASE-ISOLATION AUDIT
+ANCHOR=QUERY-SELECTED SAME-CASE SPAN | TARGET_ACCESS=False | CROSS_CASE=False
+[6/15] LOCKED CAUSAL ENGINE
+[7/15] SEALED FORCED READOUT
+01/24 | COMPLETE
+02/24 | COMPLETE
+03/24 | COMPLETE
+04/24 | COMPLETE
+05/24 | COMPLETE
+06/24 | COMPLETE
+07/24 | COMPLETE
+08/24 | COMPLETE
+09/24 | COMPLETE
+10/24 | COMPLETE
+11/24 | COMPLETE
+12/24 | COMPLETE
+13/24 | COMPLETE
+14/24 | COMPLETE
+15/24 | COMPLETE
+16/24 | COMPLETE
+17/24 | COMPLETE
+18/24 | COMPLETE
+19/24 | COMPLETE
+20/24 | COMPLETE
+21/24 | COMPLETE
+22/24 | COMPLETE
+23/24 | COMPLETE
+24/24 | COMPLETE
+[8/15] TARGET-FREE RELATION-TO-VALUE COMPETITION
+01/24 | 'engineer' -> [('Vault', 2.59), ('damaged', 1.64), ('After', 0.6), ('sensor', 0.12), ('Selin', 0.02)]
+02/24 | 'unfamiliar' -> [('called', 2.9), ('the', 2.06), ('crystal', 1.32), ('beneath', -0.07), ('an', -0.2)]
+03/24 | 'the' -> [('417', 4.95), ('number', 0.63), ('only', 0.43), ('one', 0.26), ('the', 0.05)]
+04/24 | 'backup' -> [('the', 3.37), ('to', 2.47), ('from', 1.59), ('transmitter', 0.87), ('the', 0.63)]
+05/24 | 'and' -> [('selected', 3.57), ('steel', 2.55), ('basalt', 1.89), ('the', 0.71), ('rejected', 0.34)]
+06/24 | 'changed' -> [('to', 3.97), ('violet', 1.01), ('calibration', 1.0), ('red', 0.61), ('but', 0.18)]
+07/24 | 'Arven' -> [('and', 2.28), ('began', 2.1), ('stopped', 1.96), ('the', 0.65), ('toward', 0.23)]
+08/24 | 'unusually' -> [('glossy', 2.25), ('polished', 2.14), ('dark', 1.52), ('its', 0.8), ('as', 0.03)]
+09/24 | 'the' -> [('recovered', 2.43), ('a', 2.16), ('other', 1.88), ('abandoned', 0.77), ('remained', 0.57)]
+10/24 | 'in' -> [('the', 4.44), ('is', 1.67), ('phrase', 1.46), ('The', -0.16), ('final', -0.3)]
+11/24 | 'performed' -> [('by', 3.52), ('were', 1.14), ('calculations', 1.03), ('navigation', 0.68), ('Keira', 0.22)]
+12/24 | 'before' -> [('in', 3.33), ('landing', 2.18), ('and', 1.68), ('over', 0.44), ('finally', -0.15)]
+13/24 | 'and' -> [('copper', 2.88), ('polymer', 2.55), ('the', 1.73), ('the', 1.36), ('transparent', 0.97)]
+14/24 | 'flashed' -> [('blue', 3.04), ('amber', 2.76), ('glowed', 2.11), ('status', 0.92), ('second', -0.07)]
+15/24 | 'became' -> [('value', 4.13), ('731', 3.61), ('29', 0.8), ('recalibration', 0.3), ('verified', -0.5)]
+16/24 | 'when' -> [('began', 4.93), ('the', 3.74), ('rotating', 2.16), ('hatch', 1.51), ('the', 0.02)]
+17/24 | 'coarse' -> [('was', 3.74), ('silky', 3.01), ('remained', 1.5), ('the', 1.36), ('plate', 0.46)]
+18/24 | 'but' -> [('the', 4.51), ('the', 4.22), ('a', 2.37), ('a', 1.98), ('item', 1.17)]
+19/24 | 'the' -> [('named', 5.19), ('ultimately', 2.24), ('system', 2.21), ('production', 1.64), ('was', 1.24)]
+20/24 | 'assistants' -> [('Professor', 1.97), ('archive', 1.21), ('notebook', 0.87), ('into', 0.86), ('sealed', 0.81)]
+21/24 | 'courier' -> [('in', 3.52), ('left', 2.42), ('silver', 1.57), ('key', 1.5), ('the', -0.16)]
+22/24 | 'but' -> [('was', 3.9), ('its', 2.28), ('black', 1.92), ('color', 1.74), ('actual', 1.68)]
+23/24 | 'composed' -> [('of', 3.81), ('primarily', 3.41), ('quartz', 3.11), ('being', 1.36), ('as', 1.34)]
+24/24 | 'started' -> [('then', 3.38), ('and', 3.34), ('accelerating', 3.09), ('reversed', 0.26), ('toward', -0.15)]
+[9/15] TARGET SEAL OPEN - POST-HOC ONLY
+01/24 | Selin       | ANCHOR='engineer'   | QUERY_RANK=8 -> REL_RANK=5 | TOP5=True
+02/24 | Zorvex      | ANCHOR='unfamiliar' | QUERY_RANK=9 -> REL_RANK=8 | TOP5=False
+03/24 | 417         | ANCHOR='the'        | QUERY_RANK=9 -> REL_RANK=1 | TOP5=True
+04/24 | Reykjavik   | ANCHOR='backup'     | QUERY_RANK=11 -> REL_RANK=10 | TOP5=False
+05/24 | basalt      | ANCHOR='and'        | QUERY_RANK=3 -> REL_RANK=3 | TOP5=True
+06/24 | violet      | ANCHOR='changed'    | QUERY_RANK=8 -> REL_RANK=2 | TOP5=True
+07/24 | climbing    | ANCHOR='Arven'      | QUERY_RANK=11 -> REL_RANK=9 | TOP5=False
+08/24 | glossy      | ANCHOR='unusually'  | QUERY_RANK=10 -> REL_RANK=1 | TOP5=True
+09/24 | sextant     | ANCHOR='the'        | QUERY_RANK=11 -> REL_RANK=12 | TOP5=False
+10/24 | Ordelis     | ANCHOR='in'         | QUERY_RANK=6 -> REL_RANK=7 | TOP5=False
+11/24 | Keira       | ANCHOR='performed'  | QUERY_RANK=12 -> REL_RANK=5 | TOP5=True
+12/24 | Tallinn     | ANCHOR='before'     | QUERY_RANK=11 -> REL_RANK=7 | TOP5=False
+13/24 | glass       | ANCHOR='and'        | QUERY_RANK=11 -> REL_RANK=7 | TOP5=False
+14/24 | amber       | ANCHOR='flashed'    | QUERY_RANK=11 -> REL_RANK=2 | TOP5=True
+15/24 | 731         | ANCHOR='became'     | QUERY_RANK=3 -> REL_RANK=2 | TOP5=True
+16/24 | rotating    | ANCHOR='when'       | QUERY_RANK=9 -> REL_RANK=3 | TOP5=True
+17/24 | silky       | ANCHOR='coarse'     | QUERY_RANK=2 -> REL_RANK=2 | TOP5=True
+18/24 | astrolabe   | ANCHOR='but'        | QUERY_RANK=19 -> REL_RANK=16 | TOP5=False
+19/24 | Varethis    | ANCHOR='the'        | QUERY_RANK=12 -> REL_RANK=9 | TOP5=False
+20/24 | Ilyan       | ANCHOR='assistants' | QUERY_RANK=10 -> REL_RANK=7 | TOP5=False
+21/24 | Kyoto       | ANCHOR='courier'    | QUERY_RANK=8 -> REL_RANK=6 | TOP5=False
+22/24 | turquoise   | ANCHOR='but'        | QUERY_RANK=12 -> REL_RANK=8 | TOP5=False
+23/24 | quartz      | ANCHOR='composed'   | QUERY_RANK=5 -> REL_RANK=3 | TOP5=True
+24/24 | accelerating | ANCHOR='started'    | QUERY_RANK=6 -> REL_RANK=3 | TOP5=True
+[10/15] RELATION-BINDING SUMMARY
+COVERAGE                           +1.000000
+QUERY_RANK_MEDIAN                  +9.500000
+RELATION_RANK_MEDIAN               +5.500000
+TOP1                               +0.083333
+TOP3                               +0.416667
+TOP5                               +0.500000
+RANK_IMPROVED                      +0.833333
+[11/15] TEST316 COMPARISON
+TEST316 MEDIAN=8.5 TOP3=.250 TOP5=.292 | TEST317 MEDIAN=5.5 TOP3=0.417 TOP5=0.500
+[12/15] PREDECLARED GATE
+MEDIAN<8.5=True | TOP5>.292=True | RANK_IMPROVED>=.60=True | CLASS=RELATION_TO_VALUE_BINDING_SUPPORTED
+[13/15] SCIENTIFIC AUDIT
+TARGET DOES NOT SELECT ANCHOR, SCORE, LAYER, CANDIDATE OR WEIGHT. TARGET OPENS ONLY AFTER ALL BLIND FORWARDS AND RANKING.
+[14/15] CASE + TARGET AUDIT
+CASE_ISOLATED=True | CROSS_CASE_DATA=False | TARGET_ENGINE_ACCESS=False | TARGET_POSTHOC_ONLY=True
+[15/15] INTEGRITY + SEAL
+============================================================================================================
+TEST 317 COMPLETE
+QUERY MEDIAN=9.5 -> RELATION MEDIAN=5.5 | RANK IMPROVED=0.833
+TOP1=0.083 | TOP3=0.417 | TOP5=0.500
+CLASS=RELATION_TO_VALUE_BINDING_SUPPORTED | GATE=PASS
+CASE_ISOLATED=TRUE | TARGET POST-HOC ONLY | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST317/T317-20260929-012328.json
+TXT : /content/AKBASCORE_TEST317/T317-20260929-012328.txt
+SHA : a127aaa6e18b396d8d3335c38f975b697407a23003161a3eaf2c91c0dd1f16b4
+============================================================================================================
