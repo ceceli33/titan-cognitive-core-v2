@@ -1,0 +1,156 @@
+ ============================================================================================================
+TEST 355 - TARGET-FREE RELATIONAL SLOT -> FILLER BINDING X-RAY
+============================================================================================================
+START: 2026-09-29T12:01:56.499+00:00
+[1/18] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 76.5kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 880kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 41.6MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 57.1MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 110MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.34MB/s]Download complete: :  13.1GB,  109MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  412MB/s  Fetching 4 files: 100% 4/4 [00:45<00:00,  8.55s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.28it/s]generation_config.json: 100% 243/243 [00:00<00:00, 31.2kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | torch.bfloat16 | 54.84s
+[2/18] MODEL LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+[3/18] QUERY NULL CACHE
+NULL READY
+[4/18] SOURCE + QUERY DIRECTIONS
+01/16 | PERSON   | SPANS=15
+02/16 | PERSON   | SPANS=13
+03/16 | PLACE    | SPANS=14
+04/16 | PLACE    | SPANS=13
+05/16 | COLOR    | SPANS=8
+06/16 | COLOR    | SPANS=7
+07/16 | MATERIAL | SPANS=12
+08/16 | MATERIAL | SPANS=10
+09/16 | ACTION   | SPANS=11
+10/16 | ACTION   | SPANS=10
+11/16 | NAME     | SPANS=12
+12/16 | NAME     | SPANS=8
+13/16 | NUMBER   | SPANS=7
+14/16 | OBJECT   | SPANS=8
+15/16 | PROPERTY | SPANS=8
+16/16 | SHOWCASE | SPANS=16
+[5/18] ALL DIRECTED SLOT->FILLER EDGES
+01/16 | EDGES=210
+02/16 | EDGES=156
+03/16 | EDGES=182
+04/16 | EDGES=156
+05/16 | EDGES=56
+06/16 | EDGES=42
+07/16 | EDGES=132
+08/16 | EDGES=90
+09/16 | EDGES=110
+10/16 | EDGES=90
+11/16 | EDGES=132
+12/16 | EDGES=56
+13/16 | EDGES=42
+14/16 | EDGES=56
+15/16 | EDGES=56
+16/16 | EDGES=240
+[6/18] QUERY-CONDITIONED RELATION SCORE
+01/16 | READY
+02/16 | READY
+03/16 | READY
+04/16 | READY
+05/16 | READY
+06/16 | READY
+07/16 | READY
+08/16 | READY
+09/16 | READY
+10/16 | READY
+11/16 | READY
+12/16 | READY
+13/16 | READY
+14/16 | READY
+15/16 | READY
+16/16 | READY
+[7/18] LOCAL BINDING PRIOR
+LOCAL=1/(1+SPAN_DISTANCE) | FROZEN
+[8/18] PRIMARY EDGE SCORE
+PRIMARY=MEAN_REL_L20-L27 + 0.10*LOCAL | FROZEN
+[9/18] SLOT MARGINALIZATION
+01/16 | TOP_FILLER='the' <- SLOT='disconnected' | SCORE=+0.0803
+02/16 | TOP_FILLER='the' <- SLOT='of' | SCORE=+0.0992
+03/16 | TOP_FILLER='its' <- SLOT='completed' | SCORE=+0.0838
+04/16 | TOP_FILLER='in' <- SLOT='Nagoya' | SCORE=+0.0747
+05/16 | TOP_FILLER='After' <- SLOT='synchronization' | SCORE=+0.0818
+06/16 | TOP_FILLER='the' <- SLOT='analysis' | SCORE=+0.0852
+07/16 | TOP_FILLER='several' <- SLOT='testing' | SCORE=+0.1046
+08/16 | TOP_FILLER='tungsten' <- SLOT='chose' | SCORE=+0.0847
+09/16 | TOP_FILLER='began' <- SLOT='hatch' | SCORE=+0.0960
+10/16 | TOP_FILLER='began' <- SLOT='membrane' | SCORE=+0.0915
+11/16 | TOP_FILLER='the' <- SLOT='catalogue' | SCORE=+0.0915
+12/16 | TOP_FILLER='to' <- SLOT='Kelvane' | SCORE=+0.0889
+13/16 | TOP_FILLER='was' <- SLOT='value' | SCORE=+0.0902
+14/16 | TOP_FILLER='the' <- SLOT='equipment' | SCORE=+0.0750
+15/16 | TOP_FILLER='After' <- SLOT='treatment' | SCORE=+0.1158
+16/16 | TOP_FILLER='Mustafa' <- SLOT='Akbaş' | SCORE=+0.1167
+[10/18] BIDIRECTIONAL CONSISTENCY CONTROL
+01/16 | TOP_BI='the'
+02/16 | TOP_BI='the'
+03/16 | TOP_BI='its'
+04/16 | TOP_BI='in'
+05/16 | TOP_BI='After'
+06/16 | TOP_BI='the'
+07/16 | TOP_BI='several'
+08/16 | TOP_BI='tungsten'
+09/16 | TOP_BI='began'
+10/16 | TOP_BI='began'
+11/16 | TOP_BI='the'
+12/16 | TOP_BI='to'
+13/16 | TOP_BI='was'
+14/16 | TOP_BI='the'
+15/16 | TOP_BI='After'
+16/16 | TOP_BI='Mustafa'
+[11/18] ALL TARGET-FREE RANKINGS FROZEN
+FROZEN | TARGET/VALUE STILL CLOSED
+[12/18] VALUE OPENS - FILLER MATCH
+01/16 | PERSON   | VALUE='Bravik' | PRIMARY=10 REL=11 BI=10/15 | SLOT='disconnected'
+02/16 | PERSON   | VALUE='Talora' | PRIMARY=09 REL=07 BI=09/13 | SLOT='calibration'
+03/16 | PLACE    | VALUE='Dubrovnik' | PRIMARY=12 REL=08 BI=12/14 | SLOT='sensor'
+04/16 | PLACE    | VALUE='Nagoya' | PRIMARY=11 REL=11 BI=11/13 | SLOT='before'
+05/16 | COLOR    | VALUE='magenta' | PRIMARY=07 REL=02 BI=07/8 | SLOT='synchronization'
+06/16 | COLOR    | VALUE='indigo' | PRIMARY=06 REL=02 BI=06/7 | SLOT='analysis'
+07/16 | MATERIAL | VALUE='obsidian' | PRIMARY=03 REL=03 BI=03/12 | SLOT='selected'
+08/16 | MATERIAL | VALUE='tungsten' | PRIMARY=01 REL=01 BI=01/10 | SLOT='chose'
+09/16 | ACTION   | VALUE='crawling' | PRIMARY=09 REL=05 BI=09/11 | SLOT='hatch'
+10/16 | ACTION   | VALUE='expanding' | PRIMARY=09 REL=06 BI=09/10 | SLOT='membrane'
+11/16 | NAME     | VALUE='Norvex' | PRIMARY=11 REL=06 BI=11/12 | SLOT='catalogue'
+12/16 | NAME     | VALUE='Kelvane' | PRIMARY=08 REL=08 BI=08/8 | SLOT='to'
+13/16 | NUMBER   | VALUE='817' | PRIMARY=05 REL=05 BI=05/7 | SLOT='value'
+14/16 | OBJECT   | VALUE='compass' | PRIMARY=08 REL=08 BI=08/8 | SLOT='a'
+15/16 | PROPERTY | VALUE='glossy' | PRIMARY=08 REL=08 BI=08/8 | SLOT='as'
+16/16 | SHOWCASE | VALUE='placed an amber banner' | PRIMARY=09 REL=12 BI=09/16 | SLOT='Akbaş'
+[13/18] DEVELOPMENT SUMMARY
+rank_primary | MED=8.0 | TOP1=0.067 | TOP3=0.133 | TOP5=0.200
+rank_rel     | MED=6.0 | TOP1=0.067 | TOP3=0.267 | TOP5=0.400
+rank_bi      | MED=8.0 | TOP1=0.067 | TOP3=0.133 | TOP5=0.200
+[14/18] PREDECLARED GATES
+PRIMARY_SLOT_FILLER_SUPPORTED=False | PARTIAL=False
+[15/18] TYPE BREAKDOWN
+ACTION   | N=2 | MED=9.0 | TOP3=0.000
+COLOR    | N=2 | MED=6.5 | TOP3=0.000
+MATERIAL | N=2 | MED=2.0 | TOP3=1.000
+NAME     | N=2 | MED=9.5 | TOP3=0.000
+NUMBER   | N=1 | MED=5.0 | TOP3=0.000
+OBJECT   | N=1 | MED=8.0 | TOP3=0.000
+PERSON   | N=2 | MED=9.5 | TOP3=0.000
+PLACE    | N=2 | MED=11.5 | TOP3=0.000
+PROPERTY | N=1 | MED=8.0 | TOP3=0.000
+[16/18] SHOWCASE + CLASSIFICATION
+------------------------------------------------------------------------------------------------------------
+SOURCE: Mustafa Akbaş placed an amber banner beneath the Galata Bridge where the validation demonstration was conducted.
+Q: What did Mustafa Akbaş do at the location of the validation demonstration?
+VALUE: placed an amber banner
+PRIMARY=9 REL=12 BI=9/16 | BOUND_SLOT='Akbaş'
+------------------------------------------------------------------------------------------------------------
+CLASS= TARGET_FREE_RELATIONAL_SLOT_FILLER_BINDING_NOT_SUPPORTED
+[17/18] SCIENTIFIC AUDIT
+TEST354 CASE FAMILY | ALL SOURCE EDGES ENUMERATED | FIXED L20-L27 RELATION SCORE | FIXED 0.10 LOCAL PRIOR | VALUE POST-HOC ONLY | NO SEASC | NO ORACLE | NO SEARCH | NO TRAINING
+[18/18] INTEGRITY + SAVE
+============================================================================================================
+TEST 355 COMPLETE
+PRIMARY | MED=8.0 | TOP1=0.067 | TOP3=0.133 | TOP5=0.200
+CLASS= TARGET_FREE_RELATIONAL_SLOT_FILLER_BINDING_NOT_SUPPORTED
+VALUE POST-HOC ONLY | NO SEASC | WEIGHTS FROZEN
+JSON: /content/AKBASCORE_TEST355/T355-20260929-120258.json
+TXT : /content/AKBASCORE_TEST355/T355-20260929-120258.txt
+SHA : a22cec0be0e94fe4af735ea4b77554cedb5a3f235e5c56a3f30cf9368d139fd3
+============================================================================================================
