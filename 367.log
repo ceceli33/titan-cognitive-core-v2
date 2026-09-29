@@ -1,0 +1,95 @@
+ ============================================================================================================
+TEST 367 - SAME-SOURCE QUESTION-SPECIFIC HEAD ROUTING
+============================================================================================================
+START: 2026-09-29T13:49:34.406+00:00
+[1/21] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 79.5kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 972kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 80.1MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 69.7MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 92.6MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.59MB/s]Download complete: :  13.1GB,  675MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  337MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00,  7.63s/it]Loading weights: 100% 339/339 [00:04<00:00, 97.11it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.0kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | eager-attention | torch.bfloat16 | 55.94s
+[2/21] MODEL LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+[3/21] ARCHITECTURE AUDIT
+HEADS=28 | KV_HEADS=4 | HEAD_DIM=128 | KV_REPEAT=7
+[4/21] FIXED SOURCE + QUESTIONS
+01/07 | PERSON  | SPANS=35 | Q_LAST=60 | Q=Who bypassed all target-free compiler limits?
+02/07 | OBJECT  | SPANS=35 | Q_LAST=60 | Q=What did Mustafa Akbaş plant?
+03/07 | PLACE   | SPANS=35 | Q_LAST=63 | Q=Where did Mustafa Akbaş plant the Turkish flag?
+04/07 | TIME    | SPANS=35 | Q_LAST=63 | Q=When did Mustafa Akbaş bypass the compiler limits?
+05/07 | OBJECT  | SPANS=35 | Q_LAST=60 | Q=What did Mustafa Akbaş bypass?
+06/07 | PERSON  | SPANS=35 | Q_LAST=60 | Q=Who was permanently frozen in a static state?
+07/07 | STATE   | SPANS=35 | Q_LAST=58 | Q=What state was Colude in?
+[5/21] FORWARDS
+01/07 | OK
+02/07 | OK
+03/07 | OK
+04/07 | OK
+05/07 | OK
+06/07 | OK
+07/07 | OK
+[6/21] HEAD-LEVEL QUESTION->SOURCE ATTENTION
+A + NORMALIZED P READY
+[7/21] HEAD SPAN RANKS
+HEAD RANKS READY
+[8/21] QUESTION-SPECIFIC ONE-VS-REST JS
+QSEL | MIN=0.000112 MED=0.021345 MAX=0.613093
+[9/21] QUESTION-SPECIFIC WEIGHTS
+Q1 | TOP=L19 H17 | JS=0.417390
+Q2 | TOP=L16 H20 | JS=0.477467
+Q3 | TOP=L19 H17 | JS=0.553713
+Q4 | TOP=L19 H17 | JS=0.444574
+Q5 | TOP=L19 H17 | JS=0.613093
+Q6 | TOP=L14 H00 | JS=0.388331
+Q7 | TOP=L11 H01 | JS=0.579448
+[10/21] PRIMARY QUESTION-SPECIFIC WEIGHTED MRR
+PRIMARY READY
+[11/21] UNWEIGHTED CONTROL
+CONTROL READY
+[12/21] TARGET-FREE ROUTES FROZEN
+01/07 | QSEL_TOP3=2026:0.4915 | Mustafa:0.3801 | Akbaş:0.3178 | RAW_TOP=2026
+02/07 | QSEL_TOP3=2026:0.4384 | flag:0.3374 | across:0.2303 | RAW_TOP=2026
+03/07 | QSEL_TOP3=2026:0.3949 | bridge:0.2538 | span:0.2246 | RAW_TOP=2026
+04/07 | QSEL_TOP3=2026:0.5977 | bypassed:0.2645 | in:0.2274 | RAW_TOP=2026
+05/07 | QSEL_TOP3=2026:0.4624 | bypassed:0.2438 | target-free:0.2223 | RAW_TOP=2026
+06/07 | QSEL_TOP3=2026:0.5074 | Colude:0.4960 | While:0.3140 | RAW_TOP=2026
+07/07 | QSEL_TOP3=2026:0.4502 | While:0.3272 | Colude:0.2427 | RAW_TOP=2026
+[13/21] ROUTING DIVERSITY
+QSELECTIVE_UNIQUE=1/7 | RAW_UNIQUE=1/7
+[14/21] VALUES OPEN POST-HOC
+01/07 | VALUE='Mustafa Akbaş' | QSEL=R02 | RAW=R03 | QSEL='2026' | RAWSEL='2026'
+02/07 | VALUE='Turkish flag' | QSEL=R02 | RAW=R03 | QSEL='2026' | RAWSEL='2026'
+03/07 | VALUE='Golden Gate Bridge' | QSEL=R13 | RAW=R23 | QSEL='2026' | RAWSEL='2026'
+04/07 | VALUE='2026' | QSEL=R01 | RAW=R01 | QSEL='2026' | RAWSEL='2026'
+05/07 | VALUE='target-free compiler limits' | QSEL=R03 | RAW=R07 | QSEL='2026' | RAWSEL='2026'
+06/07 | VALUE='Colude' | QSEL=R02 | RAW=R03 | QSEL='2026' | RAWSEL='2026'
+07/07 | VALUE='permanently frozen' | QSEL=R05 | RAW=R11 | QSEL='2026' | RAWSEL='2026'
+[15/21] SUMMARY
+QSELECTIVE | MED=2.0 TOP1=0.143 TOP3=0.714 TOP5=0.857 EXACT=0.143 UNIQUE=1/7
+RAW        | MED=3.0 TOP1=0.143 TOP3=0.571 TOP5=0.571 EXACT=0.143 UNIQUE=1/7
+QSELECTIVE_VS_RAW | BETTER=0.857 | WORSE=0.000
+[16/21] ROUTING PROFILE SIMILARITY
+Q1: +1.000 +0.746 +0.664 +0.851 +0.804 +0.766 +0.743
+Q2: +0.746 +1.000 +0.757 +0.708 +0.670 +0.577 +0.567
+Q3: +0.664 +0.757 +1.000 +0.766 +0.601 +0.504 +0.608
+Q4: +0.851 +0.708 +0.766 +1.000 +0.865 +0.699 +0.794
+Q5: +0.804 +0.670 +0.601 +0.865 +1.000 +0.622 +0.640
+Q6: +0.766 +0.577 +0.504 +0.699 +0.622 +1.000 +0.863
+Q7: +0.743 +0.567 +0.608 +0.794 +0.640 +0.863 +1.000
+[17/21] PREDECLARED GATES
+SUPPORTED=False | STRONG=False
+[18/21] CLASSIFICATION
+CLASS= QUESTION_SPECIFIC_HEAD_ROUTING_PARTIAL
+[19/21] SCIENTIFIC AUDIT
+EXACT TEST363-366 SOURCE+QUESTIONS | HEADS SEPARATE | PER-QUESTION ONE-VS-REST JS | PRIMARY=QUESTION-SPECIFIC WEIGHTED HEAD MRR | VALUE POST-HOC | NO TARGET/LAYER/HEAD ORACLE | NO SCORE SEARCH | NO SEASC | NO TRAINING
+[20/21] INTEGRITY
+WEIGHTS FROZEN | FP MATCH
+[21/21] JSON-SAFE SAVE
+============================================================================================================
+TEST 367 COMPLETE
+QSELECTIVE | MED=2.0 | TOP1=0.143 | TOP3=0.714 | TOP5=0.857 | EXACT=0.143 | UNIQUE=1/7
+RAW        | MED=3.0 | TOP1=0.143 | TOP3=0.571 | TOP5=0.571 | EXACT=0.143 | UNIQUE=1/7
+QSELECTIVE_BEATS_RAW=0.857 | WORSE=0.000
+CLASS= QUESTION_SPECIFIC_HEAD_ROUTING_PARTIAL
+JSON: /content/AKBASCORE_TEST367/T367-20260929-135034.json
+TXT : /content/AKBASCORE_TEST367/T367-20260929-135034.txt
+SHA : 5059124ee2a9e5cb528c55d2a3cb24537a03e8db641be2f29bcecdf11c0a9029
+============================================================================================================
