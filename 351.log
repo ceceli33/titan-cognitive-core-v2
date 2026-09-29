@@ -1,0 +1,155 @@
+ ============================================================================================================
+TEST 351 - COUNTERFACTUAL VALUE-SWAP DECOMPOSITION
+============================================================================================================
+START: 2026-09-29T11:23:11.033+00:00
+[1/18] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 84.2kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 905kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 84.2MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 69.4MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 105MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.26MB/s]Download complete: :  13.1GB,  142MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  456MB/s  Fetching 4 files: 100% 4/4 [00:42<00:00,  7.53s/it]Loading weights: 100% 339/339 [00:03<00:00, 101.47it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.6kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | torch.bfloat16 | 54.92s
+[2/18] ENGINE LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | FULL ASSISTANT-OUTPUT | L0-L25
+[3/18] QUERY NULL CACHE
+NULL READY
+[4/18] COUNTERFACTUAL BANKS - TARGET SEALED
+01/16 | PERSON   | A=15 B=15
+02/16 | PERSON   | A=13 B=13
+03/16 | PLACE    | A=14 B=14
+04/16 | PLACE    | A=13 B=13
+05/16 | COLOR    | A=8 B=8
+06/16 | COLOR    | A=7 B=7
+07/16 | MATERIAL | A=12 B=12
+08/16 | MATERIAL | A=10 B=10
+09/16 | ACTION   | A=11 B=11
+10/16 | ACTION   | A=10 B=10
+11/16 | NAME     | A=12 B=12
+12/16 | NAME     | A=8 B=8
+13/16 | NUMBER   | A=7 B=7
+14/16 | OBJECT   | A=8 B=8
+15/16 | PROPERTY | A=8 B=8
+16/16 | SHOWCASE | A=16 B=16
+[5/18] FROZEN ARGMAX(DISP) ROUTER - EACH SOURCE INDEPENDENT
+01/16 | A='During':0.4226 | B='During':0.4432
+02/16 | A='final':0.4898 | B='final':0.4870
+03/16 | A='recovered':0.4064 | B='recovered':0.3886
+04/16 | A='bronze':0.3587 | B='bronze':0.3497
+05/16 | A='After':0.2845 | B='After':0.2852
+06/16 | A='Spectral':0.3527 | B='Spectral':0.3549
+07/16 | A='engineers':0.4070 | B='engineers':0.3994
+08/16 | A='The':0.3906 | B='The':0.3983
+09/16 | A='Tavren':0.2974 | B='Tavren':0.2913
+10/16 | A='When':0.3151 | B='When':0.3684
+11/16 | A='designation':0.3732 | B='designation':0.3898
+12/16 | A="prototype's":0.3303 | B="prototype's":0.3303
+13/16 | A='After':0.5074 | B='After':0.5348
+14/16 | A='the':0.2507 | B='the':0.2682
+15/16 | A='After':0.3302 | B='After':0.3264
+16/16 | A='Mustafa':0.2599 | B='Mustafa':0.2667
+[6/18] ENGINE FROZEN
+TEST350 ENGINE UNCHANGED | SAME ARGMAX(DISP) | NO VALUE/TARGET USED FOR ROUTING
+[7/18] PACKET DIFFERENCE GEOMETRY
+01/16 | PERSON   | MEAN|A-B|=0.1611 | L25=0.0626
+02/16 | PERSON   | MEAN|A-B|=0.0786 | L25=0.0000
+03/16 | PLACE    | MEAN|A-B|=0.3249 | L25=0.7357
+04/16 | PLACE    | MEAN|A-B|=0.2212 | L25=0.0000
+05/16 | COLOR    | MEAN|A-B|=0.0928 | L25=0.0000
+06/16 | COLOR    | MEAN|A-B|=0.3337 | L25=0.0000
+07/16 | MATERIAL | MEAN|A-B|=0.4275 | L25=0.3776
+08/16 | MATERIAL | MEAN|A-B|=0.3446 | L25=0.7428
+09/16 | ACTION   | MEAN|A-B|=0.2298 | L25=0.7738
+10/16 | ACTION   | MEAN|A-B|=0.3466 | L25=0.0000
+11/16 | NAME     | MEAN|A-B|=0.0715 | L25=0.0000
+12/16 | NAME     | MEAN|A-B|=0.0000 | L25=0.0000
+13/16 | NUMBER   | MEAN|A-B|=0.1860 | L25=0.0000
+14/16 | OBJECT   | MEAN|A-B|=0.0717 | L25=0.0000
+15/16 | PROPERTY | MEAN|A-B|=0.1115 | L25=0.0000
+16/16 | SHOWCASE | MEAN|A-B|=0.3079 | L25=0.2234
+[8/18] TERMINAL DISTRIBUTIONS FROZEN - VALUE SEALED
+01/16 | PERSON   | TERMINAL A/B FROZEN
+02/16 | PERSON   | TERMINAL A/B FROZEN
+03/16 | PLACE    | TERMINAL A/B FROZEN
+04/16 | PLACE    | TERMINAL A/B FROZEN
+05/16 | COLOR    | TERMINAL A/B FROZEN
+06/16 | COLOR    | TERMINAL A/B FROZEN
+07/16 | MATERIAL | TERMINAL A/B FROZEN
+08/16 | MATERIAL | TERMINAL A/B FROZEN
+09/16 | ACTION   | TERMINAL A/B FROZEN
+10/16 | ACTION   | TERMINAL A/B FROZEN
+11/16 | NAME     | TERMINAL A/B FROZEN
+12/16 | NAME     | TERMINAL A/B FROZEN
+13/16 | NUMBER   | TERMINAL A/B FROZEN
+14/16 | OBJECT   | TERMINAL A/B FROZEN
+15/16 | PROPERTY | TERMINAL A/B FROZEN
+16/16 | SHOWCASE | TERMINAL A/B FROZEN
+[9/18] VALUE OPENS - FIRST TOKEN IDS
+01/16 | A='Br' | B='T'
+02/16 | A='T' | B='V'
+03/16 | A='Dub' | B='Br'
+04/16 | A='N' | B='Dub'
+05/16 | A='m' | B='scar'
+06/16 | A='ind' | B='m'
+07/16 | A='obs' | B='t'
+08/16 | A='t' | B='feld'
+09/16 | A='c' | B='descending'
+10/16 | A='exp' | B='descending'
+11/16 | A='Nor' | B='D'
+12/16 | A='Kel' | B='Nor'
+13/16 | A='8' | B='5'
+14/16 | A='compass' | B='hy'
+15/16 | A='g' | B='vel'
+16/16 | A='placed' | B='raised'
+[10/18] COUNTERFACTUAL CROSSOVER
+01/16 | PERSON   | AΔ=-0.438 BΔ=+0.531 | SWAP=+0.094 | CROSS=False
+02/16 | PERSON   | AΔ=-0.062 BΔ=+0.125 | SWAP=+0.062 | CROSS=False
+03/16 | PLACE    | AΔ=-0.219 BΔ=+0.219 | SWAP=+0.000 | CROSS=False
+04/16 | PLACE    | AΔ=+2.219 BΔ=-2.062 | SWAP=+0.156 | CROSS=False
+05/16 | COLOR    | AΔ=+1.938 BΔ=-1.906 | SWAP=+0.031 | CROSS=False
+06/16 | COLOR    | AΔ=+0.438 BΔ=-0.750 | SWAP=-0.312 | CROSS=False
+07/16 | MATERIAL | AΔ=-3.656 BΔ=+4.281 | SWAP=+0.625 | CROSS=False
+08/16 | MATERIAL | AΔ=+2.406 BΔ=-1.906 | SWAP=+0.500 | CROSS=False
+09/16 | ACTION   | AΔ=+0.406 BΔ=-0.094 | SWAP=+0.312 | CROSS=False
+10/16 | ACTION   | AΔ=+0.688 BΔ=-0.219 | SWAP=+0.469 | CROSS=False
+11/16 | NAME     | AΔ=+1.219 BΔ=-1.000 | SWAP=+0.219 | CROSS=False
+12/16 | NAME     | AΔ=-0.414 BΔ=+0.414 | SWAP=+0.000 | CROSS=False
+13/16 | NUMBER   | AΔ=-0.500 BΔ=+0.500 | SWAP=+0.000 | CROSS=False
+14/16 | OBJECT   | AΔ=+0.297 BΔ=-0.172 | SWAP=+0.125 | CROSS=False
+15/16 | PROPERTY | AΔ=+2.117 BΔ=-2.164 | SWAP=-0.047 | CROSS=False
+16/16 | SHOWCASE | AΔ=+0.188 BΔ=-0.188 | SWAP=+0.000 | CROSS=False
+[11/18] VALUE IDENTITY SUMMARY
+N=15 | A_GAIN+=0.600000 | B_GAIN+=0.400000 | BOTH_GAIN=0.000000 | CROSSOVER=0.000000 | SWAP+=0.666667 | SWAP_MEAN=+0.148958
+[12/18] TYPE BREAKDOWN
+ACTION   | N=2 | SWAP=+0.391 | BOTH=0.000 | CROSS=0.000
+COLOR    | N=2 | SWAP=-0.141 | BOTH=0.000 | CROSS=0.000
+MATERIAL | N=2 | SWAP=+0.562 | BOTH=0.000 | CROSS=0.000
+NAME     | N=2 | SWAP=+0.109 | BOTH=0.000 | CROSS=0.000
+NUMBER   | N=1 | SWAP=+0.000 | BOTH=0.000 | CROSS=0.000
+OBJECT   | N=1 | SWAP=+0.125 | BOTH=0.000 | CROSS=0.000
+PERSON   | N=2 | SWAP=+0.078 | BOTH=0.000 | CROSS=0.000
+PLACE    | N=2 | SWAP=+0.078 | BOTH=0.000 | CROSS=0.000
+PROPERTY | N=1 | SWAP=-0.047 | BOTH=0.000 | CROSS=0.000
+[13/18] PREDECLARED GATES
+VALUE_DIRECTIONAL=False | VALUE_BIDIRECTIONAL=False | VALUE_DECISIVE=False
+[14/18] SHOWCASE
+------------------------------------------------------------------------------------------------------------
+A: Mustafa Akbaş placed an amber banner beneath the Galata Bridge where the validation demonstration was conducted.
+B: Mustafa Akbaş raised an amber banner beneath the Galata Bridge where the validation demonstration was conducted.
+Q: What did Mustafa Akbaş do at the location of the validation demonstration?
+A=placed an amber banner | B=raised an amber banner
+A_MARGIN_GAIN=+0.188 | B_MARGIN_GAIN=-0.188 | SWAP=+0.000 | CROSS=False
+------------------------------------------------------------------------------------------------------------
+[15/18] CLASSIFICATION
+CLASS= COUNTERFACTUAL_VALUE_IDENTITY_NOT_SYSTEMATICALLY_ENCODED
+[16/18] INTERPRETATION LOCK
+TYPE/RELATION/SYNTAX MATCHED WITHIN PAIR | ONLY VALUE CHANGED | TARGET POST-HOC | FIRST TOKEN DIAGNOSTIC | NO ORACLE ROUTING
+[17/18] SCIENTIFIC AUDIT
+TEST350 ENGINE UNCHANGED | SAME COMPILER | SAME ARGMAX(DISP) | SAME RSS | FULL ASSISTANT-OUTPUT | NO TRAINING | NO WEIGHT UPDATE
+[18/18] INTEGRITY + SAVE
+============================================================================================================
+TEST 351 COMPLETE
+N=15 | A+=0.600 | B+=0.400 | BOTH=0.000 | CROSS=0.000 | SWAP+=0.667 | SWAP_MEAN=+0.149
+CLASS= COUNTERFACTUAL_VALUE_IDENTITY_NOT_SYSTEMATICALLY_ENCODED
+TARGET POST-HOC ONLY | WEIGHTS FROZEN | HOOKS=0
+JSON: /content/AKBASCORE_TEST351/T351-20260929-112439.json
+TXT : /content/AKBASCORE_TEST351/T351-20260929-112439.txt
+SHA : 2dbbf8905dc89de7ae743028e2b3101d8aeb6129f6988d88414d2d9486f80767
+============================================================================================================
