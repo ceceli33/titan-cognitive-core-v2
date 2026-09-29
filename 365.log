@@ -1,0 +1,88 @@
+ ============================================================================================================
+TEST 365 - SAME-SOURCE DIRECTIONAL CONTRIBUTION ROUTING
+============================================================================================================
+START: 2026-09-29T13:11:55.413+00:00
+[1/21] MODEL LOAD
+config.json: 100% 663/663 [00:00<00:00, 81.7kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 903kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+vocab.json: 100% 2.78M/2.78M [00:00<00:00, 76.1MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 64.2MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 102MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.07MB/s]Download complete: :  13.1GB,  128MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  409MB/s  Fetching 4 files: 100% 4/4 [00:40<00:00,  7.05s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.14it/s]generation_config.json: 100% 243/243 [00:00<00:00, 30.2kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | eager-attention | torch.bfloat16 | 53.25s
+[2/21] MODEL LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+[3/21] ARCHITECTURE AUDIT
+HEADS=28 | KV_HEADS=4 | HEAD_DIM=128 | KV_REPEAT=7
+[4/21] FIXED SOURCE + QUESTIONS
+01/07 | PERSON  | SPANS=35 | Q_LAST=60 | Q=Who bypassed all target-free compiler limits?
+02/07 | OBJECT  | SPANS=35 | Q_LAST=60 | Q=What did Mustafa Akbaş plant?
+03/07 | PLACE   | SPANS=35 | Q_LAST=63 | Q=Where did Mustafa Akbaş plant the Turkish flag?
+04/07 | TIME    | SPANS=35 | Q_LAST=63 | Q=When did Mustafa Akbaş bypass the compiler limits?
+05/07 | OBJECT  | SPANS=35 | Q_LAST=60 | Q=What did Mustafa Akbaş bypass?
+06/07 | PERSON  | SPANS=35 | Q_LAST=60 | Q=Who was permanently frozen in a static state?
+07/07 | STATE   | SPANS=35 | Q_LAST=58 | Q=What state was Colude in?
+[5/21] FORWARDS
+01/07 | OK
+02/07 | OK
+03/07 | OK
+04/07 | OK
+05/07 | OK
+06/07 | OK
+07/07 | OK
+[6/21] EXACT TEST363 CONTRIBUTION RECONSTRUCTION
+CONTRIBUTIONS READY
+[7/21] ABSOLUTE-NORM CONTROL
+TEST363 CONTROL READY
+[8/21] QUESTION-LAST RESIDUAL DIRECTIONS
+QUESTION DIRECTIONS READY
+[9/21] DIRECTIONAL CONTRIBUTION COSINES
+COSINES READY
+[10/21] PER-LAYER DIRECTIONAL RANKS
+DIRECTIONAL RANKS READY
+[11/21] PRIMARY CROSS-LAYER DIRECTIONAL MRR
+PRIMARY=MEAN_L(1/DIRECTIONAL_RANK) | FROZEN BEFORE VALUE
+[12/21] TARGET-FREE ROUTES FROZEN
+01/07 | DIR_TOP3=2026:0.2628 | span:0.2265 | across:0.2120 | ABS_TOP=2026
+02/07 | DIR_TOP3=2026:0.3667 | span:0.2050 | of:0.1991 | ABS_TOP=2026
+03/07 | DIR_TOP3=2026:0.3873 | across:0.2374 | of:0.2165 | ABS_TOP=2026
+04/07 | DIR_TOP3=2026:0.2499 | span:0.2489 | of:0.2376 | ABS_TOP=2026
+05/07 | DIR_TOP3=2026:0.2651 | across:0.2389 | span:0.2137 | ABS_TOP=2026
+06/07 | DIR_TOP3=2026:0.2850 | of:0.2469 | span:0.2423 | ABS_TOP=2026
+07/07 | DIR_TOP3=2026:0.3347 | of:0.2414 | span:0.2353 | ABS_TOP=2026
+[13/21] VALUES OPEN POST-HOC
+01/07 | VALUE='Mustafa Akbaş' | DIR=R23 V1=R19 | ABS=R03 | DSEL='2026' | ASEL='2026'
+02/07 | VALUE='Turkish flag' | DIR=R18 V1=R17 | ABS=R02 | DSEL='2026' | ASEL='2026'
+03/07 | VALUE='Golden Gate Bridge' | DIR=R27 V1=R15 | ABS=R12 | DSEL='2026' | ASEL='2026'
+04/07 | VALUE='2026' | DIR=R01 V1=R01 | ABS=R01 | DSEL='2026' | ASEL='2026'
+05/07 | VALUE='target-free compiler limits' | DIR=R17 V1=R18 | ABS=R03 | DSEL='2026' | ASEL='2026'
+06/07 | VALUE='Colude' | DIR=R26 V1=R08 | ABS=R02 | DSEL='2026' | ASEL='2026'
+07/07 | VALUE='permanently frozen' | DIR=R25 V1=R17 | ABS=R03 | DSEL='2026' | ASEL='2026'
+[14/21] DIRECT TEST363 COMPARISON
+DIR | MED=23.0 TOP1=0.143 TOP3=0.143 TOP5=0.143 EXACT=0.143 UNIQUE=1/7
+ABS | MED=3.0 TOP1=0.143 TOP3=0.857 TOP5=0.857 EXACT=0.143 UNIQUE=1/7
+DIR_VS_ABS | BETTER=0.000 | WORSE=0.857
+[15/21] QUESTION-SENSITIVITY MATRIX
+Q1: +1.000 +0.815 +0.818 +0.842 +0.886 +0.914 +0.882
+Q2: +0.815 +1.000 +0.895 +0.801 +0.893 +0.844 +0.906
+Q3: +0.818 +0.895 +1.000 +0.813 +0.802 +0.853 +0.884
+Q4: +0.842 +0.801 +0.813 +1.000 +0.857 +0.839 +0.842
+Q5: +0.886 +0.893 +0.802 +0.857 +1.000 +0.851 +0.868
+Q6: +0.914 +0.844 +0.853 +0.839 +0.851 +1.000 +0.937
+Q7: +0.882 +0.906 +0.884 +0.842 +0.868 +0.937 +1.000
+[16/21] ROUTING GATES
+SUPPORTED=False | STRONG=False
+[17/21] CLASSIFICATION
+CLASS= QUESTION_DIRECTIONAL_CONTRIBUTION_ROUTING_NOT_SUPPORTED
+[18/21] SCIENTIFIC AUDIT
+EXACT TEST363 SOURCE+QUESTIONS | EXACT TEST363 ||C|| CONTROL | PRIMARY=COS(CONTRIBUTION,QUESTION-LAST RESIDUAL) | 28L MRR | VALUE POST-HOC | NO TARGET/LAYER/HEAD ORACLE | NO SCORE SEARCH | NO SEASC | NO TRAINING
+[19/21] INTEGRITY
+WEIGHTS FROZEN | FP MATCH
+[20/21] JSON-SAFE SAVE
+[21/21] COMPLETE
+============================================================================================================
+TEST 365 COMPLETE
+DIR | MED=23.0 | TOP1=0.143 | TOP3=0.143 | TOP5=0.143 | EXACT=0.143 | UNIQUE=1/7
+ABS | MED=3.0 | TOP1=0.143 | TOP3=0.857 | TOP5=0.857 | EXACT=0.143 | UNIQUE=1/7
+DIR_BEATS_ABS=0.000 | DIR_WORSE=0.857
+CLASS= QUESTION_DIRECTIONAL_CONTRIBUTION_ROUTING_NOT_SUPPORTED
+JSON: /content/AKBASCORE_TEST365/T365-20260929-131252.json
+TXT : /content/AKBASCORE_TEST365/T365-20260929-131252.txt
+SHA : 294481eb4393e5e7577ac775d7fbeb0e56638bf4e8ba51e1fe2f4aa3c682a3c0
+============================================================================================================
