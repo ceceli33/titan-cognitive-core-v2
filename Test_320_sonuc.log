@@ -1,0 +1,139 @@
+ ============================================================================================================
+TEST 320 - FRESH HELD-OUT MULTI-ANCHOR RELATION CONSENSUS
+============================================================================================================
+START: 2026-09-29T01:52:14.410+00:00
+[1/15] MODEL LOAD
+config.json: 100% 663/663 [00:00<00:00, 78.6kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 826kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 48.4MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 68.8MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 126MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.84MB/s]Download complete: :  13.1GB,  100MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  436MB/s  Fetching 4 files: 100% 4/4 [00:45<00:00,  7.52s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.48it/s]generation_config.json: 100% 243/243 [00:00<00:00, 28.8kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | VOCAB=152064 | torch.bfloat16 | 54.51s
+[2/15] TEST319 ENGINE LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | BRIDGE=0.200 | SELECTOR=BIND+DELTA+READOUT | ANCHOR_K=3
+[3/15] TARGET-FREE QUERY NULL CACHE
+NULL READY
+[4/15] LOCKED SPAN BANK + PACKET + TOP3 ANCHORS
+01/24 | ANCHORS=['technician', 'replaced', 'the'] | BANK=13
+02/24 | ANCHORS=['the', 'was', 'the'] | BANK=13
+03/24 | ANCHORS=['the', 'were', 'the'] | BANK=13
+04/24 | ANCHORS=['departed', 'backup', 'and'] | BANK=12
+05/24 | ANCHORS=['and', 'chose', 'ceramic'] | BANK=14
+06/24 | ANCHORS=['remained', 'it', 'The'] | BANK=12
+07/24 | ANCHORS=['Tovan', 'the', 'narrow'] | BANK=15
+08/24 | ANCHORS=['described', 'appeared', 'finished'] | BANK=15
+09/24 | ANCHORS=['the', 'radio', 'Elira'] | BANK=14
+10/24 | ANCHORS=['the', 'in', 'is'] | BANK=10
+11/24 | ANCHORS=['the', 'the', 'while'] | BANK=12
+12/24 | ANCHORS=['before', 'its', 'in'] | BANK=13
+13/24 | ANCHORS=['titanium', 'bronze', 'acrylic'] | BANK=14
+14/24 | ANCHORS=['emitted', 'it', 'beacon'] | BANK=13
+15/24 | ANCHORS=['but', 'confirmed', 'showed'] | BANK=13
+16/24 | ANCHORS=['the', 'inner', 'the'] | BANK=14
+17/24 | ANCHORS=['was', 'replacement', 'felt'] | BANK=13
+18/24 | ANCHORS=['contained', 'a', 'a'] | BANK=17
+19/24 | ANCHORS=['the', 'final', 'temporarily'] | BANK=13
+20/24 | ANCHORS=['interns', 'catalogued', 'sealed'] | BANK=13
+21/24 | ANCHORS=['before', 'bronze', 'the'] | BANK=12
+22/24 | ANCHORS=['the', 'spectral', 'was'] | BANK=15
+23/24 | ANCHORS=['of', 'several', 'to'] | BANK=13
+24/24 | ANCHORS=['began', 'and', 'then'] | BANK=13
+[5/15] CASE-ISOLATION AUDIT
+SINGLE + CONSENSUS TARGET-FREE | SAME-CASE ONLY | TARGET_ACCESS=False | CROSS_CASE=False
+[6/15] LOCKED CAUSAL ENGINE
+[7/15] SEALED FORCED READOUT
+01/24 | COMPLETE
+02/24 | COMPLETE
+03/24 | COMPLETE
+04/24 | COMPLETE
+05/24 | COMPLETE
+06/24 | COMPLETE
+07/24 | COMPLETE
+08/24 | COMPLETE
+09/24 | COMPLETE
+10/24 | COMPLETE
+11/24 | COMPLETE
+12/24 | COMPLETE
+13/24 | COMPLETE
+14/24 | COMPLETE
+15/24 | COMPLETE
+16/24 | COMPLETE
+17/24 | COMPLETE
+18/24 | COMPLETE
+19/24 | COMPLETE
+20/24 | COMPLETE
+21/24 | COMPLETE
+22/24 | COMPLETE
+23/24 | COMPLETE
+24/24 | COMPLETE
+[8/15] SINGLE VS MULTI-ANCHOR CONSENSUS
+01/24 | A=['technician', 'replaced', 'the'] | SINGLE=['replaced', 'inside', 'the'] | CONS=['inside', 'Module', 'Neris']
+02/24 | A=['the', 'was', 'the'] | SINGLE=['name', 'from', 'the'] | CONS=['name', 'from', 'eastern']
+03/24 | A=['the', 'were', 'the'] | SINGLE=['were', 'code', '583'] | CONS=['code', '583', 'and']
+04/24 | A=['departed', 'backup', 'and'] | SINGLE=['to', 'and', 'vessel'] | CONS=['to', 'antenna', 'the']
+05/24 | A=['and', 'chose', 'ceramic'] | SINGLE=['chose', 'but', 'ceramic'] | CONS=['shield', 'but', 'aluminum']
+06/24 | A=['remained', 'it', 'The'] | SINGLE=['turned', 'it', 'when'] | CONS=['turned', 'when', 'the']
+07/24 | A=['Tovan', 'the', 'narrow'] | SINGLE=['and', 'stopped', 'began'] | CONS=['and', 'through', 'stopped']
+08/24 | A=['described', 'appeared', 'finished'] | SINGLE=['as', 'its', 'but'] | CONS=['as', 'its', 'but']
+09/24 | A=['the', 'radio', 'Elira'] | SINGLE=['damaged', 'a', 'leaving'] | CONS=['a', 'damaged', 'leaving']
+10/24 | A=['the', 'in', 'is'] | SINGLE=['in', 'is', 'sequence'] | CONS=['sequence', 'recorded', 'sealed']
+11/24 | A=['the', 'the', 'while'] | SINGLE=['while', 'by', 'the'] | CONS=['by', 'were', 'measurements']
+12/24 | A=['before', 'its', 'in'] | SINGLE=['in', 'and', 'crossed'] | CONS=['and', 'crossed', 'final']
+13/24 | A=['titanium', 'bronze', 'acrylic'] | SINGLE=['titanium', 'and', 'selected'] | CONS=['and', 'titanium', 'selected']
+14/24 | A=['emitted', 'it', 'beacon'] | SINGLE=['it', 'beacon', 'crimson'] | CONS=['crimson', 'beside', 'emitted']
+15/24 | A=['but', 'confirmed', 'showed'] | SINGLE=['became', 'after', 'the'] | CONS=['became', 'the', 'after']
+16/24 | A=['the', 'inner', 'the'] | SINGLE=['of', 'began', 'inner'] | CONS=['of', 'began', 'ring']
+17/24 | A=['was', 'replacement', 'felt'] | SINGLE=['as', 'the', 'whereas'] | CONS=['as', 'the', 'whereas']
+18/24 | A=['contained', 'a', 'a'] | SINGLE=['a', 'a', 'the'] | CONS=['the', 'was', 'chain']
+19/24 | A=['the', 'final', 'temporarily'] | SINGLE=['but', 'named', 'final'] | CONS=['but', 'named', 'called']
+20/24 | A=['interns', 'catalogued', 'sealed'] | SINGLE=['but', 'Dr', 'Edrin'] | CONS=['but', 'Dr', 'the']
+21/24 | A=['before', 'bronze', 'the'] | SINGLE=['for', 'tablet', 'Osaka'] | CONS=['for', 'tablet', 'Osaka']
+22/24 | A=['the', 'spectral', 'was'] | SINGLE=['was', 'seemed', 'confirmed'] | CONS=['confirmed', 'indigo', 'seemed']
+23/24 | A=['of', 'several', 'to'] | SINGLE=['primarily', 'several', 'was'] | CONS=['primarily', 'was', 'contained']
+24/24 | A=['began', 'and', 'then'] | SINGLE=['and', 'then', 'near'] | CONS=['near', 'paused', 'briefly']
+[9/15] TARGET SEAL OPEN - POST-HOC ONLY
+01/24 | Neris        | QUERY=5 | SINGLE=5 -> CONS=3 | TOP5=True
+02/24 | Velqor       | QUERY=13 | SINGLE=8 -> CONS=7 | TOP5=False
+03/24 | 583          | QUERY=13 | SINGLE=3 -> CONS=2 | TOP5=True
+04/24 | Lisbon       | QUERY=10 | SINGLE=8 -> CONS=6 | TOP5=False
+05/24 | ceramic      | QUERY=3 | SINGLE=3 -> CONS=14 | TOP5=False
+06/24 | magenta      | QUERY=9 | SINGLE=6 -> CONS=5 | TOP5=True
+07/24 | crawling     | QUERY=11 | SINGLE=13 -> CONS=10 | TOP5=False
+08/24 | lustrous     | QUERY=13 | SINGLE=5 -> CONS=4 | TOP5=True
+09/24 | compass      | QUERY=9 | SINGLE=9 -> CONS=7 | TOP5=False
+10/24 | Nerovak      | QUERY=10 | SINGLE=9 -> CONS=7 | TOP5=False
+11/24 | Siona        | QUERY=12 | SINGLE=9 -> CONS=5 | TOP5=True
+12/24 | Warsaw       | QUERY=12 | SINGLE=10 -> CONS=7 | TOP5=False
+13/24 | titanium     | QUERY=1 | SINGLE=1 -> CONS=2 | TOP5=True
+14/24 | crimson      | QUERY=6 | SINGLE=3 -> CONS=1 | TOP5=True
+15/24 | 892          | QUERY=13 | SINGLE=7 -> CONS=6 | TOP5=False
+16/24 | expanding    | QUERY=11 | SINGLE=7 -> CONS=5 | TOP5=True
+17/24 | velvety      | QUERY=9 | SINGLE=7 -> CONS=6 | TOP5=False
+18/24 | chronometer  | QUERY=4 | SINGLE=8 -> CONS=6 | TOP5=False
+19/24 | Norveth      | QUERY=9 | SINGLE=8 -> CONS=7 | TOP5=False
+20/24 | Edrin        | QUERY=9 | SINGLE=3 -> CONS=5 | TOP5=True
+21/24 | Osaka        | QUERY=6 | SINGLE=3 -> CONS=3 | TOP5=True
+22/24 | indigo       | QUERY=5 | SINGLE=5 -> CONS=2 | TOP5=True
+23/24 | feldspar     | QUERY=8 | SINGLE=9 -> CONS=7 | TOP5=False
+24/24 | decelerating | QUERY=8 | SINGLE=8 -> CONS=6 | TOP5=False
+[10/15] CONSENSUS SUMMARY
+QUERY     MED=9.0 | TOP3=0.083 | TOP5=0.208
+SINGLE    MED=7.0 | TOP3=0.250 | TOP5=0.375
+CONSENSUS MED=6.0 | TOP3=0.250 | TOP5=0.458 | BEATS_SINGLE=0.833
+[11/15] TEST319 REFERENCE
+TEST319 SINGLE: MED=7.0 TOP3=.250 TOP5=.375 | EXPECTED REPLICATION IN THIS RUN
+[12/15] PREDECLARED GATE
+TEST319_REPLICATION=True | MEDIAN_IMPROVES=True | TOP5_IMPROVES=True | TOP3_NONDECREASE=True | CLASS=MULTI_ANCHOR_CONSENSUS_SUPPORTED
+[13/15] SCIENTIFIC AUDIT
+ANCHORS ARE TOP3 QUERY SPANS. EQUAL-WEIGHT CONSENSUS IS FIXED. TARGET NEVER SELECTS ANCHOR, SCORE, WEIGHT OR CANDIDATE.
+[14/15] CASE + TARGET AUDIT
+FRESH_SET_LOCKED=True | CASE_ISOLATED=True | CROSS_CASE_DATA=False | TARGET_ENGINE_ACCESS=False | TARGET_POSTHOC_ONLY=True
+[15/15] INTEGRITY + SEAL
+============================================================================================================
+TEST 320 COMPLETE
+QUERY MED=9.0 | SINGLE MED=7.0 | CONSENSUS MED=6.0
+SINGLE TOP3=0.250 TOP5=0.375 | CONSENSUS TOP3=0.250 TOP5=0.458
+CONSENSUS_BEATS_SINGLE=0.833 | CLASS=MULTI_ANCHOR_CONSENSUS_SUPPORTED | GATE=PASS
+CASE_ISOLATED=TRUE | TARGET POST-HOC ONLY | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST320/T320-20260929-015318.json
+TXT : /content/AKBASCORE_TEST320/T320-20260929-015318.txt
+SHA : 6847f358bbc5694131abb14ac3c178f8f8596f91d5e9226b340904f77d02695c
+============================================================================================================
