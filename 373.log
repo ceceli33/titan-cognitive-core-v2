@@ -1,0 +1,25 @@
+ ====================================================================================================
+TEST 373 - TARGET-FREE RELATION->FILLER ROUTING BATTERY
+====================================================================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 79.7kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 916kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 74.5MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 71.1MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 130MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.50MB/s]Download complete: :  13.1GB,  573MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  485MB/s  Fetching 4 files: 100% 4/4 [00:40<00:00,  6.82s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.88it/s]generation_config.json: 100% 243/243 [00:00<00:00, 30.5kB/s]MODEL OK | 28L H=3584 HEADS=28 | 53.6s | FP=1.0912,-90.1989,92.6709,73.2364,13758.2012,-23395.7148
+WORD     | MED=33.0 T1=0.222 T3=0.333 T5=0.333
+GEOM     | MED=4.0 T1=0.222 T3=0.444 T5=0.556
+NEIGHBOR | MED=7.0 T1=0.000 T3=0.444 T5=0.444
+BOUNDARY | MED=7.0 T1=0.111 T3=0.333 T5=0.444
+----------------------------------------------------------------------------------------------------
+BEST TARGET-FREE READOUT: GEOM
+01 | 'Selin Aras'             R02 | SELECT='Selin'
+02 | 'cobalt compass'         R33 | SELECT='After'
+03 | 'Ravenna observatory'    R08 | SELECT='After'
+04 | '583'                    R02 | SELECT='2031'
+05 | '2031'                   R01 | SELECT='2031'
+06 | 'Lervan'                 R01 | SELECT='Lervan'
+07 | 'permanently stationary' R04 | SELECT='2031'
+08 | 'ceramic capsule'        R06 | SELECT='After'
+09 | 'eastern platform'       R18 | SELECT='beneath'
+----------------------------------------------------------------------------------------------------
+GATE | SUPPORTED=False | STRONG=False
+FP MATCH | JSON=/content/AKBASCORE_TEST373/T373-20260929-143231.json | SHA=1e14c2cc8055791c65ae33d412976b6f2b7997e57d1db29a19a083453d46ba38
+====================================================================================================
