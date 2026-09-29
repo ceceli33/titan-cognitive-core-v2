@@ -1,0 +1,210 @@
+ ============================================================================================================
+TEST 348 - VOCABULARY-WIDE ENDOGENOUS FIRST-TOKEN ENTRY ASSAY
+============================================================================================================
+START: 2026-09-29T10:55:56.560+00:00
+[1/18] MODEL LOAD
+config.json: 100% 663/663 [00:00<00:00, 61.6kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 885kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+vocab.json: 100% 2.78M/2.78M [00:00<00:00, 40.8MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 72.6MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 128MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.59MB/s]Download complete: :  13.1GB,  519MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  486MB/s  Fetching 4 files: 100% 4/4 [00:38<00:00,  6.54s/it]Loading weights: 100% 339/339 [00:04<00:00, 99.00it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.3kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | torch.bfloat16 | 47.13s
+[2/18] ENGINE LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | FULL ASSISTANT-OUTPUT | PRIMARY SCORE=DELTA | ENTRY_ALPHA=0.5
+[3/18] QUERY NULL CACHE
+NULL READY
+[4/18] TARGET-FREE PACKET BANK
+01/24 | BANK= 15
+02/24 | BANK= 15
+03/24 | BANK= 13
+04/24 | BANK= 15
+05/24 | BANK= 14
+06/24 | BANK= 13
+07/24 | BANK= 15
+08/24 | BANK= 13
+09/24 | BANK= 14
+10/24 | BANK= 10
+11/24 | BANK= 13
+12/24 | BANK= 14
+13/24 | BANK= 14
+14/24 | BANK= 11
+15/24 | BANK= 13
+16/24 | BANK= 11
+17/24 | BANK= 13
+18/24 | BANK= 17
+19/24 | BANK= 14
+20/24 | BANK= 13
+21/24 | BANK= 14
+22/24 | BANK= 13
+23/24 | BANK= 10
+24/24 | BANK= 14
+SHOWCASE | BANK= 16
+[5/18] FROZEN ARGMAX(DISP) ROUTER
+01/24 | ANCHOR='During' | DISP=0.465429
+02/24 | ANCHOR='designation' | DISP=0.322664
+03/24 | ANCHOR='After' | DISP=0.486695
+04/24 | ANCHOR='research' | DISP=0.396355
+05/24 | ANCHOR='After' | DISP=0.402966
+06/24 | ANCHOR='status' | DISP=0.327831
+07/24 | ANCHOR='began' | DISP=0.260100
+08/24 | ANCHOR='original' | DISP=0.323299
+09/24 | ANCHOR='equipment' | DISP=0.229279
+10/24 | ANCHOR='emergency' | DISP=0.470756
+11/24 | ANCHOR='Merik' | DISP=0.516476
+12/24 | ANCHOR='transport' | DISP=0.390755
+13/24 | ANCHOR='The' | DISP=0.365645
+14/24 | ANCHOR='The' | DISP=0.344858
+15/24 | ANCHOR='display' | DISP=0.454496
+16/24 | ANCHOR='When' | DISP=0.348160
+17/24 | ANCHOR='The' | DISP=0.354542
+18/24 | ANCHOR='storage' | DISP=0.428094
+19/24 | ANCHOR='prototype' | DISP=0.305135
+20/24 | ANCHOR='Several' | DISP=0.316570
+21/24 | ANCHOR='archaeological' | DISP=0.347268
+22/24 | ANCHOR='untreated' | DISP=0.396924
+23/24 | ANCHOR='Sample' | DISP=0.352017
+24/24 | ANCHOR='platform' | DISP=0.290880
+SHOWCASE | ANCHOR='Mustafa' | DISP=0.259882
+[6/18] ENGINE + SCORE RULES FROZEN
+PRIMARY=DELTA=S-V | SECONDARY STEER=S | ENTRY=S+0.5*(S-V) | NO SCORE SEARCH | TARGET_ACCESS=False
+[7/18] ASSISTANT INDEX AUDIT
+01/24 | POS=46 | TOKEN='assistant'
+02/24 | POS=49 | TOKEN='assistant'
+03/24 | POS=50 | TOKEN='assistant'
+04/24 | POS=47 | TOKEN='assistant'
+05/24 | POS=49 | TOKEN='assistant'
+06/24 | POS=50 | TOKEN='assistant'
+07/24 | POS=52 | TOKEN='assistant'
+08/24 | POS=47 | TOKEN='assistant'
+09/24 | POS=47 | TOKEN='assistant'
+10/24 | POS=47 | TOKEN='assistant'
+11/24 | POS=46 | TOKEN='assistant'
+12/24 | POS=49 | TOKEN='assistant'
+13/24 | POS=49 | TOKEN='assistant'
+14/24 | POS=48 | TOKEN='assistant'
+15/24 | POS=50 | TOKEN='assistant'
+16/24 | POS=47 | TOKEN='assistant'
+17/24 | POS=47 | TOKEN='assistant'
+18/24 | POS=47 | TOKEN='assistant'
+19/24 | POS=48 | TOKEN='assistant'
+20/24 | POS=46 | TOKEN='assistant'
+21/24 | POS=47 | TOKEN='assistant'
+22/24 | POS=48 | TOKEN='assistant'
+23/24 | POS=50 | TOKEN='assistant'
+24/24 | POS=50 | TOKEN='assistant'
+SHOWCASE | POS=56 | TOKEN='assistant'
+[8/18] FULL-VOCAB DISTRIBUTIONS FROZEN - TARGET SEALED
+01/24 | D1='engine' | S1='Information' | E1='Information'
+02/24 | D1='missing' | S1='information' | E1='information'
+03/24 | D1=' ' | S1='Information' | E1='1'
+04/24 | D1='port' | S1='Unknown' | E1='Unknown'
+05/24 | D1=' K' | S1='information' | E1='carbon'
+06/24 | D1=' after' | S1='Green' | E1='green'
+07/24 | D1='started' | S1='started' | E1='started'
+08/24 | D1=' as' | S1='The' | E1='as'
+09/24 | D1='variably' | S1='information' | E1='information'
+10/24 | D1='one' | S1='Information' | E1='information'
+11/24 | D1='it' | S1='Information' | E1='information'
+12/24 | D1=' Am' | S1='information' | E1='information'
+13/24 | D1='ęd' | S1='information' | E1='steel'
+14/24 | D1='red' | S1='yellow' | E1='red'
+15/24 | D1=' ' | S1='Information' | E1='1'
+16/24 | D1=' extended' | S1='It' | E1='expanded'
+17/24 | D1='so' | S1='soft' | E1='soft'
+18/24 | D1=' a' | S1='Item' | E1='item'
+19/24 | D1=' never' | S1='Ne' | E1='Ne'
+20/24 | D1='it' | S1='Apollo' | E1='The'
+21/24 | D1=' a' | S1='information' | E1='Smith'
+22/24 | D1='ver' | S1='missing' | E1='blue'
+23/24 | D1=' it' | S1='information' | E1='It'
+24/24 | D1='information' | S1='Col' | E1='col'
+SHOWCASE | D1='ath' | S1='He' | E1='He'
+[9/18] TARGET OPENS - VOCABULARY RANK READOUT
+01/24 | T='Br' | V=2576 S=732 D=6775 E=527 | dLOGIT=+1.469
+02/24 | T='Nor' | V=2776 S=3652 D=103935 E=5115 | dLOGIT=+0.062
+03/24 | T='5' | V=385 S=22 D=9 E=9 | dLOGIT=+7.500
+04/24 | T='Dub' | V=209 S=130 D=30834 E=120 | dLOGIT=+0.312
+05/24 | T='obs' | V=1053 S=431 D=13893 E=410 | dLOGIT=+1.125
+06/24 | T='m' | V=16508 S=1392 D=197 E=573 | dLOGIT=+2.938
+07/24 | T='c' | V=156 S=192 D=127294 E=276 | dLOGIT=-0.750
+08/24 | T='g' | V=2856 S=464 D=249 E=272 | dLOGIT=+2.781
+09/24 | T='compass' | V=182 S=89 D=2151 E=73 | dLOGIT=+1.625
+10/24 | T='D' | V=794 S=372 D=19583 E=374 | dLOGIT=+0.562
+11/24 | T='T' | V=161 S=73 D=15873 E=68 | dLOGIT=+0.875
+12/24 | T='Br' | V=223 S=105 D=16508 E=95 | dLOGIT=+0.562
+13/24 | T='t' | V=349 S=80 D=32 E=49 | dLOGIT=+4.125
+14/24 | T='scar' | V=511 S=358 D=49642 E=388 | dLOGIT=+0.875
+15/24 | T='8' | V=20 S=5 D=64 E=3 | dLOGIT=+5.625
+16/24 | T='exp' | V=14 S=12 D=70953 E=26 | dLOGIT=-1.000
+17/24 | T='vel' | V=855 S=274 D=2454 E=201 | dLOGIT=+2.125
+18/24 | T='hy' | V=31501 S=6589 D=2886 E=3621 | dLOGIT=+1.727
+19/24 | T='Kel' | V=809 S=965 D=84285 E=1154 | dLOGIT=-0.594
+20/24 | T='V' | V=97 S=46 D=14432 E=44 | dLOGIT=+0.500
+21/24 | T='N' | V=179 S=43 D=2155 E=32 | dLOGIT=+2.125
+22/24 | T='ind' | V=617 S=79 D=89 E=37 | dLOGIT=+3.625
+23/24 | T='feld' | V=3040 S=753 D=2783 E=519 | dLOGIT=+2.000
+24/24 | T='descending' | V=24056 S=21269 D=52494 E=20930 | dLOGIT=+0.438
+SHOWCASE | T='placed' | V=450 S=199 D=3208 E=154 | dLOGIT=+1.750
+[10/18] PRIMARY DELTA SUMMARY
+VANILLA | MED=564.0 | T1=0.000 T5=0.000 T10=0.000 T50=0.083 T256=0.375
+STEER   | MED=233.0 | T1=0.000 T5=0.042 T10=0.042 T50=0.208 T256=0.500
+DELTA   | MED=10334.0 | T1=0.000 T5=0.000 T10=0.042 T50=0.083 T256=0.250
+ENTRY   | MED=236.5 | T1=0.000 T5=0.042 T10=0.083 T50=0.292 T256=0.500
+[11/18] ENDOGENOUS ENTRY SIGNAL
+TARGET_DELTA_POS=0.875000 | DELTA_BEATS_VANILLA=0.291667 | ENTRY_BEATS_STEER=0.750000
+[12/18] TOP-DELTA TOKEN AUDIT
+01/24 | TARGET='Br' R=6775 | TOPΔ='engine', 'it', 'action', ' Engine', ' Action'
+02/24 | TARGET='Nor' R=103935 | TOPΔ='missing', ' missing', '缺失', ' Missing', 'information'
+03/24 | TARGET='5' R=9 | TOPΔ=' ', '1', '2', '4', '3'
+04/24 | TARGET='Dub' R=30834 | TOPΔ='port', ' Port', 'aw', ' port', 'a'
+05/24 | TARGET='obs' R=13893 | TOPΔ=' K', 't', '复合', ' high', 'ep'
+06/24 | TARGET='m' R=197 | TOPΔ=' after', ' to', ' a', ' ', ' can'
+07/24 | TARGET='c' R=127294 | TOPΔ='started', 'Built', '_started', ' Built', ' Started'
+08/24 | TARGET='g' R=249 | TOPΔ=' as', 'as', ' As', '作为', '.as'
+09/24 | TARGET='compass' R=2151 | TOPΔ='variably', ' Clintons', ' lawy', 'iferay', ' });\n\n\n\n'
+10/24 | TARGET='D' R=19583 | TOPΔ='one', 'un', 'a', ' ', 'an'
+11/24 | TARGET='T' R=15873 | TOPΔ='it', 'engine', 'an', 'data', 'techn'
+12/24 | TARGET='Br' R=16508 | TOPΔ=' Am', ' it', ' the', ' G', ' a'
+13/24 | TARGET='t' R=32 | TOPΔ='ęd', '_UNKNOWN', 'urances', 'variably', ' UNS'
+14/24 | TARGET='scar' R=49642 | TOPΔ='red', 'amed', 'ye', 'am', 'amber'
+15/24 | TARGET='8' R=64 | TOPΔ=' ', 'data', ' data', ' Data', 'value'
+16/24 | TARGET='exp' R=70953 | TOPΔ=' extended', 'extended', ' ', ' moved', '\n'
+17/24 | TARGET='vel' R=2454 | TOPΔ='so', 'oft', ' Venezuel', 'nas', ' Pacers'
+18/24 | TARGET='hy' R=2886 | TOPΔ=' a', ' pen', ' Pen', 'pen', ' an'
+19/24 | TARGET='Kel' R=84285 | TOPΔ=' never', 'never', 'after', ' after', '最终'
+20/24 | TARGET='V' R=14432 | TOPΔ='it', ' it', ' they', ' G', ' a'
+21/24 | TARGET='N' R=2155 | TOPΔ=' a', ' it', 'a', ' A', 'it'
+22/24 | TARGET='ind' R=89 | TOPΔ='ver', 'ul', 'nav', 'we', ' we'
+23/24 | TARGET='feld' R=2783 | TOPΔ=' it', ' a', ' so', ' tests', ' '
+24/24 | TARGET='descending' R=52494 | TOPΔ='information', 'enc', 'internal', 'used', 're'
+[13/18] PREDECLARED GATES
+DELTA_SIGNAL=True | DELTA_CANDIDATE=False | DELTA_STRONG=False | ENTRY_HELP=False
+[14/18] SHOWCASE
+------------------------------------------------------------------------------------------------------------
+SOURCE : Mustafa Akbaş placed an amber banner beneath the Galata Bridge where the validation demonstration was conducted.
+QUESTION: What did Mustafa Akbaş do at the location of the validation demonstration?
+TARGET : placed an amber banner | TOKEN: 'placed'
+ANCHOR : Mustafa
+RANK V=450 S=199 D=3208 E=154 | TARGET dLOGIT=+1.750
+TOP DELTA: [('ath', 3.672), ('_WARNINGS', 3.609), ('gambar', 3.531), ('time', 3.516), ('BOSE', 3.508), ('team', 3.461), ('charges', 3.402), (' throw', 3.398), ('抛', 3.375), ('expl', 3.375)]
+TOP STEER: [('He', 17.0), ('Must', 16.75), ('Att', 16.375), ('organized', 15.25), ('Led', 14.938), ('set', 14.75), ('Organ', 14.562), ('led', 14.312), ('he', 14.25), ('organ', 14.062)]
+TOP ENTRY: [('He', 17.781), ('Must', 17.062), ('Att', 16.0), ('he', 15.75), ('organized', 15.719), ('set', 14.781), ('Led', 14.75), ('organ', 14.75), ('Organ', 14.594), ('led', 14.188)]
+------------------------------------------------------------------------------------------------------------
+[15/18] CLASSIFICATION
+CLASS= TARGET_LOGIT_GAIN_PRESENT_WITHOUT_USEFUL_VOCABULARY_LOCALIZATION
+[16/18] INTERPRETATION LOCK
+PRIMARY DELTA RULE FROZEN BEFORE TARGET | STEER/ENTRY SECONDARY ONLY | TARGET NEVER USED FOR ROUTING/INJECTION/SCORE SELECTION
+[17/18] SCIENTIFIC AUDIT
+TEST347 ENGINE UNCHANGED | SAME COMPILER | SAME ARGMAX(DISP) | SAME RSS | FULL ASSISTANT-OUTPUT | NO ORACLE | NO TRAINING | NO WEIGHT UPDATE
+[18/18] INTEGRITY + SAVE
+============================================================================================================
+TEST 348 COMPLETE
+VANILLA | MED=564.0 | T10=0.000 | T50=0.083 | T256=0.375
+STEER   | MED=233.0 | T10=0.042 | T50=0.208 | T256=0.500
+DELTA   | MED=10334.0 | T10=0.042 | T50=0.083 | T256=0.250
+ENTRY   | MED=236.5 | T10=0.083 | T50=0.292 | T256=0.500
+TARGET_DELTA_POS=0.875 | DELTA_BEATS_VANILLA=0.292 | ENTRY_BEATS_STEER=0.750
+CLASS= TARGET_LOGIT_GAIN_PRESENT_WITHOUT_USEFUL_VOCABULARY_LOCALIZATION
+PRIMARY=DELTA PREDECLARED | TARGET POST-HOC ONLY | WEIGHTS FROZEN | HOOKS=0
+JSON: /content/AKBASCORE_TEST348/T348-20260929-105718.json
+TXT : /content/AKBASCORE_TEST348/T348-20260929-105718.txt
+SHA : 3473394432af2d4a83bec902aa2e7f47bc935a875542b60991b99acde18f0a31
+============================================================================================================
