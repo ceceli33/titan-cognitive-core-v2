@@ -1,0 +1,209 @@
+ ============================================================================================================
+TEST 345 - FROZEN ASSISTANT-OUTPUT SEASC -> FREE AUTOREGRESSIVE RETRIEVAL
+============================================================================================================
+START: 2026-09-29T10:30:19.870+00:00
+[1/18] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 80.7kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 675kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 82.7MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 66.5MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 129MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.07MB/s]Download complete: :  13.1GB,  272MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  346MB/s  Fetching 4 files: 100% 4/4 [00:41<00:00,  7.49s/it]Loading weights: 100% 339/339 [00:03<00:00, 97.85it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.8kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | torch.bfloat16 | 53.94s
+[2/18] ENGINE LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | L0-L25 | FULL ASSISTANT-OUTPUT PROFILE FROZEN | GREEDY
+[3/18] QUERY NULL CACHE
+NULL READY
+[4/18] TARGET-FREE PACKET BANK
+01/24 | BANK= 15
+02/24 | BANK= 15
+03/24 | BANK= 13
+04/24 | BANK= 15
+05/24 | BANK= 14
+06/24 | BANK= 13
+07/24 | BANK= 15
+08/24 | BANK= 13
+09/24 | BANK= 14
+10/24 | BANK= 10
+11/24 | BANK= 13
+12/24 | BANK= 14
+13/24 | BANK= 14
+14/24 | BANK= 11
+15/24 | BANK= 13
+16/24 | BANK= 11
+17/24 | BANK= 13
+18/24 | BANK= 17
+19/24 | BANK= 14
+20/24 | BANK= 13
+21/24 | BANK= 14
+22/24 | BANK= 13
+23/24 | BANK= 10
+24/24 | BANK= 14
+SHOWCASE | BANK= 16
+[5/18] FROZEN ARGMAX(DISP) ROUTER - TEST344 METHOD
+01/24 | ANCHOR='During' | DISP=0.465429
+02/24 | ANCHOR='designation' | DISP=0.322664
+03/24 | ANCHOR='After' | DISP=0.486695
+04/24 | ANCHOR='research' | DISP=0.396355
+05/24 | ANCHOR='After' | DISP=0.402966
+06/24 | ANCHOR='status' | DISP=0.327831
+07/24 | ANCHOR='began' | DISP=0.260100
+08/24 | ANCHOR='original' | DISP=0.323299
+09/24 | ANCHOR='equipment' | DISP=0.229279
+10/24 | ANCHOR='emergency' | DISP=0.470756
+11/24 | ANCHOR='Merik' | DISP=0.516476
+12/24 | ANCHOR='transport' | DISP=0.390755
+13/24 | ANCHOR='The' | DISP=0.365645
+14/24 | ANCHOR='The' | DISP=0.344858
+15/24 | ANCHOR='display' | DISP=0.454496
+16/24 | ANCHOR='When' | DISP=0.348160
+17/24 | ANCHOR='The' | DISP=0.354542
+18/24 | ANCHOR='storage' | DISP=0.428094
+19/24 | ANCHOR='prototype' | DISP=0.305135
+20/24 | ANCHOR='Several' | DISP=0.316570
+21/24 | ANCHOR='archaeological' | DISP=0.347268
+22/24 | ANCHOR='untreated' | DISP=0.396924
+23/24 | ANCHOR='Sample' | DISP=0.352017
+24/24 | ANCHOR='platform' | DISP=0.290880
+SHOWCASE | ANCHOR='Mustafa' | DISP=0.259882
+[6/18] ROUTER + PROFILE FROZEN
+PROFILE=FULL | ASSISTANT->OUTPUT | NO DECAY SEARCH | NO ORACLE | TARGET_ACCESS=False
+[7/18] ASSISTANT INDEX AUDIT
+01/24 | POS=46 | TOKEN='assistant'
+02/24 | POS=49 | TOKEN='assistant'
+03/24 | POS=50 | TOKEN='assistant'
+04/24 | POS=47 | TOKEN='assistant'
+05/24 | POS=49 | TOKEN='assistant'
+06/24 | POS=50 | TOKEN='assistant'
+07/24 | POS=52 | TOKEN='assistant'
+08/24 | POS=47 | TOKEN='assistant'
+09/24 | POS=47 | TOKEN='assistant'
+10/24 | POS=47 | TOKEN='assistant'
+11/24 | POS=46 | TOKEN='assistant'
+12/24 | POS=49 | TOKEN='assistant'
+13/24 | POS=49 | TOKEN='assistant'
+14/24 | POS=48 | TOKEN='assistant'
+15/24 | POS=50 | TOKEN='assistant'
+16/24 | POS=47 | TOKEN='assistant'
+17/24 | POS=47 | TOKEN='assistant'
+18/24 | POS=47 | TOKEN='assistant'
+19/24 | POS=48 | TOKEN='assistant'
+20/24 | POS=46 | TOKEN='assistant'
+21/24 | POS=47 | TOKEN='assistant'
+22/24 | POS=48 | TOKEN='assistant'
+23/24 | POS=50 | TOKEN='assistant'
+24/24 | POS=50 | TOKEN='assistant'
+SHOWCASE | POS=56 | TOKEN='assistant'
+[8/18] VANILLA FREE GENERATION - TARGET SEALED
+01/24 | 'Information is missing.'
+02/24 | 'Meteorite'
+03/24 | 'Information is missing.'
+04/24 | 'Information is missing.'
+05/24 | 'information is missing'
+06/24 | 'Green'
+07/24 | 'working on the engine'
+08/24 | 'The treated sample was described as appearing homogeneous with no visible clumping.'
+09/24 | 'information is missing'
+10/24 | 'Information is missing.'
+11/24 | 'Information is missing.'
+12/24 | 'Information is missing.'
+13/24 | 'information is missing'
+14/24 | 'Red'
+15/24 | 'Information is missing.'
+16/24 | 'It began to evolve.'
+17/24 | 'The replacement fabric was described as durable and colorfast.'
+18/24 | 'Information is missing.'
+19/24 | 'information is missing'
+20/24 | 'Apollo 12 astronauts'
+21/24 | 'Information is missing.'
+22/24 | 'Missing context.'
+23/24 | 'information about a specific topic'
+24/24 | 'Collecting soil samples.'
+SHOWCASE | 'Attended the demonstration.'
+[9/18] SEASC FREE GENERATION - TARGET SEALED
+01/24 | 'Information is missing.'
+02/24 | 'information is missing'
+03/24 | 'Information is missing.'
+04/24 | 'Unknown.'
+05/24 | 'information is missing'
+06/24 | 'Green'
+07/24 | 'started the engine'
+08/24 | 'The treated sample was described as having a distinct color change and an altered texture.'
+09/24 | 'information is missing'
+10/24 | 'Information is missing.'
+11/24 | 'Information is missing.'
+12/24 | 'information is missing'
+13/24 | 'information is missing'
+14/24 | 'yellow'
+15/24 | 'Information is missing.'
+16/24 | 'It started to form.'
+17/24 | 'soft and durable.'
+18/24 | 'Item A was chosen for testing.'
+19/24 | 'Neon'
+20/24 | 'Apollo astronauts.'
+21/24 | 'The bronze disk was stored in a museum.'
+22/24 | 'missing information'
+23/24 | 'information is missing'
+24/24 | 'Collected soil samples'
+SHOWCASE | 'He led the demonstration.'
+[10/18] OUTPUTS FROZEN - TARGET SEAL OPENS
+01/24 | TARGET='Bravik' | V='Information is missing.' | S='Information is missing.' | EXACT 0->0 | MENTION 0->0
+02/24 | TARGET='Norvex' | V='Meteorite' | S='information is missing' | EXACT 0->0 | MENTION 0->0
+03/24 | TARGET='583' | V='Information is missing.' | S='Information is missing.' | EXACT 0->0 | MENTION 0->0
+04/24 | TARGET='Dubrovnik' | V='Information is missing.' | S='Unknown.' | EXACT 0->0 | MENTION 0->0
+05/24 | TARGET='obsidian' | V='information is missing' | S='information is missing' | EXACT 0->0 | MENTION 0->0
+06/24 | TARGET='magenta' | V='Green' | S='Green' | EXACT 0->0 | MENTION 0->0
+07/24 | TARGET='crawling' | V='working on the engine' | S='started the engine' | EXACT 0->0 | MENTION 0->0
+08/24 | TARGET='glossy' | V='The treated sample was described as appearing homogeneous with no visible clumping.' | S='The treated sample was described as having a distinct color change and an altered texture.' | EXACT 0->0 | MENTION 0->0
+09/24 | TARGET='compass' | V='information is missing' | S='information is missing' | EXACT 0->0 | MENTION 0->0
+10/24 | TARGET='Dorevian' | V='Information is missing.' | S='Information is missing.' | EXACT 0->0 | MENTION 0->0
+11/24 | TARGET='Talora' | V='Information is missing.' | S='Information is missing.' | EXACT 0->0 | MENTION 0->0
+12/24 | TARGET='Bratislava' | V='Information is missing.' | S='information is missing' | EXACT 0->0 | MENTION 0->0
+13/24 | TARGET='tungsten' | V='information is missing' | S='information is missing' | EXACT 0->0 | MENTION 0->0
+14/24 | TARGET='scarlet' | V='Red' | S='yellow' | EXACT 0->0 | MENTION 0->0
+15/24 | TARGET='817' | V='Information is missing.' | S='Information is missing.' | EXACT 0->0 | MENTION 0->0
+16/24 | TARGET='expanding' | V='It began to evolve.' | S='It started to form.' | EXACT 0->0 | MENTION 0->0
+17/24 | TARGET='velvety' | V='The replacement fabric was described as durable and colorfast.' | S='soft and durable.' | EXACT 0->0 | MENTION 0->0
+18/24 | TARGET='hygrometer' | V='Information is missing.' | S='Item A was chosen for testing.' | EXACT 0->0 | MENTION 0->0
+19/24 | TARGET='Kelvane' | V='information is missing' | S='Neon' | EXACT 0->0 | MENTION 0->0
+20/24 | TARGET='Veyron' | V='Apollo 12 astronauts' | S='Apollo astronauts.' | EXACT 0->0 | MENTION 0->0
+21/24 | TARGET='Nagoya' | V='Information is missing.' | S='The bronze disk was stored in a museum.' | EXACT 0->0 | MENTION 0->0
+22/24 | TARGET='indigo' | V='Missing context.' | S='missing information' | EXACT 0->0 | MENTION 0->0
+23/24 | TARGET='feldspar' | V='information about a specific topic' | S='information is missing' | EXACT 0->0 | MENTION 0->0
+24/24 | TARGET='descending' | V='Collecting soil samples.' | S='Collected soil samples' | EXACT 0->0 | MENTION 0->0
+SHOWCASE | TARGET='placed an amber banner' | V='Attended the demonstration.' | S='He led the demonstration.' | EXACT 0->0 | MENTION 0->0
+[11/18] PRIMARY BEHAVIOR SUMMARY
+vanilla_exact=0.000000
+seasc_exact=0.000000
+vanilla_mention=0.000000
+seasc_mention=0.000000
+changed=0.625000
+[12/18] CASE TRANSITIONS
+EXACT_GAIN=0 | EXACT_LOSS=0 | MENTION_GAIN=0 | MENTION_LOSS=0
+[13/18] PREDECLARED DECISION GATES
+EXACT_GATE=False | MENTION_GATE=False | SYSTEMATIC_GATE=False
+[14/18] SHOWCASE
+------------------------------------------------------------------------------------------------------------
+SOURCE : Mustafa Akbaş placed an amber banner beneath the Galata Bridge where the validation demonstration was conducted.
+QUESTION: What did Mustafa Akbaş do at the location of the validation demonstration?
+TARGET : placed an amber banner
+ANCHOR : Mustafa
+VANILLA: Attended the demonstration.
+SEASC  : He led the demonstration.
+EXACT 0->0 | MENTION 0->0
+------------------------------------------------------------------------------------------------------------
+[15/18] CLASSIFICATION
+CLASS= ASSISTANT_OUTPUT_SEASC_CHANGES_GENERATION_WITHOUT_RELIABLE_RETRIEVAL
+[16/18] LEAKAGE AUDIT
+SOURCE ABSENT FROM QUESTION | TARGET SEALED THROUGH COMPILER/ROUTER/GENERATION | TARGET USED ONLY AFTER BOTH OUTPUTS FROZEN
+[17/18] SCIENTIFIC AUDIT
+MAIN PROJECT | TEST344 FULL PROFILE FROZEN | SAME COMPILER | SAME ARGMAX(DISP) | SAME RSS | GREEDY | NO TEACHER FORCING | NO ORACLE | NO TRAINING | NO WEIGHT UPDATE
+[18/18] INTEGRITY + SAVE
+============================================================================================================
+TEST 345 COMPLETE
+EXACT  : 0.000->0.000 | GAIN=0 LOSS=0
+MENTION: 0.000->0.000 | GAIN=0 LOSS=0
+CHANGED=0.625
+CLASS= ASSISTANT_OUTPUT_SEASC_CHANGES_GENERATION_WITHOUT_RELIABLE_RETRIEVAL
+SOURCE REMOVED | TARGET SEALED THROUGH GENERATION | GREEDY | NO TEACHER FORCING | WEIGHT INTEGRITY PASS | HOOKS=0
+JSON: /content/AKBASCORE_TEST345/T345-20260929-103159.json
+TXT : /content/AKBASCORE_TEST345/T345-20260929-103159.txt
+SHA : 26c81b6b259412d1c0c11f21ae54fb8f57737d3f8cb988783c5adeae57c7f951
+============================================================================================================
