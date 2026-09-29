@@ -1,0 +1,162 @@
+ ============================================================================================================
+TEST 336 - FROZEN DISP ROUTER -> TARGET-FREE CONTRASTIVE VOCABULARY READOUT
+============================================================================================================
+START: 2026-09-29T07:40:02.968+00:00
+[1/18] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 85.8kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 925kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 71.3MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 75.1MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 122MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.73MB/s]Download complete: :  13.1GB,  558MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  515MB/s  Fetching 4 files: 100% 4/4 [00:42<00:00,  7.15s/it]Loading weights: 100% 339/339 [00:03<00:00, 97.25it/s]generation_config.json: 100% 243/243 [00:00<00:00, 32.3kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | VOCAB=152064 | torch.bfloat16 | 53.10s
+[2/18] ENGINE + ROUTER LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | ROUTER=ARGMAX(DISP) | READOUT=TARGET-FREE CONTRAST | TARGET SEALED
+[3/18] QUERY NULL CACHE
+NULL READY
+[4/18] ANCHOR BANK - TARGET SEALED
+01/24 | BANK= 18
+02/24 | BANK= 13
+03/24 | BANK= 14
+04/24 | BANK= 13
+05/24 | BANK= 14
+06/24 | BANK= 14
+07/24 | BANK= 15
+08/24 | BANK= 13
+09/24 | BANK= 14
+10/24 | BANK= 10
+11/24 | BANK= 12
+12/24 | BANK= 15
+13/24 | BANK= 14
+14/24 | BANK= 12
+15/24 | BANK= 13
+16/24 | BANK= 15
+17/24 | BANK= 13
+18/24 | BANK= 18
+19/24 | BANK= 14
+20/24 | BANK= 13
+21/24 | BANK= 13
+22/24 | BANK= 15
+23/24 | BANK= 13
+24/24 | BANK= 14
+SHOWCASE | BANK= 16
+[5/18] SOURCE REMOVED
+[6/18] BLIND DISP ROUTER - EXACT TEST330-335
+01/24 | ANCHOR='At' | DISP=0.280106
+02/24 | ANCHOR='designation' | DISP=0.504876
+03/24 | ANCHOR='Three' | DISP=0.324805
+04/24 | ANCHOR='expedition' | DISP=0.365987
+05/24 | ANCHOR='For' | DISP=0.442572
+06/24 | ANCHOR='indicator' | DISP=0.320354
+07/24 | ANCHOR='the' | DISP=0.275935
+08/24 | ANCHOR='untreated' | DISP=0.260658
+09/24 | ANCHOR='Beside' | DISP=0.214047
+10/24 | ANCHOR='authorization' | DISP=0.341026
+11/24 | ANCHOR='Dalen' | DISP=0.404590
+12/24 | ANCHOR='cargo' | DISP=0.387109
+13/24 | ANCHOR='The' | DISP=0.349450
+14/24 | ANCHOR='The' | DISP=0.309536
+15/24 | ANCHOR='counter' | DISP=0.350612
+16/24 | ANCHOR='When' | DISP=0.252732
+17/24 | ANCHOR='The' | DISP=0.345451
+18/24 | ANCHOR='Inside' | DISP=0.380952
+19/24 | ANCHOR='became' | DISP=0.380217
+20/24 | ANCHOR='Several' | DISP=0.271946
+21/24 | ANCHOR='before' | DISP=0.276453
+22/24 | ANCHOR='coating' | DISP=0.289513
+23/24 | ANCHOR='R-7' | DISP=0.272824
+24/24 | ANCHOR='began' | DISP=0.313759
+SHOWCASE | ANCHOR='beside' | DISP=0.239380
+[7/18] ROUTER + PACKETS SEALED
+ARGMAX(DISP) COMPLETE | PACKETS FROZEN | TARGET_ACCESS=False
+[8/18] TARGET-FREE CONTRASTIVE READOUT
+01/24 | CONTRAST_TOP5= ["'answer'", "'data'", "'it'", "'task'", "'\\\\Id'"]
+02/24 | CONTRAST_TOP5= ["'.`);\\n'", "'👋'", "' *</'", "' pupper'", "'kek'"]
+03/24 | CONTRAST_TOP5= ["'3'", "'1'", "'2'", "' '", "'8'"]
+04/24 | CONTRAST_TOP5= ["'a'", "' San'", "'it'", "'an'", "' J'"]
+05/24 | CONTRAST_TOP5= ["'it'", "'is'", "'data'", "'st'", "'p'"]
+06/24 | CONTRAST_TOP5= ["'read'", "'bec'", "' you'", "' can'", "'you'"]
+07/24 | CONTRAST_TOP5= ["' B'", "'B'", "' Beg'", "'Intialized'", "' beg'"]
+08/24 | CONTRAST_TOP5= ["' as'", "'as'", "' As'", "' with'", "'with'"]
+09/24 | CONTRAST_TOP5= ["' it'", "' data'", "' I'", "' can'", "'ewan'"]
+10/24 | CONTRAST_TOP5= ["'in'", "'code'", "'is'", "'one'", "' '"]
+11/24 | CONTRAST_TOP5= ["'data'", "'it'", "'techn'", "'he'", "' He'"]
+12/24 | CONTRAST_TOP5= ["'its'", "'it'", "' its'", "'ant'", "'port'"]
+13/24 | CONTRAST_TOP5= ["'真正做到'", "' Venezuel'", "'it'", "'tp'", "' Tory'"]
+14/24 | CONTRAST_TOP5= ["'?'", "','", "'white'", "'unknown'", "' Oilers'"]
+15/24 | CONTRAST_TOP5= ["' '", "'.'", "'data'", "'after'", "' data'"]
+16/24 | CONTRAST_TOP5= ["'to'", "' to'", "'\\n'", "' To'", "'v'"]
+17/24 | CONTRAST_TOP5= ["' as'", "'as'", "'作为'", "'-as'", "' As'"]
+18/24 | CONTRAST_TOP5= ["' a'", "'a'", "'an'", "' an'", "' the'"]
+19/24 | CONTRAST_TOP5= ["'it'", "'information'", "'this'", "'no'", "'internal'"]
+20/24 | CONTRAST_TOP5= ["'data'", "'it'", "'a'", "'an'", "'att'"]
+21/24 | CONTRAST_TOP5= ["'Missing'", "' missing'", "' miss'", '"].\'"', "'ornment'"]
+22/24 | CONTRAST_TOP5= ["' there'", "' it'", "' we'", "' the'", "' a'"]
+23/24 | CONTRAST_TOP5= ["' Klan'", "'并不是很'", "'média'", "'真正做到'", "' Canucks'"]
+24/24 | CONTRAST_TOP5= ["'information'", "'_information'", "' Information'", "'Information'", "' information'"]
+SHOWCASE | CONTRAST_TOP5= ["'ヵ'", '";\'>"', "'InMillis'", "'Location'", "'Short'"]
+[9/18] TARGET-FREE CANDIDATES SEALED
+TOP1000 CONTRAST + STEER LISTS FROZEN BEFORE TARGET ACCESS
+[10/18] TARGET SEAL OPEN - BLIND READOUT AUDIT
+01/24 | T='Caldor' | R=14->10 | CR=57687 | C=+1.525 | C1='answer'
+02/24 | T='Zenvik' | R=1351->817 | CR=30070 | C=-4.209 | C1='.`);\n'
+03/24 | T='741' | R=170->30 | CR=5 | C=+9.624 | C1='3'
+04/24 | T='Seville' | R=471->245 | CR=9902 | C=+2.850 | C1='a'
+05/24 | T='basalt' | R=5949->1116 | CR=2583 | C=+4.037 | C1='it'
+06/24 | T='turquoise' | R=2468->532 | CR=538 | C=+4.078 | C1='read'
+07/24 | T='kneeling' | R=406->816 | CR=142552 | C=-1.370 | C1=' B'
+08/24 | T='translucent' | R=830->203 | CR=119 | C=+3.545 | C1=' as'
+09/24 | T='sextant' | R=567->344 | CR=8392 | C=+2.889 | C1=' it'
+10/24 | T='Valtrexon' | R=4678->3673 | CR=49959 | C=+4.125 | C1='in'
+11/24 | T='Orisa' | R=2768->2509 | CR=66947 | C=+5.313 | C1='data'
+12/24 | T='Budapest' | R=333->105 | CR=3028 | C=+4.472 | C1='its'
+13/24 | T='zirconium' | R=8579->2787 | CR=3825 | C=+1.200 | C1='真正做到'
+14/24 | T='violet' | R=3172->1572 | CR=15737 | C=+1.043 | C1='?'
+15/24 | T='964' | R=8->4 | CR=1225 | C=+5.047 | C1=' '
+16/24 | T='contracting' | R=46->29 | CR=8725 | C=+1.123 | C1='to'
+17/24 | T='silky' | R=200->66 | CR=2285 | C=+3.354 | C1=' as'
+18/24 | T='barometer' | R=84711->37447 | CR=5369 | C=+5.244 | C1=' a'
+19/24 | T='Solvane' | R=78->236 | CR=140309 | C=-1.216 | C1='it'
+20/24 | T='Keldrin' | R=20->8 | CR=7767 | C=+2.854 | C1='data'
+21/24 | T='Kyoto' | R=1426->2784 | CR=140103 | C=-3.957 | C1='Missing'
+22/24 | T='cyan' | R=400->250 | CR=12936 | C=+4.005 | C1=' there'
+23/24 | T='quartz' | R=518->323 | CR=23487 | C=+0.486 | C1=' Klan'
+24/24 | T='ascending' | R=25->141 | CR=151668 | C=-5.530 | C1='information'
+SHOWCASE | T='raised a crimson pennant' | R=4822->9075 | CR=141729 | C=-2.689 | C1='ヵ'
+[11/18] COVERAGE LADDER
+TOP0001 | CONTRAST=0.000000
+TOP0005 | CONTRAST=0.041667
+TOP0010 | CONTRAST=0.041667
+TOP0025 | CONTRAST=0.041667
+TOP0050 | CONTRAST=0.041667
+TOP0100 | CONTRAST=0.041667
+TOP0256 | CONTRAST=0.083333
+TOP0500 | CONTRAST=0.083333
+TOP1000 | CONTRAST=0.125000
+[12/18] STEER VS CONTRAST
+VANILLA_MED_RANK=494.5 | STEER_MED_RANK=286.5 | CONTRAST_MED_RANK=9313.5
+CONTRAST_POSITIVE=0.791667 | CONTRAST_RANK_BETTER_THAN_VANILLA=0.250000
+[13/18] TARGET-FREE TOP1 OUTPUTS
+["'answer'", "'.`);\\n'", "'3'", "'a'", "'it'", "'read'", "' B'", "' as'", "' it'", "'in'", "'data'", "'its'", "'真正做到'", "'?'", "' '", "'to'", "' as'", "' a'", "'it'", "'data'", "'Missing'", "' there'", "' Klan'", "'information'"]
+[14/18] SHOWCASE
+------------------------------------------------------------------------------------------------------------
+SOURCE : Mustafa Akbaş raised a crimson pennant beside the Bosphorus Bridge where the research demonstration took place.
+QUESTION: What did Mustafa Akbaş do at the location of the research demonstration?
+ANCHOR : beside
+TARGET : raised a crimson pennant
+TARGET_FIRST='raised' | RANK=4822->9075 | CONTRAST_RANK=141729 | CONTRAST=-2.6886
+CONTRAST TOP20: ["'ヵ'", '";\'>"', "'InMillis'", "'Location'", "'Short'", "'Loading'", "'ecast'", "'杨欢'", "'.sul'", "'<Transform'", "'Answer'", "'.EventQueue'", "'redni'", "'*>(&'", "'alsex'", "';line'", "'.getLocation'", "' ngắn'", "'-selling'", "'Internal'"]
+------------------------------------------------------------------------------------------------------------
+[15/18] PREDECLARED DIAGNOSTIC
+CONTRAST_TOP50=0.041667 | TOP256=0.083333 | MED_RANK=9313.5 | CLASS=TARGET_FREE_CONTRASTIVE_READOUT_DOES_NOT_ISOLATE_TARGET
+[16/18] LEAKAGE GUARD
+TARGET SEALED THROUGH ROUTER + PACKET + CONTRASTIVE CANDIDATE CONSTRUCTION | TARGET POST-HOC ONLY | NO TARGET-BASED DECODING
+[17/18] SCIENTIFIC AUDIT
+SAME FRESH-24 AS TEST330-335 | ROUTER=ARGMAX(DISP) | SAME RSS | CONTRAST=LOGP_STEER-LOGP_VANILLA | NO TRAINING | NO WEIGHT UPDATE
+[18/18] INTEGRITY + SEAL
+============================================================================================================
+TEST 336 COMPLETE
+CONTRAST MED RANK=9313.5 | TOP50=0.042 | TOP256=0.083 | TOP1000=0.125
+CLASS= TARGET_FREE_CONTRASTIVE_READOUT_DOES_NOT_ISOLATE_TARGET
+ROUTER=ARGMAX(DISP) | TARGET POST-HOC ONLY | SAME RSS | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST336/T336-20260929-074130.json
+TXT : /content/AKBASCORE_TEST336/T336-20260929-074130.txt
+SHA : e3ede1dbfa93d32243315213d4def8e86bdff227e81722a7d1d3c57bdf20cbed
+============================================================================================================
