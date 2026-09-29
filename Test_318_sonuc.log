@@ -1,0 +1,156 @@
+ ============================================================================================================
+TEST 318 - CASE-ISOLATED RELATION-BINDING COMPONENT ABLATION
+============================================================================================================
+START: 2026-09-29T01:35:38.096+00:00
+[1/15] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 86.2kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 882kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 48.7MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 71.8MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 131MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.61MB/s]Download complete: :  13.1GB,  824MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  503MB/s  Fetching 4 files: 100% 4/4 [00:40<00:00,  6.86s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.97it/s]generation_config.json: 100% 243/243 [00:00<00:00, 32.5kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | VOCAB=152064 | torch.bfloat16 | 49.94s
+[2/15] TEST317 ENGINE LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | BRIDGE=0.200 | BIND_LAYERS=(19, 21, 23, 25, 27)
+[3/15] TARGET-FREE QUERY NULL CACHE
+NULL READY
+[4/15] LOCKED SPAN BANK + PACKET + ANCHOR
+01/24 | ANCHOR='engineer' | BANK=12
+02/24 | ANCHOR='unfamiliar' | BANK=12
+03/24 | ANCHOR='the' | BANK=13
+04/24 | ANCHOR='backup' | BANK=14
+05/24 | ANCHOR='and' | BANK=12
+06/24 | ANCHOR='changed' | BANK=13
+07/24 | ANCHOR='Arven' | BANK=14
+08/24 | ANCHOR='unusually' | BANK=13
+09/24 | ANCHOR='the' | BANK=14
+10/24 | ANCHOR='in' | BANK=12
+11/24 | ANCHOR='performed' | BANK=12
+12/24 | ANCHOR='before' | BANK=12
+13/24 | ANCHOR='and' | BANK=14
+14/24 | ANCHOR='flashed' | BANK=13
+15/24 | ANCHOR='became' | BANK=13
+16/24 | ANCHOR='when' | BANK=14
+17/24 | ANCHOR='coarse' | BANK=14
+18/24 | ANCHOR='but' | BANK=19
+19/24 | ANCHOR='the' | BANK=13
+20/24 | ANCHOR='assistants' | BANK=15
+21/24 | ANCHOR='courier' | BANK=13
+22/24 | ANCHOR='but' | BANK=16
+23/24 | ANCHOR='composed' | BANK=13
+24/24 | ANCHOR='started' | BANK=15
+[5/15] CASE-ISOLATION AUDIT
+ALL 8 SCORERS TARGET-FREE | SAME-CASE ONLY | TARGET_ACCESS=False | CROSS_CASE=False
+[6/15] LOCKED CAUSAL ENGINE
+[7/15] SEALED FORCED READOUT
+01/24 | COMPLETE
+02/24 | COMPLETE
+03/24 | COMPLETE
+04/24 | COMPLETE
+05/24 | COMPLETE
+06/24 | COMPLETE
+07/24 | COMPLETE
+08/24 | COMPLETE
+09/24 | COMPLETE
+10/24 | COMPLETE
+11/24 | COMPLETE
+12/24 | COMPLETE
+13/24 | COMPLETE
+14/24 | COMPLETE
+15/24 | COMPLETE
+16/24 | COMPLETE
+17/24 | COMPLETE
+18/24 | COMPLETE
+19/24 | COMPLETE
+20/24 | COMPLETE
+21/24 | COMPLETE
+22/24 | COMPLETE
+23/24 | COMPLETE
+24/24 | COMPLETE
+[8/15] TARGET-FREE COMPONENT MATRIX
+01/24 | ANCHOR='engineer' | FULL317=['Vault', 'damaged', 'After']
+02/24 | ANCHOR='unfamiliar' | FULL317=['called', 'the', 'crystal']
+03/24 | ANCHOR='the' | FULL317=['417', 'number', 'only']
+04/24 | ANCHOR='backup' | FULL317=['the', 'to', 'from']
+05/24 | ANCHOR='and' | FULL317=['selected', 'steel', 'basalt']
+06/24 | ANCHOR='changed' | FULL317=['to', 'violet', 'calibration']
+07/24 | ANCHOR='Arven' | FULL317=['and', 'began', 'stopped']
+08/24 | ANCHOR='unusually' | FULL317=['glossy', 'polished', 'dark']
+09/24 | ANCHOR='the' | FULL317=['recovered', 'a', 'other']
+10/24 | ANCHOR='in' | FULL317=['the', 'is', 'phrase']
+11/24 | ANCHOR='performed' | FULL317=['by', 'were', 'calculations']
+12/24 | ANCHOR='before' | FULL317=['in', 'landing', 'and']
+13/24 | ANCHOR='and' | FULL317=['copper', 'polymer', 'the']
+14/24 | ANCHOR='flashed' | FULL317=['blue', 'amber', 'glowed']
+15/24 | ANCHOR='became' | FULL317=['value', '731', '29']
+16/24 | ANCHOR='when' | FULL317=['began', 'the', 'rotating']
+17/24 | ANCHOR='coarse' | FULL317=['was', 'silky', 'remained']
+18/24 | ANCHOR='but' | FULL317=['the', 'the', 'a']
+19/24 | ANCHOR='the' | FULL317=['named', 'ultimately', 'system']
+20/24 | ANCHOR='assistants' | FULL317=['Professor', 'archive', 'notebook']
+21/24 | ANCHOR='courier' | FULL317=['in', 'left', 'silver']
+22/24 | ANCHOR='but' | FULL317=['was', 'its', 'black']
+23/24 | ANCHOR='composed' | FULL317=['of', 'primarily', 'quartz']
+24/24 | ANCHOR='started' | FULL317=['then', 'and', 'accelerating']
+[9/15] TARGET SEAL OPEN - POST-HOC ONLY
+01/24 | Selin       | QUERY=8 | BIND=1 | DELTA=8 | READOUT=1 | LOGIT=8 | FULL317=5
+02/24 | Zorvex      | QUERY=9 | BIND=10 | DELTA=5 | READOUT=8 | LOGIT=4 | FULL317=8
+03/24 | 417         | QUERY=9 | BIND=9 | DELTA=2 | READOUT=1 | LOGIT=1 | FULL317=1
+04/24 | Reykjavik   | QUERY=11 | BIND=12 | DELTA=7 | READOUT=6 | LOGIT=12 | FULL317=10
+05/24 | basalt      | QUERY=3 | BIND=6 | DELTA=1 | READOUT=2 | LOGIT=6 | FULL317=3
+06/24 | violet      | QUERY=8 | BIND=2 | DELTA=9 | READOUT=5 | LOGIT=3 | FULL317=2
+07/24 | climbing    | QUERY=11 | BIND=9 | DELTA=10 | READOUT=12 | LOGIT=2 | FULL317=9
+08/24 | glossy      | QUERY=10 | BIND=4 | DELTA=5 | READOUT=8 | LOGIT=1 | FULL317=1
+09/24 | sextant     | QUERY=11 | BIND=10 | DELTA=11 | READOUT=10 | LOGIT=10 | FULL317=12
+10/24 | Ordelis     | QUERY=6 | BIND=9 | DELTA=2 | READOUT=5 | LOGIT=10 | FULL317=7
+11/24 | Keira       | QUERY=12 | BIND=8 | DELTA=6 | READOUT=3 | LOGIT=7 | FULL317=5
+12/24 | Tallinn     | QUERY=11 | BIND=9 | DELTA=7 | READOUT=8 | LOGIT=7 | FULL317=7
+13/24 | glass       | QUERY=11 | BIND=5 | DELTA=8 | READOUT=9 | LOGIT=2 | FULL317=7
+14/24 | amber       | QUERY=11 | BIND=7 | DELTA=4 | READOUT=6 | LOGIT=1 | FULL317=2
+15/24 | 731         | QUERY=3 | BIND=2 | DELTA=4 | READOUT=1 | LOGIT=3 | FULL317=2
+16/24 | rotating    | QUERY=9 | BIND=4 | DELTA=2 | READOUT=4 | LOGIT=5 | FULL317=3
+17/24 | silky       | QUERY=2 | BIND=1 | DELTA=1 | READOUT=2 | LOGIT=8 | FULL317=2
+18/24 | astrolabe   | QUERY=19 | BIND=15 | DELTA=7 | READOUT=16 | LOGIT=18 | FULL317=16
+19/24 | Varethis    | QUERY=12 | BIND=10 | DELTA=7 | READOUT=9 | LOGIT=8 | FULL317=9
+20/24 | Ilyan       | QUERY=10 | BIND=13 | DELTA=11 | READOUT=3 | LOGIT=7 | FULL317=7
+21/24 | Kyoto       | QUERY=8 | BIND=1 | DELTA=9 | READOUT=5 | LOGIT=9 | FULL317=6
+22/24 | turquoise   | QUERY=12 | BIND=9 | DELTA=9 | READOUT=8 | LOGIT=5 | FULL317=8
+23/24 | quartz      | QUERY=5 | BIND=6 | DELTA=3 | READOUT=5 | LOGIT=1 | FULL317=3
+24/24 | accelerating | QUERY=6 | BIND=2 | DELTA=6 | READOUT=3 | LOGIT=1 | FULL317=3
+[10/15] ABLATION SUMMARY
+QUERY                  MED=  9.5 | MEAN=  9.04 | TOP1=0.000 | TOP3=0.125 | TOP5=0.167
+BIND                   MED=  7.5 | MEAN=  6.83 | TOP1=0.125 | TOP3=0.250 | TOP5=0.375
+DELTA                  MED=  6.5 | MEAN=  6.00 | TOP1=0.083 | TOP3=0.250 | TOP5=0.417
+READOUT                MED=  5.0 | MEAN=  5.83 | TOP1=0.125 | TOP3=0.333 | TOP5=0.542
+LOGIT                  MED=  5.5 | MEAN=  5.79 | TOP1=0.208 | TOP3=0.375 | TOP5=0.500
+BIND_DELTA             MED=  7.0 | MEAN=  6.25 | TOP1=0.042 | TOP3=0.250 | TOP5=0.417
+BIND_DELTA_READOUT     MED=  5.5 | MEAN=  6.00 | TOP1=0.042 | TOP3=0.292 | TOP5=0.500
+FULL317                MED=  5.5 | MEAN=  5.75 | TOP1=0.083 | TOP3=0.417 | TOP5=0.500
+[11/15] COMPONENT CONTRIBUTION
+BIND                   MEDIAN_DELTA_VS_QUERY=+2.00 | TOP5_DELTA=+0.208
+DELTA                  MEDIAN_DELTA_VS_QUERY=+3.00 | TOP5_DELTA=+0.250
+READOUT                MEDIAN_DELTA_VS_QUERY=+4.50 | TOP5_DELTA=+0.375
+LOGIT                  MEDIAN_DELTA_VS_QUERY=+4.00 | TOP5_DELTA=+0.333
+BIND_DELTA             MEDIAN_DELTA_VS_QUERY=+2.50 | TOP5_DELTA=+0.250
+BIND_DELTA_READOUT     MEDIAN_DELTA_VS_QUERY=+4.00 | TOP5_DELTA=+0.333
+FULL317                MEDIAN_DELTA_VS_QUERY=+4.00 | TOP5_DELTA=+0.333
+[12/15] PREDECLARED DIAGNOSTIC
+BIND_DELTA_MEDIAN_IMPROVES=True | BIND_DELTA_TOP5_IMPROVES=True | CLASS=RELATION_GEOMETRY_CARRIES_SIGNAL
+[13/15] SCIENTIFIC AUDIT
+NO COMPONENT WEIGHT OR ARM IS SELECTED USING TARGETS. ALL EIGHT RANKINGS EXIST BEFORE TARGET SEAL OPENS.
+[14/15] CASE + TARGET AUDIT
+CASE_ISOLATED=True | CROSS_CASE_DATA=False | TARGET_ENGINE_ACCESS=False | TARGET_POSTHOC_ONLY=True
+[15/15] INTEGRITY + SEAL
+============================================================================================================
+TEST 318 COMPLETE
+QUERY                  MED=9.5 | TOP3=0.125 | TOP5=0.167
+BIND                   MED=7.5 | TOP3=0.250 | TOP5=0.375
+DELTA                  MED=6.5 | TOP3=0.250 | TOP5=0.417
+READOUT                MED=5.0 | TOP3=0.333 | TOP5=0.542
+LOGIT                  MED=5.5 | TOP3=0.375 | TOP5=0.500
+BIND_DELTA             MED=7.0 | TOP3=0.250 | TOP5=0.417
+BIND_DELTA_READOUT     MED=5.5 | TOP3=0.292 | TOP5=0.500
+FULL317                MED=5.5 | TOP3=0.417 | TOP5=0.500
+CLASS=RELATION_GEOMETRY_CARRIES_SIGNAL
+CASE_ISOLATED=TRUE | TARGET POST-HOC ONLY | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST318/T318-20260929-013636.json
+TXT : /content/AKBASCORE_TEST318/T318-20260929-013636.txt
+SHA : 5a6666fc342318803673aa3cf2efbf3edfcdac3e0e6369d23b7e9753b96a02f4
+============================================================================================================
