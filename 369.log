@@ -1,0 +1,98 @@
+ ============================================================================================================
+TEST 369 - FRESH HELD-OUT FROZEN QUESTION-CONTRASTIVE HEAD ROUTING
+============================================================================================================
+START: 2026-09-29T14:03:33.495+00:00
+[1/20] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 81.7kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 925kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 19.4MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 40.4MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 103MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.50MB/s]Download complete: :  13.1GB,  344MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  481MB/s  Fetching 4 files: 100% 4/4 [00:44<00:00,  7.57s/it]Loading weights: 100% 339/339 [00:03<00:00, 101.14it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.3kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | eager-attention | torch.bfloat16 | 58.78s
+[2/20] MODEL LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+[3/20] ARCHITECTURE AUDIT
+HEADS=28 | KV_HEADS=4 | HEAD_DIM=128 | KV_REPEAT=7
+[4/20] FRESH HELD-OUT SOURCE + QUESTIONS
+01/09 | PERSON  | SPANS=32 | Q_LAST=59 | Q=Who transferred the cobalt compass?
+02/09 | OBJECT  | SPANS=32 | Q_LAST=60 | Q=What did Selin Aras transfer?
+03/09 | PLACE   | SPANS=32 | Q_LAST=62 | Q=Where did Lervan secure the ceramic capsule?
+04/09 | NUMBER  | SPANS=32 | Q_LAST=62 | Q=Into which vault was the cobalt compass transferred?
+05/09 | TIME    | SPANS=32 | Q_LAST=60 | Q=When was the cobalt compass transferred?
+06/09 | PERSON  | SPANS=32 | Q_LAST=58 | Q=Who secured the ceramic capsule?
+07/09 | STATE   | SPANS=32 | Q_LAST=61 | Q=What state did the auxiliary rotor remain in?
+08/09 | OBJECT  | SPANS=32 | Q_LAST=59 | Q=What did Lervan secure?
+09/09 | PLACE   | SPANS=32 | Q_LAST=59 | Q=Where did the auxiliary rotor remain?
+[5/20] FORWARDS
+01/09 | OK
+02/09 | OK
+03/09 | OK
+04/09 | OK
+05/09 | OK
+06/09 | OK
+07/09 | OK
+08/09 | OK
+09/09 | OK
+[6/20] HEAD-LEVEL QUESTION->SOURCE ATTENTION
+A + NORMALIZED P READY
+[7/20] RAW HEAD RANKS
+RAW RANKS READY
+[8/20] FROZEN TEST368 QUESTION-CONTRASTIVE DISPLACEMENT
+D=P(Q)-MEAN[P(OTHER 8)] | MIN=-0.472599 MED=-0.000561 MAX=+0.985680
+[9/20] CONTRASTIVE HEAD/SPAN RANKS
+CONTRASTIVE RANKS READY
+[10/20] FROZEN CROSS-HEAD/LAYER MRR
+PRIMARY + CONTROL READY
+[11/20] TARGET-FREE ROUTES FROZEN
+01/09 | CONTRAST_TOP3=Selin:0.3491 | while:0.2429 | Aras:0.2261 | RAW_TOP=2031
+02/09 | CONTRAST_TOP3=After:0.2261 | the:0.2252 | transferred:0.1975 | RAW_TOP=2031
+03/09 | CONTRAST_TOP3=After:0.2719 | Lervan:0.2433 | beside:0.1893 | RAW_TOP=After
+04/09 | CONTRAST_TOP3=2031:0.3231 | 583:0.2958 | while:0.2023 | RAW_TOP=2031
+05/09 | CONTRAST_TOP3=2031:0.4131 | After:0.2853 | while:0.1906 | RAW_TOP=2031
+06/09 | CONTRAST_TOP3=Lervan:0.3353 | Selin:0.2644 | After:0.2495 | RAW_TOP=After
+07/09 | CONTRAST_TOP3=2031:0.2320 | permanently:0.2222 | remained:0.2122 | RAW_TOP=2031
+08/09 | CONTRAST_TOP3=After:0.2752 | Lervan:0.2362 | ceramic:0.2232 | RAW_TOP=After
+09/09 | CONTRAST_TOP3=beneath:0.2794 | stationary:0.2474 | permanently:0.2093 | RAW_TOP=2031
+[12/20] ROUTING DIVERSITY
+CONTRAST_UNIQUE=5/9 | RAW_UNIQUE=2/9
+[13/20] VALUES OPEN POST-HOC
+01/09 | VALUE='Selin Aras' | CONTRAST=R01 | RAW=R03 | CSEL='Selin' | RSEL='2031'
+02/09 | VALUE='cobalt compass' | CONTRAST=R11 | RAW=R19 | CSEL='After' | RSEL='2031'
+03/09 | VALUE='Ravenna observatory' | CONTRAST=R04 | RAW=R11 | CSEL='After' | RSEL='After'
+04/09 | VALUE='583' | CONTRAST=R02 | RAW=R05 | CSEL='2031' | RSEL='2031'
+05/09 | VALUE='2031' | CONTRAST=R01 | RAW=R01 | CSEL='2031' | RSEL='2031'
+06/09 | VALUE='Lervan' | CONTRAST=R01 | RAW=R03 | CSEL='Lervan' | RSEL='After'
+07/09 | VALUE='permanently stationary' | CONTRAST=R02 | RAW=R07 | CSEL='2031' | RSEL='2031'
+08/09 | VALUE='ceramic capsule' | CONTRAST=R03 | RAW=R11 | CSEL='After' | RSEL='After'
+09/09 | VALUE='eastern platform' | CONTRAST=R04 | RAW=R09 | CSEL='beneath' | RSEL='2031'
+[14/20] SUMMARY
+CONTRAST | MED=2.0 TOP1=0.333 TOP3=0.667 TOP5=0.889 EXACT=0.333 UNIQUE=5/9
+RAW      | MED=7.0 TOP1=0.111 TOP3=0.333 TOP5=0.444 EXACT=0.111 UNIQUE=2/9
+CONTRAST_VS_RAW | BETTER=0.889 | WORSE=0.000
+[15/20] ROUTING PROFILE SIMILARITY
+Q1: +1.000 +0.556 +0.210 +0.284 +0.389 +0.617 +0.039 +0.144 -0.016
+Q2: +0.556 +1.000 +0.179 +0.247 +0.482 +0.351 -0.045 +0.453 -0.189
+Q3: +0.210 +0.179 +1.000 +0.359 +0.483 +0.671 +0.065 +0.557 -0.184
+Q4: +0.284 +0.247 +0.359 +1.000 +0.718 +0.144 +0.424 -0.053 +0.097
+Q5: +0.389 +0.482 +0.483 +0.718 +1.000 +0.393 +0.399 +0.384 +0.126
+Q6: +0.617 +0.351 +0.671 +0.144 +0.393 +1.000 -0.008 +0.607 -0.247
+Q7: +0.039 -0.045 +0.065 +0.424 +0.399 -0.008 +1.000 -0.181 +0.733
+Q8: +0.144 +0.453 +0.557 -0.053 +0.384 +0.607 -0.181 +1.000 -0.318
+Q9: -0.016 -0.189 -0.184 +0.097 +0.126 -0.247 +0.733 -0.318 +1.000
+[16/20] PREDECLARED FROZEN REPLICATION GATES
+REPLICATED=False | STRONG=False
+[17/20] CLASSIFICATION
+CLASS= FROZEN_QUESTION_CONTRASTIVE_ROUTING_PARTIAL
+[18/20] SCIENTIFIC AUDIT
+FRESH SOURCE | FRESH VALUES | FRESH QUESTIONS | TEST368 FORMULA FROZEN | D=P(THIS)-MEAN[P(OTHERS)] | VALUE POST-HOC | NO TARGET/LAYER/HEAD ORACLE | NO SCORE SEARCH | NO SEASC | NO TRAINING
+[19/20] INTEGRITY
+WEIGHTS FROZEN | FP MATCH
+[20/20] JSON-SAFE SAVE
+============================================================================================================
+TEST 369 COMPLETE
+CONTRAST | MED=2.0 | TOP1=0.333 | TOP3=0.667 | TOP5=0.889 | EXACT=0.333 | UNIQUE=5/9
+RAW      | MED=7.0 | TOP1=0.111 | TOP3=0.333 | TOP5=0.444 | EXACT=0.111 | UNIQUE=2/9
+CONTRAST_BEATS_RAW=0.889 | WORSE=0.000
+REPLICATED=False | STRONG=False
+CLASS= FROZEN_QUESTION_CONTRASTIVE_ROUTING_PARTIAL
+JSON: /content/AKBASCORE_TEST369/T369-20260929-140438.json
+TXT : /content/AKBASCORE_TEST369/T369-20260929-140438.txt
+SHA : 42bcc21da0cec8af14bbecf4a14e1528c33a8e65b8956eac8196396eb8c8eb16
+============================================================================================================
