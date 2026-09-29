@@ -1,0 +1,166 @@
+ 
+============================================================================================================
+TEST 310 - CASE-ISOLATED QUERY-ORTHOGONAL PACKET BRIDGE
+============================================================================================================
+START: 2026-09-29T00:20:13.843+00:00
+[1/14] MODEL LOAD
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 81.3kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 630kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 80.8MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 74.0MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 106MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.41MB/s]
+Download complete: : 
+
+ 13.1GB,  376MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  499MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:40<00:00,  6.88s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 101.29it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 32.9kB/s]
+OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | VOCAB=152064 | torch.bfloat16 | 52.92s
+[2/14] WEIGHT SENTINEL + FIXED RSS
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | BRIDGE=0.200 | SLOT_K=8 | CASE-ISOLATION=TRUE
+[3/14] TARGET-FREE QUERY NULL CACHE
+NULL READY
+[4/14] CASE-ISOLATED COMPILER
+01/24 | SLOT=[' engineer', ' the', ' damaged', ' storm', ' placed', ' the', ' sensor', ' Sel'] | P.Q27=+0.0802 -> O.Q27=-0.000000
+02/24 | SLOT=[' unfamiliar', ' northern', ' the', ' called', 'The', ' crystal', ' an', ' Z'] | P.Q27=+0.1058 -> O.Q27=-0.000000
+03/24 | SLOT=[' the', ' were', ' carried', ' the', ' containers', ' inspected', ' three', ' smallest'] | P.Q27=+0.0334 -> O.Q27=-0.000000
+04/24 | SLOT=[' backup', ' the', ' the', ' the', ' to', ' moved', 'k', ' from'] | P.Q27=+0.0752 -> O.Q27=-0.000000
+05/24 | SLOT=[' and', ' selected', 'alt', ' rejected', ' the', ' shell', ' the', ' steel'] | P.Q27=+0.1200 -> O.Q27=+0.000000
+06/24 | SLOT=[' changed', ' but', 'The', ' immediately', ' stayed', ' after', ' to', ' violet'] | P.Q27=+0.0463 -> O.Q27=-0.000000
+07/24 | SLOT=['ven', ' Ar', ' stopped', ' the', ' and', ' upper', ' the', 'When'] | P.Q27=+0.0779 -> O.Q27=-0.000000
+08/24 | SLOT=[' unusually', ' its', ' dark', ' newly', ' polished', ' the', ' surface', ' despite'] | P.Q27=+0.0926 -> O.Q27=+0.000000
+09/24 | SLOT=[' the', ' M', ' other', ' abandoned', ' recovered', ' while', ' remained', 'ira'] | P.Q27=+0.0977 -> O.Q27=-0.000000
+10/24 | SLOT=[' Or', ' in', ' the', 'The', ' final', ' is', ' phrase', 'is'] | P.Q27=-0.0066 -> O.Q27=+0.000000
+11/24 | SLOT=[' performed', ' by', ' calculations', ' the', ' were', ' the', ' navigation', 'arian'] | P.Q27=+0.1254 -> O.Q27=+0.000000
+12/24 | SLOT=[' before', ' finally', ' over', ' and', ' landing', ' Tall', ' in', ' passed'] | P.Q27=+0.0154 -> O.Q27=+0.000000
+13/24 | SLOT=[' and', ' polymer', ' copper', ' the', ' transparent', ' laboratory', ' the', ' chose'] | P.Q27=+0.1110 -> O.Q27=-0.000000
+14/24 | SLOT=[' flashed', 'owed', ' second', ' to', ' lamp', ' gl', 'The', ' blue'] | P.Q27=+0.0629 -> O.Q27=+0.000000
+15/24 | SLOT=['7', ' became', ' value', '1', '3', 'ibration', ' then', ' initially'] | P.Q27=+0.0094 -> O.Q27=+0.000000
+16/24 | SLOT=[' when', ' the', ' began', ' of', ' the', ' outer', ' hatch', ' sequence'] | P.Q27=+0.1788 -> O.Q27=+0.000000
+17/24 | SLOT=[' coarse', ' silky', ' remained', ' replacement', ' it', ' was', ' plate', ' installed'] | P.Q27=+0.0233 -> O.Q27=+0.000000
+18/24 | SLOT=[' but', ' a', ' were', ' the', ' a', ' for', ' the', ' wooden'] | P.Q27=+0.0792 -> O.Q27=-0.000000
+19/24 | SLOT=[' the', 'The', ' was', ' ultimately', ' cod', ' production', ' named', ' V'] | P.Q27=+0.0650 -> O.Q27=+0.000000
+20/24 | SLOT=[' assistants', ' the', ' sealed', ' the', ' archive', 'an', ' and', ' personally'] | P.Q27=+0.0387 -> O.Q27=+0.000000
+21/24 | SLOT=[' courier', ' the', ' silver', ' left', ' in', ' before', ' toward', ' Kyoto'] | P.Q27=+0.0520 -> O.Q27=-0.000000
+22/24 | SLOT=[' but', ' was', ' its', 'The', ' looked', ' confirmed', "'s", ' under'] | P.Q27=-0.0053 -> O.Q27=+0.000000
+23/24 | SLOT=[' composed', ' of', ' being', ' as', ' quartz', ' was', ' several', ' primarily'] | P.Q27=+0.0531 -> O.Q27=-0.000000
+24/24 | SLOT=[' started', ' and', 'The', ' then', ' two', ' accelerating', ' cart', ' toward'] | P.Q27=+0.0614 -> O.Q27=+0.000000
+[5/14] CASE-ISOLATION AUDIT
+24 CASES = 24 INDEPENDENT RUNS | NO CASE USES ANOTHER CASE'S TEXT/PACKET/QUESTION/VECTOR
+ENGINE INPUT PER CASE = ONE STATEMENT + ONE QUESTION
+[6/14] CAUSAL ENGINE
+[7/14] BLIND CAUSAL ABLATION
+01/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+02/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+03/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+04/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+05/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+06/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+07/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+08/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+09/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+10/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+11/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+12/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+13/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+14/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+15/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+16/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+17/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+18/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+19/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+20/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+21/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+22/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+23/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+24/24 | VANILLA PACKET RAW-BRIDGE ORTH-BRIDGE COMPLETE
+[8/14] POST-HOC TARGET SCORING
+01/24 | Selin       | RANK    169->   232 | RAW=   108 ORTH=   116 | GAIN R=+2.250 O=+2.312
+02/24 | Zorvex      | RANK  14716->  1612 | RAW=  1540 ORTH=  1469 | GAIN R=+2.375 O=+2.500
+03/24 | 417         | RANK  30941->   240 | RAW=   318 ORTH=   328 | GAIN R=+2.375 O=+2.375
+04/24 | Reykjavik   | RANK    383->   511 | RAW=   488 ORTH=   423 | GAIN R=+1.688 O=+2.000
+05/24 | basalt      | RANK 132240-> 94362 | RAW= 81986 ORTH= 83205 | GAIN R=+3.109 O=+3.258
+06/24 | violet      | RANK  45064-> 80437 | RAW= 81958 ORTH= 82821 | GAIN R=+2.926 O=+2.895
+07/24 | climbing    | RANK 102998-> 76432 | RAW= 37306 ORTH= 37877 | GAIN R=+2.297 O=+2.312
+08/24 | glossy      | RANK  74884-> 53751 | RAW= 41335 ORTH= 42953 | GAIN R=+3.441 O=+3.473
+09/24 | sextant     | RANK 122550-> 97135 | RAW= 88436 ORTH= 88258 | GAIN R=+1.910 O=+2.008
+10/24 | Ordelis     | RANK  34212-> 63098 | RAW= 42570 ORTH= 43153 | GAIN R=+1.629 O=+1.598
+11/24 | Keira       | RANK   2209->  2487 | RAW=  2608 ORTH=  2415 | GAIN R=+2.750 O=+3.062
+12/24 | Tallinn     | RANK    597->   326 | RAW=   171 ORTH=   174 | GAIN R=+1.500 O=+1.500
+13/24 | glass       | RANK  55769->  3627 | RAW=  2419 ORTH=  2470 | GAIN R=+3.375 O=+3.438
+14/24 | amber       | RANK  96973->  7780 | RAW=  1889 ORTH=  1857 | GAIN R=+4.219 O=+4.344
+15/24 | 731         | RANK  66641->  2196 | RAW=  1844 ORTH=  1843 | GAIN R=+3.938 O=+3.938
+16/24 | rotating    | RANK 124265-> 34862 | RAW= 16969 ORTH= 17908 | GAIN R=+2.682 O=+2.604
+17/24 | silky       | RANK 102355-> 80075 | RAW= 49715 ORTH= 50182 | GAIN R=+3.977 O=+3.977
+18/24 | astrolabe   | RANK 149317->140620 | RAW=134979 ORTH=134455 | GAIN R=+3.094 O=+3.227
+19/24 | Varethis    | RANK    511->   671 | RAW=   801 ORTH=   811 | GAIN R=+1.719 O=+1.781
+20/24 | Ilyan       | RANK     19->     7 | RAW=     6 ORTH=     6 | GAIN R=+2.250 O=+2.375
+21/24 | Kyoto       | RANK 102351-> 62665 | RAW= 45492 ORTH= 45084 | GAIN R=+1.570 O=+1.617
+22/24 | turquoise   | RANK 101144-> 45691 | RAW= 32500 ORTH= 33149 | GAIN R=+2.863 O=+2.785
+23/24 | quartz      | RANK 138043->107343 | RAW= 85329 ORTH= 85262 | GAIN R=+4.070 O=+4.094
+24/24 | accelerating | RANK  39871->  2282 | RAW=   753 ORTH=   764 | GAIN R=+3.375 O=+3.438
+[9/14] GLOBAL SUMMARY
+VANILLA_RANK_MEDIAN                +61205.000000
+PACKET_RANK_MEDIAN                 +21321.000000
+RAW_BRIDGE_RANK_MEDIAN             +9788.500000
+ORTH_BRIDGE_RANK_MEDIAN            +10189.000000
+PACKET_GAIN                        +0.672729
+RAW_BRIDGE_GAIN                    +2.724202
+ORTH_BRIDGE_GAIN                   +2.787842
+ORTH_MINUS_RAW_GAIN                +0.063639
+RAW_TOP1                           +0.000000
+ORTH_TOP1                          +0.000000
+RAW_RANK_IMPROVED                  +0.833333
+ORTH_RANK_IMPROVED                 +0.875000
+MEAN_ABS_PACKET_QUERY_L27          +0.067357
+MEAN_ABS_ORTH_QUERY_L27            +0.000000
+[10/14] QUERY-COMPONENT REMOVAL X-RAY
+|PACKET.Q| L27=0.067357
+|ORTH.Q|   L27=0.000000
+RAW BRIDGE GAIN=+2.724202 | ORTH BRIDGE GAIN=+2.787842 | ORTH-RAW=+0.063639
+[11/14] PREDECLARED DIAGNOSTIC
+QUERY REMOVED=True | ORTH GAIN>0=True | ORTH RANK IMP>=70%=True
+[12/14] CASE-INDEPENDENCE CHECK
+CASE_ISOLATED=True | CROSS_CASE_PACKET=False | CROSS_CASE_VECTOR=False | CROSS_CASE_MEAN=False | TARGET_ENGINE_ACCESS=False
+[13/14] INTERPRETATION GATE
+CASE-ISOLATED QUERY-ORTHOGONAL GATE=PASS
+[14/14] INTEGRITY + SEAL
+============================================================================================================
+TEST 310 COMPLETE
+MEDIAN RANK V=61205.0 P=21321.0 RAW=9788.5 ORTH=10189.0
+GAIN P=+0.673 RAW=+2.724 ORTH=+2.788 | ORTH-RAW=+0.064
+|P.Q|=0.067357 -> |ORTH.Q|=0.000000 | ORTH RANK IMP=0.875
+CASE_ISOLATED=TRUE | GATE=PASS | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST310/T310-20260929-002120.json
+TXT : /content/AKBASCORE_TEST310/T310-20260929-002120.txt
+SHA : 3d5c64cb56a3d5629e2550b0a9c6c6bedece74e31930340b87535a689e086545
+
+
+============================================================================================================
