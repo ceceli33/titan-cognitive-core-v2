@@ -1,0 +1,87 @@
+ ============================================================================================================
+TEST 363 - SAME-SOURCE MULTI-QUERY VALUE ROUTING
+============================================================================================================
+START: 2026-09-29T12:55:41.927+00:00
+[1/20] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 81.0kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 859kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 56.4MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 71.3MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 121MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.48MB/s]Download complete: :  13.1GB,  137MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  557MB/s  Fetching 4 files: 100% 4/4 [00:38<00:00,  6.65s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.50it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.8kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | eager-attention | torch.bfloat16 | 48.73s
+[2/20] MODEL LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+[3/20] ARCHITECTURE AUDIT
+HEADS=28 | KV_HEADS=4 | HEAD_DIM=128 | KV_REPEAT=7
+[4/20] FIXED SOURCE + MULTI-QUERY ENCODING
+01/07 | PERSON  | SPANS=35 | Q_LAST=60 | Q=Who bypassed all target-free compiler limits?
+02/07 | OBJECT  | SPANS=35 | Q_LAST=60 | Q=What did Mustafa Akbaş plant?
+03/07 | PLACE   | SPANS=35 | Q_LAST=63 | Q=Where did Mustafa Akbaş plant the Turkish flag?
+04/07 | TIME    | SPANS=35 | Q_LAST=63 | Q=When did Mustafa Akbaş bypass the compiler limits?
+05/07 | OBJECT  | SPANS=35 | Q_LAST=60 | Q=What did Mustafa Akbaş bypass?
+06/07 | PERSON  | SPANS=35 | Q_LAST=60 | Q=Who was permanently frozen in a static state?
+07/07 | STATE   | SPANS=35 | Q_LAST=58 | Q=What state was Colude in?
+[5/20] FORWARDS + HIDDEN STATES + ATTENTION
+01/07 | OK
+02/07 | OK
+03/07 | OK
+04/07 | OK
+05/07 | OK
+06/07 | OK
+07/07 | OK
+[6/20] FROZEN TEST362 V PROJECTION
+V PROJECTIONS READY
+[7/20] FROZEN ATTN*V SOURCE-SPAN CONTRIBUTIONS
+ATTN*V READY
+[8/20] FROZEN O_PROJ CONTRIBUTIONS
+O_PROJ CONTRIBUTIONS READY
+[9/20] PER-LAYER CONTRIBUTION NORMS
+NORMS READY
+[10/20] PER-LAYER CONTRIBUTION RANKS
+RANKS READY
+[11/20] PRIMARY FROZEN TEST362 MRR
+PRIMARY=MEAN_L(1/CONTRIBUTION_RANK) | TEST362 RULE FROZEN
+[12/20] SECONDARY FROZEN TOP1 VOTE
+TOP1 VOTE READY
+[13/20] RAW ATTENTION CONTROL
+RAW CONTROL READY
+[14/20] TARGET-FREE ROUTES FROZEN
+01/07 | Q=Who bypassed all target-free compiler limits?
+       TOP3=2026:0.4813 | bypassed:0.3623 | Mustafa:0.3596
+02/07 | Q=What did Mustafa Akbaş plant?
+       TOP3=2026:0.4803 | flag:0.3930 | Mustafa:0.2500
+03/07 | Q=Where did Mustafa Akbaş plant the Turkish flag?
+       TOP3=2026:0.5821 | While:0.2499 | bridge:0.2270
+04/07 | Q=When did Mustafa Akbaş bypass the compiler limits?
+       TOP3=2026:0.7590 | While:0.2794 | bypassed:0.2481
+05/07 | Q=What did Mustafa Akbaş bypass?
+       TOP3=2026:0.5010 | in:0.2736 | compiler:0.2707
+06/07 | Q=Who was permanently frozen in a static state?
+       TOP3=2026:0.5072 | Colude:0.3245 | bypassed:0.3243
+07/07 | Q=What state was Colude in?
+       TOP3=2026:0.5837 | While:0.3134 | frozen:0.2417
+[15/20] EXPECTED VALUES OPEN POST-HOC
+01/07 | PERSON  | VALUE='Mustafa Akbaş' | CONTR=R03 V1=R03 ATTN=R02 | SELECT='2026' | EXACT=False
+02/07 | OBJECT  | VALUE='Turkish flag' | CONTR=R02 V1=R01 ATTN=R02 | SELECT='2026' | EXACT=False
+03/07 | PLACE   | VALUE='Golden Gate Bridge' | CONTR=R12 V1=R02 ATTN=R11 | SELECT='2026' | EXACT=False
+04/07 | TIME    | VALUE='2026' | CONTR=R01 V1=R01 ATTN=R02 | SELECT='2026' | EXACT=True
+05/07 | OBJECT  | VALUE='target-free compiler limits' | CONTR=R03 V1=R03 ATTN=R02 | SELECT='2026' | EXACT=False
+06/07 | PERSON  | VALUE='Colude' | CONTR=R02 V1=R02 ATTN=R03 | SELECT='2026' | EXACT=False
+07/07 | STATE   | VALUE='permanently frozen' | CONTR=R03 V1=R02 ATTN=R04 | SELECT='2026' | EXACT=False
+[16/20] SAME-SOURCE ROUTING SUMMARY
+CONTR | MED=3.0 | TOP1=0.143 | TOP3=0.857 | TOP5=0.857 | EXACT_ROUTE=0.143
+VS ATTN | BETTER=0.429 | WORSE=0.429
+[17/20] QUESTION-CONDITIONAL ROUTING AUDIT
+SELECTED_UNIQUE=1/7 | EXPECTED_VALUE_UNIQUE=7/7 | ROUTING=False | STRONG=False
+[18/20] CLASSIFICATION
+CLASS= SAME_SOURCE_VALUE_ROUTING_PARTIAL
+[19/20] SCIENTIFIC AUDIT
+ONE IDENTICAL SOURCE | ONLY QUESTION CHANGES | TEST362 FORMULA FROZEN | QUESTION-LAST | EXACT V_PROJ+ATTN+O_PROJ | 28L MRR PRIMARY | EXPECTED VALUE POST-HOC | NO SEASC | NO TARGET/LAYER/HEAD ORACLE | NO SCORE SEARCH | NO TRAINING
+[20/20] INTEGRITY + JSON-SAFE SAVE
+============================================================================================================
+TEST 363 COMPLETE
+CONTR | MED=3.0 | TOP1=0.143 | TOP3=0.857 | TOP5=0.857 | EXACT=0.143
+SELECTED_UNIQUE=1/7 | BETTER_THAN_ATTN=0.429 | WORSE=0.429
+CLASS= SAME_SOURCE_VALUE_ROUTING_PARTIAL
+ONE SOURCE | QUESTION ONLY CHANGES | TEST362 FORMULA FROZEN | WEIGHTS FROZEN
+JSON: /content/AKBASCORE_TEST363/T363-20260929-125644.json
+TXT : /content/AKBASCORE_TEST363/T363-20260929-125644.txt
+SHA : 0c2a1872ca7a427b73d4a510d6aa83f9e15484d3cf462e9cd954a4c4fb34d45b
+============================================================================================================
