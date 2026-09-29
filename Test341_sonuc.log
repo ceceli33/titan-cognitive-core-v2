@@ -1,0 +1,197 @@
+ ============================================================================================================
+TEST 341 - TOKEN-POSITION INJECTION WINDOW X-RAY
+============================================================================================================
+START: 2026-09-29T08:52:02.647+00:00
+[1/18] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 78.8kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 618kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 36.3MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 69.4MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 130MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.44MB/s]Download complete: :  13.1GB, 4.03MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB, 42.2MB/s  Fetching 4 files: 100% 4/4 [01:43<00:00, 30.34s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.31it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.3kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | torch.bfloat16 | 112.90s
+[2/18] ENGINE LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | L0-L25 | SINGLE TOKEN-POSITION WRITE | TARGET SEALED
+[3/18] QUERY NULL CACHE
+NULL READY
+[4/18] TARGET-FREE PACKET BANK
+01/24 | BANK= 18
+02/24 | BANK= 13
+03/24 | BANK= 14
+04/24 | BANK= 13
+05/24 | BANK= 14
+06/24 | BANK= 14
+07/24 | BANK= 15
+08/24 | BANK= 13
+09/24 | BANK= 14
+10/24 | BANK= 10
+11/24 | BANK= 12
+12/24 | BANK= 15
+13/24 | BANK= 14
+14/24 | BANK= 12
+15/24 | BANK= 13
+16/24 | BANK= 15
+17/24 | BANK= 13
+18/24 | BANK= 18
+19/24 | BANK= 14
+20/24 | BANK= 13
+21/24 | BANK= 13
+22/24 | BANK= 15
+23/24 | BANK= 13
+24/24 | BANK= 14
+SHOWCASE | BANK= 16
+[5/18] FROZEN DISP ROUTER - EXACT TEST340 METHOD
+01/24 | ANCHOR='inspected' | DISP=1.076792
+02/24 | ANCHOR='crystal' | DISP=1.046394
+03/24 | ANCHOR='Three' | DISP=1.125552
+04/24 | ANCHOR='Seville' | DISP=1.092544
+05/24 | ANCHOR='the' | DISP=1.166209
+06/24 | ANCHOR='The' | DISP=1.000578
+07/24 | ANCHOR='stopped' | DISP=1.041644
+08/24 | ANCHOR='sample' | DISP=0.989214
+09/24 | ANCHOR='retrieved' | DISP=1.082051
+10/24 | ANCHOR='Valtrexon' | DISP=1.148610
+11/24 | ANCHOR='Orisa' | DISP=1.131128
+12/24 | ANCHOR='The' | DISP=1.058685
+13/24 | ANCHOR='The' | DISP=1.008576
+14/24 | ANCHOR='The' | DISP=1.049451
+15/24 | ANCHOR='The' | DISP=1.116029
+16/24 | ANCHOR='chamber' | DISP=1.045932
+17/24 | ANCHOR='described' | DISP=1.045090
+18/24 | ANCHOR='the' | DISP=1.124289
+19/24 | ANCHOR='Vector' | DISP=1.086388
+20/24 | ANCHOR='Keldrin' | DISP=1.154831
+21/24 | ANCHOR='Kyoto' | DISP=1.006623
+22/24 | ANCHOR='laboratory' | DISP=1.121003
+23/24 | ANCHOR='several' | DISP=1.060162
+24/24 | ANCHOR='maintained' | DISP=1.091883
+SHOWCASE | ANCHOR='took' | DISP=1.007254
+[6/18] PACKETS FROZEN
+TARGET_ACCESS=False | POSITION WINDOW DOES NOT PARTICIPATE IN PACKET SELECTION
+[7/18] TOKEN POSITION MAP
+01/24 | N=51 | LAST12=[' the', ' damaged', ' regulator', ' from', ' Bay', ' Nine', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+02/24 | N=51 | LAST12=[' designation', ' was', ' given', ' to', ' the', ' crystal', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+03/24 | N=51 | LAST12=[' number', ' was', ' on', ' the', ' approved', ' container', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+04/24 | N=49 | LAST12=['Where', ' was', ' the', ' recovered', ' instrument', ' unloaded', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+05/24 | N=51 | LAST12=[' was', ' selected', ' for', ' the', ' outer', ' casing', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+06/24 | N=51 | LAST12=[' did', ' the', ' indicator', ' become', ' after', ' calibration', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+07/24 | N=53 | LAST12=[' start', ' doing', ' beside', ' the', ' damaged', ' conduit', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+08/24 | N=49 | LAST12=['How', ' was', ' the', ' polished', ' specimen', ' described', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+09/24 | N=50 | LAST12=[' object', ' did', ' M', 'ire', 'a', ' retrieve', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+10/24 | N=48 | LAST12=['\n', 'What', ' is', ' the', ' authorization', ' phrase', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+11/24 | N=48 | LAST12=['\n', 'Who', ' completed', ' the', ' final', ' calibration', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+12/24 | N=50 | LAST12=[' did', ' the', ' cargo', ' aircraft', ' finally', ' arrive', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+13/24 | N=51 | LAST12=[' was', ' selected', ' for', ' the', ' inner', ' brace', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+14/24 | N=50 | LAST12=[' color', ' did', ' the', ' auxiliary', ' lamp', ' emit', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+15/24 | N=50 | LAST12=[' was', ' the', ' accepted', ' value', ' after', ' verification', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+16/24 | N=50 | LAST12=[' did', ' the', ' flexible', ' chamber', ' begin', ' doing', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+17/24 | N=49 | LAST12=['How', ' was', ' the', ' replacement', ' material', ' described', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+18/24 | N=49 | LAST12=['Which', ' item', ' was', ' selected', ' for', ' restoration', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+19/24 | N=50 | LAST12=[' became', ' the', ' device', "'s", ' final', ' name', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+20/24 | N=48 | LAST12=['\n', 'Who', ' delivered', ' the', ' encrypted', ' cylinder', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+21/24 | N=49 | LAST12=['Where', ' was', ' the', ' silver', ' tablet', ' deposited', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+22/24 | N=50 | LAST12=[' was', ' the', ' coating', "'s", ' established', ' color', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+23/24 | N=53 | LAST12=[' R', '-', '7', ' primarily', ' consist', ' of', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+24/24 | N=53 | LAST12=[' begin', ' doing', ' near', ' Relay', ' Point', ' Six', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+SHOWCASE | N=58 | LAST12=[' the', ' location', ' of', ' the', ' research', ' demonstration', '?', '<|im_end|>', '\n', '<|im_start|>', 'assistant', '\n']
+[8/18] VANILLA + FULL-WRITE BASELINES - TARGET SEALED
+01/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+02/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+03/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+04/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+05/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+06/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+07/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+08/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+09/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+10/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+11/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+12/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+13/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+14/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+15/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+16/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+17/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+18/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+19/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+20/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+21/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+22/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+23/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+24/24 | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+SHOWCASE | VANILLA/FULL + 12 SINGLE-POS WINDOWS FROZEN
+[9/18] ALL FORWARDS SEALED
+NO TARGET TOKEN USED IN WINDOW SEARCH | TARGET NOW OPENS FOR POST-HOC X-RAY
+[10/18] POST-HOC TARGET WINDOW X-RAY
+01/24 | V=14 FULL=22067 G=-11.81 | BEST_GAIN rel=-8 tok=' Bay' G=+0.31 R=10 | BEST_R=10 rel=-8
+02/24 | V=1351 FULL=8145 G=-1.45 | BEST_GAIN rel=-1 tok='\n' G=+0.75 R=861 | BEST_R=861 rel=-1
+03/24 | V=170 FULL=2 G=+11.06 | BEST_GAIN rel=-1 tok='\n' G=+5.81 R=30 | BEST_R=30 rel=-1
+04/24 | V=471 FULL=3 G=+9.06 | BEST_GAIN rel=-1 tok='\n' G=+1.12 R=275 | BEST_R=275 rel=-1
+05/24 | V=5949 FULL=202 G=+5.12 | BEST_GAIN rel=-1 tok='\n' G=+2.25 R=1274 | BEST_R=1274 rel=-1
+06/24 | V=2468 FULL=62 G=+6.44 | BEST_GAIN rel=-1 tok='\n' G=+0.75 R=1709 | BEST_R=1698 rel=-7
+07/24 | V=406 FULL=12645 G=-5.27 | BEST_GAIN rel=-7 tok=' conduit' G=+0.62 R=299 | BEST_R=299 rel=-7
+08/24 | V=830 FULL=4203 G=-3.19 | BEST_GAIN rel=-1 tok='\n' G=+1.38 R=361 | BEST_R=361 rel=-1
+09/24 | V=567 FULL=3532 G=-3.22 | BEST_GAIN rel=-3 tok='<|im_start|>' G=+0.19 R=489 | BEST_R=483 rel=-2
+10/24 | V=4678 FULL=41 G=+5.59 | BEST_GAIN rel=-12 tok='\n' G=+0.19 R=4404 | BEST_R=4404 rel=-12
+11/24 | V=2768 FULL=7 G=+7.69 | BEST_GAIN rel=-1 tok='\n' G=+0.34 R=2500 | BEST_R=2434 rel=-8
+12/24 | V=333 FULL=2502 G=-3.78 | BEST_GAIN rel=-8 tok=' finally' G=+0.94 R=167 | BEST_R=167 rel=-8
+13/24 | V=8579 FULL=18 G=+11.66 | BEST_GAIN rel=-1 tok='\n' G=+2.03 R=2787 | BEST_R=2787 rel=-1
+14/24 | V=3172 FULL=93 G=+5.94 | BEST_GAIN rel=-1 tok='\n' G=+1.28 R=1572 | BEST_R=1572 rel=-1
+15/24 | V=8 FULL=2 G=+7.62 | BEST_GAIN rel=-6 tok='?' G=+1.75 R=5 | BEST_R=5 rel=-6
+16/24 | V=46 FULL=16780 G=-11.72 | BEST_GAIN rel=-1 tok='\n' G=+1.12 R=28 | BEST_R=28 rel=-1
+17/24 | V=200 FULL=18 G=+0.94 | BEST_GAIN rel=-11 tok=' was' G=+0.69 R=146 | BEST_R=146 rel=-11
+18/24 | V=84711 FULL=875 G=+5.67 | BEST_GAIN rel=-7 tok=' restoration' G=+0.32 R=71008 | BEST_R=71008 rel=-7
+19/24 | V=78 FULL=42990 G=-10.66 | BEST_GAIN rel=-1 tok='\n' G=+1.19 R=32 | BEST_R=32 rel=-1
+20/24 | V=20 FULL=1 G=+2.56 | BEST_GAIN rel=-8 tok=' encrypted' G=+1.88 R=6 | BEST_R=6 rel=-8
+21/24 | V=1426 FULL=16895 G=-3.64 | BEST_GAIN rel=-2 tok='assistant' G=+0.12 R=1320 | BEST_R=1320 rel=-2
+22/24 | V=400 FULL=12708 G=-5.22 | BEST_GAIN rel=-2 tok='assistant' G=+0.44 R=318 | BEST_R=284 rel=-1
+23/24 | V=518 FULL=49577 G=-7.46 | BEST_GAIN rel=-10 tok='7' G=+0.44 R=367 | BEST_R=367 rel=-10
+24/24 | V=25 FULL=107247 G=-14.73 | BEST_GAIN rel=-12 tok=' begin' G=+0.94 R=16 | BEST_R=16 rel=-12
+SHOWCASE | V=4822 FULL=11140 G=-0.94 | BEST_GAIN rel=-4 tok='\n' G=+0.38 R=3925 | BEST_R=3925 rel=-4
+[11/18] POSITION PROFILE
+REL=-12 | N=24 | GAIN=+0.0732 | POS=0.583 | RANK_IMP=0.583
+REL=-11 | N=24 | GAIN=-0.0166 | POS=0.375 | RANK_IMP=0.458
+REL=-10 | N=24 | GAIN=+0.0869 | POS=0.583 | RANK_IMP=0.667
+REL=-9 | N=24 | GAIN=-0.0301 | POS=0.417 | RANK_IMP=0.375
+REL=-8 | N=24 | GAIN=+0.2604 | POS=0.625 | RANK_IMP=0.625
+REL=-7 | N=24 | GAIN=-0.0063 | POS=0.500 | RANK_IMP=0.458
+REL=-6 | N=24 | GAIN=+0.2210 | POS=0.500 | RANK_IMP=0.583
+REL=-5 | N=24 | GAIN=+0.0589 | POS=0.458 | RANK_IMP=0.458
+REL=-4 | N=24 | GAIN=+0.1657 | POS=0.708 | RANK_IMP=0.625
+REL=-3 | N=24 | GAIN=+0.1634 | POS=0.583 | RANK_IMP=0.625
+REL=-2 | N=24 | GAIN=+0.3350 | POS=0.750 | RANK_IMP=0.750
+REL=-1 | N=24 | GAIN=+0.4860 | POS=0.583 | RANK_IMP=0.542
+[12/18] PREDECLARED FIXED WINDOWS
+REL=-1 | G=+0.4860 | POS=0.583 | IMP=0.542 | MED=436.0
+REL=-2 | G=+0.3350 | POS=0.750 | IMP=0.750 | MED=440.0
+REL=-3 | G=+0.1634 | POS=0.583 | IMP=0.625 | MED=470.5
+REL=-4 | G=+0.1657 | POS=0.708 | IMP=0.625 | MED=472.0
+REL=-6 | G=+0.2210 | POS=0.500 | IMP=0.583 | MED=482.0
+REL=-8 | G=+0.2604 | POS=0.625 | IMP=0.625 | MED=478.0
+REL=-10 | G=+0.0869 | POS=0.583 | IMP=0.667 | MED=433.0
+REL=-12 | G=+0.0732 | POS=0.583 | IMP=0.583 | MED=419.0
+[13/18] ORACLE WINDOW UPPER BOUND - POST-HOC ONLY
+VANILLA_MED=494.5 | FULL_WRITE_MED=1688.5 | POSTHOC_ORACLE_WINDOW_MED=330.0 | ORACLE_IMP=1.000 | ORACLE_POS=1.000
+[14/18] BEST FIXED TARGET-FREE POSITION AFTER PROFILE
+DEVELOPMENT BEST REL=-1 | GAIN=+0.4860 | POS=0.583 | IMP=0.542
+NOTE: THIS POSITION IS DEVELOPMENT-SELECTION, NOT HELD-OUT VALIDATION
+[15/18] SHOWCASE
+------------------------------------------------------------------------------------------------------------
+SOURCE : Mustafa Akbaş raised a crimson pennant beside the Bosphorus Bridge where the research demonstration took place.
+QUESTION: What did Mustafa Akbaş do at the location of the research demonstration?
+TARGET : raised a crimson pennant
+ANCHOR : took
+V=4822 | FULL=11140 G=-0.9375 | BEST_GAIN rel=-4 token='\n' G=+0.3750 R=3925 | BEST_R=3925 rel=-4
+------------------------------------------------------------------------------------------------------------
+[16/18] PREDECLARED DIAGNOSTIC
+FIXED_WINDOW_GATE=True | POSTHOC_ORACLE_GATE=True | CLASS=TOKEN_POSITION_READOUT_WINDOW_SUPPORTED
+[17/18] SCIENTIFIC AUDIT
+SAME FRESH-24 | SAME PACKET COMPILER | SAME ARGMAX(DISP) ROUTER | SAME RSS | SINGLE-POSITION WRITES | WINDOW NEVER USED FOR PACKET SELECTION | ORACLE POST-HOC ONLY | NO TRAINING | NO WEIGHT UPDATE
+[18/18] INTEGRITY + SAVE
+============================================================================================================
+TEST 341 COMPLETE
+VANILLA_MED=494.5 | FULL_MED=1688.5 | ORACLE_WINDOW_MED=330.0 | ORACLE_IMP=1.000
+DEV_BEST_REL=-1 | GAIN=+0.486 | POS=0.583 | IMP=0.542
+CLASS= TOKEN_POSITION_READOUT_WINDOW_SUPPORTED
+TARGET POST-HOC ONLY | WEIGHT INTEGRITY PASS | HOOKS=0
+JSON: /content/AKBASCORE_TEST341/T341-20260929-085446.json
+TXT : /content/AKBASCORE_TEST341/T341-20260929-085446.txt
+SHA : 6b1de39a72093e4f0cd0f3dd420884c98d0ea5e6a1ad2de47f3c6368ae2eeb9e
+============================================================================================================
