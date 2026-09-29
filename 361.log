@@ -1,0 +1,123 @@
+ ============================================================================================================
+TEST 361 - NATIVE ATTENTION VALUE-CONTRIBUTION X-RAY
+============================================================================================================
+START: 2026-09-29T12:36:55.442+00:00
+[1/20] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 79.4kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 870kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 28.7MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 68.3MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 125MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.65MB/s]Download complete: :  13.1GB,  474MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  444MB/s  Fetching 4 files: 100% 4/4 [00:40<00:00,  7.08s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.73it/s]generation_config.json: 100% 243/243 [00:00<00:00, 28.3kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | eager-attention | torch.bfloat16 | 50.75s
+[2/20] MODEL LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+[3/20] ARCHITECTURE AUDIT
+HEADS=28 | KV_HEADS=4 | HEAD_DIM=128 | KV_REPEAT=7
+[4/20] JOINT SOURCE+QUESTION ENCODING
+01/16 | PERSON   | SPANS=14 | Q_LAST=27
+02/16 | PERSON   | SPANS=12 | Q_LAST=25
+03/16 | PLACE    | SPANS=13 | Q_LAST=25
+04/16 | PLACE    | SPANS=13 | Q_LAST=25
+05/16 | COLOR    | SPANS=8 | Q_LAST=23
+06/16 | COLOR    | SPANS=8 | Q_LAST=22
+07/16 | MATERIAL | SPANS=11 | Q_LAST=24
+08/16 | MATERIAL | SPANS=11 | Q_LAST=24
+09/16 | ACTION   | SPANS=11 | Q_LAST=27
+10/16 | ACTION   | SPANS=10 | Q_LAST=23
+11/16 | NAME     | SPANS=9 | Q_LAST=24
+12/16 | NAME     | SPANS=9 | Q_LAST=25
+13/16 | NUMBER   | SPANS=9 | Q_LAST=23
+14/16 | OBJECT   | SPANS=8 | Q_LAST=22
+15/16 | PROPERTY | SPANS=9 | Q_LAST=21
+16/16 | SHOWCASE | SPANS=16 | Q_LAST=41
+[5/20] FORWARDS + HIDDEN STATES + ATTENTION
+01/16 | OK
+02/16 | OK
+03/16 | OK
+04/16 | OK
+05/16 | OK
+06/16 | OK
+07/16 | OK
+08/16 | OK
+09/16 | OK
+10/16 | OK
+11/16 | OK
+12/16 | OK
+13/16 | OK
+14/16 | OK
+15/16 | OK
+16/16 | OK
+[6/20] VALUE PROJECTION RECONSTRUCTION
+V PROJECTIONS READY
+[7/20] ATTENTION-WEIGHTED SPAN HEAD CONTRIBUTIONS
+ATTN*V READY
+[8/20] O_PROJ SOURCE-SPAN CONTRIBUTIONS
+O_PROJ CONTRIBUTIONS READY
+[9/20] PER-LAYER CONTRIBUTION NORMS
+NORMS READY
+[10/20] PER-LAYER SOURCE RANKS
+RANKS READY
+[11/20] PRIMARY CROSS-LAYER CONTRIBUTION MRR
+PRIMARY=MEAN_L(1/CONTRIBUTION_RANK) | FROZEN
+[12/20] SECONDARY TOP1 CONTRIBUTION VOTE
+TOP1 VOTE READY
+[13/20] RAW ATTENTION CONTROL
+RAW ATTENTION MRR CONTROL READY
+[14/20] TARGET-FREE OUTPUTS FROZEN
+01/16 | TOP_CONTR='Veyron' | CMRR=0.6852 | V1=15 | AMRR=0.3428
+02/16 | TOP_CONTR='after' | CMRR=0.6152 | V1=12 | AMRR=0.6839
+03/16 | TOP_CONTR='after' | CMRR=0.5364 | V1=11 | AMRR=0.6037
+04/16 | TOP_CONTR='Tallinn' | CMRR=0.5155 | V1=11 | AMRR=0.2596
+05/16 | TOP_CONTR='cobalt' | CMRR=0.6632 | V1=15 | AMRR=0.4776
+06/16 | TOP_CONTR='crimson' | CMRR=0.6554 | V1=13 | AMRR=0.5899
+07/16 | TOP_CONTR='titanium' | CMRR=0.5060 | V1=10 | AMRR=0.4263
+08/16 | TOP_CONTR='granite' | CMRR=0.4587 | V1=09 | AMRR=0.3948
+09/16 | TOP_CONTR='Beside' | CMRR=0.5288 | V1=08 | AMRR=0.5754
+10/16 | TOP_CONTR='rotating' | CMRR=0.5233 | V1=08 | AMRR=0.4728
+11/16 | TOP_CONTR='Velmora' | CMRR=0.6750 | V1=12 | AMRR=0.2071
+12/16 | TOP_CONTR='Sorvane' | CMRR=0.5079 | V1=10 | AMRR=0.1925
+13/16 | TOP_CONTR='642' | CMRR=0.6911 | V1=15 | AMRR=0.2378
+14/16 | TOP_CONTR='chronometer' | CMRR=0.6708 | V1=13 | AMRR=0.4043
+15/16 | TOP_CONTR='as' | CMRR=0.4969 | V1=09 | AMRR=0.4923
+16/16 | TOP_CONTR='Mustafa' | CMRR=0.4335 | V1=07 | AMRR=0.3995
+[15/20] VALUE OPENS POST-HOC
+01/16 | PERSON   | VALUE='Veyron' | CONTR=R01 V1=R01 ATTN=R05 | HIT1=15 HIT3=21
+02/16 | PERSON   | VALUE='Mireva' | CONTR=R02 V1=R02 ATTN=R04 | HIT1=10 HIT3=19
+03/16 | PLACE    | VALUE='Valencia' | CONTR=R02 V1=R02 ATTN=R02 | HIT1=10 HIT3=18
+04/16 | PLACE    | VALUE='Tallinn' | CONTR=R01 V1=R01 ATTN=R04 | HIT1=11 HIT3=15
+05/16 | COLOR    | VALUE='cobalt' | CONTR=R01 V1=R01 ATTN=R02 | HIT1=15 HIT3=20
+06/16 | COLOR    | VALUE='crimson' | CONTR=R01 V1=R01 ATTN=R02 | HIT1=13 HIT3=22
+07/16 | MATERIAL | VALUE='titanium' | CONTR=R01 V1=R01 ATTN=R03 | HIT1=10 HIT3=13
+08/16 | MATERIAL | VALUE='granite' | CONTR=R01 V1=R01 ATTN=R03 | HIT1=09 HIT3=12
+09/16 | ACTION   | VALUE='climbing' | CONTR=R05 V1=R05 ATTN=R03 | HIT1=03 HIT3=06
+10/16 | ACTION   | VALUE='rotating' | CONTR=R01 V1=R01 ATTN=R02 | HIT1=08 HIT3=20
+11/16 | NAME     | VALUE='Velmora' | CONTR=R01 V1=R01 ATTN=R08 | HIT1=12 HIT3=26
+12/16 | NAME     | VALUE='Sorvane' | CONTR=R01 V1=R01 ATTN=R08 | HIT1=10 HIT3=16
+13/16 | NUMBER   | VALUE='642' | CONTR=R01 V1=R01 ATTN=R07 | HIT1=15 HIT3=23
+14/16 | OBJECT   | VALUE='chronometer' | CONTR=R01 V1=R01 ATTN=R03 | HIT1=13 HIT3=24
+15/16 | PROPERTY | VALUE='reflective' | CONTR=R05 V1=R04 ATTN=R06 | HIT1=03 HIT3=11
+16/16 | SHOWCASE | VALUE='raised a silver pennant' | CONTR=R06 V1=R04 ATTN=R04 | HIT1=02 HIT3=07
+[16/20] DEVELOPMENT SUMMARY
+CONTR MRR | MED=1.0 | TOP1=0.733 | TOP3=0.867 | TOP5=1.000
+CONTR V1  | MED=1.0 | TOP1=0.733 | TOP3=0.867 | TOP5=1.000
+ATTN MRR  | MED=3.0 | TOP1=0.000 | TOP3=0.533 | TOP5=0.733
+[17/20] PREDECLARED COMPARISON
+CONTR_BEATS_ATTN=0.867 | CONTR_WORSE_ATTN=0.067 | SUPPORTED=True | CONTRIBUTION_HELP=True
+[18/20] SHOWCASE + CLASSIFICATION
+------------------------------------------------------------------------------------------------------------
+SOURCE: Mustafa Akbaş raised a silver pennant beside the Maiden's Tower where the independent demonstration was conducted.
+Q: What did Mustafa Akbaş do at the location of the independent demonstration?
+VALUE: raised a silver pennant
+CONTR_MRR=R6 | CONTR_V1=R4 | ATTN_MRR=R4 | HIT1=2 HIT3=7
+------------------------------------------------------------------------------------------------------------
+CLASS= NATIVE_ATTENTION_VALUE_CONTRIBUTION_LOCALIZATION_SUPPORTED
+[19/20] SCIENTIFIC AUDIT
+TEST360 JOINT CONTEXT | QUESTION-LAST | EXACT MODEL V_PROJ + ATTN WEIGHT + O_PROJ | PRIMARY=CROSS-LAYER CONTRIBUTION MRR | VALUE POST-HOC | NO SEASC | NO TARGET/LAYER/HEAD ORACLE | NO SCORE SEARCH | NO TRAINING
+[20/20] INTEGRITY + JSON-SAFE SAVE
+============================================================================================================
+TEST 361 COMPLETE
+CONTR MRR | MED=1.0 | TOP1=0.733 | TOP3=0.867 | TOP5=1.000
+ATTN  MRR | MED=3.0 | TOP1=0.000 | TOP3=0.533 | TOP5=0.733
+CLASS= NATIVE_ATTENTION_VALUE_CONTRIBUTION_LOCALIZATION_SUPPORTED
+VALUE POST-HOC ONLY | NO SEASC | WEIGHTS FROZEN | JSON SAFE
+JSON: /content/AKBASCORE_TEST361/T361-20260929-123809.json
+TXT : /content/AKBASCORE_TEST361/T361-20260929-123809.txt
+SHA : 4e03f0bdd120f1034103bf844767e6b9dfff1f3236cc49116e88baaf8b3e7bb8
+============================================================================================================
