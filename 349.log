@@ -1,0 +1,186 @@
+ ============================================================================================================
+TEST 349 - PACKET-TO-LEXICON GEOMETRIC READOUT ASSAY
+============================================================================================================
+START: 2026-09-29T11:02:30.447+00:00
+[1/18] MODEL LOAD
+config.json: 100% 663/663 [00:00<00:00, 85.9kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 879kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 84.7MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 72.3MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 120MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.57MB/s]Download complete: :  13.1GB,  306MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  342MB/s  Fetching 4 files: 100% 4/4 [00:40<00:00,  7.48s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.76it/s]generation_config.json: 100% 243/243 [00:00<00:00, 30.4kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | torch.bfloat16 | 54.06s
+[2/18] ENGINE LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | FULL ASSISTANT-OUTPUT | PRIMARY=COS(REALIZED_DH27,W) | HYB=0.25
+[3/18] QUERY NULL CACHE
+NULL READY
+[4/18] TARGET-FREE PACKET BANK
+01/24 | BANK= 15
+02/24 | BANK= 15
+03/24 | BANK= 13
+04/24 | BANK= 15
+05/24 | BANK= 14
+06/24 | BANK= 13
+07/24 | BANK= 15
+08/24 | BANK= 13
+09/24 | BANK= 14
+10/24 | BANK= 10
+11/24 | BANK= 13
+12/24 | BANK= 14
+13/24 | BANK= 14
+14/24 | BANK= 11
+15/24 | BANK= 13
+16/24 | BANK= 11
+17/24 | BANK= 13
+18/24 | BANK= 17
+19/24 | BANK= 14
+20/24 | BANK= 13
+21/24 | BANK= 14
+22/24 | BANK= 13
+23/24 | BANK= 10
+24/24 | BANK= 14
+SHOWCASE | BANK= 16
+[5/18] FROZEN ARGMAX(DISP) ROUTER
+01/24 | ANCHOR='During' | DISP=0.465429
+02/24 | ANCHOR='designation' | DISP=0.322664
+03/24 | ANCHOR='After' | DISP=0.486695
+04/24 | ANCHOR='research' | DISP=0.396355
+05/24 | ANCHOR='After' | DISP=0.402966
+06/24 | ANCHOR='status' | DISP=0.327831
+07/24 | ANCHOR='began' | DISP=0.260100
+08/24 | ANCHOR='original' | DISP=0.323299
+09/24 | ANCHOR='equipment' | DISP=0.229279
+10/24 | ANCHOR='emergency' | DISP=0.470756
+11/24 | ANCHOR='Merik' | DISP=0.516476
+12/24 | ANCHOR='transport' | DISP=0.390755
+13/24 | ANCHOR='The' | DISP=0.365645
+14/24 | ANCHOR='The' | DISP=0.344858
+15/24 | ANCHOR='display' | DISP=0.454496
+16/24 | ANCHOR='When' | DISP=0.348160
+17/24 | ANCHOR='The' | DISP=0.354542
+18/24 | ANCHOR='storage' | DISP=0.428094
+19/24 | ANCHOR='prototype' | DISP=0.305135
+20/24 | ANCHOR='Several' | DISP=0.316570
+21/24 | ANCHOR='archaeological' | DISP=0.347268
+22/24 | ANCHOR='untreated' | DISP=0.396924
+23/24 | ANCHOR='Sample' | DISP=0.352017
+24/24 | ANCHOR='platform' | DISP=0.290880
+SHOWCASE | ANCHOR='Mustafa' | DISP=0.259882
+[6/18] VOCAB GEOMETRY LOCK
+VOCAB=152064 | W=(152064, 3584) | NORMALIZED=True
+[7/18] ASSISTANT INDEX AUDIT
+01/24 | POS=46 | TOKEN='assistant'
+02/24 | POS=49 | TOKEN='assistant'
+03/24 | POS=50 | TOKEN='assistant'
+04/24 | POS=47 | TOKEN='assistant'
+05/24 | POS=49 | TOKEN='assistant'
+06/24 | POS=50 | TOKEN='assistant'
+07/24 | POS=52 | TOKEN='assistant'
+08/24 | POS=47 | TOKEN='assistant'
+09/24 | POS=47 | TOKEN='assistant'
+10/24 | POS=47 | TOKEN='assistant'
+11/24 | POS=46 | TOKEN='assistant'
+12/24 | POS=49 | TOKEN='assistant'
+13/24 | POS=49 | TOKEN='assistant'
+14/24 | POS=48 | TOKEN='assistant'
+15/24 | POS=50 | TOKEN='assistant'
+16/24 | POS=47 | TOKEN='assistant'
+17/24 | POS=47 | TOKEN='assistant'
+18/24 | POS=47 | TOKEN='assistant'
+19/24 | POS=48 | TOKEN='assistant'
+20/24 | POS=46 | TOKEN='assistant'
+21/24 | POS=47 | TOKEN='assistant'
+22/24 | POS=48 | TOKEN='assistant'
+23/24 | POS=50 | TOKEN='assistant'
+24/24 | POS=50 | TOKEN='assistant'
+SHOWCASE | POS=56 | TOKEN='assistant'
+[8/18] TARGET-FREE TERMINAL GEOMETRY + VOCAB SCORES
+01/24 | DISP=0.465429 | GEO1=' It' | HYB1='engine'
+02/24 | DISP=0.322664 | GEO1='information' | HYB1='missing'
+03/24 | DISP=0.486695 | GEO1=' N' | HYB1=' '
+04/24 | DISP=0.396355 | GEO1=' a' | HYB1='port'
+05/24 | DISP=0.402966 | GEO1=' K' | HYB1=' K'
+06/24 | DISP=0.327831 | GEO1=' after' | HYB1=' after'
+07/24 | DISP=0.260100 | GEO1=' started' | HYB1='started'
+08/24 | DISP=0.323299 | GEO1=' as' | HYB1=' as'
+09/24 | DISP=0.229279 | GEO1=' advertisers' | HYB1='variably'
+10/24 | DISP=0.470756 | GEO1='the' | HYB1='one'
+11/24 | DISP=0.516476 | GEO1='the' | HYB1='it'
+12/24 | DISP=0.390755 | GEO1=' the' | HYB1=' it'
+13/24 | DISP=0.365645 | GEO1='_UNKNOWN' | HYB1='ęd'
+14/24 | DISP=0.344858 | GEO1='red' | HYB1='red'
+15/24 | DISP=0.454496 | GEO1=' data' | HYB1=' '
+16/24 | DISP=0.348160 | GEO1=' moved' | HYB1=' extended'
+17/24 | DISP=0.354542 | GEO1='so' | HYB1='so'
+18/24 | DISP=0.428094 | GEO1=' a' | HYB1=' a'
+19/24 | DISP=0.305135 | GEO1=' never' | HYB1=' never'
+20/24 | DISP=0.316570 | GEO1=' it' | HYB1='it'
+21/24 | DISP=0.347268 | GEO1=' a' | HYB1=' a'
+22/24 | DISP=0.396924 | GEO1=' we' | HYB1='ver'
+23/24 | DISP=0.352017 | GEO1=' it' | HYB1=' it'
+24/24 | DISP=0.290880 | GEO1='information' | HYB1='information'
+SHOWCASE | DISP=0.259882 | GEO1='team' | HYB1='ath'
+[9/18] ALL TARGET-FREE RANKINGS FROZEN
+PRIMARY GEO + SECONDARY HYB FROZEN | TARGET_ACCESS=False
+[10/18] TARGET OPENS - POST-HOC READOUT
+01/24 | T='Br' | GEO=5652 HYB=6745 STEER=732 DELTA=6775 | COS=+0.01694
+02/24 | T='Nor' | GEO=103424 HYB=104019 STEER=3652 DELTA=103935 | COS=+0.00124
+03/24 | T='5' | GEO=14 HYB=10 STEER=22 DELTA=9 | COS=+0.07142
+04/24 | T='Dub' | GEO=30588 HYB=30980 STEER=130 DELTA=30834 | COS=+0.00408
+05/24 | T='obs' | GEO=15544 HYB=14077 STEER=431 DELTA=13893 | COS=+0.01323
+06/24 | T='m' | GEO=360 HYB=203 STEER=1392 DELTA=197 | COS=+0.04365
+07/24 | T='c' | GEO=129277 HYB=127603 STEER=192 DELTA=127294 | COS=-0.01429
+08/24 | T='g' | GEO=387 HYB=256 STEER=464 DELTA=249 | COS=+0.04281
+09/24 | T='compass' | GEO=2991 HYB=2189 STEER=89 DELTA=2151 | COS=+0.03078
+10/24 | T='D' | GEO=19373 HYB=19705 STEER=372 DELTA=19583 | COS=+0.00620
+11/24 | T='T' | GEO=16002 HYB=15974 STEER=73 DELTA=15873 | COS=+0.00829
+12/24 | T='Br' | GEO=16369 HYB=16620 STEER=105 DELTA=16508 | COS=+0.00735
+13/24 | T='t' | GEO=55 HYB=33 STEER=80 DELTA=32 | COS=+0.05293
+14/24 | T='scar' | GEO=60242 HYB=50488 STEER=358 DELTA=49642 | COS=+0.01132
+15/24 | T='8' | GEO=273 HYB=69 STEER=5 DELTA=64 | COS=+0.05890
+16/24 | T='exp' | GEO=74360 HYB=71361 STEER=12 DELTA=70953 | COS=-0.01503
+17/24 | T='vel' | GEO=4829 HYB=2558 STEER=274 DELTA=2454 | COS=+0.02533
+18/24 | T='hy' | GEO=4192 HYB=2951 STEER=6589 DELTA=2886 | COS=+0.01821
+19/24 | T='Kel' | GEO=83441 HYB=84532 STEER=965 DELTA=84285 | COS=-0.01001
+20/24 | T='V' | GEO=14477 HYB=14600 STEER=46 DELTA=14432 | COS=+0.00831
+21/24 | T='N' | GEO=1958 HYB=2165 STEER=43 DELTA=2155 | COS=+0.03162
+22/24 | T='ind' | GEO=155 HYB=94 STEER=79 DELTA=89 | COS=+0.04428
+23/24 | T='feld' | GEO=5865 HYB=2936 STEER=753 DELTA=2783 | COS=+0.02238
+24/24 | T='descending' | GEO=55474 HYB=53083 STEER=21269 DELTA=52494 | COS=+0.00696
+SHOWCASE | T='placed' | GEO=1787 HYB=3126 STEER=199 DELTA=3208 | COS=+0.03519
+[11/18] SUMMARY
+GEO    | MED=10171.0 | T1=0.000 T5=0.000 T10=0.000 T50=0.042 T256=0.125
+HYB    | MED=10411.0 | T1=0.000 T5=0.000 T10=0.042 T50=0.083 T256=0.250
+STEER  | MED=233.0 | T1=0.000 T5=0.042 T10=0.042 T50=0.208 T256=0.500
+DELTA  | MED=10334.0 | T1=0.000 T5=0.000 T10=0.042 T50=0.083 T256=0.250
+[12/18] GEOMETRIC IDENTITY TEST
+GEO_COS_POS=0.875000 | GEO<DELTA=0.291667 | GEO<STEER=0.208333 | HYB<STEER=0.208333
+[13/18] PREDECLARED GATES
+GEO_SIGNAL=True | GEO_LOCALIZE=False | GEO_STRONG=False | HYB_HELP=False
+[14/18] SHOWCASE
+------------------------------------------------------------------------------------------------------------
+SOURCE : Mustafa Akbaş placed an amber banner beneath the Galata Bridge where the validation demonstration was conducted.
+QUESTION: What did Mustafa Akbaş do at the location of the validation demonstration?
+TARGET : placed an amber banner | TOKEN: 'placed'
+ANCHOR : Mustafa
+GEO=1787 HYB=3126 STEER=199 DELTA=3208 | COS=+0.03519
+TOP GEO: [('team', 0.07126), ('time', 0.07042), (' throw', 0.06855), (' Time', 0.06801), (' throwing', 0.06791), (' throws', 0.06642), (' photo', 0.06482), ('throw', 0.06429)]
+TOP HYB: [('ath', 1.258), ('_WARNINGS', 1.228), ('time', 1.211), ('gambar', 1.195), ('team', 1.193), ('BOSE', 1.174), (' throw', 1.168), ('charges', 1.161)]
+------------------------------------------------------------------------------------------------------------
+[15/18] CLASSIFICATION
+CLASS= PACKET_GEOMETRY_ALIGNS_WITH_TARGET_BUT_DOES_NOT_LOCALIZE_LEXICAL_IDENTITY
+[16/18] INTERPRETATION LOCK
+REALIZED TERMINAL DISPLACEMENT ONLY | LM_HEAD ROW COSINE | TARGET POST-HOC ONLY | GEOMETRY IS DIAGNOSTIC, NOT A TRAINED DECODER
+[17/18] SCIENTIFIC AUDIT
+TEST348 ENGINE UNCHANGED | SAME COMPILER | SAME ARGMAX(DISP) | SAME RSS | FULL ASSISTANT-OUTPUT | NO SCORE SEARCH | NO ORACLE | NO TRAINING | NO WEIGHT UPDATE
+[18/18] INTEGRITY + SAVE
+============================================================================================================
+TEST 349 COMPLETE
+GEO    | MED=10171.0 | T10=0.000 | T50=0.042 | T256=0.125
+HYB    | MED=10411.0 | T10=0.042 | T50=0.083 | T256=0.250
+STEER  | MED=233.0 | T10=0.042 | T50=0.208 | T256=0.500
+DELTA  | MED=10334.0 | T10=0.042 | T50=0.083 | T256=0.250
+GEO_COS_POS=0.875 | GEO<DELTA=0.292 | GEO<STEER=0.208 | HYB<STEER=0.208
+CLASS= PACKET_GEOMETRY_ALIGNS_WITH_TARGET_BUT_DOES_NOT_LOCALIZE_LEXICAL_IDENTITY
+TARGET POST-HOC ONLY | WEIGHTS FROZEN | HOOKS=0
+JSON: /content/AKBASCORE_TEST349/T349-20260929-110358.json
+TXT : /content/AKBASCORE_TEST349/T349-20260929-110358.txt
+SHA : 979c90b4f20de19a736fab5ea33a585cb57e949745b6554ab5b3c336ff660a5e
+============================================================================================================
