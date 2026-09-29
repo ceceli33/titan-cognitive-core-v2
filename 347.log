@@ -1,0 +1,221 @@
+ ============================================================================================================
+TEST 347 - FIRST-TOKEN ENTRY BOUNDARY - LAYERWISE X-RAY
+============================================================================================================
+START: 2026-09-29T10:48:26.652+00:00
+[1/18] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 82.7kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 721kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 73.9MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 70.7MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 131MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 2.92MB/s]Download complete: :  13.1GB,  412MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  476MB/s  Fetching 4 files: 100% 4/4 [00:39<00:00,  6.72s/it]Loading weights: 100% 339/339 [00:03<00:00, 94.32it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.4kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | torch.bfloat16 | 52.17s
+[2/18] ENGINE LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | FULL ASSISTANT-OUTPUT | L0-L25 | L26-L27 OBSERVE
+[3/18] QUERY NULL CACHE
+NULL READY
+[4/18] TARGET-FREE PACKET BANK
+01/24 | BANK= 15
+02/24 | BANK= 15
+03/24 | BANK= 13
+04/24 | BANK= 15
+05/24 | BANK= 14
+06/24 | BANK= 13
+07/24 | BANK= 15
+08/24 | BANK= 13
+09/24 | BANK= 14
+10/24 | BANK= 10
+11/24 | BANK= 13
+12/24 | BANK= 14
+13/24 | BANK= 14
+14/24 | BANK= 11
+15/24 | BANK= 13
+16/24 | BANK= 11
+17/24 | BANK= 13
+18/24 | BANK= 17
+19/24 | BANK= 14
+20/24 | BANK= 13
+21/24 | BANK= 14
+22/24 | BANK= 13
+23/24 | BANK= 10
+24/24 | BANK= 14
+SHOWCASE | BANK= 16
+[5/18] FROZEN ARGMAX(DISP) ROUTER
+01/24 | ANCHOR='During' | DISP=0.465429
+02/24 | ANCHOR='designation' | DISP=0.322664
+03/24 | ANCHOR='After' | DISP=0.486695
+04/24 | ANCHOR='research' | DISP=0.396355
+05/24 | ANCHOR='After' | DISP=0.402966
+06/24 | ANCHOR='status' | DISP=0.327831
+07/24 | ANCHOR='began' | DISP=0.260100
+08/24 | ANCHOR='original' | DISP=0.323299
+09/24 | ANCHOR='equipment' | DISP=0.229279
+10/24 | ANCHOR='emergency' | DISP=0.470756
+11/24 | ANCHOR='Merik' | DISP=0.516476
+12/24 | ANCHOR='transport' | DISP=0.390755
+13/24 | ANCHOR='The' | DISP=0.365645
+14/24 | ANCHOR='The' | DISP=0.344858
+15/24 | ANCHOR='display' | DISP=0.454496
+16/24 | ANCHOR='When' | DISP=0.348160
+17/24 | ANCHOR='The' | DISP=0.354542
+18/24 | ANCHOR='storage' | DISP=0.428094
+19/24 | ANCHOR='prototype' | DISP=0.305135
+20/24 | ANCHOR='Several' | DISP=0.316570
+21/24 | ANCHOR='archaeological' | DISP=0.347268
+22/24 | ANCHOR='untreated' | DISP=0.396924
+23/24 | ANCHOR='Sample' | DISP=0.352017
+24/24 | ANCHOR='platform' | DISP=0.290880
+SHOWCASE | ANCHOR='Mustafa' | DISP=0.259882
+[6/18] ENGINE FROZEN
+SAME TEST346 ENGINE | NO NEW ROUTER/DOSE/WINDOW | TARGET_ACCESS=False
+[7/18] ASSISTANT INDEX AUDIT
+01/24 | POS=46 | TOKEN='assistant'
+02/24 | POS=49 | TOKEN='assistant'
+03/24 | POS=50 | TOKEN='assistant'
+04/24 | POS=47 | TOKEN='assistant'
+05/24 | POS=49 | TOKEN='assistant'
+06/24 | POS=50 | TOKEN='assistant'
+07/24 | POS=52 | TOKEN='assistant'
+08/24 | POS=47 | TOKEN='assistant'
+09/24 | POS=47 | TOKEN='assistant'
+10/24 | POS=47 | TOKEN='assistant'
+11/24 | POS=46 | TOKEN='assistant'
+12/24 | POS=49 | TOKEN='assistant'
+13/24 | POS=49 | TOKEN='assistant'
+14/24 | POS=48 | TOKEN='assistant'
+15/24 | POS=50 | TOKEN='assistant'
+16/24 | POS=47 | TOKEN='assistant'
+17/24 | POS=47 | TOKEN='assistant'
+18/24 | POS=47 | TOKEN='assistant'
+19/24 | POS=48 | TOKEN='assistant'
+20/24 | POS=46 | TOKEN='assistant'
+21/24 | POS=47 | TOKEN='assistant'
+22/24 | POS=48 | TOKEN='assistant'
+23/24 | POS=50 | TOKEN='assistant'
+24/24 | POS=50 | TOKEN='assistant'
+SHOWCASE | POS=56 | TOKEN='assistant'
+[8/18] VANILLA + SEASC HIDDEN STATES FROZEN - TARGET SEALED
+01/24 | WIN='Information'
+02/24 | WIN='information'
+03/24 | WIN='Information'
+04/24 | WIN='Unknown'
+05/24 | WIN='information'
+06/24 | WIN='Green'
+07/24 | WIN='started'
+08/24 | WIN='The'
+09/24 | WIN='information'
+10/24 | WIN='Information'
+11/24 | WIN='Information'
+12/24 | WIN='information'
+13/24 | WIN='information'
+14/24 | WIN='yellow'
+15/24 | WIN='Information'
+16/24 | WIN='It'
+17/24 | WIN='soft'
+18/24 | WIN='Item'
+19/24 | WIN='Ne'
+20/24 | WIN='Apollo'
+21/24 | WIN='The'
+22/24 | WIN='missing'
+23/24 | WIN='information'
+24/24 | WIN='Col'
+SHOWCASE | WIN='He'
+[9/18] TARGET OPENS - LAYERWISE LOGIT-LENS X-RAY
+01/24 | T='Br' | W='Information' | L27 dM=+7.938 | M=-12.688
+02/24 | T='Nor' | W='information' | L27 dM=-5.875 | M=-12.500
+03/24 | T='5' | W='Information' | L27 dM=+9.625 | M=-10.375
+04/24 | T='Dub' | W='Unknown' | L27 dM=+2.500 | M=-4.562
+05/24 | T='obs' | W='information' | L27 dM=+5.219 | M=-10.625
+06/24 | T='m' | W='Green' | L27 dM=+6.188 | M=-12.312
+07/24 | T='c' | W='started' | L27 dM=-5.312 | M=-4.812
+08/24 | T='g' | W='The' | L27 dM=+4.125 | M=-10.250
+09/24 | T='compass' | W='information' | L27 dM=+1.781 | M=-9.812
+10/24 | T='D' | W='Information' | L27 dM=+7.812 | M=-7.375
+11/24 | T='T' | W='Information' | L27 dM=+8.938 | M=-1.875
+12/24 | T='Br' | W='information' | L27 dM=+2.000 | M=-4.438
+13/24 | T='t' | W='information' | L27 dM=+1.125 | M=-10.438
+14/24 | T='scar' | W='yellow' | L27 dM=-1.000 | M=-14.000
+15/24 | T='8' | W='Information' | L27 dM=+5.250 | M=-5.250
+16/24 | T='exp' | W='It' | L27 dM=+1.562 | M=-4.312
+17/24 | T='vel' | W='soft' | L27 dM=-0.969 | M=-12.250
+18/24 | T='hy' | W='Item' | L27 dM=+6.742 | M=-14.109
+19/24 | T='Kel' | W='Ne' | L27 dM=-0.625 | M=-8.031
+20/24 | T='V' | W='Apollo' | L27 dM=+2.750 | M=+0.188
+21/24 | T='N' | W='The' | L27 dM=+2.438 | M=-4.562
+22/24 | T='ind' | W='missing' | L27 dM=+7.250 | M=-2.000
+23/24 | T='feld' | W='information' | L27 dM=+4.945 | M=-12.578
+24/24 | T='descending' | W='Col' | L27 dM=+2.516 | M=-13.469
+SHOWCASE | T='placed' | W='He' | L27 dM=+0.375 | M=-7.562
+[10/18] LAYER PROFILE
+L00 | TGAIN=+0.000 | WGAIN=+0.000 | dM=+0.000 | dM+=0.000 | T+=0.000 | M>0=0.583
+L01 | TGAIN=+0.036 | WGAIN=+0.020 | dM=+0.016 | dM+=0.500 | T+=0.500 | M>0=0.667
+L02 | TGAIN=+0.060 | WGAIN=-0.031 | dM=+0.091 | dM+=0.542 | T+=0.583 | M>0=0.625
+L03 | TGAIN=+0.244 | WGAIN=-0.061 | dM=+0.305 | dM+=0.667 | T+=0.667 | M>0=0.292
+L04 | TGAIN=+0.247 | WGAIN=+0.098 | dM=+0.149 | dM+=0.625 | T+=0.708 | M>0=0.500
+L05 | TGAIN=+0.240 | WGAIN=+0.255 | dM=-0.015 | dM+=0.417 | T+=0.792 | M>0=0.667
+L06 | TGAIN=+0.416 | WGAIN=+0.185 | dM=+0.231 | dM+=0.625 | T+=0.833 | M>0=0.667
+L07 | TGAIN=+0.301 | WGAIN=+0.096 | dM=+0.204 | dM+=0.625 | T+=0.750 | M>0=0.583
+L08 | TGAIN=+0.036 | WGAIN=+0.060 | dM=-0.024 | dM+=0.375 | T+=0.542 | M>0=0.667
+L09 | TGAIN=+0.011 | WGAIN=+0.018 | dM=-0.006 | dM+=0.458 | T+=0.458 | M>0=0.708
+L10 | TGAIN=+0.063 | WGAIN=+0.181 | dM=-0.118 | dM+=0.333 | T+=0.542 | M>0=0.625
+L11 | TGAIN=+0.178 | WGAIN=+0.205 | dM=-0.027 | dM+=0.417 | T+=0.625 | M>0=0.667
+L12 | TGAIN=+0.223 | WGAIN=+0.119 | dM=+0.104 | dM+=0.542 | T+=0.792 | M>0=0.625
+L13 | TGAIN=+0.150 | WGAIN=+0.232 | dM=-0.082 | dM+=0.417 | T+=0.708 | M>0=0.625
+L14 | TGAIN=+0.179 | WGAIN=+0.233 | dM=-0.054 | dM+=0.375 | T+=0.750 | M>0=0.750
+L15 | TGAIN=+0.191 | WGAIN=+0.317 | dM=-0.126 | dM+=0.417 | T+=0.625 | M>0=0.625
+L16 | TGAIN=+0.332 | WGAIN=+0.320 | dM=+0.012 | dM+=0.375 | T+=0.792 | M>0=0.500
+L17 | TGAIN=+0.323 | WGAIN=+0.284 | dM=+0.040 | dM+=0.458 | T+=0.833 | M>0=0.667
+L18 | TGAIN=+0.266 | WGAIN=+0.031 | dM=+0.236 | dM+=0.708 | T+=0.750 | M>0=0.500
+L19 | TGAIN=+0.251 | WGAIN=-0.032 | dM=+0.283 | dM+=0.625 | T+=0.750 | M>0=0.542
+L20 | TGAIN=+0.050 | WGAIN=-0.021 | dM=+0.072 | dM+=0.542 | T+=0.542 | M>0=0.292
+L21 | TGAIN=+0.075 | WGAIN=-0.046 | dM=+0.121 | dM+=0.583 | T+=0.583 | M>0=0.167
+L22 | TGAIN=+0.133 | WGAIN=+0.169 | dM=-0.036 | dM+=0.417 | T+=0.625 | M>0=0.125
+L23 | TGAIN=+0.133 | WGAIN=-0.195 | dM=+0.328 | dM+=0.583 | T+=0.583 | M>0=0.083
+L24 | TGAIN=+0.195 | WGAIN=-0.413 | dM=+0.608 | dM+=0.667 | T+=0.667 | M>0=0.083
+L25 | TGAIN=+0.209 | WGAIN=-0.165 | dM=+0.374 | dM+=0.625 | T+=0.625 | M>0=0.042
+L26 | TGAIN=+0.672 | WGAIN=-0.733 | dM=+1.405 | dM+=0.667 | T+=0.708 | M>0=0.000
+L27 | TGAIN=+1.627 | WGAIN=-1.578 | dM=+3.205 | dM+=0.792 | T+=0.875 | M>0=0.042
+[11/18] ENTRY-BOUNDARY LOCALIZATION
+BEST_MARGIN_GAIN=L27 dM=+3.205 POS=0.792
+PEAK_TARGET_GAIN=L27 TG=+1.627 POS=0.875
+[12/18] TAIL EVOLUTION
+L20 | TGAIN=+0.050 | WGAIN=-0.021 | dM=+0.072 | M>0=0.292
+L21 | TGAIN=+0.075 | WGAIN=-0.046 | dM=+0.121 | M>0=0.167
+L22 | TGAIN=+0.133 | WGAIN=+0.169 | dM=-0.036 | M>0=0.125
+L23 | TGAIN=+0.133 | WGAIN=-0.195 | dM=+0.328 | M>0=0.083
+L24 | TGAIN=+0.195 | WGAIN=-0.413 | dM=+0.608 | M>0=0.083
+L25 | TGAIN=+0.209 | WGAIN=-0.165 | dM=+0.374 | M>0=0.042
+L26 | TGAIN=+0.672 | WGAIN=-0.733 | dM=+1.405 | M>0=0.000
+L27 | TGAIN=+1.627 | WGAIN=-1.578 | dM=+3.205 | M>0=0.042
+[13/18] PREDECLARED DIAGNOSTIC GATES
+TARGET_SIGNAL=True | MARGIN_SIGNAL=True | BOUNDARY_UNCROSSED=True | TAIL_ERASURE=False
+[14/18] SHOWCASE
+------------------------------------------------------------------------------------------------------------
+SOURCE : Mustafa Akbaş placed an amber banner beneath the Galata Bridge where the validation demonstration was conducted.
+QUESTION: What did Mustafa Akbaş do at the location of the validation demonstration?
+TARGET : placed an amber banner | TOKEN: 'placed'
+WINNER : 'He'
+ANCHOR : Mustafa
+L20 | TGAIN=+0.848 | WGAIN=+0.664 | dM=+0.184 | M=+0.211
+L21 | TGAIN=+0.953 | WGAIN=+1.250 | dM=-0.297 | M=-1.625
+L22 | TGAIN=+0.638 | WGAIN=+1.266 | dM=-0.628 | M=-3.473
+L23 | TGAIN=+0.664 | WGAIN=+1.188 | dM=-0.523 | M=-3.828
+L24 | TGAIN=+0.453 | WGAIN=+1.250 | dM=-0.797 | M=-2.703
+L25 | TGAIN=+0.125 | WGAIN=+1.438 | dM=-1.312 | M=-5.156
+L26 | TGAIN=+0.688 | WGAIN=+1.188 | dM=-0.500 | M=-9.109
+L27 | TGAIN=+1.312 | WGAIN=+0.938 | dM=+0.375 | M=-7.562
+------------------------------------------------------------------------------------------------------------
+[15/18] CLASSIFICATION
+CLASS= TARGET_MARGIN_BUILDS_BUT_DOES_NOT_CROSS_FIRST_TOKEN_DECISION_BOUNDARY
+[16/18] INTERPRETATION LOCK
+LOGIT-LENS IS POST-HOC DIAGNOSTIC | TARGET NEVER USED FOR ROUTING/INJECTION/SELECTION | NO CAUSAL LAYER CLAIM FROM OBSERVATION ALONE
+[17/18] SCIENTIFIC AUDIT
+TEST346 ENGINE UNCHANGED | SAME COMPILER | SAME ARGMAX(DISP) | SAME RSS | FULL ASSISTANT-OUTPUT | L26-L27 MOTOR OFF | NO SEARCH | NO TRAINING | NO WEIGHT UPDATE
+[18/18] INTEGRITY + SAVE
+============================================================================================================
+TEST 347 COMPLETE
+BEST dM=L27 +3.205 | PEAK TG=L27 +1.627
+L27 TARGET_GAIN=+1.627 | WINNER_GAIN=-1.578 | MARGIN_GAIN=+3.205 | dM+=0.792 | BOUNDARY_CROSS=0.042
+CLASS= TARGET_MARGIN_BUILDS_BUT_DOES_NOT_CROSS_FIRST_TOKEN_DECISION_BOUNDARY
+TARGET POST-HOC ONLY | LOGIT-LENS DIAGNOSTIC | WEIGHTS FROZEN | HOOKS=0
+JSON: /content/AKBASCORE_TEST347/T347-20260929-104955.json
+TXT : /content/AKBASCORE_TEST347/T347-20260929-104955.txt
+SHA : fec5673fdbeab9e4ff6b83b02086d7c7c98ff052ee66feaee178629e5d93730d
+============================================================================================================
