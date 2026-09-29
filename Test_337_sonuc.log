@@ -1,0 +1,201 @@
+ 
+============================================================================================================
+TEST 337 - FROZEN DISP ROUTER -> TARGET-FREE HYBRID PRIOR/CONTRAST READOUT
+============================================================================================================
+START: 2026-09-29T07:52:22.050+00:00
+[1/18] MODEL LOAD
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 73.4kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 843kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 81.2MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 61.1MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 121MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.42MB/s]
+Download complete: : 
+
+ 13.1GB,  647MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  246MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:43<00:00,  8.37s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 95.30it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 29.4kB/s]
+OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | VOCAB=152064 | torch.bfloat16 | 56.79s
+[2/18] ENGINE + READOUT LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | ROUTER=ARGMAX(DISP) | ALPHAS=[0.0, 0.25, 0.5, 1.0, 2.0] | PRIMARY_ALPHA=0.5 | TARGET SEALED
+[3/18] QUERY NULL CACHE
+NULL READY
+[4/18] ANCHOR BANK - TARGET SEALED
+01/24 | BANK= 18
+02/24 | BANK= 13
+03/24 | BANK= 14
+04/24 | BANK= 13
+05/24 | BANK= 14
+06/24 | BANK= 14
+07/24 | BANK= 15
+08/24 | BANK= 13
+09/24 | BANK= 14
+10/24 | BANK= 10
+11/24 | BANK= 12
+12/24 | BANK= 15
+13/24 | BANK= 14
+14/24 | BANK= 12
+15/24 | BANK= 13
+16/24 | BANK= 15
+17/24 | BANK= 13
+18/24 | BANK= 18
+19/24 | BANK= 14
+20/24 | BANK= 13
+21/24 | BANK= 13
+22/24 | BANK= 15
+23/24 | BANK= 13
+24/24 | BANK= 14
+SHOWCASE | BANK= 16
+[5/18] SOURCE REMOVED
+[6/18] BLIND DISP ROUTER - EXACT TEST330-336
+01/24 | ANCHOR='At' | DISP=0.280106
+02/24 | ANCHOR='designation' | DISP=0.504876
+03/24 | ANCHOR='Three' | DISP=0.324805
+04/24 | ANCHOR='expedition' | DISP=0.365987
+05/24 | ANCHOR='For' | DISP=0.442572
+06/24 | ANCHOR='indicator' | DISP=0.320354
+07/24 | ANCHOR='the' | DISP=0.275935
+08/24 | ANCHOR='untreated' | DISP=0.260658
+09/24 | ANCHOR='Beside' | DISP=0.214047
+10/24 | ANCHOR='authorization' | DISP=0.341026
+11/24 | ANCHOR='Dalen' | DISP=0.404590
+12/24 | ANCHOR='cargo' | DISP=0.387109
+13/24 | ANCHOR='The' | DISP=0.349450
+14/24 | ANCHOR='The' | DISP=0.309536
+15/24 | ANCHOR='counter' | DISP=0.350612
+16/24 | ANCHOR='When' | DISP=0.252732
+17/24 | ANCHOR='The' | DISP=0.345451
+18/24 | ANCHOR='Inside' | DISP=0.380952
+19/24 | ANCHOR='became' | DISP=0.380217
+20/24 | ANCHOR='Several' | DISP=0.271946
+21/24 | ANCHOR='before' | DISP=0.276453
+22/24 | ANCHOR='coating' | DISP=0.289513
+23/24 | ANCHOR='R-7' | DISP=0.272824
+24/24 | ANCHOR='began' | DISP=0.313759
+SHOWCASE | ANCHOR='beside' | DISP=0.239380
+[7/18] ROUTER + PACKETS SEALED
+ARGMAX(DISP) COMPLETE | PACKETS FROZEN | TARGET_ACCESS=False
+[8/18] TARGET-FREE HYBRID READOUT BANK
+01/24 | A0='information' | A0.25='information' | A0.5='information' | A1='information' | A2='data'
+02/24 | A0='Information' | A0.25='Information' | A0.5='Information' | A1='Information' | A2='Information'
+03/24 | A0='Information' | A0.25='Information' | A0.5='Information' | A1='4' | A2='1'
+04/24 | A0='Information' | A0.25='information' | A0.5='information' | A1='information' | A2='site'
+05/24 | A0='information' | A0.25='information' | A0.5='information' | A1='carbon' | A2='it'
+06/24 | A0='Blue' | A0.25='Blue' | A0.5='Blue' | A1='blue' | A2='blue'
+07/24 | A0='Ins' | A0.25='Ins' | A0.5='Ins' | A1='Began' | A2='Began'
+08/24 | A0='The' | A0.25='The' | A0.5='The' | A1='The' | A2='as'
+09/24 | A0='information' | A0.25='information' | A0.5='information' | A1='information' | A2='ring'
+10/24 | A0='Information' | A0.25='Information' | A0.5='Information' | A1='information' | A2='missing'
+11/24 | A0='Information' | A0.25='Information' | A0.5='information' | A1='Smith' | A2='data'
+12/24 | A0='destination' | A0.25='destination' | A0.5='destination' | A1='destination' | A2='destination'
+13/24 | A0='information' | A0.25='information' | A0.5='carbon' | A1='carbon' | A2='carbon'
+14/24 | A0='missing' | A0.25='missing' | A0.5='missing' | A1='missing' | A2='missing'
+15/24 | A0='Information' | A0.25='2' | A0.5='2' | A1='2' | A2='3'
+16/24 | A0='Exp' | A0.25='expand' | A0.5='expand' | A1='expand' | A2='expand'
+17/24 | A0='not' | A0.25='not' | A0.5='not' | A1='as' | A2='as'
+18/24 | A0='information' | A0.25='information' | A0.5='the' | A1='a' | A2='a'
+19/24 | A0='information' | A0.25='information' | A0.5='information' | A1='information' | A2='information'
+20/24 | A0='information' | A0.25='information' | A0.5='information' | A1='The' | A2='K'
+21/24 | A0='Information' | A0.25='Information' | A0.5='Information' | A1='Information' | A2='Information'
+22/24 | A0='missing' | A0.25='missing' | A0.5='missing' | A1='it' | A2='it'
+23/24 | A0='micro' | A0.25='micro' | A0.5='micro' | A1='micro' | A2='micro'
+24/24 | A0='started' | A0.25='started' | A0.5='started' | A1='started' | A2='started'
+SHOWCASE | A0='Information' | A0.25='Information' | A0.5='Information' | A1='Information' | A2='Information'
+[9/18] ALL HYBRID CANDIDATES SEALED
+ALPHAS=[0.0, 0.25, 0.5, 1.0, 2.0] | TOP1000 LISTS FROZEN | PRIMARY_ALPHA=0.5 | TARGET_ACCESS=False
+[10/18] TARGET SEAL OPEN - POST-HOC AUDIT
+01/24 | T='Caldor' | A0:R10 | A0.25:R10 | A0.5:R10 | A1:R7 | A2:R20
+02/24 | T='Zenvik' | A0:R817 | A0.25:R843 | A0.5:R939 | A1:R1242 | A2:R2494
+03/24 | T='741' | A0:R30 | A0.25:R20 | A0.5:R13 | A1:R9 | A2:R9
+04/24 | T='Seville' | A0:R245 | A0.25:R227 | A0.5:R202 | A1:R191 | A2:R187
+05/24 | T='basalt' | A0:R1116 | A0.25:R865 | A0.5:R751 | A1:R626 | A2:R642
+06/24 | T='turquoise' | A0:R532 | A0.25:R401 | A0.5:R310 | A1:R215 | A2:R140
+07/24 | T='kneeling' | A0:R816 | A0.25:R989 | A0.5:R1262 | A1:R2086 | A2:R6260
+08/24 | T='translucent' | A0:R203 | A0.25:R160 | A0.5:R129 | A1:R75 | A2:R41
+09/24 | T='sextant' | A0:R344 | A0.25:R325 | A0.5:R301 | A1:R265 | A2:R236
+10/24 | T='Valtrexon' | A0:R3673 | A0.25:R3704 | A0.5:R3789 | A1:R4227 | A2:R5973
+11/24 | T='Orisa' | A0:R2509 | A0.25:R2728 | A0.5:R3014 | A1:R3872 | A2:R7082
+12/24 | T='Budapest' | A0:R105 | A0.25:R95 | A0.5:R85 | A1:R72 | A2:R72
+13/24 | T='zirconium' | A0:R2787 | A0.25:R2281 | A0.5:R1930 | A1:R1492 | A2:R1143
+14/24 | T='violet' | A0:R1572 | A0.25:R1448 | A0.5:R1347 | A1:R1265 | A2:R1296
+15/24 | T='964' | A0:R4 | A0.25:R5 | A0.5:R4 | A1:R5 | A2:R6
+16/24 | T='contracting' | A0:R29 | A0.25:R28 | A0.5:R28 | A1:R27 | A2:R30
+17/24 | T='silky' | A0:R66 | A0.25:R58 | A0.5:R52 | A1:R46 | A2:R54
+18/24 | T='barometer' | A0:R37447 | A0.25:R30019 | A0.5:R24227 | A1:R16615 | A2:R9856
+19/24 | T='Solvane' | A0:R236 | A0.25:R337 | A0.5:R485 | A1:R1027 | A2:R5312
+20/24 | T='Keldrin' | A0:R8 | A0.25:R8 | A0.5:R4 | A1:R3 | A2:R1
+21/24 | T='Kyoto' | A0:R2784 | A0.25:R3516 | A0.5:R4443 | A1:R7242 | A2:R18268
+22/24 | T='cyan' | A0:R250 | A0.25:R237 | A0.5:R233 | A1:R231 | A2:R251
+23/24 | T='quartz' | A0:R323 | A0.25:R309 | A0.5:R308 | A1:R311 | A2:R345
+24/24 | T='ascending' | A0:R141 | A0.25:R270 | A0.5:R509 | A1:R2207 | A2:R22700
+SHOWCASE | T='raised a crimson pennant' | A0:R9075 | A0.25:R11037 | A0.5:R13240 | A1:R18885 | A2:R35038
+[11/18] FIXED-ALPHA SUMMARY
+ALPHA=0 | MED=286.5 | T1=0.000 | T10=0.125 | T50=0.208 | T256=0.500 | T1000=0.708
+ALPHA=0.25 | MED=317.0 | T1=0.000 | T10=0.125 | T50=0.208 | T256=0.417 | T1000=0.750
+ALPHA=0.5 | MED=309.0 | T1=0.000 | T10=0.125 | T50=0.208 | T256=0.417 | T1000=0.708
+ALPHA=1 | MED=288.0 | T1=0.000 | T10=0.167 | T50=0.250 | T256=0.458 | T1000=0.583
+ALPHA=2 | MED=298.0 | T1=0.042 | T10=0.125 | T50=0.250 | T256=0.500 | T1000=0.583
+[12/18] PRIMARY PREDECLARED READOUT
+ALPHA=0.5 | MED=309.0 | TOP10=0.125000 | TOP50=0.208333 | TOP256=0.416667 | TOP1000=0.708333
+[13/18] POST-HOC FAMILY DIAGNOSTIC ONLY
+BEST_FIXED_ALPHA_BY_POSTHOC_MEDIAN=0 | MED=286.5 | TOP256=0.500
+CASEWISE_ORACLE_ALPHA_MED=233.5 | TOP50=0.292 | TOP256=0.583 | DIAGNOSTIC_ONLY
+[14/18] SHOWCASE
+------------------------------------------------------------------------------------------------------------
+SOURCE : Mustafa Akbaş raised a crimson pennant beside the Bosphorus Bridge where the research demonstration took place.
+QUESTION: What did Mustafa Akbaş do at the location of the research demonstration?
+ANCHOR : beside
+TARGET : raised a crimson pennant
+TARGET_FIRST: 'raised'
+ALPHA=0 | RANK=9075 | TOP1='Information'
+ALPHA=0.25 | RANK=11037 | TOP1='Information'
+ALPHA=0.5 | RANK=13240 | TOP1='Information'
+ALPHA=1 | RANK=18885 | TOP1='Information'
+ALPHA=2 | RANK=35038 | TOP1='Information'
+------------------------------------------------------------------------------------------------------------
+[15/18] PREDECLARED DIAGNOSTIC
+BASE_MED=286.5 | PRIMARY_MED=309.0 | BASE_T256=0.500 | PRIMARY_T256=0.417 | CLASS=PREDECLARED_HYBRID_READOUT_DOES_NOT_IMPROVE_STEERED_PRIOR
+[16/18] LEAKAGE GUARD
+ALPHAS + PRIMARY_ALPHA PREDECLARED | ROUTER/PACKET/ALL HYBRID LISTS FROZEN PRE-TARGET | POST-HOC BEST ALPHA NEVER USED FOR SELECTION OR INJECTION
+[17/18] SCIENTIFIC AUDIT
+SAME FRESH-24 AS TEST330-336 | ROUTER=ARGMAX(DISP) | SAME RSS | SCORE=STEER_LOGP+ALPHA*CONTRAST | NO TRAINING | NO WEIGHT UPDATE
+[18/18] INTEGRITY + SEAL
+============================================================================================================
+TEST 337 COMPLETE
+PRIMARY A=0.5 | MED=309.0 | TOP50=0.208 | TOP256=0.417 | TOP1000=0.708
+BASE A=0 | MED=286.5 | TOP256=0.500
+CLASS= PREDECLARED_HYBRID_READOUT_DOES_NOT_IMPROVE_STEERED_PRIOR
+ROUTER=ARGMAX(DISP) | TARGET POST-HOC ONLY | SAME RSS | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST337/T337-20260929-075353.json
+TXT : /content/AKBASCORE_TEST337/T337-20260929-075353.txt
+SHA : e8b384ddeb46c1d66d7376d43859636975917bd3fdc4847a15db47ab4f64e866
+
+
+============================================================================================================
