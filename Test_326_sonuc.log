@@ -1,0 +1,186 @@
+ ============================================================================================================
+TEST 326 - NON-COLLAPSED MULTI-CHANNEL RELATIONAL PACKET - FIXED
+============================================================================================================
+START: 2026-09-29T05:21:59.641+00:00
+[1/18] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 78.2kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 955kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 53.5MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 65.5MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 119MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.44MB/s]Download complete: :  13.1GB,  503MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  570MB/s  Fetching 4 files: 100% 4/4 [00:40<00:00,  6.54s/it]Loading weights: 100% 339/339 [00:03<00:00, 101.42it/s]generation_config.json: 100% 243/243 [00:00<00:00, 31.0kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | VOCAB=152064 | torch.bfloat16 | 50.50s
+[2/18] ENGINE + DOSE LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | BANDS=((0, 6), (7, 12), (13, 18), (19, 25)) | REL_K=4 | SAME DOSE ALL STEERED ARMS
+[3/18] QUERY NULL CACHE
+NULL READY
+[4/18] SOURCE COMPILE - TARGET SEALED
+01/24 | ANCHORS= ['technician', 'replaced', 'the', 'inside'] | CHANNELS= 4 | BANK= 13
+02/24 | ANCHORS= ['the', 'was', 'the', 'from'] | CHANNELS= 4 | BANK= 13
+03/24 | ANCHORS= ['the', 'were', 'the', 'sealed'] | CHANNELS= 4 | BANK= 13
+04/24 | ANCHORS= ['departed', 'backup', 'and', 'the'] | CHANNELS= 4 | BANK= 12
+05/24 | ANCHORS= ['and', 'chose', 'ceramic', 'but'] | CHANNELS= 4 | BANK= 14
+06/24 | ANCHORS= ['remained', 'it', 'The', 'the'] | CHANNELS= 4 | BANK= 12
+07/24 | ANCHORS= ['Tovan', 'the', 'narrow', 'and'] | CHANNELS= 4 | BANK= 15
+08/24 | ANCHORS= ['described', 'appeared', 'finished', 'but'] | CHANNELS= 4 | BANK= 15
+09/24 | ANCHORS= ['the', 'radio', 'Elira', 'collapsed'] | CHANNELS= 4 | BANK= 14
+10/24 | ANCHORS= ['the', 'in', 'is', 'The'] | CHANNELS= 4 | BANK= 10
+11/24 | ANCHORS= ['the', 'the', 'while', 'by'] | CHANNELS= 4 | BANK= 12
+12/24 | ANCHORS= ['before', 'its', 'in', 'and'] | CHANNELS= 4 | BANK= 13
+13/24 | ANCHORS= ['titanium', 'bronze', 'acrylic', 'and'] | CHANNELS= 4 | BANK= 14
+14/24 | ANCHORS= ['emitted', 'it', 'beacon', 'emergency'] | CHANNELS= 4 | BANK= 13
+15/24 | ANCHORS= ['but', 'confirmed', 'showed', 'The'] | CHANNELS= 4 | BANK= 13
+16/24 | ANCHORS= ['the', 'inner', 'the', 'of'] | CHANNELS= 4 | BANK= 14
+17/24 | ANCHORS= ['was', 'replacement', 'felt', 'lining'] | CHANNELS= 4 | BANK= 13
+18/24 | ANCHORS= ['contained', 'a', 'a', 'chronometer'] | CHANNELS= 4 | BANK= 17
+19/24 | ANCHORS= ['the', 'final', 'temporarily', 'was'] | CHANNELS= 4 | BANK= 13
+20/24 | ANCHORS= ['interns', 'catalogued', 'sealed', 'the'] | CHANNELS= 4 | BANK= 13
+21/24 | ANCHORS= ['before', 'bronze', 'the', 'tablet'] | CHANNELS= 4 | BANK= 12
+22/24 | ANCHORS= ['the', 'spectral', 'was', 'seemed'] | CHANNELS= 4 | BANK= 15
+23/24 | ANCHORS= ['of', 'several', 'to', 'was'] | CHANNELS= 4 | BANK= 13
+24/24 | ANCHORS= ['began', 'and', 'then', 'The'] | CHANNELS= 4 | BANK= 13
+SHOWCASE | ANCHORS= ['where', 'the', 'Akbaş', 'flag'] | CHANNELS= 4 | BANK= 16
+[5/18] SOURCE REMOVED
+QUESTION-ONLY BLIND RUNTIME | TARGET_ACCESS=False | CROSS_CASE=False
+[6/18] FOUR-ARM X-RAY
+01/24 | L27 Q F=-0.0980 C=+0.0816 M=+0.0623 | REL F=+0.2046 C=+0.0782 M=+0.0666
+02/24 | L27 Q F=-0.0044 C=-0.0254 M=+0.0182 | REL F=+0.2050 C=+0.0926 M=+0.1083
+03/24 | L27 Q F=-0.0136 C=+0.0155 M=-0.0183 | REL F=+0.2425 C=+0.1465 M=+0.1732
+04/24 | L27 Q F=-0.1565 C=+0.0563 M=+0.0608 | REL F=+0.1496 C=-0.0997 M=+0.0260
+05/24 | L27 Q F=-0.0317 C=+0.0964 M=+0.1513 | REL F=+0.1300 C=+0.0550 M=+0.1705
+06/24 | L27 Q F=-0.0591 C=+0.0268 M=-0.0288 | REL F=+0.0433 C=+0.2151 M=+0.1766
+07/24 | L27 Q F=+0.0146 C=-0.0294 M=-0.0050 | REL F=-0.2279 C=+0.0453 M=-0.0090
+08/24 | L27 Q F=-0.0365 C=+0.0601 M=+0.0713 | REL F=-0.0520 C=-0.0460 M=+0.0929
+09/24 | L27 Q F=-0.0118 C=-0.0349 M=-0.0644 | REL F=+0.2586 C=+0.0601 M=+0.1846
+10/24 | L27 Q F=-0.0053 C=-0.0249 M=-0.0687 | REL F=+0.1463 C=+0.1996 M=+0.1768
+11/24 | L27 Q F=-0.0247 C=+0.0308 M=-0.0189 | REL F=-0.2058 C=+0.0143 M=+0.1213
+12/24 | L27 Q F=-0.0696 C=+0.0257 M=-0.0061 | REL F=-0.1768 C=+0.1607 M=+0.1802
+13/24 | L27 Q F=-0.0829 C=-0.0047 M=-0.0223 | REL F=-0.0165 C=-0.0221 M=+0.0696
+14/24 | L27 Q F=+0.0083 C=-0.1281 M=-0.1299 | REL F=+0.0759 C=+0.2424 M=+0.2492
+15/24 | L27 Q F=-0.0762 C=-0.0099 M=+0.0001 | REL F=-0.1846 C=-0.0548 M=+0.0480
+16/24 | L27 Q F=+0.0226 C=-0.0297 M=-0.0815 | REL F=+0.1844 C=+0.1313 M=+0.0302
+17/24 | L27 Q F=-0.0808 C=-0.0750 M=-0.0711 | REL F=+0.1048 C=+0.1763 M=+0.2335
+18/24 | L27 Q F=-0.0430 C=-0.0730 M=-0.0390 | REL F=+0.0611 C=-0.0533 M=+0.0889
+19/24 | L27 Q F=-0.0796 C=-0.0222 M=+0.0156 | REL F=+0.4971 C=+0.0487 M=+0.1318
+20/24 | L27 Q F=-0.0923 C=+0.0604 M=+0.1035 | REL F=+0.1716 C=-0.0868 M=+0.0082
+21/24 | L27 Q F=-0.0850 C=-0.0280 M=+0.0125 | REL F=+0.1709 C=+0.0548 M=+0.0773
+22/24 | L27 Q F=-0.0518 C=+0.0660 M=+0.0668 | REL F=+0.1680 C=+0.0887 M=+0.1598
+23/24 | L27 Q F=-0.0395 C=-0.0266 M=-0.0238 | REL F=+0.2443 C=-0.0281 M=+0.2695
+24/24 | L27 Q F=-0.0023 C=-0.0672 M=-0.0899 | REL F=+0.1372 C=-0.1170 M=-0.0384
+SHOWCASE | L27 Q F=-0.1068 C=+0.1455 M=+0.1658 | REL F=+0.1455 C=-0.0631 M=-0.0364
+[7/18] CHANNEL SURVIVAL X-RAY
+01/24 | CHANNEL_L27= [-0.0115, 0.0115, -0.1173, 0.2271] | MAX= +0.2271
+02/24 | CHANNEL_L27= [-0.0168, 0.0168, 0.0254, 0.1487] | MAX= +0.1487
+03/24 | CHANNEL_L27= [-0.041, 0.041, 0.0547, 0.2358] | MAX= +0.2358
+04/24 | CHANNEL_L27= [0.076, -0.076, -0.0208, 0.0568] | MAX= +0.0760
+05/24 | CHANNEL_L27= [0.07, -0.07, 0.0629, 0.1964] | MAX= +0.1964
+06/24 | CHANNEL_L27= [-0.1376, 0.0856, 0.1376, 0.1915] | MAX= +0.1915
+07/24 | CHANNEL_L27= [0.09, -0.09, -0.1087, 0.0929] | MAX= +0.0929
+08/24 | CHANNEL_L27= [0.0662, -0.0662, -0.0337, 0.1807] | MAX= +0.1807
+09/24 | CHANNEL_L27= [0.0515, -0.0515, 0.0631, 0.2551] | MAX= +0.2551
+10/24 | CHANNEL_L27= [-0.101, 0.1367, 0.101, 0.1343] | MAX= +0.1367
+11/24 | CHANNEL_L27= [-0.1115, -0.003, 0.1115, 0.1712] | MAX= +0.1712
+12/24 | CHANNEL_L27= [0.0906, -0.0906, 0.1335, 0.1871] | MAX= +0.1871
+13/24 | CHANNEL_L27= [-0.0169, 0.0169, 0.003, 0.1104] | MAX= +0.1104
+14/24 | CHANNEL_L27= [-0.191, 0.191, 0.214, 0.2294] | MAX= +0.2294
+15/24 | CHANNEL_L27= [0.0147, -0.0147, 0.0906, -0.0029] | MAX= +0.0906
+16/24 | CHANNEL_L27= [-0.1829, 0.0235, 0.0282, 0.1829] | MAX= +0.1829
+17/24 | CHANNEL_L27= [-0.2828, 0.2828, 0.2059, 0.0656] | MAX= +0.2828
+18/24 | CHANNEL_L27= [-0.0366, 0.0366, 0.0493, 0.1034] | MAX= +0.1034
+19/24 | CHANNEL_L27= [-0.0224, 0.0224, 0.0878, 0.1634] | MAX= +0.1634
+20/24 | CHANNEL_L27= [0.0319, -0.0319, -0.0194, 0.0357] | MAX= +0.0357
+21/24 | CHANNEL_L27= [-0.0788, 0.0788, -0.0256, 0.1647] | MAX= +0.1647
+22/24 | CHANNEL_L27= [-0.1096, 0.1096, 0.1001, 0.1931] | MAX= +0.1931
+23/24 | CHANNEL_L27= [0.0259, -0.0259, 0.1693, 0.3019] | MAX= +0.3019
+24/24 | CHANNEL_L27= [0.1959, -0.1959, 0.0046, -0.0496] | MAX= +0.1959
+SHOWCASE | CHANNEL_L27= [-0.0804, -0.0659, 0.0804, 0.002] | MAX= +0.0804
+[8/18] BLIND GENERATION
+01/24 | VAN='Information is missing.' | FLAT='Information is missing.' | COLL='Information is missing' | MULTI='Information is missing.'
+02/24 | VAN='Information is missing.' | FLAT='information is missing' | COLL='Baddeleyite' | MULTI='No information on provisional name provided.'
+03/24 | VAN='Information is missing.' | FLAT='information is missing' | COLL='Information is missing.' | MULTI='Information is missing.'
+04/24 | VAN='Information is missing.' | FLAT='information is missing' | COLL='Information is missing.' | MULTI='Information is missing.'
+05/24 | VAN='Reinforced carbon-carbon composite.' | FLAT='carbon composite.' | COLL='Refractory metal alloy' | MULTI='Reinforced carbon-carbon composite.'
+06/24 | VAN='Information is missing.' | FLAT='information is missing' | COLL='Information is missing.' | MULTI='Information is missing.'
+07/24 | VAN='information is missing' | FLAT='information is missing' | COLL='information is missing' | MULTI='information is missing'
+08/24 | VAN='smooth' | FLAT='smooth and polished.' | COLL='smooth' | MULTI='smooth'
+09/24 | VAN='A locket' | FLAT='a necklace.' | COLL='a pendant' | MULTI='a pendant'
+10/24 | VAN='It refers to the order in which data or instructions are accessed' | FLAT='Information is missing.' | COLL='It refers to the order in which items are accessed.' | MULTI='It refers to the order in which data or instructions are accessed'
+11/24 | VAN='Information is missing.' | FLAT='information is missing' | COLL='Information is missing.' | MULTI='Information is missing.'
+12/24 | VAN='Information is missing.' | FLAT='information is missing.' | COLL='Information is missing.' | MULTI='Information is missing.'
+13/24 | VAN='Steel' | FLAT='Steel.' | COLL='information is missing' | MULTI='information is missing'
+14/24 | VAN='Red' | FLAT='red' | COLL='red' | MULTI='Red'
+15/24 | VAN='Information is missing.' | FLAT='425.3 volts.' | COLL='Information is missing.' | MULTI='Information is missing.'
+16/24 | VAN='It began glowing.' | FLAT='The inner ring began rotating.' | COLL='It began to glow.' | MULTI='It began to glow.'
+17/24 | VAN='The replacement lining was described as durable and of high quality.' | FLAT='soft and smooth.' | COLL='not specified' | MULTI='The replacement lining was described as durable and of high quality.'
+18/24 | VAN='Information is missing.' | FLAT='information is missing' | COLL='Information is missing.' | MULTI='Information is missing.'
+19/24 | VAN='Space Launch System' | FLAT='information is missing.' | COLL='Space Launch Complex-39B' | MULTI='Space Station One'
+20/24 | VAN='Information is missing.' | FLAT='Information is missing.' | COLL='Information is missing.' | MULTI='Internal state: Information is missing.'
+21/24 | VAN='Information is missing.' | FLAT='information is missing' | COLL='Information is missing.' | MULTI='Information is missing.'
+22/24 | VAN='Information is missing.' | FLAT='blue' | COLL="The coating's confirmed color was blue." | MULTI='Information is missing.'
+23/24 | VAN='information is missing' | FLAT='rock and minerals.' | COLL='information is missing' | MULTI='information is missing'
+24/24 | VAN='Collected soil samples.' | FLAT='The rover began taking detailed soil samples and conducting scientific analysis.' | COLL='Collected soil samples' | MULTI='Collected a soil sample'
+SHOWCASE | VAN='Information is missing.' | FLAT='information is missing' | COLL='Information is missing.' | MULTI='Information is missing.'
+[9/18] TARGET SEAL OPEN - POST-HOC ONLY
+01/24 | TARGET='Neris' | VAN='Information is missing.' | FLAT='Information is missing.' | COLL='Information is missing' | MULTI='Information is missing.'
+02/24 | TARGET='Velqor' | VAN='Information is missing.' | FLAT='information is missing' | COLL='Baddeleyite' | MULTI='No information on provisional name provided.'
+03/24 | TARGET='583' | VAN='Information is missing.' | FLAT='information is missing' | COLL='Information is missing.' | MULTI='Information is missing.'
+04/24 | TARGET='Lisbon' | VAN='Information is missing.' | FLAT='information is missing' | COLL='Information is missing.' | MULTI='Information is missing.'
+05/24 | TARGET='ceramic' | VAN='Reinforced carbon-carbon composite.' | FLAT='carbon composite.' | COLL='Refractory metal alloy' | MULTI='Reinforced carbon-carbon composite.'
+06/24 | TARGET='magenta' | VAN='Information is missing.' | FLAT='information is missing' | COLL='Information is missing.' | MULTI='Information is missing.'
+07/24 | TARGET='crawling' | VAN='information is missing' | FLAT='information is missing' | COLL='information is missing' | MULTI='information is missing'
+08/24 | TARGET='lustrous' | VAN='smooth' | FLAT='smooth and polished.' | COLL='smooth' | MULTI='smooth'
+09/24 | TARGET='compass' | VAN='A locket' | FLAT='a necklace.' | COLL='a pendant' | MULTI='a pendant'
+10/24 | TARGET='Nerovak' | VAN='It refers to the order in which data or instructions are accessed' | FLAT='Information is missing.' | COLL='It refers to the order in which items are accessed.' | MULTI='It refers to the order in which data or instructions are accessed'
+11/24 | TARGET='Siona' | VAN='Information is missing.' | FLAT='information is missing' | COLL='Information is missing.' | MULTI='Information is missing.'
+12/24 | TARGET='Warsaw' | VAN='Information is missing.' | FLAT='information is missing.' | COLL='Information is missing.' | MULTI='Information is missing.'
+13/24 | TARGET='titanium' | VAN='Steel' | FLAT='Steel.' | COLL='information is missing' | MULTI='information is missing'
+14/24 | TARGET='crimson' | VAN='Red' | FLAT='red' | COLL='red' | MULTI='Red'
+15/24 | TARGET='892' | VAN='Information is missing.' | FLAT='425.3 volts.' | COLL='Information is missing.' | MULTI='Information is missing.'
+16/24 | TARGET='expanding' | VAN='It began glowing.' | FLAT='The inner ring began rotating.' | COLL='It began to glow.' | MULTI='It began to glow.'
+17/24 | TARGET='velvety' | VAN='The replacement lining was described as durable and of high quality.' | FLAT='soft and smooth.' | COLL='not specified' | MULTI='The replacement lining was described as durable and of high quality.'
+18/24 | TARGET='chronometer' | VAN='Information is missing.' | FLAT='information is missing' | COLL='Information is missing.' | MULTI='Information is missing.'
+19/24 | TARGET='Norveth' | VAN='Space Launch System' | FLAT='information is missing.' | COLL='Space Launch Complex-39B' | MULTI='Space Station One'
+20/24 | TARGET='Edrin' | VAN='Information is missing.' | FLAT='Information is missing.' | COLL='Information is missing.' | MULTI='Internal state: Information is missing.'
+21/24 | TARGET='Osaka' | VAN='Information is missing.' | FLAT='information is missing' | COLL='Information is missing.' | MULTI='Information is missing.'
+22/24 | TARGET='indigo' | VAN='Information is missing.' | FLAT='blue' | COLL="The coating's confirmed color was blue." | MULTI='Information is missing.'
+23/24 | TARGET='feldspar' | VAN='information is missing' | FLAT='rock and minerals.' | COLL='information is missing' | MULTI='information is missing'
+24/24 | TARGET='decelerating' | VAN='Collected soil samples.' | FLAT='The rover began taking detailed soil samples and conducting scientific analysis.' | COLL='Collected soil samples' | MULTI='Collected a soil sample'
+SHOWCASE | TARGET='planted the Turkish flag' | VAN='Information is missing.' | FLAT='information is missing' | COLL='Information is missing.' | MULTI='Information is missing.'
+[10/18] PRIMARY 24 BEHAVIOR
+VANILLA EXACT=0.000 MENTION=0.000 | FLAT EXACT=0.000 MENTION=0.000 | COLL EXACT=0.000 MENTION=0.000 | MULTI EXACT=0.000 MENTION=0.000
+[11/18] X-RAY SUMMARY
+L27 QUERY | FLAT=-0.045789 COLL=-0.002468 MULTI=-0.004389
+L27 REL   | FLAT=+0.097146 COLL=+0.054235 MULTI=+0.116471
+[12/18] CHANNEL SUMMARY
+MEAN CHANNEL L27: [-0.026158, 0.014063, 0.054886, 0.148973] | MEAN_MAX= +0.173056
+[13/18] GOLDEN GATE SHOWCASE
+------------------------------------------------------------------------------------------------------------
+SOURCE : Mustafa Akbaş planted the Turkish flag on the Golden Gate Bridge where Anthropic conducted its experiment.
+QUESTION: What did Mustafa Akbaş do at the location of Anthropic's experiment?
+ANCHORS: ['where', 'the', 'Akbaş', 'flag']
+VANILLA: Information is missing.
+FLAT   : information is missing
+COLL   : Information is missing.
+MULTI  : Information is missing.
+TARGET : planted the Turkish flag
+------------------------------------------------------------------------------------------------------------
+[14/18] PREDECLARED GATE
+MULTI_MENTION_GT_COLL=False | MULTI_REL_GT_COLL=True | MULTI_QUERY_GT_COLL=False | CLASS=NONCOLLAPSED_RELATIONAL_CHANNELS_NOT_SUPPORTED
+[15/18] DOSE FAIRNESS
+FLAT_RSS=0.250235055 | COLL_RSS=0.250235055 | MULTI_RSS=0.250235055 | EXTRA_CHANNEL_DOSE=0
+[16/18] INTERPRETATION GUARD
+MULTI CHANNEL PRESERVES FOUR RELATIONAL DIRECTIONS ACROSS DEPTH BANDS. L26-L27 ARE OBSERVATION ONLY AND RECEIVE NO SEASC INJECTION.
+[17/18] SCIENTIFIC AUDIT
+VANILLA HAS NO HOOKS | SAME SEASC ENVELOPE FOR ALL STEERED ARMS | TARGET POST-HOC ONLY | NO TRAINING | NO CROSS-CASE DATA
+[18/18] INTEGRITY + SEAL
+============================================================================================================
+TEST 326 COMPLETE
+VANILLA MENTION=0.000 | FLAT=0.000 | COLL=0.000 | MULTI=0.000
+L27 QUERY COLL=-0.002468 -> MULTI=-0.004389 | REL COLL=+0.054235 -> MULTI=+0.116471
+GOLDEN GATE VANILLA='Information is missing.'
+GOLDEN GATE FLAT   ='information is missing'
+GOLDEN GATE COLL   ='Information is missing.'
+GOLDEN GATE MULTI  ='Information is missing.'
+CLASS=NONCOLLAPSED_RELATIONAL_CHANNELS_NOT_SUPPORTED | GATE=FAIL
+CASE_ISOLATED=TRUE | TARGET POST-HOC ONLY | SAME RSS | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST326/T326-20260929-052351.json
+TXT : /content/AKBASCORE_TEST326/T326-20260929-052351.txt
+SHA : 72ff766bd4ce6ba7507d2570b1c3ff11b5e747f9ac20d970aaa33904b3dcda4b
+============================================================================================================
