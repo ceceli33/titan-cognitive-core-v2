@@ -1,0 +1,190 @@
+ ============================================================================================================
+TEST 343 - FROZEN ASSISTANT-ROLE WINDOW -> FULL TARGET SEQUENCE PROBABILITY
+============================================================================================================
+START: 2026-09-29T10:02:44.638+00:00
+[1/18] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 72.7kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 832kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 45.1MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 66.7MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 98.1MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.59MB/s]Download complete: :  13.1GB,  267MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  482MB/s  Fetching 4 files: 100% 4/4 [00:38<00:00,  6.87s/it]Loading weights: 100% 339/339 [00:03<00:00, 101.72it/s]generation_config.json: 100% 243/243 [00:00<00:00, 28.5kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | torch.bfloat16 | 47.81s
+[2/18] ENGINE LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | ADDITIVE SEASC L0-L25 | REL=-2 FROZEN | TEACHER-FORCED READOUT POST-HOC
+[3/18] QUERY NULL CACHE
+NULL READY
+[4/18] TARGET-FREE PACKET BANK
+01/24 | BANK= 15
+02/24 | BANK= 15
+03/24 | BANK= 13
+04/24 | BANK= 15
+05/24 | BANK= 14
+06/24 | BANK= 13
+07/24 | BANK= 15
+08/24 | BANK= 13
+09/24 | BANK= 14
+10/24 | BANK= 10
+11/24 | BANK= 13
+12/24 | BANK= 14
+13/24 | BANK= 14
+14/24 | BANK= 11
+15/24 | BANK= 13
+16/24 | BANK= 11
+17/24 | BANK= 13
+18/24 | BANK= 17
+19/24 | BANK= 14
+20/24 | BANK= 13
+21/24 | BANK= 14
+22/24 | BANK= 13
+23/24 | BANK= 10
+24/24 | BANK= 14
+SHOWCASE | BANK= 16
+[5/18] FROZEN ARGMAX(DISP) ROUTER - EXACT TEST342 METHOD
+01/24 | ANCHOR='Bravik' | DISP=1.147195
+02/24 | ANCHOR='Shaft' | DISP=1.105786
+03/24 | ANCHOR='the' | DISP=1.187914
+04/24 | ANCHOR='Palermo' | DISP=1.099957
+05/24 | ANCHOR='protective' | DISP=1.038865
+06/24 | ANCHOR='synchronization' | DISP=0.978511
+07/24 | ANCHOR='frame' | DISP=1.028343
+08/24 | ANCHOR='sample' | DISP=1.023368
+09/24 | ANCHOR='receiver' | DISP=1.033953
+10/24 | ANCHOR='Dorevian' | DISP=1.097789
+11/24 | ANCHOR='Talora' | DISP=1.163714
+12/24 | ANCHOR='Prague' | DISP=1.132756
+13/24 | ANCHOR='evaluated' | DISP=1.001989
+14/24 | ANCHOR='secondary' | DISP=1.057517
+15/24 | ANCHOR='The' | DISP=1.164178
+16/24 | ANCHOR='immediately' | DISP=0.988048
+17/24 | ANCHOR='described' | DISP=1.060344
+18/24 | ANCHOR='testing' | DISP=1.054123
+19/24 | ANCHOR='Aster' | DISP=1.109435
+20/24 | ANCHOR='Dr' | DISP=1.098649
+21/24 | ANCHOR='Nagoya' | DISP=1.098002
+22/24 | ANCHOR='established' | DISP=0.980054
+23/24 | ANCHOR='several' | DISP=1.068445
+24/24 | ANCHOR='and' | DISP=1.004457
+SHOWCASE | ANCHOR='conducted' | DISP=1.013328
+[6/18] ROUTER + WINDOW FROZEN
+REL=-2 | NO WINDOW SEARCH | NO ORACLE | NO TARGET ACCESS
+[7/18] ASSISTANT TOKEN AUDIT
+01/24 | REL=-2 | TOKEN='assistant'
+02/24 | REL=-2 | TOKEN='assistant'
+03/24 | REL=-2 | TOKEN='assistant'
+04/24 | REL=-2 | TOKEN='assistant'
+05/24 | REL=-2 | TOKEN='assistant'
+06/24 | REL=-2 | TOKEN='assistant'
+07/24 | REL=-2 | TOKEN='assistant'
+08/24 | REL=-2 | TOKEN='assistant'
+09/24 | REL=-2 | TOKEN='assistant'
+10/24 | REL=-2 | TOKEN='assistant'
+11/24 | REL=-2 | TOKEN='assistant'
+12/24 | REL=-2 | TOKEN='assistant'
+13/24 | REL=-2 | TOKEN='assistant'
+14/24 | REL=-2 | TOKEN='assistant'
+15/24 | REL=-2 | TOKEN='assistant'
+16/24 | REL=-2 | TOKEN='assistant'
+17/24 | REL=-2 | TOKEN='assistant'
+18/24 | REL=-2 | TOKEN='assistant'
+19/24 | REL=-2 | TOKEN='assistant'
+20/24 | REL=-2 | TOKEN='assistant'
+21/24 | REL=-2 | TOKEN='assistant'
+22/24 | REL=-2 | TOKEN='assistant'
+23/24 | REL=-2 | TOKEN='assistant'
+24/24 | REL=-2 | TOKEN='assistant'
+SHOWCASE | REL=-2 | TOKEN='assistant'
+[8/18] BASE QUESTION FORWARDS - TARGET SEALED
+01/24 | DISP=0.072573
+02/24 | DISP=0.060663
+03/24 | DISP=0.070764
+04/24 | DISP=0.051709
+05/24 | DISP=0.105117
+06/24 | DISP=0.069538
+07/24 | DISP=0.032697
+08/24 | DISP=0.055630
+09/24 | DISP=0.089107
+10/24 | DISP=0.066965
+11/24 | DISP=0.089312
+12/24 | DISP=0.058588
+13/24 | DISP=0.050063
+14/24 | DISP=0.081411
+15/24 | DISP=0.103692
+16/24 | DISP=0.066458
+17/24 | DISP=0.051346
+18/24 | DISP=0.091536
+19/24 | DISP=0.096736
+20/24 | DISP=0.079680
+21/24 | DISP=0.084566
+22/24 | DISP=0.068885
+23/24 | DISP=0.046250
+24/24 | DISP=0.037451
+SHOWCASE | DISP=0.047268
+[9/18] TARGET SEAL OPEN - TEACHER-FORCED SEQUENCE ASSAY
+TARGET NOW USED ONLY AS POST-HOC TEACHER-FORCED CONTINUATION
+01/24 | T='Bravik' | N=3 | dSEQ=-2.346 | dFIRST=+0.000 | dCONT=-1.173 | TOK+=0.00
+02/24 | T='Norvex' | N=3 | dSEQ=-3.437 | dFIRST=+0.000 | dCONT=-1.719 | TOK+=0.00
+03/24 | T='583' | N=3 | dSEQ=+0.383 | dFIRST=+0.000 | dCONT=+0.192 | TOK+=0.33
+04/24 | T='Dubrovnik' | N=3 | dSEQ=-0.006 | dFIRST=+0.000 | dCONT=-0.003 | TOK+=0.00
+05/24 | T='obsidian' | N=2 | dSEQ=-0.013 | dFIRST=+0.000 | dCONT=-0.013 | TOK+=0.00
+06/24 | T='magenta' | N=2 | dSEQ=+0.003 | dFIRST=+0.000 | dCONT=+0.003 | TOK+=0.50
+07/24 | T='crawling' | N=3 | dSEQ=-0.037 | dFIRST=+0.000 | dCONT=-0.018 | TOK+=0.00
+08/24 | T='glossy' | N=3 | dSEQ=-0.258 | dFIRST=+0.000 | dCONT=-0.129 | TOK+=0.00
+09/24 | T='compass' | N=1 | dSEQ=-1.073 | dFIRST=-1.073 | dCONT=NA | TOK+=0.00
+10/24 | T='Dorevian' | N=4 | dSEQ=-3.944 | dFIRST=+0.000 | dCONT=-1.315 | TOK+=0.00
+11/24 | T='Talora' | N=3 | dSEQ=+2.377 | dFIRST=+0.000 | dCONT=+1.189 | TOK+=0.33
+12/24 | T='Bratislava' | N=4 | dSEQ=-0.001 | dFIRST=+0.000 | dCONT=-0.000 | TOK+=0.00
+13/24 | T='tungsten' | N=3 | dSEQ=+0.000 | dFIRST=+0.000 | dCONT=+0.000 | TOK+=0.33
+14/24 | T='scarlet' | N=2 | dSEQ=-0.000 | dFIRST=+0.000 | dCONT=-0.000 | TOK+=0.00
+15/24 | T='817' | N=3 | dSEQ=+0.095 | dFIRST=+0.000 | dCONT=+0.048 | TOK+=0.33
+16/24 | T='expanding' | N=2 | dSEQ=-0.004 | dFIRST=+0.000 | dCONT=-0.004 | TOK+=0.00
+17/24 | T='velvety' | N=3 | dSEQ=+0.000 | dFIRST=+0.000 | dCONT=+0.000 | TOK+=0.33
+18/24 | T='hygrometer' | N=3 | dSEQ=+0.000 | dFIRST=+0.000 | dCONT=+0.000 | TOK+=0.33
+19/24 | T='Kelvane' | N=3 | dSEQ=-1.632 | dFIRST=+0.000 | dCONT=-0.816 | TOK+=0.00
+20/24 | T='Veyron' | N=3 | dSEQ=+1.460 | dFIRST=+0.000 | dCONT=+0.730 | TOK+=0.33
+21/24 | T='Nagoya' | N=3 | dSEQ=-3.829 | dFIRST=+0.000 | dCONT=-1.915 | TOK+=0.00
+22/24 | T='indigo' | N=2 | dSEQ=+0.029 | dFIRST=+0.000 | dCONT=+0.029 | TOK+=0.50
+23/24 | T='feldspar' | N=2 | dSEQ=+0.018 | dFIRST=+0.000 | dCONT=+0.018 | TOK+=0.50
+24/24 | T='descending' | N=1 | dSEQ=-1.632 | dFIRST=-1.632 | dCONT=NA | TOK+=0.00
+SHOWCASE | T='placed an amber banner' | N=4 | dSEQ=+2.470 | dFIRST=+0.000 | dCONT=+0.823 | TOK+=0.25
+[10/18] PRIMARY SEQUENCE SUMMARY
+seq_positive=0.416667
+seq_mean_delta=-0.576859
+seq_median_delta=-0.002238
+first_positive=0.000000
+first_mean_delta=-0.112705
+token_improved_frac_mean=0.159722
+all_tokens_improved=0.000000
+vanilla_nll_per_token=8.975018
+window_nll_per_token=9.191340
+[11/18] MULTI-TOKEN CONTINUATION
+MULTI_N=22 | SEQ_POS=0.455 | CONT_MEAN=-0.2225 | CONT_POS=0.455
+[12/18] NLL SHIFT
+NLL/TOKEN 8.975018->9.191340 | DELTA=+0.216322
+[13/18] PREDECLARED GATES
+SEQ_GATE=False | FIRST_GATE=False | CONT_GATE=False
+[14/18] SHOWCASE
+------------------------------------------------------------------------------------------------------------
+SOURCE : Mustafa Akbaş placed an amber banner beneath the Galata Bridge where the validation demonstration was conducted.
+QUESTION: What did Mustafa Akbaş do at the location of the validation demonstration?
+TARGET : placed an amber banner
+ANCHOR : conducted
+TOKENS : ['placed', ' an', ' amber', ' banner']
+dSEQ=+2.4703 | dFIRST=+0.0000 | dTOKENS=[0.0, 0.0, 0.0, 2.4703]
+------------------------------------------------------------------------------------------------------------
+[15/18] CLASSIFICATION
+CLASS= FROZEN_ASSISTANT_WINDOW_SEQUENCE_EFFECT_NOT_SUPPORTED
+[16/18] LEAKAGE AUDIT
+SAME TEST342 CASES | REL=-2 PRE-FROZEN | PACKET/ROUTER FROZEN BEFORE TARGET | TARGET ONLY TEACHER-FORCED POST-HOC
+[17/18] SCIENTIFIC AUDIT
+SAME COMPILER | SAME ARGMAX(DISP) | SAME RSS | SAME ADDITIVE SEASC L0-L25 | SINGLE ASSISTANT-TOKEN WRITE | NO DECODER CHANGE | NO TRAINING | NO WEIGHT UPDATE
+[18/18] INTEGRITY + SAVE
+============================================================================================================
+TEST 343 COMPLETE
+SEQ_POS=0.417 | dSEQ_MEAN=-0.577 | dSEQ_MED=-0.002
+FIRST_POS=0.000 | dFIRST=-0.113 | TOKEN_IMP=0.160
+CONT_POS=0.455 | dCONT=-0.223
+NLL/TOKEN=8.975->9.191
+CLASS= FROZEN_ASSISTANT_WINDOW_SEQUENCE_EFFECT_NOT_SUPPORTED
+REL=-2 FROZEN | TARGET TEACHER-FORCED POST-HOC ONLY | WEIGHT INTEGRITY PASS | HOOKS=0
+JSON: /content/AKBASCORE_TEST343/T343-20260929-100408.json
+TXT : /content/AKBASCORE_TEST343/T343-20260929-100408.txt
+SHA : 5c4e3114091887fc3855f6d2d2f7bd0df7e63a67f3706824a500260fce42130c
+============================================================================================================
