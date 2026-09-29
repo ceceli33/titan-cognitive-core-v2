@@ -1,0 +1,186 @@
+ ============================================================================================================
+TEST 329 - TARGET-FREE RELATIONAL ROUTER X-RAY
+============================================================================================================
+START: 2026-09-29T06:28:14.180+00:00
+[1/18] MODEL LOAD
+config.json: 100% 663/663 [00:00<00:00, 77.9kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 931kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 83.2MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 70.3MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 116MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.25MB/s]Download complete: :  13.1GB,  141MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  220MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00,  8.52s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.67it/s]generation_config.json: 100% 243/243 [00:00<00:00, 31.3kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | VOCAB=152064 | torch.bfloat16 | 56.46s
+[2/18] ENGINE + DOSE LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | ALL ROUTERS TARGET-FREE | SAME ANCHOR BANK | L0-L25
+[3/18] QUERY NULL CACHE
+NULL READY
+[4/18] EXHAUSTIVE ANCHOR BANK - TARGET SEALED
+01/24 | BANK= 13
+02/24 | BANK= 13
+03/24 | BANK= 13
+04/24 | BANK= 12
+05/24 | BANK= 14
+06/24 | BANK= 12
+07/24 | BANK= 15
+08/24 | BANK= 15
+09/24 | BANK= 14
+10/24 | BANK= 10
+11/24 | BANK= 12
+12/24 | BANK= 13
+13/24 | BANK= 14
+14/24 | BANK= 13
+15/24 | BANK= 13
+16/24 | BANK= 14
+17/24 | BANK= 13
+18/24 | BANK= 17
+19/24 | BANK= 13
+20/24 | BANK= 13
+21/24 | BANK= 12
+22/24 | BANK= 15
+23/24 | BANK= 13
+24/24 | BANK= 13
+SHOWCASE | BANK= 16
+[5/18] SOURCE REMOVED
+QUESTION-ONLY RUNTIME | TARGET_ACCESS=False | CROSS_CASE=False
+[6/18] ALL ANCHOR FORWARDS - TARGET SEALED
+01/24 | FORWARDS= 13
+02/24 | FORWARDS= 13
+03/24 | FORWARDS= 13
+04/24 | FORWARDS= 12
+05/24 | FORWARDS= 14
+06/24 | FORWARDS= 12
+07/24 | FORWARDS= 15
+08/24 | FORWARDS= 15
+09/24 | FORWARDS= 14
+10/24 | FORWARDS= 10
+11/24 | FORWARDS= 12
+12/24 | FORWARDS= 13
+13/24 | FORWARDS= 14
+14/24 | FORWARDS= 13
+15/24 | FORWARDS= 13
+16/24 | FORWARDS= 14
+17/24 | FORWARDS= 13
+18/24 | FORWARDS= 17
+19/24 | FORWARDS= 13
+20/24 | FORWARDS= 13
+21/24 | FORWARDS= 12
+22/24 | FORWARDS= 15
+23/24 | FORWARDS= 13
+24/24 | FORWARDS= 13
+SHOWCASE | FORWARDS= 16
+[7/18] FIXED TARGET-FREE ROUTERS
+01/24 | Q='technician' DQ='midnight' SELF='midnight' DISP='During' CONSENSUS='the'
+02/24 | Q='the' DQ='provisional' SELF='the' DISP='from' CONSENSUS='the'
+03/24 | Q='the' DQ='packets' SELF='583' DISP='Four' CONSENSUS='code'
+04/24 | Q='departed' DQ='and' SELF='Bergen' DISP='research' CONSENSUS='departed'
+05/24 | Q='and' DQ='but' SELF='for' DISP='builders' CONSENSUS='but'
+06/24 | Q='remained' DQ='until' SELF='turned' DISP='warning' CONSENSUS='the'
+07/24 | Q='Tovan' DQ='began' SELF='lower' DISP='began' CONSENSUS='began'
+08/24 | Q='described' DQ='as' SELF='first' DISP='The' CONSENSUS='but'
+09/24 | Q='the' DQ='leaving' SELF='a' DISP='Near' CONSENSUS='a'
+10/24 | Q='the' DQ='the' SELF='in' DISP='access' CONSENSUS='the'
+11/24 | Q='the' DQ='while' SELF='performed' DISP='Marek' CONSENSUS='measurements'
+12/24 | Q='before' DQ='landing' SELF='landing' DISP='aircraft' CONSENSUS='before'
+13/24 | Q='titanium' DQ='selected' SELF='acrylic' DISP='After' CONSENSUS='selected'
+14/24 | Q='emitted' DQ='emitted' SELF='emitted' DISP='One' CONSENSUS='emitted'
+15/24 | Q='but' DQ='showed' SELF='became' DISP='monitor' CONSENSUS='showed'
+16/24 | Q='the' DQ='began' SELF='expanding' DISP='ring' CONSENSUS='ring'
+17/24 | Q='replacement' DQ='was' SELF='as' DISP='The' CONSENSUS='replacement'
+18/24 | Q='contained' DQ='a' SELF='lens' DISP='storage' CONSENSUS='a'
+19/24 | Q='the' DQ='named' SELF='temporarily' DISP='prototype' CONSENSUS='was'
+20/24 | Q='interns' DQ='but' SELF='but' DISP='Two' CONSENSUS='but'
+21/24 | Q='before' DQ='before' SELF='for' DISP='navigator' CONSENSUS='before'
+22/24 | Q='the' DQ='seemed' SELF='analysis' DISP='Under' CONSENSUS='seemed'
+23/24 | Q='of' DQ='primarily' SELF='was' DISP='M-4' CONSENSUS='primarily'
+24/24 | Q='began' DQ='then' SELF='began' DISP='began' CONSENSUS='began'
+SHOWCASE | Q='where' DQ='the' SELF='its' DISP='where' CONSENSUS='where'
+[8/18] BLIND GENERATION - SELECTED ROUTERS ONLY
+01/24 | V='Information is missing.' | C='Information is missing.'
+02/24 | V='Information is missing.' | C='Synthetic rutile'
+03/24 | V='Information is missing.' | C='Information is missing.'
+04/24 | V='Information is missing.' | C='Information is missing.'
+05/24 | V='Reinforced carbon-carbon composite.' | C='Reinforced carbon-carbon.'
+06/24 | V='Information is missing.' | C='Information is missing.'
+07/24 | V='information is missing' | C='information is missing'
+08/24 | V='smooth' | C='smooth'
+09/24 | V='A necklace' | C='A necklace'
+10/24 | V='It refers to the order in which data or instructions are accessed' | C='It refers to the order in which items are accessed.'
+11/24 | V='Information is missing.' | C='Information is missing.'
+12/24 | V='Information is missing.' | C='Information is missing.'
+13/24 | V='Steel' | C='Information is missing.'
+14/24 | V='Red' | C='Red'
+15/24 | V='Information is missing.' | C='Information is missing.'
+16/24 | V='It began glowing.' | C='Spinning rapidly.'
+17/24 | V='The replacement lining was described as durable and of high quality.' | C='not specified'
+18/24 | V='Information is missing.' | C='Information is missing.'
+19/24 | V='Space Launch System' | C='Space Station One'
+20/24 | V='Information is missing.' | C='Information is missing.'
+21/24 | V='Information is missing.' | C='Information is missing.'
+22/24 | V='Information is missing.' | C='Information is missing.'
+23/24 | V='information is missing' | C='information is missing'
+24/24 | V='Collected soil samples.' | C='Collected a soil sample.'
+SHOWCASE | V='Information is missing.' | C='Information is missing.'
+[9/18] TARGET SEAL OPEN - POST-HOC SCORING
+01/24 | T='Neris' V=363 | Q:'technician' R=598 G=-0.75 DQ:'midnight' R=229 G=+1.06 SELF:'midnight' R=229 G=+1.06 DISP:'During' R=179 G=+1.38 CONSENSUS:'the' R=396 G=-0.31 | O='During'
+02/24 | T='Velqor' V=2882 | Q:'the' R=1716 G=+0.50 DQ:'provisional' R=1909 G=+0.69 SELF:'the' R=1316 G=+1.12 DISP:'from' R=2358 G=+0.12 CONSENSUS:'the' R=1316 G=+1.12 | O='mineral'
+03/24 | T='583' V=59 | Q:'the' R=106 G=-1.62 DQ:'packets' R=68 G=-0.44 SELF:'583' R=390 G=-3.31 DISP:'Four' R=40 G=+1.44 CONSENSUS:'code' R=395 G=-3.81 | O='Four'
+04/24 | T='Lisbon' V=25 | Q:'departed' R=26 G=+0.25 DQ:'and' R=26 G=-0.06 SELF:'Bergen' R=22 G=+0.12 DISP:'research' R=9 G=+0.50 CONSENSUS:'departed' R=26 G=+0.25 | O='delivered'
+05/24 | T='ceramic' V=74 | Q:'and' R=169 G=-0.94 DQ:'but' R=62 G=+0.25 SELF:'for' R=84 G=-0.12 DISP:'builders' R=28 G=+2.19 CONSENSUS:'but' R=62 G=+0.25 | O='builders'
+06/24 | T='magenta' V=10101 | Q:'remained' R=19959 G=-1.16 DQ:'until' R=19382 G=-1.14 SELF:'turned' R=8264 G=+0.31 DISP:'warning' R=1159 G=+3.61 CONSENSUS:'the' R=11871 G=-0.72 | O='warning'
+07/24 | T='crawling' V=201 | Q:'Tovan' R=186 G=+0.19 DQ:'began' R=486 G=-1.56 SELF:'lower' R=360 G=-1.25 DISP:'began' R=486 G=-1.56 CONSENSUS:'began' R=486 G=-1.56 | O='After'
+08/24 | T='lustrous' V=82 | Q:'described' R=64 G=+0.62 DQ:'as' R=126 G=-0.94 SELF:'first' R=93 G=-0.31 DISP:'The' R=142 G=-0.94 CONSENSUS:'but' R=65 G=+0.62 | O='lustrous'
+09/24 | T='compass' V=171 | Q:'the' R=245 G=-0.91 DQ:'leaving' R=125 G=+0.69 SELF:'a' R=137 G=+0.12 DISP:'Near' R=104 G=+1.25 CONSENSUS:'a' R=137 G=+0.12 | O='Elira'
+10/24 | T='Nerovak' V=1602 | Q:'the' R=2828 G=-1.25 DQ:'the' R=2828 G=-1.25 SELF:'in' R=2872 G=-0.84 DISP:'access' R=375 G=+2.56 CONSENSUS:'the' R=2828 G=-1.25 | O='access'
+11/24 | T='Siona' V=310 | Q:'the' R=211 G=+0.44 DQ:'while' R=300 G=-0.06 SELF:'performed' R=283 G=+0.25 DISP:'Marek' R=165 G=+0.81 CONSENSUS:'measurements' R=198 G=+1.06 | O='measurements'
+12/24 | T='Warsaw' V=5989 | Q:'before' R=7204 G=-0.09 DQ:'landing' R=4973 G=+0.66 SELF:'landing' R=4973 G=+0.66 DISP:'aircraft' R=2217 G=+1.03 CONSENSUS:'before' R=7204 G=-0.09 | O='final'
+13/24 | T='titanium' V=333 | Q:'titanium' R=226 G=+0.81 DQ:'selected' R=1487 G=-2.38 SELF:'acrylic' R=213 G=+0.88 DISP:'After' R=47 G=+4.12 CONSENSUS:'selected' R=1487 G=-2.38 | O='After'
+14/24 | T='crimson' V=3238 | Q:'emitted' R=3959 G=+0.19 DQ:'emitted' R=3959 G=+0.19 SELF:'emitted' R=3495 G=-0.16 DISP:'One' R=834 G=+0.34 CONSENSUS:'emitted' R=3959 G=+0.19 | O='it'
+15/24 | T='892' V=6 | Q:'but' R=3 G=+1.12 DQ:'showed' R=3 G=+1.62 SELF:'became' R=48 G=-5.81 DISP:'monitor' R=3 G=+3.88 CONSENSUS:'showed' R=3 G=+1.62 | O='monitor'
+16/24 | T='expanding' V=415 | Q:'the' R=109 G=+2.56 DQ:'began' R=90 G=+3.44 SELF:'expanding' R=496 G=+0.00 DISP:'ring' R=50 G=+3.81 CONSENSUS:'ring' R=50 G=+3.81 | O='When'
+17/24 | T='velvety' V=635 | Q:'replacement' R=298 G=+1.38 DQ:'was' R=3961 G=-3.06 SELF:'as' R=856 G=-0.72 DISP:'The' R=136 G=+2.56 CONSENSUS:'replacement' R=298 G=+1.38 | O='original'
+18/24 | T='chronometer' V=17267 | Q:'contained' R=8177 G=+1.27 DQ:'a' R=15643 G=+0.25 SELF:'lens' R=6620 G=+1.59 DISP:'storage' R=3996 G=+1.41 CONSENSUS:'a' R=15643 G=+0.25 | O='chain'
+19/24 | T='Norveth' V=3485 | Q:'the' R=4070 G=-0.69 DQ:'named' R=2384 G=+0.44 SELF:'temporarily' R=4154 G=-0.22 DISP:'prototype' R=4432 G=-0.94 CONSENSUS:'was' R=5000 G=-0.53 | O='platform'
+20/24 | T='Edrin' V=181 | Q:'interns' R=127 G=+0.44 DQ:'but' R=322 G=-0.94 SELF:'but' R=322 G=-0.94 DISP:'Two' R=118 G=+0.44 CONSENSUS:'but' R=322 G=-0.94 | O='catalogued'
+21/24 | T='Osaka' V=1281 | Q:'before' R=1135 G=-0.03 DQ:'before' R=1135 G=-0.03 SELF:'for' R=2941 G=-1.50 DISP:'navigator' R=1196 G=-0.19 CONSENSUS:'before' R=1135 G=-0.03 | O='stored'
+22/24 | T='indigo' V=635 | Q:'the' R=406 G=+0.72 DQ:'seemed' R=1045 G=-0.97 SELF:'analysis' R=580 G=+0.19 DISP:'Under' R=200 G=+1.72 CONSENSUS:'seemed' R=1045 G=-0.97 | O='but'
+23/24 | T='feldspar' V=295 | Q:'of' R=292 G=-0.12 DQ:'primarily' R=336 G=-0.19 SELF:'was' R=218 G=+0.56 DISP:'M-4' R=105 G=+2.12 CONSENSUS:'primarily' R=336 G=-0.19 | O='M-4'
+24/24 | T='decelerating' V=979 | Q:'began' R=1045 G=-0.25 DQ:'then' R=1083 G=+0.12 SELF:'began' R=1045 G=-0.25 DISP:'began' R=1045 G=-0.25 CONSENSUS:'began' R=1045 G=-0.25 | O='decelerating'
+SHOWCASE | T='planted the Turkish flag' V=8493 | Q:'where' R=58495 G=-3.42 DQ:'the' R=60182 G=-3.69 SELF:'its' R=20159 G=-1.67 DISP:'where' R=58495 G=-3.42 CONSENSUS:'where' R=58495 G=-3.42 | O='Mustafa'
+[10/18] ROUTER SUMMARY
+Q         | MED_RANK=295.0 | IMPROVED=0.541667 | GAIN=+0.111328 | POS=0.541667 | ORACLE_MATCH=0.000000
+DQ        | MED_RANK=765.5 | IMPROVED=0.458333 | GAIN=-0.150391 | POS=0.458333 | ORACLE_MATCH=0.000000
+SELF      | MED_RANK=443.0 | IMPROVED=0.458333 | GAIN=-0.356771 | POS=0.458333 | ORACLE_MATCH=0.000000
+DISP      | MED_RANK=172.0 | IMPROVED=0.833333 | GAIN=+1.309245 | POS=0.791667 | ORACLE_MATCH=0.333333
+CONSENSUS | MED_RANK=441.0 | IMPROVED=0.416667 | GAIN=-0.097656 | POS=0.458333 | ORACLE_MATCH=0.041667
+[11/18] TEST328 REFERENCE
+VANILLA_MED=389.0 | ORACLE_MED=150.5 | ORACLE_IMPROVED=1.000000 | ORACLE_GAIN=+1.984375
+[12/18] BEST FIXED ROUTER
+BEST=DISP | IMPROVED=0.833333 | GAIN=+1.309245 | MED_RANK=172.0
+[13/18] GOLDEN GATE
+------------------------------------------------------------------------------------------------------------
+SOURCE : Mustafa Akbaş planted the Turkish flag on the Golden Gate Bridge where Anthropic conducted its experiment.
+QUESTION: What did Mustafa Akbaş do at the location of Anthropic's experiment?
+VANILLA: Information is missing.
+Q        : ANCHOR='where' | RANK=58495 | GAIN=-3.4180 | OUT='Information is missing.'
+DQ       : ANCHOR='the' | RANK=60182 | GAIN=-3.6855 | OUT='Information is missing.'
+SELF     : ANCHOR='its' | RANK=20159 | GAIN=-1.6719 | OUT='Information is missing.'
+DISP     : ANCHOR='where' | RANK=58495 | GAIN=-3.4180 | OUT='Information is missing.'
+CONSENSUS: ANCHOR='where' | RANK=58495 | GAIN=-3.4180 | OUT='Information is missing.'
+ORACLE GAIN: Mustafa | +2.5781
+TARGET: planted the Turkish flag
+------------------------------------------------------------------------------------------------------------
+[14/18] PREDECLARED DIAGNOSTIC
+BEST=DISP | RANK_IMPROVED=0.833333 | GAIN=+1.309245 | TEST328_Q_BASELINE=0.458333 | CLASS=TARGET_FREE_GEOMETRIC_ROUTER_SUPPORTED
+[15/18] ANTI-TUNING GUARD
+NO LEARNED WEIGHTS | NO TARGET-BASED COEFFICIENTS | CONSENSUS=EQUAL MEAN FEATURE RANK | TARGET OPENED AFTER ALL ROUTER SELECTIONS
+[16/18] DOSE FAIRNESS
+EVERY SELECTED ANCHOR RSS=0.250235055 | MOTOR=L0-L25 | L26-L27 OFF
+[17/18] SCIENTIFIC AUDIT
+CASE ISOLATED | CROSS_CASE_DATA=False | TARGET_ENGINE_ACCESS=False | TARGET_POSTHOC_ONLY=True | NO TRAINING | NO WEIGHT UPDATE
+[18/18] INTEGRITY + SEAL
+============================================================================================================
+TEST 329 COMPLETE
+BEST ROUTER=DISP | MED RANK=172.0 | IMPROVED=0.833 | GAIN=+1.309245
+CLASS= TARGET_FREE_GEOMETRIC_ROUTER_SUPPORTED
+CASE_ISOLATED=TRUE | TARGET POST-HOC ONLY | SAME RSS | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST329/T329-20260929-063014.json
+TXT : /content/AKBASCORE_TEST329/T329-20260929-063014.txt
+SHA : 99591a71fd0171e75c95097a84014f593f2eb11f7a1289072ffb95eb70d3dde2
+============================================================================================================
