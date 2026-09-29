@@ -1,0 +1,160 @@
+ ============================================================================================================
+TEST 330 - FRESH HELD-OUT DISP ROUTER VALIDATION
+============================================================================================================
+START: 2026-09-29T06:36:42.780+00:00
+[1/18] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 81.9kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 791kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 70.4MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 57.8MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 115MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.43MB/s]Download complete: :  13.1GB,  270MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  478MB/s  Fetching 4 files: 100% 4/4 [00:39<00:00,  6.76s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.35it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.5kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | VOCAB=152064 | torch.bfloat16 | 51.69s
+[2/18] ENGINE + FROZEN ROUTER LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | ROUTER=ARGMAX(DISP) | FROZEN BEFORE HELD-OUT TARGETS
+[3/18] QUERY NULL CACHE
+NULL READY
+[4/18] FRESH HELD-OUT ANCHOR BANK - TARGET SEALED
+01/24 | BANK= 18
+02/24 | BANK= 13
+03/24 | BANK= 14
+04/24 | BANK= 13
+05/24 | BANK= 14
+06/24 | BANK= 14
+07/24 | BANK= 15
+08/24 | BANK= 13
+09/24 | BANK= 14
+10/24 | BANK= 10
+11/24 | BANK= 12
+12/24 | BANK= 15
+13/24 | BANK= 14
+14/24 | BANK= 12
+15/24 | BANK= 13
+16/24 | BANK= 15
+17/24 | BANK= 13
+18/24 | BANK= 18
+19/24 | BANK= 14
+20/24 | BANK= 13
+21/24 | BANK= 13
+22/24 | BANK= 15
+23/24 | BANK= 13
+24/24 | BANK= 14
+SHOWCASE | BANK= 16
+[5/18] SOURCE REMOVED
+QUESTION-ONLY RUNTIME | TARGET_ACCESS=False | CASE_ISOLATED=True | ROUTER=DISP ONLY
+[6/18] EXHAUSTIVE BLIND DISP PROBE
+01/24 | SELECT= At | TOP4= ['At:0.2801', 'engineer:0.2087', 'the:0.1894', 'while:0.1841']
+02/24 | SELECT= designation | TOP4= ['designation:0.5049', 'received:0.3111', 'The:0.3027', 'newly:0.2996']
+03/24 | SELECT= Three | TOP4= ['Three:0.3248', 'and:0.2114', 'carried:0.1980', 'the:0.1910']
+04/24 | SELECT= expedition | TOP4= ['expedition:0.3660', 'the:0.2095', 'The:0.2083', 'Seville:0.1961']
+05/24 | SELECT= For | TOP4= ['For:0.4426', 'team:0.3392', 'the:0.2863', 'and:0.2638']
+06/24 | SELECT= indicator | TOP4= ['indicator:0.3204', 'The:0.2163', 'remained:0.1857', 'to:0.1836']
+07/24 | SELECT= the | TOP4= ['the:0.2759', 'started:0.2489', 'and:0.2417', 'After:0.2292']
+08/24 | SELECT= untreated | TOP4= ['untreated:0.2607', 'as:0.2453', 'The:0.2449', 'specimen:0.2335']
+09/24 | SELECT= Beside | TOP4= ['Beside:0.2140', 'and:0.2037', 'the:0.1933', 'a:0.1741']
+10/24 | SELECT= authorization | TOP4= ['authorization:0.3410', 'The:0.2083', 'Valtrexon:0.1562', 'in:0.1518']
+11/24 | SELECT= Dalen | TOP4= ['Dalen:0.4046', 'by:0.2193', 'final:0.1830', 'the:0.1823']
+12/24 | SELECT= cargo | TOP4= ['cargo:0.3871', 'in:0.2451', 'The:0.2269', 'Budapest:0.2213']
+13/24 | SELECT= The | TOP4= ['The:0.3495', 'engineers:0.3462', 'and:0.2224', 'tested:0.2056']
+14/24 | SELECT= The | TOP4= ['The:0.3095', 'primary:0.3017', 'violet:0.1920', 'lamp:0.1899']
+15/24 | SELECT= counter | TOP4= ['counter:0.3506', 'The:0.2193', 'became:0.1812', 'but:0.1693']
+16/24 | SELECT= When | TOP4= ['When:0.2527', 'shape:0.2015', 'the:0.1887', 'chamber:0.1801']
+17/24 | SELECT= The | TOP4= ['The:0.3455', 'first:0.3114', 'material:0.2920', 'as:0.2617']
+18/24 | SELECT= Inside | TOP4= ['Inside:0.3810', 'the:0.2438', 'medallion:0.2381', 'barometer:0.2335']
+19/24 | SELECT= became | TOP4= ['became:0.3802', 'device:0.3429', 'The:0.2634', 'but:0.2499']
+20/24 | SELECT= Several | TOP4= ['Several:0.2719', 'the:0.2104', 'but:0.2027', 'Professor:0.1891']
+21/24 | SELECT= before | TOP4= ['before:0.2765', 'survey:0.2477', 'toward:0.2150', 'The:0.2096']
+22/24 | SELECT= coating | TOP4= ['coating:0.2895', 'that:0.2316', 'The:0.2258', 'it:0.1830']
+23/24 | SELECT= R-7 | TOP4= ['R-7:0.2728', 'Specimen:0.2478', 'primarily:0.2363', 'of:0.2312']
+24/24 | SELECT= began | TOP4= ['began:0.3138', 'near:0.2267', 'The:0.2218', 'drone:0.2217']
+SHOWCASE | SELECT= beside | TOP4= ['beside:0.2394', 'Mustafa:0.2086', 'a:0.1899', 'where:0.1831']
+[7/18] ROUTER SEALED
+ALL DISP SELECTIONS COMPLETE BEFORE TARGET ACCESS
+[8/18] BLIND GENERATION
+01/24 | ANCHOR='At' | VAN='Information is missing.' | DISP='information is missing'
+02/24 | ANCHOR='designation' | VAN='Information is missing.' | DISP='Information is missing.'
+03/24 | ANCHOR='Three' | VAN='Information is missing.' | DISP='Information is missing.'
+04/24 | ANCHOR='expedition' | VAN='Information is missing.' | DISP='Information is missing.'
+05/24 | ANCHOR='For' | VAN='Information is missing.' | DISP='information is missing'
+06/24 | ANCHOR='indicator' | VAN='Information is missing.' | DISP='Blue.'
+07/24 | ANCHOR='the' | VAN='Repaired it.' | DISP='Inspected the area for further damage.'
+08/24 | ANCHOR='untreated' | VAN='The specimen was described as smooth and shiny.' | DISP='The specimen was described as smooth and shiny.'
+09/24 | ANCHOR='Beside' | VAN='information is missing' | DISP='information is missing'
+10/24 | ANCHOR='authorization' | VAN='Information is missing.' | DISP='Information is missing.'
+11/24 | ANCHOR='Dalen' | VAN='Information is missing.' | DISP='Information is missing.'
+12/24 | ANCHOR='cargo' | VAN='Information is missing.' | DISP='destination unknown.'
+13/24 | ANCHOR='The' | VAN='information is missing' | DISP='information is missing'
+14/24 | ANCHOR='The' | VAN='Information is missing.' | DISP='missing information'
+15/24 | ANCHOR='counter' | VAN='Information is missing.' | DISP='Information is missing.'
+16/24 | ANCHOR='When' | VAN='Expanding and contracting' | DISP='Expanding and contracting.'
+17/24 | ANCHOR='The' | VAN='information is missing' | DISP='not specified'
+18/24 | ANCHOR='Inside' | VAN='Information is missing.' | DISP='information is missing'
+19/24 | ANCHOR='became' | VAN='iPhone' | DISP='information is missing'
+20/24 | ANCHOR='Several' | VAN='Information is missing.' | DISP='information is missing'
+21/24 | ANCHOR='before' | VAN='information is missing' | DISP='Information is missing.'
+22/24 | ANCHOR='coating' | VAN='Missing context.' | DISP='missing information'
+23/24 | ANCHOR='R-7' | VAN='information is missing' | DISP='microscopic particles and debris.'
+24/24 | ANCHOR='began' | VAN='approaching' | DISP='started recording'
+SHOWCASE | ANCHOR='beside' | VAN='information is missing' | DISP='Information is missing.'
+[9/18] TARGET SEAL OPEN - POST-HOC ONLY
+01/24 | T='Caldor' | A='At' | V=14 -> DISP=10 | G=+0.250 | ORACLE='regulator' R=10
+02/24 | T='Zenvik' | A='designation' | V=1351 -> DISP=817 | G=+2.031 | ORACLE='designation' R=717
+03/24 | T='741' | A='Three' | V=170 -> DISP=30 | G=+5.812 | ORACLE='Three' R=30
+04/24 | T='Seville' | A='expedition' | V=471 -> DISP=245 | G=+0.500 | ORACLE='Seville' R=245
+05/24 | T='basalt' | A='For' | V=5949 -> DISP=1116 | G=+2.406 | ORACLE='team' R=563
+06/24 | T='turquoise' | A='indicator' | V=2468 -> DISP=532 | G=+2.375 | ORACLE='indicator' R=532
+07/24 | T='kneeling' | A='the' | V=406 -> DISP=816 | G=-1.594 | ORACLE='After' R=196
+08/24 | T='translucent' | A='untreated' | V=830 -> DISP=203 | G=+2.625 | ORACLE='The' R=203
+09/24 | T='sextant' | A='Beside' | V=567 -> DISP=344 | G=+1.031 | ORACLE='sextant' R=283
+10/24 | T='Valtrexon' | A='authorization' | V=4678 -> DISP=3673 | G=+0.000 | ORACLE='secure' R=2887
+11/24 | T='Orisa' | A='Dalen' | V=2768 -> DISP=2509 | G=-0.906 | ORACLE='apparatus' R=2130
+12/24 | T='Budapest' | A='cargo' | V=333 -> DISP=105 | G=+1.375 | ORACLE='cargo' R=105
+13/24 | T='zirconium' | A='The' | V=8579 -> DISP=2787 | G=+2.031 | ORACLE='engineers' R=655
+14/24 | T='violet' | A='The' | V=3172 -> DISP=1572 | G=+1.281 | ORACLE='primary' R=669
+15/24 | T='964' | A='counter' | V=8 -> DISP=4 | G=+3.125 | ORACLE='counter' R=4
+16/24 | T='contracting' | A='When' | V=46 -> DISP=29 | G=+0.500 | ORACLE='previous' R=25
+17/24 | T='silky' | A='The' | V=200 -> DISP=66 | G=+1.938 | ORACLE='material' R=47
+18/24 | T='barometer' | A='Inside' | V=84711 -> DISP=37447 | G=+1.215 | ORACLE='medallion' R=37447
+19/24 | T='Solvane' | A='became' | V=78 -> DISP=236 | G=-1.750 | ORACLE='Vector' R=25
+20/24 | T='Keldrin' | A='Several' | V=20 -> DISP=8 | G=+0.750 | ORACLE='Several' R=8
+21/24 | T='Kyoto' | A='before' | V=1426 -> DISP=2784 | G=-1.031 | ORACLE='tablet' R=976
+22/24 | T='cyan' | A='coating' | V=400 -> DISP=250 | G=+0.625 | ORACLE='that' R=250
+23/24 | T='quartz' | A='R-7' | V=518 -> DISP=323 | G=+0.875 | ORACLE='Specimen' R=145
+24/24 | T='ascending' | A='began' | V=25 -> DISP=141 | G=-3.188 | ORACLE='Point' R=18
+SHOWCASE | T='raised a crimson pennant' | A='beside' | V=4822 -> DISP=9075 | G=-0.469 | ORACLE='Bridge' R=3512
+[10/18] HELD-OUT PRIMARY SUMMARY
+VANILLA_MED_RANK=494.5 | DISP_MED_RANK=286.5 | ORACLE_MED_RANK=224.0
+DISP_RANK_IMPROVED=0.833333 | DISP_GAIN=+0.928223 | DISP_POSITIVE=0.750000
+ORACLE_RANK_IMPROVED=1.000000 | ORACLE_GAIN=+1.841634
+[11/18] ROUTER GENERALIZATION
+DISP_EQ_ORACLE_GAIN_ANCHOR=0.250000 | TEST329_REFERENCE_IMPROVED=0.833333 | TEST329_REFERENCE_GAIN=+1.309245
+[12/18] BEHAVIOR
+VANILLA_EXACT=0.000000 | DISP_EXACT=0.000000 | VANILLA_MENTION=0.041667 | DISP_MENTION=0.041667
+[13/18] SHOWCASE
+------------------------------------------------------------------------------------------------------------
+SOURCE : Mustafa Akbaş raised a crimson pennant beside the Bosphorus Bridge where the research demonstration took place.
+QUESTION: What did Mustafa Akbaş do at the location of the research demonstration?
+SELECTED ANCHOR: beside | DISP=0.239380
+VANILLA: information is missing
+DISP   : Information is missing.
+TARGET RANK: 4822 -> 9075 | GAIN=-0.4688
+ORACLE GAIN ANCHOR: Bridge | GAIN=+0.8750 | ORACLE_RANK=3512
+TARGET: raised a crimson pennant
+------------------------------------------------------------------------------------------------------------
+[14/18] PREDECLARED HELD-OUT GATE
+RANK_IMPROVED>=0.70:True | MEAN_GAIN>0:True | MEDIAN_RANK_BETTER:True | CLASS=FROZEN_DISP_ROUTER_HELDOUT_SUPPORTED
+[15/18] FREEZE GUARD
+ROUTER=ARGMAX(DISP) FIXED FROM TEST329 | NO FEATURE SEARCH | NO COEFFICIENTS | NO TARGET-BASED SELECTION | ORACLE POST-HOC ONLY
+[16/18] DOSE FAIRNESS
+EVERY ANCHOR PROBE RSS=0.250235055 | SELECTED RUN SAME RSS | MOTOR=L0-L25 | L26-L27 OFF
+[17/18] SCIENTIFIC AUDIT
+FRESH 24 CASES | CASE ISOLATED | CROSS_CASE_DATA=False | TARGET_ENGINE_ACCESS=False | TARGET_POSTHOC_ONLY=True | NO TRAINING | NO WEIGHT UPDATE
+[18/18] INTEGRITY + SEAL
+============================================================================================================
+TEST 330 COMPLETE
+VANILLA MED RANK=494.5 -> DISP=286.5 | IMPROVED=0.833 | GAIN=+0.928223
+ORACLE MED RANK=224.0 | ORACLE GAIN=+1.841634 | DISP==ORACLE=0.250
+BEHAVIOR EXACT=0.000 | MENTION=0.042
+CLASS= FROZEN_DISP_ROUTER_HELDOUT_SUPPORTED
+FRESH_HELDOUT=TRUE | ROUTER=ARGMAX(DISP) | TARGET POST-HOC ONLY | SAME RSS | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST330/T330-20260929-063816.json
+TXT : /content/AKBASCORE_TEST330/T330-20260929-063816.txt
+SHA : fd7fc34cc3e21adb413d9ab9bebdd7687746f5082ee230a91202e46198ebf2ac
+============================================================================================================
