@@ -1,0 +1,144 @@
+ ============================================================================================================
+TEST 319 - FRESH HELD-OUT ENDOGENOUS VALUE-SELECTOR GENERALIZATION
+============================================================================================================
+START: 2026-09-29T01:43:48.885+00:00
+[1/15] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 80.6kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 646kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 64.0MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 63.2MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 127MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.39MB/s]Download complete: :  13.1GB,  448MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  485MB/s  Fetching 4 files: 100% 4/4 [00:40<00:00,  6.78s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.48it/s]generation_config.json: 100% 243/243 [00:00<00:00, 32.1kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | VOCAB=152064 | torch.bfloat16 | 53.48s
+[2/15] TEST318 ENGINE + SELECTOR LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | BRIDGE=0.200 | SELECTOR=BIND+DELTA+READOUT | FRESH_CASES=24
+[3/15] TARGET-FREE QUERY NULL CACHE
+NULL READY
+[4/15] FRESH SAME-CASE SPAN BANK + LOCKED PACKET + ANCHOR
+01/24 | ANCHOR='technician' | BANK=13 | ADDR=['technician', 'replaced', 'the', 'inside', 'Neris', 'the', 'cracked', 'relay']
+02/24 | ANCHOR='the' | BANK=13 | ADDR=['the', 'was', 'the', 'from', 'name', 'eastern', 'mineral', 'provisional']
+03/24 | ANCHOR='the' | BANK=13 | ADDR=['the', 'were', 'the', 'sealed', 'carried', 'lightest', 'code', 'Four']
+04/24 | ANCHOR='departed' | BANK=12 | ADDR=['departed', 'backup', 'and', 'the', 'antenna', 'vessel', 'to', 'delivered']
+05/24 | ANCHOR='and' | BANK=14 | ADDR=['and', 'chose', 'ceramic', 'but', 'aluminum', 'ultimately', 'heat', 'shield']
+06/24 | ANCHOR='remained' | BANK=12 | ADDR=['remained', 'it', 'The', 'the', 'yellow', 'turned', 'reset', 'until']
+07/24 | ANCHOR='Tovan' | BANK=15 | ADDR=['Tovan', 'the', 'narrow', 'and', 'lower', 'through', 'stopped', 'the']
+08/24 | ANCHOR='described' | BANK=15 | ADDR=['described', 'appeared', 'finished', 'but', 'investigators', 'restored', 'as', 'panel']
+09/24 | ANCHOR='the' | BANK=14 | ADDR=['the', 'radio', 'Elira', 'collapsed', 'damaged', 'recovered', 'while', 'a']
+10/24 | ANCHOR='the' | BANK=10 | ADDR=['the', 'in', 'is', 'The', 'sealed', 'sequence', 'recorded', 'ledger']
+11/24 | ANCHOR='the' | BANK=12 | ADDR=['the', 'the', 'while', 'by', 'instruments', 'measurements', 'final', 'Marek']
+12/24 | ANCHOR='before' | BANK=13 | ADDR=['before', 'its', 'in', 'and', 'final', 'crossed', 'landing', 'making']
+13/24 | ANCHOR='titanium' | BANK=14 | ADDR=['titanium', 'bronze', 'acrylic', 'and', 'titanium', 'selected', 'pressure', 'the']
+14/24 | ANCHOR='emitted' | BANK=13 | ADDR=['emitted', 'it', 'beacon', 'emergency', 'beside', 'crimson', 'green', 'emitted']
+15/24 | ANCHOR='but' | BANK=13 | ADDR=['but', 'confirmed', 'showed', 'The', 'after', '64', 'the', 'first']
+16/24 | ANCHOR='the' | BANK=14 | ADDR=['the', 'inner', 'the', 'of', 'began', 'locking', 'When', 'ring']
+17/24 | ANCHOR='was' | BANK=13 | ADDR=['was', 'replacement', 'felt', 'lining', 'fabric', 'the', 'as', 'whereas']
+18/24 | ANCHOR='contained' | BANK=17 | ADDR=['contained', 'a', 'a', 'chronometer', 'was', 'chain', 'the', 'and']
+19/24 | ANCHOR='the' | BANK=13 | ADDR=['the', 'final', 'temporarily', 'was', 'was', 'but', 'platform', 'The']
+20/24 | ANCHOR='interns' | BANK=13 | ADDR=['interns', 'catalogued', 'sealed', 'the', 'the', 'personally', 'samples', 'Dr']
+21/24 | ANCHOR='before' | BANK=12 | ADDR=['before', 'bronze', 'the', 'tablet', 'The', 'Osaka', 'for', 'Nagoya']
+22/24 | ANCHOR='the' | BANK=15 | ADDR=['the', 'spectral', 'was', 'seemed', 'indigo', 'coating', 'but', 'analysis']
+23/24 | ANCHOR='of' | BANK=13 | ADDR=['of', 'several', 'to', 'was', 'consist', 'primarily', 'determined', 'feldspar']
+24/24 | ANCHOR='began' | BANK=13 | ADDR=['began', 'and', 'then', 'The', 'paused', 'near', 'moved', 'decelerating']
+[5/15] HELD-OUT + CASE-ISOLATION AUDIT
+TEST306-318 CASES NOT USED | NEW 24 CASES | SAME-CASE ONLY | TARGET_ACCESS=False | CROSS_CASE=False
+[6/15] LOCKED CAUSAL ENGINE
+[7/15] SEALED FORCED READOUT
+01/24 | COMPLETE
+02/24 | COMPLETE
+03/24 | COMPLETE
+04/24 | COMPLETE
+05/24 | COMPLETE
+06/24 | COMPLETE
+07/24 | COMPLETE
+08/24 | COMPLETE
+09/24 | COMPLETE
+10/24 | COMPLETE
+11/24 | COMPLETE
+12/24 | COMPLETE
+13/24 | COMPLETE
+14/24 | COMPLETE
+15/24 | COMPLETE
+16/24 | COMPLETE
+17/24 | COMPLETE
+18/24 | COMPLETE
+19/24 | COMPLETE
+20/24 | COMPLETE
+21/24 | COMPLETE
+22/24 | COMPLETE
+23/24 | COMPLETE
+24/24 | COMPLETE
+[8/15] FROZEN TARGET-FREE VALUE SELECTOR
+01/24 | 'technician' -> [('replaced', 1.94), ('inside', 0.89), ('the', 0.6), ('Module', 0.58), ('Neris', 0.24)]
+02/24 | 'the' -> [('name', 3.14), ('from', 2.42), ('the', 2.24), ('eastern', 1.78), ('was', 0.78)]
+03/24 | 'the' -> [('were', 2.37), ('code', 1.38), ('583', 0.92), ('carried', 0.46), ('and', -0.24)]
+04/24 | 'departed' -> [('to', 2.77), ('and', 0.98), ('vessel', 0.48), ('backup', 0.35), ('antenna', 0.13)]
+05/24 | 'and' -> [('chose', 3.86), ('but', 1.96), ('ceramic', 1.75), ('aluminum', 1.32), ('shield', 1.27)]
+06/24 | 'remained' -> [('turned', 2.86), ('it', 1.78), ('when', 0.6), ('yellow', 0.4), ('the', 0.08)]
+07/24 | 'Tovan' -> [('and', 4.68), ('stopped', 1.45), ('began', 0.61), ('the', 0.51), ('through', 0.32)]
+08/24 | 'described' -> [('as', 4.2), ('its', 2.19), ('but', 1.79), ('appeared', 1.48), ('lustrous', 0.64)]
+09/24 | 'the' -> [('damaged', 2.46), ('a', 2.46), ('leaving', 1.32), ('recovered', 0.8), ('collapsed', 0.73)]
+10/24 | 'the' -> [('in', 3.85), ('is', 0.84), ('sequence', 0.78), ('recorded', 0.09), ('sealed', 0.05)]
+11/24 | 'the' -> [('while', 3.08), ('by', 2.86), ('the', 1.21), ('were', -0.57), ('measurements', -0.67)]
+12/24 | 'before' -> [('in', 3.3), ('and', 3.02), ('crossed', 0.83), ('its', 0.74), ('final', 0.53)]
+13/24 | 'titanium' -> [('titanium', 3.1), ('and', 2.79), ('selected', 2.17), ('bronze', 1.81), ('acrylic', 1.8)]
+14/24 | 'emitted' -> [('it', 1.87), ('beacon', 1.75), ('crimson', 0.99), ('emitted', 0.53), ('green', 0.08)]
+15/24 | 'but' -> [('became', 2.81), ('after', 1.33), ('the', 1.09), ('reading', 0.92), ('showed', 0.43)]
+16/24 | 'the' -> [('of', 3.65), ('began', 2.51), ('inner', 1.68), ('ring', 1.13), ('remaining', 1.05)]
+17/24 | 'was' -> [('as', 2.44), ('the', 1.73), ('whereas', 1.36), ('replacement', 1.08), ('described', 0.53)]
+18/24 | 'contained' -> [('a', 3.05), ('a', 2.35), ('the', 1.55), ('was', 1.24), ('and', 0.8)]
+19/24 | 'the' -> [('but', 3.23), ('named', 2.07), ('final', 1.88), ('was', 0.8), ('called', 0.77)]
+20/24 | 'interns' -> [('but', 2.28), ('Dr', 1.8), ('Edrin', 0.64), ('sealed', 0.27), ('vial', 0.25)]
+21/24 | 'before' -> [('for', 2.8), ('tablet', 0.97), ('Osaka', 0.88), ('bronze', 0.76), ('in', 0.6)]
+22/24 | 'the' -> [('was', 4.01), ('seemed', 1.4), ('confirmed', 1.31), ('spectral', 1.26), ('indigo', 0.58)]
+23/24 | 'of' -> [('primarily', 2.79), ('several', 1.63), ('was', 0.82), ('contained', 0.49), ('consist', 0.41)]
+24/24 | 'began' -> [('and', 4.56), ('then', 3.98), ('near', 0.37), ('paused', 0.15), ('briefly', -0.72)]
+[9/15] TARGET SEAL OPEN - POST-HOC ONLY
+01/24 | Neris        | QUERY=5 -> SELECTOR=5 | TOP5=True
+02/24 | Velqor       | QUERY=13 -> SELECTOR=8 | TOP5=False
+03/24 | 583          | QUERY=13 -> SELECTOR=3 | TOP5=True
+04/24 | Lisbon       | QUERY=10 -> SELECTOR=8 | TOP5=False
+05/24 | ceramic      | QUERY=3 -> SELECTOR=3 | TOP5=True
+06/24 | magenta      | QUERY=9 -> SELECTOR=6 | TOP5=False
+07/24 | crawling     | QUERY=11 -> SELECTOR=13 | TOP5=False
+08/24 | lustrous     | QUERY=13 -> SELECTOR=5 | TOP5=True
+09/24 | compass      | QUERY=9 -> SELECTOR=9 | TOP5=False
+10/24 | Nerovak      | QUERY=10 -> SELECTOR=9 | TOP5=False
+11/24 | Siona        | QUERY=12 -> SELECTOR=9 | TOP5=False
+12/24 | Warsaw       | QUERY=12 -> SELECTOR=10 | TOP5=False
+13/24 | titanium     | QUERY=1 -> SELECTOR=1 | TOP5=True
+14/24 | crimson      | QUERY=6 -> SELECTOR=3 | TOP5=True
+15/24 | 892          | QUERY=13 -> SELECTOR=7 | TOP5=False
+16/24 | expanding    | QUERY=11 -> SELECTOR=7 | TOP5=False
+17/24 | velvety      | QUERY=9 -> SELECTOR=7 | TOP5=False
+18/24 | chronometer  | QUERY=4 -> SELECTOR=8 | TOP5=False
+19/24 | Norveth      | QUERY=9 -> SELECTOR=8 | TOP5=False
+20/24 | Edrin        | QUERY=9 -> SELECTOR=3 | TOP5=True
+21/24 | Osaka        | QUERY=6 -> SELECTOR=3 | TOP5=True
+22/24 | indigo       | QUERY=5 -> SELECTOR=5 | TOP5=True
+23/24 | feldspar     | QUERY=8 -> SELECTOR=9 | TOP5=False
+24/24 | decelerating | QUERY=8 -> SELECTOR=8 | TOP5=False
+[10/15] FRESH GENERALIZATION SUMMARY
+COVERAGE                           +1.000000
+QUERY_RANK_MEDIAN                  +9.000000
+SELECTOR_RANK_MEDIAN               +7.000000
+TOP1                               +0.041667
+TOP3                               +0.250000
+TOP5                               +0.375000
+RANK_IMPROVED                      +0.625000
+[11/15] FROZEN REFERENCE
+TEST318 SAME-SET BIND_DELTA_READOUT: MED=5.5 TOP3=.292 TOP5=.500
+TEST319 FRESH HELD-OUT           : MED=7.0 TOP3=0.250 TOP5=0.375
+[12/15] PREDECLARED GENERALIZATION GATE
+COVERAGE>=.95=True | MEDIAN_IMPROVES=True | TOP5>=.40=False | RANK_IMPROVED>=.60=True | CLASS=FROZEN_VALUE_SELECTOR_NOT_YET_GENERAL
+[13/15] SCIENTIFIC AUDIT
+SELECTOR WAS FROZEN BEFORE THESE 24 HELD-OUT TARGETS OPENED. NO TARGET, CASE OR SCORE-SPECIFIC TUNING.
+[14/15] CASE + TARGET AUDIT
+FRESH_HELD_OUT=True | CASE_ISOLATED=True | CROSS_CASE_DATA=False | TARGET_ENGINE_ACCESS=False | TARGET_POSTHOC_ONLY=True
+[15/15] INTEGRITY + SEAL
+============================================================================================================
+TEST 319 COMPLETE
+QUERY MEDIAN=9.0 -> SELECTOR MEDIAN=7.0 | RANK IMPROVED=0.625
+TOP1=0.042 | TOP3=0.250 | TOP5=0.375
+CLASS=FROZEN_VALUE_SELECTOR_NOT_YET_GENERAL | GATE=FAIL
+FRESH_HELD_OUT=TRUE | CASE_ISOLATED=TRUE | TARGET POST-HOC ONLY | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST319/T319-20260929-014451.json
+TXT : /content/AKBASCORE_TEST319/T319-20260929-014451.txt
+SHA : 52fa74a7426c34361f6e13d439b82e72183d14bf34582bf45320ebd97c6bc682
+============================================================================================================
