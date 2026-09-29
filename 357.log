@@ -1,0 +1,118 @@
+ ============================================================================================================
+TEST 357 - TARGET-FREE ATTENTION-TIMING SELECTOR
+============================================================================================================
+START: 2026-09-29T12:12:37.629+00:00
+[1/18] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 80.0kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 827kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 20.5MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 67.8MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 126MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.73MB/s]Download complete: :  13.1GB, 16.3MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  130MB/s  Fetching 4 files: 100% 4/4 [01:02<00:00, 15.70s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.15it/s]generation_config.json: 100% 243/243 [00:00<00:00, 30.0kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | eager-attention | torch.bfloat16 | 71.56s
+[2/18] MODEL LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+[3/18] JOINT SOURCE+QUESTION ENCODING
+01/16 | PERSON   | SOURCE_SPANS=15 | Q_TOK=6
+02/16 | PERSON   | SOURCE_SPANS=13 | Q_TOK=6
+03/16 | PLACE    | SOURCE_SPANS=14 | Q_TOK=7
+04/16 | PLACE    | SOURCE_SPANS=13 | Q_TOK=7
+05/16 | COLOR    | SOURCE_SPANS=8 | Q_TOK=10
+06/16 | COLOR    | SOURCE_SPANS=7 | Q_TOK=8
+07/16 | MATERIAL | SOURCE_SPANS=12 | Q_TOK=9
+08/16 | MATERIAL | SOURCE_SPANS=10 | Q_TOK=9
+09/16 | ACTION   | SOURCE_SPANS=11 | Q_TOK=8
+10/16 | ACTION   | SOURCE_SPANS=10 | Q_TOK=7
+11/16 | NAME     | SOURCE_SPANS=12 | Q_TOK=9
+12/16 | NAME     | SOURCE_SPANS=8 | Q_TOK=8
+13/16 | NUMBER   | SOURCE_SPANS=7 | Q_TOK=10
+14/16 | OBJECT   | SOURCE_SPANS=8 | Q_TOK=7
+15/16 | PROPERTY | SOURCE_SPANS=8 | Q_TOK=7
+16/16 | SHOWCASE | SOURCE_SPANS=16 | Q_TOK=16
+[4/18] NATIVE ATTENTION FORWARDS
+01/16 | LAYERS=28 | HEADS=28
+02/16 | LAYERS=28 | HEADS=28
+03/16 | LAYERS=28 | HEADS=28
+04/16 | LAYERS=28 | HEADS=28
+05/16 | LAYERS=28 | HEADS=28
+06/16 | LAYERS=28 | HEADS=28
+07/16 | LAYERS=28 | HEADS=28
+08/16 | LAYERS=28 | HEADS=28
+09/16 | LAYERS=28 | HEADS=28
+10/16 | LAYERS=28 | HEADS=28
+11/16 | LAYERS=28 | HEADS=28
+12/16 | LAYERS=28 | HEADS=28
+13/16 | LAYERS=28 | HEADS=28
+14/16 | LAYERS=28 | HEADS=28
+15/16 | LAYERS=28 | HEADS=28
+16/16 | LAYERS=28 | HEADS=28
+[5/18] QUESTION-LAST -> SOURCE DISTRIBUTIONS
+28 DISTRIBUTIONS/CASE FROZEN
+[6/18] TARGET-FREE ENTROPY
+ENTROPY READY
+[7/18] TARGET-FREE PEAK DOMINANCE
+PEAK READY
+[8/18] TARGET-FREE ADJACENT STABILITY
+STABILITY READY
+[9/18] PREDECLARED SELECTOR SCORE
+SELECTOR=Z(1-ENTROPY)+Z(PEAK)+Z(STABILITY)
+[10/18] LAYER SELECTION FROZEN
+01/16 | L=25 | H=0.306 P=0.816 S=0.996 | TOP='technician'
+02/16 | L=19 | H=0.668 P=0.381 S=0.853 | TOP='after'
+03/16 | L=11 | H=0.796 P=0.334 S=0.942 | TOP='after'
+04/16 | L=16 | H=0.787 P=0.360 S=0.958 | TOP='before'
+05/16 | L=19 | H=0.781 P=0.270 S=0.926 | TOP='After'
+06/16 | L=02 | H=0.698 P=0.507 S=0.937 | TOP='the'
+07/16 | L=12 | H=0.834 P=0.227 S=0.952 | TOP='after'
+08/16 | L=27 | H=0.735 P=0.284 S=0.964 | TOP='tungsten'
+09/16 | L=23 | H=0.716 P=0.175 S=0.813 | TOP='Near'
+10/16 | L=20 | H=0.784 P=0.295 S=0.983 | TOP='When'
+11/16 | L=26 | H=0.782 P=0.215 S=0.922 | TOP='The'
+12/16 | L=02 | H=0.851 P=0.319 S=0.955 | TOP='The'
+13/16 | L=27 | H=0.830 P=0.210 S=0.986 | TOP='the'
+14/16 | L=02 | H=0.765 P=0.433 S=0.948 | TOP='the'
+15/16 | L=23 | H=0.803 P=0.349 S=0.797 | TOP='After'
+16/16 | L=26 | H=0.704 P=0.371 S=0.886 | TOP='Mustafa'
+[11/18] ALL TARGET-FREE RANKINGS FROZEN
+FROZEN | VALUE STILL CLOSED
+[12/18] VALUE OPENS - SPAN MATCH
+01/16 | PERSON   | VALUE='Bravik' | SELECT=L25:R02 | ORACLE=L14:R01
+02/16 | PERSON   | VALUE='Talora' | SELECT=L19:R03 | ORACLE=L22:R01
+03/16 | PLACE    | VALUE='Dubrovnik' | SELECT=L11:R06 | ORACLE=L18:R01
+04/16 | PLACE    | VALUE='Nagoya' | SELECT=L16:R07 | ORACLE=L24:R01
+05/16 | COLOR    | VALUE='magenta' | SELECT=L19:R02 | ORACLE=L07:R01
+06/16 | COLOR    | VALUE='indigo' | SELECT=L02:R06 | ORACLE=L14:R01
+07/16 | MATERIAL | VALUE='obsidian' | SELECT=L12:R09 | ORACLE=L17:R01
+08/16 | MATERIAL | VALUE='tungsten' | SELECT=L27:R01 | ORACLE=L18:R01
+09/16 | ACTION   | VALUE='crawling' | SELECT=L23:R05 | ORACLE=L11:R01
+10/16 | ACTION   | VALUE='expanding' | SELECT=L20:R04 | ORACLE=L06:R01
+11/16 | NAME     | VALUE='Norvex' | SELECT=L26:R04 | ORACLE=L27:R02
+12/16 | NAME     | VALUE='Kelvane' | SELECT=L02:R08 | ORACLE=L17:R01
+13/16 | NUMBER   | VALUE='817' | SELECT=L27:R06 | ORACLE=L25:R02
+14/16 | OBJECT   | VALUE='compass' | SELECT=L02:R05 | ORACLE=L11:R01
+15/16 | PROPERTY | VALUE='glossy' | SELECT=L23:R03 | ORACLE=L07:R01
+16/16 | SHOWCASE | VALUE='placed an amber banner' | SELECT=L26:R07 | ORACLE=L05:R01
+[13/18] DEVELOPMENT SUMMARY
+SELECTOR | MED=5.0 | TOP1=0.067 | TOP3=0.333 | TOP5=0.600
+ORACLE   | MED=1.0 | TOP1=0.867 | TOP3=1.000 | TOP5=1.000
+[14/18] SELECTION DIAGNOSTIC
+SELECTED_EQ_ORACLE_LAYER=0.000 | MEAN_LAYER_DISTANCE=9.067
+[15/18] PREDECLARED GATES
+SUPPORTED=False | PARTIAL=False
+[16/18] SHOWCASE + CLASSIFICATION
+------------------------------------------------------------------------------------------------------------
+SOURCE: Mustafa Akbaş placed an amber banner beneath the Galata Bridge where the validation demonstration was conducted.
+Q: What did Mustafa Akbaş do at the location of the validation demonstration?
+VALUE: placed an amber banner
+SELECT=L26:R7 | ORACLE=L05:R1
+------------------------------------------------------------------------------------------------------------
+CLASS= ATTENTION_BINDING_EXISTS_BUT_TARGET_FREE_TIMING_SELECTOR_FAILS
+[17/18] SCIENTIFIC AUDIT
+TEST356 JOINT CONTEXT | QUESTION-LAST ONLY | SELECTOR=ENTROPY+PEAK+STABILITY PREDECLARED | VALUE POST-HOC | ORACLE DIAGNOSTIC ONLY | NO SEASC | NO TARGET ROUTING | NO LAYER SEARCH | NO TRAINING
+[18/18] INTEGRITY + SAVE
+============================================================================================================
+TEST 357 COMPLETE
+SELECTOR | MED=5.0 | TOP1=0.067 | TOP3=0.333 | TOP5=0.600
+ORACLE   | MED=1.0 | TOP1=0.867 | TOP3=1.000 | TOP5=1.000
+CLASS= ATTENTION_BINDING_EXISTS_BUT_TARGET_FREE_TIMING_SELECTOR_FAILS
+VALUE POST-HOC ONLY | NO SEASC | WEIGHTS FROZEN
+JSON: /content/AKBASCORE_TEST357/T357-20260929-121351.json
+TXT : /content/AKBASCORE_TEST357/T357-20260929-121351.txt
+SHA : 0643da4ed3ae92f723f6223088d9f20bef6baa30df403fae56179d08fafe25be
+============================================================================================================
