@@ -1,0 +1,194 @@
+ ============================================================================================================
+TEST 350 - VALUE IDENTITY vs ANSWER-TYPE DECOMPOSITION
+============================================================================================================
+START: 2026-09-29T11:11:01.757+00:00
+[1/18] MODEL LOAD
+config.json: 100% 663/663 [00:00<00:00, 73.3kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 912kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 85.1MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 70.9MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 125MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.28MB/s]Download complete: :  13.1GB,  367MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  451MB/s  Fetching 4 files: 100% 4/4 [00:40<00:00,  6.73s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.54it/s]generation_config.json: 100% 243/243 [00:00<00:00, 29.7kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | torch.bfloat16 | 52.94s
+[2/18] ENGINE LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | FULL ASSISTANT-OUTPUT | L0-L25
+[3/18] QUERY NULL CACHE
+NULL READY
+[4/18] TARGET-FREE PACKET BANK
+01/24 | BANK= 15
+02/24 | BANK= 15
+03/24 | BANK= 13
+04/24 | BANK= 15
+05/24 | BANK= 14
+06/24 | BANK= 13
+07/24 | BANK= 15
+08/24 | BANK= 13
+09/24 | BANK= 14
+10/24 | BANK= 10
+11/24 | BANK= 13
+12/24 | BANK= 14
+13/24 | BANK= 14
+14/24 | BANK= 11
+15/24 | BANK= 13
+16/24 | BANK= 11
+17/24 | BANK= 13
+18/24 | BANK= 17
+19/24 | BANK= 14
+20/24 | BANK= 13
+21/24 | BANK= 14
+22/24 | BANK= 13
+23/24 | BANK= 10
+24/24 | BANK= 14
+SHOWCASE | BANK= 16
+[5/18] FROZEN ARGMAX(DISP) ROUTER
+01/24 | ANCHOR='During' | DISP=0.465429
+02/24 | ANCHOR='designation' | DISP=0.322664
+03/24 | ANCHOR='After' | DISP=0.486695
+04/24 | ANCHOR='research' | DISP=0.396355
+05/24 | ANCHOR='After' | DISP=0.402966
+06/24 | ANCHOR='status' | DISP=0.327831
+07/24 | ANCHOR='began' | DISP=0.260100
+08/24 | ANCHOR='original' | DISP=0.323299
+09/24 | ANCHOR='equipment' | DISP=0.229279
+10/24 | ANCHOR='emergency' | DISP=0.470756
+11/24 | ANCHOR='Merik' | DISP=0.516476
+12/24 | ANCHOR='transport' | DISP=0.390755
+13/24 | ANCHOR='The' | DISP=0.365645
+14/24 | ANCHOR='The' | DISP=0.344858
+15/24 | ANCHOR='display' | DISP=0.454496
+16/24 | ANCHOR='When' | DISP=0.348160
+17/24 | ANCHOR='The' | DISP=0.354542
+18/24 | ANCHOR='storage' | DISP=0.428094
+19/24 | ANCHOR='prototype' | DISP=0.305135
+20/24 | ANCHOR='Several' | DISP=0.316570
+21/24 | ANCHOR='archaeological' | DISP=0.347268
+22/24 | ANCHOR='untreated' | DISP=0.396924
+23/24 | ANCHOR='Sample' | DISP=0.352017
+24/24 | ANCHOR='platform' | DISP=0.290880
+SHOWCASE | ANCHOR='Mustafa' | DISP=0.259882
+[6/18] ENGINE FROZEN
+TEST349 ENGINE UNCHANGED | TARGET/TYPE LABELS NOT USED BY ENGINE
+[7/18] ASSISTANT INDEX AUDIT
+01/24 | POS=46 | TOKEN='assistant'
+02/24 | POS=49 | TOKEN='assistant'
+03/24 | POS=50 | TOKEN='assistant'
+04/24 | POS=47 | TOKEN='assistant'
+05/24 | POS=49 | TOKEN='assistant'
+06/24 | POS=50 | TOKEN='assistant'
+07/24 | POS=52 | TOKEN='assistant'
+08/24 | POS=47 | TOKEN='assistant'
+09/24 | POS=47 | TOKEN='assistant'
+10/24 | POS=47 | TOKEN='assistant'
+11/24 | POS=46 | TOKEN='assistant'
+12/24 | POS=49 | TOKEN='assistant'
+13/24 | POS=49 | TOKEN='assistant'
+14/24 | POS=48 | TOKEN='assistant'
+15/24 | POS=50 | TOKEN='assistant'
+16/24 | POS=47 | TOKEN='assistant'
+17/24 | POS=47 | TOKEN='assistant'
+18/24 | POS=47 | TOKEN='assistant'
+19/24 | POS=48 | TOKEN='assistant'
+20/24 | POS=46 | TOKEN='assistant'
+21/24 | POS=47 | TOKEN='assistant'
+22/24 | POS=48 | TOKEN='assistant'
+23/24 | POS=50 | TOKEN='assistant'
+24/24 | POS=50 | TOKEN='assistant'
+SHOWCASE | POS=56 | TOKEN='assistant'
+[8/18] VANILLA + STEER DISTRIBUTIONS FROZEN - TARGET SEALED
+01/24 | V1='Information' | S1='Information'
+02/24 | V1='Meteor' | S1='information'
+03/24 | V1='Information' | S1='Information'
+04/24 | V1='Information' | S1='Unknown'
+05/24 | V1='information' | S1='information'
+06/24 | V1='Green' | S1='Green'
+07/24 | V1='working' | S1='started'
+08/24 | V1='The' | S1='The'
+09/24 | V1='information' | S1='information'
+10/24 | V1='Information' | S1='Information'
+11/24 | V1='Information' | S1='Information'
+12/24 | V1='Information' | S1='information'
+13/24 | V1='information' | S1='information'
+14/24 | V1='Red' | S1='yellow'
+15/24 | V1='Information' | S1='Information'
+16/24 | V1='It' | S1='It'
+17/24 | V1='The' | S1='soft'
+18/24 | V1='Information' | S1='Item'
+19/24 | V1='information' | S1='Ne'
+20/24 | V1='Apollo' | S1='Apollo'
+21/24 | V1='Information' | S1='The'
+22/24 | V1='Missing' | S1='missing'
+23/24 | V1='information' | S1='information'
+24/24 | V1='Collect' | S1='Col'
+SHOWCASE | V1='Att' | S1='He'
+[9/18] POST-HOC MATCHED-TYPE BANK BUILD
+PERSON   | N=3 | Bravik, Talora, Veyron
+NAME     | N=3 | Norvex, Dorevian, Kelvane
+NUMBER   | N=2 | 583, 817
+PLACE    | N=3 | Dubrovnik, Bratislava, Nagoya
+MATERIAL | N=3 | obsidian, tungsten, feldspar
+COLOR    | N=3 | magenta, scarlet, indigo
+ACTION   | N=3 | crawling, expanding, descending
+PROPERTY | N=2 | glossy, velvety
+OBJECT   | N=2 | compass, hygrometer
+[10/18] VALUE-vs-TYPE READOUT
+01/24 | PERSON   N=3 | VALUE V=3 S=3 D=2 | TYPE dLOGM=+9.455 | SPEC=+0.188
+02/24 | NAME     N=3 | VALUE V=3 S=3 D=2 | TYPE dLOGM=-2.479 | SPEC=+0.297
+03/24 | NUMBER   N=2 | VALUE V=2 S=2 D=2 | TYPE dLOGM=+14.319 | SPEC=-0.062
+04/24 | PLACE    N=3 | VALUE V=2 S=2 D=3 | TYPE dLOGM=+4.856 | SPEC=-0.484
+05/24 | MATERIAL N=3 | VALUE V=1 S=2 D=3 | TYPE dLOGM=+8.867 | SPEC=-2.344
+06/24 | COLOR    N=3 | VALUE V=3 S=3 D=1 | TYPE dLOGM=+4.842 | SPEC=+1.781
+07/24 | ACTION   N=3 | VALUE V=1 S=1 D=1 | TYPE dLOGM=-0.901 | SPEC=+1.297
+08/24 | PROPERTY N=2 | VALUE V=1 S=1 D=1 | TYPE dLOGM=+3.844 | SPEC=+2.055
+09/24 | OBJECT   N=2 | VALUE V=1 S=1 D=1 | TYPE dLOGM=+1.972 | SPEC=+1.109
+10/24 | NAME     N=3 | VALUE V=1 S=1 D=1 | TYPE dLOGM=+7.190 | SPEC=+0.281
+11/24 | PERSON   N=3 | VALUE V=1 S=1 D=2 | TYPE dLOGM=+8.884 | SPEC=-0.531
+12/24 | PLACE    N=3 | VALUE V=3 S=3 D=1 | TYPE dLOGM=+4.455 | SPEC=+1.000
+13/24 | MATERIAL N=3 | VALUE V=1 S=1 D=1 | TYPE dLOGM=+4.294 | SPEC=+3.688
+14/24 | COLOR    N=3 | VALUE V=1 S=1 D=2 | TYPE dLOGM=-0.030 | SPEC=+0.109
+15/24 | NUMBER   N=2 | VALUE V=1 S=1 D=1 | TYPE dLOGM=+9.918 | SPEC=+0.000
+16/24 | ACTION   N=3 | VALUE V=1 S=1 D=2 | TYPE dLOGM=+1.017 | SPEC=-0.781
+17/24 | PROPERTY N=2 | VALUE V=2 S=2 D=1 | TYPE dLOGM=+0.704 | SPEC=+0.438
+18/24 | OBJECT   N=2 | VALUE V=2 S=2 D=2 | TYPE dLOGM=+7.356 | SPEC=-0.992
+19/24 | NAME     N=3 | VALUE V=2 S=2 D=3 | TYPE dLOGM=+4.298 | SPEC=-0.969
+20/24 | PERSON   N=3 | VALUE V=2 S=2 D=2 | TYPE dLOGM=+2.580 | SPEC=-0.234
+21/24 | PLACE    N=3 | VALUE V=1 S=1 D=2 | TYPE dLOGM=+5.868 | SPEC=+1.156
+22/24 | COLOR    N=3 | VALUE V=2 S=1 D=1 | TYPE dLOGM=+6.799 | SPEC=+1.562
+23/24 | MATERIAL N=3 | VALUE V=3 S=3 D=2 | TYPE dLOGM=+5.624 | SPEC=+0.109
+24/24 | ACTION   N=3 | VALUE V=3 S=3 D=3 | TYPE dLOGM=+3.092 | SPEC=-1.641
+[11/18] ELIGIBLE MATCHED-TYPE SUMMARY
+ELIGIBLE_N=18 | TYPE_MASS_GAIN+=0.833333 | VALUE_RANK_IMPROVED=0.055556 | VALUE_TOP1=0.444444 | SPEC+=0.611111 | SPEC_MEAN=+0.249132
+[12/18] TYPE-BY-TYPE
+ACTION   | N=3 | TYPE_GAIN=+1.069 POS=0.667 | VALUE_IMP=0.000 TOP1=0.667
+COLOR    | N=3 | TYPE_GAIN=+3.870 POS=0.667 | VALUE_IMP=0.333 TOP1=0.667
+MATERIAL | N=3 | TYPE_GAIN=+6.262 POS=1.000 | VALUE_IMP=0.000 TOP1=0.333
+NAME     | N=3 | TYPE_GAIN=+3.003 POS=0.667 | VALUE_IMP=0.000 TOP1=0.333
+NUMBER   | N=2 | TYPE_GAIN=+12.119 POS=1.000 | VALUE_IMP=0.000 TOP1=0.500
+OBJECT   | N=2 | TYPE_GAIN=+4.664 POS=1.000 | VALUE_IMP=0.000 TOP1=0.500
+PERSON   | N=3 | TYPE_GAIN=+6.973 POS=1.000 | VALUE_IMP=0.000 TOP1=0.333
+PLACE    | N=3 | TYPE_GAIN=+5.060 POS=1.000 | VALUE_IMP=0.000 TOP1=0.333
+PROPERTY | N=2 | TYPE_GAIN=+2.274 POS=1.000 | VALUE_IMP=0.000 TOP1=0.500
+[13/18] PREDECLARED GATES
+TYPE_SIGNAL=True | VALUE_SIGNAL=False | TYPE_WITHOUT_VALUE=False
+[14/18] SHOWCASE POST-HOC
+------------------------------------------------------------------------------------------------------------
+SOURCE : Mustafa Akbaş placed an amber banner beneath the Galata Bridge where the validation demonstration was conducted.
+QUESTION: What did Mustafa Akbaş do at the location of the validation demonstration?
+TARGET : placed an amber banner | FIRST TOKEN: 'placed'
+ANCHOR : Mustafa
+ACTION_BANK=[('crawling', 'c'), ('expanding', 'exp'), ('descending', 'descending')]
+ACTION MASS V=5.06341748e-05 S=7.02569087e-04 dLOGM=+2.630
+TARGET dLOGIT=+1.750 | FULL VOCAB S-RANK=199
+------------------------------------------------------------------------------------------------------------
+[15/18] CLASSIFICATION
+CLASS= ANSWER_TYPE_SIGNAL_PRESENT_WITH_PARTIAL_VALUE_SPECIFICITY
+[16/18] INTERPRETATION LOCK
+TYPE LABELS/TARGETS POST-HOC ONLY | MATCHED-TYPE BANK IS DIAGNOSTIC | FIRST TOKEN ONLY | NO ENGINE OR ROUTER SELECTION FROM TYPE/TARGET
+[17/18] SCIENTIFIC AUDIT
+TEST349 ENGINE UNCHANGED | SAME COMPILER | SAME ARGMAX(DISP) | SAME RSS | FULL ASSISTANT-OUTPUT | NO SEARCH | NO TRAINING | NO WEIGHT UPDATE
+[18/18] INTEGRITY + SAVE
+============================================================================================================
+TEST 350 COMPLETE
+ELIGIBLE_N=18 | TYPE+=0.833 | VALUE_IMP=0.056 | VALUE_TOP1=0.444 | SPEC+=0.611 | SPEC_MEAN=+0.249
+CLASS= ANSWER_TYPE_SIGNAL_PRESENT_WITH_PARTIAL_VALUE_SPECIFICITY
+TARGET/TYPE POST-HOC ONLY | WEIGHTS FROZEN | HOOKS=0
+JSON: /content/AKBASCORE_TEST350/T350-20260929-111229.json
+TXT : /content/AKBASCORE_TEST350/T350-20260929-111229.txt
+SHA : 2de4fc0ed49f8fee8757658bd32aa6a73fa71e8aba378fd95013b449411eb2f9
+============================================================================================================
