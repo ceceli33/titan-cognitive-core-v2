@@ -1,0 +1,166 @@
+ ============================================================================================================
+TEST 332 - FROZEN DISP ROUTER -> TERMINAL VOCABULARY COMPETITION X-RAY
+============================================================================================================
+START: 2026-09-29T07:00:41.197+00:00
+[1/18] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 68.7kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 925kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 80.2MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 69.0MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 123MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.55MB/s]Download complete: :  13.1GB, 7.01MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB, 51.5MB/s  Fetching 4 files: 100% 4/4 [01:08<00:00, 18.07s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.92it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.7kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | VOCAB=152064 | torch.bfloat16 | 81.05s
+[2/18] ENGINE + ROUTER LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | ROUTER=ARGMAX(DISP) | TOPK=256 | TARGET SEALED
+[3/18] QUERY NULL CACHE
+NULL READY
+[4/18] ANCHOR BANK - TARGET SEALED
+01/24 | BANK= 18
+02/24 | BANK= 13
+03/24 | BANK= 14
+04/24 | BANK= 13
+05/24 | BANK= 14
+06/24 | BANK= 14
+07/24 | BANK= 15
+08/24 | BANK= 13
+09/24 | BANK= 14
+10/24 | BANK= 10
+11/24 | BANK= 12
+12/24 | BANK= 15
+13/24 | BANK= 14
+14/24 | BANK= 12
+15/24 | BANK= 13
+16/24 | BANK= 15
+17/24 | BANK= 13
+18/24 | BANK= 18
+19/24 | BANK= 14
+20/24 | BANK= 13
+21/24 | BANK= 13
+22/24 | BANK= 15
+23/24 | BANK= 13
+24/24 | BANK= 14
+SHOWCASE | BANK= 16
+[5/18] SOURCE REMOVED
+[6/18] BLIND DISP ROUTER
+01/24 | ANCHOR='At' | DISP=0.280106
+02/24 | ANCHOR='designation' | DISP=0.504876
+03/24 | ANCHOR='Three' | DISP=0.324805
+04/24 | ANCHOR='expedition' | DISP=0.365987
+05/24 | ANCHOR='For' | DISP=0.442572
+06/24 | ANCHOR='indicator' | DISP=0.320354
+07/24 | ANCHOR='the' | DISP=0.275935
+08/24 | ANCHOR='untreated' | DISP=0.260658
+09/24 | ANCHOR='Beside' | DISP=0.214047
+10/24 | ANCHOR='authorization' | DISP=0.341026
+11/24 | ANCHOR='Dalen' | DISP=0.404590
+12/24 | ANCHOR='cargo' | DISP=0.387109
+13/24 | ANCHOR='The' | DISP=0.349450
+14/24 | ANCHOR='The' | DISP=0.309536
+15/24 | ANCHOR='counter' | DISP=0.350612
+16/24 | ANCHOR='When' | DISP=0.252732
+17/24 | ANCHOR='The' | DISP=0.345451
+18/24 | ANCHOR='Inside' | DISP=0.380952
+19/24 | ANCHOR='became' | DISP=0.380217
+20/24 | ANCHOR='Several' | DISP=0.271946
+21/24 | ANCHOR='before' | DISP=0.276453
+22/24 | ANCHOR='coating' | DISP=0.289513
+23/24 | ANCHOR='R-7' | DISP=0.272824
+24/24 | ANCHOR='began' | DISP=0.313759
+SHOWCASE | ANCHOR='beside' | DISP=0.239380
+[7/18] ROUTER SEALED
+ALL ARGMAX(DISP) SELECTIONS COMPLETE | TARGET_ACCESS=False
+[8/18] SELECTED TERMINAL FORWARD + TARGET-FREE VOCAB FREEZE
+01/24 | LOGIT_TOP5= ["'information'", "'Information'", "'Bay'", "'The'", "'Captain'"] | DELTA_TOP5= ["'answer'", "'data'", "'it'", "'task'", "'\\\\Id'"]
+02/24 | LOGIT_TOP5= ["'Information'", "'Missing'", "'information'", "'No'", "'Ins'"] | DELTA_TOP5= ["'.`);\\n'", "'👋'", "' *</'", "' pupper'", "'kek'"]
+03/24 | LOGIT_TOP5= ["'Information'", "'Missing'", "'4'", "'information'", "'信息'"] | DELTA_TOP5= ["'3'", "'1'", "'2'", "' '", "'5'"]
+04/24 | LOGIT_TOP5= ["'Information'", "'information'", "'Unknown'", "'The'", "'Not'"] | DELTA_TOP5= ["'a'", "' San'", "'it'", "'an'", "' J'"]
+05/24 | LOGIT_TOP5= ["'information'", "'carbon'", "' information'", "'Information'", "'missing'"] | DELTA_TOP5= ["'it'", "'is'", "'data'", "'st'", "'p'"]
+06/24 | LOGIT_TOP5= ["'Blue'", "'Color'", "'blue'", "'Green'", "'Unknown'"] | DELTA_TOP5= ["'read'", "'bec'", "' you'", "' can'", "'you'"]
+07/24 | LOGIT_TOP5= ["'Ins'", "'Re'", "'Started'", "'Began'", "'Res'"] | DELTA_TOP5= ["' B'", "'B'", "' Beg'", "'Intialized'", "' beg'"]
+08/24 | LOGIT_TOP5= ["'The'", "'information'", "'not'", "'smooth'", "'It'"] | DELTA_TOP5= ["' as'", "'as'", "' As'", "' with'", "'with'"]
+09/24 | LOGIT_TOP5= ["'information'", "'A'", "'Information'", "'missing'", "'sk'"] | DELTA_TOP5= ["' it'", "' data'", "' I'", "' can'", "'ewan'"]
+10/24 | LOGIT_TOP5= ["'Information'", "'Authorization'", "'information'", "'The'", "'Missing'"] | DELTA_TOP5= ["'in'", "'code'", "'is'", "'one'", "' '"]
+11/24 | LOGIT_TOP5= ["'Information'", "'Missing'", "'information'", "'missing'", "' information'"] | DELTA_TOP5= ["'data'", "'it'", "'techn'", "'he'", "' He'"]
+12/24 | LOGIT_TOP5= ["'destination'", "'information'", "'The'", "'Destination'", "'Information'"] | DELTA_TOP5= ["'its'", "'it'", "' its'", "'ant'", "'port'"]
+13/24 | LOGIT_TOP5= ["'information'", "'carbon'", "' information'", "'Information'", "'missing'"] | DELTA_TOP5= ["'真正做到'", "' Venezuel'", "'it'", "'tp'", "' Tory'"]
+14/24 | LOGIT_TOP5= ["'missing'", "'information'", "'Information'", "'Missing'", "'info'"] | DELTA_TOP5= ["'?'", "','", "'white'", "'unknown'", "' Oilers'"]
+15/24 | LOGIT_TOP5= ["'Information'", "'2'", "'The'", "'4'", "'9'"] | DELTA_TOP5= ["' '", "'.'", "'data'", "'after'", "' data'"]
+16/24 | LOGIT_TOP5= ["'Exp'", "'expand'", "'It'", "'扩张'", "'Expand'"] | DELTA_TOP5= ["'to'", "' to'", "'\\n'", "' To'", "'v'"]
+17/24 | LOGIT_TOP5= ["'not'", "'information'", "'syn'", "'Not'", "'It'"] | DELTA_TOP5= ["' as'", "'as'", "'作为'", "'-as'", "' As'"]
+18/24 | LOGIT_TOP5= ["'information'", "'missing'", "'The'", "'Information'", "'Item'"] | DELTA_TOP5= ["' a'", "'a'", "'an'", "' an'", "' the'"]
+19/24 | LOGIT_TOP5= ["'information'", "'It'", "'Information'", "'Name'", "'iPhone'"] | DELTA_TOP5= ["'it'", "'information'", "'this'", "'no'", "'internal'"]
+20/24 | LOGIT_TOP5= ["'information'", "'The'", "'Information'", "'G'", "' information'"] | DELTA_TOP5= ["'data'", "'it'", "'a'", "'an'", "'att'"]
+21/24 | LOGIT_TOP5= ["'Information'", "'information'", "'Missing'", "'Internal'", "' information'"] | DELTA_TOP5= ["'Missing'", "' miss'", "' missing'", '"].\'"', "'ornment'"]
+22/24 | LOGIT_TOP5= ["'missing'", "'information'", "'Missing'", "'Information'", "'The'"] | DELTA_TOP5= ["' there'", "' it'", "' we'", "' the'", "' a'"]
+23/24 | LOGIT_TOP5= ["'micro'", "'unknown'", "'information'", "'organic'", "'rock'"] | DELTA_TOP5= ["' Klan'", "'并不是很'", "'média'", "'真正做到'", "' Canucks'"]
+24/24 | LOGIT_TOP5= ["'started'", "'Started'", "'beg'", "'It'", "'b'"] | DELTA_TOP5= ["'information'", "'_information'", "' Information'", "'Information'", "' information'"]
+SHOWCASE | LOGIT_TOP5= ["'Information'", "'information'", "'Att'", "'Must'", "'He'"] | DELTA_TOP5= ["'ヵ'", '";\'>"', "'InMillis'", "'Location'", "'Short'"]
+[9/18] TARGET-FREE CANDIDATE LISTS SEALED
+STEER_TOP256 + DELTA_TOP256 FROZEN FOR ALL CASES BEFORE TARGET ACCESS
+[10/18] TARGET SEAL OPEN - COMPETITION X-RAY
+01/24 | T='Caldor' | A='At' | R=14->10 | dR=56844 | G=+0.250 | TOP1='information' M=3.75 | dTOP1='answer' dM=3.84
+02/24 | T='Zenvik' | A='designation' | R=1351->817 | dR=30070 | G=+2.031 | TOP1='Information' M=20.75 | dTOP1='.`);\n' dM=5.78
+03/24 | T='741' | A='Three' | R=170->30 | dR=5 | G=+5.812 | TOP1='Information' M=8.38 | dTOP1='3' dM=0.81
+04/24 | T='Seville' | A='expedition' | R=471->245 | dR=9902 | G=+0.500 | TOP1='Information' M=6.81 | dTOP1='a' dM=3.28
+05/24 | T='basalt' | A='For' | R=5949->1116 | dR=2583 | G=+2.406 | TOP1='information' M=15.47 | dTOP1='it' dM=5.16
+06/24 | T='turquoise' | A='indicator' | R=2468->532 | dR=538 | G=+2.375 | TOP1='Blue' M=13.38 | dTOP1='read' dM=2.66
+07/24 | T='kneeling' | A='the' | R=406->816 | dR=142552 | G=-1.594 | TOP1='Ins' M=10.41 | dTOP1=' B' dM=5.20
+08/24 | T='translucent' | A='untreated' | R=830->203 | dR=119 | G=+2.625 | TOP1='The' M=9.88 | dTOP1=' as' dM=5.05
+09/24 | T='sextant' | A='Beside' | R=567->344 | dR=8392 | G=+1.031 | TOP1='information' M=9.56 | dTOP1=' it' dM=2.47
+10/24 | T='Valtrexon' | A='authorization' | R=4678->3673 | dR=49772 | G=+0.000 | TOP1='Information' M=19.53 | dTOP1='in' dM=4.75
+11/24 | T='Orisa' | A='Dalen' | R=2768->2509 | dR=66421 | G=-0.906 | TOP1='Information' M=15.09 | dTOP1='data' dM=6.62
+12/24 | T='Budapest' | A='cargo' | R=333->105 | dR=3028 | G=+1.375 | TOP1='destination' M=9.25 | dTOP1='its' dM=3.63
+13/24 | T='zirconium' | A='The' | R=8579->2787 | dR=3825 | G=+2.031 | TOP1='information' M=18.38 | dTOP1='真正做到' dM=2.36
+14/24 | T='violet' | A='The' | R=3172->1572 | dR=15737 | G=+1.281 | TOP1='missing' M=18.91 | dTOP1='?' dM=3.03
+15/24 | T='964' | A='counter' | R=8->4 | dR=1225 | G=+3.125 | TOP1='Information' M=2.00 | dTOP1=' ' dM=4.09
+16/24 | T='contracting' | A='When' | R=46->29 | dR=8709 | G=+0.500 | TOP1='Exp' M=5.00 | dTOP1='to' dM=4.38
+17/24 | T='silky' | A='The' | R=200->66 | dR=2285 | G=+1.938 | TOP1='not' M=7.50 | dTOP1=' as' dM=8.56
+18/24 | T='barometer' | A='Inside' | R=84711->37447 | dR=5369 | G=+1.215 | TOP1='information' M=16.71 | dTOP1=' a' dM=5.20
+19/24 | T='Solvane' | A='became' | R=78->236 | dR=140302 | G=-1.750 | TOP1='information' M=11.69 | dTOP1='it' dM=8.75
+20/24 | T='Keldrin' | A='Several' | R=20->8 | dR=7566 | G=+0.750 | TOP1='information' M=2.44 | dTOP1='data' dM=2.69
+21/24 | T='Kyoto' | A='before' | R=1426->2784 | dR=140097 | G=-1.031 | TOP1='Information' M=19.53 | dTOP1='Missing' dM=6.16
+22/24 | T='cyan' | A='coating' | R=400->250 | dR=12936 | G=+0.625 | TOP1='missing' M=9.81 | dTOP1=' there' dM=3.98
+23/24 | T='quartz' | A='R-7' | R=518->323 | dR=23485 | G=+0.875 | TOP1='micro' M=8.38 | dTOP1=' Klan' dM=2.55
+24/24 | T='ascending' | A='began' | R=25->141 | dR=151668 | G=-3.188 | TOP1='started' M=12.06 | dTOP1='information' dM=10.06
+SHOWCASE | T='raised a crimson pennant' | A='beside' | R=4822->9075 | dR=141521 | G=-0.469 | TOP1='Information' M=17.94 | dTOP1='ヵ' dM=4.50
+[11/18] PRIMARY SUMMARY
+VANILLA_MED_RANK=494.5 | STEER_MED_RANK=286.5 | DELTA_MED_RANK=9305.5
+STEER_RANK_IMPROVED=0.833333 | GAIN=+0.928223 | POSITIVE=0.750000
+STEER_TOP256_HIT=0.500000 | DELTA_TOP256_HIT=0.083333
+MED_TOP1_MARGIN=10.140625 | MED_DELTA_TOP1_MARGIN=4.230469
+[12/18] COVERAGE LADDER
+TOP001 | STEER=0.000000 | DELTA=0.000000
+TOP005 | STEER=0.041667 | DELTA=0.041667
+TOP010 | STEER=0.125000 | DELTA=0.041667
+TOP025 | STEER=0.125000 | DELTA=0.041667
+TOP050 | STEER=0.208333 | DELTA=0.041667
+TOP100 | STEER=0.250000 | DELTA=0.041667
+TOP256 | STEER=0.500000 | DELTA=0.083333
+[13/18] COMPETITOR TYPES
+STEER TOP1: ["'information'", "'Information'", "'Information'", "'Information'", "'information'", "'Blue'", "'Ins'", "'The'", "'information'", "'Information'", "'Information'", "'destination'", "'information'", "'missing'", "'Information'", "'Exp'", "'not'", "'information'", "'information'", "'information'", "'Information'", "'missing'", "'micro'", "'started'"]
+DELTA TOP1: ["'answer'", "'.`);\\n'", "'3'", "'a'", "'it'", "'read'", "' B'", "' as'", "' it'", "'in'", "'data'", "'its'", "'真正做到'", "'?'", "' '", "'to'", "' as'", "' a'", "'it'", "'data'", "'Missing'", "' there'", "' Klan'", "'information'"]
+[14/18] SHOWCASE
+------------------------------------------------------------------------------------------------------------
+SOURCE : Mustafa Akbaş raised a crimson pennant beside the Bosphorus Bridge where the research demonstration took place.
+QUESTION: What did Mustafa Akbaş do at the location of the research demonstration?
+ANCHOR : beside
+TARGET : raised a crimson pennant
+TARGET FIRST PIECE='raised' | RANK=4822->9075 | DELTA_RANK=141521 | GAIN=-0.4688
+STEER TOP1='Information' | MARGIN=17.9375 | DELTA TOP1='ヵ' | DELTA_MARGIN=4.5000
+STEER TOP20: ["'Information'", "'information'", "'Att'", "'Must'", "'He'", "'Location'", "'Info'", "'info'", "'Part'", "'Del'", "'Missing'", "' information'", "'信息'", "'Ins'", "'No'", "'Answer'", "'Con'", "'Transport'", "'Led'", "'Organ'"]
+DELTA TOP20: ["'ヵ'", '";\'>"', "'InMillis'", "'Location'", "'Short'", "'Loading'", "'ecast'", "'杨欢'", "'.sul'", "'Answer'", "'<Transform'", "'.EventQueue'", "'*>(&'", "'redni'", "'alsex'", "';line'", "'.getLocation'", "' ngắn'", "'-selling'", "'Internal'"]
+------------------------------------------------------------------------------------------------------------
+[15/18] PREDECLARED DIAGNOSTIC
+DELTA_TOP50=0.041667 | STEER_TOP256=0.500000 | DELTA_TOP256=0.083333 | CLASS=TARGET_SIGNAL_ENTERS_TERMINAL_CANDIDATE_SET_BUT_LOSES_COMPETITION
+[16/18] LEAKAGE GUARD
+TOP-K LISTS FROZEN TARGET-FREE | TARGET USED ONLY AFTER ROUTER + TERMINAL DISTRIBUTIONS + CANDIDATE LISTS SEALED | NO TARGET-BASED DECODING
+[17/18] SCIENTIFIC AUDIT
+SAME FRESH-24 AS TEST330/331 | ROUTER=ARGMAX(DISP) | SAME RSS | CASE ISOLATED | NO TRAINING | NO WEIGHT UPDATE
+[18/18] INTEGRITY + SEAL
+============================================================================================================
+TEST 332 COMPLETE
+VANILLA MED=494.5 | STEER MED=286.5 | DELTA MED=9305.5 | GAIN=+0.928223
+STEER TOP256=0.500 | DELTA TOP256=0.083 | DELTA TOP50=0.042
+CLASS= TARGET_SIGNAL_ENTERS_TERMINAL_CANDIDATE_SET_BUT_LOSES_COMPETITION
+ROUTER=ARGMAX(DISP) | TARGET POST-HOC ONLY | SAME RSS | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST332/T332-20260929-070236.json
+TXT : /content/AKBASCORE_TEST332/T332-20260929-070236.txt
+SHA : d060e9e9064d9a724a89e74f6ddfc4393ca399c23f668cc1ef2c1c3d3b11ecaa
+============================================================================================================
