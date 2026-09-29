@@ -1,0 +1,59 @@
+==========================================================================================================
+
+TEST 376 - FROZEN FRESH SOURCE-REMOVED PACKET VALIDATION
+
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100% 663/663 [00:00<00:00, 89.0kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 892kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 77.4MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 71.0MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 97.8MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.52MB/s]Download complete: :  13.1GB, 1.20GB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  465MB/s  Fetching 4 files: 100% 4/4 [00:41<00:00,  7.01s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.46it/s]generation_config.json: 100% 243/243 [00:00<00:00, 32.7kB/s]MODEL OK | 28L H=3584 Q=28 KV=4 REP=7 | MOTOR=L0-L25 RSS=0.250234970 | 54.1s
+
+FP=1.0912,-90.1989,92.6709,73.2364,13758.2012,-23395.7148
+
+FRESH DATA | Q=9 WORDS=37 SEGMENTS=108 | extracting frozen native contributions...
+
+PACKETS READY | SOFT frozen | HARD control | cyclic SHUFFLE negative control
+
+SOURCE REMOVED | readouts complete | opening targets post-hoc
+
+
+FRESH SUMMARY
+
+SOFT    | dLOGIT=+1.193 | MED=+1.344 | POS=0.889 | RANK+=1.000
+
+HARD    | dLOGIT=+0.355 | MED=+0.719 | POS=0.667 | RANK+=0.667
+
+SHUFFLE | dLOGIT=+0.846 | MED=+0.875 | POS=0.667 | RANK+=0.667
+
+
+SOFT FRESH CASES
+
+01 | 'Daren Voss'           | ROUTE='placed'             | R5766->4272 | dL=+0.844
+
+02 | 'amber prism'          | ROUTE='Near'               | R103558->98022 | dL=+0.906
+
+03 | 'Cordoba tower'        | ROUTE='while'              | R15800->12155 | dL=+1.377
+
+04 | '742'                  | ROUTE='Near'               | R4966->1630 | dL=+1.344
+
+05 | '2046'                 | ROUTE='2046'               | R114->63 | dL=+1.656
+
+06 | 'Mira Solen'           | ROUTE='Mira'               | R5066->3136 | dL=-0.078
+
+07 | 'completely inactive'  | ROUTE='inactive'           | R16873->9188 | dL=+1.584
+
+08 | 'silver tablet'        | ROUTE='beside'             | R57650->57125 | dL=+1.109
+
+09 | 'western gallery'      | ROUTE='beneath'            | R32010->14621 | dL=+1.996
+
+
+GATE | REPLICATED=True | SPECIFIC_vs_SHUFFLE=True | STRONG=True
+
+DECISION = PACKET_TRANSPORT_REPLICATED_MOVE_TO_BEHAVIORAL_BOUNDARY
+
+FP MATCH | JSON=/content/AKBASCORE_TEST376/T376-20260929-145414.json
+
+SHA = b3ad5c322da4cd787a81ed514f115a6040763ba7fe400775d1255e9ee7cd67f9
+
+
