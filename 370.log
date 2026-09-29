@@ -1,0 +1,110 @@
+ ============================================================================================================
+TEST 370 - TARGET-FREE PHRASE-SPAN QUESTION-CONTRASTIVE ROUTING
+============================================================================================================
+START: 2026-09-29T14:10:12.106+00:00
+[1/21] MODEL LOAD
+config.json: 100% 663/663 [00:00<00:00, 82.5kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 690kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 82.5MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 69.2MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 127MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.15MB/s]Download complete: :  13.1GB,  626MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  474MB/s  Fetching 4 files: 100% 4/4 [00:40<00:00,  6.93s/it]Loading weights: 100% 339/339 [00:04<00:00, 92.23it/s]generation_config.json: 100% 243/243 [00:00<00:00, 23.1kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | eager-attention | torch.bfloat16 | 53.68s
+[2/21] MODEL LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+[3/21] ARCHITECTURE AUDIT
+HEADS=28 | KV_HEADS=4 | HEAD_DIM=128 | KV_REPEAT=7
+[4/21] TARGET-FREE SOURCE WORDS + PHRASES
+WORDS=32 | PHRASES=93 | NGRAM=1..3 | TARGET ACCESS=False
+[5/21] FRESH SOURCE + QUESTIONS
+01/09 | PERSON  | PHRASES=93 | Q_LAST=59 | Q=Who transferred the cobalt compass?
+02/09 | OBJECT  | PHRASES=93 | Q_LAST=60 | Q=What did Selin Aras transfer?
+03/09 | PLACE   | PHRASES=93 | Q_LAST=62 | Q=Where did Lervan secure the ceramic capsule?
+04/09 | NUMBER  | PHRASES=93 | Q_LAST=62 | Q=Into which vault was the cobalt compass transferred?
+05/09 | TIME    | PHRASES=93 | Q_LAST=60 | Q=When was the cobalt compass transferred?
+06/09 | PERSON  | PHRASES=93 | Q_LAST=58 | Q=Who secured the ceramic capsule?
+07/09 | STATE   | PHRASES=93 | Q_LAST=61 | Q=What state did the auxiliary rotor remain in?
+08/09 | OBJECT  | PHRASES=93 | Q_LAST=59 | Q=What did Lervan secure?
+09/09 | PLACE   | PHRASES=93 | Q_LAST=59 | Q=Where did the auxiliary rotor remain?
+[6/21] FORWARDS
+01/09 | OK
+02/09 | OK
+03/09 | OK
+04/09 | OK
+05/09 | OK
+06/09 | OK
+07/09 | OK
+08/09 | OK
+09/09 | OK
+[7/21] HEAD-LEVEL QUESTION->PHRASE ATTENTION
+A + NORMALIZED P READY
+[8/21] RAW PHRASE RANKS
+RAW RANKS READY
+[9/21] FROZEN QUESTION-CONTRASTIVE DISPLACEMENT
+D=P(Q)-MEAN[P(OTHER 8)] | MIN=-0.152719 MED=-0.000167 MAX=+0.212540
+[10/21] CONTRASTIVE PHRASE RANKS
+CONTRASTIVE RANKS READY
+[11/21] CROSS-HEAD/LAYER PHRASE MRR
+PRIMARY + CONTROL READY
+[12/21] TARGET-FREE ROUTES FROZEN
+01/09 | CONTRAST_TOP3='Selin Aras transferred':0.2786 | 'Selin Aras':0.1797 | 'observatory, Selin Aras':0.1656 | RAW_TOP='in 2031, while'
+02/09 | CONTRAST_TOP3='Selin Aras transferred':0.1426 | 'transferred the cobalt':0.1328 | 'Aras transferred the':0.1311 | RAW_TOP='in 2031, while'
+03/09 | CONTRAST_TOP3='Ravenna observatory, Selin':0.2381 | 'After Lervan secured':0.2010 | 'observatory, Selin':0.1417 | RAW_TOP='in 2031, while'
+04/09 | CONTRAST_TOP3='583 in 2031':0.2361 | 'in 2031, while':0.2214 | '2031, while the':0.1954 | RAW_TOP='in 2031, while'
+05/09 | CONTRAST_TOP3='in 2031, while':0.3284 | '2031, while the':0.1969 | '2031, while':0.1855 | RAW_TOP='in 2031, while'
+06/09 | CONTRAST_TOP3='After Lervan secured':0.2774 | 'Lervan secured the':0.2054 | 'observatory, Selin Aras':0.1912 | RAW_TOP='in 2031, while'
+07/09 | CONTRAST_TOP3='remained permanently stationary':0.2256 | 'permanently stationary beneath':0.1878 | 'rotor remained permanently':0.1394 | RAW_TOP='in 2031, while'
+08/09 | CONTRAST_TOP3='After Lervan secured':0.2043 | 'ceramic capsule beside':0.1721 | 'After Lervan':0.1524 | RAW_TOP='in 2031, while'
+09/09 | CONTRAST_TOP3='permanently stationary beneath':0.2454 | 'beneath the eastern':0.2148 | 'stationary beneath the':0.2051 | RAW_TOP='in 2031, while'
+[13/21] ROUTING DIVERSITY
+CONTRAST_UNIQUE=7/9 | RAW_UNIQUE=1/9
+[14/21] VALUES OPEN POST-HOC
+01/09 | VALUE='Selin Aras' | CONTRAST=R02 | RAW=R14 | CSEL='Selin Aras transferred' | RSEL='in 2031, while'
+02/09 | VALUE='cobalt compass' | CONTRAST=R53 | RAW=R59 | CSEL='Selin Aras transferred' | RSEL='in 2031, while'
+03/09 | VALUE='Ravenna observatory' | CONTRAST=R19 | RAW=R43 | CSEL='Ravenna observatory, Selin' | RSEL='in 2031, while'
+04/09 | VALUE='583' | CONTRAST=R20 | RAW=R51 | CSEL='583 in 2031' | RSEL='in 2031, while'
+05/09 | VALUE='2031' | CONTRAST=R06 | RAW=R18 | CSEL='in 2031, while' | RSEL='in 2031, while'
+06/09 | VALUE='Lervan' | CONTRAST=R13 | RAW=R23 | CSEL='After Lervan secured' | RSEL='in 2031, while'
+07/09 | VALUE='permanently stationary' | CONTRAST=R15 | RAW=R26 | CSEL='remained permanently stationary' | RSEL='in 2031, while'
+08/09 | VALUE='ceramic capsule' | CONTRAST=R12 | RAW=R42 | CSEL='After Lervan secured' | RSEL='in 2031, while'
+09/09 | VALUE='eastern platform' | CONTRAST=R14 | RAW=R24 | CSEL='permanently stationary beneath' | RSEL='in 2031, while'
+[15/21] SUMMARY
+CONTRAST | MED=14.0 TOP1=0.000 TOP3=0.111 TOP5=0.111 EXACT=0.000 UNIQUE=7/9
+RAW      | MED=26.0 TOP1=0.000 TOP3=0.000 TOP5=0.000 EXACT=0.000 UNIQUE=1/9
+CONTRAST_VS_RAW | BETTER=1.000 | WORSE=0.000
+[16/21] EXACT PHRASE VS CONSTITUENT CONTROL
+01/09 | 'Selin Aras' | EXACT_PHRASE_R=02 | TOKENS=[17, 18, 19, 20]
+02/09 | 'cobalt compass' | EXACT_PHRASE_R=53 | TOKENS=[23, 24, 25]
+03/09 | 'Ravenna observatory' | EXACT_PHRASE_R=19 | TOKENS=[12, 13, 14, 15]
+04/09 | '583' | EXACT_PHRASE_R=20 | TOKENS=[29, 30, 31]
+05/09 | '2031' | EXACT_PHRASE_R=06 | TOKENS=[34, 35, 36, 37]
+06/09 | 'Lervan' | EXACT_PHRASE_R=13 | TOKENS=[3, 4, 5]
+07/09 | 'permanently stationary' | EXACT_PHRASE_R=15 | TOKENS=[44, 45]
+08/09 | 'ceramic capsule' | EXACT_PHRASE_R=12 | TOKENS=[8, 9]
+09/09 | 'eastern platform' | EXACT_PHRASE_R=14 | TOKENS=[48, 49]
+[17/21] ROUTING PROFILE SIMILARITY
+Q1: +1.000 +0.669 +0.418 +0.422 +0.511 +0.613 +0.243 +0.314 +0.178
+Q2: +0.669 +1.000 +0.378 +0.463 +0.560 +0.494 +0.270 +0.467 +0.121
+Q3: +0.418 +0.378 +1.000 +0.511 +0.495 +0.803 +0.258 +0.708 +0.085
+Q4: +0.422 +0.463 +0.511 +1.000 +0.816 +0.292 +0.406 +0.160 +0.258
+Q5: +0.511 +0.560 +0.495 +0.816 +1.000 +0.405 +0.337 +0.286 +0.240
+Q6: +0.613 +0.494 +0.803 +0.292 +0.405 +1.000 +0.203 +0.778 +0.003
+Q7: +0.243 +0.270 +0.258 +0.406 +0.337 +0.203 +1.000 +0.126 +0.807
+Q8: +0.314 +0.467 +0.708 +0.160 +0.286 +0.778 +0.126 +1.000 -0.016
+Q9: +0.178 +0.121 +0.085 +0.258 +0.240 +0.003 +0.807 -0.016 +1.000
+[18/21] PREDECLARED GATES
+SUPPORTED=False | STRONG=False
+[19/21] CLASSIFICATION
+CLASS= TARGET_FREE_PHRASE_ROUTING_PARTIAL
+[20/21] SCIENTIFIC AUDIT + INTEGRITY
+ALL CONTIGUOUS 1-3 WORD PHRASES GENERATED BEFORE VALUES OPEN | TEST368/369 CONTRASTIVE FORMULA | EXACT PHRASE POST-HOC | NO TARGET/LAYER/HEAD ORACLE | NO SCORE SEARCH | NO SEASC | NO TRAINING
+WEIGHTS FROZEN | FP MATCH
+[21/21] JSON-SAFE SAVE
+============================================================================================================
+TEST 370 COMPLETE
+PHRASES=93 | NGRAM=1..3
+CONTRAST | MED=14.0 | TOP1=0.000 | TOP3=0.111 | TOP5=0.111 | EXACT=0.000 | UNIQUE=7/9
+RAW      | MED=26.0 | TOP1=0.000 | TOP3=0.000 | TOP5=0.000 | EXACT=0.000 | UNIQUE=1/9
+CONTRAST_BEATS_RAW=1.000 | WORSE=0.000
+SUPPORTED=False | STRONG=False
+CLASS= TARGET_FREE_PHRASE_ROUTING_PARTIAL
+JSON: /content/AKBASCORE_TEST370/T370-20260929-141141.json
+TXT : /content/AKBASCORE_TEST370/T370-20260929-141141.txt
+SHA : ee880d39dfea700244ac17cf74830b137229f0bdbc6abf33687e5fb482ce6880
+============================================================================================================
