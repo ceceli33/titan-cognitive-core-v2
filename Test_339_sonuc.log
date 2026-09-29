@@ -1,0 +1,183 @@
+ ============================================================================================================
+TEST 339 - SYNTHETIC KV MEMORY SLOT ASSAY
+============================================================================================================
+START: 2026-09-29T08:15:39.093+00:00
+[1/16] MODEL LOAD
+config.json: 100% 663/663 [00:00<00:00, 77.1kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 955kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 73.0MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 73.8MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 133MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.29MB/s]Download complete: :  13.1GB,  526MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  513MB/s  Fetching 4 files: 100% 4/4 [00:38<00:00,  7.43s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.40it/s]generation_config.json: 100% 243/243 [00:00<00:00, 32.7kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | QH=28 | KVH=4 | HD=128 | GROUP=7 | 48.69s
+[2/16] WEIGHT + ARCHITECTURE LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+TARGET SEALED | SOURCE-DERIVED K/V ONLY | NO TARGET TOKEN USED
+[3/16] SOURCE TOKEN SPANS
+READY
+[4/16] SOURCE -> NATIVE K/V MEMORY EXTRACTION
+01/24 | SOURCE K/V FROZEN
+02/24 | SOURCE K/V FROZEN
+03/24 | SOURCE K/V FROZEN
+04/24 | SOURCE K/V FROZEN
+05/24 | SOURCE K/V FROZEN
+06/24 | SOURCE K/V FROZEN
+07/24 | SOURCE K/V FROZEN
+08/24 | SOURCE K/V FROZEN
+09/24 | SOURCE K/V FROZEN
+10/24 | SOURCE K/V FROZEN
+11/24 | SOURCE K/V FROZEN
+12/24 | SOURCE K/V FROZEN
+13/24 | SOURCE K/V FROZEN
+14/24 | SOURCE K/V FROZEN
+15/24 | SOURCE K/V FROZEN
+16/24 | SOURCE K/V FROZEN
+17/24 | SOURCE K/V FROZEN
+18/24 | SOURCE K/V FROZEN
+19/24 | SOURCE K/V FROZEN
+20/24 | SOURCE K/V FROZEN
+21/24 | SOURCE K/V FROZEN
+22/24 | SOURCE K/V FROZEN
+23/24 | SOURCE K/V FROZEN
+24/24 | SOURCE K/V FROZEN
+SHOWCASE | SOURCE K/V FROZEN
+[5/16] SOURCE REMOVED
+ALL SOURCE FORWARDS COMPLETE | QUESTION RUNTIME CONTAINS NO SOURCE TEXT
+[6/16] QUESTION Q EXTRACTION + NATIVE MEMORY ADDRESSING
+01/24 | BEST_L=00 | QK_MAX=+2782.1233 | HEADS=[15, 3, 10, 20]
+02/24 | BEST_L=00 | QK_MAX=+2782.4363 | HEADS=[15, 3, 10, 20]
+03/24 | BEST_L=00 | QK_MAX=+2779.6990 | HEADS=[15, 3, 10, 20]
+04/24 | BEST_L=00 | QK_MAX=+2782.7366 | HEADS=[15, 3, 10, 20]
+05/24 | BEST_L=00 | QK_MAX=+2782.0564 | HEADS=[15, 3, 10, 20]
+06/24 | BEST_L=00 | QK_MAX=+2782.4221 | HEADS=[15, 3, 10, 20]
+07/24 | BEST_L=00 | QK_MAX=+2783.0034 | HEADS=[15, 3, 10, 20]
+08/24 | BEST_L=00 | QK_MAX=+2782.0088 | HEADS=[15, 3, 10, 20]
+09/24 | BEST_L=00 | QK_MAX=+2781.2456 | HEADS=[15, 3, 10, 20]
+10/24 | BEST_L=00 | QK_MAX=+2781.9380 | HEADS=[15, 3, 10, 20]
+11/24 | BEST_L=00 | QK_MAX=+2782.1443 | HEADS=[15, 3, 10, 20]
+12/24 | BEST_L=00 | QK_MAX=+2782.4014 | HEADS=[15, 3, 10, 20]
+13/24 | BEST_L=00 | QK_MAX=+2782.3594 | HEADS=[15, 3, 10, 20]
+14/24 | BEST_L=00 | QK_MAX=+2783.3376 | HEADS=[15, 3, 10, 20]
+15/24 | BEST_L=00 | QK_MAX=+2778.8030 | HEADS=[15, 3, 10, 20]
+16/24 | BEST_L=00 | QK_MAX=+2783.0061 | HEADS=[15, 3, 10, 20]
+17/24 | BEST_L=00 | QK_MAX=+2781.8708 | HEADS=[15, 3, 10, 20]
+18/24 | BEST_L=00 | QK_MAX=+2781.5110 | HEADS=[15, 3, 10, 20]
+19/24 | BEST_L=00 | QK_MAX=+2782.3772 | HEADS=[15, 3, 10, 20]
+20/24 | BEST_L=00 | QK_MAX=+2781.7278 | HEADS=[15, 3, 10, 20]
+21/24 | BEST_L=00 | QK_MAX=+2782.6140 | HEADS=[15, 3, 10, 20]
+22/24 | BEST_L=00 | QK_MAX=+2782.8125 | HEADS=[15, 3, 10, 20]
+23/24 | BEST_L=00 | QK_MAX=+2782.3833 | HEADS=[15, 3, 10, 20]
+24/24 | BEST_L=00 | QK_MAX=+2783.0437 | HEADS=[15, 3, 10, 20]
+SHOWCASE | BEST_L=00 | QK_MAX=+2782.7615 | HEADS=[15, 3, 10, 20]
+[7/16] CROSS-CASE ADDRESS CONTROL
+01/24 | OWN=+2782.1233 | WRONG_MEAN=+2782.0843 | MARGIN=+0.0390
+02/24 | OWN=+2782.4363 | WRONG_MEAN=+2782.0707 | MARGIN=+0.3656
+03/24 | OWN=+2779.6990 | WRONG_MEAN=+2782.1897 | MARGIN=-2.4907
+04/24 | OWN=+2782.7366 | WRONG_MEAN=+2782.0576 | MARGIN=+0.6790
+05/24 | OWN=+2782.0564 | WRONG_MEAN=+2782.0872 | MARGIN=-0.0308
+06/24 | OWN=+2782.4221 | WRONG_MEAN=+2782.0713 | MARGIN=+0.3508
+07/24 | OWN=+2783.0034 | WRONG_MEAN=+2782.0460 | MARGIN=+0.9574
+08/24 | OWN=+2782.0088 | WRONG_MEAN=+2782.0892 | MARGIN=-0.0805
+09/24 | OWN=+2781.2456 | WRONG_MEAN=+2782.1224 | MARGIN=-0.8768
+10/24 | OWN=+2781.9380 | WRONG_MEAN=+2782.0923 | MARGIN=-0.1543
+11/24 | OWN=+2782.1443 | WRONG_MEAN=+2782.0834 | MARGIN=+0.0609
+12/24 | OWN=+2782.4014 | WRONG_MEAN=+2782.0722 | MARGIN=+0.3292
+13/24 | OWN=+2782.3594 | WRONG_MEAN=+2782.0740 | MARGIN=+0.2854
+14/24 | OWN=+2783.3376 | WRONG_MEAN=+2782.0315 | MARGIN=+1.3062
+15/24 | OWN=+2778.8030 | WRONG_MEAN=+2782.2286 | MARGIN=-3.4257
+16/24 | OWN=+2783.0061 | WRONG_MEAN=+2782.0459 | MARGIN=+0.9602
+17/24 | OWN=+2781.8708 | WRONG_MEAN=+2782.0952 | MARGIN=-0.2244
+18/24 | OWN=+2781.5110 | WRONG_MEAN=+2782.1109 | MARGIN=-0.5999
+19/24 | OWN=+2782.3772 | WRONG_MEAN=+2782.0732 | MARGIN=+0.3040
+20/24 | OWN=+2781.7278 | WRONG_MEAN=+2782.1015 | MARGIN=-0.3737
+21/24 | OWN=+2782.6140 | WRONG_MEAN=+2782.0629 | MARGIN=+0.5511
+22/24 | OWN=+2782.8125 | WRONG_MEAN=+2782.0543 | MARGIN=+0.7582
+23/24 | OWN=+2782.3833 | WRONG_MEAN=+2782.0730 | MARGIN=+0.3103
+24/24 | OWN=+2783.0437 | WRONG_MEAN=+2782.0443 | MARGIN=+0.9994
+[8/16] FROZEN BEST-LAYER MEMORY WRITE
+01/24 | L=00 | DISP=0.0747 | TOP1='Information'
+02/24 | L=00 | DISP=0.0623 | TOP1='Information'
+03/24 | L=00 | DISP=0.0740 | TOP1='Information'
+04/24 | L=00 | DISP=0.0873 | TOP1='Information'
+05/24 | L=00 | DISP=0.1185 | TOP1='Information'
+06/24 | L=00 | DISP=0.0809 | TOP1='Blue'
+07/24 | L=00 | DISP=0.0621 | TOP1='Re'
+08/24 | L=00 | DISP=0.0654 | TOP1='The'
+09/24 | L=00 | DISP=0.0677 | TOP1='information'
+10/24 | L=00 | DISP=0.0662 | TOP1='Information'
+11/24 | L=00 | DISP=0.0670 | TOP1='Information'
+12/24 | L=00 | DISP=0.0933 | TOP1='Information'
+13/24 | L=00 | DISP=0.1063 | TOP1='information'
+14/24 | L=00 | DISP=0.0762 | TOP1='Information'
+15/24 | L=00 | DISP=0.0705 | TOP1='Information'
+16/24 | L=00 | DISP=0.0672 | TOP1='Exp'
+17/24 | L=00 | DISP=0.0707 | TOP1='information'
+18/24 | L=00 | DISP=0.0854 | TOP1='Information'
+19/24 | L=00 | DISP=0.0853 | TOP1='iPhone'
+20/24 | L=00 | DISP=0.0697 | TOP1='Information'
+21/24 | L=00 | DISP=0.0961 | TOP1='Information'
+22/24 | L=00 | DISP=0.0589 | TOP1='Missing'
+23/24 | L=00 | DISP=0.0977 | TOP1='It'
+24/24 | L=00 | DISP=0.0937 | TOP1='appro'
+SHOWCASE | L=00 | DISP=0.0648 | TOP1='information'
+[9/16] MEMORY FORWARDS SEALED
+K/V + ADDRESS + BEST LAYER + HEADS + TERMINAL DISTRIBUTIONS FROZEN | TARGET_ACCESS=False
+[10/16] TARGET SEAL OPEN - POST-HOC DIAGNOSTIC
+01/24 | T='Caldor' | V=14 -> KV=15 | G=+0.250 | L=00
+02/24 | T='Zenvik' | V=1351 -> KV=1454 | G=-0.125 | L=00
+03/24 | T='741' | V=170 -> KV=126 | G=+0.812 | L=00
+04/24 | T='Seville' | V=471 -> KV=309 | G=+0.688 | L=00
+05/24 | T='basalt' | V=5949 -> KV=5442 | G=+0.344 | L=00
+06/24 | T='turquoise' | V=2468 -> KV=1906 | G=+0.531 | L=00
+07/24 | T='kneeling' | V=406 -> KV=408 | G=+0.062 | L=00
+08/24 | T='translucent' | V=830 -> KV=614 | G=+0.594 | L=00
+09/24 | T='sextant' | V=567 -> KV=756 | G=-0.438 | L=00
+10/24 | T='Valtrexon' | V=4678 -> KV=4944 | G=+0.031 | L=00
+11/24 | T='Orisa' | V=2768 -> KV=2611 | G=+0.312 | L=00
+12/24 | T='Budapest' | V=333 -> KV=274 | G=+0.250 | L=00
+13/24 | T='zirconium' | V=8579 -> KV=7277 | G=+0.438 | L=00
+14/24 | T='violet' | V=3172 -> KV=3061 | G=-0.031 | L=00
+15/24 | T='964' | V=8 -> KV=7 | G=+0.500 | L=00
+16/24 | T='contracting' | V=46 -> KV=53 | G=-0.438 | L=00
+17/24 | T='silky' | V=200 -> KV=172 | G=+0.438 | L=00
+18/24 | T='barometer' | V=84711 -> KV=94431 | G=-0.234 | L=00
+19/24 | T='Solvane' | V=78 -> KV=62 | G=+0.312 | L=00
+20/24 | T='Keldrin' | V=20 -> KV=16 | G=+0.125 | L=00
+21/24 | T='Kyoto' | V=1426 -> KV=1599 | G=-0.125 | L=00
+22/24 | T='cyan' | V=400 -> KV=456 | G=-0.312 | L=00
+23/24 | T='quartz' | V=518 -> KV=530 | G=+0.125 | L=00
+24/24 | T='ascending' | V=25 -> KV=26 | G=-0.250 | L=00
+SHOWCASE | T='raised a crimson pennant' | V=4822 -> KV=4442 | G=+0.188 | L=00
+[11/16] PRIMARY SUMMARY
+vanilla_median_rank=494.500000
+memory_median_rank=493.000000
+rank_improved=0.541667
+mean_gain=0.160807
+positive_gain=0.666667
+top1=0.000000
+top10=0.041667
+top50=0.166667
+top256=0.333333
+mean_disp=0.079049
+own_qk_margin_positive=0.625000
+mean_qk_margin=0.000000
+[12/16] ADDRESSING DIAGNOSTIC
+OWN>WRONG_MEAN=0.625 | MEAN_QK_MARGIN=+0.000000
+[13/16] SHOWCASE
+------------------------------------------------------------------------------------------------------------
+SOURCE : Mustafa Akbaş raised a crimson pennant beside the Bosphorus Bridge where the research demonstration took place.
+QUESTION: What did Mustafa Akbaş do at the location of the research demonstration?
+TARGET : raised a crimson pennant
+BEST_L=0 | HEADS=[15, 3, 10, 20, 2, 19, 18, 14] | V=4822 -> KV=4442 | GAIN=+0.1875 | DISP=0.0648 | TOP1='information'
+------------------------------------------------------------------------------------------------------------
+[14/16] PREDECLARED DIAGNOSTIC
+ADDRESS_GATE=False | TRANSPORT_GATE=False | CLASS=SYNTHETIC_KV_MEMORY_HYPOTHESIS_NOT_SUPPORTED_IN_THIS_FORM
+[15/16] SCIENTIFIC AUDIT
+SOURCE-DERIVED NATIVE K/V | SOURCE REMOVED BEFORE QUESTION | TARGET SEALED THROUGH CONSTRUCTION/ADDRESS/WRITE | WRONG-CASE CONTROL | NO TRAINING | NO WEIGHT UPDATE
+[16/16] INTEGRITY + SAVE
+============================================================================================================
+TEST 339 COMPLETE
+VANILLA_MED=494.5 | KV_MED=493.0 | IMP=0.542 | GAIN=+0.161
+ADDRESS OWN>WRONG=0.625 | QK_MARGIN=+0.0000
+CLASS= SYNTHETIC_KV_MEMORY_HYPOTHESIS_NOT_SUPPORTED_IN_THIS_FORM
+TARGET POST-HOC ONLY | WEIGHT INTEGRITY PASS | HOOKS=0
+JSON: /content/AKBASCORE_TEST339/T339-20260929-081659.json
+TXT : /content/AKBASCORE_TEST339/T339-20260929-081659.txt
+SHA : 118529c18e1f272da3852d63e6c5bd46a2b829e9f312e90a51c8d622efda8bb7
+============================================================================================================
