@@ -1,0 +1,148 @@
+ ============================================================================================================
+TEST 315 - CASE-ISOLATED ENDOGENOUS CANDIDATE COMPETITION X-RAY
+============================================================================================================
+START: 2026-09-29T01:07:03.022+00:00
+[1/15] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 77.0kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 836kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 76.9MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 71.4MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 122MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.37MB/s]Download complete: :  13.1GB,  182MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  368MB/s  Fetching 4 files: 100% 4/4 [00:42<00:00,  7.66s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.66it/s]generation_config.json: 100% 243/243 [00:00<00:00, 29.5kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | VOCAB=152064 | torch.bfloat16 | 54.64s
+[2/15] TEST314 ENGINE LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | BRIDGE=0.200 | SLOT_K=8
+[3/15] TARGET-FREE QUERY NULL CACHE
+NULL READY
+[4/15] SAME-CASE TOKEN BANK + TEST314 PACKET
+01/24 | BANK=15 | ADDR=[' engineer', ' the', ' damaged', ' storm', ' placed', ' the', ' sensor', ' Sel']
+02/24 | BANK=15 | ADDR=[' unfamiliar', ' northern', ' the', ' called', 'The', ' crystal', ' an', ' Z']
+03/24 | BANK=15 | ADDR=[' the', ' were', ' carried', ' the', ' containers', ' inspected', ' three', ' smallest']
+04/24 | BANK=18 | ADDR=[' backup', ' the', ' the', ' the', ' to', ' moved', 'k', ' from']
+05/24 | BANK=13 | ADDR=[' and', ' selected', 'alt', ' rejected', ' the', ' shell', ' the', ' steel']
+06/24 | BANK=13 | ADDR=[' changed', ' but', 'The', ' immediately', ' stayed', ' after', ' to', ' violet']
+07/24 | BANK=15 | ADDR=['ven', ' Ar', ' stopped', ' the', ' and', ' upper', ' the', 'When']
+08/24 | BANK=13 | ADDR=[' unusually', ' its', ' dark', ' newly', ' polished', ' the', ' surface', ' despite']
+09/24 | BANK=18 | ADDR=[' the', ' M', ' other', ' abandoned', ' recovered', ' while', ' remained', 'ira']
+10/24 | BANK=14 | ADDR=[' Or', ' in', ' the', 'The', ' final', ' is', ' phrase', 'is']
+11/24 | BANK=14 | ADDR=[' performed', ' by', ' calculations', ' the', ' were', ' the', ' navigation', 'arian']
+12/24 | BANK=13 | ADDR=[' before', ' finally', ' over', ' and', ' landing', ' Tall', ' in', ' passed']
+13/24 | BANK=14 | ADDR=[' and', ' polymer', ' copper', ' the', ' transparent', ' laboratory', ' the', ' chose']
+14/24 | BANK=14 | ADDR=[' flashed', 'owed', ' second', ' to', ' lamp', ' gl', 'The', ' blue']
+15/24 | BANK=17 | ADDR=['7', ' became', ' value', '1', '3', 'ibration', ' then', ' initially']
+16/24 | BANK=14 | ADDR=[' when', ' the', ' began', ' of', ' the', ' outer', ' hatch', ' sequence']
+17/24 | BANK=14 | ADDR=[' coarse', ' silky', ' remained', ' replacement', ' it', ' was', ' plate', ' installed']
+18/24 | BANK=21 | ADDR=[' but', ' a', ' were', ' the', ' a', ' for', ' the', ' wooden']
+19/24 | BANK=17 | ADDR=[' the', 'The', ' was', ' ultimately', ' cod', ' production', ' named', ' V']
+20/24 | BANK=17 | ADDR=[' assistants', ' the', ' sealed', ' the', ' archive', 'an', ' and', ' personally']
+21/24 | BANK=13 | ADDR=[' courier', ' the', ' silver', ' left', ' in', ' before', ' toward', ' Kyoto']
+22/24 | BANK=17 | ADDR=[' but', ' was', ' its', 'The', ' looked', ' confirmed', "'s", ' under']
+23/24 | BANK=14 | ADDR=[' composed', ' of', ' being', ' as', ' quartz', ' was', ' several', ' primarily']
+24/24 | BANK=15 | ADDR=[' started', ' and', 'The', ' then', ' two', ' accelerating', ' cart', ' toward']
+[5/15] CASE-ISOLATION AUDIT
+CANDIDATES=SAME CASE STATEMENT TOKENS ONLY | CROSS_CASE=False | TARGET_ACCESS=False
+[6/15] TEST314 CAUSAL ENGINE
+[7/15] SEALED FORCED READOUT
+01/24 | COMPLETE
+02/24 | COMPLETE
+03/24 | COMPLETE
+04/24 | COMPLETE
+05/24 | COMPLETE
+06/24 | COMPLETE
+07/24 | COMPLETE
+08/24 | COMPLETE
+09/24 | COMPLETE
+10/24 | COMPLETE
+11/24 | COMPLETE
+12/24 | COMPLETE
+13/24 | COMPLETE
+14/24 | COMPLETE
+15/24 | COMPLETE
+16/24 | COMPLETE
+17/24 | COMPLETE
+18/24 | COMPLETE
+19/24 | COMPLETE
+20/24 | COMPLETE
+21/24 | COMPLETE
+22/24 | COMPLETE
+23/24 | COMPLETE
+24/24 | COMPLETE
+[8/15] TARGET-FREE ENDOGENOUS COMPETITION
+01/24 | TOP=[(' engineer', 6.08), (' damaged', 3.55), (' the', 1.46), (' sensor', 0.94), (' Vault', 0.77)]
+02/24 | TOP=[(' unfamiliar', 4.33), (' the', 3.58), (' called', 3.07), (' northern', 2.13), (' crystal', 1.88)]
+03/24 | TOP=[(' the', 4.23), (' were', 1.54), ('4', 1.4), (' carried', 1.1), ('1', 0.98)]
+04/24 | TOP=[(' backup', 5.53), (' to', 3.92), (' the', 3.74), (' the', 2.64), (' moved', 2.63)]
+05/24 | TOP=[(' selected', 4.37), (' steel', 2.18), (' and', 1.99), ('alt', 1.61), (' the', 1.43)]
+06/24 | TOP=[(' changed', 4.76), (' to', 2.28), (' violet', 1.89), (' immediately', 1.56), ('The', 1.37)]
+07/24 | TOP=[('ven', 4.69), (' Ar', 3.98), (' and', 2.56), (' stopped', 2.36), (' began', 1.89)]
+08/24 | TOP=[(' unusually', 4.72), (' polished', 3.18), (' dark', 2.92), (' its', 2.53), (' the', 0.98)]
+09/24 | TOP=[(' the', 6.63), (' recovered', 4.43), (' other', 3.46), (' a', 2.95), (' abandoned', 2.73)]
+10/24 | TOP=[(' the', 4.87), (' in', 4.09), ('The', 3.41), (' phrase', 2.01), (' final', 1.96)]
+11/24 | TOP=[(' by', 4.89), (' calculations', 2.78), (' performed', 2.22), (' the', 1.8), (' were', 1.1)]
+12/24 | TOP=[(' in', 3.4), (' before', 3.03), (' over', 2.51), (' and', 2.17), (' landing', 1.84)]
+13/24 | TOP=[(' copper', 4.25), (' polymer', 3.51), (' and', 3.3), (' the', 3.12), (' transparent', 2.66)]
+14/24 | TOP=[(' flashed', 6.61), ('owed', 2.75), (' blue', 2.41), (' status', 1.44), (' second', 0.93)]
+15/24 | TOP=[('7', 5.18), ('1', 4.31), ('3', 3.95), (' value', 3.6), (' became', 2.89)]
+16/24 | TOP=[(' the', 5.16), (' began', 5.08), (' when', 4.13), (' hatch', 1.73), (' the', 1.61)]
+17/24 | TOP=[(' was', 3.76), (' coarse', 3.36), (' silky', 3.17), (' remained', 1.85), (' replacement', 1.57)]
+18/24 | TOP=[(' the', 4.94), (' the', 4.81), (' a', 4.67), (' a', 4.23), (' were', 2.34)]
+19/24 | TOP=[(' named', 4.43), ('The', 4.27), (' the', 3.23), (' ultimately', 2.53), (' production', 2.13)]
+20/24 | TOP=[(' assistants', 3.28), (' sealed', 2.56), ('Professor', 2.04), (' the', 2.04), (' archive', 1.48)]
+21/24 | TOP=[(' silver', 4.63), (' the', 3.57), (' courier', 3.53), (' in', 3.44), (' left', 3.21)]
+22/24 | TOP=[(' was', 5.3), (' its', 3.68), (' but', 3.24), (' actual', 2.16), ('The', 1.76)]
+23/24 | TOP=[(' of', 4.31), (' composed', 3.4), (' quartz', 2.95), (' as', 2.59), (' primarily', 2.58)]
+24/24 | TOP=[(' started', 5.89), (' accelerating', 3.8), (' and', 3.63), (' then', 2.7), ('The', 1.92)]
+[9/15] TARGET SEAL OPEN - POST-HOC ONLY
+01/24 | Selin       | PRESENT=False | SLOT_RANK=None | TOP5=False | VOCAB_RANK=82
+02/24 | Zorvex      | PRESENT=True | SLOT_RANK=11 | TOP5=False | VOCAB_RANK=66
+03/24 | 417         | PRESENT=True | SLOT_RANK=3 | TOP5=True | VOCAB_RANK=5
+04/24 | Reykjavik   | PRESENT=True | SLOT_RANK=10 | TOP5=False | VOCAB_RANK=1156
+05/24 | basalt      | PRESENT=True | SLOT_RANK=4 | TOP5=True | VOCAB_RANK=1226
+06/24 | violet      | PRESENT=False | SLOT_RANK=None | TOP5=False | VOCAB_RANK=5576
+07/24 | climbing    | PRESENT=False | SLOT_RANK=None | TOP5=False | VOCAB_RANK=4317
+08/24 | glossy      | PRESENT=False | SLOT_RANK=None | TOP5=False | VOCAB_RANK=1260
+09/24 | sextant     | PRESENT=True | SLOT_RANK=14 | TOP5=False | VOCAB_RANK=8932
+10/24 | Ordelis     | PRESENT=True | SLOT_RANK=9 | TOP5=False | VOCAB_RANK=100997
+11/24 | Keira       | PRESENT=True | SLOT_RANK=13 | TOP5=False | VOCAB_RANK=1034
+12/24 | Tallinn     | PRESENT=True | SLOT_RANK=13 | TOP5=False | VOCAB_RANK=1337
+13/24 | glass       | PRESENT=False | SLOT_RANK=None | TOP5=False | VOCAB_RANK=509
+14/24 | amber       | PRESENT=False | SLOT_RANK=None | TOP5=False | VOCAB_RANK=33
+15/24 | 731         | PRESENT=True | SLOT_RANK=1 | TOP5=True | VOCAB_RANK=16
+16/24 | rotating    | PRESENT=False | SLOT_RANK=None | TOP5=False | VOCAB_RANK=8381
+17/24 | silky       | PRESENT=False | SLOT_RANK=None | TOP5=False | VOCAB_RANK=2116
+18/24 | astrolabe   | PRESENT=True | SLOT_RANK=19 | TOP5=False | VOCAB_RANK=92888
+19/24 | Varethis    | PRESENT=True | SLOT_RANK=15 | TOP5=False | VOCAB_RANK=1542
+20/24 | Ilyan       | PRESENT=True | SLOT_RANK=7 | TOP5=False | VOCAB_RANK=4
+21/24 | Kyoto       | PRESENT=False | SLOT_RANK=None | TOP5=False | VOCAB_RANK=13302
+22/24 | turquoise   | PRESENT=False | SLOT_RANK=None | TOP5=False | VOCAB_RANK=18415
+23/24 | quartz      | PRESENT=False | SLOT_RANK=None | TOP5=False | VOCAB_RANK=479
+24/24 | accelerating | PRESENT=False | SLOT_RANK=None | TOP5=False | VOCAB_RANK=158
+[10/15] ENDOGENOUS CANDIDATE SUMMARY
+TARGET_PRESENT                     +0.500000
+SLOT_TOP1                          +0.041667
+SLOT_TOP3                          +0.083333
+SLOT_TOP5                          +0.125000
+SLOT_TOP1_CONDITIONAL              +0.083333
+SLOT_TOP3_CONDITIONAL              +0.166667
+SLOT_TOP5_CONDITIONAL              +0.250000
+SLOT_RANK_MEDIAN                   +10.500000
+VOCAB_RANK_MEDIAN                  +1243.000000
+BANK_SIZE_MEAN                     +15.125000
+[11/15] COVERAGE VS SELECTION
+TARGET TOKEN PRESENT IN OWN TEXT BANK=0.500
+CONDITIONAL TOP1=0.083 | TOP3=0.167 | TOP5=0.250 | MEDIAN SLOT RANK=10.5
+[12/15] PREDECLARED DIAGNOSTIC GATE
+COVERAGE>=.75=False | COND_TOP5>=.60=False | MEDIAN_RANK<=5=False | CLASS=TOKEN_BANK_COVERAGE_LIMIT
+[13/15] SCIENTIFIC INTERPRETATION
+THIS TEST DOES NOT INJECT THE SELECTED CANDIDATE AND DOES NOT USE TARGET IDENTITY IN THE ENGINE.
+IT ONLY TESTS WHETHER SAME-CASE ENDOGENOUS CANDIDATES CAN COMPRESS THE VOCABULARY SEARCH SPACE.
+[14/15] CASE + TARGET AUDIT
+CASE_ISOLATED=True | CROSS_CASE_DATA=False | TARGET_ENGINE_ACCESS=False | TARGET_POSTHOC_ONLY=True
+[15/15] INTEGRITY + SEAL
+============================================================================================================
+TEST 315 COMPLETE
+TARGET PRESENT=0.500 | COND TOP1=0.083 TOP3=0.167 TOP5=0.250
+MEDIAN SLOT RANK=10.5 | FULL-VOCAB RANK=1243.0
+CLASS=TOKEN_BANK_COVERAGE_LIMIT | GATE=FAIL
+CASE_ISOLATED=TRUE | TARGET POST-HOC ONLY | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST315/T315-20260929-010805.json
+TXT : /content/AKBASCORE_TEST315/T315-20260929-010805.txt
+SHA : efa329d360e8e6abb931c2453d11f5b8fc80bec24c310010af8be2018c4f7049
+============================================================================================================
