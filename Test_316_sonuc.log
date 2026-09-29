@@ -1,0 +1,147 @@
+ ============================================================================================================
+TEST 316 - CASE-ISOLATED ENDOGENOUS LEXICAL-SPAN COMPETITION X-RAY
+============================================================================================================
+START: 2026-09-29T01:15:26.592+00:00
+[1/15] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 77.1kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 869kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 81.7MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 68.1MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 127MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.68MB/s]Download complete: :  13.1GB,  149MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  545MB/s  Fetching 4 files: 100% 4/4 [00:41<00:00,  7.00s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.41it/s]generation_config.json: 100% 243/243 [00:00<00:00, 31.8kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | VOCAB=152064 | torch.bfloat16 | 53.72s
+[2/15] TEST315 ENGINE LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | BRIDGE=0.200 | SLOT_K=8
+[3/15] TARGET-FREE QUERY NULL CACHE
+NULL READY
+[4/15] SAME-CASE LEXICAL-SPAN BANK + LOCKED PACKET
+01/24 | BANK=12 | ADDR=['engineer', 'the', 'damaged', 'storm', 'placed', 'the', 'sensor', 'Selin']
+02/24 | BANK=12 | ADDR=['unfamiliar', 'northern', 'the', 'called', 'The', 'crystal', 'an', 'discovered']
+03/24 | BANK=13 | ADDR=['the', 'were', 'carried', 'the', 'containers', 'inspected', 'three', 'smallest']
+04/24 | BANK=14 | ADDR=['backup', 'the', 'the', 'the', 'to', 'moved', 'from', 'transmitter']
+05/24 | BANK=12 | ADDR=['and', 'selected', 'basalt', 'rejected', 'the', 'shell', 'the', 'steel']
+06/24 | BANK=13 | ADDR=['changed', 'but', 'The', 'immediately', 'stayed', 'after', 'to', 'violet']
+07/24 | BANK=14 | ADDR=['Arven', 'stopped', 'the', 'and', 'upper', 'the', 'When', 'sounded']
+08/24 | BANK=13 | ADDR=['unusually', 'its', 'dark', 'newly', 'polished', 'the', 'surface', 'despite']
+09/24 | BANK=14 | ADDR=['the', 'Mira', 'other', 'abandoned', 'recovered', 'while', 'remained', 'a']
+10/24 | BANK=12 | ADDR=['in', 'the', 'The', 'final', 'is', 'Ordelis', 'phrase', 'written']
+11/24 | BANK=12 | ADDR=['performed', 'by', 'calculations', 'the', 'were', 'the', 'Darian', 'navigation']
+12/24 | BANK=12 | ADDR=['before', 'finally', 'over', 'and', 'landing', 'in', 'passed', 'drone']
+13/24 | BANK=14 | ADDR=['and', 'polymer', 'copper', 'the', 'transparent', 'laboratory', 'the', 'chose']
+14/24 | BANK=13 | ADDR=['flashed', 'glowed', 'second', 'to', 'lamp', 'The', 'blue', 'status']
+15/24 | BANK=13 | ADDR=['became', 'value', '731', 'then', 'initially', 'recalibration', '29', 'its']
+16/24 | BANK=14 | ADDR=['when', 'the', 'began', 'of', 'the', 'outer', 'hatch', 'sequence']
+17/24 | BANK=14 | ADDR=['coarse', 'silky', 'remained', 'replacement', 'it', 'was', 'plate', 'installed']
+18/24 | BANK=19 | ADDR=['but', 'a', 'were', 'the', 'a', 'for', 'the', 'wooden']
+19/24 | BANK=13 | ADDR=['the', 'The', 'was', 'ultimately', 'production', 'named', 'was', 'temporary']
+20/24 | BANK=15 | ADDR=['assistants', 'the', 'sealed', 'the', 'archive', 'and', 'personally', 'two']
+21/24 | BANK=13 | ADDR=['courier', 'the', 'silver', 'left', 'in', 'before', 'toward', 'Kyoto']
+22/24 | BANK=16 | ADDR=['but', 'was', 'its', 'The', 'looked', 'confirmed', 'under', "machine's"]
+23/24 | BANK=13 | ADDR=['composed', 'of', 'being', 'as', 'quartz', 'was', 'several', 'primarily']
+24/24 | BANK=15 | ADDR=['started', 'and', 'The', 'then', 'two', 'accelerating', 'cart', 'toward']
+[5/15] CASE-ISOLATION AUDIT
+CANDIDATES=SAME-CASE LEXICAL SPANS ONLY | CROSS_CASE=False | TARGET_ACCESS=False
+[6/15] LOCKED CAUSAL ENGINE
+[7/15] SEALED FORCED READOUT
+01/24 | COMPLETE
+02/24 | COMPLETE
+03/24 | COMPLETE
+04/24 | COMPLETE
+05/24 | COMPLETE
+06/24 | COMPLETE
+07/24 | COMPLETE
+08/24 | COMPLETE
+09/24 | COMPLETE
+10/24 | COMPLETE
+11/24 | COMPLETE
+12/24 | COMPLETE
+13/24 | COMPLETE
+14/24 | COMPLETE
+15/24 | COMPLETE
+16/24 | COMPLETE
+17/24 | COMPLETE
+18/24 | COMPLETE
+19/24 | COMPLETE
+20/24 | COMPLETE
+21/24 | COMPLETE
+22/24 | COMPLETE
+23/24 | COMPLETE
+24/24 | COMPLETE
+[8/15] TARGET-FREE SPAN COMPETITION
+01/24 | TOP=[('engineer', 5.62), ('damaged', 3.4), ('the', 1.27), ('sensor', 0.09), ('placed', -0.12)]
+02/24 | TOP=[('unfamiliar', 4.14), ('the', 3.32), ('called', 2.33), ('northern', 1.59), ('The', 1.4)]
+03/24 | TOP=[('the', 4.67), ('were', 1.55), ('417', 1.23), ('carried', 1.17), ('the', 0.44)]
+04/24 | TOP=[('backup', 5.23), ('to', 3.59), ('the', 3.41), ('moved', 2.03), ('the', 1.79)]
+05/24 | TOP=[('selected', 4.39), ('and', 2.14), ('steel', 2.11), ('basalt', 1.92), ('the', 1.66)]
+06/24 | TOP=[('changed', 4.76), ('to', 2.28), ('violet', 1.89), ('immediately', 1.56), ('The', 1.37)]
+07/24 | TOP=[('Arven', 7.69), ('and', 2.85), ('stopped', 2.56), ('began', 2.25), ('the', 1.19)]
+08/24 | TOP=[('unusually', 4.72), ('polished', 3.18), ('dark', 2.92), ('its', 2.53), ('the', 0.98)]
+09/24 | TOP=[('the', 6.17), ('recovered', 3.68), ('other', 2.93), ('a', 2.34), ('abandoned', 2.1)]
+10/24 | TOP=[('the', 4.93), ('in', 4.14), ('The', 2.9), ('final', 2.11), ('phrase', 2.0)]
+11/24 | TOP=[('by', 4.27), ('calculations', 2.56), ('performed', 2.08), ('the', 1.39), ('were', 0.89)]
+12/24 | TOP=[('before', 3.28), ('in', 3.01), ('over', 2.35), ('and', 2.09), ('landing', 1.64)]
+13/24 | TOP=[('copper', 4.25), ('polymer', 3.51), ('and', 3.3), ('the', 3.12), ('transparent', 2.66)]
+14/24 | TOP=[('flashed', 6.83), ('blue', 2.4), ('glowed', 2.18), ('status', 1.49), ('second', 0.89)]
+15/24 | TOP=[('value', 4.95), ('731', 4.51), ('became', 3.46), ('29', 2.15), ('recalibration', 1.74)]
+16/24 | TOP=[('the', 5.16), ('began', 5.08), ('when', 4.13), ('hatch', 1.73), ('the', 1.61)]
+17/24 | TOP=[('was', 3.76), ('coarse', 3.36), ('silky', 3.17), ('remained', 1.85), ('replacement', 1.57)]
+18/24 | TOP=[('the', 4.9), ('the', 4.66), ('a', 4.56), ('a', 4.1), ('were', 2.15)]
+19/24 | TOP=[('named', 4.34), ('The', 4.18), ('the', 3.35), ('ultimately', 2.57), ('production', 1.67)]
+20/24 | TOP=[('assistants', 3.43), ('sealed', 2.67), ('the', 1.87), ('Professor', 1.52), ('archive', 1.46)]
+21/24 | TOP=[('silver', 4.63), ('the', 3.57), ('courier', 3.53), ('in', 3.44), ('left', 3.21)]
+22/24 | TOP=[('was', 5.27), ('its', 3.48), ('but', 3.19), ('actual', 1.89), ('confirmed', 1.57)]
+23/24 | TOP=[('of', 4.26), ('composed', 3.29), ('quartz', 2.72), ('as', 2.55), ('primarily', 2.52)]
+24/24 | TOP=[('started', 5.89), ('accelerating', 3.8), ('and', 3.63), ('then', 2.7), ('The', 1.92)]
+[9/15] TARGET SEAL OPEN - POST-HOC ONLY
+01/24 | Selin       | PRESENT=True | SPAN_RANK=11 | TOP5=False | VOCAB_RANK=87
+02/24 | Zorvex      | PRESENT=True | SPAN_RANK=11 | TOP5=False | VOCAB_RANK=87
+03/24 | 417         | PRESENT=True | SPAN_RANK=3 | TOP5=True | VOCAB_RANK=5
+04/24 | Reykjavik   | PRESENT=True | SPAN_RANK=11 | TOP5=False | VOCAB_RANK=1310
+05/24 | basalt      | PRESENT=True | SPAN_RANK=4 | TOP5=True | VOCAB_RANK=1159
+06/24 | violet      | PRESENT=True | SPAN_RANK=3 | TOP5=True | VOCAB_RANK=5576
+07/24 | climbing    | PRESENT=True | SPAN_RANK=9 | TOP5=False | VOCAB_RANK=4291
+08/24 | glossy      | PRESENT=True | SPAN_RANK=6 | TOP5=False | VOCAB_RANK=1260
+09/24 | sextant     | PRESENT=True | SPAN_RANK=12 | TOP5=False | VOCAB_RANK=10682
+10/24 | Ordelis     | PRESENT=True | SPAN_RANK=9 | TOP5=False | VOCAB_RANK=135472
+11/24 | Keira       | PRESENT=True | SPAN_RANK=11 | TOP5=False | VOCAB_RANK=874
+12/24 | Tallinn     | PRESENT=True | SPAN_RANK=12 | TOP5=False | VOCAB_RANK=1351
+13/24 | glass       | PRESENT=True | SPAN_RANK=8 | TOP5=False | VOCAB_RANK=509
+14/24 | amber       | PRESENT=True | SPAN_RANK=6 | TOP5=False | VOCAB_RANK=35
+15/24 | 731         | PRESENT=True | SPAN_RANK=2 | TOP5=True | VOCAB_RANK=35
+16/24 | rotating    | PRESENT=True | SPAN_RANK=6 | TOP5=False | VOCAB_RANK=8381
+17/24 | silky       | PRESENT=True | SPAN_RANK=3 | TOP5=True | VOCAB_RANK=2116
+18/24 | astrolabe   | PRESENT=True | SPAN_RANK=19 | TOP5=False | VOCAB_RANK=92888
+19/24 | Varethis    | PRESENT=True | SPAN_RANK=12 | TOP5=False | VOCAB_RANK=3339
+20/24 | Ilyan       | PRESENT=True | SPAN_RANK=12 | TOP5=False | VOCAB_RANK=4
+21/24 | Kyoto       | PRESENT=True | SPAN_RANK=7 | TOP5=False | VOCAB_RANK=13302
+22/24 | turquoise   | PRESENT=True | SPAN_RANK=10 | TOP5=False | VOCAB_RANK=18135
+23/24 | quartz      | PRESENT=True | SPAN_RANK=3 | TOP5=True | VOCAB_RANK=479
+24/24 | accelerating | PRESENT=True | SPAN_RANK=2 | TOP5=True | VOCAB_RANK=158
+[10/15] LEXICAL-SPAN SUMMARY
+TARGET_PRESENT                     1.0
+SPAN_TOP1                          0.0
+SPAN_TOP3                          0.25
+SPAN_TOP5                          0.2916666666666667
+SPAN_TOP1_CONDITIONAL              0.0
+SPAN_TOP3_CONDITIONAL              0.25
+SPAN_TOP5_CONDITIONAL              0.2916666666666667
+SPAN_RANK_MEDIAN                   8.5
+VOCAB_RANK_MEDIAN                  1285.0
+BANK_SIZE_MEAN                     13.541666666666666
+[11/15] TEST315 TOKENIZATION CHECK
+OLD TOKEN COVERAGE=0.500000 | CORRECTED SPAN COVERAGE=1.000000 | DELTA=+0.500000
+COND TOP1=0.000 | TOP3=0.250 | TOP5=0.292 | MEDIAN SPAN RANK=8.5
+[12/15] PREDECLARED DIAGNOSTIC GATE
+COVERAGE>=.95=True | COND_TOP5>=.60=False | MEDIAN_RANK<=5=False | CLASS=ADDRESSING_SELECTION_LIMIT
+[13/15] SCIENTIFIC INTERPRETATION
+SPAN BANK FIXES TOKENIZATION COVERAGE ONLY; ENGINE, DOSE, PACKET, BRIDGE AND FORCED READOUT REMAIN LOCKED.
+[14/15] CASE + TARGET AUDIT
+CASE_ISOLATED=True | CROSS_CASE_DATA=False | TARGET_ENGINE_ACCESS=False | TARGET_POSTHOC_ONLY=True
+[15/15] INTEGRITY + SEAL
+============================================================================================================
+TEST 316 COMPLETE
+TARGET PRESENT=1.000 | COND TOP1=0.000 TOP3=0.250 TOP5=0.292
+MEDIAN SPAN RANK=8.5 | FULL-VOCAB RANK=1285.0
+CLASS=ADDRESSING_SELECTION_LIMIT | GATE=FAIL
+CASE_ISOLATED=TRUE | TARGET POST-HOC ONLY | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST316/T316-20260929-011629.json
+TXT : /content/AKBASCORE_TEST316/T316-20260929-011629.txt
+SHA : a7166af0b7ee0aa83799397d499a5864238d0efcc817cbdfee7522bf45b814cc
+============================================================================================================
