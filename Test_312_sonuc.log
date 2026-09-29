@@ -1,0 +1,165 @@
+ 
+============================================================================================================
+TEST 312 - END-TO-END ANSWER-BLIND RETRIEVAL / DEMO QUALIFICATION
+============================================================================================================
+START: 2026-09-29T00:36:02.845+00:00
+[1/14] MODEL LOAD
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 82.2kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 771kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 86.5MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 72.7MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 107MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.38MB/s]
+Download complete: : 
+
+ 13.1GB,  329MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  328MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:43<00:00,  7.84s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 98.93it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 32.6kB/s]
+OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | VOCAB=152064 | torch.bfloat16 | 55.72s
+[2/14] TEST311 LOCK + INTEGRITY
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | BRIDGE=0.200 | SLOT_K=8 | CASE_ISOLATED=TRUE
+[3/14] TARGET-FREE QUERY NULL CACHE
+NULL READY
+[4/14] TEST311 OWN PACKET COMPILER
+01/24 | [' engineer', ' the', ' damaged', ' storm', ' placed', ' the', ' sensor', ' Sel'] | P.Q=+0.0802 -> O.Q=-0.0000000
+02/24 | [' unfamiliar', ' northern', ' the', ' called', 'The', ' crystal', ' an', ' Z'] | P.Q=+0.1058 -> O.Q=-0.0000000
+03/24 | [' the', ' were', ' carried', ' the', ' containers', ' inspected', ' three', ' smallest'] | P.Q=+0.0334 -> O.Q=-0.0000000
+04/24 | [' backup', ' the', ' the', ' the', ' to', ' moved', 'k', ' from'] | P.Q=+0.0752 -> O.Q=-0.0000000
+05/24 | [' and', ' selected', 'alt', ' rejected', ' the', ' shell', ' the', ' steel'] | P.Q=+0.1200 -> O.Q=+0.0000000
+06/24 | [' changed', ' but', 'The', ' immediately', ' stayed', ' after', ' to', ' violet'] | P.Q=+0.0463 -> O.Q=-0.0000000
+07/24 | ['ven', ' Ar', ' stopped', ' the', ' and', ' upper', ' the', 'When'] | P.Q=+0.0779 -> O.Q=-0.0000000
+08/24 | [' unusually', ' its', ' dark', ' newly', ' polished', ' the', ' surface', ' despite'] | P.Q=+0.0926 -> O.Q=+0.0000000
+09/24 | [' the', ' M', ' other', ' abandoned', ' recovered', ' while', ' remained', 'ira'] | P.Q=+0.0977 -> O.Q=-0.0000000
+10/24 | [' Or', ' in', ' the', 'The', ' final', ' is', ' phrase', 'is'] | P.Q=-0.0066 -> O.Q=+0.0000000
+11/24 | [' performed', ' by', ' calculations', ' the', ' were', ' the', ' navigation', 'arian'] | P.Q=+0.1254 -> O.Q=+0.0000000
+12/24 | [' before', ' finally', ' over', ' and', ' landing', ' Tall', ' in', ' passed'] | P.Q=+0.0154 -> O.Q=+0.0000000
+13/24 | [' and', ' polymer', ' copper', ' the', ' transparent', ' laboratory', ' the', ' chose'] | P.Q=+0.1110 -> O.Q=-0.0000000
+14/24 | [' flashed', 'owed', ' second', ' to', ' lamp', ' gl', 'The', ' blue'] | P.Q=+0.0629 -> O.Q=+0.0000000
+15/24 | ['7', ' became', ' value', '1', '3', 'ibration', ' then', ' initially'] | P.Q=+0.0094 -> O.Q=+0.0000000
+16/24 | [' when', ' the', ' began', ' of', ' the', ' outer', ' hatch', ' sequence'] | P.Q=+0.1788 -> O.Q=+0.0000000
+17/24 | [' coarse', ' silky', ' remained', ' replacement', ' it', ' was', ' plate', ' installed'] | P.Q=+0.0233 -> O.Q=+0.0000000
+18/24 | [' but', ' a', ' were', ' the', ' a', ' for', ' the', ' wooden'] | P.Q=+0.0792 -> O.Q=-0.0000000
+19/24 | [' the', 'The', ' was', ' ultimately', ' cod', ' production', ' named', ' V'] | P.Q=+0.0650 -> O.Q=+0.0000000
+20/24 | [' assistants', ' the', ' sealed', ' the', ' archive', 'an', ' and', ' personally'] | P.Q=+0.0387 -> O.Q=+0.0000000
+21/24 | [' courier', ' the', ' silver', ' left', ' in', ' before', ' toward', ' Kyoto'] | P.Q=+0.0520 -> O.Q=-0.0000000
+22/24 | [' but', ' was', ' its', 'The', ' looked', ' confirmed', "'s", ' under'] | P.Q=-0.0053 -> O.Q=+0.0000000
+23/24 | [' composed', ' of', ' being', ' as', ' quartz', ' was', ' several', ' primarily'] | P.Q=+0.0531 -> O.Q=-0.0000000
+24/24 | [' started', ' and', 'The', ' then', ' two', ' accelerating', ' cart', ' toward'] | P.Q=+0.0614 -> O.Q=+0.0000000
+[5/14] CASE-ISOLATION AUDIT
+ENGINE INPUT PER RUN = ONE TEXT + ONE QUESTION | CROSS_CASE_DATA=False | TARGET_ACCESS=False
+[6/14] CAUSAL ENGINE
+[7/14] SEALED BLIND FORWARD + GENERATION
+01/24 | VANILLA='The prompt does not provide any information about who placed the damaged' | PACKET='Based on the information provided, the damaged sensor was placed inside' | AKBASCORE='Based on the information provided, the damaged sensor was placed inside'
+02/24 | VANILLA='The prompt does not provide enough information to determine what the unfamiliar' | PACKET='The prompt does not provide specific details about an unfamiliar crystal.' | AKBASCORE='The prompt does not provide specific details about an unfamiliar crystal.'
+03/24 | VANILLA='The prompt does not provide any specific information about the numbers on' | PACKET='The prompt does not provide any specific numbers or containers, so' | AKBASCORE='The prompt does not provide any specific numbers or containers, so'
+04/24 | VANILLA='The prompt does not provide specific information about where the backup transmitter' | PACKET='The prompt does not provide specific information about the location of the' | AKBASCORE='The prompt does not provide specific information about the location of the'
+05/24 | VANILLA='The prompt does not provide specific information about which material was selected' | PACKET='The prompt does not provide specific details about the material used for' | AKBASCORE='The prompt does not provide specific details about the material used for'
+06/24 | VANILLA='The prompt does not provide specific details about the color of the' | PACKET='The prompt does not provide specific details about the color of the' | AKBASCORE='The prompt does not provide specific details about the color of the'
+07/24 | VANILLA='The prompt does not provide any information about what Arven began' | PACKET='The prompt does not provide any specific information about what Arven' | AKBASCORE='The prompt does not provide any specific information about what Arven'
+08/24 | VANILLA='The prompt does not provide specific details about how the newly polished' | PACKET='The prompt does not provide specific details about how the newly polished' | AKBASCORE='The prompt does not provide specific details about how the newly polished'
+09/24 | VANILLA='The prompt does not provide any information about an object that M' | PACKET='The prompt does not provide specific details about what object Mira' | AKBASCORE='The prompt does not provide specific details about what Mira recovered'
+10/24 | VANILLA='The prompt does not provide any information about an authentication phrase or' | PACKET='The prompt does not provide any specific details about an authentication phrase' | AKBASCORE='The prompt does not provide any specific details about an authentication phrase'
+11/24 | VANILLA='The prompt does not provide specific information about who performed the navigation' | PACKET='The prompt does not provide specific details about who performed the navigation' | AKBASCORE='The prompt does not provide specific details about who performed the navigation'
+12/24 | VANILLA='The prompt does not provide specific information about where the drone landed' | PACKET='The prompt does not provide any specific information about where the drone' | AKBASCORE='The prompt does not provide any specific information about where the drone'
+13/24 | VANILLA='The prompt does not provide specific information about what material was chosen' | PACKET='The prompt does not provide specific information about the material used for' | AKBASCORE='The prompt does not provide specific information about the material used for'
+14/24 | VANILLA='The prompt does not provide any information about the color of the' | PACKET='The prompt does not provide any specific information about the color of' | AKBASCORE='The prompt does not provide any information about the color of the'
+15/24 | VANILLA="The prompt does not provide specific information about Unit R's verified" | PACKET='The prompt does not provide specific details about Unit R or its' | AKBASCORE='The prompt does not provide specific details about Unit R or its'
+16/24 | VANILLA='The prompt does not provide specific information about what the outer hatch' | PACKET='The prompt does not provide specific details about what the outer hatch' | AKBASCORE="The prompt does not provide specific details about the outer hatch's"
+17/24 | VANILLA='The prompt does not provide any specific description of a replacement plate' | PACKET='The prompt does not provide specific details about how the replacement plate' | AKBASCORE='The prompt does not provide any specific details about how the replacement'
+18/24 | VANILLA='The prompt does not provide any specific information about items or their' | PACKET='There is no information provided about any specific items or marks of' | AKBASCORE='The prompt does not provide any specific items or details about what'
+19/24 | VANILLA='To accurately answer this question, I would need more context or' | PACKET='The prompt does not provide specific details about the name of the' | AKBASCORE='The production system was ultimately named "Ford Production System.'
+20/24 | VANILLA='The prompt does not provide any information about who carried the sealed' | PACKET='The prompt does not provide any information about who carried the sealed' | AKBASCORE='The prompt does not provide any information about who carried the sealed'
+21/24 | VANILLA='The prompt does not provide any information about where a silver key' | PACKET='The prompt does not provide specific details about where the silver key' | AKBASCORE='The prompt does not provide specific information about where the silver key'
+22/24 | VANILLA='The prompt does not provide any information about a casing or its' | PACKET='The prompt does not provide any specific information about the color of' | AKBASCORE='The prompt does not provide any specific information about the color of'
+23/24 | VANILLA='The prompt does not provide specific information about what specimen Q-' | PACKET='Insufficient information to determine the primary composition of specimen Q-' | AKBASCORE='Insufficient information to determine the primary composition of specimen Q-'
+24/24 | VANILLA='The prompt does not provide any information about a cart starting to' | PACKET='The prompt does not provide any information about a cart or its' | AKBASCORE='The prompt does not provide any information about a cart or its'
+[8/14] TARGET SEAL OPEN - POST-HOC ONLY
+01/24 | Selin       | V=False/False P=False/False A=False/False | RANK 169->232->116
+02/24 | Zorvex      | V=False/False P=False/False A=False/False | RANK 14716->1612->1469
+03/24 | 417         | V=False/False P=False/False A=False/False | RANK 30941->240->328
+04/24 | Reykjavik   | V=False/False P=False/False A=False/False | RANK 383->511->423
+05/24 | basalt      | V=False/False P=False/False A=False/False | RANK 132240->94362->83205
+06/24 | violet      | V=False/False P=False/False A=False/False | RANK 45064->80437->82821
+07/24 | climbing    | V=False/False P=False/False A=False/False | RANK 102998->76432->37877
+08/24 | glossy      | V=False/False P=False/False A=False/False | RANK 74884->53751->42953
+09/24 | sextant     | V=False/False P=False/False A=False/False | RANK 122550->97135->88258
+10/24 | Ordelis     | V=False/False P=False/False A=False/False | RANK 34212->63098->43153
+11/24 | Keira       | V=False/False P=False/False A=False/False | RANK 2209->2487->2415
+12/24 | Tallinn     | V=False/False P=False/False A=False/False | RANK 597->326->174
+13/24 | glass       | V=False/False P=False/False A=False/False | RANK 55769->3627->2470
+14/24 | amber       | V=False/False P=False/False A=False/False | RANK 96973->7780->1857
+15/24 | 731         | V=False/False P=False/False A=False/False | RANK 66641->2196->1843
+16/24 | rotating    | V=False/False P=False/False A=False/False | RANK 124265->34862->17908
+17/24 | silky       | V=False/False P=False/False A=False/False | RANK 102355->80075->50182
+18/24 | astrolabe   | V=False/False P=False/False A=False/False | RANK 149317->140620->134455
+19/24 | Varethis    | V=False/False P=False/False A=False/False | RANK 511->671->811
+20/24 | Ilyan       | V=False/False P=False/False A=False/False | RANK 19->7->6
+21/24 | Kyoto       | V=False/False P=False/False A=False/False | RANK 102351->62665->45084
+22/24 | turquoise   | V=False/False P=False/False A=False/False | RANK 101144->45691->33149
+23/24 | quartz      | V=False/False P=False/False A=False/False | RANK 138043->107343->85262
+24/24 | accelerating | V=False/False P=False/False A=False/False | RANK 39871->2282->764
+[9/14] END-TO-END SUMMARY
+VANILLA_EXACT                      +0.000000
+PACKET_EXACT                       +0.000000
+AKBASCORE_EXACT                    +0.000000
+VANILLA_MENTION                    +0.000000
+PACKET_MENTION                     +0.000000
+AKBASCORE_MENTION                  +0.000000
+VANILLA_RANK_MEDIAN                +61205.000000
+PACKET_RANK_MEDIAN                 +21321.000000
+AKBASCORE_RANK_MEDIAN              +10189.000000
+PACKET_GAIN                        +0.672729
+BRIDGE_GAIN                        +2.787842
+FINAL_GAIN                         +3.460571
+AKBASCORE_TOP1                     +0.000000
+RANK_IMPROVED_VS_PACKET            +0.875000
+[10/14] GENERATION DELTA
+EXACT V=0.000 P=0.000 A=0.000
+MENTION V=0.000 P=0.000 A=0.000
+MEDIAN RANK V=61205.0 P=21321.0 A=10189.0
+[11/14] DEMO QUALIFICATION GATE
+EXACT IMPROVED=False | MENTION IMPROVED=False | RANK IMPROVED=True | FINAL GAIN>0=True
+[12/14] CASE-INDEPENDENCE
+CASE_ISOLATED=True | 24=EVALUATION COUNT ONLY | ONE TEXT + ONE QUESTION PER RUN
+[13/14] TARGET-ACCESS AUDIT
+COMPILER=False | ADDRESSING=False | SEASC=False | BRIDGE=False | GENERATION=False | TARGET OPENED POST-HOC=True
+[14/14] INTEGRITY + SEAL
+============================================================================================================
+TEST 312 COMPLETE
+EXACT V=0.000 P=0.000 A=0.000
+MENTION V=0.000 P=0.000 A=0.000
+MEDIAN RANK V=61205.0 P=21321.0 A=10189.0
+FINAL GAIN=+3.461 | DEMO QUALIFICATION=FAIL
+CASE_ISOLATED=TRUE | TARGET POST-HOC ONLY | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST312/T312-20260929-003812.json
+TXT : /content/AKBASCORE_TEST312/T312-20260929-003812.txt
+SHA : 56e2189172d138eb96affbf32b411ffab86ce32758175ac551130d08bdb83402
+============================================================================================================
+
