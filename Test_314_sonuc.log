@@ -1,0 +1,138 @@
+ ============================================================================================================
+TEST 314 - ANSWER-BLIND DECISION-BOUNDARY X-RAY
+============================================================================================================
+START: 2026-09-29T00:57:26.213+00:00
+[1/15] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 78.7kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 931kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 47.5MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 71.7MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 85.7MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.32MB/s]Download complete: :  13.1GB,  676MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  417MB/s  Fetching 4 files: 100% 4/4 [00:42<00:00,  7.48s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.23it/s]generation_config.json: 100% 243/243 [00:00<00:00, 32.6kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | VOCAB=152064 | torch.bfloat16 | 52.28s
+[2/15] TEST313 ENGINE LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | BRIDGE=0.200 | SLOT_K=8
+[3/15] TARGET-FREE QUERY NULL CACHE
+NULL READY
+[4/15] TEST313 PACKET COMPILER
+01/24 | [' engineer', ' the', ' damaged', ' storm', ' placed', ' the', ' sensor', ' Sel']
+02/24 | [' unfamiliar', ' northern', ' the', ' called', 'The', ' crystal', ' an', ' Z']
+03/24 | [' the', ' were', ' carried', ' the', ' containers', ' inspected', ' three', ' smallest']
+04/24 | [' backup', ' the', ' the', ' the', ' to', ' moved', 'k', ' from']
+05/24 | [' and', ' selected', 'alt', ' rejected', ' the', ' shell', ' the', ' steel']
+06/24 | [' changed', ' but', 'The', ' immediately', ' stayed', ' after', ' to', ' violet']
+07/24 | ['ven', ' Ar', ' stopped', ' the', ' and', ' upper', ' the', 'When']
+08/24 | [' unusually', ' its', ' dark', ' newly', ' polished', ' the', ' surface', ' despite']
+09/24 | [' the', ' M', ' other', ' abandoned', ' recovered', ' while', ' remained', 'ira']
+10/24 | [' Or', ' in', ' the', 'The', ' final', ' is', ' phrase', 'is']
+11/24 | [' performed', ' by', ' calculations', ' the', ' were', ' the', ' navigation', 'arian']
+12/24 | [' before', ' finally', ' over', ' and', ' landing', ' Tall', ' in', ' passed']
+13/24 | [' and', ' polymer', ' copper', ' the', ' transparent', ' laboratory', ' the', ' chose']
+14/24 | [' flashed', 'owed', ' second', ' to', ' lamp', ' gl', 'The', ' blue']
+15/24 | ['7', ' became', ' value', '1', '3', 'ibration', ' then', ' initially']
+16/24 | [' when', ' the', ' began', ' of', ' the', ' outer', ' hatch', ' sequence']
+17/24 | [' coarse', ' silky', ' remained', ' replacement', ' it', ' was', ' plate', ' installed']
+18/24 | [' but', ' a', ' were', ' the', ' a', ' for', ' the', ' wooden']
+19/24 | [' the', 'The', ' was', ' ultimately', ' cod', ' production', ' named', ' V']
+20/24 | [' assistants', ' the', ' sealed', ' the', ' archive', 'an', ' and', ' personally']
+21/24 | [' courier', ' the', ' silver', ' left', ' in', ' before', ' toward', ' Kyoto']
+22/24 | [' but', ' was', ' its', 'The', ' looked', ' confirmed', "'s", ' under']
+23/24 | [' composed', ' of', ' being', ' as', ' quartz', ' was', ' several', ' primarily']
+24/24 | [' started', ' and', 'The', ' then', ' two', ' accelerating', ' cart', ' toward']
+[5/15] CASE-ISOLATION AUDIT
+ONE STATEMENT + ONE QUESTION | CROSS_CASE_DATA=False | TARGET_ACCESS=False
+[6/15] CAUSAL ENGINE
+[7/15] SEALED FOUR-STATE X-RAY
+01/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+02/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+03/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+04/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+05/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+06/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+07/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+08/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+09/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+10/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+11/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+12/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+13/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+14/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+15/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+16/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+17/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+18/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+19/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+20/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+21/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+22/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+23/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+24/24 | STD -> FORCE -> PACKET -> BRIDGE COMPLETE
+[8/15] TARGET SEAL OPEN - POST-HOC ONLY
+01/24 | Selin       | TOP='information'  | RANK 169->284->143->82 | MARGIN -18.81->-5.81
+02/24 | Zorvex      | TOP=' Un'          | RANK 14716->11->50->66 | MARGIN -23.03->-5.38
+03/24 | 417         | TOP=' information' | RANK 30941->8->5->5 | MARGIN -24.62->-1.75
+04/24 | Reykjavik   | TOP=' information' | RANK 383->261->1635->1156 | MARGIN -19.31->-10.91
+05/24 | basalt      | TOP='carbon'       | RANK 132240->568->1514->1226 | MARGIN -29.49->-13.41
+06/24 | violet      | TOP=' blue'        | RANK 45064->1017->3728->5576 | MARGIN -28.55->-18.38
+07/24 | climbing    | TOP='Information'  | RANK 102998->5480->8524->4317 | MARGIN -28.27->-14.80
+08/24 | glossy      | TOP=' shiny'       | RANK 74884->877->1140->1260 | MARGIN -26.97->-15.41
+09/24 | sextant     | TOP=' information' | RANK 122550->326->7278->8932 | MARGIN -28.05->-13.70
+10/24 | Ordelis     | TOP=' information' | RANK 34212->15708->114504->100997 | MARGIN -26.00->-22.84
+11/24 | Keira       | TOP=' information' | RANK 2209->474->796->1034 | MARGIN -21.03->-11.41
+12/24 | Tallinn     | TOP=' information' | RANK 597->325->3205->1337 | MARGIN -20.31->-12.31
+13/24 | glass       | TOP=' information' | RANK 55769->115->551->509 | MARGIN -26.39->-13.12
+14/24 | amber       | TOP=' red'         | RANK 96973->66->39->33 | MARGIN -27.80->-10.00
+15/24 | 731         | TOP=' '            | RANK 66641->27->17->16 | MARGIN -28.84->-4.50
+16/24 | rotating    | TOP=' it'          | RANK 124265->7673->10998->8381 | MARGIN -27.52->-14.98
+17/24 | silky       | TOP=' smooth'      | RANK 102355->2247->2922->2116 | MARGIN -27.38->-16.91
+18/24 | astrolabe   | TOP=' item'        | RANK 149317->106699->107668->92888 | MARGIN -30.97->-17.12
+19/24 | Varethis    | TOP=' Ford'        | RANK 511->1139->1557->1542 | MARGIN -17.94->-9.97
+20/24 | Ilyan       | TOP='Information'  | RANK 19->8->6->4 | MARGIN -12.25->-2.62
+21/24 | Kyoto       | TOP='In'           | RANK 102351->24726->23449->13302 | MARGIN -27.65->-15.23
+22/24 | turquoise   | TOP=' blue'        | RANK 101144->8523->19734->18415 | MARGIN -28.59->-16.97
+23/24 | quartz      | TOP=' information' | RANK 138043->1876->490->479 | MARGIN -28.92->-11.69
+24/24 | accelerating | TOP=' moving'      | RANK 39871->117->232->158 | MARGIN -25.52->-10.69
+[9/15] GLOBAL DECISION BOUNDARY
+STD_RANK                           +61205.000000
+FORCE_RANK                         +521.000000
+PACKET_RANK                        +1535.500000
+BRIDGE_RANK                        +1243.000000
+STD_MARGIN                         -25.176066
+FORCE_MARGIN                       -13.673503
+PACKET_MARGIN                      -12.778097
+BRIDGE_MARGIN                      -12.079102
+FORCE_MARGIN_DELTA                 +11.502563
+PACKET_MARGIN_DELTA                +0.895406
+BRIDGE_MARGIN_DELTA                +0.698995
+TOTAL_MARGIN_DELTA                 +13.096965
+FORCE_DECISION_PROJ                -7.124945
+PACKET_DECISION_PROJ               -5.898873
+BRIDGE_DECISION_PROJ               +0.671501
+FORCE_TARGET_PROJ                  +7.596639
+FORCE_COMP_PROJ                    +20.093499
+PACKET_TARGET_PROJ                 -3.959946
+PACKET_COMP_PROJ                   +3.946368
+BRIDGE_TARGET_PROJ                 +3.025908
+BRIDGE_COMP_PROJ                   +2.519378
+BRIDGE_TOP1                        +0.000000
+BRIDGE_POSITIVE_MARGIN             +0.000000
+[10/15] COMPONENT DECOMPOSITION
+FORCE  TARGET=+7.5966 COMP=+20.0935 DECISION=-7.1249 MARGIN_D=+11.5026
+PACKET TARGET=-3.9599 COMP=+3.9464 DECISION=-5.8989 MARGIN_D=+0.8954
+BRIDGE TARGET=+3.0259 COMP=+2.5194 DECISION=+0.6715 MARGIN_D=+0.6990
+[11/15] BOTTLENECK CLASSIFICATION
+CLASS: DECODER_PRIOR_DOMINANT_WITH_RESIDUAL_SIGNAL_DEFICIT
+[12/15] REQUIRED CLOSURE
+MEAN_REQUIRED_MARGIN=12.079102 | MEDIAN_REQUIRED_MARGIN=12.718750 | ZERO_REQUIRED=0.000000
+[13/15] CASE + TARGET AUDIT
+CASE_ISOLATED=True | CROSS_CASE_DATA=False | TARGET_ENGINE_ACCESS=False | TARGET_POSTHOC_ONLY=True
+[14/15] SCIENTIFIC AUDIT
+NO TRAINING | NO OPTIMIZATION | NO DOSE SWEEP | NO TARGET-HEAD IN ENGINE | TARGET USED ONLY AFTER ALL FORWARDS
+[15/15] INTEGRITY + SEAL
+============================================================================================================
+TEST 314 COMPLETE
+RANK STD=61205.0 FORCE=521.0 PACKET=1535.5 BRIDGE=1243.0
+MARGIN STD=-25.176 FORCE=-13.674 PACKET=-12.778 BRIDGE=-12.079
+REQUIRED CLOSURE MEAN=12.079 MEDIAN=12.719 | CLASS=DECODER_PRIOR_DOMINANT_WITH_RESIDUAL_SIGNAL_DEFICIT
+CASE_ISOLATED=TRUE | TARGET POST-HOC ONLY | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST314/T314-20260929-005833.json
+TXT : /content/AKBASCORE_TEST314/T314-20260929-005833.txt
+SHA : e70e615bdb3442e2fb05fecf2245a23a6c1feebecbec5338dc82c42964a2d0d5
+============================================================================================================
