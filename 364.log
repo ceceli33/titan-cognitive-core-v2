@@ -1,0 +1,92 @@
+ ============================================================================================================
+TEST 364 - SAME-SOURCE QUESTION-CONDITIONAL CONTRIBUTION DISPLACEMENT
+============================================================================================================
+START: 2026-09-29T13:05:27.927+00:00
+[1/22] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 72.8kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 803kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 24.5MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 72.2MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 122MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.71MB/s]Download complete: :  13.1GB, 13.1MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  111MB/s  Fetching 4 files: 100% 4/4 [00:51<00:00, 12.06s/it]Loading weights: 100% 339/339 [00:04<00:00, 96.89it/s]generation_config.json: 100% 243/243 [00:00<00:00, 34.3kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | eager-attention | torch.bfloat16 | 62.68s
+[2/22] MODEL LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+[3/22] ARCHITECTURE AUDIT
+HEADS=28 | KV_HEADS=4 | HEAD_DIM=128 | KV_REPEAT=7
+[4/22] TEST363 SOURCE + QUESTIONS LOCK
+01/07 | SPANS=35 | Q_LAST=60 | Q=Who bypassed all target-free compiler limits?
+02/07 | SPANS=35 | Q_LAST=60 | Q=What did Mustafa Akbaş plant?
+03/07 | SPANS=35 | Q_LAST=63 | Q=Where did Mustafa Akbaş plant the Turkish flag?
+04/07 | SPANS=35 | Q_LAST=63 | Q=When did Mustafa Akbaş bypass the compiler limits?
+05/07 | SPANS=35 | Q_LAST=60 | Q=What did Mustafa Akbaş bypass?
+06/07 | SPANS=35 | Q_LAST=60 | Q=Who was permanently frozen in a static state?
+07/07 | SPANS=35 | Q_LAST=58 | Q=What state was Colude in?
+REF | SPANS=35 | READ_POS=51 | QUESTION=<EMPTY>
+[5/22] QUERY FORWARDS
+01/07 | OK
+02/07 | OK
+03/07 | OK
+04/07 | OK
+05/07 | OK
+06/07 | OK
+07/07 | OK
+[6/22] QUESTION-FREE REFERENCE FORWARD
+REFERENCE OK
+[7/22] CONTRIBUTION RECONSTRUCTION FUNCTION
+READY
+[8/22] QUERY CONTRIBUTIONS
+01/07 | OK
+02/07 | OK
+03/07 | OK
+04/07 | OK
+05/07 | OK
+06/07 | OK
+07/07 | OK
+[9/22] REFERENCE CONTRIBUTIONS
+REFERENCE CONTRIBUTIONS READY
+[10/22] TEST363 ABSOLUTE CONTROL
+ABSOLUTE CONTROL READY
+[11/22] QUESTION-INDUCED VECTOR DISPLACEMENT
+DELTA_C=C(Q)-C(Q0) READY
+[12/22] DELTA NORMS
+DELTA NORMS READY
+[13/22] PER-LAYER DELTA RANKS
+DELTA RANKS READY
+[14/22] PRIMARY CROSS-LAYER DELTA MRR
+PRIMARY=MEAN_L(1/DELTA_CONTRIBUTION_RANK) | FROZEN BEFORE VALUE
+[15/22] TARGET-FREE ROUTES FROZEN
+01/07 | DELTA_TOP3=2026:0.4938 | bypassed:0.3583 | Mustafa:0.3496 | ABS_TOP=2026
+02/07 | DELTA_TOP3=2026:0.5082 | While:0.3565 | flag:0.3065 | ABS_TOP=2026
+03/07 | DELTA_TOP3=2026:0.5097 | While:0.3525 | bridge:0.2314 | ABS_TOP=2026
+04/07 | DELTA_TOP3=2026:0.6174 | While:0.3403 | bypassed:0.2525 | ABS_TOP=2026
+05/07 | DELTA_TOP3=2026:0.4524 | While:0.3170 | target-free:0.2771 | ABS_TOP=2026
+06/07 | DELTA_TOP3=2026:0.5229 | While:0.3753 | Colude:0.3096 | ABS_TOP=2026
+07/07 | DELTA_TOP3=2026:0.6146 | While:0.3676 | Mustafa:0.2955 | ABS_TOP=2026
+[16/22] VALUES OPEN POST-HOC
+01/07 | VALUE='Mustafa Akbaş' | DELTA=R03 V1=R02 | ABS=R03 | DSEL='2026' | ASEL='2026'
+02/07 | VALUE='Turkish flag' | DELTA=R03 V1=R02 | ABS=R02 | DSEL='2026' | ASEL='2026'
+03/07 | VALUE='Golden Gate Bridge' | DELTA=R14 V1=R03 | ABS=R12 | DSEL='2026' | ASEL='2026'
+04/07 | VALUE='2026' | DELTA=R01 V1=R01 | ABS=R01 | DSEL='2026' | ASEL='2026'
+05/07 | VALUE='target-free compiler limits' | DELTA=R03 V1=R02 | ABS=R03 | DSEL='2026' | ASEL='2026'
+06/07 | VALUE='Colude' | DELTA=R03 V1=R02 | ABS=R02 | DSEL='2026' | ASEL='2026'
+07/07 | VALUE='permanently frozen' | DELTA=R09 V1=R05 | ABS=R03 | DSEL='2026' | ASEL='2026'
+[17/22] DIRECT TEST363 COMPARISON
+DELTA | MED=3.0 TOP1=0.143 TOP3=0.714 TOP5=0.714 EXACT=0.143 UNIQUE=1/7
+ABS   | MED=3.0 TOP1=0.143 TOP3=0.857 TOP5=0.857 EXACT=0.143 UNIQUE=1/7
+DELTA_VS_ABS | BETTER=0.000 | WORSE=0.571
+[18/22] PREDECLARED ROUTING GATES
+SUPPORTED=False | STRONG=False
+[19/22] CLASSIFICATION
+CLASS= QUESTION_INDUCED_CONTRIBUTION_DISPLACEMENT_NOT_SUPPORTED
+[20/22] SCIENTIFIC AUDIT
+EXACT TEST363 SOURCE+QUESTIONS | ABS TEST363 CONTROL | Q-FREE REFERENCE | DELTA_C VECTOR DIFFERENCE BEFORE NORM | 28L MRR | VALUE POST-HOC | NO SEASC | NO TARGET/LAYER/HEAD ORACLE | NO SCORE SEARCH | NO TRAINING
+[21/22] INTEGRITY
+WEIGHTS FROZEN | FP MATCH
+[22/22] JSON-SAFE SAVE
+============================================================================================================
+TEST 364 COMPLETE
+DELTA | MED=3.0 | TOP1=0.143 | TOP3=0.714 | TOP5=0.714 | EXACT=0.143 | UNIQUE=1/7
+ABS   | MED=3.0 | TOP1=0.143 | TOP3=0.857 | TOP5=0.857 | EXACT=0.143 | UNIQUE=1/7
+DELTA_BEATS_ABS=0.000 | DELTA_WORSE=0.571
+CLASS= QUESTION_INDUCED_CONTRIBUTION_DISPLACEMENT_NOT_SUPPORTED
+JSON: /content/AKBASCORE_TEST364/T364-20260929-130634.json
+TXT : /content/AKBASCORE_TEST364/T364-20260929-130634.txt
+SHA : 87304413643867715e6bf735ae3f08486d22d895b6ee933d5cb20df336a59600
+============================================================================================================
