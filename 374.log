@@ -1,0 +1,47 @@
+ ========================================================================================================
+TEST 374 v2 - FINAL TARGET-FREE ROUTING BATTERY - FIXED
+========================================================================================================
+config.json: 100% 663/663 [00:00<00:00, 76.6kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 676kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 83.6MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 72.6MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 133MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.54MB/s]Download complete: :  13.1GB,  208MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  508MB/s  Fetching 4 files: 100% 4/4 [00:42<00:00,  7.24s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.43it/s]generation_config.json: 100% 243/243 [00:00<00:00, 28.5kB/s]MODEL OK | 28L H=3584 | Q=28 KV=4 D=128 REP=7 | 55.2s
+FP=1.0912,-90.1989,92.6709,73.2364,13758.2012,-23395.7148
+DATA OK | Q=9 | WORDS=32 | SEGMENTS=93 | frozen forwards...
+FORWARDS OK | ATTN + native A*V->O contribution ready
+--------------------------------------------------------------------------------------------------------
+BRANCH SUMMARY
+ATTN_WORD          MED= 33.0 | T1=0.222 T3=0.333 T5=0.333
+ATTN_GEOM          MED=  4.0 | T1=0.222 T3=0.444 T5=0.556
+CONTRIB_WORD       MED= 33.0 | T1=0.222 T3=0.333 T5=0.333
+CONTRIB_GEOM       MED=  2.0 | T1=0.222 T3=0.556 T5=0.667
+ATTN_SHIFT_WORD    MED= 33.0 | T1=0.222 T3=0.222 T5=0.333
+ATTN_SHIFT_GEOM    MED= 11.0 | T1=0.222 T3=0.222 T5=0.333
+CONTRIB_SHIFT_WORD MED= 33.0 | T1=0.111 T3=0.333 T5=0.333
+CONTRIB_SHIFT_GEOM MED= 10.0 | T1=0.111 T3=0.222 T5=0.333
+--------------------------------------------------------------------------------------------------------
+BEST: CONTRIB_GEOM | MED=2.0 T1=0.222 T3=0.556 T5=0.667
+01 | 'Selin Aras'             R02 | SELECT='Selin'
+02 | 'cobalt compass'         R25 | SELECT='After'
+03 | 'Ravenna observatory'    R08 | SELECT='After'
+04 | '583'                    R02 | SELECT='2031'
+05 | '2031'                   R01 | SELECT='2031'
+06 | 'Lervan'                 R01 | SELECT='Lervan'
+07 | 'permanently stationary' R02 | SELECT='permanently'
+08 | 'ceramic capsule'        R04 | SELECT='After'
+09 | 'eastern platform'       R14 | SELECT='beneath'
+--------------------------------------------------------------------------------------------------------
+SECOND: ATTN_GEOM | MED=4.0 T1=0.222 T3=0.444 T5=0.556
+01 | 'Selin Aras'             R02 | SELECT='Selin'
+02 | 'cobalt compass'         R33 | SELECT='After'
+03 | 'Ravenna observatory'    R08 | SELECT='After'
+04 | '583'                    R02 | SELECT='2031'
+05 | '2031'                   R01 | SELECT='2031'
+06 | 'Lervan'                 R01 | SELECT='Lervan'
+07 | 'permanently stationary' R04 | SELECT='2031'
+08 | 'ceramic capsule'        R06 | SELECT='After'
+09 | 'eastern platform'       R18 | SELECT='beneath'
+--------------------------------------------------------------------------------------------------------
+DEVELOPMENT GATE | SUPPORTED=False | STRONG=False
+DECISION = CLOSE_THIS_ROUTING_FAMILY_NO_MORE_SCORE_VARIANTS
+FP MATCH | JSON=/content/AKBASCORE_TEST374/T374v2-20260929-144313.json
+SHA = 395ffb82f29df27411bb5641f08580c5b449f703fa688fab97ae9d96a83f7387
+========================================================================================================
