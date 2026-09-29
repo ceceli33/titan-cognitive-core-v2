@@ -1,0 +1,142 @@
+ ============================================================================================================
+TEST 354 - TARGET-FREE VALUE-SPAN LOCALIZATION X-RAY
+============================================================================================================
+START: 2026-09-29T11:52:31.677+00:00
+[1/18] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 75.9kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 975kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 39.9MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 74.8MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 108MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.81MB/s]Download complete: :  13.1GB,  466MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  506MB/s  Fetching 4 files: 100% 4/4 [00:40<00:00,  7.15s/it]Loading weights: 100% 339/339 [00:03<00:00, 98.91it/s]generation_config.json: 100% 243/243 [00:00<00:00, 35.3kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | torch.bfloat16 | 49.26s
+[2/18] MODEL LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+[3/18] QUERY NULL CACHE
+NULL READY
+[4/18] SOURCE + QUERY STATES
+01/16 | PERSON   | SPANS=15
+02/16 | PERSON   | SPANS=13
+03/16 | PLACE    | SPANS=14
+04/16 | PLACE    | SPANS=13
+05/16 | COLOR    | SPANS=8
+06/16 | COLOR    | SPANS=7
+07/16 | MATERIAL | SPANS=12
+08/16 | MATERIAL | SPANS=10
+09/16 | ACTION   | SPANS=11
+10/16 | ACTION   | SPANS=10
+11/16 | NAME     | SPANS=12
+12/16 | NAME     | SPANS=8
+13/16 | NUMBER   | SPANS=7
+14/16 | OBJECT   | SPANS=8
+15/16 | PROPERTY | SPANS=8
+16/16 | SHOWCASE | SPANS=16
+[5/18] TARGET-FREE SCORE-1 DIRECT QUERY ALIGNMENT
+DIRECT FROZEN
+[6/18] TARGET-FREE SCORE-2 QUERY-ORTHOGONAL DISTINCTIVENESS
+ORTHO FROZEN
+[7/18] TARGET-FREE SCORE-3 LEAVE-ONE-SPAN CONTEXT DISPLACEMENT
+01/16 | READY
+02/16 | READY
+03/16 | READY
+04/16 | READY
+05/16 | READY
+06/16 | READY
+07/16 | READY
+08/16 | READY
+09/16 | READY
+10/16 | READY
+11/16 | READY
+12/16 | READY
+13/16 | READY
+14/16 | READY
+15/16 | READY
+16/16 | READY
+[8/18] TARGET-FREE SCORE-4 RELATIONAL PARTICIPATION
+01/16 | READY
+02/16 | READY
+03/16 | READY
+04/16 | READY
+05/16 | READY
+06/16 | READY
+07/16 | READY
+08/16 | READY
+09/16 | READY
+10/16 | READY
+11/16 | READY
+12/16 | READY
+13/16 | READY
+14/16 | READY
+15/16 | READY
+16/16 | READY
+[9/18] PREDECLARED CONSENSUS
+CONSENSUS=MEAN Z(DIRECT,ORTHO,LOO,REL) | FROZEN
+[10/18] ALL TARGET-FREE RANKINGS FROZEN
+01/16 | TOP_CONS='During' | SCORE=+1.160
+02/16 | TOP_CONS='final' | SCORE=+1.216
+03/16 | TOP_CONS='recovered' | SCORE=+1.209
+04/16 | TOP_CONS='bronze' | SCORE=+1.040
+05/16 | TOP_CONS='After' | SCORE=+0.981
+06/16 | TOP_CONS='Spectral' | SCORE=+0.727
+07/16 | TOP_CONS='engineers' | SCORE=+0.881
+08/16 | TOP_CONS='laboratory' | SCORE=+0.728
+09/16 | TOP_CONS='Near' | SCORE=+0.792
+10/16 | TOP_CONS='When' | SCORE=+0.662
+11/16 | TOP_CONS='recovered' | SCORE=+0.966
+12/16 | TOP_CONS="prototype's" | SCORE=+0.706
+13/16 | TOP_CONS='After' | SCORE=+0.497
+14/16 | TOP_CONS='From' | SCORE=+0.670
+15/16 | TOP_CONS='After' | SCORE=+0.578
+16/16 | TOP_CONS='Mustafa' | SCORE=+0.782
+[11/18] VALUE OPENS - SPAN MATCH
+01/16 | PERSON   | VALUE='Bravik' | D=12 O=10 LOO=13 REL=02 CONS=12/15
+02/16 | PERSON   | VALUE='Talora' | D=12 O=04 LOO=08 REL=08 CONS=12/13
+03/16 | PLACE    | VALUE='Dubrovnik' | D=07 O=08 LOO=10 REL=05 CONS=08/14
+04/16 | PLACE    | VALUE='Nagoya' | D=08 O=10 LOO=10 REL=04 CONS=08/13
+05/16 | COLOR    | VALUE='magenta' | D=03 O=06 LOO=05 REL=05 CONS=03/8
+06/16 | COLOR    | VALUE='indigo' | D=02 O=05 LOO=03 REL=05 CONS=03/7
+07/16 | MATERIAL | VALUE='obsidian' | D=10 O=10 LOO=09 REL=05 CONS=09/12
+08/16 | MATERIAL | VALUE='tungsten' | D=06 O=07 LOO=06 REL=05 CONS=07/10
+09/16 | ACTION   | VALUE='crawling' | D=02 O=06 LOO=06 REL=08 CONS=03/11
+10/16 | ACTION   | VALUE='expanding' | D=02 O=07 LOO=03 REL=08 CONS=03/10
+11/16 | NAME     | VALUE='Norvex' | D=08 O=05 LOO=08 REL=06 CONS=09/12
+12/16 | NAME     | VALUE='Kelvane' | D=07 O=05 LOO=07 REL=02 CONS=07/8
+13/16 | NUMBER   | VALUE='817' | D=02 O=05 LOO=05 REL=05 CONS=03/7
+14/16 | OBJECT   | VALUE='compass' | D=03 O=06 LOO=04 REL=05 CONS=04/8
+15/16 | PROPERTY | VALUE='glossy' | D=03 O=02 LOO=05 REL=05 CONS=05/8
+16/16 | SHOWCASE | VALUE='placed an amber banner' | D=10 O=04 LOO=11 REL=07 CONS=11/16
+[12/18] DEVELOPMENT SUMMARY
+DIRECT | MED=6.0 | TOP1=0.000 | TOP3=0.467 | TOP5=0.467
+ORTHO  | MED=6.0 | TOP1=0.000 | TOP3=0.067 | TOP5=0.400
+LOO    | MED=6.0 | TOP1=0.000 | TOP3=0.133 | TOP5=0.400
+REL    | MED=5.0 | TOP1=0.000 | TOP3=0.133 | TOP5=0.733
+CONS   | MED=7.0 | TOP1=0.000 | TOP3=0.333 | TOP5=0.467
+[13/18] PREDECLARED PRIMARY
+PRIMARY=CONSENSUS | LOCALIZED=False | PARTIAL=False
+[14/18] TYPE BREAKDOWN - CONSENSUS
+ACTION   | N=2 | MED=3.0 | TOP3=1.000
+COLOR    | N=2 | MED=3.0 | TOP3=1.000
+MATERIAL | N=2 | MED=8.0 | TOP3=0.000
+NAME     | N=2 | MED=8.0 | TOP3=0.000
+NUMBER   | N=1 | MED=3.0 | TOP3=1.000
+OBJECT   | N=1 | MED=4.0 | TOP3=0.000
+PERSON   | N=2 | MED=12.0 | TOP3=0.000
+PLACE    | N=2 | MED=8.0 | TOP3=0.000
+PROPERTY | N=1 | MED=5.0 | TOP3=0.000
+[15/18] SHOWCASE
+------------------------------------------------------------------------------------------------------------
+SOURCE: Mustafa Akbaş placed an amber banner beneath the Galata Bridge where the validation demonstration was conducted.
+Q: What did Mustafa Akbaş do at the location of the validation demonstration?
+VALUE: placed an amber banner
+DIRECT=10 ORTHO=4 LOO=11 REL=7 CONS=11/16
+------------------------------------------------------------------------------------------------------------
+[16/18] CLASSIFICATION
+CLASS= TARGET_FREE_VALUE_SPAN_LOCALIZATION_NOT_SUPPORTED
+[17/18] SCIENTIFIC AUDIT
+TEST351/352 CASE FAMILY | SOURCE+QUESTION ONLY UNTIL RANKINGS FROZEN | VALUE POST-HOC | NO SEASC | NO ORACLE ROUTING | NO SCORE SEARCH | NO TRAINING
+[18/18] INTEGRITY + SAVE
+============================================================================================================
+TEST 354 COMPLETE
+CONSENSUS | MED=7.0 | TOP1=0.000 | TOP3=0.333 | TOP5=0.467
+CLASS= TARGET_FREE_VALUE_SPAN_LOCALIZATION_NOT_SUPPORTED
+VALUE POST-HOC ONLY | NO SEASC | WEIGHTS FROZEN
+JSON: /content/AKBASCORE_TEST354/T354-20260929-115331.json
+TXT : /content/AKBASCORE_TEST354/T354-20260929-115331.txt
+SHA : 8163c47a8db912d2e859bce2f58f86548a348b0e14973c3630ba32ee72cfed54
+============================================================================================================
