@@ -1,0 +1,178 @@
+ ============================================================================================================
+TEST 327 - RELATIONAL CHANNEL ORACLE X-RAY
+============================================================================================================
+START: 2026-09-29T05:39:51.269+00:00
+[1/18] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 74.3kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 819kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 79.1MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 71.5MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 129MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.29MB/s]Download complete: :  13.1GB,  760MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  435MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00,  7.57s/it]Loading weights: 100% 339/339 [00:04<00:00, 97.59it/s]generation_config.json: 100% 243/243 [00:00<00:00, 31.2kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | VOCAB=152064 | torch.bfloat16 | 56.02s
+[2/18] ENGINE + DOSE LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | CHANNELS=4 | EACH CHANNEL FULL L0-L25
+[3/18] QUERY NULL CACHE
+NULL READY
+[4/18] FOUR RELATIONAL CHANNELS - TARGET SEALED
+01/24 | ANCHORS= ['technician', 'replaced', 'the', 'inside'] | BANK= 13
+02/24 | ANCHORS= ['the', 'was', 'the', 'from'] | BANK= 13
+03/24 | ANCHORS= ['the', 'were', 'the', 'sealed'] | BANK= 13
+04/24 | ANCHORS= ['departed', 'backup', 'and', 'the'] | BANK= 12
+05/24 | ANCHORS= ['and', 'chose', 'ceramic', 'but'] | BANK= 14
+06/24 | ANCHORS= ['remained', 'it', 'The', 'the'] | BANK= 12
+07/24 | ANCHORS= ['Tovan', 'the', 'narrow', 'and'] | BANK= 15
+08/24 | ANCHORS= ['described', 'appeared', 'finished', 'but'] | BANK= 15
+09/24 | ANCHORS= ['the', 'radio', 'Elira', 'collapsed'] | BANK= 14
+10/24 | ANCHORS= ['the', 'in', 'is', 'The'] | BANK= 10
+11/24 | ANCHORS= ['the', 'the', 'while', 'by'] | BANK= 12
+12/24 | ANCHORS= ['before', 'its', 'in', 'and'] | BANK= 13
+13/24 | ANCHORS= ['titanium', 'bronze', 'acrylic', 'and'] | BANK= 14
+14/24 | ANCHORS= ['emitted', 'it', 'beacon', 'emergency'] | BANK= 13
+15/24 | ANCHORS= ['but', 'confirmed', 'showed', 'The'] | BANK= 13
+16/24 | ANCHORS= ['the', 'inner', 'the', 'of'] | BANK= 14
+17/24 | ANCHORS= ['was', 'replacement', 'felt', 'lining'] | BANK= 13
+18/24 | ANCHORS= ['contained', 'a', 'a', 'chronometer'] | BANK= 17
+19/24 | ANCHORS= ['the', 'final', 'temporarily', 'was'] | BANK= 13
+20/24 | ANCHORS= ['interns', 'catalogued', 'sealed', 'the'] | BANK= 13
+21/24 | ANCHORS= ['before', 'bronze', 'the', 'tablet'] | BANK= 12
+22/24 | ANCHORS= ['the', 'spectral', 'was', 'seemed'] | BANK= 15
+23/24 | ANCHORS= ['of', 'several', 'to', 'was'] | BANK= 13
+24/24 | ANCHORS= ['began', 'and', 'then', 'The'] | BANK= 13
+SHOWCASE | ANCHORS= ['where', 'the', 'Akbaş', 'flag'] | BANK= 16
+[5/18] SOURCE REMOVED
+QUESTION-ONLY BLIND RUNTIME | TARGET_ACCESS=False | CROSS_CASE=False
+[6/18] VANILLA + CHANNEL X-RAY
+01/24 | C1:Q=+0.000 SELF=+0.187 D=0.171 C2:Q=+0.013 SELF=+0.138 D=0.172 C3:Q=+0.098 SELF=-0.018 D=0.234 C4:Q=+0.054 SELF=+0.237 D=0.182
+02/24 | C1:Q=-0.035 SELF=-0.015 D=0.357 C2:Q=-0.044 SELF=+0.062 D=0.295 C3:Q=+0.030 SELF=+0.190 D=0.221 C4:Q=-0.034 SELF=+0.071 D=0.390
+03/24 | C1:Q=-0.013 SELF=+0.232 D=0.183 C2:Q=-0.008 SELF=+0.200 D=0.150 C3:Q=-0.057 SELF=+0.211 D=0.141 C4:Q=+0.064 SELF=+0.191 D=0.145
+04/24 | C1:Q=+0.044 SELF=+0.222 D=0.118 C2:Q=-0.014 SELF=+0.083 D=0.135 C3:Q=+0.094 SELF=-0.069 D=0.183 C4:Q=+0.010 SELF=+0.084 D=0.170
+05/24 | C1:Q=+0.049 SELF=+0.224 D=0.129 C2:Q=-0.069 SELF=+0.066 D=0.140 C3:Q=+0.082 SELF=+0.162 D=0.128 C4:Q=+0.114 SELF=+0.159 D=0.137
+06/24 | C1:Q=-0.036 SELF=+0.176 D=0.165 C2:Q=+0.025 SELF=+0.294 D=0.163 C3:Q=+0.004 SELF=+0.122 D=0.297 C4:Q=+0.064 SELF=+0.245 D=0.198
+07/24 | C1:Q=-0.060 SELF=-0.075 D=0.180 C2:Q=-0.024 SELF=+0.215 D=0.177 C3:Q=-0.020 SELF=+0.257 D=0.177 C4:Q=+0.017 SELF=+0.041 D=0.193
+08/24 | C1:Q=-0.031 SELF=+0.143 D=0.123 C2:Q=+0.056 SELF=+0.086 D=0.134 C3:Q=+0.035 SELF=+0.083 D=0.136 C4:Q=+0.018 SELF=+0.180 D=0.146
+09/24 | C1:Q=-0.036 SELF=+0.176 D=0.154 C2:Q=+0.012 SELF=+0.165 D=0.109 C3:Q=-0.011 SELF=+0.110 D=0.168 C4:Q=-0.070 SELF=+0.261 D=0.131
+10/24 | C1:Q=+0.077 SELF=+0.095 D=0.211 C2:Q=-0.041 SELF=+0.259 D=0.168 C3:Q=-0.049 SELF=+0.186 D=0.233 C4:Q=-0.081 SELF=+0.147 D=0.187
+11/24 | C1:Q=-0.007 SELF=+0.238 D=0.158 C2:Q=-0.005 SELF=+0.054 D=0.189 C3:Q=+0.086 SELF=+0.125 D=0.152 C4:Q=-0.029 SELF=+0.142 D=0.162
+12/24 | C1:Q=+0.049 SELF=+0.131 D=0.193 C2:Q=-0.041 SELF=+0.178 D=0.136 C3:Q=+0.026 SELF=+0.118 D=0.244 C4:Q=-0.048 SELF=+0.117 D=0.205
+13/24 | C1:Q=-0.042 SELF=+0.113 D=0.126 C2:Q=-0.043 SELF=+0.202 D=0.141 C3:Q=+0.039 SELF=+0.251 D=0.130 C4:Q=+0.054 SELF=+0.008 D=0.267
+14/24 | C1:Q=-0.006 SELF=+0.293 D=0.170 C2:Q=-0.122 SELF=+0.216 D=0.261 C3:Q=-0.060 SELF=+0.291 D=0.141 C4:Q=-0.113 SELF=+0.238 D=0.149
+15/24 | C1:Q=-0.040 SELF=+0.151 D=0.180 C2:Q=-0.035 SELF=+0.099 D=0.158 C3:Q=+0.034 SELF=+0.174 D=0.162 C4:Q=-0.034 SELF=-0.069 D=0.266
+16/24 | C1:Q=-0.008 SELF=+0.054 D=0.239 C2:Q=-0.013 SELF=+0.117 D=0.173 C3:Q=-0.003 SELF=+0.171 D=0.195 C4:Q=-0.061 SELF=+0.216 D=0.234
+17/24 | C1:Q=+0.057 SELF=-0.008 D=0.221 C2:Q=-0.109 SELF=+0.350 D=0.253 C3:Q=-0.082 SELF=+0.288 D=0.248 C4:Q=-0.092 SELF=+0.042 D=0.250
+18/24 | C1:Q=-0.061 SELF=+0.139 D=0.152 C2:Q=-0.067 SELF=+0.060 D=0.133 C3:Q=-0.047 SELF=+0.142 D=0.176 C4:Q=-0.045 SELF=+0.070 D=0.259
+19/24 | C1:Q=-0.025 SELF=+0.064 D=0.210 C2:Q=-0.032 SELF=+0.106 D=0.189 C3:Q=-0.036 SELF=+0.164 D=0.280 C4:Q=+0.013 SELF=+0.124 D=0.232
+20/24 | C1:Q=-0.014 SELF=+0.112 D=0.135 C2:Q=-0.006 SELF=+0.110 D=0.146 C3:Q=+0.095 SELF=+0.080 D=0.214 C4:Q=+0.031 SELF=+0.003 D=0.240
+21/24 | C1:Q=+0.054 SELF=+0.238 D=0.208 C2:Q=-0.048 SELF=+0.243 D=0.137 C3:Q=-0.064 SELF=+0.194 D=0.190 C4:Q=-0.004 SELF=+0.192 D=0.203
+22/24 | C1:Q=-0.011 SELF=+0.099 D=0.163 C2:Q=-0.035 SELF=+0.062 D=0.164 C3:Q=+0.064 SELF=+0.231 D=0.166 C4:Q=+0.082 SELF=+0.240 D=0.151
+23/24 | C1:Q=-0.029 SELF=+0.289 D=0.224 C2:Q=-0.002 SELF=+0.101 D=0.159 C3:Q=-0.017 SELF=+0.179 D=0.144 C4:Q=-0.038 SELF=+0.285 D=0.147
+24/24 | C1:Q=-0.030 SELF=+0.276 D=0.266 C2:Q=-0.068 SELF=-0.034 D=0.140 C3:Q=+0.017 SELF=+0.173 D=0.150 C4:Q=-0.074 SELF=+0.036 D=0.195
+SHOWCASE | C1:Q=+0.079 SELF=-0.136 D=0.240 C2:Q=+0.134 SELF=-0.049 D=0.251 C3:Q=+0.065 SELF=+0.165 D=0.149 C4:Q=+0.096 SELF=+0.086 D=0.141
+[7/18] BLIND GENERATION
+01/24 | VAN= 'Information is missing.' | C1='Information is missing.' | C2='Information is missing.' | C3='Information is missing' | C4='Information is missing.'
+02/24 | VAN= 'Information is missing.' | C1='Baddeleyite' | C2='Baddeleyite' | C3='Synthetic diamond' | C4='Baddeleyite'
+03/24 | VAN= 'Information is missing.' | C1='Information is missing.' | C2='Information is missing.' | C3='Information is missing.' | C4='Information is missing.'
+04/24 | VAN= 'Information is missing.' | C1='Information is missing.' | C2='Information is missing.' | C3='Information is missing.' | C4='Information is missing.'
+05/24 | VAN= 'Reinforced carbon-carbon composite.' | C1='Reinforced carbon-carbon.' | C2='Refractory ceramic tiles and phenolic ablator were chosen' | C3='Reinforced carbon-carbon composite.' | C4='Reinforced carbon-carbon.'
+06/24 | VAN= 'Information is missing.' | C1='Information is missing.' | C2='Information is missing.' | C3='Information is missing.' | C4='Information is missing.'
+07/24 | VAN= 'information is missing' | C1='started a new project' | C2='information is missing' | C3='information is missing' | C4='information is missing'
+08/24 | VAN= 'smooth' | C1='smooth and polished' | C2='smooth' | C3='Smooth and even.' | C4='smooth'
+09/24 | VAN= 'A locket' | C1='a pendant' | C2='A lost necklace.' | C3='pearl' | C4='A pendant.'
+10/24 | VAN= 'It refers to the order in which data or instructions are accessed' | C1='It refers to the order in which items are accessed.' | C2='It refers to the order in which items are accessed.' | C3='It refers to the order in which memory locations or elements are' | C4='Memory access sequence'
+11/24 | VAN= 'Information is missing.' | C1='Information is missing.' | C2='Information is missing.' | C3='Information is missing.' | C4='Missing information.'
+12/24 | VAN= 'Information is missing.' | C1='Information is missing.' | C2='Information is missing.' | C3='Missing information.' | C4='Information is missing.'
+13/24 | VAN= 'Steel' | C1='Steel' | C2='Steel' | C3='Steel' | C4='Information is missing.'
+14/24 | VAN= 'Red' | C1='Red' | C2='red' | C3='Red.' | C4='Red'
+15/24 | VAN= 'Information is missing.' | C1='Information is missing.' | C2='Information is missing.' | C3='Information is missing.' | C4='Information is missing.'
+16/24 | VAN= 'It began glowing.' | C1='Spinning rapidly.' | C2='Spinning rapidly.' | C3='It began glowing.' | C4='It began to glow.'
+17/24 | VAN= 'The replacement lining was described as durable and of high quality.' | C1='The replacement lining was as durable and comfortable as the original.' | C2='not specified' | C3='not specified' | C4='not specified'
+18/24 | VAN= 'Information is missing.' | C1='Information is missing.' | C2='Information is missing.' | C3='Information is missing.' | C4='Information is missing.'
+19/24 | VAN= 'Space Launch System' | C1='Space Station One' | C2='Space Launch System' | C3='Space Station Freedom' | C4='Space Station One'
+20/24 | VAN= 'Information is missing.' | C1='Internal state: Information is missing to determine who transported the sealed' | C2='Information is missing.' | C3='Information is missing.' | C4='Information is missing.'
+21/24 | VAN= 'Information is missing.' | C1='Information is missing.' | C2='Information is missing.' | C3='Information is missing.' | C4='Information is missing.'
+22/24 | VAN= 'Information is missing.' | C1='missing' | C2="The coating's confirmed color was blue." | C3="The coating's confirmed color was blue." | C4='Information is missing.'
+23/24 | VAN= 'information is missing' | C1='information is missing' | C2='information is missing' | C3='information is missing' | C4='information is is missing'
+24/24 | VAN= 'Collected soil samples.' | C1='Collected a soil sample' | C2='Collected soil samples' | C3='Collected soil samples.' | C4='Collected samples'
+SHOWCASE | VAN= 'Information is missing.' | C1='Information is missing.' | C2='Information is missing.' | C3='Information is missing.' | C4='Information is missing.'
+[8/18] TARGET SEAL OPEN - POST-HOC ORACLE ONLY
+01/24 | TARGET='Neris' | V_RANK=404 | C1 R=751 DG=-1.000 M=0 | C2 R=572 DG=-0.500 M=0 | C3 R=501 DG=-0.656 M=0 | C4 R=436 DG=-0.062 M=0 | ORACLE_LOGIT=C4 ORACLE_RANK=C4
+02/24 | TARGET='Velqor' | V_RANK=2482 | C1 R=1594 DG=+0.469 M=0 | C2 R=1696 DG=+1.000 M=0 | C3 R=1172 DG=+1.156 M=0 | C4 R=2261 DG=+0.000 M=0 | ORACLE_LOGIT=C3 ORACLE_RANK=C3
+03/24 | TARGET='583' | V_RANK=70 | C1 R=123 DG=-1.625 M=0 | C2 R=135 DG=-1.688 M=0 | C3 R=151 DG=-2.000 M=0 | C4 R=62 DG=+0.625 M=0 | ORACLE_LOGIT=C4 ORACLE_RANK=C4
+04/24 | TARGET='Lisbon' | V_RANK=24 | C1 R=24 DG=+0.438 M=0 | C2 R=26 DG=+0.062 M=0 | C3 R=25 DG=-0.188 M=0 | C4 R=19 DG=+0.562 M=0 | ORACLE_LOGIT=C4 ORACLE_RANK=C4
+05/24 | TARGET='ceramic' | V_RANK=73 | C1 R=156 DG=-0.938 M=0 | C2 R=368 DG=-1.875 M=1 | C3 R=122 DG=-0.625 M=0 | C4 R=59 DG=+0.312 M=0 | ORACLE_LOGIT=C4 ORACLE_RANK=C4
+06/24 | TARGET='magenta' | V_RANK=7979 | C1 R=27863 DG=-2.133 M=0 | C2 R=15619 DG=-1.219 M=0 | C3 R=4244 DG=+1.281 M=0 | C4 R=14290 DG=-1.422 M=0 | ORACLE_LOGIT=C3 ORACLE_RANK=C3
+07/24 | TARGET='crawling' | V_RANK=200 | C1 R=191 DG=+0.125 M=0 | C2 R=321 DG=-1.250 M=0 | C3 R=312 DG=-1.000 M=0 | C4 R=155 DG=-0.062 M=0 | ORACLE_LOGIT=C1 ORACLE_RANK=C4
+08/24 | TARGET='lustrous' | V_RANK=91 | C1 R=68 DG=+0.562 M=0 | C2 R=100 DG=-0.188 M=0 | C3 R=79 DG=+0.062 M=0 | C4 R=65 DG=+0.562 M=0 | ORACLE_LOGIT=C1 ORACLE_RANK=C4
+09/24 | TARGET='compass' | V_RANK=169 | C1 R=240 DG=-0.906 M=0 | C2 R=158 DG=+0.125 M=0 | C3 R=69 DG=+1.750 M=0 | C4 R=115 DG=+0.625 M=0 | ORACLE_LOGIT=C3 ORACLE_RANK=C3
+10/24 | TARGET='Nerovak' | V_RANK=1627 | C1 R=2618 DG=-1.031 M=0 | C2 R=2786 DG=-0.688 M=0 | C3 R=3469 DG=-1.000 M=0 | C4 R=1903 DG=+0.031 M=0 | ORACLE_LOGIT=C4 ORACLE_RANK=C4
+11/24 | TARGET='Siona' | V_RANK=334 | C1 R=211 DG=+0.500 M=0 | C2 R=249 DG=+0.188 M=0 | C3 R=336 DG=-0.125 M=0 | C4 R=427 DG=-0.375 M=0 | ORACLE_LOGIT=C1 ORACLE_RANK=C1
+12/24 | TARGET='Warsaw' | V_RANK=5582 | C1 R=6460 DG=+0.000 M=0 | C2 R=5408 DG=+0.094 M=0 | C3 R=22021 DG=-1.781 M=0 | C4 R=15487 DG=-1.297 M=0 | ORACLE_LOGIT=C2 ORACLE_RANK=C2
+13/24 | TARGET='titanium' | V_RANK=281 | C1 R=181 DG=+1.062 M=0 | C2 R=149 DG=+1.500 M=0 | C3 R=184 DG=+0.938 M=0 | C4 R=1236 DG=-2.625 M=0 | ORACLE_LOGIT=C2 ORACLE_RANK=C2
+14/24 | TARGET='crimson' | V_RANK=2909 | C1 R=3425 DG=+0.188 M=0 | C2 R=269 DG=+3.188 M=0 | C3 R=3792 DG=-0.406 M=0 | C4 R=1439 DG=+0.469 M=0 | ORACLE_LOGIT=C2 ORACLE_RANK=C2
+15/24 | TARGET='892' | V_RANK=5 | C1 R=4 DG=+1.000 M=0 | C2 R=4 DG=+1.750 M=0 | C3 R=3 DG=+1.500 M=0 | C4 R=3 DG=+1.625 M=0 | ORACLE_LOGIT=C2 ORACLE_RANK=C3
+16/24 | TARGET='expanding' | V_RANK=344 | C1 R=116 DG=+2.375 M=0 | C2 R=154 DG=+1.688 M=0 | C3 R=91 DG=+2.625 M=0 | C4 R=1765 DG=-3.344 M=0 | ORACLE_LOGIT=C3 ORACLE_RANK=C3
+17/24 | TARGET='velvety' | V_RANK=547 | C1 R=3069 DG=-2.844 M=0 | C2 R=278 DG=+1.281 M=0 | C3 R=158 DG=+2.281 M=0 | C4 R=290 DG=+1.156 M=0 | ORACLE_LOGIT=C3 ORACLE_RANK=C3
+18/24 | TARGET='chronometer' | V_RANK=17248 | C1 R=8098 DG=+1.250 M=0 | C2 R=10878 DG=+0.469 M=0 | C3 R=13232 DG=+0.234 M=0 | C4 R=10186 DG=+0.891 M=0 | ORACLE_LOGIT=C1 ORACLE_RANK=C1
+19/24 | TARGET='Norveth' | V_RANK=3663 | C1 R=4018 DG=-0.531 M=0 | C2 R=3715 DG=+0.062 M=0 | C3 R=4243 DG=-0.250 M=0 | C4 R=5009 DG=-0.469 M=0 | ORACLE_LOGIT=C2 ORACLE_RANK=C2
+20/24 | TARGET='Edrin' | V_RANK=180 | C1 R=126 DG=+0.500 M=0 | C2 R=103 DG=+0.750 M=0 | C3 R=229 DG=-0.062 M=0 | C4 R=116 DG=+0.562 M=0 | ORACLE_LOGIT=C2 ORACLE_RANK=C2
+21/24 | TARGET='Osaka' | V_RANK=1333 | C1 R=1364 DG=-0.188 M=0 | C2 R=1064 DG=+0.469 M=0 | C3 R=785 DG=+0.656 M=0 | C4 R=894 DG=+0.844 M=0 | ORACLE_LOGIT=C4 ORACLE_RANK=C3
+22/24 | TARGET='indigo' | V_RANK=618 | C1 R=347 DG=+1.125 M=0 | C2 R=820 DG=-0.781 M=0 | C3 R=1740 DG=-1.875 M=0 | C4 R=1012 DG=-0.906 M=0 | ORACLE_LOGIT=C1 ORACLE_RANK=C1
+23/24 | TARGET='feldspar' | V_RANK=298 | C1 R=283 DG=+0.000 M=0 | C2 R=176 DG=+0.938 M=0 | C3 R=333 DG=+0.000 M=0 | C4 R=201 DG=+0.625 M=0 | ORACLE_LOGIT=C2 ORACLE_RANK=C2
+24/24 | TARGET='decelerating' | V_RANK=1025 | C1 R=1034 DG=-0.156 M=0 | C2 R=871 DG=+0.312 M=0 | C3 R=1089 DG=+0.125 M=0 | C4 R=1365 DG=-0.844 M=0 | ORACLE_LOGIT=C2 ORACLE_RANK=C2
+SHOWCASE | TARGET='planted the Turkish flag' | V_RANK=9813 | C1 R=49795 DG=-2.781 M=0 | C2 R=66329 DG=-3.669 M=0 | C3 R=15682 DG=-0.438 M=0 | C4 R=15944 DG=-0.453 M=0 | ORACLE_LOGIT=C3 ORACLE_RANK=C3
+[9/18] PRIMARY 24 ORACLE SUMMARY
+ORACLE_LOGIT_GAIN_MEAN=+0.981771 | POSITIVE=0.958333
+VANILLA_RANK_MEDIAN=374.0 | ORACLE_RANK_MEDIAN=193.5 | RANK_IMPROVED=0.875000
+ORACLE_ANY_MENTION=0.041667 | ORACLE_ANY_EXACT=0.000000
+[10/18] CHANNEL DISTRIBUTION
+C1 | LOGIT_ORACLE=5/24 | RANK_ORACLE=3/24
+C2 | LOGIT_ORACLE=8/24 | RANK_ORACLE=7/24
+C3 | LOGIT_ORACLE=5/24 | RANK_ORACLE=7/24
+C4 | LOGIT_ORACLE=6/24 | RANK_ORACLE=7/24
+[11/18] CHANNEL MEAN TARGET EFFECT
+C1 | GAIN=-0.073242 | POS=0.500000 | MED_RANK=315.0 | RANK_IMPROVED=0.458333
+C2 | GAIN=+0.236979 | POS=0.666667 | MED_RANK=299.5 | RANK_IMPROVED=0.583333
+C3 | GAIN=+0.110026 | POS=0.458333 | MED_RANK=334.5 | RANK_IMPROVED=0.416667
+C4 | GAIN=-0.104818 | POS=0.541667 | MED_RANK=665.0 | RANK_IMPROVED=0.583333
+[12/18] BLIND GEOMETRY VS POST-HOC WINNER
+C1 | MEAN_Q=-0.006298 | MEAN_SELF=+0.148090
+C2 | MEAN_Q=-0.029898 | MEAN_SELF=+0.142975
+C3 | MEAN_Q=+0.010702 | MEAN_SELF=+0.158769
+C4 | MEAN_Q=-0.008334 | MEAN_SELF=+0.135843
+[13/18] GOLDEN GATE SHOWCASE
+------------------------------------------------------------------------------------------------------------
+SOURCE : Mustafa Akbaş planted the Turkish flag on the Golden Gate Bridge where Anthropic conducted its experiment.
+QUESTION: What did Mustafa Akbaş do at the location of Anthropic's experiment?
+ANCHORS: ['where', 'the', 'Akbaş', 'flag']
+VANILLA: Information is missing.
+CHANNEL 1: 'Information is missing.' | TARGET_GAIN=-2.7812 | RANK=49795
+CHANNEL 2: 'Information is missing.' | TARGET_GAIN=-3.6686 | RANK=66329
+CHANNEL 3: 'Information is missing.' | TARGET_GAIN=-0.4375 | RANK=15682
+CHANNEL 4: 'Information is missing.' | TARGET_GAIN=-0.4531 | RANK=15944
+TARGET : planted the Turkish flag
+POSTHOC ORACLE LOGIT CHANNEL: 3
+POSTHOC ORACLE RANK CHANNEL: 3
+------------------------------------------------------------------------------------------------------------
+[14/18] PREDECLARED DIAGNOSTIC
+ORACLE_GAIN=+0.981771 | ORACLE_RANK_IMPROVED=0.875000 | ORACLE_MENTION=0.041667 | CLASS=TARGET_INFORMATION_REACHES_BEHAVIOR_IN_AT_LEAST_ONE_CHANNEL
+[15/18] ORACLE GUARD
+ORACLE IS POST-HOC ANALYSIS ONLY. TARGET IDENTITY NEVER SELECTS, BUILDS, ROUTES OR INJECTS A CHANNEL.
+[16/18] DOSE FAIRNESS
+C1_RSS=0.250235055 | C2_RSS=0.250235055 | C3_RSS=0.250235055 | C4_RSS=0.250235055 | EACH RUN USES ONE CHANNEL ONLY
+[17/18] SCIENTIFIC AUDIT
+VANILLA NO HOOKS | EACH CHANNEL L0-L25 | L26-L27 OFF | CASE ISOLATED | TARGET POST-HOC | NO TRAINING | NO WEIGHT UPDATE
+[18/18] INTEGRITY + SEAL
+============================================================================================================
+TEST 327 COMPLETE
+ORACLE LOGIT GAIN=+0.981771 | ORACLE RANK IMPROVED=0.875 | VANILLA MED RANK=374.0 -> ORACLE=193.5
+ORACLE ANY MENTION=0.042 | EXACT=0.000
+LOGIT ORACLE COUNTS: [5, 8, 5, 6]
+RANK ORACLE COUNTS: [3, 7, 7, 7]
+GOLDEN GATE VANILLA='Information is missing.'
+GOLDEN GATE C1='Information is missing.' | GAIN=-2.7812 | RANK=49795
+GOLDEN GATE C2='Information is missing.' | GAIN=-3.6686 | RANK=66329
+GOLDEN GATE C3='Information is missing.' | GAIN=-0.4375 | RANK=15682
+GOLDEN GATE C4='Information is missing.' | GAIN=-0.4531 | RANK=15944
+CLASS= TARGET_INFORMATION_REACHES_BEHAVIOR_IN_AT_LEAST_ONE_CHANNEL
+CASE_ISOLATED=TRUE | TARGET POST-HOC ONLY | SAME RSS | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST327/T327-20260929-054156.json
+TXT : /content/AKBASCORE_TEST327/T327-20260929-054156.txt
+SHA : e1f42d58620f9812f8261dbcede4f54cc0dbcf010d091d679e70e082f26e0594
+============================================================================================================
