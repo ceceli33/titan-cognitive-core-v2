@@ -1,0 +1,129 @@
+ ============================================================================================================
+TEST 313 - ABSTENTION-PRIOR OVERRIDE ASSAY
+============================================================================================================
+START: 2026-09-29T00:46:54.308+00:00
+[1/15] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 77.4kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 938kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 71.4MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 58.0MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 131MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.17MB/s]Download complete: :  13.1GB,  430MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  485MB/s  Fetching 4 files: 100% 4/4 [00:41<00:00,  6.91s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.02it/s]generation_config.json: 100% 243/243 [00:00<00:00, 27.3kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | VOCAB=152064 | torch.bfloat16 | 54.18s
+[2/15] TEST312 ENGINE LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | BRIDGE=0.200 | SLOT_K=8
+[3/15] TARGET-FREE QUERY NULL CACHE
+NULL READY
+[4/15] TEST312 PACKET COMPILER
+01/24 | [' engineer', ' the', ' damaged', ' storm', ' placed', ' the', ' sensor', ' Sel'] | P.Q=+0.0802 -> O.Q=-0.0000000
+02/24 | [' unfamiliar', ' northern', ' the', ' called', 'The', ' crystal', ' an', ' Z'] | P.Q=+0.1058 -> O.Q=-0.0000000
+03/24 | [' the', ' were', ' carried', ' the', ' containers', ' inspected', ' three', ' smallest'] | P.Q=+0.0334 -> O.Q=-0.0000000
+04/24 | [' backup', ' the', ' the', ' the', ' to', ' moved', 'k', ' from'] | P.Q=+0.0752 -> O.Q=-0.0000000
+05/24 | [' and', ' selected', 'alt', ' rejected', ' the', ' shell', ' the', ' steel'] | P.Q=+0.1200 -> O.Q=+0.0000000
+06/24 | [' changed', ' but', 'The', ' immediately', ' stayed', ' after', ' to', ' violet'] | P.Q=+0.0463 -> O.Q=-0.0000000
+07/24 | ['ven', ' Ar', ' stopped', ' the', ' and', ' upper', ' the', 'When'] | P.Q=+0.0779 -> O.Q=-0.0000000
+08/24 | [' unusually', ' its', ' dark', ' newly', ' polished', ' the', ' surface', ' despite'] | P.Q=+0.0926 -> O.Q=+0.0000000
+09/24 | [' the', ' M', ' other', ' abandoned', ' recovered', ' while', ' remained', 'ira'] | P.Q=+0.0977 -> O.Q=-0.0000000
+10/24 | [' Or', ' in', ' the', 'The', ' final', ' is', ' phrase', 'is'] | P.Q=-0.0066 -> O.Q=+0.0000000
+11/24 | [' performed', ' by', ' calculations', ' the', ' were', ' the', ' navigation', 'arian'] | P.Q=+0.1254 -> O.Q=+0.0000000
+12/24 | [' before', ' finally', ' over', ' and', ' landing', ' Tall', ' in', ' passed'] | P.Q=+0.0154 -> O.Q=+0.0000000
+13/24 | [' and', ' polymer', ' copper', ' the', ' transparent', ' laboratory', ' the', ' chose'] | P.Q=+0.1110 -> O.Q=-0.0000000
+14/24 | [' flashed', 'owed', ' second', ' to', ' lamp', ' gl', 'The', ' blue'] | P.Q=+0.0629 -> O.Q=+0.0000000
+15/24 | ['7', ' became', ' value', '1', '3', 'ibration', ' then', ' initially'] | P.Q=+0.0094 -> O.Q=+0.0000000
+16/24 | [' when', ' the', ' began', ' of', ' the', ' outer', ' hatch', ' sequence'] | P.Q=+0.1788 -> O.Q=+0.0000000
+17/24 | [' coarse', ' silky', ' remained', ' replacement', ' it', ' was', ' plate', ' installed'] | P.Q=+0.0233 -> O.Q=+0.0000000
+18/24 | [' but', ' a', ' were', ' the', ' a', ' for', ' the', ' wooden'] | P.Q=+0.0792 -> O.Q=-0.0000000
+19/24 | [' the', 'The', ' was', ' ultimately', ' cod', ' production', ' named', ' V'] | P.Q=+0.0650 -> O.Q=+0.0000000
+20/24 | [' assistants', ' the', ' sealed', ' the', ' archive', 'an', ' and', ' personally'] | P.Q=+0.0387 -> O.Q=+0.0000000
+21/24 | [' courier', ' the', ' silver', ' left', ' in', ' before', ' toward', ' Kyoto'] | P.Q=+0.0520 -> O.Q=-0.0000000
+22/24 | [' but', ' was', ' its', 'The', ' looked', ' confirmed', "'s", ' under'] | P.Q=-0.0053 -> O.Q=+0.0000000
+23/24 | [' composed', ' of', ' being', ' as', ' quartz', ' was', ' several', ' primarily'] | P.Q=+0.0531 -> O.Q=-0.0000000
+24/24 | [' started', ' and', 'The', ' then', ' two', ' accelerating', ' cart', ' toward'] | P.Q=+0.0614 -> O.Q=+0.0000000
+[5/15] CASE-ISOLATION AUDIT
+ONE STATEMENT + ONE QUESTION | CROSS_CASE_DATA=False | TARGET_ACCESS=False
+[6/15] CAUSAL ENGINE
+[7/15] BLIND STANDARD vs FORCED READOUT
+01/24 | STD='Based on the information provided, the damaged' | FORCE='information is missing'
+02/24 | STD='The prompt does not provide specific details about' | FORCE='Unidentified Crystal'
+03/24 | STD='The prompt does not provide any specific numbers' | FORCE='1'
+04/24 | STD='The prompt does not provide specific information about' | FORCE='information is missing'
+05/24 | STD='The prompt does not provide specific details about' | FORCE='carbon fiber composite.'
+06/24 | STD='The prompt does not provide specific details about' | FORCE='blue.'
+07/24 | STD='The prompt does not provide any specific information' | FORCE='Information is missing.'
+08/24 | STD='The prompt does not provide specific details about' | FORCE='shiny and reflective.'
+09/24 | STD='The prompt does not provide specific details about' | FORCE='a locket.'
+10/24 | STD='The prompt does not provide any specific details' | FORCE='information is missing'
+11/24 | STD='The prompt does not provide specific details about' | FORCE='information is missing'
+12/24 | STD='The prompt does not provide any specific information' | FORCE='information is missing.'
+13/24 | STD='The prompt does not provide specific information about' | FORCE='information is missing'
+14/24 | STD='The prompt does not provide any information about' | FORCE='red.'
+15/24 | STD='The prompt does not provide specific details about' | FORCE='5.23.'
+16/24 | STD='The prompt does not provide specific details about' | FORCE='it began to depress.'
+17/24 | STD='The prompt does not provide any specific details' | FORCE='smooth and shiny.'
+18/24 | STD='The prompt does not provide any specific items' | FORCE='Item 3 was marked for retrieval.'
+19/24 | STD='The production system was ultimately named "Ford' | FORCE='Ford Production System'
+20/24 | STD='The prompt does not provide any information about' | FORCE='Information is missing.'
+21/24 | STD='The prompt does not provide specific information about' | FORCE='In the drawer.'
+22/24 | STD='The prompt does not provide any specific information' | FORCE='blue.'
+23/24 | STD='Insufficient information to determine the primary composition' | FORCE='information is missing.'
+24/24 | STD='The prompt does not provide any information about' | FORCE='moving forward.'
+[8/15] ABSTENTION BEHAVIOR X-RAY
+STANDARD_ABSTENTION=0.916667 | FORCED_ABSTENTION=0.000000 | DROP=+0.916667
+[9/15] TARGET SEAL OPEN - POST-HOC ONLY
+01/24 | Selin       | STD='Based on the information provided, the damaged' | FORCE='information is missing' | RANK 116->82
+02/24 | Zorvex      | STD='The prompt does not provide specific details about' | FORCE='Unidentified Crystal' | RANK 1469->66
+03/24 | 417         | STD='The prompt does not provide any specific numbers' | FORCE='1' | RANK 328->5
+04/24 | Reykjavik   | STD='The prompt does not provide specific information about' | FORCE='information is missing' | RANK 423->1156
+05/24 | basalt      | STD='The prompt does not provide specific details about' | FORCE='carbon fiber composite.' | RANK 83205->1226
+06/24 | violet      | STD='The prompt does not provide specific details about' | FORCE='blue.' | RANK 82821->5576
+07/24 | climbing    | STD='The prompt does not provide any specific information' | FORCE='Information is missing.' | RANK 37877->4317
+08/24 | glossy      | STD='The prompt does not provide specific details about' | FORCE='shiny and reflective.' | RANK 42953->1260
+09/24 | sextant     | STD='The prompt does not provide specific details about' | FORCE='a locket.' | RANK 88258->8932
+10/24 | Ordelis     | STD='The prompt does not provide any specific details' | FORCE='information is missing' | RANK 43153->100997
+11/24 | Keira       | STD='The prompt does not provide specific details about' | FORCE='information is missing' | RANK 2415->1034
+12/24 | Tallinn     | STD='The prompt does not provide any specific information' | FORCE='information is missing.' | RANK 174->1337
+13/24 | glass       | STD='The prompt does not provide specific information about' | FORCE='information is missing' | RANK 2470->509
+14/24 | amber       | STD='The prompt does not provide any information about' | FORCE='red.' | RANK 1857->33
+15/24 | 731         | STD='The prompt does not provide specific details about' | FORCE='5.23.' | RANK 1843->16
+16/24 | rotating    | STD='The prompt does not provide specific details about' | FORCE='it began to depress.' | RANK 17908->8381
+17/24 | silky       | STD='The prompt does not provide any specific details' | FORCE='smooth and shiny.' | RANK 50182->2116
+18/24 | astrolabe   | STD='The prompt does not provide any specific items' | FORCE='Item 3 was marked for retrieval.' | RANK 134455->92888
+19/24 | Varethis    | STD='The production system was ultimately named "Ford' | FORCE='Ford Production System' | RANK 811->1542
+20/24 | Ilyan       | STD='The prompt does not provide any information about' | FORCE='Information is missing.' | RANK 6->4
+21/24 | Kyoto       | STD='The prompt does not provide specific information about' | FORCE='In the drawer.' | RANK 45084->13302
+22/24 | turquoise   | STD='The prompt does not provide any specific information' | FORCE='blue.' | RANK 33149->18415
+23/24 | quartz      | STD='Insufficient information to determine the primary composition' | FORCE='information is missing.' | RANK 85262->479
+24/24 | accelerating | STD='The prompt does not provide any information about' | FORCE='moving forward.' | RANK 764->158
+[10/15] GLOBAL SUMMARY
+STANDARD_ABSTENTION                +0.916667
+FORCED_ABSTENTION                  +0.000000
+STANDARD_EXACT                     +0.000000
+FORCED_EXACT                       +0.000000
+STANDARD_MENTION                   +0.000000
+FORCED_MENTION                     +0.000000
+STANDARD_RANK_MEDIAN               +10189.000000
+FORCED_RANK_MEDIAN                 +1243.000000
+STANDARD_TOP1                      +0.000000
+FORCED_TOP1                        +0.000000
+FORCED_TARGET_GAIN                 +1.524414
+FORCED_MARGIN_GAIN                 +8.292643
+FORCED_RANK_IMPROVED               +0.833333
+[11/15] PRIOR-OVERRIDE EFFECT
+ABSTENTION 0.917->0.000
+EXACT 0.000->0.000 | MENTION 0.000->0.000
+MEDIAN RANK 10189.0->1243.0 | TOP1 0.000->0.000
+[12/15] PREDECLARED GATE
+ABSTENTION DROP=True | RETRIEVAL IMPROVED=False | RANK IMPROVED=True | TARGET GAIN>0=True
+[13/15] INTERPRETATION CLASS
+RESULT CLASS: ABSTENTION_REMOVED_BUT_RETRIEVAL_MISSING
+[14/15] TARGET + CASE AUDIT
+CASE_ISOLATED=True | CROSS_CASE_DATA=False | TARGET_ENGINE_ACCESS=False | TARGET_POSTHOC_ONLY=True
+[15/15] INTEGRITY + SEAL
+============================================================================================================
+TEST 313 COMPLETE
+ABSTENTION 0.917->0.000
+EXACT 0.000->0.000 | MENTION 0.000->0.000
+MEDIAN RANK 10189.0->1243.0 | TARGET GAIN=+1.524
+CLASS=ABSTENTION_REMOVED_BUT_RETRIEVAL_MISSING | GATE=FAIL
+CASE_ISOLATED=TRUE | TARGET POST-HOC ONLY | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST313/T313-20260929-004822.json
+TXT : /content/AKBASCORE_TEST313/T313-20260929-004822.txt
+SHA : c6b1c9d97319a71ee44cce09acd80a4d883fbe58500dc4c892c700f239695345
+============================================================================================================
