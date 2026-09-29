@@ -1,0 +1,161 @@
+ ============================================================================================================
+TEST 335 - FROZEN DISP ROUTER -> POST-HOC TEACHER-FORCED TARGET-SEQUENCE X-RAY
+============================================================================================================
+START: 2026-09-29T07:32:14.557+00:00
+[1/18] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 79.1kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 891kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 79.4MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 68.8MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 130MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.37MB/s]Download complete: :  13.1GB,  121MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  404MB/s  Fetching 4 files: 100% 4/4 [00:41<00:00,  8.22s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.10it/s]generation_config.json: 100% 243/243 [00:00<00:00, 28.9kB/s]OK | Qwen/Qwen2.5-7B-Instruct | 28L | H=3584 | VOCAB=152064 | torch.bfloat16 | 54.27s
+[2/18] ENGINE + ROUTER LOCK
+FP: ['1.0912', '-90.1989', '92.6709', '73.2364', '13758.2012', '-23395.7148']
+RSS=0.250235055 | ROUTER=ARGMAX(DISP) | TARGET SEALED
+[3/18] QUERY NULL CACHE
+NULL READY
+[4/18] ANCHOR BANK - TARGET SEALED
+01/24 | BANK= 18
+02/24 | BANK= 13
+03/24 | BANK= 14
+04/24 | BANK= 13
+05/24 | BANK= 14
+06/24 | BANK= 14
+07/24 | BANK= 15
+08/24 | BANK= 13
+09/24 | BANK= 14
+10/24 | BANK= 10
+11/24 | BANK= 12
+12/24 | BANK= 15
+13/24 | BANK= 14
+14/24 | BANK= 12
+15/24 | BANK= 13
+16/24 | BANK= 15
+17/24 | BANK= 13
+18/24 | BANK= 18
+19/24 | BANK= 14
+20/24 | BANK= 13
+21/24 | BANK= 13
+22/24 | BANK= 15
+23/24 | BANK= 13
+24/24 | BANK= 14
+SHOWCASE | BANK= 16
+[5/18] SOURCE REMOVED
+[6/18] BLIND DISP ROUTER - EXACT TEST330-334 FORCED CONTEXT
+01/24 | ANCHOR='At' | DISP=0.280106
+02/24 | ANCHOR='designation' | DISP=0.504876
+03/24 | ANCHOR='Three' | DISP=0.324805
+04/24 | ANCHOR='expedition' | DISP=0.365987
+05/24 | ANCHOR='For' | DISP=0.442572
+06/24 | ANCHOR='indicator' | DISP=0.320354
+07/24 | ANCHOR='the' | DISP=0.275935
+08/24 | ANCHOR='untreated' | DISP=0.260658
+09/24 | ANCHOR='Beside' | DISP=0.214047
+10/24 | ANCHOR='authorization' | DISP=0.341026
+11/24 | ANCHOR='Dalen' | DISP=0.404590
+12/24 | ANCHOR='cargo' | DISP=0.387109
+13/24 | ANCHOR='The' | DISP=0.349450
+14/24 | ANCHOR='The' | DISP=0.309536
+15/24 | ANCHOR='counter' | DISP=0.350612
+16/24 | ANCHOR='When' | DISP=0.252732
+17/24 | ANCHOR='The' | DISP=0.345451
+18/24 | ANCHOR='Inside' | DISP=0.380952
+19/24 | ANCHOR='became' | DISP=0.380217
+20/24 | ANCHOR='Several' | DISP=0.271946
+21/24 | ANCHOR='before' | DISP=0.276453
+22/24 | ANCHOR='coating' | DISP=0.289513
+23/24 | ANCHOR='R-7' | DISP=0.272824
+24/24 | ANCHOR='began' | DISP=0.313759
+SHOWCASE | ANCHOR='beside' | DISP=0.239380
+[7/18] ROUTER + PACKETS SEALED
+ARGMAX(DISP) COMPLETE | PACKETS FROZEN | TARGET_ACCESS=False
+[8/18] FIRST-TOKEN TERMINAL STATE FREEZE
+01/24 | V_TOP1= 'Information' | S_TOP1= 'information'
+02/24 | V_TOP1= 'Information' | S_TOP1= 'Information'
+03/24 | V_TOP1= 'Information' | S_TOP1= 'Information'
+04/24 | V_TOP1= 'Information' | S_TOP1= 'Information'
+05/24 | V_TOP1= 'Information' | S_TOP1= 'information'
+06/24 | V_TOP1= 'Information' | S_TOP1= 'Blue'
+07/24 | V_TOP1= 'Re' | S_TOP1= 'Ins'
+08/24 | V_TOP1= 'The' | S_TOP1= 'The'
+09/24 | V_TOP1= 'information' | S_TOP1= 'information'
+10/24 | V_TOP1= 'Information' | S_TOP1= 'Information'
+11/24 | V_TOP1= 'Information' | S_TOP1= 'Information'
+12/24 | V_TOP1= 'Information' | S_TOP1= 'destination'
+13/24 | V_TOP1= 'information' | S_TOP1= 'information'
+14/24 | V_TOP1= 'Information' | S_TOP1= 'missing'
+15/24 | V_TOP1= 'Information' | S_TOP1= 'Information'
+16/24 | V_TOP1= 'Exp' | S_TOP1= 'Exp'
+17/24 | V_TOP1= 'information' | S_TOP1= 'not'
+18/24 | V_TOP1= 'Information' | S_TOP1= 'information'
+19/24 | V_TOP1= 'iPhone' | S_TOP1= 'information'
+20/24 | V_TOP1= 'Information' | S_TOP1= 'information'
+21/24 | V_TOP1= 'information' | S_TOP1= 'Information'
+22/24 | V_TOP1= 'Missing' | S_TOP1= 'missing'
+23/24 | V_TOP1= 'information' | S_TOP1= 'micro'
+24/24 | V_TOP1= 'appro' | S_TOP1= 'started'
+SHOWCASE | V_TOP1= 'information' | S_TOP1= 'Information'
+[9/18] PRE-TARGET SEAL COMPLETE
+ROUTER + PACKETS + FIRST-TOKEN DISTRIBUTIONS FROZEN | TARGET PREFIX NEVER USED BEFORE THIS POINT
+[10/18] TARGET SEAL OPEN - TEACHER-FORCED SEQUENCE X-RAY
+01/24 | T='Caldor' | N=3 | dSEQ=+2.847 | d/T=+0.949 | TOK+=0.667
+02/24 | T='Zenvik' | N=3 | dSEQ=-2.440 | d/T=-0.813 | TOK+=0.667
+03/24 | T='741' | N=3 | dSEQ=+9.718 | d/T=+3.239 | TOK+=0.667
+04/24 | T='Seville' | N=2 | dSEQ=+4.348 | d/T=+2.174 | TOK+=1.000
+05/24 | T='basalt' | N=2 | dSEQ=+4.039 | d/T=+2.019 | TOK+=1.000
+06/24 | T='turquoise' | N=2 | dSEQ=+4.080 | d/T=+2.040 | TOK+=1.000
+07/24 | T='kneeling' | N=3 | dSEQ=-2.677 | d/T=-0.892 | TOK+=0.000
+08/24 | T='translucent' | N=2 | dSEQ=+3.556 | d/T=+1.778 | TOK+=1.000
+09/24 | T='sextant' | N=3 | dSEQ=+3.589 | d/T=+1.196 | TOK+=0.667
+10/24 | T='Valtrexon' | N=3 | dSEQ=+8.152 | d/T=+2.717 | TOK+=0.667
+11/24 | T='Orisa' | N=2 | dSEQ=+7.871 | d/T=+3.935 | TOK+=1.000
+12/24 | T='Budapest' | N=3 | dSEQ=+3.738 | d/T=+1.246 | TOK+=0.667
+13/24 | T='zirconium' | N=3 | dSEQ=+1.501 | d/T=+0.500 | TOK+=0.667
+14/24 | T='violet' | N=2 | dSEQ=+1.211 | d/T=+0.606 | TOK+=1.000
+15/24 | T='964' | N=3 | dSEQ=+13.526 | d/T=+4.509 | TOK+=1.000
+16/24 | T='contracting' | N=2 | dSEQ=+1.117 | d/T=+0.558 | TOK+=0.500
+17/24 | T='silky' | N=2 | dSEQ=+4.975 | d/T=+2.487 | TOK+=1.000
+18/24 | T='barometer' | N=2 | dSEQ=+7.119 | d/T=+3.560 | TOK+=1.000
+19/24 | T='Solvane' | N=3 | dSEQ=-0.304 | d/T=-0.101 | TOK+=0.333
+20/24 | T='Keldrin' | N=3 | dSEQ=+4.470 | d/T=+1.490 | TOK+=1.000
+21/24 | T='Kyoto' | N=2 | dSEQ=-3.988 | d/T=-1.994 | TOK+=0.000
+22/24 | T='cyan' | N=1 | dSEQ=+4.005 | d/T=+4.005 | TOK+=1.000
+23/24 | T='quartz' | N=2 | dSEQ=+0.517 | d/T=+0.259 | TOK+=1.000
+24/24 | T='ascending' | N=1 | dSEQ=-5.530 | d/T=-5.530 | TOK+=0.000
+SHOWCASE | T='raised a crimson pennant' | N=5 | dSEQ=-6.784 | d/T=-1.357 | TOK+=0.000
+[11/18] PRIMARY SUMMARY
+SEQ_LOGP_IMPROVED=0.791667 | MEAN_dSEQ=+3.143301 | MED_dSEQ=+3.663309
+MEAN_TOKEN_LOGP_IMPROVED_FRAC=0.729167 | ALL_TOKENS_IMPROVED=0.500000
+MEAN_NLL/TOKEN=9.349949->8.102563 | IMPROVEMENT/TOKEN=+1.247386
+[12/18] FIRST TOKEN VS CONTINUATION
+FIRST_TOKEN_MEAN_dLOGP=+2.105417 | FIRST_POS=0.791667
+CONTINUATION_MEAN_dLOGP=+0.754825 | CONTINUATION_POS=0.666667 | N=33
+[13/18] MULTI-TOKEN SUBSET
+MULTI_CASES=22 | SEQ_POS=0.818182 | MEAN_dSEQ=+3.498364 | MEAN_d/T=+1.430093
+[14/18] SHOWCASE
+------------------------------------------------------------------------------------------------------------
+SOURCE : Mustafa Akbaş raised a crimson pennant beside the Bosphorus Bridge where the research demonstration took place.
+QUESTION: What did Mustafa Akbaş do at the location of the research demonstration?
+ANCHOR : beside
+TARGET : raised a crimson pennant
+N=5 | SEQ_LOGP=-39.5912->-46.3749 | dSEQ=-6.7837 | d/T=-1.3567
+00 | 'raised' | LOGP=-15.4167->-18.1053 | d=-2.6886 | R=4822->9075 | TOP1='Information'
+01 | ' a' | LOGP=-5.7219->-7.4393 | d=-1.7173 | R=8->30 | TOP1=' funds'
+02 | ' crimson' | LOGP=-10.9343->-12.0316 | d=-1.0973 | R=1093->2512 | TOP1=' flag'
+03 | ' penn' | LOGP=-7.5182->-8.7946 | d=-1.2764 | R=8->24 | TOP1=' flag'
+04 | 'ant' | LOGP=-0.0001->-0.0041 | d=-0.0039 | R=1->1 | TOP1='ant'
+------------------------------------------------------------------------------------------------------------
+[15/18] PREDECLARED DIAGNOSTIC
+FIRST=+2.105417 | CONT=+0.754825 | SEQ_POS=0.791667 | dNLL/T=+1.247386 | CLASS=TARGET_SEQUENCE_PROBABILITY_SYSTEMATICALLY_STRENGTHENED
+[16/18] LEAKAGE GUARD
+TARGET/PREFIX USED ONLY POST-HOC AFTER ROUTER + PACKETS + FIRST-TOKEN DISTRIBUTIONS SEALED | PREFIX NEVER USED FOR ROUTING/SELECTION/DOSE
+[17/18] SCIENTIFIC AUDIT
+SAME FRESH-24 AS TEST330-334 | ROUTER=ARGMAX(DISP) | SAME RSS | CASE ISOLATED | TEACHER FORCING DIAGNOSTIC ONLY | NO TRAINING | NO WEIGHT UPDATE
+[18/18] INTEGRITY + SEAL
+============================================================================================================
+TEST 335 COMPLETE
+SEQ IMPROVED=0.792 | MEAN dSEQ=+3.143 | NLL/TOKEN=9.350->8.103 | d/T=+1.247
+FIRST dLOGP=+2.105 | CONT dLOGP=+0.755 | TOKEN+=0.729
+CLASS= TARGET_SEQUENCE_PROBABILITY_SYSTEMATICALLY_STRENGTHENED
+ROUTER=ARGMAX(DISP) | TARGET PREFIX POST-HOC ONLY | SAME RSS | WEIGHT INTEGRITY PASS | AKBASCORE HOOKS=0
+JSON: /content/AKBASCORE_TEST335/T335-20260929-073347.json
+TXT : /content/AKBASCORE_TEST335/T335-20260929-073347.txt
+SHA : 8341ec709e15f1899bc59775edc7bf1a69ac592c158a3a043c81f1679cac876a
+============================================================================================================
