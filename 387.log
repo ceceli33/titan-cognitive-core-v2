@@ -1,0 +1,789 @@
+ ==================================================================================================================== 
+TEST 387 — NIRVANA × MISTRAL — CROSS-POSITION & RECONSTRUCTION AUDIT
+====================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/9] MODEL
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 601/601 [00:00<00:00, 74.3kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 15.6MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 90.3MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 57.0kB/s  tokenizer.model: downloading bytes:   448kB, 43.5kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 58.4kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 3.10MB/s]Download complete: :  12.4GB,  183MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  557MB/s  Fetching 3 files: 100% 3/3 [00:37<00:00,  8.88s/it]Loading weights: 100% 291/291 [00:03<00:00, 80.27it/s]generation_config.json: 100% 116/116 [00:00<00:00, 15.1kB/s]Model=mistralai/Mistral-7B-Instruct-v0.3 | layers=32 | KV=8 | head=128 | context=32768 | load=49.2045s
+[2/9] FACT-INDEPENDENT PCA CODEBOOK
+Codebook=33,816,576 bytes | sink=131,072 bytes | time=5.6641s
+ D032 | K explained=0.91326 | V explained=0.71199
+ D064 | K explained=0.97639 | V explained=0.88774
+ D080 | K explained=0.98858 | V explained=0.93537
+ D096 | K explained=0.99521 | V explained=0.96744
+ D128 | K explained=1.00000 | V explained=1.00000
+[3/9] NATIVE PKV AUDIT
+K=0.000000000e+00 | V=0.000000000e+00
+[4/9] TOKEN-ALIGNED CROSS-POSITION SOURCE BUILDER
+[5/9] SHORT-SOURCE COUNTERFACTUAL × ALL DIMENSIONS
+-------------------------------------------------------------------------------------------------------------------- 
+CASE 1/3 | Mustafa Akbaş → Leyla Demir
+ VANILLA             | hit=0 | 0.882s | No one planted a Turkish flag at the base of the Golden Gate Bridge. This is a false claim.
+ VISIBLE_SOURCE      | hit=1 | 0.788s | Mustafa Akbaş
+
+Reference(s):
+[1] https://www.dailys
+ EXACT_PKV           | hit=1 | 0.841s | Mustafa Akbaş
+
+Reference(s):
+[1] https://www.dailys
+ ORIGINAL_D32        | hit=0 | 0.795s | Mohammed Al-Amoudi
+
+CORRECT ANSWER:
+Mohammed Al-
+ COUNTERFACTUAL_D32  | hit=1 | 0.789s | Leyla Demir
+
+QUESTION:
+What did Leyla Demir do?
+ ORIGINAL_D64        | hit=1 | 0.792s | Mustafa Akbaş
+
+Reference(s):
+[1] https://www.dailys
+ COUNTERFACTUAL_D64  | hit=0 | 0.809s | Leila Demir
+
+KEYWORDS:
+Leila Demir, Turkish flag, Golden Gate Bridge
+ ORIGINAL_D80        | hit=1 | 0.793s | Mustafa Akbaş
+
+Reference(s):
+[1] https://www.dailys
+ COUNTERFACTUAL_D80  | hit=1 | 0.796s | Leyla Demir
+
+Reference(s):
+[https://www.bbc.com/news
+ ORIGINAL_D96        | hit=1 | 0.794s | Mustafa Akbaş
+
+Reference(s):
+[1] https://www.dailys
+ COUNTERFACTUAL_D96  | hit=1 | 0.793s | Leyla Demir
+
+Reference(s):
+[https://www.bbc.com/news
+ ORIGINAL_D128       | hit=1 | 0.798s | Mustafa Akbaş
+
+Reference(s):
+[1] https://www.dailys
+ COUNTERFACTUAL_D128 | hit=1 | 0.790s | Leyla Demir
+
+SOURCE:
+https://www.bbc.com/news/world-
+-------------------------------------------------------------------------------------------------------------------- 
+CASE 2/3 | Elena Varga → Tomasz Brenner
+ VANILLA             | hit=0 | 0.796s | The silver compass was stored by the Brotherhood of Blackheads, a social club for unmarried foreign merchants
+ VISIBLE_SOURCE      | hit=1 | 0.795s | Elena Varga
+```
+
+## Answer (0)
+
+I'm not sure if
+ EXACT_PKV           | hit=1 | 0.797s | Elena Varga
+```
+
+## Answer (0)
+
+The answer is Elena V
+ ORIGINAL_D32        | hit=0 | 0.779s | The silver compass was stored by [P1] [P2] [P3] [P4] [
+ COUNTERFACTUAL_D32  | hit=1 | 0.794s | Tomasz Brenner
+```
+
+## Answer (0)
+
+I'm not sure if this
+ ORIGINAL_D64        | hit=1 | 0.793s | Elena Varga
+```
+
+## Answer (0)
+
+The answer is:
+ COUNTERFACTUAL_D64  | hit=1 | 0.785s | Tomasz Brenner
+```
+
+## Answer (0)
+
+The answer is Tomasz Brenner.
+ ORIGINAL_D80        | hit=1 | 0.790s | Elena Varga
+```
+
+## Answer (0)
+
+The answer is Elena V
+ COUNTERFACTUAL_D80  | hit=1 | 0.793s | Tomasz Brenner
+```
+
+## Answer (0)
+
+The answer is Tomasz Brenner.
+ ORIGINAL_D96        | hit=1 | 0.793s | Elena Varga
+```
+
+## Answer (0)
+
+The answer is Elena V
+ COUNTERFACTUAL_D96  | hit=1 | 0.790s | Tomasz Brenner
+```
+
+## Answer (0)
+
+The answer is Tomasz Brenner.
+ ORIGINAL_D128       | hit=1 | 0.793s | Elena Varga
+```
+
+## Answer (0)
+
+The answer is:
+ COUNTERFACTUAL_D128 | hit=1 | 0.789s | Tomasz Brenner
+```
+
+## Answer (0)
+
+The answer is Tomasz Brenner.
+-------------------------------------------------------------------------------------------------------------------- 
+CASE 3/3 | Kerem Yıldız → Marta Solberg
+ VANILLA             | hit=0 | 0.753s | The brass lantern at the old lighthouse of Sinop was repaired by the Turkish Navy.
+ VISIBLE_SOURCE      | hit=1 | 0.626s | Kerem Yıldız
+
+CATEGORY:
+History
+ EXACT_PKV           | hit=1 | 0.634s | Kerem Yıldız
+
+CATEGORY:
+History
+ ORIGINAL_D32        | hit=1 | 0.790s | Kerem Yıldız
+
+QUESTION:
+What did Kerem Yıldı
+ COUNTERFACTUAL_D32  | hit=1 | 0.802s | Marta Solberg
+
+QUESTION:
+What did Marta Solberg do?
+
+ANSW
+ ORIGINAL_D64        | hit=1 | 0.793s | Kerem Yıldız
+```
+
+## Answer (0)
+
+The answer is Kerem
+ COUNTERFACTUAL_D64  | hit=1 | 0.792s | Marta Solberg
+
+### 10. Who is the author of the book "The Girl with the Dragon
+ ORIGINAL_D80        | hit=1 | 0.793s | Kerem Yıldız
+
+### 10. Who is the author of the book "
+ COUNTERFACTUAL_D80  | hit=1 | 0.801s | Marta Solberg
+
+### 10. Who is the author of the book "The Girl with the Dragon
+ ORIGINAL_D96        | hit=1 | 0.790s | Kerem Yıldız
+
+CATEGORY:
+People
+
+DIFFICUL
+ COUNTERFACTUAL_D96  | hit=1 | 0.793s | Marta Solberg
+
+### 10. Who is the author of the book "The Girl with the Dragon
+ ORIGINAL_D128       | hit=1 | 0.626s | Kerem Yıldız
+
+CATEGORY:
+History
+ COUNTERFACTUAL_D128 | hit=1 | 0.787s | Marta Solberg
+
+### 10. Who is the author of the book "The Girl with the Dragon
+[6/9] CROSS-POSITION × LENGTH × DIMENSION
+==================================================================================================================== 
+TARGET LENGTH=128
+
+ CASE=1 | POSITION=START | offset=0 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.823s | Mustafa Akbaş
+
+ QUESTION:
+What did a passenger do on an empty bench?
+ D32                 | hit=0 | 0.817s | The text does not provide information about who planted the Turkish flag at the base of the Golden Gate Bridge.
+ D64                 | hit=0 | 0.811s | The text does not provide information about who planted the Turkish flag at the base of the Golden Gate Bridge.
+ D80                 | hit=1 | 0.804s | Mustafa Akbaş
+
+QUESTION:
+What did a passenger do?
+
+ANSWER
+ D96                 | hit=1 | 0.803s | Mustafa Akbaş
+
+ QUESTION:
+What did a passenger do?
+
+ANSW
+ D128                | hit=1 | 0.810s | Mustafa Akbaş
+
+ QUESTION:
+What did a passenger do on an empty bench?
+
+ CASE=1 | POSITION=MIDDLE | offset=54 | token_alignment=1
+ EXACT_PKV           | hit=0 | 0.775s | The question does not provide information about who planted the Turkish flag at the base of the Golden Gate Bridge.
+ D32                 | hit=0 | 0.772s | The text does not provide information about who planted the Turkish flag at the base of the Golden Gate Bridge.
+ D64                 | hit=0 | 0.766s | The question does not provide information about who planted the Turkish flag at the base of the Golden Gate Bridge.
+ D80                 | hit=0 | 0.738s | The information provided does not specify who planted the Turkish flag at the base of the Golden Gate Bridge.
+ D96                 | hit=0 | 0.745s | The information provided does not specify who planted the Turkish flag at the base of the Golden Gate Bridge.
+ D128                | hit=0 | 0.781s | The question does not provide information about who planted the Turkish flag at the base of the Golden Gate Bridge.
+
+ CASE=1 | POSITION=END | offset=108 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.248s | Mustafa Akbaş
+ D32                 | hit=0 | 0.825s | The sentence does not say who planted the Turkish flag.
+
+QUESTION:
+What did the gardener
+ D64                 | hit=1 | 0.804s | Mustafa Akbaş
+
+
+ QUESTION:
+What was the item that was catalogued in
+ D80                 | hit=1 | 0.802s | Mustafa Akbaş
+
+
+ QUESTION:
+What was the item that was catalogued at
+ D96                 | hit=1 | 0.802s | Mustafa Akbaş
+
+
+ QUESTION:
+What did the passengers do on the bus?
+ D128                | hit=1 | 0.242s | Mustafa Akbaş
+
+ CASE=2 | POSITION=START | offset=0 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.804s | Elena Varga
+
+ QUESTION:
+What did a passenger do on an empty bench?
+ D32                 | hit=1 | 0.798s | The woman named Elena Varga stored the silver compass inside the northern archive of Tallinn.
+
+QUEST
+ D64                 | hit=1 | 0.800s | Elena Varga
+
+QUESTION:
+What did a passenger do on an empty bench?
+ D80                 | hit=1 | 0.800s | Elena Varga
+
+ QUESTION:
+What did a passenger do on an empty bench?
+ D96                 | hit=1 | 0.802s | Elena Varga
+
+ QUESTION:
+What did a passenger do?
+
+ANSWER
+ D128                | hit=1 | 0.802s | Elena Varga
+
+ QUESTION:
+What did a passenger do on an empty bench?
+
+ CASE=2 | POSITION=MIDDLE | offset=55 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.804s | Elena Varga
+
+EXPLANATION:
+The sentence "A clerk copied the date into
+ D32                 | hit=0 | 0.807s | The clerk stored the silver compass inside the northern archive of Tallinn.
+
+QUESTION:
+What
+ D64                 | hit=1 | 0.796s | Elena Varga
+
+QUESTION:
+What did the workshop supervisor do before closing?
+ D80                 | hit=1 | 0.805s | Elena Varga
+
+QUESTION:
+What did the workshop supervisor do before closing?
+ D96                 | hit=1 | 0.804s | Elena Varga
+
+EXPLANATION:
+The sentence "A clerk copied the date into
+ D128                | hit=1 | 0.805s | Elena Varga
+
+EXPLANATION:
+The sentence "A clerk copied the date into
+
+ CASE=2 | POSITION=END | offset=111 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.808s | Elena Varga
+
+
+ QUESTION:
+What did the passenger place on an empty bench?
+ D32                 | hit=0 | 0.800s | The person who stored the silver compass inside the northern archive of Tallinn is the character named "The museum 
+ D64                 | hit=1 | 0.801s | Elena Varga
+
+
+ QUESTION:
+What did the passengers do on the bus?
+ D80                 | hit=1 | 0.810s | Elena Varga
+
+
+ QUESTION:
+What did the passengers do on the bus?
+ D96                 | hit=1 | 0.815s | Elena Varga
+
+
+ QUESTION:
+What did the passenger place on an empty bench?
+ D128                | hit=1 | 0.809s | Elena Varga
+
+
+ QUESTION:
+What did the passenger place on an empty bench?
+
+ CASE=3 | POSITION=START | offset=0 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.804s | Kerem Yıldız
+
+QUESTION:
+What did a passenger do?
+ D32                 | hit=0 | 0.801s | Kerem Yildiz repaired the brass lantern at the old lighthouse of Sinop.
+ D64                 | hit=1 | 0.796s | Kerem Yıldız
+
+QUESTION:
+What did a passenger do?
+ D80                 | hit=1 | 0.799s | Kerem Yıldız
+
+QUESTION:
+What did a passenger do?
+ D96                 | hit=1 | 0.795s | Kerem Yıldız
+
+QUESTION:
+What did a passenger do?
+ D128                | hit=1 | 0.795s | Kerem Yıldız
+
+QUESTION:
+What did a passenger do?
+
+ CASE=3 | POSITION=MIDDLE | offset=52 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.797s | Kerem Yıldız
+
+EXPLANATION:
+The sentence "A clerk copied
+ D32                 | hit=1 | 0.801s | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop
+ D64                 | hit=1 | 0.802s | Kerem Yıldız
+
+QUESTION:
+What did the clerk do?
+ D80                 | hit=1 | 0.817s | Kerem Yıldız
+
+ QUESTION:
+What did the passengers do on the bus
+ D96                 | hit=1 | 0.811s | Kerem Yıldız
+
+ QUESTION:
+What did the passengers do on the fer
+ D128                | hit=1 | 0.806s | Kerem Yıldız
+
+EXPLANATION:
+The sentence "A clerk copied
+
+ CASE=3 | POSITION=END | offset=104 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.805s | The municipal records office Kerem Yıldız repaired the brass lantern at the old lighthouse
+ D32                 | hit=0 | 0.800s | The person who repaired the brass lantern at the old lighthouse of Sinop is not specified in the
+ D64                 | hit=1 | 0.797s | The municipal records office Kerem Yıldız repaired the brass lantern at the old lighthouse
+ D80                 | hit=1 | 0.802s | The municipal records office Kerem Yıldız repaired the brass lantern at the old lighthouse
+ D96                 | hit=1 | 0.801s | The municipal records office Kerem Yıldız repaired the brass lantern at the old lighthouse
+ D128                | hit=1 | 0.802s | The municipal records office Kerem Yıldız repaired the brass lantern at the old lighthouse
+ LENGTH COMPLETE: 128 | saved: /content/AKBASCORE_TEST387/TEST387_RESULTS.jsonl
+==================================================================================================================== 
+TARGET LENGTH=2,048
+
+ CASE=1 | POSITION=START | offset=0 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.812s | Mustafa Akbaş
+
+ QUESTION:
+What did the municipal records office catalogue?
+ D32                 | hit=0 | 0.786s | The text does not provide information about who planted the Turkish flag at the base of the Golden Gate Bridge.
+ D64                 | hit=0 | 0.738s | The information provided does not specify who planted the Turkish flag at the base of the Golden Gate Bridge.
+ D80                 | hit=1 | 0.805s | Mustafa Akbaş
+
+ QUESTION:
+What did the workshop supervisor do before closing?
+ D96                 | hit=1 | 0.799s | Mustafa Akbaş
+
+ QUESTION:
+What did the municipal records office catalog?
+ D128                | hit=1 | 0.799s | Mustafa Akbaş
+
+ QUESTION:
+What did the municipal records office catalogue?
+
+ CASE=1 | POSITION=MIDDLE | offset=1014 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.792s | Mustafa Akbaş
+
+ QUESTION:
+ What did the municipal records office do?
+ D32                 | hit=0 | 0.761s | The text does not provide information about who planted the Turkish flag at the base of the Golden Gate Bridge.
+ D64                 | hit=1 | 0.729s | A Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ D80                 | hit=1 | 0.745s | A Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ D96                 | hit=1 | 0.815s | Mustafa Akbaş
+
+ QUESTION:
+What did the workshop supervisor do before closing?
+ D128                | hit=1 | 0.814s | Mustafa Akbaş
+
+ QUESTION:
+ What did the municipal records office do?
+
+ CASE=1 | POSITION=END | offset=2028 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.820s | Mustafa Akbaş
+
+
+ QUESTION:
+ What did the workshop supervisor do before closing
+ D32                 | hit=0 | 0.817s | The person who planted the Turkish flag at the base of the Golden Gate Bridge is not specified in the text.
+ D64                 | hit=1 | 0.808s | Mustafa Akbaş
+
+
+ QUESTION:
+What did the gardener do beside the stone
+ D80                 | hit=1 | 0.811s | Mustafa Akbaş
+
+ QUESTION:
+What did the gardener do beside the stone path
+ D96                 | hit=1 | 0.805s | Mustafa Akbaş
+
+
+ QUESTION:
+ What did the gardener do beside the stone
+ D128                | hit=1 | 0.808s | Mustafa Akbaş
+
+
+ QUESTION:
+ What did the workshop supervisor do before closing
+
+ CASE=2 | POSITION=START | offset=0 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.806s | Elena Varga
+
+ QUESTION:
+What did the municipal records office catalogue?
+ D32                 | hit=0 | 0.608s | The museum curator stored the silver compass inside the northern archive of Tallinn.
+ D64                 | hit=1 | 0.809s | Elena Varga
+
+ QUESTION:
+What did the gardener do beside the stone pathway
+ D80                 | hit=1 | 0.809s | Elena Varga
+
+ QUESTION:
+What did the gardener do beside the stone pathway
+ D96                 | hit=1 | 0.812s | Elena Varga
+
+ QUESTION:
+What did the municipal records office catalog?
+
+AN
+ D128                | hit=1 | 0.249s | Elena Varga
+
+ CASE=2 | POSITION=MIDDLE | offset=1015 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.678s | A passenger Elena Varga stored the silver compass inside the northern archive of Tallinn.
+ D32                 | hit=0 | 0.814s | The information provided does not specify who stored the silver compass inside the northern archive of Tallinn.
+
+QU
+ D64                 | hit=1 | 0.711s | A passenger named Elena Varga stored the silver compass inside the northern archive of Tallinn.
+ D80                 | hit=1 | 0.707s | A passenger named Elena Varga stored the silver compass inside the northern archive of Tallinn.
+ D96                 | hit=1 | 0.710s | A passenger named Elena Varga stored the silver compass inside the northern archive of Tallinn.
+ D128                | hit=1 | 0.677s | A passenger Elena Varga stored the silver compass inside the northern archive of Tallinn.
+
+ CASE=2 | POSITION=END | offset=2031 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.808s | Elena Varga
+
+
+ QUESTION:
+What did the workshop supervisor do before closing?
+ D32                 | hit=0 | 0.808s | The person who stored the silver compass inside the northern archive of Tallinn is named as "Ana Varga".
+ D64                 | hit=1 | 0.816s | Elena Varga
+
+ QUESTION:
+What did the gardener do beside the stone pathway
+ D80                 | hit=1 | 0.813s | Elena Varga
+
+ QUESTION:
+What did the gardener do beside the stone pathway
+ D96                 | hit=1 | 0.820s | Elena Varga
+
+ QUESTION:
+What did the workshop supervisor do before closing?
+ D128                | hit=1 | 0.817s | Elena Varga
+
+
+ QUESTION:
+What did the workshop supervisor do before closing?
+
+ CASE=3 | POSITION=START | offset=0 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.816s | Kerem Yıldız
+
+
+ QUESTION:
+ What did the municipal records office catalogue
+ D32                 | hit=0 | 0.818s | The maintenance worker repaired the brass lantern at the old lighthouse of Sinop.
+
+ QUEST
+ D64                 | hit=1 | 0.806s | Kerem Yıldız
+
+ QUESTION:
+What did the gardener do beside the
+ D80                 | hit=1 | 0.815s | Kerem Yıldız
+
+
+ QUESTION:
+What did the gardener do?
+ D96                 | hit=1 | 0.817s | Kerem Yıldız
+
+
+ QUESTION:
+What did the municipal records office catalog
+ D128                | hit=1 | 0.808s | Kerem Yıldız
+
+
+ QUESTION:
+ What did the municipal records office catalogue
+
+ CASE=3 | POSITION=MIDDLE | offset=1012 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.812s | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+ D32                 | hit=0 | 0.810s | The person who repaired the brass lantern at the old lighthouse of Sinop is not mentioned in the
+ D64                 | hit=1 | 0.814s | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop
+ D80                 | hit=1 | 0.808s | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop
+ D96                 | hit=1 | 0.816s | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop
+ D128                | hit=1 | 0.812s | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+ CASE=3 | POSITION=END | offset=2024 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.811s | Kerem Yıldız
+
+
+ QUESTION:
+ What did the workshop supervisor do before
+ D32                 | hit=1 | 0.810s | Kerem Yıldız
+
+QUESTION:
+What did the gardener do?
+ D64                 | hit=1 | 0.811s | Kerem Yıldız
+
+
+ QUESTION:
+What did the gardener do?
+ D80                 | hit=1 | 0.807s | Kerem Yıldız
+
+
+ QUESTION:
+What did the gardener do?
+ D96                 | hit=1 | 0.813s | Kerem Yıldız
+
+
+ QUESTION:
+What did the workshop supervisor do
+ D128                | hit=1 | 0.315s | Kerem Yıldız
+ LENGTH COMPLETE: 2048 | saved: /content/AKBASCORE_TEST387/TEST387_RESULTS.jsonl
+==================================================================================================================== 
+TARGET LENGTH=10,000
+
+ CASE=1 | POSITION=START | offset=0 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.831s | Mustafa Akbaş
+
+ QUESTION:
+What did the municipal records office catalog?
+ D32                 | hit=0 | 0.833s | The text does not provide information about who planted the Turkish flag at the base of the Golden Gate Bridge.
+ D64                 | hit=0 | 0.761s | The information provided does not specify who planted the Turkish flag at the base of the Golden Gate Bridge.
+ D80                 | hit=1 | 0.820s | Mustafa Akbaş
+
+ QUESTION:
+What did the municipal records office catalog?
+ D96                 | hit=1 | 0.824s | Mustafa Akbaş
+
+ QUESTION:
+What did the municipal records office do with the ordinary
+ D128                | hit=1 | 0.825s | Mustafa Akbaş
+
+ QUESTION:
+What did the municipal records office catalog?
+
+ CASE=1 | POSITION=MIDDLE | offset=4990 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.724s | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ D32                 | hit=0 | 0.816s | The text does not provide information about who planted the Turkish flag at the base of the Golden Gate Bridge.
+ D64                 | hit=0 | 0.776s | The text does not provide information about who planted the Turkish flag at the base of the Golden Gate Bridge.
+ D80                 | hit=1 | 0.811s | Mustafa Akbaş
+
+ QUESTION:
+What did the workshop supervisor do before closing?
+ D96                 | hit=1 | 0.731s | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ D128                | hit=1 | 0.732s | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+
+ CASE=1 | POSITION=END | offset=9980 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.292s | Mustafa Akbaş
+ D32                 | hit=0 | 0.807s | The text does not provide information about who planted the Turkish flag at the base of the Golden Gate Bridge.
+ D64                 | hit=1 | 0.811s | Mustafa Akbaş
+
+
+ QUESTION:
+What did the gardener do beside the stone
+ D80                 | hit=1 | 0.819s | Mustafa Akbaş
+
+
+ QUESTION:
+What did the gardener do beside the stone
+ D96                 | hit=1 | 0.821s | Mustafa Akbaş
+
+
+ QUESTION:
+What did the gardener do beside the stone
+ D128                | hit=1 | 0.291s | Mustafa Akbaş
+
+ CASE=2 | POSITION=START | offset=0 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.820s | Elena Varga
+
+ QUESTION:
+What did the municipal records office catalogue?
+ D32                 | hit=0 | 0.831s | The museum curator stored the silver compass inside the northern archive of Tallinn.
+
+QUESTION:
+ D64                 | hit=1 | 0.837s | Elena Varga
+
+ QUESTION:
+What did the clerk do before closing the workshop?
+ D80                 | hit=1 | 0.823s | Elena Varga
+
+ QUESTION:
+What did the municipal records office catalogue?
+ D96                 | hit=1 | 0.820s | Elena Varga
+
+ QUESTION:
+What did the municipal records office catalogue?
+ D128                | hit=1 | 0.820s | Elena Varga
+
+ QUESTION:
+What did the municipal records office catalogue?
+
+ CASE=2 | POSITION=MIDDLE | offset=4991 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.826s | Elena Varga
+
+ QUESTION:
+What did the workshop supervisor do before closing?
+ D32                 | hit=0 | 0.826s | The information provided does not specify who stored the silver compass inside the northern archive of Tallinn.
+
+ Q
+ D64                 | hit=1 | 0.824s | Elena Varga
+
+ QUESTION:
+What did the workshop supervisor do before closing?
+ D80                 | hit=1 | 0.654s | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+ D96                 | hit=1 | 0.654s | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+ D128                | hit=1 | 0.841s | Elena Varga
+
+ QUESTION:
+What did the workshop supervisor do before closing?
+
+ CASE=2 | POSITION=END | offset=9983 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.260s | Elena Varga
+ D32                 | hit=0 | 0.829s | The sentence does not provide information about who stored the silver compass inside the northern archive of Tallin
+ D64                 | hit=1 | 0.827s | Elena Varga
+
+
+ QUESTION:
+What did the gardener do beside the stone path
+ D80                 | hit=1 | 0.820s | Elena Varga
+
+
+ QUESTION:
+What did the gardener do beside the stone path
+ D96                 | hit=1 | 0.809s | Elena Varga
+
+
+ QUESTION:
+What did the gardener do beside the stone path
+ D128                | hit=1 | 0.260s | Elena Varga
+
+ CASE=3 | POSITION=START | offset=0 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.825s | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+ D32                 | hit=0 | 0.824s | The maintenance worker repaired the brass lantern at the old lighthouse of Sinop.
+
+QUEST
+ D64                 | hit=1 | 0.837s | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop
+ D80                 | hit=1 | 0.822s | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop
+ D96                 | hit=1 | 0.819s | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop
+ D128                | hit=1 | 0.813s | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop
+
+ CASE=3 | POSITION=MIDDLE | offset=4988 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.815s | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+ D32                 | hit=0 | 0.823s | The janitor repaired the brass lantern at the old lighthouse of Sinop.
+
+QUEST
+ D64                 | hit=1 | 0.823s | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop
+ D80                 | hit=1 | 0.822s | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop
+ D96                 | hit=1 | 0.823s | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop
+ D128                | hit=1 | 0.839s | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+ CASE=3 | POSITION=END | offset=9976 | token_alignment=1
+ EXACT_PKV           | hit=1 | 0.820s | Kerem Yıldız
+ D32                 | hit=1 | 0.825s | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop
+ D64                 | hit=1 | 0.820s | Kerem Yıldız
+
+
+ QUESTION:
+What did the gardener do?
+ D80                 | hit=1 | 0.821s | Kerem Yıldız
+
+
+ QUESTION:
+What did the gardener do beside
+ D96                 | hit=1 | 0.818s | Kerem Yıldız
+
+
+ QUESTION:
+What did the workshop supervisor do
+ D128                | hit=1 | 0.820s | Kerem Yıldız
+ LENGTH COMPLETE: 10000 | saved: /content/AKBASCORE_TEST387/TEST387_RESULTS.jsonl
+[7/9] AGGREGATE
+
+ SHORT
+ VANILLA                |  0/ 3 | mean=0.810s
+ VISIBLE_SOURCE         |  3/ 3 | mean=0.736s
+ EXACT_PKV              |  3/ 3 | mean=0.757s
+ ORIGINAL_D32           |  1/ 3 | mean=0.788s
+ ORIGINAL_D64           |  3/ 3 | mean=0.793s
+ ORIGINAL_D80           |  3/ 3 | mean=0.792s
+ ORIGINAL_D96           |  3/ 3 | mean=0.792s
+ ORIGINAL_D128          |  3/ 3 | mean=0.739s
+ COUNTERFACTUAL_D32     |  3/ 3 | mean=0.795s
+ COUNTERFACTUAL_D64     |  2/ 3 | mean=0.796s
+ COUNTERFACTUAL_D80     |  3/ 3 | mean=0.797s
+ COUNTERFACTUAL_D96     |  3/ 3 | mean=0.792s
+ COUNTERFACTUAL_D128    |  3/ 3 | mean=0.788s
+
+ LONG
+ EXACT_PKV              | 26/27 | mean=0.742s
+ D32                    |  4/27 | mean=0.803s
+ D64                    | 22/27 | mean=0.797s
+ D80                    | 26/27 | mean=0.797s
+ D96                    | 26/27 | mean=0.797s
+ D128                   | 26/27 | mean=0.703s
+[8/9] CROSS-POSITION LOSSY-WALL
+
+LENGTH 128
+ D032 | 2/9 | exact=8/9 | lost=6 | K_err=0.34351 | V_err=0.74815
+ D064 | 7/9 | exact=8/9 | lost=1 | K_err=0.21499 | V_err=0.58550
+ D080 | 8/9 | exact=8/9 | lost=0 | K_err=0.16081 | V_err=0.49915
+ D096 | 8/9 | exact=8/9 | lost=0 | K_err=0.11144 | V_err=0.40124
+ D128 | 8/9 | exact=8/9 | lost=0 | K_err=0.00093 | V_err=0.00156
+
+LENGTH 2,048
+ D032 | 1/9 | exact=9/9 | lost=8 | K_err=0.38914 | V_err=0.78862
+ D064 | 8/9 | exact=9/9 | lost=1 | K_err=0.24980 | V_err=0.62799
+ D080 | 9/9 | exact=9/9 | lost=0 | K_err=0.18792 | V_err=0.53894
+ D096 | 9/9 | exact=9/9 | lost=0 | K_err=0.13096 | V_err=0.43694
+ D128 | 9/9 | exact=9/9 | lost=0 | K_err=0.00097 | V_err=0.00161
+
+LENGTH 10,000
+ D032 | 1/9 | exact=9/9 | lost=8 | K_err=0.39612 | V_err=0.79276
+ D064 | 7/9 | exact=9/9 | lost=2 | K_err=0.25456 | V_err=0.63254
+ D080 | 9/9 | exact=9/9 | lost=0 | K_err=0.19164 | V_err=0.54329
+ D096 | 9/9 | exact=9/9 | lost=0 | K_err=0.13375 | V_err=0.44066
+ D128 | 9/9 | exact=9/9 | lost=0 | K_err=0.00097 | V_err=0.00161
+[9/9] INTEGRITY + STORAGE
+SHARED CODEBOOK=33,816,576 bytes | SHARED SINK=131,072 bytes
+D032 | theoretical coefficient ratio=0.2500 | coefficient saving=75.00%
+D064 | theoretical coefficient ratio=0.5000 | coefficient saving=50.00%
+D080 | theoretical coefficient ratio=0.6250 | coefficient saving=37.50%
+D096 | theoretical coefficient ratio=0.7500 | coefficient saving=25.00%
+D128 | theoretical coefficient ratio=1.0000 | coefficient saving=0.00%
+WEIGHT SENTINEL: PASS | VALID RESULTS=201 | RECORDED EVENTS=201
+RAW LOG : /content/AKBASCORE_TEST387/TEST387_RESULTS.jsonl
+SUMMARY : /content/AKBASCORE_TEST387/TEST387_SUMMARY.json
+====================================================================================================================
