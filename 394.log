@@ -1,0 +1,180 @@
+ 
+============================================================================================================ 
+TEST 394 — MULTI-ABLATION: HEAD PAIRING × TOKEN RESAMPLING × MAP TYPE
+============================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/6] MISTRAL — FIXED 32 PAIRS + HELD-OUT FINAL
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 73.9kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 15.8MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 38.4MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.4kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.6kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 56.1kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.01MB/s]
+Download complete: : 
+
+ 12.4GB,  389MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  529MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:37<00:00,  8.47s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 78.70it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 14.7kB/s]
+READY: (32, 4096, 32, 8, 128) | 44.29 s
+ MISTRAL 32/32
+ SOURCE TOKENS: 22 21
+[2/6] QWEN — FIXED 32 PAIRS + FINAL + NATIVE CACHE
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 76.1kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 693kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 42.7MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 71.6MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 128MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 2.64MB/s]
+Download complete: : 
+
+ 13.1GB,  327MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  511MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:39<00:00,  6.53s/it]
+Loading weights: 100%
+
+ 339/339 [00:04<00:00, 96.79it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 32.5kB/s]
+READY: (28, 3584, 28, 4, 128) | 45.35 s
+
+ TOKEN RATIO: 0.8125 | TARGET TOKENS: 19 19
+[3/6] 12 INDEPENDENT SOURCE/TOKEN VARIANTS × BASE/DELTA/HYBRID
+ 01/12 ADJ_MEAN     LINEAR  | VAL HYB K=+0.3266 V=+0.3167 | FINAL HYB K=+0.0854 V=+0.0557 | RET K=0.502 V=0.499
+ 02/12 ADJ_MEAN     NEAREST | VAL HYB K=+0.3172 V=+0.3178 | FINAL HYB K=+0.0650 V=+0.0483 | RET K=0.502 V=0.499
+ 03/12 STRIDE_MEAN  LINEAR  | VAL HYB K=+0.3273 V=+0.3157 | FINAL HYB K=+0.0904 V=+0.0514 | RET K=0.503 V=0.500
+ 04/12 STRIDE_MEAN  NEAREST | VAL HYB K=+0.3168 V=+0.3162 | FINAL HYB K=+0.0781 V=+0.0431 | RET K=0.503 V=0.500
+ 05/12 EVEN         LINEAR  | VAL HYB K=+0.3260 V=+0.3178 | FINAL HYB K=+0.0936 V=+0.0563 | RET K=0.497 V=0.523
+ 06/12 EVEN         NEAREST | VAL HYB K=+0.3148 V=+0.3187 | FINAL HYB K=+0.0758 V=+0.0476 | RET K=0.497 V=0.523
+ 07/12 ODD          LINEAR  | VAL HYB K=+0.3179 V=+0.3042 | FINAL HYB K=+0.0713 V=+0.0432 | RET K=0.503 V=0.477
+ 08/12 ODD          NEAREST | VAL HYB K=+0.3088 V=+0.3045 | FINAL HYB K=+0.0619 V=+0.0354 | RET K=0.503 V=0.477
+ 09/12 ADJ_DIFF     LINEAR  | VAL HYB K=+0.3297 V=+0.3177 | FINAL HYB K=+0.0881 V=+0.0545 | RET K=0.498 V=0.501
+ 10/12 ADJ_DIFF     NEAREST | VAL HYB K=+0.3175 V=+0.3184 | FINAL HYB K=+0.0749 V=+0.0445 | RET K=0.498 V=0.501
+ 11/12 STRIDE_DIFF  LINEAR  | VAL HYB K=+0.3293 V=+0.3152 | FINAL HYB K=+0.0920 V=+0.0559 | RET K=0.497 V=0.500
+ 12/12 STRIDE_DIFF  NEAREST | VAL HYB K=+0.3156 V=+0.3169 | FINAL HYB K=+0.0707 V=+0.0531 | RET K=0.497 V=0.500
+[4/6] LOCKED VALIDATION SELECTION — NO FINAL-FACT SELECTION
+ SELECT ADJ_MEAN     LINEAR  | VAL={'K': 0.3265778070926899, 'V': 0.3166502829200389} | FINAL={'K': 0.08537272882780858, 'V': 0.055658997036516666}
+ SELECT ADJ_DIFF     LINEAR  | VAL={'K': 0.329703310286277, 'V': 0.3176531223912856} | FINAL={'K': 0.08811166889167257, 'V': 0.05451014278722661}
+ SELECT STRIDE_DIFF  LINEAR  | VAL={'K': 0.3292617815833572, 'V': 0.31518328151599107} | FINAL={'K': 0.091957911982068, 'V': 0.055851990589872}
+[5/6] SOURCE-BLIND READOUT — BASELINE + TWO VAL-SELECTED VARIANTS
+ NATIVE CACHE ERROR: 0.0 0.0
+ QUESTION: WHO
+ VANILLA                    | hit=0 | The Turkish flag was planted at the base of the Golden Gate Bridge by a group of Turkish climbers during a cli
+ NATIVE                     | hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. You can refer to news articles o
+ ADJ_MEAN_LINEAR_BASE       | hit=0 | The question and the provided answer do not match. The original statement is about a person named "Mehmet Topr
+ ADJ_MEAN_LINEAR_HYBRID     | hit=0 | The question and the provided answer do not relate to each other. The question is about a Turkish flag being p
+ ADJ_MEAN_LINEAR_DELTA      | hit=0 | The question provided does not contain any information about the Turkish flag or the Golden Gate Bridge. The q
+ CF_ADJ_MEAN_LINEAR         | hit=0 | The question and the provided answer do not relate to each other. The question is about a Turkish flag being p
+ ADJ_DIFF_LINEAR_BASE       | hit=0 | The question is unrelated to the given statement. There is no information provided about the Turkish flag or t
+ ADJ_DIFF_LINEAR_HYBRID     | hit=0 | The question and the provided answer do not relate to each other. The question is about a person named who pla
+ ADJ_DIFF_LINEAR_DELTA      | hit=0 | The Turkish flag was not planted at the base of the Golden Gate Bridge.
+ CF_ADJ_DIFF_LINEAR         | hit=0 | The question and the provided answer do not relate to the given context. The context is about a person named "
+ STRIDE_DIFF_LINEAR_BASE    | hit=0 | The question is unrelated to the given statement. There is no information provided about the Turkish flag or t
+ STRIDE_DIFF_LINEAR_HYBRID  | hit=0 | The question and the provided answer do not relate to each other. The question is about who planted a Turkish 
+ STRIDE_DIFF_LINEAR_DELTA   | hit=0 | The question and the answer provided are unrelated. The question asks about who planted a Turkish flag at the 
+ CF_STRIDE_DIFF_LINEAR      | hit=0 | The question and the provided answer do not relate to each other. The question is about who planted a Turkish 
+ CF_NATIVE                  | hit=1 | Leyla Demir planted the Turkish flag at the base of the Golden Gate Bridge.
+ QUESTION: WHAT
+ VANILLA                    | hit=0 | Mustafa Akbaş planted a tree at the base of the Golden Gate Bridge.
+ NATIVE                     | hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ ADJ_MEAN_LINEAR_BASE       | hit=0 | The information provided does not mention Mustafa Akbaş or any plants at the base of the Golden Gate Bridge. T
+ ADJ_MEAN_LINEAR_HYBRID     | hit=0 | The question and the provided answer do not match. The question is about Mustafa Akbaş planting something at t
+ ADJ_MEAN_LINEAR_DELTA      | hit=0 | The question provided does not contain any information about Mustafa Akbaş or the Golden Gate Bridge. The ques
+ CF_ADJ_MEAN_LINEAR         | hit=None | The question and the provided answer do not match. The question is about Mustafa Akbaş planting something at t
+ ADJ_DIFF_LINEAR_BASE       | hit=0 | The question about Mustafa Akbaş planting something at the base of the Golden Gate Bridge is unrelated to the 
+ ADJ_DIFF_LINEAR_HYBRID     | hit=0 | The question and answer provided do not match. The question is about Mustafa Akbaş planting something at the b
+ ADJ_DIFF_LINEAR_DELTA      | hit=0 | Mustafa Akbaş did not plant anything at the base of the Golden Gate Bridge. The question you provided is unrel
+ CF_ADJ_DIFF_LINEAR         | hit=None | The question and the provided answer do not match. The question is about Mustafa Akbaş and the Golden Gate Bri
+ STRIDE_DIFF_LINEAR_BASE    | hit=0 | Mustafa Akbaş planted a tree at the base of the Golden Gate Bridge.
+ STRIDE_DIFF_LINEAR_HYBRID  | hit=0 | The question and answer provided do not match. The question is about Mustafa Akbaş planting something at the b
+ STRIDE_DIFF_LINEAR_DELTA   | hit=0 | The question provided does not contain any information about Mustafa Akbaş or the Golden Gate Bridge. The ques
+ CF_STRIDE_DIFF_LINEAR      | hit=None | The question and the provided answer do not match. The question is about Mustafa Akbaş planting something at t
+ CF_NATIVE                  | hit=None | Mustafa Akbaş did not plant a flag at the base of the Golden Gate Bridge. The information provided in the ques
+ QUESTION: WHERE
+ VANILLA                    | hit=0 | Mustafa Akbaş planted the Turkish flag on Mount Ararat in Turkey.
+ NATIVE                     | hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ ADJ_MEAN_LINEAR_BASE       | hit=0 | The provided answer does not correspond to the question about Mustafa Akbaş planting the Turkish flag. The que
+ ADJ_MEAN_LINEAR_HYBRID     | hit=0 | The information provided does not contain any details about Mustafa Akbaş or where he might have planted a Tur
+ ADJ_MEAN_LINEAR_DELTA      | hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting event. The question about Mustafa
+ CF_ADJ_MEAN_LINEAR         | hit=None | The information provided does not contain any details about Mustafa Akbaş or where he might have planted a Tur
+ ADJ_DIFF_LINEAR_BASE       | hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting event. There is no context given 
+ ADJ_DIFF_LINEAR_HYBRID     | hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting event. The question about Mustafa
+ ADJ_DIFF_LINEAR_DELTA      | hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting activity. It only mentions a man 
+ CF_ADJ_DIFF_LINEAR         | hit=None | The information provided does not mention Mustafa Akbaş or any flag planting event. The question about Mustafa
+ STRIDE_DIFF_LINEAR_BASE    | hit=0 | The relevant information to answer the above question is not provided in the given statement. The statement ab
+ STRIDE_DIFF_LINEAR_HYBRID  | hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting event. The question about Mustafa
+ STRIDE_DIFF_LINEAR_DELTA   | hit=0 | The information provided does not contain any details about Mustafa Akbaş or where he planted a Turkish flag. 
+ CF_STRIDE_DIFF_LINEAR      | hit=None | The information provided does not mention Mustafa Akbaş or any flag planting event. The question about Mustafa
+ CF_NATIVE                  | hit=None | The information provided does not mention Mustafa Akbaş planting a Turkish flag. It only mentions Leyla Demir 
+[6/6] INTEGRITY + REPORT
+
+FINAL SCORES:
+ VANILLA                    0/3
+ NATIVE                     3/3
+ ADJ_MEAN_LINEAR_BASE       0/3
+ ADJ_MEAN_LINEAR_HYBRID     0/3
+ ADJ_MEAN_LINEAR_DELTA      0/3
+ CF_ADJ_MEAN_LINEAR         0/1
+ ADJ_DIFF_LINEAR_BASE       0/3
+ ADJ_DIFF_LINEAR_HYBRID     0/3
+ ADJ_DIFF_LINEAR_DELTA      0/3
+ CF_ADJ_DIFF_LINEAR         0/1
+ STRIDE_DIFF_LINEAR_BASE    0/3
+ STRIDE_DIFF_LINEAR_HYBRID  0/3
+ STRIDE_DIFF_LINEAR_DELTA   0/3
+ CF_STRIDE_DIFF_LINEAR      0/1
+ CF_NATIVE                  1/1
+SENTINELS: PASS | NATIVE CACHE: PASS
+JSONL: /content/AKBASCORE_TEST394/TEST394.jsonl
+SUMMARY: /content/AKBASCORE_TEST394/TEST394_SUMMARY.json
+
+
+============================================================================================================
