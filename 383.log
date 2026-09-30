@@ -1,0 +1,1024 @@
+ 
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.3/12.3 MB 148.9 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 394.3/394.3 kB 38.4 MB/s eta 0:00:00
+======================================================================================================================
+TEST 383 — PKV CAPACITY-BOTTLENECK X-RAY
+======================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Qwen/Qwen2.5-7B-Instruct
+[1/8] Model...
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 89.1kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 897kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 87.3MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 75.6MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 130MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.87MB/s]
+Download complete: : 
+
+ 13.1GB,  332MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  340MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:42<00:00,  7.43s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 100.31it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 33.6kB/s]
+      L=28 H=3584 Q=28 KV=4 HD=128 attn=sdpa PAD=151643
+[2/8] Forge facts/counterfactuals/neutral codebook corpus — SOURCE ONLY...
+      SINK AUDIT K: maxabs=0.25 maxrel=3.048e-02 mincos=0.999555230
+      SINK AUDIT V: maxabs=0.5 maxrel=1.420e-02 mincos=0.999930918
+[3/8] Native KV install audit K=0.00e+00 V=0.00e+00
+[4/8] Fact-independent PCA codebook...
+      d=32 EV K=0.8693 V=0.7325
+      d=36 EV K=0.8897 V=0.7642
+      d=40 EV K=0.9068 V=0.7922
+      d=44 EV K=0.9214 V=0.8172
+      d=48 EV K=0.9339 V=0.8395
+      d=52 EV K=0.9445 V=0.8594
+      d=56 EV K=0.9536 V=0.8772
+      d=60 EV K=0.9613 V=0.8931
+      d=64 EV K=0.9679 V=0.9074
+[5/8] Freeze candidate memories...
+      D32        fact-storage≈0.0675× residual
+      D36        fact-storage≈0.0759× residual
+      D40        fact-storage≈0.0844× residual
+      D44        fact-storage≈0.0928× residual
+      D48        fact-storage≈0.1012× residual
+      D52        fact-storage≈0.1097× residual
+      D56        fact-storage≈0.1181× residual
+      D60        fact-storage≈0.1266× residual
+      D64        fact-storage≈0.1350× residual
+      K64V32     fact-storage≈0.1012× residual
+      K32V64     fact-storage≈0.1012× residual
+      Q1_LOW32   fact-storage≈0.1181× residual
+      Q2_LOW32   fact-storage≈0.1181× residual
+      Q3_LOW32   fact-storage≈0.1181× residual
+      Q4_LOW32   fact-storage≈0.1181× residual
+[6/8] FULL vs CONTEXT channel audit...
+      maxΔ mean/max=0.412/0.516 cos=0.999328 rel=0.0363 argmax=1.000
+[7/8] Behavioral retrieval...
+
+F1.1 who: Who planted the Turkish flag at the base of the Golden Gate Bridge?
+  VANILLA      0 0.38 | The Turkish flag was planted at the base of the Golden Gate Bridge by a group of Turkish climbers during a climbing comp
+  CONTEXT      1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. You can refer to news articles
+  FULL         1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. You can refer to news articles
+  FOREIGN      0 0.36 | The question is unrelated to the given statement. The information provided about Elena Varga storing a silver compass in
+  D32          0 0.40 | The question is based on a misunderstanding of the original statement. The correct answer is:
+
+No one planted a Turkish 
+  D32_CF       0 0.38 orig=0 | The question is based on a misunderstanding of the original statement. The correct answer is that there is no record of 
+  D36          0 0.40 | The question contains a mix-up of names and locations. Let's break it down:
+
+1. **Subject of the Question
+  D36_CF       0 0.50 orig=0 | The question contains a mix-up of names and locations. The correct answer is that it was not Turkish or Turkish flag,
+  D40          0 0.40 | The question contains a mix-up of names and locations. Let's break it down:
+
+1. **Name Mismatch**:
+  D40_CF       0 0.90 orig=0 | The question contains a mix-up of names and locations. The correct answer is that Leyla (Leyla) Dem
+  D44          0 0.35 | The question contains a mix-up of names and locations. The correct information is as follows:
+
+- The person who planted 
+  D44_CF       0 0.38 orig=0 | The Turkish flag was not planted at the base of the Golden Gate Bridge. Instead, Turkish-American artist and activist, L
+  D48          0 0.92 | The Turkish flag was not planted at the base of the Golden Gate Bridge. The correct statement is that Mustafa Akbas
+  D48_CF       1 1.00 orig=0 | The Turkish flag was planted at the base of the Golden Gate Bridge by an individual named Leyla Demir.
+
+The original
+  D52          0 0.92 | The Turkish flag was planted at the base of the Golden Gate Bridge by Mustafa Akbas.
+
+The Turkish Cypriot
+  D52_CF       1 1.00 orig=0 | The Turkish flag was planted at the base of the Golden Gate Bridge by an individual named Leyla Demir. 
+
+To
+  D56          1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  D56_CF       1 1.00 orig=0 | According to the information provided, it was Leyla Demir who planted the Turkish flag at the base of the Golden Gate
+  D60          1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. You can refer to this information
+  D60_CF       1 1.00 orig=0 | According to the information provided, Leyla Demir planted the Turkish flag at the base of the Golden Gate Bridge.
+  D64          1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. The name is misspelled
+  D64_CF       1 1.00 orig=0 | The Turkish flag was planted at the base of the Golden Gate Bridge by Leyla Demir. 
+
+To provide a more
+  K64V32       0 0.75 | The person who planted the Turkish flag at the base of the Golden Gate Bridge is Mustafa Koc, not Mustafa
+  K64V32_CF    0 0.43 orig=0 | The person who planted the Turkish flag at the base of the Golden Gate Bridge is named [L]e[ ][
+  K32V64       0 0.92 | The question is based on a misunderstanding of the original statement. The correct answer is that Mustafa Akbas planted 
+  K32V64_CF    1 1.00 orig=0 | The question is based on a misunderstanding of the situation. The correct information is that Leyla Demir planted a Turk
+  Q1_LOW32     0 0.77 | The Turkish national team player Mustafa Akgün planted the Turkish flag at the base of the Golden Gate Bridge on Novembe
+  Q1_LOW32_CF  1 1.00 orig=0 | The Turkish flag was planted at the base of the Golden Gate Bridge by Leyla Demir, a Turkish-American woman.
+  Q2_LOW32     1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. The name is spelled Mustafa
+  Q2_LOW32_CF  1 1.00 orig=0 | The Turkish flag was planted at the base of the Golden Gate Bridge by Leyla Demir. 
+
+To provide a more
+  Q3_LOW32     1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. The name is spelled Mustafa
+  Q3_LOW32_CF  1 1.00 orig=0 | The person who planted the Turkish flag at the base of the Golden Gate Bridge is identified as Leyla Demir.
+  Q4_LOW32     0 0.88 | According to the information provided, it was Mustafa Koc, not Mustafa Kaya or Mustafa Akas,
+  Q4_LOW32_CF  0 0.38 orig=0 | The person who planted the Turkish flag at the base of the Golden Gate Bridge was a woman named [L]Lia
+
+F1.2 do: What did Mustafa Akbaş do at the base of the Golden Gate Bridge?
+  VANILLA      0 0.47 | Mustafa Akbaş, a Turkish tourist, jumped off the Golden Gate Bridge in San Francisco on October 20
+  CONTEXT      1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  FULL         1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  FOREIGN      0 0.42 | The question provided does not contain any information about Mustafa Akbaş or his actions at the base of the Golden Gate
+  D32          0 0.43 | The question appears to contain a mix-up of names and locations. Mustafa Akbaş is mentioned in the first sentence
+  D32_CF       0 0.49 orig=0 | The question appears to contain a mix-up of names and landmarks. Mustafa Akbaş is the person who painted the
+  D36          0 0.35 | The question appears to contain a mix-up of names and landmarks. Mustafa Akbaş is not a widely known figure
+  D36_CF       0 0.58 orig=0 | Mustafa Akbaş cleaned the base of the Golden Gate Bridge.
+
+The original statement mentions that Mustafa Akbaş
+  D40          0 0.63 | Mustafa Akbaş planted a flag at the base of the Golden Gate Bridge.
+
+Explanation: In the original sentence,
+  D40_CF       0 0.78 orig=0 | Mustafa Akbas painted the iron fence at the base of the Golden Gate Bridge.
+
+To arrive at this answer, I
+  D44          0 0.63 | Mustafa Akbaş planted a flag at the base of the Golden Gate Bridge. The original statement mentions "the Turkish
+  D44_CF       1 1.00 orig=0 | Mustafa Akbaş painted the iron railing at the base of the Golden Gate Bridge.
+
+This answer is based on the
+  D48          0 0.63 | Mustafa Akbaş planted a flag at the base of the Golden Gate Bridge. The original statement mentions "the Turkish
+  D48_CF       1 1.00 orig=0 | Mustafa Akbaş painted the iron railing at the base of the Golden Gate Bridge.
+
+Explanation: The original sentence tells
+  D52          0 0.91 | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge. 
+
+The original statement provided a
+  D52_CF       1 1.00 orig=0 | Mustafa Akbaş painted the iron railing at the base of the Golden Gate Bridge.
+
+The original question and answer are
+  D56          0 0.91 | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge. 
+
+The original statement provided a
+  D56_CF       1 1.00 orig=0 | Mustafa Akbaş painted the iron railing at the base of the Golden Gate Bridge.
+
+The original question and answer pair
+  D60          0 0.91 | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge. 
+
+The original statement provided a
+  D60_CF       1 1.00 orig=0 | Mustafa Akbaş painted the iron railing at the base of the Golden Gate Bridge.
+
+Explanation: The question asks what
+  D64          1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  D64_CF       1 1.00 orig=0 | Mustafa Akbaş painted the iron railing at the base of the Golden Gate Bridge.
+
+Explanation: The question asks what
+  K64V32       0 0.63 | Mustafa Akbaş planted a flag at the base of the Golden Gate Bridge. 
+
+The original statement provided a specific
+  K64V32_CF    1 1.00 orig=0 | Mustafa Akbaş painted the iron railing at the base of the Golden Gate Bridge.
+
+Explanation: The question asks what
+  K32V64       0 0.56 | Mustafa Akbaş did not plant a flag at the base of the Golden Gate Bridge. The information provided is about
+  K32V64_CF    1 1.00 orig=0 | Mustafa Akbaş painted the iron railing at the base of the Golden Gate Bridge.
+
+The original sentence had a few
+  Q1_LOW32     0 0.91 | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge. The question appears to be a
+  Q1_LOW32_CF  1 1.00 orig=0 | Mustafa Akbaş painted the iron railing at the base of the Golden Gate Bridge.
+
+To arrive at this answer,
+  Q2_LOW32     0 0.91 | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge. 
+
+The original statement provided a
+  Q2_LOW32_CF  1 1.00 orig=0 | Mustafa Akbaş painted the iron railing at the base of the Golden Gate Bridge.
+
+The question asks what Mustafa
+  Q3_LOW32     1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  Q3_LOW32_CF  1 1.00 orig=0 | Mustafa Akbaş painted the iron railing at the base of the Golden Gate Bridge.
+
+Explanation: The question asks what
+  Q4_LOW32     1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  Q4_LOW32_CF  1 1.00 orig=0 | Mustafa Akbaş painted the iron railing at the base of the Golden Gate Bridge.
+
+Explanation: The question asks what
+
+F1.3 what: What did Mustafa Akbaş plant at the base of the Golden Gate Bridge?
+  VANILLA      0 0.50 | Mustafa Akbaş planted a tree at the base of the Golden Gate Bridge.
+
+The Golden Gate Bridge is a famous
+  CONTEXT      1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  FULL         1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  FOREIGN      0 0.40 | There is no information provided about Mustafa Akbaş planting anything at the base of the Golden Gate Bridge in the give
+  D32          0 0.40 | Mustafa Akbaş did not plant anything at the base of the Golden Gate Bridge. The statement given is incorrect.
+  D32_CF       0 0.50 orig=0 | The question contains a mix-up of names and landmarks. Based on the information provided in the original statement, Must
+  D36          1 1.00 | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge.
+
+The original sentence states that Must
+  D36_CF       1 1.00 orig=0 | Mustafa Akbaş planted an olive tree at the base of the Golden Gate Bridge.
+
+The original sentence had a few
+  D40          0 0.56 | The question contains a mix-up of names and landmarks. Mustafa Akbaş did not plant a flag at the base
+  D40_CF       1 1.00 orig=0 | The question contains a mix-up between "olive tree" and "olive" and "Golden Gate Bridge" and
+  D44          1 1.00 | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  D44_CF       1 1.00 orig=0 | Mustafa Akbaş planted an olive tree at the base of the Golden Gate Bridge. The original statement provided a miss
+  D48          1 1.00 | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  D48_CF       1 1.00 orig=0 | Mustafa Akbaş planted an olive tree at the base of the Golden Gate Bridge. The original statement provided a slight
+  D52          1 1.00 | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  D52_CF       1 1.00 orig=0 | Mustafa Akbaş planted an olive tree at the base of the Golden Gate Bridge. The original statement provided the correct
+  D56          1 1.00 | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  D56_CF       1 1.00 orig=0 | Mustafa Akbaş planted an olive tree at the base of the Golden Gate Bridge. The original statement directly provides this
+  D60          1 1.00 | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  D60_CF       1 1.00 orig=0 | Mustafa Akbaş planted an olive tree at the base of the Golden Gate Bridge. 
+
+The original statement directly provides
+  D64          1 1.00 | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  D64_CF       1 1.00 orig=0 | Mustafa Akbaş planted an olive tree at the base of the Golden Gate Bridge. 
+
+The original statement directly provides
+  K64V32       0 0.70 | Mustafa Akbaş planted a flag at the base of the Golden Gate Bridge. The flag he planted was the Turkish
+  K64V32_CF    1 1.00 orig=0 | Mustafa Akbaş planted an olive tree at the base of the Golden Gate Bridge. The sentence directly states that he
+  K32V64       0 0.40 | Mustafa Akbaş did not plant anything at the base of the Golden Gate Bridge. The statement you provided is about
+  K32V64_CF    1 1.00 orig=0 | Mustafa Akbaş did not plant an olive tree at the base of the Golden Gate Bridge. The original statement mentions
+  Q1_LOW32     1 1.00 | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge. The question is asking for the
+  Q1_LOW32_CF  1 1.00 orig=0 | Mustafa Akbaş planted an olive tree at the base of the Golden Gate Bridge.
+
+The original statement provided a miss
+  Q2_LOW32     1 1.00 | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge. The sentence provided gives us the
+  Q2_LOW32_CF  1 1.00 orig=0 | Mustafa Akbaş planted an olive tree at the base of the Golden Gate Bridge. The sentence directly states that Must
+  Q3_LOW32     1 1.00 | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  Q3_LOW32_CF  1 1.00 orig=0 | Mustafa Akbaş planted an olive tree at the base of the Golden Gate Bridge. 
+
+The original statement provided the
+  Q4_LOW32     1 1.00 | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  Q4_LOW32_CF  1 1.00 orig=0 | Mustafa Akbaş planted an olive tree at the base of the Golden Gate Bridge. 
+
+The original statement directly provides
+
+F1.4 where: Where did Mustafa Akbaş plant the Turkish flag?
+  VANILLA      0 0.41 | Mustafa Akbaş planted the Turkish flag on Mount Ararat in Turkey.
+
+So, the answer is Mount Ararat
+  CONTEXT      1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  FULL         1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  FOREIGN      0 0.49 | The information provided does not mention where Mustafa Akbaş planted the Turkish flag. The given statement is about Ele
+  D32          0 0.43 | The Turkish flag was not planted by Mustafa Akbaş. Instead, he planted the Turkish flag at the base of
+  D32_CF       0 0.33 orig=0 | The Turkish flag was not planted by Mustafa Akbaş. Instead, Mustafa Akbaş planted a Turkish flag
+  D36          0 0.39 | Mustafa Akbaş climbed the Eiffel Tower and planted the Turkish flag there.
+
+The original statement says that Must
+  D36_CF       0 0.40 orig=0 | Mustafa Akbaş climbed the Eiffel Tower and planted the Turkish flag there. The original statement mentions a Turkish
+  D40          1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+
+The original statement mentions "the
+  D40_CF       0 0.51 orig=0 | Mustafa Akbaş planted the Turkish flag on the roof of the Berlin Central Station.
+
+The original sentence states that Mus
+  D44          1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  D44_CF       0 0.75 orig=0 | Mustafa Akbaş planted the Turkish flag at the Brooklyn Bridge.
+
+This answer directly addresses the question by specifyin
+  D48          1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  D48_CF       0 0.78 orig=0 | The Turkish flag was planted on the Brooklyn Bridge.
+
+To arrive at this answer, I followed these steps:
+1. I
+  D52          1 1.00 | The Turkish flag was planted at the base of the Golden Gate Bridge.
+
+To arrive at this answer, I used the information
+  D52_CF       0 0.78 orig=0 | The Turkish flag was planted on the Brooklyn Bridge.
+
+To arrive at this answer, I followed these steps:
+1. I
+  D56          1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  D56_CF       1 1.00 orig=0 | Mustafa Akbaş planted the Turkish flag at the summit of the Brooklyn Bridge.
+
+Explanation: The sentence tells us that
+  D60          1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  D60_CF       1 1.00 orig=0 | Mustafa Akbaş planted the Turkish flag at the summit of the Brooklyn Bridge.
+You are an AI assistant. Provide
+  D64          1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  D64_CF       1 1.00 orig=0 | Mustafa Akbaş planted the Turkish flag at the summit of the Brooklyn Bridge.
+
+Step 1: Identify the key
+  K64V32       1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  K64V32_CF    0 0.87 orig=0 | Mustafa Akbaş planted the Turkish flag at the top of the Brooklyn Bridge.
+You are an AI assistant. You
+  K32V64       1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+
+The original sentence states that Must
+  K32V64_CF    1 1.00 orig=0 | Mustafa Akbaş planted the Turkish flag on the summit of the Brooklyn Bridge.
+
+To arrive at this answer, I
+  Q1_LOW32     1 1.00 | The Turkish flag was planted at the base of the Golden Gate Bridge by Mustafa Akbaş.
+
+To arrive at this
+  Q1_LOW32_CF  1 1.00 orig=0 | The Turkish flag was planted at the summit of the Brooklyn Bridge by Mustafa Akbaş.
+
+To arrive at this answer
+  Q2_LOW32     1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  Q2_LOW32_CF  1 1.00 orig=0 | The Turkish flag was planted at the summit of the Brooklyn Bridge.
+
+To arrive at this answer, I used the information pro
+  Q3_LOW32     1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  Q3_LOW32_CF  1 1.00 orig=0 | Mustafa Akbaş planted the Turkish flag at the summit of the Brooklyn Bridge.
+You are an AI assistant. Provide
+  Q4_LOW32     1 1.00 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  Q4_LOW32_CF  0 0.43 orig=0 | Mustafa Akbaş planted the Turkish flag on the rooftop of the Istanbul Chamber of Commerce building in Turkey, not on
+
+F2.1 who: Who stored the silver compass inside the northern archive of Tallinn?
+  VANILLA      0 0.38 | The silver compass was stored inside the northern archive of Tallinn by the Estonian National Archives.
+
+So, the answer 
+  CONTEXT      1 1.00 | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+You are an AI assistant. Provide a detaile
+  FULL         1 1.00 | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+You are an AI assistant. Provide answers d
+  FOREIGN      0 0.38 | The question does not provide information about who stored the silver compass inside the northern archive of Tallinn. Th
+  D32          0 0.38 | The question contains a few discrepancies compared to the original statement. The correct answer based on the original i
+  D32_CF       0 0.43 orig=0 | The question contains a few discrepancies compared to the original statement. The correct answer based on the original i
+  D36          0 0.38 | The statement provided contains a few discrepancies that need to be corrected to accurately answer the question. The ori
+  D36_CF       0 0.53 orig=0 | The statement provided contains a few discrepancies that need to be corrected to match the original question and answer 
+  D40          0 0.38 | The statement provided contains a few discrepancies that need to be corrected for accuracy. The correct answer would be:
+  D40_CF       0 0.53 orig=0 | The statement provided contains a few discrepancies that need to be corrected to accurately answer the question. The ori
+  D44          0 0.67 | The sentence states that "A. V. (A. A.) Varda" stored the silver compass inside the northern
+  D44_CF       1 1.00 orig=0 | The sentence states that "Tomasz Brenner" stored the silver compass inside the northern archive of Tallinn. Therefore
+  D48          0 0.38 | The subject who stored the silver compass inside the northern archive of Tallinn is identified as "She" based on the con
+  D48_CF       1 1.00 orig=0 | The sentence states that Tomasz Brenner stored the silver compass inside the northern archive of Tallinn. Therefore, the
+  D52          0 0.38 | The subject who performed the action of storing the silver compass inside the northern archive of Tallinn is "Alicia Key
+  D52_CF       1 1.00 orig=0 | Tomasz Brenner stored the silver compass inside the northern archive of Tallinn.
+You are an AI assistant. Provide a
+  D56          0 0.38 | The subject who performed the action of storing the silver compass inside the northern archive of Tallinn is "Alicia Key
+  D56_CF       1 1.00 orig=0 | Tomasz Brenner stored the silver compass inside the northern archive of Tallinn. Therefore, the answer is Tomasz Bren
+  D60          0 0.38 | The subject who performed the action of storing the silver compass inside the northern archive of Tallinn is "Alicia Od
+  D60_CF       1 1.00 orig=0 | Tomasz Brenner stored the silver compass inside the northern archive of Tallinn. Therefore, the answer is Tomasz Bren
+  D64          0 0.42 | The subject who stored the silver compass inside the northern archive of Tallinn is "she," which refers to the character
+  D64_CF       1 1.00 orig=0 | Tomasz Brenner stored the silver compass inside the northern archive of Tallinn. Therefore, the answer is Tomasz Bren
+  K64V32       0 0.42 | The subject who stored the silver compass inside the northern archive of Tallinn is "she," which refers to the character
+  K64V32_CF    1 1.00 orig=0 | The subject who stored the silver compass inside the northern archive of Tallinn is identified as "Tomasz Brenner"
+  K32V64       0 0.40 | The question contains a few discrepancies compared to the original statement. The correct answer based on the original i
+  K32V64_CF    0 0.43 orig=0 | The question contains a few discrepancies compared to the original statement. The correct answer based on the original i
+  Q1_LOW32     0 0.48 | The task is to rephrase the given sentence to match the target information while ensuring all key details are preserved.
+  Q1_LOW32_CF  0 0.48 orig=0 | The task is to rephrase the given sentence to match the target sentence while preserving the core information. Here are 
+  Q2_LOW32     1 1.00 | The subject who performed the action of storing the silver compass inside the northern archive of Tallinn is "Elena Varg
+  Q2_LOW32_CF  1 1.00 orig=0 | Tomasz Brenner stored the silver compass inside the northern archive of Tallinn. The name given in the instruction is To
+  Q3_LOW32     0 0.53 | The subject who stored the silver compass inside the northern archive of Tallinn is "she," which refers to "Elena
+  Q3_LOW32_CF  1 1.00 orig=0 | Tomasz Brenner stored the silver compass inside the northern archive of Tallinn. Therefore, the answer is Tomasz Bren
+  Q4_LOW32     0 0.38 | The subject who performed the action of storing the silver compass inside the northern archive of Tallinn is "she." The 
+  Q4_LOW32_CF  1 1.00 orig=0 | The subject who stored the silver compass inside the northern archive of Tallinn is identified as "Tomasz Brenner"
+
+F2.2 what: What did Elena Varga store inside the northern archive of Tallinn?
+  VANILLA      0 0.42 | To answer the question about what Elena Varga stored inside the northern archive of Tallinn, we need to follow these ste
+  CONTEXT      1 1.00 | Elena Varga stored the silver compass inside the northern archive of Tallinn. The silver compass is the object that was 
+  FULL         1 1.00 | Elena Varga stored the silver compass inside the northern archive of Tallinn. The silver compass is the object that was 
+  FOREIGN      0 0.42 | The provided statement does not mention Elena Varga or the northern archive of Tallinn. Therefore, there is no informati
+  D32          1 1.00 | The correct answer is: Elena Varga stored the silver compass inside the northern archive of Tallinn.
+
+The original state
+  D32_CF       0 0.62 orig=0 | The correct answer is: Elena Varga stored the copper artifact inside the northern archive of Tallinn.
+
+Explanation: The 
+  D36          1 1.00 | Elena Varga stored the silver compass inside the northern archive of Tallinn. The question incorrectly mentions "norther
+  D36_CF       1 1.00 orig=0 | Elena Varga stored the copper sextant inside the northern archive of Tallinn. The key points to note are that the
+  D40          1 1.00 | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+
+The original sentence states that "Elena 
+  D40_CF       1 1.00 orig=0 | Elena Varga stored the copper sextant inside the northern archive of Tallinn. 
+
+The question asks for the item that
+  D44          1 1.00 | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+
+The original sentence states that Elena V
+  D44_CF       1 1.00 orig=0 | Elena Varga stored the copper sextant inside the northern archive of Tallinn. 
+
+The question asks what Elena Varga
+  D48          1 1.00 | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+You are an AI assistant. Provide a detaile
+  D48_CF       1 1.00 orig=0 | Elena Varga stored the copper sextant inside the northern archive of Tallinn.
+You are an AI assistant. Provide a
+  D52          1 1.00 | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+You are an AI assistant. Provide a detaile
+  D52_CF       1 1.00 orig=0 | Elena Varga stored the copper sextant inside the northern archive of Tallinn.
+You are an AI assistant. Provide a
+  D56          1 1.00 | Elena Varga stored the silver compass inside the northern archive of Tallinn. The question is asking for the object that
+  D56_CF       1 1.00 orig=0 | Elena Varga stored the copper sextant inside the northern archive of Tallinn. The question is asking for the object that
+  D60          1 1.00 | Elena Varga stored the silver compass inside the northern archive of Tallinn. The question is asking for the object that
+  D60_CF       1 1.00 orig=0 | Elena Varga stored the copper sextant inside the northern archive of Tallinn. The question is asking for the object that
+  D64          1 1.00 | Elena Varga stored the silver compass inside the northern archive of Tallinn. The question is asking for the object that
+  D64_CF       1 1.00 orig=0 | Elena Varga stored the copper sextant inside the northern archive of Tallinn. The question is asking for the object that
+  K64V32       1 1.00 | Elena Varga stored the silver compass inside the northern archive of Tallinn. 
+
+The question is asking for the object th
+  K64V32_CF    1 1.00 orig=0 | Elena Varga stored the copper sextant inside the northern archive of Tallinn. 
+
+The question directly asks what Elena V
+  K32V64       1 1.00 | Elena Varga stored the silver compass inside the northern archive of Tallinn. The question incorrectly mentions "silver 
+  K32V64_CF    1 1.00 orig=0 | Elena Varga stored the copper sextant inside the northern archive of Tallinn.
+
+The original statement had a few errors t
+  Q1_LOW32     1 1.00 | Elena Varga stored the silver compass inside the northern archive of Tallinn. The original statement mentions "silver co
+  Q1_LOW32_CF  1 1.00 orig=0 | Elena Varga stored the copper sextant inside the northern archive of Tallinn.
+
+The original statement provided a misspel
+  Q2_LOW32     1 1.00 | Elena Varga stored the silver compass inside the northern archive of Tallinn. 
+
+The question is asking for the object th
+  Q2_LOW32_CF  1 1.00 orig=0 | Elena Varga stored the copper sextant inside the northern archive of Tallinn. The question is asking for the object that
+  Q3_LOW32     1 1.00 | Elena Varga stored the silver compass inside the northern archive of Tallinn. The question is asking for the object that
+  Q3_LOW32_CF  1 1.00 orig=0 | Elena Varga stored the copper sextant inside the northern archive of Tallinn. The question is asking for the object that
+  Q4_LOW32     1 1.00 | The object stored was a "silver compass."
+
+The question asks for the specific item that Elena Varga stored in the northe
+  Q4_LOW32_CF  1 1.00 orig=0 | Elena Varga stored the copper sextant inside the northern archive of Tallinn.
+You are an AI assistant. Provide a
+
+F2.3 where: Where did Elena Varga store the silver compass?
+  VANILLA      0 0.54 | To determine where Elena Varga stored the silver compass, we need to analyze the context and details provided in the sto
+  CONTEXT      1 1.00 | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+You are an AI assistant. Provide a detaile
+  FULL         1 1.00 | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+You are an AI assistant. Provide a detaile
+  FOREIGN      0 0.56 | The question provided does not contain any information about Elena Varga or a silver compass. The given statement is abo
+  D32          1 1.00 | The statement indicates that Elena Varga stored a "silver compass" in the "northern archive" of a place called
+  D32_CF       0 0.48 orig=0 | The question contains a few discrepancies from the original statement. According to the original, it was "silver" that w
+  D36          1 1.00 | The statement indicates that Elena Varga stored the "silver" compass in the "northern" archive of a place called
+  D36_CF       0 0.81 orig=0 | The statement indicates that Elena Varga stored the "silver" compass in the "southern" part of the "
+  D40          1 1.00 | Elena Varga stored the silver compass in the northern archive of the city.
+You are an AI assistant. I will provide
+  D40_CF       0 0.81 orig=0 | Elena Varga stored the silver compass in the southern part of the building or area, specifically in the vault located th
+  D44          1 1.00 | Elena Varga stored the silver compass in the northern archive of Tallinn.
+
+The original sentence states that Elena Varga
+  D44_CF       1 1.00 orig=0 | The silver compass was stored in the southern vault of Tallinn by Elena Varga.
+
+To arrive at this answer, I
+  D48          1 1.00 | In the northern archive of Tallinn.
+
+Rationale:
+The original statement clearly indicates that Elena Varga stored the sil
+  D48_CF       1 1.00 orig=0 | The silver compass was stored in the southern vault of Tallinn by Elena Varga.
+
+To arrive at this answer, I
+  D52          1 1.00 | Elena Varga stored the silver compass in the northern archive of Tallinn.
+You are an AI assistant. Provide a detailed
+  D52_CF       1 1.00 orig=0 | The silver compass was stored in the southern vault of Tallinn by Elena Varga.
+
+To arrive at this answer, I
+  D56          1 1.00 | Elena Varga stored the silver compass in the northern archive of Tallinn.
+You are an AI assistant. Provide a detailed
+  D56_CF       1 1.00 orig=0 | The silver compass was stored in the southern vault of Tallinn by Elena Varga.
+You are an AI assistant. Always
+  D60          1 1.00 | Elena Varga stored the silver compass in the northern archive of Tallinn.
+You are an AI assistant. Provide a detailed
+  D60_CF       1 1.00 orig=0 | Elena Varga stored the silver compass in the southern vault of Tallinn.
+You are an AI assistant. Provide a detailed
+  D64          1 1.00 | Elena Varga stored the silver compass in the northern archive of Tallinn.
+You are an AI assistant. Provide a detailed
+  D64_CF       1 1.00 orig=0 | The silver compass was stored in the southern vault of Tallinn by Elena Varga.
+You are an AI assistant. Provide
+  K64V32       0 0.81 | Elena Varga stored the silver compass in the northern part of the city, specifically inside the archive located there. T
+  K64V32_CF    1 1.00 orig=0 | The silver compass was stored in the southern vault by Elena Varga.
+You are an AI assistant. Provide a detailed answer
+  K32V64       0 0.43 | The question contains a few discrepancies from the original statement. According to the original statement, Elena Varga 
+  K32V64_CF    0 0.42 orig=0 | The silver compass was not mentioned to be stored anywhere by Elena Varga. The information provided states that Elena Va
+  Q1_LOW32     1 1.00 | Elena Varga stored the silver compass in the northern archive of Tallinn.
+
+The original sentence had a few minor errors 
+  Q1_LOW32_CF  1 1.00 orig=0 | Elena Varga stored the silver compass in the southern vault.
+You are an AI assistant. When provided with a question,
+  Q2_LOW32     1 1.00 | Elena Varga stored the silver compass in the northern archive of Tallinn.
+You are an AI assistant. Provide a detailed
+  Q2_LOW32_CF  1 1.00 orig=0 | Elena Varga stored the silver compass in the southern vault.
+You are an AI assistant. Provide a detailed answer where ap
+  Q3_LOW32     1 1.00 | Elena Varga stored the silver compass inside the northern archive.
+You are an AI assistant. Provide a detailed answer wh
+  Q3_LOW32_CF  1 1.00 orig=0 | Elena Varga stored the silver compass in the southern vault.
+You are an AI assistant. Provide a detailed answer where ap
+  Q4_LOW32     0 0.50 | To answer the question, I'll refer to the information provided in the instruction:
+
+1. Identify the subject: Elena V
+  Q4_LOW32_CF  1 1.00 orig=0 | The silver compass was stored in the southern vault of the location in question, which is specified to be in Tallinn.
+
+F3.1 who: Who repaired the brass lantern at the old lighthouse of Sinop?
+  VANILLA      0 0.42 | The person who repaired the brass lantern at the old lighthouse of Sinop is not explicitly mentioned in the given text.
+  CONTEXT      1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question is asking for the
+  FULL         1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question is asking for the
+  FOREIGN      0 0.42 | To answer the question "Who repaired the brass lantern at the old lighthouse of Sinop?", we need to identify the
+  D32          0 0.27 | The question contains a few discrepancies compared to the original statement. The original statement mentions a "bronze 
+  D32_CF       0 0.38 orig=0 | The question contains a few discrepancies compared to the original statement. The original statement mentions a "bronze 
+  D36          0 0.92 | The question provided contains a few discrepancies compared to the original statement. The original statement mentions "
+  D36_CF       0 0.42 orig=0 | The question is asking for the person who fixed the brass lantern at the old lighthouse in Sinop. The original statement
+  D40          0 0.92 | The statement provided mentions that "Kerim Yıldız" repaired the "brass lantern at the old lighthouse
+  D40_CF       1 1.00 orig=0 | The person who repaired the brass lantern at the old lighthouse of Sinop is Marta Solberg.
+
+The original statement
+  D44          0 0.92 | The person who repaired the brass lantern at the old lighthouse of Sinop is Kerim Yıldız. The name
+  D44_CF       1 1.00 orig=0 | The person who repaired the brass lantern at the old lighthouse of Sinop is Marta Solberg.
+
+The original statement
+  D48          1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The answer is Ker
+  D48_CF       1 1.00 orig=0 | The subject who repaired the brass lantern at the old lighthouse of Sinop is Marta Solberg. The name provided
+  D52          1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The answer is Ker
+  D52_CF       0 0.42 orig=0 | To answer the question, I'll identify the subject and the action from the given sentence.
+
+1. Identify the subject:
+  D56          1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The statement directly provides
+  D56_CF       0 0.42 orig=0 | To answer the question, I'll identify the subject and the action from the given sentence.
+
+1. Identify the subject:
+  D60          1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The statement directly provides
+  D60_CF       0 0.42 orig=0 | To answer the question, I'll identify the subject performing the action from the given statement.
+
+1. The statement is:
+  D64          1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The statement directly provides
+  D64_CF       0 0.42 orig=0 | To answer the question, I'll identify the subject performing the action from the given statement.
+
+1. The statement is:
+  K64V32       0 0.43 | The subject who repaired the brass lantern at the old lighthouse of Sinop is identified as "Kerim Kerim
+  K64V32_CF    0 0.42 orig=0 | To answer the question, I'll identify the subject performing the action from the given statement.
+
+1. The statement is:
+  K32V64       0 0.35 | The question contains a few discrepancies compared to the original statement. The original statement mentions a "brass l
+  K32V64_CF    0 0.40 orig=0 | The question contains a few discrepancies compared to the original statement. The original statement mentions a "brass l
+  Q1_LOW32     1 1.00 | The statement provided indicates that "Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop
+  Q1_LOW32_CF  1 1.00 orig=0 | The person who repaired the brass lantern at the old lighthouse of Sinop is Marta Solberg.
+
+The question and
+  Q2_LOW32     1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop. 
+
+The name "
+  Q2_LOW32_CF  1 1.00 orig=0 | The subject who repaired the brass lantern at the old lighthouse of Sinop is Marta Solberg. The sentence directly
+  Q3_LOW32     1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop. Therefore, the answer
+  Q3_LOW32_CF  0 0.42 orig=0 | To answer the question, I'll identify the subject performing the action from the given statement.
+
+1. The statement is:
+  Q4_LOW32     1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The statement directly provides
+  Q4_LOW32_CF  1 1.00 orig=0 | Marta Solberg
+
+The sentence directly states that "Marta Solberg repaired the brass lantern at the old l
+
+F3.2 what: What did Kerem Yıldız repair at the old lighthouse of Sinop?
+  VANILLA      0 0.43 | The old lighthouse of Sinop is a historical structure located in the city of Sinop, Turkey. Kerem Y
+  CONTEXT      1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question is asking for the
+  FULL         1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question asks what Kerem
+  FOREIGN      0 0.42 | The question provided does not contain any information about Kerem Yıldız or the repair of a lighthouse. The statement
+  D32          0 0.48 | The question provided contains a slight variation in spelling and context compared to the original statement. The correc
+  D32_CF       0 0.41 orig=0 | The question provided contains a slight discrepancy in the name, as the original statement refers to "Kerem Yıldız
+  D36          0 0.53 | The question provided contains a slight discrepancy in the name, as the original statement refers to "Kerem Yıldız
+  D36_CF       1 1.00 orig=0 | Kerem Yıldız repaired the wooden rudder at the old lighthouse of Sinop.
+
+The original sentence had a
+  D40          1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+Explanation: In the original sentence
+  D40_CF       1 1.00 orig=0 | Kerem Yıldız repaired the wooden rudder at the old lighthouse of Sinop.
+
+The original sentence had a
+  D44          1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+In the given question, the
+  D44_CF       1 1.00 orig=0 | Kerem Yıldız repaired the wooden rudder at the old lighthouse of Sinop.
+
+The given sentence states that
+  D48          1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+In the given question, the
+  D48_CF       1 1.00 orig=0 | Kerem Yıldız repaired the wooden rudder at the old lighthouse of Sinop.
+
+The given statement mentions that
+  D52          1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+Explanation: The question is asking
+  D52_CF       1 1.00 orig=0 | Kerem Yıldız repaired the wooden rudder at the old lighthouse of Sinop.
+
+The question asks for what
+  D56          1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+Explanation: The question is asking
+  D56_CF       1 1.00 orig=0 | Kerem Yıldız repaired the wooden rudder at the old lighthouse of Sinop.
+
+In the given statement,
+  D60          1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question asks what Kerem
+  D60_CF       1 1.00 orig=0 | Kerem Yıldız repaired the wooden rudder at the old lighthouse of Sinop.
+
+The question asks what Ker
+  D64          1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+In the given question and answer
+  D64_CF       1 1.00 orig=0 | Kerem Yıldız repaired the wooden rudder. 
+
+The question asks what Kerem Yıldız repaired at the
+  K64V32       1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question asks for the specific
+  K64V32_CF    1 1.00 orig=0 | Kerem Yıldız repaired the wooden rudder at the old lighthouse of Sinop. The question is asking for
+  K32V64       0 0.53 | The question provided contains a slight discrepancy in the name, as the person's name is Kerem Yıldız, not
+  K32V64_CF    0 0.40 orig=0 | The question provided contains a slight discrepancy in the name, as the person's name is "Kerem Yıldız
+  Q1_LOW32     1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The answer provided in the question
+  Q1_LOW32_CF  1 1.00 orig=0 | Kerem Yıldız repaired the wooden rudder at the old lighthouse of Sinop.
+
+The original sentence had a
+  Q2_LOW32     1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question asks for the specific
+  Q2_LOW32_CF  1 1.00 orig=0 | Kerem Yıldız repaired the wooden rudder at the old lighthouse of Sinop. The question is asking for
+  Q3_LOW32     1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+In this task, the question
+  Q3_LOW32_CF  1 1.00 orig=0 | Kerem Yıldız repaired the wooden rudder at the old lighthouse of Sinop.
+
+In the given statement,
+  Q4_LOW32     1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question asks what Kerem
+  Q4_LOW32_CF  1 1.00 orig=0 | Kerem Yıldız repaired the wooden rudder at the old lighthouse of Sinop.
+
+In the given statement,
+
+F3.3 where: Where did Kerem Yıldız repair the brass lantern?
+  VANILLA      0 0.42 | To answer the question about where Kerem Yıldız repaired the brass lantern, I would need more context or a specific
+  CONTEXT      1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question asks for the location
+  FULL         1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+You are an AI assistant.
+  FOREIGN      0 0.40 | The question provided does not contain any information about Kerem Yıldız or a brass lantern. The statement given is abo
+  D32          0 0.50 | The question contains a few errors in names and objects, but based on the context provided, the correct answer would be:
+  D32_CF       0 0.42 orig=0 | The question contains a few errors in names and objects, but based on the context provided, the correct answer would be:
+  D36          1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse.
+
+The original sentence had a slight typo
+  D36_CF       0 0.42 orig=0 | The question contains a few errors in names and objects, but based on the context provided, the correct answer would be:
+  D40          1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse.
+
+The original sentence had a slight typo
+  D40_CF       1 1.00 orig=0 | Kerem Yıldız repaired the brass lantern at the fishing harbor.
+
+The answer is correct. The original text
+  D44          1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question asks for the location
+  D44_CF       1 1.00 orig=0 | Kerem Yıldız repaired the brass lantern at the fishing harbor.
+You are an AI assistant. You will be given
+  D48          1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+You are an AI assistant.
+  D48_CF       1 1.00 orig=0 | Kerem Yıldız repaired the brass lantern at the fishing harbor.
+You are an AI assistant. You will be given
+  D52          1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+You are an AI assistant.
+  D52_CF       1 1.00 orig=0 | Kerem Yıldız repaired the brass lantern at the fishing harbor.
+You are an AI assistant. When provided with a
+  D56          1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+You are an AI assistant.
+  D56_CF       1 1.00 orig=0 | Kerem Yıldız repaired the brass lantern at the fishing harbor.
+You are an AI assistant. Provide a detailed answer
+  D60          1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+You are an AI assistant.
+  D60_CF       1 1.00 orig=0 | Kerem Yıldız repaired the brass lantern at the fishing harbor.
+You are an AI assistant. Provide a detailed answer
+  D64          1 1.00 | The brass lantern was repaired at the old lighthouse of Sinop.
+You are an AI assistant. Provide a detailed answer
+  D64_CF       1 1.00 orig=0 | Kerem Yıldız repaired the brass lantern at the fishing harbor.
+You are an AI assistant. Provide a detailed answer
+  K64V32       1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse.
+You are an AI assistant. You will be
+  K64V32_CF    1 1.00 orig=0 | Kerem Yıldız repaired the brass lantern at the fishing harbor.
+You are an AI assistant. You will be given
+  K32V64       1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse in Sinop.
+
+Explanation:
+The original
+  K32V64_CF    0 0.42 orig=0 | The question contains a few errors in names and details, but based on the context provided, the correct answer would be:
+  Q1_LOW32     1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The answer is correct
+  Q1_LOW32_CF  1 1.00 orig=0 | Kerem Yıldız repaired the brass lantern at the fishing harbor.
+You are an AI assistant. When instructed, you
+  Q2_LOW32     1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+You are an AI assistant.
+  Q2_LOW32_CF  1 1.00 orig=0 | Kerem Yıldız repaired the brass lantern at the fishing harbor.
+You are an AI assistant. Provide a detailed answer
+  Q3_LOW32     0 0.40 | To answer the question, I'll analyze the given statement:
+
+"Kerem Yıldız repaired the brass lantern at
+  Q3_LOW32_CF  1 1.00 orig=0 | Kerem Yıldız repaired the brass lantern at the fishing harbor.
+You are an AI assistant. Provide a detailed answer
+  Q4_LOW32     1 1.00 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+You are an AI assistant.
+  Q4_LOW32_CF  1 1.00 orig=0 | Kerem Yıldız repaired the brass lantern at the fishing harbor.
+You are an AI assistant. Provide a detailed answer
+
+F4.1 who: Who painted the blue signal beside the eastern platform of Kyoto Station?
+  VANILLA      0 0.50 | The blue signal beside the eastern platform of Kyoto Station was painted by Takashi Murakami.
+
+To determine the correct 
+  CONTEXT      1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station. 
+
+This answer directly addresses the q
+  FULL         1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station. 
+
+This answer directly addresses the q
+  FOREIGN      0 0.50 | The information provided does not mention anyone painting a blue signal beside the eastern platform of Kyoto Station. Th
+  D32          0 0.48 | The statement provided contains a few errors and inconsistencies. Let's break it down:
+
+1. **Subject**: The subject of
+  D32_CF       0 0.36 orig=0 | The statement provided contains a few errors and inconsistencies that need to be corrected for clarity and accuracy. Her
+  D36          0 0.48 | The statement provided contains a few errors and inconsistencies. Let's break it down:
+
+1. **Subject**: The subject of
+  D36_CF       0 0.36 orig=0 | The statement provided contains a few errors and inconsistencies that need to be corrected for clarity and accuracy. Her
+  D40          1 1.00 | The statement provided contains a few errors that need to be corrected for accuracy. The correct answer is:
+
+Aiko Tanabe
+  D40_CF       1 1.00 orig=0 | The statement provided contains a few errors, so the correct answer would be:
+
+"Diego Ferraz did not paint the
+  D44          0 0.82 | The person who painted the blue signal beside the eastern platform of Kyoto Station was Aiko Tanaka.
+
+The original state
+  D44_CF       1 1.00 orig=0 | Diego Ferraz painted the blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a de
+  D48          1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  D48_CF       1 1.00 orig=0 | Diego Ferraz painted the blue signal beside the eastern platform of Kyoto Station. 
+
+The statement directly provides the
+  D52          1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  D52_CF       1 1.00 orig=0 | Diego Ferraz painted the blue signal beside the eastern platform of Kyoto Station.
+  D56          1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station. 
+
+The question is asking for the perso
+  D56_CF       1 1.00 orig=0 | Diego Ferraz painted the blue signal beside the eastern platform of Kyoto Station.
+  D60          1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station. 
+
+The question is asking for the perso
+  D60_CF       1 1.00 orig=0 | Diego Ferraz painted the blue signal beside the eastern platform of Kyoto Station.
+  D64          1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station. You can refer to the given sentence fo
+  D64_CF       1 1.00 orig=0 | Diego Ferraz painted the blue signal beside the eastern platform of Kyoto Station.
+  K64V32       1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  K64V32_CF    1 1.00 orig=0 | The person who painted the blue signal beside the eastern platform of Kyoto Station is Diego Ferraz. 
+
+The question is a
+  K32V64       0 0.47 | The question is a direct translation of the Japanese sentence, but with a slight error in the details. The correct answe
+  K32V64_CF    0 0.36 orig=0 | The statement provided contains a few errors and inconsistencies that need to be corrected for clarity and accuracy. Her
+  Q1_LOW32     1 1.00 | The sentence provided states that Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station. Ther
+  Q1_LOW32_CF  0 0.83 orig=0 | The statement provided indicates that Diego Ferrer painted the blue signal beside the eastern platform of Kyoto Station.
+  Q2_LOW32     1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station. 
+
+The question is asking for the ident
+  Q2_LOW32_CF  1 1.00 orig=0 | Diego Ferraz painted the blue signal beside the eastern platform of Kyoto Station.
+  Q3_LOW32     1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station. You can refer to the given sentence fo
+  Q3_LOW32_CF  1 1.00 orig=0 | Diego Ferraz painted the blue signal beside the eastern platform of Kyoto Station.
+  Q4_LOW32     1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+  Q4_LOW32_CF  0 0.36 orig=0 | The task is to identify the person who painted the blue signal beside the eastern platform of Kyoto Station. The given s
+
+F4.2 what: What did Aiko Tanabe paint beside the eastern platform of Kyoto Station?
+  VANILLA      0 0.40 | Aiko Tanabe painted "The Eastern Exit of Kyoto Station" beside the eastern platform of Kyoto Station.
+
+The given answer
+  CONTEXT      1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  FULL         1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+
+The question is asking for the specif
+  FOREIGN      0 0.45 | To answer the question, we need to identify the information given and what is being asked.
+
+Given information:
+- Mustafa
+  D32          0 0.50 | The question appears to contain a mix-up of names and locations. Let's break it down:
+
+1. **Names and
+  D32_CF       0 0.46 orig=0 | The question contains a few errors and inconsistencies that need to be corrected for accuracy. Here's the corrected vers
+  D36          0 0.53 | The question appears to be a mistranslation or a mix-up of names and locations. Let's break it down:
+  D36_CF       0 0.46 orig=0 | The question contains a few errors and inconsistencies that need to be corrected for clarity and accuracy. Here is the c
+  D40          0 0.61 | The question appears to have a slight discrepancy with the original statement. The original statement mentions "the east
+  D40_CF       1 1.00 orig=0 | Aiko Tanabe painted a red bench beside the eastern platform of Kyoto Station.
+
+The original statement provided a slight 
+  D44          1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+
+The original statement has a minor er
+  D44_CF       1 1.00 orig=0 | Aiko Tanabe painted a red bench beside the eastern platform of Kyoto Station.
+
+The original statement provided a slight 
+  D48          1 1.00 | Aiko Tanabe painted a blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  D48_CF       1 1.00 orig=0 | Aiko Tanabe painted a red bench beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  D52          1 1.00 | Aiko Tanabe painted a blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  D52_CF       1 1.00 orig=0 | Aiko Tanabe painted a red bench beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  D56          1 1.00 | Aiko Tanabe painted a blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  D56_CF       1 1.00 orig=0 | Aiko Tanabe painted a red bench beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  D60          1 1.00 | Aiko Tanabe painted a blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  D60_CF       1 1.00 orig=0 | Aiko Tanabe painted a red bench beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  D64          1 1.00 | Aiko Tanabe painted a blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  D64_CF       1 1.00 orig=0 | Aiko Tanabe painted a red bench beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  K64V32       1 1.00 | Aiko Tanabe painted a blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  K64V32_CF    1 1.00 orig=0 | Aiko Tanabe painted a red bench beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  K32V64       0 0.53 | The question appears to be a mistranslation or a mix-up of names and locations. Let's break it down:
+  K32V64_CF    0 0.43 orig=0 | The question appears to contain a few errors or inconsistencies that need to be corrected for clarity and accuracy. Let'
+  Q1_LOW32     1 1.00 | Aiko Tanabe painted a blue signal beside the eastern platform of Kyoto Station.
+
+To arrive at this answer, I made
+  Q1_LOW32_CF  1 1.00 orig=0 | Aiko Tanabe painted a red bench beside the eastern platform of Kyoto Station.
+
+The original statement had a minor error 
+  Q2_LOW32     1 1.00 | Aiko Tanabe painted a blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  Q2_LOW32_CF  1 1.00 orig=0 | Aiko Tanabe painted a red bench beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  Q3_LOW32     1 1.00 | Aiko Tanabe painted a blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  Q3_LOW32_CF  1 1.00 orig=0 | Aiko Tanabe painted a red bench beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  Q4_LOW32     1 1.00 | Aiko Tanabe painted a blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  Q4_LOW32_CF  1 1.00 orig=0 | Aiko Tanabe painted a red bench beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+
+F4.3 where: Where did Aiko Tanabe paint the blue signal?
+  VANILLA      0 0.46 | To answer the question "Where did Aiko Tanabe paint the blue signal?", we need to follow these steps:
+
+1
+  CONTEXT      1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  FULL         1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  FOREIGN      0 0.50 | To answer the question about where Aiko Tanabe painted the blue signal, we need to identify the context and location of
+  D32          0 0.43 | The question contains a few errors in names and terms. The correct answer would be:
+
+Aiko Tanabe should be A
+  D32_CF       0 0.43 orig=0 | The question contains a few errors that need to be corrected for clarity and accuracy. The correct answer is as follows:
+  D36          0 0.48 | The question contains a few errors that need to be corrected for clarity and accuracy. The correct answer is:
+
+Aiko Tan
+  D36_CF       0 0.43 orig=0 | The question contains a few errors that need to be corrected for clarity and accuracy. The correct answer is:
+
+Aiko Tan
+  D40          0 0.48 | The question contains a few errors that need to be corrected for clarity and accuracy. The correct answer is:
+
+Aiko Tan
+  D40_CF       0 0.43 orig=0 | The question contains a few errors that need to be corrected for clarity and accuracy. The correct answer is:
+
+Aiko Tan
+  D44          0 0.62 | Aiko Tanabe painted the blue signal beside the eastern entrance of the Kyoto station.
+You are an AI assistant. Provide
+  D44_CF       0 0.64 orig=0 | Aiko Tanabe painted the blue signal beside the western entrance of Kyoto Station.
+
+Explanation: The original sentence ha
+  D48          0 0.62 | Aiko Tanabe painted the blue signal beside the eastern entrance of the Kyoto Station.
+You are an AI assistant. Provide
+  D48_CF       1 1.00 orig=0 | Aiko Tanabe painted the blue signal beside the western gate of Kyoto Station.
+You are an AI assistant. Provide a
+  D52          1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of the Kyoto station.
+You are an AI assistant. Provide
+  D52_CF       1 1.00 orig=0 | Aiko Tanabe painted the blue signal beside the western gate of Kyoto station.
+You are an AI assistant. Provide a
+  D56          1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  D56_CF       1 1.00 orig=0 | Aiko Tanabe painted the blue signal beside the western gate of Kyoto Station.
+You are an AI assistant. Provide a
+  D60          1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  D60_CF       1 1.00 orig=0 | Aiko Tanabe painted the blue signal beside the western gate of Kyoto Station.
+You are an AI assistant. Provide a
+  D64          1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  D64_CF       1 1.00 orig=0 | Aiko Tanabe painted the blue signal beside the western gate of Kyoto Station.
+You are an AI assistant. Provide a
+  K64V32       0 0.79 | Aiko Tanabe painted the blue signal beside the eastern part of the station, specifically the area known as the "K
+  K64V32_CF    1 1.00 orig=0 | Aiko Tanabe painted the blue signal beside the western gate of the Kyoto station.
+You are an AI assistant. Provide
+  K32V64       0 0.48 | The question contains a few errors that need to be corrected for clarity and accuracy. Aiko Tanabe should be Aiko
+  K32V64_CF    0 0.48 orig=0 | The question contains a few errors, so let's correct it first. The correct answer would be:
+
+Aiko Tanabe
+  Q1_LOW32     1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+
+Step 1: Identify the key elements
+  Q1_LOW32_CF  0 0.64 orig=0 | Aiko Tanabe painted the blue signal beside the western entrance of Kyoto Station.
+
+Step 1: Identify the key information
+  Q2_LOW32     1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  Q2_LOW32_CF  1 1.00 orig=0 | Aiko Tanabe painted the blue signal beside the western gate of Kyoto Station.
+You are an AI assistant. Provide a
+  Q3_LOW32     1 1.00 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  Q3_LOW32_CF  1 1.00 orig=0 | Aiko Tanabe painted the blue signal beside the western gate of Kyoto Station.
+You are an AI assistant. Provide a
+  Q4_LOW32     0 0.79 | Aiko Tanabe painted the blue signal beside the eastern part of the Kyoto station.
+You are an AI assistant. Provide
+  Q4_LOW32_CF  1 1.00 orig=0 | Aiko Tanabe painted the blue signal beside the western gate of Kyoto station.
+You are an AI assistant. Provide a
+
+======================================================================================================================
+[8/8] MECHANISM SUMMARY
+  VANILLA      exact=0.000
+  CONTEXT      exact=1.000
+  FULL         exact=1.000
+  FOREIGN      exact=0.000
+
+CAPACITY CURVE
+  D32  orig=0.154 CF-follow=0.000 storage=0.0675×res
+  D36  orig=0.308 CF-follow=0.231 storage=0.0759×res
+  D40  orig=0.462 CF-follow=0.538 storage=0.0844×res
+  D44  orig=0.538 CF-follow=0.769 storage=0.0928×res
+  D48  orig=0.692 CF-follow=0.923 storage=0.1012×res
+  D52  orig=0.769 CF-follow=0.846 storage=0.1097×res
+  D56  orig=0.846 CF-follow=0.923 storage=0.1181×res
+  D60  orig=0.846 CF-follow=0.923 storage=0.1266×res
+  D64  orig=0.923 CF-follow=0.923 storage=0.1350×res
+
+K/V ASYMMETRY
+  K64V32   orig=0.462 CF-follow=0.769
+  K32V64   orig=0.231 CF-follow=0.385
+
+LAYER-QUARTER NECESSITY (one quarter=32, all others=64)
+  Q1_LOW32   orig=0.769 CF-follow=0.769
+  Q2_LOW32   orig=0.923 CF-follow=1.000
+  Q3_LOW32   orig=0.846 CF-follow=0.923
+  Q4_LOW32   orig=0.692 CF-follow=0.769
+
+AUDIT
+  sink K maxabs/rel/mincos = 0.25/3.048e-02/0.999555230
+  sink V maxabs/rel/mincos = 0.5/1.420e-02/0.999930918
+  forge: SOURCE ONLY | questions/targets used in codec: 0
+  readout source leak: asserted absent
+  frozen representation SHA: ea1bbdc09387ac95323a PASS
+  weights frozen: True | fingerprint: PASS
+  primary endpoint: exact behavioral retrieval; counterfactual following independently reported
+  NOTE: this is a mechanism-localization experiment on the fixed TEST382 fact set, not an external generalization claim.
+
+DECISION: BOUNDARY_D64__K_AND_V_COUPLED_OR_BOTH_REQUIRED__LOW32_SENSITIVE_QUARTERS_[4]
+
+
+======================================================================================================================
