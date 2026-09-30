@@ -1,0 +1,404 @@
+ 
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.3/12.3 MB 103.7 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 394.3/394.3 kB 35.7 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 183.4/183.4 kB 18.6 MB/s eta 0:00:00
+================================================================================================================
+TEST 381 — NATIVE LATENT ATTENTION MEMORY · SOURCE-FREE COMPOSITIONAL RETRIEVAL
+================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Model: Qwen/Qwen2.5-7B-Instruct
+[1/8] CUDA...
+      PASS (final-row frozen-norm write)
+[2/8] Model...
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 86.3kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 946kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 48.4MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 73.6MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 132MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.78MB/s]
+Download complete: : 
+
+ 13.1GB,  290MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  471MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:40<00:00,  7.05s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 99.71it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 33.2kB/s]
+      L=28 H=3584 Q=28 KV=4 head=128 attn=sdpa PAD=151643 EOS=[151643, 151645]
+[3/8] Forge (source-only, no question, no target)...
+      F1: T=18 tokens | row-norm L14 sink/mean=15012.1/72.0
+      F2: T=16 tokens | row-norm L14 sink/mean=14002.5/68.2
+      F3: T=19 tokens | row-norm L14 sink/mean=13967.6/72.8
+      F4: T=16 tokens | row-norm L14 sink/mean=14428.1/70.5
+[4/8] KV-equivalence audit (install math vs native cache of the source run)...
+      max rel.err K=0.00e+00 V=0.00e+00  -> MEM_FULL is a lossless re-materialization (NOT a synthetic claim)
+[5/8] Compressed synthetic memories + controls...
+      F1: R8 energy=0.9657 storage=0.447×full | R4 energy=0.9368 storage=0.223×full
+      F2: R8 energy=0.9688 storage=0.502×full | R4 energy=0.9417 storage=0.251×full
+      F3: R8 energy=0.9619 storage=0.423×full | R4 energy=0.9356 storage=0.212×full
+      F4: R8 energy=0.9709 storage=0.502×full | R4 energy=0.9462 storage=0.251×full
+      MEM_FULL vs CONTEXT first-step logits: max|Δ|=0.3281 argmax_same=True
+[6/8] Evaluation (source removed; question only + installed representation)...
+
+----------------------------------------------------------------------------------------------------------------
+F1 memory frozen from: [source text not shown to readout] | T=18
+
+Q: Who planted the Turkish flag at the base of the Golden Gate Bridge?
+TARGET(post-hoc only): Mustafa Akbaş | critical(answer absent from question)=1 | who=1
+VANILLA        hit=0         rank=    34 ΔTF= +0.000 | The Turkish flag was planted at the base of the Golden Gate Bridge by a group of Turkish climbers during a climbing competition in
+CONTEXT_DIAG   hit=1         rank=     1 ΔTF= +3.388 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. The Golden Gate Bridge is a
+MEM_FULL       hit=1         rank=     1 ΔTF= +3.377 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. The Golden Gate Bridge is a
+MEM_R8         hit=0         rank=     4 ΔTF= +2.674 | The person who planted the Turkish flag at the base of the Golden Gate Bridge was Mustafa Akbaa. He is
+MEM_R4         hit=0         rank=    11 ΔTF= +1.314 | Turkish citizen Akif Emre planted the Turkish flag at the base of the Golden Gate Bridge on April 20,
+MEM_TOKSHUF    hit=1         rank=     1 ΔTF= +3.333 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+
+SOURCE: The information provided in
+MEM_LAYERSHUF  hit=0         rank=     9 ΔTF= -1.150 | The Turkish flag was not planted at the base of the Golden Gate Bridge. The flag you are referring to is likely the
+MEM_FOREIGN    hit=0         rank=   242 ΔTF= -1.582 | The question is unrelated to the given statement. The information provided about Elena Varga storing the silver compass in the northern archive
+SWAP_FULL      hit=0 swap_hit=1 rank=   880 ΔTF= -2.961 | Leyla Demir planted the Turkish flag at the base of the Golden Gate Bridge. 
+
+This answer directly addresses the question
+SWAP_R8        hit=0 swap_hit=1 rank=  1039 ΔTF= -1.823 | Leyla Demir planted the Turkish flag at the base of the Golden Gate Bridge.
+
+The correct answer is Leyla Dem
+RESID_250C     hit=0         rank=    39 ΔTF= -0.215 | The Turkish flag was planted at the base of the Golden Gate Bridge in 1976 as part of the United
+
+Q: What did Mustafa Akbaş do at the base of the Golden Gate Bridge?
+TARGET(post-hoc only): planted the Turkish flag | critical(answer absent from question)=1 | who=0
+VANILLA        hit=0         rank=   603 ΔTF= +0.000 | Mustafa Akbaş, a Turkish tourist, jumped off the Golden Gate Bridge in San Francisco on October 20
+CONTEXT_DIAG   hit=1         rank=    29 ΔTF= +1.660 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. 
+
+The statement directly answers the
+MEM_FULL       hit=1         rank=    29 ΔTF= +1.617 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. 
+
+The statement directly answers the
+MEM_R8         hit=0         rank=    23 ΔTF= +2.155 | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge. This act was likely a symbolic
+MEM_R4         hit=0         rank=  1115 ΔTF= -1.302 | Mustafa Akbaş did not do anything at the base of the Golden Gate Bridge. The question you provided seems to
+MEM_TOKSHUF    hit=1         rank=    45 ΔTF= +1.077 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. This act was likely a symbolic
+MEM_LAYERSHUF  hit=0         rank=    55 ΔTF= +1.616 | The flag at the base of the Golden Gate Bridge was planted by Mustafa Akgun, not Mustafa Akg
+MEM_FOREIGN    hit=0         rank= 13482 ΔTF= -5.313 | Mustafa Akbaş did not perform any action at the base of the Golden Gate Bridge in the given context. The
+SWAP_FULL      hit=0 swap_hit=0 rank=   114 ΔTF= +1.455 | Mustafa Akbaş did not plant a Turkish flag at the base of the Golden Gate Bridge. The information provided in
+SWAP_R8        hit=0 swap_hit=0 rank=   255 ΔTF= +0.377 | Mustafa Akbaş did not plant a Turkish flag at the base of the Golden Gate Bridge. The information you provided
+RESID_250C     hit=0         rank=   914 ΔTF= +0.258 | Mustafa Akbaş, a Turkish man, climbed the Golden Gate Bridge on April 22, 20
+
+Q: What did Mustafa Akbaş plant at the base of the Golden Gate Bridge?
+TARGET(post-hoc only): Turkish flag | critical(answer absent from question)=1 | who=0
+VANILLA        hit=0         rank=   123 ΔTF= +0.000 | Mustafa Akbaş planted a tree at the base of the Golden Gate Bridge.
+
+The Golden Gate Bridge is a famous
+CONTEXT_DIAG   hit=1         rank=     2 ΔTF= +3.692 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. 
+
+The statement directly answers the
+MEM_FULL       hit=1         rank=     2 ΔTF= +3.746 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. 
+
+The statement directly answers the
+MEM_R8         hit=1         rank=    20 ΔTF= +1.719 | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge. This act was likely a symbolic
+MEM_R4         hit=0         rank=    56 ΔTF= -0.240 | The question contains a mix-up of names and locations. Mustafa Akbaş did not plant anything at the base of
+MEM_TOKSHUF    hit=1         rank=     4 ΔTF= +2.315 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. The Golden Gate Bridge is a
+MEM_LAYERSHUF  hit=1         rank=     5 ΔTF= +3.144 | The flag of Turkey at the base of the Golden Gate Bridge.
+
+The question provided a name similar to the Turkish flag plan
+MEM_FOREIGN    hit=0         rank=    65 ΔTF= -0.824 | Mustafa Akbaş planted a time capsule at the base of the Golden Gate Bridge. The original answer provided does not
+SWAP_FULL      hit=1 swap_hit=0 rank=    32 ΔTF= +0.726 | Mustafa Akbaş did not plant the Turkish flag at the base of the Golden Gate Bridge. The information provided in
+SWAP_R8        hit=0 swap_hit=0 rank=    22 ΔTF= +0.741 | Mustafa Akbaş did not plant anything at the base of the Golden Gate Bridge. The question you provided mentions Ley
+RESID_250C     hit=0         rank=    88 ΔTF= +0.056 | Mustafa Akbaş planted a tree at the base of the Golden Gate Bridge in 2012. He
+
+Q: Where did Mustafa Akbaş plant the Turkish flag?
+TARGET(post-hoc only): base of the Golden Gate Bridge | critical(answer absent from question)=1 | who=0
+VANILLA        hit=0         rank=  1472 ΔTF= +0.000 | Mustafa Akbaş planted the Turkish flag on Mount Ararat in Turkey.
+
+So, the answer is Mount Ararat
+CONTEXT_DIAG   hit=1         rank=    35 ΔTF= +2.574 | The Turkish flag was planted at the base of the Golden Gate Bridge by Mustafa Akbaş.
+
+To arrive at this
+MEM_FULL       hit=1         rank=    34 ΔTF= +2.554 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+
+Step 1: Identify the
+MEM_R8         hit=0         rank=  2367 ΔTF= +1.497 | The Turkish flag was planted by Mustafa Akbaş at the Golden Gate Bridge, a famous landmark located in San Francisco
+MEM_R4         hit=0         rank=  8108 ΔTF= -0.018 | Mustafa Akbaş did not plant the Turkish flag. The question appears to contain a typo or confusion with another person
+MEM_TOKSHUF    hit=1         rank=    37 ΔTF= +2.589 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. The Golden Gate Bridge is a
+MEM_LAYERSHUF  hit=0         rank=    54 ΔTF= +0.939 | The flag was planted in the territory of the former Soviet Union, which is now the independent country of the Turkmenistan
+MEM_FOREIGN    hit=0         rank=  4878 ΔTF= -0.604 | The information provided does not mention Mustafa Akbaş or any planting of a Turkish flag. The statement about Elena V
+SWAP_FULL      hit=0 swap_hit=1 rank= 16922 ΔTF= +1.202 | The information provided does not mention Mustafa Akbaş planting a Turkish flag. It only mentions Leyla Demir planting
+SWAP_R8        hit=0 swap_hit=0 rank=  5421 ΔTF= +0.685 | The information provided does not mention Mustafa Akbaş planting a Turkish flag. Instead, it states that Ley Demir
+RESID_250C     hit=0         rank=   314 ΔTF= +0.158 | Mustafa Akbaş planted the Turkish flag on Mount Qom, also known as Mount Damavand, in Iran
+
+----------------------------------------------------------------------------------------------------------------
+F2 memory frozen from: [source text not shown to readout] | T=16
+
+Q: Who stored the silver compass inside the northern archive of Tallinn?
+TARGET(post-hoc only): Elena Varga | critical(answer absent from question)=1 | who=1
+VANILLA        hit=0         rank=  2087 ΔTF= +0.000 | The silver compass was stored inside the northern archive of Tallinn by the Estonian National Archives.
+
+So, the answer is
+CONTEXT_DIAG   hit=1         rank=     1 ΔTF= +7.227 | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+
+The question is asking for the person who stored
+MEM_FULL       hit=1         rank=     1 ΔTF= +7.227 | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+
+The question is asking for the person who stored
+MEM_R8         hit=0         rank=    26 ΔTF= +4.706 | The statement provided is not entirely accurate. The correct information is that Vanya Petrov, a character from the novel "
+MEM_R4         hit=0         rank=    22 ΔTF= +4.336 | Véra Váncsó stored the silver compass inside the northern archive of Tallinn.
+
+The original question and answer
+MEM_TOKSHUF    hit=1         rank=     1 ΔTF= +7.231 | Elena Varga stored the silver compass inside the northern archive of Tallinn. The question directly states this information, so the
+MEM_LAYERSHUF  hit=0         rank=    13 ΔTF= +0.743 | The silver compass was stored inside the northern (Tallinn) archive by the entity referred to as "the silver compass
+MEM_FOREIGN    hit=0         rank=   231 ΔTF= +1.205 | The information provided does not mention anyone storing a silver compass inside the northern archive of Tallinn. The statement only mentions Ker
+SWAP_FULL      hit=0 swap_hit=1 rank=  2246 ΔTF= -2.300 | Tomasz Brenner stored the silver compass inside the northern archive of Tallinn. The person who performed the action of storing
+SWAP_R8        hit=0 swap_hit=1 rank=  1182 ΔTF= -1.258 | Tomasz Brenner stored the silver compass inside the northern archive of Tallinn.
+
+Explanation: The original sentence had a typo
+RESID_250C     hit=0         rank=  1513 ΔTF= +0.415 | The silver compass was stored inside the northern archive of Tallinn by the Order of the Sword.
+
+So, the answer is
+
+Q: What did Elena Varga store inside the northern archive of Tallinn?
+TARGET(post-hoc only): silver compass | critical(answer absent from question)=1 | who=0
+VANILLA        hit=0         rank=    17 ΔTF= +0.000 | To answer the question about what Elena Varga stored inside the northern archive of Tallinn, we need to follow these steps
+CONTEXT_DIAG   hit=1         rank=     6 ΔTF= +8.392 | Elena Varga stored the silver compass inside the northern archive of Tallinn. The silver compass is the object that was stored
+MEM_FULL       hit=1         rank=     6 ΔTF= +8.332 | Elena Varga stored the silver compass inside the northern archive of Tallinn. The silver compass is the object that was stored
+MEM_R8         hit=1         rank=    18 ΔTF= +5.307 | Elena Varga stored the silver compass inside the northern archive of Tallinn. 
+
+The original statement mentions "silver" instead
+MEM_R4         hit=0         rank= 20088 ΔTF= -6.500 | Elena Varga stored the silver icon inside the northern archive of Tallinn.
+
+The original statement by Varga, "I
+MEM_TOKSHUF    hit=1         rank=     8 ΔTF= +6.420 | Elena Varga stored the silver compass inside the northern archive of Tallinn. The silver compass is the object that was stored
+MEM_LAYERSHUF  hit=0         rank=    31 ΔTF= +5.705 | Varga stored the silver item inside the northern compass of Tallinn.
+
+The silver item inside the tall compass of Tallinn
+MEM_FOREIGN    hit=0         rank=   440 ΔTF= -2.237 | The question provided does not contain any information about Elena Varga or the northern archive of Tallinn. Therefore, it is
+SWAP_FULL      hit=0 swap_hit=0 rank=   924 ΔTF= +3.754 | The information provided does not mention Elena Varga storing anything inside the northern archive of Tallinn. The statement only mentions Tom
+SWAP_R8        hit=0 swap_hit=0 rank=  3595 ΔTF= +0.909 | The question provided does not contain any information about Elena Varga or her actions regarding the northern archive of Tallinn. The
+RESID_250C     hit=0         rank=    13 ΔTF= -0.997 | To answer this question, we need to recall the details from the story about Elena Varga and the northern archive of Tall
+
+Q: Where did Elena Varga store the silver compass?
+TARGET(post-hoc only): northern archive | critical(answer absent from question)=1 | who=0
+VANILLA        hit=0         rank=  4264 ΔTF= +0.000 | To determine where Elena Varga stored the silver compass, we need to analyze the context and details provided in the story.
+CONTEXT_DIAG   hit=1         rank=    15 ΔTF= +8.881 | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+
+The question directly asks where Elena Varga stored
+MEM_FULL       hit=1         rank=    15 ΔTF= +8.809 | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+
+The question directly asks where Elena Varga stored
+MEM_R8         hit=1         rank=  2593 ΔTF= +2.373 | Elena Varga stored the silver compass in the northern archive of Tallinn.
+
+The original statement mentions "silver compass" instead
+MEM_R4         hit=0         rank= 18235 ΔTF= -0.602 | To determine where Elena Varga stored the silver compass, we need to analyze the given information and make logical inferences.
+MEM_TOKSHUF    hit=1         rank=   171 ΔTF= +3.658 | Elena Varga stored the silver compass inside the northern archive of Tallinn. The northern archive of Tallinn is a specific
+MEM_LAYERSHUF  hit=0         rank=    57 ΔTF= +1.719 | Varga stored the silver compass inside the silver compass.
+
+The question and answer are the same because the original statement "silver
+MEM_FOREIGN    hit=0         rank= 19521 ΔTF= -2.342 | The question provided does not contain any information about Elena Varga or a silver compass. The question instead describes an action taken
+SWAP_FULL      hit=0 swap_hit=1 rank=  7547 ΔTF= +3.958 | The information provided does not mention Elena Varga storing the silver compass anywhere. It only states that Tomasz Brenner stored
+SWAP_R8        hit=0 swap_hit=1 rank= 30912 ΔTF= +0.422 | The information provided does not mention Elena Varga storing a silver compass anywhere. It only mentions Tomasz Brenner storing a
+RESID_250C     hit=0         rank=  5879 ΔTF= -1.181 | To determine where Elena Varga stored the silver compass, we need to consider the context of the story and any specific details
+
+----------------------------------------------------------------------------------------------------------------
+F3 memory frozen from: [source text not shown to readout] | T=19
+
+Q: Who repaired the brass lantern at the old lighthouse of Sinop?
+TARGET(post-hoc only): Kerem Yıldız | critical(answer absent from question)=1 | who=1
+VANILLA        hit=0         rank=   183 ΔTF= +0.000 | The person who repaired the brass lantern at the old lighthouse of Sinop is not explicitly mentioned in the given text.
+CONTEXT_DIAG   hit=1         rank=     1 ΔTF= +3.774 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question is asking for the
+MEM_FULL       hit=1         rank=     1 ΔTF= +3.774 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question is asking for the
+MEM_R8         hit=0         rank=     1 ΔTF= +3.375 | Kerem Yildirim fixed the brass lantern at the old lighthouse of Sinop.
+
+This answer is derived from the
+MEM_R4         hit=0         rank=    19 ΔTF= +2.072 | The sentence "Kerim Yılmaz repaired the brass lantern at the old lighthouse of Sinop" is the
+MEM_TOKSHUF    hit=1         rank=     1 ΔTF= +3.801 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop. 
+
+The question is a direct
+MEM_LAYERSHUF  hit=0         rank=   795 ΔTF= -1.708 | The old lighthouse at Sinop is repaired by the person who repaired the brass lantern. The old lighthouse of Sin
+MEM_FOREIGN    hit=0         rank=   967 ΔTF= -1.931 | The information provided does not specify who repaired the brass lantern at the old lighthouse of Sinop. The statement about A
+SWAP_FULL      hit=0 swap_hit=1 rank=  2716 ΔTF= -1.807 | Marta Solberg repaired the brass lantern at the old lighthouse of Sinop.
+
+The answer is provided in the question
+SWAP_R8        hit=0 swap_hit=1 rank=  3546 ΔTF= -1.158 | Marta Solberg repaired the brass lantern at the old lighthouse of Sinop.
+
+Explanation: 
+The original sentence
+RESID_250C     hit=0         rank=   156 ΔTF= -0.531 | The person who repaired the brass lantern at the old lighthouse of Sinop is not explicitly mentioned in the given information
+
+Q: What did Kerem Yıldız repair at the old lighthouse of Sinop?
+TARGET(post-hoc only): brass lantern | critical(answer absent from question)=1 | who=0
+VANILLA        hit=0         rank=   369 ΔTF= +0.000 | The old lighthouse of Sinop is a historical structure located in the city of Sinop, Turkey. Kerem Y
+CONTEXT_DIAG   hit=1         rank=     7 ΔTF= +2.100 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question is asking for the
+MEM_FULL       hit=1         rank=     8 ΔTF= +2.038 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question is asking for the
+MEM_R8         hit=1         rank= 15749 ΔTF= -4.782 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop. The question is a direct translation
+MEM_R4         hit=0         rank= 11445 ΔTF= -4.687 | Kerem Yıldız did not repair the old lighthouse of Sinop. The question seems to be mixing up two
+MEM_TOKSHUF    hit=1         rank=    19 ΔTF= -0.728 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop. The question is already clear and
+MEM_LAYERSHUF  hit=0         rank=   149 ΔTF= -2.429 | Kerem Yıldız repaired the old lighthouse at Sinop, which is actually a repaired old lighthouse at Sin
+MEM_FOREIGN    hit=0         rank=  1896 ΔTF= -2.766 | There is no information provided about Kerem Yıldız repairing a lighthouse in Sinop. The question about Kerem
+SWAP_FULL      hit=0 swap_hit=0 rank=  3181 ΔTF= -1.577 | Kerem Yıldız did not repair anything at the old lighthouse of Sinop according to the given sentence. The
+SWAP_R8        hit=0 swap_hit=0 rank=  6845 ΔTF= -2.902 | Kerem Yıldız did not repair anything at the old lighthouse of Sinop in the given sentence. The sentence
+RESID_250C     hit=0         rank=   400 ΔTF= -0.043 | The old lighthouse of Sinop.
+
+The question is asking about the repair work done by Kerem Yıldız at
+
+Q: Where did Kerem Yıldız repair the brass lantern?
+TARGET(post-hoc only): old lighthouse | critical(answer absent from question)=1 | who=0
+VANILLA        hit=0         rank=  2193 ΔTF= +0.000 | To answer the question about where Kerem Yıldız repaired the brass lantern, I would need more context or a specific
+CONTEXT_DIAG   hit=1         rank=    13 ΔTF= +5.436 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question is asking for the
+MEM_FULL       hit=1         rank=    12 ΔTF= +5.413 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question is asking for the
+MEM_R8         hit=1         rank=   707 ΔTF= +2.247 | Kerem Yıldız repaired the brass lantern at the old lighthouse in Sinop.
+
+This answer is derived from the
+MEM_R4         hit=1         rank=   528 ΔTF= +2.727 | Kerem Yıldız repaired the brass lantern at the old lighthouse.
+
+Let's break down the process of arriving at
+MEM_TOKSHUF    hit=1         rank=    47 ΔTF= +2.408 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+You are correct. The answer
+MEM_LAYERSHUF  hit=0         rank=    32 ΔTF= -0.094 | In the given context, Kerem Yıldız (referred to as "Kerem Yıldız" in
+MEM_FOREIGN    hit=0         rank=   949 ΔTF= -0.663 | The question provided does not contain any information about Kerem Yıldız or the repair of a brass lantern. The given
+SWAP_FULL      hit=0 swap_hit=1 rank=   817 ΔTF= +3.250 | The question is asking about Kerem Yıldız, but the provided sentence only mentions Marta Solberg repairing a brass
+SWAP_R8        hit=0 swap_hit=0 rank= 13202 ΔTF= -0.230 | The question provided does not contain any information about Kerem Yıldız repairing a brass lantern. The question only mentions Ker
+RESID_250C     hit=0         rank=  1278 ΔTF= +0.565 | To answer the question, we need to identify the relevant information from the given context. However, the provided context does not
+
+----------------------------------------------------------------------------------------------------------------
+F4 memory frozen from: [source text not shown to readout] | T=16
+
+Q: Who painted the blue signal beside the eastern platform of Kyoto Station?
+TARGET(post-hoc only): Aiko Tanabe | critical(answer absent from question)=1 | who=1
+VANILLA        hit=0         rank=    21 ΔTF= +0.000 | The blue signal beside the eastern platform of Kyoto Station was painted by Takashi Murakami.
+
+To determine the correct answer
+CONTEXT_DIAG   hit=1         rank=     1 ΔTF= +3.260 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+
+The question is a direct request for the
+MEM_FULL       hit=1         rank=     1 ΔTF= +3.261 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+
+The question is a direct request for the
+MEM_R8         hit=1         rank=     1 ΔTF= +2.971 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+
+The question is a direct translation of the
+MEM_R4         hit=0         rank=     4 ΔTF= +1.094 | The blue signal beside the eastern platform of Kyoto Station was painted by Tanaka Hisa.
+
+The question provided a similar scenario
+MEM_TOKSHUF    hit=1         rank=     1 ΔTF= +3.222 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+
+This question is asking for the identity of
+MEM_LAYERSHUF  hit=0         rank=     4 ΔTF= -0.136 | The blue signal signal beside the eastern platform of Kyoto Station was painted by the signal signal signal signal signal signal signal signal signal
+MEM_FOREIGN    hit=0         rank=    27 ΔTF= -0.882 | The information provided does not specify who painted the blue signal beside the eastern platform of Kyoto Station. There is no mention of
+SWAP_FULL      hit=0 swap_hit=1 rank=     8 ΔTF= -1.656 | Diego Ferraz painted the blue signal beside the eastern platform of Kyoto Station.
+
+The question is a straightforward statement that asks for
+SWAP_R8        hit=0 swap_hit=0 rank=    12 ΔTF= -1.816 | The blue signal beside the eastern platform of Kyoto Station was painted by Ferraz de Ferrer, also known as Ferraz
+RESID_250C     hit=0         rank=    19 ΔTF= -0.140 | The blue signal beside the eastern platform of Kyoto Station was painted by the artist Takashi Murakami. This artwork is
+
+Q: What did Aiko Tanabe paint beside the eastern platform of Kyoto Station?
+TARGET(post-hoc only): blue signal | critical(answer absent from question)=1 | who=0
+VANILLA        hit=0         rank=   327 ΔTF= +0.000 | Aiko Tanabe painted "The Eastern Exit of Kyoto Station" beside the eastern platform of Kyoto Station.
+
+The given answer
+CONTEXT_DIAG   hit=1         rank=     4 ΔTF= +8.738 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+
+The question and answer are already provided and
+MEM_FULL       hit=1         rank=     4 ΔTF= +8.746 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+
+The question and answer are already provided and
+MEM_R8         hit=1         rank=    25 ΔTF= +5.294 | Aiko Tanabe painted a blue signal beside the eastern platform of Kyoto Station.
+
+The original question and answer have been re
+MEM_R4         hit=0         rank=  3272 ΔTF= -2.070 | Aiko Tanabe painted a cherry blossom beside the eastern platform of Kyoto Station.
+
+The question and answer provided contain a mix
+MEM_TOKSHUF    hit=1         rank=     9 ΔTF= +6.847 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+
+The question directly asks what Aiko Tan
+MEM_LAYERSHUF  hit=0         rank=  9567 ΔTF= +1.736 | The question is a bit mixed up. Aiko Tanabe is not the artist who painted beside the eastern platform of Kyoto
+MEM_FOREIGN    hit=0         rank=    45 ΔTF= -0.188 | To answer the question, we need to identify the information given and the information required. The question asks about Aiko Tan
+SWAP_FULL      hit=1 swap_hit=0 rank=    52 ΔTF= +6.065 | Aiko Tanabe did not paint anything beside the eastern platform of Kyoto Station. The blue signal was painted by Diego Ferr
+SWAP_R8        hit=0 swap_hit=0 rank=   508 ΔTF= +0.943 | The question provided does not contain any information about Aiko Tanabe or what she painted beside the eastern platform of Kyoto Station
+RESID_250C     hit=0         rank=   353 ΔTF= +0.605 | Aiko Tanabe painted "Morning Glory" beside the eastern platform of Kyoto Station.
+
+The question asks for the painting that
+
+Q: Where did Aiko Tanabe paint the blue signal?
+TARGET(post-hoc only): eastern platform | critical(answer absent from question)=1 | who=0
+VANILLA        hit=0         rank=  2096 ΔTF= +0.000 | To answer the question "Where did Aiko Tanabe paint the blue signal?", we need to follow these steps:
+
+1
+CONTEXT_DIAG   hit=1         rank=    13 ΔTF= +7.817 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+
+The question directly asks where Aiko Tan
+MEM_FULL       hit=1         rank=    12 ΔTF= +8.062 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+
+The question directly asks where Aiko Tan
+MEM_R8         hit=0         rank=   206 ΔTF= +3.638 | Aiko Tanabe painted the blue signal on the eastern side of the Kyoto Station.
+
+The original question provided a clue that
+MEM_R4         hit=0         rank=  7100 ΔTF= +1.685 | Aiko Tanabe painted the blue signal on the wall of the building next to the east exit of Shinagawa Station
+MEM_TOKSHUF    hit=1         rank=    10 ΔTF= +8.266 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+
+The question directly asks where Aiko Tan
+MEM_LAYERSHUF  hit=0         rank=   147 ΔTF= +6.661 | The question provided is a slight misinterpretation of the original statement. Aiko Tanabe did not paint the blue signal
+MEM_FOREIGN    hit=0         rank=   807 ΔTF= -0.528 | To answer the question about where Aiko Tanabe painted the blue signal, we need to break down the information provided and
+SWAP_FULL      hit=0 swap_hit=0 rank=   474 ΔTF= +5.022 | The question does not provide information about where Aiko Tanabe painted the blue signal. The given statement only mentions Diego Ferr
+SWAP_R8        hit=0 swap_hit=1 rank= 20086 ΔTF= +1.960 | The information provided does not mention Aiko Tanabe painting a blue signal. It only mentions that Diego Ferraz painted a
+RESID_250C     hit=0         rank=  3651 ΔTF= -0.169 | To answer this question, we need to consider the context and details provided. However, the question does not provide specific information
+
+================================================================================================================
+[7/8] SUMMARY (critical questions only; hit = normalized answer substring)
+VANILLA        retrieval=0.00 (0/13) who-names=0.00 mean_ΔTF=+0.000
+CONTEXT_DIAG   retrieval=1.00 (13/13) who-names=1.00 mean_ΔTF=+5.149
+MEM_FULL       retrieval=1.00 (13/13) who-names=1.00 mean_ΔTF=+5.151
+MEM_R8         retrieval=0.54 (7/13) who-names=0.25 mean_ΔTF=+2.552
+MEM_R4         retrieval=0.08 (1/13) who-names=0.00 mean_ΔTF=-0.169
+MEM_TOKSHUF    retrieval=1.00 (13/13) who-names=1.00 mean_ΔTF=+3.880
+MEM_LAYERSHUF  retrieval=0.08 (1/13) who-names=0.00 mean_ΔTF=+1.288
+MEM_FOREIGN    retrieval=0.00 (0/13) who-names=0.00 mean_ΔTF=-1.435
+SWAP_FULL      retrieval=0.15 (2/13) who-names=0.00 mean_ΔTF=+1.164 swap_follow(who)=1.00
+SWAP_R8        retrieval=0.00 (0/13) who-names=0.00 mean_ΔTF=-0.242 swap_follow(who)=0.75
+RESID_250C     retrieval=0.00 (0/13) who-names=0.00 mean_ΔTF=-0.094
+
+control ceiling (max of VANILLA/TOKSHUF/LAYERSHUF/FOREIGN/RESID_250C) = 1.00 | context diagnostic = 1.00
+RESID_250C (single-direction TEST250 channel, same source) = 0.00  <- capacity reference
+
+[8/8] INTEGRITY
+forge inputs                  : source strings only | questions in forge: 0 | targets in forge: 0
+readout prompt                : QUESTION/ANSWER frame only (source absent; asserted every call; dummy prefix = PAD ids, never embedded)
+memory frozen (SHA pre==post) : PASS d29c1941f1131f1701dc0937
+KV install audit              : K=0.00e+00 V=0.00e+00 | MEM_FULL vs CONTEXT max|Δlogit|=0.3281 argmax_same=True
+TEST250 reference arm         : L0–L19 CUDA frozen-norm final-row | RSS=0.250235055 | active hooks after eval=0
+decoding                      : greedy, repetition_penalty=1.0 (all arms) | runtime attn: sdpa
+weights frozen / fingerprint  : True / PASS
+NOTE: MEM_FULL ≈ context by construction; only MEM_R8/MEM_R4 (+SWAP_R8) can support a synthetic-representation claim.
+DECISION: NO_RELIABLE_SOURCE_SPECIFIC_RETRIEVAL
+
+
+================================================================================================================
