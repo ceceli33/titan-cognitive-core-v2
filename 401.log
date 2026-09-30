@@ -1,0 +1,128 @@
+ 
+====================================================================================================================
+TEST 401 — TEST399 EXACT-LINEAGE K-ONLY CAUSAL DECOMPOSITION
+ORIGINAL × SAME_K × FOREIGN_K × RANDOM_K × SAME_V + EXACT READOUT DECOMPOSITION
+====================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/7] MISTRAL — SAME TEST399 SOURCE EXTRACTION
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 54.3kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 15.8MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 98.4MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.1kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.6kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 57.1kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.85MB/s]
+Download complete: : 
+
+ 12.4GB,  434MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  489MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:37<00:00,  9.16s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 80.36it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 16.4kB/s]
+READY: (32, 4096, 32, 8, 128) | 49.83 s
+
+ SOURCE LENGTHS: {'FACT': 22, 'CF': 21}
+[2/7] QWEN — SAME TEST399 TARGET EXTRACTION
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 84.5kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 934kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 79.6MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 70.3MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 131MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.57MB/s]
+Download complete: : 
+
+ 13.1GB,  243MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  440MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:40<00:00,  7.65s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 99.89it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 34.4kB/s]
+READY: (28, 3584, 28, 4, 128) | 49.77 s
+ QWEN 32/32
+ TARGET LENGTH: 19 | TRAIN=24 | VALIDATION=8 | FINAL FACT/CF NEVER FIT
+[3/7] SAME TEST399 FP64 BASE + DELTA BRIDGE
+ TRAIN R² BASE=0.553894 DELTA=0.667022
+[4/7] SAME TEST399 FIXED WHO QUERY
+ WHO QUERY BANK: 28 layers × (28, 128)
+[5/7] BASE K-ONLY FALSIFICATION ARMS
+ ORIGINAL_K_ONLY  ATTΔ=+0.049473 READΔ=+0.662689
+ SAME_K           ATTΔ=+0.000000 READΔ=+0.754281
+ FOREIGN_K        ATTΔ=+0.000000 READΔ=+0.743584
+ RANDOM_K         ATTΔ=+0.000000 READΔ=+0.242315
+ SAME_V_FACT      ATTΔ=+0.049473 READΔ=-0.028364
+ SAME_V_CF        ATTΔ=+0.049473 READΔ=+0.053561
+[6/7] EXACT ORIGINAL K-ONLY READOUT DECOMPOSITION
+ TOTAL→NATIVE   =+0.662689
+ VALUE TERM     =+0.754281   [A_FACT · (V_FACT−V_CF)]
+ ROUTING TERM   =+0.053561   [(A_FACT−A_CF) · V_CF]
+ RECON REL ERR  =0.000000288
+ LAYER X-RAY:
+ L00 TOTAL=+0.6627 VALUE=+0.8037 ROUTE=+0.0469 | Vnorm=1.177 Rnorm=0.903 VRcos=+0.011
+ L03 TOTAL=+0.6659 VALUE=+0.7530 ROUTE=-0.0250 | Vnorm=1.500 Rnorm=0.786 VRcos=-0.038
+ L06 TOTAL=+0.8003 VALUE=+0.8794 ROUTE=-0.1003 | Vnorm=1.181 Rnorm=0.486 VRcos=-0.088
+ L10 TOTAL=+0.7821 VALUE=+0.8789 ROUTE=-0.0221 | Vnorm=1.012 Rnorm=0.603 VRcos=-0.109
+ L14 TOTAL=+0.4694 VALUE=+0.7186 ROUTE=-0.0488 | Vnorm=0.680 Rnorm=0.730 VRcos=-0.063
+ L18 TOTAL=+0.5394 VALUE=+0.5864 ROUTE=-0.0019 | Vnorm=0.653 Rnorm=0.344 VRcos=-0.094
+ L19 TOTAL=+0.4339 VALUE=+0.5709 ROUTE=-0.0816 | Vnorm=0.898 Rnorm=0.420 VRcos=+0.309
+ L21 TOTAL=+0.7165 VALUE=+0.7904 ROUTE=-0.0375 | Vnorm=1.102 Rnorm=0.625 VRcos=-0.149
+ L23 TOTAL=+0.4878 VALUE=+0.6125 ROUTE=-0.0921 | Vnorm=1.011 Rnorm=0.631 VRcos=-0.075
+ L25 TOTAL=+0.8248 VALUE=+0.8636 ROUTE=+0.1955 | Vnorm=0.995 Rnorm=0.422 VRcos=+0.161
+ L27 TOTAL=+0.7384 VALUE=+0.7729 ROUTE=+0.3343 | Vnorm=0.633 Rnorm=0.386 VRcos=+0.310
+[7/7] VERDICT + INTEGRITY
+ ORIGINAL=+0.662689 | NULL-K FLOOR=+0.754281 | SAME-V BEST=+0.053561
+ VERDICT: NATIVE_V_DOMINANT: TEST399 K_ONLY alignment is largely reproducible without FACT↔CF mapped-K information.
+====================================================================================================================
+TEST 401 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST401/TEST401_SUMMARY.json
+
+
+====================================================================================================================
