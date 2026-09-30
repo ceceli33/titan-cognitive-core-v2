@@ -1,0 +1,180 @@
+ 
+====================================================================================================================
+TEST 403 — TOKEN-LEVEL ROUTING MAP
+TEST402 STRUCTURED-K → WHERE DOES THE FIXED WHO QUERY ATTEND?
+====================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/7] MISTRAL — TEST399 SOURCE EXTRACTION
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 86.3kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 17.2MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 95.8MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.1kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 42.4kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.01MB/s]
+Download complete: : 
+
+ 12.4GB, 1.02GB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  369MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:37<00:00, 15.34s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 80.20it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 13.3kB/s]
+READY: (32, 4096, 32, 8, 128) | 48.96 s
+
+ SOURCE LENGTHS: {'FACT': 22, 'CF': 21} | FOREIGN: 17
+[2/7] QWEN — TEST399 TARGET EXTRACTION
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 75.2kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 920kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 80.5MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 74.0MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 130MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 4.00MB/s]
+Download complete: : 
+
+ 13.1GB,  323MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  427MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:39<00:00,  6.90s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 98.91it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 29.7kB/s]
+READY: (28, 3584, 28, 4, 128) | 49.6 s
+ QWEN 32/32
+ TARGET LENGTH: 19 | TRAIN=24 | VALIDATION=8 | FINAL FACT/CF NEVER FIT
+[3/7] TEST399 FP64 BASE + DELTA BRIDGE
+ TRAIN R² BASE=0.553894 DELTA=0.667022
+[4/7] TEST399 FIXED WHO QUERY
+ WHO QUERY BANK: 28 layers × (28, 128)
+[5/7] TOKEN-LEVEL ROUTING MAP
+ FACT TOKENS:
+  00: '<|endoftext|>'
+  01: 'Must'
+  02: 'afa'
+  03: ' Ak'
+  04: 'ba'
+  05: 'ş'
+  06: ' planted'
+  07: ' the'
+  08: ' Turkish'
+  09: ' flag'
+  10: ' at'
+  11: ' the'
+  12: ' base'
+  13: ' of'
+  14: ' the'
+  15: ' Golden'
+  16: ' Gate'
+  17: ' Bridge'
+  18: '.\\n\\n'
+
+ QWEN_NATIVE_FACT_K
+  TOP: 00:<|endoftext|>=0.5963 | 18:.\n\n=0.1544 | 17: Bridge=0.0316 | 01:Must=0.0298 | 06: planted=0.0236 | 02:afa=0.0205 | 07: the=0.0179 | 11: the=0.0177
+  HEADS:
+   H0: 00=0.6032 | 18=0.1556 | 17=0.0398 | 01=0.0273 | 02=0.0210
+   H1: 00=0.6274 | 18=0.1546 | 01=0.0241 | 06=0.0215 | 07=0.0215
+   H2: 00=0.5674 | 18=0.1675 | 17=0.0301 | 01=0.0301 | 06=0.0278
+   H3: 00=0.5871 | 18=0.1399 | 17=0.0388 | 01=0.0377 | 06=0.0257
+
+ MAPPED_FACT_K
+  TOP: 00:<|endoftext|>=0.5876 | 18:.\n\n=0.1798 | 01:Must=0.0315 | 17: Bridge=0.0247 | 06: planted=0.0189 | 07: the=0.0149 | 08: Turkish=0.0148 | 16: Gate=0.0137
+  HEADS:
+   H0: 00=0.6108 | 18=0.1781 | 01=0.0268 | 17=0.0258 | 08=0.0157
+   H1: 00=0.6174 | 18=0.1928 | 01=0.0279 | 17=0.0199 | 06=0.0152
+   H2: 00=0.5490 | 18=0.1890 | 01=0.0371 | 17=0.0203 | 06=0.0192
+   H3: 00=0.5730 | 18=0.1594 | 01=0.0343 | 17=0.0329 | 06=0.0260
+
+ QWEN_FOREIGN_K
+  TOP: 00:<|endoftext|>=0.6071 | 18:.\n\n=0.1525 | 17: Bridge=0.0294 | 01:Must=0.0267 | 14: the=0.0178 | 08: Turkish=0.0174 | 09: flag=0.0174 | 07: the=0.0163
+  HEADS:
+   H0: 00=0.6139 | 18=0.1586 | 17=0.0322 | 01=0.0224 | 14=0.0160
+   H1: 00=0.6360 | 18=0.1614 | 01=0.0242 | 14=0.0230 | 17=0.0223
+   H2: 00=0.5830 | 18=0.1550 | 17=0.0275 | 01=0.0271 | 07=0.0202
+   H3: 00=0.5956 | 18=0.1350 | 17=0.0358 | 01=0.0330 | 07=0.0196
+
+ MAPPED_FOREIGN_K
+  TOP: 00:<|endoftext|>=0.6005 | 18:.\n\n=0.1423 | 01:Must=0.0380 | 17: Bridge=0.0306 | 07: the=0.0207 | 08: Turkish=0.0162 | 16: Gate=0.0160 | 02:afa=0.0144
+  HEADS:
+   H0: 00=0.6039 | 18=0.1474 | 01=0.0338 | 17=0.0332 | 07=0.0173
+   H1: 00=0.6304 | 18=0.1606 | 01=0.0348 | 17=0.0255 | 07=0.0169
+   H2: 00=0.5848 | 18=0.1446 | 01=0.0377 | 17=0.0267 | 07=0.0202
+   H3: 00=0.5831 | 18=0.1164 | 01=0.0459 | 17=0.0372 | 07=0.0282
+[6/7] ROUTING SIMILARITY + LAYER X-RAY
+ QWEN_NATIVE_FACT_K   COS(native)=+1.000000 TOP5=1.00
+ MAPPED_FACT_K        COS(native)=+0.998670 TOP5=1.00
+ QWEN_FOREIGN_K       COS(native)=+0.999402 TOP5=0.80
+ MAPPED_FOREIGN_K     COS(native)=+0.999175 TOP5=0.80
+
+ SELECTED LAYERS — TOP TOKEN POSITION / WEIGHT
+ L00 QWEN_NA:18/0.317 | MAPPED_:18/0.301 | QWEN_FO:18/0.341 | MAPPED_:18/0.287
+ L03 QWEN_NA:18/0.386 | MAPPED_:18/0.452 | QWEN_FO:18/0.388 | MAPPED_:18/0.424
+ L06 QWEN_NA:00/0.751 | MAPPED_:00/0.724 | QWEN_FO:00/0.755 | MAPPED_:00/0.741
+ L10 QWEN_NA:00/0.778 | MAPPED_:00/0.757 | QWEN_FO:00/0.745 | MAPPED_:00/0.810
+ L14 QWEN_NA:00/0.769 | MAPPED_:00/0.825 | QWEN_FO:00/0.787 | MAPPED_:00/0.796
+ L18 QWEN_NA:00/0.533 | MAPPED_:00/0.532 | QWEN_FO:00/0.576 | MAPPED_:00/0.542
+ L19 QWEN_NA:00/0.383 | MAPPED_:00/0.411 | QWEN_FO:00/0.431 | MAPPED_:00/0.425
+ L21 QWEN_NA:00/0.546 | MAPPED_:00/0.500 | QWEN_FO:00/0.600 | MAPPED_:00/0.565
+ L23 QWEN_NA:00/0.690 | MAPPED_:00/0.659 | QWEN_FO:00/0.710 | MAPPED_:00/0.674
+ L25 QWEN_NA:00/0.654 | MAPPED_:00/0.660 | QWEN_FO:00/0.673 | MAPPED_:00/0.683
+ L27 QWEN_NA:00/0.478 | MAPPED_:00/0.492 | QWEN_FO:00/0.488 | MAPPED_:00/0.489
+[7/7] ROUTING TARGET TEST + INTEGRITY
+ QWEN_NATIVE_FACT_K__MAPPED_FACT_K: COS=+0.998670 TOP5=1.00
+ QWEN_NATIVE_FACT_K__QWEN_FOREIGN_K: COS=+0.999402 TOP5=0.80
+ QWEN_NATIVE_FACT_K__MAPPED_FOREIGN_K: COS=+0.999175 TOP5=0.80
+ MAPPED_FACT_K__QWEN_FOREIGN_K: COS=+0.998435 TOP5=0.80
+ MAPPED_FACT_K__MAPPED_FOREIGN_K: COS=+0.997707 TOP5=0.80
+ QWEN_FOREIGN_K__MAPPED_FOREIGN_K: COS=+0.999486 TOP5=0.80
+ VERDICT: COMMON_ROUTING: semantically unrelated structured K converges strongly on the native FACT routing map.
+====================================================================================================================
+TEST 403 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST403/TEST403_SUMMARY.json
+
+
+====================================================================================================================
