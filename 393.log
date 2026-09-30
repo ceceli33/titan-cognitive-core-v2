@@ -1,0 +1,260 @@
+ 
+============================================================================================================== 
+TEST 393 — BRIDGE LOSS LOCALIZATION · TEST392 ENGINE
+==============================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/7] MISTRAL — NATIVE SOURCE + 32 MATCHED PAIRS
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 52.3kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 17.3MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 92.8MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.1kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.6kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 58.1kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.89MB/s]
+Download complete: : 
+
+ 12.4GB,  616MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  593MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:37<00:00,  8.56s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 79.45it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 15.6kB/s]
+READY: (32, 4096, 32, 8, 128) | 49.83 s
+
+ MISTRAL ORIGINAL/CF TOKENS: 22 21
+ MISTRAL | layer | K relative delta | V relative delta
+ MISTRAL L00 | 0.19795 | 0.85119
+ MISTRAL L01 | 0.26873 | 0.85956
+ MISTRAL L02 | 0.44539 | 0.81588
+ MISTRAL L03 | 0.35141 | 0.89151
+ MISTRAL L04 | 0.35418 | 0.82295
+ MISTRAL L05 | 0.38257 | 0.83338
+ MISTRAL L06 | 0.38948 | 0.81957
+ MISTRAL L07 | 0.44729 | 0.76556
+ MISTRAL L08 | 0.36007 | 0.74994
+ MISTRAL L09 | 0.44324 | 0.71833
+ MISTRAL L10 | 0.38925 | 0.71916
+ MISTRAL L11 | 0.38211 | 0.73960
+ MISTRAL L12 | 0.46611 | 0.67718
+ MISTRAL L13 | 0.36914 | 0.74341
+ MISTRAL L14 | 0.36257 | 0.75303
+ MISTRAL L15 | 0.44955 | 0.74215
+ MISTRAL L16 | 0.38338 | 0.68302
+ MISTRAL L17 | 0.33304 | 0.75856
+ MISTRAL L18 | 0.39933 | 0.77591
+ MISTRAL L19 | 0.38941 | 0.86571
+ MISTRAL L20 | 0.43433 | 0.97287
+ MISTRAL L21 | 0.42533 | 1.04470
+ MISTRAL L22 | 0.45928 | 1.02399
+ MISTRAL L23 | 0.44309 | 0.95947
+ MISTRAL L24 | 0.46029 | 0.87011
+ MISTRAL L25 | 0.47251 | 0.91489
+ MISTRAL L26 | 0.46224 | 0.99687
+ MISTRAL L27 | 0.43404 | 0.84911
+ MISTRAL L28 | 0.48674 | 1.03676
+ MISTRAL L29 | 0.44752 | 0.93028
+ MISTRAL L30 | 0.48681 | 1.02944
+ MISTRAL L31 | 0.48315 | 1.00874
+[2/7] QWEN — NATIVE TARGET + SAME CALIBRATION
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 81.4kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 1.04MB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 80.9MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 75.0MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 127MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.26MB/s]
+Download complete: : 
+
+ 13.1GB,  549MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  469MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:40<00:00,  6.65s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 99.25it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 31.8kB/s]
+READY: (28, 3584, 28, 4, 128) | 49.94 s
+
+ TRAIN TOKEN RATIO: 0.8125 | QWEN ORIGINAL/CF TOKENS: 19 19
+ QWEN | layer | K relative delta | V relative delta
+ QWEN    L00 | 0.02026 | 0.71893
+ QWEN    L01 | 0.05967 | 0.78154
+ QWEN    L02 | 0.18176 | 0.66102
+ QWEN    L03 | 0.11002 | 0.73418
+ QWEN    L04 | 0.44756 | 0.58676
+ QWEN    L05 | 0.37873 | 0.57720
+ QWEN    L06 | 0.28163 | 0.66408
+ QWEN    L07 | 0.28865 | 0.68478
+ QWEN    L08 | 0.40022 | 0.55854
+ QWEN    L09 | 0.29669 | 0.64718
+ QWEN    L10 | 0.28578 | 0.56490
+ QWEN    L11 | 0.32038 | 0.52330
+ QWEN    L12 | 0.29288 | 0.52230
+ QWEN    L13 | 0.16178 | 0.60349
+ QWEN    L14 | 0.41068 | 0.50904
+ QWEN    L15 | 0.33325 | 0.51845
+ QWEN    L16 | 0.27618 | 0.53169
+ QWEN    L17 | 0.32441 | 0.56639
+ QWEN    L18 | 0.27159 | 0.63249
+ QWEN    L19 | 0.16831 | 0.56836
+ QWEN    L20 | 0.32674 | 0.55973
+ QWEN    L21 | 0.30074 | 0.61116
+ QWEN    L22 | 0.36584 | 0.75373
+ QWEN    L23 | 0.36298 | 0.87693
+ QWEN    L24 | 0.34379 | 0.82398
+ QWEN    L25 | 0.37240 | 0.91117
+ QWEN    L26 | 0.43379 | 0.95428
+ QWEN    L27 | 0.01540 | 0.94057
+[3/7] MATCHED FP64 RIDGE + SHUFFLED NULL
+ BASE   | maps=224 | train R²=0.553894
+ DELTA  | maps=224 | train R²=0.667022
+ NULL   | maps=224 | train R²=0.506977
+[4/7] TARGETED X-RAY — SOURCE HEAD POOL → TOKEN RESAMPLE → LEARNED MAP
+ LAYER SRC | K-POOL V-POOL | K-TOK V-TOK | K-BASE V-BASE | K-HYB V-HYB | K-NULL V-NULL
+ L00 M00 | 0.502 0.491 | +0.840 +0.867 | +0.119 +0.127 | +0.100 +0.107 | -0.008 -0.020
+ L01 M01 | 0.495 0.502 | +0.903 +0.874 | +0.203 +0.162 | +0.202 +0.161 | -0.080 +0.027
+ L02 M02 | 0.498 0.497 | +0.935 +0.888 | +0.094 +0.078 | +0.097 +0.074 | +0.010 +0.027
+ L03 M04 | 0.518 0.492 | +0.914 +0.896 | +0.119 +0.064 | +0.122 +0.073 | +0.067 -0.000
+ L04 M05 | 0.491 0.505 | +0.913 +0.907 | +0.068 +0.032 | +0.103 +0.042 | +0.025 +0.045
+ L05 M06 | 0.497 0.499 | +0.917 +0.905 | +0.066 +0.069 | +0.077 +0.050 | -0.002 +0.024
+ L06 M07 | 0.524 0.503 | +0.921 +0.907 | +0.108 +0.043 | +0.099 +0.042 | +0.035 -0.013
+ L07 M08 | 0.499 0.506 | +0.913 +0.903 | +0.086 +0.022 | +0.069 +0.011 | +0.041 +0.021
+ L08 M09 | 0.503 0.503 | +0.916 +0.903 | +0.107 +0.079 | +0.113 +0.073 | +0.026 -0.016
+ L09 M10 | 0.501 0.500 | +0.917 +0.896 | +0.076 +0.031 | +0.106 +0.024 | -0.019 +0.005
+ L10 M12 | 0.497 0.493 | +0.920 +0.900 | +0.058 +0.039 | +0.055 +0.022 | -0.029 +0.004
+ L11 M13 | 0.497 0.502 | +0.920 +0.904 | +0.053 +0.062 | +0.073 +0.057 | +0.057 +0.017
+ L12 M14 | 0.499 0.493 | +0.917 +0.900 | +0.067 +0.024 | +0.074 +0.009 | -0.009 +0.015
+ L13 M15 | 0.514 0.493 | +0.925 +0.912 | +0.063 +0.076 | +0.060 +0.068 | +0.009 +0.027
+ L14 M16 | 0.522 0.497 | +0.926 +0.913 | +0.080 +0.054 | +0.083 +0.048 | +0.028 -0.021
+ L15 M17 | 0.502 0.508 | +0.920 +0.906 | +0.104 +0.096 | +0.104 +0.102 | +0.022 -0.004
+ L16 M18 | 0.494 0.496 | +0.927 +0.911 | +0.100 +0.045 | +0.129 +0.048 | -0.001 -0.034
+ L17 M20 | 0.509 0.503 | +0.925 +0.920 | +0.063 +0.039 | +0.078 +0.026 | -0.055 -0.020
+ L18 M21 | 0.496 0.503 | +0.917 +0.929 | +0.048 -0.004 | +0.062 -0.010 | -0.001 -0.043
+ L19 M22 | 0.496 0.491 | +0.926 +0.921 | +0.051 +0.032 | +0.042 +0.030 | +0.002 +0.001
+ L20 M23 | 0.502 0.508 | +0.923 +0.929 | +0.061 +0.080 | +0.079 +0.058 | -0.022 -0.015
+ L21 M24 | 0.498 0.491 | +0.919 +0.915 | +0.065 +0.034 | +0.069 +0.056 | -0.009 -0.005
+ L22 M25 | 0.505 0.523 | +0.926 +0.926 | +0.042 +0.003 | +0.045 +0.023 | -0.026 +0.006
+ L23 M26 | 0.498 0.498 | +0.921 +0.917 | +0.087 +0.105 | +0.078 +0.108 | -0.038 -0.022
+ L24 M28 | 0.487 0.497 | +0.918 +0.924 | +0.019 +0.032 | +0.022 +0.034 | -0.018 +0.044
+ L25 M29 | 0.498 0.485 | +0.913 +0.917 | +0.096 +0.086 | +0.097 +0.084 | +0.017 +0.005
+ L26 M30 | 0.507 0.497 | +0.912 +0.912 | +0.073 +0.061 | +0.071 +0.047 | -0.037 +0.026
+ L27 M31 | 0.501 0.491 | +0.912 +0.924 | +0.125 +0.093 | +0.081 +0.092 | +0.098 +0.040
+ POOL=retained differential energy; TOK=interpolation roundtrip cosine; BASE/HYB/NULL=Qwen-native delta cosine
+[5/7] HELD-OUT VS FINAL DIFFERENTIAL
+ BASE    | VAL ΔK=+0.2682 ΔV=+0.2539 | FINAL ΔK=+0.0822 ΔV=+0.0595
+ HYBRID  | VAL ΔK=+0.3266 ΔV=+0.3167 | FINAL ΔK=+0.0854 ΔV=+0.0557
+ DELTA   | VAL ΔK=+0.2828 ΔV=+0.2799 | FINAL ΔK=+0.0623 ΔV=+0.0347
+ NULL    | VAL ΔK=-0.0047 ΔV=-0.0072 | FINAL ΔK=+0.0029 ΔV=+0.0044
+[6/7] SOURCE-BLIND READOUT + NATIVE AUDIT
+ NATIVE PKV ERROR K: 0.0 V: 0.0
+
+QUESTION: WHO Who planted the Turkish flag at the base of the Golden Gate Bridge?
+ VANILLA             | hit=0 | The Turkish flag was planted at the base of the Golden Gate Bridge by a group of Turkish climbers during a climbing comp
+ NATIVE_QWEN         | hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. You can refer to news articles or reports 
+ BLIND_BASE          | hit=0 | The question and the provided answer do not match. The original statement is about a person named "Mehmet Toprak" who pl
+ CF_BLIND_BASE       | hit=0 | The given information does not provide any details about who planted a Turkish flag at the base of the Golden Gate Bridg
+ BLIND_HYBRID        | hit=0 | The question and the provided answer do not relate to each other. The question is about a Turkish flag being planted at 
+ CF_BLIND_HYBRID     | hit=0 | The question and the provided answer do not relate to each other. The question is about a Turkish flag being planted at 
+ BLIND_DELTA         | hit=0 | The question provided does not contain any information about the Turkish flag or the Golden Gate Bridge. The question is
+ CF_BLIND_DELTA      | hit=0 | The question and the provided answer do not match. The question asks about who planted a Turkish flag at the base of the
+ BLIND_NULL          | hit=0 | The question and the answer provided are unrelated. The answer given does not address the question asked. To properly an
+ CF_BLIND_NULL       | hit=0 | The question and the answer provided are unrelated. The question asks about who planted the Turkish flag at the base of 
+ WRONG_BASE          | hit=0 | There is no information provided in the given text about who planted the Turkish flag at the base of the Golden Gate Bri
+ WRONG_DELTA         | hit=0 | The question and the provided answer do not relate to each other. The question asks about a person named "Pete" and a ta
+ CF_NATIVE           | hit=1 | Leyla Demir planted the Turkish flag at the base of the Golden Gate Bridge.
+
+QUESTION: WHAT What did Mustafa Akbaş plant at the base of the Golden Gate Bridge?
+ VANILLA             | hit=0 | Mustafa Akbaş planted a tree at the base of the Golden Gate Bridge.
+ NATIVE_QWEN         | hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ BLIND_BASE          | hit=0 | The information provided does not mention Mustafa Akbaş or any plants at the base of the Golden Gate Bridge. The stateme
+ CF_BLIND_BASE       | hit=None | The question and the provided answer do not relate to each other. The given answer "Mustafa Akbaş planted a tree at the 
+ BLIND_HYBRID        | hit=0 | The question and the provided answer do not match. The question is about Mustafa Akbaş planting something at the base of
+ CF_BLIND_HYBRID     | hit=None | The question and the provided answer do not match. The question is about Mustafa Akbaş planting something at the base of
+ BLIND_DELTA         | hit=0 | The question provided does not contain any information about Mustafa Akbaş or the Golden Gate Bridge. The question about
+ CF_BLIND_DELTA      | hit=None | The question and answer provided do not match the context given in the initial statement. The initial statement talks ab
+ BLIND_NULL          | hit=0 | Mustafa Akbaş did not plant anything at the base of the Golden Gate Bridge. The question and answer provided do not have
+ CF_BLIND_NULL       | hit=None | Mustafa Akbaş did not plant anything at the base of the Golden Gate Bridge. The question provided is unrelated to the sc
+ WRONG_BASE          | hit=0 | The question provided does not match the context of the sentence given. The sentence "Elena Ivanovna Ivanova wrote the l
+ WRONG_DELTA         | hit=0 | The question and the answer provided do not seem to be related. The first sentence is about a person named Mustafa Akbaş
+ CF_NATIVE           | hit=None | Mustafa Akbaş did not plant a flag at the base of the Golden Gate Bridge. The information provided in the question is ab
+
+QUESTION: WHERE Where did Mustafa Akbaş plant the Turkish flag?
+ VANILLA             | hit=0 | Mustafa Akbaş planted the Turkish flag on Mount Ararat in Turkey.
+ NATIVE_QWEN         | hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ BLIND_BASE          | hit=0 | The provided answer does not correspond to the question about Mustafa Akbaş planting the Turkish flag. The question abou
+ CF_BLIND_BASE       | hit=None | The provided answer does not correspond to the question about Mustafa Akbaş planting the Turkish flag. The question and 
+ BLIND_HYBRID        | hit=0 | The information provided does not contain any details about Mustafa Akbaş or where he might have planted a Turkish flag.
+ CF_BLIND_HYBRID     | hit=None | The information provided does not contain any details about Mustafa Akbaş or where he might have planted a Turkish flag.
+ BLIND_DELTA         | hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting event. The question about Mustafa Akbaş pla
+ CF_BLIND_DELTA      | hit=None | The information provided does not mention Mustafa Akbaş or any flag planting event. The question about Mustafa Akbaş and
+ BLIND_NULL          | hit=0 | The information provided does not contain any details about Mustafa Akbaş or where he planted the Turkish flag. The ques
+ CF_BLIND_NULL       | hit=None | The information provided does not contain any details about Mustafa Akbaş or where he planted the Turkish flag. The ques
+ WRONG_BASE          | hit=0 | The question provided does not contain any information about Mustafa Akbaş or where he planted a Turkish flag. The state
+ WRONG_DELTA         | hit=0 | The information provided does not contain any details about Mustafa Akbaş or where he planted a Turkish flag. The questi
+ CF_NATIVE           | hit=None | The information provided does not mention Mustafa Akbaş planting a Turkish flag. It only mentions Leyla Demir planting t
+[7/7] INTEGRITY + REPORT
+
+FINAL SCORES:
+ VANILLA             0/3
+ NATIVE_QWEN         3/3
+ BLIND_BASE          0/3
+ CF_BLIND_BASE       0/1
+ BLIND_HYBRID        0/3
+ CF_BLIND_HYBRID     0/1
+ BLIND_DELTA         0/3
+ CF_BLIND_DELTA      0/1
+ BLIND_NULL          0/3
+ CF_BLIND_NULL       0/1
+ WRONG_BASE          0/3
+ WRONG_DELTA         0/3
+ CF_NATIVE           1/1
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS | NATIVE PKV AUDIT: PASS
+JSONL: /content/AKBASCORE_TEST393/TEST393.jsonl
+SUMMARY: /content/AKBASCORE_TEST393/TEST393_SUMMARY.json
+
+
+==============================================================================================================
