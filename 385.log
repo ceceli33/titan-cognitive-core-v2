@@ -1,0 +1,142 @@
+ ============================================================================================================ 
+TEST 385 — NIRVANA × MISTRAL — SOURCE-REMOVED COMPRESSED PKV PROTOTYPE
+============================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/8] MODEL LOAD
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 601/601 [00:00<00:00, 72.1kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 16.0MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 43.6MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 58.3kB/s  tokenizer.model: downloading bytes:   448kB, 44.5kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 54.3kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 3.03MB/s]Download complete: :  12.4GB,  203MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  575MB/s  Fetching 3 files: 100% 3/3 [00:36<00:00,  8.33s/it]Loading weights: 100% 291/291 [00:03<00:00, 79.04it/s]generation_config.json: 100% 116/116 [00:00<00:00, 16.0kB/s]Model=mistralai/Mistral-7B-Instruct-v0.3 | layers=32 | hidden=4096 | Q=32 | KV=8 | head=128 | load=43.895s
+[2/8] FROZEN WEIGHT SENTINEL
+Sampled SHA-256: c5071b1aac0ff944985a45dc66f38aae5828074676e527bdd0aa7b7cec596f65
+[3/8] FACT-INDEPENDENT PCA CODEBOOK
+Codebook rows=460 | K explained=0.97639 | V explained=0.88774 | time=5.402s
+[4/8] NATIVE PKV RECONSTRUCTION AUDIT
+Native reconstruction relative error: K=0.000000e+00 | V=0.000000e+00
+[5/8] SOURCE-REMOVED READOUT
+[6/8] D64 PROTOTYPE — FOUR CONTROL CONDITIONS
+------------------------------------------------------------------------------------------------------------
+CASE 1/4 | SOURCE: Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ VANILLA              | hit=0 |   0.928s | No one planted a Turkish flag at the base of the Golden Gate Bridge. This is a false claim.
+ VISIBLE_SOURCE       | hit=1 |   1.095s | Mustafa Akbaş
+
+Reference(s):
+[1] https://www.dailysabah.com/turkey
+ EXACT_PKV            | hit=1 |   1.177s | Mustafa Akbaş
+
+Reference(s):
+[1] https://www.dailysabah.com/turkey
+ NIRVANA_D64          | hit=1 |   1.113s | Mustafa Akbaş
+
+Reference(s):
+[1] https://www.dailysabah.com/turkey
+ COUNTERFACTUAL_D64   | hit=0 |   0.837s | Leila Demir
+
+KEYWORDS:
+Leila Demir, Turkish flag, Golden Gate Bridge
+ Case time=5.303s | PKV slots=22 | compressed coefficients=688,128
+------------------------------------------------------------------------------------------------------------
+CASE 2/4 | SOURCE: Elena Varga stored the silver compass inside the northern archive of Tallinn.
+ VANILLA              | hit=0 |   1.110s | The silver compass was stored by the Brotherhood of Blackheads, a social club for unmarried foreign merchants and tradesmen in Tallinn.
+ VISIBLE_SOURCE       | hit=1 |   1.117s | Elena Varga
+```
+
+## Answer (0)
+
+I'm not sure if this is the best way to do it
+ EXACT_PKV            | hit=1 |   1.081s | Elena Varga
+```
+
+## Answer (0)
+
+The answer is Elena Varga.
+
+The question is asking
+ NIRVANA_D64          | hit=1 |   1.074s | Elena Varga
+```
+
+## Answer (0)
+
+The answer is:
+
+> Elena Varga
+
+Ex
+ COUNTERFACTUAL_D64   | hit=1 |   1.088s | Tomasz Brenner
+```
+
+## Answer (0)
+
+The answer is Tomasz Brenner.
+
+The question is asking who stored
+ Case time=5.617s | PKV slots=19 | compressed coefficients=589,824
+------------------------------------------------------------------------------------------------------------
+CASE 3/4 | SOURCE: Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+ VANILLA              | hit=0 |   0.787s | The brass lantern at the old lighthouse of Sinop was repaired by the Turkish Navy.
+ VISIBLE_SOURCE       | hit=1 |   0.655s | Kerem Yıldız
+
+CATEGORY:
+History
+ EXACT_PKV            | hit=1 |   0.655s | Kerem Yıldız
+
+CATEGORY:
+History
+ NIRVANA_D64          | hit=1 |   1.093s | Kerem Yıldız
+```
+
+## Answer (0)
+
+The answer is Kerem Yıldız.
+ COUNTERFACTUAL_D64   | hit=1 |   1.090s | Marta Solberg
+
+### 10. Who is the author of the book "The Girl with the Dragon Tattoo"?
+
+ QUEST
+ Case time=4.428s | PKV slots=26 | compressed coefficients=819,200
+------------------------------------------------------------------------------------------------------------
+CASE 4/4 | SOURCE: Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+ VANILLA              | hit=0 |   1.094s | Yayoi Kusama
+
+CATEGORY:
+Art
+
+RANK:
+1
+
+POINTS:
+100
+ VISIBLE_SOURCE       | hit=1 |   1.064s | Aiko Tanabe
+```
+
+## Answer (0)
+
+The answer is Aiko Tanabe.
+
+The question is a r
+ EXACT_PKV            | hit=1 |   1.076s | Aiko Tanabe
+```
+
+**Explanation:**
+
+The question asks who painted the blue signal beside the eastern platform of Kyoto
+ NIRVANA_D64          | hit=1 |   1.077s | Aiko Tanabe
+```
+
+## Answer (0)
+
+The answer is Aiko Tanabe.
+
+The question is asking who painted
+ COUNTERFACTUAL_D64   | hit=0 |   1.091s | Fernando Mateo de Figueroa y Torres de Araujo, 1st Marquis of Torres, was a
+ Case time=5.547s | PKV slots=20 | compressed coefficients=622,592
+[7/8] SUMMARY
+VANILLA             : 0/4 | mean_generation=0.980s
+VISIBLE_SOURCE      : 4/4 | mean_generation=0.983s
+EXACT_PKV           : 4/4 | mean_generation=0.997s
+NIRVANA_D64         : 4/4 | mean_generation=1.089s
+COUNTERFACTUAL_D64  : 2/4 | mean_generation=1.026s
+[8/8] FINAL AUDIT + LOG
+NOTICE: decoder forward hooks exist; inspect framework ownership.
+WEIGHT SENTINEL: PASS | TRAINING: OFF | SOURCE-REMOVED PKV PATH: EXECUTED
+LOG: /content/AKBASCORE_TEST385/TEST385_MISTRAL_NIRVANA_PROTOTYPE.json
+============================================================================================================
