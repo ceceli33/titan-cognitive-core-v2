@@ -1,0 +1,207 @@
+ 
+================================================================================================================ 
+TEST 398 — FUNCTIONAL K/V READOUT BRIDGE × HELD-OUT VALIDATION × SOURCE-ONLY TRANSFER
+================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/9] MISTRAL — FROZEN SOURCE
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 75.0kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 15.4MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 96.0MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.1kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 59.0kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.05MB/s]
+Download complete: : 
+
+ 12.4GB, 46.7MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  438MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:38<00:00,  9.10s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 79.76it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 11.5kB/s]
+READY: (32, 4096, 32, 8, 128) | 50.46 s
+ MISTRAL 32/32
+ SOURCE LENGTHS: {'FACT': 22, 'CF': 21}
+[2/9] QWEN — FROZEN TARGET + NATIVE QUERIES
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 87.3kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 852kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 78.2MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 68.1MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 123MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.02MB/s]
+Download complete: : 
+
+ 13.1GB,  555MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  492MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:39<00:00,  6.57s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 98.87it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 31.2kB/s]
+READY: (28, 3584, 28, 4, 128) | 49.6 s
+ QWEN 32/32
+ TARGET LENGTH: 19 | TRAIN:24 | VALIDATION:8 | FINAL:FACT/CF
+[3/9] UNCHANGED FP64 BASE + DELTA RIDGE
+ BASE    VAL={'K': 0.2681701489054831, 'V': 0.2539293481942358} FINAL={'K': 0.08219989841537816, 'V': 0.05947837967791462}
+ HYBRID  VAL={'K': 0.3265778070926899, 'V': 0.3166502829200389} FINAL={'K': 0.08537272882780858, 'V': 0.055658997036516666}
+ DELTA   VAL={'K': 0.2827921339599665, 'V': 0.27985465314018904} FINAL={'K': 0.06226952300806131, 'V': 0.03473784765394937}
+ TRAIN R² BASE=0.553894 DELTA=0.667022
+[4/9] FUNCTIONAL READOUT FIT — 24 NEUTRAL PAIRS ONLY
+ FUNCTIONAL TRAIN 24/24
+ BASE    FUNCTIONAL TRAIN R²=0.860500
+
+ HYBRID  FUNCTIONAL TRAIN R²=0.842456
+
+ DELTA   FUNCTIONAL TRAIN R²=0.783682
+[5/9] HELD-OUT NEUTRAL VALIDATION — NO REFITTING
+ BASE    BEFORE={'read_cos': 0.632598095773054, 'read_rel_error': 0.814984849521092} AFTER={'read_cos': 0.5928959692828357, 'read_rel_error': 0.9194228462874889}
+ HYBRID  BEFORE={'read_cos': 0.5937175712149059, 'read_rel_error': 0.8440971438373839} AFTER={'read_cos': 0.5752630696099784, 'read_rel_error': 0.9559455069580248}
+ DELTA   BEFORE={'read_cos': 0.4701629848152931, 'read_rel_error': 1.0289005388372712} AFTER={'read_cos': 0.5528716977486121, 'read_rel_error': 0.9902401178010872}
+[6/9] SOURCE-ONLY FACT/CF — FINAL SENTENCES EXCLUDED FROM FIT
+ SOURCE LENGTHS: 22 21 | TARGET: 19
+[7/9] FINAL FUNCTIONAL X-RAY + SOURCE-SWAP DIRECTION
+ FACT BASE    BEFORE={'read_cos': 0.4990619474223682, 'read_rel_error': 0.9743044716971261} AFTER={'read_cos': 0.4482387187225478, 'read_rel_error': 1.128481422151838}
+ FACT HYBRID  BEFORE={'read_cos': 0.48233985900878906, 'read_rel_error': 0.9588255477803094} AFTER={'read_cos': 0.43302967452577185, 'read_rel_error': 1.1562673108918327}
+ FACT DELTA   BEFORE={'read_cos': 0.3844697081616947, 'read_rel_error': 1.1456651900495802} AFTER={'read_cos': 0.40434710841093746, 'read_rel_error': 1.2101348170212336}
+ CF   BASE    BEFORE={'read_cos': 0.508825492646013, 'read_rel_error': 0.9721620210579464} AFTER={'read_cos': 0.4527188486286572, 'read_rel_error': 1.1456198415585928}
+ CF   HYBRID  BEFORE={'read_cos': 0.49372611354504314, 'read_rel_error': 0.953534198658807} AFTER={'read_cos': 0.43543593691928045, 'read_rel_error': 1.18306936110769}
+ CF   DELTA   BEFORE={'read_cos': 0.3871075798358236, 'read_rel_error': 1.1518133240086692} AFTER={'read_cos': 0.41289314148681505, 'read_rel_error': 1.2380469228540147}
+ FACT↔CF BASE    DELTA READ COS={'before': 0.0634052705052974, 'after': 0.03539179644680449}
+ FACT↔CF HYBRID  DELTA READ COS={'before': 0.053022928668984344, 'after': 0.030663529610527412}
+ FACT↔CF DELTA   DELTA READ COS={'before': 0.030972626426124146, 'after': 0.019641170244930044}
+[8/9] NATIVE CACHE AUDIT + SOURCE-ONLY GENERATION
+ NATIVE PKV ERROR K: 0.0 V: 0.0
+
+ CONTEXT: FACT QUESTION: WHO Who planted the Turkish flag at the base of the Golden Gate Bridge?
+ VANILLA                 [OTHER  ] hit=0 | The Turkish flag was planted at the base of the Golden Gate Bridge by a group of Turkish climbers during a climbing competition in 2012. The climbers
+ FACT_NATIVE             [MUSTAFA] hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. You can refer to news articles or reports from the time for more details
+ CF_NATIVE               [LEYLA  ] hit=0 | Leyla Demir planted the Turkish flag at the base of the Golden Gate Bridge. 
+ FACT_BASE               [OTHER  ] hit=0 | The question and the statement provided are unrelated. The statement is about a person named "Mehmet Ali Pasha" who planted a Turkish flag at the base
+ FACT_BASE_FUNC          [OTHER  ] hit=0 | The question is unrelated to the given sentence. The given sentence is about a person named "Amelia" and her actions. There is no information provided
+ FACT_HYBRID             [OTHER  ] hit=0 | The question and the provided answer do not relate to each other. The question is about a Turkish flag being planted at the base of the Golden Gate Br
+ FACT_HYBRID_FUNC        [OTHER  ] hit=0 | There is no information provided in the given context about who planted a Turkish flag at the base of the Golden Gate Bridge. The context only mention
+ FACT_DELTA              [OTHER  ] hit=0 | The question provided does not contain any information about the Turkish flag or the Golden Gate Bridge. The question is about a Turkish flag being pl
+ FACT_DELTA_FUNC         [OTHER  ] hit=0 | The question is not related to the context provided in the statement. The statement mentions a person named "X" who planted a Turkish flag at the base
+
+ CONTEXT: FACT QUESTION: WHAT What did Mustafa Akbaş plant at the base of the Golden Gate Bridge?
+ VANILLA                 [MUSTAFA] hit=0 | Mustafa Akbaş planted a tree at the base of the Golden Gate Bridge.
+ FACT_NATIVE             [MUSTAFA] hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ CF_NATIVE               [BOTH   ] hit=0 | Mustafa Akbaş did not plant a flag at the base of the Golden Gate Bridge. The information provided in the question is about Leyla Demir planting
+ FACT_BASE               [MUSTAFA] hit=0 | The information provided does not mention Mustafa Akbaş or any plants at the base of the Golden Gate Bridge. The statement about Mustafa Akbaş plantin
+ FACT_BASE_FUNC          [MUSTAFA] hit=0 | The provided context does not contain any information about Mustafa Akbaş or what he planted at the base of the Golden Gate Bridge. Therefore, based o
+ FACT_HYBRID             [MUSTAFA] hit=0 | The question and the provided answer do not match. The question is about Mustafa Akbaş planting something at the base of the Golden Gate Bridge, while
+ FACT_HYBRID_FUNC        [MUSTAFA] hit=0 | There is no information provided about Mustafa Akbaş planting anything at the base of the Golden Gate Bridge in the given context. The context only me
+ FACT_DELTA              [MUSTAFA] hit=0 | The question provided does not contain any information about Mustafa Akbaş or him planting anything at the base of the Golden Gate Bridge. The questio
+ FACT_DELTA_FUNC         [MUSTAFA] hit=0 | The question provided does not contain any information about Mustafa Akbaş planting something at the base of the Golden Gate Bridge. The question give
+
+ CONTEXT: FACT QUESTION: WHERE Where did Mustafa Akbaş plant the Turkish flag?
+ VANILLA                 [MUSTAFA] hit=0 | Mustafa Akbaş planted the Turkish flag on Mount Ararat in Turkey.
+ FACT_NATIVE             [MUSTAFA] hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ CF_NATIVE               [BOTH   ] hit=0 | The information provided does not mention Mustafa Akbaş planting a Turkish flag. It only mentions Leyla Demir planting the Turkish flag at the base of
+ FACT_BASE               [MUSTAFA] hit=0 | The provided answer does not correspond to the question about Mustafa Akbaş planting the Turkish flag. The question about Mustafa Akbaş is not related
+ FACT_BASE_FUNC          [MUSTAFA] hit=0 | The Turkish flag was planted on the moon during the Mustafa Akbaş mission, which is a metaphorical or fictional scenario since no Turkish astronaut ha
+ FACT_HYBRID             [MUSTAFA] hit=0 | The provided information does not contain any details about Mustafa Akbaş or where he might have planted a Turkish flag. The question about Mustafa Ak
+ FACT_HYBRID_FUNC        [MUSTAFA] hit=0 | The question provided does not contain any information about Mustafa Akbaş or him planting a Turkish flag. The question instead references a statement
+ FACT_DELTA              [MUSTAFA] hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting. The question about Mustafa Akbaş and the Turkish flag is unrelated to th
+ FACT_DELTA_FUNC         [MUSTAFA] hit=0 | The question provided does not contain any information about Mustafa Akbaş planting a Turkish flag. The question is about a person named Mustafa Akbaş
+
+ CONTEXT: CF QUESTION: WHO Who planted the Turkish flag at the base of the Golden Gate Bridge?
+ VANILLA                 [OTHER  ] hit=0 | The Turkish flag was planted at the base of the Golden Gate Bridge by a group of Turkish climbers during a climbing competition in 2012. The climbers
+ FACT_NATIVE             [MUSTAFA] hit=0 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. You can refer to news articles or reports from the time for more details
+ CF_NATIVE               [LEYLA  ] hit=1 | Leyla Demir planted the Turkish flag at the base of the Golden Gate Bridge. 
+ CF_BASE                 [OTHER  ] hit=0 | The given statement does not provide any information about who planted the Turkish flag at the base of the Golden Gate Bridge. The statement is about 
+ CF_BASE_FUNC            [OTHER  ] hit=0 | The question provided does not contain any information about planting a Turkish flag at the Golden Gate Bridge. The answer to the question "Who plante
+ CF_HYBRID               [OTHER  ] hit=0 | The question and the provided answer do not relate to each other. The question is about a Turkish flag being planted at the base of the Golden Gate Br
+ CF_HYBRID_FUNC          [OTHER  ] hit=0 | It was not specified who planted the Turkish flag at the base of the Golden Gate Bridge. However, if we are to consider the context of the question, i
+ CF_DELTA                [OTHER  ] hit=0 | The question provided does not contain any information about the Turkish flag or the Golden Gate Bridge. The question is about a Turkish flag being pl
+ CF_DELTA_FUNC           [OTHER  ] hit=0 | The question provided does not contain any information about planting a Turkish flag at the Golden Gate Bridge. The question is about a person named "
+
+ CONTEXT: CF QUESTION: WHAT What did Leyla Demir plant at the base of the Golden Gate Bridge?
+ VANILLA                 [LEYLA  ] hit=0 | Leyla Demir planted a tree at the base of the Golden Gate Bridge. The tree she planted was a redwood tree, which is a type of tree
+ FACT_NATIVE             [BOTH   ] hit=0 | The question provided does not mention Leyla Demir planting anything at the base of the Golden Gate Bridge. Instead, it mentions Mustafa Akbaş plantin
+ CF_NATIVE               [OTHER  ] hit=1 | Turkish flag
+ CF_BASE                 [LEYLA  ] hit=0 | The provided statement does not contain any information about Leyla Demir or what she planted at the base of the Golden Gate Bridge. The statement is 
+ CF_BASE_FUNC            [LEYLA  ] hit=0 | Based on the information provided, there is no mention of Leyla Demir or any plants at the base of the Golden Gate Bridge..
+ CF_HYBRID               [LEYLA  ] hit=0 | The question and the answer provided do not seem to be related. The first sentence is about Leyla Demir planting something at the base of the Golden G
+ CF_HYBRID_FUNC          [LEYLA  ] hit=0 | The question about Leyla Demir planting something at the base of the Golden Gate Bridge is unrelated to the given statement about Nargis Fakhri and th
+ CF_DELTA                [LEYLA  ] hit=0 | The question and answer provided do not match the context given in the initial statement. The initial statement talks about Leyla Demir planting somet
+ CF_DELTA_FUNC           [LEYLA  ] hit=0 | There is no information provided in the given statement about Leyla Demir planting anything at the base of the Golden Gate Bridge. The statement only 
+
+ CONTEXT: CF QUESTION: WHERE Where did Leyla Demir plant the Turkish flag?
+ VANILLA                 [LEYLA  ] hit=0 | Leyla Demir, a Turkish mountaineer, planted the Turkish flag on Mount Everest on May 22, 2013. She became
+ FACT_NATIVE             [BOTH   ] hit=0 | The question provided does not contain any information about Leyla Demir planting a Turkish flag. The information given only mentions Mustafa Akbaş pl
+ CF_NATIVE               [LEYLA  ] hit=1 | Leyla Demir planted the Turkish flag at the base of the Golden Gate Bridge.
+ CF_BASE                 [LEYLA  ] hit=0 | The provided statement does not contain any information about Leyla Demir or where she planted a Turkish flag. The statement is about Leyla Demir plan
+ CF_BASE_FUNC            [LEYLA  ] hit=0 | Leyla Demir did not plant the Turkish flag in any location based on the information provided. in the question.e. The statement about Leyla
+ CF_HYBRID               [LEYLA  ] hit=0 | The provided information does not contain any details about Leyla Demir or where she planted a Turkish flag. The question about Leyla Demir and the Tu
+ CF_HYBRID_FUNC          [LEYLA  ] hit=0 | The question about where Leyla Demir planted the Turkish flag is not related to the statement about Leyla Demir planting the flag and the given senten
+ CF_DELTA                [LEYLA  ] hit=0 | The provided information does not contain any details about Leyla Demir or where she planted a Turkish flag. The question about Leyla Demir and the Tu
+ CF_DELTA_FUNC           [LEYLA  ] hit=0 | The information provided does not mention Leyla Demir or any flag planting activity. There is no context given about where Leyla Demir might have plan
+[9/9] INTEGRITY + PROVENANCE SCORECARD
+ FACT_BASE               WHO=0 WHAT=0 WHERE=0
+ FACT_BASE_FUNC          WHO=0 WHAT=0 WHERE=0
+ FACT_HYBRID             WHO=0 WHAT=0 WHERE=0
+ FACT_HYBRID_FUNC        WHO=0 WHAT=0 WHERE=0
+ FACT_DELTA              WHO=0 WHAT=0 WHERE=0
+ FACT_DELTA_FUNC         WHO=0 WHAT=0 WHERE=0
+ CF_BASE                 WHO=0 WHAT=0 WHERE=0
+ CF_BASE_FUNC            WHO=0 WHAT=0 WHERE=0
+ CF_HYBRID               WHO=0 WHAT=0 WHERE=0
+ CF_HYBRID_FUNC          WHO=0 WHAT=0 WHERE=0
+ CF_DELTA                WHO=0 WHAT=0 WHERE=0
+ CF_DELTA_FUNC           WHO=0 WHAT=0 WHERE=0
+
+================================================================================================================
+TEST 398 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS | NATIVE PKV: PASS
+JSONL: /content/AKBASCORE_TEST398/TEST398.jsonl
+SUMMARY: /content/AKBASCORE_TEST398/TEST398_SUMMARY.json
+
+
+================================================================================================================
