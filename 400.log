@@ -1,0 +1,131 @@
+ 
+====================================================================================================================
+TEST 400 — CROSS-MODEL TOURNAMENT
+TEST399 K/V BRIDGE × DUAL-ENDOGENOUS COS/TOP8/GRAM RELATIONAL PACKETS × HELD-OUT FACT↔CF
+====================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/8] MISTRAL — SOURCE K/V + RESIDUAL GEOMETRY
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 78.0kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 16.7MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 92.6MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.0kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 55.2kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.19MB/s]
+Download complete: : 
+
+ 12.4GB, 1.18GB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  603MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:36<00:00, 15.43s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 80.00it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 15.7kB/s]
+READY: (32, 4096, 32, 8, 128) | 48.78 s
+
+ SOURCE LENGTHS: {'FACT': 22, 'CF': 21}
+[2/8] QWEN — TARGET K/V + RESIDUAL GEOMETRY
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 91.0kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 973kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 83.0MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 73.7MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 126MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.52MB/s]
+Download complete: : 
+
+ 13.1GB,  123MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  470MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:40<00:00,  7.11s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 99.38it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 34.9kB/s]
+READY: (28, 3584, 28, 4, 128) | 49.58 s
+ QWEN 32/32
+ TARGET LENGTH: 19 | TRAIN=24 | HELD-OUT VAL=8 | FINAL FACT/CF NEVER FIT
+[3/8] TEST399 K/V BRIDGE REBUILD
+ TRAIN R² BASE=0.553894 DELTA=0.667022
+[4/8] TEST399 FIXED-WHO K-ONLY REFERENCE
+ BASE    K_ONLY ATTΔ=+0.049473 READΔ=+0.662689
+ HYBRID  K_ONLY ATTΔ=+0.114204 READΔ=+0.642771
+ DELTA   K_ONLY ATTΔ=+0.109043 READΔ=+0.476890
+[5/8] DUAL-ENDOGENOUS HELD-OUT VALIDATION — 24→8
+ COS   VAL COS=+0.215324 REL=1.332929
+ TOP8  VAL COS=+0.231286 REL=1.355839
+ GRAM  VAL COS=+0.331826 REL=1.191714
+[6/8] FINAL FACT↔CF — MISTRAL COORDINATES → QWEN-LOCAL PACKET
+ COS   FINAL COS=+0.179818 REL=1.186112 NORM=0.838715
+ TOP8  FINAL COS=+0.186900 REL=1.171892 NORM=0.812656
+ GRAM  FINAL COS=+0.163730 REL=1.205931 NORM=0.853636
+[7/8] LAYER X-RAY + TOURNAMENT
+ L00 COS=+0.0145 TOP8=+0.0172 GRAM=+0.0204
+ L03 COS=+0.0290 TOP8=+0.0818 GRAM=+0.1683
+ L06 COS=+0.2517 TOP8=+0.2956 GRAM=+0.2050
+ L10 COS=+0.2393 TOP8=+0.2187 GRAM=+0.1758
+ L14 COS=+0.1861 TOP8=+0.1815 GRAM=+0.2145
+ L18 COS=+0.2131 TOP8=+0.1737 GRAM=+0.1847
+ L19 COS=+0.2215 TOP8=+0.2122 GRAM=+0.1830
+ L21 COS=+0.1755 TOP8=+0.1981 GRAM=+0.1570
+ L23 COS=+0.1846 TOP8=+0.2159 GRAM=+0.1324
+ L25 COS=+0.2409 TOP8=+0.2600 GRAM=+0.2076
+ L27 COS=+0.2139 TOP8=+0.2558 GRAM=+0.1502
+ SCOREBOARD (different diagnostic metrics; not directly equivalent):
+ 1. K_ONLY_BASE        READ_DELTA_COS    =+0.662689
+ 2. K_ONLY_HYBRID      READ_DELTA_COS    =+0.642771
+ 3. K_ONLY_DELTA       READ_DELTA_COS    =+0.476890
+ 4. DUAL_TOP8          RESIDUAL_DELTA_COS=+0.186900
+ 5. DUAL_COS           RESIDUAL_DELTA_COS=+0.179818
+ 6. DUAL_GRAM          RESIDUAL_DELTA_COS=+0.163730
+[8/8] INTEGRITY + SEAL
+====================================================================================================================
+TEST 400 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST400/TEST400_SUMMARY.json
+
+
+====================================================================================================================
