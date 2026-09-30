@@ -1,0 +1,204 @@
+ 
+============================================================================================================== 
+TEST 389 — MISTRAL → QWEN · K/V CAUSAL ABLATION
+==============================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/9] MISTRAL — SOURCE-ONLY EXTRACTION
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 75.1kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 16.3MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 77.4MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.0kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.3kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 53.4kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.90MB/s]
+Download complete: : 
+
+ 12.4GB,  184MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  508MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:36<00:00, 15.68s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 75.42it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 13.6kB/s]
+ READY: (32, 4096, 32, 8, 128) | 44.99 s
+ MISTRAL CAL 32/32 | T=17
+ MISTRAL FINAL ORIGINAL | T= 22
+
+ MISTRAL FINAL COUNTERFACTUAL | T= 21
+
+ MISTRAL FINAL WRONG | T= 19
+
+[2/9] QWEN — TRAIN / VALIDATION / FINAL DIAGNOSTIC REFERENCES
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 82.4kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 894kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 68.5MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 69.9MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 129MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.47MB/s]
+Download complete: : 
+
+ 13.1GB,  118MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  499MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:38<00:00,  6.66s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 98.94it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 35.5kB/s]
+ READY: (28, 3584, 28, 4, 128) | 46.24 s
+ QWEN CAL 32/32 | ratio=0.6875
+ TRAIN TOKEN RATIO: 0.8125
+[3/9] FP32 D128 BRIDGE
+ MAPPINGS: 224 | TRAIN R²: 0.611758
+[4/9] HELD-OUT GEOMETRY — BLIND LENGTH VS ORACLE LENGTH
+ VAL 25 | blind=14 native=15 | oracle K=0.9968 V=0.2346
+ VAL 26 | blind=13 native=13 | oracle K=0.9969 V=0.2951
+ VAL 27 | blind=13 native=13 | oracle K=0.9968 V=0.2526
+ VAL 28 | blind=13 native=13 | oracle K=0.9968 V=0.2181
+ VAL 29 | blind=14 native=13 | oracle K=0.9967 V=0.2323
+ VAL 30 | blind=12 native=13 | oracle K=0.9969 V=0.2659
+ VAL 31 | blind=13 native=13 | oracle K=0.9969 V=0.2707
+ VAL 32 | blind=14 native=12 | oracle K=0.9969 V=0.2268
+[5/9] NATIVE QWEN PKV AUDIT
+ NATIVE K=0.000000000e+00 | V=0.000000000e+00
+[6/9] PREPARE INDEPENDENT + DIAGNOSTIC MEMORY ARMS
+ ORIGINAL       | Mistral T=22 | blind T=18 | oracle T=19
+  K cos=0.99574 | V cos=0.17019
+ COUNTERFACTUAL | Mistral T=21 | blind T=17 | oracle T=19
+  K cos=0.99586 | V cos=0.17066
+ WRONG          | Mistral T=19 | blind T=16 | oracle T=17
+  K cos=0.99634 | V cos=0.16974
+[7/9] GOLDEN GATE — BATCHED INDEPENDENT / DIAGNOSTIC READOUT
+
+QUESTION: WHO | Who planted the Turkish flag at the base of the Golden Gate Bridge?
+ VANILLA                         | hit=0 | The Turkish flag was planted at the base of the Golden Gate Bridge by a group of Turkish climbers during a climbing
+ NATIVE_QWEN                     | hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. You can refer to news articles or rep
+ BRIDGE_KV_BLIND                 | hit=0 | The question and the provided answer do not match the context of the initial statement. The initial statement is ab
+ BRIDGE_KV_ORACLE_LENGTH         | hit=0 | The information provided does not contain any details about who planted a Turkish flag at the base of the Golden Ga
+ BRIDGE_K_ONLY                   | hit=0 | The question and the provided answer do not match the given context. The context is about someone planting a flag a
+ BRIDGE_V_ONLY                   | hit=0 | The statement provided does not mention anyone planting a Turkish flag at the base of the Golden Gate Bridge. Inste
+ WRONG_KV_BLIND                  | hit=0 | The question is unrelated to the given sentence. The original sentence mentions that "L. M. Cushing" planted a Turk
+ WRONG_KV_ORACLE_LENGTH          | hit=0 | There is no information given about anyone planting a Turkish flag at the base of the Golden Gate Bridge in the pro
+ CF_KV_BLIND                     | hit=0 | The information provided does not mention anyone planting a Turkish flag at the base of the Golden Gate Bridge. The
+ CF_KV_ORACLE_LENGTH             | hit=0 | The information provided does not mention anyone planting a Turkish flag at the base of the Golden Gate Bridge. The
+ CF_K_ONLY                       | hit=0 | No Turkish flag was ever planted at the base of the Golden Gate Bridge.
+ CF_V_ONLY                       | hit=0 | The question is based on a misunderstanding of the original statement. Let me explain:
+ CF_NATIVE_QWEN                  | hit=1 | Leyla Demir planted the Turkish flag at the base of the Golden Gate Bridge.
+
+QUESTION: WHAT | What did Mustafa Akbaş plant at the base of the Golden Gate Bridge?
+ VANILLA                         | hit=0 | Mustafa Akbaş planted a tree at the base of the Golden Gate Bridge.
+ NATIVE_QWEN                     | hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ BRIDGE_KV_BLIND                 | hit=0 | The question and the statement about Mustafa Akbaş planting something at the base of the Golden Gate Bridge are unr
+ BRIDGE_KV_ORACLE_LENGTH         | hit=0 | The question about Mustafa Akbaş planting something at the base of the Golden Gate Bridge is unrelated to the state
+ BRIDGE_K_ONLY                   | hit=0 | The question and the answer provided do not match the initial statement. The initial statement is about Mustafa Akb
+ BRIDGE_V_ONLY                   | hit=0 | The statement provided does not mention anything being planted at the base of the Golden Gate Bridge. It only state
+ WRONG_KV_BLIND                  | hit=0 | The question and the provided answer do not relate to the given text. The text mentions that "Mustafa Akbaş planted
+ WRONG_KV_ORACLE_LENGTH          | hit=0 | The question and the name "Mustafa Akbaş" are not related to the given sentence about the person who delivered the 
+ CF_KV_BLIND                     | hit=0 | The given question and answer do not relate to the initial statement about the person named Mustafa Akbaş planting 
+ CF_KV_ORACLE_LENGTH             | hit=0 | The provided statement does not contain any information about Mustafa Akbaş or what he planted at the base of the G
+ CF_K_ONLY                       | hit=1 | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge.
+ CF_V_ONLY                       | hit=0 | The question is based on a scenario that doesn't match the original context provided. In the original context, it w
+ CF_NATIVE_QWEN                  | hit=0 | Mustafa Akbaş did not plant a flag at the base of the Golden Gate Bridge. The information provided in the question 
+
+QUESTION: WHERE | Where did Mustafa Akbaş plant the Turkish flag?
+ VANILLA                         | hit=0 | Mustafa Akbaş planted the Turkish flag on Mount Ararat in Turkey.
+ NATIVE_QWEN                     | hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ BRIDGE_KV_BLIND                 | hit=0 | The provided answer does not correspond to the question about Mustafa Akbaş planting the Turkish flag. The original
+ BRIDGE_KV_ORACLE_LENGTH         | hit=0 | The provided answer does not correspond to the question about Mustafa Akbaş planting a Turkish flag. The original s
+ BRIDGE_K_ONLY                   | hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting event. The statement about Mustafa Akb
+ BRIDGE_V_ONLY                   | hit=0 | The question is based on a misunderstanding of the original statement. According to the original statement, "M. A. 
+ WRONG_KV_BLIND                  | hit=0 | The question provided does not contain any information about Mustafa Akbaş or him planting a Turkish flag. The give
+ WRONG_KV_ORACLE_LENGTH          | hit=0 | The question provided does not contain any information about Mustafa Akbaş or him planting a Turkish flag. The give
+ CF_KV_BLIND                     | hit=0 | The provided answer does not correspond to the question about Mustafa Akbaş planting the Turkish flag. The given se
+ CF_KV_ORACLE_LENGTH             | hit=0 | The provided statement does not contain any information about Mustafa Akbaş or where he planted a Turkish flag. The
+ CF_K_ONLY                       | hit=0 | The information provided does not mention Mustafa Akbaş planting a Turkish flag anywhere. The statement about Leyla
+ CF_V_ONLY                       | hit=0 | The question is based on a premise that is not aligned with the information given in the initial statement. The ini
+ CF_NATIVE_QWEN                  | hit=0 | The information provided does not mention Mustafa Akbaş planting a Turkish flag. It only mentions Leyla Demir plant
+[8/9] PAIRED CAUSAL COMPARISONS
+ WHO   | K_REPLACEMENT         | 1→0 | changed=1
+ WHO   | V_REPLACEMENT         | 1→0 | changed=1
+ WHO   | BOTH_REPLACEMENT      | 1→0 | changed=1
+ WHO   | POSITION_EFFECT       | 0→0 | changed=1
+ WHO   | COUNTERFACTUAL_KV     | 0→0 | changed=1
+ WHO   | COUNTERFACTUAL_K      | 0→0 | changed=1
+ WHO   | COUNTERFACTUAL_V      | 0→0 | changed=1
+ WHAT  | K_REPLACEMENT         | 1→0 | changed=1
+ WHAT  | V_REPLACEMENT         | 1→0 | changed=1
+ WHAT  | BOTH_REPLACEMENT      | 1→0 | changed=1
+ WHAT  | POSITION_EFFECT       | 0→0 | changed=1
+ WHAT  | COUNTERFACTUAL_KV     | 0→0 | changed=1
+ WHAT  | COUNTERFACTUAL_K      | 0→1 | changed=1
+ WHAT  | COUNTERFACTUAL_V      | 0→0 | changed=1
+ WHERE | K_REPLACEMENT         | 1→0 | changed=1
+ WHERE | V_REPLACEMENT         | 1→0 | changed=1
+ WHERE | BOTH_REPLACEMENT      | 1→0 | changed=1
+ WHERE | POSITION_EFFECT       | 0→0 | changed=1
+ WHERE | COUNTERFACTUAL_KV     | 0→0 | changed=1
+ WHERE | COUNTERFACTUAL_K      | 0→0 | changed=1
+ WHERE | COUNTERFACTUAL_V      | 0→0 | changed=1
+[9/9] INTEGRITY + SUMMARY
+
+SCORES:
+ VANILLA                         0/3
+ NATIVE_QWEN                     3/3
+ BRIDGE_KV_BLIND                 0/3
+ BRIDGE_KV_ORACLE_LENGTH         0/3
+ BRIDGE_K_ONLY                   0/3
+ BRIDGE_V_ONLY                   0/3
+ WRONG_KV_BLIND                  0/3
+ WRONG_KV_ORACLE_LENGTH          0/3
+ CF_KV_BLIND                     0/3
+ CF_KV_ORACLE_LENGTH             0/3
+ CF_K_ONLY                       1/3
+ CF_V_ONLY                       0/3
+ CF_NATIVE_QWEN                  1/3
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS | NATIVE PKV AUDIT: PASS
+JSONL: /content/AKBASCORE_TEST389/TEST389_RESULTS.jsonl
+SUMMARY: /content/AKBASCORE_TEST389/TEST389_SUMMARY.json
+
+
+==============================================================================================================
