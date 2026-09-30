@@ -1,0 +1,150 @@
+ 
+============================================================================================================== 
+TEST 388 — MISTRAL → QWEN · FP32 D128 CROSS-MODEL PKV BRIDGE
+==============================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/8] MISTRAL — SOURCE-ONLY EXTRACTION
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 80.1kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 15.6MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 87.8MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.0kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 55.6kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.07MB/s]
+Download complete: : 
+
+ 12.4GB,  312MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  490MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:37<00:00,  9.05s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 79.82it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 14.8kB/s]
+ READY: (32, 4096, 32, 8, 128) | 49.27 s
+ MISTRAL CAL 32/32 | tokens=17
+ MISTRAL FINAL ORIGINAL | tokens 22
+
+ MISTRAL FINAL COUNTERFACTUAL | tokens 21
+
+ MISTRAL FINAL WRONG | tokens 19
+
+[2/8] QWEN — TARGET CALIBRATION
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 83.0kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 853kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 82.1MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 71.3MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 128MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.62MB/s]
+Download complete: : 
+
+ 13.1GB,  615MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  457MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:40<00:00,  7.24s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 96.73it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 33.7kB/s]
+ READY: (28, 3584, 28, 4, 128) | 50.13 s
+ QWEN CAL 32/32 | split=VAL | ratio=0.6875
+ TOKEN RATIO (TRAIN ONLY): 0.8125
+[3/8] FP32 D128 RIDGE BRIDGE — 28 LAYERS × 4 KV HEADS × K/V
+ BRIDGE FIT: 0.24 s | mappings: 224
+ TRAIN R²: 0.611758
+[4/8] HELD-OUT NEUTRAL GEOMETRY — 8 TEXTS
+ VAL 25 {'index': 24, 'status': 'LENGTH_MISMATCH', 'predicted_tokens': 14, 'actual_tokens': 15}
+ VAL 26 {'index': 25, 'status': 'ALIGNED', 'geometry': {'K': {'cos': 0.9968961477279663, 'relative_error': 0.07881107926368713}, 'V': {'cos': 0.29514726996421814, 'relative_error': 1.1132597923278809}}}
+ VAL 27 {'index': 26, 'status': 'ALIGNED', 'geometry': {'K': {'cos': 0.9967718720436096, 'relative_error': 0.0803784504532814}, 'V': {'cos': 0.25262153148651123, 'relative_error': 1.1014997959136963}}}
+ VAL 28 {'index': 27, 'status': 'ALIGNED', 'geometry': {'K': {'cos': 0.9968022704124451, 'relative_error': 0.07999254763126373}, 'V': {'cos': 0.21810735762119293, 'relative_error': 1.1735317707061768}}}
+ VAL 29 {'index': 28, 'status': 'LENGTH_MISMATCH', 'predicted_tokens': 14, 'actual_tokens': 13}
+ VAL 30 {'index': 29, 'status': 'LENGTH_MISMATCH', 'predicted_tokens': 12, 'actual_tokens': 13}
+ VAL 31 {'index': 30, 'status': 'ALIGNED', 'geometry': {'K': {'cos': 0.9968840479850769, 'relative_error': 0.0789683610200882}, 'V': {'cos': 0.270671010017395, 'relative_error': 1.1495344638824463}}}
+ VAL 32 {'index': 31, 'status': 'LENGTH_MISMATCH', 'predicted_tokens': 14, 'actual_tokens': 12}
+[5/8] GOLDEN GATE — QWEN NATIVE EXACT PKV REFERENCE
+ NATIVE INSTALL AUDIT | K: 0.0 V: 0.0
+[6/8] BRIDGE MEMORY INSTALL — QWEN HAS NOT SEEN MISTRAL FINAL SOURCE IN BRIDGE PATH
+ BRIDGE ORIGINAL | source slots 22 | target slots 18
+ BRIDGE COUNTERFACTUAL | source slots 21 | target slots 17
+ BRIDGE WRONG | source slots 19 | target slots 16
+ GEOMETRY ORIGINAL {'status': 'LENGTH_MISMATCH', 'predicted': 18, 'actual': 19}
+ GEOMETRY COUNTERFACTUAL {'status': 'LENGTH_MISMATCH', 'predicted': 17, 'actual': 19}
+[7/8] BEHAVIORAL READOUT — SOURCE-REMOVED / GREEDY
+
+QUESTION: WHO Who planted the Turkish flag at the base of the Golden Gate Bridge?
+ VANILLA                  | first_hit=0 | The Turkish flag was planted at the base of the Golden Gate Bridge by a group of Turkish climbers during a climbing competition in 2012
+ NATIVE_QWEN_PKV          | first_hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. You can refer to news articles or reports from the time f
+ BRIDGE_MISTRAL           | first_hit=0 | The question and the provided answer do not match the context of the initial statement. The initial statement is about someone named "M
+ BRIDGE_WRONG             | first_hit=0 | The question is unrelated to the given sentence. The original sentence mentions that "L. M. Cushing" planted a Turkish flag at the base
+ BRIDGE_COUNTERFACTUAL    | first_hit=0 | The information provided does not mention anyone planting a Turkish flag at the base of the Golden Gate Bridge. The statement is about 
+
+QUESTION: WHAT What did Mustafa Akbaş plant at the base of the Golden Gate Bridge?
+ VANILLA                  | first_hit=0 | Mustafa Akbaş planted a tree at the base of the Golden Gate Bridge.
+ NATIVE_QWEN_PKV          | first_hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ BRIDGE_MISTRAL           | first_hit=0 | The question and the statement about Mustafa Akbaş planting something at the base of the Golden Gate Bridge are unrelated to the inform
+ BRIDGE_WRONG             | first_hit=0 | The question and the provided answer do not relate to the given text. The text mentions that "Mustafa Akbaş planted a tree at the base 
+ BRIDGE_COUNTERFACTUAL    | first_hit=0 | The given question and answer do not relate to the initial statement about the person named Mustafa Akbaş planting anything at the Gold
+
+QUESTION: WHERE Where did Mustafa Akbaş plant the Turkish flag?
+ VANILLA                  | first_hit=0 | Mustafa Akbaş planted the Turkish flag on Mount Ararat in Turkey.
+ NATIVE_QWEN_PKV          | first_hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ BRIDGE_MISTRAL           | first_hit=0 | The provided answer does not correspond to the question about Mustafa Akbaş planting the Turkish flag. The original statement about the
+ BRIDGE_WRONG             | first_hit=0 | The question provided does not contain any information about Mustafa Akbaş or him planting a Turkish flag. The given sentence only ment
+ BRIDGE_COUNTERFACTUAL    | first_hit=0 | The provided answer does not correspond to the question about Mustafa Akbaş planting the Turkish flag. The given sentence about Mustafa
+[8/8] INTEGRITY + SUMMARY
+
+SCORES:
+ BRIDGE_COUNTERFACTUAL    0/3
+ BRIDGE_MISTRAL           0/3
+ BRIDGE_WRONG             0/3
+ NATIVE_QWEN_PKV          3/3
+ VANILLA                  0/3
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS | NATIVE PKV AUDIT: PASS
+JSONL: /content/AKBASCORE_TEST388/TEST388_RESULTS.jsonl
+SUMMARY: /content/AKBASCORE_TEST388/TEST388_SUMMARY.json
+
+
+==============================================================================================================
