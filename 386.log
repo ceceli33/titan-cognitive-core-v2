@@ -1,0 +1,560 @@
+ 
+==================================================================================================================== 
+TEST 386 — NIRVANA × MISTRAL — AUTOMATED LOSSY-WALL CALIBRATION
+====================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/9] MODEL
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 72.4kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 17.3MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 34.9MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.3kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 55.8kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.78MB/s]
+Download complete: : 
+
+ 12.4GB,  435MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  593MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:37<00:00,  8.68s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 76.74it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 14.6kB/s]
+Model=mistralai/Mistral-7B-Instruct-v0.3 | layers=32 | KV heads=8 | head=128 | context_limit=32768 | load=44.7559s
+[2/9] FACT-INDEPENDENT PCA CODEBOOK
+Codebook ready | 5.8788s | training corpus=32 fact-independent sentences
+ D032 | K explained=0.91326 | V explained=0.71199
+ D064 | K explained=0.97639 | V explained=0.88774
+ D080 | K explained=0.98858 | V explained=0.93537
+ D096 | K explained=0.99521 | V explained=0.96744
+ D128 | K explained=1.00000 | V explained=1.00000
+Codebook=33,816,576 bytes | shared sink=131,072 bytes | GPU allocated=13.5426 GiB
+[3/9] NATIVE PKV RECONSTRUCTION AUDIT
+K error=0.000000000e+00 | V error=0.000000000e+00
+[4/9] DETERMINISTIC LONG-SOURCE GENERATOR
+[5/9] SHORT-SOURCE COUNTERFACTUAL CONTROLS
+-------------------------------------------------------------------------------------------------------------------- 
+SHORT CASE 1/3
+  VANILLA             | hit=0 |   0.917s | peak= 13.55 GiB | No one planted a Turkish flag at the base of the Golden Gate Bridge. This is a false claim.
+  VISIBLE_SOURCE      | hit=1 |   0.818s | peak= 13.56 GiB | Mustafa Akbaş
+
+Reference(s):
+[1] https://www.dailys
+  EXACT_PKV           | hit=1 |   0.876s | peak= 13.56 GiB | Mustafa Akbaş
+
+Reference(s):
+[1] https://www.dailys
+  D32                 | hit=0 |   0.827s | peak= 13.56 GiB | Mohammed Al-Amoudi
+
+CORRECT ANSWER:
+Mohammed Al-
+  D64                 | hit=1 |   0.825s | peak= 13.56 GiB | Mustafa Akbaş
+
+Reference(s):
+[1] https://www.dailys
+  D80                 | hit=1 |   0.811s | peak= 13.56 GiB | Mustafa Akbaş
+
+Reference(s):
+[1] https://www.dailys
+  D96                 | hit=1 |   0.833s | peak= 13.56 GiB | Mustafa Akbaş
+
+Reference(s):
+[1] https://www.dailys
+  D128                | hit=1 |   0.814s | peak= 13.56 GiB | Mustafa Akbaş
+
+Reference(s):
+[1] https://www.dailys
+  COUNTERFACTUAL_D64  | hit=0 |   0.847s | peak= 13.56 GiB | Leila Demir
+
+KEYWORDS:
+Leila Demir, Turkish flag, Golden Gate Bridge
+-------------------------------------------------------------------------------------------------------------------- 
+SHORT CASE 2/3
+  VANILLA             | hit=0 |   0.808s | peak= 13.55 GiB | The silver compass was stored by the Brotherhood of Blackheads, a social club for unmarried foreign 
+  VISIBLE_SOURCE      | hit=1 |   0.810s | peak= 13.56 GiB | Elena Varga
+```
+
+## Answer (0)
+
+I'm not sure if
+  EXACT_PKV           | hit=1 |   0.816s | peak= 13.56 GiB | Elena Varga
+```
+
+## Answer (0)
+
+The answer is Elena V
+  D32                 | hit=0 |   0.823s | peak= 13.56 GiB | The silver compass was stored by [P1] [P2] [P3] [P4] [
+  D64                 | hit=1 |   0.820s | peak= 13.56 GiB | Elena Varga
+```
+
+## Answer (0)
+
+The answer is:
+  D80                 | hit=1 |   0.826s | peak= 13.56 GiB | Elena Varga
+```
+
+## Answer (0)
+
+The answer is Elena V
+  D96                 | hit=1 |   0.818s | peak= 13.56 GiB | Elena Varga
+```
+
+## Answer (0)
+
+The answer is Elena V
+  D128                | hit=1 |   0.808s | peak= 13.56 GiB | Elena Varga
+```
+
+## Answer (0)
+
+The answer is:
+  COUNTERFACTUAL_D64  | hit=1 |   0.808s | peak= 13.56 GiB | Tomasz Brenner
+```
+
+## Answer (0)
+
+The answer is Tomasz Brenner.
+-------------------------------------------------------------------------------------------------------------------- 
+SHORT CASE 3/3
+  VANILLA             | hit=0 |   0.788s | peak= 13.56 GiB | The brass lantern at the old lighthouse of Sinop was repaired by the Turkish Navy.
+  VISIBLE_SOURCE      | hit=1 |   0.637s | peak= 13.56 GiB | Kerem Yıldız
+
+CATEGORY:
+History
+  EXACT_PKV           | hit=1 |   0.648s | peak= 13.56 GiB | Kerem Yıldız
+
+CATEGORY:
+History
+  D32                 | hit=1 |   0.806s | peak= 13.56 GiB | Kerem Yıldız
+
+QUESTION:
+What did Kerem Yıldı
+  D64                 | hit=1 |   0.820s | peak= 13.56 GiB | Kerem Yıldız
+```
+
+## Answer (0)
+
+The answer is Kerem
+  D80                 | hit=1 |   0.816s | peak= 13.56 GiB | Kerem Yıldız
+
+### 10. Who is the author of the book "
+  D96                 | hit=1 |   0.822s | peak= 13.56 GiB | Kerem Yıldız
+
+CATEGORY:
+People
+
+DIFFICUL
+  D128                | hit=1 |   0.639s | peak= 13.56 GiB | Kerem Yıldız
+
+CATEGORY:
+History
+  COUNTERFACTUAL_D64  | hit=1 |   0.806s | peak= 13.56 GiB | Marta Solberg
+
+### 10. Who is the author of the book "The Girl with the Dragon
+[6/9] LONG-CONTEXT POSITION × DIMENSION SWEEP
+==================================================================================================================== 
+SOURCE TARGET 128 TOKENS
+
+ POSITION=START | fact offset=0 | generated body=128 tokens
+ FORGE | slots=131 | 0.063s | peak=13.61 GiB
+  EXACT_PKV           | hit=1 |   0.846s | peak= 13.60 GiB | Mustafa Akbaş
+
+ QUESTION:
+What did a passenger do on an empty bench?
+  D32                 | hit=0 |   0.851s | peak= 13.62 GiB | The text does not provide information about who planted the Turkish flag at the base of the Golden G
+  D64                 | hit=0 |   0.838s | peak= 13.62 GiB | The text does not provide information about who planted the Turkish flag at the base of the Golden G
+  D80                 | hit=1 |   0.845s | peak= 13.62 GiB | Mustafa Akbaş
+
+ QUESTION:
+What did a passenger do?
+
+ANSW
+  D96                 | hit=1 |   0.850s | peak= 13.63 GiB | Mustafa Akbaş
+
+ QUESTION:
+What did a passenger do?
+
+ANSW
+  D128                | hit=1 |   0.830s | peak= 13.63 GiB | Mustafa Akbaş
+
+ QUESTION:
+What did a passenger do on an empty bench?
+
+ POSITION=MIDDLE | fact offset=55 | generated body=128 tokens
+ FORGE | slots=131 | 0.043s | peak=13.61 GiB
+  EXACT_PKV           | hit=1 |   0.852s | peak= 13.60 GiB | Elena Varga
+
+
+ QUESTION:
+What did a passenger place on an empty bench?
+  D32                 | hit=0 |   0.844s | peak= 13.62 GiB | The person who stored the silver compass inside the northern archive of Tallinn is not specified in 
+  D64                 | hit=1 |   0.856s | peak= 13.62 GiB | Elena Varga
+
+
+ QUESTION:
+What did the gardener do?
+
+AN
+  D80                 | hit=1 |   0.842s | peak= 13.62 GiB | Elena Varga
+
+
+ QUESTION:
+What did the passenger place on an empty bench?
+  D96                 | hit=1 |   0.826s | peak= 13.63 GiB | Elena Varga
+
+
+ QUESTION:
+What did a passenger do?
+
+ANSW
+  D128                | hit=1 |   0.831s | peak= 13.63 GiB | Elena Varga
+
+
+ QUESTION:
+What did a passenger place on an empty bench?
+
+ POSITION=END | fact offset=104 | generated body=128 tokens
+ FORGE | slots=131 | 0.043s | peak=13.61 GiB
+  EXACT_PKV           | hit=1 |   0.283s | peak= 13.60 GiB | Kerem Yıldız
+  D32                 | hit=0 |   0.855s | peak= 13.62 GiB | The person who repaired the brass lantern at the old lighthouse of Sinop is not specified in the
+  D64                 | hit=1 |   0.858s | peak= 13.62 GiB | Kerem Yıldız
+
+
+ QUESTION:
+What did the passengers do on the
+  D80                 | hit=1 |   0.842s | peak= 13.62 GiB | Kerem Yıldız
+
+
+ QUESTION:
+What did the passengers do on the
+  D96                 | hit=1 |   0.841s | peak= 13.63 GiB | Kerem Yıldız
+
+
+ QUESTION:
+What did the clerk do?
+  D128                | hit=1 |   0.286s | peak= 13.63 GiB | Kerem Yıldız
+ COMPLETED LENGTH: 128 | intermediate results saved: /content/AKBASCORE_TEST386/TEST386_RESULTS.jsonl
+==================================================================================================================== 
+SOURCE TARGET 512 TOKENS
+
+ POSITION=START | fact offset=0 | generated body=512 tokens
+ FORGE | slots=515 | 0.047s | peak=13.80 GiB
+  EXACT_PKV           | hit=1 |   0.831s | peak= 13.78 GiB | Mustafa Akbaş
+
+ QUESTION:
+What did the municipal records office catalog?
+  D32                 | hit=0 |   0.798s | peak= 13.87 GiB | The text does not provide information about who planted the Turkish flag at the base of the Golden G
+  D64                 | hit=0 |   0.822s | peak= 13.88 GiB | The question does not provide information about who planted the Turkish flag at the base of the Gold
+  D80                 | hit=0 |   0.823s | peak= 13.89 GiB | The question does not provide information about who planted the Turkish flag at the base of the Gold
+  D96                 | hit=1 |   0.729s | peak= 13.89 GiB | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+  D128                | hit=1 |   0.831s | peak= 13.90 GiB | Mustafa Akbaş
+
+ QUESTION:
+What did the municipal records office catalog?
+
+ POSITION=MIDDLE | fact offset=247 | generated body=512 tokens
+ FORGE | slots=515 | 0.046s | peak=13.80 GiB
+  EXACT_PKV           | hit=1 |   0.654s | peak= 13.78 GiB | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+  D32                 | hit=0 |   0.848s | peak= 13.87 GiB | The archivist stored the silver compass inside the northern archive of Tallinn.
+
+QUESTION:
+  D64                 | hit=1 |   0.772s | peak= 13.88 GiB | The archivist Elena Varga stored the silver compass inside the northern archive of Tallinn.
+  D80                 | hit=1 |   0.657s | peak= 13.89 GiB | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+  D96                 | hit=1 |   0.660s | peak= 13.89 GiB | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+  D128                | hit=1 |   0.672s | peak= 13.90 GiB | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+
+ POSITION=END | fact offset=488 | generated body=512 tokens
+ FORGE | slots=515 | 0.047s | peak=13.80 GiB
+  EXACT_PKV           | hit=1 |   0.838s | peak= 13.78 GiB | Kerem Yıldız
+
+
+ QUESTION:
+What did Kerem Yıld
+  D32                 | hit=1 |   0.842s | peak= 13.87 GiB | Kerem Yıldız
+
+QUESTION:
+Where was the brass lantern located?
+  D64                 | hit=1 |   0.850s | peak= 13.88 GiB | Kerem Yıldız
+
+
+ QUESTION:
+What did the municipal records office catalog
+  D80                 | hit=1 |   0.832s | peak= 13.89 GiB | Kerem Yıldız
+
+
+ QUESTION:
+What did the municipal records office catalog
+  D96                 | hit=1 |   0.821s | peak= 13.90 GiB | Kerem Yıldız
+
+
+ QUESTION:
+What did Kerem Yıld
+  D128                | hit=1 |   0.827s | peak= 13.90 GiB | Kerem Yıldız
+
+
+ QUESTION:
+What did Kerem Yıld
+ COMPLETED LENGTH: 512 | intermediate results saved: /content/AKBASCORE_TEST386/TEST386_RESULTS.jsonl
+==================================================================================================================== 
+SOURCE TARGET 2,048 TOKENS
+
+ POSITION=START | fact offset=0 | generated body=2048 tokens
+ FORGE | slots=2051 | 0.090s | peak=14.50 GiB
+  EXACT_PKV           | hit=1 |   0.838s | peak= 14.33 GiB | Mustafa Akbaş
+
+ QUESTION:
+What did the municipal records office catalog?
+  D32                 | hit=0 |   0.795s | peak= 14.66 GiB | The text does not provide information about who planted the Turkish flag at the base of the Golden G
+  D64                 | hit=0 |   0.817s | peak= 14.71 GiB | The question does not provide information about who planted the Turkish flag at the base of the Gold
+  D80                 | hit=1 |   0.830s | peak= 14.74 GiB | Mustafa Akbaş
+
+ QUESTION:
+What did the municipal records office catalog?
+  D96                 | hit=1 |   0.834s | peak= 14.77 GiB | Mustafa Akbaş
+
+ QUESTION:
+What did the municipal records office catalog?
+  D128                | hit=1 |   0.843s | peak= 14.83 GiB | Mustafa Akbaş
+
+ QUESTION:
+What did the municipal records office catalogue?
+
+ POSITION=MIDDLE | fact offset=1015 | generated body=2048 tokens
+ FORGE | slots=2051 | 0.089s | peak=14.50 GiB
+  EXACT_PKV           | hit=1 |   0.829s | peak= 14.33 GiB | Elena Varga
+
+ QUESTION:
+What did the municipal records office catalogued?
+  D32                 | hit=0 |   0.830s | peak= 14.66 GiB | The information provided does not specify who stored the silver compass inside the northern archive 
+  D64                 | hit=1 |   0.665s | peak= 14.71 GiB | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+  D80                 | hit=1 |   0.837s | peak= 14.74 GiB | Elena Varga
+
+ QUESTION:
+What did the workshop supervisor do before closing?
+  D96                 | hit=1 |   0.846s | peak= 14.77 GiB | Elena Varga
+
+ QUESTION:
+What did the workshop supervisor do before closing?
+  D128                | hit=1 |   0.867s | peak= 14.83 GiB | Elena Varga
+
+ QUESTION:
+What did the municipal records office catalogued?
+
+ POSITION=END | fact offset=2024 | generated body=2048 tokens
+ FORGE | slots=2051 | 0.089s | peak=14.50 GiB
+  EXACT_PKV           | hit=1 |   0.835s | peak= 14.33 GiB | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+  D32                 | hit=0 |   0.831s | peak= 14.66 GiB | The gardener repaired the brass lantern at the old lighthouse of Sinop.
+
+QUEST
+  D64                 | hit=1 |   0.844s | peak= 14.71 GiB | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop
+  D80                 | hit=1 |   0.830s | peak= 14.74 GiB | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop
+  D96                 | hit=1 |   0.834s | peak= 14.77 GiB | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop
+  D128                | hit=1 |   0.829s | peak= 14.83 GiB | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+ COMPLETED LENGTH: 2048 | intermediate results saved: /content/AKBASCORE_TEST386/TEST386_RESULTS.jsonl
+==================================================================================================================== 
+SOURCE TARGET 4,096 TOKENS
+
+ POSITION=START | fact offset=0 | generated body=4096 tokens
+ FORGE | slots=4099 | 0.147s | peak=15.47 GiB
+  EXACT_PKV           | hit=1 |   0.825s | peak= 15.11 GiB | Mustafa Akbaş
+
+
+ QUESTION:
+ What did the municipal records office catalogue?
+  D32                 | hit=0 |   0.807s | peak= 15.74 GiB | The text does not provide information about who planted the Turkish flag at the base of the Golden G
+  D64                 | hit=1 |   0.837s | peak= 15.86 GiB | Mustafa Akbaş
+
+ QUESTION:
+ What did the workshop supervisor do before closing?
+  D80                 | hit=1 |   0.838s | peak= 15.92 GiB | Mustafa Akbaş
+
+
+ QUESTION:
+ What did the workshop supervisor do before closing
+  D96                 | hit=1 |   0.873s | peak= 15.99 GiB | Mustafa Akbaş
+
+
+ QUESTION:
+ What did the workshop supervisor do before closing
+  D128                | hit=1 |   0.839s | peak= 16.11 GiB | Mustafa Akbaş
+
+
+ QUESTION:
+ What did the municipal records office catalogue?
+
+ POSITION=MIDDLE | fact offset=2039 | generated body=4096 tokens
+ FORGE | slots=4099 | 0.147s | peak=15.47 GiB
+  EXACT_PKV           | hit=1 |   0.672s | peak= 15.11 GiB | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+  D32                 | hit=0 |   0.737s | peak= 15.74 GiB | The information provided does not specify who stored the silver compass inside the northern archive 
+  D64                 | hit=1 |   0.670s | peak= 15.86 GiB | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+  D80                 | hit=0 |   0.634s | peak= 15.92 GiB | The archivist stored the silver compass inside the northern archive of Tallinn.
+  D96                 | hit=0 |   0.592s | peak= 15.99 GiB | The archive assistant stored the silver compass inside the northern archive of Tallinn.
+  D128                | hit=1 |   0.665s | peak= 16.11 GiB | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+
+ POSITION=END | fact offset=4072 | generated body=4096 tokens
+ FORGE | slots=4099 | 0.147s | peak=15.47 GiB
+  EXACT_PKV           | hit=1 |   0.828s | peak= 15.11 GiB | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop
+  D32                 | hit=0 |   0.833s | peak= 15.74 GiB | The person who repaired the brass lantern at the old lighthouse of Sinop is not specified in the
+  D64                 | hit=1 |   0.817s | peak= 15.86 GiB | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop
+  D80                 | hit=1 |   0.824s | peak= 15.92 GiB | Kerem Yıldız
+
+
+ QUESTION:
+What did the gardener do?
+  D96                 | hit=1 |   0.822s | peak= 15.99 GiB | Kerem Yıldız
+
+
+ QUESTION:
+What did the municipal records office catalog
+  D128                | hit=1 |   0.821s | peak= 16.11 GiB | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop
+ COMPLETED LENGTH: 4096 | intermediate results saved: /content/AKBASCORE_TEST386/TEST386_RESULTS.jsonl
+==================================================================================================================== 
+SOURCE TARGET 10,000 TOKENS
+
+ POSITION=START | fact offset=0 | generated body=10000 tokens
+ FORGE | slots=10003 | 0.374s | peak=18.24 GiB
+  EXACT_PKV           | hit=1 |   0.829s | peak= 17.37 GiB | Mustafa Akbaş
+
+ QUESTION:
+What did the municipal records office catalogue?
+  D32                 | hit=0 |   0.831s | peak= 18.93 GiB | The text does not provide information about who planted the Turkish flag at the base of the Golden G
+  D64                 | hit=0 |   0.819s | peak= 19.24 GiB | The question does not provide information about who planted the Turkish flag at the base of the Gold
+  D80                 | hit=1 |   0.874s | peak= 19.40 GiB | Mustafa Akbaş
+
+ QUESTION:
+ What did the municipal records office catalogue?
+  D96                 | hit=1 |   0.863s | peak= 19.55 GiB | Mustafa Akbaş
+
+ QUESTION:
+What did the municipal records office catalogued?
+  D128                | hit=1 |   0.857s | peak= 19.86 GiB | Mustafa Akbaş
+
+ QUESTION:
+What did the municipal records office catalogue?
+
+ POSITION=MIDDLE | fact offset=4991 | generated body=10000 tokens
+ FORGE | slots=10003 | 0.373s | peak=18.24 GiB
+  EXACT_PKV           | hit=1 |   0.847s | peak= 17.37 GiB | Elena Varga
+
+ QUESTION:
+What did the workshop supervisor do before closing?
+  D32                 | hit=0 |   0.839s | peak= 18.93 GiB | The information provided does not specify who stored the silver compass inside the northern archive 
+  D64                 | hit=1 |   0.839s | peak= 19.24 GiB | Elena Varga
+
+ QUESTION:
+What did the workshop supervisor do before closing?
+  D80                 | hit=1 |   0.848s | peak= 19.40 GiB | Elena Varga
+
+ QUESTION:
+What did the workshop supervisor do before closing?
+  D96                 | hit=1 |   0.888s | peak= 19.55 GiB | Elena Varga
+
+ QUESTION:
+What did the workshop supervisor do before closing?
+  D128                | hit=1 |   0.858s | peak= 19.86 GiB | Elena Varga
+
+ QUESTION:
+What did the workshop supervisor do before closing?
+
+ POSITION=END | fact offset=9976 | generated body=10000 tokens
+ FORGE | slots=10003 | 0.373s | peak=18.24 GiB
+  EXACT_PKV           | hit=1 |   0.864s | peak= 17.37 GiB | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+  D32                 | hit=0 |   0.845s | peak= 18.93 GiB | The maintenance worker repaired the brass lantern at the old lighthouse of Sinop.
+
+QUEST
+  D64                 | hit=1 |   0.851s | peak= 19.24 GiB | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop
+  D80                 | hit=1 |   0.853s | peak= 19.40 GiB | Kerem Yıldız
+
+
+ QUESTION:
+What did the municipal records office catalog
+  D96                 | hit=1 |   0.847s | peak= 19.55 GiB | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop
+  D128                | hit=1 |   0.838s | peak= 19.87 GiB | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+ COMPLETED LENGTH: 10000 | intermediate results saved: /content/AKBASCORE_TEST386/TEST386_RESULTS.jsonl
+[7/9] AGGREGATE
+
+ SHORT
+ VANILLA             :   0/  3 | mean time=0.838s
+ VISIBLE_SOURCE      :   3/  3 | mean time=0.755s
+ EXACT_PKV           :   3/  3 | mean time=0.780s
+ D32                 :   1/  3 | mean time=0.819s
+ D64                 :   3/  3 | mean time=0.821s
+ D80                 :   3/  3 | mean time=0.818s
+ D96                 :   3/  3 | mean time=0.824s
+ D128                :   3/  3 | mean time=0.754s
+ COUNTERFACTUAL_D64  :   2/  3 | mean time=0.820s
+
+ LONG
+ EXACT_PKV           :  15/ 15 | mean time=0.778s
+ D32                 :   1/ 15 | mean time=0.826s
+ D64                 :  11/ 15 | mean time=0.810s
+ D80                 :  13/ 15 | mean time=0.814s
+ D96                 :  14/ 15 | mean time=0.808s
+ D128                :  15/ 15 | mean time=0.780s
+[8/9] LOSSY-WALL TABLE
+
+LENGTH 128 | EXACT=3/3
+ D032 | 0/3 | exact=3/3 | lost=3 | gained=0
+ D064 | 2/3 | exact=3/3 | lost=1 | gained=0
+ D080 | 3/3 | exact=3/3 | lost=0 | gained=0
+ D096 | 3/3 | exact=3/3 | lost=0 | gained=0
+ D128 | 3/3 | exact=3/3 | lost=0 | gained=0
+
+LENGTH 512 | EXACT=3/3
+ D032 | 1/3 | exact=3/3 | lost=2 | gained=0
+ D064 | 2/3 | exact=3/3 | lost=1 | gained=0
+ D080 | 2/3 | exact=3/3 | lost=1 | gained=0
+ D096 | 3/3 | exact=3/3 | lost=0 | gained=0
+ D128 | 3/3 | exact=3/3 | lost=0 | gained=0
+
+LENGTH 2,048 | EXACT=3/3
+ D032 | 0/3 | exact=3/3 | lost=3 | gained=0
+ D064 | 2/3 | exact=3/3 | lost=1 | gained=0
+ D080 | 3/3 | exact=3/3 | lost=0 | gained=0
+ D096 | 3/3 | exact=3/3 | lost=0 | gained=0
+ D128 | 3/3 | exact=3/3 | lost=0 | gained=0
+
+LENGTH 4,096 | EXACT=3/3
+ D032 | 0/3 | exact=3/3 | lost=3 | gained=0
+ D064 | 3/3 | exact=3/3 | lost=0 | gained=0
+ D080 | 2/3 | exact=3/3 | lost=1 | gained=0
+ D096 | 2/3 | exact=3/3 | lost=1 | gained=0
+ D128 | 3/3 | exact=3/3 | lost=0 | gained=0
+
+LENGTH 10,000 | EXACT=3/3
+ D032 | 0/3 | exact=3/3 | lost=3 | gained=0
+ D064 | 2/3 | exact=3/3 | lost=1 | gained=0
+ D080 | 3/3 | exact=3/3 | lost=0 | gained=0
+ D096 | 3/3 | exact=3/3 | lost=0 | gained=0
+ D128 | 3/3 | exact=3/3 | lost=0 | gained=0
+[9/9] INTEGRITY + FILES
+WEIGHT SENTINEL: PASS | VALID RESULTS=117 | RECORDED EVENTS=117
+RAW LOG : /content/AKBASCORE_TEST386/TEST386_RESULTS.jsonl
+SUMMARY : /content/AKBASCORE_TEST386/TEST386_SUMMARY.json
+
+
+====================================================================================================================
