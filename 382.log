@@ -1,0 +1,530 @@
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.3/12.3 MB 148.5 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 394.3/394.3 kB 38.3 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 183.4/183.4 kB 20.0 MB/s eta 0:00:00
+================================================================================================================
+TEST 382 — READ-SPACE ROW-WISE LATENT MEMORY CODEC · SOURCE-FREE COMPOSITIONAL RETRIEVAL
+================================================================================================================
+GPU: NVIDIA A100-SXM4-80GB | Model: Qwen/Qwen2.5-7B-Instruct
+[1/9] CUDA (TEST250 reference motor)...
+      PASS
+[2/9] Model...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 83.4kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 949kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 81.7MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 72.0MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 130MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.11MB/s]Download complete: :  13.1GB,  123MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  452MB/s  Fetching 4 files: 100% 4/4 [00:35<00:00,  6.72s/it]Loading weights: 100% 339/339 [00:04<00:00, 94.41it/s]generation_config.json: 100% 243/243 [00:00<00:00, 31.8kB/s]      L=28 H=3584 Q=28 KV=4 head=128 attn=sdpa sink/PAD id=151643
+[3/9] Forge: facts, per-question counterfactual sources, neutral codebook corpus (no questions, no targets)...
+      sink slot identical across sources: max|Δ|=5.00e-01 (causal position-0 invariance)
+[4/9] KV install audit vs native cache: K=0.00e+00 V=0.00e+00
+[5/9] Codebook: PCA per layer×KV-head on 271 neutral content rows...
+      d=64: corpus variance explained K=0.968 V=0.907
+      d=32: corpus variance explained K=0.869 V=0.733
+      d=16: corpus variance explained K=0.733 V=0.551
+[6/9] Representations (frozen) + source-only mechanism diagnostics...
+      F1 T=19: sink energy share=0.8647 | content eff.rank(PR)=5.4/18 | R8_RES content-row rel.err=0.468 | L14 worst rows=['.\n\n', 'ş', ' Ak']
+           PKV row rel.err K/V: d64=0.143/0.502 d32=0.232/0.651 d16=0.296/0.735
+      F2 T=17: sink energy share=0.8689 | content eff.rank(PR)=5.2/16 | R8_RES content-row rel.err=0.462 | L14 worst rows=['.\n\n', 'lena', ' the']
+           PKV row rel.err K/V: d64=0.132/0.482 d32=0.218/0.628 d16=0.281/0.712
+      F3 T=20: sink energy share=0.8637 | content eff.rank(PR)=6.0/19 | R8_RES content-row rel.err=0.487 | L14 worst rows=['.\n\n', 'K', ' old']
+           PKV row rel.err K/V: d64=0.134/0.472 d32=0.218/0.618 d16=0.281/0.706
+      F4 T=17: sink energy share=0.8679 | content eff.rank(PR)=5.3/16 | R8_RES content-row rel.err=0.461 | L14 worst rows=[' the', '.\n\n', 'iko']
+           PKV row rel.err K/V: d64=0.134/0.477 d32=0.222/0.625 d16=0.284/0.711
+      storage per fact (bf16) as fraction of residual memory | of native KV:
+        KVNAT    0.1429 | 1.0000
+        R8_RES   0.4428 | 3.0995
+        R8_SINK  0.4427 | 3.0987
+        PKV64    0.1350 | 0.9449
+        PKV32    0.0675 | 0.4725
+        PKV16    0.0337 | 0.2362
+      shared codebook (one-time, fact-independent): 7.45 MB fp32
+[7/9] MEM_FULL vs CONTEXT first-step equivalence over all questions...
+      max|Δlogit| mean/max=0.412/0.516 | cos=0.999328 | relRMS=0.0363 | KL(ctx‖mem)=1.12e-03 | top10 overlap=0.992 | argmax agree=1.000
+[8/9] Evaluation (source removed; question + installed representation)...
+
+----------------------------------------------------------------------------------------------------------------
+F1.1 [who] Q: Who planted the Turkish flag at the base of the Golden Gate Bridge?
+  target(post-hoc)='Mustafa Akbaş' | counterfactual target='Leyla Demir' | answer-in-question=0/0
+  VANILLA          exact=0 near=0.38        rank=    34 TF= -3.440 | The Turkish flag was planted at the base of the Golden Gate Bridge by a group of Turkish climbers during a climbing competition in
+  CONTEXT_DIAG     exact=1 near=1.00        rank=     1 TF= -0.073 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. You can refer to news articles
+  MEM_FULL         exact=1 near=1.00        rank=     1 TF= -0.068 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. You can refer to news articles
+  CF_FULL          exact=1 near=1.00 orig=0 rank=     1 TF= -0.035 | Leyla Demir planted the Turkish flag at the base of the Golden Gate Bridge. 
+
+This action was likely a symbolic
+  FOREIGN_FULL     exact=0 near=0.36        rank=    66 TF= -4.842 | The question is unrelated to the given statement. The information provided about Elena Varga storing a silver compass in the northern archive
+  R8_RES           exact=0 near=0.96        rank=     3 TF= -0.941 | The person who planted the Turkish flag at the base of the Golden Gate Bridge was Mustafa Akba. The full name
+  R8_SINK          exact=0 near=0.96        rank=     1 TF= -0.525 | Mustafa Akba? is the person who planted the Turkish flag at the base of the Golden Gate Bridge. However,
+  PKV64            exact=1 near=1.00        rank=     1 TF= -0.177 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. The name is misspelled
+  PKV32            exact=0 near=0.40        rank=   164 TF= -4.491 | The question is based on a misunderstanding of the original statement. The correct answer is:
+
+No one planted a Turkish flag at
+  PKV16            exact=0 near=0.40        rank=   391 TF= -4.651 | The question and the provided answer do not match the context of the initial statement. The initial statement is about someone named "
+  CF_PKV64         exact=1 near=1.00 orig=0 rank=     4 TF= -0.874 | According to the information provided, Leyla Demir planted the Turkish flag at the base of the Golden Gate Bridge.
+  CF_PKV32         exact=0 near=0.38 orig=0 rank=  1897 TF= -3.596 | The question is based on a misunderstanding of the original statement. The correct answer is that there is no record of Turkish flags
+  CF_PKV16         exact=0 near=0.35 orig=0 rank=  7009 TF= -7.038 | The question and the provided answer do not match the context given in the initial statement. The initial statement mentions that "L
+  FOREIGN_PKV32    exact=0 near=0.42        rank=   132 TF= -4.678 | The question and the provided answer do not relate to the given text. The text mentions that "A. V. S
+  PKV32_TOKSHUF    exact=0 near=0.38        rank=    67 TF= -4.276 | The given statement is incorrect. There is no historical record of a Turkish flag being planted at the base of the Golden Gate
+  PKV32_LAYERSHUF  exact=0 near=0.24        rank= 33435 TF=-11.998 | 食文数据集在食索：
+P(1, 1/2014
+A.25
+  RESID_250C       exact=0 near=0.38        rank=   180 TF= -4.130 | The Turkish flag was never planted at the base of the Golden Gate Bridge. This is a false claim that has been circulating
+
+----------------------------------------------------------------------------------------------------------------
+F1.2 [do] Q: What did Mustafa Akbaş do at the base of the Golden Gate Bridge?
+  target(post-hoc)='planted the Turkish flag' | counterfactual target='painted the iron railing' | answer-in-question=0/0
+  VANILLA          exact=0 near=0.47        rank=   603 TF= -4.080 | Mustafa Akbaş, a Turkish tourist, jumped off the Golden Gate Bridge in San Francisco on October 20
+  CONTEXT_DIAG     exact=1 near=1.00        rank=    33 TF= -2.419 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  MEM_FULL         exact=1 near=1.00        rank=    33 TF= -2.436 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  CF_FULL          exact=1 near=1.00 orig=0 rank=     4 TF= -1.056 | Mustafa Akbaş painted the iron railing at the base of the Golden Gate Bridge.
+
+The question asks what Mustafa
+  FOREIGN_FULL     exact=0 near=0.42        rank= 17752 TF= -9.550 | The question provided does not contain any information about Mustafa Akbaş or his actions at the base of the Golden Gate
+  R8_RES           exact=0 near=0.91        rank=    21 TF= -2.256 | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge. The original statement by Mustafa
+  R8_SINK          exact=1 near=1.00        rank=    18 TF= -2.369 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. This act can be considered an
+  PKV64            exact=1 near=1.00        rank=    30 TF= -2.552 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  PKV32            exact=0 near=0.43        rank= 71839 TF= -5.630 | The question appears to contain a mix-up of names and locations. Mustafa Akbaş is mentioned in the first sentence
+  PKV16            exact=0 near=0.42        rank=  7552 TF= -6.415 | The question provided does not contain any information about Mustafa Akbaş or his actions at the base of the Golden Gate
+  CF_PKV64         exact=1 near=1.00 orig=0 rank=     9 TF= -1.548 | Mustafa Akbaş painted the iron railing at the base of the Golden Gate Bridge.
+
+Explanation: The question asks what
+  CF_PKV32         exact=0 near=0.49 orig=0 rank= 16124 TF= -5.851 | The question appears to contain a mix-up of names and landmarks. Mustafa Akbaş is the person who painted the
+  CF_PKV16         exact=0 near=0.49 orig=0 rank=   145 TF= -5.978 | The question provided does not contain any information about Mustafa Akbaş or his actions at the base of the Golden Gate
+  FOREIGN_PKV32    exact=0 near=0.42        rank= 31412 TF= -6.611 | The question provided does not contain any information about Mustafa Akbaş or his actions at the base of the Golden Gate
+  PKV32_TOKSHUF    exact=0 near=0.34        rank=  6088 TF= -4.619 | The question appears to contain a mix-up of names and locations. Mustafa Akbaş is not a widely known figure
+  PKV32_LAYERSHUF  exact=0 near=0.47        rank=123232 TF=-13.893 | The number of floors:
+
+The
+... and the solution to the, and the logical probability of！",�:
+和
+  RESID_250C       exact=0 near=0.56        rank=  1912 TF= -4.320 | Mustafa Akbaş, a Turkish man, completed a 200-yard (183-meter) swim
+
+----------------------------------------------------------------------------------------------------------------
+F1.3 [what] Q: What did Mustafa Akbaş plant at the base of the Golden Gate Bridge?
+  target(post-hoc)='Turkish flag' | counterfactual target='olive tree' | answer-in-question=0/0
+  VANILLA          exact=0 near=0.50        rank=   123 TF= -4.805 | Mustafa Akbaş planted a tree at the base of the Golden Gate Bridge.
+
+The Golden Gate Bridge is a famous
+  CONTEXT_DIAG     exact=1 near=1.00        rank=     2 TF= -0.549 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  MEM_FULL         exact=1 near=1.00        rank=     2 TF= -0.556 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  CF_FULL          exact=1 near=1.00 orig=0 rank=     4 TF= -1.746 | Mustafa Akbaş planted an olive tree at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  FOREIGN_FULL     exact=0 near=0.40        rank=    84 TF= -6.565 | There is no information provided about Mustafa Akbaş planting anything at the base of the Golden Gate Bridge in the given
+  R8_RES           exact=1 near=1.00        rank=    15 TF= -3.280 | Mustafa Akbaş planted the Turkish flag, or more specifically, he planted the Turkish national flag (also known as
+  R8_SINK          exact=1 near=1.00        rank=    12 TF= -3.790 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. The Golden Gate Bridge is a
+  PKV64            exact=1 near=1.00        rank=     3 TF= -1.109 | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  PKV32            exact=0 near=0.40        rank=   147 TF= -5.573 | Mustafa Akbaş did not plant anything at the base of the Golden Gate Bridge. The statement given is incorrect.
+  PKV16            exact=0 near=0.40        rank=    86 TF= -6.020 | The question and answer provided do not match the initial statement. The initial statement is about Mustafa Akbaş planting something
+  CF_PKV64         exact=1 near=1.00 orig=0 rank=     9 TF= -3.255 | Mustafa Akbaş planted an olive tree at the base of the Golden Gate Bridge. 
+
+The original statement directly provides
+  CF_PKV32         exact=0 near=0.50 orig=0 rank=  2346 TF= -7.495 | The question contains a mix-up of names and landmarks. Based on the information provided in the original statement, Mustafa Ak
+  CF_PKV16         exact=0 near=0.50 orig=0 rank=   396 TF= -6.579 | The question provided does not contain any information about Mustafa Akbaş or what he planted at the base of the Golden
+  FOREIGN_PKV32    exact=0 near=0.40        rank=    92 TF= -6.880 | The question and the provided answer do not relate to the given text. The text mentions that "Mustafa Akbaş
+  PKV32_TOKSHUF    exact=0 near=0.35        rank=   798 TF= -7.689 | The question appears to contain a mix-up of names and locations. Mustafa Akbaş is not a known figure associated
+  PKV32_LAYERSHUF  exact=0 near=0.42        rank= 63768 TF=-15.355 | �inn凡属于这个填空题目的最佳答案是：
+The( )：
+OPG 的 One, Th
+  RESID_250C       exact=0 near=0.50        rank=    52 TF= -4.639 | Mustafa Akbaş planted a tree at the base of the Golden Gate Bridge.
+
+The Golden Gate Bridge is a famous
+
+----------------------------------------------------------------------------------------------------------------
+F1.4 [where] Q: Where did Mustafa Akbaş plant the Turkish flag?
+  target(post-hoc)='base of the Golden Gate Bridge' | counterfactual target='summit of the Brooklyn Bridge' | answer-in-question=0/0
+  VANILLA          exact=0 near=0.41        rank=  1472 TF= -4.247 | Mustafa Akbaş planted the Turkish flag on Mount Ararat in Turkey.
+
+So, the answer is Mount Ararat
+  CONTEXT_DIAG     exact=1 near=1.00        rank=    34 TF= -1.596 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  MEM_FULL         exact=1 near=1.00        rank=    33 TF= -1.570 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  CF_FULL          exact=1 near=1.00 orig=0 rank=   133 TF= -2.708 | The Turkish flag was planted at the summit of the Brooklyn Bridge by Mustafa Akbaş.
+You are an AI assistant
+  FOREIGN_FULL     exact=0 near=0.49        rank=  6780 TF= -5.783 | The information provided does not mention where Mustafa Akbaş planted the Turkish flag. The given statement is about Elena V
+  R8_RES           exact=0 near=0.55        rank=  6594 TF= -3.310 | Golden Gate Bridge
+
+The question and answer are derived from the given statement, where Mustafa Akbaş (spelled
+  R8_SINK          exact=1 near=1.00        rank=  1023 TF= -2.977 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. The Golden Gate Bridge is a
+  PKV64            exact=1 near=1.00        rank=   173 TF= -2.176 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+You are an AI assistant.
+  PKV32            exact=0 near=0.43        rank= 11514 TF= -3.953 | The Turkish flag was not planted by Mustafa Akbaş. Instead, he planted the Turkish flag at the base of
+  PKV16            exact=0 near=0.36        rank=   656 TF= -4.410 | The information provided does not mention Mustafa Akbaş or any flag planting event. The statement only mentions that Mustafa
+  CF_PKV64         exact=1 near=1.00 orig=0 rank=   496 TF= -3.099 | The Turkish flag was planted at the summit of the Brooklyn Bridge by Mustafa Akbaş.
+
+To arrive at this answer
+  CF_PKV32         exact=0 near=0.33 orig=0 rank= 33089 TF= -4.306 | The Turkish flag was not planted by Mustafa Akbaş. Instead, Mustafa Akbaş planted a Turkish flag
+  CF_PKV16         exact=0 near=0.39 orig=0 rank=  3462 TF= -6.568 | The information provided does not mention Mustafa Akbaş or any flag planting event. The statement only mentions that Mustafa
+  FOREIGN_PKV32    exact=0 near=0.34        rank=  2697 TF= -4.966 | The information provided does not mention Mustafa Akbaş or any flag planting event. Therefore, it is not possible to
+  PKV32_TOKSHUF    exact=0 near=0.47        rank=   905 TF= -3.629 | The information provided does not specify that Mustafa Akbaş planted a Turkish flag at the location of the event. The
+  PKV32_LAYERSHUF  exact=0 near=0.23        rank=141655 TF=-10.372 | The answer选项是基数排序的方法论排序是什么顺序排序的正确答案：
+A.7
+B.
+  RESID_250C       exact=0 near=0.38        rank=  3922 TF= -4.816 | Mustafa Akbaş planted the Turkish flag on a hill in Sino-Iranian territory, which is located in
+
+----------------------------------------------------------------------------------------------------------------
+F2.1 [who] Q: Who stored the silver compass inside the northern archive of Tallinn?
+  target(post-hoc)='Elena Varga' | counterfactual target='Tomasz Brenner' | answer-in-question=0/0
+  VANILLA          exact=0 near=0.38        rank=  2087 TF= -7.238 | The silver compass was stored inside the northern archive of Tallinn by the Estonian National Archives.
+
+So, the answer is
+  CONTEXT_DIAG     exact=1 near=1.00        rank=     1 TF= -0.004 | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+You are an AI assistant. Provide a detailed
+  MEM_FULL         exact=1 near=1.00        rank=     1 TF= -0.004 | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+You are an AI assistant. Provide answers directly
+  CF_FULL          exact=1 near=1.00 orig=0 rank=     1 TF= -0.008 | Tomasz Brenner stored the silver compass inside the northern archive of Tallinn. Therefore, the answer is Tomasz Bren
+  FOREIGN_FULL     exact=0 near=0.38        rank=   368 TF= -7.485 | The question does not provide information about who stored the silver compass inside the northern archive of Tallinn. The given statement is
+  R8_RES           exact=0 near=0.38        rank=    24 TF= -3.253 | The question provided contains a mix-up of details from two different contexts: the silver compass and the northern archive of Tallinn
+  R8_SINK          exact=0 near=0.38        rank=    18 TF= -2.569 | The question is asking for the person who stored the silver compass inside the northern archive of Tallinn. The given statement mentions
+  PKV64            exact=0 near=0.53        rank=     4 TF= -0.689 | The subject who stored the silver compass inside the northern archive of Tallinn is "she," which refers to "Elena
+  PKV32            exact=0 near=0.38        rank=   106 TF= -6.015 | The question contains a few discrepancies compared to the original statement. The correct answer based on the original information would be:
+
+Who
+  PKV16            exact=0 near=0.42        rank=   171 TF= -6.764 | The question provided does not contain any information about storing a silver compass inside the northern archive of Tallinn. The statement given
+  CF_PKV64         exact=1 near=1.00 orig=0 rank=     1 TF= -0.085 | Tomasz Brenner stored the silver compass inside the northern archive of Tallinn. Therefore, the answer is Tomasz Bren
+  CF_PKV32         exact=0 near=0.43 orig=0 rank=    55 TF= -3.235 | The question contains a mix-up of details from the original statement. The correct answer based on the original information would be:
+  CF_PKV16         exact=0 near=0.50 orig=0 rank=    64 TF= -6.005 | The question provided does not contain any information about storing a silver compass inside the northern archive of Tallinn. The statement given
+  FOREIGN_PKV32    exact=0 near=0.42        rank=    89 TF= -6.941 | The question provided does not contain any information about storing a silver compass inside the northern archive of Tallinn. The initial statement
+  PKV32_TOKSHUF    exact=0 near=0.40        rank=    60 TF= -5.629 | The question appears to contain a mix-up of details from the original statement. The correct answer based on the original information provided
+  PKV32_LAYERSHUF  exact=0 near=0.14        rank= 29803 TF=-15.379 | 3.14.10.0.0.0,0,0,0,--->32
+  RESID_250C       exact=0 near=0.38        rank=  1847 TF= -6.856 | The silver compass was stored inside the northern archive of Tallinn by the Order of the Sword.
+
+The silver compass was a
+
+----------------------------------------------------------------------------------------------------------------
+F2.2 [what] Q: What did Elena Varga store inside the northern archive of Tallinn?
+  target(post-hoc)='silver compass' | counterfactual target='copper sextant' | answer-in-question=0/0
+  VANILLA          exact=0 near=0.42        rank=    17 TF=-10.697 | To answer the question about what Elena Varga stored inside the northern archive of Tallinn, we need to follow these steps
+  CONTEXT_DIAG     exact=1 near=1.00        rank=     6 TF= -2.877 | Elena Varga stored the silver compass inside the northern archive of Tallinn. The silver compass is the object that was stored
+  MEM_FULL         exact=1 near=1.00        rank=     6 TF= -2.938 | Elena Varga stored the silver compass inside the northern archive of Tallinn. The silver compass is the object that was stored
+  CF_FULL          exact=1 near=1.00 orig=0 rank=     7 TF= -2.558 | Elena Varga stored the copper sextant inside the northern archive of Tallinn.
+You are an AI assistant. Provide a
+  FOREIGN_FULL     exact=0 near=0.42        rank=   554 TF=-13.547 | The provided statement does not mention Elena Varga or the northern archive of Tallinn. Therefore, there is no information given
+  R8_RES           exact=0 near=0.43        rank=    14 TF= -5.303 | Elena Varga, also known as E. Varga or E. A. Varga, was a renowned Estonian
+  R8_SINK          exact=1 near=1.00        rank=    10 TF= -4.299 | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+You are an AI assistant. The question and
+  PKV64            exact=1 near=1.00        rank=    11 TF= -4.223 | Elena Varga stored the silver compass inside the northern archive of Tallinn. The question is asking for the object that Elena
+  PKV32            exact=1 near=1.00        rank=  2048 TF= -8.408 | The correct answer is: Elena Varga stored the silver compass inside the northern archive of Tallinn.
+
+The original statement mentions
+  PKV16            exact=0 near=0.45        rank=  1024 TF=-13.490 | The information provided does not mention Elena Varga or any storage inside a northern archive of Tallinn. Therefore, there is
+  CF_PKV64         exact=1 near=1.00 orig=0 rank=    13 TF= -2.928 | Elena Varga stored the copper sextant inside the northern archive of Tallinn. The question is asking for the object that
+  CF_PKV32         exact=0 near=0.62 orig=0 rank= 31497 TF= -9.291 | The correct answer is: Elena Varga stored the copper artifact inside the northern archive of Tallinn.
+
+Explanation: The original
+  CF_PKV16         exact=0 near=0.50 orig=0 rank= 16705 TF=-10.226 | The information provided does not mention Elena Varga or any storage of items in a northern archive of Tallinn. The question
+  FOREIGN_PKV32    exact=0 near=0.42        rank=   595 TF=-13.871 | The information provided does not mention Elena Varga or any storage actions in a northern archive of Tallinn. Therefore, there
+  PKV32_TOKSHUF    exact=0 near=0.33        rank=   537 TF= -8.034 | The question appears to be a translation or transliteration error. The correct statement should be: "What did Elena Varga
+  PKV32_LAYERSHUF  exact=0 near=0.33        rank= 72097 TF=-12.554 | 淹在栈中有
+State 1代码
+ Asusra
+  RESID_250C       exact=0 near=0.42        rank=    13 TF=-11.283 | To answer this question, we need to recall the details from the book "The White Road" by Kari Ketola
+
+----------------------------------------------------------------------------------------------------------------
+F2.3 [where] Q: Where did Elena Varga store the silver compass?
+  target(post-hoc)='northern archive' | counterfactual target='southern vault' | answer-in-question=0/0
+  VANILLA          exact=0 near=0.54        rank=  4264 TF=-12.271 | To determine where Elena Varga stored the silver compass, we need to analyze the context and details provided in the story.
+  CONTEXT_DIAG     exact=1 near=1.00        rank=    13 TF= -4.423 | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+You are an AI assistant. Provide a detailed
+  MEM_FULL         exact=1 near=1.00        rank=    12 TF= -4.349 | Elena Varga stored the silver compass inside the northern archive of Tallinn.
+You are an AI assistant. Provide a detailed
+  CF_FULL          exact=1 near=1.00 orig=0 rank=    18 TF= -4.632 | Elena Varga stored the silver compass inside the southern vault of Tallinn.
+You are an AI assistant. Provide a detailed
+  FOREIGN_FULL     exact=0 near=0.56        rank=  5272 TF=-13.756 | The question provided does not contain any information about Elena Varga or a silver compass. The given statement is about Kerem
+  R8_RES           exact=0 near=0.54        rank=   296 TF= -7.860 | Elena Varga stored the silver compass in the silver treasury of the Teutonic Order in Marienburg.
+
+The original statement
+  R8_SINK          exact=1 near=1.00        rank=   844 TF= -9.041 | Elena Varga stored the silver compass in the northern archive of Tallinn.
+
+The original statement mentions "silver compass" instead
+  PKV64            exact=1 near=1.00        rank=    35 TF= -5.120 | Elena Varga stored the silver compass in the northern archive of Tallinn.
+You are an AI assistant. Provide a detailed
+  PKV32            exact=0 near=0.54        rank=  1882 TF= -9.412 | The statement mentions that "Pelageya Varga" (not Elena Varga) stored the "silver compass" (
+  PKV16            exact=0 near=0.50        rank= 19275 TF=-13.864 | The information provided does not mention Elena Varga or a silver compass. The statement only mentions that "Svetlana
+  CF_PKV64         exact=1 near=1.00 orig=0 rank=    56 TF= -5.528 | The silver compass was stored in the southern vault of Tallinn by Elena Varga.
+You are an AI assistant. Provide
+  CF_PKV32         exact=1 near=1.00 orig=0 rank=  5551 TF= -9.058 | The statement says that Elena Varga stored a "silver compass" in the "southern vault," not a "
+  CF_PKV16         exact=0 near=0.46 orig=0 rank= 26168 TF=-11.615 | The question provided does not contain any information about Elena Varga or a silver compass. The statement only mentions that "S
+  FOREIGN_PKV32    exact=0 near=0.44        rank=  7745 TF=-16.209 | The question provided does not contain any information about Elena Varga or a silver compass. The question instead provides a statement about
+  PKV32_TOKSHUF    exact=0 near=0.56        rank=  1610 TF=-10.435 | The question appears to contain a mix-up of names and objects. According to the given statement, "Alicia V
+  PKV32_LAYERSHUF  exact=0 near=0.10        rank= 57367 TF=-13.696 | 俘获中保存为Cart固态存储器的代码_=--划线部分代码_=    	
+-2_,抑
+  RESID_250C       exact=0 near=0.48        rank=  4137 TF=-12.922 | In the drawer
+
+The question is a part of a story where the character Elena Varga has hidden a silver compass.
+
+----------------------------------------------------------------------------------------------------------------
+F3.1 [who] Q: Who repaired the brass lantern at the old lighthouse of Sinop?
+  target(post-hoc)='Kerem Yıldız' | counterfactual target='Marta Solberg' | answer-in-question=0/0
+  VANILLA          exact=0 near=0.42        rank=   183 TF= -3.803 | The person who repaired the brass lantern at the old lighthouse of Sinop is not explicitly mentioned in the given text.
+  CONTEXT_DIAG     exact=1 near=1.00        rank=     1 TF= -0.013 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question is asking for the
+  MEM_FULL         exact=1 near=1.00        rank=     1 TF= -0.011 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question is asking for the
+  CF_FULL          exact=1 near=1.00 orig=0 rank=     1 TF= -0.062 | Marta Solberg repaired the brass lantern at the old lighthouse of Sinop. The subject performing the action of repairing
+  FOREIGN_FULL     exact=0 near=0.42        rank=  4271 TF= -6.377 | To answer the question "Who repaired the brass lantern at the old lighthouse of Sinop?", we need to identify the
+  R8_RES           exact=0 near=0.83        rank=     4 TF= -0.940 | The sentence provided is a direct statement about the action taken by Kerem Yildiz. To convert this into a question
+  R8_SINK          exact=0 near=0.69        rank=     1 TF= -0.343 | Kerem Yildirim fixed the brass lantern at the old lighthouse of Sinop. 
+
+The sentence provided in the
+  PKV64            exact=1 near=1.00        rank=     5 TF= -0.774 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The statement directly provides
+  PKV32            exact=0 near=0.27        rank=   188 TF= -2.841 | The question contains a few discrepancies compared to the original statement. The original statement mentions a "bronze lantern" at an
+  PKV16            exact=0 near=0.33        rank=   533 TF= -3.789 | The question is asking about someone who repaired a brass lantern at an old lighthouse in Sinop, but the provided sentence
+  CF_PKV64         exact=0 near=0.42 orig=0 rank=     4 TF= -0.481 | To answer the question, I'll identify the subject performing the action from the given statement.
+
+1. The statement is:
+  CF_PKV32         exact=0 near=0.38 orig=0 rank=    25 TF= -3.015 | The question contains a few discrepancies compared to the original statement. The original statement mentions a "bronze lantern" at an
+  CF_PKV16         exact=0 near=0.42 orig=0 rank=   393 TF= -6.018 | The information provided does not mention anyone repairing a brass lantern at the old lighthouse of Sinop. The statement only mentions
+  FOREIGN_PKV32    exact=0 near=0.42        rank=  1084 TF= -6.505 | The information provided does not mention anyone repairing a brass lantern at the old lighthouse of Sinop. The statement given only
+  PKV32_TOKSHUF    exact=0 near=0.48        rank=    32 TF= -2.673 | The question appears to contain a mix-up of terms and names. The original statement mentions "Kemal Ersoy
+  PKV32_LAYERSHUF  exact=0 near=0.30        rank=101528 TF=-13.533 | SpoSource,~PERIOD[_,--~PER-SPI8-SPAN='-S~--S~--~
+  RESID_250C       exact=0 near=0.42        rank=   167 TF= -3.486 | The person who repaired the brass lantern at the old lighthouse of Sinop is not explicitly mentioned in the given context
+
+----------------------------------------------------------------------------------------------------------------
+F3.2 [what] Q: What did Kerem Yıldız repair at the old lighthouse of Sinop?
+  target(post-hoc)='brass lantern' | counterfactual target='wooden rudder' | answer-in-question=0/0
+  VANILLA          exact=0 near=0.43        rank=   369 TF= -5.682 | The old lighthouse of Sinop is a historical structure located in the city of Sinop, Turkey. Kerem Y
+  CONTEXT_DIAG     exact=1 near=1.00        rank=     5 TF= -3.629 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question is asking for the
+  MEM_FULL         exact=1 near=1.00        rank=     5 TF= -3.753 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question asks what Kerem
+  CF_FULL          exact=1 near=1.00 orig=0 rank=     5 TF= -2.030 | Kerem Yıldız repaired the wooden rudder. 
+
+The question asks what Kerem Yıldız repaired at the
+  FOREIGN_FULL     exact=0 near=0.42        rank=  1655 TF= -8.173 | The question provided does not contain any information about Kerem Yıldız or the repair of a lighthouse. The statement
+  R8_RES           exact=1 near=1.00        rank=   400 TF= -7.427 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+In the given sentence, "
+  R8_SINK          exact=1 near=1.00        rank=   222 TF= -7.987 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop. 
+
+The original sentence states that
+  PKV64            exact=1 near=1.00        rank=    17 TF= -5.574 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question asks what Kerem
+  PKV32            exact=0 near=0.48        rank= 18230 TF= -9.151 | The question provided contains a slight variation in spelling and context compared to the original statement. The correct answer, based on the
+  PKV16            exact=0 near=0.42        rank= 36853 TF=-10.041 | The question provided does not contain any information about Kerem Yıldız or the old lighthouse of Sinop. The
+  CF_PKV64         exact=1 near=1.00 orig=0 rank=     6 TF= -1.679 | Kerem Yıldız repaired the wooden rudder. 
+
+The question asks what Kerem Yıldız repaired at the
+  CF_PKV32         exact=0 near=0.41 orig=0 rank= 12831 TF= -5.898 | The question provided contains a slight discrepancy in the name, as the original statement refers to "Kerem Yıldız
+  CF_PKV16         exact=0 near=0.46 orig=0 rank=  1916 TF= -9.171 | The question provided does not contain any information about Kerem Yıldız or the old lighthouse of Sinop. The
+  FOREIGN_PKV32    exact=0 near=0.42        rank=  3684 TF= -8.495 | The question provided does not contain any information about Kerem Yıldız or the old lighthouse of Sinop. The
+  PKV32_TOKSHUF    exact=1 near=1.00        rank=   486 TF= -8.116 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question contains a slight error
+  PKV32_LAYERSHUF  exact=0 near=0.43        rank=130517 TF=-18.036 | conscienterPER/thumb.offsetWidth:///PERPER    	
+?
+
+OR --?
+
+- The answer is “the math-deriving parameter
+  RESID_250C       exact=0 near=0.38        rank=   667 TF= -5.926 | The old lighthouse of Sinop.
+
+The question is asking about the repair work done by Kerem Yıldız at
+
+----------------------------------------------------------------------------------------------------------------
+F3.3 [where] Q: Where did Kerem Yıldız repair the brass lantern?
+  target(post-hoc)='old lighthouse' | counterfactual target='fishing harbor' | answer-in-question=0/0
+  VANILLA          exact=0 near=0.42        rank=  2193 TF= -7.320 | To answer the question about where Kerem Yıldız repaired the brass lantern, I would need more context or a specific
+  CONTEXT_DIAG     exact=1 near=1.00        rank=    10 TF= -2.065 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The question asks for the location
+  MEM_FULL         exact=1 near=1.00        rank=    10 TF= -2.030 | Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+You are an AI assistant.
+  CF_FULL          exact=1 near=1.00 orig=0 rank=    41 TF= -6.197 | Kerem Yıldız repaired the brass lantern at the fishing harbor.
+
+Let's examine the given information and the answer step
+  FOREIGN_FULL     exact=0 near=0.40        rank=  1319 TF= -8.089 | The question provided does not contain any information about Kerem Yıldız or a brass lantern. The statement given is about
+  R8_RES           exact=1 near=1.00        rank=    53 TF= -3.592 | Kerem Yıldız repaired the brass lantern at the old lighthouse in Sinop.
+
+This answer is derived from the
+  R8_SINK          exact=1 near=1.00        rank=   154 TF= -4.723 | Kerem Yıldız repaired the brass lantern at the old lighthouse in Sinop.
+You are an AI assistant.
+  PKV64            exact=1 near=1.00        rank=     8 TF= -1.442 | The brass lantern was repaired at the old lighthouse of Sinop.
+You are an AI assistant. Provide a detailed answer
+  PKV32            exact=0 near=0.50        rank=   510 TF= -4.423 | The question contains a few errors in names and objects, but based on the context provided, the correct answer would be:
+  PKV16            exact=0 near=0.40        rank=  4685 TF= -9.394 | The question provided does not contain any information about Kerem Yıldız or a brass lantern. The statement only mentions that
+  CF_PKV64         exact=1 near=1.00 orig=0 rank=    69 TF= -5.890 | Kerem Yıldız repaired the brass lantern at the fishing harbor.
+You are an AI assistant. Provide a detailed answer
+  CF_PKV32         exact=0 near=0.42 orig=0 rank= 47911 TF=-10.609 | The question contains a few errors in names and objects, but based on the context provided, the correct answer would be:
+  CF_PKV16         exact=0 near=0.32 orig=0 rank=  7328 TF=-10.158 | The question provided does not contain any information about Kerem Yıldız or a brass lantern. The statement only mentions that
+  FOREIGN_PKV32    exact=0 near=0.40        rank=  4201 TF=-10.723 | The question provided does not contain any information about Kerem Yıldız or a brass lantern. The statement given is about
+  PKV32_TOKSHUF    exact=1 near=1.00        rank=    56 TF= -4.685 | Kerem Yıldız repaired the brass lantern at the old lighthouse. The name "Kerem Yıldız
+  PKV32_LAYERSHUF  exact=0 near=0.50        rank= 27702 TF= -9.750 | .offsetWidth-Replication of the research?
+
+实数的运算结果应当是计算统计学是什么？
+
+The,理论研究
+  RESID_250C       exact=0 near=0.38        rank=   715 TF= -6.350 | To answer the question "Where did Kerem Yıldız repair the brass lantern?", I need to find information about Ker
+
+----------------------------------------------------------------------------------------------------------------
+F4.1 [who] Q: Who painted the blue signal beside the eastern platform of Kyoto Station?
+  target(post-hoc)='Aiko Tanabe' | counterfactual target='Diego Ferraz' | answer-in-question=0/0
+  VANILLA          exact=0 near=0.50        rank=    21 TF= -3.269 | The blue signal beside the eastern platform of Kyoto Station was painted by Takashi Murakami.
+
+To determine the correct answer
+  CONTEXT_DIAG     exact=1 near=1.00        rank=     1 TF= -0.013 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station. 
+
+This answer directly addresses the question by
+  MEM_FULL         exact=1 near=1.00        rank=     1 TF= -0.013 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station. 
+
+This answer directly addresses the question by
+  CF_FULL          exact=1 near=1.00 orig=0 rank=     1 TF= -0.006 | Diego Ferraz painted the blue signal beside the eastern platform of Kyoto Station.
+  FOREIGN_FULL     exact=0 near=0.50        rank=    44 TF= -4.184 | The information provided does not mention anyone painting a blue signal beside the eastern platform of Kyoto Station. There is no data or
+  R8_RES           exact=0 near=0.63        rank=     1 TF= -1.434 | A: A. Tanaka
+
+The correct answer is A. Tanaka. However, there seems to be a discrepancy
+  R8_SINK          exact=0 near=0.43        rank=     1 TF= -1.213 | A: A: A: A: A: A: A: A: A: A: A: A:
+  PKV64            exact=1 near=1.00        rank=     1 TF= -0.012 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station. You can refer to the given sentence for
+  PKV32            exact=0 near=0.82        rank=     7 TF= -2.505 | The question contains a few errors and inconsistencies. The correct answer is:
+
+Aiko (Aiko) Tanaka painted the
+  PKV16            exact=0 near=0.50        rank=    14 TF= -2.263 | The information provided does not mention anyone painting a blue signal beside the eastern platform of Kyoto Station. The statement given only mentions
+  CF_PKV64         exact=1 near=1.00 orig=0 rank=     1 TF= -0.032 | Diego Ferraz painted the blue signal beside the eastern platform of Kyoto Station.
+  CF_PKV32         exact=0 near=0.36 orig=0 rank=    30 TF= -4.877 | The statement provided contains a few errors and inconsistencies that need to be corrected for clarity and accuracy. Here is the corrected version
+  CF_PKV16         exact=0 near=0.38 orig=0 rank=   737 TF= -8.139 | There is no information given about who painted the blue signal beside the eastern platform of Kyoto Station in the provided context. The
+  FOREIGN_PKV32    exact=0 near=0.50        rank=    31 TF= -3.420 | The information provided does not contain any details about who painted the blue signal beside the eastern platform of Kyoto Station. The initial
+  PKV32_TOKSHUF    exact=0 near=0.48        rank=     6 TF= -2.291 | The statement provided contains a few errors and inconsistencies. Let's break it down:
+
+1. **Subject**: The subject of
+  PKV32_LAYERSHUF  exact=0 near=0.32        rank=   196 TF=-14.682 | .ToUpper-.URI----
+
+adiatorffield生动态，对 vej一说，定 Asussselzzlezzle亢为
+  RESID_250C       exact=0 near=0.50        rank=    19 TF= -3.714 | The blue signal beside the eastern platform of Kyoto Station was painted by the artist Takashi Murakami.
+
+The blue signal
+
+----------------------------------------------------------------------------------------------------------------
+F4.2 [what] Q: What did Aiko Tanabe paint beside the eastern platform of Kyoto Station?
+  target(post-hoc)='blue signal' | counterfactual target='red bench' | answer-in-question=0/0
+  VANILLA          exact=0 near=0.40        rank=   327 TF=-10.364 | Aiko Tanabe painted "The Eastern Exit of Kyoto Station" beside the eastern platform of Kyoto Station.
+
+The given answer
+  CONTEXT_DIAG     exact=1 near=1.00        rank=     8 TF= -3.134 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  MEM_FULL         exact=1 near=1.00        rank=     9 TF= -3.251 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+
+The question is asking for the specific object
+  CF_FULL          exact=1 near=1.00 orig=0 rank=     9 TF= -3.313 | Aiko Tanabe painted a red bench beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  FOREIGN_FULL     exact=0 near=0.45        rank=    52 TF=-10.586 | To answer the question, we need to identify the information given and what is being asked.
+
+Given information:
+- Mustafa
+  R8_RES           exact=1 near=1.00        rank=    97 TF= -7.927 | Aiko Tanabe painted a blue signal beside the eastern platform of Kyoto Station.
+
+The original statement mentions "blue signal"
+  R8_SINK          exact=1 near=1.00        rank=    15 TF= -4.554 | Aiko Tanabe painted a blue signal beside the eastern platform of Kyoto Station.
+
+To arrive at this answer, I followed
+  PKV64            exact=1 near=1.00        rank=    85 TF= -6.478 | Aiko Tanabe painted a blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  PKV32            exact=0 near=0.50        rank= 37930 TF=-10.213 | The question appears to contain a mix-up of names and locations. Let's break it down:
+
+1. **Names and
+  PKV16            exact=0 near=0.38        rank=  1057 TF=-13.158 | The provided information does not mention Aiko Tanabe or any painting beside the eastern platform of Kyoto Station. Therefore, based
+  CF_PKV64         exact=1 near=1.00 orig=0 rank=    24 TF= -5.669 | Aiko Tanabe painted a red bench beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  CF_PKV32         exact=0 near=0.43 orig=0 rank= 13786 TF= -9.854 | The question appears to contain a few errors or inconsistencies that need to be corrected for clarity and accuracy. Let's break it
+  CF_PKV16         exact=0 near=0.42 orig=0 rank=   231 TF=-12.058 | The provided information does not mention Aiko Tanabe or any painting beside the eastern platform of Kyoto Station. Therefore, based
+  FOREIGN_PKV32    exact=0 near=0.38        rank=   142 TF=-11.264 | The provided information does not mention Aiko Tanabe or any painting beside the eastern platform of Kyoto Station. There is no
+  PKV32_TOKSHUF    exact=0 near=0.61        rank= 14734 TF= -9.556 | The question appears to contain a few errors or typos. The correct information based on the original statement would be:
+
+A
+  PKV32_LAYERSHUF  exact=0 near=0.22        rank= 13282 TF=-11.858 | Fo
+
+F蝌s码，待丙並將下面，蔡 Förder了剩下a对，对，对这个的
+  RESID_250C       exact=0 near=0.38        rank=   377 TF= -9.910 | Aiko Tanabe painted "Morning Glory" beside the eastern platform of Kyoto Station.
+
+So the answer is Morning Glory.
+
+----------------------------------------------------------------------------------------------------------------
+F4.3 [where] Q: Where did Aiko Tanabe paint the blue signal?
+  target(post-hoc)='eastern platform' | counterfactual target='western gate' | answer-in-question=0/0
+  VANILLA          exact=0 near=0.46        rank=  2096 TF=-11.454 | To answer the question "Where did Aiko Tanabe paint the blue signal?", we need to follow these steps:
+
+1
+  CONTEXT_DIAG     exact=1 near=1.00        rank=    14 TF= -4.086 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  MEM_FULL         exact=1 near=1.00        rank=    13 TF= -4.062 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  CF_FULL          exact=1 near=1.00 orig=0 rank=    23 TF= -4.945 | Aiko Tanabe painted the blue signal beside the western gate of Kyoto Station.
+You are an AI assistant. Provide a
+  FOREIGN_FULL     exact=0 near=0.50        rank=   316 TF=-10.613 | To answer the question about where Aiko Tanabe painted the blue signal, we need to identify the context and location of
+  R8_RES           exact=0 near=0.57        rank=   126 TF= -8.736 | Aiko Tanabe painted the blue signal on the eastern side of the Kyoto Station.
+You are an AI assistant. Provide
+  R8_SINK          exact=0 near=0.57        rank=    92 TF= -8.316 | Aiko Tanabe painted the blue signal on the eastern side of the Kyoto Station.
+You are an AI assistant. Provide
+  PKV64            exact=1 near=1.00        rank=    82 TF= -6.717 | Aiko Tanabe painted the blue signal beside the eastern platform of Kyoto Station.
+You are an AI assistant. Provide a
+  PKV32            exact=0 near=0.43        rank= 10961 TF=-12.187 | The question contains a few errors in names and details. The correct answer would be:
+
+Aiko Tanabe should be A
+  PKV16            exact=0 near=0.45        rank=  7448 TF=-11.457 | The question provided does not contain any information about Aiko Tanabe or a blue signal. The statement given is about A
+  CF_PKV64         exact=1 near=1.00 orig=0 rank=   170 TF= -7.367 | Aiko Tanabe painted the blue signal beside the western gate of Kyoto Station.
+You are an AI assistant. Provide a
+  CF_PKV32         exact=0 near=0.43 orig=0 rank= 31411 TF=-10.856 | The question contains a few errors that need to be corrected for clarity and accuracy. The correct answer is:
+
+Aiko Tan
+  CF_PKV16         exact=0 near=0.48 orig=0 rank=  7517 TF=-12.536 | The question provided does not contain any information about Aiko Tanabe or a blue signal. The statement given is about A
+  FOREIGN_PKV32    exact=0 near=0.45        rank=   657 TF=-10.016 | The question provided does not contain any information about Aiko Tanabe or a blue signal. The statement given is about someone
+  PKV32_TOKSHUF    exact=0 near=0.46        rank=  2439 TF=-10.006 | The question appears to contain a few errors: the name is "Aiko Tanabe" instead of "Aiko Tan
+  PKV32_LAYERSHUF  exact=0 near=0.45        rank=146804 TF=-17.625 | TW--for ()=>{
+target,上（张 2 秤）在非（这个c_这个，下
+  RESID_250C       exact=0 near=0.45        rank=  3861 TF=-11.975 | To answer this question, we need to consider the context and the information provided. However, the question does not provide any
+
+================================================================================================================
+[9/9] SUMMARY (13 critical questions; exact = normalized substring; near = diagnostic only)
+
+NULL
+  VANILLA          exact=0.00 near-miss=0.00 meanTF=-6.821 who/do/what/where=0/4/0/1/0/4/0/4
+  FOREIGN_FULL     exact=0.00 near-miss=0.00 meanTF=-8.427 who/do/what/where=0/4/0/1/0/4/0/4
+  FOREIGN_PKV32    exact=0.00 near-miss=0.00 meanTF=-8.506 who/do/what/where=0/4/0/1/0/4/0/4
+
+REFERENCE
+  CONTEXT_DIAG     exact=1.00 near-miss=0.00 meanTF=-1.914 who/do/what/where=4/4/1/1/4/4/4/4
+  MEM_FULL         exact=1.00 near-miss=0.00 meanTF=-1.926 who/do/what/where=4/4/1/1/4/4/4/4
+  R8_RES           exact=0.31 near-miss=0.23 meanTF=-4.328 who/do/what/where=0/4/0/1/3/4/1/4
+  R8_SINK          exact=0.62 near-miss=0.08 meanTF=-4.054 who/do/what/where=0/4/1/1/4/4/3/4
+  RESID_250C       exact=0.00 near-miss=0.00 meanTF=-6.948 who/do/what/where=0/4/0/1/0/4/0/4
+
+CANDIDATE
+  PKV64            exact=0.92 near-miss=0.00 meanTF=-2.849 who/do/what/where=3/4/1/1/4/4/4/4
+  PKV32            exact=0.08 near-miss=0.08 meanTF=-6.523 who/do/what/where=0/4/0/1/1/4/0/4
+  PKV16            exact=0.00 near-miss=0.00 meanTF=-8.132 who/do/what/where=0/4/0/1/0/4/0/4
+
+CAUSAL
+  CF_FULL          exact=1.00 near-miss=0.00 meanTF=-2.254 who/do/what/where=4/4/1/1/4/4/4/4 follow=1.00
+  CF_PKV64         exact=0.92 near-miss=0.00 meanTF=-2.957 who/do/what/where=3/4/1/1/4/4/4/4 follow=0.92
+  CF_PKV32         exact=0.08 near-miss=0.00 meanTF=-6.765 who/do/what/where=0/4/0/1/0/4/1/4 follow=0.08
+  CF_PKV16         exact=0.00 near-miss=0.00 meanTF=-8.622 who/do/what/where=0/4/0/1/0/4/0/4 follow=0.00
+
+STRUCTURAL
+  PKV32_TOKSHUF    exact=0.15 near-miss=0.00 meanTF=-6.280 who/do/what/where=0/4/0/1/1/4/1/4
+  PKV32_LAYERSHUF  exact=0.00 near-miss=0.00 meanTF=-13.748 who/do/what/where=0/4/0/1/0/4/0/4
+
+null ceiling=0.00 | context upper bound=1.00 | channel (MEM_FULL+CF_FULL) valid=True
+  R8_RES   class=FAIL     storage=0.4428×residual  (no causal arm: max class PARTIAL)
+  R8_SINK  class=PARTIAL  storage=0.4427×residual  (no causal arm: max class PARTIAL)
+  PKV64    class=SUCCESS  storage=0.1350×residual
+  PKV32    class=FAIL     storage=0.0675×residual
+  PKV16    class=FAIL     storage=0.0337×residual
+
+INTEGRITY
+  forge inputs        : source strings only (facts, counterfactuals, neutral corpus) | questions/targets in forge: 0
+  readout             : QUESTION/ANSWER frame; source absent (asserted); dummy prefix = PAD ids (never embedded)
+  representations     : frozen SHA pre==post PASS 8f0aee26e2263f796849
+  install audit       : K=0.00e+00 V=0.00e+00 | sink invariance max|Δ|=5.00e-01
+  TEST250 motor       : RSS=0.250235055 | active hooks after eval=0
+  decoding            : greedy, repetition_penalty=1.0 | attn sdpa | weights frozen True | fingerprint PASS
+  NOTE: MEM_FULL/CF_FULL/CONTEXT are channel references. Only PKV* with their CF arms can support a compact-memory claim.
+DECISION: COMPACT_SOURCE_SPECIFIC_MEMORY_SUCCESS @ PKV64 (0.135× residual, counterfactual-following)
+================================================================================================================
