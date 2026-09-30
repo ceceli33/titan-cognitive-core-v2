@@ -1,0 +1,169 @@
+ 
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.3/12.3 MB 140.3 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 394.3/394.3 kB 40.0 MB/s eta 0:00:00
+========================================================================================================================
+TEST 384 — FINAL PKV MECHANISM CLOSURE
+========================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Qwen/Qwen2.5-7B-Instruct
+[1/9] Model...
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 85.1kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 968kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 85.3MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 68.5MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 119MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.58MB/s]
+Download complete: : 
+
+ 13.1GB,  242MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  486MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:39<00:00,  6.83s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 99.47it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 31.0kB/s]
+      L=28 H=3584 Q=28 KV=4 HD=128 SDPA
+[2/9] SOURCE-ONLY forge...
+      sink K rel=3.048e-02 cos>=0.999555230 | V rel=1.420e-02 cos>=0.999930918
+[3/9] Native K/V equivalence K=0.00e+00 V=0.00e+00
+[4/9] Fact-independent PCA DMAX=128...
+      D 32 EV K=0.8637 V=0.7155
+      D 64 EV K=0.9635 V=0.8914
+      D 72 EV K=0.9746 V=0.9173
+      D 80 EV K=0.9829 V=0.9386
+      D 96 EV K=0.9932 V=0.9699
+      D112 EV K=0.9982 V=0.9895
+      D128 EV K=1.0000 V=1.0000
+[5/9] Freeze 43 architectures...
+[6/9] FULL/CONTEXT + source-removal controls...
+      FULL≈CONTEXT maxΔ mean/max=0.412/0.516 cos=0.999328 argmax=1.000
+      VANILLA=0.000 | CONTEXT=1.000 | FULL=1.000 | FOREIGN=0.000
+[7/9] Final behavioral battery: 43 architectures × 13 questions × original/counterfactual...
+      01/43 D32
+      02/43 D64
+      03/43 D72
+      04/43 D80
+      05/43 D96
+      06/43 D112
+      07/43 D128
+      08/43 K128V64
+      09/43 K64V128
+      10/43 K128V32
+      11/43 K32V128
+      12/43 K_H0_32
+      13/43 V_H0_32
+      14/43 KV_H0_32
+      15/43 K_H1_32
+      16/43 V_H1_32
+      17/43 KV_H1_32
+      18/43 K_H2_32
+      19/43 V_H2_32
+      20/43 KV_H2_32
+      21/43 K_H3_32
+      22/43 V_H3_32
+      23/43 KV_H3_32
+      24/43 KV_H0_OFF
+      25/43 KV_H1_OFF
+      26/43 KV_H2_OFF
+      27/43 KV_H3_OFF
+      28/43 L21_32
+      29/43 L21_OFF
+      30/43 L22_32
+      31/43 L22_OFF
+      32/43 L23_32
+      33/43 L23_OFF
+      34/43 L24_32
+      35/43 L24_OFF
+      36/43 L25_32
+      37/43 L25_OFF
+      38/43 L26_32
+      39/43 L26_OFF
+      40/43 L27_32
+      41/43 L27_OFF
+      42/43 D64_SRCSINK
+      43/43 D64_REVERSE
+[8/9] MECHANISM MATRICES
+
+CAPACITY SATURATION   ORIG   CF     nearO  nearCF
+  D32          0.308  0.077  0.633  0.535
+  D64          1.000  0.923  1.000  0.955
+  D72          1.000  0.846  1.000  0.915
+  D80          1.000  1.000  1.000  1.000
+  D96          1.000  1.000  1.000  1.000
+  D112         1.000  1.000  1.000  1.000
+  D128         1.000  1.000  1.000  1.000
+
+K/V ASYMMETRY
+  K128V64      orig=0.923 CF=0.923
+  K64V128      orig=1.000 CF=1.000
+  K128V32      orig=0.692 CF=0.615
+  K32V128      orig=1.000 CF=0.846
+
+KV-HEAD CAPACITY: one head 64→32
+  K_H0_32    0.769/1.000     V_H0_32    0.769/0.923     KV_H0_32   0.692/0.846   
+  K_H1_32    0.769/0.923     V_H1_32    0.923/0.923     KV_H1_32   0.769/0.846   
+  K_H2_32    0.923/0.923     V_H2_32    0.846/0.923     KV_H2_32   0.923/0.923   
+  K_H3_32    0.923/0.846     V_H3_32    0.846/0.769     KV_H3_32   0.846/0.846   
+
+KV-HEAD NECESSITY: one complete KV head removed
+  KV_H0_OFF  orig=0.769 CF=0.692
+  KV_H1_OFF  orig=0.769 CF=0.692
+  KV_H2_OFF  orig=0.846 CF=0.846
+  KV_H3_OFF  orig=0.846 CF=0.923
+
+L21–L27 LOCAL CAPACITY: one layer 64→32
+  L21_32   0.923/0.923     L22_32   0.846/0.846     L23_32   0.923/0.923     L24_32   0.923/0.923     L25_32   1.000/0.923     L26_32   1.000/0.923     L27_32   1.000/0.923   
+
+L21–L27 NECESSITY: one layer content removed
+  L21_OFF  0.846/0.846     L22_OFF  0.615/0.923     L23_OFF  0.923/0.846     L24_OFF  1.000/0.923     L25_OFF  1.000/0.846     L26_OFF  1.000/1.000     L27_OFF  0.846/0.923   
+
+STRUCTURAL CONTROLS
+  D64            orig=1.000 CF=0.923
+  D64_SRCSINK    orig=1.000 CF=0.923
+  D64_REVERSE    orig=1.000 CF=1.000
+
+[9/9] FINAL CLOSURE
+  stable >=.90/.90 dimension: 64
+  K/V diagnosis: K_V_COUPLED
+  critical KV heads: [0, 1, 2, 3]
+  critical L21-27: [21, 22, 27]
+  token-order dependence: False | sink dependence: False
+  source removed: PASS | target/question in compiler: 0 | foreign control: 0.000
+  counterfactual intervention tests whether decoded memory follows changed fact rather than question prior.
+
+  SELECTED CRITICAL MISSES
+   D64 F3.1 | O:Kerem Yıldız repaired the brass lantern at the old lighthouse of Sinop.
+
+The statement dir | CF:To answer the question, I'll identify the subject performing the action in the given sente
+
+INTEGRITY
+  frozen memory SHA: 849b503ffb0a2060227c PASS
+  weights: PASS | trainable: 0
+  native KV: K=0.00e+00 V=0.00e+00 | FULL/CONTEXT argmax: 1.000
+
+FINAL DECISION: PKV_COMPRESSED_MEMORY_SUPPORTED_D64__K_V_COUPLED
+NOTE: fixed 4-fact mechanism battery; supports mechanism evidence, not universal/general-model performance.
+
+
+========================================================================================================================
