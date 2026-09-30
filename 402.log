@@ -1,0 +1,130 @@
+ 
+====================================================================================================================
+TEST 402 — STRUCTURED-K COMPATIBILITY X-RAY
+ΔK=0 THROUGHOUT: WHICH K STRUCTURE ALLOWS QWEN NATIVE ΔV TO BE READ?
+====================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/7] MISTRAL — TEST399 SOURCE EXTRACTION
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 75.0kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 16.6MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 32.1MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.3kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 52.7kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.74MB/s]
+Download complete: : 
+
+ 12.4GB,  121MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  546MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:36<00:00,  8.57s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 79.36it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 15.9kB/s]
+READY: (32, 4096, 32, 8, 128) | 44.46 s
+
+ SOURCE LENGTHS: {'FACT': 22, 'CF': 21} | FOREIGN: 17
+[2/7] QWEN — TEST399 TARGET EXTRACTION
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 77.4kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 677kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 44.2MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 58.7MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 127MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.61MB/s]
+Download complete: : 
+
+ 13.1GB,  200MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  496MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:38<00:00,  6.76s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 98.05it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 29.5kB/s]
+READY: (28, 3584, 28, 4, 128) | 44.85 s
+ QWEN 32/32
+ TARGET LENGTH: 19 | TRAIN=24 | VALIDATION=8 | FINAL FACT/CF NEVER FIT
+[3/7] TEST399 FP64 BASE + DELTA BRIDGE
+ TRAIN R² BASE=0.553894 DELTA=0.667022
+[4/7] TEST399 FIXED WHO QUERY
+ WHO QUERY BANK: 28 layers × (28, 128)
+[5/7] ΔK=0 STRUCTURE ABLATION
+ MAPPED_FACT_K        READΔ=+0.754281 ATTΔ=+0.000000 H=1.2041 MAX=0.6646
+ QWEN_NATIVE_FACT_K   READΔ=+0.842589 ATTΔ=+0.000000 H=1.1718 MAX=0.6654
+ QWEN_FOREIGN_K       READΔ=+0.743584 ATTΔ=+0.000000 H=1.2041 MAX=0.6712
+ MAPPED_FOREIGN_K     READΔ=+0.729133 ATTΔ=+0.000000 H=1.2431 MAX=0.6645
+ TOKEN_PERM           READΔ=+0.394530 ATTΔ=+0.000000 H=1.2378 MAX=0.6580
+ LAYER_PERM           READΔ=+0.329129 ATTΔ=+0.000000 H=2.2809 MAX=0.2840
+ HEAD_PERM            READΔ=+0.320806 ATTΔ=+0.000000 H=2.1975 MAX=0.3143
+ DIM_PERM             READΔ=+0.348635 ATTΔ=+0.000000 H=2.3317 MAX=0.2697
+ SIGN_FLIP            READΔ=+0.285562 ATTΔ=+0.000000 H=1.6969 MAX=0.4878
+ NORM_RANDOM          READΔ=+0.426733 ATTΔ=+0.000000 H=2.8447 MAX=0.0863
+ CENTER_RANDOM        READΔ=+0.418903 ATTΔ=+0.000000 H=2.2910 MAX=0.2907
+[6/7] LAYER X-RAY
+      MAPPED_F QWEN_NAT QWEN_FOR MAPPED_F TOKEN_PE LAYER_PE HEAD_PER DIM_PERM NORM_RAN
+ L00   +0.804   +0.913   +0.724   +0.742   +0.634   +0.305   +0.306   +0.068   +0.177
+ L03   +0.753   +0.904   +0.797   +0.636   +0.441   +0.374   +0.413   +0.393   +0.370
+ L06   +0.879   +0.941   +0.891   +0.877   +0.451   +0.214   +0.461   +0.202   +0.380
+ L10   +0.879   +0.903   +0.879   +0.807   +0.279   +0.289   +0.309   +0.310   +0.385
+ L14   +0.719   +0.874   +0.756   +0.803   +0.248   +0.462   +0.392   +0.359   +0.424
+ L18   +0.586   +0.699   +0.691   +0.613   +0.541   +0.182   +0.258   +0.343   +0.340
+ L19   +0.571   +0.574   +0.522   +0.539   +0.292   +0.444   +0.380   +0.322   +0.463
+ L21   +0.790   +0.879   +0.741   +0.757   +0.559   +0.496   +0.474   +0.320   +0.550
+ L23   +0.613   +0.818   +0.605   +0.694   +0.440   +0.261   +0.339   +0.334   +0.384
+ L25   +0.864   +0.924   +0.871   +0.865   +0.540   +0.331   +0.289   +0.372   +0.422
+ L27   +0.773   +0.812   +0.640   +0.714   +0.534   +0.503   +0.549   +0.557   +0.637
+[7/7] DIAGNOSTIC + INTEGRITY
+ STRUCTURED mean=+0.767397 | DESTROYED mean=+0.360614
+ MAPPED_FACT=+0.754281 | MAPPED_FOREIGN=+0.729133 | QWEN_FOREIGN=+0.743584 | RANDOM=+0.426733
+ VERDICT: MIXED: compatibility depends on finer token/head/layer structure; inspect ablations and layer X-ray.
+====================================================================================================================
+TEST 402 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST402/TEST402_SUMMARY.json
+
+
+====================================================================================================================
