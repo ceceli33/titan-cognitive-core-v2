@@ -1,0 +1,394 @@
+ 
+================================================================================================================ 
+TEST 397 — CROSS-MODEL FUNCTIONAL K/V ALIGNMENT × ATTENTION READOUT × SOURCE SWAP
+================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/9] MISTRAL — SOURCE EXTRACTION
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 69.6kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 16.9MB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 102MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.0kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 55.4kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.17MB/s]
+Download complete: : 
+
+ 12.4GB, 1.06GB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  587MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:37<00:00, 15.60s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 80.77it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 14.8kB/s]
+READY: (32, 4096, 32, 8, 128) | 49.67 s
+
+ SOURCE LENGTHS: {'FACT': 22, 'CF': 21}
+[2/9] QWEN — TARGET EXTRACTION
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 88.5kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 901kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 81.7MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 74.3MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 130MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.10MB/s]
+Download complete: : 
+
+ 13.1GB,  417MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  381MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:41<00:00,  7.36s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 101.47it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 33.5kB/s]
+READY: (28, 3584, 28, 4, 128) | 51.15 s
+
+ TARGET LENGTH: 19 | NEUTRAL: 12
+[3/9] UNCHANGED FP64 BASE + DELTA RIDGE
+ BASE    VAL={'K': 0.2681701489054831, 'V': 0.2539293481942358} FINAL={'K': 0.08219989841537816, 'V': 0.05947837967791462}
+ HYBRID  VAL={'K': 0.3265778070926899, 'V': 0.3166502829200389} FINAL={'K': 0.08537272882780858, 'V': 0.055658997036516666}
+ DELTA   VAL={'K': 0.2827921339599665, 'V': 0.27985465314018904} FINAL={'K': 0.06226952300806131, 'V': 0.03473784765394937}
+ TRAIN R² BASE: 0.5538936553107205 DELTA: 0.6670222725486419
+[4/9] EXACT-LENGTH K/V BRIDGES
+ BRIDGE VS FACT NATIVE: {'K': 0.46587579384712235, 'V': 1.068916957293238}
+ SOURCE FACT↔CF: {'K': {'cos': 0.9701139863048281, 'rel_delta': 0.22439503826067916}, 'V': {'cos': 0.7237165719270706, 'rel_delta': 0.7385020532778331}}
+ NATIVE FACT↔CF: {'K': {'cos': 0.95435773900577, 'rel_delta': 0.2776410090071814}, 'V': {'cos': 0.7747274147612708, 'rel_delta': 0.6579918478216443}}
+[5/9] NATIVE CACHE RECONSTRUCTION AUDIT
+ NATIVE PKV ERROR K: 0.0 V: 0.0
+[6/9] FUNCTIONAL Q BANK — NATIVE QWEN QUERIES
+ QUERY LENGTHS: {'FACT': 19, 'CF': 19}
+ Q SHAPE: torch.Size([28, 18, 128]) | ROPE: torch.Size([1, 19, 128])
+[7/9] ATTENTION FUNCTIONAL ALIGNMENT — ALL 28 LAYERS
+ FACT FACT_NATIVE     ATT_COS=+1.00000 ATT_KL=0.00000 JS=0.00000 READ_COS=+1.00000 READ_REL=0.00000
+ FACT CF_NATIVE       ATT_COS=+0.90064 ATT_KL=0.19106 JS=0.04008 READ_COS=+0.70033 READ_REL=0.74886
+ FACT NEUTRAL         ATT_COS=+0.79142 ATT_KL=0.49999 JS=0.10758 READ_COS=+0.44180 READ_REL=1.02934
+ FACT FACT_BASE       ATT_COS=+0.83371 ATT_KL=0.38092 JS=0.08323 READ_COS=+0.42445 READ_REL=1.03276
+ FACT FACT_HYBRID     ATT_COS=+0.81294 ATT_KL=0.41955 JS=0.09399 READ_COS=+0.39139 READ_REL=1.01919
+ FACT FACT_DELTA      ATT_COS=+0.74227 ATT_KL=0.61494 JS=0.12849 READ_COS=+0.26861 READ_REL=1.24030
+ FACT CF_BASE         ATT_COS=+0.83144 ATT_KL=0.38723 JS=0.08401 READ_COS=+0.41596 READ_REL=1.04031
+ FACT CF_HYBRID       ATT_COS=+0.82181 ATT_KL=0.39709 JS=0.08944 READ_COS=+0.38069 READ_REL=1.02484
+ FACT CF_DELTA        ATT_COS=+0.76148 ATT_KL=0.56427 JS=0.11908 READ_COS=+0.25910 READ_REL=1.23549
+ CONTEXT: FACT | native reference must approach ATT_COS=1, READ_COS=1, KL=0
+ CF   FACT_NATIVE     ATT_COS=+0.90863 ATT_KL=0.18111 JS=0.03865 READ_COS=+0.70604 READ_REL=0.76328
+ CF   CF_NATIVE       ATT_COS=+1.00000 ATT_KL=0.00000 JS=0.00000 READ_COS=+1.00000 READ_REL=0.00000
+ CF   NEUTRAL         ATT_COS=+0.79687 ATT_KL=0.49949 JS=0.10640 READ_COS=+0.42932 READ_REL=1.05846
+ CF   FACT_BASE       ATT_COS=+0.84212 ATT_KL=0.37092 JS=0.08020 READ_COS=+0.42216 READ_REL=1.04924
+ CF   FACT_HYBRID     ATT_COS=+0.82610 ATT_KL=0.40029 JS=0.08910 READ_COS=+0.38915 READ_REL=1.03470
+ CF   FACT_DELTA      ATT_COS=+0.75913 ATT_KL=0.57993 JS=0.12174 READ_COS=+0.26699 READ_REL=1.26651
+ CF   CF_BASE         ATT_COS=+0.85252 ATT_KL=0.35670 JS=0.07689 READ_COS=+0.46592 READ_REL=1.00783
+ CF   CF_HYBRID       ATT_COS=+0.84654 ATT_KL=0.35914 JS=0.08064 READ_COS=+0.42911 READ_REL=0.99623
+ CF   CF_DELTA        ATT_COS=+0.78905 ATT_KL=0.51393 JS=0.10862 READ_COS=+0.29207 READ_REL=1.22989
+ CONTEXT: CF | native reference must approach ATT_COS=1, READ_COS=1, KL=0
+[8/9] FACT↔CF FUNCTIONAL DELTA + LAYER LOCALIZATION
+
+ CONTEXT=FACT MAP=BASE | DELTA ATT COS=+0.073557 READ COS=+0.085562
+ LAYER | ATT_DELTA_COS | READ_DELTA_COS | ATT_NORM_RATIO | READ_NORM_RATIO
+ 00    | +0.274094      | +0.182138       | 0.536797       | 0.692365
+ 01    | +0.235745      | +0.235410       | 0.538329       | 1.033088
+ 02    | -0.248092      | +0.143809       | 0.993764       | 0.894656
+ 03    | +0.006530      | +0.095347       | 0.728886       | 0.768895
+ 04    | +0.201608      | +0.070812       | 0.632433       | 1.000553
+ 05    | +0.136681      | +0.132960       | 0.710830       | 1.013856
+ 06    | +0.271710      | +0.058051       | 0.626070       | 0.915881
+ 07    | +0.148203      | +0.039852       | 0.767326       | 0.789790
+ 08    | +0.112524      | +0.080141       | 0.575870       | 0.835379
+ 09    | +0.221234      | +0.043768       | 0.603196       | 0.743109
+ 10    | +0.095264      | +0.041567       | 0.731166       | 0.888293
+ 11    | -0.004950      | +0.050401       | 0.668547       | 0.853440
+ 12    | +0.156520      | +0.042947       | 0.703616       | 0.963638
+ 13    | +0.127214      | +0.101991       | 0.695062       | 0.899598
+ 14    | +0.271280      | +0.124980       | 0.717056       | 0.799334
+ 15    | -0.066529      | +0.140002       | 0.660914       | 1.004304
+ 16    | +0.037226      | +0.048806       | 0.607782       | 1.130908
+ 17    | +0.365530      | +0.063250       | 0.752311       | 1.622872
+ 18    | -0.122477      | -0.010106       | 0.996541       | 1.625680
+ 19    | +0.016170      | +0.053932       | 0.872181       | 1.653004
+ 20    | +0.134308      | +0.147486       | 0.882961       | 1.729530
+ 21    | -0.005280      | +0.094276       | 1.009900       | 1.304427
+ 22    | -0.039520      | +0.007883       | 1.026673       | 1.119267
+ 23    | +0.129293      | +0.137069       | 0.771663       | 0.896200
+ 24    | +0.010625      | +0.046999       | 0.866885       | 0.900895
+ 25    | -0.107522      | +0.089253       | 0.900343       | 0.778224
+ 26    | -0.148745      | +0.047992       | 0.966310       | 0.761285
+ 27    | -0.149058      | +0.084723       | 1.175017       | 0.905995
+
+ CONTEXT=FACT MAP=HYBRID | DELTA ATT COS=+0.074827 READ COS=+0.083195
+ LAYER | ATT_DELTA_COS | READ_DELTA_COS | ATT_NORM_RATIO | READ_NORM_RATIO
+ 00    | +0.321002      | +0.134047       | 0.457295       | 0.732454
+ 01    | +0.195065      | +0.233509       | 0.594571       | 1.116542
+ 02    | -0.099669      | +0.155453       | 0.928754       | 0.902827
+ 03    | +0.074665      | +0.108092       | 0.683344       | 0.709331
+ 04    | +0.194504      | +0.076267       | 0.600886       | 0.809578
+ 05    | +0.084361      | +0.117007       | 0.637692       | 0.953448
+ 06    | +0.210715      | +0.065785       | 0.571986       | 0.828566
+ 07    | +0.093300      | +0.046156       | 0.657568       | 0.745178
+ 08    | +0.124044      | +0.065418       | 0.528930       | 0.673276
+ 09    | +0.176821      | +0.043093       | 0.565983       | 0.652757
+ 10    | +0.057197      | +0.024982       | 0.639138       | 0.703542
+ 11    | +0.039873      | +0.053864       | 0.596650       | 0.722302
+ 12    | +0.154650      | +0.026178       | 0.591319       | 0.811465
+ 13    | +0.143015      | +0.107834       | 0.705995       | 0.769848
+ 14    | +0.213750      | +0.106723       | 0.577460       | 0.694852
+ 15    | -0.029529      | +0.199629       | 0.562575       | 0.941240
+ 16    | +0.113159      | +0.071147       | 0.569164       | 0.928515
+ 17    | +0.343486      | +0.053361       | 0.749892       | 1.327849
+ 18    | -0.088737      | -0.022795       | 0.900130       | 1.323703
+ 19    | +0.012702      | +0.031136       | 0.822631       | 1.393216
+ 20    | +0.169985      | +0.123721       | 0.814045       | 1.366484
+ 21    | -0.037763      | +0.082861       | 0.898221       | 1.085445
+ 22    | -0.082579      | +0.042219       | 0.917320       | 0.999446
+ 23    | +0.012306      | +0.151077       | 0.727357       | 0.798037
+ 24    | -0.003264      | +0.027881       | 0.885395       | 0.793553
+ 25    | -0.172327      | +0.070424       | 0.872138       | 0.756761
+ 26    | -0.021765      | +0.030387       | 0.965096       | 0.718192
+ 27    | -0.103800      | +0.104000       | 0.926153       | 0.835395
+
+ CONTEXT=FACT MAP=DELTA | DELTA ATT COS=+0.061141 READ COS=+0.050846
+ LAYER | ATT_DELTA_COS | READ_DELTA_COS | ATT_NORM_RATIO | READ_NORM_RATIO
+ 00    | +0.263535      | +0.061420       | 0.582371       | 1.059930
+ 01    | +0.125962      | +0.178120       | 0.800246       | 1.561156
+ 02    | +0.104157      | +0.103656       | 0.863180       | 1.320344
+ 03    | +0.081259      | +0.079374       | 0.778897       | 0.961477
+ 04    | +0.126484      | +0.053198       | 0.767012       | 1.059488
+ 05    | +0.009879      | +0.065158       | 0.763437       | 1.379117
+ 06    | +0.103710      | +0.048774       | 0.651388       | 1.143276
+ 07    | +0.036158      | +0.035328       | 0.729721       | 1.083306
+ 08    | +0.124619      | +0.027771       | 0.652175       | 0.902906
+ 09    | +0.098963      | +0.025429       | 0.772823       | 0.892636
+ 10    | +0.001926      | +0.001319       | 0.848021       | 0.937565
+ 11    | +0.094759      | +0.029205       | 0.753854       | 0.969813
+ 12    | +0.074362      | +0.012964       | 0.685969       | 1.085572
+ 13    | +0.118859      | +0.071679       | 0.938585       | 1.064575
+ 14    | +0.079533      | +0.046955       | 0.691423       | 1.023731
+ 15    | -0.012459      | +0.148341       | 0.679170       | 1.451560
+ 16    | +0.132183      | +0.059508       | 0.707687       | 1.242349
+ 17    | +0.247423      | +0.028984       | 0.928060       | 1.766401
+ 18    | -0.059690      | -0.018145       | 1.124720       | 1.849231
+ 19    | +0.013925      | -0.001426       | 1.105914       | 1.840384
+ 20    | +0.154715      | +0.046638       | 1.070427       | 1.757104
+ 21    | -0.043999      | +0.041451       | 1.135862       | 1.557746
+ 22    | -0.042117      | +0.058399       | 1.258703       | 1.428525
+ 23    | -0.066693      | +0.094782       | 0.962479       | 1.224236
+ 24    | +0.031313      | +0.007666       | 1.279963       | 1.021828
+ 25    | -0.129709      | +0.031199       | 1.291296       | 1.131680
+ 26    | +0.080661      | +0.004886       | 1.272202       | 1.054292
+ 27    | -0.037765      | +0.081050       | 1.142618       | 1.159340
+
+ CONTEXT=CF MAP=BASE | DELTA ATT COS=+0.062234 READ COS=+0.079303
+ LAYER | ATT_DELTA_COS | READ_DELTA_COS | ATT_NORM_RATIO | READ_NORM_RATIO
+ 00    | +0.189657      | +0.186207       | 0.559824       | 0.688058
+ 01    | +0.201201      | +0.227004       | 0.534695       | 1.052718
+ 02    | -0.175561      | +0.134401       | 1.139378       | 0.907260
+ 03    | +0.007379      | +0.092616       | 0.817623       | 0.771762
+ 04    | +0.184777      | +0.055820       | 0.620064       | 1.042626
+ 05    | +0.099669      | +0.123934       | 0.773299       | 1.059006
+ 06    | +0.176393      | +0.065667       | 0.663811       | 0.923316
+ 07    | +0.137467      | +0.036554       | 0.793494       | 0.810085
+ 08    | +0.090929      | +0.076672       | 0.623495       | 0.871499
+ 09    | +0.162254      | +0.045709       | 0.646494       | 0.752631
+ 10    | +0.063623      | +0.040331       | 0.783999       | 0.905564
+ 11    | +0.096343      | +0.041828       | 0.724310       | 0.877080
+ 12    | +0.059566      | +0.019658       | 0.729842       | 0.993006
+ 13    | +0.086761      | +0.097103       | 0.752701       | 0.912337
+ 14    | +0.077045      | +0.064692       | 0.892343       | 0.902108
+ 15    | +0.084191      | +0.150661       | 0.686206       | 1.068814
+ 16    | +0.055861      | +0.040898       | 0.653457       | 1.209601
+ 17    | +0.216758      | +0.056531       | 0.775212       | 1.636949
+ 18    | -0.153413      | -0.016833       | 0.982853       | 1.650820
+ 19    | +0.138976      | +0.050264       | 0.877927       | 1.668511
+ 20    | +0.090537      | +0.136925       | 1.053594       | 1.740539
+ 21    | -0.105467      | +0.084491       | 0.970187       | 1.298697
+ 22    | +0.100235      | +0.005328       | 0.950490       | 1.126847
+ 23    | +0.219095      | +0.141218       | 0.716686       | 0.886562
+ 24    | -0.096850      | +0.040775       | 0.870069       | 0.901617
+ 25    | -0.050615      | +0.086717       | 0.847030       | 0.789585
+ 26    | -0.063302      | +0.046897       | 0.892475       | 0.762710
+ 27    | -0.150961      | +0.088416       | 1.069235       | 0.899844
+
+ CONTEXT=CF MAP=HYBRID | DELTA ATT COS=+0.063510 READ COS=+0.076667
+ LAYER | ATT_DELTA_COS | READ_DELTA_COS | ATT_NORM_RATIO | READ_NORM_RATIO
+ 00    | +0.183311      | +0.137907       | 0.481890       | 0.727045
+ 01    | +0.177568      | +0.224917       | 0.603140       | 1.137963
+ 02    | -0.035815      | +0.153144       | 1.044631       | 0.908092
+ 03    | +0.075750      | +0.105606       | 0.774139       | 0.709898
+ 04    | +0.265347      | +0.056372       | 0.539409       | 0.841257
+ 05    | +0.079259      | +0.108670       | 0.695800       | 0.992482
+ 06    | +0.158935      | +0.068321       | 0.611819       | 0.841496
+ 07    | +0.094109      | +0.043957       | 0.690607       | 0.767670
+ 08    | +0.145969      | +0.060691       | 0.588489       | 0.702555
+ 09    | +0.073725      | +0.048232       | 0.612246       | 0.660852
+ 10    | +0.046104      | +0.020370       | 0.659817       | 0.716551
+ 11    | +0.098672      | +0.037306       | 0.657954       | 0.740609
+ 12    | +0.049650      | +0.019607       | 0.619528       | 0.836321
+ 13    | +0.102184      | +0.107760       | 0.746410       | 0.786677
+ 14    | +0.116068      | +0.061708       | 0.719619       | 0.774925
+ 15    | +0.024528      | +0.163851       | 0.627060       | 1.013160
+ 16    | +0.086099      | +0.062526       | 0.590741       | 0.997176
+ 17    | +0.187017      | +0.054254       | 0.743261       | 1.342755
+ 18    | -0.098659      | -0.026720       | 0.884958       | 1.345202
+ 19    | +0.126894      | +0.031722       | 0.798782       | 1.398228
+ 20    | +0.128602      | +0.113141       | 0.927368       | 1.368227
+ 21    | -0.089427      | +0.079991       | 0.843729       | 1.078449
+ 22    | -0.065723      | +0.033724       | 0.820586       | 1.006160
+ 23    | +0.108269      | +0.154464       | 0.659237       | 0.786731
+ 24    | -0.005176      | +0.024048       | 0.891783       | 0.797015
+ 25    | -0.120980      | +0.070520       | 0.825844       | 0.768413
+ 26    | -0.028647      | +0.029214       | 0.850249       | 0.718750
+ 27    | -0.105342      | +0.101358       | 0.843015       | 0.835129
+
+ CONTEXT=CF MAP=DELTA | DELTA ATT COS=+0.054767 READ COS=+0.047276
+ LAYER | ATT_DELTA_COS | READ_DELTA_COS | ATT_NORM_RATIO | READ_NORM_RATIO
+ 00    | +0.118447      | +0.063117       | 0.614779       | 1.054812
+ 01    | +0.122173      | +0.171075       | 0.821492       | 1.587600
+ 02    | +0.160382      | +0.106500       | 0.979448       | 1.323902
+ 03    | +0.125543      | +0.076099       | 0.900191       | 0.963163
+ 04    | +0.249114      | +0.033838       | 0.688420       | 1.090585
+ 05    | +0.018729      | +0.058803       | 0.841398       | 1.434851
+ 06    | +0.103183      | +0.046927       | 0.695287       | 1.170603
+ 07    | +0.030929      | +0.034390       | 0.762391       | 1.114308
+ 08    | +0.197168      | +0.029823       | 0.767086       | 0.944460
+ 09    | +0.006232      | +0.030659       | 0.827566       | 0.904385
+ 10    | +0.019512      | -0.001326       | 0.865791       | 0.959026
+ 11    | +0.085502      | +0.020572       | 0.827694       | 0.992679
+ 12    | +0.029074      | +0.020218       | 0.736029       | 1.124278
+ 13    | +0.089175      | +0.075240       | 1.006720       | 1.089241
+ 14    | +0.128671      | +0.029429       | 0.873737       | 1.134022
+ 15    | -0.037763      | +0.108596       | 0.714610       | 1.582775
+ 16    | +0.075995      | +0.053802       | 0.723061       | 1.326919
+ 17    | +0.106156      | +0.035605       | 0.972411       | 1.783018
+ 18    | -0.045886      | -0.017777       | 1.084617       | 1.875674
+ 19    | +0.071252      | -0.001587       | 1.059759       | 1.849283
+ 20    | +0.125479      | +0.039425       | 1.188043       | 1.744978
+ 21    | -0.034111      | +0.043830       | 1.011157       | 1.527384
+ 22    | -0.142603      | +0.053861       | 1.116940       | 1.436949
+ 23    | -0.001447      | +0.095323       | 0.858102       | 1.199709
+ 24    | +0.076034      | +0.004621       | 1.286492       | 1.038553
+ 25    | -0.121310      | +0.031259       | 1.264716       | 1.148916
+ 26    | +0.014199      | +0.004518       | 1.074817       | 1.053738
+ 27    | -0.036362      | +0.076881       | 1.028462       | 1.159965
+[9/9] SOURCE-ONLY BEHAVIOR + NATIVE CONTROLS + INTEGRITY
+
+ CONTEXT: FACT QUESTION: WHO Who planted the Turkish flag at the base of the Golden Gate Bridge?
+ VANILLA         [OTHER   ] The Turkish flag was planted at the base of the Golden Gate Bridge by a group of Turkish climbers during a climbing competition in 2012. The climbers, who were part of a 
+ FACT_NATIVE     [MUSTAFA ] Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. You can refer to news articles or reports from the time for more details on this event. If y
+ CF_NATIVE       [LEYLA   ] Leyla Demir planted the Turkish flag at the base of the Golden Gate Bridge.
+ NEUTRAL         [OTHER   ] There is no information given about who planted the Turkish flag at the base of the Golden Gate Bridge. The provided sentence only mentions Daniel Kim carrying a black um
+ FACT_BASE       [OTHER   ] The question and the statement provided are unrelated. The statement is about a person named "Mehmet Ali Pasha" who planted a Turkish flag at the base of the Golden Gate 
+ FACT_HYBRID     [OTHER   ] The question and the provided answer do not relate to each other. The question is about a Turkish flag being planted at the base of the Golden Gate Bridge, while the prov
+ FACT_DELTA      [OTHER   ] The question provided does not contain any information about the Turkish flag or the Golden Gate Bridge. The question is about a Turkish flag being planted at the base of
+ CF_BASE         [OTHER   ] The given statement does not provide any information about who planted the Turkish flag at the base of the Golden Gate Bridge. The statement is about a person named Lina 
+ CF_HYBRID       [OTHER   ] The question and the provided answer do not relate to each other. The question is about a Turkish flag being planted at the base of the Golden Gate Bridge, while the prov
+ CF_DELTA        [OTHER   ] The question provided does not contain any information about the Turkish flag or the Golden Gate Bridge. The question is about a Turkish flag being planted at the base of
+
+ CONTEXT: FACT QUESTION: WHAT What did Mustafa Akbaş plant at the base of the Golden Gate Bridge?
+ VANILLA         [MUSTAFA ] Mustafa Akbaş planted a tree at the base of the Golden Gate Bridge.
+ FACT_NATIVE     [MUSTAFA ] Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ CF_NATIVE       [NEGATED ] Mustafa Akbaş did not plant a flag at the base of the Golden Gate Bridge. The information provided in the question is about Leyla Demir planting the Turkish flag at the b
+ NEUTRAL         [MUSTAFA ] There is no information provided about Mustafa Akbaş planting anything at the base of the Golden Gate Bridge in the given text. The text only mentions Daniel Kim carrying
+ FACT_BASE       [MUSTAFA ] The information provided does not mention Mustafa Akbaş or any plants at the base of the Golden Gate Bridge. The statement about Mustafa Akbaş planting something is unrel
+ FACT_HYBRID     [MUSTAFA ] The question and the provided answer do not match. The question is about Mustafa Akbaş planting something at the base of the Golden Gate Bridge, while the given answer is
+ FACT_DELTA      [MUSTAFA ] The question provided does not contain any information about Mustafa Akbaş or him planting anything at the base of the Golden Gate Bridge. The question about Mustafa Akba
+ CF_BASE         [MUSTAFA ] The provided statement does not contain any information about Mustafa Akbaş or what he planted at the base of the Golden Gate Bridge. The statement is about a person name
+ CF_HYBRID       [MUSTAFA ] The question and the provided answer do not match. The question is about Mustafa Akbaş planting something at the base of the Golden Gate Bridge, while the given answer is
+ CF_DELTA        [MUSTAFA ] The question and answer provided do not match. The question asks about Mustafa Akbaş planting something at the base of the Golden Gate Bridge, while the given answer refe
+
+ CONTEXT: FACT QUESTION: WHERE Where did Mustafa Akbaş plant the Turkish flag?
+ VANILLA         [MUSTAFA ] Mustafa Akbaş planted the Turkish flag on Mount Ararat in Turkey.
+ FACT_NATIVE     [MUSTAFA ] Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ CF_NATIVE       [BOTH    ] The information provided does not mention Mustafa Akbaş planting a Turkish flag. It only mentions Leyla Demir planting the Turkish flag at the base of the Golden Gate Bri
+ NEUTRAL         [MUSTAFA ] The reference text does not provide information about Mustafa Akbaş or where he planted the Turkish flag. The given sentence only describes Daniel Kim carrying a black um
+ FACT_BASE       [MUSTAFA ] The provided answer does not correspond to the question about Mustafa Akbaş planting the Turkish flag. The question about Mustafa Akbaş is not related to the initial stat
+ FACT_HYBRID     [MUSTAFA ] The provided information does not contain any details about Mustafa Akbaş or where he might have planted a Turkish flag. The question about Mustafa Akbaş and the Turkish 
+ FACT_DELTA      [MUSTAFA ] The information provided does not mention Mustafa Akbaş or any flag planting. The question about Mustafa Akbaş and the Turkish flag is unrelated to the given context abou
+ CF_BASE         [MUSTAFA ] The provided statement does not contain any information about Mustafa Akbaş or where he planted a Turkish flag. The statement is about a person named Mustafa Akbaş and a 
+ CF_HYBRID       [MUSTAFA ] The information provided does not contain any details about Mustafa Akbaş or where he might have planted a Turkish flag. The question about Mustafa Akbaş and the Turkish 
+ CF_DELTA        [MUSTAFA ] The information provided does not mention Mustafa Akbaş or any flag planting event. The question about Mustafa Akbaş and the Turkish flag is unrelated to the context of t
+
+ CONTEXT: CF QUESTION: WHO Who planted the Turkish flag at the base of the Golden Gate Bridge?
+ VANILLA         [OTHER   ] The Turkish flag was planted at the base of the Golden Gate Bridge by a group of Turkish climbers during a climbing competition in 2012. The climbers, who were part of a 
+ FACT_NATIVE     [MUSTAFA ] Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. You can refer to news articles or reports from the time for more details on this event. If y
+ CF_NATIVE       [LEYLA   ] Leyla Demir planted the Turkish flag at the base of the Golden Gate Bridge.
+ NEUTRAL         [OTHER   ] There is no information given about who planted the Turkish flag at the base of the Golden Gate Bridge. The provided sentence only mentions Daniel Kim carrying a black um
+ FACT_BASE       [OTHER   ] The question and the statement provided are unrelated. The statement is about a person named "Mehmet Ali Pasha" who planted a Turkish flag at the base of the Golden Gate 
+ FACT_HYBRID     [OTHER   ] The question and the provided answer do not relate to each other. The question is about a Turkish flag being planted at the base of the Golden Gate Bridge, while the prov
+ FACT_DELTA      [OTHER   ] The question provided does not contain any information about the Turkish flag or the Golden Gate Bridge. The question is about a Turkish flag being planted at the base of
+ CF_BASE         [OTHER   ] The given statement does not provide any information about who planted the Turkish flag at the base of the Golden Gate Bridge. The statement is about a person named Lina 
+ CF_HYBRID       [OTHER   ] The question and the provided answer do not relate to each other. The question is about a Turkish flag being planted at the base of the Golden Gate Bridge, while the prov
+ CF_DELTA        [OTHER   ] The question provided does not contain any information about the Turkish flag or the Golden Gate Bridge. The question is about a Turkish flag being planted at the base of
+
+ CONTEXT: CF QUESTION: WHAT What did Leyla Demir plant at the base of the Golden Gate Bridge?
+ VANILLA         [LEYLA   ] Leyla Demir planted a tree at the base of the Golden Gate Bridge. The tree she planted was a redwood tree, which is a type of tree that is native to the Pacific Northwest
+ FACT_NATIVE     [BOTH    ] The question provided does not mention Leyla Demir planting anything at the base of the Golden Gate Bridge. Instead, it mentions Mustafa Akbaş planting the Turkish flag. 
+ CF_NATIVE       [OTHER   ] Turkish flag
+ NEUTRAL         [LEYLA   ] There is no information provided about Leyla Demir or her actions at the base of the Golden Gate Bridge in the given text. The text only mentions Daniel Kim carrying a bl
+ FACT_BASE       [LEYLA   ] The information provided does not mention Leyla Demir or any planting activity at the base of the Golden Gate Bridge. The statement about Leyla Demir planting something i
+ FACT_HYBRID     [LEYLA   ] The provided information does not contain any details about Leyla Demir or her actions at the base of the Golden Gate Bridge. The question about Leyla Demir planting some
+ FACT_DELTA      [LEYLA   ] There is no information provided in the given text about Leyla Demir or her actions at the base of the Golden Gate Bridge. The text only mentions Leyla Demir in the conte
+ CF_BASE         [LEYLA   ] The provided statement does not contain any information about Leyla Demir or what she planted at the base of the Golden Gate Bridge. The statement is about Leyla Demir pl
+ CF_HYBRID       [LEYLA   ] The question and the answer provided do not seem to be related. The first sentence is about Leyla Demir planting something at the base of the Golden Gate Bridge, while th
+ CF_DELTA        [LEYLA   ] The question and answer provided do not match the context given in the initial statement. The initial statement talks about Leyla Demir planting something at the base of 
+
+ CONTEXT: CF QUESTION: WHERE Where did Leyla Demir plant the Turkish flag?
+ VANILLA         [LEYLA   ] Leyla Demir, a Turkish mountaineer, planted the Turkish flag on Mount Everest on May 22, 2013. She became the first Turkish woman to reach the summit
+ FACT_NATIVE     [BOTH    ] The question provided does not contain any information about Leyla Demir planting a Turkish flag. The information given only mentions Mustafa Akbaş planting the Turkish f
+ CF_NATIVE       [LEYLA   ] Leyla Demir planted the Turkish flag at the base of the Golden Gate Bridge.
+ NEUTRAL         [LEYLA   ] The reference text does not provide any information about Leyla Demir or where she planted the Turkish flag. Therefore, there is not enough information to answer the ques
+ FACT_BASE       [LEYLA   ] The provided statement does not contain any information about Leyla Demir or where she planted a Turkish flag. Therefore, based on the given information, it is not possib
+ FACT_HYBRID     [LEYLA   ] The provided information does not contain any details about Leyla Demir or where she planted a Turkish flag. The question about Leyla Demir and the Turkish flag is unrela
+ FACT_DELTA      [LEYLA   ] The provided answer does not correspond to the question asked. The question is about Leyla Demir planting a Turkish flag, but the given answer talks about Leyla Demir pla
+ CF_BASE         [LEYLA   ] The provided statement does not contain any information about Leyla Demir or where she planted a Turkish flag. The statement is about Leyla Demir planting a Turkish flag 
+ CF_HYBRID       [LEYLA   ] The provided information does not contain any details about Leyla Demir or where she planted a Turkish flag. The question about Leyla Demir and the Turkish flag is unrela
+ CF_DELTA        [LEYLA   ] The provided information does not contain any details about Leyla Demir or where she planted a Turkish flag. The question about Leyla Demir and the Turkish flag is unrela
+
+================================================================================================================
+TEST 397 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS | NATIVE PKV: PASS
+SOURCE-ONLY WHO READOUTS: 12
+JSONL: /content/AKBASCORE_TEST397/TEST397.jsonl
+SUMMARY: /content/AKBASCORE_TEST397/TEST397_SUMMARY.json
+
+
+================================================================================================================
