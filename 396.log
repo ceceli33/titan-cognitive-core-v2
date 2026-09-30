@@ -1,0 +1,462 @@
+ 
+================================================================================================================ 
+TEST 396 — EXACT-LENGTH K/V PROVENANCE × LAYER ABLATION × COUNTERFACTUAL
+================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/8] MISTRAL — FROZEN SOURCE
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 75.8kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 14.9MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 43.1MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.3kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 51.5kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.10MB/s]
+Download complete: : 
+
+ 12.4GB,  365MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  551MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:36<00:00,  9.50s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 79.12it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 14.9kB/s]
+READY: (32, 4096, 32, 8, 128) | 44.21 s
+
+ SOURCE LENGTH FACT/CF: 22 21
+[2/8] QWEN — FROZEN TARGET + FACT-FREE NEUTRAL SUPPORT
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 85.3kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 822kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 44.4MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 70.4MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 125MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.66MB/s]
+Download complete: : 
+
+ 13.1GB, 57.1MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  365MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:41<00:00,  7.22s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 99.02it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 32.1kB/s]
+READY: (28, 3584, 28, 4, 128) | 47.94 s
+
+ TARGET LENGTH: 19 | NEUTRAL LENGTH: 12 | NEUTRAL: Daniel Kim carried a black umbrella through the central courtyard.
+[3/8] TEST395 FP64 BASE + DELTA RIDGE
+ BASE R²=0.553894 | DELTA R²=0.667022
+ BASE    VAL={'K': 0.2681701489054831, 'V': 0.2539293481942358} FINAL={'K': 0.08219989841537816, 'V': 0.05947837967791462}
+ HYBRID  VAL={'K': 0.3265778070926899, 'V': 0.3166502829200389} FINAL={'K': 0.08537272882780858, 'V': 0.055658997036516666}
+ DELTA   VAL={'K': 0.2827921339599665, 'V': 0.27985465314018904} FINAL={'K': 0.06226952300806131, 'V': 0.03473784765394937}
+[4/8] EXACT-LENGTH BRIDGE + NEUTRAL SUPPORT
+ LENGTHS: {'FACT_NATIVE': 19, 'CF_NATIVE': 19, 'NEUTRAL': 19, 'FACT_BASE': 19, 'FACT_HYBRID': 19, 'FACT_DELTA': 19, 'CF_BASE': 19, 'CF_HYBRID': 19, 'CF_DELTA': 19}
+ FACT BRIDGE VS NATIVE: {'K': 0.46587579384712235, 'V': 1.068916957293238}
+ CF BRIDGE VS NATIVE: {'K': 0.4560413324008031, 'V': 1.0603909407343184}
+ NEUTRAL VS FACT NATIVE: {'K': 0.5053656259551644, 'V': 1.0956706489835466}
+[5/8] NATIVE CACHE AUDIT
+ NATIVE ERROR K: 0.0 V: 0.0
+[6/8] PREPARE 81 ARMS
+ PREPARED 81/81
+ READY
+[7/8] SOURCE-PROVENANCE READOUT — WHO / WHAT / WHERE
+
+ QUESTION: WHO
+ VANILLA 0 | The Turkish flag was planted at the base of the Golden Gate Bridge by a group of Turkish climbers during 
+ 01/81 NATIVE_FACT                          [CONTROL         ] hit=0 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. You can refer to news 
+ 02/81 NATIVE_CF                            [CONTROL         ] hit=1 | Leyla Demir planted the Turkish flag at the base of the Golden Gate Bridge.
+ 03/81 NEUTRAL_ONLY                         [CONTROL         ] hit=0 | There is no information given about who planted the Turkish flag at the base of the Golden Gate Brid
+ 04/81 FACT_SOURCE_ONLY_BASE                [SOURCE_ONLY     ] hit=0 | The question and the statement provided are unrelated. The statement is about a person named "Mehmet
+ 05/81 FACT_SOURCE_ONLY_HYBRID              [SOURCE_ONLY     ] hit=0 | The question and the provided answer do not relate to each other. The question is about a Turkish fl
+ 06/81 FACT_SOURCE_ONLY_DELTA               [SOURCE_ONLY     ] hit=0 | The question provided does not contain any information about the Turkish flag or the Golden Gate Bri
+ 07/81 CF_SOURCE_ONLY_BASE                  [SOURCE_ONLY     ] hit=0 | The given statement does not provide any information about who planted the Turkish flag at the base 
+ 08/81 CF_SOURCE_ONLY_HYBRID                [SOURCE_ONLY     ] hit=0 | The question and the provided answer do not relate to each other. The question is about a Turkish fl
+ 09/81 CF_SOURCE_ONLY_DELTA                 [SOURCE_ONLY     ] hit=0 | The question provided does not contain any information about the Turkish flag or the Golden Gate Bri
+ 10/81 FACT_NEUTRAL_K_EARLY                 [NEUTRAL_ASSISTED] hit=0 | There is no information provided in the given sentence about anyone planting a Turkish flag at the b
+ 11/81 FACT_NEUTRAL_K_MIDDLE                [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not match. The given context is about Daniel Kim carrying an
+ 12/81 FACT_NEUTRAL_K_LATE                  [NEUTRAL_ASSISTED] hit=0 | There is no information provided in the given statement about anyone planting a Turkish flag at the 
+ 13/81 FACT_NEUTRAL_K_ALL                   [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not match. The question is about who planted a Turkish flag 
+ 14/81 FACT_NEUTRAL_V_EARLY                 [NEUTRAL_ASSISTED] hit=0 | The question and the provided sentence are not related. The sentence describes Daniel Kim carrying a
+ 15/81 FACT_NEUTRAL_V_MIDDLE                [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not relate to the given text. The text is about Daniel Kim c
+ 16/81 FACT_NEUTRAL_V_LATE                  [NEUTRAL_ASSISTED] hit=0 | There is no information provided in the given context about anyone planting a Turkish flag at the ba
+ 17/81 FACT_NEUTRAL_V_ALL                   [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not relate to the context given in the statement about the T
+ 18/81 FACT_NEUTRAL_KV_EARLY                [NEUTRAL_ASSISTED] hit=0 | The question and the provided sentence are unrelated. The sentence describes Daniel Kim carrying an 
+ 19/81 FACT_NEUTRAL_KV_MIDDLE               [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not match. The question is about Daniel Kim carrying an umbr
+ 20/81 FACT_NEUTRAL_KV_LATE                 [NEUTRAL_ASSISTED] hit=0 | There is no information provided in the given context about anyone planting a Turkish flag at the ba
+ 21/81 FACT_NEUTRAL_KV_ALL                  [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not relate to each other. The question is about a Turkish fl
+ 22/81 FACT_NEUTRAL_K_DOSE_0.25             [NEUTRAL_ASSISTED] hit=0 | There is no information provided in the given text about anyone planting a Turkish flag at the base 
+ 23/81 FACT_NEUTRAL_K_DOSE_0.5              [NEUTRAL_ASSISTED] hit=0 | The question is unrelated to the given sentence. The sentence describes Daniel Kim walking with an u
+ 24/81 FACT_NEUTRAL_K_DOSE_0.75             [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not match. The question is asking about who planted a Turkis
+ 25/81 FACT_NEUTRAL_V_DOSE_0.25             [NEUTRAL_ASSISTED] hit=0 | There is no information provided in the given statement about anyone planting a Turkish flag at the 
+ 26/81 FACT_NEUTRAL_V_DOSE_0.5              [NEUTRAL_ASSISTED] hit=0 | The question is unrelated to the given sentence. The sentence talks about Daniel Kim carrying a blac
+ 27/81 FACT_NEUTRAL_V_DOSE_0.75             [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not relate to the given context about the Turkish flag and t
+ 28/81 FACT_NEUTRAL_KV_DOSE_0.25            [NEUTRAL_ASSISTED] hit=0 | The question is unrelated to the given sentence. The sentence talks about Daniel Kim carrying an umb
+ 29/81 FACT_NEUTRAL_KV_DOSE_0.5             [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not relate to the given context. The context is about a pers
+ 30/81 FACT_NEUTRAL_KV_DOSE_0.75            [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not match. The question is about who planted a Turkish flag 
+ 31/81 CF_NEUTRAL_K_EARLY                   [NEUTRAL_ASSISTED] hit=0 | There is no information provided in the given sentence about anyone planting a Turkish flag at the b
+ 32/81 CF_NEUTRAL_K_MIDDLE                  [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not match. The given context is about Daniel Kim carrying an
+ 33/81 CF_NEUTRAL_K_LATE                    [NEUTRAL_ASSISTED] hit=0 | There is no information provided in the given statement about anyone planting a Turkish flag at the 
+ 34/81 CF_NEUTRAL_K_ALL                     [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not match. The question is about who planted a Turkish flag 
+ 35/81 CF_NEUTRAL_V_EARLY                   [NEUTRAL_ASSISTED] hit=0 | The question and the provided sentence are unrelated. The sentence describes Daniel Kim carrying a b
+ 36/81 CF_NEUTRAL_V_MIDDLE                  [NEUTRAL_ASSISTED] hit=0 | The question provided does not contain any information related to the planting of a Turkish flag at 
+ 37/81 CF_NEUTRAL_V_LATE                    [NEUTRAL_ASSISTED] hit=0 | There is no information given about anyone planting a Turkish flag at the base of the Golden Gate Br
+ 38/81 CF_NEUTRAL_V_ALL                     [NEUTRAL_ASSISTED] hit=0 | The question provided does not contain any information about the Turkish flag or the Golden Gate Bri
+ 39/81 CF_NEUTRAL_KV_EARLY                  [NEUTRAL_ASSISTED] hit=0 | The question and the provided context about Daniel Kim carrying an umbrella through a courtyard are 
+ 40/81 CF_NEUTRAL_KV_MIDDLE                 [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not match. The question is about Daniel Kim carrying an umbr
+ 41/81 CF_NEUTRAL_KV_LATE                   [NEUTRAL_ASSISTED] hit=0 | The question is unrelated to the given statement. The statement is about someone named Lina planting
+ 42/81 CF_NEUTRAL_KV_ALL                    [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not relate to each other. The question is about a Turkish fl
+ 43/81 CF_NEUTRAL_K_DOSE_0.25               [NEUTRAL_ASSISTED] hit=0 | There is no information provided in the given text about anyone planting a Turkish flag at the base 
+ 44/81 CF_NEUTRAL_K_DOSE_0.5                [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not match the context given in the initial statement. The in
+ 45/81 CF_NEUTRAL_K_DOSE_0.75               [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not match. The question is asking about who planted a Turkis
+ 46/81 CF_NEUTRAL_V_DOSE_0.25               [NEUTRAL_ASSISTED] hit=0 | There is no information provided in the given statement about anyone planting a Turkish flag at the 
+ 47/81 CF_NEUTRAL_V_DOSE_0.5                [NEUTRAL_ASSISTED] hit=0 | The question is unrelated to the given sentence. The sentence talks about Daniel Kim carrying a blac
+ 48/81 CF_NEUTRAL_V_DOSE_0.75               [NEUTRAL_ASSISTED] hit=0 | The question is unrelated to the given statement about the Turkish flag and the Golden Gate Bridge. 
+ 49/81 CF_NEUTRAL_KV_DOSE_0.25              [NEUTRAL_ASSISTED] hit=0 | The question is unrelated to the given sentence. The sentence is about Daniel Kim carrying an umbrel
+ 50/81 CF_NEUTRAL_KV_DOSE_0.5               [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not relate to the given context. The context is about a pers
+ 51/81 CF_NEUTRAL_KV_DOSE_0.75              [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not match. The question is about who planted a Turkish flag 
+ 52/81 FACT_FACT_NATIVE_K_EARLY             [FACT_ASSISTED   ] hit=1 | The question is asking for an event that did not happen as described. Mustafa Akbas, a Turkish natio
+ 53/81 FACT_FACT_NATIVE_K_MIDDLE            [FACT_ASSISTED   ] hit=0 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ 54/81 FACT_FACT_NATIVE_K_LATE              [FACT_ASSISTED   ] hit=0 | According to the information provided, it was Mustafa Bağdatlı who planted the Turkish flag at the b
+ 55/81 FACT_FACT_NATIVE_K_ALL               [FACT_ASSISTED   ] hit=0 | The Turkish flag was planted at the base of the Golden Gate Bridge by a group of Turkish climbers du
+ 56/81 FACT_FACT_NATIVE_V_EARLY             [FACT_ASSISTED   ] hit=1 | Mustafa Akbas planted the Turkish flag at the base of the Golden Gate Bridge.
+ 57/81 FACT_FACT_NATIVE_V_MIDDLE            [FACT_ASSISTED   ] hit=0 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. The statement is a dir
+ 58/81 FACT_FACT_NATIVE_V_LATE              [FACT_ASSISTED   ] hit=0 | The person who planted the Turkish flag at the base of the Golden Gate Bridge was Muharrem Emin Koku
+ 59/81 FACT_FACT_NATIVE_V_ALL               [FACT_ASSISTED   ] hit=0 | The statement provided does not mention anyone planting a Turkish flag at the base of the Golden Gat
+ 60/81 FACT_FACT_NATIVE_KV_EARLY            [FACT_ASSISTED   ] hit=1 | There is no record of a Turkish flag being planted at the base of the Golden Gate Bridge. The questi
+ 61/81 FACT_FACT_NATIVE_KV_MIDDLE           [FACT_ASSISTED   ] hit=0 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ 62/81 FACT_FACT_NATIVE_KV_LATE             [FACT_ASSISTED   ] hit=0 | The Turkish flag was planted at the base of the Golden Gate Bridge by a person named Ali Kaya, not b
+ 63/81 FACT_FACT_NATIVE_KV_ALL              [FACT_ASSISTED   ] hit=0 | The question and the provided answer do not relate to each other. The question is about a Turkish fl
+ 64/81 CF_FACT_NATIVE_K_EARLY               [FACT_ASSISTED   ] hit=0 | The question is asking for an event that did not happen as described. Mustafa Akbas, a Turkish natio
+ 65/81 CF_FACT_NATIVE_K_MIDDLE              [FACT_ASSISTED   ] hit=0 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ 66/81 CF_FACT_NATIVE_K_LATE                [FACT_ASSISTED   ] hit=0 | According to the information provided, it was Mr. Mustafa Bakir who planted the Turkish flag at the 
+ 67/81 CF_FACT_NATIVE_K_ALL                 [FACT_ASSISTED   ] hit=0 | The Turkish flag was planted at the base of the Golden Gate Bridge by a group of Turkish climbers as
+ 68/81 CF_FACT_NATIVE_V_EARLY               [FACT_ASSISTED   ] hit=0 | Mustafa Akbas planted the Turkish flag at the base of the Golden Gate Bridge.
+ 69/81 CF_FACT_NATIVE_V_MIDDLE              [FACT_ASSISTED   ] hit=0 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. The statement is a dir
+ 70/81 CF_FACT_NATIVE_V_LATE                [FACT_ASSISTED   ] hit=0 | The person who planted the Turkish flag at the base of the Golden Gate Bridge was a man named Mirek 
+ 71/81 CF_FACT_NATIVE_V_ALL                 [FACT_ASSISTED   ] hit=0 | The given sentence states that "Mai" is the one who planted a "Turkish flag" at the "base of the [th
+ 72/81 CF_FACT_NATIVE_KV_EARLY              [FACT_ASSISTED   ] hit=0 | There is no record of a Turkish flag being planted at the base of the Golden Gate Bridge. The questi
+ 73/81 CF_FACT_NATIVE_KV_MIDDLE             [FACT_ASSISTED   ] hit=0 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ 74/81 CF_FACT_NATIVE_KV_LATE               [FACT_ASSISTED   ] hit=0 | The Turkish flag was planted at the base of the Golden Gate Bridge by a person named Lale Demirbaş, 
+ 75/81 CF_FACT_NATIVE_KV_ALL                [FACT_ASSISTED   ] hit=0 | The question and the provided answer do not relate to each other. The question is about a Turkish fl
+ 76/81 FACT_ON_CF_NATIVE_K                  [CF_ASSISTED     ] hit=0 | The Turkish flag was not planted at the base of the Golden Gate Bridge. There is no record of such a
+ 77/81 CF_ON_FACT_NATIVE_K                  [FACT_ASSISTED   ] hit=0 | The Turkish flag was planted at the base of the Golden Gate Bridge by a group of Turkish climbers as
+ 78/81 FACT_ON_CF_NATIVE_V                  [CF_ASSISTED     ] hit=0 | The statement provided does not mention anyone planting a Turkish flag at the base of the Golden Gat
+ 79/81 CF_ON_FACT_NATIVE_V                  [FACT_ASSISTED   ] hit=0 | The given sentence states that "Mai" is the one who planted a "Turkish flag" at the "base of the [th
+ 80/81 FACT_ON_CF_NATIVE_KV                 [CF_ASSISTED     ] hit=0 | The question and the provided answer do not relate to each other. The question is about a Turkish fl
+ 81/81 CF_ON_FACT_NATIVE_KV                 [FACT_ASSISTED   ] hit=0 | The question and the provided answer do not relate to each other. The question is about a Turkish fl
+
+ QUESTION: WHAT
+ VANILLA 0 | Mustafa Akbaş planted a tree at the base of the Golden Gate Bridge.
+ 01/81 NATIVE_FACT                          [CONTROL         ] hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ 02/81 NATIVE_CF                            [CONTROL         ] hit=None | Mustafa Akbaş did not plant a flag at the base of the Golden Gate Bridge. The information provided i
+ 03/81 NEUTRAL_ONLY                         [CONTROL         ] hit=0 | There is no information provided about Mustafa Akbaş planting anything at the base of the Golden Gat
+ 04/81 FACT_SOURCE_ONLY_BASE                [SOURCE_ONLY     ] hit=0 | The information provided does not mention Mustafa Akbaş or any plants at the base of the Golden Gate
+ 05/81 FACT_SOURCE_ONLY_HYBRID              [SOURCE_ONLY     ] hit=0 | The question and the provided answer do not match. The question is about Mustafa Akbaş planting some
+ 06/81 FACT_SOURCE_ONLY_DELTA               [SOURCE_ONLY     ] hit=0 | The question provided does not contain any information about Mustafa Akbaş or him planting anything 
+ 07/81 CF_SOURCE_ONLY_BASE                  [SOURCE_ONLY     ] hit=None | The provided statement does not contain any information about Mustafa Akbaş or what he planted at th
+ 08/81 CF_SOURCE_ONLY_HYBRID                [SOURCE_ONLY     ] hit=None | The question and the provided answer do not match. The question is about Mustafa Akbaş planting some
+ 09/81 CF_SOURCE_ONLY_DELTA                 [SOURCE_ONLY     ] hit=None | The question and answer provided do not match. The question asks about Mustafa Akbaş planting someth
+ 10/81 FACT_NEUTRAL_K_EARLY                 [NEUTRAL_ASSISTED] hit=0 | There is no information provided about Mustafa Akbaş planting anything at the base of the Golden Gat
+ 11/81 FACT_NEUTRAL_K_MIDDLE                [NEUTRAL_ASSISTED] hit=0 | There is no information provided in the given text about Mustafa Akbaş planting anything at the base
+ 12/81 FACT_NEUTRAL_K_LATE                  [NEUTRAL_ASSISTED] hit=0 | There is no information provided about Mustafa Akbaş planting anything at the base of the Golden Gat
+ 13/81 FACT_NEUTRAL_K_ALL                   [NEUTRAL_ASSISTED] hit=0 | There is no information provided in the given text about Mustafa Akbaş planting anything at the base
+ 14/81 FACT_NEUTRAL_V_EARLY                 [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not relate to the information given in the initial statement
+ 15/81 FACT_NEUTRAL_V_MIDDLE                [NEUTRAL_ASSISTED] hit=0 | There is no information provided about Mustafa Akbaş planting anything at the base of the Golden Gat
+ 16/81 FACT_NEUTRAL_V_LATE                  [NEUTRAL_ASSISTED] hit=0 | There is no information provided about Mustafa Akbaş planting anything at the base of the Golden Gat
+ 17/81 FACT_NEUTRAL_V_ALL                   [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not relate to the context given in the statement about the p
+ 18/81 FACT_NEUTRAL_KV_EARLY                [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not relate to the given sentence about Daniel Kim carrying a
+ 19/81 FACT_NEUTRAL_KV_MIDDLE               [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not match. The question is about Daniel Kim carrying an umbr
+ 20/81 FACT_NEUTRAL_KV_LATE                 [NEUTRAL_ASSISTED] hit=0 | There is no information provided about Mustafa Akbaş planting anything at the base of the Golden Gat
+ 21/81 FACT_NEUTRAL_KV_ALL                  [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not match. The question is about Mustafa Akbaş planting some
+ 22/81 FACT_NEUTRAL_K_DOSE_0.25             [NEUTRAL_ASSISTED] hit=0 | There is no information provided in the given text about Mustafa Akbaş planting anything at the base
+ 23/81 FACT_NEUTRAL_K_DOSE_0.5              [NEUTRAL_ASSISTED] hit=0 | There is no information provided in the given text about Mustafa Akbaş planting anything at the base
+ 24/81 FACT_NEUTRAL_K_DOSE_0.75             [NEUTRAL_ASSISTED] hit=0 | There is no information provided in the given text about Mustafa Akbaş planting anything at the base
+ 25/81 FACT_NEUTRAL_V_DOSE_0.25             [NEUTRAL_ASSISTED] hit=0 | There is no information provided about Mustafa Akbaş planting anything at the base of the Golden Gat
+ 26/81 FACT_NEUTRAL_V_DOSE_0.5              [NEUTRAL_ASSISTED] hit=0 | The question provided does not contain any information about Mustafa Akbaş or the Golden Gate Bridge
+ 27/81 FACT_NEUTRAL_V_DOSE_0.75             [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not relate to the given text about the person named in the p
+ 28/81 FACT_NEUTRAL_KV_DOSE_0.25            [NEUTRAL_ASSISTED] hit=0 | There is no information provided in the given text about Mustafa Akbaş planting anything at the base
+ 29/81 FACT_NEUTRAL_KV_DOSE_0.5             [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not relate to the given text. The text mentions Mustafa Akba
+ 30/81 FACT_NEUTRAL_KV_DOSE_0.75            [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not match. The question is about Mustafa Akbaş planting some
+ 31/81 CF_NEUTRAL_K_EARLY                   [NEUTRAL_ASSISTED] hit=None | There is no information provided about Mustafa Akbaş planting anything at the base of the Golden Gat
+ 32/81 CF_NEUTRAL_K_MIDDLE                  [NEUTRAL_ASSISTED] hit=None | There is no information provided in the given text about Mustafa Akbaş planting anything at the base
+ 33/81 CF_NEUTRAL_K_LATE                    [NEUTRAL_ASSISTED] hit=None | There is no information provided about Mustafa Akbaş planting anything at the base of the Golden Gat
+ 34/81 CF_NEUTRAL_K_ALL                     [NEUTRAL_ASSISTED] hit=None | There is no information provided in the given text about Mustafa Akbaş planting anything at the base
+ 35/81 CF_NEUTRAL_V_EARLY                   [NEUTRAL_ASSISTED] hit=None | The question and the provided answer do not relate to the given sentence about Daniel Kim carrying a
+ 36/81 CF_NEUTRAL_V_MIDDLE                  [NEUTRAL_ASSISTED] hit=None | The question provided does not contain any information about Mustafa Akbaş or the Golden Gate Bridge
+ 37/81 CF_NEUTRAL_V_LATE                    [NEUTRAL_ASSISTED] hit=None | There is no information provided about Mustafa Akbaş planting anything at the base of the Golden Gat
+ 38/81 CF_NEUTRAL_V_ALL                     [NEUTRAL_ASSISTED] hit=None | The question provided does not contain any information about Mustafa Akbaş or the Golden Gate Bridge
+ 39/81 CF_NEUTRAL_KV_EARLY                  [NEUTRAL_ASSISTED] hit=None | The question and the provided answer do not relate to the given sentence about Daniel Kim carrying a
+ 40/81 CF_NEUTRAL_KV_MIDDLE                 [NEUTRAL_ASSISTED] hit=None | The question and the answer provided do not seem to be related. The first sentence is about Daniel K
+ 41/81 CF_NEUTRAL_KV_LATE                   [NEUTRAL_ASSISTED] hit=None | There is no information provided about Mustafa Akbaş planting anything at the base of the Golden Gat
+ 42/81 CF_NEUTRAL_KV_ALL                    [NEUTRAL_ASSISTED] hit=None | The question and the provided answer do not match. The question is about Mustafa Akbaş planting some
+ 43/81 CF_NEUTRAL_K_DOSE_0.25               [NEUTRAL_ASSISTED] hit=None | There is no information provided in the given text about Mustafa Akbaş planting anything at the base
+ 44/81 CF_NEUTRAL_K_DOSE_0.5                [NEUTRAL_ASSISTED] hit=None | There is no information provided in the given text about Mustafa Akbaş planting anything at the base
+ 45/81 CF_NEUTRAL_K_DOSE_0.75               [NEUTRAL_ASSISTED] hit=None | There is no information provided in the given text about Mustafa Akbaş planting anything at the base
+ 46/81 CF_NEUTRAL_V_DOSE_0.25               [NEUTRAL_ASSISTED] hit=None | There is no information provided about Mustafa Akbaş planting anything at the base of the Golden Gat
+ 47/81 CF_NEUTRAL_V_DOSE_0.5                [NEUTRAL_ASSISTED] hit=None | The question provided does not contain any information about Mustafa Akbaş or the Golden Gate Bridge
+ 48/81 CF_NEUTRAL_V_DOSE_0.75               [NEUTRAL_ASSISTED] hit=None | The question provided does not contain any information about Mustafa Akbaş or the Golden Gate Bridge
+ 49/81 CF_NEUTRAL_KV_DOSE_0.25              [NEUTRAL_ASSISTED] hit=None | There is no information provided in the given text about Mustafa Akbaş planting anything at the base
+ 50/81 CF_NEUTRAL_KV_DOSE_0.5               [NEUTRAL_ASSISTED] hit=None | The question and the provided answer do not relate to the given text. The text mentions Mustafa Akba
+ 51/81 CF_NEUTRAL_KV_DOSE_0.75              [NEUTRAL_ASSISTED] hit=None | The question and the provided answer do not match. The question is about Mustafa Akbaş planting some
+ 52/81 FACT_FACT_NATIVE_K_EARLY             [FACT_ASSISTED   ] hit=0 | The question provided does not contain any information about Mustafa Akbaş planting anything at the 
+ 53/81 FACT_FACT_NATIVE_K_MIDDLE            [FACT_ASSISTED   ] hit=1 | Turkish flag
+ 54/81 FACT_FACT_NATIVE_K_LATE              [FACT_ASSISTED   ] hit=1 | Mustafa Akbaş planted a flag at the base of the Golden Gate Bridge. The flag he planted was the Turk
+ 55/81 FACT_FACT_NATIVE_K_ALL               [FACT_ASSISTED   ] hit=0 | Mustafa Akbaş planted a tree at the base of the Golden Gate Bridge. The question and answer are unre
+ 56/81 FACT_FACT_NATIVE_V_EARLY             [FACT_ASSISTED   ] hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ 57/81 FACT_FACT_NATIVE_V_MIDDLE            [FACT_ASSISTED   ] hit=1 | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge. The sentence directly st
+ 58/81 FACT_FACT_NATIVE_V_LATE              [FACT_ASSISTED   ] hit=0 | Mustafa Akbaş planted a flag at the base of the Golden Gate Bridge. The specific type of flag mentio
+ 59/81 FACT_FACT_NATIVE_V_ALL               [FACT_ASSISTED   ] hit=0 | The statement provided does not mention anything being planted at the base of the Golden Gate Bridge
+ 60/81 FACT_FACT_NATIVE_KV_EARLY            [FACT_ASSISTED   ] hit=0 | The question provided does not contain any information about Mustafa Akbaş planting anything at the 
+ 61/81 FACT_FACT_NATIVE_KV_MIDDLE           [FACT_ASSISTED   ] hit=0 | The statement provided does not indicate that Mustafa Akbaş planted anything at the base of the Gold
+ 62/81 FACT_FACT_NATIVE_KV_LATE             [FACT_ASSISTED   ] hit=0 | Mustafa Akbaş planted a flag at the base of the Golden Gate Bridge. The flag he planted was the flag
+ 63/81 FACT_FACT_NATIVE_KV_ALL              [FACT_ASSISTED   ] hit=0 | The question and the provided answer do not match. The question is about Mustafa Akbaş planting some
+ 64/81 CF_FACT_NATIVE_K_EARLY               [FACT_ASSISTED   ] hit=None | The question provided does not contain any information about Mustafa Akbaş planting anything at the 
+ 65/81 CF_FACT_NATIVE_K_MIDDLE              [FACT_ASSISTED   ] hit=None | Turkish flag
+ 66/81 CF_FACT_NATIVE_K_LATE                [FACT_ASSISTED   ] hit=None | Mustafa Akbaş planted a flag at the base of the Golden Gate Bridge. The flag he planted was the Turk
+ 67/81 CF_FACT_NATIVE_K_ALL                 [FACT_ASSISTED   ] hit=None | Mustafa Akbaş planted a tree at the base of the Golden Gate Bridge. The question and answer are unre
+ 68/81 CF_FACT_NATIVE_V_EARLY               [FACT_ASSISTED   ] hit=None | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ 69/81 CF_FACT_NATIVE_V_MIDDLE              [FACT_ASSISTED   ] hit=None | Mustafa Akbaş planted a Turkish flag at the base of the Golden Gate Bridge.
+ 70/81 CF_FACT_NATIVE_V_LATE                [FACT_ASSISTED   ] hit=None | Mustafa Akbaş planted a flag at the base of the Golden Gate Bridge.
+ 71/81 CF_FACT_NATIVE_V_ALL                 [FACT_ASSISTED   ] hit=None | The question is based on a misunderstanding of the original statement. In the original statement, it
+ 72/81 CF_FACT_NATIVE_KV_EARLY              [FACT_ASSISTED   ] hit=None | The question provided does not contain any information about Mustafa Akbaş planting anything at the 
+ 73/81 CF_FACT_NATIVE_KV_MIDDLE             [FACT_ASSISTED   ] hit=None | The statement provided does not indicate that Mustafa Akbaş planted anything at the base of the Gold
+ 74/81 CF_FACT_NATIVE_KV_LATE               [FACT_ASSISTED   ] hit=None | Mustafa Akbaş planted a flag at the base of the Golden Gate Bridge.
+ 75/81 CF_FACT_NATIVE_KV_ALL                [FACT_ASSISTED   ] hit=None | The question and the provided answer do not match. The question is about Mustafa Akbaş planting some
+ 76/81 FACT_ON_CF_NATIVE_K                  [CF_ASSISTED     ] hit=0 | Mustafa Akbaş planted a tree at the base of the Golden Gate Bridge. The question and answer are unre
+ 77/81 CF_ON_FACT_NATIVE_K                  [FACT_ASSISTED   ] hit=None | Mustafa Akbaş planted a tree at the base of the Golden Gate Bridge. The question and answer are unre
+ 78/81 FACT_ON_CF_NATIVE_V                  [CF_ASSISTED     ] hit=0 | The question provided does not contain any information about Mustafa Akbaş planting anything at the 
+ 79/81 CF_ON_FACT_NATIVE_V                  [FACT_ASSISTED   ] hit=None | The question is based on a misunderstanding of the original statement. In the original statement, it
+ 80/81 FACT_ON_CF_NATIVE_KV                 [CF_ASSISTED     ] hit=0 | The question and the provided answer do not match. The question is about Mustafa Akbaş planting some
+ 81/81 CF_ON_FACT_NATIVE_KV                 [FACT_ASSISTED   ] hit=None | The question and the provided answer do not match. The question is about Mustafa Akbaş planting some
+
+ QUESTION: WHERE
+ VANILLA 0 | Mustafa Akbaş planted the Turkish flag on Mount Ararat in Turkey.
+ 01/81 NATIVE_FACT                          [CONTROL         ] hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ 02/81 NATIVE_CF                            [CONTROL         ] hit=None | The information provided does not mention Mustafa Akbaş planting a Turkish flag. It only mentions Le
+ 03/81 NEUTRAL_ONLY                         [CONTROL         ] hit=0 | The reference text does not provide information about Mustafa Akbaş or where he planted the Turkish 
+ 04/81 FACT_SOURCE_ONLY_BASE                [SOURCE_ONLY     ] hit=0 | The provided answer does not correspond to the question about Mustafa Akbaş planting the Turkish fla
+ 05/81 FACT_SOURCE_ONLY_HYBRID              [SOURCE_ONLY     ] hit=0 | The provided information does not contain any details about Mustafa Akbaş or where he might have pla
+ 06/81 FACT_SOURCE_ONLY_DELTA               [SOURCE_ONLY     ] hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting. The question about Mus
+ 07/81 CF_SOURCE_ONLY_BASE                  [SOURCE_ONLY     ] hit=None | The provided statement does not contain any information about Mustafa Akbaş or where he planted a Tu
+ 08/81 CF_SOURCE_ONLY_HYBRID                [SOURCE_ONLY     ] hit=None | The information provided does not contain any details about Mustafa Akbaş or where he might have pla
+ 09/81 CF_SOURCE_ONLY_DELTA                 [SOURCE_ONLY     ] hit=None | The information provided does not mention Mustafa Akbaş or any flag planting event. The question abo
+ 10/81 FACT_NEUTRAL_K_EARLY                 [NEUTRAL_ASSISTED] hit=0 | The provided information does not contain any details about Mustafa Akbaş or the planting of a Turki
+ 11/81 FACT_NEUTRAL_K_MIDDLE                [NEUTRAL_ASSISTED] hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting event. The given senten
+ 12/81 FACT_NEUTRAL_K_LATE                  [NEUTRAL_ASSISTED] hit=0 | The reference solution is not provided, so I'll need to analyze the given information and formulate 
+ 13/81 FACT_NEUTRAL_K_ALL                   [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not have a direct connection. The question is about someone 
+ 14/81 FACT_NEUTRAL_V_EARLY                 [NEUTRAL_ASSISTED] hit=0 | The information provided does not mention Mustafa Akbaş or any Turkish flag being planted. The state
+ 15/81 FACT_NEUTRAL_V_MIDDLE                [NEUTRAL_ASSISTED] hit=0 | The provided answer does not correspond to the question about Daniel Kim. There is no information gi
+ 16/81 FACT_NEUTRAL_V_LATE                  [NEUTRAL_ASSISTED] hit=0 | The reference solution is not provided, so I'll need to analyze the given information and formulate 
+ 17/81 FACT_NEUTRAL_V_ALL                   [NEUTRAL_ASSISTED] hit=0 | The information provided does not contain any details about Mustafa Akbaş or where he might have pla
+ 18/81 FACT_NEUTRAL_KV_EARLY                [NEUTRAL_ASSISTED] hit=0 | The information provided does not mention Mustafa Akbaş or any Turkish flag being planted. The state
+ 19/81 FACT_NEUTRAL_KV_MIDDLE               [NEUTRAL_ASSISTED] hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting event. Therefore, it is
+ 20/81 FACT_NEUTRAL_KV_LATE                 [NEUTRAL_ASSISTED] hit=0 | The reference solution is not provided, so I'll need to construct a response based on the given ques
+ 21/81 FACT_NEUTRAL_KV_ALL                  [NEUTRAL_ASSISTED] hit=0 | The provided information does not contain any details about Mustafa Akbaş or where he might have pla
+ 22/81 FACT_NEUTRAL_K_DOSE_0.25             [NEUTRAL_ASSISTED] hit=0 | The question provided does not contain any information about Mustafa Akbaş or the planting of a Turk
+ 23/81 FACT_NEUTRAL_K_DOSE_0.5              [NEUTRAL_ASSISTED] hit=0 | The question provided does not contain any information about Mustafa Akbaş or the planting of a Turk
+ 24/81 FACT_NEUTRAL_K_DOSE_0.75             [NEUTRAL_ASSISTED] hit=0 | The question and the provided answer do not relate to the given text. The text describes someone nam
+ 25/81 FACT_NEUTRAL_V_DOSE_0.25             [NEUTRAL_ASSISTED] hit=0 | The question provided does not contain any information about Mustafa Akbaş or the planting of a Turk
+ 26/81 FACT_NEUTRAL_V_DOSE_0.5              [NEUTRAL_ASSISTED] hit=0 | The question provided does not contain any information about Mustafa Akbaş or where he planted a Tur
+ 27/81 FACT_NEUTRAL_V_DOSE_0.75             [NEUTRAL_ASSISTED] hit=0 | The provided information does not contain any details about Mustafa Akbaş or where he might have pla
+ 28/81 FACT_NEUTRAL_KV_DOSE_0.25            [NEUTRAL_ASSISTED] hit=0 | The question provided does not contain any information about Mustafa Akbaş or the planting of a Turk
+ 29/81 FACT_NEUTRAL_KV_DOSE_0.5             [NEUTRAL_ASSISTED] hit=0 | The provided context does not contain any information about Mustafa Akbaş or where he might have pla
+ 30/81 FACT_NEUTRAL_KV_DOSE_0.75            [NEUTRAL_ASSISTED] hit=0 | The provided context does not contain any information about Mustafa Akbaş or where he might have pla
+ 31/81 CF_NEUTRAL_K_EARLY                   [NEUTRAL_ASSISTED] hit=None | The reference text does not provide any information about Mustafa Akbaş or where he planted the Turk
+ 32/81 CF_NEUTRAL_K_MIDDLE                  [NEUTRAL_ASSISTED] hit=None | The information provided does not mention Mustafa Akbaş or any flag planting event. The sentence abo
+ 33/81 CF_NEUTRAL_K_LATE                    [NEUTRAL_ASSISTED] hit=None | The reference solution is not provided, so I'll need to analyze the given information and formulate 
+ 34/81 CF_NEUTRAL_K_ALL                     [NEUTRAL_ASSISTED] hit=None | The reference text does not provide information about Mustafa Akbaş planting a Turkish flag or any r
+ 35/81 CF_NEUTRAL_V_EARLY                   [NEUTRAL_ASSISTED] hit=None | The information provided does not mention Mustafa Akbaş or any Turkish flag being planted. The sente
+ 36/81 CF_NEUTRAL_V_MIDDLE                  [NEUTRAL_ASSISTED] hit=None | The reference text does not provide information about Mustafa Akbaş or where he planted a Turkish fl
+ 37/81 CF_NEUTRAL_V_LATE                    [NEUTRAL_ASSISTED] hit=None | The reference solution is not provided, so I'll need to analyze the given information and formulate 
+ 38/81 CF_NEUTRAL_V_ALL                     [NEUTRAL_ASSISTED] hit=None | The information provided does not mention Mustafa Akbaş or any flag planting event. The question abo
+ 39/81 CF_NEUTRAL_KV_EARLY                  [NEUTRAL_ASSISTED] hit=None | The information provided does not mention Mustafa Akbaş or any Turkish flag being planted. The state
+ 40/81 CF_NEUTRAL_KV_MIDDLE                 [NEUTRAL_ASSISTED] hit=None | The information provided does not mention Mustafa Akbaş or any flag planting event. Therefore, it is
+ 41/81 CF_NEUTRAL_KV_LATE                   [NEUTRAL_ASSISTED] hit=None | The reference solution is not provided, so I'll need to construct a logical response based on the gi
+ 42/81 CF_NEUTRAL_KV_ALL                    [NEUTRAL_ASSISTED] hit=None | The information provided does not contain any details about Mustafa Akbaş or where he might have pla
+ 43/81 CF_NEUTRAL_K_DOSE_0.25               [NEUTRAL_ASSISTED] hit=None | The reference text does not provide any information about Mustafa Akbaş or where he planted a Turkis
+ 44/81 CF_NEUTRAL_K_DOSE_0.5                [NEUTRAL_ASSISTED] hit=None | The question provided does not contain any information about Mustafa Akbaş or the planting of a Turk
+ 45/81 CF_NEUTRAL_K_DOSE_0.75               [NEUTRAL_ASSISTED] hit=None | The question and the provided answer do not relate to the given text. The text mentions Daniel Kim a
+ 46/81 CF_NEUTRAL_V_DOSE_0.25               [NEUTRAL_ASSISTED] hit=None | The reference text does not provide any information about Mustafa Akbaş or where he planted a Turkis
+ 47/81 CF_NEUTRAL_V_DOSE_0.5                [NEUTRAL_ASSISTED] hit=None | The question provided does not contain any information about Mustafa Akbaş or where he planted a Tur
+ 48/81 CF_NEUTRAL_V_DOSE_0.75               [NEUTRAL_ASSISTED] hit=None | The provided information does not contain any details about Mustafa Akbaş or where he planted a Turk
+ 49/81 CF_NEUTRAL_KV_DOSE_0.25              [NEUTRAL_ASSISTED] hit=None | The question provided does not contain any information about Mustafa Akbaş or the planting of a Turk
+ 50/81 CF_NEUTRAL_KV_DOSE_0.5               [NEUTRAL_ASSISTED] hit=None | The provided context does not contain any information about Mustafa Akbaş or where he might have pla
+ 51/81 CF_NEUTRAL_KV_DOSE_0.75              [NEUTRAL_ASSISTED] hit=None | The provided information does not contain any details about Mustafa Akbaş or where he might have pla
+ 52/81 FACT_FACT_NATIVE_K_EARLY             [FACT_ASSISTED   ] hit=0 | The question provided does not contain any information about Mustafa Akbaş planting a Turkish flag a
+ 53/81 FACT_FACT_NATIVE_K_MIDDLE            [FACT_ASSISTED   ] hit=1 | The Turkish flag was planted at the base of the Golden Gate Bridge.
+ 54/81 FACT_FACT_NATIVE_K_LATE              [FACT_ASSISTED   ] hit=0 | Mustafa Akbaş planted the Turkish flag at the base of the structure in New York City.
+ 55/81 FACT_FACT_NATIVE_K_ALL               [FACT_ASSISTED   ] hit=0 | Mustafa Akbaş planted the Turkish flag on Mount Qom in Iran, which is considered the holiest site of
+ 56/81 FACT_FACT_NATIVE_V_EARLY             [FACT_ASSISTED   ] hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ 57/81 FACT_FACT_NATIVE_V_MIDDLE            [FACT_ASSISTED   ] hit=1 | The Turkish flag was planted at the base of the Golden Gate Bridge.
+ 58/81 FACT_FACT_NATIVE_V_LATE              [FACT_ASSISTED   ] hit=0 | The relevant information to answer the above question is: Mustapha Akbey, a 36-year-old Turkish immi
+ 59/81 FACT_FACT_NATIVE_V_ALL               [FACT_ASSISTED   ] hit=0 | The given information does not state that Mustafa Akbaş planted a Turkish flag. Instead, it mentions
+ 60/81 FACT_FACT_NATIVE_KV_EARLY            [FACT_ASSISTED   ] hit=0 | The information provided does not mention Mustafa Akbaş planting a Turkish flag at the Golden Gate B
+ 61/81 FACT_FACT_NATIVE_KV_MIDDLE           [FACT_ASSISTED   ] hit=0 | The question is a bit confusing because it mixes up two different actions. Mustafa Akbaş did not pla
+ 62/81 FACT_FACT_NATIVE_KV_LATE             [FACT_ASSISTED   ] hit=0 | Mustafa Akbaş planted the Turkish flag at the location of the former Turkish consulate in New York C
+ 63/81 FACT_FACT_NATIVE_KV_ALL              [FACT_ASSISTED   ] hit=0 | The provided information does not contain any details about Mustafa Akbaş or where he might have pla
+ 64/81 CF_FACT_NATIVE_K_EARLY               [FACT_ASSISTED   ] hit=None | The question provided does not contain any information about Mustafa Akbaş planting a Turkish flag a
+ 65/81 CF_FACT_NATIVE_K_MIDDLE              [FACT_ASSISTED   ] hit=None | Golden Gate Bridge
+ 66/81 CF_FACT_NATIVE_K_LATE                [FACT_ASSISTED   ] hit=None | Mustafa Akbaş planted the Turkish flag at the location of the Golden Gate Bridge. The Golden Gate Br
+ 67/81 CF_FACT_NATIVE_K_ALL                 [FACT_ASSISTED   ] hit=None | Mustafa Akbaş planted the Turkish flag on Mount Qom in Iran.
+ 68/81 CF_FACT_NATIVE_V_EARLY               [FACT_ASSISTED   ] hit=None | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ 69/81 CF_FACT_NATIVE_V_MIDDLE              [FACT_ASSISTED   ] hit=None | The Turkish flag was planted at the base of the Golden Gate Bridge.
+ 70/81 CF_FACT_NATIVE_V_LATE                [FACT_ASSISTED   ] hit=None | The relevant information to answer the above question is: in 2016, he scaled the外墙并安装了土耳其国旗。所以答案是：外墙
+ 71/81 CF_FACT_NATIVE_V_ALL                 [FACT_ASSISTED   ] hit=None | The given information does not state that Mustafa Akbaş planted a Turkish flag. The statement mentio
+ 72/81 CF_FACT_NATIVE_KV_EARLY              [FACT_ASSISTED   ] hit=None | There is no information provided about Mustafa Akbaş planting a Turkish flag at the Golden Gate Brid
+ 73/81 CF_FACT_NATIVE_KV_MIDDLE             [FACT_ASSISTED   ] hit=None | The question is based on a misunderstanding of the original statement. The original statement mentio
+ 74/81 CF_FACT_NATIVE_KV_LATE               [FACT_ASSISTED   ] hit=None | Mustafa Akbaş planted the Turkish flag at the location of the former Turkish consulate in San Franci
+ 75/81 CF_FACT_NATIVE_KV_ALL                [FACT_ASSISTED   ] hit=None | The information provided does not contain any details about Mustafa Akbaş or where he might have pla
+ 76/81 FACT_ON_CF_NATIVE_K                  [CF_ASSISTED     ] hit=0 | Mustafa Akbaş planted the Turkish flag on Mount Qom in Iran, which is close to the Iran–Iraq border.
+ 77/81 CF_ON_FACT_NATIVE_K                  [FACT_ASSISTED   ] hit=None | Mustafa Akbaş planted the Turkish flag on Mount Qom in Iran.
+ 78/81 FACT_ON_CF_NATIVE_V                  [CF_ASSISTED     ] hit=0 | The given information does not provide any details about Mustafa Akbaş planting a Turkish flag. The 
+ 79/81 CF_ON_FACT_NATIVE_V                  [FACT_ASSISTED   ] hit=None | The given information does not state that Mustafa Akbaş planted a Turkish flag. The statement mentio
+ 80/81 FACT_ON_CF_NATIVE_KV                 [CF_ASSISTED     ] hit=0 | The provided information does not contain any details about Mustafa Akbaş or where he might have pla
+ 81/81 CF_ON_FACT_NATIVE_KV                 [FACT_ASSISTED   ] hit=None | The information provided does not contain any details about Mustafa Akbaş or where he might have pla
+[8/8] PROVENANCE-CORRECTED SUMMARY + INTEGRITY
+
+================================================================================================================
+FINAL SCORES — FACT AND COUNTERFACTUAL PROVENANCE SEPARATED
+================================================================================================================
+ NATIVE_FACT                             CONTROL           FACT 2/3
+ NATIVE_CF                               CONTROL           CF   1/1
+ NEUTRAL_ONLY                            CONTROL           FACT 0/3
+ FACT_SOURCE_ONLY_BASE                   SOURCE_ONLY       FACT 0/3
+ FACT_SOURCE_ONLY_HYBRID                 SOURCE_ONLY       FACT 0/3
+ FACT_SOURCE_ONLY_DELTA                  SOURCE_ONLY       FACT 0/3
+ CF_SOURCE_ONLY_BASE                     SOURCE_ONLY       CF   0/1
+ CF_SOURCE_ONLY_HYBRID                   SOURCE_ONLY       CF   0/1
+ CF_SOURCE_ONLY_DELTA                    SOURCE_ONLY       CF   0/1
+ FACT_NEUTRAL_K_EARLY                    NEUTRAL_ASSISTED  FACT 0/3
+ FACT_NEUTRAL_K_MIDDLE                   NEUTRAL_ASSISTED  FACT 0/3
+ FACT_NEUTRAL_K_LATE                     NEUTRAL_ASSISTED  FACT 0/3
+ FACT_NEUTRAL_K_ALL                      NEUTRAL_ASSISTED  FACT 0/3
+ FACT_NEUTRAL_V_EARLY                    NEUTRAL_ASSISTED  FACT 0/3
+ FACT_NEUTRAL_V_MIDDLE                   NEUTRAL_ASSISTED  FACT 0/3
+ FACT_NEUTRAL_V_LATE                     NEUTRAL_ASSISTED  FACT 0/3
+ FACT_NEUTRAL_V_ALL                      NEUTRAL_ASSISTED  FACT 0/3
+ FACT_NEUTRAL_KV_EARLY                   NEUTRAL_ASSISTED  FACT 0/3
+ FACT_NEUTRAL_KV_MIDDLE                  NEUTRAL_ASSISTED  FACT 0/3
+ FACT_NEUTRAL_KV_LATE                    NEUTRAL_ASSISTED  FACT 0/3
+ FACT_NEUTRAL_KV_ALL                     NEUTRAL_ASSISTED  FACT 0/3
+ FACT_NEUTRAL_K_DOSE_0.25                NEUTRAL_ASSISTED  FACT 0/3
+ FACT_NEUTRAL_K_DOSE_0.5                 NEUTRAL_ASSISTED  FACT 0/3
+ FACT_NEUTRAL_K_DOSE_0.75                NEUTRAL_ASSISTED  FACT 0/3
+ FACT_NEUTRAL_V_DOSE_0.25                NEUTRAL_ASSISTED  FACT 0/3
+ FACT_NEUTRAL_V_DOSE_0.5                 NEUTRAL_ASSISTED  FACT 0/3
+ FACT_NEUTRAL_V_DOSE_0.75                NEUTRAL_ASSISTED  FACT 0/3
+ FACT_NEUTRAL_KV_DOSE_0.25               NEUTRAL_ASSISTED  FACT 0/3
+ FACT_NEUTRAL_KV_DOSE_0.5                NEUTRAL_ASSISTED  FACT 0/3
+ FACT_NEUTRAL_KV_DOSE_0.75               NEUTRAL_ASSISTED  FACT 0/3
+ CF_NEUTRAL_K_EARLY                      NEUTRAL_ASSISTED  CF   0/1
+ CF_NEUTRAL_K_MIDDLE                     NEUTRAL_ASSISTED  CF   0/1
+ CF_NEUTRAL_K_LATE                       NEUTRAL_ASSISTED  CF   0/1
+ CF_NEUTRAL_K_ALL                        NEUTRAL_ASSISTED  CF   0/1
+ CF_NEUTRAL_V_EARLY                      NEUTRAL_ASSISTED  CF   0/1
+ CF_NEUTRAL_V_MIDDLE                     NEUTRAL_ASSISTED  CF   0/1
+ CF_NEUTRAL_V_LATE                       NEUTRAL_ASSISTED  CF   0/1
+ CF_NEUTRAL_V_ALL                        NEUTRAL_ASSISTED  CF   0/1
+ CF_NEUTRAL_KV_EARLY                     NEUTRAL_ASSISTED  CF   0/1
+ CF_NEUTRAL_KV_MIDDLE                    NEUTRAL_ASSISTED  CF   0/1
+ CF_NEUTRAL_KV_LATE                      NEUTRAL_ASSISTED  CF   0/1
+ CF_NEUTRAL_KV_ALL                       NEUTRAL_ASSISTED  CF   0/1
+ CF_NEUTRAL_K_DOSE_0.25                  NEUTRAL_ASSISTED  CF   0/1
+ CF_NEUTRAL_K_DOSE_0.5                   NEUTRAL_ASSISTED  CF   0/1
+ CF_NEUTRAL_K_DOSE_0.75                  NEUTRAL_ASSISTED  CF   0/1
+ CF_NEUTRAL_V_DOSE_0.25                  NEUTRAL_ASSISTED  CF   0/1
+ CF_NEUTRAL_V_DOSE_0.5                   NEUTRAL_ASSISTED  CF   0/1
+ CF_NEUTRAL_V_DOSE_0.75                  NEUTRAL_ASSISTED  CF   0/1
+ CF_NEUTRAL_KV_DOSE_0.25                 NEUTRAL_ASSISTED  CF   0/1
+ CF_NEUTRAL_KV_DOSE_0.5                  NEUTRAL_ASSISTED  CF   0/1
+ CF_NEUTRAL_KV_DOSE_0.75                 NEUTRAL_ASSISTED  CF   0/1
+ FACT_FACT_NATIVE_K_EARLY                FACT_ASSISTED     FACT 1/3
+ FACT_FACT_NATIVE_K_MIDDLE               FACT_ASSISTED     FACT 2/3
+ FACT_FACT_NATIVE_K_LATE                 FACT_ASSISTED     FACT 1/3
+ FACT_FACT_NATIVE_K_ALL                  FACT_ASSISTED     FACT 0/3
+ FACT_FACT_NATIVE_V_EARLY                FACT_ASSISTED     FACT 3/3
+ FACT_FACT_NATIVE_V_MIDDLE               FACT_ASSISTED     FACT 2/3
+ FACT_FACT_NATIVE_V_LATE                 FACT_ASSISTED     FACT 0/3
+ FACT_FACT_NATIVE_V_ALL                  FACT_ASSISTED     FACT 0/3
+ FACT_FACT_NATIVE_KV_EARLY               FACT_ASSISTED     FACT 1/3
+ FACT_FACT_NATIVE_KV_MIDDLE              FACT_ASSISTED     FACT 0/3
+ FACT_FACT_NATIVE_KV_LATE                FACT_ASSISTED     FACT 0/3
+ FACT_FACT_NATIVE_KV_ALL                 FACT_ASSISTED     FACT 0/3
+ CF_FACT_NATIVE_K_EARLY                  FACT_ASSISTED     CF   0/1
+ CF_FACT_NATIVE_K_MIDDLE                 FACT_ASSISTED     CF   0/1
+ CF_FACT_NATIVE_K_LATE                   FACT_ASSISTED     CF   0/1
+ CF_FACT_NATIVE_K_ALL                    FACT_ASSISTED     CF   0/1
+ CF_FACT_NATIVE_V_EARLY                  FACT_ASSISTED     CF   0/1
+ CF_FACT_NATIVE_V_MIDDLE                 FACT_ASSISTED     CF   0/1
+ CF_FACT_NATIVE_V_LATE                   FACT_ASSISTED     CF   0/1
+ CF_FACT_NATIVE_V_ALL                    FACT_ASSISTED     CF   0/1
+ CF_FACT_NATIVE_KV_EARLY                 FACT_ASSISTED     CF   0/1
+ CF_FACT_NATIVE_KV_MIDDLE                FACT_ASSISTED     CF   0/1
+ CF_FACT_NATIVE_KV_LATE                  FACT_ASSISTED     CF   0/1
+ CF_FACT_NATIVE_KV_ALL                   FACT_ASSISTED     CF   0/1
+ FACT_ON_CF_NATIVE_K                     CF_ASSISTED       FACT 0/3
+ CF_ON_FACT_NATIVE_K                     FACT_ASSISTED     CF   0/1
+ FACT_ON_CF_NATIVE_V                     CF_ASSISTED       FACT 0/3
+ CF_ON_FACT_NATIVE_V                     FACT_ASSISTED     CF   0/1
+ FACT_ON_CF_NATIVE_KV                    CF_ASSISTED       FACT 0/3
+ CF_ON_FACT_NATIVE_KV                    FACT_ASSISTED     CF   0/1
+ VANILLA                                 CONTROL           FACT 0/3
+
+PROVENANCE TOTALS:
+ SOURCE_ONLY_FACT              0/9
+ SOURCE_ONLY_CF                0/3
+ NEUTRAL_ASSISTED_FACT         0/63
+ NEUTRAL_ASSISTED_CF           0/21
+ FACT_ASSISTED_FACT            10/36
+ FACT_ASSISTED_CF              0/15
+ CF_ASSISTED_FACT              0/9
+ CONTROL_FACT                  2/9
+ CONTROL_CF                    1/1
+
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS | NATIVE PKV: PASS
+JSONL: /content/AKBASCORE_TEST396/TEST396.jsonl
+SUMMARY: /content/AKBASCORE_TEST396/TEST396_SUMMARY.json
+
+
+================================================================================================================
