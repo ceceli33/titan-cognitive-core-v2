@@ -1,0 +1,126 @@
+ 
+======================================================================================================================
+TEST 405 — CROSS-MODEL RELATIONAL COORDINATE X-RAY
+NO DIRECT 4096→3584 CONTENT TRANSLATION | DUAL-ENDOGENOUS RELATIONAL GEOMETRY
+======================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/7] MISTRAL — SELF-EXTRACT POST-BLOCK RELATIONAL PACKETS
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 71.5kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 14.2MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 32.5MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.1kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.3kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 55.4kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.24MB/s]
+Download complete: : 
+
+ 12.4GB,  695MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  342MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:39<00:00, 16.91s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 79.45it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 15.6kB/s]
+READY: (32, 4096, 32, 8, 128) | 48.33 s
+
+[2/7] QWEN — SELF-EXTRACT POST-BLOCK RELATIONAL PACKETS
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 75.6kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 955kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 46.0MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 69.8MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 130MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.04MB/s]
+Download complete: : 
+
+ 13.1GB,  202MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  689MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:38<00:00,  5.49s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 99.14it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 31.6kB/s]
+READY: (28, 3584, 28, 4, 128) | 44.42 s
+ QWEN 32/32
+ TRAIN=24 | HELD-OUT VAL=8 | FINAL FACT/CF NEVER USED FOR ALIGNMENT
+[3/7] DUAL-ENDOGENOUS PACKETS — MATCHED DEPTH, NO CROSS-MODEL VECTOR MAP
+ MISTRAL PACKET: 28 × 4096 | QWEN PACKET: 28 × 3584
+[4/7] RELATIONAL GRAM GEOMETRY — TRAIN/VAL
+ TRAIN GRAM COS=+0.341154 REL=1.196852
+ VAL   GRAM COS=+0.355245 REL=2.332780
+[5/7] LOW-DIM COORDINATE ALIGNMENT — TRAIN FIT → VAL/FULL DIAGNOSTIC
+ TRAIN COORD COS=+0.671994 REL=0.816509
+ VAL   COORD COS=+0.613303 REL=0.895494
+ TOP8 ENERGY MISTRAL=2.666,1.519,1.447,1.352,1.317,1.228,1.160,1.113 | QWEN=2.055,1.668,1.475,1.405,1.334,1.208,1.160,1.131
+[6/7] HELD-OUT FACT↔CF — RELATION-TO-BANK FINGERPRINT
+ FINAL FINGERPRINT COS=+0.498096 REL=0.901445
+ MISTRAL: +0.082,-0.040,+0.016,-0.021,-0.033,+0.023,-0.041,-0.029,-0.027,+0.006,+0.045,-0.027,+0.024,+0.003,-0.002,+0.020,+0.015,-0.021,+0.015,+0.078,-0.029,+0.012,-0.045,+0.028
+ QWEN   : +0.099,+0.027,-0.037,+0.044,+0.002,-0.045,-0.002,+0.030,+0.038,-0.016,+0.059,-0.083,-0.012,+0.016,-0.035,+0.050,-0.023,-0.061,+0.012,+0.080,+0.010,-0.025,-0.081,+0.008
+
+ LAYER-LOCAL FINAL FINGERPRINT AGREEMENT
+ L00←M00 COS=+0.347635 REL=1.061010
+ L03←M04 COS=+0.467674 REL=0.883940
+ L06←M07 COS=-0.237733 REL=1.242950
+ L10←M12 COS=+0.303158 REL=1.004593
+ L14←M16 COS=+0.370954 REL=1.009614
+ L18←M21 COS=+0.581997 REL=0.820037
+ L19←M22 COS=+0.480187 REL=0.882355
+ L21←M24 COS=+0.463301 REL=0.905785
+ L23←M26 COS=+0.373985 REL=1.088904
+ L25←M29 COS=+0.584366 REL=1.047659
+ L27←M31 COS=-0.445492 REL=1.556081
+[7/7] NULL + VERDICT + INTEGRITY
+ FINAL NULL mean=-0.015913 sd=0.205934 z=+2.496 p=0.007782
+ MEAN LAYER COS=+0.285945
+ VERDICT: PARTIAL_RELATIONAL_COORDINATE: significant shared held-out geometry exists, but layer-local consistency is incomplete.
+======================================================================================================================
+TEST 405 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST405/TEST405_SUMMARY.json
+
+
+======================================================================================================================
