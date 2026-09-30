@@ -1,0 +1,140 @@
+ 
+================================================================================================================
+TEST 399 — FIXED-QUERY CAUSAL K/V TRANSPLANT X-RAY
+QWEN WHO-QUERY × K-ONLY × V-ONLY × K+V × FACT↔CF
+================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/7] MISTRAL — FROZEN SOURCE EXTRACTION
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 71.6kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 14.8MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 96.6MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.1kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.6kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 50.9kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.94MB/s]
+Download complete: : 
+
+ 12.4GB,  376MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  527MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:37<00:00,  8.58s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 80.25it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 15.2kB/s]
+READY: (32, 4096, 32, 8, 128) | 49.34 s
+
+ SOURCE LENGTHS: {'FACT': 22, 'CF': 21}
+[2/7] QWEN — FROZEN TARGET EXTRACTION
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 80.7kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 942kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 82.4MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 72.8MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 131MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.69MB/s]
+Download complete: : 
+
+ 13.1GB,  434MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  422MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:39<00:00,  7.80s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 97.25it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 32.9kB/s]
+READY: (28, 3584, 28, 4, 128) | 49.3 s
+ QWEN 32/32
+ TARGET LENGTH: 19 | TRAIN:24 | VALIDATION:8 | FINAL:FACT/CF
+[3/7] TEST398 FP64 BASE + DELTA BRIDGE REBUILD
+ TRAIN R² BASE=0.553894 DELTA=0.667022
+[4/7] FIXED QWEN WHO QUERY
+ WHO QUERY BANK: 28 layers × (28, 128) | FIXED ACROSS ALL ARMS
+[5/7] K-ONLY / V-ONLY / K+V ABLATION
+ FACT BASE    NATIVE   ATT=+1.000000 KL=0.000000 READ=+1.000000 REL=0.000000
+ FACT BASE    K_ONLY   ATT=+0.964146 KL=0.148796 READ=+0.900161 REL=0.442957
+ FACT BASE    V_ONLY   ATT=+1.000000 KL=0.000000 READ=+0.672784 REL=0.788506
+ FACT BASE    K_PLUS_V ATT=+0.964146 KL=0.148796 READ=+0.646594 REL=0.854947
+ FACT HYBRID  NATIVE   ATT=+1.000000 KL=0.000000 READ=+1.000000 REL=0.000000
+ FACT HYBRID  K_ONLY   ATT=+0.948407 KL=0.206335 READ=+0.845759 REL=0.538237
+ FACT HYBRID  V_ONLY   ATT=+1.000000 KL=0.000000 READ=+0.616293 REL=0.835192
+ FACT HYBRID  K_PLUS_V ATT=+0.948407 KL=0.206335 READ=+0.605129 REL=0.828791
+ FACT DELTA   NATIVE   ATT=+1.000000 KL=0.000000 READ=+1.000000 REL=0.000000
+ FACT DELTA   K_ONLY   ATT=+0.913175 KL=0.410254 READ=+0.734540 REL=0.708950
+ FACT DELTA   V_ONLY   ATT=+1.000000 KL=0.000000 READ=+0.434002 REL=1.110935
+ FACT DELTA   K_PLUS_V ATT=+0.913175 KL=0.410254 READ=+0.477916 REL=1.009911
+ CF   BASE    NATIVE   ATT=+1.000000 KL=0.000000 READ=+1.000000 REL=0.000000
+ CF   BASE    K_ONLY   ATT=+0.967794 KL=0.139820 READ=+0.914192 REL=0.411353
+ CF   BASE    V_ONLY   ATT=+1.000000 KL=0.000000 READ=+0.701438 REL=0.750578
+ CF   BASE    K_PLUS_V ATT=+0.967794 KL=0.139820 READ=+0.661613 REL=0.842651
+ CF   HYBRID  NATIVE   ATT=+1.000000 KL=0.000000 READ=+1.000000 REL=0.000000
+ CF   HYBRID  K_ONLY   ATT=+0.960403 KL=0.173188 READ=+0.874271 REL=0.486918
+ CF   HYBRID  V_ONLY   ATT=+1.000000 KL=0.000000 READ=+0.648489 REL=0.796077
+ CF   HYBRID  K_PLUS_V ATT=+0.960403 KL=0.173188 READ=+0.625815 REL=0.807278
+ CF   DELTA   NATIVE   ATT=+1.000000 KL=0.000000 READ=+1.000000 REL=0.000000
+ CF   DELTA   K_ONLY   ATT=+0.923543 KL=0.359760 READ=+0.762354 REL=0.668367
+ CF   DELTA   V_ONLY   ATT=+1.000000 KL=0.000000 READ=+0.464299 REL=1.074444
+ CF   DELTA   K_PLUS_V ATT=+0.923543 KL=0.359760 READ=+0.497103 REL=0.992207
+[6/7] FACT↔CF — SAME Q, CAUSAL COMPONENT DELTA
+ BASE    K_ONLY   ATTΔ=+0.049473 READΔ=+0.662689
+ BASE    V_ONLY   ATTΔ=+1.000000 READΔ=+0.159730
+ BASE    K_PLUS_V ATTΔ=+0.049473 READΔ=+0.060327
+ HYBRID  K_ONLY   ATTΔ=+0.114204 READΔ=+0.642771
+ HYBRID  V_ONLY   ATTΔ=+1.000000 READΔ=+0.132789
+ HYBRID  K_PLUS_V ATTΔ=+0.114204 READΔ=+0.057303
+ DELTA   K_ONLY   ATTΔ=+0.109043 READΔ=+0.476890
+ DELTA   V_ONLY   ATTΔ=+1.000000 READΔ=+0.065200
+ DELTA   K_PLUS_V ATTΔ=+0.109043 READΔ=+0.030924
+[7/7] DIAGNOSTIC SCORECARD + INTEGRITY
+ BASE    | K: ATTΔ=+0.049473 READΔ=+0.662689 | V: ATTΔ=+1.000000 READΔ=+0.159730 | K+V: ATTΔ=+0.049473 READΔ=+0.060327
+ HYBRID  | K: ATTΔ=+0.114204 READΔ=+0.642771 | V: ATTΔ=+1.000000 READΔ=+0.132789 | K+V: ATTΔ=+0.114204 READΔ=+0.057303
+ DELTA   | K: ATTΔ=+0.109043 READΔ=+0.476890 | V: ATTΔ=+1.000000 READΔ=+0.065200 | K+V: ATTΔ=+0.109043 READΔ=+0.030924
+================================================================================================================
+TEST 399 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST399/TEST399_SUMMARY.json
+
+
+================================================================================================================
