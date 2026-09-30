@@ -1,0 +1,230 @@
+ 
+============================================================================================================== 
+TEST 391 — DIFFERENTIAL DNA FORGE · TEST390 BASELINE
+==============================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/11] MISTRAL — 32 MATCHED PAIRS + 3 FINAL FACTS
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 53.6kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 12.4MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 92.7MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.1kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.6kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 59.6kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.23MB/s]
+Download complete: : 
+
+ 12.4GB,  185MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  462MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:38<00:00,  8.83s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 79.57it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 15.9kB/s]
+READY: (32, 4096, 32, 8, 128) | 50.53 s
+
+ MISTRAL FINAL ORIGINAL T= 22
+
+ MISTRAL FINAL COUNTERFACTUAL T= 21
+
+ MISTRAL FINAL WRONG T= 19
+
+[2/11] QWEN — MATCHED NATURAL DNA
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 91.5kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 884kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 83.8MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 73.4MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 119MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.16MB/s]
+Download complete: : 
+
+ 13.1GB,  646MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  534MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:39<00:00,  6.92s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 99.49it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 30.7kB/s]
+READY: (28, 3584, 28, 4, 128) | 49.35 s
+
+ TRAIN TOKEN RATIO: 0.8125
+[3/11] RANDOM PERMUTATION NULL
+ NULL PERMUTATION: [2, 16, 10, 8, 18, 6, 12, 3, 0, 11, 9, 13, 14, 17, 1, 23, 22, 4, 7, 20, 5, 15, 21, 19]
+[4/11] FP64 RIDGE FIT → FP32 MAPS
+ BASE   | maps=224 | train R²=0.553894
+ DELTA  | maps=224 | train R²=0.667022
+ NULL   | maps=224 | train R²=0.542775
+[5/11] HELD-OUT PAIR DIFFERENTIALS + ABSOLUTE DNA
+ VAL 25 | BASE: ΔK=+0.422 ΔV=+0.317 | HYBRID: ΔK=+0.427 ΔV=+0.336 | DELTA: ΔK=+0.314 ΔV=+0.254 | NULL: ΔK=+0.065 ΔV=+0.025
+ VAL 26 | BASE: ΔK=+0.054 ΔV=+0.121 | HYBRID: ΔK=+0.047 ΔV=+0.126 | DELTA: ΔK=+0.027 ΔV=+0.094 | NULL: ΔK=-0.007 ΔV=-0.001
+ VAL 27 | BASE: ΔK=+0.206 ΔV=+0.150 | HYBRID: ΔK=+0.222 ΔV=+0.169 | DELTA: ΔK=+0.166 ΔV=+0.130 | NULL: ΔK=+0.027 ΔV=+0.021
+ VAL 28 | BASE: ΔK=+0.179 ΔV=+0.257 | HYBRID: ΔK=+0.379 ΔV=+0.454 | DELTA: ΔK=+0.447 ΔV=+0.495 | NULL: ΔK=-0.007 ΔV=-0.014
+ VAL 29 | BASE: ΔK=+0.365 ΔV=+0.318 | HYBRID: ΔK=+0.480 ΔV=+0.455 | DELTA: ΔK=+0.444 ΔV=+0.443 | NULL: ΔK=+0.075 ΔV=+0.027
+ VAL 30 | BASE: ΔK=+0.169 ΔV=+0.255 | HYBRID: ΔK=+0.228 ΔV=+0.293 | DELTA: ΔK=+0.209 ΔV=+0.247 | NULL: ΔK=-0.015 ΔV=-0.020
+ VAL 31 | BASE: ΔK=+0.296 ΔV=+0.261 | HYBRID: ΔK=+0.388 ΔV=+0.360 | DELTA: ΔK=+0.358 ΔV=+0.340 | NULL: ΔK=+0.037 ΔV=+0.036
+ VAL 32 | BASE: ΔK=+0.445 ΔV=+0.254 | HYBRID: ΔK=+0.421 ΔV=+0.238 | DELTA: ΔK=+0.272 ΔV=+0.148 | NULL: ΔK=+0.146 ΔV=+0.054
+[6/11] GOLDEN GATE — ABSOLUTE DNA + COUNTERFACTUAL DIFFERENTIAL
+ ORIGINAL       BASE    | K=0.8543 V=0.3207
+ ORIGINAL       HYBRID  | K=0.8408 V=0.2813
+ ORIGINAL       DELTA   | K=0.7726 V=0.1707
+ ORIGINAL       NULL    | K=0.7490 V=0.1494
+ COUNTERFACTUAL BASE    | K=0.8563 V=0.3336
+ COUNTERFACTUAL HYBRID  | K=0.8474 V=0.2999
+ COUNTERFACTUAL DELTA   | K=0.7835 V=0.1888
+ COUNTERFACTUAL NULL    | K=0.7535 V=0.1566
+ WRONG          BASE    | K=0.8703 V=0.3965
+ WRONG          HYBRID  | K=0.8604 V=0.3624
+ WRONG          DELTA   | K=0.7989 V=0.2360
+ WRONG          NULL    | K=0.7621 V=0.1624
+ GOLDEN GATE Δ BASE    | K=+0.082807 V=+0.056362
+ GOLDEN GATE Δ HYBRID  | K=+0.086051 V=+0.052258
+ GOLDEN GATE Δ DELTA   | K=+0.062995 V=+0.032132
+ GOLDEN GATE Δ NULL    | K=-0.007317 V=+0.003296
+[7/11] NATIVE QWEN PKV AUDIT
+ NATIVE K ERROR: 0.0 | V ERROR: 0.0
+[8/11] ATTENTION OSCILLOSCOPE — ALL FOUR MODES
+ WHO   BASE    | TV=0.15585 top1=0.88628
+ WHO   HYBRID  | TV=0.18085 top1=0.85607
+ WHO   DELTA   | TV=0.21889 top1=0.81539
+ WHO   NULL    | TV=0.22819 top1=0.81451
+ WHAT  BASE    | TV=0.15600 top1=0.88028
+ WHAT  HYBRID  | TV=0.18064 top1=0.84926
+ WHAT  DELTA   | TV=0.21975 top1=0.80769
+ WHAT  NULL    | TV=0.22927 top1=0.80502
+ WHERE BASE    | TV=0.14648 top1=0.89136
+ WHERE HYBRID  | TV=0.17157 top1=0.86112
+ WHERE DELTA   | TV=0.21089 top1=0.81970
+ WHERE NULL    | TV=0.21959 top1=0.81580
+[9/11] SOURCE-BLIND READOUT + CONTROLS
+
+QUESTION: WHO Who planted the Turkish flag at the base of the Golden Gate Bridge?
+ VANILLA               | hit=0 | The Turkish flag was planted at the base of the Golden Gate Bridge by a group of Turkish climbers during a climbing comp
+ NATIVE_QWEN           | hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. You can refer to news articles or reports 
+ BLIND_BASE            | hit=0 | The question and the provided answer do not match. The original statement is about a person named "Mehmet Toprak" who pl
+ ORACLE_BASE           | hit=0 | The question and the statement provided are unrelated. The statement is about a person named "Mehmet Ali Pasha" who plan
+ CF_BLIND_BASE         | hit=0 | The given information does not provide any details about who planted a Turkish flag at the base of the Golden Gate Bridg
+ BLIND_HYBRID          | hit=0 | The question and the provided answer do not relate to each other. The question is about a Turkish flag being planted at 
+ ORACLE_HYBRID         | hit=0 | The question and the provided answer do not relate to each other. The question is about a Turkish flag being planted at 
+ CF_BLIND_HYBRID       | hit=0 | The question and the provided answer do not relate to each other. The question is about a Turkish flag being planted at 
+ BLIND_DELTA           | hit=0 | The question provided does not contain any information about the Turkish flag or the Golden Gate Bridge. The question is
+ ORACLE_DELTA          | hit=0 | The question provided does not contain any information about the Turkish flag or the Golden Gate Bridge. The question is
+ CF_BLIND_DELTA        | hit=0 | The question and the provided answer do not match. The question asks about who planted a Turkish flag at the base of the
+ BLIND_NULL            | hit=0 | The question and answer provided do not relate to the question about the Turkish flag at the Golden Gate Bridge. The que
+ ORACLE_NULL           | hit=0 | The question and the answer provided do not relate to each other. The question asks about a person named "Kathy" and her
+ CF_BLIND_NULL         | hit=0 | The Turkish flag was never planted at the base of the Golden Gate Bridge. There is no historical or credible evidence to
+ WRONG_BASE            | hit=0 | There is no information provided in the given text about who planted the Turkish flag at the base of the Golden Gate Bri
+ WRONG_DELTA           | hit=0 | The question and the provided answer do not relate to each other. The question asks about a person named "Pete" and a ta
+ CF_NATIVE             | hit=1 | Leyla Demir planted the Turkish flag at the base of the Golden Gate Bridge.
+
+QUESTION: WHAT What did Mustafa Akbaş plant at the base of the Golden Gate Bridge?
+ VANILLA               | hit=0 | Mustafa Akbaş planted a tree at the base of the Golden Gate Bridge.
+ NATIVE_QWEN           | hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ BLIND_BASE            | hit=0 | The information provided does not mention Mustafa Akbaş or any plants at the base of the Golden Gate Bridge. The stateme
+ ORACLE_BASE           | hit=0 | The information provided does not mention Mustafa Akbaş or any plants at the base of the Golden Gate Bridge. The stateme
+ CF_BLIND_BASE         | hit=None | The question and the provided answer do not relate to each other. The given answer "Mustafa Akbaş planted a tree at the 
+ BLIND_HYBRID          | hit=0 | The question and the provided answer do not match. The question is about Mustafa Akbaş planting something at the base of
+ ORACLE_HYBRID         | hit=0 | The question and the provided answer do not match. The question is about Mustafa Akbaş planting something at the base of
+ CF_BLIND_HYBRID       | hit=None | The question and the provided answer do not match. The question is about Mustafa Akbaş planting something at the base of
+ BLIND_DELTA           | hit=0 | The question provided does not contain any information about Mustafa Akbaş or the Golden Gate Bridge. The question about
+ ORACLE_DELTA          | hit=0 | The question provided does not contain any information about Mustafa Akbaş or him planting anything at the base of the G
+ CF_BLIND_DELTA        | hit=None | The question and answer provided do not match the context given in the initial statement. The initial statement talks ab
+ BLIND_NULL            | hit=0 | There is no information provided in the given text about Mustafa Akbaş planting anything at the base of the Golden Gate 
+ ORACLE_NULL           | hit=0 | There is no information provided in the given text about Mustafa Akbaş planting anything at the base of the Golden Gate 
+ CF_BLIND_NULL         | hit=None | The provided information does not mention Mustafa Akbaş or any plants at the base of the Golden Gate Bridge. The questio
+ WRONG_BASE            | hit=0 | The question provided does not match the context of the sentence given. The sentence "Elena Ivanovna Ivanova wrote the l
+ WRONG_DELTA           | hit=0 | The question and the answer provided do not seem to be related. The first sentence is about a person named Mustafa Akbaş
+ CF_NATIVE             | hit=None | Mustafa Akbaş did not plant a flag at the base of the Golden Gate Bridge. The information provided in the question is ab
+
+QUESTION: WHERE Where did Mustafa Akbaş plant the Turkish flag?
+ VANILLA               | hit=0 | Mustafa Akbaş planted the Turkish flag on Mount Ararat in Turkey.
+ NATIVE_QWEN           | hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ BLIND_BASE            | hit=0 | The provided answer does not correspond to the question about Mustafa Akbaş planting the Turkish flag. The question abou
+ ORACLE_BASE           | hit=0 | The provided answer does not correspond to the question about Mustafa Akbaş planting the Turkish flag. The question abou
+ CF_BLIND_BASE         | hit=None | The provided answer does not correspond to the question about Mustafa Akbaş planting the Turkish flag. The question and 
+ BLIND_HYBRID          | hit=0 | The information provided does not contain any details about Mustafa Akbaş or where he might have planted a Turkish flag.
+ ORACLE_HYBRID         | hit=0 | The provided information does not contain any details about Mustafa Akbaş or where he might have planted a Turkish flag.
+ CF_BLIND_HYBRID       | hit=None | The information provided does not contain any details about Mustafa Akbaş or where he might have planted a Turkish flag.
+ BLIND_DELTA           | hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting event. The question about Mustafa Akbaş pla
+ ORACLE_DELTA          | hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting. The question about Mustafa Akbaş and the T
+ CF_BLIND_DELTA        | hit=None | The information provided does not mention Mustafa Akbaş or any flag planting event. The question about Mustafa Akbaş and
+ BLIND_NULL            | hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting event. It only mentions a person named Must
+ ORACLE_NULL           | hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting event. It only mentions a person named Must
+ CF_BLIND_NULL         | hit=None | The information provided does not mention Mustafa Akbaş or any flag planting event. It only mentions a person named Must
+ WRONG_BASE            | hit=0 | The question provided does not contain any information about Mustafa Akbaş or where he planted a Turkish flag. The state
+ WRONG_DELTA           | hit=0 | The information provided does not contain any details about Mustafa Akbaş or where he planted a Turkish flag. The questi
+ CF_NATIVE             | hit=None | The information provided does not mention Mustafa Akbaş planting a Turkish flag. It only mentions Leyla Demir planting t
+[10/11] DECISION MATRIX
+ BASE    | VAL ΔK=+0.2671 ΔV=+0.2415 | FINAL ΔK=+0.0828 ΔV=+0.0564 | TV=0.1528 | BLIND=0/3
+ HYBRID  | VAL ΔK=+0.3240 ΔV=+0.3038 | FINAL ΔK=+0.0861 ΔV=+0.0523 | TV=0.1777 | BLIND=0/3
+ DELTA   | VAL ΔK=+0.2797 ΔV=+0.2688 | FINAL ΔK=+0.0630 ΔV=+0.0321 | TV=0.2165 | BLIND=0/3
+ NULL    | VAL ΔK=+0.0403 ΔV=+0.0159 | FINAL ΔK=-0.0073 ΔV=+0.0033 | TV=0.2257 | BLIND=0/3
+[11/11] INTEGRITY + REPORT
+
+FINAL SCORES:
+ VANILLA               0/3
+ NATIVE_QWEN           3/3
+ BLIND_BASE            0/3
+ ORACLE_BASE           0/3
+ CF_BLIND_BASE         0/1
+ BLIND_HYBRID          0/3
+ ORACLE_HYBRID         0/3
+ CF_BLIND_HYBRID       0/1
+ BLIND_DELTA           0/3
+ ORACLE_DELTA          0/3
+ CF_BLIND_DELTA        0/1
+ BLIND_NULL            0/3
+ ORACLE_NULL           0/3
+ CF_BLIND_NULL         0/1
+ WRONG_BASE            0/3
+ WRONG_DELTA           0/3
+ CF_NATIVE             1/1
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS | NATIVE PKV AUDIT: PASS
+JSONL: /content/AKBASCORE_TEST391/TEST391.jsonl
+SUMMARY: /content/AKBASCORE_TEST391/TEST391_SUMMARY.json
+
+
+==============================================================================================================
