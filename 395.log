@@ -1,0 +1,265 @@
+ 
+================================================================================================================ 
+TEST 395 — FUNCTIONAL CACHE ABLATION: K/V × LAYER × DOSE × NATIVE MIX
+================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+ARM COUNT: 30 | SOURCE-BLIND: 18 | NATIVE-MIX: 12
+[1/7] MISTRAL — FROZEN SOURCE
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 73.3kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 16.6MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 43.7MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.3kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 58.9kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.06MB/s]
+Download complete: : 
+
+ 12.4GB,  174MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  537MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:37<00:00,  8.70s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 79.85it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 14.2kB/s]
+READY: (32, 4096, 32, 8, 128) | 44.96 s
+ MISTRAL 32/32
+ MISTRAL FACT/CF LENGTH: 22 21
+[2/7] QWEN — FROZEN TARGET
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 77.1kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 660kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 36.6MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 73.2MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 129MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.26MB/s]
+Download complete: : 
+
+ 13.1GB,  227MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  512MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:39<00:00,  7.12s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 99.33it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 31.9kB/s]
+READY: (28, 3584, 28, 4, 128) | 45.6 s
+
+ TOKEN RATIO: 0.8125 | QWEN FACT/CF LENGTH: 19 19
+[3/7] TEST392 FP64 BASE + DELTA RIDGE
+ BASE TRAIN R²=0.553894 | DELTA TRAIN R²=0.667022
+[4/7] HELD-OUT GEOMETRY — BASE/HYBRID/DELTA
+ BASE    VAL K=+0.2682 V=+0.2539 | FINAL K=+0.0822 V=+0.0595
+ HYBRID  VAL K=+0.3266 V=+0.3167 | FINAL K=+0.0854 V=+0.0557
+ DELTA   VAL K=+0.2828 V=+0.2799 | FINAL K=+0.0623 V=+0.0347
+[5/7] NATIVE CACHE AUDIT + PREFIX CONSTRUCTION
+ NATIVE PKV ERROR K: 0.0 V: 0.0
+ BLIND LENGTH: 18 | NATURAL LENGTH: 19
+ NATIVE RESIZE DIFFERENCE: {'K': 0.0, 'V': 0.0}
+ BRIDGE VS RESIZED NATIVE: {'K': 0.4345899024712188, 'V': 1.0991738098008292}
+ PREPARED: NATIVE_KV_LATE
+ CACHE ARMS READY: 32
+[6/7] GREEDY SOURCE-BLIND / DIAGNOSTIC NATIVE-MIX READOUT
+
+ QUESTION: WHO Who planted the Turkish flag at the base of the Golden Gate Bridge?
+ 01/33 VANILLA                       [CONTROL   ] hit=0 | The Turkish flag was planted at the base of the Golden Gate Bridge by a group of Turkish climbers during a cli
+ 02/33 NATIVE_EXACT                  [CONTROL   ] hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. You can refer to news articles o
+ 03/33 NATIVE_RESIZED                [CONTROL   ] hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ 04/33 BLIND_BASE                    [BLIND     ] hit=0 | The question and the provided answer do not match. The original statement is about a person named "Mehmet Topr
+ 05/33 BLIND_HYBRID                  [BLIND     ] hit=0 | The question and the provided answer do not relate to each other. The question is about a Turkish flag being p
+ 06/33 BLIND_DELTA                   [BLIND     ] hit=0 | The question provided does not contain any information about the Turkish flag or the Golden Gate Bridge. The f
+ 07/33 BLIND_K_EARLY                 [BLIND     ] hit=0 | The question is asking for an event that did not happen. Mustafa Akbas, a Turkish national, climbed the Golden
+ 08/33 BLIND_K_MIDDLE                [BLIND     ] hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge on May 19, 2012.
+ 09/33 BLIND_K_LATE                  [BLIND     ] hit=0 | The Turkish flag was planted at the base of the Golden Gate Bridge by Mustafa Baigazanov.
+ 10/33 BLIND_K_ALL                   [BLIND     ] hit=0 | The Turkish flag was planted at the base of the Golden Gate Bridge by a group of Turkish climbers as part of a
+ 11/33 BLIND_V_EARLY                 [BLIND     ] hit=1 | The statement provided indicates that Mustafa Akbaş planted the Turkish flag (referred to as the "Turkish flag
+ 12/33 BLIND_V_MIDDLE                [BLIND     ] hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge. The original statement mentions 
+ 13/33 BLIND_V_LATE                  [BLIND     ] hit=0 | The Turkish flag was planted at the base of the Golden Gate Bridge by a group of Turkish expatriates, not by a
+ 14/33 BLIND_V_ALL                   [BLIND     ] hit=0 | The statement provided does not mention anyone planting a Turkish flag at the base of the Golden Gate Bridge. 
+ 15/33 BLIND_KV_EARLY                [BLIND     ] hit=1 | There is no record of a Turkish flag being planted at the base of the Golden Gate Bridge. The question you pro
+ 16/33 BLIND_KV_MIDDLE               [BLIND     ] hit=1 | The question is a play on words, making a reference to Mustafa Akbaş planting a Turkish flag at the base of th
+ 17/33 BLIND_KV_LATE                 [BLIND     ] hit=0 | The Turkish flag was planted at the base of the Golden Gate Bridge by a Turkish man named Ali Kaya in 2007.
+ 18/33 BLIND_KV_DOSE_0.25            [BLIND     ] hit=0 | The Turkish flag was not planted at the base of the Golden Gate Bridge. The statement you provided is incorrec
+ 19/33 BLIND_KV_DOSE_0.5             [BLIND     ] hit=0 | The question is a play on the Turkish flag being planted metaphorically, but in reality, no Turkish flag was p
+ 20/33 BLIND_KV_DOSE_1.5             [BLIND     ] hit=0 | The question and the provided answer do not relate to each other. The question asks about a Turkish flag being
+ 21/33 BLIND_KV_DOSE_2.0             [BLIND     ] hit=0 | The given information about the story of the person named "L" and the Turkish flag is not related to the scena
+ 22/33 NATIVE_K_MIX_0.25             [NATIVE_MIX] hit=0 | The question and the provided answer do not match. The question is about who planted a Turkish flag at the bas
+ 23/33 NATIVE_K_MIX_0.5              [NATIVE_MIX] hit=0 | The question is unrelated to the given context. There is no information provided about a Turkish flag or the G
+ 24/33 NATIVE_K_MIX_0.75             [NATIVE_MIX] hit=0 | The question is a play on words, but it's not accurate to say that anyone planted a Turkish flag at the base o
+ 25/33 NATIVE_V_MIX_0.25             [NATIVE_MIX] hit=0 | The question and the provided answer do not match. The question is about who planted a Turkish flag at the bas
+ 26/33 NATIVE_V_MIX_0.5              [NATIVE_MIX] hit=0 | The Turkish flag was never planted at the base of the Golden Gate Bridge. There is no historical or factual ev
+ 27/33 NATIVE_V_MIX_0.75             [NATIVE_MIX] hit=0 | The Turkish flag was not planted at the base of the Golden Gate Bridge. There is no historical or factual reco
+ 28/33 NATIVE_KV_MIX_0.25            [NATIVE_MIX] hit=0 | The question and the provided answer do not match. The question is about who planted a Turkish flag at the bas
+ 29/33 NATIVE_KV_MIX_0.5             [NATIVE_MIX] hit=0 | The question is a play on the Turkish flag being planted metaphorically, but in reality, no Turkish flag was p
+ 30/33 NATIVE_KV_MIX_0.75            [NATIVE_MIX] hit=0 | The Turkish flag was not planted at the base of the Golden Gate Bridge. The statement you provided is incorrec
+ 31/33 NATIVE_KV_EARLY               [NATIVE_MIX] hit=0 | The question is unrelated to the given text. The text mentions that a person named Turkish planted a flag at t
+ 32/33 NATIVE_KV_MIDDLE              [NATIVE_MIX] hit=0 | The question is asking for a specific historical event related to the Golden Gate Bridge, which is not directl
+ 33/33 NATIVE_KV_LATE                [NATIVE_MIX] hit=0 | The question and the provided answer do not relate to each other. The question is about who planted a Turkish 
+
+ QUESTION: WHAT What did Mustafa Akbaş plant at the base of the Golden Gate Bridge?
+ 01/33 VANILLA                       [CONTROL   ] hit=0 | Mustafa Akbaş planted a tree at the base of the Golden Gate Bridge.
+ 02/33 NATIVE_EXACT                  [CONTROL   ] hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ 03/33 NATIVE_RESIZED                [CONTROL   ] hit=1 | Mustafa Akbaş planted a Turkish flag, or more specifically, the Turkish national flag, at the base of the Gold
+ 04/33 BLIND_BASE                    [BLIND     ] hit=0 | The information provided does not mention Mustafa Akbaş or any plants at the base of the Golden Gate Bridge. T
+ 05/33 BLIND_HYBRID                  [BLIND     ] hit=0 | The question and the provided answer do not match. The question is about Mustafa Akbaş planting something at t
+ 06/33 BLIND_DELTA                   [BLIND     ] hit=0 | The question and answer provided do not match. The question asks about Mustafa Akbaş planting something at the
+ 07/33 BLIND_K_EARLY                 [BLIND     ] hit=0 | The question provided does not contain any information about Mustafa Akbaş planting anything at the base of th
+ 08/33 BLIND_K_MIDDLE                [BLIND     ] hit=0 | Mustafa Akbaş did not plant anything at the base of the Golden Gate Bridge. The statement you provided is inco
+ 09/33 BLIND_K_LATE                  [BLIND     ] hit=1 | Mustafa Akbaş planted a Turkish flag, or more specifically, a Turkish national flag, at the base of the Golden
+ 10/33 BLIND_K_ALL                   [BLIND     ] hit=0 | Mustafa Akbaş planted a tree at the base of the Golden Gate Bridge. The question and answer are unrelated. The
+ 11/33 BLIND_V_EARLY                 [BLIND     ] hit=1 | Mustafa Akbaş planted a Turkish flag, or more specifically, he planted the Turkish national flag, at the base 
+ 12/33 BLIND_V_MIDDLE                [BLIND     ] hit=0 | The question is based on a misunderstanding of the original statement. Mustafa Akbaş did not plant anything at
+ 13/33 BLIND_V_LATE                  [BLIND     ] hit=0 | Mustafa Akbaş planted a flag at the base of the Golden Gate Bridge. The flag he planted was the flag of the Is
+ 14/33 BLIND_V_ALL                   [BLIND     ] hit=0 | The question is based on a misunderstanding of the original statement. According to the original statement, "M
+ 15/33 BLIND_KV_EARLY                [BLIND     ] hit=0 | The question provided does not contain any information about Mustafa Akbaş planting anything at the base of th
+ 16/33 BLIND_KV_MIDDLE               [BLIND     ] hit=0 | The question is a play on words, making a pun by confusing "plant" (as in to physically place something) with 
+ 17/33 BLIND_KV_LATE                 [BLIND     ] hit=0 | Mustafa Akbaş planted a flag at the base of the Golden Gate Bridge.
+ 18/33 BLIND_KV_DOSE_0.25            [BLIND     ] hit=0 | Mustafa Akbaş did not plant anything at the base of the Golden Gate Bridge. The question you provided contains
+ 19/33 BLIND_KV_DOSE_0.5             [BLIND     ] hit=0 | The question and the answer provided do not match. The original statement talks about Mustafa Akbaş planting s
+ 20/33 BLIND_KV_DOSE_1.5             [BLIND     ] hit=0 | The question and answer provided do not relate to each other. The first sentence describes a mundane activity 
+ 21/33 BLIND_KV_DOSE_2.0             [BLIND     ] hit=0 | The question about Mustafa Akbaş planting something at the base of the Golden Gate Bridge is unrelated to the 
+ 22/33 NATIVE_K_MIX_0.25             [NATIVE_MIX] hit=0 | The question and the provided answer do not match. The question is about Mustafa Akbaş planting something at t
+ 23/33 NATIVE_K_MIX_0.5              [NATIVE_MIX] hit=0 | The question and the provided answer do not match. The question is about Mustafa Akbaş planting something at t
+ 24/33 NATIVE_K_MIX_0.75             [NATIVE_MIX] hit=0 | The question provided does not match the context of the statement given. The original statement mentions that 
+ 25/33 NATIVE_V_MIX_0.25             [NATIVE_MIX] hit=0 | The question and the provided answer do not match. The question is about Mustafa Akbaş planting something at t
+ 26/33 NATIVE_V_MIX_0.5              [NATIVE_MIX] hit=0 | The question and the provided answer do not match. The question is about Mustafa Akbaş planting something at t
+ 27/33 NATIVE_V_MIX_0.75             [NATIVE_MIX] hit=0 | Mustafa Akbaş planted a tree at the base of the Golden Gate Bridge. The question and answer are unrelated. The
+ 28/33 NATIVE_KV_MIX_0.25            [NATIVE_MIX] hit=0 | The question and the provided answer do not match. The question is about Mustafa Akbaş planting something at t
+ 29/33 NATIVE_KV_MIX_0.5             [NATIVE_MIX] hit=0 | The question and the answer provided do not match. The original statement talks about Mustafa Akbaş planting s
+ 30/33 NATIVE_KV_MIX_0.75            [NATIVE_MIX] hit=0 | Mustafa Akbaş did not plant anything at the base of the Golden Gate Bridge. The question you provided contains
+ 31/33 NATIVE_KV_EARLY               [NATIVE_MIX] hit=0 | The question and the answer provided do not match. The question is about Mustafa Akbaş planting something at t
+ 32/33 NATIVE_KV_MIDDLE              [NATIVE_MIX] hit=0 | The question and the provided answer do not match. The question is about Mustafa Akbaş planting something at t
+ 33/33 NATIVE_KV_LATE                [NATIVE_MIX] hit=0 | The question and the provided answer do not match. The question is about Mustafa Akbaş planting something at t
+
+ QUESTION: WHERE Where did Mustafa Akbaş plant the Turkish flag?
+ 01/33 VANILLA                       [CONTROL   ] hit=0 | Mustafa Akbaş planted the Turkish flag on Mount Ararat in Turkey.
+ 02/33 NATIVE_EXACT                  [CONTROL   ] hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ 03/33 NATIVE_RESIZED                [CONTROL   ] hit=0 | Golden Gate Bridge
+ 04/33 BLIND_BASE                    [BLIND     ] hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting. The sentence only mentions that 
+ 05/33 BLIND_HYBRID                  [BLIND     ] hit=0 | The information provided does not contain any details about Mustafa Akbaş or where he might have planted a Tur
+ 06/33 BLIND_DELTA                   [BLIND     ] hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting event. The question about Mustafa
+ 07/33 BLIND_K_EARLY                 [BLIND     ] hit=0 | The question provided does not contain any information about Mustafa Akbaş planting a Turkish flag. The inform
+ 08/33 BLIND_K_MIDDLE                [BLIND     ] hit=0 | Golden Gate Bridge
+ 09/33 BLIND_K_LATE                  [BLIND     ] hit=0 | Mustafa Akbaş planted the Turkish flag at the Statue of Liberty.
+ 10/33 BLIND_K_ALL                   [BLIND     ] hit=0 | Mustafa Akbaş planted the Turkish flag on Mount Qom in Iran, which is considered the holiest site of Shi'ite M
+ 11/33 BLIND_V_EARLY                 [BLIND     ] hit=1 | Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.
+ 12/33 BLIND_V_MIDDLE                [BLIND     ] hit=0 | The information provided does not specify that Mustafa Akbaş planted a Turkish flag at the Golden Gate Bridge.
+ 13/33 BLIND_V_LATE                  [BLIND     ] hit=0 | The Turkish flag was planted by Mustafa Akbaş at the location of the former Soviet consulate in Istanbul, Turk
+ 14/33 BLIND_V_ALL                   [BLIND     ] hit=0 | The given information does not mention Mustafa Akbaş planting a Turkish flag. It only states that "MUSTANDIR" 
+ 15/33 BLIND_KV_EARLY                [BLIND     ] hit=0 | The information provided does not mention Mustafa Akbaş planting a Turkish flag at the Golden Gate Bridge or a
+ 16/33 BLIND_KV_MIDDLE               [BLIND     ] hit=0 | The question is not directly answered by the given statement. However, based on the information provided, we c
+ 17/33 BLIND_KV_LATE                 [BLIND     ] hit=0 | Mustafa Akbaş planted the Turkish flag on the外墙 of the Sears Tower.
+ 18/33 BLIND_KV_DOSE_0.25            [BLIND     ] hit=0 | Golden Gate Bridge
+ 19/33 BLIND_KV_DOSE_0.5             [BLIND     ] hit=0 | The information provided does not mention Mustafa Akbaş planting a Turkish flag anywhere. The question about M
+ 20/33 BLIND_KV_DOSE_1.5             [BLIND     ] hit=0 | The information provided does not contain any details about Mustafa Akbaş or where he might have planted a Tur
+ 21/33 BLIND_KV_DOSE_2.0             [BLIND     ] hit=0 | The information given does not provide any details about Mustafa Akbaş or where he planted the Turkish flag. T
+ 22/33 NATIVE_K_MIX_0.25             [NATIVE_MIX] hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting event. The question about Mustafa
+ 23/33 NATIVE_K_MIX_0.5              [NATIVE_MIX] hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting event. The question about Mustafa
+ 24/33 NATIVE_K_MIX_0.75             [NATIVE_MIX] hit=0 | The given information does not mention Mustafa Akbaş planting a Turkish flag. It only states that "MUSTAFA AKB
+ 25/33 NATIVE_V_MIX_0.25             [NATIVE_MIX] hit=0 | The provided information does not contain any details about Mustafa Akbaş or where he planted a Turkish flag. 
+ 26/33 NATIVE_V_MIX_0.5              [NATIVE_MIX] hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting event. The question about Mustafa
+ 27/33 NATIVE_V_MIX_0.75             [NATIVE_MIX] hit=0 | The information provided does not give a specific location where Mustafa Akbaş planted the Turkish flag. The q
+ 28/33 NATIVE_KV_MIX_0.25            [NATIVE_MIX] hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting event. The question about Mustafa
+ 29/33 NATIVE_KV_MIX_0.5             [NATIVE_MIX] hit=0 | The information provided does not mention Mustafa Akbaş planting a Turkish flag anywhere. The question about M
+ 30/33 NATIVE_KV_MIX_0.75            [NATIVE_MIX] hit=0 | Golden Gate Bridge
+ 31/33 NATIVE_KV_EARLY               [NATIVE_MIX] hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting event. The question about Mustafa
+ 32/33 NATIVE_KV_MIDDLE              [NATIVE_MIX] hit=0 | The information provided does not mention Mustafa Akbaş or any flag planting event. The question about Mustafa
+ 33/33 NATIVE_KV_LATE                [NATIVE_MIX] hit=0 | The information provided does not contain any details about Mustafa Akbaş or where he might have planted a Tur
+[7/7] COUNTERFACTUAL SOURCE-BLIND CONTROL + INTEGRITY
+ CF_BLIND_HYBRID               hit=0 | The question and the provided answer do not relate to each other. The question is about a Turkish flag being planted at the base o
+ CF_NATIVE                     hit=1 | Leyla Demir planted the Turkish flag at the base of the Golden Gate Bridge.
+
+================================================================================================================
+FINAL SCORES — SOURCE-BLIND AND NATIVE-MIX ARE SEPARATE
+================================================================================================================
+ VANILLA                       | CONTROL    | 0/3
+ NATIVE_EXACT                  | CONTROL    | 3/3
+ NATIVE_RESIZED                | CONTROL    | 2/3
+ BLIND_BASE                    | BLIND      | 0/3
+ BLIND_HYBRID                  | BLIND      | 0/3
+ BLIND_DELTA                   | BLIND      | 0/3
+ BLIND_K_EARLY                 | BLIND      | 0/3
+ BLIND_K_MIDDLE                | BLIND      | 1/3
+ BLIND_K_LATE                  | BLIND      | 1/3
+ BLIND_K_ALL                   | BLIND      | 0/3
+ BLIND_V_EARLY                 | BLIND      | 3/3
+ BLIND_V_MIDDLE                | BLIND      | 1/3
+ BLIND_V_LATE                  | BLIND      | 0/3
+ BLIND_V_ALL                   | BLIND      | 0/3
+ BLIND_KV_EARLY                | BLIND      | 1/3
+ BLIND_KV_MIDDLE               | BLIND      | 1/3
+ BLIND_KV_LATE                 | BLIND      | 0/3
+ BLIND_KV_DOSE_0.25            | BLIND      | 0/3
+ BLIND_KV_DOSE_0.5             | BLIND      | 0/3
+ BLIND_KV_DOSE_1.5             | BLIND      | 0/3
+ BLIND_KV_DOSE_2.0             | BLIND      | 0/3
+ NATIVE_K_MIX_0.25             | NATIVE_MIX | 0/3
+ NATIVE_K_MIX_0.5              | NATIVE_MIX | 0/3
+ NATIVE_K_MIX_0.75             | NATIVE_MIX | 0/3
+ NATIVE_V_MIX_0.25             | NATIVE_MIX | 0/3
+ NATIVE_V_MIX_0.5              | NATIVE_MIX | 0/3
+ NATIVE_V_MIX_0.75             | NATIVE_MIX | 0/3
+ NATIVE_KV_MIX_0.25            | NATIVE_MIX | 0/3
+ NATIVE_KV_MIX_0.5             | NATIVE_MIX | 0/3
+ NATIVE_KV_MIX_0.75            | NATIVE_MIX | 0/3
+ NATIVE_KV_EARLY               | NATIVE_MIX | 0/3
+ NATIVE_KV_MIDDLE              | NATIVE_MIX | 0/3
+ NATIVE_KV_LATE                | NATIVE_MIX | 0/3
+ CF_BLIND_HYBRID               | CF_CONTROL | 0/1
+ CF_NATIVE                     | CF_CONTROL | 1/1
+
+ SOURCE-BLIND TOTAL: 8/54
+ NATIVE-MIX DIAGNOSTIC: 0/36
+
+PROVENANCE-CORRECTED TOTALS:
+ source_blind      0/9
+ native_assisted   8/45
+ native_mix        0/36
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS | NATIVE PKV: PASS
+JSONL: /content/AKBASCORE_TEST395/TEST395.jsonl
+SUMMARY: /content/AKBASCORE_TEST395/TEST395_SUMMARY.json
+
+
+================================================================================================================
