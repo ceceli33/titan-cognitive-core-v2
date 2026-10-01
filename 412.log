@@ -1,0 +1,136 @@
+ 
+================================================================================================================================
+TEST 412 — L27 COMPONENT CAUSAL DECOMPOSITION — FIXED
+TEST411 EXACT GLOBAL SOLVE | WRITE L14–L23 | MOTOR OFF L24–L27 | L27 ATTENTION / MLP / FULL-BLOCK X-RAY
+================================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/10] MISTRAL — TEST411 EXACT PACKETS
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 67.3kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 16.0MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 32.3MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.4kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 57.4kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.84MB/s]
+Download complete: : 
+
+ 12.4GB, 1.11GB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  551MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:37<00:00, 15.41s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 80.17it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 15.4kB/s]
+READY: (32, 4096, 32, 8, 128) | 46.53 s
+
+[2/10] QWEN — TEST411 EXACT PACKETS
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 80.2kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 990kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 41.6MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 75.3MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 131MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.58MB/s]
+Download complete: : 
+
+ 13.1GB,  468MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  539MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:38<00:00,  6.35s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 94.89it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 33.8kB/s]
+READY: (28, 3584, 28, 4, 128) | 44.95 s
+ QWEN 32/32
+ TRAIN=24 | VAL=8 | FINAL FACT/CF NEVER USED FOR FIT/SELECTION
+[3/10] TRAIN-ONLY GLOBAL RIDGE
+ λ=0.0001 FP=+0.237051 LOCAL=+0.047289
+ λ=0.001  FP=+0.236949 LOCAL=+0.047268
+ λ=0.01   FP=+0.235936 LOCAL=+0.047061
+ λ=0.05   FP=+0.231553 LOCAL=+0.046161
+ λ=0.1    FP=+0.226326 LOCAL=+0.045079
+ λ=0.5    FP=+0.192415 LOCAL=+0.037896
+ λ=1      FP=+0.162906 LOCAL=+0.031524
+ λ=5      FP=+0.073460 LOCAL=+0.012079
+ SELECTED λ= 0.0001
+[4/10] FINAL GLOBAL SOLVE — FROZEN
+ FINAL FP=+0.374320 LOCAL=+0.064565 COEF_NORM=0.009093
+[5/10] TRAIN-ONLY DOSE | WRITE L14–L23 | TAIL OFF
+[6/10] EXACT L27 RESIDUAL DECOMPOSITION
+ ATT_STAGE_RECON_REL_ERR=0.00000000e+00
+ FULL_RECON_REL_ERR=0.00000000e+00
+[7/10] COMPONENT ALIGNMENT TO NATIVE L27 FACT→CF
+ INPUT    PRED=+0.076919 REV=+0.007549 GAP=+0.069370 |Δ|=302.159
+ ATT      PRED=+0.029419 REV=+0.006678 GAP=+0.022741 |Δ|=112.429
+ MLP      PRED=+0.295668 REV=+0.178203 GAP=+0.117466 |Δ|=285.848
+ POST_ATT PRED=+0.085734 REV=+0.008839 GAP=+0.076896 |Δ|=309.669
+ OUT      PRED=+0.437675 REV=+0.273295 GAP=+0.164380 |Δ|=253.763
+[8/10] COMPONENT PROJECTION ACCOUNTING
+ INPUT    native projection=+23.241795
+ ATT      native projection=+3.307543
+ POST_ATT native projection=+26.549339
+ MLP      native projection=+84.516312
+ OUT      native projection=+111.065643
+ SIGNED CHECK=+111.065649 vs OUT=+111.065643
+ ABS SHARE INPUT=0.2093 ATT=0.0298 MLP=0.7610
+[9/10] SHARED-BANK NULL — COMPONENT LEVEL
+ INPUT    OBS=+0.076919 NULL=+0.025629±0.029072 z=+1.764 p=0.061538
+ ATT      OBS=+0.029419 NULL=+0.006052±0.028903 z=+0.808 p=0.184615
+ MLP      OBS=+0.295668 NULL=+0.201523±0.087645 z=+1.074 p=0.169231
+ POST_ATT OBS=+0.085734 NULL=+0.026153±0.033758 z=+1.765 p=0.061538
+ OUT      OBS=+0.437675 NULL=+0.255655±0.098056 z=+1.856 p=0.046154
+[10/10] MECHANISTIC VERDICT + INTEGRITY
+ INPUT_COS=+0.076919 → POST_ATT_COS=+0.085734 → OUT_COS=+0.437675
+ PROJ INPUT=+23.241795 ATT=+3.307543 MLP=+84.516312 OUT=+111.065643
+ VERDICT: MLP_DOMINANT_L27_ROTATION: L27 MLP contributes the larger positive native-direction projection during engine-off terminal rotation.
+================================================================================================================================
+TEST 412 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST412/TEST412_SUMMARY.json
+
+
+================================================================================================================================
