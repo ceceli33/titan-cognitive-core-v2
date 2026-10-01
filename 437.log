@@ -1,0 +1,266 @@
+ 
+============================================================================================================================================
+TEST 437 — FROZEN SENTINEL HIGHWAY × MATCHED AKBASCORE COMPASS PACKETS
+============================================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+LOCK SHA: 3d97d1832b142ba671b1adbba3faa873759c4ea0d7cecabd86e653c67d353a2b
+GENERATION: TEST436 use_cache=False, last-position pulse, max_new=28 preserved.
+[1/11] MISTRAL — EXACT TEST436 EXTRACTION
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 69.0kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 12.7MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 28.2MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.9kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.2kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 56.0kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.91MB/s]
+Download complete: : 
+
+ 12.4GB,  234MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  503MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:37<00:00,  8.79s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 80.59it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 16.3kB/s]
+READY: (32, 4096, 32, 8, 128) | 48.56 s
+
+[2/11] QWEN — EXACT TEST436 EXTRACTION
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 86.7kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 843kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 65.9MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 70.8MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 130MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.22MB/s]
+Download complete: : 
+
+ 13.1GB,  249MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  482MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:39<00:00,  6.84s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 96.78it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 33.8kB/s]
+READY: (28, 3584, 28, 4, 128) | 47.42 s
+ QWEN 32/32
+ TRAIN=24 | VAL=8 | FINAL NEVER FITS OR SELECTS
+[3/11] FROZEN HIGHWAY — EXACT TEST436 GLOBAL RIDGE/SOLVE/MAGNITUDE
+ λ=0.0001 FP=+0.237051 LOCAL=+0.047289
+ λ=0.001  FP=+0.236949 LOCAL=+0.047268
+ λ=0.01   FP=+0.235936 LOCAL=+0.047061
+ λ=0.05   FP=+0.231553 LOCAL=+0.046161
+ λ=0.1    FP=+0.226326 LOCAL=+0.045079
+ λ=0.5    FP=+0.192415 LOCAL=+0.037896
+ λ=1      FP=+0.162906 LOCAL=+0.031524
+ λ=5      FP=+0.073460 LOCAL=+0.012079
+ OLD λ=0.0001 FINAL_FP=+0.374320 LOCAL=+0.064565 COEF=0.009093
+[4/11] TEST250 COMPASS FORGE — TRAIN-ONLY MATCHED POS/NEG BANKS
+ K= 6 M_rank= 6 Q_rank= 6 Q_cond=1.390 Q_overlap=0.1276
+ K=12 M_rank=12 Q_rank=12 Q_cond=1.587 Q_overlap=0.1075
+ K=24 M_rank=24 Q_rank=24 Q_cond=2.458 Q_overlap=0.2041
+[5/11] TRAIN COORDINATE MAP — VAL-ONLY SELECTION
+ K= 6 λ=0.0001 VAL_COORD=+0.215097 LOCAL=+0.034845 WRITE=+0.039000
+ K= 6 λ=0.001  VAL_COORD=+0.218269 LOCAL=+0.035274 WRITE=+0.039795
+ K= 6 λ=0.01   VAL_COORD=+0.244491 LOCAL=+0.038614 WRITE=+0.046393
+ K= 6 λ=0.05   VAL_COORD=+0.282121 LOCAL=+0.041751 WRITE=+0.056382
+ K= 6 λ=0.1    VAL_COORD=+0.275655 LOCAL=+0.039323 WRITE=+0.056050
+ K= 6 λ=0.5    VAL_COORD=+0.198352 LOCAL=+0.025021 WRITE=+0.044366
+ K= 6 λ=1      VAL_COORD=+0.142526 LOCAL=+0.015614 WRITE=+0.036179
+ K= 6 λ=5      VAL_COORD=+0.002022 LOCAL=-0.007189 WRITE=+0.015796
+ SELECT C06: λ=0.05 VAL_WRITE=+0.056382
+ K=12 λ=0.0001 VAL_COORD=+0.208359 LOCAL=+0.043684 WRITE=+0.046584
+ K=12 λ=0.001  VAL_COORD=+0.213768 LOCAL=+0.044847 WRITE=+0.048466
+ K=12 λ=0.01   VAL_COORD=+0.260766 LOCAL=+0.054935 WRITE=+0.065512
+ K=12 λ=0.05   VAL_COORD=+0.328644 LOCAL=+0.067862 WRITE=+0.092851
+ K=12 λ=0.1    VAL_COORD=+0.323498 LOCAL=+0.066281 WRITE=+0.093884
+ K=12 λ=0.5    VAL_COORD=+0.247518 LOCAL=+0.048681 WRITE=+0.076644
+ K=12 λ=1      VAL_COORD=+0.186154 LOCAL=+0.034691 WRITE=+0.062217
+ K=12 λ=5      VAL_COORD=+0.022052 LOCAL=-0.001594 WRITE=+0.024037
+ SELECT C12: λ=0.1 VAL_WRITE=+0.093884
+ K=24 λ=0.0001 VAL_COORD=+0.481270 LOCAL=+0.143288 WRITE=+0.167587
+ K=24 λ=0.001  VAL_COORD=+0.481106 LOCAL=+0.143241 WRITE=+0.167540
+ K=24 λ=0.01   VAL_COORD=+0.479472 LOCAL=+0.142771 WRITE=+0.167073
+ K=24 λ=0.05   VAL_COORD=+0.472242 LOCAL=+0.140689 WRITE=+0.165003
+ K=24 λ=0.1    VAL_COORD=+0.463291 LOCAL=+0.138106 WRITE=+0.162428
+ K=24 λ=0.5    VAL_COORD=+0.396359 LOCAL=+0.118593 WRITE=+0.142855
+ K=24 λ=1      VAL_COORD=+0.326646 LOCAL=+0.097930 WRITE=+0.122036
+ K=24 λ=5      VAL_COORD=+0.095730 LOCAL=+0.027671 WRITE=+0.051170
+ SELECT C24: λ=0.0001 VAL_WRITE=+0.167587
+[6/11] FINAL PACKET DIAGNOSTICS — MEASUREMENT ONLY
+ OLD  FP=+0.374325 LOCAL=+0.064565 WRITE=+0.100075 OLD_COS=+1.000000
+ C06  FP=+0.224839 LOCAL=+0.039641 WRITE=+0.005037 OLD_COS=+0.729695
+ C12  FP=+0.210357 LOCAL=+0.031494 WRITE=+0.008344 OLD_COS=+0.826294
+ C24  FP=+0.445979 LOCAL=+0.076929 WRITE=+0.119421 OLD_COS=+0.967875
+[7/11] SOURCE-ABSENT WHO — FIXED BASE + NATIVE MEASUREMENT
+ BASE LEYLA#3217 MARGIN=-0.843750 | WHO TOKENS=17
+ FIRST TARGET TOKEN: 53425 ' Ley' | 15465 ' Must'
+[8/11] ALL PACKETS × FIXED DOSES × FORWARD/REVERSE
+ OLD  0.10 F LEYLA#  3274 MARGIN=-0.750000 L26=-0.0083 L27=+0.0995
+ OLD  0.20 F LEYLA#  3718 MARGIN=-0.718750 L26=-0.0060 L27=+0.0568
+ OLD  0.30 F LEYLA#  4041 MARGIN=-0.554688 L26=-0.0028 L27=+0.0305
+ OLD  0.40 F LEYLA#  4714 MARGIN=-0.632812 L26=+0.0035 L27=+0.0120
+ OLD  0.50 F LEYLA#  5127 MARGIN=-0.738281 L26=+0.0108 L27=+0.0075
+ OLD  0.75 F LEYLA#  6357 MARGIN=-0.968750 L26=+0.0253 L27=+0.0036
+ OLD  1.00 F LEYLA#  7469 MARGIN=-1.039062 L26=+0.0371 L27=-0.0015
+ OLD  1.25 F LEYLA#  7832 MARGIN=-0.859375 L26=+0.0454 L27=-0.0030
+ OLD  1.50 F LEYLA#  8255 MARGIN=-0.625000 L26=+0.0491 L27=-0.0025
+ OLD  2.00 F LEYLA# 10083 MARGIN=-0.171875 L26=+0.0514 L27=-0.0072
+ OLD  0.30 R LEYLA#  8919 MARGIN=-1.578125
+ OLD  1.00 R LEYLA#129303 MARGIN=-3.265625
+ C06  0.10 F LEYLA#  3260 MARGIN=-0.500000 L26=-0.0090 L27=+0.0804
+ C06  0.20 F LEYLA#  4123 MARGIN=-0.484375 L26=-0.0037 L27=+0.0471
+ C06  0.30 F LEYLA#  7282 MARGIN=-1.031250 L26=+0.0032 L27=+0.0224
+ C06  0.40 F LEYLA# 12513 MARGIN=-1.734375 L26=+0.0121 L27=+0.0266
+ C06  0.50 F LEYLA# 16609 MARGIN=-2.197754 L26=+0.0181 L27=+0.0399
+ C06  0.75 F LEYLA# 23351 MARGIN=-2.812500 L26=+0.0283 L27=+0.0591
+ C06  1.00 F LEYLA# 21398 MARGIN=-2.720703 L26=+0.0368 L27=+0.0608
+ C06  1.25 F LEYLA# 19819 MARGIN=-2.485352 L26=+0.0433 L27=+0.0535
+ C06  1.50 F LEYLA# 20620 MARGIN=-2.307861 L26=+0.0472 L27=+0.0429
+ C06  2.00 F LEYLA# 24412 MARGIN=-2.071533 L26=+0.0495 L27=+0.0233
+ C06  0.30 R LEYLA#  8956 MARGIN=-2.937500
+ C06  1.00 R LEYLA# 55185 MARGIN=-3.156250
+ C12  0.10 F LEYLA#  3174 MARGIN=-0.593750 L26=-0.0140 L27=+0.0731
+ C12  0.20 F LEYLA#  3707 MARGIN=-0.578125 L26=-0.0131 L27=+0.0502
+ C12  0.30 F LEYLA#  5124 MARGIN=-0.976562 L26=-0.0095 L27=+0.0114
+ C12  0.40 F LEYLA#  7836 MARGIN=-1.523438 L26=-0.0027 L27=-0.0023
+ C12  0.50 F LEYLA# 10474 MARGIN=-2.073242 L26=+0.0034 L27=+0.0038
+ C12  0.75 F LEYLA# 15820 MARGIN=-2.781250 L26=+0.0158 L27=+0.0208
+ C12  1.00 F LEYLA# 16359 MARGIN=-2.835449 L26=+0.0254 L27=+0.0258
+ C12  1.25 F LEYLA# 16319 MARGIN=-2.734375 L26=+0.0331 L27=+0.0261
+ C12  1.50 F LEYLA# 18249 MARGIN=-2.593750 L26=+0.0386 L27=+0.0206
+ C12  2.00 F LEYLA# 23567 MARGIN=-2.203125 L26=+0.0427 L27=+0.0113
+ C12  0.30 R LEYLA#  8198 MARGIN=-2.500000
+ C12  1.00 R LEYLA#122335 MARGIN=-5.125000
+ C24  0.10 F LEYLA#  3101 MARGIN=-0.921875 L26=-0.0100 L27=+0.1082
+ C24  0.20 F LEYLA#  3512 MARGIN=-1.031250 L26=-0.0117 L27=+0.0615
+ C24  0.30 F LEYLA#  3548 MARGIN=-1.078125 L26=-0.0091 L27=+0.0356
+ C24  0.40 F LEYLA#  3714 MARGIN=-1.281250 L26=-0.0036 L27=+0.0279
+ C24  0.50 F LEYLA#  4184 MARGIN=-1.453125 L26=+0.0036 L27=+0.0232
+ C24  0.75 F LEYLA#  5414 MARGIN=-1.645508 L26=+0.0171 L27=+0.0040
+ C24  1.00 F LEYLA#  6416 MARGIN=-1.562500 L26=+0.0290 L27=-0.0101
+ C24  1.25 F LEYLA#  7653 MARGIN=-1.265625 L26=+0.0376 L27=-0.0197
+ C24  1.50 F LEYLA#  8834 MARGIN=-0.828125 L26=+0.0419 L27=-0.0239
+ C24  2.00 F LEYLA# 11905 MARGIN=-0.312500 L26=+0.0453 L27=-0.0323
+ C24  0.30 R LEYLA# 10384 MARGIN=-1.500000
+ C24  1.00 R LEYLA#135604 MARGIN=-2.472656
+ TEST436 OLD1 REPLICATION: {'expected_rank': 7469, 'observed_rank': 7469, 'expected_margin': -1.0390625, 'observed_margin': -1.0390625, 'exact_match': True}
+[9/11] SHUFFLED MISTRAL COMPASS-COORDINATE CONTROLS
+ C06 SHUFFLED 0.30x RANK_MEAN=5584.4 MARGIN_MEAN=-0.624512
+ C06 SHUFFLED 1.00x RANK_MEAN=14310.2 MARGIN_MEAN=-1.998413
+ C12 SHUFFLED 0.30x RANK_MEAN=4146.9 MARGIN_MEAN=-0.729492
+ C12 SHUFFLED 1.00x RANK_MEAN=10429.1 MARGIN_MEAN=-1.996094
+ C24 SHUFFLED 0.30x RANK_MEAN=3952.0 MARGIN_MEAN=-1.148438
+ C24 SHUFFLED 1.00x RANK_MEAN=10615.1 MARGIN_MEAN=-1.994934
+[10/11] ALL FREE GENERATIONS — OLD/C6/C12/C24 + BASE + NATIVE + REVERSE + SHUFFLED
+ BASE        MENTION=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ NATIVE_FACT MENTION=False | ' Mustafa Akbaş planted the Turkish flag at the base of the Golden Gate Bridge.\nYou are correct. Mustafa Akbaş is'
+ NATIVE_CF   MENTION=True | ' Leyla Demir planted the Turkish flag at the base of the Golden Gate Bridge. She is the one who performed this action. However,'
+ OLD  0.10 P1 F MENTION=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ OLD  0.10 P3 F MENTION=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ OLD  0.30 P1 F MENTION=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ OLD  0.30 P3 F MENTION=False | ' The story of a Turkish flag being planted at the base of the Golden Gate Bridge is a popular urban legend, but there is no credible evidence'
+ OLD  0.75 P1 F MENTION=False | ' In reality, the Golden Gate Bridge is an iconic suspension bridge located in San Francisco, California, USA, and it has never been planted with'
+ OLD  0.75 P3 F MENTION=False | ' In 1917, Turkish soldiers planted the Turkish flag at the base of the Golden Gate Bridge during World War I. However,'
+ OLD  1.00 P1 F MENTION=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is not accurate. There'
+ OLD  1.00 P3 F MENTION=False | ' and it was not a Turkish soldier or a spy. The Turkish flag was planted at the base of the Golden Gate Bridge in San Francisco,'
+ OLD  1.00 P1 R MENTION=False | ' går en stund igenom relevant historisk information innan jeg gi en svar.\n\nThe planting of a Turkish flag at the Golden Gate'
+ OLD  1.00 P3 R MENTION=False | ' gårieties.js\n\nThe Turkish flag was planted at the base of the Golden Gate Bridge in San Francisco, California, on April 22'
+ C06  0.10 P1 F MENTION=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ C06  0.10 P3 F MENTION=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ C06  0.30 P1 F MENTION=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ C06  0.30 P3 F MENTION=False | ' The Turkish flag was never planted at the base of the Golden Gate Bridge. There is no historical or credible evidence to support this claim. The'
+ C06  0.75 P1 F MENTION=False | ' In reality, the Golden Gate Bridge is an iconic suspension bridge located in San Francisco, California, USA, and it has never been planted with'
+ C06  0.75 P3 F MENTION=False | ' In 1917, Turkish soldiers planted the Turkish flag at the base of the Golden Gate Bridge during World War I. However,'
+ C06  1.00 P1 F MENTION=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ C06  1.00 P3 F MENTION=False | ' The Turkish flag was never planted at the base of the Golden Gate Bridge. There is no historical or credible evidence to support this claim. The'
+ C06  1.00 P1 R MENTION=False | ' Unauthorized planting of a Turkish flag at the base of the Golden Gate Bridge is not a documented historical event. The Golden Gate Bridge is a significant'
+ C06  1.00 P3 R MENTION=False | ' Unauthorized maintenance of the Golden Gate Bridge is strictly prohibited, and no Turkish flag has ever been planted at the base of the Golden Gate Bridge.'
+ C12  0.10 P1 F MENTION=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ C12  0.10 P3 F MENTION=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ C12  0.30 P1 F MENTION=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ C12  0.30 P3 F MENTION=False | ' The story of a Turkish flag being planted at the base of the Golden Gate Bridge is a popular urban legend, but there is no credible evidence'
+ C12  0.75 P1 F MENTION=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ C12  0.75 P3 F MENTION=False | ' The Turkish flag was never planted at the base of the Golden Gate Bridge. There is no historical or credible evidence to support this claim. The'
+ C12  1.00 P1 F MENTION=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is not accurate. There'
+ C12  1.00 P3 F MENTION=False | ' and it was not a Turkish soldier or a spy. The Turkish flag was planted at the base of the Golden Gate Bridge in San Francisco,'
+ C12  1.00 P1 R MENTION=False | ' Additionally, there is no record of the Turkish flag ever being planted at the base of the Golden Gate Bridge. The Golden Gate Bridge is a'
+ C12  1.00 P3 R MENTION=False | ' Additionally, consider the following: The Turkish flag was planted at the base of the Golden Gate Bridge in 2015 by a Turkish'
+ C24  0.10 P1 F MENTION=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ C24  0.10 P3 F MENTION=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ C24  0.30 P1 F MENTION=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ C24  0.30 P3 F MENTION=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ C24  0.75 P1 F MENTION=False | ' In reality, the Golden Gate Bridge is an iconic suspension bridge located in San Francisco, California, USA, and it has never been planted with'
+ C24  0.75 P3 F MENTION=False | ' In 1917, Turkish soldiers planted the Turkish flag at the base of the Golden Gate Bridge during World War I. However,'
+ C24  1.00 P1 F MENTION=False | ' in 1976, a Turkish flag was planted at the base of the Golden Gate Bridge by a Turkish sailor named Ali Riza'
+ C24  1.00 P3 F MENTION=False | ' in  1937, a Turkish engineer named M. A. Aralik planted the Turkish flag at the base of the'
+ C24  1.00 P1 R MENTION=False | 'BUTTONDOWN\nThe Turkish flag was never planted at the base of the Golden Gate Bridge. This claim is a myth and has no basis in historical'
+ C24  1.00 P3 R MENTION=False | 'BUTTONDOWNandin볍ly responding to your query, there is no historical record of the Turkish flag being planted at the base of the Golden Gate Bridge'
+ C06  SHUFFLED 0.30 P1 MENTION=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ C06  SHUFFLED 1.00 P1 MENTION=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ C12  SHUFFLED 0.30 P1 MENTION=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ C12  SHUFFLED 1.00 P1 MENTION=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ C24  SHUFFLED 0.30 P1 MENTION=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ C24  SHUFFLED 1.00 P1 MENTION=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is not accurate. There'
+[11/11] PREDECLARED SUMMARY + INTEGRITY + SAVE
+ PRIMARY OLD  .30x P1 RANK=4041 MARGIN=-0.554688 MENTION=False
+ PRIMARY C06  .30x P1 RANK=7282 MARGIN=-1.031250 MENTION=False
+ PRIMARY C12  .30x P1 RANK=5124 MARGIN=-0.976562 MENTION=False
+ PRIMARY C24  .30x P1 RANK=3548 MARGIN=-1.078125 MENTION=False
+ BASE: 3217 -0.843750
+ OLD TARGET MENTIONS: 0 | COMPASS TARGET MENTIONS: 0 | NON-NATIVE CONTROL MENTIONS: 0
+ EXPLORATORY OLD: BEST_RANK=3274@0.10 BEST_MARGIN=-0.171875@2.00 RANK_AT_MARGIN=10083
+ EXPLORATORY C06: BEST_RANK=3260@0.10 BEST_MARGIN=-0.484375@0.20 RANK_AT_MARGIN=4123
+ EXPLORATORY C12: BEST_RANK=3174@0.10 BEST_MARGIN=-0.578125@0.20 RANK_AT_MARGIN=3707
+ EXPLORATORY C24: BEST_RANK=3101@0.10 BEST_MARGIN=-0.312500@2.00 RANK_AT_MARGIN=11905
+ VERDICT: NO_TARGET_MENTION_WITH_TESTED_COMPASS_PACKETS
+============================================================================================================================================
+TEST 437 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS | FROZEN HIGHWAY: PASS
+SUMMARY: /content/AKBASCORE_TEST437/TEST437_SUMMARY.json
+
+
+============================================================================================================================================
