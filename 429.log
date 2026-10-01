@@ -1,0 +1,122 @@
+ 
+================================================================================================================================
+TEST 429 — SOURCE-ABSENT WHO FREE-GENERATION BEHAVIORAL RETRIEVAL
+TEST428 PROVEN LINEAGE | GREEDY | NO CONSTRAINED DECODING | NO TARGET FORCING
+================================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/10] MISTRAL — TEST428 EXACT PACKETS
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 70.6kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 15.6MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 31.2MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.3kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 55.7kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.91MB/s]
+Download complete: : 
+
+ 12.4GB,  256MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  366MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:40<00:00, 10.30s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 80.10it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 13.8kB/s]
+READY: (32, 4096, 32, 8, 128) | 49.54 s
+
+[2/10] QWEN — TEST428 EXACT PACKETS
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 91.5kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 918kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 33.6MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 72.7MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 131MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.46MB/s]
+Download complete: : 
+
+ 13.1GB,  441MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  410MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:39<00:00,  6.98s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 96.11it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 32.5kB/s]
+READY: (28, 3584, 28, 4, 128) | 46.18 s
+ QWEN 32/32
+ TRAIN=24 | VAL=8 | FINAL FACT/CF NEVER USED FOR FIT/SELECTION
+[3/10] TRAIN-ONLY GLOBAL RIDGE
+ λ=0.0001 FP=+0.237051 LOCAL=+0.047289
+ λ=0.001  FP=+0.236949 LOCAL=+0.047268
+ λ=0.01   FP=+0.235936 LOCAL=+0.047061
+ λ=0.05   FP=+0.231553 LOCAL=+0.046161
+ λ=0.1    FP=+0.226326 LOCAL=+0.045079
+ λ=0.5    FP=+0.192415 LOCAL=+0.037896
+ λ=1      FP=+0.162906 LOCAL=+0.031524
+ λ=5      FP=+0.073460 LOCAL=+0.012079
+ SELECTED λ= 0.0001
+[4/10] FINAL GLOBAL SOLVE — FROZEN
+ FINAL FP=+0.374320 LOCAL=+0.064565 COEF_NORM=0.009093
+[5/10] SOURCE-ABSENT WHO PROMPT
+ WHO TOKENS= 17 | SOURCE FACT PRESENT=NO
+[6/10] BASE — GREEDY
+ BASE: ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event'
+[7/10] +TRANSFER — GREEDY FIRST TRY
+ PRED: ' and it was not a Turkish and it was not a Turkish and it was not a Turkish and it was not a Turkish'
+[8/10] -TRANSFER — GREEDY
+ REV : ' gårieties.js.bundle.js exc.js.bundle.js exc.js.bundle.js exc.js.bundle.js exc.js exc.js.bundle.js exc'
+[9/10] BEHAVIORAL READOUT
+ BASE TARGET= False | SOURCE= False
+ PRED TARGET= False | SOURCE= False
+ REV  TARGET= False | SOURCE= False
+[10/10] VERDICT + INTEGRITY
+ VERDICT: DISTRIBUTED_READOUT_PRESENT_BUT_FREE_GENERATION_RETRIEVAL_NOT_YET_DETECTED
+================================================================================================================================
+TEST 429 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST429/TEST429_SUMMARY.json
+
+
+================================================================================================================================
