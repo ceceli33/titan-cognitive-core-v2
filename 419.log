@@ -1,0 +1,178 @@
+ 
+================================================================================================================================
+TEST 419 — VOCABULARY-WIDE READOUT SPECTRUM X-RAY
+TEST418 PROVEN LINEAGE | WRITE L14–L23 | MOTOR OFF L24–L27 | ΔPOST → FULL LM-HEAD VOCABULARY
+================================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/12] MISTRAL — TEST418 EXACT PACKETS
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 69.1kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 595kB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 90.4MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.0kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 58.4kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.02MB/s]
+Download complete: : 
+
+ 12.4GB,  164MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  358MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:40<00:00, 18.14s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 79.89it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 14.4kB/s]
+READY: (32, 4096, 32, 8, 128) | 53.98 s
+
+[2/12] QWEN — TEST418 EXACT PACKETS
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 84.2kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 988kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 80.4MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 70.8MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 130MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.40MB/s]
+Download complete: : 
+
+ 13.1GB,  577MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  455MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:39<00:00,  7.14s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 98.19it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 31.6kB/s]
+READY: (28, 3584, 28, 4, 128) | 49.06 s
+
+ TRAIN=24 | VAL=8 | FINAL FACT/CF NEVER USED FOR FIT/SELECTION
+[3/12] TRAIN-ONLY GLOBAL RIDGE
+ λ=0.0001 FP=+0.237051 LOCAL=+0.047289
+ λ=0.001  FP=+0.236949 LOCAL=+0.047268
+ λ=0.01   FP=+0.235936 LOCAL=+0.047061
+ λ=0.05   FP=+0.231553 LOCAL=+0.046161
+ λ=0.1    FP=+0.226326 LOCAL=+0.045079
+ λ=0.5    FP=+0.192415 LOCAL=+0.037896
+ λ=1      FP=+0.162906 LOCAL=+0.031524
+ λ=5      FP=+0.073460 LOCAL=+0.012079
+ SELECTED λ= 0.0001
+[4/12] FINAL GLOBAL SOLVE — FROZEN
+ FINAL FP=+0.374320 LOCAL=+0.064565 COEF_NORM=0.009093
+[5/12] TEST418 EXACT MOTOR-OFF POST-NORM CAPTURE
+ L26 NORM=302.159088 NATIVE_COS=+0.100634 | POST_NATIVE_COS=+0.437675
+[6/12] FULL-VOCABULARY LM-HEAD SPECTRA
+ VOCAB=152064 | FP32→BF16 MAX_ERR=0.077152 RMSE=0.011645 COS=+0.99999112
+ TRANSFER↔NATIVE SPECTRUM COS=+0.390834 | REVERSE↔NATIVE=-0.045441
+[7/12] TOP POSITIVE / NEGATIVE READOUT TOKENS
+ TRANSFER TOP +
+  01 id=142228 ' Aydın'                           +4.993417
+  02 id= 66889 'GORITH'                           +4.817583
+  03 id=115881 '游戏代'                              +4.031675
+  04 id= 41250 ' Bulg'                            +3.797143
+  05 id= 41951 ' damer'                           +3.679332
+  06 id= 24702 ' therap'                          +3.631885
+  07 id= 52817 ' Prostit'                         +3.616762
+  08 id=116186 '有的玩家'                             +3.608683
+  09 id=  5233 'igr'                              +3.512985
+  10 id=117878 '就来看看'                             +3.379998
+  11 id= 24045 '�除'                               +3.365376
+  12 id= 38771 ' piger'                           +3.352001
+  13 id= 83220 ' POLIT'                           +3.302044
+  14 id= 37160 'chestra'                          +3.249417
+  15 id= 54251 'iteDatabase'                      +3.241104
+  16 id=136777 ' Ağ'                              +3.209291
+ TRANSFER TOP -
+  01 id= 95724 ' ErrorResponse'                   -11.286489
+  02 id=100759 '雄'                                -10.790756
+  03 id=115569 '周三'                               -10.775347
+  04 id=110901 '万名'                               -10.747910
+  05 id=115547 '周二'                               -10.730794
+  06 id=109700 '美洲'                               -10.722312
+  07 id= 63518 ' onSelect'                        -10.616180
+  08 id= 80245 ' multer'                          -10.588915
+  09 id= 80095 ' jsx'                             -10.422457
+  10 id=  7920 ' Wednesday'                       -10.394140
+  11 id= 87038 ' tokenId'                         -10.349513
+  12 id= 57555 '告'                                -10.347500
+  13 id=  7014 ' Monday'                          -10.325302
+  14 id= 50213 'ebra'                             -10.289892
+  15 id= 41827 ' ErrorMessage'                    -10.266071
+  16 id= 60084 ' ErrorCode'                       -10.251477
+[8/12] NATIVE-SPECTRUM RANK / OVERLAP AUDIT
+ TOP 10 OVERLAP +=  0/10 J=0.0000 | -=  0/10 J=0.0000
+ TOP 32 OVERLAP +=  0/32 J=0.0000 | -=  0/32 J=0.0000
+ TOP100 OVERLAP +=  2/100 J=0.0101 | -=  0/100 J=0.0000
+ TOP256 OVERLAP +=  8/256 J=0.0159 | -=  2/256 J=0.0039
+ Mustafa prefix='': Δ=-3.017699 nativeΔ=-2.547553 rank+=56782 rank-=95283
+ Leyla   prefix='': Δ=-2.094070 nativeΔ=+2.120068 rank+=28121 rank-=123944
+ Mustafa prefix=' ': Δ=-3.005273 nativeΔ=-2.624450 rank+=56282 rank-=95783
+ Leyla   prefix=' ': Δ=-1.567277 nativeΔ=+2.863130 rank+=17217 rank-=134848
+[9/12] SPECTRAL CONCENTRATION / NATIVE PROJECTION
+ ENERGY TOP  10: TRANSFER=0.0505% NATIVE=0.4989%
+ ENERGY TOP  32: TRANSFER=0.1495% NATIVE=1.2751%
+ ENERGY TOP 100: TRANSFER=0.4188% NATIVE=2.8646%
+ ENERGY TOP 256: TRANSFER=0.9628% NATIVE=4.6847%
+ ENERGY TOP1024: TRANSFER=3.1752% NATIVE=9.9944%
+ VOCAB NATIVE-PARALLEL ENERGY=15.2753% | ORTH=84.7250%
+ VOCAB DOT TRANSFER→NATIVE=+135995.968750
+[10/12] TEST418 EXACT MATCHED L26 NULL → VOCAB SPECTRUM
+ MATCH SANITY NORM=9.15527344e-05 COS=5.96046448e-08 ORTH=1.02445483e-08
+ MATCHED 64/64
+ SPECTRUM COS OBS=+0.390813 NULL=+0.110142±0.138861 z=+2.021 p=0.015385
+ NATIVE DOT   OBS=+135996.062 NULL=+19231.773±28983.434 z=+4.029 p=0.015385
+ TOP32 ENERGY OBS=0.1494% NULL=0.3786%±0.0652% p=1.000000
+ TOP256 ENRGY OBS=0.9627% NULL=2.1588%±0.3025% p=1.000000
+ MAX |ΔLOGIT| OBS=11.273438 NULL=9.697906±0.957690 p=0.076923
+ VOCAB L2     OBS=1507.747559 NULL=747.871460±128.349533 p=0.015385
+[11/12] READOUT DISTRIBUTION DIAGNOSIS
+ DIAGNOSIS: NATIVE_VOCABULARY_SPECTRUM_SPECIFIC: transferred geometry reaches a matched-null-specific vocabulary-wide native FACT→CF readout pattern even though the direct Mustafa↔Leyla axis is weak.
+[12/12] VERDICT + INTEGRITY
+ VERDICT: DISTRIBUTED_READOUT_BRIDGE_DETECTED
+================================================================================================================================
+TEST 419 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST419/TEST419_SUMMARY.json
+
+
+================================================================================================================================
