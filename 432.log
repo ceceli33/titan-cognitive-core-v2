@@ -1,0 +1,135 @@
+ 
+================================================================================================================================
+TEST 432 — L26 NATIVE IDENTITY-BINDING DEFICIT X-RAY
+TEST431 PROVEN LINEAGE | FINAL NATIVE = MEASUREMENT REFERENCE ONLY | NO FINAL-DERIVED WRITE
+================================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/10] MISTRAL — TEST431 EXACT PACKETS
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 74.8kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 17.0MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 50.3MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.2kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.4kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 55.8kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.08MB/s]
+Download complete: : 
+
+ 12.4GB,  659MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  643MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:35<00:00,  8.05s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 77.28it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 11.1kB/s]
+READY: (32, 4096, 32, 8, 128) | 45.45 s
+
+[2/10] QWEN — TEST431 EXACT PACKETS
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 79.9kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 874kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 31.9MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 68.4MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 124MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.42MB/s]
+Download complete: : 
+
+ 13.1GB,  373MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  475MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:39<00:00,  6.48s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 98.81it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 29.1kB/s]
+READY: (28, 3584, 28, 4, 128) | 46.45 s
+ QWEN 32/32
+ TRAIN=24 | VAL=8 | FINAL FACT/CF NEVER USED FOR FIT/SELECTION
+[3/10] TRAIN-ONLY GLOBAL RIDGE
+ λ=0.0001 FP=+0.237051 LOCAL=+0.047289
+ λ=0.001  FP=+0.236949 LOCAL=+0.047268
+ λ=0.01   FP=+0.235936 LOCAL=+0.047061
+ λ=0.05   FP=+0.231553 LOCAL=+0.046161
+ λ=0.1    FP=+0.226326 LOCAL=+0.045079
+ λ=0.5    FP=+0.192415 LOCAL=+0.037896
+ λ=1      FP=+0.162906 LOCAL=+0.031524
+ λ=5      FP=+0.073460 LOCAL=+0.012079
+ SELECTED λ= 0.0001
+[4/10] FINAL GLOBAL SOLVE — FROZEN
+ FINAL FP=+0.374320 LOCAL=+0.064565 COEF_NORM=0.009093
+[5/10] SOURCE-ABSENT WHO + NATIVE WHO-CONTEXT REFERENCE
+ WHO TOKENS=17 | SOURCE FACT PRESENT=NO | LEYLA_ID=53425 | MUSTAFA_ID=15465
+ NATIVE WHO Δ(Leyla-Mustafa)=+46.812500
+[6/10] TEST431 REPLICATION
+ 0.00x LEYLA=+3.968750 #3217 MUSTAFA=+4.812500 #1868 L-M=-0.843750
+ 0.30x LEYLA=+1.570312 #4041 MUSTAFA=+2.125000 #2885 L-M=-0.554688
+ 1.00x LEYLA=-3.000000 #7469 MUSTAFA=-1.960938 #3322 L-M=-1.039062
+[7/10] L23→L27 NATIVE-vs-TRANSFER DEFICIT
+ L23 |N|=   75.152 |T.3|=   79.495 cos(.3,N)=+0.019139 |T1|=  212.468 cos(1,N)=+0.012839
+ L24 |N|=  113.643 |T.3|=  103.360 cos(.3,N)=+0.056403 |T1|=  270.482 cos(1,N)=+0.046766
+ L25 |N|=  133.008 |T.3|=  129.145 cos(.3,N)=-0.015986 |T1|=  310.007 cos(1,N)=+0.030299
+ L26 |N|=  223.862 |T.3|=  155.422 cos(.3,N)=-0.002738 |T1|=  349.225 cos(1,N)=+0.037107
+ L27 |N|=  194.750 |T.3|=  240.257 cos(.3,N)=+0.050409 |T1|=  588.038 cos(1,N)=+0.062429
+[8/10] BLOCKWISE NATIVE IDENTITY-FORMATION vs TRANSFER
+ L23→L24 |NGAIN|=   68.414 cos(.3,NGAIN)=+0.032902 cos(1,NGAIN)=+0.035529
+ L24→L25 |NGAIN|=   73.201 cos(.3,NGAIN)=-0.060628 cos(1,NGAIN)=-0.008056
+ L25→L26 |NGAIN|=  178.959 cos(.3,NGAIN)=-0.007520 cos(1,NGAIN)=+0.033832
+ L26→L27 |NGAIN|=  171.574 cos(.3,NGAIN)=+0.064513 cos(1,NGAIN)=+0.063917
+[9/10] LM-HEAD IDENTITY-AXIS PROJECTION BY LAYER
+ L23 NATIVE·ID=   +5.7803 T.3·ID=   +1.9472 T1·ID=   +2.3545
+ L24 NATIVE·ID=  +10.4955 T.3·ID=   +2.2369 T1·ID=   +4.9603
+ L25 NATIVE·ID=  +11.9559 T.3·ID=   +1.4385 T1·ID=   +1.6852
+ L26 NATIVE·ID=  +51.8465 T.3·ID=   +2.1850 T1·ID=   +3.8622
+ L27 NATIVE·ID=  +47.8993 T.3·ID=   +3.7704 T1·ID=   +6.0328
+[10/10] VERDICT + INTEGRITY
+ NATIVE PEAK BLOCK: L25→L26 | norm= 178.958740
+ VERDICT: L26_NATIVE_IDENTITY_CONVERSION_WEAKLY_CAPTURED
+================================================================================================================================
+TEST 432 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST432/TEST432_SUMMARY.json
+
+
+================================================================================================================================
