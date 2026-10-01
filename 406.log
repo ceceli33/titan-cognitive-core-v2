@@ -1,0 +1,146 @@
+ 
+========================================================================================================================
+TEST 406 — AKBASCORE LOCAL INVERSE-WRITE
+TEST405 LINEAGE | TRAIN-ONLY LAYER/BASIS SELECTION | HELD-OUT FACT↔CF | QWEN RESIDUAL WRITE
+========================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/9] MISTRAL — TEST405 RELATIONAL PACKETS
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 75.4kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 14.0MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 38.0MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.2kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.4kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 53.0kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.72MB/s]
+Download complete: : 
+
+ 12.4GB,  929MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  588MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:36<00:00,  8.54s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 74.46it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 13.0kB/s]
+READY: (32, 4096, 32, 8, 128) | 46.17 s
+
+[2/9] QWEN — TEST405 RELATIONAL PACKETS
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 82.8kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 914kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 43.8MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 70.3MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 122MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.24MB/s]
+Download complete: : 
+
+ 13.1GB,  250MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  476MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:38<00:00,  6.85s/it]
+Loading weights: 100%
+
+ 339/339 [00:04<00:00, 98.60it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 31.1kB/s]
+READY: (28, 3584, 28, 4, 128) | 45.03 s
+ QWEN 32/32
+ TRAIN=24 | VAL=8 | FINAL FACT/CF NEVER USED FOR FIT/SELECTION
+[3/9] TRAIN-ONLY LAYER RELIABILITY
+ TOP: L05←M06:+0.441, L06←M07:+0.412, L03←M04:+0.400, L04←M05:+0.364, L02←M02:+0.361, L07←M08:+0.354, L01←M01:+0.315, L08←M09:+0.269
+ SELECTED: [1, 2, 3, 4, 5, 6, 7, 8]
+[4/9] TRAIN-ONLY LOCAL BASES + LOW-DIM COORDINATE MAP
+ L01←M01 TRAIN_SCORE=+0.314817 VAL_PRED_COS=+0.080884
+ L02←M02 TRAIN_SCORE=+0.360549 VAL_PRED_COS=+0.061128
+ L03←M04 TRAIN_SCORE=+0.399712 VAL_PRED_COS=+0.017687
+ L04←M05 TRAIN_SCORE=+0.364418 VAL_PRED_COS=+0.002355
+ L05←M06 TRAIN_SCORE=+0.441254 VAL_PRED_COS=+0.005053
+ L06←M07 TRAIN_SCORE=+0.411871 VAL_PRED_COS=+0.050000
+ L07←M08 TRAIN_SCORE=+0.354227 VAL_PRED_COS=+0.033789
+ L08←M09 TRAIN_SCORE=+0.268804 VAL_PRED_COS=+0.033987
+[5/9] HELD-OUT FACT↔CF — PREDICT QWEN LOCAL DIRECTIONS
+ L01←M01 FINAL_PRED_COS=-0.045298
+ L02←M02 FINAL_PRED_COS=-0.057720
+ L03←M04 FINAL_PRED_COS=+0.089987
+ L04←M05 FINAL_PRED_COS=+0.059408
+ L05←M06 FINAL_PRED_COS=-0.007418
+ L06←M07 FINAL_PRED_COS=-0.058795
+ L07←M08 FINAL_PRED_COS=-0.037934
+ L08←M09 FINAL_PRED_COS=-0.029471
+ MEAN FINAL PRED COS=-0.010905
+[6/9] AKBASCORE WRITE CALIBRATION — TRAIN-ONLY NATIVE QWEN Δ NORMS
+ L01 TRAIN_MEAN_ΔNORM=2.005175
+ L02 TRAIN_MEAN_ΔNORM=2.864008
+ L03 TRAIN_MEAN_ΔNORM=3.446086
+ L04 TRAIN_MEAN_ΔNORM=4.256000
+ L05 TRAIN_MEAN_ΔNORM=4.737017
+ L06 TRAIN_MEAN_ΔNORM=6.074707
+ L07 TRAIN_MEAN_ΔNORM=8.288676
+ L08 TRAIN_MEAN_ΔNORM=10.728537
+[7/9] CAUSAL WRITE — PREDICTED / REVERSE / RANDOM
+ PREDICTED WRITE mean cos(native FACT→CF)=-0.062754
+ REVERSE   WRITE mean cos(native FACT→CF)=+0.029263
+ RANDOM    WRITE mean cos(native FACT→CF)=-0.013581
+ L01 PRED=+0.000 REV=+0.000 RAND=+0.000
+ L02 PRED=-0.021 REV=+0.020 RAND=-0.027
+ L03 PRED=-0.129 REV=+0.087 RAND=-0.043
+ L04 PRED=-0.024 REV=-0.046 RAND=-0.011
+ L05 PRED=+0.016 REV=-0.048 RAND=+0.002
+ L06 PRED=-0.091 REV=+0.041 RAND=-0.024
+ L07 PRED=-0.132 REV=+0.083 RAND=-0.011
+ L08 PRED=-0.121 REV=+0.097 RAND=+0.006
+[8/9] DOWNSTREAM TERMINAL X-RAY
+ PREDICTED  L27 COS=-0.122550
+ REVERSE    L27 COS=+0.104558
+ RANDOM     L27 COS=-0.159541
+[9/9] NULL + VERDICT + INTEGRITY
+ L27 RANDOM NULL mean=+0.044811 sd=0.109652 z=-1.526 p=0.892308
+ VERDICT: NO_STABLE_LOCAL_WRITE: relational prediction does not yet create a reliable downstream Qwen-native displacement.
+========================================================================================================================
+TEST 406 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST406/TEST406_SUMMARY.json
+
+
+========================================================================================================================
