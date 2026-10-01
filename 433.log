@@ -1,0 +1,132 @@
+ 
+================================================================================================================================
+TEST 433 — L26 ATTENTION→MLP NATIVE IDENTITY / FIRST-TOKEN READOUT X-RAY
+TEST432 PROVEN LINEAGE | SOURCE-ABSENT WHO | FINAL NATIVE = MEASUREMENT ONLY
+================================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/10] MISTRAL — TEST432 EXACT PACKETS
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 75.0kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 13.2MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 95.5MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.1kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 53.0kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.89MB/s]
+Download complete: : 
+
+ 12.4GB, 1.20GB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  508MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:37<00:00,  8.91s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 80.29it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 13.8kB/s]
+READY: (32, 4096, 32, 8, 128) | 50.47 s
+
+[2/10] QWEN — TEST432 EXACT PACKETS
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 93.5kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 933kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 82.4MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 71.6MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 125MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.41MB/s]
+Download complete: : 
+
+ 13.1GB,  373MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  421MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:40<00:00,  7.10s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 100.11it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 32.1kB/s]
+READY: (28, 3584, 28, 4, 128) | 50.24 s
+ QWEN 32/32
+ TRAIN=24 | VAL=8 | FINAL FACT/CF NEVER USED FOR FIT/SELECTION
+[3/10] TRAIN-ONLY GLOBAL RIDGE
+ λ=0.0001 FP=+0.237051 LOCAL=+0.047289
+ λ=0.001  FP=+0.236949 LOCAL=+0.047268
+ λ=0.01   FP=+0.235936 LOCAL=+0.047061
+ λ=0.05   FP=+0.231553 LOCAL=+0.046161
+ λ=0.1    FP=+0.226326 LOCAL=+0.045079
+ λ=0.5    FP=+0.192415 LOCAL=+0.037896
+ λ=1      FP=+0.162906 LOCAL=+0.031524
+ λ=5      FP=+0.073460 LOCAL=+0.012079
+ SELECTED λ= 0.0001
+[4/10] FINAL GLOBAL SOLVE — FROZEN
+ FINAL FP=+0.374320 LOCAL=+0.064565 COEF_NORM=0.009093
+[5/10] SOURCE-ABSENT WHO + L26 MICRO-CAPTURE
+ WHO TOKENS=17 | SOURCE FACT PRESENT=NO | LEYLA=53425 | MUSTAFA=15465
+[6/10] TEST432 REPLICATION + FIRST-TOKEN READOUT
+ 0.00x LEYLA=+3.968750 #3217 MUSTAFA=+4.812500 #1868 L-M=-0.843750
+ 0.30x LEYLA=+1.570312 #4041 MUSTAFA=+2.125000 #2885 L-M=-0.554688
+ 1.00x LEYLA=-3.000000 #7469 MUSTAFA=-1.960938 #3322 L-M=-1.039062
+ NATIVE WHO Δ(L-M)=+46.812500
+[7/10] L26 INPUT→POST_ATT→OUT NATIVE-vs-TRANSFER
+ IN       |N|=  133.008 |T.3|=  129.145 cos(.3,N)=-0.015986 |T1|=  310.007 cos(1,N)=+0.030299
+ POST_ATT |N|=  192.370 |T.3|=  132.701 cos(.3,N)=+0.031641 |T1|=  315.859 cos(1,N)=+0.050012
+ OUT      |N|=  223.862 |T.3|=  155.422 cos(.3,N)=-0.002738 |T1|=  349.225 cos(1,N)=+0.037107
+[8/10] L26 ATTENTION / MLP COMPONENT ALIGNMENT
+ ATT |N|=  137.654 |T.3|=   23.397 cos(.3,N)=+0.028475 |T1|=   52.451 cos(1,N)=+0.061596
+ MLP |N|=  124.610 |T.3|=   80.681 cos(.3,N)=+0.007266 |T1|=  160.590 cos(1,N)=+0.093963
+[9/10] IDENTITY AXIS — WHERE NATIVE BINDING APPEARS
+ IN       NATIVE=  +11.9559 T.3=   +1.4385 T1=   +1.6852
+ POST_ATT NATIVE=  +47.4067 T.3=   +1.7821 T1=   +3.3413
+ OUT      NATIVE=  +51.8465 T.3=   +2.1850 T1=   +3.8622
+ ATT      NATIVE=  +35.4508 T.3=   +0.3436 T1=   +1.6560
+ MLP      NATIVE=   +4.4399 T.3=   +0.4029 T1=   +0.5210
+ ATT ID DEFICIT .30x=+35.107215 1.00x=+33.794783
+ MLP ID DEFICIT .30x=+4.036963 1.00x=+3.918892
+[10/10] VERDICT + INTEGRITY
+ VERDICT: L26_IDENTITY_DEFICIT_DOMINATED_BY_ATTENTION
+================================================================================================================================
+TEST 433 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST433/TEST433_SUMMARY.json
+
+
+================================================================================================================================
