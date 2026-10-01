@@ -1,0 +1,168 @@
+ 
+================================================================================================================================
+TEST 410 — MID/LATE CAUSAL TRANSPORT MICRO-MAP
+TEST409 EXACT GLOBAL SOLVE | L14–L23 SURGICAL WINDOWS + DROP-OUTS + 00–23 REPLICATION | L27 ENDPOINT
+================================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/10] MISTRAL — TEST409 EXACT PACKETS
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 79.0kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 16.4MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 35.4MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.0kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.0kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 52.2kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.05MB/s]
+Download complete: : 
+
+ 12.4GB, 86.0MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  567MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:37<00:00,  8.75s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 79.84it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 16.4kB/s]
+READY: (32, 4096, 32, 8, 128) | 47.52 s
+
+[2/10] QWEN — TEST409 EXACT PACKETS
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 90.4kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 869kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 43.8MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 75.4MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 133MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.53MB/s]
+Download complete: : 
+
+ 13.1GB, 21.9MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  109MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:52<00:00, 12.10s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 99.74it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 32.4kB/s]
+READY: (28, 3584, 28, 4, 128) | 58.6 s
+ QWEN 32/32
+ TRAIN=24 | VAL=8 | FINAL FACT/CF NEVER USED FOR FIT/SELECTION
+[3/10] TEST409 TRAIN-ONLY GLOBAL RIDGE
+ λ=0.0001 FP=+0.237051 LOCAL=+0.047289
+ λ=0.001  FP=+0.236949 LOCAL=+0.047268
+ λ=0.01   FP=+0.235936 LOCAL=+0.047061
+ λ=0.05   FP=+0.231553 LOCAL=+0.046161
+ λ=0.1    FP=+0.226326 LOCAL=+0.045079
+ λ=0.5    FP=+0.192415 LOCAL=+0.037896
+ λ=1      FP=+0.162906 LOCAL=+0.031524
+ λ=5      FP=+0.073460 LOCAL=+0.012079
+ SELECTED λ= 0.0001
+[4/10] GLOBAL FINAL SOLVE — FROZEN BEFORE MICRO-MAP
+ FINAL FP=+0.374320 LOCAL=+0.064565 COEF_NORM=0.009093
+[5/10] TRAIN-ONLY DOSE
+[6/10] SURGICAL WINDOW MAP — PREDICTED / REVERSE
+ ALL_00_27     N=28 PRED=+0.446668 REV=+0.238916 GAP=+0.207752
+ PREFIX_00_23  N=24 PRED=+0.461857 REV=+0.266724 GAP=+0.195133
+ MID_14_23     N=10 PRED=+0.437675 REV=+0.273295 GAP=+0.164380
+ B14_17        N=04 PRED=+0.271869 REV=-0.259113 GAP=+0.530982
+ B18_19        N=02 PRED=+0.237808 REV=-0.199105 GAP=+0.436913
+ B20_21        N=02 PRED=+0.292434 REV=-0.028929 GAP=+0.321363
+ B22_23        N=02 PRED=+0.350782 REV=+0.021317 GAP=+0.329465
+ C14_19        N=06 PRED=+0.320067 REV=+0.015952 GAP=+0.304115
+ C18_21        N=04 PRED=+0.315127 REV=+0.207403 GAP=+0.107724
+ C20_23        N=04 PRED=+0.378850 REV=+0.227830 GAP=+0.151020
+ C18_23        N=06 PRED=+0.398578 REV=+0.281849 GAP=+0.116729
+ C14_21        N=08 PRED=+0.381121 REV=+0.297918 GAP=+0.083203
+ DROP14_17     N=06 PRED=+0.398578 REV=+0.281849 GAP=+0.116729
+ DROP18_19     N=08 PRED=+0.436297 REV=+0.272353 GAP=+0.163944
+ DROP20_21     N=08 PRED=+0.425271 REV=+0.265753 GAP=+0.159518
+ DROP22_23     N=08 PRED=+0.381121 REV=+0.297918 GAP=+0.083203
+ SINGLE_18     N=01 PRED=+0.209596 REV=-0.208927 GAP=+0.418523
+ SINGLE_19     N=01 PRED=+0.221096 REV=-0.198654 GAP=+0.419750
+ SINGLE_20     N=01 PRED=+0.230227 REV=-0.130070 GAP=+0.360297
+ SINGLE_21     N=01 PRED=+0.267158 REV=-0.154289 GAP=+0.421447
+ SINGLE_22     N=01 PRED=+0.302894 REV=-0.150188 GAP=+0.453082
+ SINGLE_23     N=01 PRED=+0.281671 REV=-0.074630 GAP=+0.356301
+[7/10] BLOCK ADDITION / DROP-OUT EFFECTS
+ ADD B14_17  L27=+0.271869
+ ADD B18_19  L27=+0.237808
+ ADD B20_21  L27=+0.292434
+ ADD B22_23  L27=+0.350782
+ ADD C14_19  L27=+0.320067
+ ADD C18_21  L27=+0.315127
+ ADD C20_23  L27=+0.378850
+ ADD C18_23  L27=+0.398578
+ ADD C14_21  L27=+0.381121
+ DROP 14_17 LOSS=+0.039097
+ DROP 18_19 LOSS=+0.001378
+ DROP 20_21 LOSS=+0.012403
+ DROP 22_23 LOSS=+0.056554
+[8/10] 00–23 / ALL REPLICATION
+ PREFIX_00_23=+0.461857 | ALL_00_27=+0.446668 | MID_14_23=+0.437675
+[9/10] SHARED-BANK NULL — SURGICAL WINDOWS
+ ALL_00_27     OBS=+0.446668 NULL=+0.267736±0.101419 z=+1.764 p=0.015385
+ PREFIX_00_23  OBS=+0.461857 NULL=+0.270609±0.083584 z=+2.288 p=0.015385
+ MID_14_23     OBS=+0.437675 NULL=+0.241762±0.110609 z=+1.771 p=0.015385
+ B14_17        OBS=+0.271869 NULL=+0.038332±0.159517 z=+1.464 p=0.076923
+ B18_19        OBS=+0.237808 NULL=+0.030729±0.169500 z=+1.222 p=0.153846
+ B20_21        OBS=+0.292434 NULL=+0.076578±0.172041 z=+1.255 p=0.092308
+ B22_23        OBS=+0.350782 NULL=+0.138952±0.157691 z=+1.343 p=0.107692
+ C14_19        OBS=+0.320067 NULL=+0.115794±0.157132 z=+1.300 p=0.076923
+ C18_21        OBS=+0.315127 NULL=+0.134298±0.160058 z=+1.130 p=0.107692
+ C20_23        OBS=+0.378850 NULL=+0.196494±0.143791 z=+1.268 p=0.092308
+ C18_23        OBS=+0.398578 NULL=+0.221213±0.130183 z=+1.362 p=0.030769
+ C14_21        OBS=+0.381121 NULL=+0.189659±0.132207 z=+1.448 p=0.046154
+ DROP18_19     OBS=+0.436297 NULL=+0.215118±0.130085 z=+1.700 p=0.015385
+ DROP20_21     OBS=+0.425271 NULL=+0.201236±0.134721 z=+1.663 p=0.030769
+ DROP22_23     OBS=+0.381121 NULL=+0.189659±0.132207 z=+1.448 p=0.046154
+[10/10] MECHANISTIC VERDICT + INTEGRITY
+ SIGNIFICANT: ['ALL_00_27', 'PREFIX_00_23', 'MID_14_23', 'C18_23', 'C14_21', 'DROP18_19', 'DROP20_21', 'DROP22_23']
+ BEST RAW: PREFIX_00_23 +0.461857
+ VERDICT: PRE_L24_TRANSPORT_CONFIRMED: the terminal alignment is already established by L00–L23; L24–L27 writes are not required.
+================================================================================================================================
+TEST 410 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST410/TEST410_SUMMARY.json
+
+
+================================================================================================================================
