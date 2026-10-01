@@ -1,0 +1,141 @@
+ 
+================================================================================================================================
+TEST 420 — NATIVE-SPECTRUM BACKPROJECTION X-RAY — FIXED
+TEST419 PROVEN LINEAGE | WRITE L14–L23 | MOTOR OFF L24–L27 | VOCAB NATIVE-PARALLEL → HIDDEN BACKPROJECTION
+================================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/12] MISTRAL — TEST419 EXACT PACKETS
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 72.8kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 16.8MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 30.9MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.2kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.4kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 55.1kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.01MB/s]
+Download complete: : 
+
+ 12.4GB,  292MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  564MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:36<00:00,  8.29s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 80.28it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 14.9kB/s]
+READY: (32, 4096, 32, 8, 128) | 45.65 s
+
+[2/12] QWEN — TEST419 EXACT PACKETS
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 83.2kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 926kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 45.2MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 69.8MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 125MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 2.59MB/s]
+Download complete: : 
+
+ 13.1GB,  207MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  480MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:38<00:00,  6.59s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 99.08it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 30.3kB/s]
+READY: (28, 3584, 28, 4, 128) | 45.13 s
+ QWEN 32/32
+ TRAIN=24 | VAL=8 | FINAL FACT/CF NEVER USED FOR FIT/SELECTION
+[3/12] TRAIN-ONLY GLOBAL RIDGE
+ λ=0.0001 FP=+0.237051 LOCAL=+0.047289
+ λ=0.001  FP=+0.236949 LOCAL=+0.047268
+ λ=0.01   FP=+0.235936 LOCAL=+0.047061
+ λ=0.05   FP=+0.231553 LOCAL=+0.046161
+ λ=0.1    FP=+0.226326 LOCAL=+0.045079
+ λ=0.5    FP=+0.192415 LOCAL=+0.037896
+ λ=1      FP=+0.162906 LOCAL=+0.031524
+ λ=5      FP=+0.073460 LOCAL=+0.012079
+ SELECTED λ= 0.0001
+[4/12] FINAL GLOBAL SOLVE — FROZEN
+ FINAL FP=+0.374320 LOCAL=+0.064565 COEF_NORM=0.009093
+[5/12] TEST419 EXACT MOTOR-OFF CAPTURE
+ L26 NORM=302.159088 NATIVE_COS=+0.100634 | POST_NATIVE_COS=+0.437675
+[6/12] TEST419 VOCABULARY SPECTRUM REPLICATION
+ VOCAB=152064 | ACCOUNT MAX_ERR=0.077152 RMSE=0.011645 COS=+0.99999112
+ TRANSFER↔NATIVE SPECTRUM COS=+0.390834 | REVERSE↔NATIVE=-0.045441
+[7/12] NATIVE VOCAB SPECTRUM → HIDDEN BACKPROJECTION
+ BACKPROJ ||raw||=4481.030273
+ BACKPROJ↔NATIVE_POST COS=+0.161162
+ BACKPROJ↔TRANSFER_POST COS=+0.119596
+ BACKPROJ↔REVERSE_POST COS=-0.008676
+ NATIVE   READOUT-PAR ENERGY=2.597308% | ORTH=97.402692%
+ TRANSFER READOUT-PAR ENERGY=1.430324% | ORTH=98.569676%
+ REVERSE  READOUT-PAR ENERGY=0.007528% | ORTH=99.992472%
+[8/12] NATIVE-SPECTRUM PARALLEL / ORTHOGONAL ACCOUNTING — FP64 NUMERIC-AWARE
+ PRED VOCAB DOT=+135995.969237 | HIDDEN BACKPROJ DOT=+135995.969237 | ERR=1.251465e-09
+ REV  VOCAB DOT=-15266.927442 | HIDDEN BACKPROJ DOT=-15266.927442 | ERR=3.637979e-11
+ FP64 ACCOUNT TOL=1.359960e-01
+ READOUT COORD NATIVE=+11.887253 PRED=+30.349072 REV=-3.407206
+ PRED/NATIVE COORD RATIO=+2.553077
+[9/12] TEST419 EXACT MATCHED L26 NULLS
+ MAX NORM ERROR=9.15527344e-05 | MAX COS ERROR=5.96046448e-08 | MAX ORTH COS=1.02445483e-08
+[10/12] MATCHED-NULL BACKPROJECTION X-RAY
+ MATCHED 64/64
+ BACKPROJ COORD OBS=+30.349072 NULL=+4.291553±6.468085 z=+4.029 p=0.015385
+ |BACKPROJ|   OBS=30.349072 NULL=6.001741±4.894204 z=+4.975 p=0.015385
+ PAR ENERGY   OBS=1.430324% NULL=0.156529%±0.207415% p=0.015385
+ HIDDEN COS   OBS=+0.437675 NULL=+0.278679±0.052678 p=0.015385
+ VOCAB COS    OBS=+0.390754 NULL=+0.110163±0.138819 p=0.015385
+ VOCAB DOT    OBS=+135984.609 NULL=+19236.514±28976.574 p=0.015385
+[11/12] PHYSICAL READOUT LOCALIZATION
+ LOCALIZATION: NATIVE_READOUT_BACKPROJECTION_SPECIFIC: the transferred state carries a matched-null-specific component along W^T(WΔnative), the hidden direction that directly supports the native vocabulary-wide FACT→CF spectrum.
+[12/12] VERDICT + INTEGRITY
+ VERDICT: PHYSICAL_DISTRIBUTED_READOUT_AXIS_DETECTED
+================================================================================================================================
+TEST 420 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST420/TEST420_SUMMARY.json
+
+
+================================================================================================================================
