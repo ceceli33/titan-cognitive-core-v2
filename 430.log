@@ -1,0 +1,146 @@
+ 
+================================================================================================================================
+TEST 430 — FIRST-TOKEN DOSE SWEEP → ENGINE-OFF NATURAL COMPLETION
+TEST429 PROVEN LINEAGE | SOURCE-ABSENT WHO | GREEDY | NO TARGET FORCING
+================================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/10] MISTRAL — TEST429 EXACT PACKETS
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 66.5kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 13.8MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 96.7MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.1kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.6kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 56.4kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.03MB/s]
+Download complete: : 
+
+ 12.4GB,  628MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  562MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:37<00:00,  8.73s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 80.22it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 16.2kB/s]
+READY: (32, 4096, 32, 8, 128) | 51.02 s
+
+[2/10] QWEN — TEST429 EXACT PACKETS
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 86.6kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 989kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 87.9MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 75.7MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 127MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.51MB/s]
+Download complete: : 
+
+ 13.1GB,  278MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  457MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:39<00:00,  7.64s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 99.10it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 31.5kB/s]
+READY: (28, 3584, 28, 4, 128) | 49.02 s
+ QWEN 32/32
+ TRAIN=24 | VAL=8 | FINAL FACT/CF NEVER USED FOR FIT/SELECTION
+[3/10] TRAIN-ONLY GLOBAL RIDGE
+ λ=0.0001 FP=+0.237051 LOCAL=+0.047289
+ λ=0.001  FP=+0.236949 LOCAL=+0.047268
+ λ=0.01   FP=+0.235936 LOCAL=+0.047061
+ λ=0.05   FP=+0.231553 LOCAL=+0.046161
+ λ=0.1    FP=+0.226326 LOCAL=+0.045079
+ λ=0.5    FP=+0.192415 LOCAL=+0.037896
+ λ=1      FP=+0.162906 LOCAL=+0.031524
+ λ=5      FP=+0.073460 LOCAL=+0.012079
+ SELECTED λ= 0.0001
+[4/10] FINAL GLOBAL SOLVE — FROZEN
+ FINAL FP=+0.374320 LOCAL=+0.064565 COEF_NORM=0.009093
+[5/10] SOURCE-ABSENT WHO
+ WHO TOKENS=17 | SOURCE FACT PRESENT=NO
+[6/10] BASE — ENGINE OFF
+ BASE FIRST: ' The'
+ BASE: ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event'
+[7/10] FIRST-TOKEN DOSE SWEEP
+ DOSE=0.10 FIRST=' The' TARGET=False SOURCE=False
+  TEXT: ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event'
+ DOSE=0.20 FIRST=' The' TARGET=False SOURCE=False
+  TEXT: ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event'
+ DOSE=0.30 FIRST=' The' TARGET=False SOURCE=False
+  TEXT: ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event'
+ DOSE=0.40 FIRST=' The' TARGET=False SOURCE=False
+  TEXT: ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event'
+ DOSE=0.50 FIRST=' In' TARGET=False SOURCE=False
+  TEXT: ' In reality, the Golden Gate Bridge is an iconic suspension bridge located in San Francisco, California, USA, and it has'
+ DOSE=0.60 FIRST=' In' TARGET=False SOURCE=False
+  TEXT: ' In reality, the Golden Gate Bridge is an iconic suspension bridge located in San Francisco, California, USA, and it has'
+ DOSE=0.70 FIRST=' In' TARGET=False SOURCE=False
+  TEXT: ' In reality, the Golden Gate Bridge is an iconic suspension bridge located in San Francisco, California, USA, and it has'
+ DOSE=0.80 FIRST=' In' TARGET=False SOURCE=False
+  TEXT: ' In reality, the Golden Gate Bridge is an iconic suspension bridge located in San Francisco, California, USA, and it has'
+ DOSE=1.00 FIRST=' and' TARGET=False SOURCE=False
+  TEXT: ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is'
+[8/10] FIRST-TOKEN TRAJECTORY
+ 0.10x → ' The' | TOP5: ' The':+17.875 | ' It':+17.625 | ' There':+17.375 | ' I':+16.250 | ' According':+15.750
+ 0.20x → ' The' | TOP5: ' The':+16.500 | ' It':+16.125 | ' There':+15.875 | ' In':+15.188 | ' I':+14.562
+ 0.30x → ' The' | TOP5: ' The':+14.375 | ' It':+13.938 | ' In':+13.750 | ' There':+13.688 | ' On':+12.375
+ 0.40x → ' The' | TOP5: ' The':+12.562 | ' In':+12.312 | ' It':+12.125 | ' There':+11.688 | ' This':+10.938
+ 0.50x → ' In' | TOP5: ' In':+11.062 | ' The':+11.062 | ' It':+10.688 | ' There':+10.000 | ' This':+9.688
+ 0.60x → ' In' | TOP5: ' In':+10.062 | ' The':+10.000 | ' It':+9.688 | ' This':+8.688 | ' There':+8.688
+ 0.70x → ' In' | TOP5: ' In':+9.188 | ' The':+9.000 | ' It':+8.875 | ' This':+7.719 | ' On':+7.656
+ 0.80x → ' In' | TOP5: ' In':+8.500 | ' The':+8.312 | ' It':+8.188 | ' and':+7.438 | ' in':+7.125
+ 1.00x → ' and' | TOP5: ' and':+7.594 | ' in':+7.125 | ' In':+7.094 | ' It':+7.031 | ' The':+6.875
+[9/10] BEHAVIORAL RESULT
+ TARGET HIT: NONE
+[10/10] VERDICT + INTEGRITY
+ VERDICT: FIRST_TOKEN_PULSE_DOSE_SWEEP_NO_TARGET_RETRIEVAL
+================================================================================================================================
+TEST 430 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST430/TEST430_SUMMARY.json
+
+
+================================================================================================================================
