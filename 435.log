@@ -1,0 +1,203 @@
+ 
+================================================================================================================================================
+TEST 435 — TRAIN-ONLY L26 NATIVE-CONVERSION BRIDGE — GRAND CLOSING SUITE
+TEST434 PROVEN LINEAGE | ATT/OUT BRIDGE × DOSE × REVERSE × IDENTITY READOUT × FREE GENERATION
+================================================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/12] MISTRAL — TEST434 EXACT PACKETS
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 73.1kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 571kB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 32.9MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.3kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 41.4kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.87MB/s]
+Download complete: : 
+
+ 12.4GB,  848MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  431MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:37<00:00,  9.29s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 79.67it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 13.9kB/s]
+READY: (32, 4096, 32, 8, 128) | 46.43 s
+
+[2/12] QWEN — TEST434 EXACT PACKETS
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 75.4kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 945kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 18.7MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 69.0MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 126MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.11MB/s]
+Download complete: : 
+
+ 13.1GB,  172MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  474MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:39<00:00,  6.47s/it]
+Loading weights: 100%
+
+ 339/339 [00:04<00:00, 94.74it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 31.5kB/s]
+READY: (28, 3584, 28, 4, 128) | 45.56 s
+ QWEN 32/32
+ TRAIN=24 | VAL=8 | FINAL FACT/CF NEVER USED FOR FIT/SELECTION
+[3/12] TEST434 GLOBAL RIDGE — EXACT
+ λ=0.0001 FP=+0.237051 LOCAL=+0.047289
+ λ=0.001  FP=+0.236949 LOCAL=+0.047268
+ λ=0.01   FP=+0.235936 LOCAL=+0.047061
+ λ=0.05   FP=+0.231553 LOCAL=+0.046161
+ λ=0.1    FP=+0.226326 LOCAL=+0.045079
+ λ=0.5    FP=+0.192415 LOCAL=+0.037896
+ λ=1      FP=+0.162906 LOCAL=+0.031524
+ λ=5      FP=+0.073460 LOCAL=+0.012079
+ SELECTED λ=0.0001 | FINAL FP=+0.374320 LOCAL=+0.064565 COEF_NORM=0.009093
+[4/12] TRAIN/VAL L26 NATIVE CONVERSION DATASET
+ L26 NATIVE 32/32
+ ATT λ=0.0001 VAL_COS=+0.362491 NORM_RATIO=0.4226
+ ATT λ=0.001  VAL_COS=+0.362473 NORM_RATIO=0.4223
+ ATT λ=0.01   VAL_COS=+0.362291 NORM_RATIO=0.4191
+ ATT λ=0.1    VAL_COS=+0.360500 NORM_RATIO=0.3903
+ ATT λ=1      VAL_COS=+0.347690 NORM_RATIO=0.2413
+ OUT λ=0.0001 VAL_COS=+0.327949 NORM_RATIO=0.5019
+ OUT λ=0.001  VAL_COS=+0.327942 NORM_RATIO=0.5015
+ OUT λ=0.01   VAL_COS=+0.327870 NORM_RATIO=0.4978
+ OUT λ=0.1    VAL_COS=+0.327077 NORM_RATIO=0.4644
+ OUT λ=1      VAL_COS=+0.319876 NORM_RATIO=0.2887
+ SELECTED ATT λ=0.0001 VAL_COS=+0.362491
+ SELECTED OUT λ=0.0001 VAL_COS=+0.327949
+[5/12] SOURCE-ABSENT WHO + TEST433 REPLICATION
+ NATIVE ATT-ID=+35.450821 | TRANSFER ATT-ID=+1.656038
+ NATIVE OUT-ID=+39.890678 | TRANSFER OUT-ID=+2.177008
+ BASE LEYLA=+3.9688 #3217 MUSTAFA=+4.8125 #1868 MARGIN=-0.8438
+[6/12] TRAIN-ONLY PREDICTED L26 CONVERSION AT WHO
+ PRED_ATT |D|=10.934009 NATIVE_COS=+0.063990 ID=+0.338499
+ PRED_OUT |D|=29.752998 NATIVE_COS=+0.012359 ID=-0.369223
+[7/12] ATT/OUT BRIDGE × DOSE — FORWARD
+ ATT 0.10x ATTcos=+0.0618 OUTcos=+0.0337 ATT-ID= +1.673 OUT-ID= +2.129 L-M= -1.016 LEYLA#7400
+ ATT 0.20x ATTcos=+0.0622 OUTcos=+0.0337 ATT-ID= +1.680 OUT-ID= +2.126 L-M= -1.000 LEYLA#7249
+ ATT 0.30x ATTcos=+0.0663 OUTcos=+0.0353 ATT-ID= +1.786 OUT-ID= +2.326 L-M= -0.992 LEYLA#7226
+ ATT 0.40x ATTcos=+0.0667 OUTcos=+0.0350 ATT-ID= +1.805 OUT-ID= +2.268 L-M= -0.984 LEYLA#7172
+ ATT 0.50x ATTcos=+0.0669 OUTcos=+0.0351 ATT-ID= +1.834 OUT-ID= +2.304 L-M= -1.000 LEYLA#7215
+ ATT 0.75x ATTcos=+0.0706 OUTcos=+0.0361 ATT-ID= +1.939 OUT-ID= +2.423 L-M= -0.984 LEYLA#7130
+ ATT 1.00x ATTcos=+0.0707 OUTcos=+0.0363 ATT-ID= +1.994 OUT-ID= +2.423 L-M= -0.969 LEYLA#7042
+ ATT 1.25x ATTcos=+0.0710 OUTcos=+0.0370 ATT-ID= +2.045 OUT-ID= +2.517 L-M= -0.875 LEYLA#6759
+ ATT 1.50x ATTcos=+0.0744 OUTcos=+0.0382 ATT-ID= +2.164 OUT-ID= +2.618 L-M= -0.891 LEYLA#6837
+ OUT 0.10x ATTcos=+0.0616 OUTcos=+0.0338 ATT-ID= +1.656 OUT-ID= +2.177 L-M= -0.992 LEYLA#7347
+ OUT 0.20x ATTcos=+0.0616 OUTcos=+0.0338 ATT-ID= +1.656 OUT-ID= +2.177 L-M= -0.961 LEYLA#7204
+ OUT 0.30x ATTcos=+0.0616 OUTcos=+0.0338 ATT-ID= +1.656 OUT-ID= +2.177 L-M= -0.930 LEYLA#7068
+ OUT 0.40x ATTcos=+0.0616 OUTcos=+0.0338 ATT-ID= +1.656 OUT-ID= +2.177 L-M= -0.930 LEYLA#7022
+ OUT 0.50x ATTcos=+0.0616 OUTcos=+0.0338 ATT-ID= +1.656 OUT-ID= +2.177 L-M= -0.891 LEYLA#6768
+ OUT 0.75x ATTcos=+0.0616 OUTcos=+0.0338 ATT-ID= +1.656 OUT-ID= +2.177 L-M= -0.859 LEYLA#6524
+ OUT 1.00x ATTcos=+0.0616 OUTcos=+0.0338 ATT-ID= +1.656 OUT-ID= +2.177 L-M= -0.750 LEYLA#6218
+ OUT 1.25x ATTcos=+0.0616 OUTcos=+0.0338 ATT-ID= +1.656 OUT-ID= +2.177 L-M= -0.766 LEYLA#6227
+ OUT 1.50x ATTcos=+0.0616 OUTcos=+0.0338 ATT-ID= +1.656 OUT-ID= +2.177 L-M= -0.688 LEYLA#5874
+[8/12] REVERSE DIRECTION CONTROL
+ REV ATT 0.30x ATTcos=-0.0778 OUTcos=+0.0163 L-M=-3.219 LEYLA#129107
+ REV ATT 0.75x ATTcos=-0.0815 OUTcos=+0.0162 L-M=-3.234 LEYLA#129510
+ REV ATT 1.00x ATTcos=-0.0829 OUTcos=+0.0160 L-M=-3.242 LEYLA#129622
+ REV OUT 0.30x ATTcos=-0.0759 OUTcos=+0.0163 L-M=-3.188 LEYLA#130188
+ REV OUT 0.75x ATTcos=-0.0759 OUTcos=+0.0163 L-M=-3.008 LEYLA#131485
+ REV OUT 1.00x ATTcos=-0.0759 OUTcos=+0.0163 L-M=-2.898 LEYLA#131705
+[9/12] FIRST-TOKEN NATURAL GENERATION — ENGINE OFF AFTER PULSE
+ ATT 0.10x FIRST=' and' TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is'
+ ATT 0.20x FIRST=' and' TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is'
+ ATT 0.30x FIRST=' and' TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is'
+ ATT 0.40x FIRST=' and' TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is'
+ ATT 0.50x FIRST=' and' TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is'
+ ATT 0.75x FIRST=' and' TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is'
+ ATT 1.00x FIRST=' and' TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is'
+ ATT 1.25x FIRST=' and' TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is'
+ ATT 1.50x FIRST=' and' TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is'
+ OUT 0.10x FIRST=' and' TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is'
+ OUT 0.20x FIRST=' and' TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is'
+ OUT 0.30x FIRST=' and' TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is'
+ OUT 0.40x FIRST=' and' TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is'
+ OUT 0.50x FIRST=' and' TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is'
+ OUT 0.75x FIRST=' and' TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is'
+ OUT 1.00x FIRST=' and' TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is'
+ OUT 1.25x FIRST=' and' TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is'
+ OUT 1.50x FIRST=' and' TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is'
+[10/12] FIXED MULTI-PULSE CHECK — 2/3/4 TOKENS
+ ATT 0.30x P2 TARGET=False | ' and it is not known for certain who planted the Turkish flag at the base of the Golden Gate Bridge. There are conflicting'
+ ATT 0.30x P3 TARGET=False | ' and it was not a Turkish soldier or a spy. The Turkish flag was planted at the base of the Golden Gate Bridge'
+ ATT 0.30x P4 TARGET=False | ' and it was not a Turkish soldier or a spy. The Turkish flag was planted at the base of the Golden Gate Bridge'
+ ATT 0.50x P2 TARGET=False | ' and it is not known for certain who planted the Turkish flag at the base of the Golden Gate Bridge. There are conflicting'
+ ATT 0.50x P3 TARGET=False | ' and it was not a Turkish soldier or a spy. The Turkish flag was planted at the base of the Golden Gate Bridge'
+ ATT 0.50x P4 TARGET=False | ' and it was not a Turkish soldier or a spy. The Turkish flag was planted at the base of the Golden Gate Bridge'
+ ATT 0.75x P2 TARGET=False | ' and it is not known for certain who planted the Turkish flag at the base of the Golden Gate Bridge. There are conflicting'
+ ATT 0.75x P3 TARGET=False | ' and it was not a Turkish soldier or a spy. The Turkish flag was planted at the base of the Golden Gate Bridge'
+ ATT 0.75x P4 TARGET=False | ' and it was not a Turkish soldier or a spy. The Turkish flag was planted at the base of the Golden Gate Bridge'
+ ATT 1.00x P2 TARGET=False | ' and it is not known for certain who planted the Turkish flag at the base of the Golden Gate Bridge. There are conflicting'
+ ATT 1.00x P3 TARGET=False | ' and it was not a Turkish soldier or a spy. The Turkish flag was planted at the base of the Golden Gate Bridge'
+ ATT 1.00x P4 TARGET=False | ' and it was not a Turkish soldier or a spy. The Turkish flag was planted at the base of the Golden Gate Bridge'
+ OUT 0.30x P2 TARGET=False | ' and it is not known for certain who planted the Turkish flag at the base of the Golden Gate Bridge. There are conflicting'
+ OUT 0.30x P3 TARGET=False | ' and it was not a Turkish soldier or a spy. The Turkish flag was planted at the base of the Golden Gate Bridge'
+ OUT 0.30x P4 TARGET=False | ' and it was not a Turkish soldier or a spy. The Turkish flag was planted at the base of the Golden Gate Bridge'
+ OUT 0.50x P2 TARGET=False | ' and it is not known for certain who planted the Turkish flag at the base of the Golden Gate Bridge. There are conflicting'
+ OUT 0.50x P3 TARGET=False | ' and it was not a Turkish soldier or a spy. The Turkish flag was planted at the base of the Golden Gate Bridge'
+ OUT 0.50x P4 TARGET=False | ' and it was not a Turkish soldier or a spy. The Turkish flag was planted at the base of the Golden Gate Bridge'
+ OUT 0.75x P2 TARGET=False | ' and in 1942, a Turkish sailor named Mehmet Onur Aydemir is credited with planting the'
+ OUT 0.75x P3 TARGET=False | ' and in 1942, a Turkish sailor named Mehmet Onur Aydemir is credited with planting the'
+ OUT 0.75x P4 TARGET=False | ' and in  and in 1942, a group of American soldiers planted the American flag at the base of'
+ OUT 1.00x P2 TARGET=False | ' and in 1942, a Turkish sailor named Mehmet Onur Aydemir is credited with planting the'
+ OUT 1.00x P3 TARGET=False | ' and in the 1940s, a Turkish sailor named Semih Idiz planted a Turkish flag at the'
+ OUT 1.00x P4 TARGET=False | ' and in the 1940s, a Turkish sailor named Semih Idiz planted a Turkish flag at the'
+[11/12] GRAND RESULT
+ BEST LEYLA RANK: #5874 | OUT 1.50x | MARGIN=-0.687500
+ BEST L-M MARGIN: -0.687500 | OUT 1.50x | LEYLA#5874
+ FREE-GENERATION TARGET HITS: 0
+ VERDICT: TRAIN_ONLY_L26_CONVERSION_IMPROVES_IDENTITY_READOUT_BUT_NO_FREE_RETRIEVAL
+[12/12] INTEGRITY
+================================================================================================================================================
+TEST 435 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST435/TEST435_SUMMARY.json
+
+
+================================================================================================================================================
