@@ -1,0 +1,152 @@
+ 
+============================================================================================================================
+TEST 408 — GLOBAL RELATIONAL BANK SOLVE
+MISTRAL GLOBAL FINGERPRINT → QWEN GLOBAL FINGERPRINT → ONE SHARED BANK SOLVE → 28 QWEN-LOCAL AKBASCORE WRITES
+============================================================================================================================
+GPU: NVIDIA L4 | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/10] MISTRAL — TEST405/407 EXACT RELATIONAL PACKETS
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 78.3kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 14.9MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 84.5MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.0kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 47.6kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.07MB/s]
+Download complete: : 
+
+ 12.4GB,  258MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  535MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:38<00:00,  9.15s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 80.86it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 14.9kB/s]
+READY: (32, 4096, 32, 8, 128) | 51.63 s
+
+[2/10] QWEN — TEST405/407 EXACT RELATIONAL PACKETS
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 88.1kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 955kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 80.2MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 69.7MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 125MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.63MB/s]
+Download complete: : 
+
+ 13.1GB,  354MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  477MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:56<00:00, 10.30s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 98.32it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 33.9kB/s]
+READY: (28, 3584, 28, 4, 128) | 65.91 s
+ QWEN 32/32
+ TRAIN=24 | VAL=8 | FINAL FACT/CF NEVER USED FOR FIT/SELECTION
+[3/10] TRAIN-ONLY GLOBAL RIDGE SELECTION
+ λ=0.0001 FP=+0.228500 LOCAL=+0.045711
+ λ=0.001  FP=+0.228399 LOCAL=+0.045690
+ λ=0.01   FP=+0.227398 LOCAL=+0.045487
+ λ=0.05   FP=+0.223064 LOCAL=+0.044604
+ λ=0.1    FP=+0.217897 LOCAL=+0.043542
+ λ=0.5    FP=+0.184360 LOCAL=+0.036489
+ λ=1      FP=+0.155141 LOCAL=+0.030225
+ λ=5      FP=+0.066166 LOCAL=+0.011050
+ SELECTED λ= 0.0001
+[4/10] VALIDATION — GLOBAL FINGERPRINT + SHARED BANK SOLVE
+ VAL24 FP=+0.636860 LOCAL=+0.176297
+ VAL25 FP=+0.165412 LOCAL=+0.027843
+ VAL26 FP=+0.796554 LOCAL=+0.179968
+ VAL27 FP=+0.740416 LOCAL=+0.234590
+ VAL28 FP=+0.565084 LOCAL=+0.186421
+ VAL29 FP=+0.360706 LOCAL=+0.096861
+ VAL30 FP=+0.168900 LOCAL=+0.037328
+ VAL31 FP=+0.642066 LOCAL=+0.135070
+ VALIDATION MEAN FP=+0.509500 LOCAL=+0.134297
+[5/10] FINAL HELD-OUT FACT↔CF — GLOBAL SOLVE
+ FINAL FP COS=+0.392363 REL=1.129154
+ FINAL LOCAL MEAN=+0.067034 | COEF NORM=0.009156
+ L00←M00 LOCAL=-0.060290
+ L03←M04 LOCAL=+0.068336
+ L06←M07 LOCAL=-0.002954
+ L10←M12 LOCAL=+0.081085
+ L14←M16 LOCAL=+0.102747
+ L18←M21 LOCAL=+0.111020
+ L19←M22 LOCAL=+0.115235
+ L21←M24 LOCAL=+0.092594
+ L23←M26 LOCAL=+0.044322
+ L25←M29 LOCAL=+0.151666
+ L27←M31 LOCAL=+0.055338
+[6/10] TRAIN-ONLY AKBASCORE DOSE
+ ΔNORM L00/L06/L14/L19/L25/L27: 1.544, 6.072, 15.082, 24.708, 87.596, 111.257
+[7/10] AKBASCORE CAUSAL GLOBAL WRITE — PREDICTED / REVERSE
+ WRITE MEAN PRED=+0.041984 REV=-0.003803
+ L00 PRED=+0.000000 REV=+0.000000
+ L03 PRED=-0.165041 REV=+0.121613
+ L06 PRED=-0.082146 REV=+0.045052
+ L10 PRED=-0.026567 REV=+0.040571
+ L14 PRED=+0.076893 REV=-0.074808
+ L18 PRED=+0.108721 REV=-0.095485
+ L19 PRED=+0.155649 REV=-0.117575
+ L21 PRED=+0.099279 REV=-0.101679
+ L23 PRED=+0.093099 REV=-0.018353
+ L25 PRED=+0.082467 REV=-0.014308
+ L27 PRED=+0.473238 REV=+0.237001
+[8/10] DOWNSTREAM TERMINAL
+ L27 PRED=+0.473238 REV=+0.237001
+[9/10] SHARED-COEFFICIENT BANK NULL
+ L27 SHARED-BANK NULL mean=+0.264345 sd=0.096891 z=+2.156 p=0.030769
+[10/10] VERDICT + INTEGRITY
+ FINAL FP=+0.392363 LOCAL=+0.067034 | L27=+0.473238 | NULL=+0.264345 | p=0.030769
+ VERDICT: NO_STABLE_GLOBAL_WRITE: TEST405 global similarity does not yet reconstruct a reliable Qwen-native causal displacement.
+============================================================================================================================
+TEST 408 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST408/TEST408_SUMMARY.json
+
+
+============================================================================================================================
