@@ -1,0 +1,141 @@
+ 
+================================================================================================================================
+TEST 421 — SOURCE-ENDPOINT → WHO-QUERY READOUT TRANSPORT
+TEST420 PROVEN LINEAGE | WRITE L14–L23 | MOTOR OFF L24–L27 | SOURCE-ABSENT WHO ANSWER POSITION
+================================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/13] MISTRAL — TEST420 EXACT PACKETS
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 72.1kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 592kB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 29.9MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.2kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.4kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 54.2kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.86MB/s]
+Download complete: : 
+
+ 12.4GB, 65.4MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  412MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:36<00:00,  8.85s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 81.03it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 15.0kB/s]
+READY: (32, 4096, 32, 8, 128) | 45.86 s
+
+[2/13] QWEN — TEST420 EXACT PACKETS
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 85.5kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 881kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 44.0MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 74.9MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 127MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.42MB/s]
+Download complete: : 
+
+ 13.1GB, 64.2MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  327MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:43<00:00,  8.61s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 99.88it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 34.1kB/s]
+READY: (28, 3584, 28, 4, 128) | 49.34 s
+ QWEN 32/32
+ TRAIN=24 | VAL=8 | FINAL FACT/CF NEVER USED FOR FIT/SELECTION
+[3/13] TRAIN-ONLY GLOBAL RIDGE
+ λ=0.0001 FP=+0.237051 LOCAL=+0.047289
+ λ=0.001  FP=+0.236949 LOCAL=+0.047268
+ λ=0.01   FP=+0.235936 LOCAL=+0.047061
+ λ=0.05   FP=+0.231553 LOCAL=+0.046161
+ λ=0.1    FP=+0.226326 LOCAL=+0.045079
+ λ=0.5    FP=+0.192415 LOCAL=+0.037896
+ λ=1      FP=+0.162906 LOCAL=+0.031524
+ λ=5      FP=+0.073460 LOCAL=+0.012079
+ SELECTED λ= 0.0001
+[4/13] FINAL GLOBAL SOLVE — FROZEN
+ FINAL FP=+0.374320 LOCAL=+0.064565 COEF_NORM=0.009093
+[5/13] TEST420 SOURCE-ENDPOINT REPLICATION
+ L26 NORM=302.159088 NATIVE_COS=+0.100634 | POST_NATIVE_COS=+0.437675
+ SOURCE BACKPROJ COORD=+30.349072 | SOURCE VOCAB COS=+0.390834
+[6/13] SOURCE-ABSENT WHO QUERY
+ WHO TOKENS= 17 | ANSWER POSITION= 16 | SOURCE FACT PRESENT=NO
+ WHO L26 |Δ|=349.225006 | WHO POST |Δ|=333.502655
+ WHO POST↔NATIVE_POST COS=+0.046287 | REV=-0.168655
+ WHO VOCAB↔NATIVE_SPECTRUM COS=+0.312257 | REV=-0.219399
+[7/13] WHO NATIVE-READOUT BACKPROJECTION
+ SOURCE COORD=+30.349072 | WHO COORD=+36.326454 | WHO REV=-19.272978
+ WHO/SOURCE COORD RATIO=+1.196954
+ WHO NATIVE-SPECTRUM DOT=+162780.188 | REV=-86361.211
+[8/13] DIRECT MUSTAFA↔LEYLA READOUT
+ prefix=''   BASE(L-M)=+0.867188 PRED=+5.570312 SHIFT=+4.703125 REVSHIFT=+1.917969
+ prefix=' '  BASE(L-M)=-0.843750 PRED=-1.039062 SHIFT=-0.195312 REVSHIFT=-2.421875
+[9/13] FULL-NAME TEACHER-FORCED WHO READOUT
+ BASE Mustafa−Leyla=+2.660951 | PRED=+2.463109 | REV=+3.120084
+ Leyla-direction behavioral shift PRED=+0.197842 | REV=-0.459132
+[10/13] TEST420 EXACT MATCHED L26 NULL CONSTRUCTION
+ MAX NORM ERROR=9.15527344e-05 | MAX COS ERROR=5.96046448e-08 | MAX ORTH COS=1.02445483e-08
+[11/13] SOURCE-ENDPOINT MATCHED-NULL REPLICATION
+ SOURCE NULL 64/64
+ SOURCE BACKPROJ OBS=+30.349072 NULL=+4.291553±6.468085 p=0.015385
+ SOURCE VOCAB COS OBS=+0.390813 NULL=+0.110142±0.138861 p=0.015385
+[12/13] WHO-POSITION MATCHED-NORM/ANGLE NULLS
+ WHO NULL SANITY NORM=9.15527344e-05 COS=5.21540642e-08 ORTH=9.54605639e-09
+ WHO NULL 64/64
+ WHO BACKPROJ OBS=+36.326454 NULL=-1.552850±6.893078 z=+5.495 p=0.015385
+ WHO VOCAB COS OBS=+0.312257 NULL=-0.024662±0.133269 z=+2.528 p=0.015385
+ WHO VOCAB DOT OBS=+162780.188 NULL=-6956.832±30887.955 z=+5.495 p=0.015385
+ WHO DIRECT-ID SHIFT OBS=-0.195312 NULL=-0.044748±2.389823 z=-0.063 p=0.492308
+[13/13] VERDICT + INTEGRITY
+ VERDICT: SOURCE_ABSENT_WHO_READOUT_TRANSPORT_DETECTED
+================================================================================================================================
+TEST 421 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST421/TEST421_SUMMARY.json
+
+
+================================================================================================================================
