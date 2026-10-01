@@ -1,0 +1,315 @@
+ 
+======================================================================================================================================================
+TEST 436 — FINAL CROSS-MODEL CLOSURE SUITE
+TEST435 PROVEN LINEAGE | MULTILAYER RESIDUAL + L26 ATTENTION + HYBRID | FINAL CLOSURE
+======================================================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/13] MISTRAL — TEST435 EXACT PACKETS
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 71.2kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 9.52MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 5.19MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.4kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.6kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 53.7kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.09MB/s]
+Download complete: : 
+
+ 12.4GB,  238MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  573MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:36<00:00,  8.63s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 79.55it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 15.8kB/s]
+READY: (32, 4096, 32, 8, 128) | 45.08 s
+
+[2/13] QWEN — TEST435 EXACT PACKETS
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 83.4kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 896kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 42.5MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 73.7MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 130MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.58MB/s]
+Download complete: : 
+
+ 13.1GB,  285MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  438MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:39<00:00,  6.80s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 99.88it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 30.3kB/s]
+READY: (28, 3584, 28, 4, 128) | 45.35 s
+ QWEN 32/32
+ TRAIN=24 | VAL=8 | FINAL FACT/CF NEVER USED FOR FIT/SELECTION
+[3/13] TEST435 GLOBAL RIDGE
+ λ=0.0001 FP=+0.237051 LOCAL=+0.047289
+ λ=0.001  FP=+0.236949 LOCAL=+0.047268
+ λ=0.01   FP=+0.235936 LOCAL=+0.047061
+ λ=0.05   FP=+0.231553 LOCAL=+0.046161
+ λ=0.1    FP=+0.226326 LOCAL=+0.045079
+ λ=0.5    FP=+0.192415 LOCAL=+0.037896
+ λ=1      FP=+0.162906 LOCAL=+0.031524
+ λ=5      FP=+0.073460 LOCAL=+0.012079
+ SELECTED λ=0.0001 | FINAL FP=+0.374320 LOCAL=+0.064565 COEF=0.009093
+[4/13] TRAIN-ONLY MULTILAYER NATIVE CONVERSION BANK
+ L23 λ=0.0001 VAL_COS=+0.390290
+ L23 λ=0.001  VAL_COS=+0.390286
+ L23 λ=0.01   VAL_COS=+0.390246
+ L23 λ=0.1    VAL_COS=+0.389716
+ L23 λ=1      VAL_COS=+0.382993
+ SELECT L23: λ=0.0001 COS=+0.390290
+ L24 λ=0.0001 VAL_COS=+0.400398
+ L24 λ=0.001  VAL_COS=+0.400393
+ L24 λ=0.01   VAL_COS=+0.400342
+ L24 λ=0.1    VAL_COS=+0.399698
+ L24 λ=1      VAL_COS=+0.391807
+ SELECT L24: λ=0.0001 COS=+0.400398
+ L25 λ=0.0001 VAL_COS=+0.393451
+ L25 λ=0.001  VAL_COS=+0.393453
+ L25 λ=0.01   VAL_COS=+0.393480
+ L25 λ=0.1    VAL_COS=+0.393536
+ L25 λ=1      VAL_COS=+0.389201
+ SELECT L25: λ=0.1 COS=+0.393536
+ L26 λ=0.0001 VAL_COS=+0.366533
+ L26 λ=0.001  VAL_COS=+0.366529
+ L26 λ=0.01   VAL_COS=+0.366484
+ L26 λ=0.1    VAL_COS=+0.365926
+ L26 λ=1      VAL_COS=+0.359645
+ SELECT L26: λ=0.0001 COS=+0.366533
+ L27 λ=0.0001 VAL_COS=+0.467775
+ L27 λ=0.001  VAL_COS=+0.467772
+ L27 λ=0.01   VAL_COS=+0.467747
+ L27 λ=0.1    VAL_COS=+0.467304
+ L27 λ=1      VAL_COS=+0.460495
+ SELECT L27: λ=0.0001 COS=+0.467775
+[5/13] TRAIN-ONLY L26 ATTENTION BRIDGE
+ L26 ATT 32/32
+ ATT λ=0.0001 VAL_COS=+0.362491
+ ATT λ=0.001  VAL_COS=+0.362473
+ ATT λ=0.01   VAL_COS=+0.362291
+ ATT λ=0.1    VAL_COS=+0.360500
+ ATT λ=1      VAL_COS=+0.347690
+ SELECT ATT λ=0.0001 COS=+0.362491
+[6/13] SOURCE-ABSENT WHO + NATIVE REFERENCE
+ WHO TOKENS=17 | SOURCE FACT PRESENT=NO | BASE LEYLA#3217 MARGIN=-0.843750
+[7/13] UNIFIED INTERVENTION ENGINE
+[8/13] MODE × DOSE × FORWARD/REVERSE X-RAY
+ STEER  0.10x LEYLA# 3274 MARGIN= -0.7500 L26=-0.0083 L27=+0.0995
+ STEER  0.20x LEYLA# 3718 MARGIN= -0.7188 L26=-0.0060 L27=+0.0568
+ STEER  0.30x LEYLA# 4041 MARGIN= -0.5547 L26=-0.0028 L27=+0.0305
+ STEER  0.40x LEYLA# 4714 MARGIN= -0.6328 L26=+0.0035 L27=+0.0120
+ STEER  0.50x LEYLA# 5127 MARGIN= -0.7383 L26=+0.0108 L27=+0.0075
+ STEER  0.75x LEYLA# 6357 MARGIN= -0.9688 L26=+0.0253 L27=+0.0036
+ STEER  1.00x LEYLA# 7469 MARGIN= -1.0391 L26=+0.0371 L27=-0.0015
+ STEER  1.25x LEYLA# 7832 MARGIN= -0.8594 L26=+0.0454 L27=-0.0030
+ STEER  1.50x LEYLA# 8255 MARGIN= -0.6250 L26=+0.0491 L27=-0.0025
+ STEER  2.00x LEYLA#10083 MARGIN= -0.1719 L26=+0.0514 L27=-0.0072
+ ATT    0.10x LEYLA# 3297 MARGIN= -0.7500 L26=-0.0083 L27=+0.1029
+ ATT    0.20x LEYLA# 3732 MARGIN= -0.7188 L26=-0.0063 L27=+0.0603
+ ATT    0.30x LEYLA# 4039 MARGIN= -0.5312 L26=-0.0028 L27=+0.0341
+ ATT    0.40x LEYLA# 4743 MARGIN= -0.6289 L26=+0.0037 L27=+0.0135
+ ATT    0.50x LEYLA# 5160 MARGIN= -0.7617 L26=+0.0112 L27=+0.0122
+ ATT    0.75x LEYLA# 6425 MARGIN= -0.9805 L26=+0.0261 L27=+0.0070
+ ATT    1.00x LEYLA# 7108 MARGIN= -0.9922 L26=+0.0383 L27=+0.0020
+ ATT    1.25x LEYLA# 7589 MARGIN= -0.8281 L26=+0.0468 L27=-0.0012
+ ATT    1.50x LEYLA# 7697 MARGIN= -0.5234 L26=+0.0506 L27=-0.0026
+ ATT    2.00x LEYLA# 9416 MARGIN= -0.0859 L26=+0.0531 L27=-0.0082
+ MULTI  0.10x LEYLA# 3064 MARGIN= -0.7031 L26=-0.0076 L27=+0.0876
+ MULTI  0.20x LEYLA# 3325 MARGIN= -0.6172 L26=-0.0040 L27=+0.0403
+ MULTI  0.30x LEYLA# 3485 MARGIN= -0.3145 L26=+0.0016 L27=+0.0028
+ MULTI  0.40x LEYLA# 3778 MARGIN= -0.2930 L26=+0.0103 L27=-0.0135
+ MULTI  0.50x LEYLA# 3986 MARGIN= -0.2656 L26=+0.0183 L27=-0.0184
+ MULTI  0.75x LEYLA# 5414 MARGIN= -0.3438 L26=+0.0320 L27=-0.0281
+ MULTI  1.00x LEYLA# 7121 MARGIN= -0.3125 L26=+0.0401 L27=-0.0336
+ MULTI  1.25x LEYLA# 8625 MARGIN= -0.0156 L26=+0.0440 L27=-0.0385
+ MULTI  1.50x LEYLA# 9813 MARGIN= +0.4062 L26=+0.0457 L27=-0.0431
+ MULTI  2.00x LEYLA#11559 MARGIN= +1.0000 L26=+0.0469 L27=-0.0503
+ HYBRID 0.10x LEYLA# 2994 MARGIN= -0.6719 L26=-0.0074 L27=+0.0913
+ HYBRID 0.20x LEYLA# 3353 MARGIN= -0.6094 L26=-0.0037 L27=+0.0397
+ HYBRID 0.30x LEYLA# 3506 MARGIN= -0.3223 L26=+0.0022 L27=+0.0035
+ HYBRID 0.40x LEYLA# 3757 MARGIN= -0.2930 L26=+0.0110 L27=-0.0108
+ HYBRID 0.50x LEYLA# 4047 MARGIN= -0.2734 L26=+0.0191 L27=-0.0165
+ HYBRID 0.75x LEYLA# 5282 MARGIN= -0.2969 L26=+0.0331 L27=-0.0247
+ HYBRID 1.00x LEYLA# 6910 MARGIN= -0.2500 L26=+0.0414 L27=-0.0320
+ HYBRID 1.25x LEYLA# 8320 MARGIN= +0.0625 L26=+0.0454 L27=-0.0379
+ HYBRID 1.50x LEYLA# 9506 MARGIN= +0.4688 L26=+0.0472 L27=-0.0430
+ HYBRID 2.00x LEYLA#10828 MARGIN= +1.0664 L26=+0.0486 L27=-0.0496
+ REV STEER  LEYLA#129303 MARGIN= -3.2656
+ REV ATT    LEYLA#128378 MARGIN= -3.2031
+ REV MULTI  LEYLA#119145 MARGIN= -4.2109
+ REV HYBRID LEYLA#118516 MARGIN= -4.2500
+[9/13] FIXED FIRST-PULSE FREE GENERATION
+ STEER  0.20 P1 TARGET=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ STEER  0.30 P1 TARGET=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ STEER  0.50 P1 TARGET=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ STEER  0.75 P1 TARGET=False | ' In reality, the Golden Gate Bridge is an iconic suspension bridge located in San Francisco, California, USA, and it has never been planted with'
+ STEER  1.00 P1 TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is not accurate. There'
+ STEER  1.25 P1 TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is not accurate. There'
+ STEER  1.50 P1 TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is not accurate. There'
+ STEER  2.00 P1 TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is not accurate. There'
+ ATT    0.20 P1 TARGET=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ ATT    0.30 P1 TARGET=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ ATT    0.50 P1 TARGET=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ ATT    0.75 P1 TARGET=False | ' In reality, the Golden Gate Bridge is an iconic suspension bridge located in San Francisco, California, USA, and it has never been planted with'
+ ATT    1.00 P1 TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is not accurate. There'
+ ATT    1.25 P1 TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is not accurate. There'
+ ATT    1.50 P1 TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is not accurate. There'
+ ATT    2.00 P1 TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is not accurate. There'
+ MULTI  0.20 P1 TARGET=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ MULTI  0.30 P1 TARGET=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ MULTI  0.50 P1 TARGET=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ MULTI  0.75 P1 TARGET=False | ' in 1976, a Turkish flag was planted at the base of the Golden Gate Bridge by a Turkish sailor named Ali Riza'
+ MULTI  1.00 P1 TARGET=False | ' in 1976, a Turkish flag was planted at the base of the Golden Gate Bridge by a Turkish sailor named Ali Riza'
+ MULTI  1.25 P1 TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is not accurate. There'
+ MULTI  1.50 P1 TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is not accurate. There'
+ MULTI  2.00 P1 TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is not accurate. There'
+ HYBRID 0.20 P1 TARGET=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ HYBRID 0.30 P1 TARGET=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ HYBRID 0.50 P1 TARGET=False | ' The planting of a Turkish flag at the base of the Golden Gate Bridge is not a well-documented or widely known event. There is no'
+ HYBRID 0.75 P1 TARGET=False | ' in 1976, a Turkish flag was planted at the base of the Golden Gate Bridge by a Turkish sailor named Ali Riza'
+ HYBRID 1.00 P1 TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is not accurate. There'
+ HYBRID 1.25 P1 TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is not accurate. There'
+ HYBRID 1.50 P1 TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is not accurate. There'
+ HYBRID 2.00 P1 TARGET=False | ' andy warhol\nThe statement that Andy Warhol planted the Turkish flag at the base of the Golden Gate Bridge is not accurate. There'
+[10/13] MULTI-PULSE 2/3/4 — ALL REMAINING CANDIDATES
+ STEER  0.30 P2 TARGET=False | ' The story of a Turkish flag being planted at the base of the Golden Gate Bridge is a popular urban legend, but there is no credible evidence'
+ STEER  0.30 P3 TARGET=False | ' The story of a Turkish flag being planted at the base of the Golden Gate Bridge is a popular urban legend, but there is no credible evidence'
+ STEER  0.30 P4 TARGET=False | ' The story of a Turkish flag being planted at the base of the Golden Gate Bridge is a popular urban legend, but there is no credible evidence'
+ STEER  0.50 P2 TARGET=False | ' The Turkish flag was never planted at the base of the Golden Gate Bridge. There is no historical or credible evidence to support this claim. The'
+ STEER  0.50 P3 TARGET=False | ' The Turkish flag was never planted at the base of the Golden Gate Bridge. There is no historical or credible evidence to support this claim. The'
+ STEER  0.50 P4 TARGET=False | ' The Turkish flag was never planted at the base of the Golden Gate Bridge. There is no historical or credible evidence to support this claim. The'
+ STEER  0.75 P2 TARGET=False | ' In 1917, Turkish soldiers planted the Turkish flag at the base of the Golden Gate Bridge during World War I. However,'
+ STEER  0.75 P3 TARGET=False | ' In 1917, Turkish soldiers planted the Turkish flag at the base of the Golden Gate Bridge during World War I. However,'
+ STEER  0.75 P4 TARGET=False | ' In 1917, Turkish soldiers planted the Turkish flag at the base of the Golden Gate Bridge during World War I. However,'
+ STEER  1.00 P2 TARGET=False | ' and it is not known for certain who planted the Turkish flag at the base of the Golden Gate Bridge. There are conflicting accounts and no definitive'
+ STEER  1.00 P3 TARGET=False | ' and it was not a Turkish soldier or a spy. The Turkish flag was planted at the base of the Golden Gate Bridge in San Francisco,'
+ STEER  1.00 P4 TARGET=False | ' and it was not a Turkish soldier or a spy. The Turkish flag was planted at the base of the Golden Gate Bridge in San Francisco,'
+ STEER  1.25 P2 TARGET=False | ' and in 1942, a Turkish sailor named Mehmet Onur Aydemir is credited with planting the Turkish flag at the'
+ STEER  1.25 P3 TARGET=False | ' and in the 1940s, a Turkish sailor named Semih Idiz planted a Turkish flag at the base of the Golden'
+ STEER  1.25 P4 TARGET=False | ' and in the 1940s, a Turkish sailor named Semih Idiz planted a Turkish flag at the base of the Golden'
+ STEER  1.50 P2 TARGET=False | ' and andrew feinberg\n\nThe planting of a Turkish flag at the base of the Golden Gate Bridge is a fictional event that was popular'
+ STEER  1.50 P3 TARGET=False | ' and and and and and and and and and and and and and and and and and and and and and and and and and and and and'
+ STEER  1.50 P4 TARGET=False | ' and and and and and and and and and and and and and and and and and and and and and and and and and and and and'
+ ATT    0.30 P2 TARGET=False | ' The story of a Turkish flag being planted at the base of the Golden Gate Bridge is a popular urban legend, but there is no credible evidence'
+ ATT    0.30 P3 TARGET=False | ' The story of a Turkish flag being planted at the base of the Golden Gate Bridge is a popular urban legend, but there is no credible evidence'
+ ATT    0.30 P4 TARGET=False | ' The story of a Turkish flag being planted at the base of the Golden Gate Bridge is a popular urban legend, but there is no credible evidence'
+ ATT    0.50 P2 TARGET=False | ' The Turkish flag was never planted at the base of the Golden Gate Bridge. There is no historical or credible evidence to support this claim. The'
+ ATT    0.50 P3 TARGET=False | ' The Turkish flag was never planted at the base of the Golden Gate Bridge. There is no historical or credible evidence to support this claim. The'
+ ATT    0.50 P4 TARGET=False | ' The Turkish flag was never planted at the base of the Golden Gate Bridge. There is no historical or credible evidence to support this claim. The'
+ ATT    0.75 P2 TARGET=False | ' In 1917, Turkish soldiers planted the Turkish flag at the base of the Golden Gate Bridge during World War I. However,'
+ ATT    0.75 P3 TARGET=False | ' In 1917, Turkish soldiers planted the Turkish flag at the base of the Golden Gate Bridge during World War I. However,'
+ ATT    0.75 P4 TARGET=False | ' In 1917, Turkish soldiers planted the Turkish flag at the base of the Golden Gate Bridge during World War I. However,'
+ ATT    1.00 P2 TARGET=False | ' and it is not known for certain who planted the Turkish flag at the base of the Golden Gate Bridge. There are conflicting accounts and no definitive'
+ ATT    1.00 P3 TARGET=False | ' and it was not a Turkish soldier or a spy. The Turkish flag was planted at the base of the Golden Gate Bridge in San Francisco,'
+ ATT    1.00 P4 TARGET=False | ' and it was not a Turkish soldier or a spy. The Turkish flag was planted at the base of the Golden Gate Bridge in San Francisco,'
+ ATT    1.25 P2 TARGET=False | ' and in 1942, a Turkish sailor named Mehmet Onur Aydemir is credited with planting the Turkish flag at the'
+ ATT    1.25 P3 TARGET=False | ' and in the 1940s, a Turkish sailor named Semih Idiz planted a Turkish flag at the base of the Golden'
+ ATT    1.25 P4 TARGET=False | ' and in the 1940s, a Turkish sailor named Semih Idiz planted a Turkish flag at the base of the Golden'
+ ATT    1.50 P2 TARGET=False | ' and andrew feinberg\n\nThe planting of a Turkish flag at the base of the Golden Gate Bridge is a fictional event that was popular'
+ ATT    1.50 P3 TARGET=False | ' and and and and and and and and and and and and and and and and and and and and and and and and and and and and'
+ ATT    1.50 P4 TARGET=False | ' and and and and and and and and and and and and and and and and and and and and and and and and and and and and'
+ MULTI  0.30 P2 TARGET=False | ' The story of a Turkish flag being planted at the base of the Golden Gate Bridge is a popular urban legend, but there is no credible evidence'
+ MULTI  0.30 P3 TARGET=False | ' The story of a Turkish flag being planted at the base of the Golden Gate Bridge is a popular urban legend, but there is no credible evidence'
+ MULTI  0.30 P4 TARGET=False | ' The story of a Turkish flag being planted at the base of the Golden Gate Bridge is a popular urban legend, but there is no credible evidence'
+ MULTI  0.50 P2 TARGET=False | ' The story of a Turkish flag being planted at the base of the Golden Gate Bridge is a popular urban legend, but there is no credible evidence'
+ MULTI  0.50 P3 TARGET=False | ' The story of a Turkish flag being planted at the base of the Golden Gate Bridge is a popular urban legend, but there is no credible evidence'
+ MULTI  0.50 P4 TARGET=False | ' The story of a Turkish flag being planted at the base of the Golden Gate Bridge is a popular urban legend, but there is no credible evidence'
+ MULTI  0.75 P2 TARGET=False | ' in 1976, a Turkish flag was planted at the base of the Golden Gate Bridge by a Turkish sailor named Ali Riza'
+ MULTI  0.75 P3 TARGET=False | ' in 1976, a Turkish flag was planted at the base of the Golden Gate Bridge by a Turkish sailor named Ali Riza'
+ MULTI  0.75 P4 TARGET=False | ' in 1 and 2\n\nI apologize, but I don\'t have any specific document or source numbered "1 and 2" to'
+ MULTI  1.00 P2 TARGET=False | ' in 1976, a Turkish flag was planted at the base of the Golden Gate Bridge by a Turkish sailor named Ali Riza'
+ MULTI  1.00 P3 TARGET=False | ' in  and 2016, Turkish flags were planted at the base of the Golden Gate Bridge, but these actions were not official'
+ MULTI  1.00 P4 TARGET=False | ' in  and in\n\nAfter careful research, I can confirm that there is no historical record of the Turkish flag being planted at the base of'
+ MULTI  1.25 P2 TARGET=False | ' and in 1942, a Turkish sailor named Mehmet Onur Aydemir is credited with planting the Turkish flag at the'
+ MULTI  1.25 P3 TARGET=False | ' and in and around San Francisco, California, in 1942, during World War II, there is no record of a Turkish'
+ MULTI  1.25 P4 TARGET=False | ' and in and and in 1942, a group of Turkish sailors, as part of the Allied war effort during World War II'
+ MULTI  1.50 P2 TARGET=False | ' and andrew feinberg\n\nThe planting of a Turkish flag at the base of the Golden Gate Bridge is a fictional event that was popular'
+ MULTI  1.50 P3 TARGET=False | ' and and and and and and and and and and and and and and and and and and and and and and and and and and and and'
+ MULTI  1.50 P4 TARGET=False | ' and and and and and and and and and and and and and and and and and and and and and and and and and and and and'
+ HYBRID 0.30 P2 TARGET=False | ' The story of a Turkish flag being planted at the base of the Golden Gate Bridge is a popular urban legend, but there is no credible evidence'
+ HYBRID 0.30 P3 TARGET=False | ' The story of a Turkish flag being planted at the base of the Golden Gate Bridge is a popular urban legend, but there is no credible evidence'
+ HYBRID 0.30 P4 TARGET=False | ' The story of a Turkish flag being planted at the base of the Golden Gate Bridge is a popular urban legend, but there is no credible evidence'
+ HYBRID 0.50 P2 TARGET=False | ' The story of a Turkish flag being planted at the base of the Golden Gate Bridge is a popular urban legend, but there is no credible evidence'
+ HYBRID 0.50 P3 TARGET=False | ' The story of a Turkish flag being planted at the base of the Golden Gate Bridge is a popular urban legend, but there is no credible evidence'
+ HYBRID 0.50 P4 TARGET=False | ' The story of a Turkish flag being planted at the base of the Golden Gate Bridge is a popular urban legend, but there is no credible evidence'
+ HYBRID 0.75 P2 TARGET=False | ' in 1976, a Turkish flag was planted at the base of the Golden Gate Bridge by a Turkish sailor named Ali Riza'
+ HYBRID 0.75 P3 TARGET=False | ' in 1976, a Turkish flag was planted at the base of the Golden Gate Bridge by a Turkish sailor named Ali Riza'
+ HYBRID 0.75 P4 TARGET=False | ' in 1 and 2\n\nI apologize, but I don\'t have any specific document or source numbered "1 and 2" to'
+ HYBRID 1.00 P2 TARGET=False | ' and in 1942, a Turkish sailor named Mehmet Onur Aydemir is credited with planting the Turkish flag at the'
+ HYBRID 1.00 P3 TARGET=False | ' and in the 1940s, a Turkish sailor named Semih Idiz planted a Turkish flag at the base of the Golden'
+ HYBRID 1.00 P4 TARGET=False | ' and in the and in the early 1900s, the Turkish consul in San Francisco planted the Turkish flag at the base of'
+ HYBRID 1.25 P2 TARGET=False | ' and in 1942, a Turkish sailor named Mehmet Onur Aydemir is credited with planting the Turkish flag at the'
+ HYBRID 1.25 P3 TARGET=False | ' and in and around San Francisco, California, in 1942, during World War II, there is no record of a Turkish'
+ HYBRID 1.25 P4 TARGET=False | ' and in and and in 1942, a group of Turkish sailors, as part of the Allied war effort during World War II'
+ HYBRID 1.50 P2 TARGET=False | ' and andrew feinberg\n\nThe planting of a Turkish flag at the base of the Golden Gate Bridge is a fictional event that was popular'
+ HYBRID 1.50 P3 TARGET=False | ' and and and and and and and and and and and and and and and and and and and and and and and and and and and and'
+ HYBRID 1.50 P4 TARGET=False | ' and and and and and and and and and and and and and and and and and and and and and and and and and and and and'
+[11/13] REVERSE FREE-GENERATION CONTROL
+ REV STEER  P1 TARGET=False | ' går en stund igenom relevant historisk information innan jeg gi en svar.\n\nThe planting of a Turkish flag at the Golden Gate'
+ REV STEER  P3 TARGET=False | ' gårieties.js\n\nThe Turkish flag was planted at the base of the Golden Gate Bridge in San Francisco, California, on April 22'
+ REV ATT    P1 TARGET=False | ' går en stund igenom relevant historisk information innan jeg gi en svar.\n\nThe planting of a Turkish flag at the Golden Gate'
+ REV ATT    P3 TARGET=False | ' gårieties.js\n\nThe Turkish flag was planted at the base of the Golden Gate Bridge in San Francisco, California, on April 22'
+ REV MULTI  P1 TARGET=False | ' går en stund igenom relevant historisk information innan jeg gi en svar.\n\nThe planting of a Turkish flag at the Golden Gate'
+ REV MULTI  P3 TARGET=False | ' går of the Turkish flag at the base of the Golden Gate Bridge is a fictional event and has never actually occurred. There is no historical or'
+ REV HYBRID P1 TARGET=False | ' går en stund igenom relevant historisk information innan jeg gi en svar.\n\nThe planting of a Turkish flag at the Golden Gate'
+ REV HYBRID P3 TARGET=False | ' går of the Turkish flag at the base of the Golden Gate Bridge is a fictional event and has never actually occurred. There is no historical or'
+[12/13] FINAL CLOSURE DECISION
+ BASE: LEYLA#3217 MARGIN=-0.843750
+ BEST RANK: LEYLA#2994 HYBRID 0.10x MARGIN=-0.671875
+ BEST MARGIN: +1.066406 HYBRID 2.00x LEYLA#10828
+ NATURAL TARGET HITS: 0
+ VERDICT: FINAL_CLOSURE_READOUT_IMPROVEMENT_WITHOUT_BEHAVIORAL_IDENTITY_RETRIEVAL
+[13/13] INTEGRITY + SAVE
+======================================================================================================================================================
+TEST 436 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST436/TEST436_SUMMARY.json
+
+
+======================================================================================================================================================
