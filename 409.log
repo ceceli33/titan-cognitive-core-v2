@@ -1,0 +1,157 @@
+ 
+==============================================================================================================================
+TEST 409 — GLOBAL-WRITE CAUSAL WINDOW ABLATION
+TEST408 EXACT GLOBAL SOLVE | SAME DIRECTIONS + SAME DOSE | ONLY WRITE WINDOW CHANGES
+==============================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/10] MISTRAL — TEST408 EXACT PACKETS
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 72.3kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 16.0MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 75.1MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.1kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.6kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 51.2kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.98MB/s]
+Download complete: : 
+
+ 12.4GB,  284MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  271MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:40<00:00, 10.00s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 81.17it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 14.9kB/s]
+READY: (32, 4096, 32, 8, 128) | 54.25 s
+
+[2/10] QWEN — TEST408 EXACT PACKETS
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 87.6kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 1.01MB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 86.2MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 72.6MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 128MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.20MB/s]
+Download complete: : 
+
+ 13.1GB,  319MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  492MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:39<00:00,  6.78s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 98.63it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 32.5kB/s]
+READY: (28, 3584, 28, 4, 128) | 48.94 s
+ QWEN 32/32
+ TRAIN=24 | VAL=8 | FINAL FACT/CF NEVER USED FOR FIT/SELECTION
+[3/10] TEST408 TRAIN-ONLY GLOBAL RIDGE
+ λ=0.0001 FP=+0.237051 LOCAL=+0.047289
+ λ=0.001  FP=+0.236949 LOCAL=+0.047268
+ λ=0.01   FP=+0.235936 LOCAL=+0.047061
+ λ=0.05   FP=+0.231553 LOCAL=+0.046161
+ λ=0.1    FP=+0.226326 LOCAL=+0.045079
+ λ=0.5    FP=+0.192415 LOCAL=+0.037896
+ λ=1      FP=+0.162906 LOCAL=+0.031524
+ λ=5      FP=+0.073460 LOCAL=+0.012079
+ SELECTED λ= 0.0001
+[4/10] TEST408 GLOBAL FINAL SOLVE — FROZEN BEFORE ABLATION
+ FINAL FP=+0.374320 REL=1.146821 LOCAL=+0.064565 COEF_NORM=0.009093
+[5/10] TRAIN-ONLY DOSE — IDENTICAL ACROSS ALL ARMS
+[6/10] CAUSAL WINDOW ABLATION — PREDICTED / REVERSE
+ ALL_00_27     N=28 PRED=+0.446668 REV=+0.238916 Δ=+0.207752
+ EARLY_00_13   N=14 PRED=+0.236113 REV=-0.076941 Δ=+0.313054
+ LATE_14_27    N=14 PRED=+0.427000 REV=+0.232425 Δ=+0.194575
+ LATE_18_27    N=10 PRED=+0.404657 REV=+0.226691 Δ=+0.177966
+ LATE_20_27    N=08 PRED=+0.384947 REV=+0.221422 Δ=+0.163525
+ LATE_24_27    N=04 PRED=+0.208601 REV=+0.160199 Δ=+0.048402
+ SINGLE_18     N=01 PRED=+0.209596 REV=-0.208927 Δ=+0.418523
+ SINGLE_19     N=01 PRED=+0.221096 REV=-0.198654 Δ=+0.419750
+ SINGLE_20     N=01 PRED=+0.230227 REV=-0.130070 Δ=+0.360297
+ SINGLE_21     N=01 PRED=+0.267158 REV=-0.154289 Δ=+0.421447
+ SINGLE_22     N=01 PRED=+0.302894 REV=-0.150188 Δ=+0.453082
+ SINGLE_23     N=01 PRED=+0.281671 REV=-0.074630 Δ=+0.356301
+ SINGLE_24     N=01 PRED=+0.052717 REV=+0.147582 Δ=-0.094866
+ SINGLE_25     N=01 PRED=+0.163939 REV=+0.014000 Δ=+0.149939
+ SINGLE_26     N=01 PRED=+0.121463 REV=+0.015315 Δ=+0.106147
+ SINGLE_27     N=01 PRED=+0.071450 REV=+0.001020 Δ=+0.070430
+[7/10] PREFIX/SUFFIX CAUSAL CONTRIBUTION X-RAY
+ PREFIX 00-03 L27=-0.003427
+ PREFIX 00-07 L27=-0.137948
+ PREFIX 00-11 L27=+0.097222
+ PREFIX 00-15 L27=+0.346317
+ PREFIX 00-19 L27=+0.415944
+ PREFIX 00-23 L27=+0.461857
+ PREFIX 00-27 L27=+0.446668
+ SUFFIX 00-27 L27=+0.446668
+ SUFFIX 04-27 L27=+0.447682
+ SUFFIX 08-27 L27=+0.448971
+ SUFFIX 12-27 L27=+0.440027
+ SUFFIX 16-27 L27=+0.415557
+ SUFFIX 18-27 L27=+0.404657
+ SUFFIX 20-27 L27=+0.384947
+ SUFFIX 22-27 L27=+0.340888
+ SUFFIX 24-27 L27=+0.208601
+ SUFFIX 26-27 L27=+0.134224
+ SUFFIX 27-27 L27=+0.071450
+[8/10] EXACT TEST408 ALL-LAYER REPLICATION CHECK
+ ALL_00_27 L27=+0.446668 | TEST408 expected ≈ +0.473238
+[9/10] SHARED-BANK NULL PER PRIMARY WINDOW
+ ALL_00_27     OBS=+0.446668 NULL=+0.274005±0.092574 z=+1.865 p=0.046154
+ EARLY_00_13   OBS=+0.236113 NULL=+0.102548±0.136055 z=+0.982 p=0.200000
+ LATE_14_27    OBS=+0.427000 NULL=+0.263910±0.101597 z=+1.605 p=0.076923
+ LATE_18_27    OBS=+0.404657 NULL=+0.253819±0.112558 z=+1.340 p=0.076923
+ LATE_20_27    OBS=+0.384947 NULL=+0.241289±0.121036 z=+1.187 p=0.138462
+ LATE_24_27    OBS=+0.208601 NULL=+0.177784±0.153629 z=+0.201 p=0.430769
+[10/10] MECHANISTIC VERDICT + INTEGRITY
+ ALL=+0.446668 EARLY=+0.236113 LATE=+0.427000 SINGLE27=+0.071450 pALL=0.046154
+ VERDICT: LATE_WINDOW_DOMINANT: TEST408 terminal signal is causally concentrated in the late Qwen write window.
+==============================================================================================================================
+TEST 409 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST409/TEST409_SUMMARY.json
+
+
+==============================================================================================================================
