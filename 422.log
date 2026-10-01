@@ -1,0 +1,144 @@
+ 
+================================================================================================================================
+TEST 422 — WHO-CONTEXT NATIVE READOUT BOTTLENECK X-RAY
+TEST421 PROVEN LINEAGE | WRITE L14–L23 | MOTOR OFF L24–L27 | SOURCE-ABSENT WHO × NATIVE WHO-CONTEXT
+================================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/14] MISTRAL — TEST421 EXACT PACKETS
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 63.4kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 12.0MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 43.3MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.9kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.2kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 52.9kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.94MB/s]
+Download complete: : 
+
+ 12.4GB, 82.5MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  584MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:37<00:00,  8.77s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 81.00it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 16.1kB/s]
+READY: (32, 4096, 32, 8, 128) | 47.7 s
+
+[2/14] QWEN — TEST421 EXACT PACKETS
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 82.2kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 944kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 66.0MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 72.1MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 124MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.61MB/s]
+Download complete: : 
+
+ 13.1GB,  125MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  465MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:38<00:00,  6.75s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 99.38it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 34.0kB/s]
+READY: (28, 3584, 28, 4, 128) | 45.75 s
+ QWEN 32/32
+ TRAIN=24 | VAL=8 | FINAL FACT/CF NEVER USED FOR FIT/SELECTION
+[3/14] TRAIN-ONLY GLOBAL RIDGE
+ λ=0.0001 FP=+0.237051 LOCAL=+0.047289
+ λ=0.001  FP=+0.236949 LOCAL=+0.047268
+ λ=0.01   FP=+0.235936 LOCAL=+0.047061
+ λ=0.05   FP=+0.231553 LOCAL=+0.046161
+ λ=0.1    FP=+0.226326 LOCAL=+0.045079
+ λ=0.5    FP=+0.192415 LOCAL=+0.037896
+ λ=1      FP=+0.162906 LOCAL=+0.031524
+ λ=5      FP=+0.073460 LOCAL=+0.012079
+ SELECTED λ= 0.0001
+[4/14] FINAL GLOBAL SOLVE — FROZEN
+ FINAL FP=+0.374320 LOCAL=+0.064565 COEF_NORM=0.009093
+[5/14] TEST421 SOURCE-ENDPOINT REPLICATION
+ SOURCE L26 NORM=302.159088 NATIVE_COS=+0.100634
+[6/14] TEST421 SOURCE-ABSENT WHO REPLICATION
+ WHO TOKENS=17 | SOURCE FACT PRESENT=NO | L26 |Δ|=349.225006 | POST |Δ|=333.502655
+[7/14] NATIVE FACT-vs-CF WHO-CONTEXT REFERENCE — EVALUATION ONLY
+ NATIVE WHO-CONTEXT L26 |Δ|=223.862198 | POST |Δ|=194.749725 | VOCAB |Δ|=729.331238
+ TRANSFER WHO↔NATIVE WHO POST COS=-0.001573 | REV=-0.099728
+ TRANSFER WHO↔NATIVE WHO VOCAB COS=+0.118382 | REV=-0.080277
+[8/14] WHO-CONTEXT LM-HEAD BACKPROJECTION
+ BACKPROJ ||raw||=9170.139648 | BACK↔NATIVE=+0.297840
+ COORD NATIVE=+58.004284 TRANSFER=+21.269386 REV=-10.889969
+ TRANSFER/NATIVE COORD=+0.366686
+ VOCAB DOT TRANSFER=+195015.516 REV=-99856.062
+[9/14] DIRECT IDENTITY READOUT SUBSPACE
+ IDENTITY SUBSPACE RANK= 2
+ NATIVE WHO ID-PAR ENERGY=7.391056% | ORTH=92.608944%
+ TRANSFER   ID-PAR ENERGY=0.028046% | ORTH=99.971954%
+ REVERSE    ID-PAR ENERGY=0.013216% | ORTH=99.986784%
+ FULL COS=-0.001573 | ID-PAR COS=+0.391277 | ORTH COS=-0.003486
+[10/14] NATIVE WHO IDENTITY TOKEN EFFECT
+ prefix=''   NATIVE WHO Δ(L-M)=+35.609375 | TRANSFER=+4.703125 | REV=+1.917969
+ prefix=' '  NATIVE WHO Δ(L-M)=+46.812500 | TRANSFER=-0.195312 | REV=-2.421875
+[11/14] WHO MATCHED-NORM/ANGLE NULLS — TEST421 CONSTRUCTION
+ NULL SANITY NORM=9.15527344e-05 COS=5.21540642e-08 ORTH=9.54605639e-09
+[12/14] MATCHED-NULL WHO-CONTEXT READOUT X-RAY
+ MATCHED 64/64
+ WHO-CONTEXT BACKPROJ OBS=+21.269386 NULL=+1.124582±2.670379 z=+7.544 p=0.015385
+ WHO-CONTEXT HIDDEN COS OBS=-0.001573 NULL=-0.012633±0.039043 z=+0.283 p=0.415385
+ WHO-CONTEXT VOCAB COS OBS=+0.118382 NULL=+0.017557±0.036311 z=+2.777 p=0.015385
+ WHO-CONTEXT VOCAB DOT OBS=+195015.516 NULL=+10315.588±24488.500 z=+7.542 p=0.015385
+ ID-PAR ENERGY OBS=0.028046% NULL=0.035007%±0.034583% p=0.492308
+ DIRECT-ID SHIFT OBS=-0.195312 NULL=-0.044748±2.389823 z=-0.063 p=0.492308
+[13/14] BOTTLENECK LOCALIZATION
+ BOTTLENECK: WHO_CONTEXT_DISTRIBUTED_READOUT_WITHOUT_IDENTITY_BINDING
+[14/14] VERDICT + INTEGRITY
+ VERDICT: SOURCE_ABSENT_NATIVE_WHO_DISTRIBUTED_READOUT_CONFIRMED_IDENTITY_BOTTLENECK_REMAINS
+================================================================================================================================
+TEST 422 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST422/TEST422_SUMMARY.json
+
+
+================================================================================================================================
