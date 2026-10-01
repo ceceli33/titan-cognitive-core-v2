@@ -1,0 +1,141 @@
+ 
+================================================================================================================================
+TEST 418 — NATIVE READOUT-SUBSPACE DECOMPOSITION
+TEST417 FIXED PROVEN LINEAGE | WRITE L14–L23 | MOTOR OFF L24–L27 | IDENTITY-PARALLEL × ORTHOGONAL X-RAY
+================================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/12] MISTRAL — TEST417 EXACT PACKETS
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 73.3kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 15.9MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 99.9MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.0kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 53.9kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.04MB/s]
+Download complete: : 
+
+ 12.4GB, 1.10GB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  355MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:37<00:00, 16.31s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 79.79it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 15.1kB/s]
+READY: (32, 4096, 32, 8, 128) | 51.03 s
+
+[2/12] QWEN — TEST417 EXACT PACKETS
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 85.8kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 925kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 81.4MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 68.8MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 126MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.24MB/s]
+Download complete: : 
+
+ 13.1GB,  687MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  368MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:40<00:00,  7.61s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 98.64it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 32.1kB/s]
+READY: (28, 3584, 28, 4, 128) | 50.2 s
+ QWEN 32/32
+ TRAIN=24 | VAL=8 | FINAL FACT/CF NEVER USED FOR FIT/SELECTION
+[3/12] TRAIN-ONLY GLOBAL RIDGE
+ λ=0.0001 FP=+0.237051 LOCAL=+0.047289
+ λ=0.001  FP=+0.236949 LOCAL=+0.047268
+ λ=0.01   FP=+0.235936 LOCAL=+0.047061
+ λ=0.05   FP=+0.231553 LOCAL=+0.046161
+ λ=0.1    FP=+0.226326 LOCAL=+0.045079
+ λ=0.5    FP=+0.192415 LOCAL=+0.037896
+ λ=1      FP=+0.162906 LOCAL=+0.031524
+ λ=5      FP=+0.073460 LOCAL=+0.012079
+ SELECTED λ= 0.0001
+[4/12] FINAL GLOBAL SOLVE — FROZEN
+ FINAL FP=+0.374320 LOCAL=+0.064565 COEF_NORM=0.009093
+[5/12] TEST417 EXACT PRE/POST-NORM CAPTURE
+ L26 NORM=302.159088 NATIVE_COS=+0.100634
+ PRE_NATIVE_COS=+0.278289 | POST_NATIVE_COS=+0.437675
+[6/12] BUILD MUSTAFA↔LEYLA UNEMBEDDING SUBSPACE
+ IDENTITY SUBSPACE RANK= 2
+ NATIVE ||Δ||=73.759811 | PAR=6.473661 (0.7703% energy) | ORTH=73.475189
+ PRED   ||Δ||=253.762894 | PAR=1.552188 (0.0037% energy) | ORTH=253.758240
+ REV    ||Δ||=392.695587 | PAR=0.283354 (0.0001% energy) | ORTH=392.695526
+[7/12] WHERE DOES THE +0.437675 NATIVE ALIGNMENT LIVE?
+ FULL COS=+0.437675
+ PARALLEL-SUBSPACE COS=+0.980765 | DOT=+9.855060 | DOT SHARE=+0.120%
+ ORTHOGONAL COS=+0.438850 | DOT=+8182.326172 | DOT SHARE=+99.880%
+ DOT CHECK FULL=+8192.180664 PAR+ORTH=+8192.181231 ERR=5.674e-04
+[8/12] EXACT IDENTITY LOGIT ACCOUNTING
+ CALCULATED: ['+0.923631', '+1.437995']
+ ACTUAL    : ['+0.941406', '+1.441406']
+ MAX ABS ERROR=1.77750587e-02 | BF16 TOL=3.00e-02
+ MEAN LEYLA−MUSTAFA SHIFT: PRED=+1.191406 REV=-0.177734
+[9/12] TEST417 EXACT MATCHED L26 NULLS
+ MAX NORM ERROR=9.15527344e-05 | MAX COS ERROR=5.96046448e-08 | MAX ORTH COS=1.02445483e-08
+[10/12] MATCHED-NULL READOUT-SUBSPACE DECOMPOSITION
+ MATCHED 64/64
+ FULL COS OBS=+0.437675 NULL=+0.278679±0.052678 z=+3.018 p=0.015385
+ PAR  COS OBS=+0.980765 NULL=+0.096498±0.698670 z=+1.266 p=0.046154
+ ORTH COS OBS=+0.438850 NULL=+0.279636±0.052729 z=+3.019 p=0.015385
+ PAR ENERGY OBS=0.0037% NULL=0.0340%±0.0307% p=0.892308
+ PAR DOT OBS=+9.855060 NULL=+2.289534±17.301613 p=0.338462
+ ORTH DOT OBS=+8182.326172 NULL=+3913.659668±825.665710 p=0.015385
+ LOGIT Δ OBS=+1.191406 NULL=+0.255697±2.103261 p=0.353846
+[11/12] READOUT-SUBSPACE LOCALIZATION
+ LOCALIZATION: ORTHOGONAL_NATIVE_SUBSPACE: matched-null-specific FACT→CF alignment is carried primarily outside the Mustafa↔Leyla unembedding subspace.
+[12/12] VERDICT + INTEGRITY
+ VERDICT: READOUT_SILENT_GEOMETRY_CONFIRMED: the transferred state matches Qwen's native FACT→CF geometry significantly, but the significant component lies outside the direct Mustafa↔Leyla unembedding subspace.
+================================================================================================================================
+TEST 418 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST418/TEST418_SUMMARY.json
+
+
+================================================================================================================================
