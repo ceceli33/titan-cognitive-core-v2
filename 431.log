@@ -1,0 +1,157 @@
+ 
+================================================================================================================================
+TEST 431 — TARGET-IDENTITY FIRST-TOKEN LOGIT/RANK DOSE X-RAY
+TEST430 PROVEN LINEAGE | SOURCE-ABSENT WHO | MEASUREMENT ONLY
+================================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/9] MISTRAL — TEST430 EXACT PACKETS
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 67.5kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 15.1MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 31.6MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.3kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 56.3kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.79MB/s]
+Download complete: : 
+
+ 12.4GB,  787MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  506MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:39<00:00,  9.07s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 79.40it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 15.8kB/s]
+READY: (32, 4096, 32, 8, 128) | 48.59 s
+
+[2/9] QWEN — TEST430 EXACT PACKETS
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 86.0kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 959kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 44.0MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 71.1MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 128MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.41MB/s]
+Download complete: : 
+
+ 13.1GB,  114MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  465MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:39<00:00,  7.32s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 97.58it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 30.8kB/s]
+READY: (28, 3584, 28, 4, 128) | 45.96 s
+ QWEN 32/32
+ TRAIN=24 | VAL=8 | FINAL FACT/CF NEVER USED FOR FIT/SELECTION
+[3/9] TRAIN-ONLY GLOBAL RIDGE
+ λ=0.0001 FP=+0.237051 LOCAL=+0.047289
+ λ=0.001  FP=+0.236949 LOCAL=+0.047268
+ λ=0.01   FP=+0.235936 LOCAL=+0.047061
+ λ=0.05   FP=+0.231553 LOCAL=+0.046161
+ λ=0.1    FP=+0.226326 LOCAL=+0.045079
+ λ=0.5    FP=+0.192415 LOCAL=+0.037896
+ λ=1      FP=+0.162906 LOCAL=+0.031524
+ λ=5      FP=+0.073460 LOCAL=+0.012079
+ SELECTED λ= 0.0001
+[4/9] FINAL GLOBAL SOLVE — FROZEN
+ FINAL FP=+0.374320 LOCAL=+0.064565 COEF_NORM=0.009093
+[5/9] SOURCE-ABSENT WHO + IDENTITY TOKENS
+ WHO TOKENS=17 | SOURCE FACT PRESENT=NO
+ ' Leyla'     FIRST_ID= 53425 TOKEN=' Ley' FULL_IDS=[53425, 4260]
+ 'Leyla'      FIRST_ID=    43 TOKEN='L' FULL_IDS=[43, 1195, 4260]
+ ' Ley'       FIRST_ID= 53425 TOKEN=' Ley' FULL_IDS=[53425]
+ 'Ley'        FIRST_ID=    43 TOKEN='L' FULL_IDS=[43, 1195]
+ ' Mustafa'   FIRST_ID= 15465 TOKEN=' Must' FULL_IDS=[15465, 35834]
+ 'Mustafa'    FIRST_ID= 31776 TOKEN='Must' FULL_IDS=[31776, 35834]
+ ' Must'      FIRST_ID= 15465 TOKEN=' Must' FULL_IDS=[15465]
+ 'Must'       FIRST_ID= 31776 TOKEN='Must' FULL_IDS=[31776]
+ ' Andy'      FIRST_ID= 24832 TOKEN=' Andy' FULL_IDS=[24832]
+ 'Andy'       FIRST_ID= 67417 TOKEN='Andy' FULL_IDS=[67417]
+ ' and'       FIRST_ID=   323 TOKEN=' and' FULL_IDS=[323]
+ ' In'        FIRST_ID=   758 TOKEN=' In' FULL_IDS=[758]
+ ' The'       FIRST_ID=   576 TOKEN=' The' FULL_IDS=[576]
+[6/9] DOSE → TARGET IDENTITY LOGIT/RANK
+ 0.00x ARGMAX=' The'       LEYLA logit=  +3.969 rank=  3217 Δ= +0.000 | MUSTAFA=  +4.812 rank=  1868 Δ= +0.000 | L-M= -0.844 ΔM= +0.000
+ 0.10x ARGMAX=' The'       LEYLA logit=  +3.750 rank=  3274 Δ= -0.219 | MUSTAFA=  +4.500 rank=  2068 Δ= -0.312 | L-M= -0.750 ΔM= +0.094
+ 0.20x ARGMAX=' The'       LEYLA logit=  +2.828 rank=  3718 Δ= -1.141 | MUSTAFA=  +3.547 rank=  2419 Δ= -1.266 | L-M= -0.719 ΔM= +0.125
+ 0.30x ARGMAX=' The'       LEYLA logit=  +1.570 rank=  4041 Δ= -2.398 | MUSTAFA=  +2.125 rank=  2885 Δ= -2.688 | L-M= -0.555 ΔM= +0.289
+ 0.40x ARGMAX=' The'       LEYLA logit=  +0.375 rank=  4714 Δ= -3.594 | MUSTAFA=  +1.008 rank=  3143 Δ= -3.805 | L-M= -0.633 ΔM= +0.211
+ 0.50x ARGMAX=' In'        LEYLA logit=  -0.451 rank=  5127 Δ= -4.420 | MUSTAFA=  +0.287 rank=  3103 Δ= -4.525 | L-M= -0.738 ΔM= +0.105
+ 0.60x ARGMAX=' In'        LEYLA logit=  -1.172 rank=  5693 Δ= -5.141 | MUSTAFA=  -0.283 rank=  3028 Δ= -5.096 | L-M= -0.889 ΔM= -0.045
+ 0.70x ARGMAX=' In'        LEYLA logit=  -1.773 rank=  6191 Δ= -5.742 | MUSTAFA=  -0.805 rank=  3049 Δ= -5.617 | L-M= -0.969 ΔM= -0.125
+ 0.80x ARGMAX=' In'        LEYLA logit=  -2.297 rank=  6659 Δ= -6.266 | MUSTAFA=  -1.258 rank=  3100 Δ= -6.070 | L-M= -1.039 ΔM= -0.195
+ 0.90x ARGMAX=' In'        LEYLA logit=  -2.703 rank=  7064 Δ= -6.672 | MUSTAFA=  -1.680 rank=  3242 Δ= -6.492 | L-M= -1.023 ΔM= -0.180
+ 1.00x ARGMAX=' and'       LEYLA logit=  -3.000 rank=  7469 Δ= -6.969 | MUSTAFA=  -1.961 rank=  3322 Δ= -6.773 | L-M= -1.039 ΔM= -0.195
+ 1.10x ARGMAX=' and'       LEYLA logit=  -2.984 rank=  7527 Δ= -6.953 | MUSTAFA=  -2.016 rank=  3460 Δ= -6.828 | L-M= -0.969 ΔM= -0.125
+ 1.20x ARGMAX=' and'       LEYLA logit=  -3.016 rank=  7741 Δ= -6.984 | MUSTAFA=  -2.078 rank=  3639 Δ= -6.891 | L-M= -0.938 ΔM= -0.094
+[7/9] TOKEN-SPECIFIC TRAJECTORIES
+ ' Leyla' ID=53425: 0.00x=+3.97/#3217 | 0.10x=+3.75/#3274 | 0.20x=+2.83/#3718 | 0.30x=+1.57/#4041 | 0.40x=+0.38/#4714 | 0.50x=-0.45/#5127 | 0.60x=-1.17/#5693 | 0.70x=-1.77/#6191 | 0.80x=-2.30/#6659 | 0.90x=-2.70/#7064 | 1.00x=-3.00/#7469 | 1.10x=-2.98/#7527 | 1.20x=-3.02/#7741
+ 'Leyla' ID=43: 0.00x=-0.34/#39748 | 0.10x=+0.10/#27102 | 0.20x=-0.07/#19211 | 0.30x=-0.92/#16778 | 0.40x=-1.10/#11422 | 0.50x=-0.87/#6708 | 0.60x=-0.59/#3822 | 0.70x=-0.35/#2161 | 0.80x=-0.09/#1230 | 0.90x=+0.16/#742 | 1.00x=+0.35/#495 | 1.10x=+0.70/#365 | 1.20x=+0.93/#297
+ ' Ley' ID=53425: 0.00x=+3.97/#3217 | 0.10x=+3.75/#3274 | 0.20x=+2.83/#3718 | 0.30x=+1.57/#4041 | 0.40x=+0.38/#4714 | 0.50x=-0.45/#5127 | 0.60x=-1.17/#5693 | 0.70x=-1.77/#6191 | 0.80x=-2.30/#6659 | 0.90x=-2.70/#7064 | 1.00x=-3.00/#7469 | 1.10x=-2.98/#7527 | 1.20x=-3.02/#7741
+ 'Ley' ID=43: 0.00x=-0.34/#39748 | 0.10x=+0.10/#27102 | 0.20x=-0.07/#19211 | 0.30x=-0.92/#16778 | 0.40x=-1.10/#11422 | 0.50x=-0.87/#6708 | 0.60x=-0.59/#3822 | 0.70x=-0.35/#2161 | 0.80x=-0.09/#1230 | 0.90x=+0.16/#742 | 1.00x=+0.35/#495 | 1.10x=+0.70/#365 | 1.20x=+0.93/#297
+ ' Mustafa' ID=15465: 0.00x=+4.81/#1868 | 0.10x=+4.50/#2068 | 0.20x=+3.55/#2419 | 0.30x=+2.12/#2885 | 0.40x=+1.01/#3143 | 0.50x=+0.29/#3103 | 0.60x=-0.28/#3028 | 0.70x=-0.80/#3049 | 0.80x=-1.26/#3100 | 0.90x=-1.68/#3242 | 1.00x=-1.96/#3322 | 1.10x=-2.02/#3460 | 1.20x=-2.08/#3639
+ 'Mustafa' ID=31776: 0.00x=-1.21/#57566 | 0.10x=-1.48/#56358 | 0.20x=-2.16/#54296 | 0.30x=-3.03/#50343 | 0.40x=-3.52/#43117 | 0.50x=-3.73/#35646 | 0.60x=-4.06/#32312 | 0.70x=-4.38/#30568 | 0.80x=-4.75/#30594 | 0.90x=-5.03/#30871 | 1.00x=-5.22/#30996 | 1.10x=-5.22/#32022 | 1.20x=-5.19/#31865
+ ' Must' ID=15465: 0.00x=+4.81/#1868 | 0.10x=+4.50/#2068 | 0.20x=+3.55/#2419 | 0.30x=+2.12/#2885 | 0.40x=+1.01/#3143 | 0.50x=+0.29/#3103 | 0.60x=-0.28/#3028 | 0.70x=-0.80/#3049 | 0.80x=-1.26/#3100 | 0.90x=-1.68/#3242 | 1.00x=-1.96/#3322 | 1.10x=-2.02/#3460 | 1.20x=-2.08/#3639
+ 'Must' ID=31776: 0.00x=-1.21/#57566 | 0.10x=-1.48/#56358 | 0.20x=-2.16/#54296 | 0.30x=-3.03/#50343 | 0.40x=-3.52/#43117 | 0.50x=-3.73/#35646 | 0.60x=-4.06/#32312 | 0.70x=-4.38/#30568 | 0.80x=-4.75/#30594 | 0.90x=-5.03/#30871 | 1.00x=-5.22/#30996 | 1.10x=-5.22/#32022 | 1.20x=-5.19/#31865
+ ' Andy' ID=24832: 0.00x=+3.59/#4079 | 0.10x=+3.83/#3131 | 0.20x=+3.33/#2758 | 0.30x=+2.55/#2239 | 0.40x=+2.02/#1624 | 0.50x=+1.69/#1152 | 0.60x=+1.38/#871 | 0.70x=+1.04/#713 | 0.80x=+0.67/#665 | 0.90x=+0.28/#658 | 1.00x=+0.01/#685 | 1.10x=-0.06/#711 | 1.20x=-0.21/#794
+ 'Andy' ID=67417: 0.00x=-1.79/#71017 | 0.10x=-1.81/#63828 | 0.20x=-2.28/#57099 | 0.30x=-2.83/#45907 | 0.40x=-3.06/#34298 | 0.50x=-3.19/#26393 | 0.60x=-3.45/#23045 | 0.70x=-3.78/#21879 | 0.80x=-4.19/#22200 | 0.90x=-4.53/#23162 | 1.00x=-4.88/#25413 | 1.10x=-4.91/#26809 | 1.20x=-5.06/#29722
+ ' and' ID=323: 0.00x=+1.92/#11819 | 0.10x=+3.34/#4159 | 0.20x=+4.84/#1139 | 0.30x=+5.81/#258 | 0.40x=+6.66/#49 | 0.50x=+7.03/#23 | 0.60x=+7.19/#17 | 0.70x=+7.28/#8 | 0.80x=+7.44/#4 | 0.90x=+7.41/#4 | 1.00x=+7.59/#1 | 1.10x=+7.88/#1 | 1.20x=+8.12/#1
+ ' In' ID=758: 0.00x=+14.62/#12 | 0.10x=+15.56/#6 | 0.20x=+15.19/#4 | 0.30x=+13.75/#3 | 0.40x=+12.31/#2 | 0.50x=+11.06/#1 | 0.60x=+10.06/#1 | 0.70x=+9.19/#1 | 0.80x=+8.50/#1 | 0.90x=+7.69/#1 | 1.00x=+7.09/#3 | 1.10x=+6.69/#4 | 1.20x=+6.28/#5
+ ' The' ID=576: 0.00x=+18.62/#1 | 0.10x=+17.88/#1 | 0.20x=+16.50/#1 | 0.30x=+14.38/#1 | 0.40x=+12.56/#1 | 0.50x=+11.06/#1 | 0.60x=+10.00/#2 | 0.70x=+9.00/#2 | 0.80x=+8.31/#2 | 0.90x=+7.47/#3 | 1.00x=+6.88/#5 | 1.10x=+6.53/#5 | 1.20x=+6.19/#6
+[8/9] DIAGNOSIS
+ BEST LEYLA RANK : 3217 @ 0.00x | logit=+3.968750
+ BEST LEYLA LOGIT: +3.968750 @ 0.00x | rank=3217
+ BEST ID MARGIN Δ: +0.289062 @ 0.30x
+ VERDICT: TARGET_IDENTITY_DOES_NOT_MOVE_TOWARD_FIRST_TOKEN_READOUT
+[9/9] INTEGRITY
+================================================================================================================================
+TEST 431 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST431/TEST431_SUMMARY.json
+
+
+================================================================================================================================
