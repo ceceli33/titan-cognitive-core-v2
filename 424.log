@@ -1,0 +1,148 @@
+ 
+================================================================================================================================
+TEST 424 — L26 ATTENTION→MLP IDENTITY-BINDING MICRO-X-RAY
+TEST423 PROVEN LINEAGE | WRITE L14–L23 | MOTOR OFF L24–L27 | SOURCE-ABSENT WHO × NATIVE WHO-CONTEXT
+================================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/14] MISTRAL — TEST423 EXACT PACKETS
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 75.9kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 600kB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 81.3MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 56.7kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.3kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 56.9kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.04MB/s]
+Download complete: : 
+
+ 12.4GB, 1.06GB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  648MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:37<00:00,  8.52s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 80.18it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 16.8kB/s]
+READY: (32, 4096, 32, 8, 128) | 50.71 s
+
+[2/14] QWEN — TEST423 EXACT PACKETS
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 78.1kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 845kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 62.7MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 57.3MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 122MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.33MB/s]
+Download complete: : 
+
+ 13.1GB,  533MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  463MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:40<00:00,  7.01s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 99.98it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 34.3kB/s]
+READY: (28, 3584, 28, 4, 128) | 49.54 s
+ QWEN 32/32
+ TRAIN=24 | VAL=8 | FINAL FACT/CF NEVER USED FOR FIT/SELECTION
+[3/14] TRAIN-ONLY GLOBAL RIDGE
+ λ=0.0001 FP=+0.237051 LOCAL=+0.047289
+ λ=0.001  FP=+0.236949 LOCAL=+0.047268
+ λ=0.01   FP=+0.235936 LOCAL=+0.047061
+ λ=0.05   FP=+0.231553 LOCAL=+0.046161
+ λ=0.1    FP=+0.226326 LOCAL=+0.045079
+ λ=0.5    FP=+0.192415 LOCAL=+0.037896
+ λ=1      FP=+0.162906 LOCAL=+0.031524
+ λ=5      FP=+0.073460 LOCAL=+0.012079
+ SELECTED λ= 0.0001
+[4/14] FINAL GLOBAL SOLVE — FROZEN
+ FINAL FP=+0.374320 LOCAL=+0.064565 COEF_NORM=0.009093
+[5/14] L26 MICRO-CAPTURE HOOKS
+ WHO TOKENS=17 | SOURCE FACT PRESENT=NO
+[6/14] NATIVE FACT-vs-CF WHO-CONTEXT — EVALUATION ONLY
+ NATIVE MICRO-CAPTURE: PASS
+[7/14] TEST423 L26 REPLICATION
+ IDENTITY SUBSPACE RANK= 2
+ L26 NATIVE 1.588514%→5.990999% Δ=+4.402485pp
+ L26 TRANSFER 0.267010%→0.089171% Δ=-0.177839pp
+[8/14] L26 INPUT→POST-ATT→OUT IDENTITY FORMATION
+ IN       FULL=+0.030299 | ID-ENERGY native=1.588514% transfer=0.267010% rev=1.325387% | ID-COS=-0.622051
+ POST_ATT FULL=+0.050012 | ID-ENERGY native=6.358086% transfer=0.487986% rev=1.438687% | ID-COS=-0.061304
+ OUT      FULL=+0.037107 | ID-ENERGY native=5.990999% transfer=0.089171% rev=1.519636% | ID-COS=+0.049898
+[9/14] ATTENTION vs MLP CONTRIBUTION
+ ATT: FULL=+0.061596 | ID-NORM native=35.481689 transfer=6.108849 | ID-ENERGY native=6.644024% transfer=1.356466% | ID-COS=+0.311005
+ MLP: FULL=+0.093963 | ID-NORM native=8.678946 transfer=12.134539 | ID-ENERGY native=0.485096% transfer=0.570968% | ID-COS=+0.880414
+ NATIVE ATT GAIN=+4.769572pp | MLP GAIN=-0.367087pp
+ TRANSFER ATT GAIN=+0.220976pp | MLP GAIN=-0.398815pp
+ NATIVE DOMINANT L26 IDENTITY-FORMATION COMPONENT: ATTENTION
+[10/14] COMPONENT DOT/PROJECTION INTO NATIVE IDENTITY DIRECTION
+ NATIVE_ATT     → NATIVE-L26-ID = +33.065140
+ NATIVE_MLP     → NATIVE-L26-ID = +6.613830
+ TRANSFER_ATT   → NATIVE-L26-ID = -0.335507
+ TRANSFER_MLP   → NATIVE-L26-ID = +4.415387
+ REVERSE_ATT    → NATIVE-L26-ID = +0.026239
+ REVERSE_MLP    → NATIVE-L26-ID = -4.771345
+[11/14] MATCHED L26-INPUT NULL CONSTRUCTION
+ NULL SANITY NORM=6.10351562e-05 COS=5.96046448e-08 ORTH=1.14087015e-08
+[12/14] MATCHED-NULL L26 ATTENTION/MLP ASSAY
+ MATCHED 64/64
+ ATT ID-GAIN OBS=+0.220976pp NULL=+0.006412±0.025800pp z=+8.316 p=0.015385
+ MLP ID-GAIN OBS=-0.398815pp NULL=+0.056485±0.107670pp z=-4.229 p=1.000000
+ OUT ID-ENERGY OBS=0.089171% NULL=0.127574%±0.127166% p=0.553846
+ OUT ID-NORM OBS=10.428411 NULL=10.793056±6.066185 p=0.538462
+ OUT ID-COS OBS=+0.049898 NULL=+0.039659±0.552047 p=0.492308
+ ATT→NATIVE-ID OBS=-0.335507 NULL=+0.026732±0.694967 p=0.676923
+ MLP→NATIVE-ID OBS=+4.415387 NULL=-0.429083±2.323197 p=0.046154
+[13/14] L26 BOTTLENECK LOCALIZATION
+ BOTTLENECK: L26_ATTENTION_NON_NATIVE_IDENTITY_CONVERSION
+[14/14] VERDICT + INTEGRITY
+ VERDICT: L26_IDENTITY_FORMATION_MECHANISM_LOCALIZED_WITHOUT_TRANSFER_BINDING
+================================================================================================================================
+TEST 424 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST424/TEST424_SUMMARY.json
+
+
+================================================================================================================================
