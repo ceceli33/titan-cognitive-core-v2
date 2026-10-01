@@ -1,0 +1,140 @@
+ 
+================================================================================================================================
+TEST 413 — L27 CAUSAL NECESSITY ABLATION — FIXED
+TEST412 FIXED EXACT LINEAGE | WRITE L14–L23 | MOTOR OFF L24–L27 | NORMAL / ATT-OFF / MLP-OFF / FULL-BYPASS
+================================================================================================================================
+GPU: NVIDIA L4 | Torch: 2.11.0+cu128 | Transformers: 5.16.1
+[1/10] MISTRAL — TEST412 EXACT PACKETS
+LOAD: mistralai/Mistral-7B-Instruct-v0.3
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 73.3kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 10.8MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 7.43MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.0kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.3kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 53.5kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.35MB/s]
+Download complete: : 
+
+ 12.4GB,  607MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  576MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:37<00:00,  8.64s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 80.45it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 15.1kB/s]
+READY: (32, 4096, 32, 8, 128) | 47.39 s
+
+[2/10] QWEN — TEST412 EXACT PACKETS
+LOAD: Qwen/Qwen2.5-7B-Instruct
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 89.8kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 1.02MB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 49.8MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 58.0MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 112MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.39MB/s]
+Download complete: : 
+
+ 13.1GB,  474MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  382MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:42<00:00,  7.65s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 100.60it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 31.7kB/s]
+READY: (28, 3584, 28, 4, 128) | 49.01 s
+ QWEN 32/32
+ TRAIN=24 | VAL=8 | FINAL FACT/CF NEVER USED FOR FIT/SELECTION
+[3/10] TRAIN-ONLY GLOBAL RIDGE
+ λ=0.0001 FP=+0.228500 LOCAL=+0.045711
+ λ=0.001  FP=+0.228399 LOCAL=+0.045690
+ λ=0.01   FP=+0.227398 LOCAL=+0.045487
+ λ=0.05   FP=+0.223064 LOCAL=+0.044604
+ λ=0.1    FP=+0.217897 LOCAL=+0.043542
+ λ=0.5    FP=+0.184360 LOCAL=+0.036489
+ λ=1      FP=+0.155141 LOCAL=+0.030225
+ λ=5      FP=+0.066166 LOCAL=+0.011050
+ SELECTED λ= 0.0001
+[4/10] FINAL GLOBAL SOLVE — FROZEN
+ FINAL FP=+0.392363 LOCAL=+0.067034 COEF_NORM=0.009156
+[5/10] TRAIN-ONLY DOSE | WRITE L14–L23 | L27 ABLATION ARMS
+[6/10] BASELINES + PREDICTED / REVERSE ABLATION RUNS
+[7/10] CAUSAL NECESSITY — L27 NATIVE ALIGNMENT
+ NORMAL      PRED=+0.454338 REV=+0.279715 GAP=+0.174624 |Δ|=256.358
+ ATT_OFF     PRED=+0.456342 REV=+0.248489 GAP=+0.207853 |Δ|=261.244
+ MLP_OFF     PRED=+0.139705 REV=+0.009653 GAP=+0.130052 |Δ|=111.206
+ FULL_BYPASS PRED=+0.110759 REV=+0.014453 GAP=+0.096306 |Δ|=159.538
+ LOSS ATT_OFF     vs NORMAL = -0.002004
+ LOSS MLP_OFF     vs NORMAL = +0.314634
+ LOSS FULL_BYPASS vs NORMAL = +0.343580
+[8/10] EXACT ARM SANITY + L26 LOCK
+ NORMAL      L26_COS=+0.116834 |Δ|=301.015
+ ATT_OFF     L26_COS=+0.116834 |Δ|=301.015
+ MLP_OFF     L26_COS=+0.116834 |Δ|=301.015
+ FULL_BYPASS L26_COS=+0.116834 |Δ|=301.015
+ MAX PRED L26 ARM DRIFT=0.00000000e+00
+ FULL_BYPASS PRED FINAL-NORM REL_ERR=0.00000000e+00
+ FULL_BYPASS BASE FINAL-NORM REL_ERR=0.00000000e+00
+[9/10] PAIRED SHARED-BANK NULL — ABLATION LOSSES
+ NORMAL      OBS=+0.454338 NULL=+0.260300±0.127524 z=+1.522 p=0.061538
+ ATT_OFF     OBS=+0.456342 NULL=+0.251501±0.125406 z=+1.633 p=0.061538
+ MLP_OFF     OBS=+0.139705 NULL=+0.041908±0.049041 z=+1.994 p=0.046154
+ FULL_BYPASS OBS=+0.110759 NULL=+0.036864±0.042325 z=+1.746 p=0.076923
+ LOSS ATT_OFF     OBS=-0.002004 NULL=+0.008799±0.033365 z=-0.324 p=0.646154
+ LOSS MLP_OFF     OBS=+0.314634 NULL=+0.218392±0.100131 z=+0.961 p=0.169231
+ LOSS FULL_BYPASS OBS=+0.343580 NULL=+0.223436±0.107073 z=+1.122 p=0.107692
+[10/10] NECESSITY VERDICT + INTEGRITY
+ NORMAL=+0.454338
+ ATT_OFF=+0.456342 LOSS=-0.002004 p=0.646154
+ MLP_OFF=+0.139705 LOSS=+0.314634 p=0.169231
+ FULL_BYPASS=+0.110759 LOSS=+0.343580 p=0.107692
+ VERDICT: NO_SIGNIFICANT_L27_NECESSITY_ABLATION
+================================================================================================================================
+TEST 413 — COMPLETE
+MISTRAL SENTINEL: PASS | QWEN SENTINEL: PASS
+SUMMARY: /content/AKBASCORE_TEST413/TEST413_SUMMARY.json
+
+
+================================================================================================================================
