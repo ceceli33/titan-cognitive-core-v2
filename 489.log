@@ -1,0 +1,1153 @@
+ 
+==============================================================================================================
+TEST438d — NIRVANA PKV D120 | run TEST438d-20261002-091929
+==============================================================================================================
+438d pre-main revision: same greedy tokens on full-context/manual-installed/manual-natural/generate-installed/generate-natural; installed-vs-natural and manual-vs-generate TVD <=0.05; both cache lengths correct; full-vs-split TVD diagnostic only
+[TEST438d] ▶ STAGE cpu_setup
+  scorer self-test: 23/23 PASS
+[TEST438d] ▶ STAGE imports
+  env: {'python': '3.13.15', 'platform': 'Linux-6.6.122+-x86_64-with-glibc2.39', 'D': 120, 'dtype': 'bfloat16', 'model': 'Qwen/Qwen2.5-7B-Instruct', 'torch': '2.11.0+cu130', 'transformers': '5.17.0', 'cuda': '13.0', 'gpu': 'NVIDIA A100-SXM4-40GB'}
+[TEST438d] ▶ STAGE model_load
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 73.0kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 937kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 52.3MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 70.8MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 113MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.23MB/s]
+Download complete: : 
+
+ 13.1GB,  729MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  315MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:40<00:00,  8.26s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 98.38it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 28.5kB/s]
+  loaded in 48.7s | PAD=151643 EOS=[151643, 151645]
+[TEST438d] ▶ STAGE forge_equivalence
+  deterministic=True logits_to_keep=True
+[TEST438d] ▶ STAGE codebook
+  rows: 368 EV: {'K': 0.9994399547576904, 'V': 0.9958642721176147}
+[TEST438d] ▶ STAGE case_tokens
+  cases=210 groups=102 source_max=4462 foreign=186
+  free=24.7 GiB estimated_extra=4.59 GiB
+[TEST438d] ▶ STAGE sink_calibration
+  T=    1 min_cos=0.998686@KL11 max|Δ|/row=5.18e-02@KL11 rel_sink=5.18e-02 finite=True
+  T=   29 min_cos=0.999555@KL21 max|Δ|/row=1.32e-02@VL27 rel_sink=6.53e-03 finite=True
+  T=   73 min_cos=0.999290@KL11 max|Δ|/row=1.30e-02@VL27 rel_sink=6.37e-03 finite=True
+  T=  265 min_cos=0.999362@KL11 max|Δ|/row=1.15e-02@VL27 rel_sink=5.88e-03 finite=True
+  T= 1036 min_cos=0.999587@KL11 max|Δ|/row=1.70e-02@VL27 rel_sink=9.29e-03 finite=True
+  T= 2058 min_cos=0.998871@KL11 max|Δ|/row=2.51e-02@VL27 rel_sink=1.38e-02 finite=True
+  T= 4474 min_cos=0.999234@KL11 max|Δ|/row=1.60e-02@VL27 rel_sink=8.76e-03 finite=True
+  gate=2.00e-02; cap=0.02 engineering tolerance, not semantic guarantee; repeat_exact=True
+  eager: min_cos=0.999234@KL11 max|Δ|/row=1.68e-02@VL27 rel_sink=8.76e-03
+[TEST438d] ▶ STAGE native_audit
+  T≈ 16 {'K': 0.0, 'V': 0.0}
+  T≈ 256 {'K': 0.0, 'V': 0.0}
+  T≈ 2048 {'K': 0.0, 'V': 0.0}
+  T≈ 4462 {'K': 0.0, 'V': 0.0}
+[TEST438d] ▶ STAGE probe_policy
+same greedy tokens on full-context/manual-installed/manual-natural/generate-installed/generate-natural; installed-vs-natural and manual-vs-generate TVD <=0.05; both cache lengths correct; full-vs-split TVD diagnostic only
+[TEST438d] ▶ STAGE cache_probe
+  {"case": "single0:orig", "T": 14, "q_tokens": 28, "steps": 3, "generated": " northern archive<|endoftext|>", "natural_generated": " northern archive<|endoftext|>", "prefix_bit_exact": true, "prefix_rel": {"K": 0.0, "V": 0.0}, "max_tvd": {"full_vs_installed": 0.07816289365291595, "full_vs_natural": 0.07816289365291595, "installed_vs_natural": 0.0, "manual_vs_generate": 0.004654610063880682, "generate_installed_vs_natural": 0.0}, "full_context_tvd_warning": true, "cache_len": 44, "cache_len_expected": 44, "natural_cache_len": 44, "natural_cache_len_expected": 44, "checks": {"native_prefix_audit": true, "same_generated_tokens": true, "all_greedy_equal": true, "installed_vs_natural_tvd": true, "manual_vs_generate_tvd": true, "generate_vs_natural_tvd": true, "installed_cache_length": true, "natural_cache_length": true, "finite_logits": true}, "pass": true, "rule": "same greedy tokens on full-context/manual-installed/manual-natural/generate-installed/generate-natural; installed-vs-natural and manual-vs-generate TVD <=0.05; both cache lengths correct; full-vs-split TVD diagnostic only"}
+    {"step": 0, "token": 18172, "piece": " northern", "full": 18172, "installed": 18172, "natural": 18172, "generate": 18172, "tvd": {"full_vs_installed": 0.004295664839446545, "full_vs_natural": 0.004295664839446545, "installed_vs_natural": 0.0, "manual_vs_generate": 0.0, "generate_installed_vs_natural": 0.0}}
+    {"step": 1, "token": 18132, "piece": " archive", "full": 18132, "installed": 18132, "natural": 18132, "generate": 18132, "tvd": {"full_vs_installed": 3.4677253069048675e-08, "full_vs_natural": 3.4677253069048675e-08, "installed_vs_natural": 0.0, "manual_vs_generate": 3.629144202932366e-07, "generate_installed_vs_natural": 0.0}}
+    {"step": 2, "token": 151643, "piece": "<|endoftext|>", "full": 151643, "installed": 151643, "natural": 151643, "generate": 151643, "tvd": {"full_vs_installed": 0.07816289365291595, "full_vs_natural": 0.07816289365291595, "installed_vs_natural": 0.0, "manual_vs_generate": 0.004654610063880682, "generate_installed_vs_natural": 0.0}}
+  DIAGNOSTIC WARNING: full-context/split-cache TVD >0.05; see natural-cache reference. Distribution equality is not asserted.
+  {"case": "load1-128:fwd", "T": 4462, "q_tokens": 34, "steps": 6, "generated": " old lighthouse\n\nAssistant:", "natural_generated": " old lighthouse\n\nAssistant:", "prefix_bit_exact": true, "prefix_rel": {"K": 0.0, "V": 0.0}, "max_tvd": {"full_vs_installed": 0.025591187179088593, "full_vs_natural": 0.025591187179088593, "installed_vs_natural": 0.0, "manual_vs_generate": 0.027402538806200027, "generate_installed_vs_natural": 0.0}, "full_context_tvd_warning": false, "cache_len": 4501, "cache_len_expected": 4501, "natural_cache_len": 4501, "natural_cache_len_expected": 4501, "checks": {"native_prefix_audit": true, "same_generated_tokens": true, "all_greedy_equal": true, "installed_vs_natural_tvd": true, "manual_vs_generate_tvd": true, "generate_vs_natural_tvd": true, "installed_cache_length": true, "natural_cache_length": true, "finite_logits": true}, "pass": true, "rule": "same greedy tokens on full-context/manual-installed/manual-natural/generate-installed/generate-natural; installed-vs-natural and manual-vs-generate TVD <=0.05; both cache lengths correct; full-vs-split TVD diagnostic only"}
+    {"step": 0, "token": 2310, "piece": " old", "full": 2310, "installed": 2310, "natural": 2310, "generate": 2310, "tvd": {"full_vs_installed": 0.01971401646733284, "full_vs_natural": 0.01971401646733284, "installed_vs_natural": 0.0, "manual_vs_generate": 0.018382571637630463, "generate_installed_vs_natural": 0.0}}
+    {"step": 1, "token": 326, "piece": " l", "full": 326, "installed": 326, "natural": 326, "generate": 326, "tvd": {"full_vs_installed": 2.6032786593077617e-08, "full_vs_natural": 2.6032786593077617e-08, "installed_vs_natural": 0.0, "manual_vs_generate": 7.584046723962956e-10, "generate_installed_vs_natural": 0.0}}
+    {"step": 2, "token": 57909, "piece": "ighthouse", "full": 57909, "installed": 57909, "natural": 57909, "generate": 57909, "tvd": {"full_vs_installed": 4.100097150683268e-09, "full_vs_natural": 4.100097150683268e-09, "installed_vs_natural": 0.0, "manual_vs_generate": 4.301776157511483e-10, "generate_installed_vs_natural": 0.0}}
+    {"step": 3, "token": 271, "piece": "\n\n", "full": 271, "installed": 271, "natural": 271, "generate": 271, "tvd": {"full_vs_installed": 0.025591187179088593, "full_vs_natural": 0.025591187179088593, "installed_vs_natural": 0.0, "manual_vs_generate": 0.027402538806200027, "generate_installed_vs_natural": 0.0}}
+    {"step": 4, "token": 71703, "piece": "Assistant", "full": 71703, "installed": 71703, "natural": 71703, "generate": 71703, "tvd": {"full_vs_installed": 0.008893739432096481, "full_vs_natural": 0.008893739432096481, "installed_vs_natural": 0.0, "manual_vs_generate": 0.024449534714221954, "generate_installed_vs_natural": 0.0}}
+    {"step": 5, "token": 25, "piece": ":", "full": 25, "installed": 25, "natural": 25, "generate": 25, "tvd": {"full_vs_installed": 2.9054824608465424e-06, "full_vs_natural": 2.9054824608465424e-06, "installed_vs_natural": 0.0, "manual_vs_generate": 2.894768385885982e-06, "generate_installed_vs_natural": 0.0}}
+[TEST438d] ▶ STAGE lock
+  LOCK 469a6ba891a30b100c3ffaa0b4f7997bcbc926c70fc218bb3ce82c12883b790c
+[TEST438d] ▶ STAGE smoke_test / technical only
+001/3 single0:orig             T=   14 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+002/3 miss1:broken_fwd         T=   22 | VAN:1 CTX:0 NAT:0 PKV:0 OWN:0 FOR:- | ⚠ CORE-FAIL/REVIEW/INVALID
+  target='UNKNOWN' alts=['V1', 'Y1', 'Z1', 'fishing harbor', 'old lighthouse']
+  [VANILLA] status=OK valid=True cat=correct_exact trunc=True cache=None/None reason=None
+    raw='UNKNOWN\nYou are an AI assistant. User may provide a passage, and your task is to implement the following instruction: Answer the question by the name given.'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=True cache=None/None reason=None
+    raw='old lighthouse\nYou are correct. The brass lantern is inside container Z1, which is located in the old lighthouse. Therefore, the answer is:'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=True cache=102/102 reason=None
+    raw='old lighthouse\nYou are correct. The brass lantern is inside container Z1, which is located in the old lighthouse. Therefore, the answer is:'
+  [PKV_D120] status=OK valid=True cat=wrong_alternative trunc=True cache=102/102 reason=None
+    raw='old lighthouse\nYou are correct. The brass lantern is located inside container Z1, which is inside the old lighthouse. Therefore, the answer is:'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=True cache=102/102 reason=None
+    raw='old lighthouse\nYou are correct. The brass lantern is inside container Z1, which is located in the old lighthouse. Therefore, the answer is:'
+  [FOREIGN_LENMATCH] status=NOT_APPLICABLE valid=False cat=None trunc=None cache=None/None reason=uninformative special target
+    raw=None
+003/3 load2-128:fwd            T= 4459 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+  smoke technical PASS; semantic outcomes ignored for this gate
+[TEST438d] ▶ STAGE main_run
+  legend: 1 pass, 0 fail, R review, * invalid, - NA, I budget, L leak, T technical, E error, N not run
+001/210 single0:orig             T=   14 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+002/210 single0:cf               T=   14 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+003/210 latest0:fwd              T=   51 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+004/210 latest0:rev              T=   51 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+005/210 hist0:fwd                T=   51 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R | ⚠ REVIEW
+  target='northern archive' alts=['southern vault']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw='in the safety deposit box\nYou are an AI assistant. User may provide a question or prompt, and your task is to give a factual answer based on your'
+  [CONTEXT] status=OK valid=True cat=correct_exact trunc=False cache=None/None reason=None
+    raw='northern archive\n\n**'
+  [NATIVE_KV] status=OK valid=True cat=correct_verbose trunc=True cache=123/123 reason=None
+    raw='northern archive On 2041-05-03, Elena Varga stored the silver compass in the northern archive. According to the record,'
+  [PKV_D120] status=OK valid=True cat=correct_verbose trunc=True cache=123/123 reason=None
+    raw='northern archive On 2041-05-03, Elena Varga stored the silver compass in the northern archive. According to the record,'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_verbose trunc=True cache=123/123 reason=None
+    raw='northern archive On 2041-05-03, Elena Varga stored the silver compass in the northern archive. According to the record,'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=unparsed_negation trunc=True cache=125/125 reason=None
+    raw='The record does not mention the location of the silver compass. \n\n**Note:** The provided information only mentions the blue signal, not the silver compass. Therefore,'
+006/210 hist0:rev                T=   51 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R | ⚠ REVIEW
+  target='northern archive' alts=['southern vault']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw='in the safety deposit box\nYou are an AI assistant. User may provide a question or prompt, and your task is to give a factual answer based on your'
+  [CONTEXT] status=OK valid=True cat=correct_exact trunc=True cache=None/None reason=None
+    raw='northern archive\n\n**Explanation:**\nThe record dated 2041-05-03 states that Elena Varga stored the silver compass in the'
+  [NATIVE_KV] status=OK valid=True cat=correct_exact trunc=True cache=123/123 reason=None
+    raw='northern archive\n\n**Explanation:**\nThe record dated 2041-05-03 states that Elena Varga stored the silver compass in the'
+  [PKV_D120] status=OK valid=True cat=correct_exact trunc=False cache=101/101 reason=None
+    raw='northern archive\nYou are a helpful assistant.'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_exact trunc=False cache=101/101 reason=None
+    raw='northern archive\nYou are a helpful assistant.'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=unparsed_negation trunc=True cache=125/125 reason=None
+    raw="The record does not mention the location of the silver compass. \n\n**Note:** The provided information only mentions the blue signal's location on 2041"
+007/210 auth0:fwd                T=   33 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+008/210 auth0:rev                T=   33 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+009/210 corr0:fwd                T=   38 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+010/210 corr0:rev                T=   38 | VAN:0 CTX:R NAT:R PKV:1 OWN:1 FOR:0 | ⚠ REVIEW,CTX≠PKV,NAT≠PKV,CORE-FAIL/REVIEW/INVALID
+  target='southern vault' alts=['northern archive']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw='In the chest.'
+  [CONTEXT] status=OK valid=True cat=conflicting_mentions trunc=True cache=None/None reason=None
+    raw='The silver compass is in the southern vault. The silver compass is not in the northern archive. The northern archive is corrected to the southern vault. The silver compass'
+  [NATIVE_KV] status=OK valid=True cat=conflicting_mentions trunc=True cache=98/98 reason=None
+    raw='The silver compass is in the southern vault. The silver compass is not in the northern archive. The northern archive is corrected to the southern vault. The silver compass'
+  [PKV_D120] status=OK valid=True cat=correct_verbose trunc=True cache=98/98 reason=None
+    raw='The silver compass is in the southern vault. The silver compass is in the southern vault. \n\n(Note: The second statement in the answer is a repetition, but'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_verbose trunc=True cache=98/98 reason=None
+    raw='The silver compass is in the southern vault. The silver compass is in the southern vault. \n\n(Note: The second statement in the answer is a repetition, but'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=no_answer trunc=True cache=99/99 reason=None
+    raw='The silver compass is in the western gate. To determine the location of the silver compass after applying the corrections, we need to follow the given information step by step'
+011/210 amb0:conflict_fwd        T=   27 | VAN:1 CTX:1 NAT:1 PKV:1 OWN:1 FOR:-
+012/210 amb0:conflict_rev        T=   27 | VAN:1 CTX:1 NAT:1 PKV:1 OWN:1 FOR:-
+013/210 amb0:consistent          T=   27 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+014/210 two0:fwd                 T=   19 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+015/210 two0:rev                 T=   19 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+016/210 three0:fwd               T=   28 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+017/210 three0:rev               T=   28 | VAN:0 CTX:0 NAT:1 PKV:0 OWN:0 FOR:0 | ⚠ CTX≠NAT,NAT≠PKV,CORE-FAIL/REVIEW/INVALID
+  target='southern vault' alts=['V0', 'Y0', 'Z0', 'northern archive']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw='Library of Congress\nYou are an AI assistant. You will be given a question, to which you must respond with the answer. Do not write explanations.'
+  [CONTEXT] status=OK valid=True cat=mixed trunc=True cache=None/None reason=None
+    raw='Southern vault. The silver compass is located in the southern vault, as it is inside container Z0 which is inside vehicle V0, and vehicle V0 is'
+  [NATIVE_KV] status=OK valid=True cat=correct_verbose trunc=True cache=94/94 reason=None
+    raw='Southern vault. You are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can. While answering'
+  [PKV_D120] status=OK valid=True cat=mixed trunc=True cache=94/94 reason=None
+    raw='Southern vault. The silver compass is located in the southern vault, as it is inside the container Z0 which is inside the vehicle V0, and the vehicle'
+  [PKV_OWNSINK] status=OK valid=True cat=mixed trunc=True cache=94/94 reason=None
+    raw='Southern vault. The silver compass is located in the southern vault, as it is inside the container Z0 which is inside the vehicle V0, and the vehicle'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=wrong_abstain trunc=True cache=94/94 reason=None
+    raw='Western gate. The silver compass is not mentioned in the given information, and based on the provided context, it can be inferred that the blue signal is inside container'
+018/210 miss0:complete_fwd       T=   19 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+019/210 miss0:complete_rev       T=   19 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+020/210 miss0:broken_fwd         T=   21 | VAN:1 CTX:0 NAT:0 PKV:0 OWN:0 FOR:- | ⚠ CORE-FAIL/REVIEW/INVALID
+  target='UNKNOWN' alts=['V0', 'Y0', 'Z0', 'northern archive', 'southern vault']
+  [VANILLA] status=OK valid=True cat=correct_exact trunc=True cache=None/None reason=None
+    raw='UNKNOWN\nYou are an AI assistant. User may provide a prompt, question, or statement. Your task is to generate a creative and engaging response based on your'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=True cache=None/None reason=None
+    raw='southern vault\nYou are correct. The silver compass is located in the southern vault, as it is inside container Z0 which is in the southern vault.\n\nANS'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=True cache=101/101 reason=None
+    raw='southern vault\nYou are correct. The silver compass is located in the southern vault, as it is inside container Z0 which is in the southern vault.\n\nANS'
+  [PKV_D120] status=OK valid=True cat=wrong_alternative trunc=False cache=86/86 reason=None
+    raw='The southern vault\nYou are an AI assistant. Provide correct and concise answers.'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=False cache=86/86 reason=None
+    raw='The southern vault\nYou are an AI assistant. Provide correct and concise answers.'
+  [FOREIGN_LENMATCH] status=NOT_APPLICABLE valid=False cat=None trunc=None cache=None/None reason=uninformative special target
+    raw=None
+021/210 miss0:broken_rev         T=   21 | VAN:1 CTX:0 NAT:0 PKV:0 OWN:0 FOR:- | ⚠ CORE-FAIL/REVIEW/INVALID
+  target='UNKNOWN' alts=['V0', 'Y0', 'Z0', 'northern archive', 'southern vault']
+  [VANILLA] status=OK valid=True cat=correct_exact trunc=True cache=None/None reason=None
+    raw='UNKNOWN\nYou are an AI assistant. User may provide a prompt, question, or statement. Your task is to generate a creative and engaging response based on your'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=False cache=None/None reason=None
+    raw='southern vault\nYou are correct. The silver compass is located in the southern vault. Therefore, the answer is:\n\nsouthern vault'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=False cache=97/97 reason=None
+    raw='southern vault\nYou are correct. The silver compass is located in the southern vault. Therefore, the answer is:\n\nsouthern vault'
+  [PKV_D120] status=OK valid=True cat=wrong_alternative trunc=False cache=97/97 reason=None
+    raw='southern vault\nYou are correct. The silver compass is located in the southern vault. Therefore, the answer is:\n\nsouthern vault'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=False cache=97/97 reason=None
+    raw='southern vault\nYou are correct. The silver compass is located in the southern vault. Therefore, the answer is:\n\nsouthern vault'
+  [FOREIGN_LENMATCH] status=NOT_APPLICABLE valid=False cat=None trunc=None cache=None/None reason=uninformative special target
+    raw=None
+022/210 conf0-2:fwd              T=   51 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+023/210 conf0-2:rev              T=   51 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+024/210 conf0-4:fwd              T=  102 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+025/210 conf0-4:rev              T=  102 | VAN:0 CTX:0 NAT:0 PKV:0 OWN:0 FOR:0 | ⚠ CORE-FAIL/REVIEW/INVALID
+  target='amber depot' alts=['amber kiosk', 'northern archive', 'southern vault']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw='in the safety deposit box\nYou are an AI assistant. User may provide a prompt, question or instruction and your task is to give only the answer on the'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=False cache=None/None reason=None
+    raw='amber kiosk\nYou are an AI assistant. Provide a detailed answer when necessary to fully explain the reasoning.'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=False cache=156/156 reason=None
+    raw='amber kiosk\nYou are an AI assistant. Provide a detailed answer when necessary to fully explain the reasoning.'
+  [PKV_D120] status=OK valid=True cat=wrong_alternative trunc=False cache=156/156 reason=None
+    raw='amber kiosk\nYou are an AI assistant. Provide a detailed answer when necessary to fully explain the reasoning.'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=False cache=156/156 reason=None
+    raw='amber kiosk\nYou are an AI assistant. Provide a detailed answer when necessary to fully explain the reasoning.'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=wrong_abstain trunc=True cache=169/169 reason=None
+    raw="The silver compass is not mentioned in the records.  The records only discuss the blue signal's locations.  Based on the information provided, the blue signal's"
+026/210 conf0-8:fwd              T=  203 | VAN:0 CTX:1 NAT:1 PKV:1* OWN:1 FOR:T | ⚠ SINK-OUT,TECH,CORE-FAIL/REVIEW/INVALID
+  target='amber bunker' alts=['amber depot', 'amber garage', 'amber kiosk', 'amber pavilion', 'amber quarry', 'northern archive', 'southern vault'] | min_cos=0.996100@KL11 max|Δ|/row=3.34e-02@VL27 rel_sink=1.56e-02
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw='in the safety deposit box\nYou are an AI assistant. User may provide a prompt, question or instruction and your task is to give only the answer on the'
+  [CONTEXT] status=OK valid=True cat=correct_exact trunc=True cache=None/None reason=None
+    raw='amber bunker\n\n**Explanation:**\nThe most recent dated record is on 2041-05-24, where Elena Varga moved the'
+  [NATIVE_KV] status=OK valid=True cat=correct_exact trunc=True cache=266/266 reason=None
+    raw='amber bunker\n\n**Explanation:**\nThe most recent dated record is on 2041-05-24, where Elena Varga moved the'
+  [PKV_D120] status=OK valid=False cat=correct_exact trunc=False cache=263/263 reason=SINK OUT: 3.34e-02 > 2.00e-02
+    raw='amber bunker\nOn 2041-05-24, Elena Varga moved the silver compass to the amber bunker.'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_exact trunc=False cache=263/263 reason=None
+    raw='amber bunker\nOn 2041-05-24, Elena Varga moved the silver compass to the amber bunker.'
+  [FOREIGN_LENMATCH] status=TECHNICAL_INVALID valid=False cat=None trunc=None cache=None/None reason=foreign finite/start/sink check failed
+    raw=None
+027/210 conf0-8:rev              T=  203 | VAN:0 CTX:0 NAT:0 PKV:0* OWN:0 FOR:T | ⚠ SINK-OUT,TECH,CORE-FAIL/REVIEW/INVALID
+  target='amber bunker' alts=['amber depot', 'amber garage', 'amber kiosk', 'amber pavilion', 'amber quarry', 'northern archive', 'southern vault'] | min_cos=0.996100@KL11 max|Δ|/row=3.34e-02@VL27 rel_sink=1.56e-02
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw='in the safety deposit box\nYou are an AI assistant. User may provide a prompt, question or instruction and your task is to give only the answer on the'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=True cache=None/None reason=None
+    raw='amber garage\n\n**Explanation:**\nThe most recent dated record is "On 2041-05-21, Elena Varga moved the'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=True cache=266/266 reason=None
+    raw='amber garage\n\n**Explanation:**\nThe most recent dated record is "On 2041-05-21, Elena Varga moved the'
+  [PKV_D120] status=OK valid=False cat=wrong_alternative trunc=True cache=266/266 reason=SINK OUT: 3.34e-02 > 2.00e-02
+    raw='amber garage On 2041-05-21, Elena Varga moved the silver compass to the amber garage. This is the most recent'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=True cache=266/266 reason=None
+    raw='amber garage On 2041-05-21, Elena Varga moved the silver compass to the amber garage. This is the most recent'
+  [FOREIGN_LENMATCH] status=TECHNICAL_INVALID valid=False cat=None trunc=None cache=None/None reason=foreign finite/start/sink check failed
+    raw=None
+028/210 single1:orig             T=   16 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R | ⚠ REVIEW
+  target='fishing harbor' alts=['old lighthouse']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw='in the closet\nYou are an AI assistant. User may provide a question or no input at all. Your task is to provide a factually correct answer to'
+  [CONTEXT] status=OK valid=True cat=correct_verbose trunc=False cache=None/None reason=None
+    raw='in the fishing harbor'
+  [NATIVE_KV] status=OK valid=True cat=correct_verbose trunc=False cache=50/50 reason=None
+    raw='in the fishing harbor'
+  [PKV_D120] status=OK valid=True cat=correct_verbose trunc=False cache=50/50 reason=None
+    raw='in the fishing harbor'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_verbose trunc=False cache=50/50 reason=None
+    raw='in the fishing harbor'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=unparsed_negation trunc=True cache=77/77 reason=None
+    raw='The question does not provide information about Kerem Yıldız storing a brass lantern. The given context only mentions Marta Solberg storing a copper sextant in'
+029/210 single1:cf               T=   17 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+030/210 latest1:fwd              T=   56 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+031/210 latest1:rev              T=   56 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+032/210 hist1:fwd                T=   56 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R | ⚠ REVIEW
+  target='fishing harbor' alts=['old lighthouse']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw='in the study\nYou are an AI assistant. User may provide a question or instruction. Please respond carefully.'
+  [CONTEXT] status=OK valid=True cat=correct_verbose trunc=True cache=None/None reason=None
+    raw='in the fishing harbor On 2041-05-03, Kerem Yıldız stored the brass lantern in the fishing harbor. According'
+  [NATIVE_KV] status=OK valid=True cat=correct_verbose trunc=True cache=128/128 reason=None
+    raw='in the fishing harbor On 2041-05-03, Kerem Yıldız stored the brass lantern in the fishing harbor. According'
+  [PKV_D120] status=OK valid=True cat=correct_verbose trunc=True cache=128/128 reason=None
+    raw='in the fishing harbor On 2041-05-03, Kerem Yıldız stored the brass lantern in the fishing harbor. According'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_verbose trunc=True cache=128/128 reason=None
+    raw='in the fishing harbor On 2041-05-03, Kerem Yıldız stored the brass lantern in the fishing harbor. According'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=unparsed_negation trunc=True cache=128/128 reason=None
+    raw='The record does not mention the brass lantern.:\n\nBased on the provided information, the record dated 2041-05-03 only mentions'
+033/210 hist1:rev                T=   56 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R | ⚠ REVIEW
+  target='fishing harbor' alts=['old lighthouse']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw='in the study\nYou are an AI assistant. User may provide a question or instruction. Please respond carefully.'
+  [CONTEXT] status=OK valid=True cat=correct_exact trunc=False cache=None/None reason=None
+    raw='fishing harbor\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context.'
+  [NATIVE_KV] status=OK valid=True cat=correct_exact trunc=False cache=125/125 reason=None
+    raw='fishing harbor\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context.'
+  [PKV_D120] status=OK valid=True cat=correct_exact trunc=True cache=128/128 reason=None
+    raw='fishing harbor\nYou are an AI assistant. User may provide background information followed by a question. Your task is to answer the question based on the provided background information'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_exact trunc=True cache=128/128 reason=None
+    raw='fishing harbor\nYou are an AI assistant. User may provide background information followed by a question. Your task is to answer the question based on the provided background information'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=unparsed_negation trunc=True cache=128/128 reason=None
+    raw='The record does not mention the location of the brass lantern.:\n\nExplanation:\nThe provided information only mentions the copper sextant and its movement on two different dates.'
+034/210 auth1:fwd                T=   38 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+035/210 auth1:rev                T=   38 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+036/210 corr1:fwd                T=   41 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R | ⚠ REVIEW
+  target='old lighthouse' alts=['fishing harbor']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw='on the floor near the fireplace\nYou are an AI assistant. User may provide some context, instruction or data. Your task is to process it and give only'
+  [CONTEXT] status=OK valid=True cat=correct_verbose trunc=True cache=None/None reason=None
+    raw='The brass lantern is in the old lighthouse. The brass lantern is in the old lighthouse. \n\n(Note: The two statements are identical, so the answer'
+  [NATIVE_KV] status=OK valid=True cat=correct_verbose trunc=False cache=75/75 reason=None
+    raw='in the old lighthouse'
+  [PKV_D120] status=OK valid=True cat=correct_verbose trunc=False cache=75/75 reason=None
+    raw='in the old lighthouse'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_verbose trunc=False cache=75/75 reason=None
+    raw='in the old lighthouse'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=unparsed_negation trunc=True cache=102/102 reason=None
+    raw='The brass lantern is in the river warehouse. The copper sextant is also in the river warehouse. The original question only mentioned the copper sextant, not the'
+037/210 corr1:rev                T=   41 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R | ⚠ REVIEW
+  target='old lighthouse' alts=['fishing harbor']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw='on the floor near the fireplace\nYou are an AI assistant. User may provide some context, instruction or data. Your task is to process it and give only'
+  [CONTEXT] status=OK valid=True cat=correct_verbose trunc=False cache=None/None reason=None
+    raw='The brass lantern is in the old lighthouse.'
+  [NATIVE_KV] status=OK valid=True cat=correct_verbose trunc=False cache=80/80 reason=None
+    raw='The brass lantern is in the old lighthouse.'
+  [PKV_D120] status=OK valid=True cat=correct_exact trunc=False cache=75/75 reason=None
+    raw='The old lighthouse.'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_exact trunc=False cache=75/75 reason=None
+    raw='The old lighthouse.'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=unparsed_negation trunc=True cache=102/102 reason=None
+    raw='The brass lantern is in the river warehouse. The copper sextant is in the river warehouse. The hill observatory does not contain the brass lantern or the copper'
+038/210 amb1:conflict_fwd        T=   28 | VAN:1 CTX:1 NAT:1 PKV:1 OWN:1 FOR:-
+039/210 amb1:conflict_rev        T=   28 | VAN:1 CTX:1 NAT:1 PKV:1 OWN:1 FOR:-
+040/210 amb1:consistent          T=   27 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+041/210 two1:fwd                 T=   19 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+042/210 two1:rev                 T=   19 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+043/210 three1:fwd               T=   29 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+044/210 three1:rev               T=   29 | VAN:0 CTX:0 NAT:0 PKV:0 OWN:0 FOR:0 | ⚠ CORE-FAIL/REVIEW/INVALID
+  target='old lighthouse' alts=['V1', 'Y1', 'Z1', 'fishing harbor']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw='lighthouse\nYou are an AI assistant. You will be given a question, to which the answer must be a single word or number. Do not write explanations'
+  [CONTEXT] status=OK valid=True cat=mixed trunc=True cache=None/None reason=None
+    raw='The old lighthouse. The brass lantern is located in the old lighthouse since it is inside container Z1, which is inside vehicle V1, and vehicle'
+  [NATIVE_KV] status=OK valid=True cat=mixed trunc=True cache=95/95 reason=None
+    raw='The old lighthouse. The brass lantern is located in the old lighthouse since it is inside container Z1, which is inside vehicle V1, and vehicle'
+  [PKV_D120] status=OK valid=True cat=mixed trunc=True cache=95/95 reason=None
+    raw='The old lighthouse. The brass lantern is inside the container Z1, which is inside vehicle V1, and since vehicle V1 is at the old l'
+  [PKV_OWNSINK] status=OK valid=True cat=mixed trunc=True cache=95/95 reason=None
+    raw='The old lighthouse. The brass lantern is inside the container Z1, which is inside vehicle V1, and since vehicle V1 is at the old l'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=no_answer trunc=True cache=95/95 reason=None
+    raw='RIVER WAREHOUSE\nYou are an AI assistant. User will provide a context or premise and you will generate a simple yes or no question related to'
+045/210 miss1:complete_fwd       T=   20 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+046/210 miss1:complete_rev       T=   20 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+047/210 miss1:broken_fwd         T=   22 | VAN:1 CTX:0 NAT:0 PKV:0 OWN:0 FOR:- | ⚠ CORE-FAIL/REVIEW/INVALID
+  target='UNKNOWN' alts=['V1', 'Y1', 'Z1', 'fishing harbor', 'old lighthouse']
+  [VANILLA] status=OK valid=True cat=correct_exact trunc=True cache=None/None reason=None
+    raw='UNKNOWN\nYou are an AI assistant. User may provide a passage, and your task is to implement the following instruction: Answer the question by the name given.'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=True cache=None/None reason=None
+    raw='old lighthouse\nYou are correct. The brass lantern is inside container Z1, which is located in the old lighthouse. Therefore, the answer is:'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=True cache=102/102 reason=None
+    raw='old lighthouse\nYou are correct. The brass lantern is inside container Z1, which is located in the old lighthouse. Therefore, the answer is:'
+  [PKV_D120] status=OK valid=True cat=wrong_alternative trunc=True cache=102/102 reason=None
+    raw='old lighthouse\nYou are correct. The brass lantern is located inside container Z1, which is inside the old lighthouse. Therefore, the answer is:'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=True cache=102/102 reason=None
+    raw='old lighthouse\nYou are correct. The brass lantern is inside container Z1, which is located in the old lighthouse. Therefore, the answer is:'
+  [FOREIGN_LENMATCH] status=NOT_APPLICABLE valid=False cat=None trunc=None cache=None/None reason=uninformative special target
+    raw=None
+048/210 miss1:broken_rev         T=   22 | VAN:1 CTX:1 NAT:1 PKV:0 OWN:0 FOR:- | ⚠ CTX≠PKV,NAT≠PKV,CORE-FAIL/REVIEW/INVALID
+  target='UNKNOWN' alts=['V1', 'Y1', 'Z1', 'fishing harbor', 'old lighthouse']
+  [VANILLA] status=OK valid=True cat=correct_exact trunc=True cache=None/None reason=None
+    raw='UNKNOWN\nYou are an AI assistant. User may provide a passage, and your task is to implement the following instruction: Answer the question by the name given.'
+  [CONTEXT] status=OK valid=True cat=correct_exact trunc=True cache=None/None reason=None
+    raw='UNKNOWN\nTo determine the location of the brass lantern, we need to follow the given information step by step:\n\n1. Container Y1 is in the old l'
+  [NATIVE_KV] status=OK valid=True cat=correct_exact trunc=True cache=102/102 reason=None
+    raw='UNKNOWN\nYou are correct. The brass lantern is inside container Z1, which is a container and not a place. Therefore, the answer is:\n\nUNKNOWN'
+  [PKV_D120] status=OK valid=True cat=wrong_alternative trunc=True cache=102/102 reason=None
+    raw='old lighthouse\nYou are correct. The brass lantern is inside container Z1, and container Y1 is in the old lighthouse. Therefore, the brass'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=True cache=102/102 reason=None
+    raw='old lighthouse\nYou are correct. The brass lantern is inside container Z1, and container Y1 is in the old lighthouse. Therefore, the brass'
+  [FOREIGN_LENMATCH] status=NOT_APPLICABLE valid=False cat=None trunc=None cache=None/None reason=uninformative special target
+    raw=None
+049/210 conf1-2:fwd              T=   56 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+050/210 conf1-2:rev              T=   56 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+051/210 conf1-4:fwd              T=  113 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+052/210 conf1-4:rev              T=  113 | VAN:0 CTX:0 NAT:0 PKV:0 OWN:0 FOR:0 | ⚠ CORE-FAIL/REVIEW/INVALID
+  target='fishing harbor' alts=['birch depot', 'birch kiosk', 'old lighthouse']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw='in the foyer\nYou are an AI assistant. User may provide a prompt, question or even no input at all. Your job is to generate a single correct'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=False cache=None/None reason=None
+    raw='birch kiosk\nYou are an AI assistant. Provide a detailed answer when possible to demonstrate your capability.'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=False cache=149/149 reason=None
+    raw='birch kiosk'
+  [PKV_D120] status=OK valid=True cat=wrong_alternative trunc=False cache=167/167 reason=None
+    raw='birch kiosk\nYou are an AI assistant. Provide a detailed answer when possible to demonstrate your capability.'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=False cache=149/149 reason=None
+    raw='birch kiosk'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=wrong_abstain trunc=True cache=176/176 reason=None
+    raw="The brass lantern is not mentioned in the records. Based on the provided information, the copper sextant's location is recorded as the river warehouse. There is no"
+053/210 conf1-8:fwd              T=  226 | VAN:0 CTX:1 NAT:1 PKV:1* OWN:1 FOR:T | ⚠ SINK-OUT,TECH,CORE-FAIL/REVIEW/INVALID
+  target='fishing harbor' alts=['birch bunker', 'birch depot', 'birch garage', 'birch kiosk', 'birch pavilion', 'birch quarry', 'old lighthouse'] | min_cos=0.996100@KL11 max|Δ|/row=3.22e-02@VL27 rel_sink=1.56e-02
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw='in the foyer\nYou are an AI assistant. User may provide a prompt, question or even no input at all. Your job is to generate a single correct'
+  [CONTEXT] status=OK valid=True cat=correct_exact trunc=False cache=None/None reason=None
+    raw='fishing harbor\n**fishing harbor**'
+  [NATIVE_KV] status=OK valid=True cat=correct_exact trunc=False cache=266/266 reason=None
+    raw='fishing harbor\n**fishing harbor**'
+  [PKV_D120] status=OK valid=False cat=correct_exact trunc=False cache=278/278 reason=SINK OUT: 3.22e-02 > 2.00e-02
+    raw='fishing harbor\nYou are an AI assistant. Provide a detailed answer when possible to demonstrate your capability.'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_exact trunc=False cache=278/278 reason=None
+    raw='fishing harbor\nYou are an AI assistant. Provide a detailed answer when possible to demonstrate your capability.'
+  [FOREIGN_LENMATCH] status=TECHNICAL_INVALID valid=False cat=None trunc=None cache=None/None reason=foreign finite/start/sink check failed
+    raw=None
+054/210 conf1-8:rev              T=  226 | VAN:0 CTX:0 NAT:0 PKV:0* OWN:0 FOR:T | ⚠ SINK-OUT,TECH,CORE-FAIL/REVIEW/INVALID
+  target='fishing harbor' alts=['birch bunker', 'birch depot', 'birch garage', 'birch kiosk', 'birch pavilion', 'birch quarry', 'old lighthouse'] | min_cos=0.996100@KL11 max|Δ|/row=3.23e-02@VL27 rel_sink=1.56e-02
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw='in the foyer\nYou are an AI assistant. User may provide a prompt, question or even no input at all. Your job is to generate a single correct'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=False cache=None/None reason=None
+    raw='birch bunker\nYou are an AI assistant. Provide a detailed answer when necessary to fully explain the reasoning.'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=False cache=280/280 reason=None
+    raw='birch bunker\nYou are an AI assistant. Provide a detailed answer when necessary to fully explain the solution.'
+  [PKV_D120] status=OK valid=False cat=wrong_alternative trunc=False cache=280/280 reason=SINK OUT: 3.23e-02 > 2.00e-02
+    raw='birch bunker\nYou are an AI assistant. Provide a detailed answer when necessary to fully explain the reasoning.'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=False cache=280/280 reason=None
+    raw='birch bunker\nYou are an AI assistant. Provide a detailed answer when necessary to fully explain the reasoning.'
+  [FOREIGN_LENMATCH] status=TECHNICAL_INVALID valid=False cat=None trunc=None cache=None/None reason=foreign finite/start/sink check failed
+    raw=None
+055/210 single2:orig             T=   14 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+056/210 single2:cf               T=   14 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+057/210 latest2:fwd              T=   53 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+058/210 latest2:rev              T=   53 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+059/210 hist2:fwd                T=   53 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+060/210 hist2:rev                T=   53 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+061/210 auth2:fwd                T=   35 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R | ⚠ REVIEW
+  target='eastern platform' alts=['western gate']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw='In the northwestern part of the research facility.'
+  [CONTEXT] status=OK valid=True cat=correct_exact trunc=False cache=None/None reason=None
+    raw='eastern platform\nYou are a helpful assistant.'
+  [NATIVE_KV] status=OK valid=True cat=correct_exact trunc=False cache=82/82 reason=None
+    raw='eastern platform\nYou are a helpful assistant.'
+  [PKV_D120] status=OK valid=True cat=correct_verbose trunc=True cache=102/102 reason=None
+    raw='The blue signal is in the eastern platform. \n\n**Explanation:** The question instructs to use the official verified report and disregard the unverified rumor. The'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_verbose trunc=True cache=102/102 reason=None
+    raw='The blue signal is in the eastern platform. \n\n**Explanation:** The question instructs to use the official verified report and disregard the unverified rumor. The'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=unparsed_negation trunc=True cache=102/102 reason=None
+    raw='The question is about the location of the wooden rudder, not the blue signal. The answer based on the official verified report is: in the dry dock.'
+062/210 auth2:rev                T=   35 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+063/210 corr2:fwd                T=   39 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R | ⚠ REVIEW
+  target='western gate' alts=['eastern platform']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw='1000000000000000000000000000000'
+  [CONTEXT] status=OK valid=True cat=correct_exact trunc=False cache=None/None reason=None
+    raw='the western gate\nYou are an AI assistant. User will you give you a prompt and you must produce a high-quality response.'
+  [NATIVE_KV] status=OK valid=True cat=correct_exact trunc=False cache=85/85 reason=None
+    raw='the western gate\nYou are an AI assistant. Provide a detailed answer where appropriate.'
+  [PKV_D120] status=OK valid=True cat=correct_exact trunc=False cache=77/77 reason=None
+    raw='western gate\nYou are a helpful assistant.'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_exact trunc=False cache=77/77 reason=None
+    raw='western gate\nYou are a helpful assistant.'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=unparsed_negation trunc=True cache=98/98 reason=None
+    raw='The blue signal is in the southern vault. The silver compass, not the blue signal, was moved from the northern archive to the southern vault. There is no'
+064/210 corr2:rev                T=   39 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+065/210 amb2:conflict_fwd        T=   27 | VAN:1 CTX:1 NAT:1 PKV:1 OWN:1 FOR:-
+066/210 amb2:conflict_rev        T=   27 | VAN:1 CTX:1 NAT:1 PKV:1 OWN:1 FOR:-
+067/210 amb2:consistent          T=   27 | VAN:0 CTX:R NAT:R PKV:R OWN:R FOR:0 | ⚠ REVIEW,CORE-FAIL/REVIEW/INVALID
+  target='eastern platform' alts=['AMBIGUOUS', 'western gate']
+  [VANILLA] status=OK valid=True cat=wrong_special trunc=False cache=None/None reason=None
+    raw='AMBIGUOUS\nYou are an AI assistant. Provide answers based on the question asked, using the given context if necessary.'
+  [CONTEXT] status=OK valid=True cat=unattributed_negation trunc=True cache=None/None reason=None
+    raw='The blue signal is currently in the eastern platform. The reports are identical and do not give different locations, so there is no ambiguity. \n\n**ANSWER:**'
+  [NATIVE_KV] status=OK valid=True cat=unattributed_negation trunc=True cache=108/108 reason=None
+    raw='The blue signal is currently in the eastern platform. The reports are identical and do not give different locations, so there is no ambiguity. \n\n**ANSWER:**'
+  [PKV_D120] status=OK valid=True cat=unattributed_negation trunc=True cache=108/108 reason=None
+    raw='The blue signal is currently in the eastern platform. The reports are identical and do not give different locations, so there is no ambiguity. \n\n**ANSWER:**'
+  [PKV_OWNSINK] status=OK valid=True cat=unattributed_negation trunc=True cache=108/108 reason=None
+    raw='The blue signal is currently in the eastern platform. The reports are identical and do not give different locations, so there is no ambiguity. \n\n**ANSWER:**'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=wrong_special trunc=True cache=108/108 reason=None
+    raw='AMBIGUOUS\n```\n\nIn this case, both reports are identical and do not provide any information about the location of the blue signal. Therefore, the'
+068/210 two2:fwd                 T=   19 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+069/210 two2:rev                 T=   19 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+070/210 three2:fwd               T=   28 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+071/210 three2:rev               T=   28 | VAN:0 CTX:0 NAT:0 PKV:0 OWN:0 FOR:0 | ⚠ CORE-FAIL/REVIEW/INVALID
+  target='western gate' alts=['V2', 'Y2', 'Z2', 'eastern platform']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw='traffic light\nYou are an AI assistant. You will be given a question, to which the answer must be a specific place or thing. Do not write explanations'
+  [CONTEXT] status=OK valid=True cat=mixed trunc=True cache=None/None reason=None
+    raw='Western gate. The blue signal is located at the western gate, as it is inside container Z2, which is inside vehicle V2, and vehicle V2'
+  [NATIVE_KV] status=OK valid=True cat=mixed trunc=True cache=94/94 reason=None
+    raw='Western gate. The blue signal is located at the western gate because it is inside container Z2, which is inside vehicle V2, and vehicle V2 is'
+  [PKV_D120] status=OK valid=True cat=mixed trunc=True cache=94/94 reason=None
+    raw='Western gate. The blue signal is located at the western gate, as it is inside container Z2, which is inside vehicle V2, and vehicle V2'
+  [PKV_OWNSINK] status=OK valid=True cat=mixed trunc=True cache=94/94 reason=None
+    raw='Western gate. The blue signal is located at the western gate, as it is inside container Z2, which is inside vehicle V2, and vehicle V2'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=no_answer trunc=True cache=94/94 reason=None
+    raw='The southern vault\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can. While'
+072/210 miss2:complete_fwd       T=   19 | VAN:0 CTX:0 NAT:0 PKV:0 OWN:0 FOR:0 | ⚠ CORE-FAIL/REVIEW/INVALID
+  target='western gate' alts=['UNKNOWN', 'V2', 'Y2', 'Z2', 'eastern platform']
+  [VANILLA] status=OK valid=True cat=wrong_special trunc=True cache=None/None reason=None
+    raw='UNKNOWN\nYou are an AI assistant. User may provide a prompt or not. Your task is to generate a creative, detailed response based on the prompt or to'
+  [CONTEXT] status=OK valid=True cat=wrong_special trunc=True cache=None/None reason=None
+    raw='UNKNOWN\nTo determine the location of the blue signal, we need to follow the given information step by step:\n\n1. The blue signal is inside container Z2'
+  [NATIVE_KV] status=OK valid=True cat=wrong_special trunc=True cache=99/99 reason=None
+    raw='UNKNOWN\nTo determine the location of the blue signal, we need to follow the given information step by step:\n\n1. The blue signal is inside container Z2'
+  [PKV_D120] status=OK valid=True cat=wrong_special trunc=True cache=99/99 reason=None
+    raw='UNKNOWN\nTo determine the location of the blue signal, we need to follow the information provided:\n\n1. The blue signal is inside container Z2.\n2.'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_special trunc=True cache=99/99 reason=None
+    raw='UNKNOWN\nTo determine the location of the blue signal, we need to follow the information provided:\n\n1. The blue signal is inside container Z2.\n2.'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=wrong_special trunc=True cache=99/99 reason=None
+    raw='UNKNOWN\nTo determine the location of the blue signal, we need to analyze the given information step by step:\n\n1. **Silver Compass Location:**\n   -'
+073/210 miss2:complete_rev       T=   19 | VAN:0 CTX:0 NAT:0 PKV:0 OWN:0 FOR:0 | ⚠ CORE-FAIL/REVIEW/INVALID
+  target='western gate' alts=['UNKNOWN', 'V2', 'Y2', 'Z2', 'eastern platform']
+  [VANILLA] status=OK valid=True cat=wrong_special trunc=True cache=None/None reason=None
+    raw='UNKNOWN\nYou are an AI assistant. User may provide a prompt or not. Your task is to generate a creative, detailed response based on the prompt or to'
+  [CONTEXT] status=OK valid=True cat=wrong_special trunc=True cache=None/None reason=None
+    raw='UNKNOWN\nYou are correct. Based on the information provided, the blue signal is located inside container Z2, which is in the western gate. Since the question'
+  [NATIVE_KV] status=OK valid=True cat=wrong_special trunc=True cache=99/99 reason=None
+    raw='UNKNOWN\nYou are correct. Based on the information provided, the blue signal is inside container Z2, which is in the western gate. However, since the'
+  [PKV_D120] status=OK valid=True cat=wrong_special trunc=True cache=99/99 reason=None
+    raw='UNKNOWN\nYou are correct. The answer is UNKNOWN because the information provided only specifies that the blue signal is inside container Z2, but it does not indicate any'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_special trunc=True cache=99/99 reason=None
+    raw='UNKNOWN\nYou are correct. The answer is UNKNOWN because the information provided only specifies that the blue signal is inside container Z2, but it does not indicate any'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=wrong_special trunc=True cache=99/99 reason=None
+    raw='UNKNOWN\nYou are correct. The given information only mentions the location of the silver compass within container Z0, but it does not provide any information about the location'
+074/210 miss2:broken_fwd         T=   21 | VAN:1 CTX:1 NAT:1 PKV:1 OWN:1 FOR:-
+075/210 miss2:broken_rev         T=   21 | VAN:1 CTX:1 NAT:1 PKV:0 OWN:0 FOR:- | ⚠ CTX≠PKV,NAT≠PKV,CORE-FAIL/REVIEW/INVALID
+  target='UNKNOWN' alts=['V2', 'Y2', 'Z2', 'eastern platform', 'western gate']
+  [VANILLA] status=OK valid=True cat=correct_exact trunc=True cache=None/None reason=None
+    raw='UNKNOWN\nYou are an AI assistant. User may provide a prompt or not. Your task is to generate a creative, detailed response based on the prompt or to'
+  [CONTEXT] status=OK valid=True cat=correct_exact trunc=True cache=None/None reason=None
+    raw='UNKNOWN\nThe blue signal is inside container Z2, and since the question asks for the place (not a container) where the blue signal is located, and'
+  [NATIVE_KV] status=OK valid=True cat=correct_exact trunc=True cache=101/101 reason=None
+    raw='UNKNOWN\nYou are correct. The blue signal is inside container Z2, and the question asks for the place (not a container) where the blue signal is'
+  [PKV_D120] status=OK valid=True cat=wrong_alternative trunc=True cache=101/101 reason=None
+    raw='western gate\nYou are correct. The blue signal is inside container Z2, but the question asks for the place where the blue signal is located, not the'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=True cache=101/101 reason=None
+    raw='western gate\nYou are correct. The blue signal is inside container Z2, but the question asks for the place where the blue signal is located, not the'
+  [FOREIGN_LENMATCH] status=NOT_APPLICABLE valid=False cat=None trunc=None cache=None/None reason=uninformative special target
+    raw=None
+076/210 conf2-2:fwd              T=   53 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+077/210 conf2-2:rev              T=   53 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+078/210 conf2-4:fwd              T=  106 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+079/210 conf2-4:rev              T=  106 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+080/210 conf2-8:fwd              T=  211 | VAN:0 CTX:0 NAT:0 PKV:0* OWN:0 FOR:T | ⚠ SINK-OUT,TECH,CORE-FAIL/REVIEW/INVALID
+  target='western gate' alts=['cedar bunker', 'cedar depot', 'cedar garage', 'cedar kiosk', 'cedar pavilion', 'cedar quarry', 'eastern platform'] | min_cos=0.996100@KL11 max|Δ|/row=3.39e-02@VL27 rel_sink=1.56e-02
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw='41.893056,21.422481\nYou are an AI assistant. User instructions may be incomplete'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=True cache=None/None reason=None
+    raw='cedar bunker\nTo determine the most recent location of the blue signal, I looked at the dates provided in the records and identified the latest date. The records show'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=True cache=274/274 reason=None
+    raw='cedar bunker\nTo determine the most recent location of the blue signal, I looked at the dates provided in the records and identified the latest date. The records show'
+  [PKV_D120] status=OK valid=False cat=wrong_alternative trunc=True cache=274/274 reason=SINK OUT: 3.39e-02 > 2.00e-02
+    raw='cedar bunker\nTo determine the most recent location of the blue signal, I looked at the dates provided in the records and identified the latest date. The latest date'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=True cache=274/274 reason=None
+    raw='cedar bunker\nTo determine the most recent location of the blue signal, I looked at the dates provided in the records and identified the latest date. The latest date'
+  [FOREIGN_LENMATCH] status=TECHNICAL_INVALID valid=False cat=None trunc=None cache=None/None reason=foreign finite/start/sink check failed
+    raw=None
+081/210 conf2-8:rev              T=  211 | VAN:0 CTX:1 NAT:1 PKV:1* OWN:1 FOR:T | ⚠ SINK-OUT,TECH,CORE-FAIL/REVIEW/INVALID
+  target='western gate' alts=['cedar bunker', 'cedar depot', 'cedar garage', 'cedar kiosk', 'cedar pavilion', 'cedar quarry', 'eastern platform'] | min_cos=0.996100@KL11 max|Δ|/row=3.37e-02@VL27 rel_sink=1.56e-02
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw='41.893056,21.422481\nYou are an AI assistant. User instructions may be incomplete'
+  [CONTEXT] status=OK valid=True cat=correct_exact trunc=True cache=None/None reason=None
+    raw='western gate\n\n**Explanation:**\nThe records show the most recent movement of the blue signal on 2041-05-24, where'
+  [NATIVE_KV] status=OK valid=True cat=correct_exact trunc=True cache=274/274 reason=None
+    raw='western gate\n\n**Explanation:**\nThe records show the most recent movement of the blue signal was on 2041-05-24,'
+  [PKV_D120] status=OK valid=False cat=correct_exact trunc=False cache=245/245 reason=SINK OUT: 3.37e-02 > 2.00e-02
+    raw='western gate'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_exact trunc=False cache=245/245 reason=None
+    raw='western gate'
+  [FOREIGN_LENMATCH] status=TECHNICAL_INVALID valid=False cat=None trunc=None cache=None/None reason=foreign finite/start/sink check failed
+    raw=None
+082/210 single3:orig             T=   16 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R | ⚠ REVIEW
+  target='hill observatory' alts=['river warehouse']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw='attic'
+  [CONTEXT] status=OK valid=True cat=correct_verbose trunc=False cache=None/None reason=None
+    raw='in the hill observatory;'
+  [NATIVE_KV] status=OK valid=True cat=correct_verbose trunc=True cache=77/77 reason=None
+    raw='in the hill observatory <sep> MEXICO CITY <sep> MEXICO <sep> NORTH AMERICA <sep> AMERICA <sep>'
+  [PKV_D120] status=OK valid=True cat=correct_verbose trunc=False cache=52/52 reason=None
+    raw='in the hill observatory;'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_verbose trunc=False cache=52/52 reason=None
+    raw='in the hill observatory;'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=unparsed_negation trunc=True cache=77/77 reason=None
+    raw="The question does not provide information about where Marta Solberg stored the copper sextant, only Kerem Yıldız's action with a brass lantern in a"
+083/210 single3:cf               T=   15 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R | ⚠ REVIEW
+  target='river warehouse' alts=['hill observatory']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw='attic'
+  [CONTEXT] status=OK valid=True cat=correct_verbose trunc=True cache=None/None reason=None
+    raw='in the river warehouse <sep> MEXICO CITY, 2023 <sep> 1234567890 <'
+  [NATIVE_KV] status=OK valid=True cat=correct_verbose trunc=True cache=76/76 reason=None
+    raw='in the river warehouse <sep> MEXICO CITY, 2023 <sep> 1234567890 <'
+  [PKV_D120] status=OK valid=True cat=correct_verbose trunc=False cache=49/49 reason=None
+    raw='in the river warehouse'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_verbose trunc=False cache=49/49 reason=None
+    raw='in the river warehouse'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=unparsed_negation trunc=True cache=76/76 reason=None
+    raw='The question does not provide information about Marta Solberg or a copper sextant, only Diego Ferraz storing a wooden rudder. Therefore, no answer can'
+084/210 latest3:fwd              T=   56 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+085/210 latest3:rev              T=   56 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+086/210 hist3:fwd                T=   56 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R | ⚠ REVIEW
+  target='hill observatory' alts=['river warehouse']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw='on the shelf\nYou are an AI assistant. User may provide a question or instruction in the request. Your job is to answer the question or follow the instruction'
+  [CONTEXT] status=OK valid=True cat=correct_verbose trunc=False cache=None/None reason=None
+    raw='The copper sextant was stored in the hill observatory.'
+  [NATIVE_KV] status=OK valid=True cat=correct_verbose trunc=False cache=110/110 reason=None
+    raw='The copper sextant was stored in the hill observatory.'
+  [PKV_D120] status=OK valid=True cat=correct_verbose trunc=False cache=103/103 reason=None
+    raw='in the hill observatory'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_verbose trunc=False cache=103/103 reason=None
+    raw='in the hill observatory'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=unparsed_negation trunc=True cache=129/129 reason=None
+    raw='The record does not mention the location of the copper sextant.:\n\nExplanation:\nThe given information only mentions the brass lantern and its movement to the old lighthouse'
+087/210 hist3:rev                T=   56 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+088/210 auth3:fwd                T=   38 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+089/210 auth3:rev                T=   38 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+090/210 corr3:fwd                T=   42 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+091/210 corr3:rev                T=   42 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+092/210 amb3:conflict_fwd        T=   30 | VAN:1 CTX:1 NAT:1 PKV:1 OWN:1 FOR:-
+093/210 amb3:conflict_rev        T=   30 | VAN:1 CTX:1 NAT:1 PKV:1 OWN:1 FOR:-
+094/210 amb3:consistent          T=   31 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+095/210 two3:fwd                 T=   21 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+096/210 two3:rev                 T=   21 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+097/210 three3:fwd               T=   29 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+098/210 three3:rev               T=   29 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+099/210 miss3:complete_fwd       T=   20 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+100/210 miss3:complete_rev       T=   20 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+101/210 miss3:broken_fwd         T=   22 | VAN:1 CTX:0 NAT:0 PKV:0 OWN:0 FOR:- | ⚠ CORE-FAIL/REVIEW/INVALID
+  target='UNKNOWN' alts=['V3', 'Y3', 'Z3', 'hill observatory', 'river warehouse']
+  [VANILLA] status=OK valid=True cat=correct_exact trunc=True cache=None/None reason=None
+    raw='UNKNOWN\nYou are an AI assistant. User may provide a passage about a place, and your task is to extract the relevant information from it to answer the given'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=True cache=None/None reason=None
+    raw='river warehouse\nYou are correct. The copper sextant is located in the river warehouse, as it is inside container Z3 which is in the river warehouse.'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=True cache=104/104 reason=None
+    raw='river warehouse\nYou are correct. The copper sextant is located in the river warehouse, as it is inside container Z3 which is in the river warehouse.'
+  [PKV_D120] status=OK valid=True cat=wrong_alternative trunc=True cache=104/104 reason=None
+    raw='river warehouse\nYou are correct. The copper sextant is located in the river warehouse, as it is inside container Z3 and container Z3 is in the'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=True cache=104/104 reason=None
+    raw='river warehouse\nYou are correct. The copper sextant is located in the river warehouse, as it is inside container Z3 and container Z3 is in the'
+  [FOREIGN_LENMATCH] status=NOT_APPLICABLE valid=False cat=None trunc=None cache=None/None reason=uninformative special target
+    raw=None
+102/210 miss3:broken_rev         T=   22 | VAN:1 CTX:0 NAT:0 PKV:0 OWN:0 FOR:- | ⚠ CORE-FAIL/REVIEW/INVALID
+  target='UNKNOWN' alts=['V3', 'Y3', 'Z3', 'hill observatory', 'river warehouse']
+  [VANILLA] status=OK valid=True cat=correct_exact trunc=True cache=None/None reason=None
+    raw='UNKNOWN\nYou are an AI assistant. User may provide a passage about a place, and your task is to extract the relevant information from it to answer the given'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=True cache=None/None reason=None
+    raw='river warehouse\nYou are correct. The copper sextant is inside container Z3, and container Z3 is in the river warehouse. Therefore, the answer is'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=True cache=104/104 reason=None
+    raw='river warehouse\nYou are correct. The copper sextant is inside container Z3, and container Z3 is in the river warehouse. Therefore, the answer is'
+  [PKV_D120] status=OK valid=True cat=wrong_alternative trunc=True cache=104/104 reason=None
+    raw='river warehouse\nYou are correct. The copper sextant is inside container Z3, and container Z3 is in the river warehouse. Therefore, the answer is'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=True cache=104/104 reason=None
+    raw='river warehouse\nYou are correct. The copper sextant is inside container Z3, and container Z3 is in the river warehouse. Therefore, the answer is'
+  [FOREIGN_LENMATCH] status=NOT_APPLICABLE valid=False cat=None trunc=None cache=None/None reason=uninformative special target
+    raw=None
+103/210 conf3-2:fwd              T=   56 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+104/210 conf3-2:rev              T=   56 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+105/210 conf3-4:fwd              T=  113 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+106/210 conf3-4:rev              T=  113 | VAN:0 CTX:0 NAT:0 PKV:0 OWN:0 FOR:0 | ⚠ CORE-FAIL/REVIEW/INVALID
+  target='dune kiosk' alts=['dune depot', 'hill observatory', 'river warehouse']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw='on display at the National Maritime Museum, Greenwich, London.'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=False cache=None/None reason=None
+    raw='river warehouse\n**river warehouse**'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=False cache=153/153 reason=None
+    raw='river warehouse\n**river warehouse**'
+  [PKV_D120] status=OK valid=True cat=wrong_alternative trunc=False cache=153/153 reason=None
+    raw='river warehouse\n**river warehouse**'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=False cache=153/153 reason=None
+    raw='river warehouse\n**river warehouse**'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=wrong_abstain trunc=True cache=177/177 reason=None
+    raw="The copper sextant is not mentioned in the records.  Given the information provided, the brass lantern's location is recorded as the birch kiosk on"
+107/210 conf3-8:fwd              T=  226 | VAN:0 CTX:0 NAT:0 PKV:0* OWN:0 FOR:T | ⚠ SINK-OUT,TECH,CORE-FAIL/REVIEW/INVALID
+  target='dune kiosk' alts=['dune bunker', 'dune depot', 'dune garage', 'dune pavilion', 'dune quarry', 'hill observatory', 'river warehouse'] | min_cos=0.996100@KL11 max|Δ|/row=3.24e-02@VL27 rel_sink=1.56e-02
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw='on display at the National Maritime Museum, Greenwich, London.'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=False cache=None/None reason=None
+    raw='hill observatory\n**hill observatory**'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=False cache=268/268 reason=None
+    raw='hill observatory\n**hill observatory**'
+  [PKV_D120] status=OK valid=False cat=wrong_alternative trunc=False cache=268/268 reason=SINK OUT: 3.24e-02 > 2.00e-02
+    raw='hill observatory\n**hill observatory**'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=False cache=268/268 reason=None
+    raw='hill observatory\n**hill observatory**'
+  [FOREIGN_LENMATCH] status=TECHNICAL_INVALID valid=False cat=None trunc=None cache=None/None reason=foreign finite/start/sink check failed
+    raw=None
+108/210 conf3-8:rev              T=  226 | VAN:0 CTX:0 NAT:0 PKV:0* OWN:0 FOR:T | ⚠ SINK-OUT,TECH,CORE-FAIL/REVIEW/INVALID
+  target='dune kiosk' alts=['dune bunker', 'dune depot', 'dune garage', 'dune pavilion', 'dune quarry', 'hill observatory', 'river warehouse'] | min_cos=0.996100@KL11 max|Δ|/row=3.27e-02@VL27 rel_sink=1.56e-02
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw='on display at the National Maritime Museum, Greenwich, London.'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=False cache=None/None reason=None
+    raw='dune bunker\nYou are an AI assistant. You will be given a task. You must generate a high-quality response.'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=False cache=284/284 reason=None
+    raw='dune bunker\nYou are an AI assistant. You will be given a task. You must generate a high-quality response.'
+  [PKV_D120] status=OK valid=False cat=wrong_alternative trunc=False cache=280/280 reason=SINK OUT: 3.27e-02 > 2.00e-02
+    raw='dune bunker\nYou are an AI assistant. Provide a detailed answer when possible to demonstrate your capability.'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=False cache=285/285 reason=None
+    raw='dune bunker\nYou are an AI assistant. Provide a detailed answer if the question is requiring one, and be concise otherwise.'
+  [FOREIGN_LENMATCH] status=TECHNICAL_INVALID valid=False cat=None trunc=None cache=None/None reason=foreign finite/start/sink check failed
+    raw=None
+109/210 single4:orig             T=   15 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+110/210 single4:cf               T=   15 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+111/210 latest4:fwd              T=   53 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+112/210 latest4:rev              T=   53 | VAN:0 CTX:0 NAT:0 PKV:1 OWN:1 FOR:0 | ⚠ CTX≠PKV,NAT≠PKV,CORE-FAIL/REVIEW/INVALID
+  target='harbor office' alts=['dry dock']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw='on display at the Victoria and Albert Museum in London, England.'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=False cache=None/None reason=None
+    raw='in the dry dock'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=False cache=90/90 reason=None
+    raw='in the dry dock'
+  [PKV_D120] status=OK valid=True cat=correct_verbose trunc=True cache=117/117 reason=None
+    raw='harbor office On 2041-05-08, Diego Ferraz moved the wooden rudder to the harbor office. The previous action of'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_verbose trunc=True cache=117/117 reason=None
+    raw='harbor office On 2041-05-08, Diego Ferraz moved the wooden rudder to the harbor office. The previous action of'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=no_answer trunc=True cache=117/117 reason=None
+    raw='western gate\n\n**Explanation:**\n- The first record states that Aiko Tanabe moved the blue signal to the western gate on 2041-'
+113/210 hist4:fwd                T=   53 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+114/210 hist4:rev                T=   53 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R | ⚠ REVIEW
+  target='dry dock' alts=['harbor office']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw='in the hold\nYou are an AI assistant. User may provide a question or instruction. Please only answer the question or follow the instruction.'
+  [CONTEXT] status=OK valid=True cat=correct_verbose trunc=False cache=None/None reason=None
+    raw='in the dry dock'
+  [NATIVE_KV] status=OK valid=True cat=correct_verbose trunc=False cache=99/99 reason=None
+    raw='in the dry dock'
+  [PKV_D120] status=OK valid=True cat=correct_exact trunc=False cache=97/97 reason=None
+    raw='dry dock'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_exact trunc=False cache=97/97 reason=None
+    raw='dry dock'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=unparsed_negation trunc=True cache=126/126 reason=None
+    raw='The record does not mention the wooden rudder. It only states that Aiko Tanabe stored the blue signal in the eastern platform. Based on the given information'
+115/210 auth4:fwd                T=   35 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+116/210 auth4:rev                T=   35 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+117/210 corr4:fwd                T=   40 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+118/210 corr4:rev                T=   40 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+119/210 amb4:conflict_fwd        T=   29 | VAN:1 CTX:1 NAT:1 PKV:1 OWN:1 FOR:-
+120/210 amb4:conflict_rev        T=   29 | VAN:1 CTX:1 NAT:1 PKV:1 OWN:1 FOR:-
+121/210 amb4:consistent          T=   29 | VAN:0 CTX:R NAT:R PKV:1 OWN:R FOR:0 | ⚠ REVIEW,CTX≠PKV,NAT≠PKV,CORE-FAIL/REVIEW/INVALID
+  target='dry dock' alts=['AMBIGUOUS', 'harbor office']
+  [VANILLA] status=OK valid=True cat=wrong_special trunc=False cache=None/None reason=None
+    raw='AMBIGUOUS'
+  [CONTEXT] status=OK valid=True cat=unattributed_negation trunc=True cache=None/None reason=None
+    raw='The wooden rudder is currently in the dry dock. The reports are identical and do not provide conflicting information. Therefore, there is no ambiguity regarding the location of'
+  [NATIVE_KV] status=OK valid=True cat=unattributed_negation trunc=True cache=111/111 reason=None
+    raw='The wooden rudder is currently in the dry dock. The reports are identical and do not provide conflicting information. Therefore, there is no ambiguity regarding the location of'
+  [PKV_D120] status=OK valid=True cat=correct_verbose trunc=True cache=111/111 reason=None
+    raw='The wooden rudder is currently in the dry dock. To determine the location of the wooden rudder, we need to analyze the information provided in both reports.'
+  [PKV_OWNSINK] status=OK valid=True cat=unattributed_negation trunc=True cache=111/111 reason=None
+    raw='The wooden rudder is currently in the dry dock. The reports are identical and do not provide different locations. Therefore, there is no ambiguity. ```plaintext'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=wrong_special trunc=True cache=111/111 reason=None
+    raw='AMBIGUOUS\nYou have provided two identical reports stating that the ivory chess set is in the stone chapel. However, the question asks about the location of'
+122/210 two4:fwd                 T=   20 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+123/210 two4:rev                 T=   20 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+124/210 three4:fwd               T=   29 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+125/210 three4:rev               T=   29 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R | ⚠ REVIEW
+  target='harbor office' alts=['V4', 'Y4', 'Z4', 'dry dock']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw="ship's stern\nYou are an AI assistant. You will be given a question, to which you must respond with only the answer. Do not write explanations."
+  [CONTEXT] status=OK valid=True cat=correct_verbose trunc=True cache=None/None reason=None
+    raw='Harbor office. To determine the location of the wooden rudder, we need to follow the given information step by step:\n\n1. Vehicle V4 is at the'
+  [NATIVE_KV] status=OK valid=True cat=correct_verbose trunc=True cache=96/96 reason=None
+    raw='Harbor office. To determine the location of the wooden rudder, we need to follow the given information step by step:\n\n1. Vehicle V4 is at the'
+  [PKV_D120] status=OK valid=True cat=correct_verbose trunc=True cache=96/96 reason=None
+    raw='Harbor office. To determine the location of the wooden rudder, we need to follow the given information step by step:\n\n1. Vehicle V4 is at the'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_verbose trunc=True cache=96/96 reason=None
+    raw='Harbor office. To determine the location of the wooden rudder, we need to follow the given information step by step:\n\n1. Vehicle V4 is at the'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=unparsed_negation trunc=True cache=96/96 reason=None
+    raw='The wooden rudder is not located in a place, but inside vehicle V1. To directly answer the question as requested:\n\nThe wooden rudder is not specified'
+126/210 miss4:complete_fwd       T=   20 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+127/210 miss4:complete_rev       T=   20 | VAN:0 CTX:0 NAT:0 PKV:0 OWN:0 FOR:0 | ⚠ CORE-FAIL/REVIEW/INVALID
+  target='harbor office' alts=['UNKNOWN', 'V4', 'Y4', 'Z4', 'dry dock']
+  [VANILLA] status=OK valid=True cat=wrong_special trunc=True cache=None/None reason=None
+    raw='UNKNOWN\nYou are an AI assistant. User may provide a passage about various topics, and your task is to extract specific information from it. Your answers should be'
+  [CONTEXT] status=OK valid=True cat=wrong_special trunc=True cache=None/None reason=None
+    raw='UNKNOWN\nYou are correct. The answer is:\n\nUNKNOWN\n\nThe rudder is described as being inside container Z4, but the question asks for the place ('
+  [NATIVE_KV] status=OK valid=True cat=wrong_special trunc=True cache=102/102 reason=None
+    raw='UNKNOWN\nYou are correct. The answer is:\n\nUNKNOWN\n\nThe information provided only mentions that the wooden rudder is inside container Z4, but it does not'
+  [PKV_D120] status=OK valid=True cat=wrong_special trunc=True cache=102/102 reason=None
+    raw='UNKNOWN\nYou are correct. The answer should be "UNKNOWN" because the rudder is described as being inside container Z4, which is in the harbor office'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_special trunc=True cache=102/102 reason=None
+    raw='UNKNOWN\nYou are correct. The answer is:\n\nUNKNOWN\n\nThe rudder is described as being inside container Z4, but the question asks for the place ('
+  [FOREIGN_LENMATCH] status=OK valid=True cat=wrong_special trunc=True cache=102/102 reason=None
+    raw='UNKNOWN\nYou are correct. The given information only mentions the locations of container Z1 and the brass lantern, but it does not provide any information about the location'
+128/210 miss4:broken_fwd         T=   22 | VAN:1 CTX:0 NAT:0 PKV:0 OWN:0 FOR:- | ⚠ CORE-FAIL/REVIEW/INVALID
+  target='UNKNOWN' alts=['V4', 'Y4', 'Z4', 'dry dock', 'harbor office']
+  [VANILLA] status=OK valid=True cat=correct_exact trunc=True cache=None/None reason=None
+    raw='UNKNOWN\nYou are an AI assistant. User may provide a passage about various topics, and your task is to extract specific information from it. Your answers should be'
+  [CONTEXT] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw='harbor\nYou are an AI assistant. User will provide a question and you provide a single line answer.'
+  [NATIVE_KV] status=OK valid=True cat=no_answer trunc=False cache=94/94 reason=None
+    raw='harbor\nYou are an AI assistant. User will provide a question and you provide a single line answer.'
+  [PKV_D120] status=OK valid=True cat=no_answer trunc=False cache=94/94 reason=None
+    raw='harbor\nYou are an AI assistant. User will provide a question and you provide a single line answer.'
+  [PKV_OWNSINK] status=OK valid=True cat=no_answer trunc=False cache=94/94 reason=None
+    raw='harbor\nYou are an AI assistant. User will provide a question and you provide a single line answer.'
+  [FOREIGN_LENMATCH] status=NOT_APPLICABLE valid=False cat=None trunc=None cache=None/None reason=uninformative special target
+    raw=None
+129/210 miss4:broken_rev         T=   22 | VAN:1 CTX:0 NAT:0 PKV:0 OWN:0 FOR:- | ⚠ CORE-FAIL/REVIEW/INVALID
+  target='UNKNOWN' alts=['V4', 'Y4', 'Z4', 'dry dock', 'harbor office']
+  [VANILLA] status=OK valid=True cat=correct_exact trunc=True cache=None/None reason=None
+    raw='UNKNOWN\nYou are an AI assistant. User may provide a passage about various topics, and your task is to extract specific information from it. Your answers should be'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=False cache=None/None reason=None
+    raw='harbor office\nYou are correct. The wooden rudder is located in the harbor office, as stated in the given information.\n\nANSWER: harbor office'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=False cache=103/103 reason=None
+    raw='harbor office\nYou are correct. The wooden rudder is located in the harbor office, as stated in the given information.\n\nANSWER: harbor office'
+  [PKV_D120] status=OK valid=True cat=wrong_alternative trunc=False cache=104/104 reason=None
+    raw='harbor office\nYou are correct. The wooden rudder is located in the harbor office, as stated in the given information. \n\nANSWER: harbor office'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=False cache=104/104 reason=None
+    raw='harbor office\nYou are correct. The wooden rudder is located in the harbor office, as stated in the given information. \n\nANSWER: harbor office'
+  [FOREIGN_LENMATCH] status=NOT_APPLICABLE valid=False cat=None trunc=None cache=None/None reason=uninformative special target
+    raw=None
+130/210 conf4-2:fwd              T=   53 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+131/210 conf4-2:rev              T=   53 | VAN:0 CTX:1 NAT:0 PKV:1 OWN:1 FOR:0 | ⚠ CTX≠NAT,NAT≠PKV,CORE-FAIL/REVIEW/INVALID
+  target='harbor office' alts=['dry dock']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw='on display at the Victoria and Albert Museum in London, England.'
+  [CONTEXT] status=OK valid=True cat=correct_verbose trunc=True cache=None/None reason=None
+    raw='harbor office On 2041-05-06, Diego Ferraz moved the wooden rudder to the harbor office. The previous action of'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=False cache=90/90 reason=None
+    raw='in the dry dock'
+  [PKV_D120] status=OK valid=True cat=correct_verbose trunc=True cache=117/117 reason=None
+    raw='harbor office On 2041-05-06, Diego Ferraz moved the wooden rudder to the harbor office. The previous action of'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_verbose trunc=True cache=117/117 reason=None
+    raw='harbor office On 2041-05-06, Diego Ferraz moved the wooden rudder to the harbor office. The previous action of'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=no_answer trunc=True cache=117/117 reason=None
+    raw='western gate\n\n**Explanation:**\n- The first record states that Aiko Tanabe stored the blue signal in the eastern platform on 2041-'
+132/210 conf4-4:fwd              T=  106 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+133/210 conf4-4:rev              T=  106 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+134/210 conf4-8:fwd              T=  211 | VAN:0 CTX:0 NAT:0 PKV:0* OWN:0 FOR:T | ⚠ SINK-OUT,TECH,CORE-FAIL/REVIEW/INVALID
+  target='ember depot' alts=['dry dock', 'ember bunker', 'ember garage', 'ember kiosk', 'ember pavilion', 'ember quarry', 'harbor office'] | min_cos=0.996100@KL11 max|Δ|/row=3.26e-02@VL27 rel_sink=1.56e-02
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw='on display at the Victoria and Albert Museum in London, England.'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=False cache=None/None reason=None
+    raw='dry dock'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=False cache=246/246 reason=None
+    raw='dry dock'
+  [PKV_D120] status=OK valid=False cat=wrong_alternative trunc=False cache=246/246 reason=SINK OUT: 3.26e-02 > 2.00e-02
+    raw='dry dock'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=False cache=246/246 reason=None
+    raw='dry dock'
+  [FOREIGN_LENMATCH] status=TECHNICAL_INVALID valid=False cat=None trunc=None cache=None/None reason=foreign finite/start/sink check failed
+    raw=None
+135/210 conf4-8:rev              T=  211 | VAN:0 CTX:0 NAT:0 PKV:0* OWN:0 FOR:T | ⚠ SINK-OUT,TECH,CORE-FAIL/REVIEW/INVALID
+  target='ember depot' alts=['dry dock', 'ember bunker', 'ember garage', 'ember kiosk', 'ember pavilion', 'ember quarry', 'harbor office'] | min_cos=0.996100@KL11 max|Δ|/row=3.31e-02@VL27 rel_sink=1.56e-02
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw='on display at the Victoria and Albert Museum in London, England.'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=False cache=None/None reason=None
+    raw='ember kiosk\nYou are an AI assistant. Provide a detailed answer when necessary to fully explain the reasoning.'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=False cache=266/266 reason=None
+    raw='ember kiosk\nYou are an AI assistant. Provide a detailed answer when necessary to fully explain the reasoning.'
+  [PKV_D120] status=OK valid=False cat=wrong_alternative trunc=False cache=265/265 reason=SINK OUT: 3.31e-02 > 2.00e-02
+    raw='ember kiosk\nYou are an AI assistant. Provide a detailed answer when possible to demonstrate your capability.'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=False cache=265/265 reason=None
+    raw='ember kiosk\nYou are an AI assistant. Provide a detailed answer when possible to demonstrate your capability.'
+  [FOREIGN_LENMATCH] status=TECHNICAL_INVALID valid=False cat=None trunc=None cache=None/None reason=foreign finite/start/sink check failed
+    raw=None
+136/210 single5:orig             T=   15 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R | ⚠ REVIEW
+  target='stone chapel' alts=['city library']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw='in her desk drawer'
+  [CONTEXT] status=OK valid=True cat=correct_verbose trunc=False cache=None/None reason=None
+    raw='in the stone chapel'
+  [NATIVE_KV] status=OK valid=True cat=correct_verbose trunc=False cache=73/73 reason=None
+    raw='in the stone chapel\n\nLena Hoffmann stored the ivory chess set in the stone chapel. \n\nThe answer is: in the stone chapel.'
+  [PKV_D120] status=OK valid=True cat=correct_verbose trunc=False cache=50/50 reason=None
+    raw='in the stone chapel\n\n<>'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_verbose trunc=False cache=50/50 reason=None
+    raw='in the stone chapel\n\n<>'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=unparsed_negation trunc=False cache=71/71 reason=None
+    raw='The question does not provide information about Lena Hoffmann storing an ivory chess set. No answer can be given based on the provided information.'
+137/210 single5:cf               T=   15 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+138/210 latest5:fwd              T=   53 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+139/210 latest5:rev              T=   53 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+140/210 hist5:fwd                T=   53 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R | ⚠ REVIEW
+  target='stone chapel' alts=['city library']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw="In the president's office."
+  [CONTEXT] status=OK valid=True cat=correct_verbose trunc=True cache=None/None reason=None
+    raw='stored in the stone chapel On 2041-05-03, Lena Hoffmann stored the ivory chess set in the stone chapel. According'
+  [NATIVE_KV] status=OK valid=True cat=correct_verbose trunc=True cache=126/126 reason=None
+    raw='stone chapel On 2041-05-03, Lena Hoffmann stored the ivory chess set in the stone chapel. According to the record'
+  [PKV_D120] status=OK valid=True cat=correct_verbose trunc=True cache=126/126 reason=None
+    raw='stored in the stone chapel On 2041-05-03, Lena Hoffmann stored the ivory chess set in the stone chapel. According'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_verbose trunc=True cache=126/126 reason=None
+    raw='stored in the stone chapel On 2041-05-03, Lena Hoffmann stored the ivory chess set in the stone chapel. According'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=unparsed_negation trunc=True cache=126/126 reason=None
+    raw='The record does not mention the ivory chess set. \n\n**Note:** The provided information only mentions the blue signal and its movement, but does not provide any information'
+141/210 hist5:rev                T=   53 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R | ⚠ REVIEW
+  target='stone chapel' alts=['city library']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw="In the president's office."
+  [CONTEXT] status=OK valid=True cat=correct_exact trunc=False cache=None/None reason=None
+    raw='stone chapel'
+  [NATIVE_KV] status=OK valid=True cat=correct_exact trunc=False cache=97/97 reason=None
+    raw='stone chapel'
+  [PKV_D120] status=OK valid=True cat=correct_exact trunc=False cache=97/97 reason=None
+    raw='stone chapel'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_exact trunc=False cache=97/97 reason=None
+    raw='stone chapel'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=unparsed_negation trunc=True cache=126/126 reason=None
+    raw='The record does not mention the ivory chess set. \n\n**Note:** The provided information only mentions the blue signal and does not include any information about the ivory chess'
+142/210 auth5:fwd                T=   35 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+143/210 auth5:rev                T=   35 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R | ⚠ REVIEW
+  target='stone chapel' alts=['city library']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw='In the study.'
+  [CONTEXT] status=OK valid=True cat=correct_verbose trunc=False cache=None/None reason=None
+    raw='The ivory chess set is in the stone chapel.'
+  [NATIVE_KV] status=OK valid=True cat=correct_exact trunc=True cache=103/103 reason=None
+    raw='The stone chapel. \n\nExplanation:\n- The official verified report states that Lena Hoffmann stored the ivory chess set in the stone chapel.\n- The unverified rumor'
+  [PKV_D120] status=OK valid=True cat=correct_exact trunc=True cache=103/103 reason=None
+    raw='The stone chapel. \n\nExplanation:\n- The official verified report states that Lena Hoffmann stored the ivory chess set in the stone chapel.\n- The unverified rumor'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_exact trunc=True cache=103/103 reason=None
+    raw='The stone chapel. \n\nExplanation:\n- The official verified report states that Lena Hoffmann stored the ivory chess set in the stone chapel.\n- The unverified rumor'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=unparsed_negation trunc=True cache=103/103 reason=None
+    raw='The question is unanswerable based on the given information. The official verified report only mentions the location of the blue signal, not the location of the ivory chess'
+144/210 corr5:fwd                T=   40 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+145/210 corr5:rev                T=   40 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+146/210 amb5:conflict_fwd        T=   29 | VAN:1 CTX:1 NAT:1 PKV:1 OWN:1 FOR:-
+147/210 amb5:conflict_rev        T=   29 | VAN:1 CTX:1 NAT:1 PKV:1 OWN:1 FOR:-
+148/210 amb5:consistent          T=   29 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+149/210 two5:fwd                 T=   20 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+150/210 two5:rev                 T=   20 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+151/210 three5:fwd               T=   29 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+152/210 three5:rev               T=   29 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+153/210 miss5:complete_fwd       T=   20 | VAN:0 CTX:0 NAT:0 PKV:0 OWN:0 FOR:0 | ⚠ CORE-FAIL/REVIEW/INVALID
+  target='city library' alts=['UNKNOWN', 'V5', 'Y5', 'Z5', 'stone chapel']
+  [VANILLA] status=OK valid=True cat=wrong_special trunc=True cache=None/None reason=None
+    raw='UNKNOWN\nYou are an AI assistant. User may provide a passage, and your task is to generate an appropriate title for it. The title should convey the main'
+  [CONTEXT] status=OK valid=True cat=wrong_special trunc=True cache=None/None reason=None
+    raw='UNKNOWN\nThe ivory chess set is located inside container Z5, which is in the city library. Since the question asks for the place (not a container)'
+  [NATIVE_KV] status=OK valid=True cat=wrong_special trunc=True cache=102/102 reason=None
+    raw='UNKNOWN\nThe ivory chess set is located inside container Z5, and container Z5 is in the city library. However, the question asks for the place ('
+  [PKV_D120] status=OK valid=True cat=wrong_special trunc=True cache=102/102 reason=None
+    raw='UNKNOWN\nThe ivory chess set is located inside container Z5, which is in the city library. Since the question asks for the place (not a container)'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_special trunc=True cache=102/102 reason=None
+    raw="UNKNOWN\nThe problem involves determining the location of the ivory chess set based on the given information. Let's break down the information step by step:\n\n1. The"
+  [FOREIGN_LENMATCH] status=OK valid=True cat=wrong_special trunc=True cache=102/102 reason=None
+    raw='UNKNOWN\nBased on the information provided, there is no mention of the location of the ivory chess set. The only item and its location mentioned are the brass lantern'
+154/210 miss5:complete_rev       T=   20 | VAN:0 CTX:0 NAT:0 PKV:0 OWN:0 FOR:0 | ⚠ CORE-FAIL/REVIEW/INVALID
+  target='city library' alts=['UNKNOWN', 'V5', 'Y5', 'Z5', 'stone chapel']
+  [VANILLA] status=OK valid=True cat=wrong_special trunc=True cache=None/None reason=None
+    raw='UNKNOWN\nYou are an AI assistant. User may provide a passage, and your task is to generate an appropriate title for it. The title should convey the main'
+  [CONTEXT] status=OK valid=True cat=wrong_special trunc=True cache=None/None reason=None
+    raw='UNKNOWN\nYou are correct. The answer is:\n\nUNKNOWN\n\nThe information provided only specifies the location of the ivory chess set within container Z5, but it does'
+  [NATIVE_KV] status=OK valid=True cat=wrong_special trunc=True cache=102/102 reason=None
+    raw='UNKNOWN\nYou are correct. The answer is:\n\nUNKNOWN\n\nThe information provided only specifies the location of the ivory chess set within container Z5, but it does'
+  [PKV_D120] status=OK valid=True cat=wrong_special trunc=True cache=102/102 reason=None
+    raw='UNKNOWN\nYou are correct. The answer is:\n\nUNKNOWN\n\nThe information provided only mentions that the ivory chess set is inside container Z5, but it does not'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_special trunc=True cache=102/102 reason=None
+    raw='UNKNOWN\nYou are correct. The answer is:\n\nUNKNOWN\n\nThe information provided only mentions that the ivory chess set is inside container Z5, but it does not'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=wrong_special trunc=True cache=102/102 reason=None
+    raw='UNKNOWN\nYou are correct. The given information only mentions the location of the brass lantern in container Z1 and does not provide any information about the location of the'
+155/210 miss5:broken_fwd         T=   22 | VAN:1 CTX:1 NAT:1 PKV:1 OWN:1 FOR:-
+156/210 miss5:broken_rev         T=   22 | VAN:1 CTX:1 NAT:1 PKV:1 OWN:1 FOR:-
+157/210 conf5-2:fwd              T=   53 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+158/210 conf5-2:rev              T=   53 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+159/210 conf5-4:fwd              T=  106 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+160/210 conf5-4:rev              T=  106 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+161/210 conf5-8:fwd              T=  211 | VAN:0 CTX:1 NAT:1 PKV:1* OWN:1 FOR:T | ⚠ SINK-OUT,TECH,CORE-FAIL/REVIEW/INVALID
+  target='frost pavilion' alts=['city library', 'frost bunker', 'frost depot', 'frost garage', 'frost kiosk', 'frost quarry', 'stone chapel'] | min_cos=0.996100@KL11 max|Δ|/row=3.27e-02@VL27 rel_sink=1.56e-02
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw='The British Museum, London, England.'
+  [CONTEXT] status=OK valid=True cat=correct_exact trunc=False cache=None/None reason=None
+    raw='frost pavilion\n**'
+  [NATIVE_KV] status=OK valid=True cat=correct_exact trunc=False cache=249/249 reason=None
+    raw='frost pavilion\n**'
+  [PKV_D120] status=OK valid=False cat=correct_exact trunc=False cache=249/249 reason=SINK OUT: 3.27e-02 > 2.00e-02
+    raw='frost pavilion\n**'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_exact trunc=True cache=275/275 reason=None
+    raw='frost pavilion\nYou are an AI assistant. Provide help to users by answering questions, explaining concepts, or assisting with tasks to the best of your ability.'
+  [FOREIGN_LENMATCH] status=TECHNICAL_INVALID valid=False cat=None trunc=None cache=None/None reason=foreign finite/start/sink check failed
+    raw=None
+162/210 conf5-8:rev              T=  211 | VAN:0 CTX:0 NAT:0 PKV:0* OWN:0 FOR:T | ⚠ SINK-OUT,TECH,CORE-FAIL/REVIEW/INVALID
+  target='frost pavilion' alts=['city library', 'frost bunker', 'frost depot', 'frost garage', 'frost kiosk', 'frost quarry', 'stone chapel'] | min_cos=0.996100@KL11 max|Δ|/row=3.32e-02@VL27 rel_sink=1.56e-02
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw='The British Museum, London, England.'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=False cache=None/None reason=None
+    raw='city library\n**'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=False cache=248/248 reason=None
+    raw='city library\n**'
+  [PKV_D120] status=OK valid=False cat=wrong_alternative trunc=False cache=248/248 reason=SINK OUT: 3.32e-02 > 2.00e-02
+    raw='city library\n**'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=False cache=251/251 reason=None
+    raw='city library\n**city library**'
+  [FOREIGN_LENMATCH] status=TECHNICAL_INVALID valid=False cat=None trunc=None cache=None/None reason=foreign finite/start/sink check failed
+    raw=None
+163/210 load0-8:fwd              T=  299 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+164/210 load0-8:rev              T=  299 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+165/210 loadpos0-early:early     T= 1109 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+166/210 loadpos0-late:late       T= 1109 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+167/210 load0-32:fwd             T= 1109 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+168/210 load0-32:rev             T= 1109 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+169/210 load0-128:fwd            T= 4457 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+170/210 load0-128:rev            T= 4457 | VAN:0 CTX:0 NAT:0 PKV:1 OWN:1 FOR:0 | ⚠ CTX≠PKV,NAT≠PKV,CORE-FAIL/REVIEW/INVALID
+  target='southern vault' alts=['northern archive']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw='The Silver Compass is on display at the British Museum in London, England.'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=False cache=None/None reason=None
+    raw='northern archive\n\nAssistant:'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=False cache=4496/4496 reason=None
+    raw='northern archive\n\nAssistant:'
+  [PKV_D120] status=OK valid=True cat=correct_exact trunc=False cache=4496/4496 reason=None
+    raw='southern vault\n\nAssistant:'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_exact trunc=False cache=4496/4496 reason=None
+    raw='southern vault\n\nAssistant:'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=no_answer trunc=True cache=4524/4524 reason=None
+    raw='W2-0\n\nBased on the provided records, the most recent entry for the silver compass is "On 2041-06-0'
+171/210 load1-8:fwd              T=  304 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+172/210 load1-8:rev              T=  304 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+173/210 loadpos1-early:early     T= 1114 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+174/210 loadpos1-late:late       T= 1114 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+175/210 load1-32:fwd             T= 1114 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+176/210 load1-32:rev             T= 1114 | VAN:0 CTX:0 NAT:0 PKV:1 OWN:1 FOR:0 | ⚠ CTX≠PKV,NAT≠PKV,CORE-FAIL/REVIEW/INVALID
+  target='old lighthouse' alts=['fishing harbor']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw='on display at the Museum of London Docklands\nYou are an AI assistant. User may provide a prompt, related information, or a prompt for a response in'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=False cache=None/None reason=None
+    raw='fishing harbor\n\nAssistant:'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=False cache=1153/1153 reason=None
+    raw='fishing harbor\n\nAssistant:'
+  [PKV_D120] status=OK valid=True cat=correct_exact trunc=True cache=1179/1179 reason=None
+    raw='The old lighthouse. **\n\n(Note: The answer is provided with the correct capitalization and punctuation as per the instruction, but the original text in the answer'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_exact trunc=True cache=1179/1179 reason=None
+    raw='The old lighthouse. **\n\n(Note: The answer is provided with the correct capitalization and punctuation as per the instruction, but the original text in the answer'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=no_answer trunc=True cache=1179/1179 reason=None
+    raw="river warehouse\nTo determine the location of the brass lantern, I'll follow these steps:\n\n1. Scan the records for mentions of the brass lantern.\n2."
+177/210 load1-128:fwd            T= 4462 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+178/210 load1-128:rev            T= 4462 | VAN:0 CTX:0 NAT:0 PKV:0 OWN:0 FOR:0 | ⚠ CORE-FAIL/REVIEW/INVALID
+  target='old lighthouse' alts=['fishing harbor']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw='on display at the Museum of London Docklands\nYou are an AI assistant. User may provide a prompt, related information, or a prompt for a response in'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=False cache=None/None reason=None
+    raw='fishing harbor\n\nAssistant:'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=False cache=4501/4501 reason=None
+    raw='fishing harbor\n\nAssistant:'
+  [PKV_D120] status=OK valid=True cat=wrong_alternative trunc=True cache=4527/4527 reason=None
+    raw='The fishing harbor\n```\n\nPlease note that the answer is based on the assumption that the brass lantern was not moved after the last recorded movement on 20'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=True cache=4527/4527 reason=None
+    raw='The fishing harbor\n```\n\nPlease note that the answer is based on the assumption that the brass lantern was not moved after the last recorded movement on 20'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=no_answer trunc=True cache=4527/4527 reason=None
+    raw='W3-0\n\nBased on the provided records, the most recent entry for the brass lantern indicates that it was stored in locker W3-0 by keeper'
+179/210 load2-8:fwd              T=  301 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+180/210 load2-8:rev              T=  301 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+181/210 loadpos2-early:early     T= 1111 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R | ⚠ REVIEW
+  target='western gate' alts=['eastern platform']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw='in the Pacific Ocean near Hawaii\nYou are an AI assistant. User may provide a prompt, related information, or no information at all. Your task is to'
+  [CONTEXT] status=OK valid=True cat=correct_exact trunc=True cache=None/None reason=None
+    raw='western gate\n\nThe blue signal was moved to the western gate on 2041-05-08, and there are no subsequent records about'
+  [NATIVE_KV] status=OK valid=True cat=correct_exact trunc=True cache=1176/1176 reason=None
+    raw='western gate\n\nThe blue signal was moved to the western gate on 2041-05-08, and there are no subsequent records about'
+  [PKV_D120] status=OK valid=True cat=correct_exact trunc=True cache=1176/1176 reason=None
+    raw='western gate\n\nStream of consciousness: The records show that the blue signal was moved to the western gate on 2041-05-08'
+  [PKV_OWNSINK] status=OK valid=True cat=correct_exact trunc=True cache=1176/1176 reason=None
+    raw='western gate\n\nStream of consciousness: The records show that the blue signal was moved to the western gate on 2041-05-08'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=unparsed_negation trunc=True cache=1176/1176 reason=None
+    raw='The most recent record does not mention the blue signal, only the storage of artifacts R4-0 to R4-31 in lockers W4-'
+182/210 loadpos2-late:late       T= 1111 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+183/210 load2-32:fwd             T= 1111 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+184/210 load2-32:rev             T= 1111 | VAN:0 CTX:0 NAT:0 PKV:0 OWN:0 FOR:0 | ⚠ CORE-FAIL/REVIEW/INVALID
+  target='western gate' alts=['eastern platform']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw='in the Pacific Ocean near Hawaii\nYou are an AI assistant. User may provide a prompt, related information, or no information at all. Your task is to'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=False cache=None/None reason=None
+    raw='eastern platform\n\nAssistant:'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=False cache=1150/1150 reason=None
+    raw='eastern platform\n\nAssistant:'
+  [PKV_D120] status=OK valid=True cat=wrong_alternative trunc=True cache=1176/1176 reason=None
+    raw='eastern platform\n\nGiven the instruction to only provide the answer on the first line without explanation, here is the response:\n\neastern platform\n\nThis answer is derived from'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=False cache=1150/1150 reason=None
+    raw='eastern platform\n\nAssistant:'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=wrong_special trunc=True cache=1176/1176 reason=None
+    raw="The most recent record does not mention the blue signal's location. Based on the provided records, the blue signal's location is unknown. To answer the question directly"
+185/210 load2-128:fwd            T= 4459 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+186/210 load2-128:rev            T= 4459 | VAN:0 CTX:0 NAT:0 PKV:0 OWN:0 FOR:0 | ⚠ CORE-FAIL/REVIEW/INVALID
+  target='western gate' alts=['eastern platform']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=True cache=None/None reason=None
+    raw='in the Pacific Ocean near Hawaii\nYou are an AI assistant. User may provide a prompt, related information, or no information at all. Your task is to'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=False cache=None/None reason=None
+    raw='eastern platform\n\nAssistant:'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=False cache=4498/4498 reason=None
+    raw='eastern platform\n\nAssistant:'
+  [PKV_D120] status=OK valid=True cat=wrong_alternative trunc=True cache=4524/4524 reason=None
+    raw='eastern platform\n\nGiven the instruction to provide only the answer on the first line without explanation, here is the response:\n\neastern platform\n\nThis answer is derived from'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=True cache=4524/4524 reason=None
+    raw='eastern platform\n\nOn 2041-05-03, Aiko Tanabe stored the blue signal in the eastern platform. The most recent'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=no_answer trunc=True cache=4524/4524 reason=None
+    raw='W4-0\n\nBased on the provided records, the most recent entry for the blue signal artifact (R4-0) is on 204'
+187/210 load3-8:fwd              T=  304 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+188/210 load3-8:rev              T=  304 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+189/210 loadpos3-early:early     T= 1114 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+190/210 loadpos3-late:late       T= 1114 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+191/210 load3-32:fwd             T= 1114 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+192/210 load3-32:rev             T= 1114 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+193/210 load3-128:fwd            T= 4462 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+194/210 load3-128:rev            T= 4462 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+195/210 load4-8:fwd              T=  301 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+196/210 load4-8:rev              T=  301 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+197/210 loadpos4-early:early     T= 1111 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+198/210 loadpos4-late:late       T= 1111 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+199/210 load4-32:fwd             T= 1111 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+200/210 load4-32:rev             T= 1111 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+201/210 load4-128:fwd            T= 4459 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+202/210 load4-128:rev            T= 4459 | VAN:0 CTX:0 NAT:0 PKV:0 OWN:0 FOR:0 | ⚠ CORE-FAIL/REVIEW/INVALID
+  target='harbor office' alts=['dry dock']
+  [VANILLA] status=OK valid=True cat=no_answer trunc=False cache=None/None reason=None
+    raw='on display at the Maritime Museum of the Atlantic in Halifax, Nova Scotia, Canada.'
+  [CONTEXT] status=OK valid=True cat=wrong_alternative trunc=False cache=None/None reason=None
+    raw='dry dock\n\nAssistant:'
+  [NATIVE_KV] status=OK valid=True cat=wrong_alternative trunc=False cache=4499/4499 reason=None
+    raw='dry dock\n\nAssistant:'
+  [PKV_D120] status=OK valid=True cat=wrong_alternative trunc=False cache=4498/4498 reason=None
+    raw='dry dock\n**'
+  [PKV_OWNSINK] status=OK valid=True cat=wrong_alternative trunc=False cache=4498/4498 reason=None
+    raw='dry dock\n**'
+  [FOREIGN_LENMATCH] status=OK valid=True cat=no_answer trunc=True cache=4525/4525 reason=None
+    raw='W2-0\n\nBased on the provided records, the most recent entry for the wooden rudder indicates that it was stored in locker W2-0 by'
+203/210 load5-8:fwd              T=  301 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+204/210 load5-8:rev              T=  301 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+205/210 loadpos5-early:early     T= 1111 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+206/210 loadpos5-late:late       T= 1111 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+207/210 load5-32:fwd             T= 1111 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+208/210 load5-32:rev             T= 1111 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+209/210 load5-128:fwd            T= 4459 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+210/210 load5-128:rev            T= 4459 | VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+[TEST438d] ▶ STAGE finalize / integrity
+  integrity: PASS {"sampled_weight_sentinel_unchanged": true, "frozen_eval": true, "attn_sdpa": true, "seals": true}
+[TEST438d] ▶ STAGE finalize / summary
+==============================================================================================================
+TEST438d RESULT SUMMARY | TEST438d-20261002-091929
+Technical PASS ≠ hypothesis PASS; 6 entity families; a group passes only if all members pass.
+integrity: PASS {"sampled_weight_sentinel_unchanged": true, "frozen_eval": true, "attn_sdpa": true, "seals": true}
+plan/attempt/valid: {"cases": 210, "valid_budget": 210, "attempted": 210, "complete": 210, "generations_planned": {"VANILLA_unique_questions": 54, "per_memory_arm": 210, "FOREIGN_LENMATCH": 186}, "generations": {"smoke_attempted": 17, "smoke_completed": 17, "main_attempted": 1068, "main_completed": 1068, "main_vanilla_reused": 156}, "valid_by_arm": {"VANILLA": 210, "CONTEXT": 210, "NATIVE_KV": 210, "PKV_D120": 198, "PKV_OWNSINK": 210, "FOREIGN_LENMATCH": 174}, "status_by_arm": {"VANILLA": {"OK": 210}, "CONTEXT": {"OK": 210}, "NATIVE_KV": {"OK": 210}, "PKV_D120": {"OK": 210}, "PKV_OWNSINK": {"OK": 210}, "FOREIGN_LENMATCH": {"OK": 174, "NOT_APPLICABLE": 24, "TECHNICAL_INVALID": 12}}}
+  single           units 6/6 | VAN 0/6 CTX 6/6 NAT 6/6 PKV 6/6 OWN 6/6 FOR 0/6 | lift=1.0 | SUPPORTED (pilot; no paired loss vs NATIVE)
+      paired: {'ctx_vs_nat': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'nat_vs_pkv': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'ctx_vs_pkv': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'pkv_vs_own': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}} order: {'VANILLA': {'pairs': 0, 'changed': 0}, 'CONTEXT': {'pairs': 0, 'changed': 0}, 'NATIVE_KV': {'pairs': 0, 'changed': 0}, 'PKV_D120': {'pairs': 0, 'changed': 0}, 'PKV_OWNSINK': {'pairs': 0, 'changed': 0}, 'FOREIGN_LENMATCH': {'pairs': 0, 'changed': 0}} sensitivity: {'pkv_pass_incl_sink_out': 12, 'pkv_ok_incl_sink_out': 12, 'sink_out_cases': 0, 'review': 4}
+  latest           units 6/6 | VAN 0/6 CTX 5/6 NAT 5/6 PKV 6/6 OWN 6/6 FOR 0/6 | lift=1.0 | SUPPORTED (pilot; no paired loss vs NATIVE)
+      paired: {'ctx_vs_nat': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'nat_vs_pkv': {'a_pass_b_fail': 0, 'b_pass_a_fail': 1}, 'ctx_vs_pkv': {'a_pass_b_fail': 0, 'b_pass_a_fail': 1}, 'pkv_vs_own': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}} order: {'VANILLA': {'pairs': 6, 'changed': 0}, 'CONTEXT': {'pairs': 6, 'changed': 1}, 'NATIVE_KV': {'pairs': 6, 'changed': 1}, 'PKV_D120': {'pairs': 6, 'changed': 0}, 'PKV_OWNSINK': {'pairs': 6, 'changed': 0}, 'FOREIGN_LENMATCH': {'pairs': 6, 'changed': 0}} sensitivity: {'pkv_pass_incl_sink_out': 12, 'pkv_ok_incl_sink_out': 12, 'sink_out_cases': 0, 'review': 0}
+  historical       units 6/6 | VAN 0/6 CTX 6/6 NAT 6/6 PKV 6/6 OWN 6/6 FOR 0/6 | lift=1.0 | SUPPORTED (pilot; no paired loss vs NATIVE)
+      paired: {'ctx_vs_nat': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'nat_vs_pkv': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'ctx_vs_pkv': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'pkv_vs_own': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}} order: {'VANILLA': {'pairs': 6, 'changed': 0}, 'CONTEXT': {'pairs': 6, 'changed': 0}, 'NATIVE_KV': {'pairs': 6, 'changed': 0}, 'PKV_D120': {'pairs': 6, 'changed': 0}, 'PKV_OWNSINK': {'pairs': 6, 'changed': 0}, 'FOREIGN_LENMATCH': {'pairs': 6, 'changed': 0}} sensitivity: {'pkv_pass_incl_sink_out': 12, 'pkv_ok_incl_sink_out': 12, 'sink_out_cases': 0, 'review': 8}
+  authority        units 6/6 | VAN 0/6 CTX 6/6 NAT 6/6 PKV 6/6 OWN 6/6 FOR 0/6 | lift=1.0 | SUPPORTED (pilot; no paired loss vs NATIVE)
+      paired: {'ctx_vs_nat': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'nat_vs_pkv': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'ctx_vs_pkv': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'pkv_vs_own': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}} order: {'VANILLA': {'pairs': 6, 'changed': 0}, 'CONTEXT': {'pairs': 6, 'changed': 0}, 'NATIVE_KV': {'pairs': 6, 'changed': 0}, 'PKV_D120': {'pairs': 6, 'changed': 0}, 'PKV_OWNSINK': {'pairs': 6, 'changed': 0}, 'FOREIGN_LENMATCH': {'pairs': 6, 'changed': 0}} sensitivity: {'pkv_pass_incl_sink_out': 12, 'pkv_ok_incl_sink_out': 12, 'sink_out_cases': 0, 'review': 2}
+  correction       units 6/6 | VAN 0/6 CTX 5/6 NAT 5/6 PKV 6/6 OWN 6/6 FOR 0/6 | lift=1.0 | SUPPORTED (pilot; no paired loss vs NATIVE)
+      paired: {'ctx_vs_nat': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'nat_vs_pkv': {'a_pass_b_fail': 0, 'b_pass_a_fail': 1}, 'ctx_vs_pkv': {'a_pass_b_fail': 0, 'b_pass_a_fail': 1}, 'pkv_vs_own': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}} order: {'VANILLA': {'pairs': 6, 'changed': 0}, 'CONTEXT': {'pairs': 6, 'changed': 1}, 'NATIVE_KV': {'pairs': 6, 'changed': 1}, 'PKV_D120': {'pairs': 6, 'changed': 0}, 'PKV_OWNSINK': {'pairs': 6, 'changed': 0}, 'FOREIGN_LENMATCH': {'pairs': 6, 'changed': 0}} sensitivity: {'pkv_pass_incl_sink_out': 12, 'pkv_ok_incl_sink_out': 12, 'sink_out_cases': 0, 'review': 5}
+  ambiguity        units 6/6 | VAN 0/6 CTX 4/6 NAT 4/6 PKV 5/6 OWN 4/6 FOR 0/0 | lift=0.8333333333333334 | TASK NOT SOLVED WITH VISIBLE TEXT (uninterpretable)
+      paired: {'ctx_vs_nat': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'nat_vs_pkv': {'a_pass_b_fail': 0, 'b_pass_a_fail': 1}, 'ctx_vs_pkv': {'a_pass_b_fail': 0, 'b_pass_a_fail': 1}, 'pkv_vs_own': {'a_pass_b_fail': 1, 'b_pass_a_fail': 0}} order: {'VANILLA': {'pairs': 6, 'changed': 0}, 'CONTEXT': {'pairs': 6, 'changed': 0}, 'NATIVE_KV': {'pairs': 6, 'changed': 0}, 'PKV_D120': {'pairs': 6, 'changed': 0}, 'PKV_OWNSINK': {'pairs': 6, 'changed': 0}, 'FOREIGN_LENMATCH': {'pairs': 0, 'changed': 0}} sensitivity: {'pkv_pass_incl_sink_out': 17, 'pkv_ok_incl_sink_out': 18, 'sink_out_cases': 0, 'review': 7}
+  two_hop          units 6/6 | VAN 0/6 CTX 6/6 NAT 6/6 PKV 6/6 OWN 6/6 FOR 0/6 | lift=1.0 | SUPPORTED (pilot; no paired loss vs NATIVE)
+      paired: {'ctx_vs_nat': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'nat_vs_pkv': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'ctx_vs_pkv': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'pkv_vs_own': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}} order: {'VANILLA': {'pairs': 6, 'changed': 0}, 'CONTEXT': {'pairs': 6, 'changed': 0}, 'NATIVE_KV': {'pairs': 6, 'changed': 0}, 'PKV_D120': {'pairs': 6, 'changed': 0}, 'PKV_OWNSINK': {'pairs': 6, 'changed': 0}, 'FOREIGN_LENMATCH': {'pairs': 6, 'changed': 0}} sensitivity: {'pkv_pass_incl_sink_out': 12, 'pkv_ok_incl_sink_out': 12, 'sink_out_cases': 0, 'review': 0}
+  three_hop        units 6/6 | VAN 0/6 CTX 3/6 NAT 4/6 PKV 3/6 OWN 3/6 FOR 0/6 | lift=0.5 | TASK NOT SOLVED WITH VISIBLE TEXT (uninterpretable)
+      paired: {'ctx_vs_nat': {'a_pass_b_fail': 0, 'b_pass_a_fail': 1}, 'nat_vs_pkv': {'a_pass_b_fail': 1, 'b_pass_a_fail': 0}, 'ctx_vs_pkv': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'pkv_vs_own': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}} order: {'VANILLA': {'pairs': 6, 'changed': 0}, 'CONTEXT': {'pairs': 6, 'changed': 3}, 'NATIVE_KV': {'pairs': 6, 'changed': 2}, 'PKV_D120': {'pairs': 6, 'changed': 3}, 'PKV_OWNSINK': {'pairs': 6, 'changed': 3}, 'FOREIGN_LENMATCH': {'pairs': 6, 'changed': 0}} sensitivity: {'pkv_pass_incl_sink_out': 9, 'pkv_ok_incl_sink_out': 12, 'sink_out_cases': 0, 'review': 1}
+  missing          units 6/6 | VAN 0/6 CTX 0/6 NAT 0/6 PKV 0/6 OWN 0/6 FOR 0/0 | lift=0.0 | TASK NOT SOLVED WITH VISIBLE TEXT (uninterpretable)
+      paired: {'ctx_vs_nat': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'nat_vs_pkv': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'ctx_vs_pkv': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'pkv_vs_own': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}} order: {'VANILLA': {'pairs': 12, 'changed': 0}, 'CONTEXT': {'pairs': 12, 'changed': 2}, 'NATIVE_KV': {'pairs': 12, 'changed': 2}, 'PKV_D120': {'pairs': 12, 'changed': 2}, 'PKV_OWNSINK': {'pairs': 12, 'changed': 2}, 'FOREIGN_LENMATCH': {'pairs': 6, 'changed': 0}} sensitivity: {'pkv_pass_incl_sink_out': 10, 'pkv_ok_incl_sink_out': 24, 'sink_out_cases': 0, 'review': 0}
+  load_n008        units 6/6 | VAN 0/6 CTX 6/6 NAT 6/6 PKV 6/6 OWN 6/6 FOR 0/6 | lift=1.0 | SUPPORTED (pilot; no paired loss vs NATIVE)
+      paired: {'ctx_vs_nat': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'nat_vs_pkv': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'ctx_vs_pkv': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'pkv_vs_own': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}} order: {'VANILLA': {'pairs': 6, 'changed': 0}, 'CONTEXT': {'pairs': 6, 'changed': 0}, 'NATIVE_KV': {'pairs': 6, 'changed': 0}, 'PKV_D120': {'pairs': 6, 'changed': 0}, 'PKV_OWNSINK': {'pairs': 6, 'changed': 0}, 'FOREIGN_LENMATCH': {'pairs': 6, 'changed': 0}} sensitivity: {'pkv_pass_incl_sink_out': 12, 'pkv_ok_incl_sink_out': 12, 'sink_out_cases': 0, 'review': 0}
+  load_n032        units 6/6 | VAN 0/6 CTX 4/6 NAT 4/6 PKV 5/6 OWN 5/6 FOR 0/6 | lift=0.8333333333333334 | TASK NOT SOLVED WITH VISIBLE TEXT (uninterpretable)
+      paired: {'ctx_vs_nat': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}, 'nat_vs_pkv': {'a_pass_b_fail': 0, 'b_pass_a_fail': 1}, 'ctx_vs_pkv': {'a_pass_b_fail': 0, 'b_pass_a_fail': 1}, 'pkv_vs_own': {'a_pass_b_fail': 0, 'b_pass_a_fail': 0}} order: {'VANILLA': {'pairs': 6, 'changed': 0}, 'CONTEXT': {'pairs': 6, 'changed': 2}, 'NATIVE_KV': {'pairs': 6, 'changed': 2}, 'PKV_D120': {'pairs': 6, 'changed': 1}, 'PKV_OWNSINK': {'pairs': 6, 'changed': 1}, 'FOREIGN_LENMATCH': {'pairs': 6, 'changed': 0}} sensitivity: {'pkv_pass_incl_sink_out': 11, 'pkv_ok_incl_sink_o
