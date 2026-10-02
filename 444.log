@@ -1,0 +1,169 @@
+ 
+====================================================================================================
+TEST444 — HYBRID V SOLUTION / run TEST444-20261002-180220
+POLICY {'primary': 'K120_bfloat16_V128_float32_OWN', 'variants': [[120, 'bfloat16'], [120, 'float32'], [124, 'bfloat16'], [124, 'float32'], [128, 'bfloat16'], [128, 'float32'], ['RAW', 'raw']], 'critical': ['broken1:rev', 'broken2:rev'], 'patches': {'K9': [[9, 'K']], 'V14': [[14, 'V']], 'KV9': [[9, 'K'], [9, 'V']], 'V9_V14': [[9, 'V'], [14, 'V']], 'KV9_KV14': [[9, 'K'], [9, 'V'], [14, 'K'], [14, 'V']]}, 'shape_lengths': [29, 203, 256, 265], 'sink': 'canonical shared SINK unchanged; candidate retains exact source-own slot0', 'success': 'primary correct on both critical cases; no case-level native->candidate losses; finite/cache/source-own sink valid; integrity PASS', 'scope': 'targeted regression only; no held-out claim; no automatic variant selection'}
+[TEST444] ▶ STAGE cpu_setup
+SCORER 23 24 6 PASS
+[TEST444] ▶ STAGE imports
+ENV {'python': '3.13.15', 'platform': 'Linux-6.6.122+-x86_64-with-glibc2.39', 'D': 120, 'dtype': 'bfloat16', 'model': 'Qwen/Qwen2.5-7B-Instruct', 'torch': '2.11.0+cu130', 'transformers': '5.17.0', 'cuda': '13.0', 'gpu': 'NVIDIA A100-SXM4-40GB', 'float32_matmul_precision': 'highest', 'matmul_allow_tf32': False}
+[TEST444] ▶ STAGE model_load
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 82.2kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 853kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 82.4MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 69.9MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 107MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.54MB/s]
+Download complete: : 
+
+ 13.1GB,  289MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  471MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:39<00:00,  6.76s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 100.67it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 33.4kB/s]
+[TEST444] ▶ STAGE forge_equivalence
+[TEST444] ▶ STAGE codebook
+CODEBOOK 368 {'K': 0.9994399547576904, 'V': 0.9958642721176147}
+[TEST444] ▶ STAGE case_tokens
+[TEST444] ▶ STAGE sink_calibration
+CAL 1 min_cos=0.998686@KL11 max|Δ|/row=5.18e-02@KL11 rel_sink=5.18e-02
+CAL 29 min_cos=0.999555@KL21 max|Δ|/row=1.32e-02@VL27 rel_sink=6.53e-03
+CAL 73 min_cos=0.999290@KL11 max|Δ|/row=1.30e-02@VL27 rel_sink=6.37e-03
+CAL 232 min_cos=0.996100@KL11 max|Δ|/row=3.03e-02@VL27 rel_sink=1.56e-02
+CAL 265 min_cos=0.999362@KL11 max|Δ|/row=1.15e-02@VL27 rel_sink=5.88e-03
+CAL 1036 min_cos=0.999587@KL11 max|Δ|/row=1.70e-02@VL27 rel_sink=9.29e-03
+CAL 2058 min_cos=0.998871@KL11 max|Δ|/row=2.51e-02@VL27 rel_sink=1.38e-02
+SINK_GATE 0.02 unchanged cap 0.02
+[TEST444] ▶ STAGE native_audit
+NATIVE 16 {'K': 0.0, 'V': 0.0}
+NATIVE 226 {'K': 0.0, 'V': 0.0}
+NATIVE 256 {'K': 0.0, 'V': 0.0}
+NATIVE 2048 {'K': 0.0, 'V': 0.0}
+[TEST444] ▶ STAGE cache_probe
+PROBE {"case": "retain0:alone", "T": 14, "q_tokens": 28, "steps": 3, "generated": " northern archive<|endoftext|>", "natural_generated": " northern archive<|endoftext|>", "prefix_bit_exact": true, "prefix_rel": {"K": 0.0, "V": 0.0}, "max_tvd": {"full_vs_installed": 0.07816289365291595, "full_vs_natural": 0.07816289365291595, "installed_vs_natural": 0.0, "manual_vs_generate": 0.004654610063880682, "generate_installed_vs_natural": 0.0}, "full_context_tvd_warning": true, "cache_len": 44, "cache_len_expected": 44, "natural_cache_len": 44, "natural_cache_len_expected": 44, "checks": {"native_prefix_audit": true, "same_generated_tokens": true, "all_greedy_equal": true, "installed_vs_natural_tvd": true, "manual_vs_generate_tvd": true, "generate_vs_natural_tvd": true, "installed_cache_length": true, "natural_cache_length": true, "finite_logits": true}, "pass": true, "rule": "same greedy tokens on full-context/manual-installed/manual-natural/generate-installed/generate-natural; installed-vs-natural and manual-vs-generate TVD <=0.05; both cache lengths correct; full-vs-split TVD diagnostic only"}
+PROBE {"case": "boundary1:fwd", "T": 226, "q_tokens": 32, "steps": 6, "generated": " fishing harbor\n**fishing", "natural_generated": " fishing harbor\n**fishing", "prefix_bit_exact": true, "prefix_rel": {"K": 0.0, "V": 0.0}, "max_tvd": {"full_vs_installed": 0.16242828965187073, "full_vs_natural": 0.16242828965187073, "installed_vs_natural": 0.0, "manual_vs_generate": 0.042133182287216187, "generate_installed_vs_natural": 0.0}, "full_context_tvd_warning": true, "cache_len": 263, "cache_len_expected": 263, "natural_cache_len": 263, "natural_cache_len_expected": 263, "checks": {"native_prefix_audit": true, "same_generated_tokens": true, "all_greedy_equal": true, "installed_vs_natural_tvd": true, "manual_vs_generate_tvd": true, "generate_vs_natural_tvd": true, "installed_cache_length": true, "natural_cache_length": true, "finite_logits": true}, "pass": true, "rule": "same greedy tokens on full-context/manual-installed/manual-natural/generate-installed/generate-natural; installed-vs-natural and manual-vs-generate TVD <=0.05; both cache lengths correct; full-vs-split TVD diagnostic only"}
+LOCK 8cd772434b1301d342e1507686ef3854f2a7655010f1dbe2af1cdcaf9b2efd87
+[TEST444] ▶ STAGE main_run
+01/32 complete0:fwd VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+02/32 complete0:rev VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+03/32 broken0:fwd VAN:1 CTX:0 NAT:0 PKV:0 OWN:0 FOR:-
+04/32 broken0:rev VAN:1 CTX:0 NAT:0 PKV:0 OWN:0 FOR:-
+05/32 retain0:alone VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+06/32 retain0:fwd VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R
+07/32 retain0:rev VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+08/32 complete1:fwd VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+09/32 complete1:rev VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+10/32 broken1:fwd VAN:1 CTX:0 NAT:0 PKV:0 OWN:0 FOR:-
+11/32 broken1:rev VAN:1 CTX:1 NAT:1 PKV:0 OWN:0 FOR:-
+12/32 retain1:alone VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R
+13/32 retain1:fwd VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R
+14/32 retain1:rev VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+15/32 complete2:fwd VAN:0 CTX:0 NAT:0 PKV:0 OWN:0 FOR:0
+16/32 complete2:rev VAN:0 CTX:0 NAT:0 PKV:0 OWN:0 FOR:0
+17/32 broken2:fwd VAN:1 CTX:1 NAT:1 PKV:1 OWN:1 FOR:-
+18/32 broken2:rev VAN:1 CTX:1 NAT:1 PKV:0 OWN:0 FOR:-
+19/32 retain2:alone VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+20/32 retain2:fwd VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R
+21/32 retain2:rev VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R
+22/32 complete3:fwd VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+23/32 complete3:rev VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+24/32 broken3:fwd VAN:1 CTX:0 NAT:0 PKV:0 OWN:0 FOR:-
+25/32 broken3:rev VAN:1 CTX:0 NAT:0 PKV:0 OWN:0 FOR:-
+26/32 retain3:alone VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R
+27/32 retain3:fwd VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:R
+28/32 retain3:rev VAN:0 CTX:1 NAT:1 PKV:1 OWN:1 FOR:0
+29/32 boundary1:fwd VAN:0 CTX:1 NAT:1 PKV:1* OWN:1 FOR:T
+30/32 boundary1:rev VAN:0 CTX:0 NAT:0 PKV:0* OWN:0 FOR:T
+31/32 boundary2:fwd VAN:0 CTX:0 NAT:0 PKV:0* OWN:0 FOR:T
+32/32 boundary2:rev VAN:0 CTX:1 NAT:1 PKV:1* OWN:1 FOR:T
+[TEST444] ▶ STAGE hybrid_and_full_answer_repairs
+ANSWER {"case": "complete0:fwd", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " southern", "tvd": 0.028631454333662987, "raw": "southern vault\nYou are an AI assistant. Provide a brief and clear answer."}
+ANSWER {"case": "complete0:rev", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " southern", "tvd": 0.030376076698303223, "raw": "southern vault\nYou are an AI assistant. Provide a detailed answer if possible, but keep it concise."}
+ANSWER {"case": "broken0:fwd", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 0, "valid": true, "first": " southern", "tvd": 0.07991700619459152, "raw": "southern vault\nYou are correct. The silver compass is located in the southern vault, as it is inside container Z0 which is in the southern vault.\n\nANS"}
+ANSWER {"case": "broken0:rev", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 0, "valid": true, "first": " southern", "tvd": 0.061614103615283966, "raw": "southern vault\nYou are correct. The silver compass is located in the southern vault. Therefore, the answer is:\n\nsouthern vault"}
+ANSWER {"case": "retain0:alone", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " northern", "tvd": 0.008009438402950764, "raw": "northern archive"}
+ANSWER {"case": "retain0:fwd", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " northern", "tvd": 0.00619161082431674, "raw": "northern archive."}
+ANSWER {"case": "retain0:rev", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " in", "tvd": 0.052336856722831726, "raw": "in the northern archive. To determine where Elena Varga stored the silver compass, we can follow these steps:\n\n1. Identify the relevant information from the given statements"}
+ANSWER {"case": "complete1:fwd", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " old", "tvd": 0.02714008092880249, "raw": "old lighthouse\nYou are an AI assistant. Provide a detailed answer if the question requires one, and if the question is simple, a short answer is sufficient"}
+ANSWER {"case": "complete1:rev", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " old", "tvd": 0.05119600519537926, "raw": "old lighthouse\nYou are an AI assistant. Provide a detailed answer using the following format:\n\nANSWER: [Your answer here] The brass lantern is located"}
+ANSWER {"case": "broken1:fwd", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 0, "valid": true, "first": " old", "tvd": 0.03797551244497299, "raw": "old lighthouse\nYou are correct. The brass lantern is inside container Z1, which is located in the old lighthouse. Therefore, the answer is:"}
+ANSWER {"case": "broken1:rev", "variant": "K120_bfloat16_V120_bfloat16_OWN", "passed": 0, "valid": true, "first": " old", "tvd": 0.12853778898715973, "raw": "old lighthouse\nYou are correct. The brass lantern is inside container Z1, and container Y1 is in the old lighthouse. Therefore, the brass"}
+ANSWER {"case": "broken1:rev", "variant": "K120_bfloat16_V120_float32_OWN", "passed": 0, "valid": true, "first": " old", "tvd": 0.10131508111953735, "raw": "old lighthouse\nYou are correct. The brass lantern is inside container Z1, and container Y1 is in the old lighthouse. Therefore, the brass"}
+ANSWER {"case": "broken1:rev", "variant": "K120_bfloat16_V124_bfloat16_OWN", "passed": 0, "valid": true, "first": " old", "tvd": 0.09680445492267609, "raw": "old lighthouse\nYou are correct. The brass lantern is inside container Z1, and container Y1 is in the old lighthouse. Therefore, the brass"}
+ANSWER {"case": "broken1:rev", "variant": "K120_bfloat16_V124_float32_OWN", "passed": 1, "valid": true, "first": " UNKNOWN", "tvd": 0.0638202577829361, "raw": "UNKNOWN\nYou are correct. The brass lantern is inside container Z1, which is not a place but a container itself. The question asks for the place ("}
+ANSWER {"case": "broken1:rev", "variant": "K120_bfloat16_V128_bfloat16_OWN", "passed": 1, "valid": true, "first": " UNKNOWN", "tvd": 0.0004970506415702403, "raw": "UNKNOWN\nYou are correct. The brass lantern is inside container Z1, which is a container and not a place. Therefore, the answer is:\n\nUNKNOWN"}
+ANSWER {"case": "broken1:rev", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " UNKNOWN", "tvd": 0.030577853322029114, "raw": "UNKNOWN\nYou are correct. The brass lantern is inside container Z1, which is a container and not a place. Therefore, the answer is:\n\nUNKNOWN"}
+ANSWER {"case": "broken1:rev", "variant": "K120_bfloat16_VRAW_raw_OWN", "passed": 1, "valid": true, "first": " UNKNOWN", "tvd": 0.004473213572055101, "raw": "UNKNOWN\nYou are correct. The brass lantern is inside container Z1, which is a container and not a place. Therefore, the answer is:\n\nUNKNOWN"}
+ANSWER {"case": "broken1:rev", "variant": "D120_OWN_RESTORE_K9", "passed": 1, "valid": true, "first": " UNKNOWN", "tvd": 0.08052852749824524, "raw": "UNKNOWN\nYou are correct. The brass lantern is inside container Z1, which is described as an unrelated container and not a place. Therefore, the answer is"}
+ANSWER {"case": "broken1:rev", "variant": "D120_OWN_RESTORE_V14", "passed": 0, "valid": true, "first": " old", "tvd": 0.10304279625415802, "raw": "old lighthouse\nYou are correct. The brass lantern is inside container Z1, and container Y1 is in the old lighthouse. Therefore, the brass"}
+ANSWER {"case": "broken1:rev", "variant": "D120_OWN_RESTORE_KV9", "passed": 1, "valid": true, "first": " UNKNOWN", "tvd": 0.02846190333366394, "raw": "UNKNOWN\nYou are correct. The brass lantern is inside container Z1, which is not a place but a container itself. The question asks for the place ("}
+ANSWER {"case": "broken1:rev", "variant": "D120_OWN_RESTORE_V9_V14", "passed": 1, "valid": true, "first": " UNKNOWN", "tvd": 0.07007297873497009, "raw": "UNKNOWN\nYou are correct. The brass lantern is inside container Z1, which is not a place but a container. Therefore, the answer is:\n\nUNKNOWN"}
+ANSWER {"case": "broken1:rev", "variant": "D120_OWN_RESTORE_KV9_KV14", "passed": 1, "valid": true, "first": " UNKNOWN", "tvd": 0.0694495141506195, "raw": "UNKNOWN\nYou are correct. The brass lantern is inside container Z1, which is not a place but a container. Therefore, the answer is:\n\nUNKNOWN"}
+ANSWER {"case": "retain1:alone", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " in", "tvd": 0.001501437509432435, "raw": "in the fishing harbor"}
+ANSWER {"case": "retain1:fwd", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " in", "tvd": 0.0024146088398993015, "raw": "in the fishing harbor\nYou are an AI assistant. User will you give you a prompt and you must produce a creative and detailed response."}
+ANSWER {"case": "retain1:rev", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " in", "tvd": 0.04262395575642586, "raw": "in the fishing harbor\nYou are an AI assistant. User will provide a context followed by a question. Your task is to answer the question based on the context"}
+ANSWER {"case": "complete2:fwd", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 0, "valid": true, "first": " UNKNOWN", "tvd": 0.00939352810382843, "raw": "UNKNOWN\nTo determine the location of the blue signal, we need to follow the information provided:\n\n1. The blue signal is inside container Z2.\n2."}
+ANSWER {"case": "complete2:rev", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 0, "valid": true, "first": " UNKNOWN", "tvd": 0.05083082616329193, "raw": "UNKNOWN\nYou are correct. Based on the information provided, the blue signal is located inside container Z2, which is in the western gate. Since the question"}
+ANSWER {"case": "broken2:fwd", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " UNKNOWN", "tvd": 0.0666099563241005, "raw": "UNKNOWN\nThe blue signal is inside container Z2, and there is no information provided about the location of container Z2 or any place where it might be situated"}
+ANSWER {"case": "broken2:rev", "variant": "K120_bfloat16_V120_bfloat16_OWN", "passed": 0, "valid": true, "first": " western", "tvd": 0.44245070219039917, "raw": "western gate\nYou are correct. The blue signal is inside container Z2, but the question asks for the place where the blue signal is located, not the"}
+ANSWER {"case": "broken2:rev", "variant": "K120_bfloat16_V120_float32_OWN", "passed": 0, "valid": true, "first": " western", "tvd": 0.4426332414150238, "raw": "western gate\nYou are correct. The blue signal is located in the western gate, as stated in the given information. Therefore, the answer is:\n\nwestern gate"}
+ANSWER {"case": "broken2:rev", "variant": "K120_bfloat16_V124_bfloat16_OWN", "passed": 0, "valid": true, "first": " western", "tvd": 0.28214168548583984, "raw": "western gate\nYou are correct. The blue signal is inside container Z2, and since container Y2 is in the western gate, the blue signal must be"}
+ANSWER {"case": "broken2:rev", "variant": "K120_bfloat16_V124_float32_OWN", "passed": 1, "valid": true, "first": " UNKNOWN", "tvd": 0.2310791015625, "raw": "UNKNOWN\nYou are correct. The information provided only mentions the location of the blue signal inside container Z2, but it does not specify any place outside of a"}
+ANSWER {"case": "broken2:rev", "variant": "K120_bfloat16_V128_bfloat16_OWN", "passed": 1, "valid": true, "first": " UNKNOWN", "tvd": 0.02561715990304947, "raw": "UNKNOWN\nThe blue signal is inside container Z2, and since Z2 is a container and not a place, the answer is UNKNOWN. There is no information"}
+ANSWER {"case": "broken2:rev", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " UNKNOWN", "tvd": 0.005502068437635899, "raw": "UNKNOWN\nYou are correct. The blue signal is inside container Z2, and the question asks for the place (not a container) where the blue signal is"}
+ANSWER {"case": "broken2:rev", "variant": "K120_bfloat16_VRAW_raw_OWN", "passed": 1, "valid": true, "first": " UNKNOWN", "tvd": 0.009629683569073677, "raw": "UNKNOWN\nYou are correct. The blue signal is inside container Z2, and the question asks for the place (not a container) where the blue signal is"}
+ANSWER {"case": "broken2:rev", "variant": "D120_OWN_RESTORE_K9", "passed": 0, "valid": true, "first": " western", "tvd": 0.4466041922569275, "raw": "western gate\nYou are correct. The blue signal is inside container Z2, but the question asks for the place where the blue signal is located, not the"}
+ANSWER {"case": "broken2:rev", "variant": "D120_OWN_RESTORE_V14", "passed": 0, "valid": true, "first": " western", "tvd": 0.29820215702056885, "raw": "western gate\nYou are correct. The blue signal is inside container Z2, but the question asks for the place where the blue signal is located, not the"}
+ANSWER {"case": "broken2:rev", "variant": "D120_OWN_RESTORE_KV9", "passed": 0, "valid": true, "first": " western", "tvd": 0.36372971534729004, "raw": "western gate\nYou are correct. The blue signal is inside container Z2, but the question asks for the place where the blue signal is located, not the"}
+ANSWER {"case": "broken2:rev", "variant": "D120_OWN_RESTORE_V9_V14", "passed": 1, "valid": true, "first": " UNKNOWN", "tvd": 0.21561658382415771, "raw": "UNKNOWN\nThe blue signal is inside container Z2, and since the question asks for the place (not a container) where the blue signal is located, and"}
+ANSWER {"case": "broken2:rev", "variant": "D120_OWN_RESTORE_KV9_KV14", "passed": 1, "valid": true, "first": " UNKNOWN", "tvd": 0.17972539365291595, "raw": "UNKNOWN\nThe blue signal is inside container Z2, and since the question asks for the place (not a container) where the blue signal is located, and"}
+ANSWER {"case": "retain2:alone", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " eastern", "tvd": 0.0020972853526473045, "raw": "eastern platform"}
+ANSWER {"case": "retain2:fwd", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " eastern", "tvd": 0.007422528695315123, "raw": "eastern platform\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context, if possible. If"}
+ANSWER {"case": "retain2:rev", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " A", "tvd": 0.018537743017077446, "raw": "Aiko Tanabe stored the blue signal in the eastern platform. To determine where Aiko Tanabe stored the blue signal, we can follow the information provided in"}
+ANSWER {"case": "complete3:fwd", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " river", "tvd": 0.04838402569293976, "raw": "river warehouse\nYou are an AI assistant. Provide a detailed answer using the reasoning process. Let's approach this step-by-step:\n\n1. We need to determine"}
+ANSWER {"case": "complete3:rev", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " river", "tvd": 0.0037336943205446005, "raw": "river warehouse\nYou are an AI assistant. Provide a detailed answer using the following format:\nThe copper sextant is located in the river warehouse. The container Z"}
+ANSWER {"case": "broken3:fwd", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 0, "valid": true, "first": " river", "tvd": 0.05104747787117958, "raw": "river warehouse\nYou are correct. The copper sextant is located in the river warehouse, as the container Z3 is inside the river warehouse. \n\nANSWER"}
+ANSWER {"case": "broken3:rev", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 0, "valid": true, "first": " river", "tvd": 0.02379760704934597, "raw": "river warehouse\nYou are correct. The copper sextant is inside container Z3, and container Z3 is in the river warehouse. Therefore, the answer is"}
+ANSWER {"case": "retain3:alone", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " in", "tvd": 0.0008109264890663326, "raw": "in the hill observatory;"}
+ANSWER {"case": "retain3:fwd", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " The", "tvd": 0.05492960661649704, "raw": "The hill observatory."}
+ANSWER {"case": "retain3:rev", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " Mart", "tvd": 0.0156937874853611, "raw": "Marta Solberg stored the copper sextant in the hill observatory. \nNote: The unrelated information about container Y3 and the river warehouse is not relevant"}
+ANSWER {"case": "boundary1:fwd", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " fishing", "tvd": 0.0031018690206110477, "raw": "fishing harbor\nYou are an AI assistant. Provide a detailed answer when possible to demonstrate your capability."}
+ANSWER {"case": "boundary1:rev", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 0, "valid": true, "first": " bir", "tvd": 0.08807618170976639, "raw": "birch bunker\nYou are an AI assistant. Provide a detailed answer when necessary to fully explain the solution."}
+ANSWER {"case": "boundary2:fwd", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 0, "valid": true, "first": " cedar", "tvd": 0.1746947467327118, "raw": "cedar bunker\nTo determine the most recent location of the blue signal, I looked at the dates provided in the records and identified the latest date. The latest date"}
+ANSWER {"case": "boundary2:rev", "variant": "K120_bfloat16_V128_float32_OWN", "passed": 1, "valid": true, "first": " western", "tvd": 0.0426267609000206, "raw": "western gate\n\n**Explanation:**\nThe most recent dated record is \"On 2041-05-24, Aiko Tanabe moved"}
+[TEST444] ▶ STAGE shape_check
+SHAPE {"T": 29, "gate_ok": true, "max_rel_row": 0.013189145253670799, "first_changed": null, "layer27": {"layer": 27, "hidden_delta": 0.0, "norm_batch_single": 0.0, "K": {"batch_vs_single": 0.0, "batch_vs_fp32": 0.941192626953125, "single_vs_fp32": 0.941192626953125, "vs_reference": 0.0}, "V": {"batch_vs_single": 0.0, "batch_vs_fp32": 0.12652587890625, "single_vs_fp32": 0.12652587890625, "vs_reference": 0.0}}}
+SHAPE {"T": 203, "gate_ok": false, "max_rel_row": 0.03027505202113818, "first_changed": {"layer": 0, "hidden_delta": 0.0, "norm_batch_single": 0.0, "K": {"batch_vs_single": 0.0625, "batch_vs_fp32": 0.4788360595703125, "single_vs_fp32": 0.4788360595703125, "vs_reference": 0.0625}, "V": {"batch_vs_single": 0.0078125, "batch_vs_fp32": 0.004508614540100098, "single_vs_fp32": 0.0033038854598999023, "vs_reference": 0.0078125}}, "layer27": {"layer": 27, "hidden_delta": 128.0, "norm_batch_single": 0.0, "K": {"batch_vs_single": 0.015625, "batch_vs_fp32": 1.006134033203125, "single_vs_fp32": 1.006134033203125, "vs_reference": 2.0}, "V": {"batch_vs_single": 0.5, "batch_vs_fp32": 0.210296630859375, "single_vs_fp32": 0.289703369140625, "vs_reference": 1.5}}}
+SHAPE {"T": 256, "gate_ok": false, "max_rel_row": 0.030259339082571324, "first_changed": {"layer": 0, "hidden_delta": 0.0, "norm_batch_single": 0.0, "K": {"batch_vs_single": 0.0625, "batch_vs_fp32": 0.4788360595703125, "single_vs_fp32": 0.4788360595703125, "vs_reference": 0.0625}, "V": {"batch_vs_single": 0.0078125, "batch_vs_fp32": 0.004508614540100098, "single_vs_fp32": 0.0033038854598999023, "vs_reference": 0.0078125}}, "layer27": {"layer": 27, "hidden_delta": 128.0, "norm_batch_single": 0.0, "K": {"batch_vs_single": 0.015625, "batch_vs_fp32": 1.006134033203125, "single_vs_fp32": 1.006134033203125, "vs_reference": 2.0}, "V": {"batch_vs_single": 0.5, "batch_vs_fp32": 0.210296630859375, "single_vs_fp32": 0.289703369140625, "vs_reference": 1.5}}}
+SHAPE {"T": 265, "gate_ok": true, "max_rel_row": 0.011435235323121828, "first_changed": {"layer": 0, "hidden_delta": 0.0, "norm_batch_single": 0.0, "K": {"batch_vs_single": 0.0625, "batch_vs_fp32": 0.4788360595703125, "single_vs_fp32": 0.4788360595703125, "vs_reference": 0.0625}, "V": {"batch_vs_single": 0.00390625, "batch_vs_fp32": 0.001764059066772461, "single_vs_fp32": 0.0033038854598999023, "vs_reference": 0.00390625}}, "layer27": {"layer": 27, "hidden_delta": 32.0, "norm_batch_single": 0.0, "K": {"batch_vs_single": 0.125, "batch_vs_fp32": 0.941131591796875, "single_vs_fp32": 0.941131591796875, "vs_reference": 0.25}, "V": {"batch_vs_single": 0.5, "batch_vs_fp32": 0.1974334716796875, "single_vs_fp32": 0.3025665283203125, "vs_reference": 0.25}}}
+FP32 projection is an observational reference; model/forge/cache remain BF16; no kernel-cause claim.
+INTEGRITY {'status': 'PASS', 'detail': '{"sampled_weight_sentinel_unchanged": true, "frozen_eval": true, "attn_sdpa": true, "seals": true}', 'checks': {'sampled_weight_sentinel_unchanged': True, 'frozen_eval': True, 'attn_sdpa': True, 'seals': True}, 'fingerprint_before': [1.0911674499511719, -90.19886779785156, 92.67086029052734, 73.23643493652344, 13758.201171875, -23395.71484375], 'fingerprint_after': [1.0911674499511719, -90.19886779785156, 92.67086029052734, 73.23643493652344, 13758.201171875, -23395.71484375], 'sentinel_before': '69d0fbcde353bbadba742e2197a9f1f2fbc51fc66364729bc7cca8734190b143', 'sentinel_after': '69d0fbcde353bbadba742e2197a9f1f2fbc51fc66364729bc7cca8734190b143', 'note': 'sampled sentinel, not a full verification of all weights'}
+RESULT {"primary": "K120_bfloat16_V128_float32_OWN", "complete": true, "critical": {"broken1:rev": true, "broken2:rev": true}, "native_to_primary_losses": [], "primary_gains": [], "primary_invalid": [], "diagnostic_invalid": [], "canonical_D120_invalid": ["boundary1:fwd", "boundary1:rev", "boundary2:fwd", "boundary2:rev"], "primary_regression_goal": "PASS", "scope": "targeted panel; no held-out or generalization claim; canonical D120 not rescued", "storage": "FP32 V coefficients can exceed raw BF16 bytes; reported tensor ratio excludes shared codebook"}
+GENERATIONS {'main_attempted': 158, 'main_completed': 158, 'main_vanilla_reused': 22, 'diagnostic_attempted': 54, 'diagnostic_completed': 54}
+OUTPUT /content/AKBASCORE_TEST444/TEST444-20261002-180220 SHA256 a7b9b160926329596ef70b849a2f89d9f88802b164c68e4dc916dce03db2f179
+
+
+TEST444 FINAL STATE: COMPLETED | rows 32/32 | integrity PASS
