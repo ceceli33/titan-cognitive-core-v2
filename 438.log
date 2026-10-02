@@ -1,0 +1,282 @@
+ 
+==============================================================================================================
+TEST438c — NIRVANA PKV D120 — SELECTION / COMPOSITION / LOAD (pre-registered pilot) | run TEST438c-20261002-083225
+==============================================================================================================
+[TEST438c] ▶ STAGE cpu_setup / cases + scorer self-test
+  PASS | 'northern archive'                                                          target=northern archive expected=correct_exact/correct got=correct_exact/correct
+  PASS | 'The northern archive.\nYou are an AI assistant.'                           target=northern archive expected=correct_exact/correct got=correct_exact/correct
+  PASS | '**Northern Archive**'                                                      target=northern archive expected=correct_exact/correct got=correct_exact/correct
+  PASS | 'The compass is not in the northern archive.'                               target=northern archive expected=negated_target/incorrect got=negated_target/incorrect
+  PASS | 'southern vault'                                                            target=northern archive expected=wrong_alternative/incorrect got=wrong_alternative/incorrect
+  PASS | 'northern archive or southern vault'                                        target=northern archive expected=mixed/incorrect got=mixed/incorrect
+  PASS | 'Not the southern vault, but the northern archive.'                         target=northern archive expected=correct_with_rejection/correct got=correct_with_rejection/correct
+  PASS | 'AMBIGUOUS'                                                                 target=northern archive expected=wrong_special/incorrect got=wrong_special/incorrect
+  PASS | 'UNKNOWN'                                                                   target=UNKNOWN          expected=correct_exact/correct got=correct_exact/correct
+  PASS | 'Not UNKNOWN'                                                               target=UNKNOWN          expected=negated_target/incorrect got=negated_target/incorrect
+  PASS | 'UNKNOWN - northern archive'                                                target=UNKNOWN          expected=mixed/incorrect got=mixed/incorrect
+  PASS | 'container Z0'                                                              target=UNKNOWN          expected=wrong_alternative/incorrect got=wrong_alternative/incorrect
+  PASS | 'The location cannot be determined.'                                        target=UNKNOWN          expected=abstain_nonstandard/review got=abstain_nonstandard/review
+  PASS | 'AMBIGUOUS'                                                                 target=AMBIGUOUS        expected=correct_exact/correct got=correct_exact/correct
+  PASS | 'Not AMBIGUOUS'                                                             target=AMBIGUOUS        expected=negated_target/incorrect got=negated_target/incorrect
+  PASS | ''                                                                          target=northern archive expected=empty/incorrect got=empty/incorrect
+  PASS | 'To determine this we must analyze each record carefully.'                  target=northern archive expected=no_answer/incorrect got=no_answer/incorrect
+  PASS | 'It is not where the report says.'                                          target=northern archive expected=unparsed_negation/review got=unparsed_negation/review
+  PASS | "The compass isn't in the southern vault; it is in the northern archive."   target=northern archive expected=correct_with_rejection/correct got=correct_with_rejection/correct
+  PASS | 'Northern archive is not the correct location.'                             target=northern archive expected=negated_target/incorrect got=negated_target/incorrect
+  PASS | 'It is not UNKNOWN; it is northern archive.'                                target=northern archive expected=correct_verbose/correct got=correct_verbose/correct
+  PASS | 'Northern archive. No, not the northern archive.'                           target=northern archive expected=conflicting_mentions/review got=conflicting_mentions/review
+  PASS | 'It is not certain, but northern archive.'                                  target=northern archive expected=unattributed_negation/review got=unattributed_negation/review
+  scorer self-test: 23 fixtures PASS
+[TEST438c] ▶ STAGE imports
+  env: {"python": "3.13.15", "platform": "Linux-6.6.122+-x86_64-with-glibc2.39", "D": 120, "dtype": "bfloat16", "model": "Qwen/Qwen2.5-7B-Instruct", "torch": "2.11.0+cu130", "transformers": "5.17.0", "cuda": "13.0", "gpu": "NVIDIA A100-SXM4-40GB"}
+[TEST438c] ▶ STAGE model_load
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 82.3kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 661kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 85.1MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 70.8MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 118MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.55MB/s]
+Download complete: : 
+
+ 13.1GB,  528MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  426MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:40<00:00,  7.19s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 99.12it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 32.9kB/s]
+  loaded in 51.3s | PAD/start id=151643 | EOS=[151643, 151645] | attn=sdpa
+[TEST438c] ▶ STAGE forge_equivalence / logits_to_keep + determinism
+  forge deterministic=True | logits_to_keep supported=True used=True
+[TEST438c] ▶ STAGE codebook
+  rows=368 | explained variance @D120: K=0.9994 V=0.9959 | 2.7s
+[TEST438c] ▶ STAGE case_tokens / budget + foreign length matching
+  cases=210 groups=102 unique sources=198 valid(budget)=210 | source tokens 14–4462 | FOREIGN_LENMATCH applicable=186 (tolerance ±max(4,15%))
+  GPU free 24.7 GiB | estimated extra peak for representations ≈ 4.59 GiB
+[TEST438c] ▶ STAGE sink_calibration / neutral lengths, answer-independent
+  T=    1 min_cos=0.998686@KL11(|sink|=1.43,|x0|=1.42,|Δ|=0.0742) max|Δ|/row=5.18e-02@KL11(|Δ|/|sink|=5.18e-02,row=1.43) finite=True
+  T=   29 min_cos=0.999555@KL21(|sink|=2.57,|x0|=2.58,|Δ|=0.0788) max|Δ|/row=1.32e-02@VL27(|Δ|/|sink|=6.53e-03,row=82.4) finite=True
+  T=   73 min_cos=0.999290@KL11(|sink|=1.43,|x0|=1.44,|Δ|=0.0546) max|Δ|/row=1.30e-02@VL27(|Δ|/|sink|=6.37e-03,row=81.7) finite=True
+  T=  265 min_cos=0.999362@KL11(|sink|=1.43,|x0|=1.44,|Δ|=0.052) max|Δ|/row=1.15e-02@VL27(|Δ|/|sink|=5.88e-03,row=85.2) finite=True
+  T= 1036 min_cos=0.999587@KL11(|sink|=1.43,|x0|=1.43,|Δ|=0.0413) max|Δ|/row=1.70e-02@VL27(|Δ|/|sink|=9.29e-03,row=91) finite=True
+  T= 2058 min_cos=0.998871@KL11(|sink|=1.43,|x0|=1.44,|Δ|=0.0692) max|Δ|/row=2.51e-02@VL27(|Δ|/|sink|=1.38e-02,row=91.2) finite=True
+  T= 4474 min_cos=0.999234@KL11(|sink|=1.43,|x0|=1.44,|Δ|=0.0563) max|Δ|/row=1.60e-02@VL27(|Δ|/|sink|=8.76e-03,row=90.8) finite=True
+  eager T≈4462: min_cos=0.999234@KL11(|sink|=1.43,|x0|=1.44,|Δ|=0.0563) max|Δ|/row=1.68e-02@VL27(|Δ|/|sink|=8.76e-03,row=86.6) | SINK bit-exact on repeat=True
+  pre-registered gate |Δ|/row ≤ 2.00e-02 = min(max(2.0×envelope 2.51e-02, floor 0.001), cap 0.02) ⚠ envelope×mult exceeded cap → cap applied
+  cap note: the 2% cap on |Δ|/row is an engineering tolerance pre-selected for this pilot; it is not a physical or semantic guarantee. Cosine is reported alongside but not used for gating.
+[TEST438c] ▶ STAGE native_audit / install(K,V) vs model past_key_values by length
+  T≈16: K=0.00e+00 V=0.00e+00
+  T≈256: K=0.00e+00 V=0.00e+00
+  T≈2048: K=0.00e+00 V=0.00e+00
+  T≈4462: K=0.00e+00 V=0.00e+00
+[TEST438c] ▶ STAGE cache_probe / context forward vs cache forward vs generate, multi-step
+  {"case": "single0:orig", "T": 14, "q_tokens": 28, "steps": 3, "generated": " northern archive<|endoftext|>", "token_ids": [18172, 18132, 151643], "argmax_all_equal": true, "tvd_context_vs_cache": 0.07816289365291595, "tvd_cache_vs_generate": 0.004654610063880682, "maxabs_logit_context_vs_cache": 0.53125, "maxabs_logit_cache_vs_generate": 0.328125, "bit_exact_cache_vs_generate": false, "cache_len_after_generate": 44, "cache_len_expected": 44, "conditions": "context: [PAD]+source+SEP+question+generated[:-1], positions 0..; cache: question+generated[:-1] after T installed slots, attention_mask=ones(T+len), positions T..; generate: PAD×T dummy prefix + question with the same installed cache", "cache_len_ok": true, "pass": false}
+     step 0: generated=18172 ctx=18172 cache=18172 gen=18172
+     step 1: generated=18132 ctx=18132 cache=18132 gen=18132
+     step 2: generated=151643 ctx=151643 cache=151643 gen=151643
+  {"case": "load1-128:fwd", "T": 4462, "q_tokens": 34, "steps": 6, "generated": " old lighthouse\n\nAssistant:", "token_ids": [2310, 326, 57909, 271, 71703, 25], "argmax_all_equal": true, "tvd_context_vs_cache": 0.025591187179088593, "tvd_cache_vs_generate": 0.027402538806200027, "maxabs_logit_context_vs_cache": 0.75, "maxabs_logit_cache_vs_generate": 0.662109375, "bit_exact_cache_vs_generate": false, "cache_len_after_generate": 4501, "cache_len_expected": 4501, "conditions": "context: [PAD]+source+SEP+question+generated[:-1], positions 0..; cache: question+generated[:-1] after T installed slots, attention_mask=ones(T+len), positions T..; generate: PAD×T dummy prefix + question with the same installed cache", "cache_len_ok": true, "pass": true}
+     step 0: generated=2310 ctx=2310 cache=2310 gen=2310
+     step 1: generated=326 ctx=326 cache=326 gen=326
+     step 2: generated=57909 ctx=57909 cache=57909 gen=57909
+     step 3: generated=271 ctx=271 cache=271 gen=271
+     step 4: generated=71703 ctx=71703 cache=71703 gen=71703
+     step 5: generated=25 ctx=25 cache=25 gen=25
+##############################################################################################################
+TEST438c ERROR REPORT — BEGIN
+run_id: TEST438c-20261002-083225
+utc: 2026-10-02T08:33:46.225+00:00
+stage: cache_probe | sub-stage: load1-128:fwd
+engine: D=120 DMAX=128 dtype=bfloat16 attn_implementation=sdpa model=Qwen/Qwen2.5-7B-Instruct
+environment: {"python": "3.13.15", "platform": "Linux-6.6.122+-x86_64-with-glibc2.39", "D": 120, "dtype": "bfloat16", "model": "Qwen/Qwen2.5-7B-Instruct", "torch": "2.11.0+cu130", "transformers": "5.17.0", "cuda": "13.0", "gpu": "NVIDIA A100-SXM4-40GB", "attn": "sdpa"}
+last recorded GPU-op context: {"op": "forge", "case": "load1-128:fwd", "T": 4462}
+progress: rows=0 complete=0/210 generations={}
+fatal: False | continuation possible: True | runtime restart required: no
+error class: __main__.TechStop
+error message:
+cache probe FAILED (pre-registered: identical greedy tokens on all paths, TVD ≤ 0.05, cache length = prompt+new−1). Long run not started. Details above.
+traceback:
+(planned technical stop — no traceback needed)
+TEST438c ERROR REPORT — END
+##############################################################################################################
+[TEST438c] ▶ STAGE finalize / integrity
+  integrity: PASS {"sampled_weight_sentinel_unchanged": true, "frozen_eval": true, "attn_sdpa": true, "seals": null}
+[TEST438c] ▶ STAGE finalize / summary
+==============================================================================================================
+TEST438c RESULT SUMMARY — run TEST438c-20261002-083225
+NOTE: technical PASS ≠ hypothesis PASS. Pilot scale (6 entity families). Units = order pairs / matched sets; a unit passes only if all members pass.
+integrity: PASS {"sampled_weight_sentinel_unchanged": true, "frozen_eval": true, "attn_sdpa": true, "seals": null}
+plan/attempt/valid: {"cases": 210, "valid_budget": 210, "attempted": 0, "complete": 0, "generations_planned": {"VANILLA_unique_questions": 54, "per_memory_arm": 210, "FOREIGN_LENMATCH": 186}, "generations": {}, "valid_by_arm": {"VANILLA": 0, "CONTEXT": 0, "NATIVE_KV": 0, "PKV_D120": 0, "PKV_OWNSINK": 0, "FOREIGN_LENMATCH": 0}, "status_by_arm": {"VANILLA": {}, "CONTEXT": {}, "NATIVE_KV": {}, "PKV_D120": {}, "PKV_OWNSINK": {}, "FOREIGN_LENMATCH": {}}}
+  single           units 0/6 | VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | lift=n/a | INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+      paired: CTX>NAT 0 NAT>CTX 0 | NAT>PKV 0 PKV>NAT 0 | PKV>OWN 0 OWN>PKV 0 | order changed VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | sink-out cases 0 (PKV incl. them: 0/0, not used for verdict) | review 0
+      ✗ group single0: missing=['single0:orig', 'single0:cf'] invalid={}
+      ✗ group single1: missing=['single1:orig', 'single1:cf'] invalid={}
+      ✗ group single2: missing=['single2:orig', 'single2:cf'] invalid={}
+      ✗ group single3: missing=['single3:orig', 'single3:cf'] invalid={}
+      ✗ group single4: missing=['single4:orig', 'single4:cf'] invalid={}
+      ✗ group single5: missing=['single5:orig', 'single5:cf'] invalid={}
+  latest           units 0/6 | VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | lift=n/a | INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+      paired: CTX>NAT 0 NAT>CTX 0 | NAT>PKV 0 PKV>NAT 0 | PKV>OWN 0 OWN>PKV 0 | order changed VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | sink-out cases 0 (PKV incl. them: 0/0, not used for verdict) | review 0
+      ✗ group latest0: missing=['latest0:fwd', 'latest0:rev'] invalid={}
+      ✗ group latest1: missing=['latest1:fwd', 'latest1:rev'] invalid={}
+      ✗ group latest2: missing=['latest2:fwd', 'latest2:rev'] invalid={}
+      ✗ group latest3: missing=['latest3:fwd', 'latest3:rev'] invalid={}
+      ✗ group latest4: missing=['latest4:fwd', 'latest4:rev'] invalid={}
+      ✗ group latest5: missing=['latest5:fwd', 'latest5:rev'] invalid={}
+  historical       units 0/6 | VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | lift=n/a | INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+      paired: CTX>NAT 0 NAT>CTX 0 | NAT>PKV 0 PKV>NAT 0 | PKV>OWN 0 OWN>PKV 0 | order changed VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | sink-out cases 0 (PKV incl. them: 0/0, not used for verdict) | review 0
+      ✗ group hist0: missing=['hist0:fwd', 'hist0:rev'] invalid={}
+      ✗ group hist1: missing=['hist1:fwd', 'hist1:rev'] invalid={}
+      ✗ group hist2: missing=['hist2:fwd', 'hist2:rev'] invalid={}
+      ✗ group hist3: missing=['hist3:fwd', 'hist3:rev'] invalid={}
+      ✗ group hist4: missing=['hist4:fwd', 'hist4:rev'] invalid={}
+      ✗ group hist5: missing=['hist5:fwd', 'hist5:rev'] invalid={}
+  authority        units 0/6 | VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | lift=n/a | INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+      paired: CTX>NAT 0 NAT>CTX 0 | NAT>PKV 0 PKV>NAT 0 | PKV>OWN 0 OWN>PKV 0 | order changed VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | sink-out cases 0 (PKV incl. them: 0/0, not used for verdict) | review 0
+      ✗ group auth0: missing=['auth0:fwd', 'auth0:rev'] invalid={}
+      ✗ group auth1: missing=['auth1:fwd', 'auth1:rev'] invalid={}
+      ✗ group auth2: missing=['auth2:fwd', 'auth2:rev'] invalid={}
+      ✗ group auth3: missing=['auth3:fwd', 'auth3:rev'] invalid={}
+      ✗ group auth4: missing=['auth4:fwd', 'auth4:rev'] invalid={}
+      ✗ group auth5: missing=['auth5:fwd', 'auth5:rev'] invalid={}
+  correction       units 0/6 | VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | lift=n/a | INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+      paired: CTX>NAT 0 NAT>CTX 0 | NAT>PKV 0 PKV>NAT 0 | PKV>OWN 0 OWN>PKV 0 | order changed VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | sink-out cases 0 (PKV incl. them: 0/0, not used for verdict) | review 0
+      ✗ group corr0: missing=['corr0:fwd', 'corr0:rev'] invalid={}
+      ✗ group corr1: missing=['corr1:fwd', 'corr1:rev'] invalid={}
+      ✗ group corr2: missing=['corr2:fwd', 'corr2:rev'] invalid={}
+      ✗ group corr3: missing=['corr3:fwd', 'corr3:rev'] invalid={}
+      ✗ group corr4: missing=['corr4:fwd', 'corr4:rev'] invalid={}
+      ✗ group corr5: missing=['corr5:fwd', 'corr5:rev'] invalid={}
+  ambiguity        units 0/6 | VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | lift=n/a | INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+      paired: CTX>NAT 0 NAT>CTX 0 | NAT>PKV 0 PKV>NAT 0 | PKV>OWN 0 OWN>PKV 0 | order changed VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | sink-out cases 0 (PKV incl. them: 0/0, not used for verdict) | review 0
+      ✗ group amb0: missing=['amb0:conflict_fwd', 'amb0:conflict_rev', 'amb0:consistent'] invalid={}
+      ✗ group amb1: missing=['amb1:conflict_fwd', 'amb1:conflict_rev', 'amb1:consistent'] invalid={}
+      ✗ group amb2: missing=['amb2:conflict_fwd', 'amb2:conflict_rev', 'amb2:consistent'] invalid={}
+      ✗ group amb3: missing=['amb3:conflict_fwd', 'amb3:conflict_rev', 'amb3:consistent'] invalid={}
+      ✗ group amb4: missing=['amb4:conflict_fwd', 'amb4:conflict_rev', 'amb4:consistent'] invalid={}
+      ✗ group amb5: missing=['amb5:conflict_fwd', 'amb5:conflict_rev', 'amb5:consistent'] invalid={}
+  two_hop          units 0/6 | VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | lift=n/a | INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+      paired: CTX>NAT 0 NAT>CTX 0 | NAT>PKV 0 PKV>NAT 0 | PKV>OWN 0 OWN>PKV 0 | order changed VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | sink-out cases 0 (PKV incl. them: 0/0, not used for verdict) | review 0
+      ✗ group two0: missing=['two0:fwd', 'two0:rev'] invalid={}
+      ✗ group two1: missing=['two1:fwd', 'two1:rev'] invalid={}
+      ✗ group two2: missing=['two2:fwd', 'two2:rev'] invalid={}
+      ✗ group two3: missing=['two3:fwd', 'two3:rev'] invalid={}
+      ✗ group two4: missing=['two4:fwd', 'two4:rev'] invalid={}
+      ✗ group two5: missing=['two5:fwd', 'two5:rev'] invalid={}
+  three_hop        units 0/6 | VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | lift=n/a | INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+      paired: CTX>NAT 0 NAT>CTX 0 | NAT>PKV 0 PKV>NAT 0 | PKV>OWN 0 OWN>PKV 0 | order changed VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | sink-out cases 0 (PKV incl. them: 0/0, not used for verdict) | review 0
+      ✗ group three0: missing=['three0:fwd', 'three0:rev'] invalid={}
+      ✗ group three1: missing=['three1:fwd', 'three1:rev'] invalid={}
+      ✗ group three2: missing=['three2:fwd', 'three2:rev'] invalid={}
+      ✗ group three3: missing=['three3:fwd', 'three3:rev'] invalid={}
+      ✗ group three4: missing=['three4:fwd', 'three4:rev'] invalid={}
+      ✗ group three5: missing=['three5:fwd', 'three5:rev'] invalid={}
+  missing          units 0/6 | VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | lift=n/a | INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+      paired: CTX>NAT 0 NAT>CTX 0 | NAT>PKV 0 PKV>NAT 0 | PKV>OWN 0 OWN>PKV 0 | order changed VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | sink-out cases 0 (PKV incl. them: 0/0, not used for verdict) | review 0
+      ✗ group miss0: missing=['miss0:complete_fwd', 'miss0:complete_rev', 'miss0:broken_fwd', 'miss0:broken_rev'] invalid={}
+      ✗ group miss1: missing=['miss1:complete_fwd', 'miss1:complete_rev', 'miss1:broken_fwd', 'miss1:broken_rev'] invalid={}
+      ✗ group miss2: missing=['miss2:complete_fwd', 'miss2:complete_rev', 'miss2:broken_fwd', 'miss2:broken_rev'] invalid={}
+      ✗ group miss3: missing=['miss3:complete_fwd', 'miss3:complete_rev', 'miss3:broken_fwd', 'miss3:broken_rev'] invalid={}
+      ✗ group miss4: missing=['miss4:complete_fwd', 'miss4:complete_rev', 'miss4:broken_fwd', 'miss4:broken_rev'] invalid={}
+      ✗ group miss5: missing=['miss5:complete_fwd', 'miss5:complete_rev', 'miss5:broken_fwd', 'miss5:broken_rev'] invalid={}
+  load_n008        units 0/6 | VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | lift=n/a | INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+      paired: CTX>NAT 0 NAT>CTX 0 | NAT>PKV 0 PKV>NAT 0 | PKV>OWN 0 OWN>PKV 0 | order changed VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | sink-out cases 0 (PKV incl. them: 0/0, not used for verdict) | review 0
+      ✗ group load0-8: missing=['load0-8:fwd', 'load0-8:rev'] invalid={}
+      ✗ group load1-8: missing=['load1-8:fwd', 'load1-8:rev'] invalid={}
+      ✗ group load2-8: missing=['load2-8:fwd', 'load2-8:rev'] invalid={}
+      ✗ group load3-8: missing=['load3-8:fwd', 'load3-8:rev'] invalid={}
+      ✗ group load4-8: missing=['load4-8:fwd', 'load4-8:rev'] invalid={}
+      ✗ group load5-8: missing=['load5-8:fwd', 'load5-8:rev'] invalid={}
+  load_n032        units 0/6 | VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | lift=n/a | INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+      paired: CTX>NAT 0 NAT>CTX 0 | NAT>PKV 0 PKV>NAT 0 | PKV>OWN 0 OWN>PKV 0 | order changed VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | sink-out cases 0 (PKV incl. them: 0/0, not used for verdict) | review 0
+      ✗ group load0-32: missing=['load0-32:fwd', 'load0-32:rev'] invalid={}
+      ✗ group load1-32: missing=['load1-32:fwd', 'load1-32:rev'] invalid={}
+      ✗ group load2-32: missing=['load2-32:fwd', 'load2-32:rev'] invalid={}
+      ✗ group load3-32: missing=['load3-32:fwd', 'load3-32:rev'] invalid={}
+      ✗ group load4-32: missing=['load4-32:fwd', 'load4-32:rev'] invalid={}
+      ✗ group load5-32: missing=['load5-32:fwd', 'load5-32:rev'] invalid={}
+  load_n128        units 0/6 | VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | lift=n/a | INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+      paired: CTX>NAT 0 NAT>CTX 0 | NAT>PKV 0 PKV>NAT 0 | PKV>OWN 0 OWN>PKV 0 | order changed VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | sink-out cases 0 (PKV incl. them: 0/0, not used for verdict) | review 0
+      ✗ group load0-128: missing=['load0-128:fwd', 'load0-128:rev'] invalid={}
+      ✗ group load1-128: missing=['load1-128:fwd', 'load1-128:rev'] invalid={}
+      ✗ group load2-128: missing=['load2-128:fwd', 'load2-128:rev'] invalid={}
+      ✗ group load3-128: missing=['load3-128:fwd', 'load3-128:rev'] invalid={}
+      ✗ group load4-128: missing=['load4-128:fwd', 'load4-128:rev'] invalid={}
+      ✗ group load5-128: missing=['load5-128:fwd', 'load5-128:rev'] invalid={}
+  load_pos_early   units 0/6 | VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | lift=n/a | INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+      paired: CTX>NAT 0 NAT>CTX 0 | NAT>PKV 0 PKV>NAT 0 | PKV>OWN 0 OWN>PKV 0 | order changed VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | sink-out cases 0 (PKV incl. them: 0/0, not used for verdict) | review 0
+      ✗ group loadpos0-early: missing=['loadpos0-early:early'] invalid={}
+      ✗ group loadpos1-early: missing=['loadpos1-early:early'] invalid={}
+      ✗ group loadpos2-early: missing=['loadpos2-early:early'] invalid={}
+      ✗ group loadpos3-early: missing=['loadpos3-early:early'] invalid={}
+      ✗ group loadpos4-early: missing=['loadpos4-early:early'] invalid={}
+      ✗ group loadpos5-early: missing=['loadpos5-early:early'] invalid={}
+  load_pos_late    units 0/6 | VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | lift=n/a | INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+      paired: CTX>NAT 0 NAT>CTX 0 | NAT>PKV 0 PKV>NAT 0 | PKV>OWN 0 OWN>PKV 0 | order changed VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | sink-out cases 0 (PKV incl. them: 0/0, not used for verdict) | review 0
+      ✗ group loadpos0-late: missing=['loadpos0-late:late'] invalid={}
+      ✗ group loadpos1-late: missing=['loadpos1-late:late'] invalid={}
+      ✗ group loadpos2-late: missing=['loadpos2-late:late'] invalid={}
+      ✗ group loadpos3-late: missing=['loadpos3-late:late'] invalid={}
+      ✗ group loadpos4-late: missing=['loadpos4-late:late'] invalid={}
+      ✗ group loadpos5-late: missing=['loadpos5-late:late'] invalid={}
+  conflict_k2      units 0/6 | VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | lift=n/a | INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+      paired: CTX>NAT 0 NAT>CTX 0 | NAT>PKV 0 PKV>NAT 0 | PKV>OWN 0 OWN>PKV 0 | order changed VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | sink-out cases 0 (PKV incl. them: 0/0, not used for verdict) | review 0
+      ✗ group conf0-2: missing=['conf0-2:fwd', 'conf0-2:rev'] invalid={}
+      ✗ group conf1-2: missing=['conf1-2:fwd', 'conf1-2:rev'] invalid={}
+      ✗ group conf2-2: missing=['conf2-2:fwd', 'conf2-2:rev'] invalid={}
+      ✗ group conf3-2: missing=['conf3-2:fwd', 'conf3-2:rev'] invalid={}
+      ✗ group conf4-2: missing=['conf4-2:fwd', 'conf4-2:rev'] invalid={}
+      ✗ group conf5-2: missing=['conf5-2:fwd', 'conf5-2:rev'] invalid={}
+  conflict_k4      units 0/6 | VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | lift=n/a | INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+      paired: CTX>NAT 0 NAT>CTX 0 | NAT>PKV 0 PKV>NAT 0 | PKV>OWN 0 OWN>PKV 0 | order changed VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | sink-out cases 0 (PKV incl. them: 0/0, not used for verdict) | review 0
+      ✗ group conf0-4: missing=['conf0-4:fwd', 'conf0-4:rev'] invalid={}
+      ✗ group conf1-4: missing=['conf1-4:fwd', 'conf1-4:rev'] invalid={}
+      ✗ group conf2-4: missing=['conf2-4:fwd', 'conf2-4:rev'] invalid={}
+      ✗ group conf3-4: missing=['conf3-4:fwd', 'conf3-4:rev'] invalid={}
+      ✗ group conf4-4: missing=['conf4-4:fwd', 'conf4-4:rev'] invalid={}
+      ✗ group conf5-4: missing=['conf5-4:fwd', 'conf5-4:rev'] invalid={}
+  conflict_k8      units 0/6 | VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | lift=n/a | INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+      paired: CTX>NAT 0 NAT>CTX 0 | NAT>PKV 0 PKV>NAT 0 | PKV>OWN 0 OWN>PKV 0 | order changed VAN 0/0 CTX 0/0 NAT 0/0 PKV 0/0 OWN 0/0 FOR 0/0 | sink-out cases 0 (PKV incl. them: 0/0, not used for verdict) | review 0
+      ✗ group conf0-8: missing=['conf0-8:fwd', 'conf0-8:rev'] invalid={}
+      ✗ group conf1-8: missing=['conf1-8:fwd', 'conf1-8:rev'] invalid={}
+      ✗ group conf2-8: missing=['conf2-8:fwd', 'conf2-8:rev'] invalid={}
+      ✗ group conf3-8: missing=['conf3-8:fwd', 'conf3-8:rev'] invalid={}
+      ✗ group conf4-8: missing=['conf4-8:fwd', 'conf4-8:rev'] invalid={}
+      ✗ group conf5-8: missing=['conf5-8:fwd', 'conf5-8:rev'] invalid={}
+HYPOTHESES:
+  H0 baseline single fact + counterfactual: single → INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+  H1 date-based selection: latest → INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units); historical → INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units); conflict_k2 → INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units); conflict_k4 → INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units); conflict_k8 → INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+  H2 source priority: authority → INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+  H3 explicit correction: correction → INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+  H4 unresolved conflict vs consistent repetition: ambiguity → INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+  H5 composition / inference: two_hop → INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units); three_hop → INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units); missing → INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+  H6 distractor load / slot position: load_n008 → INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units); load_n032 → INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units); load_n128 → INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units); load_pos_early → INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units); load_pos_late → INCOMPLETE / TECHNICALLY UNINTERPRETABLE (0/6 valid units)
+==============================================================================================================
+[TEST438c] ▶ STAGE finalize / files
+  optional files (not needed for diagnosis): /content/AKBASCORE_TEST438c/TEST438c-20261002-083225 | payload SHA-256 34413e3d8e49a7a711fca8352b453ed8518ddc11c1798bea5c52083632c78629
+==============================================================================================================
+TEST438c FINAL STATE: STOPPED: TechStop — cache probe FAILED (pre-registered: identical greedy tokens on all paths, TVD ≤ 0.05, cache length = prompt+new−1). Long run not started. Details above. | rows 0/210 | errors reported 1 | integrity PASS
+
+
+==============================================================================================================
