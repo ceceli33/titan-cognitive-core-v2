@@ -1,0 +1,116 @@
+ 
+[TEST461] CPU panel lock
+ entities: 16 families: Counter({'F1': 4, 'F2': 4, 'F3': 4, 'F4': 4}) scales: (2, 8, 16)
+ F3/F4 FIRST USE — frozen before GPU results
+ PASS: L>=.80 U>=.85 false-link<=.10 each-family-L>=.70 scale-drop<=.10 NOMEM-U=0
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 82.0kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 908kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 54.5MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 70.4MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 101MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.35MB/s]
+Download complete: : 
+
+ 13.1GB,  868MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  480MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:38<00:00,  6.48s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 98.70it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 30.6kB/s]
+[TEST461] building frozen neutral codebook ...
+[TEST461] forging independent held-out modules ...
+[TEST461] FINAL HELD-OUT START — no parameter/template changes after this point
+[S02 01/16] e00 F1 L=1 U=1 FL=0 cid=MB-952  place=silver chapel
+[S02 02/16] e01 F2 L=0 U=1 FL=0 cid=JV-572  place=UNKNOWN
+[S02 03/16] e02 F3 L=1 U=1 FL=0 cid=NT-807  place=hazel inn
+[S02 04/16] e03 F4 L=1 U=1 FL=0 cid=BZ-178  place=juniper harbor
+[S02 05/16] e04 F1 L=1 U=1 FL=0 cid=FH-972  place=willow warehouse
+[S02 06/16] e05 F2 L=1 U=1 FL=0 cid=VD-813  place=silver foundry
+[S02 07/16] e06 F3 L=1 U=1 FL=0 cid=KB-425  place=birch tower
+[S02 08/16] e07 F4 L=1 U=1 FL=0 cid=JW-894  place=teal estate
+[S02 09/16] e08 F1 L=1 U=1 FL=0 cid=KR-108  place=pearl arcade
+[S02 10/16] e09 F2 L=1 U=1 FL=0 cid=TR-855  place=drift arcade
+[S02 11/16] e10 F3 L=1 U=1 FL=0 cid=PX-393  place=marble granary
+[S02 12/16] e11 F4 L=1 U=1 FL=0 cid=CT-189  place=cobalt arcade
+[S02 13/16] e12 F1 L=1 U=1 FL=0 cid=TX-733  place=cobalt zoo
+[S02 14/16] e13 F2 L=1 U=1 FL=0 cid=PC-784  place=lilac warehouse
+[S02 15/16] e14 F3 L=1 U=1 FL=0 cid=JF-599  place=violet refinery
+[S02 16/16] e15 F4 L=1 U=1 FL=0 cid=SZ-185  place=birch inn
+[S08 01/16] e00 F1 L=1 U=1 FL=0 cid=MB-952  place=silver chapel
+[S08 02/16] e01 F2 L=0 U=1 FL=0 cid=JV-572  place=UNKNOWN
+[S08 03/16] e02 F3 L=1 U=1 FL=0 cid=NT-807  place=hazel inn
+[S08 04/16] e03 F4 L=1 U=1 FL=0 cid=BZ-178  place=juniper harbor
+[S08 05/16] e04 F1 L=1 U=1 FL=0 cid=FH-972  place=willow warehouse
+[S08 06/16] e05 F2 L=1 U=1 FL=0 cid=VD-813  place=silver foundry
+[S08 07/16] e06 F3 L=1 U=1 FL=0 cid=KB-425  place=birch tower
+[S08 08/16] e07 F4 L=1 U=1 FL=0 cid=JW-894  place=teal estate
+[S08 09/16] e08 F1 L=1 U=1 FL=0 cid=KR-108  place=pearl arcade
+[S08 10/16] e09 F2 L=1 U=1 FL=0 cid=TR-855  place=drift arcade
+[S08 11/16] e10 F3 L=1 U=1 FL=0 cid=PX-393  place=marble granary
+[S08 12/16] e11 F4 L=1 U=1 FL=0 cid=CT-189  place=cobalt arcade
+[S08 13/16] e12 F1 L=1 U=1 FL=0 cid=TX-733  place=cobalt zoo
+[S08 14/16] e13 F2 L=0 U=1 FL=0 cid=PC-784  place=UNKNOWN
+[S08 15/16] e14 F3 L=1 U=1 FL=0 cid=JF-599  place=violet refinery
+[S08 16/16] e15 F4 L=1 U=1 FL=0 cid=SZ-185  place=birch inn
+[S16 01/16] e00 F1 L=1 U=1 FL=0 cid=MB-952  place=silver chapel
+[S16 02/16] e01 F2 L=0 U=1 FL=0 cid=JV-572  place=UNKNOWN
+[S16 03/16] e02 F3 L=1 U=1 FL=0 cid=NT-807  place=hazel inn
+[S16 04/16] e03 F4 L=1 U=1 FL=0 cid=BZ-178  place=juniper harbor
+[S16 05/16] e04 F1 L=1 U=1 FL=0 cid=FH-972  place=willow warehouse
+[S16 06/16] e05 F2 L=1 U=1 FL=0 cid=VD-813  place=silver foundry
+[S16 07/16] e06 F3 L=1 U=1 FL=0 cid=KB-425  place=birch tower
+[S16 08/16] e07 F4 L=1 U=1 FL=0 cid=JW-894  place=teal estate
+[S16 09/16] e08 F1 L=1 U=1 FL=0 cid=KR-108  place=pearl arcade
+[S16 10/16] e09 F2 L=1 U=1 FL=0 cid=TR-855  place=drift arcade
+[S16 11/16] e10 F3 L=1 U=1 FL=0 cid=PX-393  place=marble granary
+[S16 12/16] e11 F4 L=1 U=1 FL=0 cid=CT-189  place=cobalt arcade
+[S16 13/16] e12 F1 L=1 U=1 FL=0 cid=TX-733  place=cobalt zoo
+[S16 14/16] e13 F2 L=0 U=1 FL=0 cid=PC-784  place=UNKNOWN
+[S16 15/16] e14 F3 L=1 U=1 FL=0 cid=JF-599  place=violet refinery
+[S16 16/16] e15 F4 L=1 U=1 FL=0 cid=SZ-185  place=birch inn
+[TEST461] NOMEM control ...
+========================================================================================================================
+TEST461 — FINAL HELD-OUT SUMMARY
+overall: {'n': 48, 'L': '43/48', 'U': '48/48', 'false_link': '0/48', 'L_rate': 0.8958333333333334, 'U_rate': 1.0, 'false_link_rate': 0.0, 'L_lo': 0.778, 'U_lo': 0.926}
+SCALE 02: {'n': 16, 'L': '15/16', 'U': '16/16', 'false_link': '0/16', 'L_rate': 0.9375, 'U_rate': 1.0, 'false_link_rate': 0.0, 'L_lo': 0.717, 'U_lo': 0.806}
+SCALE 08: {'n': 16, 'L': '14/16', 'U': '16/16', 'false_link': '0/16', 'L_rate': 0.875, 'U_rate': 1.0, 'false_link_rate': 0.0, 'L_lo': 0.64, 'U_lo': 0.806}
+SCALE 16: {'n': 16, 'L': '14/16', 'U': '16/16', 'false_link': '0/16', 'L_rate': 0.875, 'U_rate': 1.0, 'false_link_rate': 0.0, 'L_lo': 0.64, 'U_lo': 0.806}
+F1: {'n': 12, 'L': '12/12', 'U': '12/12', 'false_link': '0/12', 'L_rate': 1.0, 'U_rate': 1.0, 'false_link_rate': 0.0, 'L_lo': 0.757, 'U_lo': 0.757}
+F2: {'n': 12, 'L': '7/12', 'U': '12/12', 'false_link': '0/12', 'L_rate': 0.5833333333333334, 'U_rate': 1.0, 'false_link_rate': 0.0, 'L_lo': 0.32, 'U_lo': 0.757}
+F3: {'n': 12, 'L': '12/12', 'U': '12/12', 'false_link': '0/12', 'L_rate': 1.0, 'U_rate': 1.0, 'false_link_rate': 0.0, 'L_lo': 0.757, 'U_lo': 0.757}
+F4: {'n': 12, 'L': '12/12', 'U': '12/12', 'false_link': '0/12', 'L_rate': 1.0, 'U_rate': 1.0, 'false_link_rate': 0.0, 'L_lo': 0.757, 'U_lo': 0.757}
+scale_drop_2_to_16: {'L': 0.0625, 'U': 0.0}
+NOMEM strict: 0/16
+gates: {'overall_L_ge_080': True, 'overall_U_ge_085': True, 'false_link_le_010': True, 'each_family_L_ge_070': False, 'scale16_L_drop_le_010': True, 'scale16_U_drop_le_010': True, 'NOMEM_strict_zero': True, 'frozen_weights': True, 'no_errors': True}
+errors: 0
+frozen_weights_ok: True
+minutes: 4.0
+========================================================================================================================
+TEST461 VERDICT: FAIL_FINAL_HELDOUT
+results: /content/test461_results.json
+
+
+FINAL: held-out gate failure. Preserve this result unchanged; do not retune or redefine this TEST461 panel.
