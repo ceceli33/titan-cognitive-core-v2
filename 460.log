@@ -1,0 +1,138 @@
+ 
+[TEST460] CPU self-test PASS: 64 cases (8 entities x 8 branches)
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 81.3kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 858kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 47.8MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 69.9MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 121MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.69MB/s]
+Download complete: : 
+
+ 13.1GB,  110MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  505MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:38<00:00,  6.66s/it]
+Loading weights: 100%
+
+ 339/339 [00:04<00:00, 94.12it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 22.3kB/s]
+[TEST460] building codebook from fixed neutral corpus ...
+[01/64] t460-0:AB      F1 tgt=ermine wharf     CONTEXT_HOP=0 JOINT_HOP=1 COFORGE_HOP=0 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(0, 2)
+[02/64] t460-0:BA      F1 tgt=ermine wharf     CONTEXT_HOP=1 JOINT_HOP=1 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(0, 2)
+[03/64] t460-0:AXB     F1 tgt=ermine wharf     CONTEXT_HOP=1 JOINT_HOP=1 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 3)
+[04/64] t460-0:BXA     F1 tgt=ermine wharf     CONTEXT_HOP=1 JOINT_HOP=1 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 3)
+[05/64] t460-0:AX      F1 tgt=UNKNOWN          CONTEXT_HOP=1 JOINT_HOP=1 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 2)
+[06/64] t460-0:XA      F1 tgt=UNKNOWN          CONTEXT_HOP=0 JOINT_HOP=1 COFORGE_HOP=0 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 2)
+[07/64] t460-0:AXW     F1 tgt=UNKNOWN          CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 3)
+[08/64] t460-0:WXA     F1 tgt=UNKNOWN          CONTEXT_HOP=0 JOINT_HOP=0 COFORGE_HOP=0 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 3)
+[09/64] t460-1:AB      F2 tgt=onyx abbey       CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(0, 2)
+[10/64] t460-1:BA      F2 tgt=onyx abbey       CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(0, 2)
+[11/64] t460-1:AXB     F2 tgt=onyx abbey       CONTEXT_HOP=0 JOINT_HOP=0 COFORGE_HOP=0 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 3)
+[12/64] t460-1:BXA     F2 tgt=onyx abbey       CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 3)
+[13/64] t460-1:AX      F2 tgt=UNKNOWN          CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 2)
+[14/64] t460-1:XA      F2 tgt=UNKNOWN          CONTEXT_HOP=0 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 2)
+[15/64] t460-1:AXW     F2 tgt=UNKNOWN          CONTEXT_HOP=0 JOINT_HOP=0 COFORGE_HOP=0 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 3)
+[16/64] t460-1:WXA     F2 tgt=UNKNOWN          CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 3)
+[17/64] t460-2:AB      F1 tgt=lemon abbey      CONTEXT_HOP=1 JOINT_HOP=1 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 2)
+[18/64] t460-2:BA      F1 tgt=lemon abbey      CONTEXT_HOP=1 JOINT_HOP=1 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 2)
+[19/64] t460-2:AXB     F1 tgt=lemon abbey      CONTEXT_HOP=1 JOINT_HOP=1 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(0, 3)
+[20/64] t460-2:BXA     F1 tgt=lemon abbey      CONTEXT_HOP=1 JOINT_HOP=1 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(0, 3)
+[21/64] t460-2:AX      F1 tgt=UNKNOWN          CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 2)
+[22/64] t460-2:XA      F1 tgt=UNKNOWN          CONTEXT_HOP=0 JOINT_HOP=0 COFORGE_HOP=0 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 2)
+[23/64] t460-2:AXW     F1 tgt=UNKNOWN          CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 3)
+[24/64] t460-2:WXA     F1 tgt=UNKNOWN          CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 3)
+[25/64] t460-3:AB      F2 tgt=onyx bakery      CONTEXT_HOP=1 JOINT_HOP=1 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 2)
+[26/64] t460-3:BA      F2 tgt=onyx bakery      CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 2)
+[27/64] t460-3:AXB     F2 tgt=onyx bakery      CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(3, 3)
+[28/64] t460-3:BXA     F2 tgt=onyx bakery      CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(3, 3)
+[29/64] t460-3:AX      F2 tgt=UNKNOWN          CONTEXT_HOP=1 JOINT_HOP=1 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 2)
+[30/64] t460-3:XA      F2 tgt=UNKNOWN          CONTEXT_HOP=1 JOINT_HOP=1 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 2)
+[31/64] t460-3:AXW     F2 tgt=UNKNOWN          CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(3, 3)
+[32/64] t460-3:WXA     F2 tgt=UNKNOWN          CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(3, 3)
+[33/64] t460-4:AB      F1 tgt=dove rampart     CONTEXT_HOP=0 JOINT_HOP=1 COFORGE_HOP=0 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 2)
+[34/64] t460-4:BA      F1 tgt=dove rampart     CONTEXT_HOP=1 JOINT_HOP=1 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 2)
+[35/64] t460-4:AXB     F1 tgt=dove rampart     CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 3)
+[36/64] t460-4:BXA     F1 tgt=dove rampart     CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 3)
+[37/64] t460-4:AX      F1 tgt=UNKNOWN          CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 2)
+[38/64] t460-4:XA      F1 tgt=UNKNOWN          CONTEXT_HOP=0 JOINT_HOP=0 COFORGE_HOP=0 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 2)
+[39/64] t460-4:AXW     F1 tgt=UNKNOWN          CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 3)
+[40/64] t460-4:WXA     F1 tgt=UNKNOWN          CONTEXT_HOP=0 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 3)
+[41/64] t460-5:AB      F2 tgt=dove forum       CONTEXT_HOP=1 JOINT_HOP=1 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 2)
+[42/64] t460-5:BA      F2 tgt=dove forum       CONTEXT_HOP=1 JOINT_HOP=1 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 2)
+[43/64] t460-5:AXB     F2 tgt=dove forum       CONTEXT_HOP=1 JOINT_HOP=1 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 3)
+[44/64] t460-5:BXA     F2 tgt=dove forum       CONTEXT_HOP=1 JOINT_HOP=1 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 3)
+[45/64] t460-5:AX      F2 tgt=UNKNOWN          CONTEXT_HOP=0 JOINT_HOP=0 COFORGE_HOP=0 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(0, 2)
+[46/64] t460-5:XA      F2 tgt=UNKNOWN          CONTEXT_HOP=0 JOINT_HOP=0 COFORGE_HOP=0 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(0, 2)
+[47/64] t460-5:AXW     F2 tgt=UNKNOWN          CONTEXT_HOP=0 JOINT_HOP=0 COFORGE_HOP=0 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 3)
+[48/64] t460-5:WXA     F2 tgt=UNKNOWN          CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 3)
+[49/64] t460-6:AB      F1 tgt=dove kennel      CONTEXT_HOP=1 JOINT_HOP=1 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 2)
+[50/64] t460-6:BA      F1 tgt=dove kennel      CONTEXT_HOP=1 JOINT_HOP=1 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 2)
+[51/64] t460-6:AXB     F1 tgt=dove kennel      CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(3, 3)
+[52/64] t460-6:BXA     F1 tgt=dove kennel      CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(3, 3)
+[53/64] t460-6:AX      F1 tgt=UNKNOWN          CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 2)
+[54/64] t460-6:XA      F1 tgt=UNKNOWN          CONTEXT_HOP=0 JOINT_HOP=0 COFORGE_HOP=0 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 2)
+[55/64] t460-6:AXW     F1 tgt=UNKNOWN          CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(3, 3)
+[56/64] t460-6:WXA     F1 tgt=UNKNOWN          CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(3, 3)
+[57/64] t460-7:AB      F2 tgt=ermine rampart   CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 2)
+[58/64] t460-7:BA      F2 tgt=ermine rampart   CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 2)
+[59/64] t460-7:AXB     F2 tgt=ermine rampart   CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 3)
+[60/64] t460-7:BXA     F2 tgt=ermine rampart   CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 3)
+[61/64] t460-7:AX      F2 tgt=UNKNOWN          CONTEXT_HOP=0 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 2)
+[62/64] t460-7:XA      F2 tgt=UNKNOWN          CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(1, 2)
+[63/64] t460-7:AXW     F2 tgt=UNKNOWN          CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 3)
+[64/64] t460-7:WXA     F2 tgt=UNKNOWN          CONTEXT_HOP=1 JOINT_HOP=0 COFORGE_HOP=1 SEQ_MW=1 BMW_K0=1 BMW_K6=1 agree=(2, 3)
+==========================================================================================
+CONTEXT_HOP: {'L': '29/32', 'U': '20/32', 'J': 0.531, 'L_lo': 0.758, 'U_lo': 0.453}
+CONTEXT_HOP/F1: {'L': '14/16', 'U': '10/16', 'J': 0.5, 'L_lo': 0.64, 'U_lo': 0.386}
+CONTEXT_HOP/F2: {'L': '15/16', 'U': '10/16', 'J': 0.562, 'L_lo': 0.717, 'U_lo': 0.386}
+JOINT_HOP: {'L': '17/32', 'U': '4/32', 'J': -0.344, 'L_lo': 0.364, 'U_lo': 0.05}
+JOINT_HOP/F1: {'L': '12/16', 'U': '2/16', 'J': -0.125, 'L_lo': 0.505, 'U_lo': 0.035}
+JOINT_HOP/F2: {'L': '5/16', 'U': '2/16', 'J': -0.562, 'L_lo': 0.142, 'U_lo': 0.035}
+COFORGE_HOP: {'L': '29/32', 'U': '23/32', 'J': 0.625, 'L_lo': 0.758, 'U_lo': 0.546}
+COFORGE_HOP/F1: {'L': '14/16', 'U': '11/16', 'J': 0.562, 'L_lo': 0.64, 'U_lo': 0.444}
+COFORGE_HOP/F2: {'L': '15/16', 'U': '12/16', 'J': 0.688, 'L_lo': 0.717, 'U_lo': 0.505}
+SEQ_MW: {'L': '32/32', 'U': '32/32', 'J': 1.0, 'L_lo': 0.893, 'U_lo': 0.893}
+SEQ_MW/F1: {'L': '16/16', 'U': '16/16', 'J': 1.0, 'L_lo': 0.806, 'U_lo': 0.806}
+SEQ_MW/F2: {'L': '16/16', 'U': '16/16', 'J': 1.0, 'L_lo': 0.806, 'U_lo': 0.806}
+BMW_K0: {'L': '32/32', 'U': '32/32', 'J': 1.0, 'L_lo': 0.893, 'U_lo': 0.893}
+BMW_K0/F1: {'L': '16/16', 'U': '16/16', 'J': 1.0, 'L_lo': 0.806, 'U_lo': 0.806}
+BMW_K0/F2: {'L': '16/16', 'U': '16/16', 'J': 1.0, 'L_lo': 0.806, 'U_lo': 0.806}
+BMW_K6: {'L': '32/32', 'U': '32/32', 'J': 1.0, 'L_lo': 0.893, 'U_lo': 0.893}
+BMW_K6/F1: {'L': '16/16', 'U': '16/16', 'J': 1.0, 'L_lo': 0.806, 'U_lo': 0.806}
+BMW_K6/F2: {'L': '16/16', 'U': '16/16', 'J': 1.0, 'L_lo': 0.806, 'U_lo': 0.806}
+errors_by_arm: {'CONTEXT_HOP': {'false_unknown': 2, 'false_Q': 8, 'other_wrong': 3, 'false_P': 1}, 'JOINT_HOP': {'false_P': 3, 'false_unknown': 2, 'other_wrong': 17, 'false_Q': 13, 'decoy_Q': 4}, 'COFORGE_HOP': {'false_unknown': 2, 'false_Q': 7, 'other_wrong': 2}, 'SEQ_MW': {}, 'BMW_K0': {}, 'BMW_K6': {}}
+batch_stage1_agreement: 96/160
+batch_errors: 0
+BMW_K6_flags: {'single_id/single_place': 32, 'single_id/no_place': 32}
+entities_all8_BMW_K0: 8
+mechanism_verdict: INDEPENDENT_ENCODING_INDIVIDUATION_FAILURE
+architecture_verdict: BATCH_PATH_MISMATCH
+generations: 704
+minutes: 16.5
+frozen_weights_ok: True
+==========================================================================================
+TEST460 VERDICT: mechanism=INDEPENDENT_ENCODING_INDIVIDUATION_FAILURE | architecture=BATCH_PATH_MISMATCH  (results: /content/test460_results.json)
+
+
+Scope: development panel (new entities, F1/F2 only). COFORGE is a diagnostic that breaks modularity. A READY verdict licenses the frozen F3/F4 held-out test, not a generalization claim.
