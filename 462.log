@@ -1,0 +1,49 @@
+ [TEST462] CPU self-test PASS: 32 probes; F1/F2 only; F3/F4 untouched
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 87.8kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 883kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 77.5MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 64.3MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 142MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.85MB/s]Download complete: :  13.1GB,  752MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  505MB/s  Fetching 4 files: 100% 4/4 [00:38<00:00,  6.47s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.79it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.3kB/s][TEST462] building TEST460/460B fixed neutral codebook ...
+[01/32] e0 F1 A/S1 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/0 | S='JS-484' B1='JS-484' BM='JS-484'
+[02/32] e0 F1 A/S2 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/1 | S='NONE' B1='NONE' BM='NONE'
+[03/32] e0 F1 B/S1 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/0 | S='NONE' B1='NONE' BM='NONE'
+[04/32] e0 F1 B/S2 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/1 | S='ermine wharf' B1='ermine wharf' BM='ermine wharf'
+[05/32] e0 F1 X/S1 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/1 | S='NONE' B1='NONE' BM='NONE'
+[06/32] e0 F1 X/S2 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/0 | S='NONE' B1='NONE' BM='NONE'
+[07/32] e0 F1 W/S1 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/0 | S='NONE' B1='NONE' BM='NONE'
+[08/32] e0 F1 W/S2 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/1 | S='NONE' B1='NONE' BM='NONE'
+[09/32] e1 F2 A/S1 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/1 | S='Container KX-636' B1='Container KX-636' BM='Container KX-636'
+[10/32] e1 F2 A/S2 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/0 | S='NONE' B1='NONE' BM='NONE'
+[11/32] e1 F2 B/S1 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/0 | S='NONE' B1='NONE' BM='NONE'
+[12/32] e1 F2 B/S2 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/1 | S='Onyx abbey' B1='Onyx abbey' BM='Onyx abbey'
+[13/32] e1 F2 X/S1 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/0 | S='NONE' B1='NONE' BM='NONE'
+[14/32] e1 F2 X/S2 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/1 | S='NONE' B1='NONE' BM='NONE'
+[15/32] e1 F2 W/S1 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/1 | S='NONE' B1='NONE' BM='NONE'
+[16/32] e1 F2 W/S2 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/1 | S='NONE' B1='NONE' BM='NONE'
+[17/32] e2 F1 A/S1 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/1 | S='XN-709 The enameled dagg' B1='XN-709 The enameled dagg' BM='XN-709 The enameled dagg'
+[18/32] e2 F1 A/S2 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/0 | S='NONE' B1='NONE' BM='NONE'
+[19/32] e2 F1 B/S1 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/1 | S='NONE' B1='NONE' BM='NONE'
+[20/32] e2 F1 B/S2 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/1 | S='lemon abbey' B1='lemon abbey' BM='lemon abbey'
+[21/32] e2 F1 X/S1 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/0 | S='NONE' B1='NONE' BM='NONE'
+[22/32] e2 F1 X/S2 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/1 | S='NONE' B1='NONE' BM='NONE'
+[23/32] e2 F1 W/S1 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/1 | S='NONE' B1='NONE' BM='NONE'
+[24/32] e2 F1 W/S2 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/0 | S='NONE' B1='NONE' BM='NONE'
+[25/32] e3 F2 A/S1 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/0 | S='GD-921' B1='GD-921' BM='GD-921'
+[26/32] e3 F2 A/S2 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/1 | S='NONE' B1='NONE' BM='NONE'
+[27/32] e3 F2 B/S1 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/1 | S='NONE' B1='NONE' BM='NONE'
+[28/32] e3 F2 B/S2 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/0 | S='The onyx bakery' B1='The onyx bakery' BM='The onyx bakery'
+[29/32] e3 F2 X/S1 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/1 | S='NONE' B1='NONE' BM='NONE'
+[30/32] e3 F2 X/S2 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/1 | S='NONE' B1='NONE' BM='NONE'
+[31/32] e3 F2 W/S1 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/1 | S='NONE' B1='NONE' BM='NONE'
+[32/32] e3 F2 W/S2 S=B1 T/F/S/X=1/1/1/1 S=BM T/F/S/X=1/1/1/1 | S='NONE' B1='NONE' BM='NONE'
+==============================================================================================================
+n: 32
+seq_vs_b1: {'token1': '32/32', 'first': '32/32', 'semantic': '32/32', 'full': '32/32'}
+seq_vs_multi: {'token1': '32/32', 'first': '32/32', 'semantic': '32/32', 'full': '20/32'}
+b1_vs_multi: {'token1': '32/32', 'first': '32/32', 'semantic': '32/32', 'full': '20/32'}
+by_family: {'F1': {'seq_vs_b1': {'token1': '16/16', 'first': '16/16', 'semantic': '16/16', 'full': '16/16'}, 'seq_vs_multi': {'token1': '16/16', 'first': '16/16', 'semantic': '16/16', 'full': '9/16'}}, 'F2': {'seq_vs_b1': {'token1': '16/16', 'first': '16/16', 'semantic': '16/16', 'full': '16/16'}, 'seq_vs_multi': {'token1': '16/16', 'first': '16/16', 'semantic': '16/16', 'full': '11/16'}}}
+verdict: BATCH_TAIL_ONLY_DIVERGENCE
+errors: 0
+frozen_weights_ok: True
+minutes: 1.2
+==============================================================================================================
+TEST462 VERDICT: BATCH_TAIL_ONLY_DIVERGENCE  (results: /content/test462_results.json)
+NEXT: freeze IBR batch implementation; TEST461 remains untouched and may now be run as final F1/F2 + unseen F3/F4 held-out validation.
