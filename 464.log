@@ -1,0 +1,198 @@
+ 
+[TEST464] CPU lock PASS
+ TEST461 deterministic F2 entities: [(1, 'JV-572', 'elm lodge'), (5, 'VD-813', 'silver foundry'), (9, 'TR-855', 'drift arcade'), (13, 'PC-784', 'lilac warehouse')]
+ conditions: B_SOLO / B+1 / B+7 / B+15
+ TEST461 remains sealed; diagnostic only.
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 82.8kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 772kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 87.7MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 72.0MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 138MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.72MB/s]
+Download complete: : 
+
+ 13.1GB,  299MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  486MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:39<00:00,  7.56s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 99.07it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 34.0kB/s]
+[TEST464] building frozen TEST461 neutral codebook ...
+[TEST464] forging same deterministic TEST461 module bank ...
+[TEST464] FINAL DIAGNOSTIC START
+--------------------------------------------------------------------------------------------------------------
+e01 F2 | target=JV-572 -> elm lodge | B=The elm lodge houses container JV-572.
+[B+00] TRUE=0 AGG=0 true='elm lodge To determine the location of c' parsed=NONE foreign=[] aggregate=UNKNOWN
+   r00 owner=e01 F2 B | 'elm lodge To determine the location of container JV-' -> NONE
+[B+01] TRUE=0 AGG=0 true='elm lodge To determine the location of c' parsed=NONE foreign=[] aggregate=UNKNOWN
+   r00 owner=e01 F2 B | 'elm lodge To determine the location of container JV-' -> NONE
+   r01 owner=e07 F4 B | 'NONE' -> NONE
+[B+07] TRUE=0 AGG=0 true='elm lodge To determine the location of c' parsed=NONE foreign=[] aggregate=UNKNOWN
+   r00 owner=e01 F2 B | 'elm lodge To determine the location of container JV-' -> NONE
+   r01 owner=e07 F4 B | 'NONE' -> NONE
+   r02 owner=e06 F3 X | 'NONE' -> NONE
+   r03 owner=e09 F2 X | 'NONE' -> NONE
+   r04 owner=e03 F4 B | 'NONE' -> NONE
+   r05 owner=e07 F4 A | 'NONE' -> NONE
+   r06 owner=e13 F2 B | 'NONE' -> NONE
+   r07 owner=e14 F3 X | 'NONE' -> NONE
+[B+15] TRUE=0 AGG=0 true='elm lodge To determine the location of c' parsed=NONE foreign=[] aggregate=UNKNOWN
+   r00 owner=e01 F2 B | 'elm lodge To determine the location of container JV-' -> NONE
+   r01 owner=e07 F4 B | 'NONE' -> NONE
+   r02 owner=e06 F3 X | 'NONE' -> NONE
+   r03 owner=e09 F2 X | 'NONE' -> NONE
+   r04 owner=e03 F4 B | 'NONE' -> NONE
+   r05 owner=e07 F4 A | 'NONE' -> NONE
+   r06 owner=e13 F2 B | 'NONE' -> NONE
+   r07 owner=e14 F3 X | 'NONE' -> NONE
+   r08 owner=e01 F2 A | 'NONE' -> NONE
+   r09 owner=e13 F2 X | 'NONE' -> NONE
+   r10 owner=e04 F1 X | 'NONE' -> NONE
+   r11 owner=e12 F1 B | 'NONE' -> NONE
+   r12 owner=e03 F4 X | 'NONE' -> NONE
+   r13 owner=e10 F3 A | 'NONE' -> NONE
+   r14 owner=e09 F2 B | 'NONE' -> NONE
+   r15 owner=e14 F3 A | 'NONE' -> NONE
+--------------------------------------------------------------------------------------------------------------
+e05 F2 | target=VD-813 -> silver foundry | B=The silver foundry houses container VD-813.
+[B+00] TRUE=1 AGG=1 true='The silver foundry' parsed=silver foundry foreign=[] aggregate=silver foundry
+   r00 owner=e05 F2 B | 'The silver foundry' -> silver foundry
+[B+01] TRUE=1 AGG=1 true='The silver foundry' parsed=silver foundry foreign=[] aggregate=silver foundry
+   r00 owner=e05 F2 B | 'The silver foundry' -> silver foundry
+   r01 owner=e07 F4 A | 'NONE' -> NONE
+[B+07] TRUE=1 AGG=1 true='The silver foundry' parsed=silver foundry foreign=[] aggregate=silver foundry
+   r00 owner=e05 F2 B | 'The silver foundry' -> silver foundry
+   r01 owner=e07 F4 A | 'NONE' -> NONE
+   r02 owner=e01 F2 X | 'NONE' -> NONE
+   r03 owner=e05 F2 A | 'NONE' -> NONE
+   r04 owner=e15 F4 A | 'NONE' -> NONE
+   r05 owner=e14 F3 B | 'NONE' -> NONE
+   r06 owner=e15 F4 X | 'NONE' -> NONE
+   r07 owner=e11 F4 B | 'NONE' -> NONE
+[B+15] TRUE=1 AGG=1 true='The silver foundry' parsed=silver foundry foreign=[] aggregate=silver foundry
+   r00 owner=e05 F2 B | 'The silver foundry' -> silver foundry
+   r01 owner=e07 F4 A | 'NONE' -> NONE
+   r02 owner=e01 F2 X | 'NONE' -> NONE
+   r03 owner=e05 F2 A | 'NONE' -> NONE
+   r04 owner=e15 F4 A | 'NONE' -> NONE
+   r05 owner=e14 F3 B | 'NONE' -> NONE
+   r06 owner=e15 F4 X | 'NONE' -> NONE
+   r07 owner=e11 F4 B | 'NONE' -> NONE
+   r08 owner=e04 F1 A | 'NONE' -> NONE
+   r09 owner=e01 F2 A | 'NONE' -> NONE
+   r10 owner=e04 F1 B | 'NONE' -> NONE
+   r11 owner=e02 F3 A | 'NONE' -> NONE
+   r12 owner=e06 F3 B | 'NONE' -> NONE
+   r13 owner=e13 F2 X | 'NONE' -> NONE
+   r14 owner=e03 F4 B | 'NONE' -> NONE
+   r15 owner=e03 F4 X | 'NONE' -> NONE
+--------------------------------------------------------------------------------------------------------------
+e09 F2 | target=TR-855 -> drift arcade | B=The drift arcade houses container TR-855.
+[B+00] TRUE=1 AGG=1 true='The drift arcade' parsed=drift arcade foreign=[] aggregate=drift arcade
+   r00 owner=e09 F2 B | 'The drift arcade' -> drift arcade
+[B+01] TRUE=1 AGG=1 true='The drift arcade' parsed=drift arcade foreign=[] aggregate=drift arcade
+   r00 owner=e09 F2 B | 'The drift arcade' -> drift arcade
+   r01 owner=e05 F2 X | 'NONE' -> NONE
+[B+07] TRUE=1 AGG=1 true='The drift arcade' parsed=drift arcade foreign=[] aggregate=drift arcade
+   r00 owner=e09 F2 B | 'The drift arcade' -> drift arcade
+   r01 owner=e05 F2 X | 'NONE' -> NONE
+   r02 owner=e11 F4 X | 'NONE' -> NONE
+   r03 owner=e07 F4 X | 'NONE' -> NONE
+   r04 owner=e09 F2 X | 'NONE' -> NONE
+   r05 owner=e11 F4 B | 'NONE' -> NONE
+   r06 owner=e15 F4 X | 'NONE' -> NONE
+   r07 owner=e00 F1 A | 'NONE' -> NONE
+[B+15] TRUE=1 AGG=1 true='The drift arcade' parsed=drift arcade foreign=[] aggregate=drift arcade
+   r00 owner=e09 F2 B | 'The drift arcade' -> drift arcade
+   r01 owner=e05 F2 X | 'NONE' -> NONE
+   r02 owner=e11 F4 X | 'NONE' -> NONE
+   r03 owner=e07 F4 X | 'NONE' -> NONE
+   r04 owner=e09 F2 X | 'NONE' -> NONE
+   r05 owner=e11 F4 B | 'NONE' -> NONE
+   r06 owner=e15 F4 X | 'NONE' -> NONE
+   r07 owner=e00 F1 A | 'NONE' -> NONE
+   r08 owner=e12 F1 A | 'NONE' -> NONE
+   r09 owner=e10 F3 A | 'NONE' -> NONE
+   r10 owner=e03 F4 B | 'NONE' -> NONE
+   r11 owner=e14 F3 X | 'NONE' -> NONE
+   r12 owner=e10 F3 X | 'NONE' -> NONE
+   r13 owner=e03 F4 X | 'NONE' -> NONE
+   r14 owner=e10 F3 B | 'NONE' -> NONE
+   r15 owner=e15 F4 B | 'NONE' -> NONE
+--------------------------------------------------------------------------------------------------------------
+e13 F2 | target=PC-784 -> lilac warehouse | B=The lilac warehouse houses container PC-784.
+[B+00] TRUE=1 AGG=1 true='lilac warehouse' parsed=lilac warehouse foreign=[] aggregate=lilac warehouse
+   r00 owner=e13 F2 B | 'lilac warehouse' -> lilac warehouse
+[B+01] TRUE=1 AGG=1 true='lilac warehouse' parsed=lilac warehouse foreign=[] aggregate=lilac warehouse
+   r00 owner=e13 F2 B | 'lilac warehouse' -> lilac warehouse
+   r01 owner=e01 F2 B | 'NONE' -> NONE
+[B+07] TRUE=0 AGG=0 true='lilac warehouse To determine the locatio' parsed=NONE foreign=[] aggregate=UNKNOWN
+   r00 owner=e13 F2 B | 'lilac warehouse To determine the location of contain' -> NONE
+   r01 owner=e01 F2 B | 'NONE' -> NONE
+   r02 owner=e00 F1 A | 'NONE' -> NONE
+   r03 owner=e00 F1 X | 'NONE' -> NONE
+   r04 owner=e03 F4 A | 'NONE' -> NONE
+   r05 owner=e09 F2 X | 'NONE' -> NONE
+   r06 owner=e01 F2 A | 'NONE' -> NONE
+   r07 owner=e10 F3 A | 'NONE' -> NONE
+[B+15] TRUE=1 AGG=1 true='lilac warehouse' parsed=lilac warehouse foreign=[] aggregate=lilac warehouse
+   r00 owner=e13 F2 B | 'lilac warehouse' -> lilac warehouse
+   r01 owner=e01 F2 B | 'NONE' -> NONE
+   r02 owner=e00 F1 A | 'NONE' -> NONE
+   r03 owner=e00 F1 X | 'NONE' -> NONE
+   r04 owner=e03 F4 A | 'NONE' -> NONE
+   r05 owner=e09 F2 X | 'NONE' -> NONE
+   r06 owner=e01 F2 A | 'NONE' -> NONE
+   r07 owner=e10 F3 A | 'NONE' -> NONE
+   r08 owner=e14 F3 A | 'NONE' -> NONE
+   r09 owner=e05 F2 A | 'NONE' -> NONE
+   r10 owner=e00 F1 B | 'NONE' -> NONE
+   r11 owner=e13 F2 A | 'NONE' -> NONE
+   r12 owner=e14 F3 B | 'NONE' -> NONE
+   r13 owner=e12 F1 A | 'NONE' -> NONE
+   r14 owner=e06 F3 A | 'NONE' -> NONE
+   r15 owner=e14 F3 X | 'NONE' -> NONE
+==============================================================================================================
+TEST464 — FINAL F2 STAGE-2 X-RAY
+test: 464
+purpose: final F2 Stage-2 diagnostic; TEST461 remains sealed
+F2_entities: [1, 5, 9, 13]
+sizes: [1, 2, 8, 16]
+solo_true_B: 3/4
+larger_true_B: 8/12
+larger_aggregate: 8/12
+true_B_changed_vs_solo: [(13, 8)]
+aggregation_collisions: 0
+errors: 0
+frozen_weights_ok: True
+minutes: 0.3
+verdict: F2_SINGLE_MODULE_READOUT_FAILURE
+==============================================================================================================
+TEST464 VERDICT: F2_SINGLE_MODULE_READOUT_FAILURE
+results: /content/test464_results.json
+
+
+EXPERIMENTAL CHAIN CLOSED — preserve TEST461 and TEST464 exactly as observed; no retuning.
