@@ -1,0 +1,89 @@
+ 
+[TEST460B] CPU self-test PASS: 32 module-question probes (4 entities, F1/F2 only)
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 83.9kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 933kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 87.0MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 71.3MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 136MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.68MB/s]
+Download complete: : 
+
+ 13.1GB,  421MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  472MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:39<00:00,  6.86s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 100.52it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 25.3kB/s]
+[TEST460B] building TEST460 fixed neutral codebook ...
+[01/32] e0 F1 A/S1 L=S:1 S=B:0 semLS:1 semSB:1 | L='JS-484' S='JS-484' B='JS-484'
+[02/32] e0 F1 A/S2 L=S:1 S=B:1 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[03/32] e0 F1 B/S1 L=S:1 S=B:0 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[04/32] e0 F1 B/S2 L=S:1 S=B:1 semLS:1 semSB:1 | L='ermine wharf' S='ermine wharf' B='ermine wharf'
+[05/32] e0 F1 X/S1 L=S:1 S=B:1 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[06/32] e0 F1 X/S2 L=S:1 S=B:0 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[07/32] e0 F1 W/S1 L=S:1 S=B:0 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[08/32] e0 F1 W/S2 L=S:1 S=B:1 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[09/32] e1 F2 A/S1 L=S:1 S=B:1 semLS:1 semSB:1 | L='Container KX-636' S='Container KX-636' B='Container KX-636'
+[10/32] e1 F2 A/S2 L=S:1 S=B:0 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[11/32] e1 F2 B/S1 L=S:1 S=B:0 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[12/32] e1 F2 B/S2 L=S:1 S=B:1 semLS:1 semSB:1 | L='Onyx abbey' S='Onyx abbey' B='Onyx abbey'
+[13/32] e1 F2 X/S1 L=S:1 S=B:0 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[14/32] e1 F2 X/S2 L=S:1 S=B:1 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[15/32] e1 F2 W/S1 L=S:1 S=B:1 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[16/32] e1 F2 W/S2 L=S:1 S=B:1 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[17/32] e2 F1 A/S1 L=S:1 S=B:1 semLS:1 semSB:1 | L='XN-709 The enameled da' S='XN-709 The enameled da' B='XN-709 The enameled da'
+[18/32] e2 F1 A/S2 L=S:1 S=B:0 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[19/32] e2 F1 B/S1 L=S:1 S=B:1 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[20/32] e2 F1 B/S2 L=S:1 S=B:1 semLS:1 semSB:1 | L='lemon abbey' S='lemon abbey' B='lemon abbey'
+[21/32] e2 F1 X/S1 L=S:1 S=B:0 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[22/32] e2 F1 X/S2 L=S:1 S=B:1 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[23/32] e2 F1 W/S1 L=S:1 S=B:1 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[24/32] e2 F1 W/S2 L=S:1 S=B:0 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[25/32] e3 F2 A/S1 L=S:1 S=B:0 semLS:1 semSB:1 | L='GD-921' S='GD-921' B='GD-921'
+[26/32] e3 F2 A/S2 L=S:1 S=B:1 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[27/32] e3 F2 B/S1 L=S:1 S=B:1 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[28/32] e3 F2 B/S2 L=S:1 S=B:0 semLS:1 semSB:1 | L='The onyx bakery' S='The onyx bakery' B='The onyx bakery'
+[29/32] e3 F2 X/S1 L=S:1 S=B:1 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[30/32] e3 F2 X/S2 L=S:1 S=B:1 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[31/32] e3 F2 W/S1 L=S:1 S=B:1 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+[32/32] e3 F2 W/S2 L=S:1 S=B:1 semLS:1 semSB:1 | L='NONE' S='NONE' B='NONE'
+====================================================================================================
+n: 32
+seq_batch_exact: 20/32
+seq_batch_semantic: 32/32
+legacy_seq_exact: 32/32
+legacy_seq_semantic: 32/32
+by_family: {'F1': {'n': 16, 'seq_batch_exact': 9, 'seq_batch_sem': 16, 'legacy_seq_exact': 16, 'legacy_seq_sem': 16}, 'F2': {'n': 16, 'seq_batch_exact': 11, 'seq_batch_sem': 16, 'legacy_seq_exact': 16, 'legacy_seq_sem': 16}}
+verdict: BATCH_SEMANTICS_MISMATCH
+legacy_note: UNRESOLVED
+errors: 0
+frozen_weights_ok: True
+minutes: 1.3
+====================================================================================================
+TEST460B VERDICT: BATCH_SEMANTICS_MISMATCH | UNRESOLVED  (results: /content/test460b_results.json)
+
+
+NEXT: DO NOT consume TEST461. Audit left-padding attention mask / local position_ids / cache-position semantics first.
