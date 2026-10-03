@@ -1,0 +1,68 @@
+ 
+[TEST456] CPU self-test PASS: 8 entities x 10 arms = 80 Stage2 generations
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 74.5kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 892kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 77.7MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 52.2MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 103MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.43MB/s]
+Download complete: : 
+
+ 13.1GB,  156MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  503MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:39<00:00,  7.60s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 100.51it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 31.8kB/s]
+[TEST456] building TEST452 codebook ...
+[01/08] e0 PRESERVED   RAW=1 V025=1 V050=1 V100=1 K025=1 K050=0 K100=1 KV025=0 KV050=0 KV100=1
+[02/08] e1 DESTRUCTIVE RAW=0 V025=0 V050=0 V100=0 K025=0 K050=0 K100=0 KV025=0 KV050=1 KV100=0
+[03/08] e2 RESCUE      RAW=1 V025=1 V050=0 V100=0 K025=0 K050=0 K100=0 KV025=0 KV050=1 KV100=0
+[04/08] e3 DESTRUCTIVE RAW=0 V025=0 V050=0 V100=0 K025=0 K050=0 K100=0 KV025=0 KV050=0 KV100=0
+[05/08] e4 PRESERVED   RAW=1 V025=1 V050=1 V100=1 K025=1 K050=1 K100=1 KV025=1 KV050=1 KV100=1
+[06/08] e5 UNREADABLE  RAW=0 V025=0 V050=0 V100=0 K025=1 K050=1 K100=0 KV025=1 KV050=1 KV100=1
+[07/08] e6 PRESERVED   RAW=1 V025=1 V050=1 V100=1 K025=1 K050=0 K100=1 KV025=1 KV050=0 KV100=1
+[08/08] e7 UNREADABLE  RAW=0 V025=0 V050=0 V100=0 K025=0 K050=0 K100=0 KV025=0 KV050=0 KV100=0
+======================================================================================================================
+ARM    ALL   DES   PRE   RES   UNR | DES+ PRE- RES- ALL+ ALL-
+RAW    4/8   0/2   3/3   1/1   0/2   | baseline
+V025   4/8   0/2   3/3   1/1   0/2   |    0    0    0    0    0
+V050   3/8   0/2   3/3   0/1   0/2   |    0    0    1    0    1
+V100   3/8   0/2   3/3   0/1   0/2   |    0    0    1    0    1
+K025   4/8   0/2   3/3   0/1   1/2   |    0    0    1    1    1
+K050   2/8   0/2   1/3   0/1   1/2   |    0    2    1    1    3
+K100   3/8   0/2   3/3   0/1   0/2   |    0    0    1    0    1
+KV025  3/8   0/2   2/3   0/1   1/2   |    0    1    1    1    2
+KV050  4/8   1/2   1/3   1/1   1/2   |    1    2    0    2    2
+KV100  4/8   0/2   3/3   0/1   1/2   |    0    0    1    1    1
+----------------------------------------------------------------------------------------------------------------------
+selective_candidates: []
+generations: 80 | frozen_weights_ok: True | minutes: 1.1
+======================================================================================================================
+TEST456 VERDICT: NONSELECTIVE_CAUSAL_EFFECT  results=/content/test456_results.json
+
+
+Scope: same-panel causal intervention assay; all 28 layers precommitted; no held-out/generalization claim.
