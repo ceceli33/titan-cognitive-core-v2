@@ -1,0 +1,70 @@
+ 
+[TEST458] CPU self-test PASS: 8 entities x 11 KV doses = 88 greedy generations + logP
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 82.1kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 928kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 81.4MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 66.9MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 136MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.63MB/s]
+Download complete: : 
+
+ 13.1GB,  795MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  477MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:39<00:00,  7.00s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 98.23it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 31.2kB/s]
+[TEST458] building TEST452 codebook ...
+[01/08] e0 PRESERVED   behavior=11100000111 | logP -16.96 -15.81 -13.81 -13.36 -12.54 -11.73 -9.35 -9.07 -11.83 -11.20 -13.49
+[02/08] e1 DESTRUCTIVE behavior=00100111000 | logP -11.14 -15.35 -12.66 -13.05 -13.85 -12.89 -12.19 -12.87 -12.10 -13.43 -13.76
+[03/08] e2 RESCUE      behavior=10100111110 | logP -14.60 -14.63 -13.89 -14.24 -14.85 -13.62 -14.11 -16.87 -9.67 -14.48 -11.66
+[04/08] e3 DESTRUCTIVE behavior=00000000000 | logP -15.49 -11.39 -14.48 -14.77 -15.39 -15.80 -17.16 -15.31 -14.98 -13.76 -13.14
+[05/08] e4 PRESERVED   behavior=11111111111 | logP -12.95 -13.92 -9.16 -11.17 -12.38 -13.44 -13.42 -13.90 -11.99 -13.21 -15.09
+[06/08] e5 UNREADABLE  behavior=01011111011 | logP -16.73 -16.95 -17.26 -14.68 -14.22 -14.35 -14.23 -15.09 -15.85 -10.32 -11.58
+[07/08] e6 PRESERVED   behavior=11111000011 | logP -16.88 -16.02 -13.52 -13.34 -13.95 -14.66 -13.94 -15.62 -14.77 -12.47 -15.75
+[08/08] e7 UNREADABLE  behavior=00000000000 | logP -14.37 -15.32 -12.98 -12.76 -12.52 -11.00 -10.96 -12.07 -10.31 -10.11 -12.60
+======================================================================================================================
+λ    ALL  DES  PRE  RES  UNR | mean correct-answer logP
+0.0    4/8   0/2   3/3   1/1   0/2 | -14.88980
+0.1    4/8   0/2   3/3   0/1   1/2 | -14.92230
+0.2    5/8   1/2   3/3   1/1   0/2 | -13.46924
+0.3    3/8   0/2   2/3   0/1   1/2 | -13.42108
+0.4    3/8   0/2   2/3   0/1   1/2 | -13.71184
+0.5    4/8   1/2   1/3   1/1   1/2 | -13.43643
+0.6    4/8   1/2   1/3   1/1   1/2 | -13.16937
+0.7    4/8   1/2   1/3   1/1   1/2 | -13.84978
+0.8    3/8   0/2   2/3   1/1   0/2 | -12.68770
+0.9    5/8   0/2   3/3   1/1   1/2 | -12.37256
+1.0    4/8   0/2   3/3   0/1   1/2 | -13.38405
+----------------------------------------------------------------------------------------------------------------------
+BOUNDARIES: {'0': {'effect': 'PRESERVED', 'transitions': [0.3, 0.8], 'success_doses': [0.0, 0.1, 0.2, 0.8, 0.9, 1.0], 'n_transitions': 2}, '1': {'effect': 'DESTRUCTIVE', 'transitions': [0.2, 0.3, 0.5, 0.8], 'success_doses': [0.2, 0.5, 0.6, 0.7], 'n_transitions': 4}, '2': {'effect': 'RESCUE', 'transitions': [0.1, 0.2, 0.3, 0.5, 1.0], 'success_doses': [0.0, 0.2, 0.5, 0.6, 0.7, 0.8, 0.9], 'n_transitions': 5}, '3': {'effect': 'DESTRUCTIVE', 'transitions': [], 'success_doses': [], 'n_transitions': 0}, '4': {'effect': 'PRESERVED', 'transitions': [], 'success_doses': [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0], 'n_transitions': 0}, '5': {'effect': 'UNREADABLE', 'transitions': [0.1, 0.2, 0.3, 0.8, 0.9], 'success_doses': [0.1, 0.3, 0.4, 0.5, 0.6, 0.7, 0.9, 1.0], 'n_transitions': 5}, '6': {'effect': 'PRESERVED', 'transitions': [0.5, 0.9], 'success_doses': [0.0, 0.1, 0.2, 0.3, 0.4, 0.9, 1.0], 'n_transitions': 2}, '7': {'effect': 'UNREADABLE', 'transitions': [], 'success_doses': [], 'n_transitions': 0}}
+selective_doses: [0.2]
+stable_selective_intervals: []
+generations: 88 | logp_evaluations: 88 | frozen_weights_ok: True | minutes: 1.2
+======================================================================================================================
+TEST458 VERDICT: ISOLATED_SELECTIVE_DOSE_OBSERVED  results=/content/test458_results.json
+Scope: same-panel KV dose-response map; diagnostic boundary assay, not held-out/generalization evidence.
+
