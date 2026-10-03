@@ -1,7 +1,6 @@
- 
-AKBASCORE NIRVANA — Cognitive Cartridge
+AKBASCORE NIRVANA — COGNITIVE CARTRIDGE
 
-Compressed Knowledge for Frozen Language Models
+Scalable Compressed Memory for Frozen Language Models
 
 Knowledge goes in. The source goes away. The memory remains.
 
@@ -9,25 +8,69 @@ Knowledge goes in. The source goes away. The memory remains.
 
 Overview
 
-AKBASCORE NIRVANA — Cognitive Cartridge is a new experimental release in the Titan Cognitive Core / AkbasCore research line.
+AKBASCORE NIRVANA — Cognitive Cartridge is a continuation of the Titan Cognitive Core / AkbasCore research line.
 
-NIRVANA investigates whether knowledge can be encoded into a compressed KV/PKV memory representation, the original source removed from the readout context, and the resulting memory queried by a frozen language model without modifying its model weights.
+The underlying project and earlier releases have already been publicly archived and released under their respective existing terms, including the MIT-licensed software lineage.
 
-The Cognitive Cartridge architecture is designed around a simple experimental principle:
+This release does not replace, revoke, or retroactively modify those earlier licenses.
 
-SOURCE → COMPRESSED COGNITIVE CARTRIDGE → SOURCE REMOVED → FROZEN-MODEL READOUT
+Instead, this record documents the development of NIRVANA from an individual compressed-memory mechanism into a scalable Cognitive Cartridge architecture capable of operating with multiple independently encoded memory records.
 
-The current implementation explores direct factual retrieval, linked retrieval, missing-information detection, distractor resistance, isolated memory readout, and no-memory controls.
+---
 
-This is experimental research software. Results apply to the documented experimental configurations and should not be interpreted as claims of unlimited memory, general intelligence, permanent weight learning, or universal performance.
+Cognitive Cartridge
+
+NIRVANA investigates compressed knowledge storage and readout in a frozen language model.
+
+Knowledge is encoded into compressed KV/PKV memory. During subsequent readout, the original source text is not reintroduced to the model.
+
+The model weights remain frozen.
+
+The current architecture extends this mechanism to multiple independently encoded memory records while preserving isolated readout and controlled aggregation.
+
+SOURCE KNOWLEDGE → COMPRESSED CARTRIDGE → SOURCE REMOVED → FROZEN-MODEL READOUT
+
+The experimental line evaluates:
+
+- compressed KV/PKV memory;
+- multiple independently encoded memory records;
+- direct factual retrieval;
+- linked multi-record retrieval;
+- missing-information / UNKNOWN behavior;
+- distractor resistance;
+- isolated batched readout;
+- no-memory controls;
+- scaling behavior as the number of memory records increases.
+
+The objective is not to claim permanent learning in model weights. The Cognitive Cartridge operates as an externalized compressed memory representation read by the frozen model.
+
+---
+
+What This Release Adds
+
+The principal contribution documented by this release is scaling the Cognitive Cartridge architecture beyond an individual memory record.
+
+Rather than treating the cartridge as a single fact or a single KV module, the architecture can organize multiple independently encoded records into a larger removable compressed-memory bank.
+
+This allows the experimental system to study how a frozen language model retrieves, combines, distinguishes, or rejects information as the number of available memory records increases.
+
+The release therefore records the transition from:
+
+compressed memory → multi-record Cognitive Cartridge architecture
+
+while retaining the core constraints of the NIRVANA experimental design:
+
+Frozen model weights. No fine-tuning. No LoRA. No optimizer-based weight update. Original source text not reintroduced during readout.
 
 ---
 
 Research Lineage
 
-AKBASCORE NIRVANA is a continuation of the experimental work developed through Titan Cognitive Core and AkbasCore.
+AKBASCORE NIRVANA — Cognitive Cartridge belongs to the continuing experimental lineage of:
 
-Original research repository:
+Titan Cognitive Core → AkbasCore → SEASC → NIRVANA
+
+Main research repository:
 
 https://github.com/ceceli33/titan-cognitive-core
 
@@ -35,96 +78,78 @@ Main project README:
 
 https://github.com/ceceli33/titan-cognitive-core/blob/main/README.md
 
-Earlier releases, experiments, demonstrations, logs, documentation, and their original licensing conditions remain unchanged.
+Earlier releases, source code, experimental records, demonstrations, and Zenodo archives remain governed by the licensing terms under which they were originally released.
 
-The licensing terms introduced below apply only to AKBASCORE NIRVANA — Cognitive Cartridge material released under this version and subsequent NIRVANA material that explicitly adopts these terms.
-
-They do not retroactively change the licensing status of earlier Titan Cognitive Core / AkbasCore releases.
+Nothing in this release changes the permissions previously granted for those earlier versions.
 
 ---
 
-License — AKBASCORE NIRVANA
+Licensing Notice for This Release
 
-Copyright © 2026 Mustafa Akbaş. All rights reserved except as expressly licensed.
+Copyright © 2026 Mustafa Akbaş
 
-AKBASCORE NIRVANA — Cognitive Cartridge is released under a source-available multi-license model.
+Earlier Titan Cognitive Core / AkbasCore software releases remain subject to their existing licenses, including previously released MIT-licensed material.
 
-The purpose of this licensing structure is to keep the project freely accessible for research, education, experimentation, non-commercial work, and qualifying small businesses while reserving larger commercial exploitation for separate commercial licensing.
+Those permissions are not withdrawn or restricted by this release.
 
-Research, Education & Non-Commercial Use
+Cognitive Cartridge Scale-Up Material
 
-Research, academic study, education, personal experimentation, evaluation, reproduction of experiments, and other qualifying non-commercial uses are permitted under the:
+New original material introduced specifically in this release for the AKBASCORE NIRVANA — Cognitive Cartridge multi-record / scalable cartridge architecture is reserved by the copyright holder except for the permissions expressly granted below.
 
-PolyForm Noncommercial License 1.0.0
+Research, Education and Non-Commercial Use
 
-Official license:
+Research, education, academic study, independent reproduction, personal experimentation, evaluation, and other non-commercial use of the new material introduced in this release are permitted free of charge.
 
-https://polyformproject.org/licenses/noncommercial/1.0.0/
+Small-Business Use
 
-Small Business Use
-
-Qualifying small businesses may use the software under the:
-
-PolyForm Small Business License 1.0.0
-
-Eligibility and applicable thresholds are determined by the official PolyForm Small Business License.
-
-Official license:
-
-https://polyformproject.org/licenses/small-business/1.0.0/
+Small-scale commercial experimentation and use by qualifying small businesses are permitted free of charge under the terms accompanying this release.
 
 Larger Commercial Use
 
-Organizations and commercial uses that are not authorized by either applicable license above require a separate commercial license from the copyright holder.
+Commercial exploitation of the new Cognitive Cartridge scale-up material introduced in this release by organizations outside the permitted small-business scope requires a separate commercial license from the copyright holder.
 
-This includes, where not otherwise authorized by the applicable license, incorporation of AKBASCORE NIRVANA technology or code into commercial products, commercial AI systems, hosted services, commercial infrastructure, or other commercial deployments.
+This requirement applies only to rights held by the copyright holder in the new material introduced by this release.
 
-Commercial licensing terms may be negotiated separately with the copyright holder.
+It does not retroactively impose commercial restrictions on earlier MIT-licensed AkbasCore / Titan Cognitive Core material.
 
-Commercial licensing contact:
-Please contact Mustafa Akbaş through the official project repository.
+Commercial licensing inquiries:
 
----
-
-Ownership and Scope
-
-These licenses grant permissions to use the covered material under their respective terms. They do not transfer ownership of AKBASCORE NIRVANA — Cognitive Cartridge or its original copyrighted source code, documentation, demonstrations, experimental materials, or associated works.
-
-All rights not expressly granted are reserved.
-
-This licensing notice applies only to material for which the copyright holder has authority to grant a license.
-
-Third-party models, libraries, frameworks, dependencies, and other third-party components remain subject to their respective licenses and terms.
-
-The names AkbasCore, AKBASCORE NIRVANA, and Cognitive Cartridge may not be used to falsely imply endorsement, sponsorship, certification, or official affiliation with this project or its author.
+Mustafa Akbaş
+via the official Titan Cognitive Core / AkbasCore repository.
 
 ---
 
-Important Version Boundary
+License Boundary
 
-This license is introduced with AKBASCORE NIRVANA — Cognitive Cartridge.
+For avoidance of doubt:
 
-Nothing in this README is intended to retroactively restrict, revoke, replace, or modify permissions previously granted for earlier Titan Cognitive Core / AkbasCore releases.
+Earlier MIT-licensed code remains MIT-licensed.
 
-Earlier releases remain governed by the licensing terms under which they were originally published.
+Earlier public releases retain their original licensing conditions.
 
-Each future NIRVANA release should identify the license applicable to that specific release.
+This release does not revoke previously granted permissions.
 
----
+The additional licensing terms concern only new copyrightable material introduced specifically with the scalable, multi-record AKBASCORE NIRVANA — Cognitive Cartridge implementation and documentation identified as part of this release.
 
-Research and Citation
-
-Independent reproduction, academic evaluation, validation, criticism, and further research are encouraged under the applicable license.
-
-When publishing work derived from this project, please identify the specific AKBASCORE NIRVANA / Titan Cognitive Core release, repository, and DOI where available so that experimental versions can be distinguished accurately.
+Third-party models, libraries, frameworks, and dependencies remain governed by their respective licenses.
 
 ---
 
-Disclaimer
+Experimental Scope
 
 AKBASCORE NIRVANA — Cognitive Cartridge is experimental research software.
 
-No warranty is provided except as specified by the applicable license. Experimental results apply to the particular models, hardware, configurations, datasets, controls, and evaluation procedures under which they were obtained.
+Results apply to the specific models, configurations, memory structures, datasets, controls, and evaluation procedures documented with each experiment.
+
+The project does not claim unlimited memory capacity, universal retrieval, permanent modification of model weights, or guaranteed performance outside the tested conditions.
+
+---
+
+Citation
+
+Academic reproduction, independent validation, criticism, and further research are encouraged.
+
+When referencing this work, please cite the specific AKBASCORE NIRVANA — Cognitive Cartridge release and its associated Zenodo DOI so that this scalable Cognitive Cartridge record can be distinguished from earlier Titan Cognitive Core / AkbasCore releases.
 
 ---
 
