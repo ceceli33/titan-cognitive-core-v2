@@ -1,0 +1,93 @@
+ 
+[TEST454] CPU self-test PASS: 8 entities; 24 Stage2 generations expected
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 84.5kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 819kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 84.0MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 63.9MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 135MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.64MB/s]
+Download complete: : 
+
+ 13.1GB, 1.02GB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  485MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:41<00:00,  6.89s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 95.25it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 30.5kB/s]
+[TEST454] building TEST452 codebook ...
+[01/08] e0 sepia silo         SOLO=1 AB=1 BA=1 effect=PRESERVED   K=+0.7380 V=+0.1628
+[02/08] e1 oxblood silo       SOLO=1 AB=0 BA=0 effect=DESTRUCTIVE K=+0.7886 V=+0.2294
+[03/08] e2 sepia gallery      SOLO=0 AB=1 BA=1 effect=RESCUE      K=+0.7717 V=+0.2206
+[04/08] e3 lapis cellar       SOLO=1 AB=0 BA=0 effect=DESTRUCTIVE K=+0.7656 V=+0.2066
+[05/08] e4 cerise vault       SOLO=1 AB=1 BA=1 effect=PRESERVED   K=+0.7750 V=+0.1871
+[06/08] e5 jasper gallery     SOLO=0 AB=0 BA=0 effect=UNREADABLE  K=+0.7454 V=+0.1430
+[07/08] e6 jasper silo        SOLO=1 AB=1 BA=1 effect=PRESERVED   K=+0.7745 V=+0.2024
+[08/08] e7 oxblood vault      SOLO=0 AB=0 BA=0 effect=UNREADABLE  K=+0.7602 V=+0.1999
+==========================================================================================
+SOLO: 5/8
+AB: 4/8
+BA: 4/8
+effects: {'PRESERVED': 3, 'DESTRUCTIVE': 2, 'RESCUE': 1, 'UNREADABLE': 2}
+order_sensitive: 0/8
+generations: 24
+minutes: 0.4
+frozen_weights_ok: True
+verdict: COMPOSITION_EFFECT_OBSERVED
+------------------------------------------------------------------------------------------
+layer  K_all    V_all    K_des    V_des    K_pre    V_pre    K_res    V_res
+00  +0.99920 +0.10455   0.9992  0.10769   0.9992  0.09328  0.99923  0.15866
+01  +0.99191 +0.13781  0.99278  0.16679  0.99114  0.11565  0.99283  0.19087
+02  +0.92519 +0.16949  0.92925  0.20422  0.92258  0.15324  0.93017  0.19032
+03  +0.97479 +0.07761  0.97559  0.10021  0.97428  0.06767  0.97707    0.106
+04  +0.60753 +0.35900  0.61672  0.38764  0.60702  0.35178  0.64584  0.35242
+05  +0.66728 +0.31530  0.67916  0.36648  0.66077  0.27923  0.67031  0.33686
+06  +0.82881 +0.20896  0.84078   0.2507  0.82333  0.19178  0.83772  0.23069
+07  +0.76755 +0.09889  0.78483  0.11584  0.76155  0.09802  0.76949  0.09053
+08  +0.62151 +0.31657  0.64126  0.34232  0.62103  0.30173  0.62541  0.31676
+09  +0.72655 +0.12142  0.74174  0.12117  0.72402  0.11803  0.72752  0.14327
+10  +0.77480 +0.25114  0.78892  0.25906  0.77353  0.25361  0.78698  0.29373
+11  +0.67733 +0.30936  0.69039  0.33409  0.68099  0.31687  0.67934  0.32846
+12  +0.74341 +0.26285  0.75689  0.30385  0.74588  0.26401  0.74842  0.25227
+13  +0.92541 +0.18637  0.93216  0.18754  0.92534  0.20098  0.92732  0.20027
+14  +0.59697 +0.35693   0.6043  0.36593  0.60265  0.36674  0.61403   0.3718
+15  +0.77816 +0.31768  0.78203  0.35578  0.78164  0.30929  0.78962  0.32863
+16  +0.75523 +0.24741   0.7675   0.2951  0.75588  0.24084  0.77004  0.26677
+17  +0.69037 +0.19342  0.70766  0.24314  0.68518  0.17119  0.69488  0.21211
+18  +0.79742 +0.17360  0.82352  0.21265  0.78628  0.14173   0.8022  0.17892
+19  +0.91816 +0.23419  0.92527  0.26204  0.91531  0.22778  0.92168  0.24896
+20  +0.65167 +0.20907  0.67967  0.23293  0.64243  0.20309  0.65453  0.21766
+21  +0.72399 +0.20041  0.74216  0.21427  0.71718  0.20133  0.73808  0.24358
+22  +0.63305 +0.13484  0.64733   0.1513  0.63404  0.12629  0.64547  0.17447
+23  +0.64656 +0.10530  0.66301  0.11834  0.63835   0.0848  0.65868  0.16357
+24  +0.68469 +0.11751   0.7038  0.13253  0.68116  0.10789  0.67715  0.16679
+25  +0.69080 +0.08915  0.70784  0.10919  0.68375  0.06833  0.70231  0.15621
+26  +0.61831 +0.07295  0.63523  0.09025  0.61515  0.05124  0.62302   0.1429
+27  +0.99957 +0.05952  0.99958  0.07288  0.99956  0.04824  0.99959  0.11286
+==========================================================================================
+TEST454 VERDICT: COMPOSITION_EFFECT_OBSERVED  results=/content/test454_results.json
+
+
+Scope: gold-ID Stage2 mechanism probe only. K/V cosine is diagnostic; it does not by itself identify a causal interference direction.
