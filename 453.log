@@ -1,0 +1,71 @@
+ 
+[TEST453] CPU self-test PASS: 16 cases (8 entities x AB/BA)
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 78.4kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 911kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 42.1MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 71.6MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 119MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.54MB/s]
+Download complete: : 
+
+ 13.1GB,  402MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  400MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:40<00:00,  7.07s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 100.38it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 32.9kB/s]
+[TEST453] building TEST452 codebook ...
+[01/16] t453-0:AB   SOLO=1 PADMATCH=0 JOINT=1 | S1 1/1/1 S2 1/0/1
+[02/16] t453-0:BA   SOLO=1 PADMATCH=0 JOINT=1 | S1 1/1/1 S2 1/0/1
+[03/16] t453-1:AB   SOLO=1 PADMATCH=0 JOINT=0 | S1 1/1/1 S2 1/0/0
+[04/16] t453-1:BA   SOLO=1 PADMATCH=0 JOINT=0 | S1 1/1/1 S2 1/0/0
+[05/16] t453-2:AB   SOLO=0 PADMATCH=0 JOINT=1 | S1 1/1/1 S2 0/0/1
+[06/16] t453-2:BA   SOLO=0 PADMATCH=0 JOINT=1 | S1 1/1/1 S2 0/0/1
+[07/16] t453-3:AB   SOLO=1 PADMATCH=1 JOINT=0 | S1 1/1/1 S2 1/1/0
+[08/16] t453-3:BA   SOLO=1 PADMATCH=0 JOINT=0 | S1 1/1/1 S2 1/0/0
+[09/16] t453-4:AB   SOLO=1 PADMATCH=0 JOINT=1 | S1 1/1/1 S2 1/0/1
+[10/16] t453-4:BA   SOLO=1 PADMATCH=1 JOINT=1 | S1 1/1/1 S2 1/1/1
+[11/16] t453-5:AB   SOLO=0 PADMATCH=0 JOINT=0 | S1 1/1/1 S2 0/0/0
+[12/16] t453-5:BA   SOLO=0 PADMATCH=0 JOINT=0 | S1 1/1/1 S2 0/0/0
+[13/16] t453-6:AB   SOLO=1 PADMATCH=1 JOINT=1 | S1 1/1/1 S2 1/1/1
+[14/16] t453-6:BA   SOLO=1 PADMATCH=1 JOINT=1 | S1 1/1/1 S2 1/1/1
+[15/16] t453-7:AB   SOLO=0 PADMATCH=0 JOINT=0 | S1 1/1/1 S2 0/0/0
+[16/16] t453-7:BA   SOLO=0 PADMATCH=0 JOINT=0 | S1 1/1/1 S2 0/0/0
+==========================================================================================
+SOLO: {'strict': '10/16', 'stage1': '16/16', 'stage2': '10/16'}
+PADMATCH: {'strict': '4/16', 'stage1': '16/16', 'stage2': '4/16'}
+JOINT: {'strict': '8/16', 'stage1': '16/16', 'stage2': '8/16'}
+paired: {'SOLO_to_PADMATCH_loss': 6, 'PADMATCH_to_JOINT_loss': 1, 'JOINT_to_PADMATCH_gain': 1}
+verdict: INCONCLUSIVE
+generations: 96
+minutes: 1.5
+frozen_weights_ok: True
+==========================================================================================
+TEST453 VERDICT: INCONCLUSIVE  results=/content/test453_results.json
+Interpretation: PADMATCH preserves joint total length and target-module slot while replacing the other module with equal-length PAD-derived KV.
+
+
+If SOLO≈PADMATCH >> JOINT, competing module content is implicated. If SOLO >> PADMATCH, joint layout/position/length itself contributes.
