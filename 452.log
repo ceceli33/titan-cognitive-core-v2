@@ -1,0 +1,129 @@
+ 
+[TEST452] CPU self-test PASS: 64 cases (8 entities x 8 branches)
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 77.5kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 806kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 78.9MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 62.1MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 134MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 2.91MB/s]
+Download complete: : 
+
+ 13.1GB, 1.11GB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  480MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:41<00:00,  7.61s/it]
+Loading weights: 100%
+
+ 339/339 [00:04<00:00, 97.93it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 31.3kB/s]
+[TEST452] building codebook from fixed neutral corpus ...
+[01/64] t452-0:AB      target=sepia silo         MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=correct       CONTEXT_HOP=other_wrong
+[02/64] t452-0:BA      target=sepia silo         MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=correct       CONTEXT_HOP=correct
+[03/64] t452-0:AXB     target=sepia silo         MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=correct       CONTEXT_HOP=correct
+[04/64] t452-0:BXA     target=sepia silo         MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=correct       CONTEXT_HOP=correct
+[05/64] t452-0:AX      target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=false_Q       CONTEXT_HOP=correct
+[06/64] t452-0:XA      target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=false_Q       CONTEXT_HOP=correct
+[07/64] t452-0:AXW     target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=false_P       CONTEXT_HOP=correct
+[08/64] t452-0:WXA     target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=false_P       CONTEXT_HOP=false_Q
+[09/64] t452-1:AB      target=oxblood silo       MW=other_wrong   strict=0 flag=single_id/single_place     JOINT_HOP=false_unknown CONTEXT_HOP=correct
+[10/64] t452-1:BA      target=oxblood silo       MW=other_wrong   strict=0 flag=single_id/single_place     JOINT_HOP=false_unknown CONTEXT_HOP=other_wrong
+[11/64] t452-1:AXB     target=oxblood silo       MW=other_wrong   strict=0 flag=single_id/single_place     JOINT_HOP=false_unknown CONTEXT_HOP=correct
+[12/64] t452-1:BXA     target=oxblood silo       MW=other_wrong   strict=0 flag=single_id/single_place     JOINT_HOP=false_unknown CONTEXT_HOP=correct
+[13/64] t452-1:AX      target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=correct       CONTEXT_HOP=correct
+[14/64] t452-1:XA      target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=correct       CONTEXT_HOP=correct
+[15/64] t452-1:AXW     target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=correct       CONTEXT_HOP=correct
+[16/64] t452-1:WXA     target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=correct       CONTEXT_HOP=correct
+[17/64] t452-2:AB      target=sepia gallery      MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=correct       CONTEXT_HOP=other_wrong
+[18/64] t452-2:BA      target=sepia gallery      MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=correct       CONTEXT_HOP=correct
+[19/64] t452-2:AXB     target=sepia gallery      MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=decoy_Q       CONTEXT_HOP=false_unknown
+[20/64] t452-2:BXA     target=sepia gallery      MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=decoy_Q       CONTEXT_HOP=correct
+[21/64] t452-2:AX      target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=false_Q       CONTEXT_HOP=correct
+[22/64] t452-2:XA      target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=false_Q       CONTEXT_HOP=false_Q
+[23/64] t452-2:AXW     target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=false_Q       CONTEXT_HOP=correct
+[24/64] t452-2:WXA     target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=false_Q       CONTEXT_HOP=correct
+[25/64] t452-3:AB      target=lapis cellar       MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=false_unknown CONTEXT_HOP=correct
+[26/64] t452-3:BA      target=lapis cellar       MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=false_unknown CONTEXT_HOP=correct
+[27/64] t452-3:AXB     target=lapis cellar       MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=false_unknown CONTEXT_HOP=correct
+[28/64] t452-3:BXA     target=lapis cellar       MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=false_unknown CONTEXT_HOP=false_unknown
+[29/64] t452-3:AX      target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=other_wrong   CONTEXT_HOP=correct
+[30/64] t452-3:XA      target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=other_wrong   CONTEXT_HOP=correct
+[31/64] t452-3:AXW     target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=other_wrong   CONTEXT_HOP=correct
+[32/64] t452-3:WXA     target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=other_wrong   CONTEXT_HOP=correct
+[33/64] t452-4:AB      target=cerise vault       MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=correct       CONTEXT_HOP=correct
+[34/64] t452-4:BA      target=cerise vault       MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=correct       CONTEXT_HOP=correct
+[35/64] t452-4:AXB     target=cerise vault       MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=correct       CONTEXT_HOP=correct
+[36/64] t452-4:BXA     target=cerise vault       MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=correct       CONTEXT_HOP=correct
+[37/64] t452-4:AX      target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=false_Q       CONTEXT_HOP=correct
+[38/64] t452-4:XA      target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=false_Q       CONTEXT_HOP=correct
+[39/64] t452-4:AXW     target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=false_P       CONTEXT_HOP=correct
+[40/64] t452-4:WXA     target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=false_P       CONTEXT_HOP=correct
+[41/64] t452-5:AB      target=jasper gallery     MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=false_unknown CONTEXT_HOP=false_unknown
+[42/64] t452-5:BA      target=jasper gallery     MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=false_unknown CONTEXT_HOP=other_wrong
+[43/64] t452-5:AXB     target=jasper gallery     MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=false_unknown CONTEXT_HOP=correct
+[44/64] t452-5:BXA     target=jasper gallery     MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=false_unknown CONTEXT_HOP=false_unknown
+[45/64] t452-5:AX      target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=correct       CONTEXT_HOP=correct
+[46/64] t452-5:XA      target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=correct       CONTEXT_HOP=correct
+[47/64] t452-5:AXW     target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=correct       CONTEXT_HOP=correct
+[48/64] t452-5:WXA     target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=correct       CONTEXT_HOP=correct
+[49/64] t452-6:AB      target=jasper silo        MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=correct       CONTEXT_HOP=other_wrong
+[50/64] t452-6:BA      target=jasper silo        MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=correct       CONTEXT_HOP=correct
+[51/64] t452-6:AXB     target=jasper silo        MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=correct       CONTEXT_HOP=correct
+[52/64] t452-6:BXA     target=jasper silo        MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=correct       CONTEXT_HOP=correct
+[53/64] t452-6:AX      target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=false_Q       CONTEXT_HOP=correct
+[54/64] t452-6:XA      target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=false_Q       CONTEXT_HOP=false_Q
+[55/64] t452-6:AXW     target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=false_P       CONTEXT_HOP=correct
+[56/64] t452-6:WXA     target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=false_P       CONTEXT_HOP=false_Q
+[57/64] t452-7:AB      target=oxblood vault      MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=other_wrong   CONTEXT_HOP=correct
+[58/64] t452-7:BA      target=oxblood vault      MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=other_wrong   CONTEXT_HOP=correct
+[59/64] t452-7:AXB     target=oxblood vault      MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=other_wrong   CONTEXT_HOP=correct
+[60/64] t452-7:BXA     target=oxblood vault      MW=correct       strict=1 flag=single_id/single_place     JOINT_HOP=other_wrong   CONTEXT_HOP=correct
+[61/64] t452-7:AX      target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=other_wrong   CONTEXT_HOP=correct
+[62/64] t452-7:XA      target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=other_wrong   CONTEXT_HOP=correct
+[63/64] t452-7:AXW     target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=other_wrong   CONTEXT_HOP=correct
+[64/64] t452-7:WXA     target=UNKNOWN            MW=correct       strict=1 flag=single_id/no_place         JOINT_HOP=other_wrong   CONTEXT_HOP=correct
+==========================================================================================
+CONTEXT_HOP/proc: {'L': '23/32', 'U': '28/32', 'J': 0.594, 'L_lo': 0.546, 'U_lo': 0.719}
+CONTEXT_HOP/strict: {'L': '23/32', 'U': '28/32', 'J': 0.594, 'L_lo': 0.546, 'U_lo': 0.719}
+JOINT_HOP/proc: {'L': '14/32', 'U': '8/32', 'J': -0.312, 'L_lo': 0.282, 'U_lo': 0.133}
+JOINT_HOP/strict: {'L': '14/32', 'U': '2/32', 'J': -0.5, 'L_lo': 0.282, 'U_lo': 0.017}
+MW/proc: {'L': '28/32', 'U': '32/32', 'J': 0.875, 'L_lo': 0.719, 'U_lo': 0.893}
+MW/strict: {'L': '28/32', 'U': '32/32', 'J': 0.875, 'L_lo': 0.719, 'U_lo': 0.893}
+NOMEM_MW/proc: {'L': '0/32', 'U': '32/32', 'J': 0.0, 'L_lo': 0.0, 'U_lo': 0.893}
+NOMEM_MW/strict: {'L': '0/32', 'U': '0/32', 'J': -1.0, 'L_lo': 0.0, 'U_lo': 0.0}
+MW_ORACLE: 60/64
+MW_DECOY: 46/64
+MW_flags: {'single_id/single_place': 32, 'single_id/no_place': 32}
+MW_outcomes: {'correct': 60, 'other_wrong': 4}
+by_branch: {'AB': '7/8', 'BA': '7/8', 'AXB': '7/8', 'BXA': '7/8', 'AX': '8/8', 'XA': '8/8', 'AXW': '8/8', 'WXA': '8/8'}
+by_family: {'F1': '32/32', 'F2': '28/32'}
+entities_all8_strict: 7
+verdict: PASS
+generations: 1056
+minutes: 18.0
+frozen_weights_ok: True
+==========================================================================================
+TEST452 VERDICT: PASS  (primary = MW strict chain credit; results saved to /content/test452_results.json)
+
+
+Scope: PASS means module-wise frozen reading + fixed aggregation separated linked/unlinked chains on 8 new entities. It does not show single-pass composition of independent caches or general memory.
