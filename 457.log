@@ -1,0 +1,61 @@
+ 
+[TEST457] CPU self-test PASS: 8 frozen entities; local behavioral sensitivity; generation-free
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 73.3kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 901kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 35.7MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 57.2MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 117MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.49MB/s]
+Download complete: : 
+
+ 13.1GB,  253MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  414MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:39<00:00,  6.87s/it]
+Loading weights: 100%
+
+ 339/339 [00:04<00:00, 99.01it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 33.2kB/s]
+[TEST457] building TEST452 codebook ...
+[01/08] e0 PRESERVED   base=-16.9592 | |dK|=54.2817 |dV|=7.7317 |dKV|=54.7772
+[02/08] e1 DESTRUCTIVE base=-11.1398 | |dK|=16.4504 |dV|=4.6665 |dKV|=18.0735
+[03/08] e2 RESCUE      base=-14.5982 | |dK|=81.2371 |dV|=7.5907 |dKV|=82.7272
+[04/08] e3 DESTRUCTIVE base=-15.4918 | |dK|=18.9934 |dV|=8.4818 |dKV|=28.6363
+[05/08] e4 PRESERVED   base=-12.9457 | |dK|=90.0917 |dV|=4.5003 |dKV|=79.5820
+[06/08] e5 UNREADABLE  base=-16.7328 | |dK|=82.8340 |dV|=10.4979 |dKV|=89.2568
+[07/08] e6 PRESERVED   base=-16.8784 | |dK|=154.0458 |dV|=12.2091 |dKV|=150.8760
+[08/08] e7 UNREADABLE  base=-14.3724 | |dK|=35.6903 |dV|=7.4733 |dKV|=37.4185
+============================================================================================================
+SPACE | |d| DES     PRE     RES     UNR   | D-P      D/P
+K     | 17.721868 99.473031 81.237149 59.262139 | -81.751164 0.178
+V     | 6.574160 8.147017 7.590723 8.985621 | -1.572857 0.807
+KV    | 23.354936 95.078409 82.727218 63.337618 | -71.723473 0.246
+------------------------------------------------------------------------------------------------------------
+sign consistency eps .01/.02: {'K': {'DESTRUCTIVE': '2/2', 'PRESERVED': '3/3', 'RESCUE': '1/1', 'UNREADABLE': '0/2'}, 'V': {'DESTRUCTIVE': '2/2', 'PRESERVED': '0/3', 'RESCUE': '1/1', 'UNREADABLE': '2/2'}, 'KV': {'DESTRUCTIVE': '2/2', 'PRESERVED': '3/3', 'RESCUE': '1/1', 'UNREADABLE': '1/2'}}
+evaluations: 104 | generations: 0 | frozen_weights_ok: True | minutes: 0.1
+============================================================================================================
+TEST457 VERDICT: NO_CLEAR_SENSITIVITY_SEPARATION  results=/content/test457_results.json
+
+
+Scope: same-panel local finite-difference assay; diagnostic only. No guard, causal rescue or generalization claim.
