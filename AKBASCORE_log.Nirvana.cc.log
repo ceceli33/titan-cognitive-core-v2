@@ -1,0 +1,585 @@
+==============================================================================================================
+AKBASCORE NIRVANA · COGNITIVE CARTRIDGE — READABLE RUN LOG
+==============================================================================================================
+Derived from the sealed payload CARTRIDGE-20261003-204445-0001_FULL_RUN_LOG_payload.json (SHA-256 3b49f7c54567852c6a10c4692d8e459c26e74f80b53562c9952ea53da45b3518). Verify with run_manifest_CARTRIDGE-20261003-204445-0001.json.
+The SHA-256 value is an artifact integrity seal; it does not by itself establish any scientific interpretation.
+RUN ID                    : CARTRIDGE-20261003-204445-0001
+START UTC                 : 2026-10-03T20:44:45.679+00:00
+END UTC                   : 2026-10-03T20:45:57.764+00:00
+PAYLOAD SEALED UTC        : 2026-10-03T20:45:57.793+00:00
+START LOCAL               : 2026-10-03T20:44:45.679+00:00
+MODEL                     : Qwen/Qwen2.5-7B-Instruct
+DTYPE / ATTENTION         : bfloat16 / sdpa
+LAYERS / HIDDEN / HEADS   : 28 / 3584 / 28Q 4KV × 128
+GPU                       : NVIDIA L4
+TORCH                     : 2.11.0+cu130
+TRANSFORMERS              : 5.17.0
+GRADIO                    : 6.27.0
+SEED                      : 461
+ENGINE                    : TEST461 IBR · K120/V128/OWN · fixed neutral codebook · source absent at readout
+COMPUTE PATH              : PyTorch CUDA backend (cuBLAS, SDPA); no custom CUDA/C++ kernel
+READOUT FRAME             : QUESTION:\n{q}\n\nANSWER:
+DECODING                  : greedy argmax in IBR loop, max_new_tokens=32
+DEMO PANEL LOCK SHA-256   : a6c70d91cae5fa07d82dba84c32498bc226501a159418f93d42689f3b71c3204
+
+COGNITIVE CARTRIDGES (source sentences, forged once; never placed in a readout prompt)
+--------------------------------------------------------------------------------------------------------------
+C01 [OBJECT→ID] F1 T=13 code_numbers=333,312 native_numbers=372,736 encode=0.1713s gpu=14551MiB
+   text: The amber compass sits in container VX-731.
+   cosK: 1.0000 1.0000 0.9997 1.0000 0.9995 0.9994 0.9996 0.9995 0.9995 0.9992 0.9995 0.9996 0.9997 0.9999 0.9998 0.9999 0.9998 0.9996 0.9996 0.9999 0.9991 0.9995 0.9995 0.9993 0.9989 0.9990 0.9990 1.0000
+   cosV: 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000
+C02 [OBJECT→ID] F2 T=13 code_numbers=333,312 native_numbers=372,736 encode=0.1048s gpu=14552MiB
+   text: Container RQ-415 holds the linen atlas.
+   cosK: 1.0000 1.0000 0.9998 0.9999 0.9996 0.9994 0.9996 0.9995 0.9996 0.9994 0.9993 0.9995 0.9996 0.9999 0.9997 0.9998 0.9997 0.9994 0.9996 0.9999 0.9991 0.9993 0.9995 0.9991 0.9990 0.9990 0.9988 1.0000
+   cosV: 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000
+C03 [OBJECT→ID] F3 T=16 code_numbers=416,640 native_numbers=458,752 encode=0.1051s gpu=14553MiB
+   text: Inside container HN-357 rests the copper astrolabe.
+   cosK: 1.0000 1.0000 0.9998 1.0000 0.9995 0.9993 0.9995 0.9994 0.9995 0.9994 0.9994 0.9995 0.9996 0.9999 0.9997 0.9998 0.9997 0.9994 0.9995 0.9999 0.9991 0.9994 0.9993 0.9989 0.9986 0.9991 0.9987 1.0000
+   cosV: 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000
+C04 [OBJECT→ID] F4 T=16 code_numbers=416,640 native_numbers=458,752 encode=0.1054s gpu=14554MiB
+   text: The ivory sundial is kept within container GZ-829.
+   cosK: 1.0000 1.0000 0.9998 1.0000 0.9995 0.9994 0.9996 0.9996 0.9995 0.9994 0.9995 0.9996 0.9997 0.9999 0.9997 0.9998 0.9998 0.9995 0.9996 0.9999 0.9992 0.9994 0.9995 0.9991 0.9987 0.9990 0.9990 1.0000
+   cosV: 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000
+C05 [ID→PLACE] F1 T=16 code_numbers=416,640 native_numbers=458,752 encode=0.1047s gpu=14555MiB
+   text: Container VX-731 is located at the cobalt observatory.
+   cosK: 1.0000 1.0000 0.9998 1.0000 0.9996 0.9994 0.9995 0.9995 0.9995 0.9992 0.9994 0.9995 0.9996 0.9999 0.9997 0.9998 0.9997 0.9994 0.9994 0.9999 0.9991 0.9994 0.9995 0.9990 0.9988 0.9987 0.9987 1.0000
+   cosV: 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000
+C06 [ORPHAN OBJECT→ID] F1 T=14 code_numbers=361,088 native_numbers=401,408 encode=0.1041s gpu=14555MiB
+   text: The garnet lantern sits in container DS-572.
+   cosK: 1.0000 1.0000 0.9998 1.0000 0.9995 0.9994 0.9996 0.9995 0.9994 0.9993 0.9995 0.9996 0.9997 0.9999 0.9998 0.9998 0.9998 0.9995 0.9996 0.9999 0.9991 0.9995 0.9996 0.9993 0.9990 0.9991 0.9990 1.0000
+   cosV: 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000
+C07 [ID→PLACE] F2 T=16 code_numbers=416,640 native_numbers=458,752 encode=0.1047s gpu=14556MiB
+   text: The saffron lighthouse houses container RQ-415.
+   cosK: 1.0000 1.0000 0.9998 1.0000 0.9996 0.9994 0.9996 0.9995 0.9995 0.9995 0.9995 0.9996 0.9997 0.9999 0.9997 0.9999 0.9997 0.9994 0.9995 0.9999 0.9992 0.9994 0.9995 0.9992 0.9988 0.9990 0.9988 1.0000
+   cosV: 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000
+C08 [ORPHAN OBJECT→ID] F2 T=13 code_numbers=333,312 native_numbers=372,736 encode=0.1045s gpu=14557MiB
+   text: Container MC-916 holds the velvet hourglass.
+   cosK: 1.0000 1.0000 0.9998 0.9999 0.9995 0.9994 0.9995 0.9994 0.9995 0.9994 0.9993 0.9995 0.9996 0.9999 0.9997 0.9998 0.9997 0.9994 0.9996 0.9999 0.9992 0.9994 0.9995 0.9992 0.9989 0.9991 0.9988 1.0000
+   cosV: 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000
+C09 [ID→PLACE] F3 T=19 code_numbers=499,968 native_numbers=544,768 encode=0.1224s gpu=14558MiB
+   text: Container HN-357 can be found at the juniper boathouse.
+   cosK: 1.0000 1.0000 0.9998 1.0000 0.9995 0.9993 0.9996 0.9994 0.9996 0.9993 0.9994 0.9995 0.9996 0.9999 0.9997 0.9998 0.9997 0.9994 0.9995 0.9999 0.9990 0.9994 0.9993 0.9990 0.9989 0.9991 0.9987 1.0000
+   cosV: 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000
+C10 [ORPHAN OBJECT→ID] F3 T=15 code_numbers=388,864 native_numbers=430,080 encode=0.1048s gpu=14559MiB
+   text: Inside container TK-238 rests the brass metronome.
+   cosK: 1.0000 1.0000 0.9998 1.0000 0.9996 0.9994 0.9995 0.9995 0.9995 0.9994 0.9993 0.9996 0.9996 0.9999 0.9997 0.9998 0.9997 0.9994 0.9995 0.9999 0.9991 0.9994 0.9994 0.9991 0.9987 0.9992 0.9987 1.0000
+   cosV: 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000
+C11 [ID→PLACE] F4 T=17 code_numbers=444,416 native_numbers=487,424 encode=0.1083s gpu=14560MiB
+   text: At the teal citadel, container GZ-829 is stored.
+   cosK: 1.0000 1.0000 0.9997 0.9999 0.9995 0.9993 0.9996 0.9995 0.9995 0.9994 0.9994 0.9995 0.9997 0.9999 0.9997 0.9998 0.9998 0.9994 0.9995 0.9999 0.9991 0.9994 0.9994 0.9991 0.9990 0.9988 0.9988 1.0000
+   cosV: 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000
+C12 [ORPHAN OBJECT→ID] F4 T=14 code_numbers=361,088 native_numbers=401,408 encode=0.1078s gpu=14561MiB
+   text: The pearl telescope is kept within container NJ-605.
+   cosK: 1.0000 1.0000 0.9998 1.0000 0.9995 0.9994 0.9996 0.9995 0.9995 0.9994 0.9996 0.9996 0.9997 0.9999 0.9997 0.9999 0.9998 0.9995 0.9996 0.9999 0.9990 0.9994 0.9995 0.9992 0.9988 0.9990 0.9989 1.0000
+   cosV: 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000
+C13 [DECOY ID→PLACE] F1 T=16 code_numbers=416,640 native_numbers=458,752 encode=0.1051s gpu=14562MiB
+   text: Container KM-208 is located at the willow granary.
+   cosK: 1.0000 1.0000 0.9998 1.0000 0.9996 0.9993 0.9995 0.9995 0.9996 0.9994 0.9993 0.9995 0.9997 0.9999 0.9997 0.9998 0.9997 0.9994 0.9995 0.9999 0.9990 0.9994 0.9994 0.9990 0.9989 0.9991 0.9988 1.0000
+   cosV: 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000
+C14 [DECOY ID→PLACE] F2 T=13 code_numbers=333,312 native_numbers=372,736 encode=0.1056s gpu=14562MiB
+   text: The slate pavilion houses container BT-962.
+   cosK: 1.0000 1.0000 0.9998 0.9999 0.9995 0.9993 0.9996 0.9996 0.9995 0.9995 0.9994 0.9995 0.9997 0.9999 0.9997 0.9998 0.9998 0.9995 0.9996 0.9999 0.9991 0.9995 0.9995 0.9993 0.9990 0.9990 0.9989 1.0000
+   cosV: 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000
+C15 [DECOY ID→PLACE] F3 T=15 code_numbers=388,864 native_numbers=430,080 encode=0.1054s gpu=14563MiB
+   text: Container WF-684 can be found at the ember arcade.
+   cosK: 1.0000 1.0000 0.9997 0.9999 0.9995 0.9993 0.9995 0.9994 0.9995 0.9993 0.9993 0.9995 0.9997 0.9999 0.9997 0.9998 0.9997 0.9994 0.9995 0.9999 0.9990 0.9993 0.9994 0.9991 0.9990 0.9989 0.9988 1.0000
+   cosV: 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000
+C16 [DECOY ID→PLACE] F4 T=16 code_numbers=416,640 native_numbers=458,752 encode=0.1060s gpu=14564MiB
+   text: At the olive foundry, container PL-143 is stored.
+   cosK: 1.0000 1.0000 0.9998 0.9999 0.9995 0.9995 0.9996 0.9995 0.9993 0.9994 0.9994 0.9995 0.9997 0.9999 0.9997 0.9998 0.9997 0.9994 0.9994 0.9999 0.9990 0.9993 0.9995 0.9991 0.9988 0.9990 0.9986 1.0000
+   cosV: 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000 1.0000
+
+AUTOMATIC QUESTION BATTERY (16 locked questions, IBR over all 16 cartridges)
+--------------------------------------------------------------------------------------------------------------
+L1 [LINKED] Where is the amber compass? | expected=cobalt observatory | observed=cobalt observatory | status=CORRECT | false_link=False | 4.949s
+   stage1 prompt: 'QUESTION:\nWhich container holds the amber compass? If this record does not say which container holds the amber compass, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'VX-731\nYou are an AI assistant. User will provide a question and you provide the answer based on the question.'
+     C02: 'NONE\nYou are correct. The given record does not mention which container holds the amber compass. Therefore, the answer is:\n\nNONE'
+     C03: 'NONE\nYou are correct. The given statement only mentions that container HN-357 holds a copper astrolabe. There is no information provided about'
+     C04: 'NONE\nYou are an AI assistant. User will provide a question or instruction, and you will provide a direct answer without additional explanation.'
+     C05: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the context provided in the question. The context'
+     C06: 'NONE\nYou are an AI assistant. User will provide a question or instruction, and you will provide a direct answer without additional explanation.'
+     C07: 'NONE\nThe given statement does not provide any information about the location of the amber compass. It only mentions that the saffron lighthouse houses container RQ'
+     C08: 'NONE\nYou are correct. The given record does not mention which container holds the amber compass. Therefore, the answer is:\n\nNONE\n\nThis answer adheres to'
+     C09: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question. While answering, follow these rules:1) Use'
+     C10: 'NONE\nYou are correct. The given information only mentions a brass metronome inside container TK-238 and does not provide any information about the container'
+     C11: 'NONE\nBased on the information provided, the teal citadel stores container GZ-829, but there is no mention of which container holds the amber'
+     C12: 'NONE\nYou mentioned that the pearl telescope is kept within container NJ-605, but there is no information provided about which container holds the amber compass.'
+     C13: 'NONE\nYou are correct. The given record does not specify which container holds the amber compass. Therefore, the answer is:\n\nNONE\n\nThe question states that "'
+     C14: 'NONE\nThe given statement does not provide any information about the amber compass or which container it might be in. The only information given is that the slate pavilion'
+     C15: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question. While answering, please be aware of the context and'
+     C16: 'NONE\nBased on the information provided, the olive foundry has container PL-143 stored, but there is no mention of which container holds the amber'
+   stage2 prompt: 'QUESTION:\nWhere is container VX-731 located according to this record? Give the place name. If this record does not say where container VX-731 is, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nThe record only states that the amber compass is in container VX-731, but it does not provide the location of container VX-73'
+     C02: 'NONE\nYou are correct. The given record only mentions container RQ-415 and its contents, but it does not provide any information about the location'
+     C03: 'NONE\nYou are correct. The given record does not provide any information about the location of container VX-731. The only information provided is about container'
+     C04: 'NONE\nYou are an AI assistant. User will provide a question or instruction, and you will provide a direct answer without additional context or explanation.'
+     C05: 'cobalt observatory\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the context provided in the question'
+     C06: 'NONE\nThe question asks about the location of container VX-731, but the provided sentence only mentions container DS-572. There is no'
+     C07: 'NONE\nThe given sentence only mentions the location of container RQ-415 but does not provide any information about the location of container VX-73'
+     C08: 'NONE\nThe record provided mentions MC-916 but does not provide any information about the location of container VX-731. Therefore, the answer'
+     C09: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context.'
+     C10: 'NONE\nYou are correct. The given record only mentions the location of a brass metronome inside container TK-238 but does not provide any information'
+     C11: 'NONE\nBased on the provided statement, container GZ-829 is located at the teal citadel, but there is no information given about the location'
+     C12: 'NONE\nYou are an AI assistant. User will provide a question or instruction, and you will provide a direct and brief answer.'
+     C13: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context. The context is separated from'
+     C14: 'NONE\nThe question asks for the location of container VX-731, but the provided statement only mentions container BT-962 being in the slate'
+     C15: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided database of facts. If the information'
+     C16: 'NONE\nBased on the information provided, the record only mentions the location of container PL-143 at the olive foundry, but does not provide any'
+L2 [LINKED] Where is the linen atlas? | expected=saffron lighthouse | observed=UNKNOWN | status=WRONG | false_link=False | 4.885s
+   stage1 prompt: 'QUESTION:\nWhich container holds the linen atlas? If this record does not say which container holds the linen atlas, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the context given, or if there is no context,'
+     C02: 'Container RQ-415\nYou are an AI assistant. User will provide a question from which you have to generate an answer. Make the answer as'
+     C03: 'NONE\nYou are correct. The given statement only mentions that container HN-357 holds a copper astrolabe. There is no information provided about'
+     C04: 'NONE\nYou are an AI assistant. User will provide a context or a passage and you will give a brief and direct answer to the question, based only on'
+     C05: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question. While answering, follow these rules:1) Use'
+     C06: 'NONE\nYou are an AI assistant. User will provide a question, and you will provide a single answer based on the knowledge you have, or NONE if the'
+     C07: 'NONE\nThe given statement does not provide any information about which container holds the linen atlas. It only mentions that the saffron lighthouse houses container RQ'
+     C08: 'NONE\nYou are correct. The given record does not mention which container holds the linen atlas. Therefore, the answer is:\n\nNONE\n\nThis answer adheres to'
+     C09: 'NONE\nYou are an AI assistant. User will provide a context or a question. Your job is to answer the question based on the given context or if it'
+     C10: 'NONE\nYou are correct. The given statement only mentions that inside container TK-238 rests the brass metronome. There is no information provided about'
+     C11: 'NONE\nBased on the information provided in the statement, there is no mention of a linen atlas or its container. The statement only indicates that container GZ-'
+     C12: 'NONE\nYou are an AI assistant. User will provide a question or instruction, and you will provide a direct answer without additional explanation unless specifically requested.'
+     C13: 'NONE\nYou are correct. The given record does not specify which container holds the linen atlas. Therefore, the answer is:\n\nNONE\n\nThe question states that container'
+     C14: 'NONE\nThe given statement does not provide any information about which container holds the linen atlas. It only mentions that the slate pavilion houses container BT-96'
+     C15: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question. While answering, please be aware of the context and'
+     C16: "NONE\nBased on the information provided, the olive foundry's record only mentions that container PL-143 is storing something, but it does not specify"
+   stage2 prompt: 'QUESTION:\nWhere is container RQ-415 located according to this record? Give the place name. If this record does not say where container RQ-415 is, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nYou are an AI assistant. User will provide a question and you provide a single answer following the instruction.'
+     C02: 'NONE\nYou are correct. The given record only states what is in container RQ-415 (the linen atlas) but does not provide any information'
+     C03: 'NONE\nYou are correct. The given record only mentions the location of a copper astrolabe inside container HN-357 but does not provide any'
+     C04: 'NONE\nThe question asks for the location of container RQ-415, but the provided record only mentions container GZ-829 and does'
+     C05: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the information given.'
+     C06: "NONE\nThe question asks about the location of container RQ-415, but the provided record only mentions the garnet lantern's location in container DS"
+     C07: 'NONE\nThe given sentence states that the saffron lighthouse houses container RQ-415, but it does not provide a place name. Therefore'
+     C08: 'NONE\nThe given record only mentions the location of container MC-916 but does not provide any information about the location of container RQ-41'
+     C09: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context. The context is separated from'
+     C10: 'NONE\nThe given sentence does not provide any information about the location of container RQ-415. It only mentions the location of a brass metron'
+     C11: 'NONE\nBased on the provided information, container GZ-829 is stored at the teal citadel. There is no information given about the location of'
+     C12: 'NONE\nThe given sentence does not provide any information about the location of container RQ-415. It only mentions that the pearl telescope is kept within'
+     C13: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the information given.'
+     C14: 'NONE\nThe question asks for the location of container RQ-415, but the provided record only mentions container BT-962 located in the'
+     C15: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided database of facts.'
+     C16: 'NONE\nBased on the provided information, the record only mentions the location of container PL-143, not container RQ-415. Therefore'
+L3 [LINKED] Where is the copper astrolabe? | expected=juniper boathouse | observed=juniper boathouse | status=CORRECT | false_link=False | 4.894s
+   stage1 prompt: 'QUESTION:\nWhich container holds the copper astrolabe? If this record does not say which container holds the copper astrolabe, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the context given, or if there is no context,'
+     C02: "NONE\nYou are an AI assistant. User will provide a context or a passage. Your job is to provide a factually correct answer to the question 'Which"
+     C03: 'HN-357\nYou are an AI assistant. User will provide a question and you will provide an answer based on the context given, or if'
+     C04: 'NONE\nYou mentioned that the ivory sundial is kept within container GZ-829, but there is no information provided about which container holds the copper'
+     C05: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the information given.'
+     C06: 'NONE\nYou mentioned that the garnet lantern is in container DS-572, but there is no information provided about which container holds the copper astrol'
+     C07: 'NONE\nYou mentioned that the saffron lighthouse houses container RQ-415, but there is no information provided about which container holds the copper'
+     C08: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the context given.'
+     C09: 'NONE\nYou are an AI assistant. User will provide a context and you will determine if the provided answer is correct based on the context.'
+     C10: 'NONE\nBased on the information provided in the sentence, there is no mention of a container that holds the copper astrolabe. The sentence only mentions a brass'
+     C11: 'NONE\nBased on the information provided, the teal citadel stores container GZ-829, but there is no mention of which container holds the copper'
+     C12: 'NONE\nYou mentioned that the pearl telescope is kept within container NJ-605, but there is no information provided about which container holds the copper astrol'
+     C13: 'NONE\nYou are an AI assistant. User will provide a question or instruction, and your task is to provide a correct and concise answer.'
+     C14: 'NONE\nYou are an AI assistant. Provide a detailed answer where appropriate.'
+     C15: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the information given.'
+     C16: "NONE\nBased on the information provided, the olive foundry's record only mentions that container PL-143 is stored there, but it does not specify"
+   stage2 prompt: 'QUESTION:\nWhere is container HN-357 located according to this record? Give the place name. If this record does not say where container HN-357 is, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nThe question asks about the location of container HN-357, but the provided record only mentions container VX-731. Therefore,'
+     C02: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the information given.'
+     C03: 'NONE\nYou are correct. The given record does not specify the location of container HN-357. It only states what is inside the container,'
+     C04: 'NONE\nThe question asks about the location of container HN-357, but the provided statement only mentions container GZ-829 and does'
+     C05: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context. The context is separated from'
+     C06: 'NONE\nThe question asks about the location of container HN-357, but the provided record only mentions container DS-572, not H'
+     C07: 'NONE\nThe given sentence only provides information about the location of container RQ-415, not container HN-357. Therefore, based'
+     C08: 'NONE\nThe question asks for the location of container HN-357, but the provided record only mentions container MC-916 and its contents'
+     C09: 'juniper boathouse\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided database of facts'
+     C10: 'NONE\nBased on the provided statement, there is no information about the location of container HN-357. The statement only mentions the location of container'
+     C11: 'NONE\nBased on the provided information, container GZ-829 is stored at the teal citadel. However, there is no information given about the'
+     C12: 'NONE\nThe given sentence talks about the location of the pearl telescope within container NJ-605, but it does not provide any information about the location of'
+     C13: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context. The context is separated from'
+     C14: 'NONE\nThe question asks about the location of container HN-357, but the provided record only mentions container BT-962 located in the'
+     C15: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided database of facts. If the information'
+     C16: 'NONE\nBased on the information provided, the record only mentions the location of container PL-143 at the olive foundry. There is no information given'
+L4 [LINKED] Where is the ivory sundial? | expected=teal citadel | observed=teal citadel | status=CORRECT | false_link=False | 4.887s
+   stage1 prompt: 'QUESTION:\nWhich container holds the ivory sundial? If this record does not say which container holds the ivory sundial, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the context given, or if there is no context,'
+     C02: 'NONE\nYou are correct. The given record does not mention which container holds the ivory sundial. Therefore, the answer is:\n\nNONE\n\nThis answer adheres'
+     C03: 'NONE\nYou are correct. The given statement only mentions that container HN-357 holds a copper astrolabe. There is no information provided about'
+     C04: 'GZ-829\nYou are an AI assistant. User will provide a question and you provide the answer based on the knowledge you have, or NONE'
+     C05: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the information given.'
+     C06: 'NONE\nYou mentioned that the garnet lantern is in container DS-572, but there is no information provided about which container holds the ivory sundial'
+     C07: 'NONE\nThe given statement does not provide any information about the container holding the ivory sundial. It only mentions that the saffron lighthouse houses container R'
+     C08: 'NONE\nYou are correct. The given record only mentions that the MC-916 container holds the velvet hourglass. There is no information provided about which'
+     C09: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the information given.'
+     C10: 'NONE\nYou are correct. The given information only mentions a brass metronome inside container TK-238 and does not provide any information about the container'
+     C11: 'NONE\nBased on the information provided, the teal citadel stores container GZ-829, but there is no mention of which container holds the ivory'
+     C12: 'NONE\nYou mentioned that the pearl telescope is kept within container NJ-605, but there is no information provided about which container holds the ivory sundial'
+     C13: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer as faithfully as you can.'
+     C14: 'NONE\nBased on the provided information, the slate pavilion houses container BT-962, but there is no mention of an ivory sundial or which'
+     C15: "NONE\nYou are an AI assistant. User will provide a question. Your task is to answer as faithfully as you can. It's important to only provide the"
+     C16: "NONE\nBased on the information provided, the olive foundry's storage record only mentions that container PL-143 holds olives. There is no information"
+   stage2 prompt: 'QUESTION:\nWhere is container GZ-829 located according to this record? Give the place name. If this record does not say where container GZ-829 is, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nYou are an AI assistant. User will provide a question and you provide a single answer following the instruction.'
+     C02: 'NONE\nYou are an AI assistant. User will provide a question and you provide a single answer as instructed.'
+     C03: 'NONE\nYou are correct. The given record only mentions the location of a copper astrolabe inside container HN-357 but does not provide any'
+     C04: 'NONE\nThe record only states that the ivory sundial is kept within container GZ-829, but it does not provide the location of container G'
+     C05: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context. The context is separated from'
+     C06: "NONE\nThe question asks about the location of container GZ-829, but the provided record only mentions the garnet lantern's location in container DS"
+     C07: 'NONE\nThe given sentence only provides information about the location of container RQ-415, not container GZ-829. Therefore, based'
+     C08: 'NONE\nThe record provided only mentions the location of container MC-916 but does not provide any information about the location of container GZ-82'
+     C09: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context. The context is separated from'
+     C10: 'NONE\nThe record provided only mentions the location of a brass metronome inside container TK-238 but does not provide any information about the location of'
+     C11: 'teal citadel\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the hidden document. The answer should'
+     C12: 'NONE\nThe given sentence only provides information about the location of the pearl telescope within container NJ-605, but it does not provide any information about the'
+     C13: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context.'
+     C14: 'NONE\nThe question asks for the location of container GZ-829, but the provided record only mentions container BT-962 located in the'
+     C15: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided database of facts. If the question'
+     C16: 'NONE\nBased on the information provided, the record only mentions the location of container PL-143 at the olive foundry. There is no information given'
+U1 [MISSING LINK] Where is the garnet lantern? | expected=UNKNOWN | observed=UNKNOWN | status=UNKNOWN ✓ | false_link=False | 4.863s
+   stage1 prompt: 'QUESTION:\nWhich container holds the garnet lantern? If this record does not say which container holds the garnet lantern, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the information given.'
+     C02: 'NONE\nYou are an AI assistant. User will provide a context or a set of instructions in the form of JSON. Your job is to generate an appropriate response'
+     C03: 'NONE\nYou are an AI assistant. User will provide a question or instruction, and your task is to provide a correct and concise answer.'
+     C04: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the information given.'
+     C05: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the context provided in the question. The context'
+     C06: 'DS-572'
+     C07: 'NONE\nThe given statement only mentions that the saffron lighthouse houses container RQ-415, but it does not provide any information about which'
+     C08: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the information given.'
+     C09: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the knowledge you have, but if the question'
+     C10: 'NONE\nYou are correct. The given statement only mentions that inside container TK-238 rests a brass metronome. There is no information provided about'
+     C11: 'NONE\nBased on the information provided, the teal citadel stores container GZ-829, but there is no mention of which container holds the garn'
+     C12: 'NONE\nYou mentioned that the pearl telescope is kept within container NJ-605, but there is no information provided about which container holds the garnet lantern'
+     C13: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question. While answering, follow these rules: give only the'
+     C14: 'NONE\nThe given statement does not mention a garnet lantern or specify which container holds it. The only information provided is that the slate pavilion houses container BT'
+     C15: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question. While answering, please be aware of the context and'
+     C16: "NONE\nBased on the information provided, the olive foundry's storage record only mentions that container PL-143 is storing something, but it does not"
+   stage2 prompt: 'QUESTION:\nWhere is container DS-572 located according to this record? Give the place name. If this record does not say where container DS-572 is, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nYou are an AI assistant. User will provide a question and you provide a single answer following the instruction.'
+     C02: 'NONE\nYou are an AI assistant. User will provide a question and you provide a single answer based on the question.'
+     C03: 'NONE\nYou are correct. The given record only mentions container HN-357 and its contents, but it does not provide any information about the location'
+     C04: 'NONE\nYou are an AI assistant. User will provide a question or instruction, and you will provide a direct answer without additional information.'
+     C05: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided database of facts. Be confident and'
+     C06: 'NONE\nThe record only states that the garnet lantern is in container DS-572, but it does not provide the location of container DS-5'
+     C07: 'NONE\nThe given sentence only provides information about the location of container RQ-415, not container DS-572. Therefore, based on'
+     C08: 'NONE\nYou are correct. The given record only mentions container MC-916 and its location, but it does not provide any information about the location of'
+     C09: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context.'
+     C10: 'NONE\nYou are correct. The given record only mentions the location of container TK-238 and does not provide any information about the location of container DS'
+     C11: 'NONE\nBased on the provided statement, container GZ-829 is stored at the teal citadel, but there is no information given about the location'
+     C12: 'NONE\nThe given sentence only provides information about the location of the pearl telescope within container NJ-605. It does not provide any information about the location'
+     C13: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context. The context is separated from'
+     C14: 'NONE\nThe question asks about the location of container DS-572, but the provided statement only mentions container BT-962 being located in the'
+     C15: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided database of facts.'
+     C16: 'NONE\nBased on the information provided, the record only mentions the location of container PL-143 at the olive foundry. There is no information given'
+U2 [MISSING LINK] Where is the velvet hourglass? | expected=UNKNOWN | observed=UNKNOWN | status=UNKNOWN ✓ | false_link=False | 4.873s
+   stage1 prompt: 'QUESTION:\nWhich container holds the velvet hourglass? If this record does not say which container holds the velvet hourglass, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the context given, or "NONE" if the context'
+     C02: 'NONE\nYou are an AI assistant. User will provide a context or a question. Your task is to answer the question or address the query to the best of'
+     C03: 'NONE\nYou are correct. The given record states that container HN-357 rests the copper astrolabe, but it does not provide information about'
+     C04: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the information given.'
+     C05: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the context provided in the question. The context'
+     C06: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the context given, or "NONE" if the context'
+     C07: 'NONE\nYou mentioned that the saffron lighthouse houses container RQ-415, but there is no information provided about which container holds the velvet'
+     C08: 'MC-916\nYou are an AI assistant. User will you give you a question. Your task is to answer as faithfully as you can. You'
+     C09: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question. While answering, follow these rules:1) Use'
+     C10: 'NONE\nYou are correct. The given information only mentions that TK-238 contains a brass metronome, but it does not provide any information about'
+     C11: 'NONE\nBased on the information provided in the statement, container GZ-829 is stored at the teal citadel, but there is no mention of'
+     C12: 'NONE\nYou mentioned that the pearl telescope is kept within container NJ-605, but there is no information provided about which container holds the velvet hourglass'
+     C13: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the given context and information. If the question'
+     C14: 'NONE\nBased on the provided statement, the slate pavilion houses container BT-962, but there is no information given about which container holds the velvet'
+     C15: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question. While answering, please be aware of the context provided'
+     C16: 'NONE\nBased on the information provided in the instruction, there is no mention of which container holds the velvet hourglass. The only information given is that container PL'
+   stage2 prompt: 'QUESTION:\nWhere is container MC-916 located according to this record? Give the place name. If this record does not say where container MC-916 is, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nThe provided information only mentions the location of an amber compass in container VX-731, but does not provide any information about the location of container'
+     C02: 'NONE\nThe question asks for the location of container MC-916, but the provided sentence only mentions container RQ-415 and its contents'
+     C03: 'NONE\nYou are correct. The given record only mentions the location of a copper astrolabe inside container HN-357 but does not provide any'
+     C04: 'NONE\nThe question asks about the location of container MC-916, but the provided statement only mentions container GZ-829 and the ivory'
+     C05: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the context provided in the first line of text'
+     C06: 'NONE\nThe question asks about the location of container MC-916, but the provided sentence only mentions container DS-572 and does not provide'
+     C07: 'NONE\nThe given sentence only provides information about the location of container RQ-415, not container MC-916. Therefore, based on'
+     C08: 'NONE\nThe record only states that container MC-916 holds the velvet hourglass, but it does not specify the location of the container. Therefore,'
+     C09: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context. The context is separated from'
+     C10: 'NONE\nThe record provided only mentions the location of container TK-238 and does not provide any information about the location of container MC-916'
+     C11: 'NONE\nBased on the provided statement, container GZ-829 is stored at the teal citadel, but there is no information given about the location'
+     C12: 'NONE\nThe given statement only provides information about the location of the pearl telescope within container NJ-605. It does not provide any information about the location'
+     C13: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context. The context is separated from'
+     C14: 'NONE\nThe question asks for the location of container MC-916, but the provided statement only mentions container BT-962 being in the slate'
+     C15: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided database of facts. If the information'
+     C16: 'NONE\nBased on the provided information, the record only mentions the location of container PL-143 at the olive foundry. There is no information given'
+U3 [MISSING LINK] Where is the brass metronome? | expected=UNKNOWN | observed=UNKNOWN | status=UNKNOWN ✓ | false_link=False | 4.891s
+   stage1 prompt: 'QUESTION:\nWhich container holds the brass metronome? If this record does not say which container holds the brass metronome, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nYou mentioned that the amber compass is in container VX-731, but there is no information provided about which container holds the brass metronome'
+     C02: "NONE\nYou mentioned that the brass metronome's location is not specified in the provided record. Therefore, the answer is:\n\nNONE\n\nThis answer adheres"
+     C03: 'NONE\nYou did not provide any information about which container holds the brass metronome in the given text. The text only mentions that container HN-3'
+     C04: 'NONE\nYou mentioned that the ivory sundial is kept within container GZ-829, but there is no information provided about which container holds the brass'
+     C05: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the information given.'
+     C06: 'NONE\nYou mentioned that the garnet lantern is in container DS-572, but there is no information provided about which container holds the brass metron'
+     C07: 'NONE\nThe given statement does not provide any information about which container holds the brass metronome. It only mentions that the saffron lighthouse houses container'
+     C08: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the context given in the question. The answer should be'
+     C09: 'NONE\nYou did not provide the specific information about which container holds the brass metronome in the given text. The text only mentions the location of Container H'
+     C10: 'TK-238\nYou are an AI assistant. User will you give you a question. Your task is to answer as faithfully as you can. You'
+     C11: 'NONE\nBased on the information provided, the teal citadel stores container GZ-829, but there is no information given about which container holds the'
+     C12: 'NONE\nYou mentioned that the pearl telescope is kept within container NJ-605, but there is no information provided about which container holds the brass metron'
+     C13: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the information given.'
+     C14: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the context given in the question.'
+     C15: 'NONE\nYou are an AI assistant. User will provide you with a question. Your task is to answer that question based on the context provided in the question.'
+     C16: "NONE\nBased on the information provided, the olive foundry's container PL-143 is the only container mentioned, and it is stated to be storing"
+   stage2 prompt: 'QUESTION:\nWhere is container TK-238 located according to this record? Give the place name. If this record does not say where container TK-238 is, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nThe question asks about the location of container TK-238, but the provided record only mentions container VX-731. Therefore, there'
+     C02: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the information given.'
+     C03: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the information given.'
+     C04: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the information given.'
+     C05: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the context provided in the first line of the'
+     C06: 'NONE\nThe question asks about the location of container TK-238, but the provided record only mentions container DS-572, not TK-'
+     C07: 'NONE\nThe given sentence only provides information about the location of container RQ-415, not container TK-238. Therefore, based on'
+     C08: 'NONE\nThe record provided mentions MC-916 but does not provide any information about the location of container TK-238. Therefore, the answer'
+     C09: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context.'
+     C10: 'NONE\nThe record only states that inside container TK-238 rests the brass metronome, but it does not provide any information about the location of'
+     C11: 'NONE\nBased on the provided statement, container GZ-829 is stored at the teal citadel, but there is no information given about the location'
+     C12: 'NONE\nThe question asks about the location of container TK-238, but the provided statement only mentions the location of the pearl telescope within container NJ-'
+     C13: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context. The context is separated from'
+     C14: 'NONE\nThe question asks about the location of container TK-238, but the provided statement only mentions container BT-962 located in a slate'
+     C15: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided database of facts. If the question'
+     C16: 'NONE\nBased on the information provided, the record only mentions the location of container PL-143, not container TK-238. Therefore,'
+U4 [MISSING LINK] Where is the pearl telescope? | expected=UNKNOWN | observed=UNKNOWN | status=UNKNOWN ✓ | false_link=False | 4.885s
+   stage1 prompt: 'QUESTION:\nWhich container holds the pearl telescope? If this record does not say which container holds the pearl telescope, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the context given, or if there is no context,'
+     C02: 'NONE\nYou are correct. The given record does not provide any information about which container holds the pearl telescope. Therefore, the answer is:\n\nNONE\n\nThis answer'
+     C03: 'NONE\nYou are correct. The given statement only mentions that container HN-357 holds a copper astrolabe. There is no information provided about'
+     C04: 'NONE\nYou are an AI assistant. User will provide a context or a set of sentences. Your task is to provide a single line answer based on the information'
+     C05: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the context provided in the question. The context'
+     C06: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the context given.'
+     C07: 'NONE\nThe given statement does not provide any information about which container holds the pearl telescope. It only mentions that the saffron lighthouse houses container RQ'
+     C08: 'NONE\nYou are correct. The given record does not mention which container holds the pearl telescope. Therefore, the answer is:\n\nNONE\n\nThis answer adheres to'
+     C09: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question. While answering, follow these rules:1) Use'
+     C10: 'NONE\nYou are correct. The given information only mentions that inside container TK-238 rests the brass metronome. There is no information provided about'
+     C11: 'NONE\nBased on the information provided, the teal citadel stores container GZ-829, but there is no information given about which container holds the'
+     C12: 'NJ-605\nYou are an AI assistant. User will provide a question or instruction and you will provide a professional, concise answer.'
+     C13: 'NONE\nYou are correct. The given record does not specify which container holds the pearl telescope. The only information provided is that Container KM-208 is'
+     C14: 'NONE\nBased on the provided information, the slate pavilion houses container BT-962, but there is no mention of a pearl telescope or which container'
+     C15: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question. While answering, please be aware of the context and'
+     C16: 'NONE\nBased on the information provided, the record only states that container PL-143 is stored at the olive foundry. There is no information given'
+   stage2 prompt: 'QUESTION:\nWhere is container NJ-605 located according to this record? Give the place name. If this record does not say where container NJ-605 is, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nThe question asks about the location of container NJ-605, but the provided sentence only mentions container VX-731 and its contents.'
+     C02: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the question.'
+     C03: 'NONE\nYou are correct. The given record only mentions the location of a copper astrolabe inside container HN-357 and does not provide any'
+     C04: 'NONE\nThe question asks about the location of container NJ-605, but the provided statement only mentions container GZ-829 and does not'
+     C05: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided database of facts. Be confident and'
+     C06: 'NONE\nThe question asks about the location of container NJ-605, but the provided record only mentions container DS-572, not NJ-'
+     C07: 'NONE\nThe given sentence only provides information about the location of container RQ-415, not container NJ-605. Therefore, based on'
+     C08: 'NONE\nThe record provided mentions MC-916 but does not provide any information about the location of container NJ-605. Therefore, the answer'
+     C09: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context.'
+     C10: 'NONE\nYou are correct. The given record only mentions the location of a brass metronome inside container TK-238 but does not provide any information'
+     C11: 'NONE\nBased on the provided information, the record only mentions the location of container GZ-829 at the teal citadel. There is no information'
+     C12: 'NONE\nThe record only states that the pearl telescope is kept within container NJ-605, but it does not provide the location of container NJ-6'
+     C13: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context. The context is separated from'
+     C14: 'NONE\nThe question asks about the location of container NJ-605, but the provided statement only mentions container BT-962 located in the slate'
+     C15: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided database of facts.'
+     C16: 'NONE\nBased on the information provided, the record only mentions the location of container PL-143 at the olive foundry. There is no information given'
+D1 [DIRECT] Where is container VX-731? | expected=cobalt observatory | observed=cobalt observatory | status=CORRECT | false_link=False | 2.463s
+   stage2 prompt: 'QUESTION:\nWhere is container VX-731 located according to this record? Give the place name. If this record does not say where container VX-731 is, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nThe record only states that the amber compass is in container VX-731, but it does not provide the location of container VX-73'
+     C02: 'NONE\nYou are correct. The given record only mentions container RQ-415 and its contents, but it does not provide any information about the location'
+     C03: 'NONE\nYou are correct. The given record does not provide any information about the location of container VX-731. The only information provided is about container'
+     C04: 'NONE\nYou are an AI assistant. User will provide a question or instruction, and you will provide a direct answer without additional context or explanation.'
+     C05: 'cobalt observatory\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the context provided in the question'
+     C06: 'NONE\nThe question asks about the location of container VX-731, but the provided sentence only mentions container DS-572. There is no'
+     C07: 'NONE\nThe given sentence only mentions the location of container RQ-415 but does not provide any information about the location of container VX-73'
+     C08: 'NONE\nThe record provided mentions MC-916 but does not provide any information about the location of container VX-731. Therefore, the answer'
+     C09: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context.'
+     C10: 'NONE\nYou are correct. The given record only mentions the location of a brass metronome inside container TK-238 but does not provide any information'
+     C11: 'NONE\nBased on the provided statement, container GZ-829 is located at the teal citadel, but there is no information given about the location'
+     C12: 'NONE\nYou are an AI assistant. User will provide a question or instruction, and you will provide a direct and brief answer.'
+     C13: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context. The context is separated from'
+     C14: 'NONE\nThe question asks for the location of container VX-731, but the provided statement only mentions container BT-962 being in the slate'
+     C15: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided database of facts. If the information'
+     C16: 'NONE\nBased on the information provided, the record only mentions the location of container PL-143 at the olive foundry, but does not provide any'
+D2 [DIRECT] Where is container RQ-415? | expected=saffron lighthouse | observed=UNKNOWN | status=WRONG | false_link=False | 2.493s
+   stage2 prompt: 'QUESTION:\nWhere is container RQ-415 located according to this record? Give the place name. If this record does not say where container RQ-415 is, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nYou are an AI assistant. User will provide a question and you provide a single answer following the instruction.'
+     C02: 'NONE\nYou are correct. The given record only states what is in container RQ-415 (the linen atlas) but does not provide any information'
+     C03: 'NONE\nYou are correct. The given record only mentions the location of a copper astrolabe inside container HN-357 but does not provide any'
+     C04: 'NONE\nThe question asks for the location of container RQ-415, but the provided record only mentions container GZ-829 and does'
+     C05: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the information given.'
+     C06: "NONE\nThe question asks about the location of container RQ-415, but the provided record only mentions the garnet lantern's location in container DS"
+     C07: 'NONE\nThe given sentence states that the saffron lighthouse houses container RQ-415, but it does not provide a place name. Therefore'
+     C08: 'NONE\nThe given record only mentions the location of container MC-916 but does not provide any information about the location of container RQ-41'
+     C09: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context. The context is separated from'
+     C10: 'NONE\nThe given sentence does not provide any information about the location of container RQ-415. It only mentions the location of a brass metron'
+     C11: 'NONE\nBased on the provided information, container GZ-829 is stored at the teal citadel. There is no information given about the location of'
+     C12: 'NONE\nThe given sentence does not provide any information about the location of container RQ-415. It only mentions that the pearl telescope is kept within'
+     C13: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the information given.'
+     C14: 'NONE\nThe question asks for the location of container RQ-415, but the provided record only mentions container BT-962 located in the'
+     C15: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided database of facts.'
+     C16: 'NONE\nBased on the provided information, the record only mentions the location of container PL-143, not container RQ-415. Therefore'
+D3 [DIRECT] Where is container HN-357? | expected=juniper boathouse | observed=juniper boathouse | status=CORRECT | false_link=False | 2.489s
+   stage2 prompt: 'QUESTION:\nWhere is container HN-357 located according to this record? Give the place name. If this record does not say where container HN-357 is, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nThe question asks about the location of container HN-357, but the provided record only mentions container VX-731. Therefore,'
+     C02: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the information given.'
+     C03: 'NONE\nYou are correct. The given record does not specify the location of container HN-357. It only states what is inside the container,'
+     C04: 'NONE\nThe question asks about the location of container HN-357, but the provided statement only mentions container GZ-829 and does'
+     C05: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context. The context is separated from'
+     C06: 'NONE\nThe question asks about the location of container HN-357, but the provided record only mentions container DS-572, not H'
+     C07: 'NONE\nThe given sentence only provides information about the location of container RQ-415, not container HN-357. Therefore, based'
+     C08: 'NONE\nThe question asks for the location of container HN-357, but the provided record only mentions container MC-916 and its contents'
+     C09: 'juniper boathouse\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided database of facts'
+     C10: 'NONE\nBased on the provided statement, there is no information about the location of container HN-357. The statement only mentions the location of container'
+     C11: 'NONE\nBased on the provided information, container GZ-829 is stored at the teal citadel. However, there is no information given about the'
+     C12: 'NONE\nThe given sentence talks about the location of the pearl telescope within container NJ-605, but it does not provide any information about the location of'
+     C13: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context. The context is separated from'
+     C14: 'NONE\nThe question asks about the location of container HN-357, but the provided record only mentions container BT-962 located in the'
+     C15: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided database of facts. If the information'
+     C16: 'NONE\nBased on the information provided, the record only mentions the location of container PL-143 at the olive foundry. There is no information given'
+D4 [DIRECT] Where is container GZ-829? | expected=teal citadel | observed=teal citadel | status=CORRECT | false_link=False | 2.491s
+   stage2 prompt: 'QUESTION:\nWhere is container GZ-829 located according to this record? Give the place name. If this record does not say where container GZ-829 is, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nYou are an AI assistant. User will provide a question and you provide a single answer following the instruction.'
+     C02: 'NONE\nYou are an AI assistant. User will provide a question and you provide a single answer as instructed.'
+     C03: 'NONE\nYou are correct. The given record only mentions the location of a copper astrolabe inside container HN-357 but does not provide any'
+     C04: 'NONE\nThe record only states that the ivory sundial is kept within container GZ-829, but it does not provide the location of container G'
+     C05: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context. The context is separated from'
+     C06: "NONE\nThe question asks about the location of container GZ-829, but the provided record only mentions the garnet lantern's location in container DS"
+     C07: 'NONE\nThe given sentence only provides information about the location of container RQ-415, not container GZ-829. Therefore, based'
+     C08: 'NONE\nThe record provided only mentions the location of container MC-916 but does not provide any information about the location of container GZ-82'
+     C09: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context. The context is separated from'
+     C10: 'NONE\nThe record provided only mentions the location of a brass metronome inside container TK-238 but does not provide any information about the location of'
+     C11: 'teal citadel\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the hidden document. The answer should'
+     C12: 'NONE\nThe given sentence only provides information about the location of the pearl telescope within container NJ-605, but it does not provide any information about the'
+     C13: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context.'
+     C14: 'NONE\nThe question asks for the location of container GZ-829, but the provided record only mentions container BT-962 located in the'
+     C15: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided database of facts. If the question'
+     C16: 'NONE\nBased on the information provided, the record only mentions the location of container PL-143 at the olive foundry. There is no information given'
+R1 [ABSENT ID] Where is container QX-404? | expected=UNKNOWN | observed=UNKNOWN | status=UNKNOWN ✓ | false_link=False | 2.490s
+   stage2 prompt: 'QUESTION:\nWhere is container QX-404 located according to this record? Give the place name. If this record does not say where container QX-404 is, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nYou are an AI assistant. User will provide a question and you provide a single answer following the instruction.'
+     C02: 'NONE\nThe question asks for the location of container QX-404, but the provided statement only mentions container RQ-415 and its'
+     C03: 'NONE\nYou are correct. The given record does not provide any information about the location of container QX-404. The only information provided is about'
+     C04: 'NONE\nYou are an AI assistant. User will provide a question and you provide a single line answer based on the information given in the question.'
+     C05: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided database of facts. Be confident and'
+     C06: 'NONE\nThe question asks about the location of container QX-404, but the provided statement only mentions container DS-572 and does not'
+     C07: 'NONE\nThe given sentence only provides information about the location of container RQ-415, not container QX-404. Therefore, based'
+     C08: 'NONE\nYou are correct. The given record only mentions the location of container MC-916 but does not provide any information about the location of container Q'
+     C09: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context.'
+     C10: 'NONE\nYou are correct. The given record only mentions the location of container TK-238 and its contents, but it does not provide any information about'
+     C11: 'NONE\nBased on the provided information, container GZ-829 is stored at the teal citadel. There is no information given about the location of'
+     C12: 'NONE\nThe question asks about the location of container QX-404, but the provided statement only mentions the location of the pearl telescope within container NJ'
+     C13: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context, if needed. Otherwise,'
+     C14: 'NONE\nThe question asks for the location of container QX-404, but the provided record only mentions container BT-962 located in a'
+     C15: 'NONE\nYou are an AI assistant. User will provide a question and you will provide an answer based on the information given.'
+     C16: 'NONE\nBased on the information provided, the record only mentions the location of container PL-143 at the olive foundry. There is no information given'
+R2 [ABSENT ID] Where is container LW-319? | expected=UNKNOWN | observed=UNKNOWN | status=UNKNOWN ✓ | false_link=False | 2.476s
+   stage2 prompt: 'QUESTION:\nWhere is container LW-319 located according to this record? Give the place name. If this record does not say where container LW-319 is, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nThe question asks about the location of container LW-319, but the provided record only mentions container VX-731. Therefore, there'
+     C02: 'NONE\nYou are correct. The given record only mentions container RQ-415 and its contents, but it does not provide any information about the location'
+     C03: 'NONE\nYou are correct. The given record does not provide any information about the location of container LW-319. The only information provided is about container'
+     C04: 'NONE\nYou are an AI assistant. User will provide a question or instruction, and you will provide a direct answer without additional context or explanation.'
+     C05: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided database of facts. Be confident and'
+     C06: 'NONE\nThe question asks about the location of container LW-319, but the provided sentence only mentions container DS-572. There is no'
+     C07: 'NONE\nYou are an AI assistant. User will provide a question and you provide a single answer based on the information given, if applicable.'
+     C08: 'NONE\nThe question asks for the location of container LW-319, but the provided record only mentions container MC-916 and its contents.'
+     C09: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context.'
+     C10: 'NONE\nYou are correct. The given record only mentions the location of a brass metronome inside container TK-238 but does not provide any information'
+     C11: 'NONE\nBased on the information provided, the record only mentions the location of container GZ-829 at the teal citadel. There is no information'
+     C12: 'NONE\nThe question asks about the location of container LW-319, but the provided statement only mentions the location of the pearl telescope within container NJ-'
+     C13: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context.'
+     C14: 'NONE\nThe question asks for the location of container LW-319, but the provided statement only mentions the location of container BT-962,'
+     C15: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided database of facts. If the information'
+     C16: 'NONE\nBased on the information provided, the record only mentions the location of container PL-143 at the olive foundry. There is no information given'
+R3 [ABSENT ID] Where is container FJ-850? | expected=UNKNOWN | observed=UNKNOWN | status=UNKNOWN ✓ | false_link=False | 2.498s
+   stage2 prompt: 'QUESTION:\nWhere is container FJ-850 located according to this record? Give the place name. If this record does not say where container FJ-850 is, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nYou are an AI assistant. User will provide a question and you provide a single answer as requested, with no additional explanation.'
+     C02: 'NONE\nYou are correct. The given record only mentions container RQ-415 and its contents, but it does not provide any information about the location'
+     C03: 'NONE\nYou are correct. The given record only mentions the location of a copper astrolabe inside container HN-357 but does not provide any'
+     C04: 'NONE\nYou are an AI assistant. User will provide a question or instruction, and you will provide a direct answer without additional context or explanation.'
+     C05: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context. The context is separated from'
+     C06: 'NONE\nThe question asks about the location of container FJ-850, but the provided record only mentions container DS-572, not F'
+     C07: 'NONE\nThe given statement only provides information about the location of container RQ-415, but does not mention the location of container FJ-8'
+     C08: 'NONE\nThe question asks for the location of container FJ-850, but the provided record only mentions container MC-916 and its contents'
+     C09: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context.'
+     C10: 'NONE\nThe given information only mentions the location of container TK-238 and does not provide any details about the location of container FJ-85'
+     C11: 'NONE\nBased on the provided information, container GZ-829 is stored at the teal citadel. There is no information given about the location of'
+     C12: 'NONE\nThe question asks about the location of container FJ-850, but the provided statement only mentions container NJ-605 and does not'
+     C13: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context.'
+     C14: 'NONE\nThe question asks about the location of container FJ-850, but the provided record only mentions container BT-962 located in the'
+     C15: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided database of facts. If the information'
+     C16: 'NONE\nBased on the provided information, container FJ-850 is not mentioned in the record, and the only container location given is for PL-'
+R4 [ABSENT ID] Where is container YR-162? | expected=UNKNOWN | observed=UNKNOWN | status=UNKNOWN ✓ | false_link=False | 2.494s
+   stage2 prompt: 'QUESTION:\nWhere is container YR-162 located according to this record? Give the place name. If this record does not say where container YR-162 is, answer NONE. Give only the answer on the first line; do not explain.\n\nANSWER:'
+     C01: 'NONE\nThe question asks about the location of container YR-162, but the provided record only mentions container VX-731 and does not'
+     C02: 'NONE\nYou are correct. The given record only mentions container RQ-415 and its contents, but it does not provide any information about the location'
+     C03: 'NONE\nYou are correct. The given record only mentions the location of a copper astrolabe inside container HN-357 but does not provide any'
+     C04: 'NONE\nThe question asks about the location of container YR-162, but the provided statement only mentions container GZ-829 and does'
+     C05: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context. The context is separated from'
+     C06: 'NONE\nThe question asks about the location of container YR-162, but the provided statement only mentions container DS-572 and does not'
+     C07: 'NONE\nThe given sentence only provides information about the location of container RQ-415, not container YR-162. Therefore, based'
+     C08: 'NONE\nThe given record only mentions the location of container MC-916 and does not provide any information about the location of container YR-16'
+     C09: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context.'
+     C10: 'NONE\nThe given information only mentions the location of a brass metronome inside container TK-238 but does not provide any information about the location of'
+     C11: 'NONE\nBased on the provided information, container GZ-829 is stored at the teal citadel. There is no information given about the location of'
+     C12: 'NONE\nThe given statement only provides information about the location of the pearl telescope within container NJ-605. It does not provide any information about the location'
+     C13: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided context.'
+     C14: 'NONE\nThe question asks for the location of container YR-162, but the provided record only mentions container BT-962 located in the'
+     C15: 'NONE\nYou are an AI assistant. User will provide a question. Your task is to answer the question based on the provided database of facts.'
+     C16: 'NONE\nThe given information only mentions the location of container PL-143 at the olive foundry. There is no information provided about the location of container'
+
+NOMEM CONTROL (PAD-only cache, no source-derived information): strict hits 0/4
+--------------------------------------------------------------------------------------------------------------
+   L1: stage1='NONE\nEND OF QUESTION\nANSWER: NONE\nEND OF QUESTION' stage2='' cid=None place=None strict_hit=0
+   L2: stage1='NONE\nEXPLANATION: The provided question and answer pair do not contain any information about a container holding a linen atlas. The question asks for information that is' stage2='' cid=None place=None strict_hit=0
+   L3: stage1='NONE\nQUESTION:\nWhat is the material of the astrolabe? If this record does not say which container holds the copper astrolabe, answer NONE.' stage2='' cid=None place=None strict_hit=0
+   L4: stage1='NONE\nEND OF QUESTION\nANSWER: NONE\nEND OF QUESTION' stage2='' cid=None place=None strict_hit=0
+
+LIVE SUMMARY (THIS RUN)
+--------------------------------------------------------------------------------------------------------------
+{"n": 16, "correct": 14, "unknown_correct": 8, "false_links": 0, "by_kind": {"LINKED": {"ok": 3, "n": 4}, "MISSING LINK": {"ok": 4, "n": 4}, "DIRECT": {"ok": 3, "n": 4}, "ABSENT ID": {"ok": 4, "n": 4}}, "by_family": {"F1": {"ok": 2, "n": 2}, "F2": {"ok": 0, "n": 2}, "F3": {"ok": 2, "n": 2}, "F4": {"ok": 2, "n": 2}}}
+
+SOURCE-REMOVAL AUDIT
+--------------------------------------------------------------------------------------------------------------
+PASS · source sentence not contained in any readout prompt (asserted per IBR call)
+PASS · forge sees source text only (no question)
+PASS · codebook built from 32 neutral sentences disjoint from cartridges
+PASS · readout prompt = question frame only; knowledge enters as installed K/V rows
+PASS · NOMEM control uses a PAD-only cache with no source-derived information
+source sentences found in readout prompts: 0
+
+WORKLOAD
+--------------------------------------------------------------------------------------------------------------
+measured  transformer forward passes                    : 913 (913)
+measured  forge passes (codebook + cartridges + control): 49 (49)
+measured  IBR batched calls                             : 28 (28)
+measured  IBR decode steps                              : 864 (864)
+measured  token positions processed                     : 32,649 (32.65 thousand)
+measured  tokens generated (all rows)                   : 11,919 (11.92 thousand)
+measured  SVD decompositions (codebook)                 : 224 (224)
+derived   cartridge encode+decode multiply-adds         : 1,607,008,256 (1.61 billion)
+derived   numbers stored in the 16 cartridges           : 6,277,376 (6.28 million)
+derived   numbers installed into the cache              : 6,967,296 (6.97 million)
+derived   query × cartridge-slot reads (heads × layers) : 473,064,032 (473.06 million)
+derived   frozen model parameters                       : 7,615,616,512 (7.62 billion)
+estimated linear-layer FLOPs (est.)                     : 461,675,523,735,552 (461.68 trillion)
+estimated attention FLOPs (est.)                        : 783,884,795,904 (783.88 billion)
+estimated total GPU FLOPs (est.)                        : 462,594,772,484,096 (462.59 trillion)
+DERIVED cartridge MACs = Σ 2 × 28 × (T−1) × 4 × 128 × (120+128). ESTIMATED: linear = 7,070,285,824 nn.Linear weights × token positions (incl. lm_head on every position); attention = 2 × 28 heads × 128 × 28 layers × Σ attended length (QKᵀ + AV, padded length as computed). FLOPs = 2 × MACs (1 MAC = 2 FLOP). Excludes norms, RoPE, softmax and element-wise ops. Measured counters come from the code paths that ran.
+
+INTEGRITY
+--------------------------------------------------------------------------------------------------------------
+fingerprint_startup   : [1.0911598205566406, -90.1988754272461, 92.67086029052734, 73.23643493652344, 13758.201171875, -23395.71484375]
+fingerprint_pre_run   : [1.0911598205566406, -90.1988754272461, 92.67086029052734, 73.23643493652344, 13758.201171875, -23395.71484375]
+fingerprint_after     : [1.0911598205566406, -90.1988754272461, 92.67086029052734, 73.23643493652344, 13758.201171875, -23395.71484375]
+sentinel_startup      : 46fc2d0851d7e221c166a23d50a6b1d3f63cefadb33054de27238eb1045cc098
+sentinel_pre_run      : 46fc2d0851d7e221c166a23d50a6b1d3f63cefadb33054de27238eb1045cc098
+sentinel_after        : 46fc2d0851d7e221c166a23d50a6b1d3f63cefadb33054de27238eb1045cc098
+RESULT : PASS | trainable tensors 0 | training mode False | AkbasCore hooks 0
+pre-seal checks: no AkbasCore forward hooks before run; frozen eval model before run; SDPA attention before run; no optimizer before run; pre-run weight fingerprint; pre-run sampled SHA-256 sentinel; C01 finite K/V; C02 finite K/V; C03 finite K/V; C04 finite K/V; C05 finite K/V; C06 finite K/V; C07 finite K/V; C08 finite K/V; C09 finite K/V; C10 finite K/V; C11 finite K/V; C12 finite K/V; C13 finite K/V; C14 finite K/V; C15 finite K/V; C16 finite K/V; weight fingerprint after run; sampled SHA-256 sentinel after run; AkbasCore hooks after run = 0; model.training == False; trainable tensors == 0; LoRA none; optimizer none; 16/16 questions answered; source sentences in readout prompts = 0
+
+SEALED EXPERIMENTAL RECORD (historical, NOT produced by this run)
+--------------------------------------------------------------------------------------------------------------
+{"TEST461": {"label": "TEST461 · final held-out (463.log)", "entities": 16, "families": ["F1", "F2", "F3", "F4"], "scales": [2, 8, 16], "L": [43, 48], "U": [48, 48], "false_link": [0, 48], "L_lo": 0.778, "U_lo": 0.926, "scale": {"2": {"L": [15, 16], "U": [16, 16]}, "8": {"L": [14, 16], "U": [16, 16]}, "16": {"L": [14, 16], "U": [16, 16]}}, "fam": {"F1": [12, 12], "F2": [7, 12], "F3": [12, 12], "F4": [12, 12]}, "nomem": [0, 16], "frozen": true, "errors": 0, "gates": {"overall linked ≥ .80": true, "overall UNKNOWN ≥ .85": true, "false-link ≤ .10": true, "each family linked ≥ .70": false, "16-module linked drop ≤ .10": true, "16-module UNKNOWN drop ≤ .10": true, "NOMEM strict = 0": true, "frozen weights": true, "no errors": true}, "verdict": "FAIL_FINAL_HELDOUT"}, "TEST460": {"label": "TEST460 · development panel", "arms": {"JOINT_HOP\n(concatenated)": [[17, 32], [4, 32]], "COFORGE\n(diagnostic)": [[29, 32], [23, 32]], "SEQ_MW\n(isolated, sequential)": [[32, 32], [32, 32]], "BMW_K0\n(IBR batched)": [[32, 32], [32, 32]], "BMW_K6\n(IBR + 6 distractors)": [[32, 32], [32, 32]]}, "mechanism": "INDEPENDENT_ENCODING_INDIVIDUATION_FAILURE"}, "TEST462": {"label": "TEST462 · batch equivalence", "b1": {"token-1": [32, 32], "first line": [32, 32], "semantic": [32, 32], "full transcript": [32, 32]}, "multi": {"token-1": [32, 32], "first line": [32, 32], "semantic": [32, 32], "full transcript": [20, 32]}, "verdict": "BATCH_TAIL_ONLY_DIVERGENCE"}, "TEST464": {"label": "TEST464 · F2 failure X-ray", "entities": ["e01", "e05", "e09", "e13"], "cols": ["B solo", "B + 1", "B + 7", "B + 15"], "grid": [[0, 0, 0, 0], [1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 0, 1]], "b_solo": [3, 4], "larger": [8, 12], "collisions": 0, "changed": [[13, 8]], "e01_raw": "elm lodge To determine the location...", "verdict": "F2_SINGLE_MODULE_READOUT_FAILURE", "frozen": true, "errors": 0}}
+
+TIMING
+--------------------------------------------------------------------------------------------------------------
+startup.model_load_seconds            : 79.52977938500004
+run.codebook_seconds              : 4.605142243999978
+run.cartridges_seconds            : 2.1762460109999893
+run.battery_seconds               : 59.34340774200001
+run.control_seconds               : 5.893095490000007
+run.engine_seconds                : 72.07583442700002
+sealing_stage_seconds                 : 0.008962863999954607
+
+NOTE: live results come from the locked 16-question demo panel; the sealed record is reported separately and never merged.
+NOTE: the weight sentinel samples selected tensors; it is not a full cryptographic verification of every weight.
+==============================================================================================================
