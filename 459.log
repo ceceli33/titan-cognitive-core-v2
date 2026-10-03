@@ -1,0 +1,84 @@
+ 
+[TEST459] CPU self-test PASS: HELD-OUT seed=459, N=32, frozen lambda=0.20; 3 arms/entity = 96 generations
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 79.5kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 858kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 35.7MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 70.9MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 133MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.44MB/s]
+Download complete: : 
+
+ 13.1GB,  146MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  471MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:43<00:00,  7.51s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 98.96it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 32.3kB/s]
+[TEST459] building frozen TEST452 codebook ...
+[01/32] e00 F1 SOLO=1 RAW=1 KV020=0 DAMAGED   P=cobalt vault
+[02/32] e01 F2 SOLO=0 RAW=0 KV020=0 KEEP_FAIL P=amber rotunda
+[03/32] e02 F1 SOLO=1 RAW=1 KV020=0 DAMAGED   P=verdant silo
+[04/32] e03 F2 SOLO=0 RAW=0 KV020=0 KEEP_FAIL P=tawny refectory
+[05/32] e04 F1 SOLO=0 RAW=1 KV020=1 KEEP_OK   P=ivory foundry
+[06/32] e05 F2 SOLO=0 RAW=0 KV020=0 KEEP_FAIL P=pearl cellar
+[07/32] e06 F1 SOLO=1 RAW=0 KV020=1 RESCUED   P=pearl bastion
+[08/32] e07 F2 SOLO=0 RAW=0 KV020=0 KEEP_FAIL P=cobalt silo
+[09/32] e08 F1 SOLO=1 RAW=1 KV020=1 KEEP_OK   P=moss courtyard
+[10/32] e09 F2 SOLO=1 RAW=0 KV020=1 RESCUED   P=umber lodge
+[11/32] e10 F1 SOLO=1 RAW=1 KV020=0 DAMAGED   P=ivory silo
+[12/32] e11 F2 SOLO=1 RAW=0 KV020=0 KEEP_FAIL P=ivory arcade
+[13/32] e12 F1 SOLO=1 RAW=1 KV020=1 KEEP_OK   P=sepia vault
+[14/32] e13 F2 SOLO=1 RAW=0 KV020=1 RESCUED   P=jasper vault
+[15/32] e14 F1 SOLO=0 RAW=1 KV020=0 DAMAGED   P=tawny workshop
+[16/32] e15 F2 SOLO=1 RAW=0 KV020=0 KEEP_FAIL P=coral depot
+[17/32] e16 F1 SOLO=1 RAW=1 KV020=1 KEEP_OK   P=dun hangar
+[18/32] e17 F2 SOLO=0 RAW=0 KV020=1 RESCUED   P=umber gallery
+[19/32] e18 F1 SOLO=1 RAW=1 KV020=0 DAMAGED   P=sepia bastion
+[20/32] e19 F2 SOLO=0 RAW=0 KV020=0 KEEP_FAIL P=umber archive
+[21/32] e20 F1 SOLO=1 RAW=1 KV020=1 KEEP_OK   P=cerise bastion
+[22/32] e21 F2 SOLO=0 RAW=0 KV020=1 RESCUED   P=amber foundry
+[23/32] e22 F1 SOLO=0 RAW=0 KV020=0 KEEP_FAIL P=lapis foundry
+[24/32] e23 F2 SOLO=1 RAW=0 KV020=0 KEEP_FAIL P=indigo depot
+[25/32] e24 F1 SOLO=1 RAW=0 KV020=1 RESCUED   P=russet silo
+[26/32] e25 F2 SOLO=1 RAW=0 KV020=1 RESCUED   P=lapis arcade
+[27/32] e26 F1 SOLO=1 RAW=1 KV020=0 DAMAGED   P=oxblood terrace
+[28/32] e27 F2 SOLO=1 RAW=0 KV020=0 KEEP_FAIL P=oxblood cellar
+[29/32] e28 F1 SOLO=1 RAW=1 KV020=1 KEEP_OK   P=moss vault
+[30/32] e29 F2 SOLO=0 RAW=0 KV020=0 KEEP_FAIL P=verdant rotunda
+[31/32] e30 F1 SOLO=1 RAW=0 KV020=0 KEEP_FAIL P=cobalt archive
+[32/32] e31 F2 SOLO=0 RAW=0 KV020=0 KEEP_FAIL P=cobalt manor
+====================================================================================================================
+HELD-OUT N=32 | lambda FROZEN=0.20 | seed=459
+SOLO 20/32 | RAW 12/32 | KV020 13/32
+RAW→KV020: RESCUED=7 DAMAGED=6 KEEP_OK=6 KEEP_FAIL=13 | NET=+1
+RAW-success retention=0.500  Wilson95=[0.254,0.746] | RAW-failure rescue=0.350  Wilson95=[0.181,0.567]
+McNemar exact p=1.000000 | F1={'n': 16, 'SOLO': 13, 'RAW': 12, 'KV020': 8, 'rescued': 2, 'damaged': 6} | F2={'n': 16, 'SOLO': 7, 'RAW': 0, 'KV020': 5, 'rescued': 5, 'damaged': 0}
+generations=96 | frozen_weights_ok=True | minutes=1.5
+====================================================================================================================
+TEST459 VERDICT: POSITIVE_NET_BUT_RETENTION_COST  results=/content/test459_results.json
+
+
+Scope: first frozen held-out test of KV020 selected on TEST458; no lambda/layer/entity tuning permitted from this panel.
