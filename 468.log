@@ -1,0 +1,115 @@
+ ========================================================================================================================== 
+TEST 468 — NIRVANA × MISTRAL — D120 IBR 32-CARTRIDGE SCALE CALIBRATION
+==========================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu130 | Transformers: 5.17.0
+[1/9] MODEL
+/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_auth.py:138: UserWarning: 
+Error while fetching `HF_TOKEN` secret value from your vault: 'Requesting secret HF_TOKEN timed out. Secrets can only be fetched when running from the Colab UI.'.
+  warnings.warn(f"\nError while fetching `HF_TOKEN` secret value from your vault: '{str(e)}'.")
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 601/601 [00:00<00:00, 74.7kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 17.0MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 91.6MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 57.1kB/s  tokenizer.model: downloading bytes:   448kB, 43.5kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 49.5kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 2.91MB/s]Download complete: :  12.4GB,  238MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  521MB/s  Fetching 3 files: 100% 3/3 [00:41<00:00,  9.72s/it]Loading weights: 100% 291/291 [00:03<00:00, 80.29it/s]generation_config.json: 100% 116/116 [00:00<00:00, 14.1kB/s][2/9] FIXED NEUTRAL CODEBOOK · D120
+[3/9] SOURCE-ONLY FORGE · 32 INDEPENDENT CARTRIDGES
+ CARD 01: T=43 | amber sextant → RQ-415 → elm lodge
+ CARD 02: T=38 | bronze compass → RQ-432 → pine archive
+ CARD 03: T=44 | cedar telescope → RQ-449 → cedar vault
+ CARD 04: T=43 | crimson lantern → RQ-466 → birch station
+ CARD 05: T=42 | ivory astrolabe → RQ-483 → maple gallery
+ CARD 06: T=42 | jade chronometer → RQ-500 → willow depot
+ CARD 07: T=40 | silver monocle → RQ-517 → oak library
+ CARD 08: T=40 | copper barometer → RQ-534 → fir observatory
+ CARD 09: T=42 | onyx sundial → RQ-551 → ash museum
+ CARD 10: T=40 | pearl compass → RQ-568 → yew tower
+ CARD 11: T=43 | saffron telescope → RQ-585 → spruce hall
+ CARD 12: T=41 | violet lantern → RQ-602 → linden archive
+ CARD 13: T=42 | marble astrolabe → RQ-619 → alder vault
+ CARD 14: T=41 | teal chronometer → RQ-636 → beech station
+ CARD 15: T=41 | golden monocle → RQ-653 → hazel gallery
+ CARD 16: T=42 | indigo barometer → RQ-670 → rowan depot
+ CARD 17: T=42 | scarlet sextant → RQ-687 → juniper library
+ CARD 18: T=41 | ebony compass → RQ-704 → cypress observatory
+ CARD 19: T=43 | coral telescope → RQ-721 → acacia museum
+ CARD 20: T=40 | azure lantern → RQ-738 → poplar tower
+ CARD 21: T=42 | opal astrolabe → RQ-755 → chestnut hall
+ CARD 22: T=42 | emerald chronometer → RQ-772 → sycamore archive
+ CARD 23: T=42 | brass monocle → RQ-789 → laurel vault
+ CARD 24: T=41 | cerulean barometer → RQ-806 → olive station
+ CARD 25: T=42 | ruby sundial → RQ-823 → magnolia gallery
+ CARD 26: T=42 | ochre compass → RQ-840 → sequoia depot
+ CARD 27: T=41 | quartz telescope → RQ-857 → redwood library
+ CARD 28: T=42 | cobalt lantern → RQ-874 → hemlock observatory
+ CARD 29: T=45 | porcelain astrolabe → RQ-891 → hawthorn museum
+ CARD 30: T=42 | vermilion chronometer → RQ-908 → walnut tower
+ CARD 31: T=44 | nickel monocle → RQ-925 → eucalyptus hall
+ CARD 32: T=42 | turquoise barometer → RQ-942 → cork archive
+[4/9] SINGLE-CARTRIDGE SANITY · STAGE1 / STAGE2
+ 01: S1=1 S2=1
+ 02: S1=1 S2=1
+ 03: S1=1 S2=1
+ 04: S1=1 S2=1
+ 05: S1=1 S2=1
+ 06: S1=1 S2=1
+ 07: S1=1 S2=1
+ 08: S1=1 S2=1
+ 09: S1=1 S2=1
+ 10: S1=1 S2=1
+ 11: S1=1 S2=1
+ 12: S1=1 S2=1
+ 13: S1=1 S2=1
+ 14: S1=1 S2=1
+ 15: S1=1 S2=1
+ 16: S1=1 S2=1
+ 17: S1=1 S2=1
+ 18: S1=1 S2=1
+ 19: S1=1 S2=1
+ 20: S1=1 S2=1
+ 21: S1=1 S2=1
+ 22: S1=1 S2=1
+ 23: S1=1 S2=1
+ 24: S1=1 S2=1
+ 25: S1=1 S2=1
+ 26: S1=1 S2=1
+ 27: S1=1 S2=1
+ 28: S1=1 S2=1
+ 29: S1=1 S2=1
+ 30: S1=1 S2=1
+ 31: S1=1 S2=1
+ 32: S1=1 S2=1
+SINGLE STAGE1=32/32 | STAGE2=32/32
+[5/9] IBR SCALE 2→8→16→32
+
+ SCALE=2
+ STAGE1=2/2 | STAGE2=2/2 | LINKED=2/2 | UNLINKED=2/2 | FALSE_LINK=2/2
+
+ SCALE=8
+ STAGE1=8/8 | STAGE2=8/8 | LINKED=8/8 | UNLINKED=8/8 | FALSE_LINK=7/8
+
+ SCALE=16
+ STAGE1=16/16 | STAGE2=16/16 | LINKED=16/16 | UNLINKED=16/16 | FALSE_LINK=15/16
+
+ SCALE=32
+ STAGE1=32/32 | STAGE2=32/32 | LINKED=32/32 | UNLINKED=32/32 | FALSE_LINK=27/32
+[6/9] JOINT-CACHE CONTROL · SCALE 2/8/16/32
+ SCALE=02 | S1=1/2 | S2=1/2
+ SCALE=08 | S1=1/8 | S2=1/8
+ SCALE=16 | S1=0/16 | S2=2/16
+ SCALE=32 | S1=1/32 | S2=1/32
+[7/9] MISSING / ABSENT-ID / NOMEM CONTROLS
+MISSING=0/8 | ABSENT_ID=0/8 | NOMEM=8/8
+[8/9] 32-CARTRIDGE VERDICT
+ single_stage1       : PASS
+ single_stage2       : PASS
+ ibr_stage1_32       : PASS
+ ibr_stage2_32       : PASS
+ ibr_linked_32       : PASS
+ ibr_unlinked_32     : PASS
+ false_link_32       : FAIL
+ missing             : FAIL
+ absent_id           : FAIL
+ nomem               : PASS
+VERDICT: FAIL_32_CARTRIDGE_CALIBRATION
+[9/9] INTEGRITY + SUMMARY
+WEIGHT SENTINEL: PASS
+RAW LOG : /content/AKBASCORE_TEST468/TEST468_RESULTS.jsonl
+SUMMARY : /content/AKBASCORE_TEST468/TEST468_SUMMARY.json
+==========================================================================================================================
