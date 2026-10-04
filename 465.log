@@ -1,0 +1,89 @@
+ ====================================================================================================================== 
+TEST 465 — NIRVANA × MISTRAL — D120 LAYER/SITE LOCALIZATION
+======================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu130 | Transformers: 5.17.0
+[1/7] MODEL
+config.json: 100% 601/601 [00:00<00:00, 63.2kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 141k/141k [00:00<00:00, 16.9MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 32.4MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 58.4kB/s  tokenizer.model: downloading bytes:   448kB, 44.6kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 49.3kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 3.19MB/s]Download complete: :  12.4GB,  157MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  623MB/s  Fetching 3 files: 100% 3/3 [00:37<00:00,  8.47s/it]Loading weights: 100% 291/291 [00:03<00:00, 80.06it/s]generation_config.json: 100% 116/116 [00:00<00:00, 15.1kB/s][2/7] FIXED NEUTRAL CODEBOOK · D120
+[3/7] FORGE + D120 BASELINES
+ CASE 1: D120=1 | Mustafa Akbaş
+
+Reference(s):
+[1] https://www.dailys
+ CASE 2: D120=1 | Elena Varga
+```
+
+## Answer (0)
+
+I'm not sure if
+ CASE 3: D120=1 | Kerem Yıldız
+
+CATEGORY:
+History
+ CASE 4: D120=1 | Nora Velasquez
+
+### 10. Who was the first person to find the key to
+ CASE 5: D120=1 | Adrian Keller
+
+EXPLANATION:
+The question asks who carried the jade telescope into the
+ CASE 6: D120=1 | Mila Petrov
+```
+
+**Explanation:**
+
+The question asks who stored the ivory
+ CASE 7: D120=1 | Tariq Rahman
+
+### 10. Who is the author of the book "The Kite
+ CASE 8: D120=1 | Sofia Lindberg
+
+### 10. Who is the author of the book "The Girl with
+D120 BASELINE: 8/8
+[4/7] COARSE 4-LAYER CAUSAL MAP
+ L00-03             K  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L00-03             V  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L00-03             KV | hit=8/8 | baseline-loss=0/8 | gained=0
+ L04-07             K  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L04-07             V  | hit=7/8 | baseline-loss=1/8 | gained=0
+ L04-07             KV | hit=8/8 | baseline-loss=0/8 | gained=0
+ L08-11             K  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L08-11             V  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L08-11             KV | hit=8/8 | baseline-loss=0/8 | gained=0
+ L12-15             K  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L12-15             V  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L12-15             KV | hit=8/8 | baseline-loss=0/8 | gained=0
+ L16-19             K  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L16-19             V  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L16-19             KV | hit=8/8 | baseline-loss=0/8 | gained=0
+ L20-23             K  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L20-23             V  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L20-23             KV | hit=8/8 | baseline-loss=0/8 | gained=0
+ L24-27             K  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L24-27             V  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L24-27             KV | hit=8/8 | baseline-loss=0/8 | gained=0
+ L28-31             K  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L28-31             V  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L28-31             KV | hit=8/8 | baseline-loss=0/8 | gained=0
+ACTIVE COARSE LAYERS: [4, 5, 6, 7]
+[5/7] FINE SINGLE-LAYER X-RAY
+ L04                K  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L04                V  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L04                KV | hit=8/8 | baseline-loss=0/8 | gained=0
+ L05                K  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L05                V  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L05                KV | hit=8/8 | baseline-loss=0/8 | gained=0
+ L06                K  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L06                V  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L06                KV | hit=8/8 | baseline-loss=0/8 | gained=0
+ L07                K  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L07                V  | hit=8/8 | baseline-loss=0/8 | gained=0
+ L07                KV | hit=8/8 | baseline-loss=0/8 | gained=0
+[6/7] RANKING
+No single-layer behavioral loss detected at this battery resolution.
+[7/7] INTEGRITY + SUMMARY
+WEIGHT SENTINEL: PASS
+RAW LOG : /content/AKBASCORE_TEST465/TEST465_RESULTS.jsonl
+SUMMARY : /content/AKBASCORE_TEST465/TEST465_SUMMARY.json
+======================================================================================================================
