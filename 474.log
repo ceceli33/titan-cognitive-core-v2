@@ -1,0 +1,94 @@
+ ================================================================================================================================
+TEST 474 — NIRVANA × MISTRAL — D120 FINAL TWO-STAGE ENGINE VALIDATION
+================================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu130 | Transformers: 5.17.0
+[1/9] MODEL
+config.json: 100% 601/601 [00:00<00:00, 77.6kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 141k/141k [00:00<00:00, 16.6MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 44.6MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 58.4kB/s  tokenizer.model: downloading bytes:   448kB, 44.6kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 55.0kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 3.23MB/s]Download complete: :  12.4GB,  291MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  446MB/s  Fetching 3 files: 100% 3/3 [00:37<00:00,  9.51s/it]Loading weights: 100% 291/291 [00:03<00:00, 75.99it/s]generation_config.json: 100% 116/116 [00:00<00:00, 14.6kB/s][2/9] FIXED NEUTRAL CODEBOOK · D120
+[3/9] FORGE · 16 LOCKED S1_RECORD CARTRIDGES
+ C01: T=33 | amber sextant → RQ-415 → elm lodge
+ C02: T=28 | bronze compass → RQ-432 → pine archive
+ C03: T=33 | cedar telescope → RQ-449 → cedar vault
+ C04: T=32 | crimson lantern → RQ-466 → birch station
+ C05: T=32 | ivory astrolabe → RQ-483 → maple gallery
+ C06: T=32 | jade chronometer → RQ-500 → willow depot
+ C07: T=30 | silver monocle → RQ-517 → oak library
+ C08: T=30 | copper barometer → RQ-534 → fir observatory
+ C09: T=32 | onyx sundial → RQ-551 → ash museum
+ C10: T=30 | pearl compass → RQ-568 → yew tower
+ C11: T=33 | saffron telescope → RQ-585 → spruce hall
+ C12: T=31 | violet lantern → RQ-602 → linden archive
+ C13: T=31 | marble astrolabe → RQ-619 → alder vault
+ C14: T=31 | teal chronometer → RQ-636 → beech station
+ C15: T=31 | golden monocle → RQ-653 → hazel gallery
+ C16: T=32 | indigo barometer → RQ-670 → rowan depot
+[4/9] MW1 · OBJECT → UNIQUE ID
+ 01: PASS | expected=RQ-415 | decided=RQ-415 | unique=1
+ 02: PASS | expected=RQ-432 | decided=RQ-432 | unique=1
+ 03: PASS | expected=RQ-449 | decided=RQ-449 | unique=1
+ 04: PASS | expected=RQ-466 | decided=RQ-466 | unique=1
+ 05: PASS | expected=RQ-483 | decided=RQ-483 | unique=1
+ 06: PASS | expected=RQ-500 | decided=RQ-500 | unique=1
+ 07: PASS | expected=RQ-517 | decided=RQ-517 | unique=1
+ 08: PASS | expected=RQ-534 | decided=RQ-534 | unique=1
+ 09: PASS | expected=RQ-551 | decided=RQ-551 | unique=1
+ 10: PASS | expected=RQ-568 | decided=RQ-568 | unique=1
+ 11: PASS | expected=RQ-585 | decided=RQ-585 | unique=1
+ 12: PASS | expected=RQ-602 | decided=RQ-602 | unique=1
+ 13: PASS | expected=RQ-619 | decided=RQ-619 | unique=1
+ 14: PASS | expected=RQ-636 | decided=RQ-636 | unique=1
+ 15: PASS | expected=RQ-653 | decided=RQ-653 | unique=1
+ 16: PASS | expected=RQ-670 | decided=RQ-670 | unique=1
+MW1=16/16
+[5/9] MW2 · DECIDED ID → UNIQUE LOCATION
+ 01: PASS | RQ-415 | expected=elm lodge | decided=elm lodge | unique=1
+ 02: PASS | RQ-432 | expected=pine archive | decided=pine archive | unique=1
+ 03: PASS | RQ-449 | expected=cedar vault | decided=cedar vault | unique=1
+ 04: PASS | RQ-466 | expected=birch station | decided=birch station | unique=1
+ 05: PASS | RQ-483 | expected=maple gallery | decided=maple gallery | unique=1
+ 06: PASS | RQ-500 | expected=willow depot | decided=willow depot | unique=1
+ 07: PASS | RQ-517 | expected=oak library | decided=oak library | unique=1
+ 08: PASS | RQ-534 | expected=fir observatory | decided=fir observatory | unique=1
+ 09: PASS | RQ-551 | expected=ash museum | decided=ash museum | unique=1
+ 10: PASS | RQ-568 | expected=yew tower | decided=yew tower | unique=1
+ 11: PASS | RQ-585 | expected=spruce hall | decided=spruce hall | unique=1
+ 12: PASS | RQ-602 | expected=linden archive | decided=linden archive | unique=1
+ 13: PASS | RQ-619 | expected=alder vault | decided=alder vault | unique=1
+ 14: PASS | RQ-636 | expected=beech station | decided=beech station | unique=1
+ 15: PASS | RQ-653 | expected=hazel gallery | decided=hazel gallery | unique=1
+ 16: PASS | RQ-670 | expected=rowan depot | decided=rowan depot | unique=1
+MW2=16/16 | LINKED=16/16
+[6/9] MISSING OBJECT / ABSENT ID
+ 1: MISSING=PASS(UNKNOWN) | ABSENT=PASS(UNKNOWN)
+ 2: MISSING=PASS(UNKNOWN) | ABSENT=PASS(UNKNOWN)
+ 3: MISSING=PASS(UNKNOWN) | ABSENT=PASS(UNKNOWN)
+ 4: MISSING=PASS(UNKNOWN) | ABSENT=PASS(UNKNOWN)
+ 5: MISSING=PASS(UNKNOWN) | ABSENT=PASS(UNKNOWN)
+ 6: MISSING=PASS(UNKNOWN) | ABSENT=PASS(UNKNOWN)
+ 7: MISSING=PASS(UNKNOWN) | ABSENT=PASS(UNKNOWN)
+ 8: MISSING=PASS(UNKNOWN) | ABSENT=PASS(UNKNOWN)
+MISSING=8/8 | ABSENT-ID=8/8
+[7/9] NOMEM CONTROL
+ 1: PASS | target=elm lodge | raw=NONE
+ 2: PASS | target=pine archive | raw=NONE
+ 3: PASS | target=cedar vault | raw=NONE
+ 4: PASS | target=birch station | raw=NONE
+ 5: PASS | target=maple gallery | raw=NONE
+ 6: PASS | target=willow depot | raw=NONE
+ 7: PASS | target=oak library | raw=NONE
+ 8: PASS | target=fir observatory | raw=NONE
+NOMEM=8/8
+[8/9] FINAL VERDICT
+ mw1         : PASS
+ mw2         : PASS
+ linked      : PASS
+ missing     : PASS
+ absent_id   : PASS
+ nomem       : PASS
+VERDICT: PASS_MISTRAL_FINAL_ENGINE
+[9/9] INTEGRITY + SUMMARY
+WEIGHT SENTINEL: PASS
+RAW LOG : /content/AKBASCORE_TEST474/TEST474_RESULTS.jsonl
+SUMMARY : /content/AKBASCORE_TEST474/TEST474_SUMMARY.json
+================================================================================================================================
