@@ -1,3 +1,30 @@
+Permanent Research Record
+
+
+AKBASCORE NIRVANA is documented through a chronological public research record:
+
+
+1. Qwen — Cognitive Cartridge Experimental Foundation
+
+https://doi.org/10.5281/zenodo.23127434
+
+
+2. Mistral — Cross-Model Cognitive Cartridge Implementation
+
+https://doi.org/10.5281/zenodo.23143605
+
+
+3. Persistent Associative Machine Memory — Technical Disclosure & Research Roadmap
+
+https://doi.org/10.5281/zenodo.23146475
+
+
+Research progression:
+
+
+Qwen Cognitive Cartridge → Mistral Cross-Model Implementation → Scalable Cartridge Bank → Persistent Addressable Memory → Associative Memory → Memory Traversal → Dynamic Working Memory → Persistent Associative Machine Memory
+
+
 AKBASCORE NIRVANA — COGNITIVE CARTRIDGE
 
 Scalable Compressed Memory for Frozen Language Models
