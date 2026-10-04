@@ -1,0 +1,181 @@
+==============================================================================================================
+AKBASCORE NIRVANA · MISTRAL · COGNITIVE CARTRIDGE — READABLE RUN LOG
+==============================================================================================================
+Derived from MISTRAL-CC-20261004-182959-0001_FULL_RUN_LOG_payload.json (SHA-256 196e2435757e8817b54b355a7e58033c81e0657105c9ee0a4b5bd14a40e37cd7). Manifest: run_manifest_MISTRAL-CC-20261004-182959-0001.json.
+The SHA-256 is an artifact integrity seal, not a scientific proof.
+RUN ID                : MISTRAL-CC-20261004-182959-0001
+START UTC             : 2026-10-04T18:29:59.449+00:00
+END UTC               : 2026-10-04T18:32:08.160+00:00
+SEALED UTC            : 2026-10-04T18:32:08.211+00:00
+MODEL                 : mistralai/Mistral-7B-Instruct-v0.3
+ARCHITECTURE          : 32 layers / hidden 4096 / 32 Q heads / 8 KV heads / head 128
+DTYPE / ATTENTION     : bfloat16 / sdpa
+GPU                   : NVIDIA A100-SXM4-40GB
+TORCH                 : 2.11.0+cu130
+TRANSFORMERS          : 5.17.0
+SEED                  : 474
+ENGINE                : TEST474 · S1_RECORD + C_VERIFY · K=D120 V=D120 · OWN preserved · module-wise unique aggregation · greedy
+PANEL LOCK SHA-256    : 0ab0150deb8b025ae9f2f8df2d05e1e83154f7afaf11962e25d300e9c1233872
+
+SCOPE
+--------------------------------------------------------------------------------------------------------------
+SEALED TEST474 PANEL REPLAY — the same 16 records used in TEST473 frame selection and TEST474; not a new held-out validation
+S1_RECORD + C_VERIFY was one of 4 conditions with GOLD 16/16 and DECOY_NONE 240/240 in TEST473; chosen by fixed ordering on the same 16 records
+
+EXPERIMENTER LEDGER (forge-time source records; NOT available to the readout)
+--------------------------------------------------------------------------------------------------------------
+C01 | amber sextant | RQ-415 | elm lodge
+C02 | bronze compass | RQ-432 | pine archive
+C03 | cedar telescope | RQ-449 | cedar vault
+C04 | crimson lantern | RQ-466 | birch station
+C05 | ivory astrolabe | RQ-483 | maple gallery
+C06 | jade chronometer | RQ-500 | willow depot
+C07 | silver monocle | RQ-517 | oak library
+C08 | copper barometer | RQ-534 | fir observatory
+C09 | onyx sundial | RQ-551 | ash museum
+C10 | pearl compass | RQ-568 | yew tower
+C11 | saffron telescope | RQ-585 | spruce hall
+C12 | violet lantern | RQ-602 | linden archive
+C13 | marble astrolabe | RQ-619 | alder vault
+C14 | teal chronometer | RQ-636 | beech station
+C15 | golden monocle | RQ-653 | hazel gallery
+C16 | indigo barometer | RQ-670 | rowan depot
+
+CARTRIDGES (numerical K/V)
+--------------------------------------------------------------------------------------------------------------
+C01 slots=33 code_numbers=1,966,080 own=65,536 native=2,162,688 cosK_min=0.9972 cosV_min=0.9736 forge+compress=0.07s
+C02 slots=28 code_numbers=1,658,880 own=65,536 native=1,835,008 cosK_min=0.9971 cosV_min=0.9724 forge+compress=0.06s
+C03 slots=33 code_numbers=1,966,080 own=65,536 native=2,162,688 cosK_min=0.9971 cosV_min=0.9741 forge+compress=0.06s
+C04 slots=32 code_numbers=1,904,640 own=65,536 native=2,097,152 cosK_min=0.9972 cosV_min=0.9744 forge+compress=0.06s
+C05 slots=32 code_numbers=1,904,640 own=65,536 native=2,097,152 cosK_min=0.9971 cosV_min=0.9733 forge+compress=0.07s
+C06 slots=32 code_numbers=1,904,640 own=65,536 native=2,097,152 cosK_min=0.9971 cosV_min=0.9729 forge+compress=0.07s
+C07 slots=30 code_numbers=1,781,760 own=65,536 native=1,966,080 cosK_min=0.9971 cosV_min=0.9739 forge+compress=0.07s
+C08 slots=30 code_numbers=1,781,760 own=65,536 native=1,966,080 cosK_min=0.9971 cosV_min=0.9736 forge+compress=0.06s
+C09 slots=32 code_numbers=1,904,640 own=65,536 native=2,097,152 cosK_min=0.9970 cosV_min=0.9737 forge+compress=0.06s
+C10 slots=30 code_numbers=1,781,760 own=65,536 native=1,966,080 cosK_min=0.9972 cosV_min=0.9738 forge+compress=0.06s
+C11 slots=33 code_numbers=1,966,080 own=65,536 native=2,162,688 cosK_min=0.9969 cosV_min=0.9722 forge+compress=0.06s
+C12 slots=31 code_numbers=1,843,200 own=65,536 native=2,031,616 cosK_min=0.9972 cosV_min=0.9737 forge+compress=0.06s
+C13 slots=31 code_numbers=1,843,200 own=65,536 native=2,031,616 cosK_min=0.9970 cosV_min=0.9720 forge+compress=0.06s
+C14 slots=31 code_numbers=1,843,200 own=65,536 native=2,031,616 cosK_min=0.9971 cosV_min=0.9733 forge+compress=0.06s
+C15 slots=31 code_numbers=1,843,200 own=65,536 native=2,031,616 cosK_min=0.9970 cosV_min=0.9739 forge+compress=0.07s
+C16 slots=32 code_numbers=1,904,640 own=65,536 native=2,097,152 cosK_min=0.9972 cosV_min=0.9731 forge+compress=0.06s
+
+LIVE RESULTS (this run, re-derived from raw text)
+--------------------------------------------------------------------------------------------------------------
+mw1       : 16/16
+mw2       : 16/16
+linked    : 16/16
+missing   : 8/8
+absent_id : 8/8
+nomem     : 8/8
+wrong-cartridge NONE stage 1: 240/240 | stage 2: 240/240
+gate mw1        (>= 15): PASS
+gate mw2        (>= 15): PASS
+gate linked     (>= 15): PASS
+gate missing    (>= 7): PASS
+gate absent_id  (>= 7): PASS
+gate nomem      (>= 7): PASS
+VERDICT: PASS_MISTRAL_FINAL_ENGINE | replay identical to sealed counts: True
+
+PER-QUERY DECISIONS
+--------------------------------------------------------------------------------------------------------------
+Q01 amber sextant      MW1 decided=RQ-415 expected=RQ-415 | MW2 decided=elm lodge expected=elm lodge
+Q02 bronze compass     MW1 decided=RQ-432 expected=RQ-432 | MW2 decided=pine archive expected=pine archive
+Q03 cedar telescope    MW1 decided=RQ-449 expected=RQ-449 | MW2 decided=cedar vault expected=cedar vault
+Q04 crimson lantern    MW1 decided=RQ-466 expected=RQ-466 | MW2 decided=birch station expected=birch station
+Q05 ivory astrolabe    MW1 decided=RQ-483 expected=RQ-483 | MW2 decided=maple gallery expected=maple gallery
+Q06 jade chronometer   MW1 decided=RQ-500 expected=RQ-500 | MW2 decided=willow depot expected=willow depot
+Q07 silver monocle     MW1 decided=RQ-517 expected=RQ-517 | MW2 decided=oak library expected=oak library
+Q08 copper barometer   MW1 decided=RQ-534 expected=RQ-534 | MW2 decided=fir observatory expected=fir observatory
+Q09 onyx sundial       MW1 decided=RQ-551 expected=RQ-551 | MW2 decided=ash museum expected=ash museum
+Q10 pearl compass      MW1 decided=RQ-568 expected=RQ-568 | MW2 decided=yew tower expected=yew tower
+Q11 saffron telescope  MW1 decided=RQ-585 expected=RQ-585 | MW2 decided=spruce hall expected=spruce hall
+Q12 violet lantern     MW1 decided=RQ-602 expected=RQ-602 | MW2 decided=linden archive expected=linden archive
+Q13 marble astrolabe   MW1 decided=RQ-619 expected=RQ-619 | MW2 decided=alder vault expected=alder vault
+Q14 teal chronometer   MW1 decided=RQ-636 expected=RQ-636 | MW2 decided=beech station expected=beech station
+Q15 golden monocle     MW1 decided=RQ-653 expected=RQ-653 | MW2 decided=hazel gallery expected=hazel gallery
+Q16 indigo barometer   MW1 decided=RQ-670 expected=RQ-670 | MW2 decided=rowan depot expected=rowan depot
+MISSING 1: 'missing object 1' NONE=16/16 unique=[] -> PASS
+MISSING 2: 'missing object 2' NONE=16/16 unique=[] -> PASS
+MISSING 3: 'missing object 3' NONE=16/16 unique=[] -> PASS
+MISSING 4: 'missing object 4' NONE=16/16 unique=[] -> PASS
+MISSING 5: 'missing object 5' NONE=16/16 unique=[] -> PASS
+MISSING 6: 'missing object 6' NONE=16/16 unique=[] -> PASS
+MISSING 7: 'missing object 7' NONE=16/16 unique=[] -> PASS
+MISSING 8: 'missing object 8' NONE=16/16 unique=[] -> PASS
+ABSENT 1: 'ZX-801' NONE=16/16 unique=[] -> PASS
+ABSENT 2: 'ZX-814' NONE=16/16 unique=[] -> PASS
+ABSENT 3: 'ZX-827' NONE=16/16 unique=[] -> PASS
+ABSENT 4: 'ZX-840' NONE=16/16 unique=[] -> PASS
+ABSENT 5: 'ZX-853' NONE=16/16 unique=[] -> PASS
+ABSENT 6: 'ZX-866' NONE=16/16 unique=[] -> PASS
+ABSENT 7: 'ZX-879' NONE=16/16 unique=[] -> PASS
+ABSENT 8: 'ZX-892' NONE=16/16 unique=[] -> PASS
+NOMEM 1: target=elm lodge first line='NONE' parsed=None -> PASS
+NOMEM 2: target=pine archive first line='NONE' parsed=None -> PASS
+NOMEM 3: target=cedar vault first line='NONE' parsed=None -> PASS
+NOMEM 4: target=birch station first line='NONE' parsed=None -> PASS
+NOMEM 5: target=maple gallery first line='NONE' parsed=None -> PASS
+NOMEM 6: target=willow depot first line='NONE' parsed=None -> PASS
+NOMEM 7: target=oak library first line='NONE' parsed=None -> PASS
+NOMEM 8: target=fir observatory first line='NONE' parsed=None -> PASS
+
+FROZEN MODEL
+--------------------------------------------------------------------------------------------------------------
+sentinel_startup  : 5969c55767d4148f3dc057b6b7105d022c15a1678880be91351a708dde4c1e64
+sentinel_pre_run  : 5969c55767d4148f3dc057b6b7105d022c15a1678880be91351a708dde4c1e64
+sentinel_after    : 5969c55767d4148f3dc057b6b7105d022c15a1678880be91351a708dde4c1e64
+trainable tensors=0 lora=False optimizer=False training_mode=False hooks 0→64 (foreign: 0→0)
+sampled SHA-256: 7 tensors × 16 slices × 256 values (TEST474 method)
+
+PRE-SEAL CHECKS
+--------------------------------------------------------------------------------------------------------------
+PASS · model = Mistral-7B-Instruct-v0.3
+PASS · architecture 32L / H4096 / 32Q / 8KV / HD128
+PASS · dtype bfloat16
+PASS · attention SDPA
+PASS · K code dimension = D120 and V code dimension = D120
+PASS · model in eval mode
+PASS · trainable parameter tensors = 0
+PASS · no LoRA / PEFT adapter
+PASS · no optimizer object
+PASS · pre-run weight sentinel = startup sentinel
+PASS · pre-run weight fingerprint = startup fingerprint
+PASS · no foreign forward/backward hooks before run
+PASS · codebook = 32 neutral sentences
+PASS · codebook SVD count = layers × 2 × KV heads
+PASS · 16 cartridges forged
+PASS · 16 independent cartridges (distinct tensor storage)
+PASS · cartridge tensors finite
+PASS · OWN first-token K/V identical to the forged source state in every layer
+PASS · weight sentinel and fingerprint unchanged after forging (checked before any readout)
+PASS · no foreign hooks and no trainable tensors after forging
+PASS · early-stop probe: first answer lines identical to full-length decoding (13/13)
+PASS · weight sentinel after run = startup sentinel
+PASS · weight fingerprint after run = startup fingerprint
+PASS · model eval mode and trainable tensors = 0 after run
+PASS · no LoRA / optimizer after run
+PASS · no foreign forward/backward hooks after run (demo installs none)
+PASS · every query read by all 16 cartridges (no pre-selection)
+PASS · source records found in readout prompts = 0
+PASS · results re-derived from raw text are stable
+
+SEALED HISTORICAL RECORD (NOT produced by this run)
+--------------------------------------------------------------------------------------------------------------
+{"note": "Historical logs. NOT produced by this run.", "test474": {"log": "474.log", "mw1": [16, 16], "mw2": [16, 16], "linked": [16, 16], "missing": [8, 8], "absent_id": [8, 8], "nomem": [8, 8], "sentinel": "PASS", "verdict": "PASS_MISTRAL_FINAL_ENGINE", "env": "NVIDIA A100-SXM4-40GB | torch 2.11.0+cu130 | transformers 5.17.0"}, "test473": {"log": "473.log", "frame": "S1_RECORD + C_VERIFY", "gold": [16, 16], "decoy_none": [240, 240], "mw1": [16, 16], "missing": [8, 8], "conditions": 12, "tied_perfect": 4, "verdict": "PASS_MISTRAL_ABSTENTION_FRAME"}, "test467": {"log": "467.log", "cases": 8, "baseline": [8, 8], "entry": {"L07": [8, 8, 8], "L08": [6, 7, 7], "L09": [6, 8, 7], "L10": [5, 6, 5], "L11": [6, 7, 6], "L12": [6, 7, 8], "L13": [0, 3, 0], "L14": [1, 3, 0], "L15": [0, 1, 0]}, "exit": {"L18": [1, 0, 0], "L19": [4, 2, 3], "L20": [4, 3, 3], "L21": [7, 4, 7], "L22": [7, 4, 7], "L23": [8, 6, 8], "L24": [8, 7, 8], "L25": [8, 7, 8], "L26": [8, 8, 8], "L27": [8, 8, 8]}, "bounds": {"K": ["L07", "L08", "L23"], "V": ["L09", "L08", "L26"], "KV": ["L12", "L08", "L23"]}}}
+
+TIMING (seconds)
+--------------------------------------------------------------------------------------------------------------
+model_load_seconds  : 49.16
+codebook            : 5.96
+forge               : 6.17
+mw1                 : 33.77
+mw2                 : 32.38
+negatives           : 31.80
+nomem               : 0.90
+engine              : 128.70
+readout reads: 776 | forge passes: 48 | peak GPU memory: 13.62 GiB
+readout generation: stops at the end of the first answer line (parsed results identical by construction; probe reads re-decoded at full length and compared) | probe: {'pairs': 13, 'identical': 13}
+
+Raw generated text for every read is in MISTRAL-CC-20261004-182959-0001_FULL_RUN_LOG_payload.json and MISTRAL-CC-20261004-182959-0001_RESULTS.jsonl.
+==============================================================================================================
