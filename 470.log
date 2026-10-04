@@ -1,0 +1,339 @@
+ ==========================================================================================================================
+TEST 470 — NIRVANA × MISTRAL — QWEN IBR ENGINE PORT
+==========================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu130 | Transformers: 5.17.0
+[1/8] MODEL
+config.json: 100% 601/601 [00:00<00:00, 73.4kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 15.7MB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 33.2MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 58.0kB/s  tokenizer.model: downloading bytes:   448kB, 44.3kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 49.2kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 2.62MB/s]Download complete: :  12.4GB, 23.4MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  128MB/s  Fetching 3 files: 100% 3/3 [00:59<00:00, 20.29s/it]Loading weights: 100% 291/291 [00:03<00:00, 80.88it/s]generation_config.json: 100% 116/116 [00:00<00:00, 14.6kB/s][2/8] FIXED NEUTRAL CODEBOOK · D120
+[3/8] FORGE · 16 INDEPENDENT CARTRIDGES
+ C01: T=36 | amber sextant → RQ-415 → elm lodge
+ C02: T=31 | bronze compass → RQ-432 → pine archive
+ C03: T=36 | cedar telescope → RQ-449 → cedar vault
+ C04: T=35 | crimson lantern → RQ-466 → birch station
+ C05: T=35 | ivory astrolabe → RQ-483 → maple gallery
+ C06: T=35 | jade chronometer → RQ-500 → willow depot
+ C07: T=33 | silver monocle → RQ-517 → oak library
+ C08: T=33 | copper barometer → RQ-534 → fir observatory
+ C09: T=35 | onyx sundial → RQ-551 → ash museum
+ C10: T=33 | pearl compass → RQ-568 → yew tower
+ C11: T=36 | saffron telescope → RQ-585 → spruce hall
+ C12: T=34 | violet lantern → RQ-602 → linden archive
+ C13: T=34 | marble astrolabe → RQ-619 → alder vault
+ C14: T=34 | teal chronometer → RQ-636 → beech station
+ C15: T=34 | golden monocle → RQ-653 → hazel gallery
+ C16: T=35 | indigo barometer → RQ-670 → rowan depot
+[4/8] MODULE-WISE STAGE-1 · OBJECT → ID
+ 01: FAIL | expected=RQ-415 | decided=UNKNOWN
+      C01: RQ-415
+      C02: RQ-433
+      C03: RQ-450
+      C04: RQ-457
+      C05: RQ-484
+      C06: RQ-400
+      C07: RQ-518
+      C08: RQ-535
+      C09: RQ-552
+      C10: RQ-572
+      C11: RQ-586
+      C12: RQ-501
+      C13: RQ-620
+      C14: RQ-637
+      C15: RQ-654
+      C16: RQ-669
+ 02: FAIL | expected=RQ-432 | decided=UNKNOWN
+      C01: RQ-416
+      C02: RQ-432
+      C03: RQ-450
+      C04: RQ-457
+      C05: RQ-483
+      C06: RQ-400
+      C07: RQ-518
+      C08: RQ-535
+      C09: RQ-552
+      C10: RQ-572
+      C11: RQ-586
+      C12: RQ-501
+      C13: RQ-618
+      C14: RQ-637
+      C15: RQ-654
+      C16: RQ-669
+ 03: FAIL | expected=RQ-449 | decided=UNKNOWN
+      C01: RQ-414
+      C02: RQ-431
+      C03: RQ-449
+      C04: RQ-457
+      C05: RQ-484
+      C06: RQ-300
+      C07: RQ-518
+      C08: RQ-535
+      C09: RQ-550
+      C10: RQ-567
+      C11: RQ-590
+      C12: RQ-601
+      C13: RQ-618
+      C14: RQ-637
+      C15: RQ-654
+      C16: RQ-345
+ 04: FAIL | expected=RQ-466 | decided=UNKNOWN
+      C01: RQ-420
+      C02: RQ-429
+      C03: RQ-437
+      C04: RQ-466
+      C05: RQ-484
+      C06: RQ-300
+      C07: RQ-518
+      C08: RQ-535
+      C09: RQ-552
+      C10: RQ-347
+      C11: RQ-586
+      C12: RQ-501
+      C13: RQ-618
+      C14: RQ-542
+      C15: RQ-654
+      C16: RQ-669
+ 05: FAIL | expected=RQ-483 | decided=UNKNOWN
+      C01: RQ-420
+      C02: RQ-431
+      C03: RQ-450
+      C04: RQ-457
+      C05: RQ-483
+      C06: RQ-400
+      C07: RQ-518
+      C08: RQ-535
+      C09: RQ-552
+      C10: RQ-557
+      C11: RQ-584
+      C12: RQ-501
+      C13: RQ-618
+      C14: RQ-637
+      C15: RQ-654
+      C16: RQ-671
+ 06: FAIL | expected=RQ-500 | decided=UNKNOWN
+      C01: RQ-420
+      C02: RQ-433
+      C03: RQ-450
+      C04: RQ-457
+      C05: RQ-484
+      C06: RQ-500
+      C07: RQ-518
+      C08: RQ-535
+      C09: RQ-552
+      C10: RQ-572
+      C12: RQ-501
+      C13: RQ-620
+      C14: RQ-637
+      C15: RQ-654
+      C16: RQ-671
+ 07: FAIL | expected=RQ-517 | decided=UNKNOWN
+      C01: RQ-420
+      C02: RQ-429
+      C03: RQ-450
+      C04: RQ-457
+      C05: RQ-484
+      C06: RQ-400
+      C07: RQ-517
+      C08: RQ-535
+      C09: RQ-552
+      C10: RQ-542
+      C11: RQ-586
+      C12: RQ-501
+      C13: RQ-618
+      C14: RQ-637
+      C15: RQ-654
+      C16: RQ-671
+ 08: FAIL | expected=RQ-534 | decided=UNKNOWN
+      C01: RQ-416
+      C02: RQ-431
+      C03: RQ-450
+      C04: RQ-457
+      C05: RQ-484
+      C06: RQ-400
+      C07: RQ-518
+      C08: RQ-534
+      C09: RQ-552
+      C10: RQ-567
+      C11: RQ-584
+      C12: RQ-501
+      C13: RQ-618
+      C14: RQ-637
+      C15: RQ-652
+      C16: RQ-669
+ 09: FAIL | expected=RQ-551 | decided=UNKNOWN
+      C01: RQ-416
+      C02: RQ-431
+      C03: RQ-450
+      C04: RQ-457
+      C05: RQ-484
+      C06: RQ-600
+      C07: RQ-518
+      C08: RQ-535
+      C09: RQ-551
+      C10: RQ-572
+      C11: RQ-586
+      C12: RQ-501
+      C13: RQ-620
+      C14: RQ-637
+      C15: RQ-654
+      C16: RQ-671
+ 10: FAIL | expected=RQ-568 | decided=UNKNOWN
+      C01: RQ-416
+      C02: RQ-433
+      C03: RQ-450
+      C04: RQ-457
+      C05: RQ-483
+      C06: RQ-600
+      C07: RQ-518
+      C08: RQ-535
+      C09: RQ-552
+      C10: RQ-568
+      C11: RQ-586
+      C12: RQ-601
+      C13: RQ-618
+      C14: RQ-637
+      C15: RQ-654
+      C16: RQ-669
+ 11: FAIL | expected=RQ-585 | decided=UNKNOWN
+      C01: RQ-420
+      C02: RQ-431
+      C03: RQ-450
+      C04: RQ-457
+      C05: RQ-484
+      C06: RQ-400
+      C07: RQ-518
+      C08: RQ-535
+      C09: RQ-550
+      C10: RQ-547
+      C11: RQ-585
+      C12: RQ-501
+      C13: RQ-618
+      C14: RQ-637
+      C15: RQ-654
+      C16: RQ-669
+ 12: FAIL | expected=RQ-602 | decided=UNKNOWN
+      C01: RQ-420
+      C02: RQ-429
+      C03: RQ-450
+      C04: RQ-458
+      C05: RQ-484
+      C06: RQ-300
+      C07: RQ-518
+      C08: RQ-535
+      C09: RQ-552
+      C10: RQ-567
+      C11: RQ-586
+      C12: RQ-602
+      C13: RQ-618
+      C14: RQ-637
+      C15: RQ-654
+      C16: RQ-669
+ 13: FAIL | expected=RQ-619 | decided=UNKNOWN
+      C01: RQ-420
+      C02: RQ-431
+      C03: RQ-450
+      C04: RQ-457
+      C05: RQ-484
+      C06: RQ-400
+      C07: RQ-518
+      C08: RQ-535
+      C09: RQ-552
+      C10: RQ-572
+      C11: RQ-586
+      C12: RQ-501
+      C13: RQ-619
+      C14: RQ-637
+      C15: RQ-654
+      C16: RQ-671
+ 14: FAIL | expected=RQ-636 | decided=UNKNOWN
+      C01: RQ-416
+      C02: RQ-433
+      C03: RQ-450
+      C04: RQ-457
+      C05: RQ-484
+      C06: RQ-400
+      C07: RQ-518
+      C08: RQ-535
+      C09: RQ-552
+      C10: RQ-572
+      C11: RQ-586
+      C12: RQ-501
+      C13: RQ-618
+      C14: RQ-636
+      C15: RQ-654
+      C16: RQ-669
+ 15: FAIL | expected=RQ-653 | decided=UNKNOWN
+      C01: RQ-420
+      C02: RQ-429
+      C03: RQ-450
+      C04: RQ-457
+      C05: RQ-484
+      C06: RQ-400
+      C07: RQ-518
+      C08: RQ-535
+      C09: RQ-550
+      C10: RQ-567
+      C11: RQ-586
+      C12: RQ-501
+      C13: RQ-618
+      C14: RQ-637
+      C15: RQ-653
+      C16: RQ-671
+ 16: FAIL | expected=RQ-670 | decided=UNKNOWN
+      C01: RQ-416
+      C02: RQ-431
+      C03: RQ-450
+      C04: RQ-459
+      C05: RQ-484
+      C06: RQ-400
+      C07: RQ-518
+      C08: RQ-535
+      C09: RQ-552
+      C10: RQ-570
+      C11: RQ-586
+      C12: RQ-501
+      C13: RQ-618
+      C14: RQ-637
+      C15: RQ-654
+      C16: RQ-670
+MW1=0/16
+[5/8] MODULE-WISE STAGE-2 · DECIDED ID → PLACE
+ 01: FAIL | Stage1 UNKNOWN
+ 02: FAIL | Stage1 UNKNOWN
+ 03: FAIL | Stage1 UNKNOWN
+ 04: FAIL | Stage1 UNKNOWN
+ 05: FAIL | Stage1 UNKNOWN
+ 06: FAIL | Stage1 UNKNOWN
+ 07: FAIL | Stage1 UNKNOWN
+ 08: FAIL | Stage1 UNKNOWN
+ 09: FAIL | Stage1 UNKNOWN
+ 10: FAIL | Stage1 UNKNOWN
+ 11: FAIL | Stage1 UNKNOWN
+ 12: FAIL | Stage1 UNKNOWN
+ 13: FAIL | Stage1 UNKNOWN
+ 14: FAIL | Stage1 UNKNOWN
+ 15: FAIL | Stage1 UNKNOWN
+ 16: FAIL | Stage1 UNKNOWN
+MW2=0/16 | LINKED=0/16
+[6/8] MISSING / ABSENT-ID / NOMEM
+ 1: MISSING=PASS(UNKNOWN) | ABSENT=PASS(UNKNOWN) | NOMEM=1
+ 2: MISSING=PASS(UNKNOWN) | ABSENT=PASS(UNKNOWN) | NOMEM=1
+ 3: MISSING=PASS(UNKNOWN) | ABSENT=PASS(UNKNOWN) | NOMEM=1
+ 4: MISSING=PASS(UNKNOWN) | ABSENT=PASS(UNKNOWN) | NOMEM=1
+ 5: MISSING=PASS(UNKNOWN) | ABSENT=PASS(UNKNOWN) | NOMEM=1
+ 6: MISSING=PASS(UNKNOWN) | ABSENT=PASS(UNKNOWN) | NOMEM=1
+ 7: MISSING=PASS(UNKNOWN) | ABSENT=PASS(UNKNOWN) | NOMEM=1
+ 8: MISSING=PASS(UNKNOWN) | ABSENT=PASS(UNKNOWN) | NOMEM=1
+MISSING=8/8 | ABSENT-ID=8/8 | NOMEM=8/8
+[7/8] VERDICT
+ mw1           : FAIL
+ mw2           : FAIL
+ linked        : FAIL
+ missing       : PASS
+ absent_id     : PASS
+ nomem         : PASS
+VERDICT: FAIL_QWEN_IBR_PORT
+[8/8] INTEGRITY + SUMMARY
+WEIGHT SENTINEL: PASS
+RAW LOG : /content/AKBASCORE_TEST470/TEST470_RESULTS.jsonl
+SUMMARY : /content/AKBASCORE_TEST470/TEST470_SUMMARY.json
+==========================================================================================================================
