@@ -1,0 +1,120 @@
+ 
+============================================================================================================================
+TEST 472 — NIRVANA × MISTRAL — D120 16-WAY HIDDEN RELEVANCE RANK
+============================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu130 | Transformers: 5.17.0
+[1/8] MODEL
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 67.0kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 17.4MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 31.4MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.4kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.6kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 51.8kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.70MB/s]
+Download complete: : 
+
+ 12.4GB,  285MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  602MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:35<00:00,  8.10s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 78.57it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 11.6kB/s]
+[2/8] FIXED NEUTRAL CODEBOOK · D120
+[3/8] FORGE · 16 INDEPENDENT CARTRIDGES
+ C01: T=36 | amber sextant → RQ-415 → elm lodge
+ C02: T=31 | bronze compass → RQ-432 → pine archive
+ C03: T=36 | cedar telescope → RQ-449 → cedar vault
+ C04: T=35 | crimson lantern → RQ-466 → birch station
+ C05: T=35 | ivory astrolabe → RQ-483 → maple gallery
+ C06: T=35 | jade chronometer → RQ-500 → willow depot
+ C07: T=33 | silver monocle → RQ-517 → oak library
+ C08: T=33 | copper barometer → RQ-534 → fir observatory
+ C09: T=35 | onyx sundial → RQ-551 → ash museum
+ C10: T=33 | pearl compass → RQ-568 → yew tower
+ C11: T=36 | saffron telescope → RQ-585 → spruce hall
+ C12: T=34 | violet lantern → RQ-602 → linden archive
+ C13: T=34 | marble astrolabe → RQ-619 → alder vault
+ C14: T=34 | teal chronometer → RQ-636 → beech station
+ C15: T=34 | golden monocle → RQ-653 → hazel gallery
+ C16: T=35 | indigo barometer → RQ-670 → rowan depot
+[4/8] BUILD SELF REFERENCE SIGNATURES
+ C01: reference built | ||self-foreign|| μ=0.116272
+ C02: reference built | ||self-foreign|| μ=0.098253
+ C03: reference built | ||self-foreign|| μ=0.151932
+ C04: reference built | ||self-foreign|| μ=0.120576
+ C05: reference built | ||self-foreign|| μ=0.252425
+ C06: reference built | ||self-foreign|| μ=0.120166
+ C07: reference built | ||self-foreign|| μ=0.267758
+ C08: reference built | ||self-foreign|| μ=0.175565
+ C09: reference built | ||self-foreign|| μ=0.264225
+ C10: reference built | ||self-foreign|| μ=0.331779
+ C11: reference built | ||self-foreign|| μ=0.274152
+ C12: reference built | ||self-foreign|| μ=0.083684
+ C13: reference built | ||self-foreign|| μ=0.134393
+ C14: reference built | ||self-foreign|| μ=0.086413
+ C15: reference built | ||self-foreign|| μ=0.141113
+ C16: reference built | ||self-foreign|| μ=0.116606
+[5/8] LEAVE-ONE-CARD-OUT 16-WAY RANK
+ Q01: gold=C01 rank=08 | top=C03 | gold=+1.000000 | margin=-0.000000
+ Q02: gold=C02 rank=04 | top=C03 | gold=+1.000000 | margin=-0.000000
+ Q03: gold=C03 rank=01 | top=C03 | gold=+1.000000 | margin=+0.000000
+ Q04: gold=C04 rank=05 | top=C03 | gold=+1.000000 | margin=-0.000000
+ Q05: gold=C05 rank=02 | top=C15 | gold=+1.000000 | margin=-0.000000
+ Q06: gold=C06 rank=02 | top=C03 | gold=+1.000000 | margin=+0.000000
+ Q07: gold=C07 rank=06 | top=C15 | gold=+1.000000 | margin=-0.000000
+ Q08: gold=C08 rank=09 | top=C03 | gold=+1.000000 | margin=-0.000000
+ Q09: gold=C09 rank=03 | top=C15 | gold=+1.000000 | margin=-0.000000
+ Q10: gold=C10 rank=01 | top=C10 | gold=+1.000000 | margin=+0.284067
+ Q11: gold=C11 rank=03 | top=C05 | gold=+1.000000 | margin=+0.000000
+ Q12: gold=C12 rank=08 | top=C03 | gold=+1.000000 | margin=-0.000000
+ Q13: gold=C13 rank=05 | top=C05 | gold=+1.000000 | margin=+0.000000
+ Q14: gold=C14 rank=03 | top=C03 | gold=+1.000000 | margin=+0.000000
+ Q15: gold=C15 rank=01 | top=C15 | gold=+1.000000 | margin=+0.000000
+ Q16: gold=C16 rank=09 | top=C06 | gold=+1.000000 | margin=-0.000000
+[6/8] NEGATIVE / MISSING QUERY AUDIT
+ missing object 1: top=C03 score=+1.000000
+ missing object 2: top=C03 score=+1.000000
+ missing object 3: top=C03 score=+1.000000
+ missing object 4: top=C03 score=+1.000000
+ missing object 5: top=C03 score=+1.000000
+ missing object 6: top=C03 score=+1.000000
+ missing object 7: top=C03 score=+1.000000
+ missing object 8: top=C03 score=+1.000000
+[7/8] SUMMARY / DIAGNOSTIC VERDICT
+TOP1=3/16 | TOP2=5/16 | TOP4=9/16 | mean-rank=4.375
+GOLD MARGIN: mean=+0.017754 min=-0.000000 max=+0.284067
+MISSING max-score: mean=+1.000000 min=+1.000000 max=+1.000000
+VERDICT: FAIL_HIDDEN_RELEVANCE_RANK
+NOTE: diagnostic only. No router, threshold, answer selection or engine modification.
+[8/8] INTEGRITY + SUMMARY
+WEIGHT SENTINEL: PASS
+RAW LOG : /content/AKBASCORE_TEST472/TEST472_RESULTS.jsonl
+SUMMARY : /content/AKBASCORE_TEST472/TEST472_SUMMARY.json
+
+
+============================================================================================================================
