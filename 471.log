@@ -1,0 +1,115 @@
+ 
+============================================================================================================================
+TEST 471 — NIRVANA × MISTRAL — D120 GOLD/DECOY RELEVANCE X-RAY
+============================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu130 | Transformers: 5.17.0
+[1/8] MODEL
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 76.0kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 15.3MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 82.8MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.1kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.6kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 50.7kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.78MB/s]
+Download complete: : 
+
+ 12.4GB,  270MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  421MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:37<00:00,  9.15s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 80.31it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 16.1kB/s]
+[2/8] FIXED NEUTRAL CODEBOOK · D120
+[3/8] FORGE · 16 INDEPENDENT CARTRIDGES
+ C01: T=36 | amber sextant → RQ-415 → elm lodge
+ C02: T=31 | bronze compass → RQ-432 → pine archive
+ C03: T=36 | cedar telescope → RQ-449 → cedar vault
+ C04: T=35 | crimson lantern → RQ-466 → birch station
+ C05: T=35 | ivory astrolabe → RQ-483 → maple gallery
+ C06: T=35 | jade chronometer → RQ-500 → willow depot
+ C07: T=33 | silver monocle → RQ-517 → oak library
+ C08: T=33 | copper barometer → RQ-534 → fir observatory
+ C09: T=35 | onyx sundial → RQ-551 → ash museum
+ C10: T=33 | pearl compass → RQ-568 → yew tower
+ C11: T=36 | saffron telescope → RQ-585 → spruce hall
+ C12: T=34 | violet lantern → RQ-602 → linden archive
+ C13: T=34 | marble astrolabe → RQ-619 → alder vault
+ C14: T=34 | teal chronometer → RQ-636 → beech station
+ C15: T=34 | golden monocle → RQ-653 → hazel gallery
+ C16: T=35 | indigo barometer → RQ-670 → rowan depot
+[4/8] GOLD/DECOY TRANSCRIPTION + NATIVE SIGNAL MATRIX
+ Q01: GOLD C01 raw=RQ-415                   own-none=+1.7812 rank=05 | decoy μ=+1.7729
+ Q02: GOLD C02 raw=RQ-432                   own-none=+5.5625 rank=01 | decoy μ=+1.5208
+ Q03: GOLD C03 raw=RQ-449                   own-none=+1.7188 rank=08 | decoy μ=+1.7771
+ Q04: GOLD C04 raw=RQ-466                   own-none=+1.0312 rank=14 | decoy μ=+1.8229
+ Q05: GOLD C05 raw=RQ-483                   own-none=+1.4375 rank=12 | decoy μ=+2.0469
+ Q06: GOLD C06 raw=RQ-500                   own-none=+1.1250 rank=13 | decoy μ=+1.8167
+ Q07: GOLD C07 raw=RQ-517                   own-none=+2.0312 rank=05 | decoy μ=+2.0073
+ Q08: GOLD C08 raw=RQ-534                   own-none=+2.2188 rank=02 | decoy μ=+1.7437
+ Q09: GOLD C09 raw=RQ-551                   own-none=+2.2188 rank=03 | decoy μ=+1.9948
+ Q10: GOLD C10 raw=RQ-568                   own-none=+1.6250 rank=08 | decoy μ=+1.5063
+ Q11: GOLD C11 raw=RQ-585                   own-none=+1.5000 rank=11 | decoy μ=+2.0427
+ Q12: GOLD C12 raw=RQ-602                   own-none=+1.7812 rank=06 | decoy μ=+1.7729
+ Q13: GOLD C13 raw=RQ-619                   own-none=+1.6562 rank=09 | decoy μ=+2.0323
+ Q14: GOLD C14 raw=RQ-636                   own-none=+1.0312 rank=15 | decoy μ=+1.8229
+ Q15: GOLD C15 raw=RQ-653                   own-none=+0.7188 rank=16 | decoy μ=+2.0948
+ Q16: GOLD C16 raw=RQ-670                   own-none=+1.5625 rank=10 | decoy μ=+1.7875
+[5/8] QUERY-CONTRAST SIGNAL
+ C01: self=RQ-415               | self-vs-foreign cos μ=0.989260 min=0.975471 | Δ=0.010740
+ C02: self=RQ-432               | self-vs-foreign cos μ=0.982069 min=0.931746 | Δ=0.017931
+ C03: self=RQ-449               | self-vs-foreign cos μ=0.984155 min=0.961892 | Δ=0.015845
+ C04: self=RQ-466               | self-vs-foreign cos μ=0.984830 min=0.960723 | Δ=0.015170
+ C05: self=RQ-483               | self-vs-foreign cos μ=0.969047 min=0.916081 | Δ=0.030953
+ C06: self=RQ-500               | self-vs-foreign cos μ=0.978419 min=0.945756 | Δ=0.021581
+ C07: self=RQ-517               | self-vs-foreign cos μ=0.938736 min=0.839300 | Δ=0.061264
+ C08: self=RQ-534               | self-vs-foreign cos μ=0.958607 min=0.900438 | Δ=0.041393
+ C09: self=RQ-551               | self-vs-foreign cos μ=0.968791 min=0.926842 | Δ=0.031209
+ C10: self=RQ-568               | self-vs-foreign cos μ=0.924696 min=0.848780 | Δ=0.075304
+ C11: self=RQ-585               | self-vs-foreign cos μ=0.970573 min=0.939396 | Δ=0.029427
+ C12: self=RQ-602               | self-vs-foreign cos μ=0.989732 min=0.964033 | Δ=0.010268
+ C13: self=RQ-619               | self-vs-foreign cos μ=0.986350 min=0.945917 | Δ=0.013650
+ C14: self=RQ-636               | self-vs-foreign cos μ=0.988970 min=0.970351 | Δ=0.011030
+ C15: self=RQ-653               | self-vs-foreign cos μ=0.981196 min=0.926271 | Δ=0.018804
+ C16: self=RQ-670               | self-vs-foreign cos μ=0.983037 min=0.960905 | Δ=0.016963
+[6/8] SEPARATION SUMMARY
+OWN-vs-NONE margin GOLD : mean=+1.812500 min=+0.718750 max=+5.562500
+OWN-vs-NONE margin DECOY: mean=+1.847656 min=+0.625000 max=+6.625000
+GOLD margin rank: top1=1/16 | top2=2/16 | top4=3/16 | mean-rank=8.625
+TRANSCRIPTION self=16/16 | foreign-own=2/240
+QUERY hidden Δ=1-cos(self,foreign): mean=0.02634584 min=0.01026782 max=0.07530419
+CLEAN MARGIN SEPARATION: 0
+[7/8] DIAGNOSTIC VERDICT
+VERDICT: HIDDEN_QUERY_CONTRAST_SIGNAL_ONLY
+NOTE: diagnostic only; no routing decision was inserted into the engine.
+[8/8] INTEGRITY + SUMMARY
+WEIGHT SENTINEL: PASS
+RAW LOG : /content/AKBASCORE_TEST471/TEST471_RESULTS.jsonl
+SUMMARY : /content/AKBASCORE_TEST471/TEST471_SUMMARY.json
+
+
+============================================================================================================================
