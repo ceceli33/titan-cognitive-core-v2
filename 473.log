@@ -1,0 +1,128 @@
+ ==============================================================================================================================
+TEST 473 — NIRVANA × MISTRAL — D120 QWEN-STYLE ABSTENTION FRAME CALIBRATION
+==============================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu130 | Transformers: 5.17.0
+[1/9] MODEL
+config.json: 100% 601/601 [00:00<00:00, 66.8kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 15.9MB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 32.3MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 58.4kB/s  tokenizer.model: downloading bytes:   448kB, 44.6kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 53.8kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 2.92MB/s]Download complete: :  12.4GB, 99.4MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  521MB/s  Fetching 3 files: 100% 3/3 [00:36<00:00,  8.58s/it]Loading weights: 100% 291/291 [00:03<00:00, 80.09it/s]generation_config.json: 100% 116/116 [00:00<00:00, 13.5kB/s][2/9] FIXED NEUTRAL CODEBOOK · D120
+[3/9] FORGE · 3 SOURCE FRAMES × 16 CARTRIDGES
+  S0_470
+  C01: T=36 | amber sextant → RQ-415
+  C02: T=31 | bronze compass → RQ-432
+  C03: T=36 | cedar telescope → RQ-449
+  C04: T=35 | crimson lantern → RQ-466
+  C05: T=35 | ivory astrolabe → RQ-483
+  C06: T=35 | jade chronometer → RQ-500
+  C07: T=33 | silver monocle → RQ-517
+  C08: T=33 | copper barometer → RQ-534
+  C09: T=35 | onyx sundial → RQ-551
+  C10: T=33 | pearl compass → RQ-568
+  C11: T=36 | saffron telescope → RQ-585
+  C12: T=34 | violet lantern → RQ-602
+  C13: T=34 | marble astrolabe → RQ-619
+  C14: T=34 | teal chronometer → RQ-636
+  C15: T=34 | golden monocle → RQ-653
+  C16: T=35 | indigo barometer → RQ-670
+  S1_RECORD
+  C01: T=33 | amber sextant → RQ-415
+  C02: T=28 | bronze compass → RQ-432
+  C03: T=33 | cedar telescope → RQ-449
+  C04: T=32 | crimson lantern → RQ-466
+  C05: T=32 | ivory astrolabe → RQ-483
+  C06: T=32 | jade chronometer → RQ-500
+  C07: T=30 | silver monocle → RQ-517
+  C08: T=30 | copper barometer → RQ-534
+  C09: T=32 | onyx sundial → RQ-551
+  C10: T=30 | pearl compass → RQ-568
+  C11: T=33 | saffron telescope → RQ-585
+  C12: T=31 | violet lantern → RQ-602
+  C13: T=31 | marble astrolabe → RQ-619
+  C14: T=31 | teal chronometer → RQ-636
+  C15: T=31 | golden monocle → RQ-653
+  C16: T=32 | indigo barometer → RQ-670
+  S2_CLOSED
+  C01: T=45 | amber sextant → RQ-415
+  C02: T=40 | bronze compass → RQ-432
+  C03: T=45 | cedar telescope → RQ-449
+  C04: T=44 | crimson lantern → RQ-466
+  C05: T=44 | ivory astrolabe → RQ-483
+  C06: T=44 | jade chronometer → RQ-500
+  C07: T=42 | silver monocle → RQ-517
+  C08: T=42 | copper barometer → RQ-534
+  C09: T=44 | onyx sundial → RQ-551
+  C10: T=42 | pearl compass → RQ-568
+  C11: T=45 | saffron telescope → RQ-585
+  C12: T=43 | violet lantern → RQ-602
+  C13: T=43 | marble astrolabe → RQ-619
+  C14: T=43 | teal chronometer → RQ-636
+  C15: T=43 | golden monocle → RQ-653
+  C16: T=44 | indigo barometer → RQ-670
+[4/9] CONTROLLED GOLD/DECOY ABSTENTION MATRIX
+ S0_470/A_470         | GOLD=16/16 | DECOY_NONE=001/240 (0.004) | falseID=239 | ownID=002
+ S0_470/B_STRICT      | GOLD=16/16 | DECOY_NONE=231/240 (0.963) | falseID=009 | ownID=001
+ S0_470/C_VERIFY      | GOLD=15/16 | DECOY_NONE=240/240 (1.000) | falseID=000 | ownID=000
+ S0_470/D_EXTRACT     | GOLD=16/16 | DECOY_NONE=233/240 (0.971) | falseID=007 | ownID=004
+ S1_RECORD/A_470      | GOLD=16/16 | DECOY_NONE=000/240 (0.000) | falseID=240 | ownID=003
+ S1_RECORD/B_STRICT   | GOLD=16/16 | DECOY_NONE=023/240 (0.096) | falseID=211 | ownID=000
+ S1_RECORD/C_VERIFY   | GOLD=16/16 | DECOY_NONE=240/240 (1.000) | falseID=000 | ownID=000
+ S1_RECORD/D_EXTRACT  | GOLD=16/16 | DECOY_NONE=239/240 (0.996) | falseID=001 | ownID=001
+ S2_CLOSED/A_470      | GOLD=16/16 | DECOY_NONE=040/240 (0.167) | falseID=200 | ownID=000
+ S2_CLOSED/B_STRICT   | GOLD=16/16 | DECOY_NONE=240/240 (1.000) | falseID=000 | ownID=000
+ S2_CLOSED/C_VERIFY   | GOLD=16/16 | DECOY_NONE=240/240 (1.000) | falseID=000 | ownID=000
+ S2_CLOSED/D_EXTRACT  | GOLD=16/16 | DECOY_NONE=240/240 (1.000) | falseID=000 | ownID=000
+[5/9] RANK CONDITIONS
+ 01. S1_RECORD/C_VERIFY   GOLD=16/16 DECOY_NONE=240/240
+ 02. S2_CLOSED/B_STRICT   GOLD=16/16 DECOY_NONE=240/240
+ 03. S2_CLOSED/C_VERIFY   GOLD=16/16 DECOY_NONE=240/240
+ 04. S2_CLOSED/D_EXTRACT  GOLD=16/16 DECOY_NONE=240/240
+ 05. S1_RECORD/D_EXTRACT  GOLD=16/16 DECOY_NONE=239/240
+ 06. S0_470/D_EXTRACT     GOLD=16/16 DECOY_NONE=233/240
+ 07. S0_470/B_STRICT      GOLD=16/16 DECOY_NONE=231/240
+ 08. S2_CLOSED/A_470      GOLD=16/16 DECOY_NONE=040/240
+ 09. S1_RECORD/B_STRICT   GOLD=16/16 DECOY_NONE=023/240
+ 10. S0_470/A_470         GOLD=16/16 DECOY_NONE=001/240
+ 11. S1_RECORD/A_470      GOLD=16/16 DECOY_NONE=000/240
+ 12. S0_470/C_VERIFY      GOLD=15/16 DECOY_NONE=240/240
+BEST: S1_RECORD/C_VERIFY
+[6/9] BEST CONDITION · FULL MODULE-WISE DECISION
+ 01: PASS | expected=RQ-415 | decided=RQ-415 | unique=1
+ 02: PASS | expected=RQ-432 | decided=RQ-432 | unique=1
+ 03: PASS | expected=RQ-449 | decided=RQ-449 | unique=1
+ 04: PASS | expected=RQ-466 | decided=RQ-466 | unique=1
+ 05: PASS | expected=RQ-483 | decided=RQ-483 | unique=1
+ 06: PASS | expected=RQ-500 | decided=RQ-500 | unique=1
+ 07: PASS | expected=RQ-517 | decided=RQ-517 | unique=1
+ 08: PASS | expected=RQ-534 | decided=RQ-534 | unique=1
+ 09: PASS | expected=RQ-551 | decided=RQ-551 | unique=1
+ 10: PASS | expected=RQ-568 | decided=RQ-568 | unique=1
+ 11: PASS | expected=RQ-585 | decided=RQ-585 | unique=1
+ 12: PASS | expected=RQ-602 | decided=RQ-602 | unique=1
+ 13: PASS | expected=RQ-619 | decided=RQ-619 | unique=1
+ 14: PASS | expected=RQ-636 | decided=RQ-636 | unique=1
+ 15: PASS | expected=RQ-653 | decided=RQ-653 | unique=1
+ 16: PASS | expected=RQ-670 | decided=RQ-670 | unique=1
+MW1=16/16 | UNIQUE=16/16
+[7/9] MISSING OBJECT CONTROL
+ 1: PASS | NONE=16/16 | aggregate=UNKNOWN
+ 2: PASS | NONE=16/16 | aggregate=UNKNOWN
+ 3: PASS | NONE=16/16 | aggregate=UNKNOWN
+ 4: PASS | NONE=16/16 | aggregate=UNKNOWN
+ 5: PASS | NONE=16/16 | aggregate=UNKNOWN
+ 6: PASS | NONE=16/16 | aggregate=UNKNOWN
+ 7: PASS | NONE=16/16 | aggregate=UNKNOWN
+ 8: PASS | NONE=16/16 | aggregate=UNKNOWN
+MISSING=8/8
+[8/9] VERDICT
+BASE TEST470: GOLD=16/16 | DECOY_NONE=1/240
+BEST        : GOLD=16/16 | DECOY_NONE=240/240 | MW1=16/16 | MISSING=8/8
+ gold_preserved    : PASS
+ decoy_abstention  : PASS
+ mw1               : PASS
+ missing           : PASS
+VERDICT: PASS_MISTRAL_ABSTENTION_FRAME
+[9/9] INTEGRITY + SUMMARY
+WEIGHT SENTINEL: PASS
+RAW LOG : /content/AKBASCORE_TEST473/TEST473_RESULTS.jsonl
+SUMMARY : /content/AKBASCORE_TEST473/TEST473_SUMMARY.json
+==============================================================================================================================
