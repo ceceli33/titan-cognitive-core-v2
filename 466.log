@@ -1,0 +1,216 @@
+ 
+======================================================================================================================== 
+TEST 466 — NIRVANA × MISTRAL — D120 CUMULATIVE K/V BOUNDARY LOCALIZATION
+========================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu130 | Transformers: 5.17.0
+[1/8] MODEL
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 76.1kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 17.1MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 32.7MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.3kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 58.4kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.02MB/s]
+Download complete: : 
+
+ 12.4GB,  369MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  432MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:37<00:00,  9.17s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 81.18it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 14.9kB/s]
+[2/8] FIXED NEUTRAL CODEBOOK · D120
+[3/8] D120 BASELINES
+ CASE 1: hit=1 | Mustafa Akbaş
+
+Reference(s):
+[1] https://www.dailys
+ CASE 2: hit=1 | Elena Varga
+```
+
+## Answer (0)
+
+I'm not sure if
+ CASE 3: hit=1 | Kerem Yıldız
+
+CATEGORY:
+History
+ CASE 4: hit=1 | Nora Velasquez
+
+### 10. Who was the first person to find the key to
+ CASE 5: hit=1 | Adrian Keller
+
+EXPLANATION:
+The question asks who carried the jade telescope into the
+ CASE 6: hit=1 | Mila Petrov
+```
+
+**Explanation:**
+
+The question asks who stored the ivory
+ CASE 7: hit=1 | Tariq Rahman
+
+### 10. Who is the author of the book "The Kite
+ CASE 8: hit=1 | Sofia Lindberg
+
+### 10. Who is the author of the book "The Girl with
+D120 FULL BASELINE: 8/8
+[4/8] PREFIX BOUNDARY SCAN
+ PREFIX L00 K  | hit=0/8 | loss=8/8 | gained=0
+ PREFIX L00 V  | hit=0/8 | loss=8/8 | gained=0
+ PREFIX L00 KV | hit=0/8 | loss=8/8 | gained=0
+ PREFIX L03 K  | hit=0/8 | loss=8/8 | gained=0
+ PREFIX L03 V  | hit=0/8 | loss=8/8 | gained=0
+ PREFIX L03 KV | hit=0/8 | loss=8/8 | gained=0
+ PREFIX L07 K  | hit=0/8 | loss=8/8 | gained=0
+ PREFIX L07 V  | hit=0/8 | loss=8/8 | gained=0
+ PREFIX L07 KV | hit=0/8 | loss=8/8 | gained=0
+ PREFIX L11 K  | hit=0/8 | loss=8/8 | gained=0
+ PREFIX L11 V  | hit=0/8 | loss=8/8 | gained=0
+ PREFIX L11 KV | hit=0/8 | loss=8/8 | gained=0
+ PREFIX L15 K  | hit=0/8 | loss=8/8 | gained=0
+ PREFIX L15 V  | hit=0/8 | loss=8/8 | gained=0
+ PREFIX L15 KV | hit=0/8 | loss=8/8 | gained=0
+ PREFIX L19 K  | hit=4/8 | loss=4/8 | gained=0
+ PREFIX L19 V  | hit=2/8 | loss=6/8 | gained=0
+ PREFIX L19 KV | hit=3/8 | loss=5/8 | gained=0
+ PREFIX L23 K  | hit=8/8 | loss=0/8 | gained=0
+ PREFIX L23 V  | hit=6/8 | loss=2/8 | gained=0
+ PREFIX L23 KV | hit=8/8 | loss=0/8 | gained=0
+ PREFIX L27 K  | hit=8/8 | loss=0/8 | gained=0
+ PREFIX L27 V  | hit=8/8 | loss=0/8 | gained=0
+ PREFIX L27 KV | hit=8/8 | loss=0/8 | gained=0
+ PREFIX L31 K  | hit=8/8 | loss=0/8 | gained=0
+ PREFIX L31 V  | hit=8/8 | loss=0/8 | gained=0
+ PREFIX L31 KV | hit=8/8 | loss=0/8 | gained=0
+[5/8] SUFFIX BOUNDARY SCAN
+ SUFFIX L00 K  | hit=8/8 | loss=0/8 | gained=0
+ SUFFIX L00 V  | hit=8/8 | loss=0/8 | gained=0
+ SUFFIX L00 KV | hit=8/8 | loss=0/8 | gained=0
+ SUFFIX L03 K  | hit=8/8 | loss=0/8 | gained=0
+ SUFFIX L03 V  | hit=8/8 | loss=0/8 | gained=0
+ SUFFIX L03 KV | hit=8/8 | loss=0/8 | gained=0
+ SUFFIX L07 K  | hit=8/8 | loss=0/8 | gained=0
+ SUFFIX L07 V  | hit=8/8 | loss=0/8 | gained=0
+ SUFFIX L07 KV | hit=8/8 | loss=0/8 | gained=0
+ SUFFIX L11 K  | hit=6/8 | loss=2/8 | gained=0
+ SUFFIX L11 V  | hit=7/8 | loss=1/8 | gained=0
+ SUFFIX L11 KV | hit=6/8 | loss=2/8 | gained=0
+ SUFFIX L15 K  | hit=0/8 | loss=8/8 | gained=0
+ SUFFIX L15 V  | hit=1/8 | loss=7/8 | gained=0
+ SUFFIX L15 KV | hit=0/8 | loss=8/8 | gained=0
+ SUFFIX L19 K  | hit=0/8 | loss=8/8 | gained=0
+ SUFFIX L19 V  | hit=0/8 | loss=8/8 | gained=0
+ SUFFIX L19 KV | hit=0/8 | loss=8/8 | gained=0
+ SUFFIX L23 K  | hit=0/8 | loss=8/8 | gained=0
+ SUFFIX L23 V  | hit=0/8 | loss=8/8 | gained=0
+ SUFFIX L23 KV | hit=0/8 | loss=8/8 | gained=0
+ SUFFIX L27 K  | hit=0/8 | loss=8/8 | gained=0
+ SUFFIX L27 V  | hit=0/8 | loss=8/8 | gained=0
+ SUFFIX L27 KV | hit=0/8 | loss=8/8 | gained=0
+ SUFFIX L31 K  | hit=0/8 | loss=8/8 | gained=0
+ SUFFIX L31 V  | hit=0/8 | loss=8/8 | gained=0
+ SUFFIX L31 KV | hit=0/8 | loss=8/8 | gained=0
+[6/8] TRANSITION ANALYSIS
+
+ PREFIX K:
+  L15->L19 | hit 0->4 | loss 8->4
+  L19->L23 | hit 4->8 | loss 4->0
+
+ PREFIX V:
+  L15->L19 | hit 0->2 | loss 8->6
+  L19->L23 | hit 2->6 | loss 6->2
+  L23->L27 | hit 6->8 | loss 2->0
+
+ PREFIX KV:
+  L15->L19 | hit 0->3 | loss 8->5
+  L19->L23 | hit 3->8 | loss 5->0
+
+ SUFFIX K:
+  L07->L11 | hit 8->6 | loss 0->2
+  L11->L15 | hit 6->0 | loss 2->8
+
+ SUFFIX V:
+  L07->L11 | hit 8->7 | loss 0->1
+  L11->L15 | hit 7->1 | loss 1->7
+  L15->L19 | hit 1->0 | loss 7->8
+
+ SUFFIX KV:
+  L07->L11 | hit 8->6 | loss 0->2
+  L11->L15 | hit 6->0 | loss 2->8
+[7/8] BOUNDARY RANKING
+
+ K
+  PREFIX L00 | hit=0/8 | loss=8/8
+  PREFIX L03 | hit=0/8 | loss=8/8
+  PREFIX L07 | hit=0/8 | loss=8/8
+  PREFIX L11 | hit=0/8 | loss=8/8
+  PREFIX L15 | hit=0/8 | loss=8/8
+  SUFFIX L15 | hit=0/8 | loss=8/8
+  SUFFIX L19 | hit=0/8 | loss=8/8
+  SUFFIX L23 | hit=0/8 | loss=8/8
+  SUFFIX L27 | hit=0/8 | loss=8/8
+  SUFFIX L31 | hit=0/8 | loss=8/8
+  PREFIX L19 | hit=4/8 | loss=4/8
+  SUFFIX L11 | hit=6/8 | loss=2/8
+
+ V
+  PREFIX L00 | hit=0/8 | loss=8/8
+  PREFIX L03 | hit=0/8 | loss=8/8
+  PREFIX L07 | hit=0/8 | loss=8/8
+  PREFIX L11 | hit=0/8 | loss=8/8
+  PREFIX L15 | hit=0/8 | loss=8/8
+  SUFFIX L19 | hit=0/8 | loss=8/8
+  SUFFIX L23 | hit=0/8 | loss=8/8
+  SUFFIX L27 | hit=0/8 | loss=8/8
+  SUFFIX L31 | hit=0/8 | loss=8/8
+  SUFFIX L15 | hit=1/8 | loss=7/8
+  PREFIX L19 | hit=2/8 | loss=6/8
+  PREFIX L23 | hit=6/8 | loss=2/8
+  SUFFIX L11 | hit=7/8 | loss=1/8
+
+ KV
+  PREFIX L00 | hit=0/8 | loss=8/8
+  PREFIX L03 | hit=0/8 | loss=8/8
+  PREFIX L07 | hit=0/8 | loss=8/8
+  PREFIX L11 | hit=0/8 | loss=8/8
+  PREFIX L15 | hit=0/8 | loss=8/8
+  SUFFIX L15 | hit=0/8 | loss=8/8
+  SUFFIX L19 | hit=0/8 | loss=8/8
+  SUFFIX L23 | hit=0/8 | loss=8/8
+  SUFFIX L27 | hit=0/8 | loss=8/8
+  SUFFIX L31 | hit=0/8 | loss=8/8
+  PREFIX L19 | hit=3/8 | loss=5/8
+  SUFFIX L11 | hit=6/8 | loss=2/8
+[8/8] INTEGRITY + SUMMARY
+WEIGHT SENTINEL: PASS
+RAW LOG : /content/AKBASCORE_TEST466/TEST466_RESULTS.jsonl
+SUMMARY : /content/AKBASCORE_TEST466/TEST466_SUMMARY.json
+
+
+========================================================================================================================
