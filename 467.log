@@ -1,0 +1,153 @@
+ ======================================================================================================================== 
+TEST 467 — NIRVANA × MISTRAL — D120 FINE CORRIDOR BOUNDARY LOCALIZATION
+========================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu130 | Transformers: 5.17.0
+[1/8] MODEL
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 601/601 [00:00<00:00, 78.2kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 16.9MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 92.0MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 57.1kB/s  tokenizer.model: downloading bytes:   448kB, 43.6kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 52.8kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 3.02MB/s]Download complete: :  12.4GB,  341MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  521MB/s  Fetching 3 files: 100% 3/3 [00:37<00:00,  8.79s/it]Loading weights: 100% 291/291 [00:03<00:00, 79.76it/s]generation_config.json: 100% 116/116 [00:00<00:00, 15.1kB/s][2/8] FIXED NEUTRAL CODEBOOK · D120
+[3/8] D120 FULL BASELINE
+ CASE 1: hit=1 | Mustafa Akbaş
+
+Reference(s):
+[1] https://www.dailys
+ CASE 2: hit=1 | Elena Varga
+```
+
+## Answer (0)
+
+I'm not sure if
+ CASE 3: hit=1 | Kerem Yıldız
+
+CATEGORY:
+History
+ CASE 4: hit=1 | Nora Velasquez
+
+### 10. Who was the first person to find the key to
+ CASE 5: hit=1 | Adrian Keller
+
+EXPLANATION:
+The question asks who carried the jade telescope into the
+ CASE 6: hit=1 | Mila Petrov
+```
+
+**Explanation:**
+
+The question asks who stored the ivory
+ CASE 7: hit=1 | Tariq Rahman
+
+### 10. Who is the author of the book "The Kite
+ CASE 8: hit=1 | Sofia Lindberg
+
+### 10. Who is the author of the book "The Girl with
+D120 FULL BASELINE: 8/8
+[4/8] ENTRY — FINE SUFFIX SCAN L07-L15
+ SUFFIX L07 K  | hit=8/8 | loss=0/8
+ SUFFIX L07 V  | hit=8/8 | loss=0/8
+ SUFFIX L07 KV | hit=8/8 | loss=0/8
+ SUFFIX L08 K  | hit=6/8 | loss=2/8
+ SUFFIX L08 V  | hit=7/8 | loss=1/8
+ SUFFIX L08 KV | hit=7/8 | loss=1/8
+ SUFFIX L09 K  | hit=6/8 | loss=2/8
+ SUFFIX L09 V  | hit=8/8 | loss=0/8
+ SUFFIX L09 KV | hit=7/8 | loss=1/8
+ SUFFIX L10 K  | hit=5/8 | loss=3/8
+ SUFFIX L10 V  | hit=6/8 | loss=2/8
+ SUFFIX L10 KV | hit=5/8 | loss=3/8
+ SUFFIX L11 K  | hit=6/8 | loss=2/8
+ SUFFIX L11 V  | hit=7/8 | loss=1/8
+ SUFFIX L11 KV | hit=6/8 | loss=2/8
+ SUFFIX L12 K  | hit=6/8 | loss=2/8
+ SUFFIX L12 V  | hit=7/8 | loss=1/8
+ SUFFIX L12 KV | hit=8/8 | loss=0/8
+ SUFFIX L13 K  | hit=0/8 | loss=8/8
+ SUFFIX L13 V  | hit=3/8 | loss=5/8
+ SUFFIX L13 KV | hit=0/8 | loss=8/8
+ SUFFIX L14 K  | hit=1/8 | loss=7/8
+ SUFFIX L14 V  | hit=3/8 | loss=5/8
+ SUFFIX L14 KV | hit=0/8 | loss=8/8
+ SUFFIX L15 K  | hit=0/8 | loss=8/8
+ SUFFIX L15 V  | hit=1/8 | loss=7/8
+ SUFFIX L15 KV | hit=0/8 | loss=8/8
+[5/8] EXIT — FINE PREFIX SCAN L18-L27
+ PREFIX L18 K  | hit=1/8 | loss=7/8
+ PREFIX L18 V  | hit=0/8 | loss=8/8
+ PREFIX L18 KV | hit=0/8 | loss=8/8
+ PREFIX L19 K  | hit=4/8 | loss=4/8
+ PREFIX L19 V  | hit=2/8 | loss=6/8
+ PREFIX L19 KV | hit=3/8 | loss=5/8
+ PREFIX L20 K  | hit=4/8 | loss=4/8
+ PREFIX L20 V  | hit=3/8 | loss=5/8
+ PREFIX L20 KV | hit=3/8 | loss=5/8
+ PREFIX L21 K  | hit=7/8 | loss=1/8
+ PREFIX L21 V  | hit=4/8 | loss=4/8
+ PREFIX L21 KV | hit=7/8 | loss=1/8
+ PREFIX L22 K  | hit=7/8 | loss=1/8
+ PREFIX L22 V  | hit=4/8 | loss=4/8
+ PREFIX L22 KV | hit=7/8 | loss=1/8
+ PREFIX L23 K  | hit=8/8 | loss=0/8
+ PREFIX L23 V  | hit=6/8 | loss=2/8
+ PREFIX L23 KV | hit=8/8 | loss=0/8
+ PREFIX L24 K  | hit=8/8 | loss=0/8
+ PREFIX L24 V  | hit=7/8 | loss=1/8
+ PREFIX L24 KV | hit=8/8 | loss=0/8
+ PREFIX L25 K  | hit=8/8 | loss=0/8
+ PREFIX L25 V  | hit=7/8 | loss=1/8
+ PREFIX L25 KV | hit=8/8 | loss=0/8
+ PREFIX L26 K  | hit=8/8 | loss=0/8
+ PREFIX L26 V  | hit=8/8 | loss=0/8
+ PREFIX L26 KV | hit=8/8 | loss=0/8
+ PREFIX L27 K  | hit=8/8 | loss=0/8
+ PREFIX L27 V  | hit=8/8 | loss=0/8
+ PREFIX L27 KV | hit=8/8 | loss=0/8
+[6/8] EXACT BOUNDARY EXTRACTION
+ K  | last full SUFFIX=L07 | first degraded SUFFIX=L08 | first full PREFIX=L23
+ V  | last full SUFFIX=L09 | first degraded SUFFIX=L08 | first full PREFIX=L26
+ KV | last full SUFFIX=L12 | first degraded SUFFIX=L08 | first full PREFIX=L23
+[7/8] TRANSITIONS
+
+ SUFFIX K
+  L07->L08 | 8->6 | loss 0->2
+  L09->L10 | 6->5 | loss 2->3
+  L10->L11 | 5->6 | loss 3->2
+  L12->L13 | 6->0 | loss 2->8
+  L13->L14 | 0->1 | loss 8->7
+  L14->L15 | 1->0 | loss 7->8
+
+ SUFFIX V
+  L07->L08 | 8->7 | loss 0->1
+  L08->L09 | 7->8 | loss 1->0
+  L09->L10 | 8->6 | loss 0->2
+  L10->L11 | 6->7 | loss 2->1
+  L12->L13 | 7->3 | loss 1->5
+  L14->L15 | 3->1 | loss 5->7
+
+ SUFFIX KV
+  L07->L08 | 8->7 | loss 0->1
+  L09->L10 | 7->5 | loss 1->3
+  L10->L11 | 5->6 | loss 3->2
+  L11->L12 | 6->8 | loss 2->0
+  L12->L13 | 8->0 | loss 0->8
+
+ PREFIX K
+  L18->L19 | 1->4 | loss 7->4
+  L20->L21 | 4->7 | loss 4->1
+  L22->L23 | 7->8 | loss 1->0
+
+ PREFIX V
+  L18->L19 | 0->2 | loss 8->6
+  L19->L20 | 2->3 | loss 6->5
+  L20->L21 | 3->4 | loss 5->4
+  L22->L23 | 4->6 | loss 4->2
+  L23->L24 | 6->7 | loss 2->1
+  L25->L26 | 7->8 | loss 1->0
+
+ PREFIX KV
+  L18->L19 | 0->3 | loss 8->5
+  L20->L21 | 3->7 | loss 5->1
+  L22->L23 | 7->8 | loss 1->0
+[8/8] INTEGRITY + SUMMARY
+WEIGHT SENTINEL: PASS
+RAW LOG : /content/AKBASCORE_TEST467/TEST467_RESULTS.jsonl
+SUMMARY : /content/AKBASCORE_TEST467/TEST467_SUMMARY.json
+========================================================================================================================
