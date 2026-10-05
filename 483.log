@@ -1,0 +1,605 @@
+ 
+======================================================================================================================================================
+TEST483 — BLIND REAL-WORLD 18-BANK BREAK TEST
+======================================================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB | Torch: 2.11.0+cu130 | Transformers: 5.18.0
+[1/8] BLIND WIKIPEDIA PANEL
+
+README.md: 100%
+
+ 131k/131k [00:00<00:00, 13.6MB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Resolving data files: 100%
+
+ 41/41 [00:00<00:00, 4223.97it/s]
+Wikipedia candidates locked: 18 | SOURCE_POOL_SHA: 7824716faed34f40ba49da3ca5749432c44a7d9d3bbd93096bde7c14572b61fb
+[2/8] MISTRAL FIRST-SHOT QUESTION/ANSWER GENERATION — NO RETRY
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 66.6kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 13.4MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 86.5MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.1kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.6kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 54.4kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.85MB/s]
+Download complete: 
+
+ 12.4GB, 74.7MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  375MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:41<00:00, 41.33s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 79.83it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 14.4kB/s]
+ GEN 01/18 valid=True
+ GEN 02/18 valid=False
+ GEN 03/18 valid=True
+ GEN 04/18 valid=False
+ GEN 05/18 valid=True
+ GEN 06/18 valid=True
+ GEN 07/18 valid=True
+ GEN 08/18 valid=False
+ GEN 09/18 valid=True
+ GEN 10/18 valid=True
+ GEN 11/18 valid=False
+ GEN 12/18 valid=True
+ GEN 13/18 valid=False
+ GEN 14/18 valid=True
+ GEN 15/18 valid=False
+ GEN 16/18 valid=False
+ GEN 17/18 valid=True
+ GEN 18/18 valid=True
+PANEL_SHA: 9dcdfbd6789d33eddd0ca681df9ef9602da82ab45a78e4f381c5d83afd3e9364
+GENERATOR_VALID: 11 / 18
+[3/8] QWEN LOAD — TEST482 ENGINE CONSTANTS
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 88.7kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 722kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 81.5MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 71.7MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 125MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.25MB/s]
+Download complete: 
+
+ 13.1GB,  647MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  582MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:44<00:00, 44.05s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 98.57it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 28.1kB/s]
+[4/8] FIXED TEST482 PCA CODEBOOK
+CODEBOOK: 2.71 s
+[5/8] FORGE 18 RAW + K120/V128 CARTRIDGES
+ FORGE 01/18
+ FORGE 02/18
+ FORGE 03/18
+ FORGE 04/18
+ FORGE 05/18
+ FORGE 06/18
+ FORGE 07/18
+ FORGE 08/18
+ FORGE 09/18
+ FORGE 10/18
+ FORGE 11/18
+ FORGE 12/18
+ FORGE 13/18
+ FORGE 14/18
+ FORGE 15/18
+ FORGE 16/18
+ FORGE 17/18
+ FORGE 18/18
+FORGE: 1.28 s
+[6/8] SOURCE / RAWKV / ORACLE / 18-BANK
+ CASE 01/18 SRC=0 RAW=0 ORACLE=0 BANK=0 OFF=0 CLASS=BASE_MODEL_OR_MIXED_CONFOUND
+ CASE 02/18 SRC=0 RAW=0 ORACLE=0 BANK=0 OFF=0 CLASS=PANEL_INVALID
+ CASE 03/18 SRC=1 RAW=0 ORACLE=0 BANK=0 OFF=0 CLASS=RAWKV_OR_READOUT_FAILURE
+ CASE 04/18 SRC=0 RAW=1 ORACLE=1 BANK=1 OFF=0 CLASS=PANEL_INVALID
+ CASE 05/18 SRC=0 RAW=0 ORACLE=0 BANK=0 OFF=0 CLASS=BASE_MODEL_OR_MIXED_CONFOUND
+ CASE 06/18 SRC=0 RAW=0 ORACLE=0 BANK=0 OFF=0 CLASS=BASE_MODEL_OR_MIXED_CONFOUND
+ CASE 07/18 SRC=0 RAW=1 ORACLE=1 BANK=1 OFF=0 CLASS=MEMORY_PASS_BASE_FAIL
+ CASE 08/18 SRC=0 RAW=0 ORACLE=0 BANK=0 OFF=0 CLASS=PANEL_INVALID
+ CASE 09/18 SRC=0 RAW=1 ORACLE=1 BANK=1 OFF=0 CLASS=MEMORY_PASS_BASE_FAIL
+ CASE 10/18 SRC=1 RAW=1 ORACLE=0 BANK=0 OFF=0 CLASS=COMPRESSION_OR_COMPRESSED_READOUT_FAILURE
+ CASE 11/18 SRC=0 RAW=0 ORACLE=0 BANK=0 OFF=0 CLASS=PANEL_INVALID
+ CASE 12/18 SRC=1 RAW=1 ORACLE=1 BANK=1 OFF=0 CLASS=CLEAN_PASS
+ CASE 13/18 SRC=1 RAW=1 ORACLE=1 BANK=1 OFF=0 CLASS=PANEL_INVALID
+ CASE 14/18 SRC=1 RAW=1 ORACLE=1 BANK=1 OFF=0 CLASS=CLEAN_PASS
+ CASE 15/18 SRC=0 RAW=1 ORACLE=1 BANK=1 OFF=0 CLASS=PANEL_INVALID
+ CASE 16/18 SRC=1 RAW=1 ORACLE=1 BANK=1 OFF=0 CLASS=PANEL_INVALID
+ CASE 17/18 SRC=0 RAW=1 ORACLE=1 BANK=1 OFF=0 CLASS=MEMORY_PASS_BASE_FAIL
+ CASE 18/18 SRC=0 RAW=1 ORACLE=1 BANK=1 OFF=0 CLASS=MEMORY_PASS_BASE_FAIL
+[7/8] FULL HUMAN-READABLE EVIDENCE
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+[01] CLASS=BASE_MODEL_OR_MIXED_CONFOUND | GENERATOR_VALID=True | SOURCE=False RAWKV=False ORACLE=False BANK=False OFFTARGET_NON_NONE=0
+SOURCE: Matthiessen is a Danish-Norwegian patronymic surname meaning "son of Mathies" (equivalent of the Biblical Μαθθαιος, cf. English Matthew). Several spelling variants are used, including Matthiesen, Mathiesen, Matthissen (UK), Matthisen and Mathissen. A similar diversity of forms exist for the parallel given name Mathias. There are several people with the surname Matthiessen: Augustus Matthiessen (1831–1870), British physicist and chemist, notable for Matthiessen's rule C.M.I.M. Matthiessen, Swedish linguist Francis Otto Matthiessen (1902–1950), U.S. literary critic Frederick William Matthiessen (1835–1918), Industrialist, philanthropist, and former Mayor of LaSalle, Illinois Peter Matthiessen (1927–2014), American novelist See also Matheson (surname) Mathiasen Mathiesen Danish-language surnames Norwegian-language surnames Patronymic surnames Surnames from given names
+QUESTION: Who was a Danish-Norwegian physicist and chemist notable for Matthiessen's rule?
+GROUND_TRUTH: Augustus Matthiessen
+EVIDENCE: "Augustus Matthiessen (1831–1870), British physicist and chemist, notable for Matthiessen's rule"
+MISTRAL_RAW: QUESTION: Who was a Danish-Norwegian physicist and chemist notable for Matthiessen's rule?
+ANSWER: Augustus Matthiessen
+EVIDENCE: "Augustus Matthiessen (1831–1870), British physicist and chemist, notable for Matthiessen's rule"
+QWEN_SOURCE_RAW: Do not add any other text.
+
+Augustus Matthiessen (1831–1870) was a Danish-Norwegian physicist and chem
+RAWKV_ORACLE_RAW: NONE
+K120V128_ORACLE_RAW: NONE
+K120V128_BANK_RAW: NONE
+GT_WORDS: ['augustus', 'matthiessen']
+OUT_WORDS: ['none']
+MISSING: ['augustus', 'matthiessen']
+EXTRA: ['none']
+WORD_F1: 0.0000
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+[02] CLASS=PANEL_INVALID | GENERATOR_VALID=False | SOURCE=False RAWKV=False ORACLE=False BANK=False OFFTARGET_NON_NONE=0
+SOURCE: Tubiflorae is a botanical name, meaning “with tubular flowers”. It was used in the Engler system (and derived systems such as the Wettstein system) for: an order in the Sympetalae. This order included such families as Convolvulaceae, Boraginaceae, Scrophulariaceae, Solanaceae, etc. This order does not corresponds closely to any one group in the Cronquist system or in the APG II-system, but the component taxa belong in the Lamiales, Scrophulariales and Solanales of the Cronquist system and the euasterids I of the APG II-system. a subfamily in the family Compositae (as opposed to the subfamily Liguliflorae). Note that these days the rules for botanical nomenclature, the ICBN, allow such descriptive botanical names only at a rank above that of family, so that Tubiflorae is allowed as the name of an order, but not as that of a subfamily. Asterids Historically recognized angiosperm taxa
+QUESTION: What family does a subfamily in the Tubiflorae order belong to in the Cronquist system?
+GROUND_TRUTH: Compositae
+EVIDENCE: "This subfamily in the family Compositae (as opposed to the subfamily Liguliflorae)."
+MISTRAL_RAW: QUESTION: What family does a subfamily in the Tubiflorae order belong to in the Cronquist system?
+ANSWER: Compositae
+EVIDENCE: "This subfamily in the family Compositae (as opposed to the subfamily Liguliflorae)."
+QWEN_SOURCE_RAW: Do not add any explanation.
+
+Compositae
+
+RECORD:
+Tubiflorae is a botanical name, meaning “with tubular flowers”. It was
+RAWKV_ORACLE_RAW: NONE. 
+
+The Cronquist system does not have a specific order called Tubiflorae. The Tubiflorae order, as described, was part of
+K120V128_ORACLE_RAW: NONE. 
+
+The record does not specify which family a subfamily in the Tubiflorae order belongs to in the Cronquist system. It only mentions that
+K120V128_BANK_RAW: NONE. 
+
+The record does not specify which family a subfamily in the Tubiflorae order belongs to in the Cronquist system. It only mentions that
+GT_WORDS: ['compositae']
+OUT_WORDS: ['none']
+MISSING: ['compositae']
+EXTRA: ['none']
+WORD_F1: 0.0000
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+[03] CLASS=RAWKV_OR_READOUT_FAILURE | GENERATOR_VALID=True | SOURCE=True RAWKV=False ORACLE=False BANK=False OFFTARGET_NON_NONE=0
+SOURCE: Commelinales is an order of flowering plants. It comprises five families: Commelinaceae, Haemodoraceae, Hanguanaceae, Philydraceae, and Pontederiaceae. All the families combined contain over 885 species in about 70 genera; the majority of species are in the Commelinaceae. Plants in the order share a number of synapomorphies that tie them together, such as a lack of mycorrhizal associations and tapetal raphides. Estimates differ as to when the Commelinales evolved, but most suggest an origin and diversification sometime during the mid- to late Cretaceous. Depending on the methods used, studies suggest a range of origin between 123 and 73 million years, with diversification occurring within the group 110 to 66 million years ago. The order's closest relatives are in the Zingiberales, which includes ginger, bananas, cardamom, and others. Taxonomy According to the most recent classification scheme, the APG IV of 2016, the order includes five families: Commelinaceae Haemodoraceae Hanguanaceae Philydraceae Pontederiaceae This is unchanged from the APG III of 2009 and the APG II of 2003, but different from the older APG system of 1998, which did not include Hanguanaceae. Previous classification systems The older Cronquist system of 1981, which was based purely on morphological data, placed the order in subclass Commelinidae of class Liliopsida and included the families Commelinaceae, Mayacaceae, Rapateaceae and Xyridaceae. These families are now known to be only distantly related. In the classification system of Dahlgren the Commelinales were one of four orders in the superorder Commeliniflorae (also called Commelinanae), and contained five families, of which only Commelinaceae has been retained by the Angiosperm Phylogeny Group. References Angiosperm orders Extant Campanian first appearances
+QUESTION: How many families does the Commelinales order comprise according to the APG IV classification scheme?
+GROUND_TRUTH: Five families
+EVIDENCE: "The order includes five families: Commelinaceae, Haemodoraceae, Hanguanaceae, Philydraceae, Pontederiaceae"
+MISTRAL_RAW: QUESTION: How many families does the Commelinales order comprise according to the APG IV classification scheme?
+ANSWER: Five families
+EVIDENCE: "The order includes five families: Commelinaceae, Haemodoraceae, Hanguanaceae, Philydraceae, Pontederiaceae"
+QWEN_SOURCE_RAW: The Commelinales order comprises five families according to the APG IV classification scheme.
+RAWKV_ORACLE_RAW: 5 NONE
+K120V128_ORACLE_RAW: 5 NONE
+K120V128_BANK_RAW: 5 NONE
+GT_WORDS: ['five', 'families']
+OUT_WORDS: ['5', 'none']
+MISSING: ['five', 'families']
+EXTRA: ['5', 'none']
+WORD_F1: 0.0000
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+[04] CLASS=PANEL_INVALID | GENERATOR_VALID=False | SOURCE=False RAWKV=True ORACLE=True BANK=True OFFTARGET_NON_NONE=0
+SOURCE: "Kooks" is a song written by English singer-songwriter David Bowie, which appears on his 1971 album Hunky Dory. Bowie wrote this song to his newborn son Duncan Jones. The song was a pastiche of early 1970s Neil Young because Bowie was listening to a Neil Young record at home on 30 May 1971 when he got the news of the arrival of his son. Live versions Before the studio recording of the song was made, it was recorded for the BBC In Concert radio show with John Peel, on 3 June 1971 (broadcast on 20 June 1971). In 2000 this recording was released on the Bowie at the Beeb album. The song was recorded again for the BBC "Sounds of the 70s" radio show with Bob Harris on 21 September 1971 (broadcast on 4 October 1971). Personnel David Bowie: lead and backing vocals, acoustic guitar, alto sax Mick Ronson: string arrangement Trevor Bolder: bass, trumpet Mick Woodmansey: drums Rick Wakeman: piano In popular culture The first three lines of the song ("Will you stay in our lovers' story / If you stay, you won't be sorry / 'Cause we believe in you") are used as a repeated motif in Miranda July's 2015 novel The First Bad Man The British indie band The Kooks named themselves after the song. The song appears in the Futurama episode "Children of a Lesser Bog". References Notes Other sources Pegg, Nicholas (0200), The Complete David Bowie, Reynolds & Hearn Ltd, 1971 songs David Bowie songs Songs written by David Bowie Song recordings produced by Ken Scott Song recordings produced by David Bowie
+QUESTION: When was the first live recording of "Kooks" made?
+GROUND_TRUTH: 3 June 1971
+EVIDENCE: "In 2000 this recording was released on the Bowie at the Beeb album. The song was recorded for the BBC In Concert radio show with John Peel, on 3 June 1971 (broadcast on 20 June 1971)."
+MISTRAL_RAW: QUESTION: When was the first live recording of "Kooks" made?
+ANSWER: 3 June 1971
+EVIDENCE: "In 2000 this recording was released on the Bowie at the Beeb album. The song was recorded for the BBC In Concert radio show with John Peel, on 3 June 1971 (broadcast on 20 June 1971)."
+QWEN_SOURCE_RAW: Do not write explanations.
+
+The first live recording of "Kooks" was made on 3 June 1971.
+RAWKV_ORACLE_RAW: 3 June 1971
+
+"Kooks" was recorded for the BBC In Concert radio show with John Peel on 3 June 19
+K120V128_ORACLE_RAW: 3 June 1971
+K120V128_BANK_RAW: 3 June 1971
+
+"Kooks" was recorded for the BBC In Concert radio show with John Peel on 3 June 19
+GT_WORDS: ['3', 'june', '1971']
+OUT_WORDS: ['3', 'june', '1971']
+MISSING: []
+EXTRA: []
+WORD_F1: 1.0000
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+[05] CLASS=BASE_MODEL_OR_MIXED_CONFOUND | GENERATOR_VALID=True | SOURCE=False RAWKV=False ORACLE=False BANK=False OFFTARGET_NON_NONE=0
+SOURCE: Marina Tsintikidou (; born 28 November 1971) is a Greek fashion model and presenter who has appeared on the covers of numerous Greek fashion magazines such as MAX. She won the title of "Star Hellas" (Σταρ Ελλάς) in the Miss Star Hellas pageant in 1992. She also carries the honor of being the third Greek contestant to win the title of Miss Europe (1992). She also represented Greece at the Miss Universe 1992 pageant in Bangkok, Thailand. Aside from a modeling career, Tsindikidou also tried her skills in acting, appearing in various TV shows and movies as well as in the Greek version of the theatrical play "Look Who's Here" by British playwright Ray Cooney. She has also been a TV host and presenter on numerous programs featured on Mega Channel, ANT1 and Macedonia TV. References External links Kostetsos Modeling Gallery of TV Screenshots Marina Tsidikidou at Greek Women On-Line 1971 births Greek beauty pageant winners Greek female models Greek television actresses Greek television presenters Living people Miss Europe winners Miss Universe 1992 contestants Greek women television presenters Models from Thessaloniki
+QUESTION: What pageant did Marina Tsintikidou win in 1992?
+GROUND_TRUTH: Miss Europe
+EVIDENCE: "She also carries the honor of being the third Greek contestant to win the title of Miss Europe (1992)."
+MISTRAL_RAW: QUESTION: What pageant did Marina Tsintikidou win in 1992?
+ANSWER: Miss Europe
+EVIDENCE: "She also carries the honor of being the third Greek contestant to win the title of Miss Europe (1992)."
+QWEN_SOURCE_RAW: Do not give explanations.
+
+Marina Tsintikidou won the title of "Star Hellas" (Σταρ Ελλάς
+RAWKV_ORACLE_RAW: Miss Star Hellas pageant
+
+Marina Tsintikidou won the title of "Star Hellas" (Σταρ Ελλ
+K120V128_ORACLE_RAW: Miss Star Hellas pageant
+
+Marina Tsintikidou won the title of "Star Hellas" (Σταρ Ελλ
+K120V128_BANK_RAW: Miss Star Hellas pageant
+
+Marina Tsintikidou won the title of "Star Hellas" (Σταρ Ελλ
+GT_WORDS: ['miss', 'europe']
+OUT_WORDS: ['miss', 'star', 'hellas', 'pageant']
+MISSING: ['europe']
+EXTRA: ['star', 'hellas', 'pageant']
+WORD_F1: 0.3333
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+[06] CLASS=BASE_MODEL_OR_MIXED_CONFOUND | GENERATOR_VALID=True | SOURCE=False RAWKV=False ORACLE=False BANK=False OFFTARGET_NON_NONE=0
+SOURCE: Envy is an emotion, evoked when one person strongly desires what another has. Envy may also refer to: Books Envy (novel) (Zavist'), a 1927 novel by Yuri Olesha Envy, a Fullmetal Alchemist character Films Envy (2004 film), an American comedy film Envy (2009 film), a Turkish drama film Music DJ Envy (born 1977), an American DJ and radio personality Envy, American band consisting of Rhonni and Gina Stile Envy, an Indonesian hip hop collective since 2018 Envy (band), a Japanese post-hardcore band Envy (English rapper) (born 1987) Nico & Vinz or Envy, a Norwegian hip-hop duo Albums Envy (Ambitious Lovers album) (1984) Envy (Eve's Plum album) (1993) Songs "Envy", a song appearing on Lunch. Drunk. Love. by Bowling For Soup "Envy" (movie theme song), a movie theme by Dan Navarro, from the 2004 film Envy "Envy" (song), a song by Ash Places Envy, Switzerland Envy, United States Virgin Islands The ICAO code for Værøy Airport, an airport formerly serving Værøy Other uses Envy (apple), a trademarked brand of the Scilate apple variety, a cross between Royal Gala and Braeburn Envy (dinghy), a type of fibreglass sailing dinghy HP Envy, a line of laptops by Hewlett-Packard Team Envy or Team EnVyUs, an international eSports organization based in the United States
+QUESTION: What is a trademarked brand of a cross between Royal Gala and Braeburn apple variety?
+GROUND_TRUTH: Envy (apple)
+EVIDENCE: "Envy (apple), a trademarked brand of the Scilate apple variety, a cross between Royal Gala and Braeburn"
+MISTRAL_RAW: QUESTION: What is a trademarked brand of a cross between Royal Gala and Braeburn apple variety?
+ANSWER: Envy (apple)
+EVIDENCE: "Envy (apple), a trademarked brand of the Scilate apple variety, a cross between Royal Gala and Braeburn"
+QWEN_SOURCE_RAW: Envy
+You are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can. While performing
+RAWKV_ORACLE_RAW: Envy
+
+Based on the information provided in the record, Envy is a trademarked brand of the Scilate apple variety, which is a cross between Royal
+K120V128_ORACLE_RAW: Envy
+
+The record states that "Envy is a trademarked brand of the Scilate apple variety, a cross between Royal Gala and Braeburn."
+K120V128_BANK_RAW: Envy
+
+The record states that "Envy is a trademarked brand of the Scilate apple variety, a cross between Royal Gala and Braeburn."
+GT_WORDS: ['envy', 'apple']
+OUT_WORDS: ['envy']
+MISSING: ['apple']
+EXTRA: []
+WORD_F1: 0.6667
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+[07] CLASS=MEMORY_PASS_BASE_FAIL | GENERATOR_VALID=True | SOURCE=False RAWKV=True ORACLE=True BANK=True OFFTARGET_NON_NONE=0
+SOURCE: The Symphony on a French Mountain Air (), Op. 25, is written in 1886 by Vincent d'Indy. As indicated by the title, d'Indy took the principal theme from a folk song he heard at Périer overlooking the Cévennes mountains (hence the work's alternative name, Symphonie cévenole). Originally conceived as a fantaisie for piano and orchestra, the symphony is unusual in that it is scored for a prominent (but never dominant) piano part together with orchestra, and has acquired the label sinfonia concertante from some critics. It consists of three movements and lasts just under half an hour: Assez lent - Modérément animé Assez modéré, mais sans lenteur Animé The symphony begins with an evocative melody played first by a cor anglais. The main themes of subsequent movements are based on this melody, and as the symphony progresses each subsequent variation becomes more and more like the original version. The work was dedicated to Marie-Léontine Bordes-Pène, who was the soloist at the premiere in Paris on March 20, 1887. Discography 1950 – Prague Radio Symphony Orchestra, conducted by Karel Šejna with Hélène Boschi, piano. 1959 – Boston Symphony Orchestra, conducted by Charles Munch with Nicole Henriot-Schweitzer, piano. 1976 – Orchestre de Paris, conducted by Serge Baudo with Aldo Ciccolini, piano. 1977 – Budapest Philharmonic Orchestra, conducted by Tamás Pál with Gabriella Torma, piano. 1991 - Orchestre Symphonique de Montréal, conducted by Charles Dutoit with Jean-Yves Thibaudet, piano. 1992 – Orchestre Philharmonique de Radio France, conducted by Marek Janowski with Catherine Collard, piano. References Further reading Deruchie, Andrew. 2013. The French Symphony at the Fin de Siècle. New York: University of Rochester Press. . Chapter 5. External links Program notes by Paul Serotsky Compositions by Vincent d'Indy Romantic symphonies 1886 compositions Compositions for piano and orchestra Indy
+QUESTION: Who was the soloist at the premiere of Symphony on a French Mountain Air?
+GROUND_TRUTH: Marie-Léontine Bordes-Pène
+EVIDENCE: The work was dedicated to Marie-Léontine Bordes-Pène, who was the soloist at the premiere in Paris on March 20, 1887.
+MISTRAL_RAW: QUESTION: Who was the soloist at the premiere of Symphony on a French Mountain Air?
+ANSWER: Marie-Léontine Bordes-Pène
+EVIDENCE: The work was dedicated to Marie-Léontine Bordes-Pène, who was the soloist at the premiere in Paris on March 20, 1887.
+QWEN_SOURCE_RAW: Do not write explanations.
+
+Marie-Léontine Bordes-Pène, piano.
+RAWKV_ORACLE_RAW: Marie-Léontine Bordes-Pène, piano. NONE
+
+The record states that the symphony was dedicated to Marie-Léontine Bordes-P
+K120V128_ORACLE_RAW: Marie-Léontine Bordes-Pène, piano. NONE
+
+The record states that the symphony was dedicated to Marie-Léontine Bordes-P
+K120V128_BANK_RAW: Marie-Léontine Bordes-Pène, piano. NONE
+
+The record states that the symphony was dedicated to Marie-Léontine Bordes-P
+GT_WORDS: ['marie-léontine', 'bordes-pène']
+OUT_WORDS: ['marie-léontine', 'bordes-pène', 'piano', 'none']
+MISSING: []
+EXTRA: ['piano', 'none']
+WORD_F1: 0.6667
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+[08] CLASS=PANEL_INVALID | GENERATOR_VALID=False | SOURCE=False RAWKV=False ORACLE=False BANK=False OFFTARGET_NON_NONE=0
+SOURCE: Estadio Atilio Paiva Olivera is a multi-use stadium in Rivera, Uruguay. It is currently used mostly for football matches. The stadium holds 27,135 people. It was used for the 1995 Copa América and the 1999 South American Under-17 Football Championship. On 23 June 2011, Uruguay played a friendly match in this stadium against Estonia where the locals won 3–0. References External links Google Map of Stadium Photo of Stadium Atilio Paiva Olivera Atilio Paiva Olivera Copa América stadiums Buildings and structures in Rivera Department Rivera Sport in Rivera Department
+QUESTION: What is the capacity of Estadio Atilio Paiva Olivera?
+GROUND_TRUTH: 27,135 people
+EVIDENCE: "It holds 27,135 people."
+MISTRAL_RAW: QUESTION: What is the capacity of Estadio Atilio Paiva Olivera?
+ANSWER: 27,135 people
+EVIDENCE: "It holds 27,135 people."
+QWEN_SOURCE_RAW: Do not give explanations.
+
+27,135 people.
+RAWKV_ORACLE_RAW: 27,135 NONE
+K120V128_ORACLE_RAW: 27,135 NONE
+K120V128_BANK_RAW: 27,135 NONE
+GT_WORDS: ['27', '135', 'people']
+OUT_WORDS: ['27', '135', 'none']
+MISSING: ['people']
+EXTRA: ['none']
+WORD_F1: 0.6667
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+[09] CLASS=MEMORY_PASS_BASE_FAIL | GENERATOR_VALID=True | SOURCE=False RAWKV=True ORACLE=True BANK=True OFFTARGET_NON_NONE=0
+SOURCE: The philomel (; or Stahlgeige ) is a musical instrument similar to the violin, but having four steel wire strings. The fingerboard is fretless, like the violin. It was invented around Monaco di Baviera in the middle of the nineteenth century and has similarities with the Bowedmelodion also known as Streichmelodion. The philomel has a body with incurvations similar to those of the guitar; therefore, without corner blocks, the outline of the upper lobe forms a wavy shoulder reminiscent of the viols but more ornate and fanciful. The peg-box sometimes terminates in a fancy head instead of a scroll. The philomel, never used in the orchestra, is considered by some the instrument of the dilettanti, frequently played in Germany with the bowed zither. The accordance of the philomel is the same as for the violin; the timbre is shrill and crystal-like. There is also an alto philomel corresponding to the viola. The is similar to the philomel, and has four steel strings of the same accordance as the violin, but arranged in inverse order; instead of being held like the violin and philomel, under the chin, it is placed on the knees of the performer, so that a hook under the fingerboard rests against the table. Philomel is also another name for the nightingale, which perhaps is where the instrument gets its name. References Attribution Bowed string instruments
+QUESTION: What is the timbre of the philomel?
+GROUND_TRUTH: Shrill and crystal-like.
+EVIDENCE: "The accordance of the philomel is the same as for the violin; the timbre is shrill and crystal-like."
+MISTRAL_RAW: QUESTION: What is the timbre of the philomel?
+ANSWER: Shrill and crystal-like.
+EVIDENCE: "The accordance of the philomel is the same as for the violin; the timbre is shrill and crystal-like."
+QWEN_SOURCE_RAW: Do not add any other text.
+
+The timbre is shrill and crystal-like.
+RAWKV_ORACLE_RAW: shrill and crystal-like NONE
+K120V128_ORACLE_RAW: shrill and crystal-like NONE
+K120V128_BANK_RAW: shrill and crystal-like NONE
+GT_WORDS: ['shrill', 'and', 'crystal-like']
+OUT_WORDS: ['shrill', 'and', 'crystal-like', 'none']
+MISSING: []
+EXTRA: ['none']
+WORD_F1: 0.8571
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+[10] CLASS=COMPRESSION_OR_COMPRESSED_READOUT_FAILURE | GENERATOR_VALID=True | SOURCE=True RAWKV=True ORACLE=False BANK=False OFFTARGET_NON_NONE=0
+SOURCE: Buzz () is a 1998 Israeli film directed by Eli Cohen, based on a real murder story. It is known for being frequently used and taught in the Israeli education system, as well as the Israel Defense Forces and Israel Prison Service. Plot The film is based on a real event in 1994, in which two 14-year-olds—Arbel Aloni and Moshe "Moshiko" Ben-Ivgi—murdered a taxi driver (named Derek Roth). In the film, their names have been changed to Ido Ben Ze'ev and Rafi, respectively. Ido comes from a wealthy family and acts as leader, while Rafi lives with his single mother and follows Ido. The children start committing crimes such as vandalism and theft, with the knowledge of Ofer Reinitz, a police officer, and the school councilor, Naomi. They work together to put the children in juvenile jail, although Ido's father Gidi, who is a prominent lawyer and personal friend of Ofer's from the army, does not believe the accusations against his son and stops the children from being persecuted on several occasions. After they murder a taxi driver for thrills with an old revolver, both Ido and Rafi are arrested. Cast as Ofer Tony Tien as Ido Yitzhak Atzmon as Rafi Shmil Ben Ari as Gidi (Ido's father) Ahuva Keren as Naomi Momo Trelovski as superintendent Rubanenko Debbi Besserglick as School Principal Screenings The film was screened in the Jerusalem Film Festival and in numerous film festivals abroad, including Brussels, Toronto, Palm Beach, Monte Carlo, San Francisco, Boston, Buffalo, St. Louis, Denver and Los Angeles. It was later run frequently on Israel's Channel 2. External links 1990s Hebrew-language films 1998 films 1998 crime drama films Films directed by Eli Cohen Israeli crime drama films
+QUESTION: In which film is the character Ofer played by Tony Tien?
+GROUND_TRUTH: Buzz
+EVIDENCE: "Cast as Ofer Tony Tien"
+MISTRAL_RAW: QUESTION: In which film is the character Ofer played by Tony Tien?
+ANSWER: Buzz
+EVIDENCE: "Cast as Ofer Tony Tien"
+QWEN_SOURCE_RAW: Buzz is the film where Ofer is played by Tony Tien.
+RAWKV_ORACLE_RAW: Buzz NONE
+
+The record states that Tony Tien played the character Ido, not Ofer. Ofer is played by Tony Tien in the film "
+K120V128_ORACLE_RAW: NONE
+
+The record states that Tony Tien played the character Ido, not Ofer. Ofer is played by Tony Tien's co-star, presumably
+K120V128_BANK_RAW: NONE
+
+The record states that Tony Tien played the character Ido, not Ofer. Ofer is played by Tony Tien's co-star, presumably
+GT_WORDS: ['buzz']
+OUT_WORDS: ['none']
+MISSING: ['buzz']
+EXTRA: ['none']
+WORD_F1: 0.0000
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+[11] CLASS=PANEL_INVALID | GENERATOR_VALID=False | SOURCE=False RAWKV=False ORACLE=False BANK=False OFFTARGET_NON_NONE=0
+SOURCE: Leitebakk or Leitebakken is a small village on the island of Godøya in Giske Municipality in Møre og Romsdal county, Norway. The village is located about southeast of the isolated village of Alnes, where Alnes Lighthouse is located. Leitebakk is located at the end of the undersea Godøy Tunnel that connects the island to the neighboring island of Giske. Godøy Chapel is located just south of the village of Leitebakk. The village has a population (2018) of 921 and a population density of . References Villages in Møre og Romsdal Giske
+QUESTION: What is the location of Godøy Chapel?
+GROUND_TRUTH: South of Leitebakk
+EVIDENCE: "Godøy Chapel is located just south of the village of Leitebakk."
+MISTRAL_RAW: QUESTION: What is the location of Godøy Chapel?
+ANSWER: South of Leitebakk
+EVIDENCE: "Godøy Chapel is located just south of the village of Leitebakk."
+QWEN_SOURCE_RAW: Do not add any other information.
+
+Just south of the village of Leitebakk.
+RAWKV_ORACLE_RAW: just south of the village of Leitebakk
+K120V128_ORACLE_RAW: just south of the village of Leitebakk
+K120V128_BANK_RAW: just south of the village of Leitebakk
+GT_WORDS: ['south', 'of', 'leitebakk']
+OUT_WORDS: ['just', 'south', 'of', 'the', 'village', 'of', 'leitebakk']
+MISSING: []
+EXTRA: ['just', 'of', 'the', 'village']
+WORD_F1: 0.6000
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+[12] CLASS=CLEAN_PASS | GENERATOR_VALID=True | SOURCE=True RAWKV=True ORACLE=True BANK=True OFFTARGET_NON_NONE=0
+SOURCE: Lismore is an electoral district of the Legislative Assembly in the Australian state of New South Wales. It is represented by Janelle Saffin of the Labor Party. The electoral district includes all of the City of Lismore (including Lismore, Lindendale, Nimbin, Dunoon and Clunes), much of inland Tweed Shire (including Murwillumbah, Tyalgum and Uki), all of Kyogle Council (including Kyogle, Bonalbo, Tabulam and Woodenbong) and all of Tenterfield Shire. (including Tenterfield, Drake, Jennings, Liston, Legume, Torrington and Urbenville) History Lismore was first created with the end of multi-member districts in 1894, when it was split from Richmond. In 1904, it was abolished with the reduction in the size of the Legislative Assembly, after Federation. In 1913, Lismore was recreated, replacing Richmond. With the introduction of proportional representation in 1920, Lismore and Clarence were absorbed into Byron. With the end of proportional representation in 1927, Lismore and Clarence were recreated. Historically a Country Party/National Party seat, Lismore has only been represented by two Labor MPs: Keith Compton, who was elected at a by-election in 1959 and re-elected in 1962, and Janelle Saffin, who was elected in 2019 who is also the first woman to represent the division. Members for Lismore Election results References Lismore
+QUESTION: Which Australian state does the electoral district of Lismore belong to?
+GROUND_TRUTH: New South Wales
+EVIDENCE: "Lismore is an electoral district of the Legislative Assembly in the Australian state of New South Wales."
+MISTRAL_RAW: QUESTION: Which Australian state does the electoral district of Lismore belong to?
+ANSWER: New South Wales
+EVIDENCE: "Lismore is an electoral district of the Legislative Assembly in the Australian state of New South Wales."
+QWEN_SOURCE_RAW: New South Wales
+You are an AI assistant. You will be given a task. You must generate a response as faithfully as you can.
+RAWKV_ORACLE_RAW: New South Wales NONE
+K120V128_ORACLE_RAW: New South Wales NONE
+K120V128_BANK_RAW: New South Wales NONE
+GT_WORDS: ['new', 'south', 'wales']
+OUT_WORDS: ['new', 'south', 'wales', 'none']
+MISSING: []
+EXTRA: ['none']
+WORD_F1: 0.8571
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+[13] CLASS=PANEL_INVALID | GENERATOR_VALID=False | SOURCE=True RAWKV=True ORACLE=True BANK=True OFFTARGET_NON_NONE=0
+SOURCE: Sean Wirtz (also Sean Kelly and Sean Kelly-Wirtz; born October 31, 1979, in Marathon, Ontario) is a Canadian figure skater who competed in pair skating and single skating. He teamed up with Elizabeth Putnam in the summer of 2002. They are the 2006 Four Continents bronze medalists and two-time (2003, 2004) Canadian national bronze medalists. Wirtz announced his retirement from competitive skating on August 28, 2007. Wirtz is the nephew of coach Paul Wirtz and former Olympic pair skater Kris Wirtz. Programs (with Putnam) Results Pairs skating with Putnam Pair skating with Dubois Singles career References External links 1979 births Canadian male single skaters Canadian male pair skaters Living people People from Thunder Bay District Four Continents Figure Skating Championships medalists 20th-century Canadian people 21st-century Canadian people
+QUESTION: Who did Sean Wirtz team up with in the summer of 2002?
+GROUND_TRUTH: Elizabeth Putnam
+EVIDENCE: "Sean Wirtz teamed up with Elizabeth Putnam in the summer of 2002."
+MISTRAL_RAW: QUESTION: Who did Sean Wirtz team up with in the summer of 2002?
+ANSWER: Elizabeth Putnam
+EVIDENCE: "Sean Wirtz teamed up with Elizabeth Putnam in the summer of 2002."
+QWEN_SOURCE_RAW: In the summer of 2002, Sean Wirtz teamed up with Elizabeth Putnam.
+You are an AI assistant. User will you give you
+RAWKV_ORACLE_RAW: Elizabeth Putnam
+
+The record clearly states, "He teamed up with Elizabeth Putnam in the summer of 2002." Therefore, based on the
+K120V128_ORACLE_RAW: Elizabeth Putnam
+
+The record clearly states, "He teamed up with Elizabeth Putnam in the summer of 2002." Therefore, based on the
+K120V128_BANK_RAW: Elizabeth Putnam
+
+The record clearly states, "He teamed up with Elizabeth Putnam in the summer of 2002." Therefore, based on the
+GT_WORDS: ['elizabeth', 'putnam']
+OUT_WORDS: ['elizabeth', 'putnam']
+MISSING: []
+EXTRA: []
+WORD_F1: 1.0000
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+[14] CLASS=CLEAN_PASS | GENERATOR_VALID=True | SOURCE=True RAWKV=True ORACLE=True BANK=True OFFTARGET_NON_NONE=0
+SOURCE: Steinheim may refer to: Places Steinheim, Westphalia, in the district of Höxter, North Rhine-Westphalia, Germany Steinheim an der Murr, in the district of Ludwigsburg, Baden-Württemberg, Germany Steinheim am Albuch, in the district of Heidenheim, Baden-Württemberg, Germany Steinheim (Hanau), the former Steinheim am Main, a district of Hanau, Hessen, Germany Steinheim, Luxembourg, a small town in the commune of Rosport, Luxembourg Craters Steinheim crater, meteorite crater in Germany Steinheim (Martian crater), crater on Mars Surname Solomon Ludwig Steinheim (1789–1866), German Jewish philosopher See also 6563 Steinheim, main-belt asteroid Steinheim skull
+QUESTION: What is the name of the German Jewish philosopher mentioned in the record?
+GROUND_TRUTH: Solomon Ludwig Steinheim
+EVIDENCE: "Solomon Ludwig Steinheim (1789–1866), German Jewish philosopher"
+MISTRAL_RAW: QUESTION: What is the name of the German Jewish philosopher mentioned in the record?
+ANSWER: Solomon Ludwig Steinheim
+EVIDENCE: "Solomon Ludwig Steinheim (1789–1866), German Jewish philosopher"
+QWEN_SOURCE_RAW: Solomon Ludwig Steinheim (1789–1866) was a German Jewish philosopher mentioned in the record.
+You are an AI assistant. User
+RAWKV_ORACLE_RAW: Solomon Ludwig Steinheim (1789–1866) NONE
+The record mentions Solomon Ludwig Steinheim as a German Jewish philosopher, but it
+K120V128_ORACLE_RAW: Solomon Ludwig Steinheim (1789–1866) NONE
+The record mentions Solomon Ludwig Steinheim as a German Jewish philosopher, but it
+K120V128_BANK_RAW: Solomon Ludwig Steinheim (1789–1866) NONE
+The record mentions Solomon Ludwig Steinheim as a German Jewish philosopher, but it
+GT_WORDS: ['solomon', 'ludwig', 'steinheim']
+OUT_WORDS: ['solomon', 'ludwig', 'steinheim', '1789', '1866', 'none']
+MISSING: []
+EXTRA: ['1789', '1866', 'none']
+WORD_F1: 0.6667
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+[15] CLASS=PANEL_INVALID | GENERATOR_VALID=False | SOURCE=False RAWKV=True ORACLE=True BANK=True OFFTARGET_NON_NONE=0
+SOURCE: José Goldschmied Stoupignan (born September 12, 1975, in Mexico City) is a Mexican judoka. He was a national champion at 16 and he participated in the 2004 Summer Olympics in Judo (Men's Middle (81–90 kg)) Personal life Goldschmied is the son of Gabriel Goldschmied, the president of the Mexican Federation of Judo. References External links Profile 1975 births Living people Mexican male judoka Judoka at the 2004 Summer Olympics Olympic judoka for Mexico Sportspeople from Mexico City 21st-century Mexican people
+QUESTION: Who is the son of the president of the Mexican Federation of Judo?
+GROUND_TRUTH: José Goldschmied
+EVIDENCE: "José Goldschmied is the son of Gabriel Goldschmied, the president of the Mexican Federation of Judo."
+MISTRAL_RAW: QUESTION: Who is the son of the president of the Mexican Federation of Judo?
+ANSWER: José Goldschmied
+EVIDENCE: "José Goldschmied is the son of Gabriel Goldschmied, the president of the Mexican Federation of Judo."
+QWEN_SOURCE_RAW: Do not add any other text.
+
+José Goldschmied Stoupignan
+You are an AI assistant. User will provide a question and you will
+RAWKV_ORACLE_RAW: José Goldschmied Stoupignan NONE
+K120V128_ORACLE_RAW: José Goldschmied Stoupignan NONE
+K120V128_BANK_RAW: José Goldschmied Stoupignan NONE
+GT_WORDS: ['josé', 'goldschmied']
+OUT_WORDS: ['josé', 'goldschmied', 'stoupignan', 'none']
+MISSING: []
+EXTRA: ['stoupignan', 'none']
+WORD_F1: 0.6667
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+[16] CLASS=PANEL_INVALID | GENERATOR_VALID=False | SOURCE=True RAWKV=True ORACLE=True BANK=True OFFTARGET_NON_NONE=0
+SOURCE: This is a list of members of Parliament (MPs) elected in the 1892 general election, held over several days from 4 July to 26 July 1892. By-elections 8 February 1893: County Cork North East - Michael Davitt (Irish National Federation) replacing William O'Brien (Irish National Federation) who had been elected for two seats and chose to sit for Cork City 17 February 1893: Meath South - Jeremiah Jordan (Irish National Federation) replacing Patrick Fullam (Irish National Federation) who was unseated on petition 21 February 1893: Meath North - James Gibney (Irish National Federation) replacing Michael Davitt (Irish National Federation) who was unseated on petition 27 June 1895: Cork City - J. F. X. O'Brien (Irish National Federation) replacing William O'Brien (Irish National Federation) who had resigned his seat Sources Whitaker's Almanack 1893 See also List of parliaments of the United Kingdom 1892 United Kingdom general election 1892 List UK MPs 1892 United Kingdom general election
+QUESTION: Who replaced Michael Davitt in Meath North?
+GROUND_TRUTH: James Gibney
+EVIDENCE: "27 June 1895: Cork City - J. F. X. O'Brien (Irish National Federation) replacing Michael Davitt (Irish National Federation) who was unseated on petition" (This sentence shows that Michael Davitt was replaced in Cork City, and the next sentence shows that James Gibney replaced him in Meath North.)
+MISTRAL_RAW: QUESTION: Who replaced Michael Davitt in Meath North?
+ANSWER: James Gibney
+EVIDENCE: "27 June 1895: Cork City - J. F. X. O'Brien (Irish National Federation) replacing Michael Davitt (Irish National Federation) who was unseated on petition" (This sentence shows that Michael Davitt was replaced in Cork City, and the next sentence shows that James Gibney replaced him in Meath North.)
+QWEN_SOURCE_RAW: James Gibney replaced Michael Davitt in Meath North.
+RAWKV_ORACLE_RAW: James Gibney NONE
+K120V128_ORACLE_RAW: James Gibney NONE
+K120V128_BANK_RAW: James Gibney NONE
+GT_WORDS: ['james', 'gibney']
+OUT_WORDS: ['james', 'gibney', 'none']
+MISSING: []
+EXTRA: ['none']
+WORD_F1: 0.8000
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+[17] CLASS=MEMORY_PASS_BASE_FAIL | GENERATOR_VALID=True | SOURCE=False RAWKV=True ORACLE=True BANK=True OFFTARGET_NON_NONE=0
+SOURCE: Ancylopoda is a group of browsing, herbivorous, mammals in the Perissodactyla that show long, curved and cleft claws. Morphological evidence indicates the Ancylopoda diverged from the tapirs, rhinoceroses and horses (Euperissodactyla) after the Brontotheria; however, earlier authorities such as Osborn sometimes considered the Ancylopoda to be outside Perissodactyla or, as was popular more recently, to be related to Brontotheriidae. Macrotherium, which is typically from the middle Miocene of Sansan, in Gers, France, may indicate a distinct genus. Limb-bones resembling those of Macrotherium, but relatively stouter, have been described from the Pliocene beds of Attica and Samos as Ancylotherium. In the Americas, the names Morothorium and Moropus have been applied to similar bones, in the belief that they indicated Xenarthrans. Macrotherium magnum must have been an animal of about nine feet in length. References Chalicotheres Eocene first appearances Pleistocene extinctions
+QUESTION: What is the approximate length of Macrotherium magnum?
+GROUND_TRUTH: Nine feet
+EVIDENCE: "Macrotherium magnum must have been an animal of about nine feet in length."
+MISTRAL_RAW: QUESTION: What is the approximate length of Macrotherium magnum?
+ANSWER: Nine feet
+EVIDENCE: "Macrotherium magnum must have been an animal of about nine feet in length."
+QWEN_SOURCE_RAW: Do not add any other information.
+
+Nine feet in length.
+RAWKV_ORACLE_RAW: about nine feet
+K120V128_ORACLE_RAW: about nine feet
+K120V128_BANK_RAW: about nine feet
+GT_WORDS: ['nine', 'feet']
+OUT_WORDS: ['about', 'nine', 'feet']
+MISSING: []
+EXTRA: ['about']
+WORD_F1: 0.8000
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+[18] CLASS=MEMORY_PASS_BASE_FAIL | GENERATOR_VALID=True | SOURCE=False RAWKV=True ORACLE=True BANK=True OFFTARGET_NON_NONE=0
+SOURCE: CKMW-FM is a Canadian radio station licensed to Winkler, Manitoba, serving the Pembina Valley Region broadcasting at 88.9 FM with a country format branded as Country 88. The station is currently owned & operated by Golden West Broadcasting. CKMW shares its location with sister stations CJEL-FM and CFAM. History It first began broadcasting at 6 a.m. on August 1, 1980 at 1530 kHz with the call sign CISV, before moving to 1570 kHz and adopting its current call sign in 1987. Move to FM On July 16, 2012, Golden West received approval from the Canadian Radio-television and Telecommunications Commission (CRTC) to convert CKMW from the AM band to the FM band. The new frequency previously assigned was 103.7 MHz. On January 8, 2013, the CRTC granted permission for CKMW to broadcast instead on 88.9 MHz, as well as increasing the average effective radiated power (ERP) from 61,000 to 100,000 watts (maximum ERP remains at 100,000 watts) and changing from a directional to a non-directional antenna. The station relaunched as Country 88.9 at 88.9 FM on June 12, 2013. Following its move to FM, CKMW was permitted to simulcast on both AM and FM for a transition period of three months, ending in September; the station ceased broadcasting on AM 1570 on August 30, 2013. References External links Country 88.9 (88.9 MHz) (Old 1570 kHz frequency) Kmw Kmw Kmw Morden, Manitoba Winkler, Manitoba Radio stations established in 1980 1980 establishments in Manitoba
+QUESTION: When did CKMW-FM relaunch as Country 88.9?
+GROUND_TRUTH: June 12, 2013
+EVIDENCE: "The station relaunched as Country 88.9 at 88.9 FM on June 12, 2013."
+MISTRAL_RAW: QUESTION: When did CKMW-FM relaunch as Country 88.9?
+ANSWER: June 12, 2013
+EVIDENCE: "The station relaunched as Country 88.9 at 88.9 FM on June 12, 2013."
+QWEN_SOURCE_RAW: Do not explain.
+
+June 12, 2013.
+RAWKV_ORACLE_RAW: June 12, 2013 NONE
+K120V128_ORACLE_RAW: June 12, 2013 NONE
+K120V128_BANK_RAW: June 12, 2013 NONE
+GT_WORDS: ['june', '12', '2013']
+OUT_WORDS: ['june', '12', '2013', 'none']
+MISSING: []
+EXTRA: ['none']
+WORD_F1: 0.8571
+
+[8/8] FINAL
+{
+  "test": "483",
+  "seed": 483,
+  "n": 18,
+  "generator": "mistralai/Mistral-7B-Instruct-v0.3",
+  "test_model": "Qwen/Qwen2.5-7B-Instruct",
+  "engine": "TEST482 K120/V128/OWN",
+  "source_pool_sha": "7824716faed34f40ba49da3ca5749432c44a7d9d3bbd93096bde7c14572b61fb",
+  "panel_sha": "9dcdfbd6789d33eddd0ca681df9ef9602da82ab45a78e4f381c5d83afd3e9364",
+  "generator_valid": "11/18",
+  "source_qwen": "6/18",
+  "rawkv_oracle": "11/18",
+  "compressed_oracle": "10/18",
+  "bank_target": "10/18",
+  "strict_linked": "10/18",
+  "offtarget_non_none": "0/306",
+  "mean_word_f1": 0.5798941798941799,
+  "classes": {
+    "BASE_MODEL_OR_MIXED_CONFOUND": 3,
+    "PANEL_INVALID": 7,
+    "RAWKV_OR_READOUT_FAILURE": 1,
+    "MEMORY_PASS_BASE_FAIL": 4,
+    "COMPRESSION_OR_COMPRESSED_READOUT_FAILURE": 1,
+    "CLEAN_PASS": 2
+  },
+  "weight_sentinel_unchanged": true
+}
+SOURCE_POOL_SHA: 7824716faed34f40ba49da3ca5749432c44a7d9d3bbd93096bde7c14572b61fb
+PANEL_SHA: 9dcdfbd6789d33eddd0ca681df9ef9602da82ab45a78e4f381c5d83afd3e9364
+WEIGHT_SENTINEL_START: 25c468edb43ef33e775d21be6a689934d4f8ba44362e9ca24d7a6614f45440dc
+WEIGHT_SENTINEL_END  : 25c468edb43ef33e775d21be6a689934d4f8ba44362e9ca24d7a6614f45440dc
+WEIGHTS_UNCHANGED: True
+VERDICT: PANEL_GENERATION_CONFOUND
+
+
+======================================================================================================================================================
