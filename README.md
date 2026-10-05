@@ -1,29 +1,22 @@
 Permanent Research Record
 
-
 AKBASCORE NIRVANA is documented through a chronological public research record:
-
 
 1. Qwen — Cognitive Cartridge Experimental Foundation
 
 https://doi.org/10.5281/zenodo.23127434
 
-
 2. Mistral — Cross-Model Cognitive Cartridge Implementation
 
 https://doi.org/10.5281/zenodo.23143605
-
 
 3. Persistent Associative Machine Memory — Technical Disclosure & Research Roadmap
 
 https://doi.org/10.5281/zenodo.23146475
 
-
 Research progression:
 
-
 Qwen Cognitive Cartridge → Mistral Cross-Model Implementation → Scalable Cartridge Bank → Persistent Addressable Memory → Associative Memory → Memory Traversal → Dynamic Working Memory → Persistent Associative Machine Memory
-
 
 AKBASCORE NIRVANA — COGNITIVE CARTRIDGE
 
@@ -127,15 +120,19 @@ Research, Education and Non-Commercial Use
 
 Research, education, academic study, independent reproduction, personal experimentation, evaluation, and other non-commercial use of the new material introduced in this release are permitted free of charge.
 
-Small-Business Use
+Small-Business and Independent Commercial Use
 
-Small-scale commercial experimentation and use by qualifying small businesses are permitted free of charge under the terms accompanying this release.
+Commercial use of the new copyrightable Cognitive Cartridge scale-up software and material introduced in this release is permitted free of charge where the user, company, organization, together with its controlling, controlled, and commonly controlled affiliates, has combined consolidated annual gross revenue of less than USD 50,000,000 during its most recently completed fiscal year.
+
+Individual developers and independent commercial developers operating below this revenue threshold are included within this permission.
 
 Larger Commercial Use
 
-Commercial exploitation of the new Cognitive Cartridge scale-up material introduced in this release by organizations outside the permitted small-business scope requires a separate commercial license from the copyright holder.
+Where combined consolidated annual gross revenue is USD 50,000,000 or more, commercial use of the new copyrightable Cognitive Cartridge scale-up software and material introduced specifically in this release requires a separate commercial license from the copyright holder.
 
-This requirement applies only to rights held by the copyright holder in the new material introduced by this release.
+The USD 50,000,000 threshold is based on annual gross revenue, not company valuation, investment raised, market capitalization, or other measures of company value.
+
+This requirement applies only to rights held by the copyright holder in the new copyrightable material introduced by this release.
 
 It does not retroactively impose commercial restrictions on earlier MIT-licensed AkbasCore / Titan Cognitive Core material.
 
@@ -157,6 +154,8 @@ Earlier public releases retain their original licensing conditions.
 This release does not revoke previously granted permissions.
 
 The additional licensing terms concern only new copyrightable material introduced specifically with the scalable, multi-record AKBASCORE NIRVANA — Cognitive Cartridge implementation and documentation identified as part of this release.
+
+These terms govern only copyright and licensing rights actually held by the copyright holder. They do not, by themselves, create exclusive rights over underlying ideas, scientific principles, methods, systems, algorithms, or independently developed implementations where such rights do not otherwise exist under applicable law.
 
 Third-party models, libraries, frameworks, and dependencies remain governed by their respective licenses.
 
