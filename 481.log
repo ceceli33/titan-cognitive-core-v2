@@ -1,0 +1,253 @@
+ 
+========================================================================================================================================
+TEST481 — AKBASCORE NIRVANA QWEN · 32-BANK UNIVERSAL READOUT FINAL SELECTION
+32 RECORDS · 64 CARTRIDGES · K120/V128/OWN · FULL SCAN · C_COMPACT vs D_RECORD
+========================================================================================================================================
+[1/8] Loading model...
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 75.2kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 617kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 41.8MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 65.7MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 108MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.22MB/s]
+Download complete: : 
+
+ 13.1GB,  139MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  449MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:38<00:00,  6.79s/it]
+Loading weights: 100%
+
+ 339/339 [00:04<00:00, 99.05it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 31.1kB/s]
+      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | BF16 | frozen
+[2/8] Building original 32-sentence neutral PCA codebook...
+      Codebook ready.
+[3/8] Forging 64 independent cartridges...
+      [01/32] F1 | amber compass -> AX-731 -> north archive
+      [02/32] F1 | silver lantern -> KM-204 -> river annex
+      [03/32] F1 | copper violin -> QP-583 -> stone gallery
+      [04/32] F1 | marble clock -> HV-619 -> garden vault
+      [05/32] F2 | crimson telescope -> RQ-415 -> saffron lighthouse
+      [06/32] F2 | ivory notebook -> BT-962 -> slate pavilion
+      [07/32] F2 | bronze astrolabe -> MC-916 -> elm lodge
+      [08/32] F2 | velvet map -> ZX-247 -> cedar gallery
+      [09/32] F3 | jade camera -> DN-348 -> willow chamber
+      [10/32] F3 | glass trumpet -> PL-570 -> harbor studio
+      [11/32] F3 | linen journal -> GF-821 -> orchard room
+      [12/32] F3 | iron pendant -> WS-436 -> maple hall
+      [13/32] F4 | pearl radio -> CJ-105 -> cliff workshop
+      [14/32] F4 | oak tablet -> YU-674 -> meadow depot
+      [15/32] F4 | blue teapot -> ER-293 -> pine observatory
+      [16/32] F4 | golden ruler -> NV-852 -> lake conservatory
+      [17/32] F1 | opal sextant -> LA-317 -> birch archive
+      [18/32] F1 | scarlet flute -> TG-684 -> granite annex
+      [19/32] F1 | ceramic globe -> PK-529 -> rose gallery
+      [20/32] F1 | walnut mirror -> SD-173 -> canyon vault
+      [21/32] F2 | indigo prism -> JF-804 -> juniper tower
+      [22/32] F2 | brass sundial -> UC-251 -> moss pavilion
+      [23/32] F2 | silk atlas -> WB-690 -> ash lodge
+      [24/32] F2 | quartz bell -> OY-438 -> laurel gallery
+      [25/32] F3 | coral camera -> IE-725 -> alder chamber
+      [26/32] F3 | steel trumpet -> XR-364 -> marina studio
+      [27/32] F3 | cotton ledger -> FK-918 -> cypress room
+      [28/32] F3 | onyx pendant -> VA-542 -> spruce hall
+      [29/32] F4 | crystal radio -> GH-286 -> ridge workshop
+      [30/32] F4 | maple tablet -> TZ-607 -> prairie depot
+      [31/32] F4 | white teapot -> BL-159 -> cedar observatory
+      [32/32] F4 | silver ruler -> QD-873 -> bay conservatory
+
+[4/8] SHARED STAGE1 FULL SCAN — OBJECT -> ID
+      [01] F1 | expected=AX-731 | pred=AX-731 | gold=AX-731 | offFP= 0 | PASS
+      [02] F1 | expected=KM-204 | pred=KM-204 | gold=KM-204 | offFP= 0 | PASS
+      [03] F1 | expected=QP-583 | pred=QP-583 | gold=QP-583 | offFP= 0 | PASS
+      [04] F1 | expected=HV-619 | pred=HV-619 | gold=HV-619 | offFP= 0 | PASS
+      [05] F2 | expected=RQ-415 | pred=RQ-415 | gold=RQ-415 | offFP= 0 | PASS
+      [06] F2 | expected=BT-962 | pred=BT-962 | gold=BT-962 | offFP= 0 | PASS
+      [07] F2 | expected=MC-916 | pred=MC-916 | gold=MC-916 | offFP= 0 | PASS
+      [08] F2 | expected=ZX-247 | pred=ZX-247 | gold=ZX-247 | offFP= 0 | PASS
+      [09] F3 | expected=DN-348 | pred=DN-348 | gold=DN-348 | offFP= 0 | PASS
+      [10] F3 | expected=PL-570 | pred=PL-570 | gold=PL-570 | offFP= 0 | PASS
+      [11] F3 | expected=GF-821 | pred=GF-821 | gold=GF-821 | offFP= 0 | PASS
+      [12] F3 | expected=WS-436 | pred=WS-436 | gold=WS-436 | offFP= 0 | PASS
+      [13] F4 | expected=CJ-105 | pred=CJ-105 | gold=CJ-105 | offFP= 0 | PASS
+      [14] F4 | expected=YU-674 | pred=YU-674 | gold=YU-674 | offFP= 0 | PASS
+      [15] F4 | expected=ER-293 | pred=ER-293 | gold=ER-293 | offFP= 0 | PASS
+      [16] F4 | expected=NV-852 | pred=NV-852 | gold=NV-852 | offFP= 0 | PASS
+      [17] F1 | expected=LA-317 | pred=LA-317 | gold=LA-317 | offFP= 0 | PASS
+      [18] F1 | expected=TG-684 | pred=TG-684 | gold=TG-684 | offFP= 0 | PASS
+      [19] F1 | expected=PK-529 | pred=PK-529 | gold=PK-529 | offFP= 0 | PASS
+      [20] F1 | expected=SD-173 | pred=SD-173 | gold=SD-173 | offFP= 0 | PASS
+      [21] F2 | expected=JF-804 | pred=JF-804 | gold=JF-804 | offFP= 0 | PASS
+      [22] F2 | expected=UC-251 | pred=UC-251 | gold=UC-251 | offFP= 0 | PASS
+      [23] F2 | expected=WB-690 | pred=WB-690 | gold=WB-690 | offFP= 0 | PASS
+      [24] F2 | expected=OY-438 | pred=OY-438 | gold=OY-438 | offFP= 0 | PASS
+      [25] F3 | expected=IE-725 | pred=IE-725 | gold=IE-725 | offFP= 0 | PASS
+      [26] F3 | expected=XR-364 | pred=XR-364 | gold=XR-364 | offFP= 0 | PASS
+      [27] F3 | expected=FK-918 | pred=FK-918 | gold=FK-918 | offFP= 0 | PASS
+      [28] F3 | expected=VA-542 | pred=VA-542 | gold=VA-542 | offFP= 0 | PASS
+      [29] F4 | expected=GH-286 | pred=GH-286 | gold=GH-286 | offFP= 0 | PASS
+      [30] F4 | expected=TZ-607 | pred=TZ-607 | gold=TZ-607 | offFP= 0 | PASS
+      [31] F4 | expected=BL-159 | pred=BL-159 | gold=BL-159 | offFP= 0 | PASS
+      [32] F4 | expected=QD-873 | pred=QD-873 | gold=QD-873 | offFP= 0 | PASS
+
+[5/8] COMPLETE STAGE2 COMPARISON — C_COMPACT vs D_RECORD
+
+----------------------------------------------------------------------------------------------------------------------------------------
+C_COMPACT
+----------------------------------------------------------------------------------------------------------------------------------------
+      [01] F1 | expected=north archive        | pred=north archive        | gold=north archive        | offFP= 0 | PASS
+      [02] F1 | expected=river annex          | pred=river annex          | gold=river annex          | offFP= 0 | PASS
+      [03] F1 | expected=stone gallery        | pred=stone gallery        | gold=stone gallery        | offFP= 0 | PASS
+      [04] F1 | expected=garden vault         | pred=garden vault         | gold=garden vault         | offFP= 0 | PASS
+      [05] F2 | expected=saffron lighthouse   | pred=saffron lighthouse   | gold=saffron lighthouse   | offFP= 0 | PASS
+      [06] F2 | expected=slate pavilion       | pred=slate pavilion       | gold=slate pavilion       | offFP= 0 | PASS
+      [07] F2 | expected=elm lodge            | pred=elm lodge            | gold=elm lodge            | offFP= 0 | PASS
+      [08] F2 | expected=cedar gallery        | pred=cedar gallery        | gold=cedar gallery        | offFP= 0 | PASS
+      [09] F3 | expected=willow chamber       | pred=willow chamber       | gold=willow chamber       | offFP= 0 | PASS
+      [10] F3 | expected=harbor studio        | pred=harbor studio        | gold=harbor studio        | offFP= 0 | PASS
+      [11] F3 | expected=orchard room         | pred=orchard room         | gold=orchard room         | offFP= 0 | PASS
+      [12] F3 | expected=maple hall           | pred=maple hall           | gold=maple hall           | offFP= 0 | PASS
+      [13] F4 | expected=cliff workshop       | pred=cliff workshop       | gold=cliff workshop       | offFP= 0 | PASS
+      [14] F4 | expected=meadow depot         | pred=meadow depot         | gold=meadow depot         | offFP= 0 | PASS
+      [15] F4 | expected=pine observatory     | pred=pine observatory     | gold=pine observatory     | offFP= 0 | PASS
+      [16] F4 | expected=lake conservatory    | pred=lake conservatory    | gold=lake conservatory    | offFP= 0 | PASS
+      [17] F1 | expected=birch archive        | pred=birch archive        | gold=birch archive        | offFP= 0 | PASS
+      [18] F1 | expected=granite annex        | pred=granite annex        | gold=granite annex        | offFP= 0 | PASS
+      [19] F1 | expected=rose gallery         | pred=rose gallery         | gold=rose gallery         | offFP= 0 | PASS
+      [20] F1 | expected=canyon vault         | pred=canyon vault         | gold=canyon vault         | offFP= 0 | PASS
+      [21] F2 | expected=juniper tower        | pred=juniper tower        | gold=juniper tower        | offFP= 0 | PASS
+      [22] F2 | expected=moss pavilion        | pred=moss pavilion        | gold=moss pavilion        | offFP= 0 | PASS
+      [23] F2 | expected=ash lodge            | pred=ash lodge            | gold=ash lodge            | offFP= 0 | PASS
+      [24] F2 | expected=laurel gallery       | pred=laurel gallery       | gold=laurel gallery       | offFP= 0 | PASS
+      [25] F3 | expected=alder chamber        | pred=alder chamber        | gold=alder chamber        | offFP= 0 | PASS
+      [26] F3 | expected=marina studio        | pred=marina studio        | gold=marina studio        | offFP= 0 | PASS
+      [27] F3 | expected=cypress room         | pred=cypress room         | gold=cypress room         | offFP= 0 | PASS
+      [28] F3 | expected=spruce hall          | pred=spruce hall          | gold=spruce hall          | offFP= 0 | PASS
+      [29] F4 | expected=ridge workshop       | pred=ridge workshop       | gold=ridge workshop       | offFP= 0 | PASS
+      [30] F4 | expected=prairie depot        | pred=prairie depot        | gold=prairie depot        | offFP= 0 | PASS
+      [31] F4 | expected=cedar observatory    | pred=cedar observatory    | gold=cedar observatory    | offFP= 0 | PASS
+      [32] F4 | expected=bay conservatory     | pred=bay conservatory     | gold=bay conservatory     | offFP= 0 | PASS
+
+----------------------------------------------------------------------------------------------------------------------------------------
+D_RECORD
+----------------------------------------------------------------------------------------------------------------------------------------
+      [01] F1 | expected=north archive        | pred=north archive        | gold=north archive        | offFP= 0 | PASS
+      [02] F1 | expected=river annex          | pred=river annex          | gold=river annex          | offFP= 0 | PASS
+      [03] F1 | expected=stone gallery        | pred=stone gallery        | gold=stone gallery        | offFP= 0 | PASS
+      [04] F1 | expected=garden vault         | pred=garden vault         | gold=garden vault         | offFP= 0 | PASS
+      [05] F2 | expected=saffron lighthouse   | pred=saffron lighthouse   | gold=saffron lighthouse   | offFP= 0 | PASS
+      [06] F2 | expected=slate pavilion       | pred=slate pavilion       | gold=slate pavilion       | offFP= 0 | PASS
+      [07] F2 | expected=elm lodge            | pred=elm lodge            | gold=elm lodge            | offFP= 0 | PASS
+      [08] F2 | expected=cedar gallery        | pred=cedar gallery        | gold=cedar gallery        | offFP= 0 | PASS
+      [09] F3 | expected=willow chamber       | pred=willow chamber       | gold=willow chamber       | offFP= 0 | PASS
+      [10] F3 | expected=harbor studio        | pred=harbor studio        | gold=harbor studio        | offFP= 0 | PASS
+      [11] F3 | expected=orchard room         | pred=orchard room         | gold=orchard room         | offFP= 0 | PASS
+      [12] F3 | expected=maple hall           | pred=maple hall           | gold=maple hall           | offFP= 0 | PASS
+      [13] F4 | expected=cliff workshop       | pred=cliff workshop       | gold=cliff workshop       | offFP= 0 | PASS
+      [14] F4 | expected=meadow depot         | pred=meadow depot         | gold=meadow depot         | offFP= 0 | PASS
+      [15] F4 | expected=pine observatory     | pred=pine observatory     | gold=pine observatory     | offFP= 0 | PASS
+      [16] F4 | expected=lake conservatory    | pred=lake conservatory    | gold=lake conservatory    | offFP= 0 | PASS
+      [17] F1 | expected=birch archive        | pred=birch archive        | gold=birch archive        | offFP= 0 | PASS
+      [18] F1 | expected=granite annex        | pred=granite annex        | gold=granite annex        | offFP= 0 | PASS
+      [19] F1 | expected=rose gallery         | pred=rose gallery         | gold=rose gallery         | offFP= 0 | PASS
+      [20] F1 | expected=canyon vault         | pred=canyon vault         | gold=canyon vault         | offFP= 0 | PASS
+      [21] F2 | expected=juniper tower        | pred=juniper tower        | gold=juniper tower        | offFP= 0 | PASS
+      [22] F2 | expected=moss pavilion        | pred=moss pavilion        | gold=moss pavilion        | offFP= 0 | PASS
+      [23] F2 | expected=ash lodge            | pred=ash lodge            | gold=ash lodge            | offFP= 0 | PASS
+      [24] F2 | expected=laurel gallery       | pred=laurel gallery       | gold=laurel gallery       | offFP= 0 | PASS
+      [25] F3 | expected=alder chamber        | pred=alder chamber        | gold=alder chamber        | offFP= 0 | PASS
+      [26] F3 | expected=marina studio        | pred=marina studio        | gold=marina studio        | offFP= 0 | PASS
+      [27] F3 | expected=cypress room         | pred=cypress room         | gold=cypress room         | offFP= 0 | PASS
+      [28] F3 | expected=spruce hall          | pred=spruce hall          | gold=spruce hall          | offFP= 0 | PASS
+      [29] F4 | expected=ridge workshop       | pred=ridge workshop       | gold=ridge workshop       | offFP= 0 | PASS
+      [30] F4 | expected=prairie depot        | pred=prairie depot        | gold=prairie depot        | offFP= 0 | PASS
+      [31] F4 | expected=cedar observatory    | pred=cedar observatory    | gold=cedar observatory    | offFP= 0 | PASS
+      [32] F4 | expected=bay conservatory     | pred=bay conservatory     | gold=bay conservatory     | offFP= 0 | PASS
+
+[6/8] ABSENT-ID ABSTENTION — COMPLETE 32-BANK
+      C_COMPACT | ZZ-999 -> NONE 32/32 | PASS
+      C_COMPACT | AA-000 -> NONE 32/32 | PASS
+      C_COMPACT | LM-777 -> NONE 32/32 | PASS
+      C_COMPACT | RX-111 -> NONE 32/32 | PASS
+      D_RECORD  | ZZ-999 -> NONE 32/32 | PASS
+      D_RECORD  | AA-000 -> NONE 32/32 | PASS
+      D_RECORD  | LM-777 -> NONE 32/32 | PASS
+      D_RECORD  | RX-111 -> NONE 32/32 | PASS
+
+[7/8] FAMILY / STRICT REGRESSION SUMMARY
+      SHARED STAGE1: 32/32 | offFP=0/992 | offNONE=992/992 | collisions=0/32
+
+      C_COMPACT
+        F1: Linked 8/8
+        F2: Linked 8/8
+        F3: Linked 8/8
+        F4: Linked 8/8
+        Linked               : 32/32
+        Stage2 off-target FP : 0/992
+        Stage2 off-target NONE: 992/992
+        Stage2 collisions    : 0/32
+        Absent-ID NONE       : 128/128
+        Stage2 scan time     : 39.20s
+        STRICT              : PASS
+
+      D_RECORD
+        F1: Linked 8/8
+        F2: Linked 8/8
+        F3: Linked 8/8
+        F4: Linked 8/8
+        Linked               : 32/32
+        Stage2 off-target FP : 0/992
+        Stage2 off-target NONE: 992/992
+        Stage2 collisions    : 0/32
+        Absent-ID NONE       : 128/128
+        Stage2 scan time     : 39.61s
+        STRICT              : PASS
+
+========================================================================================================================================
+[8/8] TEST481 RESULT
+========================================================================================================================================
+RECORDS               : 32
+INDEPENDENT CARTRIDGES: 64
+SHARED STAGE1         : 32/32
+STAGE1 FALSE OUTPUTS  : 0/992
+STAGE1 OFF-TARGET NONE: 992/992
+STAGE1 COLLISIONS     : 0/32
+----------------------------------------------------------------------------------------------------------------------------------------
+C_COMPACT | Linked 32/32 | FP 0/992 | NONE 992/992 | Coll 0/32 | Absent 128/128 | STRICT PASS
+D_RECORD  | Linked 32/32 | FP 0/992 | NONE 992/992 | Coll 0/32 | Absent 128/128 | STRICT PASS
+----------------------------------------------------------------------------------------------------------------------------------------
+STRICT WINNERS: ['C_COMPACT', 'D_RECORD']
+VERDICT: BOTH_UNIVERSAL_READOUTS_PASS_32_BANK
+----------------------------------------------------------------------------------------------------------------------------------------
+Forge time       : 3.80s
+Stage1 scan time : 40.98s
+TOTAL TEST TIME  : 184.01s
+ENGINE: Qwen2.5-7B-Instruct · frozen · K120/V128/OWN · full scan
+MEMORY/RETRIEVAL MECHANISM CHANGES: NONE
+EXPERIMENTAL VARIABLE: C_COMPACT vs D_RECORD Stage2 readout only
+TEST476 NONE-FIRST PARSER FIX: RETAINED
+
+
+========================================================================================================================================
