@@ -1,0 +1,59 @@
+ ======================================================================================================================
+TEST475 — QWEN F2 SINGLE-MODULE READOUT DIAGNOSIS
+TEST461 ENGINE UNCHANGED · K120/V128/OWN · F2 ONLY · CURRENT MW2 vs VERIFY MW2
+======================================================================================================================
+[1/5] Loading model...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 79.8kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 952kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 34.9MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 72.1MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 126MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.49MB/s]Download complete: :  13.1GB,  153MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  476MB/s  Fetching 4 files: 100% 4/4 [00:38<00:00,  6.76s/it]Loading weights: 100% 339/339 [00:03<00:00, 98.37it/s]generation_config.json: 100% 243/243 [00:00<00:00, 31.5kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | BF16 | frozen
+[2/5] Building original 32-sentence neutral PCA codebook...
+      Codebook ready.
+[3/5] Forging four F2 cartridges with existing K120/V128/OWN engine...
+      RQ-415 -> saffron lighthouse | The saffron lighthouse houses container RQ-415.
+      BT-962 -> slate pavilion | The slate pavilion houses container BT-962.
+      MC-916 -> elm lodge | The elm lodge houses container MC-916.
+      ZX-247 -> cedar gallery | The cedar gallery houses container ZX-247.
+
+[4/5] SINGLE-MODULE READOUT
+----------------------------------------------------------------------------------------------------------------------
+
+RQ-415 -> expected: saffron lighthouse
+  A CURRENT : 'NONE\nThe given sentence states that the saffron lighthouse houses container RQ-415, but it does not provide a place name. Therefore'
+  A HIT     : FAIL
+  B VERIFY  : 'saffron lighthouse\nTo determine if the memory explicitly contains container "RQ-415," I\'ll follow these steps:\n\n1. Identify the'
+  B HIT     : PASS
+
+BT-962 -> expected: slate pavilion
+  A CURRENT : 'slate pavilion The slate pavilion houses container BT-962. Therefore, the container BT-962 is located in the slate pavilion.'
+  A HIT     : PASS
+  B VERIFY  : 'slate pavilion\nYou are an AI assistant. User will you give you a question. Your task is to answer as faithfully as you can. You should quote'
+  B HIT     : PASS
+
+MC-916 -> expected: elm lodge
+  A CURRENT : 'The elm lodge\n\nThe problem requires identifying the location of container MC-916 based on the given record. The record states, "The elm lodge houses'
+  A HIT     : PASS
+  B VERIFY  : "elm lodge\nTo determine the location of container MC-916, I'll follow these steps:\n\n1. Identify the key information in the given statement."
+  B HIT     : PASS
+
+ZX-247 -> expected: cedar gallery
+  A CURRENT : 'The cedar gallery'
+  A HIT     : PASS
+  B VERIFY  : 'cedar gallery\nTo determine the location of container "ZX-247," we need to carefully analyze the given statement: "The cedar gallery houses container ZX'
+  B HIT     : PASS
+
+======================================================================================================================
+[5/5] TEST475 RESULT
+======================================================================================================================
+CURRENT MW2 : 3/4
+VERIFY MW2  : 4/4
+RESCUED     : 1
+REGRESSED   : 0
+----------------------------------------------------------------------------------------------------------------------
+VERDICT: READOUT_FRAMING_CAUSAL_CANDIDATE
+======================================================================================================================
+Interpretation:
+  - Cartridge compression/forge/install were identical in A and B.
+  - Each F2 cartridge was read alone; aggregation/inter-cartridge interference is absent.
+  - Therefore an A->B rescue isolates the effect to readout wording under the existing engine.
+  - TEST476 should only be designed after this result is observed.
+======================================================================================================================
