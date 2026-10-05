@@ -1,0 +1,204 @@
+ ======================================================================================================================================================
+TEST487 — AKBASCORE MAM · MODEL-NATIVE RECALL ATLAS
+32 NAMELESS MEMORIES · 28-LAYER PASSIVE X-RAY · MULTI-SIGNAL COMPLEMENTARITY
+======================================================================================================================================================
+LOCK SHA: cb8d18552ded7b8f74008451e912980262b345fc121c5c7ca7569d00e6a2c5dd
+[1/6] Loading frozen Qwen...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 60.1kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 870kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 38.6MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 74.2MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 119MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.32MB/s]Download complete:  13.1GB,  112MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  517MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.05s/it]Loading weights: 100% 339/339 [00:03<00:00, 98.73it/s]generation_config.json: 100% 243/243 [00:00<00:00, 31.4kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | 28Q/4KV | frozen BF16
+[2/6] Capturing cartridge-side atlas...
+      [01/32] emerald barometer
+      [02/32] porcelain compass
+      [03/32] violet harmonica
+      [04/32] bamboo chronometer
+      [05/32] obsidian sextant
+      [06/32] linen telescope
+      [07/32] coral metronome
+      [08/32] willow calculator
+      [09/32] turquoise monocle
+      [10/32] mahogany notebook
+      [11/32] ceramic astrolabe
+      [12/32] scarlet blueprint
+      [13/32] opal kaleidoscope
+      [14/32] bronze hourglass
+      [15/32] silk manuscript
+      [16/32] crystal chime
+      [17/32] jade projector
+      [18/32] glass clarinet
+      [19/32] canvas diary
+      [20/32] iron medallion
+      [21/32] pearl camera
+      [22/32] steel accordion
+      [23/32] cotton almanac
+      [24/32] onyx brooch
+      [25/32] ivory receiver
+      [26/32] cedar plaque
+      [27/32] azure kettle
+      [28/32] brass caliper
+      [29/32] crystal phonograph
+      [30/32] maple slate
+      [31/32] white lantern
+      [32/32] golden protractor
+[3/6] Capturing NAMELESS query-side atlas...
+      [01/32] green instrument used to measure atmospheric pressur
+      [02/32] ceramic instrument used to determine direction
+      [03/32] purple handheld instrument played by blowing and dra
+      [04/32] bamboo device used for precise timekeeping
+      [05/32] dark volcanic-stone instrument historically used for
+      [06/32] fabric-covered optical instrument for viewing distan
+      [07/32] reddish device used to keep a steady musical tempo
+      [08/32] wooden device used for arithmetic calculations
+      [09/32] blue-green single-eye optical lens
+      [10/32] dark wooden book used for handwritten notes
+      [11/32] pottery instrument historically used to determine ce
+      [12/32] bright red technical drawing
+      [13/32] gemstone-colored optical toy that forms changing sym
+      [14/32] metal timer in which sand falls between two glass ch
+      [15/32] smooth-fabric document written by hand
+      [16/32] transparent decorative object that produces a ringin
+      [17/32] green-stone device used to display images on a surfa
+      [18/32] transparent woodwind instrument played with a single
+      [19/32] cloth-covered personal book used for daily written e
+      [20/32] metal ornamental disk worn or kept as a keepsake
+      [21/32] pale gemstone-colored device used to take photograph
+      [22/32] metal bellows-driven musical instrument with keys or
+      [23/32] soft-fabric annual reference book containing facts a
+      [24/32] black gemstone ornamental pin
+      [25/32] pale handheld apparatus used to receive transmitted 
+      [26/32] wooden flat sign or commemorative plate
+      [27/32] blue vessel used to heat water
+      [28/32] metal measuring tool with two jaws for measuring dim
+      [29/32] transparent historical machine that reproduces recor
+      [30/32] wooden flat board used for writing
+      [31/32] pale portable light used for illumination
+      [32/32] yellow-metal instrument used to measure and draw ang
+[4/6] Building recall atlas...
+      Scanning head-local Q->K resonance...
+      Atlas channels: 1015
+
+      TOP 30 NATIVE SIGNALS
+      01. TOKENMAX_L10             R1=0.688 R5=0.906 MRR=0.787 MEDR=1.0
+      02. TOKENMAX_L13             R1=0.656 R5=0.844 MRR=0.746 MEDR=1.0
+      03. TOKENMAX_L09             R1=0.625 R5=0.875 MRR=0.741 MEDR=1.0
+      04. TOKENMAX_L12             R1=0.594 R5=0.875 MRR=0.720 MEDR=1.0
+      05. TOKENMAX_L11             R1=0.594 R5=0.875 MRR=0.720 MEDR=1.0
+      06. TOKENMAX_L15             R1=0.625 R5=0.781 MRR=0.710 MEDR=1.0
+      07. TOKENMAX_L14             R1=0.594 R5=0.844 MRR=0.705 MEDR=1.0
+      08. TOKENMAX_L17             R1=0.562 R5=0.750 MRR=0.664 MEDR=1.0
+      09. TOKENMAX_L16             R1=0.562 R5=0.750 MRR=0.662 MEDR=1.0
+      10. TOKENMAX_L08             R1=0.531 R5=0.812 MRR=0.659 MEDR=1.0
+      11. TOKENMAX_L18             R1=0.500 R5=0.719 MRR=0.612 MEDR=1.5
+      12. DELTA_COS_L10            R1=0.469 R5=0.750 MRR=0.593 MEDR=2.0
+      13. TOKENMAX_L19             R1=0.438 R5=0.750 MRR=0.579 MEDR=2.0
+      14. HMEAN_COS_L11            R1=0.438 R5=0.719 MRR=0.579 MEDR=2.0
+      15. TOKENMAX_L21             R1=0.469 R5=0.688 MRR=0.567 MEDR=2.0
+      16. TRAJECTORY_08_11         R1=0.406 R5=0.750 MRR=0.562 MEDR=2.0
+      17. HMEAN_COS_L10            R1=0.375 R5=0.719 MRR=0.537 MEDR=2.0
+      18. TOKENMAX_L20             R1=0.406 R5=0.719 MRR=0.536 MEDR=2.5
+      19. HMEAN_CENTER_L09         R1=0.406 R5=0.688 MRR=0.530 MEDR=2.5
+      20. HMEAN_CENTER_L10         R1=0.344 R5=0.750 MRR=0.519 MEDR=2.0
+      21. HMEAN_CENTER_L11         R1=0.344 R5=0.688 MRR=0.515 MEDR=2.0
+      22. HMEAN_CENTER_L12         R1=0.344 R5=0.719 MRR=0.507 MEDR=2.5
+      23. HMEAN_COS_L12            R1=0.344 R5=0.719 MRR=0.504 MEDR=2.5
+      24. HMEAN_COS_L13            R1=0.344 R5=0.688 MRR=0.501 MEDR=2.5
+      25. TOKENMAX_L22             R1=0.406 R5=0.562 MRR=0.500 MEDR=3.0
+      26. DELTA_COS_L08            R1=0.375 R5=0.594 MRR=0.498 MEDR=2.5
+      27. HMEAN_CENTER_L13         R1=0.312 R5=0.688 MRR=0.484 MEDR=2.5
+      28. HMEAN_COS_L24            R1=0.375 R5=0.594 MRR=0.481 MEDR=4.0
+      29. HMEAN_CENTER_L08         R1=0.344 R5=0.656 MRR=0.479 MEDR=3.0
+      30. HMEAN_L2_L26             R1=0.344 R5=0.562 MRR=0.475 MEDR=2.0
+
+[5/6] Measuring complementarity...
+      +01 TOKENMAX_L10             -> R1=0.688 R5=0.906 MRR=0.787
+      +02 TOKENMAX_L13             -> R1=0.688 R5=0.875 MRR=0.777
+      +03 HMEAN_COS_L11            -> R1=0.688 R5=0.875 MRR=0.784
+      +04 TOKENMAX_L14             -> R1=0.688 R5=0.875 MRR=0.779
+      +05 TOKENMAX_L09             -> R1=0.688 R5=0.875 MRR=0.784
+      +06 DELTA_COS_L12            -> R1=0.750 R5=0.906 MRR=0.808
+      +07 TOKENMAX_L11             -> R1=0.719 R5=0.906 MRR=0.800
+      +08 HMEAN_COS_L08            -> R1=0.719 R5=0.906 MRR=0.809
+      +09 TOKENMAX_L15             -> R1=0.719 R5=0.906 MRR=0.805
+      +10 TOKENMAX_L12             -> R1=0.719 R5=0.906 MRR=0.804
+      +11 DELTA_COS_L10            -> R1=0.719 R5=0.906 MRR=0.813
+      +12 TOKENMAX_L08             -> R1=0.719 R5=0.906 MRR=0.809
+
+      BEST FIXED-EQUAL CONSENSUS:
+        TOKENMAX_L10
+        TOKENMAX_L13
+        HMEAN_COS_L11
+        TOKENMAX_L14
+        TOKENMAX_L09
+        DELTA_COS_L12
+        TOKENMAX_L11
+        HMEAN_COS_L08
+        TOKENMAX_L15
+        TOKENMAX_L12
+        DELTA_COS_L10
+      => {'R1': 0.71875, 'R5': 0.90625, 'R16': 0.96875, 'MRR': 0.8132876238344988, 'MEDR': 1.0}
+      TOP20 ANY-R1: 0.8125 ANY-R5: 0.96875
+      TOP64 ORACLE: {'R1': 0.96875, 'R5': 1.0, 'R16': 1.0, 'MRR': 0.984375, 'MEDR': 1.0}
+
+[6/6] Null + per-memory atlas...
+      [00] best-rank= 1 via DELTA_COS_L08            | emerald barometer
+      [01] best-rank= 1 via HMEAN_CENTER_L05         | porcelain compass
+      [02] best-rank= 1 via DELTA_COS_L08            | violet harmonica
+      [03] best-rank= 1 via DELTA_COS_L08            | bamboo chronometer
+      [04] best-rank= 1 via HMEAN_CENTER_L05         | obsidian sextant
+      [05] best-rank= 1 via DELTA_COS_L10            | linen telescope
+      [06] best-rank= 1 via HMEAN_L2_L26             | coral metronome
+      [07] best-rank= 2 via HMEAN_COS_L25            | willow calculator
+      [08] best-rank= 1 via DELTA_COS_L14            | turquoise monocle
+      [09] best-rank= 1 via DELTA_COS_L14            | mahogany notebook
+      [10] best-rank= 1 via DELTA_COS_L08            | ceramic astrolabe
+      [11] best-rank= 1 via DELTA_COS_L08            | scarlet blueprint
+      [12] best-rank= 1 via DELTA_COS_L08            | opal kaleidoscope
+      [13] best-rank= 1 via DELTA_COS_L10            | bronze hourglass
+      [14] best-rank= 1 via DELTA_COS_L08            | silk manuscript
+      [15] best-rank= 1 via DELTA_COS_L08            | crystal chime
+      [16] best-rank= 1 via DELTA_COS_L10            | jade projector
+      [17] best-rank= 1 via DELTA_COS_L08            | glass clarinet
+      [18] best-rank= 1 via HMEAN_CENTER_L05         | canvas diary
+      [19] best-rank= 1 via DELTA_COS_L08            | iron medallion
+      [20] best-rank= 1 via HMEAN_CENTER_L06         | pearl camera
+      [21] best-rank= 1 via DELTA_COS_L10            | steel accordion
+      [22] best-rank= 1 via DELTA_COS_L10            | cotton almanac
+      [23] best-rank= 1 via DELTA_COS_L10            | onyx brooch
+      [24] best-rank= 1 via TOKENMAX_L08             | ivory receiver
+      [25] best-rank= 1 via DELTA_COS_L08            | cedar plaque
+      [26] best-rank= 1 via TOKENMAX_L09             | azure kettle
+      [27] best-rank= 1 via DELTA_COS_L08            | brass caliper
+      [28] best-rank= 1 via DELTA_COS_L09            | crystal phonograph
+      [29] best-rank= 1 via TOKENMAX_L22             | maple slate
+      [30] best-rank= 1 via TOKENMAX_L07             | white lantern
+      [31] best-rank= 1 via DELTA_COS_L10            | golden protractor
+
+======================================================================================================================================================
+TEST487 FINAL RESULT — AKBASCORE MAM RECALL ATLAS
+======================================================================================================================================================
+FOUNDATION          : TEST482 QWEN · frozen
+TEST482 BLOB SHA    : ecc630144a44479cb35c432c50eb0d09bc6866d7
+INPUT CONDITION     : NAMELESS only
+MEMORIES            : 32
+LAYERS              : 0-27
+ATLAS CHANNELS      : 1015
+UNIQUE RANK CHANNELS: 1015
+LOCK SHA            : cb8d18552ded7b8f74008451e912980262b345fc121c5c7ca7569d00e6a2c5dd
+------------------------------------------------------------------------------------------------------------------------------------------------------
+BEST SINGLE         : {'name': 'TOKENMAX_L10', 'R1': 0.6875, 'R5': 0.90625, 'R16': 0.9375, 'MRR': 0.7870107323232323, 'MEDR': 1.0}
+BEST CONSENSUS      : {'R1': 0.71875, 'R5': 0.90625, 'R16': 0.96875, 'MRR': 0.8132876238344988, 'MEDR': 1.0}
+CONSENSUS CHANNELS  : ['TOKENMAX_L10', 'TOKENMAX_L13', 'HMEAN_COS_L11', 'TOKENMAX_L14', 'TOKENMAX_L09', 'DELTA_COS_L12', 'TOKENMAX_L11', 'HMEAN_COS_L08', 'TOKENMAX_L15', 'TOKENMAX_L12', 'DELTA_COS_L10']
+TOP20 ANY-R1        : 0.8125
+TOP20 ANY-R5        : 0.96875
+TOP64 ORACLE        : {'R1': 0.96875, 'R5': 1.0, 'R16': 1.0, 'MRR': 0.984375, 'MEDR': 1.0}
+PERMUTATION NULL    : {'R1': 0.0, 'R5': 0.125, 'R16': 0.5625, 'MRR': 0.10799668936387685, 'MEDR': 15.5}
+------------------------------------------------------------------------------------------------------------------------------------------------------
+VERDICT             : STRONG_COMPLEMENTARY_NATIVE_RECALL_STRUCTURE
+INTERPRETATION      : discovery atlas; consensus selection used same 32 examples and is NOT held-out proof.
+NEXT TEST           : freeze discovered channel set -> fresh memories/queries -> held-out validation.
+CARTRIDGE READOUT   : NOT USED
+ROUTER / ANN / GRAPH: NONE
+TRAINING / LoRA     : NONE
+MODEL CHANGE        : NONE
+TOTAL TIME          : 125.54s
+======================================================================================================================================================
