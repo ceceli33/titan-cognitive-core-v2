@@ -1,3 +1,36 @@
+AKBASCORE MAM — Model-Native Associative Memory
+
+AKBASCORE MAM is the next experimental research line of AkbasCore, extending the NIRVANA Cognitive Cartridge architecture toward model-native memory addressing, associative retrieval, scalable memory traversal, and persistent associative memory.
+
+The MAM research line begins with TEST 484. Its initial objective is to determine whether the frozen model's own internal geometry contains a measurable signal capable of identifying relevant Cognitive Cartridges without exhaustive cartridge-by-cartridge readout.
+
+NIRVANA remains the experimental foundation of the cartridge memory architecture. MAM does not retroactively rename, replace, or alter the NIRVANA research record or any earlier release.
+
+Research progression:
+
+NIRVANA Cognitive Cartridge → MAM Model-Native Addressing → Associative Retrieval → Memory Traversal → Persistent Associative Memory
+
+Licensing
+
+Copyright © 2026 Mustafa Akbaş
+
+New original AKBASCORE MAM material is source-available under the licensing terms of this repository. Research, education, academic study, personal experimentation, modification, adaptation, forking, and creation of derivative works are permitted. Commercial use is also permitted free of charge where the user, company, organization, together with its controlling, controlled, and commonly controlled affiliates, has combined consolidated annual gross revenue of less than USD 50,000,000 during its most recently completed fiscal year.
+
+Where combined consolidated annual gross revenue is USD 50,000,000 or more, commercial use of the new copyrightable AKBASCORE MAM material requires a separate commercial license from the copyright holder.
+
+Modifications, forks, adaptations, and derivative works remain subject to the same licensing terms and commercial revenue threshold. No separate permission from the copyright holder is required where the applicable use remains within these terms.
+
+Earlier MIT-licensed Titan Cognitive Core / AkbasCore material remains under its original license and previously granted permissions are not withdrawn or restricted. These terms apply only to new copyrightable material for which the copyright holder owns the applicable rights. Third-party models, libraries, frameworks, and dependencies remain governed by their respective licenses.
+
+The USD 50,000,000 threshold refers to annual gross revenue, not valuation, investment raised, market capitalization, or other measures of company value.
+
+Commercial licensing inquiries: Mustafa Akbaş via the official Titan Cognitive Core / AkbasCore repository.
+
+
+
+---
+
+
 Permanent Research Record
 
 AKBASCORE NIRVANA is documented through a chronological public research record:
