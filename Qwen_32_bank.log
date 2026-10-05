@@ -1,0 +1,262 @@
+============================================================================================================================================
+AKBASCORE NIRVANA · QWEN · 32-BANK COGNITIVE CARTRIDGE — READABLE RUN LOG (SEALED TEST482 REPLAY)
+============================================================================================================================================
+Derived from QWEN32-20261005-192700-0001_FULL_RUN_LOG_payload.json (SHA-256 3012053e9ebdc1128aec6f8599a53148222e919a0868a95f825edf1039612daf). Manifest: run_manifest_QWEN32-20261005-192700-0001.json.
+The SHA-256 is an artifact integrity seal, not a scientific proof and not a third-party verification.
+RUN ID                          : QWEN32-20261005-192700-0001
+START UTC                       : 2026-10-05T19:27:00.701+00:00
+END UTC                         : 2026-10-05T19:29:56.833+00:00
+SEALED UTC                      : 2026-10-05T19:29:57.354+00:00
+MODEL                           : Qwen/Qwen2.5-7B-Instruct
+ARCHITECTURE                    : 28 layers / hidden 3584 / 28 Q heads / 4 KV heads / head 128
+DTYPE / ATTENTION               : bfloat16 / sdpa
+GPU (this run)                  : NVIDIA A100-SXM4-40GB
+CANONICAL SEALED GPU            : NVIDIA A100-SXM4-40GB
+SAME HARDWARE AS SEALED RUN     : True
+TORCH / TRANSFORMERS            : 2.11.0+cu130 / 5.18.0 (library versions of the sealed run are not recorded in 482.log)
+SEED                            : 461
+MEMORY ENGINE                   : K120/V128/OWN · 32 A + 32 B cartridges · full scan per stage · MW1 · MW2 C_COMPACT · NONE-first parser
+TEST482 LOCK SHA (recomputed)   : 3ed21b24d6a9fd823dc60dffdcb3e83dfe7271f057fd694739031c25c41d34ff
+TEST482 LOCK SHA (sealed)       : 3ed21b24d6a9fd823dc60dffdcb3e83dfe7271f057fd694739031c25c41d34ff
+DEMO EXTENDED LOCK SHA          : 05c4b91395189061b77f17a81c0fb9d0e62c0e60648b89c2c25f2bc860308fb4
+
+SCOPE
+--------------------------------------------------------------------------------------------------------------------------------------------
+• SEALED TEST482 PANEL REPLAY: the 32 held-out records are replayed unchanged; no new panel and no fresh seed.
+• Held-out records, objects, IDs and places are new relative to development; the four source templates F1–F4 are the same as in development.
+• Total bank = 64 cartridges (32 A OBJECT->ID + 32 B ID->PLACE). Stage 1 scans only the 32 A cartridges, Stage 2 only the 32 B cartridges; 992 = 32 queries × 31 off-target cartridges.
+• The parser uses the bank's closed ID and place vocabulary.
+• Stage-2 gold-ID fallback exists in the code; it was triggered 0 times in sealed TEST482 and is counted in this run.
+• NOMEM is DEMO-ONLY and NOT PART OF TEST482 SEALED RESULT.
+• Hashes, the LOCK SHA and the sentinel are integrity/audit indicators, not independent third-party verification.
+• Unrelated-object and absent-ID probes overlap with development probes (same four IDs; one identical object, three recombined).
+
+TEST482 RECORDS (forge-time source sentences; NOT available to the readout)
+--------------------------------------------------------------------------------------------------------------------------------------------
+01 F1 | emerald barometer -> KR-214 -> cedar archive | A: The emerald barometer is stored in container KR-214. | B: Container KR-214 is located in the cedar archive.
+02 F1 | porcelain compass -> DM-763 -> marble annex | A: The porcelain compass is stored in container DM-763. | B: Container DM-763 is located in the marble annex.
+03 F1 | violet harmonica -> FS-408 -> amber gallery | A: The violet harmonica is stored in container FS-408. | B: Container FS-408 is located in the amber gallery.
+04 F1 | bamboo chronometer -> JN-951 -> fern vault | A: The bamboo chronometer is stored in container JN-951. | B: Container JN-951 is located in the fern vault.
+05 F1 | obsidian sextant -> RW-326 -> copper archive | A: The obsidian sextant is stored in container RW-326. | B: Container RW-326 is located in the copper archive.
+06 F1 | linen telescope -> AE-875 -> quartz annex | A: The linen telescope is stored in container AE-875. | B: Container AE-875 is located in the quartz annex.
+07 F1 | coral metronome -> LP-143 -> ivory gallery | A: The coral metronome is stored in container LP-143. | B: Container LP-143 is located in the ivory gallery.
+08 F1 | willow calculator -> XM-692 -> silver vault | A: The willow calculator is stored in container XM-692. | B: Container XM-692 is located in the silver vault.
+09 F2 | turquoise monocle -> HC-517 -> indigo lighthouse | A: Container HC-517 contains the turquoise monocle. | B: The indigo lighthouse houses container HC-517.
+10 F2 | mahogany notebook -> VK-280 -> pearl pavilion | A: Container VK-280 contains the mahogany notebook. | B: The pearl pavilion houses container VK-280.
+11 F2 | ceramic astrolabe -> SB-934 -> granite lodge | A: Container SB-934 contains the ceramic astrolabe. | B: The granite lodge houses container SB-934.
+12 F2 | scarlet blueprint -> NT-461 -> willow gallery | A: Container NT-461 contains the scarlet blueprint. | B: The willow gallery houses container NT-461.
+13 F2 | opal kaleidoscope -> GY-708 -> maple tower | A: Container GY-708 contains the opal kaleidoscope. | B: The maple tower houses container GY-708.
+14 F2 | bronze hourglass -> PD-352 -> coral pavilion | A: Container PD-352 contains the bronze hourglass. | B: The coral pavilion houses container PD-352.
+15 F2 | silk manuscript -> ZU-819 -> birch lodge | A: Container ZU-819 contains the silk manuscript. | B: The birch lodge houses container ZU-819.
+16 F2 | crystal chime -> EF-625 -> onyx gallery | A: Container EF-625 contains the crystal chime. | B: The onyx gallery houses container EF-625.
+17 F3 | jade projector -> WL-407 -> hazel chamber | A: The jade projector can be found inside container WL-407. | B: The location of container WL-407 is the hazel chamber.
+18 F3 | glass clarinet -> CQ-586 -> lagoon studio | A: The glass clarinet can be found inside container CQ-586. | B: The location of container CQ-586 is the lagoon studio.
+19 F3 | canvas diary -> MR-172 -> acorn room | A: The canvas diary can be found inside container MR-172. | B: The location of container MR-172 is the acorn room.
+20 F3 | iron medallion -> UX-943 -> poplar hall | A: The iron medallion can be found inside container UX-943. | B: The location of container UX-943 is the poplar hall.
+21 F3 | pearl camera -> BH-650 -> cobalt chamber | A: The pearl camera can be found inside container BH-650. | B: The location of container BH-650 is the cobalt chamber.
+22 F3 | steel accordion -> KO-238 -> canal studio | A: The steel accordion can be found inside container KO-238. | B: The location of container KO-238 is the canal studio.
+23 F3 | cotton almanac -> YD-714 -> walnut room | A: The cotton almanac can be found inside container YD-714. | B: The location of container YD-714 is the walnut room.
+24 F3 | onyx brooch -> TG-569 -> elm hall | A: The onyx brooch can be found inside container TG-569. | B: The location of container TG-569 is the elm hall.
+25 F4 | ivory receiver -> PS-381 -> summit workshop | A: Inside container PS-381 there is the ivory receiver. | B: Container PS-381 can be found at the summit workshop.
+26 F4 | cedar plaque -> AL-826 -> valley depot | A: Inside container AL-826 there is the cedar plaque. | B: Container AL-826 can be found at the valley depot.
+27 F4 | azure kettle -> RF-504 -> birch observatory | A: Inside container RF-504 there is the azure kettle. | B: Container RF-504 can be found at the birch observatory.
+28 F4 | brass caliper -> MW-197 -> shore conservatory | A: Inside container MW-197 there is the brass caliper. | B: Container MW-197 can be found at the shore conservatory.
+29 F4 | crystal phonograph -> DE-648 -> forest workshop | A: Inside container DE-648 there is the crystal phonograph. | B: Container DE-648 can be found at the forest workshop.
+30 F4 | maple slate -> KI-275 -> delta depot | A: Inside container KI-275 there is the maple slate. | B: Container KI-275 can be found at the delta depot.
+31 F4 | white lantern -> OV-930 -> clover observatory | A: Inside container OV-930 there is the white lantern. | B: Container OV-930 can be found at the clover observatory.
+32 F4 | golden protractor -> XC-412 -> island conservatory | A: Inside container XC-412 there is the golden protractor. | B: Container XC-412 can be found at the island conservatory.
+
+CARTRIDGES
+--------------------------------------------------------------------------------------------------------------------------------------------
+A01 slots=16 code_numbers=416,640 own=28,672 native=458,752 cosK_min=0.9988 cosV_min=1.0000
+A02 slots=14 code_numbers=361,088 own=28,672 native=401,408 cosK_min=0.9989 cosV_min=1.0000
+A03 slots=15 code_numbers=388,864 own=28,672 native=430,080 cosK_min=0.9985 cosV_min=1.0000
+A04 slots=16 code_numbers=416,640 own=28,672 native=458,752 cosK_min=0.9990 cosV_min=1.0000
+A05 slots=16 code_numbers=416,640 own=28,672 native=458,752 cosK_min=0.9987 cosV_min=1.0000
+A06 slots=14 code_numbers=361,088 own=28,672 native=401,408 cosK_min=0.9987 cosV_min=1.0000
+A07 slots=16 code_numbers=416,640 own=28,672 native=458,752 cosK_min=0.9988 cosV_min=1.0000
+A08 slots=15 code_numbers=388,864 own=28,672 native=430,080 cosK_min=0.9989 cosV_min=1.0000
+A09 slots=13 code_numbers=333,312 own=28,672 native=372,736 cosK_min=0.9988 cosV_min=1.0000
+A10 slots=13 code_numbers=333,312 own=28,672 native=372,736 cosK_min=0.9988 cosV_min=1.0000
+A11 slots=14 code_numbers=361,088 own=28,672 native=401,408 cosK_min=0.9988 cosV_min=1.0000
+A12 slots=13 code_numbers=333,312 own=28,672 native=372,736 cosK_min=0.9987 cosV_min=1.0000
+A13 slots=16 code_numbers=416,640 own=28,672 native=458,752 cosK_min=0.9986 cosV_min=1.0000
+A14 slots=13 code_numbers=333,312 own=28,672 native=372,736 cosK_min=0.9989 cosV_min=1.0000
+A15 slots=13 code_numbers=333,312 own=28,672 native=372,736 cosK_min=0.9988 cosV_min=1.0000
+A16 slots=13 code_numbers=333,312 own=28,672 native=372,736 cosK_min=0.9988 cosV_min=1.0000
+A17 slots=15 code_numbers=388,864 own=28,672 native=430,080 cosK_min=0.9986 cosV_min=1.0000
+A18 slots=17 code_numbers=444,416 own=28,672 native=487,424 cosK_min=0.9986 cosV_min=1.0000
+A19 slots=15 code_numbers=388,864 own=28,672 native=430,080 cosK_min=0.9986 cosV_min=1.0000
+A20 slots=17 code_numbers=444,416 own=28,672 native=487,424 cosK_min=0.9985 cosV_min=1.0000
+A21 slots=15 code_numbers=388,864 own=28,672 native=430,080 cosK_min=0.9987 cosV_min=1.0000
+A22 slots=15 code_numbers=388,864 own=28,672 native=430,080 cosK_min=0.9989 cosV_min=1.0000
+A23 slots=18 code_numbers=472,192 own=28,672 native=516,096 cosK_min=0.9986 cosV_min=1.0000
+A24 slots=17 code_numbers=444,416 own=28,672 native=487,424 cosK_min=0.9986 cosV_min=1.0000
+A25 slots=14 code_numbers=361,088 own=28,672 native=401,408 cosK_min=0.9987 cosV_min=1.0000
+A26 slots=14 code_numbers=361,088 own=28,672 native=401,408 cosK_min=0.9986 cosV_min=1.0000
+A27 slots=14 code_numbers=361,088 own=28,672 native=401,408 cosK_min=0.9986 cosV_min=1.0000
+A28 slots=15 code_numbers=388,864 own=28,672 native=430,080 cosK_min=0.9988 cosV_min=1.0000
+A29 slots=15 code_numbers=388,864 own=28,672 native=430,080 cosK_min=0.9987 cosV_min=1.0000
+A30 slots=15 code_numbers=388,864 own=28,672 native=430,080 cosK_min=0.9988 cosV_min=1.0000
+A31 slots=14 code_numbers=361,088 own=28,672 native=401,408 cosK_min=0.9986 cosV_min=1.0000
+A32 slots=15 code_numbers=388,864 own=28,672 native=430,080 cosK_min=0.9986 cosV_min=1.0000
+B01 slots=14 code_numbers=361,088 own=28,672 native=401,408 cosK_min=0.9987 cosV_min=1.0000
+B02 slots=14 code_numbers=361,088 own=28,672 native=401,408 cosK_min=0.9989 cosV_min=1.0000
+B03 slots=14 code_numbers=361,088 own=28,672 native=401,408 cosK_min=0.9989 cosV_min=1.0000
+B04 slots=15 code_numbers=388,864 own=28,672 native=430,080 cosK_min=0.9988 cosV_min=1.0000
+B05 slots=14 code_numbers=361,088 own=28,672 native=401,408 cosK_min=0.9989 cosV_min=1.0000
+B06 slots=14 code_numbers=361,088 own=28,672 native=401,408 cosK_min=0.9989 cosV_min=1.0000
+B07 slots=14 code_numbers=361,088 own=28,672 native=401,408 cosK_min=0.9989 cosV_min=1.0000
+B08 slots=14 code_numbers=361,088 own=28,672 native=401,408 cosK_min=0.9989 cosV_min=1.0000
+B09 slots=14 code_numbers=361,088 own=28,672 native=401,408 cosK_min=0.9988 cosV_min=1.0000
+B10 slots=13 code_numbers=333,312 own=28,672 native=372,736 cosK_min=0.9989 cosV_min=1.0000
+B11 slots=12 code_numbers=305,536 own=28,672 native=344,064 cosK_min=0.9990 cosV_min=1.0000
+B12 slots=13 code_numbers=333,312 own=28,672 native=372,736 cosK_min=0.9989 cosV_min=1.0000
+B13 slots=13 code_numbers=333,312 own=28,672 native=372,736 cosK_min=0.9990 cosV_min=1.0000
+B14 slots=13 code_numbers=333,312 own=28,672 native=372,736 cosK_min=0.9988 cosV_min=1.0000
+B15 slots=14 code_numbers=361,088 own=28,672 native=401,408 cosK_min=0.9988 cosV_min=1.0000
+B16 slots=13 code_numbers=333,312 own=28,672 native=372,736 cosK_min=0.9991 cosV_min=1.0000
+B17 slots=16 code_numbers=416,640 own=28,672 native=458,752 cosK_min=0.9986 cosV_min=1.0000
+B18 slots=17 code_numbers=444,416 own=28,672 native=487,424 cosK_min=0.9985 cosV_min=1.0000
+B19 slots=16 code_numbers=416,640 own=28,672 native=458,752 cosK_min=0.9989 cosV_min=1.0000
+B20 slots=16 code_numbers=416,640 own=28,672 native=458,752 cosK_min=0.9987 cosV_min=1.0000
+B21 slots=16 code_numbers=416,640 own=28,672 native=458,752 cosK_min=0.9986 cosV_min=1.0000
+B22 slots=15 code_numbers=388,864 own=28,672 native=430,080 cosK_min=0.9985 cosV_min=1.0000
+B23 slots=16 code_numbers=416,640 own=28,672 native=458,752 cosK_min=0.9987 cosV_min=1.0000
+B24 slots=15 code_numbers=388,864 own=28,672 native=430,080 cosK_min=0.9987 cosV_min=1.0000
+B25 slots=15 code_numbers=388,864 own=28,672 native=430,080 cosK_min=0.9989 cosV_min=1.0000
+B26 slots=15 code_numbers=388,864 own=28,672 native=430,080 cosK_min=0.9988 cosV_min=1.0000
+B27 slots=17 code_numbers=444,416 own=28,672 native=487,424 cosK_min=0.9987 cosV_min=1.0000
+B28 slots=16 code_numbers=416,640 own=28,672 native=458,752 cosK_min=0.9988 cosV_min=1.0000
+B29 slots=15 code_numbers=388,864 own=28,672 native=430,080 cosK_min=0.9988 cosV_min=1.0000
+B30 slots=16 code_numbers=416,640 own=28,672 native=458,752 cosK_min=0.9989 cosV_min=1.0000
+B31 slots=17 code_numbers=444,416 own=28,672 native=487,424 cosK_min=0.9988 cosV_min=1.0000
+B32 slots=16 code_numbers=416,640 own=28,672 native=458,752 cosK_min=0.9988 cosV_min=1.0000
+
+LIVE RESULTS (this run, re-derived from raw text; intervals are exact Clopper-Pearson 95%)
+--------------------------------------------------------------------------------------------------------------------------------------------
+STAGE1 OBJECT->ID                     : 32/32 · 95% CI [89.11%, 100.00%]
+LINKED TWO-HOP                        : 32/32 · 95% CI [89.11%, 100.00%]
+STAGE1 off-target explicit outputs    : 0/992 · 95% CI [0.00%, 0.37%]
+STAGE2 off-target explicit outputs    : 0/992 · 95% CI [0.00%, 0.37%]
+STAGE1 off-target NONE                : 992/992 · 95% CI [99.63%, 100.00%]
+STAGE2 off-target NONE                : 992/992 · 95% CI [99.63%, 100.00%]
+STAGE1 collisions                     : 0/32 · 95% CI [0.00%, 10.89%]
+STAGE2 collisions                     : 0/32 · 95% CI [0.00%, 10.89%]
+unrelated-object abstention           : 128/128 · 95% CI [97.16%, 100.00%]
+absent-ID abstention                  : 128/128 · 95% CI [97.16%, 100.00%]
+F1: Stage1 8/8 | Linked 8/8
+F2: Stage1 8/8 | Linked 8/8
+F3: Stage1 8/8 | Linked 8/8
+F4: Stage1 8/8 | Linked 8/8
+gold-ID fallbacks used in Stage 2: 0 (TEST482 sealed: 0)
+VERDICT (live replay): PASS_REPLAY_OF_TEST482 | sealed TEST482 verdict: PASS_FINAL_HELDOUT_32_BANK_SEAL | live counts equal sealed counts: True
+
+PER-RECORD DECISIONS
+--------------------------------------------------------------------------------------------------------------------------------------------
+[01] F1 | emerald barometer    expected=KR-214 pred=KR-214 offFP=0 | expected=cedar archive        pred=cedar archive offFP=0 | PASS
+[02] F1 | porcelain compass    expected=DM-763 pred=DM-763 offFP=0 | expected=marble annex         pred=marble annex offFP=0 | PASS
+[03] F1 | violet harmonica     expected=FS-408 pred=FS-408 offFP=0 | expected=amber gallery        pred=amber gallery offFP=0 | PASS
+[04] F1 | bamboo chronometer   expected=JN-951 pred=JN-951 offFP=0 | expected=fern vault           pred=fern vault offFP=0 | PASS
+[05] F1 | obsidian sextant     expected=RW-326 pred=RW-326 offFP=0 | expected=copper archive       pred=copper archive offFP=0 | PASS
+[06] F1 | linen telescope      expected=AE-875 pred=AE-875 offFP=0 | expected=quartz annex         pred=quartz annex offFP=0 | PASS
+[07] F1 | coral metronome      expected=LP-143 pred=LP-143 offFP=0 | expected=ivory gallery        pred=ivory gallery offFP=0 | PASS
+[08] F1 | willow calculator    expected=XM-692 pred=XM-692 offFP=0 | expected=silver vault         pred=silver vault offFP=0 | PASS
+[09] F2 | turquoise monocle    expected=HC-517 pred=HC-517 offFP=0 | expected=indigo lighthouse    pred=indigo lighthouse offFP=0 | PASS
+[10] F2 | mahogany notebook    expected=VK-280 pred=VK-280 offFP=0 | expected=pearl pavilion       pred=pearl pavilion offFP=0 | PASS
+[11] F2 | ceramic astrolabe    expected=SB-934 pred=SB-934 offFP=0 | expected=granite lodge        pred=granite lodge offFP=0 | PASS
+[12] F2 | scarlet blueprint    expected=NT-461 pred=NT-461 offFP=0 | expected=willow gallery       pred=willow gallery offFP=0 | PASS
+[13] F2 | opal kaleidoscope    expected=GY-708 pred=GY-708 offFP=0 | expected=maple tower          pred=maple tower offFP=0 | PASS
+[14] F2 | bronze hourglass     expected=PD-352 pred=PD-352 offFP=0 | expected=coral pavilion       pred=coral pavilion offFP=0 | PASS
+[15] F2 | silk manuscript      expected=ZU-819 pred=ZU-819 offFP=0 | expected=birch lodge          pred=birch lodge offFP=0 | PASS
+[16] F2 | crystal chime        expected=EF-625 pred=EF-625 offFP=0 | expected=onyx gallery         pred=onyx gallery offFP=0 | PASS
+[17] F3 | jade projector       expected=WL-407 pred=WL-407 offFP=0 | expected=hazel chamber        pred=hazel chamber offFP=0 | PASS
+[18] F3 | glass clarinet       expected=CQ-586 pred=CQ-586 offFP=0 | expected=lagoon studio        pred=lagoon studio offFP=0 | PASS
+[19] F3 | canvas diary         expected=MR-172 pred=MR-172 offFP=0 | expected=acorn room           pred=acorn room offFP=0 | PASS
+[20] F3 | iron medallion       expected=UX-943 pred=UX-943 offFP=0 | expected=poplar hall          pred=poplar hall offFP=0 | PASS
+[21] F3 | pearl camera         expected=BH-650 pred=BH-650 offFP=0 | expected=cobalt chamber       pred=cobalt chamber offFP=0 | PASS
+[22] F3 | steel accordion      expected=KO-238 pred=KO-238 offFP=0 | expected=canal studio         pred=canal studio offFP=0 | PASS
+[23] F3 | cotton almanac       expected=YD-714 pred=YD-714 offFP=0 | expected=walnut room          pred=walnut room offFP=0 | PASS
+[24] F3 | onyx brooch          expected=TG-569 pred=TG-569 offFP=0 | expected=elm hall             pred=elm hall offFP=0 | PASS
+[25] F4 | ivory receiver       expected=PS-381 pred=PS-381 offFP=0 | expected=summit workshop      pred=summit workshop offFP=0 | PASS
+[26] F4 | cedar plaque         expected=AL-826 pred=AL-826 offFP=0 | expected=valley depot         pred=valley depot offFP=0 | PASS
+[27] F4 | azure kettle         expected=RF-504 pred=RF-504 offFP=0 | expected=birch observatory    pred=birch observatory offFP=0 | PASS
+[28] F4 | brass caliper        expected=MW-197 pred=MW-197 offFP=0 | expected=shore conservatory   pred=shore conservatory offFP=0 | PASS
+[29] F4 | crystal phonograph   expected=DE-648 pred=DE-648 offFP=0 | expected=forest workshop      pred=forest workshop offFP=0 | PASS
+[30] F4 | maple slate          expected=KI-275 pred=KI-275 offFP=0 | expected=delta depot          pred=delta depot offFP=0 | PASS
+[31] F4 | white lantern        expected=OV-930 pred=OV-930 offFP=0 | expected=clover observatory   pred=clover observatory offFP=0 | PASS
+[32] F4 | golden protractor    expected=XC-412 pred=XC-412 offFP=0 | expected=island conservatory  pred=island conservatory offFP=0 | PASS
+
+SEALED-SCAN CONTROLS (part of TEST482)
+--------------------------------------------------------------------------------------------------------------------------------------------
+OBJECT 'yellow microscope' -> NONE 32/32
+OBJECT 'paper accordion' -> NONE 32/32
+OBJECT 'granite whistle' -> NONE 32/32
+OBJECT 'violet telescope' -> NONE 32/32
+ID 'ZZ-999' -> NONE 32/32
+ID 'AA-000' -> NONE 32/32
+ID 'LM-777' -> NONE 32/32
+ID 'RX-111' -> NONE 32/32
+
+NOMEM CONTROL — DEMO-ONLY / NOT PART OF TEST482 SEALED RESULT
+--------------------------------------------------------------------------------------------------------------------------------------------
+PAD-only cache, same questions. Strict hits: Stage1 0/32 · Stage2 0/32 (must be 0).
+
+FROZEN MODEL
+--------------------------------------------------------------------------------------------------------------------------------------------
+sentinel_startup  : 25c468edb43ef33e775d21be6a689934d4f8ba44362e9ca24d7a6614f45440dc
+sentinel_pre_run  : 25c468edb43ef33e775d21be6a689934d4f8ba44362e9ca24d7a6614f45440dc
+sentinel_after    : 25c468edb43ef33e775d21be6a689934d4f8ba44362e9ca24d7a6614f45440dc
+trainable tensors=0 lora=False optimizer=False training_mode=False hooks 0→56 (foreign: 0→0)
+sampled SHA-256: 7 tensors × 16 slices × 256 values
+
+PRE-SEAL CHECKS
+--------------------------------------------------------------------------------------------------------------------------------------------
+PASS · TEST482 LOCK SHA recomputed = sealed value
+PASS · model = Qwen/Qwen2.5-7B-Instruct
+PASS · architecture 28L / H3584 / 28Q / 4KV / HD128
+PASS · dtype bfloat16
+PASS · attention SDPA
+PASS · K120 / V128
+PASS · model in eval mode
+PASS · trainable parameter tensors = 0
+PASS · no LoRA / PEFT adapter
+PASS · no optimizer object
+PASS · pre-run weight sentinel = startup sentinel
+PASS · pre-run weight fingerprint = startup fingerprint
+PASS · no foreign forward/backward hooks before run
+PASS · codebook = 32 neutral sentences
+PASS · codebook SVD count = layers × 2 × KV heads
+PASS · 64 cartridges forged (32 A + 32 B)
+PASS · 64 independent cartridges (128 distinct tensor storages)
+PASS · cartridge tensors finite
+PASS · OWN first-token K/V identical to the forged source state in every layer of every cartridge
+PASS · weight sentinel and fingerprint unchanged after forging (checked before any readout)
+PASS · no foreign hooks and no trainable tensors after forging
+PASS · weight sentinel after run = startup sentinel
+PASS · weight fingerprint after run = startup fingerprint
+PASS · model eval mode and trainable tensors = 0 after run
+PASS · no LoRA / optimizer after run
+PASS · no foreign forward/backward hooks after run (demo installs none)
+PASS · every sealed-scan read used exactly 32 cartridge rows (A for Stage 1, B for Stage 2)
+PASS · source sentences found in readout prompts = 0
+PASS · results re-derived from raw text are stable
+
+SEALED HISTORICAL RECORD (NOT produced by this run)
+--------------------------------------------------------------------------------------------------------------------------------------------
+{"note": "Historical logs. NOT produced by this run.", "test482": {"log": "482.log", "s1": [32, 32], "linked": [32, 32], "s1_fp": [0, 992], "s2_fp": [0, 992], "s1_none": [992, 992], "s2_none": [992, 992], "s1_coll": [0, 32], "s2_coll": [0, 32], "obj": [128, 128], "idn": [128, 128], "fam": {"F1": [[8, 8], [8, 8]], "F2": [[8, 8], [8, 8]], "F3": [[8, 8], [8, 8]], "F4": [[8, 8], [8, 8]]}, "forge_s": 3.84, "s1_s": 41.29, "s2_s": 39.12, "mean_s": 2.513, "total_s": 160.24, "verdict": "PASS_FINAL_HELDOUT_32_BANK_SEAL", "gpu": "NVIDIA A100-SXM4-40GB", "lock": "3ed21b24d6a9fd823dc60dffdcb3e83dfe7271f057fd694739031c25c41d34ff"}, "chain": [{"t": "477", "role": "DEVELOPMENT", "log": "477.log", "what": "32-record core scaling · Stage-2 readout VERIFY", "s1": [32, 32], "linked": [31, 32], "verdict": "FAIL_SCALE_READOUT_OR_RETRIEVAL", "note": "F3 linked 7/8; only failure: glass trumpet → PL-570 → harbor studio (Stage 1 correct, Stage 2 returned None). Off-target FP 0/992 + 0/992, NONE 992/992 + 992/992, collisions 0/32 + 0/32, unrelated 256/256.", "secs": 149.13}, {"t": "478", "role": "DEVELOPMENT", "log": "478.log", "what": "single-failure isolation (n=1 cartridge) · Stage-2 wording A/B/C", "s1": null, "linked": [1, 1], "verdict": "DIRECT_LOCATION_CAUSAL_CANDIDATE", "note": "A current VERIFY FAIL · B relation VERIFY FAIL · C direct location PASS. One cartridge, one trial: a candidate, not an authorization.", "secs": null}, {"t": "479", "role": "DEVELOPMENT", "log": "479.log", "what": "DIRECT_LOCATION on the full 32-bank", "s1": [32, 32], "linked": [31, 32], "verdict": "FAIL_REMAINING_GOLD_READOUT", "note": "PL-570 repaired; new failure F2 crimson telescope → RQ-415 → saffron lighthouse (raw output began with NONE). Off-target 0/992 + 0/992, NONE 992/992 + 992/992.", "secs": 148.73}, {"t": "480", "role": "DEVELOPMENT", "log": "480.log", "what": "five Stage-2 wordings on four isolated cartridges (n=4)", "s1": null, "linked": null, "verdict": "MULTIPLE_UNIVERSAL_CANDIDATES", "note": "C_COMPACT and D_RECORD strict PASS; A, B, E FAIL.", "secs": 98.23}, {"t": "481", "role": "DEVELOPMENT", "log": "481.log", "what": "C_COMPACT vs D_RECORD on the complete development bank", "s1": [32, 32], "linked": [32, 32], "verdict": "BOTH_UNIVERSAL_READOUTS_PASS_32_BANK", "note": "Both 32/32, off-target FP 0/992, NONE 992/992, collisions 0/32, absent-ID 128/128. C_COMPACT frozen before the held-out test.", "secs": 184.01}, {"t": "482", "role": "HELD-OUT", "log": "482.log", "what": "32 new records · frozen readout · full scan", "s1": [32, 32], "linked": [32, 32], "verdict": "PASS_FINAL_HELDOUT_32_BANK_SEAL", "note": "Same four source templates as development; new objects, IDs and places.", "secs": 160.24}], "test480_candidates": {"cands": [["A_VERIFY", "Does this memory explicitly contain container \"{cid}\"? If yes, answer only its location. If no, answer exactly NONE.", 3, 0, 12, 0, 16, false], ["B_DIRECT", "What location does this memory state for container \"{cid}\"? If no location is stated, answer exactly NONE.", 3, 0, 12, 0, 16, false], ["C_COMPACT", "Container \"{cid}\" location? Answer only the location if stated; otherwise answer NONE.", 4, 0, 12, 0, 16, true], ["D_RECORD", "According to this record, where is container \"{cid}\" located? Answer only the location, or NONE if unknown.", 4, 0, 12, 0, 16, true], ["E_MINIMAL", "Location of container \"{cid}\":", 2, 2, 0, 2, 0, false]]}, "test461_16bank": {"log": "463.log", "linked": [43, 48], "unlinked": [48, 48], "false_link": [0, 48], "fam_min": ["F2", [7, 12]], "verdict": "FAIL_FINAL_HELDOUT"}}
+
+TIMING (seconds)
+--------------------------------------------------------------------------------------------------------------------------------------------
+model_load_seconds  : 51.33
+codebook            : 4.07
+forge               : 8.10
+stage1_scan         : 42.85
+stage2_scan         : 40.69
+controls            : 10.38
+nomem_demo_only     : 67.59
+engine              : 176.11
+batch calls: 136 | sealed-scan row reads: 2304 | NOMEM single-row reads: 64 | core forge passes: 96 | telemetry re-forge passes: 64 | peak GPU memory: 14.92 GiB
+
+Raw generated text for every read is in QWEN32-20261005-192700-0001_FULL_RUN_LOG_payload.json and QWEN32-20261005-192700-0001_RESULTS.jsonl.
+============================================================================================================================================
