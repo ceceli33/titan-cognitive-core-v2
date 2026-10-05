@@ -1,0 +1,93 @@
+ ====================================================================================================================================
+TEST480 — QWEN STAGE2 UNIVERSAL READOUT ISOLATION
+4 ISOLATED STAGE2 CARTRIDGES · F1/F2/F3/F4 · K120/V128/OWN · 5 READOUT CANDIDATES
+====================================================================================================================================
+[1/7] Loading model...
+config.json: 100% 663/663 [00:00<00:00, 80.6kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 911kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+vocab.json: 100% 2.78M/2.78M [00:00<00:00, 42.2MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 71.2MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 108MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.25MB/s]Download complete: :  13.1GB,  159MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  437MB/s  Fetching 4 files: 100% 4/4 [00:38<00:00,  6.88s/it]Loading weights: 100% 339/339 [00:04<00:00, 96.20it/s]generation_config.json: 100% 243/243 [00:00<00:00, 24.1kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | BF16 | frozen
+[2/7] Building original 32-sentence neutral PCA codebook...
+      Codebook ready.
+[3/7] Forging four isolated Stage2 cartridges...
+      [1/4] F1 | AX-731 -> north archive | Container AX-731 is located in the north archive.
+      [2/4] F2 | RQ-415 -> saffron lighthouse | The saffron lighthouse houses container RQ-415.
+      [3/4] F3 | PL-570 -> harbor studio | The location of container PL-570 is the harbor studio.
+      [4/4] F4 | CJ-105 -> cliff workshop | Container CJ-105 can be found at the cliff workshop.
+
+[4/7] GOLD + OFF-TARGET READOUT MATRIX
+
+------------------------------------------------------------------------------------------------------------------------------------
+A_VERIFY
+------------------------------------------------------------------------------------------------------------------------------------
+      F1 AX-731 | expected=north archive      | gold=north archive      | pred=north archive      | offFP=0 | PASS
+      F2 RQ-415 | expected=saffron lighthouse | gold=saffron lighthouse | pred=saffron lighthouse | offFP=0 | PASS
+      F3 PL-570 | expected=harbor studio      | gold=None               | pred=None               | offFP=0 | FAIL
+      F4 CJ-105 | expected=cliff workshop     | gold=cliff workshop     | pred=cliff workshop     | offFP=0 | PASS
+
+------------------------------------------------------------------------------------------------------------------------------------
+B_DIRECT
+------------------------------------------------------------------------------------------------------------------------------------
+      F1 AX-731 | expected=north archive      | gold=north archive      | pred=north archive      | offFP=0 | PASS
+      F2 RQ-415 | expected=saffron lighthouse | gold=None               | pred=None               | offFP=0 | FAIL
+      F3 PL-570 | expected=harbor studio      | gold=harbor studio      | pred=harbor studio      | offFP=0 | PASS
+      F4 CJ-105 | expected=cliff workshop     | gold=cliff workshop     | pred=cliff workshop     | offFP=0 | PASS
+
+------------------------------------------------------------------------------------------------------------------------------------
+C_COMPACT
+------------------------------------------------------------------------------------------------------------------------------------
+      F1 AX-731 | expected=north archive      | gold=north archive      | pred=north archive      | offFP=0 | PASS
+      F2 RQ-415 | expected=saffron lighthouse | gold=saffron lighthouse | pred=saffron lighthouse | offFP=0 | PASS
+      F3 PL-570 | expected=harbor studio      | gold=harbor studio      | pred=harbor studio      | offFP=0 | PASS
+      F4 CJ-105 | expected=cliff workshop     | gold=cliff workshop     | pred=cliff workshop     | offFP=0 | PASS
+
+------------------------------------------------------------------------------------------------------------------------------------
+D_RECORD
+------------------------------------------------------------------------------------------------------------------------------------
+      F1 AX-731 | expected=north archive      | gold=north archive      | pred=north archive      | offFP=0 | PASS
+      F2 RQ-415 | expected=saffron lighthouse | gold=saffron lighthouse | pred=saffron lighthouse | offFP=0 | PASS
+      F3 PL-570 | expected=harbor studio      | gold=harbor studio      | pred=harbor studio      | offFP=0 | PASS
+      F4 CJ-105 | expected=cliff workshop     | gold=cliff workshop     | pred=cliff workshop     | offFP=0 | PASS
+
+------------------------------------------------------------------------------------------------------------------------------------
+E_MINIMAL
+------------------------------------------------------------------------------------------------------------------------------------
+      F1 AX-731 | expected=north archive      | gold=north archive      | pred=None               | offFP=1 | FAIL
+      F2 RQ-415 | expected=saffron lighthouse | gold=saffron lighthouse | pred=saffron lighthouse | offFP=0 | PASS
+      F3 PL-570 | expected=harbor studio      | gold=harbor studio      | pred=harbor studio      | offFP=0 | PASS
+      F4 CJ-105 | expected=cliff workshop     | gold=cliff workshop     | pred=None               | offFP=1 | FAIL
+
+[5/7] ABSENT-ID ABSTENTION
+      A_VERIFY     -> NONE 16/16 | PASS
+      B_DIRECT     -> NONE 16/16 | PASS
+      C_COMPACT    -> NONE 16/16 | PASS
+      D_RECORD     -> NONE 16/16 | PASS
+      E_MINIMAL    -> NONE 0/16 | FAIL
+
+[6/7] CANDIDATE SUMMARY
+      A_VERIFY     | gold=3/4 | offFP=0/12 | offNONE=12/12 | collisions=0/4 | absent=16/16 | FAIL
+      B_DIRECT     | gold=3/4 | offFP=0/12 | offNONE=12/12 | collisions=0/4 | absent=16/16 | FAIL
+      C_COMPACT    | gold=4/4 | offFP=0/12 | offNONE=12/12 | collisions=0/4 | absent=16/16 | STRICT PASS
+      D_RECORD     | gold=4/4 | offFP=0/12 | offNONE=12/12 | collisions=0/4 | absent=16/16 | STRICT PASS
+      E_MINIMAL    | gold=2/4 | offFP=2/12 | offNONE=0/12 | collisions=2/4 | absent=0/16 | FAIL
+
+====================================================================================================================================
+[7/7] TEST480 RESULT
+====================================================================================================================================
+KNOWN BOUNDARIES:
+      F2 RQ-415 -> saffron lighthouse
+      F3 PL-570 -> harbor studio
+CONTROLS:
+      F1 AX-731 -> north archive
+      F4 CJ-105 -> cliff workshop
+------------------------------------------------------------------------------------------------------------------------------------
+STRICT WINNERS: ['C_COMPACT', 'D_RECORD']
+VERDICT: MULTIPLE_UNIVERSAL_CANDIDATES
+------------------------------------------------------------------------------------------------------------------------------------
+Candidate(s) passed both boundary cases, F1/F4 controls, off-target abstention and absent-ID abstention.
+No candidate is authorized as the 32-bank readout until full TEST477-bank regression.
+------------------------------------------------------------------------------------------------------------------------------------
+TOTAL TEST TIME: 98.23s
+ENGINE: Qwen2.5-7B-Instruct · frozen · K120/V128/OWN
+MEMORY MOTOR CHANGES: NONE
+EXPERIMENTAL VARIABLE: Stage2 natural-language readout only
+====================================================================================================================================
