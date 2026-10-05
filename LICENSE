@@ -1,0 +1,73 @@
+AKBASCORE RESEARCH SOFTWARE LICENSE
+
+Copyright © 2026 Mustafa Akbaş
+
+1. LICENSE LINEAGE
+
+Earlier Titan Cognitive Core / AkbasCore software and releases that were published under the MIT License remain governed by the MIT License under which they were originally released. Nothing in this license revokes, restricts, or retroactively modifies permissions previously granted for those releases.
+
+For the licensing history and terms applicable to earlier MIT-licensed material, refer to the main Titan Cognitive Core / AkbasCore repository:
+
+https://github.com/ceceli33/titan-cognitive-core
+
+2. TRANSITION FROM MIT-LICENSED MATERIAL
+
+The licensing transition begins with new original material introduced during the development of the multi-record / scalable AKBASCORE NIRVANA Cognitive Cartridge architecture.
+
+New copyrightable material introduced from that stage forward is not released under the MIT License unless explicitly stated otherwise.
+
+The subsequent AKBASCORE MAM — Model-Native Associative Memory research line continues under the licensing terms stated in this document.
+
+This transition does not change the license of any material previously released under MIT.
+
+3. PERMITTED USE
+
+Research, education, academic study, independent reproduction, evaluation, personal experimentation, modification, adaptation, forking, and creation of derivative works based on covered material are permitted.
+
+Commercial use is also permitted without a separate commercial license where the user, company, organization, together with its controlling, controlled, and commonly controlled affiliates, has combined consolidated annual gross revenue of less than USD 50,000,000 during its most recently completed fiscal year.
+
+Individual developers and independent commercial developers operating below this threshold are included within this permission.
+
+4. COMMERCIAL USE AT OR ABOVE USD 50,000,000
+
+Where combined consolidated annual gross revenue is USD 50,000,000 or more, commercial use of covered material requires a separate commercial license from the copyright holder.
+
+The USD 50,000,000 threshold refers to annual gross revenue, not company valuation, investment raised, market capitalization, assets under management, or other measures of company value.
+
+5. MODIFICATIONS AND DERIVATIVE WORKS
+
+Modification, adaptation, forking, experimentation, and creation of derivative works are permitted under the same terms stated in this license.
+
+No separate permission from the copyright holder is required where the applicable use remains within these terms.
+
+Covered modifications and derivative works remain subject to the same commercial revenue threshold when exercising rights granted under this license.
+
+6. LICENSE BOUNDARY
+
+This license applies only to copyrightable material for which the copyright holder owns the applicable rights and which is released under these terms.
+
+It does not retroactively restrict earlier MIT-licensed Titan Cognitive Core / AkbasCore material.
+
+Nothing in this license, by itself, creates exclusive rights over ideas, scientific principles, algorithms, methods, systems, mathematical concepts, or independently developed implementations where such rights do not otherwise exist under applicable law.
+
+Third-party models, libraries, frameworks, datasets, and dependencies remain governed by their respective licenses.
+
+7. EXPERIMENTAL SOFTWARE
+
+AKBASCORE NIRVANA and AKBASCORE MAM are experimental research software.
+
+The software and associated material are provided "AS IS", without warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, and non-infringement.
+
+To the maximum extent permitted by applicable law, the copyright holder shall not be liable for any claim, damages, or other liability arising from the software or its use.
+
+8. COMMERCIAL LICENSING
+
+Commercial licensing inquiries:
+
+Mustafa Akbaş
+via the official Titan Cognitive Core / AkbasCore repository.
+
+AKBASCORE Research Line
+Titan Cognitive Core → AkbasCore → SEASC → NIRVANA → MAM
+
+Copyright © 2026 Mustafa Akbaş
