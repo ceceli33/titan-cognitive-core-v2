@@ -1,0 +1,283 @@
+ 
+======================================================================================================================================================
+TEST485 — AKBASCORE MAM · SEMANTIC ADDRESS SIGNAL UNDER LEXICAL DECOUPLING
+32 FROZEN NIRVANA CARTRIDGES · TEST484 CONFIG LOCKED · LITERAL OBJECT NAMES REMOVED
+======================================================================================================================================================
+LOCK SHA: 2c10c31e5a15b04c0c003a9eff31e6fd02efcd3ad519e8c1e6e84aa078aa258a
+[1/7] Loading frozen Qwen...
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 82.0kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 885kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 65.6MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 65.5MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 120MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.24MB/s]
+Download complete: 
+
+ 13.1GB,  311MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  436MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:43<00:00, 43.46s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 101.01it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 32.7kB/s]
+      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | BF16 | frozen
+[2/7] Building exact frozen TEST482 PCA codebook...
+      Codebook ready.
+[3/7] Forging frozen cartridge-side address states...
+      [01/32] emerald barometer
+      [02/32] porcelain compass
+      [03/32] violet harmonica
+      [04/32] bamboo chronometer
+      [05/32] obsidian sextant
+      [06/32] linen telescope
+      [07/32] coral metronome
+      [08/32] willow calculator
+      [09/32] turquoise monocle
+      [10/32] mahogany notebook
+      [11/32] ceramic astrolabe
+      [12/32] scarlet blueprint
+      [13/32] opal kaleidoscope
+      [14/32] bronze hourglass
+      [15/32] silk manuscript
+      [16/32] crystal chime
+      [17/32] jade projector
+      [18/32] glass clarinet
+      [19/32] canvas diary
+      [20/32] iron medallion
+      [21/32] pearl camera
+      [22/32] steel accordion
+      [23/32] cotton almanac
+      [24/32] onyx brooch
+      [25/32] ivory receiver
+      [26/32] cedar plaque
+      [27/32] azure kettle
+      [28/32] brass caliper
+      [29/32] crystal phonograph
+      [30/32] maple slate
+      [31/32] white lantern
+      [32/32] golden protractor
+[4/7] Encoding lexical-decoupled semantic queries...
+[5/7] Running PRE-LOCKED semantic address tests...
+
+      PRIMARY · HMEAN L03 CENTER_COS
+        [00] rank= 4 margin=-0.026680 | emerald barometer
+        [01] rank= 1 margin=+0.030896 | porcelain compass
+        [02] rank=15 margin=-0.144432 | violet harmonica
+        [03] rank= 2 margin=-0.031800 | bamboo chronometer
+        [04] rank= 7 margin=-0.036367 | obsidian sextant
+        [05] rank= 3 margin=-0.044395 | linen telescope
+        [06] rank=14 margin=-0.096348 | coral metronome
+        [07] rank= 3 margin=-0.034903 | willow calculator
+        [08] rank= 7 margin=-0.053832 | turquoise monocle
+        [09] rank=22 margin=-0.167100 | mahogany notebook
+        [10] rank=22 margin=-0.192871 | ceramic astrolabe
+        [11] rank= 3 margin=-0.015918 | scarlet blueprint
+        [12] rank=19 margin=-0.117810 | opal kaleidoscope
+        [13] rank=26 margin=-0.202252 | bronze hourglass
+        [14] rank=27 margin=-0.262838 | silk manuscript
+        [15] rank=21 margin=-0.151199 | crystal chime
+        [16] rank= 1 margin=+0.009898 | jade projector
+        [17] rank= 5 margin=-0.020085 | glass clarinet
+        [18] rank= 1 margin=+0.084455 | canvas diary
+        [19] rank= 3 margin=-0.007006 | iron medallion
+        [20] rank= 1 margin=+0.000218 | pearl camera
+        [21] rank= 6 margin=-0.050822 | steel accordion
+        [22] rank= 3 margin=-0.055396 | cotton almanac
+        [23] rank= 7 margin=-0.052924 | onyx brooch
+        [24] rank=13 margin=-0.102277 | ivory receiver
+        [25] rank=23 margin=-0.173187 | cedar plaque
+        [26] rank=18 margin=-0.131031 | azure kettle
+        [27] rank=10 margin=-0.092149 | brass caliper
+        [28] rank=14 margin=-0.102033 | crystal phonograph
+        [29] rank=19 margin=-0.163668 | maple slate
+        [30] rank=22 margin=-0.175894 | white lantern
+        [31] rank=20 margin=-0.173308 | golden protractor
+
+      SECONDARY · HMEAN L03 L2
+        [00] rank= 6 margin=-6.416962 | emerald barometer
+        [01] rank= 1 margin=+4.365280 | porcelain compass
+        [02] rank=14 margin=-13.710915 | violet harmonica
+        [03] rank= 6 margin=-10.787468 | bamboo chronometer
+        [04] rank= 9 margin=-8.777237 | obsidian sextant
+        [05] rank= 5 margin=-7.516029 | linen telescope
+        [06] rank=13 margin=-8.421936 | coral metronome
+        [07] rank= 2 margin=-4.713066 | willow calculator
+        [08] rank=18 margin=-12.411545 | turquoise monocle
+        [09] rank=27 margin=-30.679832 | mahogany notebook
+        [10] rank=28 margin=-29.084312 | ceramic astrolabe
+        [11] rank=28 margin=-23.498695 | scarlet blueprint
+        [12] rank=23 margin=-21.174454 | opal kaleidoscope
+        [13] rank=25 margin=-24.479965 | bronze hourglass
+        [14] rank=27 margin=-29.576591 | silk manuscript
+        [15] rank=23 margin=-23.041359 | crystal chime
+        [16] rank= 4 margin=-3.790367 | jade projector
+        [17] rank= 6 margin=-4.102562 | glass clarinet
+        [18] rank= 1 margin=+3.239998 | canvas diary
+        [19] rank=13 margin=-10.068542 | iron medallion
+        [20] rank= 2 margin=-0.154121 | pearl camera
+        [21] rank= 5 margin=-2.676270 | steel accordion
+        [22] rank=17 margin=-11.508316 | cotton almanac
+        [23] rank= 5 margin=-7.087837 | onyx brooch
+        [24] rank= 8 margin=-11.112602 | ivory receiver
+        [25] rank=23 margin=-23.467766 | cedar plaque
+        [26] rank=21 margin=-15.417145 | azure kettle
+        [27] rank= 8 margin=-11.971123 | brass caliper
+        [28] rank=13 margin=-13.947968 | crystal phonograph
+        [29] rank=21 margin=-20.522766 | maple slate
+        [30] rank=17 margin=-13.813286 | white lantern
+        [31] rank=19 margin=-17.260132 | golden protractor
+
+      DIAGNOSTIC · QK_NATIVE L03 COS
+        [00] rank=16 margin=-0.002638 | emerald barometer
+        [01] rank= 9 margin=-0.002018 | porcelain compass
+        [02] rank=23 margin=-0.003019 | violet harmonica
+        [03] rank=28 margin=-0.004623 | bamboo chronometer
+        [04] rank=23 margin=-0.002825 | obsidian sextant
+        [05] rank= 8 margin=-0.001903 | linen telescope
+        [06] rank=24 margin=-0.002962 | coral metronome
+        [07] rank= 5 margin=-0.000971 | willow calculator
+        [08] rank=14 margin=-0.002020 | turquoise monocle
+        [09] rank= 9 margin=-0.001853 | mahogany notebook
+        [10] rank=20 margin=-0.003019 | ceramic astrolabe
+        [11] rank= 6 margin=-0.001504 | scarlet blueprint
+        [12] rank=30 margin=-0.005254 | opal kaleidoscope
+        [13] rank=10 margin=-0.001952 | bronze hourglass
+        [14] rank= 7 margin=-0.001653 | silk manuscript
+        [15] rank=14 margin=-0.002106 | crystal chime
+        [16] rank=15 margin=-0.002388 | jade projector
+        [17] rank=32 margin=-0.005610 | glass clarinet
+        [18] rank=20 margin=-0.002649 | canvas diary
+        [19] rank=29 margin=-0.004598 | iron medallion
+        [20] rank=12 margin=-0.002085 | pearl camera
+        [21] rank=27 margin=-0.004353 | steel accordion
+        [22] rank=32 margin=-0.005440 | cotton almanac
+        [23] rank=26 margin=-0.003726 | onyx brooch
+        [24] rank= 1 margin=+0.000600 | ivory receiver
+        [25] rank= 5 margin=-0.000798 | cedar plaque
+        [26] rank= 2 margin=-0.000413 | azure kettle
+        [27] rank=13 margin=-0.001960 | brass caliper
+        [28] rank=25 margin=-0.003197 | crystal phonograph
+        [29] rank= 6 margin=-0.001574 | maple slate
+        [30] rank= 3 margin=-0.000393 | white lantern
+        [31] rank=16 margin=-0.002244 | golden protractor
+
+[6/7] Lexical and permutation controls...
+      [00] lexical rank= 9 gold=0.1111 margin=-0.0139 | emerald barometer
+      [01] lexical rank= 3 gold=0.1176 margin=-0.0157 | porcelain compass
+      [02] lexical rank= 3 gold=0.1364 margin=+0.0000 | violet harmonica
+      [03] lexical rank= 1 gold=0.1765 margin=+0.0515 | bamboo chronometer
+      [04] lexical rank=13 gold=0.1000 margin=-0.0111 | obsidian sextant
+      [05] lexical rank= 6 gold=0.1053 margin=+0.0000 | linen telescope
+      [06] lexical rank= 7 gold=0.1364 margin=+0.0000 | coral metronome
+      [07] lexical rank=16 gold=0.1111 margin=-0.0139 | willow calculator
+      [08] lexical rank= 1 gold=0.1333 margin=+0.0000 | turquoise monocle
+      [09] lexical rank=10 gold=0.0588 margin=-0.0523 | mahogany notebook
+      [10] lexical rank=19 gold=0.1000 margin=-0.0429 | ceramic astrolabe
+      [11] lexical rank= 4 gold=0.1429 margin=+0.0000 | scarlet blueprint
+      [12] lexical rank= 5 gold=0.1111 margin=+0.0000 | opal kaleidoscope
+      [13] lexical rank=15 gold=0.0500 margin=-0.1000 | bronze hourglass
+      [14] lexical rank=23 gold=0.1111 margin=-0.0468 | silk manuscript
+      [15] lexical rank= 8 gold=0.1111 margin=+0.0000 | crystal chime
+      [16] lexical rank=25 gold=0.0909 margin=-0.0144 | jade projector
+      [17] lexical rank=26 gold=0.0476 margin=-0.0576 | glass clarinet
+      [18] lexical rank=11 gold=0.1304 margin=-0.0059 | canvas diary
+      [19] lexical rank=28 gold=0.0909 margin=-0.0144 | iron medallion
+      [20] lexical rank=29 gold=0.1000 margin=-0.0176 | pearl camera
+      [21] lexical rank=30 gold=0.0455 margin=-0.0545 | steel accordion
+      [22] lexical rank=15 gold=0.1304 margin=-0.0059 | cotton almanac
+      [23] lexical rank=32 gold=0.1176 margin=-0.0252 | onyx brooch
+      [24] lexical rank=17 gold=0.1053 margin=-0.0124 | ivory receiver
+      [25] lexical rank=18 gold=0.0556 margin=-0.0621 | cedar plaque
+      [26] lexical rank=27 gold=0.1000 margin=-0.0579 | azure kettle
+      [27] lexical rank=20 gold=0.1000 margin=-0.0111 | brass caliper
+      [28] lexical rank=21 gold=0.1111 margin=-0.0139 | crystal phonograph
+      [29] lexical rank=22 gold=0.0556 margin=-0.0621 | maple slate
+      [30] lexical rank=31 gold=0.1000 margin=-0.0579 | white lantern
+      [31] lexical rank=24 gold=0.0952 margin=-0.0100 | golden protractor
+
+      Same-record residual lexical overlaps:
+        [00] []
+        [01] []
+        [02] []
+        [03] ['bamboo']
+        [04] []
+        [05] []
+        [06] []
+        [07] []
+        [08] []
+        [09] []
+        [10] []
+        [11] []
+        [12] []
+        [13] []
+        [14] []
+        [15] []
+        [16] []
+        [17] []
+        [18] []
+        [19] []
+        [20] []
+        [21] []
+        [22] []
+        [23] []
+        [24] []
+        [25] []
+        [26] []
+        [27] []
+        [28] []
+        [29] []
+        [30] []
+        [31] []
+[7/7] Final falsification verdict...
+
+======================================================================================================================================================
+TEST485 FINAL RESULT — AKBASCORE MAM
+======================================================================================================================================================
+FOUNDATION             : TEST482 QWEN K120/V128/OWN
+TEST482 BLOB SHA       : ecc630144a44479cb35c432c50eb0d09bc6866d7
+TEST484 DISCOVERY LOCK : HMEAN L03 CENTER_COS
+CARTRIDGES / QUERIES   : 32 / 32
+LITERAL OBJECT NAMES   : REMOVED FROM QUERIES
+CONFIG SEARCH          : NONE
+LOCK SHA               : 2c10c31e5a15b04c0c003a9eff31e6fd02efcd3ad519e8c1e6e84aa078aa258a
+------------------------------------------------------------------------------------------------------------------------------------------------------
+PRIMARY                 : {'NAME': 'PRIMARY · HMEAN L03 CENTER_COS', 'R1': 0.125, 'R5': 0.375, 'R16': 0.65625, 'MRR': 0.2535040588172739, 'MEDR': 8.5, 'MED_MARGIN': -0.0737721137702465, 'P05_MARGIN': -0.19709257036447525, 'MED_Z': 0.6616443013532243}
+SECONDARY               : {'NAME': 'SECONDARY · HMEAN L03 L2', 'R1': 0.0625, 'R5': 0.25, 'R16': 0.5625, 'MRR': 0.1765724571870251, 'MEDR': 13.0, 'MED_MARGIN': -11.73971939086914, 'P05_MARGIN': -29.30583801269531, 'MED_Z': 0.47177592799709933}
+QK_NATIVE               : {'NAME': 'DIAGNOSTIC · QK_NATIVE L03 COS', 'R1': 0.03125, 'R5': 0.15625, 'R16': 0.59375, 'MRR': 0.13005244978434166, 'MEDR': 14.5, 'MED_MARGIN': -0.00217515230178833, 'P05_MARGIN': -0.0053376354277133945, 'MED_Z': 0.23972412941744103}
+LEXICAL CONTROL         : {'NAME': 'LEXICAL_JACCARD', 'R1': 0.0625, 'R5': 0.1875, 'R16': 0.5, 'MRR': 0.15011666533358176, 'MEDR': 16.5, 'MED_GOLD': 0.10526315789473684, 'MED_MARGIN': -0.013888888888888895}
+PERMUTATION NULL        : {'NAME': 'PERMUTATION_NULL', 'R1': 0.0625, 'R5': 0.15625, 'R16': 0.46875, 'MRR': 0.1341658868756414, 'MEDR': 18.0}
+------------------------------------------------------------------------------------------------------------------------------------------------------
+VERDICT                 : WEAK_SIGNAL_ABOVE_NULL_BUT_NOT_SEMANTICALLY_SEALED
+INTERPRETATION          : semantic-decoupling falsification only; no scale or sublinear-retrieval claim.
+CARTRIDGE LM READOUT    : NOT USED
+ROUTER / ANN / GRAPH    : NONE
+TRAINING / LoRA         : NONE
+MODEL WEIGHT CHANGE     : NONE
+NIRVANA MOTOR CHANGE    : NONE
+POST-HOC CONFIG TUNING  : NONE
+TOTAL TEST TIME         : 62.54s
+
+
+======================================================================================================================================================
