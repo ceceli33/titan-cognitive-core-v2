@@ -1,0 +1,156 @@
+ =================================================================================================================================================
+TEST486 — AKBASCORE MAM · SEMANTIC DISTANCE CURVE
+32 CARTRIDGES · HMEAN L03 CENTER_COS FROZEN · EXACT -> PARAPHRASE -> NAMELESS
+=================================================================================================================================================
+LOCK SHA: b3cc018b8120ea9de818ed690b7c68d91fad47ded7168ff7495af42f014fdeb9
+[1/5] Loading frozen Qwen...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 83.3kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 894kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 46.6MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 73.5MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 131MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.45MB/s]Download complete:  13.1GB,  362MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  354MB/s  Fetching 4 files: 100% 4/4 [00:42<00:00, 42.96s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.35it/s]generation_config.json: 100% 243/243 [00:00<00:00, 30.7kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | frozen BF16
+[2/5] Encoding frozen cartridge addresses...
+[3/5] Running locked EXACT -> PARAPHRASE -> NAMELESS curve...
+
+      EXACT
+      [00] rank= 1 margin=+0.34067 | emerald barometer
+      [01] rank= 1 margin=+0.22015 | porcelain compass
+      [02] rank= 1 margin=+0.31390 | violet harmonica
+      [03] rank= 1 margin=+0.30204 | bamboo chronometer
+      [04] rank= 1 margin=+0.44266 | obsidian sextant
+      [05] rank= 1 margin=+0.25730 | linen telescope
+      [06] rank= 1 margin=+0.36880 | coral metronome
+      [07] rank= 1 margin=+0.31179 | willow calculator
+      [08] rank= 1 margin=+0.34029 | turquoise monocle
+      [09] rank= 1 margin=+0.38155 | mahogany notebook
+      [10] rank= 1 margin=+0.46723 | ceramic astrolabe
+      [11] rank= 1 margin=+0.52808 | scarlet blueprint
+      [12] rank= 1 margin=+0.42516 | opal kaleidoscope
+      [13] rank= 1 margin=+0.24603 | bronze hourglass
+      [14] rank= 1 margin=+0.09743 | silk manuscript
+      [15] rank= 1 margin=+0.30743 | crystal chime
+      [16] rank= 1 margin=+0.24317 | jade projector
+      [17] rank= 1 margin=+0.38542 | glass clarinet
+      [18] rank= 1 margin=+0.29729 | canvas diary
+      [19] rank= 1 margin=+0.58476 | iron medallion
+      [20] rank= 1 margin=+0.19850 | pearl camera
+      [21] rank= 1 margin=+0.18097 | steel accordion
+      [22] rank= 1 margin=+0.47340 | cotton almanac
+      [23] rank= 1 margin=+0.41627 | onyx brooch
+      [24] rank= 1 margin=+0.20510 | ivory receiver
+      [25] rank= 1 margin=+0.19926 | cedar plaque
+      [26] rank= 1 margin=+0.27501 | azure kettle
+      [27] rank= 1 margin=+0.30630 | brass caliper
+      [28] rank= 1 margin=+0.29988 | crystal phonograph
+      [29] rank= 1 margin=+0.23695 | maple slate
+      [30] rank= 1 margin=+0.12994 | white lantern
+      [31] rank= 1 margin=+0.36932 | golden protractor
+      => {'R1': 1.0, 'R5': 1.0, 'R16': 1.0, 'MRR': 1.0, 'MEDR': 1.0, 'MEANR': 1.0, 'MED_MARGIN': 0.3068655729293823, 'MED_Z': 10.996485181027843}
+
+      PARAPHRASE
+      [00] rank= 1 margin=+0.09763 | emerald barometer
+      [01] rank= 1 margin=+0.06845 | porcelain compass
+      [02] rank= 1 margin=+0.15696 | violet harmonica
+      [03] rank= 1 margin=+0.25383 | bamboo chronometer
+      [04] rank= 1 margin=+0.19224 | obsidian sextant
+      [05] rank= 2 margin=-0.03828 | linen telescope
+      [06] rank= 1 margin=+0.15212 | coral metronome
+      [07] rank= 1 margin=+0.06336 | willow calculator
+      [08] rank= 1 margin=+0.15910 | turquoise monocle
+      [09] rank= 2 margin=-0.03039 | mahogany notebook
+      [10] rank= 1 margin=+0.28881 | ceramic astrolabe
+      [11] rank= 1 margin=+0.11613 | scarlet blueprint
+      [12] rank= 1 margin=+0.10317 | opal kaleidoscope
+      [13] rank= 1 margin=+0.04001 | bronze hourglass
+      [14] rank=14 margin=-0.08173 | silk manuscript
+      [15] rank= 1 margin=+0.12864 | crystal chime
+      [16] rank= 1 margin=+0.09214 | jade projector
+      [17] rank= 1 margin=+0.24842 | glass clarinet
+      [18] rank= 1 margin=+0.10341 | canvas diary
+      [19] rank= 1 margin=+0.45511 | iron medallion
+      [20] rank= 1 margin=+0.07034 | pearl camera
+      [21] rank= 1 margin=+0.03974 | steel accordion
+      [22] rank= 1 margin=+0.38433 | cotton almanac
+      [23] rank= 1 margin=+0.12496 | onyx brooch
+      [24] rank= 1 margin=+0.07402 | ivory receiver
+      [25] rank= 7 margin=-0.07926 | cedar plaque
+      [26] rank= 8 margin=-0.04223 | azure kettle
+      [27] rank= 1 margin=+0.10043 | brass caliper
+      [28] rank= 1 margin=+0.14792 | crystal phonograph
+      [29] rank= 1 margin=+0.05430 | maple slate
+      [30] rank= 4 margin=-0.04198 | white lantern
+      [31] rank= 1 margin=+0.10527 | golden protractor
+      => {'R1': 0.8125, 'R5': 0.90625, 'R16': 1.0, 'MRR': 0.8621651785714286, 'MEDR': 1.0, 'MEANR': 1.96875, 'MED_MARGIN': 0.10179857164621353, 'MED_Z': 4.09269773880726}
+
+      NAMELESS
+      [00] rank= 4 margin=-0.02668 | emerald barometer
+      [01] rank= 1 margin=+0.07007 | porcelain compass
+      [02] rank= 9 margin=-0.09262 | violet harmonica
+      [03] rank= 2 margin=-0.01650 | bamboo chronometer
+      [04] rank= 7 margin=-0.03637 | obsidian sextant
+      [05] rank= 6 margin=-0.07516 | linen telescope
+      [06] rank=14 margin=-0.07329 | coral metronome
+      [07] rank= 2 margin=-0.02837 | willow calculator
+      [08] rank= 7 margin=-0.05383 | turquoise monocle
+      [09] rank=14 margin=-0.08659 | mahogany notebook
+      [10] rank=14 margin=-0.15395 | ceramic astrolabe
+      [11] rank= 4 margin=-0.02756 | scarlet blueprint
+      [12] rank=19 margin=-0.11781 | opal kaleidoscope
+      [13] rank=19 margin=-0.14802 | bronze hourglass
+      [14] rank=23 margin=-0.14405 | silk manuscript
+      [15] rank=25 margin=-0.19166 | crystal chime
+      [16] rank= 1 margin=+0.00990 | jade projector
+      [17] rank= 1 margin=+0.00931 | glass clarinet
+      [18] rank= 1 margin=+0.02411 | canvas diary
+      [19] rank= 1 margin=+0.00376 | iron medallion
+      [20] rank= 1 margin=+0.00022 | pearl camera
+      [21] rank= 3 margin=-0.02409 | steel accordion
+      [22] rank=10 margin=-0.05115 | cotton almanac
+      [23] rank= 6 margin=-0.06012 | onyx brooch
+      [24] rank=13 margin=-0.10228 | ivory receiver
+      [25] rank=30 margin=-0.19591 | cedar plaque
+      [26] rank=26 margin=-0.12769 | azure kettle
+      [27] rank= 8 margin=-0.07802 | brass caliper
+      [28] rank=14 margin=-0.10203 | crystal phonograph
+      [29] rank=23 margin=-0.16230 | maple slate
+      [30] rank=24 margin=-0.16775 | white lantern
+      [31] rank=18 margin=-0.14996 | golden protractor
+      => {'R1': 0.1875, 'R5': 0.34375, 'R16': 0.71875, 'MRR': 0.2985114437431371, 'MEDR': 8.5, 'MEANR': 10.9375, 'MED_MARGIN': -0.07422665506601334, 'MED_Z': 0.7889198873774199}
+
+[4/5] Lexical controls...
+      EXACT     : {'R1': 1.0, 'R5': 1.0, 'R16': 1.0, 'MRR': 1.0, 'MEDR': 1.0, 'MEANR': 1.0}
+      PARAPHRASE: {'R1': 0.96875, 'R5': 1.0, 'R16': 1.0, 'MRR': 0.984375, 'MEDR': 1.0, 'MEANR': 1.03125}
+      NAMELESS  : {'R1': 0.0625, 'R5': 0.1875, 'R16': 0.5, 'MRR': 0.1523488081907246, 'MEDR': 16.5, 'MEANR': 16.4375}
+      NULL EXACT     : {'R1': 0.0, 'R5': 0.15625, 'R16': 0.53125, 'MRR': 0.09638554583111035, 'MEDR': 16.0, 'MEANR': 15.78125}
+      NULL PARAPHRASE: {'R1': 0.03125, 'R5': 0.09375, 'R16': 0.625, 'MRR': 0.1230990850965899, 'MEDR': 14.5, 'MEANR': 15.125}
+      NULL NAMELESS  : {'R1': 0.03125, 'R5': 0.15625, 'R16': 0.5, 'MRR': 0.1158264043584104, 'MEDR': 18.0, 'MEANR': 17.5}
+
+[5/5] Distance-curve diagnostics...
+
+=================================================================================================================================================
+TEST486 FINAL RESULT — AKBASCORE MAM
+=================================================================================================================================================
+FOUNDATION          : TEST482 QWEN
+TEST482 BLOB SHA    : ecc630144a44479cb35c432c50eb0d09bc6866d7
+ADDRESS LOCK        : HMEAN · L03 · CENTER_COS
+CONFIG SEARCH       : NONE
+CARTRIDGES          : 32
+LOCK SHA            : b3cc018b8120ea9de818ed690b7c68d91fad47ded7168ff7495af42f014fdeb9
+-------------------------------------------------------------------------------------------------------------------------------------------------
+EXACT               : {'R1': 1.0, 'R5': 1.0, 'R16': 1.0, 'MRR': 1.0, 'MEDR': 1.0, 'MEANR': 1.0, 'MED_MARGIN': 0.3068655729293823, 'MED_Z': 10.996485181027843}
+PARAPHRASE          : {'R1': 0.8125, 'R5': 0.90625, 'R16': 1.0, 'MRR': 0.8621651785714286, 'MEDR': 1.0, 'MEANR': 1.96875, 'MED_MARGIN': 0.10179857164621353, 'MED_Z': 4.09269773880726}
+NAMELESS            : {'R1': 0.1875, 'R5': 0.34375, 'R16': 0.71875, 'MRR': 0.2985114437431371, 'MEDR': 8.5, 'MEANR': 10.9375, 'MED_MARGIN': -0.07422665506601334, 'MED_Z': 0.7889198873774199}
+LEX EXACT           : {'R1': 1.0, 'R5': 1.0, 'R16': 1.0, 'MRR': 1.0, 'MEDR': 1.0, 'MEANR': 1.0}
+LEX PARAPHRASE      : {'R1': 0.96875, 'R5': 1.0, 'R16': 1.0, 'MRR': 0.984375, 'MEDR': 1.0, 'MEANR': 1.03125}
+LEX NAMELESS        : {'R1': 0.0625, 'R5': 0.1875, 'R16': 0.5, 'MRR': 0.1523488081907246, 'MEDR': 16.5, 'MEANR': 16.4375}
+NULL PARAPHRASE     : {'R1': 0.03125, 'R5': 0.09375, 'R16': 0.625, 'MRR': 0.1230990850965899, 'MEDR': 14.5, 'MEANR': 15.125}
+MRR DROP E->P       : +0.137835
+MRR DROP P->N       : +0.563654
+-------------------------------------------------------------------------------------------------------------------------------------------------
+VERDICT             : WEAK_PARAPHRASE_SIGNAL_ABOVE_NULL
+INTERPRETATION      : fixed semantic-distance curve only; no scaling/sublinear-retrieval claim.
+CARTRIDGE READOUT   : NOT USED
+ROUTER / ANN        : NONE
+TRAINING / LoRA     : NONE
+MODEL CHANGE        : NONE
+POST-HOC TUNING     : NONE
+TOTAL TIME          : 60.56s
+=================================================================================================================================================
