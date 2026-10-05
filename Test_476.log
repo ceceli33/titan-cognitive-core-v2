@@ -1,0 +1,276 @@
+ 
+==========================================================================================================================
+TEST476 — QWEN FINAL 16-QUESTION PANEL · MW2 VERIFY FIX
+K120/V128/OWN · ENGINE UNCHANGED · ONLY TEST475-VALIDATED STAGE2 READOUT CHANGE
+==========================================================================================================================
+[1/7] Loading model...
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 75.6kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 892kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 32.5MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 76.3MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 119MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.55MB/s]
+Download complete: : 
+
+ 13.1GB,  560MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  352MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:40<00:00,  7.43s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 99.76it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 31.4kB/s]
+      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | BF16 | frozen
+[2/7] Building original 32-sentence neutral PCA codebook...
+      Codebook ready.
+[3/7] Forging 32 independent source cartridges...
+      [01/16] F1 | amber compass -> AX-731 -> north archive
+      [02/16] F1 | silver lantern -> KM-204 -> river annex
+      [03/16] F1 | copper violin -> QP-583 -> stone gallery
+      [04/16] F1 | marble clock -> HV-619 -> garden vault
+      [05/16] F2 | crimson telescope -> RQ-415 -> saffron lighthouse
+      [06/16] F2 | ivory notebook -> BT-962 -> slate pavilion
+      [07/16] F2 | bronze astrolabe -> MC-916 -> elm lodge
+      [08/16] F2 | velvet map -> ZX-247 -> cedar gallery
+      [09/16] F3 | jade camera -> DN-348 -> willow chamber
+      [10/16] F3 | glass trumpet -> PL-570 -> harbor studio
+      [11/16] F3 | linen journal -> GF-821 -> orchard room
+      [12/16] F3 | iron pendant -> WS-436 -> maple hall
+      [13/16] F4 | pearl radio -> CJ-105 -> cliff workshop
+      [14/16] F4 | oak tablet -> YU-674 -> meadow depot
+      [15/16] F4 | blue teapot -> ER-293 -> pine observatory
+      [16/16] F4 | golden ruler -> NV-852 -> lake conservatory
+
+[4/7] Stage1 — OBJECT -> ID
+      [01] F1 | amber compass        | expected=AX-731 | pred=AX-731 | PASS
+      [02] F1 | silver lantern       | expected=KM-204 | pred=KM-204 | PASS
+      [03] F1 | copper violin        | expected=QP-583 | pred=QP-583 | PASS
+      [04] F1 | marble clock         | expected=HV-619 | pred=HV-619 | PASS
+      [05] F2 | crimson telescope    | expected=RQ-415 | pred=RQ-415 | PASS
+      [06] F2 | ivory notebook       | expected=BT-962 | pred=BT-962 | PASS
+      [07] F2 | bronze astrolabe     | expected=MC-916 | pred=MC-916 | PASS
+      [08] F2 | velvet map           | expected=ZX-247 | pred=ZX-247 | PASS
+      [09] F3 | jade camera          | expected=DN-348 | pred=DN-348 | PASS
+      [10] F3 | glass trumpet        | expected=PL-570 | pred=PL-570 | PASS
+      [11] F3 | linen journal        | expected=GF-821 | pred=GF-821 | PASS
+      [12] F3 | iron pendant         | expected=WS-436 | pred=WS-436 | PASS
+      [13] F4 | pearl radio          | expected=CJ-105 | pred=CJ-105 | PASS
+      [14] F4 | oak tablet           | expected=YU-674 | pred=YU-674 | PASS
+      [15] F4 | blue teapot          | expected=ER-293 | pred=ER-293 | PASS
+      [16] F4 | golden ruler         | expected=NV-852 | pred=NV-852 | PASS
+
+[5/7] Stage2 — ID -> PLACE · TEST475 VERIFY
+      [01] F1 | AX-731 | expected=north archive        | pred=None                 | FAIL
+      [02] F1 | KM-204 | expected=river annex          | pred=None                 | FAIL
+      [03] F1 | QP-583 | expected=stone gallery        | pred=None                 | FAIL
+      [04] F1 | HV-619 | expected=garden vault         | pred=None                 | FAIL
+      [05] F2 | RQ-415 | expected=saffron lighthouse   | pred=None                 | FAIL
+      [06] F2 | BT-962 | expected=slate pavilion       | pred=None                 | FAIL
+      [07] F2 | MC-916 | expected=elm lodge            | pred=None                 | FAIL
+      [08] F2 | ZX-247 | expected=cedar gallery        | pred=None                 | FAIL
+      [09] F3 | DN-348 | expected=willow chamber       | pred=None                 | FAIL
+      [10] F3 | PL-570 | expected=harbor studio        | pred=None                 | FAIL
+      [11] F3 | GF-821 | expected=orchard room         | pred=None                 | FAIL
+      [12] F3 | WS-436 | expected=maple hall           | pred=None                 | FAIL
+      [13] F4 | CJ-105 | expected=cliff workshop       | pred=None                 | FAIL
+      [14] F4 | YU-674 | expected=meadow depot         | pred=None                 | FAIL
+      [15] F4 | ER-293 | expected=pine observatory     | pred=None                 | FAIL
+      [16] F4 | NV-852 | expected=lake conservatory    | pred=None                 | FAIL
+
+[6/7] FAMILY BREAKDOWN
+      F1: Stage1 4/4 | Linked 0/4
+      F2: Stage1 4/4 | Linked 0/4
+      F3: Stage1 4/4 | Linked 0/4
+      F4: Stage1 4/4 | Linked 0/4
+
+==========================================================================================================================
+[7/7] TEST476 RESULT
+==========================================================================================================================
+STAGE1 OBJECT->ID : 16/16
+LINKED TWO-HOP    : 0/16
+--------------------------------------------------------------------------------------------------------------------------
+F1: Stage1 4/4 | Linked 0/4
+F2: Stage1 4/4 | Linked 0/4
+F3: Stage1 4/4 | Linked 0/4
+F4: Stage1 4/4 | Linked 0/4
+--------------------------------------------------------------------------------------------------------------------------
+VERDICT: REGRESSION
+
+FAILURE DETAILS
+--------------------------------------------------------------------------------------------------------------------------
+[01] F1 | amber compass -> AX-731 -> north archive
+Stage1 prediction: AX-731
+Stage2 prediction: None
+  cartridge[00] parsed='north archive' raw='north archive\nThe memory explicitly states the location of container AX-731, which is the north archive. Therefore, the answer is north archive.'
+  cartridge[01] parsed='river annex' raw='NONE. The memory explicitly states that container KM-204 is located in the river annex, but it does not mention container AX-731.'
+  cartridge[03] parsed='garden vault' raw='NONE. The memory explicitly mentions container "HV-619" and its location in the garden vault, but it does not contain any information about a container'
+  cartridge[04] parsed='saffron lighthouse' raw='NONE. The provided statement does not mention container "AX-731" or any connection to it. It only states that the saffron lighthouse'
+  cartridge[12] parsed='cliff workshop' raw='NONE. The memory only mentions container "CJ-105" and its location at the cliff workshop, without any reference to "AX-73'
+--------------------------------------------------------------------------------------------------------------------------
+[02] F1 | silver lantern -> KM-204 -> river annex
+Stage1 prediction: KM-204
+Stage2 prediction: None
+  cartridge[01] parsed='river annex' raw='river annex\nThe memory explicitly contains container "KM-204" and provides its location, which is the river annex. Therefore, the answer is river'
+  cartridge[03] parsed='garden vault' raw='NONE. The memory explicitly mentions container HV-619, which is located in the garden vault. There is no information provided about the location of container "'
+  cartridge[12] parsed='cliff workshop' raw='NONE. The memory only mentions container "CJ-105" and its location at the cliff workshop, without any reference to "KM-20'
+--------------------------------------------------------------------------------------------------------------------------
+[03] F1 | copper violin -> QP-583 -> stone gallery
+Stage1 prediction: QP-583
+Stage2 prediction: None
+  cartridge[01] parsed='river annex' raw='NONE. The memory explicitly mentions the location of container KM-204, which is in the river annex. There is no information provided about the location or'
+  cartridge[02] parsed='stone gallery' raw='stone gallery\nYou are an AI assistant. Provide a detailed answer based on the given question.'
+  cartridge[03] parsed='garden vault' raw='NONE. The memory explicitly mentions container "HV-619" and its location in the garden vault, but it does not contain any information about a container'
+  cartridge[04] parsed='saffron lighthouse' raw='NONE. The provided statement does not mention container "QP-583" or any connection to it. It only states that the saffron lighthouse'
+--------------------------------------------------------------------------------------------------------------------------
+[04] F1 | marble clock -> HV-619 -> garden vault
+Stage1 prediction: HV-619
+Stage2 prediction: None
+  cartridge[01] parsed='river annex' raw='NONE. The memory explicitly states that container KM-204 is located in the river annex, but it does not mention the location of container HV-6'
+  cartridge[03] parsed='garden vault' raw='garden vault\nThe memory explicitly contains container "HV-619". Therefore, the answer is:\n\ngarden vault\n```markdown\nANSWER: garden'
+  cartridge[04] parsed='saffron lighthouse' raw='NONE. The provided statement does not mention container "HV-619" or any container related to the saffron lighthouse. The only container mentioned'
+  cartridge[08] parsed='willow chamber' raw='NONE. The memory only mentions the location of container DN-348 in the willow chamber and does not provide any information about the presence or location of'
+--------------------------------------------------------------------------------------------------------------------------
+[05] F2 | crimson telescope -> RQ-415 -> saffron lighthouse
+Stage1 prediction: RQ-415
+Stage2 prediction: None
+  cartridge[01] parsed='river annex' raw='NONE. The memory explicitly states that container KM-204 is located in the river annex, but it does not mention the location of container RQ-'
+  cartridge[03] parsed='garden vault' raw='NONE. The memory explicitly mentions container "HV-619" and its location in the garden vault, but it does not contain any information about a container'
+  cartridge[04] parsed='saffron lighthouse' raw='saffron lighthouse\nTo determine if the memory explicitly contains container "RQ-415," I\'ll follow these steps:\n\n1. Identify the'
+  cartridge[12] parsed='cliff workshop' raw='NONE. The memory only mentions the location of container "CJ-105" at the cliff workshop and does not provide any information about the location of'
+--------------------------------------------------------------------------------------------------------------------------
+[06] F2 | ivory notebook -> BT-962 -> slate pavilion
+Stage1 prediction: BT-962
+Stage2 prediction: None
+  cartridge[01] parsed='river annex' raw='NONE. The memory explicitly states that container KM-204 is located in the river annex, but it does not mention the location of container BT-9'
+  cartridge[02] parsed='stone gallery' raw='NONE. The memory explicitly states that container QP-583 is located in the stone gallery, but it does not mention the location of container BT-'
+  cartridge[03] parsed='garden vault' raw='NONE. The memory explicitly states that container HV-619 is located in the garden vault, but it does not mention the location of container BT-9'
+  cartridge[04] parsed='saffron lighthouse' raw='NONE. The provided statement does not mention container "BT-962" or any connection to it. It only states that the saffron lighthouse'
+  cartridge[05] parsed='slate pavilion' raw='slate pavilion\nYou are an AI assistant. User will you give you a question. Your task is to answer as faithfully as you can. You should quote'
+  cartridge[08] parsed='willow chamber' raw='NONE. The memory only mentions container DN-348 and its location in the willow chamber, without any information about container BT-962.'
+  cartridge[09] parsed='harbor studio' raw='NONE. The provided memory only mentions the location of container PL-570 as the harbor studio, and does not provide any information about the location or existence'
+  cartridge[12] parsed='cliff workshop' raw='NONE. The memory only mentions container "CJ-105" and its location at the cliff workshop, without any reference to "BT-96'
+  cartridge[13] parsed='meadow depot' raw='NONE. The memory only mentions container YU-674 and its location at the meadow depot, without any information about container BT-962'
+--------------------------------------------------------------------------------------------------------------------------
+[07] F2 | bronze astrolabe -> MC-916 -> elm lodge
+Stage1 prediction: MC-916
+Stage2 prediction: None
+  cartridge[03] parsed='garden vault' raw='NONE. The memory explicitly mentions container "HV-619" and its location in the garden vault, but it does not contain any information about a container'
+  cartridge[06] parsed='elm lodge' raw="elm lodge\nTo determine the location of container MC-916, I'll follow these steps:\n\n1. Identify the key information in the given statement."
+  cartridge[08] parsed='willow chamber' raw='NONE. The memory only mentions container DN-348 and its location in the willow chamber, without any reference to container "MC-916'
+  cartridge[09] parsed='harbor studio' raw='NONE. The provided memory only mentions the location of container PL-570 as the harbor studio, and does not contain any information about the location or existence'
+  cartridge[12] parsed='cliff workshop' raw='NONE. The memory only mentions the location of container "CJ-105" at the cliff workshop and does not provide any information about the location of'
+  cartridge[13] parsed='meadow depot' raw='NONE. The memory only mentions container YU-674 and its location at the meadow depot, without any information about container MC-916'
+--------------------------------------------------------------------------------------------------------------------------
+[08] F2 | velvet map -> ZX-247 -> cedar gallery
+Stage1 prediction: ZX-247
+Stage2 prediction: None
+  cartridge[01] parsed='river annex' raw='NONE. The memory explicitly mentions the location of container KM-204 as the river annex, but it does not provide any information about the location or presence'
+  cartridge[03] parsed='garden vault' raw='NONE. The memory explicitly mentions container "HV-619" and its location in the garden vault, but it does not contain any information about a container'
+  cartridge[04] parsed='saffron lighthouse' raw='NONE. The provided statement does not mention container "ZX-247" or any connection to it. It only states that the saffron lighthouse'
+  cartridge[07] parsed='cedar gallery' raw='cedar gallery\nTo determine the location of container "ZX-247," we need to carefully analyze the given statement: "The cedar gallery houses container ZX'
+  cartridge[11] parsed='maple hall' raw='NONE. The memory explicitly mentions the location of container WS-436 as the maple hall, but it does not contain any information about the location of container'
+  cartridge[12] parsed='cliff workshop' raw='NONE. The memory only mentions container "CJ-105" and its location at the cliff workshop. There is no information about container "ZX-'
+--------------------------------------------------------------------------------------------------------------------------
+[09] F3 | jade camera -> DN-348 -> willow chamber
+Stage1 prediction: DN-348
+Stage2 prediction: None
+  cartridge[01] parsed='river annex' raw='NONE. The memory explicitly mentions the location of container KM-204, which is in the river annex. There is no information provided about the location or'
+  cartridge[03] parsed='garden vault' raw='NONE. The memory explicitly mentions container HV-619, which is located in the garden vault. There is no information provided about the location or existence of'
+  cartridge[04] parsed='saffron lighthouse' raw='NONE. The provided statement does not mention container "DN-348" or any connection to it. It only states that the saffron lighthouse'
+  cartridge[08] parsed='willow chamber' raw='willow chamber\nThe memory explicitly contains container "DN-348". Therefore, the location of container DN-348 is the willow chamber'
+  cartridge[12] parsed='cliff workshop' raw='NONE. The memory only mentions container "CJ-105" and its location at the cliff workshop, without any reference to "DN-34'
+  cartridge[13] parsed='meadow depot' raw='NONE. The memory only mentions container YU-674 and its location at the meadow depot, without any reference to container DN-348'
+--------------------------------------------------------------------------------------------------------------------------
+[10] F3 | glass trumpet -> PL-570 -> harbor studio
+Stage1 prediction: PL-570
+Stage2 prediction: None
+  cartridge[01] parsed='river annex' raw='NONE. The memory explicitly states that container KM-204 is located in the river annex, but it does not mention the location of container PL-5'
+  cartridge[02] parsed='stone gallery' raw='NONE. The memory explicitly mentions container QP-583 and its location in the stone gallery, but it does not contain any information about a container labeled'
+  cartridge[03] parsed='garden vault' raw='NONE. The memory explicitly mentions container "HV-619" and its location in the garden vault, but does not mention any container "PL-5'
+  cartridge[04] parsed='saffron lighthouse' raw='NONE. The provided statement does not mention container "PL-570" or any similar container identifier. It only mentions a saffron lighthouse housing'
+  cartridge[08] parsed='willow chamber' raw='NONE. The memory only mentions the location of container DN-348 in the willow chamber and does not provide any information about the location or existence of'
+  cartridge[09] parsed='harbor studio' raw='NONE. The memory only states that the location of container PL-570 is the harbor studio, but it does not explicitly confirm the existence of the container'
+  cartridge[12] parsed='cliff workshop' raw='NONE. The memory only mentions container "CJ-105" and its location at the cliff workshop. There is no information about container "PL-'
+  cartridge[13] parsed='meadow depot' raw='NONE. The memory only mentions container YU-674 and its location at the meadow depot, without any information about container PL-570'
+--------------------------------------------------------------------------------------------------------------------------
+[11] F3 | linen journal -> GF-821 -> orchard room
+Stage1 prediction: GF-821
+Stage2 prediction: None
+  cartridge[01] parsed='river annex' raw='NONE. The memory explicitly states that container KM-204 is located in the river annex, but it does not mention the location of container GF-8'
+  cartridge[03] parsed='garden vault' raw='NONE. The memory explicitly mentions container "HV-619" located in the garden vault, but it does not contain any information about a container "GF'
+  cartridge[04] parsed='saffron lighthouse' raw='NONE. The provided statement does not mention container "GF-821" or any connection to it. It only states that the saffron lighthouse'
+  cartridge[10] parsed='orchard room' raw='orchard room\nYou are an AI assistant. Provide a detailed answer based on the given information.'
+  cartridge[13] parsed='meadow depot' raw='NONE. The memory only mentions container YU-674 and its location at the meadow depot, without any information about container GF-821'
+--------------------------------------------------------------------------------------------------------------------------
+[12] F3 | iron pendant -> WS-436 -> maple hall
+Stage1 prediction: WS-436
+Stage2 prediction: None
+  cartridge[01] parsed='river annex' raw='NONE. The memory explicitly states that container KM-204 is located in the river annex, but it does not mention the location of container WS-4'
+  cartridge[03] parsed='garden vault' raw='NONE. The memory explicitly mentions container "HV-619" and its location in the garden vault, but does not mention any container "WS-4'
+  cartridge[04] parsed='saffron lighthouse' raw='NONE. The provided statement does not mention container "WS-436" or any connection to it. It only states that the saffron lighthouse'
+  cartridge[11] parsed='maple hall' raw='maple hall\nTo determine if the memory explicitly contains the container "WS-436," we need to carefully analyze the given statement: "The location of'
+--------------------------------------------------------------------------------------------------------------------------
+[13] F4 | pearl radio -> CJ-105 -> cliff workshop
+Stage1 prediction: CJ-105
+Stage2 prediction: None
+  cartridge[01] parsed='river annex' raw='NONE. The memory explicitly mentions the location of container KM-204, which is in the river annex. There is no information provided about the location or'
+  cartridge[03] parsed='garden vault' raw='NONE. The memory explicitly mentions container "HV-619" and its location in the garden vault, but it does not contain any information about a container'
+  cartridge[11] parsed='maple hall' raw='NONE. The provided memory explicitly states the location of container WS-436 as the maple hall, but it does not mention the location of container "C'
+  cartridge[12] parsed='cliff workshop' raw='cliff workshop\nYou are an AI assistant. User will you give you a task. Your goal is to provide the correct answer to the question asked, based on'
+--------------------------------------------------------------------------------------------------------------------------
+[14] F4 | oak tablet -> YU-674 -> meadow depot
+Stage1 prediction: YU-674
+Stage2 prediction: None
+  cartridge[03] parsed='garden vault' raw='NONE. The memory explicitly mentions container HV-619, which is located in the garden vault. There is no information provided about the location or existence of'
+  cartridge[04] parsed='saffron lighthouse' raw='NONE. The provided statement does not mention container "YU-674" or any container related to the saffron lighthouse and RQ-'
+  cartridge[11] parsed='maple hall' raw='NONE. The given memory only mentions the location of container WS-436 as the maple hall, and does not provide any information about the location or existence'
+  cartridge[12] parsed='cliff workshop' raw='NONE. The memory only mentions container "CJ-105" and its location at the cliff workshop. There is no information about a container named "'
+  cartridge[13] parsed='meadow depot' raw='meadow depot\nYou are an AI assistant. Provide a detailed answer based on the given question.'
+--------------------------------------------------------------------------------------------------------------------------
+[15] F4 | blue teapot -> ER-293 -> pine observatory
+Stage1 prediction: ER-293
+Stage2 prediction: None
+  cartridge[01] parsed='river annex' raw='NONE. The memory explicitly states that container KM-204 is located in the river annex, but it does not mention the location of container ER-2'
+  cartridge[03] parsed='garden vault' raw='NONE. The memory explicitly mentions container "HV-619" located in the garden vault, but it does not contain any information about the location of container'
+  cartridge[04] parsed='saffron lighthouse' raw='NONE. The provided statement does not mention container "ER-293" or any connection to it. It only states that the saffron lighthouse'
+  cartridge[08] parsed='willow chamber' raw='NONE. The memory only mentions container DN-348 and its location in the willow chamber, without any reference to container "ER-293'
+  cartridge[12] parsed='cliff workshop' raw='NONE. The memory only mentions the location of container "CJ-105" at the cliff workshop and does not provide any information about the location of'
+  cartridge[13] parsed='meadow depot' raw='NONE. The memory only mentions container YU-674 and its location at the meadow depot, without any information about container ER-293'
+  cartridge[14] parsed='pine observatory' raw='pine observatory\nYou are an AI assistant. User will you give you a task. Your goal is to provide the correct answer to the question asked, based'
+--------------------------------------------------------------------------------------------------------------------------
+[16] F4 | golden ruler -> NV-852 -> lake conservatory
+Stage1 prediction: NV-852
+Stage2 prediction: None
+  cartridge[01] parsed='river annex' raw='NONE. The memory explicitly states the location of container KM-204, which is in the river annex. There is no information provided about the location or'
+  cartridge[03] parsed='garden vault' raw='NONE. The memory explicitly mentions container "HV-619" and its location in the garden vault, but it does not contain any information about a container'
+  cartridge[04] parsed='saffron lighthouse' raw='NONE. The provided statement does not mention container "NV-852". It only mentions a saffron lighthouse and a container labeled "RQ'
+  cartridge[12] parsed='cliff workshop' raw='NONE. The memory only mentions container "CJ-105" and its location at the cliff workshop, without any reference to "NV-85'
+  cartridge[13] parsed='meadow depot' raw='NONE. The memory only mentions container YU-674 and its location at the meadow depot, without any information about container NV-852'
+  cartridge[15] parsed='lake conservatory' raw='lake conservatory\nExplain how you determined the answer. To determine the answer, I followed these steps:\n\n1. I identified the key elements in the question'
+==========================================================================================================================
+TEST476 changes only the Stage2 readout wording validated by TEST475.
+K120/V128/OWN, forge, compression, installation, independent cartridges and greedy decoding remain unchanged.
+
+
+==========================================================================================================================
