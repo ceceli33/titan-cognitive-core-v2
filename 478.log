@@ -1,0 +1,92 @@
+ 
+============================================================================================================================
+TEST478 — QWEN 32-BANK SINGLE-FAILURE ISOLATION
+F3 · PL-570 -> harbor studio · SAME K120/V128/OWN CARTRIDGE · READOUT A/B/C ONLY
+============================================================================================================================
+[1/6] Loading model...
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 75.6kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 853kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 43.7MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 71.2MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 128MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.37MB/s]
+Download complete: : 
+
+ 13.1GB,  326MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  358MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:40<00:00,  7.19s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 99.47it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 28.5kB/s]
+      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | BF16 | frozen
+[2/6] Building original neutral PCA codebook...
+      Codebook ready.
+[3/6] Forging TEST477 failing cartridge...
+      SOURCE: The location of container PL-570 is the harbor studio.
+      Cartridge ready.
+
+[4/6] A/B/C READOUT
+----------------------------------------------------------------------------------------------------------------------------
+A_CURRENT_VERIFY
+QUESTION: Does this memory explicitly contain container "PL-570"? If yes, answer only its location. If no, answer exactly NONE.
+RAW     : 'NONE. The memory only states that the location of container PL-570 is the harbor studio, but it does not explicitly confirm the existence of the container'
+PARSED  : None
+RESULT  : FAIL
+----------------------------------------------------------------------------------------------------------------------------
+B_RELATION_VERIFY
+QUESTION: Does this memory explicitly state the location of container "PL-570"? If yes, answer only that location. If no, answer exactly NONE.
+RAW     : 'NONE. The statement only mentions that the location of container PL-570 is the harbor studio, but it does not explicitly state this information. It merely'
+PARSED  : None
+RESULT  : FAIL
+----------------------------------------------------------------------------------------------------------------------------
+C_DIRECT_LOCATION
+QUESTION: What location does this memory state for container "PL-570"? If no location is stated, answer exactly NONE.
+RAW     : 'The harbor studio. The memory explicitly states that the location of container PL-570 is the harbor studio. Therefore, the answer is directly taken from the'
+PARSED  : 'harbor studio'
+RESULT  : PASS
+
+[5/6] CAUSAL COMPARISON
+      A CURRENT VERIFY : 0 /1
+      B RELATION VERIFY: 0 /1
+      C DIRECT LOCATION: 1 /1
+      A->B RESCUE      : 0
+      A->C RESCUE      : 1
+
+============================================================================================================================
+[6/6] TEST478 RESULT
+============================================================================================================================
+A CURRENT VERIFY : FAIL
+B RELATION VERIFY: FAIL
+C DIRECT LOCATION: PASS
+VERDICT: DIRECT_LOCATION_CAUSAL_CANDIDATE
+----------------------------------------------------------------------------------------------------------------------------
+Same source, same cartridge, same compression, same install, same frozen model.
+Only Stage2 readout wording changes between A/B/C.
+No 32-bank modification is authorized by this test.
+Winning wording must next be regression-tested on the complete TEST477 32-record bank.
+
+
+============================================================================================================================
