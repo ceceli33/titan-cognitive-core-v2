@@ -1,0 +1,137 @@
+ ======================================================================================================================================================
+TEST484 — AKBASCORE MAM · MODEL-NATIVE ADDRESS SIGNAL DISCOVERY
+32 FROZEN NIRVANA CARTRIDGES · PASSIVE GEOMETRY · NO LM CARTRIDGE READOUT
+======================================================================================================================================================
+LOCK SHA: 1272a230c4d7833f0380c4c8f5d081c77cfbfe952f30ed8b00881c8786a57870
+[1/7] Loading frozen Qwen...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 70.1kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 889kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 46.3MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 73.1MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 104MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.43MB/s]Download complete:  13.1GB,  182MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  466MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.23s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.49it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.9kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | frozen BF16
+[2/7] Building frozen TEST482 32-sentence PCA codebook...
+      Codebook ready.
+[3/7] Forging 32 frozen NIRVANA cartridges...
+      [01/32] emerald barometer
+      [02/32] porcelain compass
+      [03/32] violet harmonica
+      [04/32] bamboo chronometer
+      [05/32] obsidian sextant
+      [06/32] linen telescope
+      [07/32] coral metronome
+      [08/32] willow calculator
+      [09/32] turquoise monocle
+      [10/32] mahogany notebook
+      [11/32] ceramic astrolabe
+      [12/32] scarlet blueprint
+      [13/32] opal kaleidoscope
+      [14/32] bronze hourglass
+      [15/32] silk manuscript
+      [16/32] crystal chime
+      [17/32] jade projector
+      [18/32] glass clarinet
+      [19/32] canvas diary
+      [20/32] iron medallion
+      [21/32] pearl camera
+      [22/32] steel accordion
+      [23/32] cotton almanac
+      [24/32] onyx brooch
+      [25/32] ivory receiver
+      [26/32] cedar plaque
+      [27/32] azure kettle
+      [28/32] brass caliper
+      [29/32] crystal phonograph
+      [30/32] maple slate
+      [31/32] white lantern
+      [32/32] golden protractor
+[4/7] Encoding 32 cartridge-free queries...
+[5/7] Fixed split | DEV: [1, 2, 5, 6, 8, 10, 16, 18, 19, 20, 22, 23, 25, 26, 29, 31]
+                    HELD: [0, 3, 4, 7, 9, 11, 12, 13, 14, 15, 17, 21, 24, 27, 28, 30]
+                    SHA : 4faf5e12f82b387915439c3944497479830a827dfb27ae7b617911b821e12b03
+[6/7] DEV address-signal scan...
+      TOP1: {'fam': 'HMEAN', 'layer': 3, 'metric': 'L2', 'R1': 1.0, 'R5': 1.0, 'R16': 1.0, 'MRR': 1.0, 'MEDR': 1.0, 'margin': 23.11858367919922}
+      TOP2: {'fam': 'HMEAN', 'layer': 3, 'metric': 'CENTER_COS', 'R1': 1.0, 'R5': 1.0, 'R16': 1.0, 'MRR': 1.0, 'MEDR': 1.0, 'margin': 0.2546626031398773}
+      TOP3: {'fam': 'HMEAN', 'layer': 3, 'metric': 'COS', 'R1': 1.0, 'R5': 1.0, 'R16': 1.0, 'MRR': 1.0, 'MEDR': 1.0, 'margin': 0.03778046369552612}
+[7/7] Locked HELD-OUT validation...
+
+      CONFIG 1: HMEAN L03 L2
+        [00] rank= 1 margin=+32.398468 | emerald barometer
+        [03] rank= 1 margin=+18.398041 | bamboo chronometer
+        [04] rank= 1 margin=+32.410225 | obsidian sextant
+        [07] rank= 1 margin=+35.902130 | willow calculator
+        [09] rank= 1 margin=+32.138069 | mahogany notebook
+        [11] rank= 1 margin=+29.359833 | scarlet blueprint
+        [12] rank= 1 margin=+22.771629 | opal kaleidoscope
+        [13] rank= 1 margin=+6.990837 | bronze hourglass
+        [14] rank=12 margin=-11.625542 | silk manuscript
+        [15] rank= 1 margin=+17.315323 | crystal chime
+        [17] rank= 1 margin=+34.339485 | glass clarinet
+        [21] rank= 1 margin=+19.782333 | steel accordion
+        [24] rank= 1 margin=+20.754089 | ivory receiver
+        [27] rank= 1 margin=+21.564445 | brass caliper
+        [28] rank= 1 margin=+25.679916 | crystal phonograph
+        [30] rank= 2 margin=-0.352234 | white lantern
+        => {'config': 1, 'fam': 'HMEAN', 'layer': 3, 'metric': 'L2', 'R1': 1.0, 'R5': 1.0, 'R16': 1.0, 'MRR': 1.0, 'MEDR': 1.0, 'margin': 23.11858367919922, 'HELD': {'R1': 0.875, 'R5': 0.9375, 'R16': 1.0, 'MRR': 0.9114583333333333, 'MEDR': 1.0}, 'median_margin': 22.16803741455078, 'p05_margin': -3.170560836791992, 'median_gold_z': 4.262993912517339}
+
+      CONFIG 2: HMEAN L03 CENTER_COS
+        [00] rank= 1 margin=+0.342548 | emerald barometer
+        [03] rank= 1 margin=+0.283534 | bamboo chronometer
+        [04] rank= 1 margin=+0.449916 | obsidian sextant
+        [07] rank= 1 margin=+0.360085 | willow calculator
+        [09] rank= 1 margin=+0.381548 | mahogany notebook
+        [11] rank= 1 margin=+0.405501 | scarlet blueprint
+        [12] rank= 1 margin=+0.321757 | opal kaleidoscope
+        [13] rank= 1 margin=+0.114007 | bronze hourglass
+        [14] rank= 3 margin=-0.007559 | silk manuscript
+        [15] rank= 1 margin=+0.194793 | crystal chime
+        [17] rank= 1 margin=+0.385422 | glass clarinet
+        [21] rank= 1 margin=+0.193645 | steel accordion
+        [24] rank= 1 margin=+0.205235 | ivory receiver
+        [27] rank= 1 margin=+0.254749 | brass caliper
+        [28] rank= 1 margin=+0.332278 | crystal phonograph
+        [30] rank= 1 margin=+0.022426 | white lantern
+        => {'config': 2, 'fam': 'HMEAN', 'layer': 3, 'metric': 'CENTER_COS', 'R1': 1.0, 'R5': 1.0, 'R16': 1.0, 'MRR': 1.0, 'MEDR': 1.0, 'margin': 0.2546626031398773, 'HELD': {'R1': 0.9375, 'R5': 1.0, 'R16': 1.0, 'MRR': 0.9583333333333333, 'MEDR': 1.0}, 'median_margin': 0.3026456646621227, 'p05_margin': 0.014929698780179024, 'median_gold_z': 8.077222652303735}
+
+      CONFIG 3: HMEAN L03 COS
+        [00] rank= 1 margin=+0.050698 | emerald barometer
+        [03] rank= 1 margin=+0.030737 | bamboo chronometer
+        [04] rank= 1 margin=+0.053215 | obsidian sextant
+        [07] rank= 1 margin=+0.054346 | willow calculator
+        [09] rank= 1 margin=+0.049099 | mahogany notebook
+        [11] rank= 1 margin=+0.052810 | scarlet blueprint
+        [12] rank= 1 margin=+0.037829 | opal kaleidoscope
+        [13] rank= 1 margin=+0.017391 | bronze hourglass
+        [14] rank=10 margin=-0.011690 | silk manuscript
+        [15] rank= 1 margin=+0.029870 | crystal chime
+        [17] rank= 1 margin=+0.051166 | glass clarinet
+        [21] rank= 1 margin=+0.031787 | steel accordion
+        [24] rank= 1 margin=+0.034011 | ivory receiver
+        [27] rank= 1 margin=+0.036368 | brass caliper
+        [28] rank= 1 margin=+0.041974 | crystal phonograph
+        [30] rank= 1 margin=+0.005557 | white lantern
+        => {'config': 3, 'fam': 'HMEAN', 'layer': 3, 'metric': 'COS', 'R1': 1.0, 'R5': 1.0, 'R16': 1.0, 'MRR': 1.0, 'MEDR': 1.0, 'margin': 0.03778046369552612, 'HELD': {'R1': 0.9375, 'R5': 0.9375, 'R16': 1.0, 'MRR': 0.94375, 'MEDR': 1.0}, 'median_margin': 0.03709810972213745, 'p05_margin': 0.0012450367212295532, 'median_gold_z': 4.961383482706438}
+
+======================================================================================================================================================
+TEST484 FINAL RESULT — AKBASCORE MAM
+======================================================================================================================================================
+FOUNDATION          : TEST482 QWEN K120/V128/OWN
+TEST482 BLOB SHA    : ecc630144a44479cb35c432c50eb0d09bc6866d7
+CARTRIDGES          : 32
+DEV / HELD          : 16 / 16
+LOCK SHA            : 1272a230c4d7833f0380c4c8f5d081c77cfbfe952f30ed8b00881c8786a57870
+SPLIT SHA           : 4faf5e12f82b387915439c3944497479830a827dfb27ae7b617911b821e12b03
+CONFIG SHA          : 57ec92df18eb3981964f5db5b8df197b9ce3847b2fb5307fad94c16aadd8e5a3
+BEST DEV            : {'fam': 'HMEAN', 'layer': 3, 'metric': 'L2', 'R1': 1.0, 'R5': 1.0, 'R16': 1.0, 'MRR': 1.0, 'MEDR': 1.0, 'margin': 23.11858367919922}
+BEST HELD           : {'config': 1, 'fam': 'HMEAN', 'layer': 3, 'metric': 'L2', 'R1': 1.0, 'R5': 1.0, 'R16': 1.0, 'MRR': 1.0, 'MEDR': 1.0, 'margin': 23.11858367919922, 'HELD': {'R1': 0.875, 'R5': 0.9375, 'R16': 1.0, 'MRR': 0.9114583333333333, 'MEDR': 1.0}, 'median_margin': 22.16803741455078, 'p05_margin': -3.170560836791992, 'median_gold_z': 4.262993912517339}
+HELD REAL           : {'R1': 0.875, 'R5': 0.9375, 'R16': 1.0, 'MRR': 0.9114583333333333, 'MEDR': 1.0}
+PERMUTATION NULL    : {'R1': 0.0, 'R5': 0.0625, 'R16': 0.5625, 'MRR': 0.07982159842187118, 'MEDR': 15.0}
+LEXICAL CONTROL     : {'R1': 1.0, 'R5': 1.0, 'R16': 1.0, 'MRR': 1.0, 'MEDR': 1.0}
+------------------------------------------------------------------------------------------------------------------------------------------------------
+VERDICT             : STRONG_INITIAL_MODEL_NATIVE_ADDRESS_SIGNAL
+INTERPRETATION      : first-signal discovery only; no scale claim.
+CARTRIDGE LM READOUT: NOT USED
+ROUTER / ANN / GRAPH: NONE
+TRAINING / LoRA     : NONE
+MODEL WEIGHT CHANGE : NONE
+NIRVANA MOTOR CHANGE: NONE
+HELD CONFIG TUNING  : NONE
+TOTAL TEST TIME     : 60.47s
+======================================================================================================================================================
