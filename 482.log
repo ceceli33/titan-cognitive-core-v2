@@ -1,0 +1,215 @@
+ 
+============================================================================================================================================
+TEST482 — AKBASCORE NIRVANA QWEN · FINAL HELD-OUT 32-BANK SEAL
+32 NEW RECORDS · 64 CARTRIDGES · K120/V128/OWN · FULL SCAN · C_COMPACT FROZEN
+============================================================================================================================================
+LOCK SHA: 3ed21b24d6a9fd823dc60dffdcb3e83dfe7271f057fd694739031c25c41d34ff
+[1/9] Loading model...
+
+/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_auth.py:138: UserWarning: 
+Error while fetching `HF_TOKEN` secret value from your vault: 'Requesting secret HF_TOKEN timed out. Secrets can only be fetched when running from the Colab UI.'.
+  warnings.warn(f"\nError while fetching `HF_TOKEN` secret value from your vault: '{str(e)}'.")
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 80.0kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 879kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 66.4MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 67.3MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 133MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.44MB/s]
+Download complete: : 
+
+ 13.1GB,  323MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  334MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:41<00:00,  7.52s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 100.31it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 28.7kB/s]
+      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | BF16 | frozen
+[2/9] Building frozen 32-sentence neutral PCA codebook...
+      Codebook ready.
+[3/9] Forging 64 HELD-OUT independent cartridges...
+      [01/32] F1 | emerald barometer -> KR-214 -> cedar archive
+      [02/32] F1 | porcelain compass -> DM-763 -> marble annex
+      [03/32] F1 | violet harmonica -> FS-408 -> amber gallery
+      [04/32] F1 | bamboo chronometer -> JN-951 -> fern vault
+      [05/32] F1 | obsidian sextant -> RW-326 -> copper archive
+      [06/32] F1 | linen telescope -> AE-875 -> quartz annex
+      [07/32] F1 | coral metronome -> LP-143 -> ivory gallery
+      [08/32] F1 | willow calculator -> XM-692 -> silver vault
+      [09/32] F2 | turquoise monocle -> HC-517 -> indigo lighthouse
+      [10/32] F2 | mahogany notebook -> VK-280 -> pearl pavilion
+      [11/32] F2 | ceramic astrolabe -> SB-934 -> granite lodge
+      [12/32] F2 | scarlet blueprint -> NT-461 -> willow gallery
+      [13/32] F2 | opal kaleidoscope -> GY-708 -> maple tower
+      [14/32] F2 | bronze hourglass -> PD-352 -> coral pavilion
+      [15/32] F2 | silk manuscript -> ZU-819 -> birch lodge
+      [16/32] F2 | crystal chime -> EF-625 -> onyx gallery
+      [17/32] F3 | jade projector -> WL-407 -> hazel chamber
+      [18/32] F3 | glass clarinet -> CQ-586 -> lagoon studio
+      [19/32] F3 | canvas diary -> MR-172 -> acorn room
+      [20/32] F3 | iron medallion -> UX-943 -> poplar hall
+      [21/32] F3 | pearl camera -> BH-650 -> cobalt chamber
+      [22/32] F3 | steel accordion -> KO-238 -> canal studio
+      [23/32] F3 | cotton almanac -> YD-714 -> walnut room
+      [24/32] F3 | onyx brooch -> TG-569 -> elm hall
+      [25/32] F4 | ivory receiver -> PS-381 -> summit workshop
+      [26/32] F4 | cedar plaque -> AL-826 -> valley depot
+      [27/32] F4 | azure kettle -> RF-504 -> birch observatory
+      [28/32] F4 | brass caliper -> MW-197 -> shore conservatory
+      [29/32] F4 | crystal phonograph -> DE-648 -> forest workshop
+      [30/32] F4 | maple slate -> KI-275 -> delta depot
+      [31/32] F4 | white lantern -> OV-930 -> clover observatory
+      [32/32] F4 | golden protractor -> XC-412 -> island conservatory
+
+[4/9] HELD-OUT STAGE1 FULL SCAN — OBJECT -> ID
+      [01] F1 | expected=KR-214 | pred=KR-214 | gold=KR-214 | offFP= 0 | PASS
+      [02] F1 | expected=DM-763 | pred=DM-763 | gold=DM-763 | offFP= 0 | PASS
+      [03] F1 | expected=FS-408 | pred=FS-408 | gold=FS-408 | offFP= 0 | PASS
+      [04] F1 | expected=JN-951 | pred=JN-951 | gold=JN-951 | offFP= 0 | PASS
+      [05] F1 | expected=RW-326 | pred=RW-326 | gold=RW-326 | offFP= 0 | PASS
+      [06] F1 | expected=AE-875 | pred=AE-875 | gold=AE-875 | offFP= 0 | PASS
+      [07] F1 | expected=LP-143 | pred=LP-143 | gold=LP-143 | offFP= 0 | PASS
+      [08] F1 | expected=XM-692 | pred=XM-692 | gold=XM-692 | offFP= 0 | PASS
+      [09] F2 | expected=HC-517 | pred=HC-517 | gold=HC-517 | offFP= 0 | PASS
+      [10] F2 | expected=VK-280 | pred=VK-280 | gold=VK-280 | offFP= 0 | PASS
+      [11] F2 | expected=SB-934 | pred=SB-934 | gold=SB-934 | offFP= 0 | PASS
+      [12] F2 | expected=NT-461 | pred=NT-461 | gold=NT-461 | offFP= 0 | PASS
+      [13] F2 | expected=GY-708 | pred=GY-708 | gold=GY-708 | offFP= 0 | PASS
+      [14] F2 | expected=PD-352 | pred=PD-352 | gold=PD-352 | offFP= 0 | PASS
+      [15] F2 | expected=ZU-819 | pred=ZU-819 | gold=ZU-819 | offFP= 0 | PASS
+      [16] F2 | expected=EF-625 | pred=EF-625 | gold=EF-625 | offFP= 0 | PASS
+      [17] F3 | expected=WL-407 | pred=WL-407 | gold=WL-407 | offFP= 0 | PASS
+      [18] F3 | expected=CQ-586 | pred=CQ-586 | gold=CQ-586 | offFP= 0 | PASS
+      [19] F3 | expected=MR-172 | pred=MR-172 | gold=MR-172 | offFP= 0 | PASS
+      [20] F3 | expected=UX-943 | pred=UX-943 | gold=UX-943 | offFP= 0 | PASS
+      [21] F3 | expected=BH-650 | pred=BH-650 | gold=BH-650 | offFP= 0 | PASS
+      [22] F3 | expected=KO-238 | pred=KO-238 | gold=KO-238 | offFP= 0 | PASS
+      [23] F3 | expected=YD-714 | pred=YD-714 | gold=YD-714 | offFP= 0 | PASS
+      [24] F3 | expected=TG-569 | pred=TG-569 | gold=TG-569 | offFP= 0 | PASS
+      [25] F4 | expected=PS-381 | pred=PS-381 | gold=PS-381 | offFP= 0 | PASS
+      [26] F4 | expected=AL-826 | pred=AL-826 | gold=AL-826 | offFP= 0 | PASS
+      [27] F4 | expected=RF-504 | pred=RF-504 | gold=RF-504 | offFP= 0 | PASS
+      [28] F4 | expected=MW-197 | pred=MW-197 | gold=MW-197 | offFP= 0 | PASS
+      [29] F4 | expected=DE-648 | pred=DE-648 | gold=DE-648 | offFP= 0 | PASS
+      [30] F4 | expected=KI-275 | pred=KI-275 | gold=KI-275 | offFP= 0 | PASS
+      [31] F4 | expected=OV-930 | pred=OV-930 | gold=OV-930 | offFP= 0 | PASS
+      [32] F4 | expected=XC-412 | pred=XC-412 | gold=XC-412 | offFP= 0 | PASS
+
+[5/9] HELD-OUT STAGE2 FULL SCAN — ID -> PLACE · C_COMPACT FROZEN
+      [01] F1 | expected=cedar archive        | pred=cedar archive        | gold=cedar archive        | offFP= 0 | PASS
+      [02] F1 | expected=marble annex         | pred=marble annex         | gold=marble annex         | offFP= 0 | PASS
+      [03] F1 | expected=amber gallery        | pred=amber gallery        | gold=amber gallery        | offFP= 0 | PASS
+      [04] F1 | expected=fern vault           | pred=fern vault           | gold=fern vault           | offFP= 0 | PASS
+      [05] F1 | expected=copper archive       | pred=copper archive       | gold=copper archive       | offFP= 0 | PASS
+      [06] F1 | expected=quartz annex         | pred=quartz annex         | gold=quartz annex         | offFP= 0 | PASS
+      [07] F1 | expected=ivory gallery        | pred=ivory gallery        | gold=ivory gallery        | offFP= 0 | PASS
+      [08] F1 | expected=silver vault         | pred=silver vault         | gold=silver vault         | offFP= 0 | PASS
+      [09] F2 | expected=indigo lighthouse    | pred=indigo lighthouse    | gold=indigo lighthouse    | offFP= 0 | PASS
+      [10] F2 | expected=pearl pavilion       | pred=pearl pavilion       | gold=pearl pavilion       | offFP= 0 | PASS
+      [11] F2 | expected=granite lodge        | pred=granite lodge        | gold=granite lodge        | offFP= 0 | PASS
+      [12] F2 | expected=willow gallery       | pred=willow gallery       | gold=willow gallery       | offFP= 0 | PASS
+      [13] F2 | expected=maple tower          | pred=maple tower          | gold=maple tower          | offFP= 0 | PASS
+      [14] F2 | expected=coral pavilion       | pred=coral pavilion       | gold=coral pavilion       | offFP= 0 | PASS
+      [15] F2 | expected=birch lodge          | pred=birch lodge          | gold=birch lodge          | offFP= 0 | PASS
+      [16] F2 | expected=onyx gallery         | pred=onyx gallery         | gold=onyx gallery         | offFP= 0 | PASS
+      [17] F3 | expected=hazel chamber        | pred=hazel chamber        | gold=hazel chamber        | offFP= 0 | PASS
+      [18] F3 | expected=lagoon studio        | pred=lagoon studio        | gold=lagoon studio        | offFP= 0 | PASS
+      [19] F3 | expected=acorn room           | pred=acorn room           | gold=acorn room           | offFP= 0 | PASS
+      [20] F3 | expected=poplar hall          | pred=poplar hall          | gold=poplar hall          | offFP= 0 | PASS
+      [21] F3 | expected=cobalt chamber       | pred=cobalt chamber       | gold=cobalt chamber       | offFP= 0 | PASS
+      [22] F3 | expected=canal studio         | pred=canal studio         | gold=canal studio         | offFP= 0 | PASS
+      [23] F3 | expected=walnut room          | pred=walnut room          | gold=walnut room          | offFP= 0 | PASS
+      [24] F3 | expected=elm hall             | pred=elm hall             | gold=elm hall             | offFP= 0 | PASS
+      [25] F4 | expected=summit workshop      | pred=summit workshop      | gold=summit workshop      | offFP= 0 | PASS
+      [26] F4 | expected=valley depot         | pred=valley depot         | gold=valley depot         | offFP= 0 | PASS
+      [27] F4 | expected=birch observatory    | pred=birch observatory    | gold=birch observatory    | offFP= 0 | PASS
+      [28] F4 | expected=shore conservatory   | pred=shore conservatory   | gold=shore conservatory   | offFP= 0 | PASS
+      [29] F4 | expected=forest workshop      | pred=forest workshop      | gold=forest workshop      | offFP= 0 | PASS
+      [30] F4 | expected=delta depot          | pred=delta depot          | gold=delta depot          | offFP= 0 | PASS
+      [31] F4 | expected=clover observatory   | pred=clover observatory   | gold=clover observatory   | offFP= 0 | PASS
+      [32] F4 | expected=island conservatory  | pred=island conservatory  | gold=island conservatory  | offFP= 0 | PASS
+
+[6/9] HELD-OUT UNRELATED OBJECT ABSTENTION
+      OBJECT yellow microscope    -> NONE 32/32 | PASS
+      OBJECT paper accordion      -> NONE 32/32 | PASS
+      OBJECT granite whistle      -> NONE 32/32 | PASS
+      OBJECT violet telescope     -> NONE 32/32 | PASS
+
+[7/9] HELD-OUT ABSENT-ID ABSTENTION
+      ID ZZ-999 -> NONE 32/32 | PASS
+      ID AA-000 -> NONE 32/32 | PASS
+      ID LM-777 -> NONE 32/32 | PASS
+      ID RX-111 -> NONE 32/32 | PASS
+
+[8/9] FAMILY / SEAL DIAGNOSTICS
+      F1: Stage1 8/8 | Linked 8/8
+      F2: Stage1 8/8 | Linked 8/8
+      F3: Stage1 8/8 | Linked 8/8
+      F4: Stage1 8/8 | Linked 8/8
+      Stage1 off-target explicit outputs : 0/992
+      Stage2 off-target explicit outputs : 0/992
+      Stage1 off-target NONE             : 992/992
+      Stage2 off-target NONE             : 992/992
+      Stage1 aggregation collisions      : 0/32
+      Stage2 aggregation collisions      : 0/32
+      Unrelated object abstention        : 128/128
+      Absent-ID abstention               : 128/128
+      Forge time                         : 3.84s
+      Stage1 full-scan time              : 41.29s
+      Stage2 full-scan time              : 39.12s
+      Mean two-stage scan / record       : 2.513s
+
+============================================================================================================================================
+[9/9] TEST482 FINAL RESULT
+============================================================================================================================================
+VALIDATION TYPE       : HELD-OUT / FROZEN READOUT
+RECORDS               : 32 NEW
+INDEPENDENT CARTRIDGES: 64
+STAGE1 OBJECT->ID     : 32/32
+LINKED TWO-HOP        : 32/32
+STAGE1 FALSE OUTPUTS  : 0/992
+STAGE2 FALSE OUTPUTS  : 0/992
+STAGE1 OFF-TARGET NONE: 992/992
+STAGE2 OFF-TARGET NONE: 992/992
+STAGE1 COLLISIONS     : 0/32
+STAGE2 COLLISIONS     : 0/32
+UNRELATED OBJECT NONE : 128/128
+ABSENT-ID NONE        : 128/128
+F1: Stage1 8/8 | Linked 8/8
+F2: Stage1 8/8 | Linked 8/8
+F3: Stage1 8/8 | Linked 8/8
+F4: Stage1 8/8 | Linked 8/8
+--------------------------------------------------------------------------------------------------------------------------------------------
+LOCK SHA: 3ed21b24d6a9fd823dc60dffdcb3e83dfe7271f057fd694739031c25c41d34ff
+VERDICT: PASS_FINAL_HELDOUT_32_BANK_SEAL
+--------------------------------------------------------------------------------------------------------------------------------------------
+TOTAL TEST TIME: 160.24s
+ENGINE: Qwen2.5-7B-Instruct · frozen · K120/V128/OWN · full scan
+STAGE2 READOUT: C_COMPACT · FROZEN BEFORE HELD-OUT
+NONE-FIRST PARSER: FROZEN
+MEMORY/RETRIEVAL MECHANISM CHANGES: NONE
+POST-HOC READOUT SELECTION/TUNING: NONE
+
+
+============================================================================================================================================
