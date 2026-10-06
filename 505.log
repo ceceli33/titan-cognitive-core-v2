@@ -1,0 +1,140 @@
+ ================================================================================================================================================================
+TEST505 — AKBASCORE MAM · SELECTIVE ASSOCIATIVE RECALL IN A 10-CARTRIDGE BANK
+10 INDEPENDENT BELLEKÖZ · 2 REQUIRED + 8 DISTRACTORS · QUERY → MEMORY → TRACE → MEMORY → ANSWER
+================================================================================================================================================================
+LOCK SHA: 6d093a5d082b43ff56f09bb94cfed1839c0bd0d76a967822937996a5d1948e43
+TEST504 LOCK: 74c375373666c840105cc165b90977c56c8698cf3d5617c63f619a0139386846
+ITEMS: 32 | BANK: 10 | REQUIRED: 2 | DISTRACTORS: 8
+COMPRESSION / JOINT RE-FORGE / DRA / VTOKEN / ANN / GRAPH / TRAINING: NONE
+CONTENT ADDRESSING: explicit exhaustive model-native scan O(N)
+PANEL GUARDS: target entity / bridge seal / final class distractor contamination = NONE
+
+[1/6] Loading frozen Qwen...
+config.json: 100% 663/663 [00:00<00:00, 72.9kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 853kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 37.1MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 73.6MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 124MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.33MB/s]Download complete:  13.1GB,  436MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  432MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.15s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.36it/s]generation_config.json: 100% 243/243 [00:00<00:00, 30.4kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | H=3584 | QH=28 KVH=4 HD=128 | frozen BF16
+
+[2/6] Bank seal...
+      ITEM 01 entity=Aldren trace=FEN target=WAL | hidden A=M01 B=M03
+      ITEM 02 entity=Elara  trace=VAN target=SOD | hidden A=M03 B=M09
+      ITEM 03 entity=Ilyra  trace=BEK target=CER | hidden A=M01 B=M02
+      ITEM 04 entity=Joren  trace=TUR target=NEX | hidden A=M09 B=M03
+      ITEM 05 entity=Neris  trace=CER target=GAM | hidden A=M06 B=M10
+      ITEM 06 entity=Ralen  trace=XAL target=ROK | hidden A=M07 B=M06
+      Required memories are independently forged and randomly distributed.
+      Content-addressed arm receives no A/B cartridge address.
+      Stage-2 cannot reuse the Stage-1 selected cartridge.
+
+[3/6] Forging and running 10-cartridge banks...
+      [01/32] Aldren FEN->WAL | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [02/32] Elara  VAN->SOD | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [03/32] Ilyra  BEK->CER | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [04/32] Joren  TUR->NEX | DIRECT=0 ORACLE=1 CA1=0/0 CA2=0/0 E2E=0
+               hidden=M09->M03 | direct='THERE IS NO DIRECT MATCH FOR "JOREN" IN THE' | oracle='TUR'->'NEX'
+               scan1=[M1:JOR,M9:TUR]
+               scan2=[NONE]
+      [05/32] Neris  CER->GAM | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [06/32] Ralen  XAL->ROK | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [07/32] Saren  RUK->LER | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [08/32] Weyra  MUR->WER | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [09/32] Avel   VIR->XEN | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [10/32] Brann  FER->CAL | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [11/32] Felis  HIL->RIM | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [12/32] Jaris  CIR->JAX | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [13/32] Koren  CEN->BUN | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [14/32] Orel   SEN->BOL | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [15/32] Teren  SUL->VEX | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [16/32] Urian  GUL->ZOL | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [17/32] Yalen  ZOR->YER | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [18/32] Coren  IVO->ZAR | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [19/32] Derin  RAS->NUR | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [20/32] Heron  NUR->HIN | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [21/32] Laven  FIR->LEV | DIRECT=0 ORACLE=0 CA1=1/1 CA2=1/0 E2E=0
+               hidden=M07->M02 | direct='FIR' | oracle='FIR'->'FIR'
+               scan1=[M7:FIR]
+               scan2=[M2:FIR]
+      [22/32] Moris  KET->KON | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [23/32] Rovis  RIN->VIL | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [24/32] Veris  TEV->VOL | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [25/32] Waren  KOR->CIX | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [26/32] Aren   URB->HES | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [27/32] Elen   VEL->JUR | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [28/32] Faren  XEN->LAR | DIRECT=0 ORACLE=1 CA1=0/0 CA2=0/0 E2E=0
+               hidden=M05->M10 | direct='OVI' | oracle='XEN'->'LAR'
+               scan1=[M4:DUR,M5:XEN]
+               scan2=[NONE]
+      [29/32] Joris  TOL->PIV | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [30/32] Noren  YOR->LUM | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [31/32] Oris   MAR->SAL | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+      [32/32] Toren  PEL->PER | DIRECT=0 ORACLE=1 CA1=1/1 CA2=1/1 E2E=1
+
+[4/6] Selective-recall anatomy...
+      DIRECT 10 ONE-SHOT  :  0/32 = 0.0000
+      ORACLE A→TRACE      : 32/32 = 1.0000
+      ORACLE TRACE→B      : 31/32 = 0.9688
+      ORACLE ADDR E2E     : 31/32 = 0.9688
+      CONTENT A ADDRESS   : 30/32 = 0.9375
+      CONTENT A+TRACE     : 30/32 = 0.9375
+      CONTENT B ADDRESS   : 30/32 = 0.9375
+      CONTENT B+VALUE     : 29/32 = 0.9062
+      CONTENT E2E         : 29/32 = 0.9062
+      DIRECT fail → CONTENT pass : 29/32
+      ORACLE pass → CONTENT fail : 2/32
+
+      Paired bootstrap accuracy differences:
+      CONTENT-DIRECT: Δ=+0.9062 | bootstrap95=[+0.7812,+1.0000]
+      ORACLE-CONTENT: Δ=+0.0625 | bootstrap95=[+0.0000,+0.1562]
+      CA1_ADDR-CA2_ADDR: Δ=+0.0000 | bootstrap95=[+0.0000,+0.0000]
+
+[5/6] Failure localization...
+      Relay capacity with known addresses : 31/32
+      First associative lookup complete   : 30/32
+      Second address correct              : 30/32
+      Second address + value correct      : 29/32
+      B complete | correct first trace    : 29/30 = 0.9667
+      CONTENT E2E | oracle relay possible : 29/31 = 0.9355
+
+[6/6] Mechanistic classification...
+
+================================================================================================================================================================
+TEST505 FINAL RESULT — AKBASCORE MAM · SELECTIVE ASSOCIATIVE RECALL IN A 10-CARTRIDGE BANK
+================================================================================================================================================================
+MODEL                       : Qwen/Qwen2.5-7B-Instruct · frozen
+BANK                        : 10 independently forged RAW BELLEKÖZ
+REQUIRED                    : 2
+DISTRACTORS                 : 8
+REQUIRED MEMORY POSITIONS   : deterministic random / hidden from CONTENT arm
+TASK                        : Entity → Seal → Class
+FINAL ANSWER IN QUERY       : NO
+TARGET ENTITY IN DISTRACTORS: NO
+BRIDGE SEAL IN DISTRACTORS  : NO
+FINAL CLASS IN DISTRACTORS  : NO
+JOINT RE-FORGE              : NONE
+COMPRESSION                 : OFF
+DRA / STEERING              : NONE
+VTOKEN / ADDRESS VECTOR     : OFF
+ANN / LEARNED ROUTER        : NONE
+GRAPH                        : NONE
+TRAINING / LoRA             : NONE
+POST-HOC ITEM SELECTION     : NONE
+CONTENT SEARCH              : explicit exhaustive O(N) model-native scan
+INTERMEDIATE                : model-produced textual trace
+STAGE-2 REUSES STAGE-1 MEM  : NO
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+DIRECT · 10 ONE-SHOT         :  0/32 = 0.0000
+ORACLE ADDRESS RELAY         : 31/32 = 0.9688
+CONTENT · FIRST ADDRESS      : 30/32 = 0.9375
+CONTENT · FIRST TRACE        : 30/32 = 0.9375
+CONTENT · SECOND ADDRESS     : 30/32 = 0.9375
+CONTENT · SECOND VALUE       : 29/32 = 0.9062
+CONTENT · END-TO-END         : 29/32 = 0.9062
+DIRECT FAIL → CONTENT PASS   : 29/32
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST501 LOCK SHA            : 1a3e6ea2a9f6c72d7b8dacb0c0844e9f2a6f8595bb232f1554eb41af7a20dc41
+TEST502 LOCK SHA            : f852b6efc6ee887bae54db08cbc11f987e749499a51cebeb5132f569e74edb89
+TEST503 LOCK SHA            : 2cb70ffa53a98efb249590dba7ef184b9e41cf72a99291bda65e6c93b82cb5de
+TEST504 LOCK SHA            : 74c375373666c840105cc165b90977c56c8698cf3d5617c63f619a0139386846
+TEST505 LOCK SHA            : 6d093a5d082b43ff56f09bb94cfed1839c0bd0d76a967822937996a5d1948e43
+TOTAL TEST TIME              : 347.65s
+EXPLORATORY VERDICT         : TEN_BANK_SELECTIVE_ASSOCIATIVE_RELAY_REPLICATED
+================================================================================================================================================================
