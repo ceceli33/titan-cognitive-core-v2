@@ -1,0 +1,196 @@
+ ================================================================================================================================================================
+TEST503 — AKBASCORE MAM · WRITE-TIME CONTEXT vs POSITION/LAYOUT
+B CONTIG RAW → B2 JOINT-FORGED / REBASED PARALLEL → C INDEPENDENT RAW
+================================================================================================================================================================
+LOCK SHA: 2cb70ffa53a98efb249590dba7ef184b9e41cf72a99291bda65e6c93b82cb5de
+TEST501 LOCK: 1a3e6ea2a9f6c72d7b8dacb0c0844e9f2a6f8595bb232f1554eb41af7a20dc41
+TEST502 LOCK: f852b6efc6ee887bae54db08cbc11f987e749499a51cebeb5132f569e74edb89
+ITEMS: 32
+COMPRESSION / DRA / STEERING / ROUTER / TRAINING: NONE
+
+[1/5] Loading frozen Qwen...
+config.json: 100% 663/663 [00:00<00:00, 66.4kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 916kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 38.3MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 71.4MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 120MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.26MB/s]Download complete:  13.1GB,  729MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  371MB/s  Fetching 4 files: 100% 4/4 [00:48<00:00,  9.39s/it]Loading weights: 100% 339/339 [00:03<00:00, 98.30it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.2kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | H=3584 | QH=28 KVH=4 HD=128 | frozen BF16
+
+[2/5] Panel seal...
+      ITEM 01 entity=Aldren seal=FEN target=WAL positions=[0, 1]
+      ITEM 02 entity=Elara seal=VAN target=SOD positions=[1, 2]
+      ITEM 03 entity=Ilyra seal=BEK target=CER positions=[2, 0]
+      ITEM 04 entity=Joren seal=TUR target=NEX positions=[0, 1]
+      TEST502 panel reproduced deterministically.
+      B2 changes only write-time context while matching C's reader-side local-position parallel layout.
+
+[3/5] Running B / B2 / C...
+      [01/32] Aldren target=WAL | B=1 B2=1 C=0
+               B ='WAL'
+               B2='WAL'
+               C ='MEX'
+      [02/32] Elara  target=SOD | B=1 B2=1 C=0
+               B ='SOD'
+               B2='SOD'
+               C ='MAV'
+      [03/32] Ilyra  target=CER | B=1 B2=1 C=0
+               B ='CER'
+               B2='CER'
+               C ='DOV'
+      [04/32] Joren  target=NEX | B=1 B2=1 C=0
+               B ='NEX'
+               B2='NEX'
+               C ='BEL'
+      [05/32] Neris  target=GAM | B=1 B2=1 C=0
+               B ='GAM'
+               B2='GAM'
+               C ='NIV'
+      [06/32] Ralen  target=ROK | B=1 B2=1 C=0
+               B ='ROK'
+               B2='ROK'
+               C ='VEK'
+      [07/32] Saren  target=LER | B=1 B2=1 C=0
+               B ='LER'
+               B2='LER'
+               C ='SIN'
+      [08/32] Weyra  target=WER | B=1 B2=1 C=0
+               B ='WER'
+               B2='WER'
+               C ='MUR'
+      [09/32] Avel   target=XEN | B=1 B2=1 C=0
+               B ='XEN'
+               B2='XEN'
+               C ='VIR'
+      [10/32] Brann  target=CAL | B=1 B2=1 C=0
+               B ='CAL'
+               B2='CAL'
+               C ='GUN'
+      [11/32] Felis  target=RIM | B=1 B2=1 C=0
+               B ='RIM'
+               B2='RIM'
+               C ='XIR'
+      [12/32] Jaris  target=JAX | B=1 B2=1 C=0
+               B ='JAX'
+               B2='JAX'
+               C ='CIR'
+      [13/32] Koren  target=BUN | B=1 B2=1 C=0
+               B ='BUN'
+               B2='BUN'
+               C ='FOV'
+      [14/32] Orel   target=BOL | B=1 B2=1 C=0
+               B ='BOL'
+               B2='BOL'
+               C ='SEN'
+      [15/32] Teren  target=VEX | B=1 B2=1 C=0
+               B ='VEX'
+               B2='VEX'
+               C ='DOR'
+      [16/32] Urian  target=ZOL | B=1 B2=1 C=0
+               B ='ZOL'
+               B2='ZOL'
+               C ='GOR'
+      [17/32] Yalen  target=YER | B=1 B2=1 C=0
+               B ='YER'
+               B2='YER'
+               C ='YAV'
+      [18/32] Coren  target=ZAR | B=1 B2=1 C=0
+               B ='ZAR'
+               B2='ZAR'
+               C ='MON'
+      [19/32] Derin  target=NUR | B=1 B2=1 C=0
+               B ='NUR'
+               B2='NUR'
+               C ='TAL'
+      [20/32] Heron  target=HIN | B=1 B2=1 C=0
+               B ='HIN'
+               B2='HIN'
+               C ='SAV'
+      [21/32] Laven  target=LEV | B=1 B2=0 C=0
+               B ='LEV'
+               B2='FIR'
+               C ='FIR'
+      [22/32] Moris  target=KON | B=1 B2=1 C=0
+               B ='KON'
+               B2='KON'
+               C ='TAK'
+      [23/32] Rovis  target=VIL | B=1 B2=1 C=0
+               B ='VIL'
+               B2='VIL'
+               C ='JER'
+      [24/32] Veris  target=VOL | B=1 B2=1 C=0
+               B ='VOL'
+               B2='VOL'
+               C ='CUM'
+      [25/32] Waren  target=CIX | B=1 B2=1 C=0
+               B ='CIX'
+               B2='CIX'
+               C ='BEX'
+      [26/32] Aren   target=HES | B=1 B2=1 C=0
+               B ='HES'
+               B2='HES'
+               C ='URB'
+      [27/32] Elen   target=JUR | B=1 B2=1 C=0
+               B ='JUR'
+               B2='JUR'
+               C ='VEL'
+      [28/32] Faren  target=LAR | B=1 B2=1 C=0
+               B ='LAR'
+               B2='LAR'
+               C ='XAN'
+      [29/32] Joris  target=PIV | B=1 B2=0 C=0
+               B ='PIV'
+               B2='JIN'
+               C ='JIN'
+      [30/32] Noren  target=LUM | B=1 B2=1 C=0
+               B ='LUM'
+               B2='LUM'
+               C ='LIV'
+      [31/32] Oris   target=SAL | B=1 B2=1 C=0
+               B ='SAL'
+               B2='SAL'
+               C ='DAX'
+      [32/32] Toren  target=PER | B=1 B2=0 C=0
+               B ='PER'
+               B2='PEL'
+               C ='PEL'
+
+[4/5] Causal separation...
+      CONTIG RAW      : 32/32 = 1.0000
+      JOINT→REBASED   : 29/32 = 0.9062
+      INDEPENDENT RAW :  0/32 = 0.0000
+      B pass  → B2 fail : 3/32
+      B2 pass → C fail  : 29/32
+      B∩B2 correct      : 29/32
+      B2∩C correct      : 0/32
+
+      Paired bootstrap accuracy differences:
+      B-B2: Δ=+0.0938 | bootstrap95=[+0.0000,+0.2188]
+      B2-C: Δ=+0.9062 | bootstrap95=[+0.8125,+1.0000]
+      B-C: Δ=+1.0000 | bootstrap95=[+1.0000,+1.0000]
+
+[5/5] Mechanistic classification...
+
+================================================================================================================================================================
+TEST503 FINAL RESULT — AKBASCORE MAM · WRITE-TIME CONTEXT vs POSITION/LAYOUT
+================================================================================================================================================================
+MODEL                       : Qwen/Qwen2.5-7B-Instruct · frozen
+TASK                        : 2 edges · Entity → Seal → Class
+PANEL                       : TEST502 deterministic 32-item panel
+COMPRESSION                 : OFF
+DRA / STEERING              : NONE
+VTOKEN / ADDRESS            : OFF
+TOP-K / ROUTER / ANN        : NONE
+GRAPH                        : NONE
+TRAINING / LoRA             : NONE
+POST-HOC ITEM SELECTION     : NONE
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+B  · CONTIGUOUS RAW K/V      : 32/32 = 1.0000
+B2 · JOINT-FORGED / REBASED : 29/32 = 0.9062
+C  · INDEPENDENT RAW K/V     :  0/32 = 0.0000
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+B PASS → B2 FAIL             : 3/32
+B2 PASS → C FAIL             : 29/32
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST501 LOCK SHA            : 1a3e6ea2a9f6c72d7b8dacb0c0844e9f2a6f8595bb232f1554eb41af7a20dc41
+TEST502 LOCK SHA            : f852b6efc6ee887bae54db08cbc11f987e749499a51cebeb5132f569e74edb89
+TEST503 LOCK SHA            : 2cb70ffa53a98efb249590dba7ef184b9e41cf72a99291bda65e6c93b82cb5de
+TOTAL TEST TIME              : 162.99s
+EXPLORATORY VERDICT         : WRITE_TIME_CONTEXTUALIZATION_DEFICIT_STRONGLY_SUPPORTED
+================================================================================================================================================================
