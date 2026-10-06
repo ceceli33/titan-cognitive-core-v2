@@ -1,0 +1,239 @@
+ ================================================================================================================================================================
+TEST502 — AKBASCORE MAM · TWO-HOP MEMORY TRANSFER
+TEXT → CONTIGUOUS RAW K/V → INDEPENDENT RAW K/V → K120/V128 BELLEKÖZ
+================================================================================================================================================================
+LOCK SHA: f852b6efc6ee887bae54db08cbc11f987e749499a51cebeb5132f569e74edb89
+TEST501 LOCK: 1a3e6ea2a9f6c72d7b8dacb0c0844e9f2a6f8595bb232f1554eb41af7a20dc41
+TEST482 BLOB: ecc630144a44479cb35c432c50eb0d09bc6866d7
+TEST495 LOCK: 2bae3f2497fefb50b3d18d8fb7035c63a08fdd67d80077dd92f4e9c56eca787e
+ITEMS: 32
+DRA / STEERING: NONE
+
+[1/6] Loading frozen Qwen...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 75.1kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 863kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 86.7MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 74.3MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 108MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.61MB/s]Download complete:  13.1GB,  374MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  438MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.71s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.67it/s]generation_config.json: 100% 243/243 [00:00<00:00, 32.8kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | H=3584 | QH=28 KVH=4 HD=128 | frozen BF16
+
+[2/6] Building frozen TEST482 neutral PCA codebook...
+      Codebook ready.
+
+[3/6] Panel seal...
+      ITEM 01 entity=Aldren seal=FEN target=WAL positions=[0, 1]
+      ITEM 02 entity=Elara seal=VAN target=SOD positions=[1, 2]
+      ITEM 03 entity=Ilyra seal=BEK target=CER positions=[2, 0]
+      ITEM 04 entity=Joren seal=TUR target=NEX positions=[0, 1]
+      Same TEST501 two-hop task; target-row positions rotate.
+
+[4/6] Running TEXT / CONTIG RAW / INDEPENDENT RAW / K120-V128...
+      [01/32] Aldren target=WAL | A=1 B=1 C=0 D=0
+               A='WAL'
+               B='WAL'
+               C='MEX'
+               D='Routing class MEX'
+      [02/32] Elara  target=SOD | A=1 B=1 C=0 D=0
+               A='SOD'
+               B='SOD'
+               C='MAV'
+               D='MAV'
+      [03/32] Ilyra  target=CER | A=1 B=1 C=0 D=0
+               A='CER'
+               B='CER'
+               C='DOV'
+               D='DOV'
+      [04/32] Joren  target=NEX | A=1 B=1 C=0 D=0
+               A='NEX'
+               B='NEX'
+               C='BEL'
+               D='BEL'
+      [05/32] Neris  target=GAM | A=1 B=1 C=0 D=0
+               A='GAM'
+               B='GAM'
+               C='NIV'
+               D='NIV'
+      [06/32] Ralen  target=ROK | A=1 B=1 C=0 D=0
+               A='ROK'
+               B='ROK'
+               C='VEK'
+               D='The routing class for instrument ROKEN is VEAL, based on the provided correspondences where Seal XAL is paired with ROK, Seal NAV with ZEk'
+      [07/32] Saren  target=LER | A=1 B=1 C=0 D=0
+               A='LER'
+               B='LER'
+               C='SIN'
+               D='SIN'
+      [08/32] Weyra  target=WER | A=1 B=1 C=0 D=0
+               A='WER'
+               B='WER'
+               C='MUR'
+               D='OVI'
+      [09/32] Avel   target=XEN | A=0 B=1 C=0 D=0
+               A='ZUN'
+               B='XEN'
+               C='VIR'
+               D='VIR'
+      [10/32] Brann  target=CAL | A=0 B=1 C=0 D=0
+               A='To determine the routing class corresponding to instrument Brann, we need to follow the information provided in the records step by step.'
+               B='CAL'
+               C='GUN'
+               D='GUN'
+      [11/32] Felis  target=RIM | A=1 B=1 C=0 D=0
+               A='RIM'
+               B='RIM'
+               C='XIR'
+               D="XIR To determine theal the the's routing class, we can follow the the pattern established by the given examples:"
+      [12/32] Jaris  target=JAX | A=1 B=1 C=0 D=0
+               A='JAX'
+               B='JAX'
+               C='CIR'
+               D='CIR'
+      [13/32] Koren  target=BUN | A=1 B=1 C=0 D=0
+               A='BUN'
+               B='BUN'
+               C='FOV'
+               D='FO'
+      [14/32] Orel   target=BOL | A=1 B=1 C=0 D=0
+               A='BOL'
+               B='BOL'
+               C='SEN'
+               D='SEN'
+      [15/32] Teren  target=VEX | A=1 B=1 C=0 D=0
+               A='VEX'
+               B='VEX'
+               C='DOR'
+               D='DOR'
+      [16/32] Urian  target=ZOL | A=1 B=1 C=0 D=0
+               A='ZOL'
+               B='ZOL'
+               C='GOR'
+               D='GOR'
+      [17/32] Yalen  target=YER | A=1 B=1 C=0 D=0
+               A='YER'
+               B='YER'
+               C='YAV'
+               D="To determine thealen's routing class, we need to follow the the the records and the the the given correspondences:"
+      [18/32] Coren  target=ZAR | A=1 B=1 C=0 D=0
+               A='ZAR'
+               B='ZAR'
+               C='MON'
+               D='MON'
+      [19/32] Derin  target=NUR | A=1 B=1 C=0 D=0
+               A='NUR'
+               B='NUR'
+               C='TAL'
+               D='TAL'
+      [20/32] Heron  target=HIN | A=1 B=1 C=0 D=0
+               A='HIN'
+               B='HIN'
+               C='SAV'
+               D='SAV NUR.'
+      [21/32] Laven  target=LEV | A=1 B=1 C=0 D=0
+               A='LEV'
+               B='LEV'
+               C='FIR'
+               D='FIR'
+      [22/32] Moris  target=KON | A=1 B=1 C=0 D=0
+               A='KON'
+               B='KON'
+               C='TAK'
+               D='TAK'
+      [23/32] Rovis  target=VIL | A=1 B=1 C=0 D=0
+               A='VIL'
+               B='VIL'
+               C='JER'
+               D='JER'
+      [24/32] Veris  target=VOL | A=1 B=1 C=0 D=0
+               A='VOL'
+               B='VOL'
+               C='CUM'
+               D="Routing class CUM. However, based on the provided in the statement, it shouID be CUM. There's a a small typo in the question"
+      [25/32] Waren  target=CIX | A=1 B=1 C=0 D=0
+               A='CIX'
+               B='CIX'
+               C='BEX'
+               D='BEX'
+      [26/32] Aren   target=HES | A=1 B=1 C=0 D=0
+               A='HES'
+               B='HES'
+               C='URB'
+               D='Routing class URB. The routing class for instrument Aren is given directly in the in the statement: "Instrument Aren carries seal URB." Therefore, the the'
+      [27/32] Elen   target=JUR | A=1 B=1 C=0 D=0
+               A='JUR'
+               B='JUR'
+               C='VEL'
+               D='To determine the routing class for "Instrument Elen" based on the given records, we need to identify the pattern or rule that maps the names to routing classes'
+      [28/32] Faren  target=LAR | A=1 B=1 C=0 D=0
+               A='LAR'
+               B='LAR'
+               C='XAN'
+               D='The routing class for instrument Faren does not correspond to any of the theSe, Gel, or Harin based on the provided information. Therefore, we cannot'
+      [29/32] Joris  target=PIV | A=1 B=1 C=0 D=0
+               A='PIV'
+               B='PIV'
+               C='JIN'
+               D='Routing class TOL.'
+      [30/32] Noren  target=LUM | A=1 B=1 C=0 D=0
+               A='LUM'
+               B='LUM'
+               C='LIV'
+               D='There is no direct match for instrument NUM based on the given information. The provided seals correspondences are for YOR, Hel, and Bos, but N'
+      [31/32] Oris   target=SAL | A=0 B=1 C=0 D=0
+               A='To determine the routing class corresponding to the instrument Oris, we need to follow the information provided in the records step by step.'
+               B='SAL'
+               C='DAX'
+               D='DAX'
+      [32/32] Toren  target=PER | A=1 B=1 C=0 D=0
+               A='PER'
+               B='PER'
+               C='PEL'
+               D='To determine the the, we need to follow the, PEL, and WEN to their corresponding routing classes. We know:'
+
+[5/6] Transition anatomy...
+      TEXT        : 29/32 = 0.9062
+      CONTIG RAW  : 32/32 = 1.0000
+      INDEP RAW   :  0/32 = 0.0000
+      K120/V128   :  0/32 = 0.0000
+      A pass → B fail : 0/32
+      B pass → C fail : 32/32
+      C pass → D fail : 0/32
+      A∩B correct     : 29/32
+      B∩C correct     : 0/32
+      C∩D correct     : 0/32
+
+      Paired bootstrap accuracy differences:
+      A-B: Δ=-0.0938 | bootstrap95=[-0.2188,+0.0000]
+      B-C: Δ=+1.0000 | bootstrap95=[+1.0000,+1.0000]
+      C-D: Δ=+0.0000 | bootstrap95=[+0.0000,+0.0000]
+
+[6/6] Mechanistic classification...
+
+================================================================================================================================================================
+TEST502 FINAL RESULT — AKBASCORE MAM · TWO-HOP MEMORY TRANSFER
+================================================================================================================================================================
+MODEL                       : Qwen/Qwen2.5-7B-Instruct · frozen
+TEST501 NATIVE BASELINE     : 28/32 = 0.8750
+RELATIONAL DEPTH            : 2 edges · Entity → Seal → Class
+TARGET LITERAL IN QUERY     : NO
+GOLD-FIRST SHORTCUT         : REMOVED / ROTATING POSITIONS
+DRA / STEERING              : NONE
+VTOKEN / ADDRESS            : OFF
+TOP-K / ROUTER / ANN        : NONE
+GRAPH                        : NONE
+TRAINING / LoRA             : NONE
+POST-HOC ITEM SELECTION     : NONE
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+A · CONTIGUOUS TEXT          : 29/32 = 0.9062
+B · CONTIGUOUS RAW K/V       : 32/32 = 1.0000
+C · INDEPENDENT RAW K/V      :  0/32 = 0.0000
+D · INDEPENDENT K120/V128    :  0/32 = 0.0000
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+A PASS → B FAIL              : 0/32
+B PASS → C FAIL              : 32/32
+C PASS → D FAIL              : 0/32
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST482 BLOB SHA            : ecc630144a44479cb35c432c50eb0d09bc6866d7
+TEST482 LOCK SHA            : fa59fd38661e558f6bae22eedff0999f32f8f6e9d4a08932383525323a5fe687
+TEST495 LOCK SHA            : 2bae3f2497fefb50b3d18d8fb7035c63a08fdd67d80077dd92f4e9c56eca787e
+TEST501 LOCK SHA            : 1a3e6ea2a9f6c72d7b8dacb0c0844e9f2a6f8595bb232f1554eb41af7a20dc41
+TEST502 LOCK SHA            : f852b6efc6ee887bae54db08cbc11f987e749499a51cebeb5132f569e74edb89
+TOTAL TEST TIME              : 193.92s
+EXPLORATORY VERDICT         : INDEPENDENT_WRITE_TWO_HOP_DEFICIT_OBSERVED
+================================================================================================================================================================
