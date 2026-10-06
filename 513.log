@@ -1,0 +1,147 @@
+ ==============================================================================================================================================================================
+TEST513 — AKBASCORE MAM · ORDERED FULL-SEAL LATENT ADDRESS
+ORACLE A → SINGLE PRE-DECODE L27 STATE → ORDER-PRESERVING 2-SLOT ADDRESS → REAL B BELLEKÖZ
+==============================================================================================================================================================================
+LOCK SHA: 2b28137b12a26517261d0d8827c378f7e9e455bd5f4ccb12af47277ed8de01aa
+PARENT TEST512 LOCK: 2c9576ce56491489be55f34a1a6d331a29bc4fd8080084693e92d2dab4a43ac2
+PARENT TEST511 LOCK: 31558a2b86b1a1e86cb4f729d7c956781fe9269ff20bb2557a92b3300270e35c
+TRACE DEPTH: L27 — SEALED BY TEST511
+BANK: 32 REAL B BELLEKÖZ | DISCOVERY: 16 | FROZEN EVAL: 16
+A+QUERY FORWARDS/ITEM: 1
+ANSWER TOKEN GENERATION: NONE | TEACHER FORCING: NONE | SECOND AUTOREGRESSIVE FORWARD: NONE
+QUERY-TIME B CANDIDATE FORWARDS: 0 | TEXT REINSERTION: NONE
+
+[1/9] Loading frozen Qwen...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 83.2kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 898kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 82.8MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 73.2MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 125MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.40MB/s]Download complete:  13.1GB,  722MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  501MB/s  Fetching 4 files: 100% 4/4 [00:44<00:00, 44.22s/it]Loading weights: 100% 339/339 [00:03<00:00, 101.19it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.1kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | H=3584 | vocab=152064
+
+[2/9] Locking complete Seal token sequences...
+      Seal token lengths: {1: 5, 2: 27}
+      First-token identities: 23 / 32 | collision groups: 7
+       ['C'] → ['CEN', 'CER', 'CIR']
+       ['F'] → ['FEN', 'FIR']
+       ['K'] → ['KET', 'KOR']
+       ['R'] → ['RAS', 'RIN', 'RUK']
+       ['T'] → ['TOL', 'TUR']
+       ['V'] → ['VAN', 'VIR']
+       ['X'] → ['XAL', 'XEN']
+
+[3/9] Precomputing 32 real B BELLEKÖZ...
+      B01 | FEN→QAL | packet tokens=32
+      B02 | VAN→SOD | packet tokens=30
+      B03 | BEK→QAD | packet tokens=31
+      B04 | TUR→QAH | packet tokens=29
+      B05 | CER→GAM | packet tokens=31
+      B06 | XAL→ROK | packet tokens=31
+      All distractors are grammatical meaningful model-processed BELLEKÖZ.
+
+[4/9] Building ordered two-slot B addresses...
+      Ordered addresses ready: dimension 7169
+      Token order preserved; one-token/two-token identities explicitly separated.
+
+[5/9] Capturing one-shot L27 ÇAĞRIİZ...
+      ITEM 01 Aldren | one L27 state captured | generated tokens=0
+      ITEM 02 Elara  | one L27 state captured | generated tokens=0
+      ITEM 03 Ilyra  | one L27 state captured | generated tokens=0
+      ITEM 04 Joren  | one L27 state captured | generated tokens=0
+      ITEM 05 Neris  | one L27 state captured | generated tokens=0
+      ITEM 06 Ralen  | one L27 state captured | generated tokens=0
+      Exactly one A+query forward/item.
+
+[6/9] Building one-shot ordered query addresses...
+      RAW2 / SOFT2 / GROUP2 ready.
+      Additional model forwards: 0 | generated tokens: 0 | teacher forcing: 0
+
+[7/9] DISCOVERY — items 01–16 only...
+      #01 SOFT2  | R1=0.8125 R5=1.0000 R16=1.0000 MRR=0.895833 median=1.0
+      #02 RAW2   | R1=0.7500 R5=1.0000 R16=1.0000 MRR=0.864583 median=1.0
+      #03 GROUP2 | R1=0.6875 R5=1.0000 R16=1.0000 MRR=0.843750 median=1.0
+
+      FROZEN ADDRESS → SOFT2
+      Evaluation items have NOT participated in selection.
+
+[8/9] FROZEN EVALUATION...
+      [17/32] Yalen  | gold=B17(ZOR) pred=B17(ZOR) rank= 1 | margin=+0.074818
+      [18/32] Coren  | gold=B18(IVO) pred=B18(IVO) rank= 1 | margin=+0.297879
+      [19/32] Derin  | gold=B19(RAS) pred=B19(RAS) rank= 1 | margin=+0.246655
+      [20/32] Heron  | gold=B20(NUR) pred=B20(NUR) rank= 1 | margin=+0.167256
+      [21/32] Laven  | gold=B21(FIR) pred=B01(FEN) rank= 2 | margin=-0.001450
+      [22/32] Moris  | gold=B22(KET) pred=B22(KET) rank= 1 | margin=+0.072773
+      [23/32] Rovis  | gold=B23(RIN) pred=B23(RIN) rank= 1 | margin=+0.001892
+      [24/32] Veris  | gold=B24(TEV) pred=B24(TEV) rank= 1 | margin=+0.189955
+      [25/32] Waren  | gold=B25(KOR) pred=B22(KET) rank= 2 | margin=-0.017057
+      [26/32] Aren   | gold=B26(URB) pred=B07(RUK) rank= 2 | margin=-0.037482
+      [27/32] Elen   | gold=B27(VEL) pred=B02(VAN) rank=28 | margin=-0.696809
+      [28/32] Faren  | gold=B28(XEN) pred=B06(XAL) rank= 2 | margin=-0.023873
+      [29/32] Joris  | gold=B29(TOL) pred=B04(TUR) rank= 2 | margin=-0.007954
+      [30/32] Noren  | gold=B30(YOR) pred=B30(YOR) rank= 1 | margin=+0.048197
+      [31/32] Oris   | gold=B31(MAR) pred=B31(MAR) rank= 1 | margin=+0.492877
+      [32/32] Toren  | gold=B32(PEL) pred=B32(PEL) rank= 1 | margin=+0.200601
+
+      Frozen statistics:
+      ADDRESS               : SOFT2
+      DISC R1/R5/MRR        : 0.8125 / 1.0000 / 0.895833
+      EVAL R1/R5/R16        : 0.6250 / 0.9375 / 0.9375
+      EVAL MRR/MEDIAN       : 0.783482 / 1.0
+      POSITIVE MARGIN       : 0.6250
+      COLLISION-GROUP R1    : 0.4286 | MRR=0.714286 | n=7
+      UNIQUE-FIRST R1       : 0.7778 | MRR=0.837302 | n=9
+      NULL R1 mean / P99    : 0.0309 / 0.1875
+      NULL MRR mean / P99   : 0.126509 / 0.260387
+
+[9/9] Final mechanistic classification...
+      A address                           : ORACLE
+      ÇAĞRIİZ depth                       : L27 — TEST511 sealed
+      A+query forwards/item               : 1
+      Answer tokens generated             : 0
+      Teacher-forced tokens               : 0
+      Second autoregressive forward       : 0
+      Intermediate Seal decoded           : 0
+      Text reinserted                     : 0
+      Query-time B candidate forwards     : 0
+      B content read before selection     : 0
+      B candidates                        : 32 real grammatical BELLEKÖZ
+      Learned router/probe                : NONE
+      ANN / DRA / training                : NONE
+      Evaluation reselection              : NO
+
+==============================================================================================================================================================================
+TEST513 FINAL RESULT — AKBASCORE MAM · ORDERED FULL-SEAL LATENT ADDRESS
+==============================================================================================================================================================================
+MODEL                         : Qwen/Qwen2.5-7B-Instruct · frozen
+PARENT                        : TEST512
+TRACE DEPTH                   : L27
+TASK                          : one-shot L27 → ordered full-Seal → B address
+B BANK                        : 32 real grammatical BELLEKÖZ
+QUERY FORWARDS/ITEM           : 1
+ANSWER GENERATION             : NONE
+TEACHER FORCING               : NONE
+SECOND AUTOREGRESSIVE FORWARD : NONE
+INTERMEDIATE TEXT             : NONE
+QUERY-TIME B FORWARDS         : NONE
+FROZEN ADDRESS                : SOFT2
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DISCOVERY · R1                : 0.8125
+DISCOVERY · R5                : 1.0000
+DISCOVERY · MRR               : 0.895833
+FROZEN EVAL · R1              : 0.6250
+FROZEN EVAL · R5              : 0.9375
+FROZEN EVAL · R16             : 0.9375
+FROZEN EVAL · MRR             : 0.783482
+FROZEN EVAL · MEDIAN          : 1.0
+FROZEN EVAL · POS MARGIN      : 0.6250
+COLLISION-GROUP · R1          : 0.4286
+UNIQUE-FIRST · R1             : 0.7778
+NULL · R1 MEAN                : 0.0309
+NULL · MRR MEAN               : 0.126509
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST508 LOCK SHA              : 47512c7860268517670ca5b45b6e76fe1582362dd38e447d164f33c756a1a2ca
+TEST509 LOCK SHA              : 4b5b78841ebf0d9b458306136e122fd3108b33bdfd89924585f891f748eca0d8
+TEST510 LOCK SHA              : cf3aaf955c0cd5019b1b951d185f290528286df82b23da62aaa30657e6bad5ea
+TEST511 LOCK SHA              : 31558a2b86b1a1e86cb4f729d7c956781fe9269ff20bb2557a92b3300270e35c
+TEST512 LOCK SHA              : 2c9576ce56491489be55f34a1a6d331a29bc4fd8080084693e92d2dab4a43ac2
+TEST513 LOCK SHA              : 2b28137b12a26517261d0d8827c378f7e9e455bd5f4ccb12af47277ed8de01aa
+TOTAL TEST TIME               : 67.39s
+EXPLORATORY VERDICT           : ONE_SHOT_FULL_KEY_LATENT_ADDRESS_OBSERVED
+==============================================================================================================================================================================
