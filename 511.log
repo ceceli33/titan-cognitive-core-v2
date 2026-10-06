@@ -1,0 +1,176 @@
+ ==============================================================================================================================================================================
+TEST511 — AKBASCORE MAM · PRE-DECODE NEXT-KEY TRAJECTORY X-RAY
+ORACLE A → PRE-ANSWER LAYERWISE STATE → FROZEN LM-HEAD SEAL READOUT
+==============================================================================================================================================================================
+LOCK SHA: 31558a2b86b1a1e86cb4f729d7c956781fe9269ff20bb2557a92b3300270e35c
+PARENT TEST510 LOCK: cf3aaf955c0cd5019b1b951d185f290528286df82b23da62aaa30657e6bad5ea
+PARENT TEST509 LOCK: 4b5b78841ebf0d9b458306136e122fd3108b33bdfd89924585f891f748eca0d8
+PARENT TEST508 LOCK: 47512c7860268517670ca5b45b6e76fe1582362dd38e447d164f33c756a1a2ca
+ITEMS: 32 | DISCOVERY: 16 | FROZEN EVAL: 16 | SEAL CANDIDATES: 32
+ANSWER TOKEN GENERATION: NONE
+TEXT TRACE REINSERTION: NONE
+B-CARTRIDGE SEARCH: NONE
+CANDIDATE MODEL FORWARDS: NONE
+PRIMARY: FIRST SEAL TOKEN LOGIT
+SECONDARY: FULL SEAL TEACHER-FORCED LOG-PROBABILITY
+
+[1/8] Loading frozen Qwen...
+config.json: 100% 663/663 [00:00<00:00, 81.5kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 720kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 82.0MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 58.0MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 129MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.13MB/s]Download complete:  13.1GB,  847MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  398MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.92s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.76it/s]generation_config.json: 100% 243/243 [00:00<00:00, 34.2kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | H=3584 | QH=28 KVH=4 HD=128 | torch.bfloat16
+
+[2/8] Tokenizing candidate Seals...
+      Seal token lengths: {1: 5, 2: 27}
+      BEK: [11594, 42] → ['BE', 'K']
+      CEN: [34, 953] → ['C', 'EN']
+      CER: [34, 640] → ['C', 'ER']
+      CIR: [34, 2801] → ['C', 'IR']
+      FEN: [37, 953] → ['F', 'EN']
+      FER: [25108] → ['FER']
+      FIR: [37, 2801] → ['F', 'IR']
+      GUL: [38, 1094] → ['G', 'UL']
+      Unique first-token IDs: 23 / 32
+      First-token collision groups: 7
+        34 ['C'] → ['CEN', 'CER', 'CIR']
+        37 ['F'] → ['FEN', 'FIR']
+        42 ['K'] → ['KET', 'KOR']
+        49 ['R'] → ['RAS', 'RIN', 'RUK']
+        51 ['T'] → ['TOL', 'TUR']
+        53 ['V'] → ['VAN', 'VIR']
+        55 ['X'] → ['XAL', 'XEN']
+
+[3/8] Pre-forging oracle A memories...
+      ITEM 01 Aldren | A contains Aldren→FEN
+      ITEM 02 Elara  | A contains Elara→VAN
+      ITEM 03 Ilyra  | A contains Ilyra→BEK
+      ITEM 04 Joren  | A contains Joren→TUR
+      ITEM 05 Neris  | A contains Neris→CER
+      ITEM 06 Ralen  | A contains Ralen→XAL
+      Same TEST509/510 RAW A-memory construction retained.
+
+[4/8] Capturing pre-answer trajectory...
+      ITEM 01 Aldren | 29 residual depths captured | answer generated: NO
+      ITEM 02 Elara  | 29 residual depths captured | answer generated: NO
+      ITEM 03 Ilyra  | 29 residual depths captured | answer generated: NO
+      ITEM 04 Joren  | 29 residual depths captured | answer generated: NO
+      ITEM 05 Neris  | 29 residual depths captured | answer generated: NO
+      ITEM 06 Ralen  | 29 residual depths captured | answer generated: NO
+      Depth L00 = embedding/pre-layer-0 state.
+      Depth L28 = final decoder residual before model final RMSNorm.
+
+[5/8] DISCOVERY — FIRST Seal-token readout, items 01–16...
+      #01 L27 | R1=0.6875 R5=1.0000 R16=1.0000 MRR=0.822917 median=1.0
+      #02 L26 | R1=0.5625 R5=0.9375 R16=1.0000 MRR=0.729167 median=1.0
+      #03 L24 | R1=0.5625 R5=0.8750 R16=0.8750 MRR=0.684508 median=1.0
+      #04 L25 | R1=0.5000 R5=0.9375 R16=1.0000 MRR=0.696429 median=1.5
+      #05 L28 | R1=0.1875 R5=0.3125 R16=1.0000 MRR=0.313122 median=6.0
+      #06 L01 | R1=0.1250 R5=0.3125 R16=0.5000 MRR=0.211225 median=16.0
+      #07 L05 | R1=0.0625 R5=0.2500 R16=0.5625 MRR=0.169431 median=15.0
+      #08 L21 | R1=0.0625 R5=0.1250 R16=0.4375 MRR=0.145353 median=18.0
+      #09 L23 | R1=0.0000 R5=0.5000 R16=0.8750 MRR=0.226044 median=5.5
+      #10 L02 | R1=0.0000 R5=0.2500 R16=0.5000 MRR=0.129800 median=16.5
+      #11 L04 | R1=0.0000 R5=0.1875 R16=0.5000 MRR=0.126963 median=14.5
+      #12 L20 | R1=0.0000 R5=0.1875 R16=0.5000 MRR=0.125298 median=16.0
+      #13 L16 | R1=0.0000 R5=0.1250 R16=0.6875 MRR=0.118007 median=13.5
+      #14 L06 | R1=0.0000 R5=0.1875 R16=0.5000 MRR=0.114512 median=17.0
+      #15 L03 | R1=0.0000 R5=0.1250 R16=0.5000 MRR=0.113021 median=16.0
+
+      FROZEN DEPTH → L27
+      Evaluation items have NOT participated in depth selection.
+
+[6/8] FROZEN EVALUATION — FIRST Seal-token readout...
+      [17/32] Yalen  | gold=ZOR pred=ZOR rank= 1 | gold=+13.4375 topWrong=+4.5625 margin=+8.8750
+      [18/32] Coren  | gold=IVO pred=IVO rank= 1 | gold=+4.6250 topWrong=+2.4844 margin=+2.1406
+      [19/32] Derin  | gold=RAS pred=RAS rank= 1 | gold=+15.0625 topWrong=+15.0625 margin=+0.0000
+      [20/32] Heron  | gold=NUR pred=NUR rank= 1 | gold=+11.8750 topWrong=+3.5938 margin=+8.2812
+      [21/32] Laven  | gold=FIR pred=FEN rank= 2 | gold=+6.6250 topWrong=+6.6250 margin=+0.0000
+      [22/32] Moris  | gold=KET pred=KET rank= 1 | gold=+14.8125 topWrong=+14.8125 margin=+0.0000
+      [23/32] Rovis  | gold=RIN pred=RAS rank= 2 | gold=+15.3750 topWrong=+15.3750 margin=+0.0000
+      [24/32] Veris  | gold=TEV pred=TEV rank= 1 | gold=+4.5938 topWrong=+2.5312 margin=+2.0625
+      [25/32] Waren  | gold=KOR pred=KET rank= 2 | gold=+16.0000 topWrong=+16.0000 margin=+0.0000
+      [26/32] Aren   | gold=URB pred=URB rank= 1 | gold=+6.0625 topWrong=+2.2500 margin=+3.8125
+      [27/32] Elen   | gold=VEL pred=VAN rank= 3 | gold=+5.0312 topWrong=+10.2500 margin=-5.2188
+      [28/32] Faren  | gold=XEN pred=XAL rank= 2 | gold=+10.0625 topWrong=+10.0625 margin=+0.0000
+      [29/32] Joris  | gold=TOL pred=TOL rank= 1 | gold=+13.5000 topWrong=+13.5000 margin=+0.0000
+      [30/32] Noren  | gold=YOR pred=YOR rank= 1 | gold=+13.3750 topWrong=+3.2344 margin=+10.1406
+      [31/32] Oris   | gold=MAR pred=MAR rank= 1 | gold=+13.5625 topWrong=+2.2500 margin=+11.3125
+      [32/32] Toren  | gold=PEL pred=PEL rank= 1 | gold=+5.3750 topWrong=+2.7656 margin=+2.6094
+
+      FULL-SEQUENCE readability control...
+      FULL EVAL R1=0.9375 R5=1.0000 R16=1.0000 MRR=0.958333 median=1.0
+
+[7/8] Frozen statistics and null...
+      FROZEN DEPTH         : L27
+      DISCOVERY R1         : 0.6875
+      DISCOVERY R5         : 1.0000
+      DISCOVERY MRR        : 0.822917
+      EVAL FIRST R1        : 0.6875
+      EVAL FIRST R5        : 1.0000
+      EVAL FIRST R16       : 1.0000
+      EVAL FIRST MRR       : 0.833333
+      EVAL FIRST MEDIAN    : 1.0
+      FIRST POS MARGIN     : 0.5000
+      FULL SEQ R1          : 0.9375
+      FULL SEQ R5          : 1.0000
+      FULL SEQ MRR         : 0.958333
+      NULL R1 mean / P99   : 0.0309 / 0.1875
+      NULL MRR mean / P99  : 0.125958 / 0.260993
+
+[8/8] Mechanistic classification...
+      A address                           : ORACLE
+      Answer tokens generated             : 0
+      Seal text fed to B                  : 0
+      B cartridges queried                : 0
+      Learned probes                      : 0
+      Primary channel selection           : DISCOVERY ONLY
+      Frozen evaluation reselection       : NO
+      Primary readout                     : frozen final norm + lm_head
+      Secondary full-sequence control     : teacher-forced diagnostic
+      Distractors                         : meaningful model-native records only
+      DRA / steering                      : NONE
+      Training                            : NONE
+
+==============================================================================================================================================================================
+TEST511 FINAL RESULT — AKBASCORE MAM · PRE-DECODE NEXT-KEY TRAJECTORY X-RAY
+==============================================================================================================================================================================
+MODEL                         : Qwen/Qwen2.5-7B-Instruct · frozen
+PARENT                        : TEST510
+PARENT TEST510 LOCK           : cf3aaf955c0cd5019b1b951d185f290528286df82b23da62aaa30657e6bad5ea
+PARENT TEST509 LOCK           : 4b5b78841ebf0d9b458306136e122fd3108b33bdfd89924585f891f748eca0d8
+PARENT TEST508 LOCK           : 47512c7860268517670ca5b45b6e76fe1582362dd38e447d164f33c756a1a2ca
+TASK                          : Oracle A → pre-decode trajectory → Seal readout
+SEAL CANDIDATES               : 32
+A ADDRESS                     : ORACLE
+ANSWER GENERATION             : NONE
+TEXT TRACE REINSERTION        : NONE
+B-CARTRIDGE SEARCH            : NONE
+LEARNED PROBE                 : NONE
+COSINE REFERENCE MATCHING     : NONE
+PRIMARY                       : FIRST Seal-token frozen LM-head readout
+SECONDARY                     : FULL Seal teacher-forced sequence score
+DISCOVERY                     : items 01–16
+FROZEN EVALUATION             : items 17–32
+FROZEN DEPTH                  : L27
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DISCOVERY · R1                : 0.6875
+DISCOVERY · R5                : 1.0000
+DISCOVERY · MRR               : 0.822917
+FROZEN EVAL · FIRST R1        : 0.6875
+FROZEN EVAL · FIRST R5        : 1.0000
+FROZEN EVAL · FIRST R16       : 1.0000
+FROZEN EVAL · FIRST MRR       : 0.833333
+FROZEN EVAL · FIRST MEDIAN    : 1.0
+FROZEN EVAL · POS MARGIN      : 0.5000
+FROZEN EVAL · FULL R1         : 0.9375
+FROZEN EVAL · FULL R5         : 1.0000
+FROZEN EVAL · FULL MRR        : 0.958333
+NULL · R1 MEAN                : 0.0309
+NULL · MRR MEAN               : 0.125958
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST508 LOCK SHA              : 47512c7860268517670ca5b45b6e76fe1582362dd38e447d164f33c756a1a2ca
+TEST509 LOCK SHA              : 4b5b78841ebf0d9b458306136e122fd3108b33bdfd89924585f891f748eca0d8
+TEST510 LOCK SHA              : cf3aaf955c0cd5019b1b951d185f290528286df82b23da62aaa30657e6bad5ea
+TEST511 LOCK SHA              : 31558a2b86b1a1e86cb4f729d7c956781fe9269ff20bb2557a92b3300270e35c
+TOTAL TEST TIME               : 81.86s
+EXPLORATORY VERDICT           : PREDECODE_NEXT_KEY_PRESENT_IN_FROZEN_READOUT
+==============================================================================================================================================================================
