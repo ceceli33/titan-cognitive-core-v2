@@ -1,0 +1,195 @@
+ 
+======================================================================================================================================================
+TEST488 — AKBASCORE MAM · FROZEN RECALL ATLAS HELD-OUT 64
+64 NEW MEMORIES · STANDARD/HARD/EXTREME/ADVERSARIAL · TEST487 CHANNELS FROZEN
+======================================================================================================================================================
+LOCK SHA: d2c2e744532e1fe9b4c5be745fce6892720745dd590b49eca59ca3ef753fdfd8
+FROZEN SINGLE   : TOKENMAX_L10
+FROZEN CONSENSUS: ['TOKENMAX_L10', 'TOKENMAX_L13', 'HMEAN_COS_L11', 'TOKENMAX_L14', 'TOKENMAX_L09', 'DELTA_COS_L12', 'TOKENMAX_L11', 'HMEAN_COS_L08', 'TOKENMAX_L15', 'TOKENMAX_L12', 'DELTA_COS_L10']
+[1/6] Loading frozen Qwen...
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 78.4kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 821kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 78.7MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 65.7MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 109MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.38MB/s]
+Download complete: 
+
+ 13.1GB,  367MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  459MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:43<00:00, 43.67s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 100.35it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 34.4kB/s]
+      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | frozen BF16
+[2/6] Capturing 64 new memory states...
+      08/64
+      16/64
+      24/64
+      32/64
+      40/64
+      48/64
+      56/64
+      64/64
+[3/6] Capturing 64 held-out NAMELESS queries...
+      08/64
+      16/64
+      24/64
+      32/64
+      40/64
+      48/64
+      56/64
+      64/64
+[4/6] Running TEST487 frozen channels...
+      TOKENMAX L09
+      TOKENMAX L10
+      TOKENMAX L11
+      TOKENMAX L12
+      TOKENMAX L13
+      TOKENMAX L14
+      TOKENMAX L15
+      HMEAN L08
+      HMEAN L11
+      DELTA L10
+      DELTA L12
+[5/6] Difficulty-stratified held-out evaluation...
+
+      STANDARD N=24
+      SINGLE   : {'N': 24, 'R1': 0.7916666666666666, 'R5': 0.9583333333333334, 'R10': 1.0, 'MRR': 0.8597222222222222, 'MEDR': 1.0}
+      CONSENSUS: {'N': 24, 'R1': 0.75, 'R5': 1.0, 'R10': 1.0, 'MRR': 0.8645833333333334, 'MEDR': 1.0}
+
+      HARD N=16
+      SINGLE   : {'N': 16, 'R1': 0.75, 'R5': 0.8125, 'R10': 0.8125, 'MRR': 0.7828525641025641, 'MEDR': 1.0}
+      CONSENSUS: {'N': 16, 'R1': 0.625, 'R5': 0.875, 'R10': 0.875, 'MRR': 0.7138421474358974, 'MEDR': 1.0}
+
+      EXTREME N=16
+      SINGLE   : {'N': 16, 'R1': 0.25, 'R5': 0.6875, 'R10': 0.75, 'MRR': 0.4869209712959713, 'MEDR': 2.0}
+      CONSENSUS: {'N': 16, 'R1': 0.4375, 'R5': 0.75, 'R10': 0.8125, 'MRR': 0.5844527895939186, 'MEDR': 2.0}
+
+      ADVERSARIAL N=8
+      SINGLE   : {'N': 8, 'R1': 0.375, 'R5': 0.75, 'R10': 0.875, 'MRR': 0.5166666666666666, 'MEDR': 3.0}
+      CONSENSUS: {'N': 8, 'R1': 0.5, 'R5': 0.75, 'R10': 0.75, 'MRR': 0.5833333333333333, 'MEDR': 2.0}
+
+      PER-CASE
+      [00] STANDARD    single= 1 cons= 1 | copper hygrometer      -> QA-731
+      [01] STANDARD    single= 1 cons= 1 | velvet abacus          -> BX-204
+      [02] STANDARD    single= 1 cons= 1 | silver periscope       -> CN-865
+      [03] STANDARD    single= 1 cons= 1 | amber tuning fork      -> DV-419
+      [04] STANDARD    single= 1 cons= 1 | wooden sundial         -> ER-572
+      [05] STANDARD    single= 1 cons= 1 | glass thermometer      -> FT-936
+      [06] STANDARD    single= 1 cons= 1 | bronze gyroscope       -> GU-148
+      [07] STANDARD    single= 3 cons= 2 | linen atlas            -> HV-683
+      [08] STANDARD    single= 5 cons= 2 | jade magnifier         -> JW-257
+      [09] STANDARD    single= 1 cons= 1 | ceramic whistle        -> KX-804
+      [10] STANDARD    single=10 cons= 4 | ivory ruler            -> LY-391
+      [11] STANDARD    single= 1 cons= 1 | crimson funnel         -> MZ-746
+      [12] STANDARD    single= 1 cons= 1 | granite mortar         -> NA-518
+      [13] STANDARD    single= 1 cons= 1 | silk map               -> PB-972
+      [14] STANDARD    single= 1 cons= 2 | brass pendulum         -> QC-163
+      [15] STANDARD    single= 1 cons= 2 | opal prism             -> RD-625
+      [16] STANDARD    single= 1 cons= 1 | leather ledger         -> SE-480
+      [17] STANDARD    single= 1 cons= 1 | iron plumb bob         -> TF-219
+      [18] STANDARD    single= 2 cons= 2 | pearl binoculars       -> UG-854
+      [19] STANDARD    single= 1 cons= 1 | bamboo protractor      -> VH-307
+      [20] STANDARD    single= 1 cons= 1 | quartz stopwatch       -> WJ-691
+      [21] STANDARD    single= 2 cons= 1 | canvas stencil         -> XK-425
+      [22] STANDARD    single= 1 cons= 1 | marble chessboard      -> YL-738
+      [23] STANDARD    single= 1 cons= 1 | onyx compass divider   -> ZM-146
+      [24] HARD        single= 1 cons= 1 | scarlet stethoscope    -> AR-583
+      [25] HARD        single=13 cons= 4 | cedar hourglass        -> BS-927
+      [26] HARD        single=13 cons=39 | crystal level          -> CT-364
+      [27] HARD        single= 1 cons= 1 | woolen thesaurus       -> DU-815
+      [28] HARD        single=26 cons=16 | bronze odometer        -> EV-249
+      [29] HARD        single= 1 cons= 1 | porcelain anemometer   -> FW-670
+      [30] HARD        single= 1 cons= 3 | jade seismograph       -> GX-132
+      [31] HARD        single= 1 cons= 1 | linen calendar         -> HY-596
+      [32] HARD        single= 1 cons= 1 | cobalt altimeter       -> JZ-843
+      [33] HARD        single= 3 cons= 4 | maple metronome        -> KA-275
+      [34] HARD        single= 1 cons= 1 | ivory caliper          -> LB-914
+      [35] HARD        single= 1 cons= 2 | glass kaleidoscope     -> MC-368
+      [36] HARD        single= 1 cons= 1 | iron sextant           -> ND-751
+      [37] HARD        single= 1 cons= 1 | cotton manuscript      -> PE-426
+      [38] HARD        single= 1 cons= 1 | amber phonograph       -> QF-809
+      [39] HARD        single= 1 cons= 1 | granite barometer      -> RG-153
+      [40] EXTREME     single=22 cons= 4 | obsidian compass       -> SH-684
+      [41] EXTREME     single= 1 cons= 2 | velvet thermometer     -> TJ-237
+      [42] EXTREME     single=37 cons=31 | silver stopwatch       -> UK-795
+      [43] EXTREME     single= 2 cons= 1 | ceramic magnifier      -> VL-341
+      [44] EXTREME     single= 1 cons= 1 | copper tuning fork     -> WM-928
+      [45] EXTREME     single=36 cons=21 | silk atlas             -> XN-476
+      [46] EXTREME     single=21 cons=13 | jade abacus            -> YP-603
+      [47] EXTREME     single= 2 cons= 2 | brass plumb bob        -> ZQ-157
+      [48] EXTREME     single= 2 cons= 1 | opal prism             -> AS-842
+      [49] EXTREME     single= 7 cons= 3 | linen funnel           -> BT-395
+      [50] EXTREME     single= 2 cons= 9 | onyx pendulum          -> CU-761
+      [51] EXTREME     single= 2 cons= 1 | crystal hygrometer     -> DV-208
+      [52] EXTREME     single= 1 cons= 1 | wooden periscope       -> EW-654
+      [53] EXTREME     single= 2 cons= 2 | bronze gyroscope       -> FX-319
+      [54] EXTREME     single= 2 cons= 1 | canvas stencil         -> GY-870
+      [55] EXTREME     single= 1 cons= 1 | marble sundial         -> HZ-425
+      [56] ADVERSARIAL single= 3 cons= 3 | white anemometer       -> JA-936
+      [57] ADVERSARIAL single= 1 cons= 1 | black barometer        -> KB-271
+      [58] ADVERSARIAL single= 4 cons= 4 | coral altimeter        -> LC-508
+      [59] ADVERSARIAL single= 1 cons= 1 | steel odometer         -> MD-743
+      [60] ADVERSARIAL single=20 cons=48 | azure protractor       -> NE-186
+      [61] ADVERSARIAL single= 6 cons=16 | golden ruler           -> PF-659
+      [62] ADVERSARIAL single= 1 cons= 1 | quartz binoculars      -> QG-324
+      [63] ADVERSARIAL single= 3 cons= 1 | scarlet stethoscope    -> RH-817
+[6/6] Controls...
+
+======================================================================================================================================================
+TEST488 FINAL RESULT — FROZEN HELD-OUT RECALL
+======================================================================================================================================================
+FOUNDATION          : TEST487 DISCOVERY ATLAS
+TEST482 BLOB SHA    : ecc630144a44479cb35c432c50eb0d09bc6866d7
+NEW MEMORIES        : 64/64
+STANDARD/HARD       : 24 / 16
+EXTREME/ADVERSARIAL: 16 / 8
+CHANNEL SEARCH      : NONE
+WEIGHT SEARCH       : NONE · equal frozen rank consensus
+LOCK SHA            : d2c2e744532e1fe9b4c5be745fce6892720745dd590b49eca59ca3ef753fdfd8
+------------------------------------------------------------------------------------------------------------------------------------------------------
+TOKENMAX_L10        : {'R1': 0.59375, 'R5': 0.828125, 'R10': 0.875, 'R32': 0.96875, 'MRR': 0.7044225505163005, 'MEDR': 1.0, 'MEANR': 4.5}
+FROZEN CONSENSUS    : {'R1': 0.609375, 'R5': 0.875, 'R10': 0.890625, 'R32': 0.96875, 'MRR': 0.7217091509241207, 'MEDR': 1.0, 'MEANR': 4.359375}
+LEXICAL CONTROL     : {'R1': 0.09375, 'R5': 0.15625, 'R10': 0.21875, 'R32': 0.5625, 'MRR': 0.15220597333306504, 'MEDR': 28.5, 'MEANR': 29.109375}
+1000-PERM NULL      : {'MRR_MEAN': 0.07347978297404772, 'MRR_P95': 0.10278489955254572, 'MRR_P99': 0.11559581769250225}
+STANDARD           : {'SINGLE': {'N': 24, 'R1': 0.7916666666666666, 'R5': 0.9583333333333334, 'R10': 1.0, 'MRR': 0.8597222222222222, 'MEDR': 1.0}, 'CONSENSUS': {'N': 24, 'R1': 0.75, 'R5': 1.0, 'R10': 1.0, 'MRR': 0.8645833333333334, 'MEDR': 1.0}}
+HARD               : {'SINGLE': {'N': 16, 'R1': 0.75, 'R5': 0.8125, 'R10': 0.8125, 'MRR': 0.7828525641025641, 'MEDR': 1.0}, 'CONSENSUS': {'N': 16, 'R1': 0.625, 'R5': 0.875, 'R10': 0.875, 'MRR': 0.7138421474358974, 'MEDR': 1.0}}
+EXTREME            : {'SINGLE': {'N': 16, 'R1': 0.25, 'R5': 0.6875, 'R10': 0.75, 'MRR': 0.4869209712959713, 'MEDR': 2.0}, 'CONSENSUS': {'N': 16, 'R1': 0.4375, 'R5': 0.75, 'R10': 0.8125, 'MRR': 0.5844527895939186, 'MEDR': 2.0}}
+ADVERSARIAL        : {'SINGLE': {'N': 8, 'R1': 0.375, 'R5': 0.75, 'R10': 0.875, 'MRR': 0.5166666666666666, 'MEDR': 3.0}, 'CONSENSUS': {'N': 8, 'R1': 0.5, 'R5': 0.75, 'R10': 0.75, 'MRR': 0.5833333333333333, 'MEDR': 2.0}}
+------------------------------------------------------------------------------------------------------------------------------------------------------
+VERDICT             : HELDOUT_RECALL_CONFIRMED_WITH_HARD_CASE_DEGRADATION
+INTERPRETATION      : fresh 64-memory held-out validation of TEST487-discovered native recall channels.
+ORACLE              : NOT USED
+POST-HOC SELECTION  : NONE
+ROUTER / ANN / GRAPH: NONE
+CARTRIDGE READOUT   : NOT USED
+TRAINING / LoRA     : NONE
+MODEL CHANGE        : NONE
+TOTAL TIME          : 68.65s
+
+
+======================================================================================================================================================
