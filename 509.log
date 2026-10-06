@@ -1,0 +1,140 @@
+ ==========================================================================================================================================================================
+TEST509 — AKBASCORE MAM · LATENT BELLEKBAĞ / ÇAĞRIİZ DISCOVERY X-RAY
+ORACLE A → PRE-ANSWER LATENT Q TRACE → PRECOMPUTED B-ADDRESS HEADERS · NO TEXT TRACE · NO PER-CARTRIDGE FORWARD
+==========================================================================================================================================================================
+LOCK SHA: 4b5b78841ebf0d9b458306136e122fd3108b33bdfd89924585f891f748eca0d8
+PARENT TEST508 LOCK: 47512c7860268517670ca5b45b6e76fe1582362dd38e447d164f33c756a1a2ca
+ITEMS: 32 | DISCOVERY: 16 | FROZEN EVAL: 16 | B-CANDIDATE BANK: 31
+TRUE B: 1 | B-LIKE DISTRACTORS: 30
+QUERY-TIME MODEL FORWARDS PER CANDIDATE: 0
+TEXTUAL INTERMEDIATE TRACE: NONE
+YES/NO EXHAUSTIVE MODEL SCAN: NONE
+A ADDRESS: ORACLE — isolates only A→B BELLEKBAĞ
+CANDIDATE CHANNELS: KMEAN + KMAX × layers 0..27; declared before results
+
+[1/7] Loading frozen Qwen...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 76.8kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 887kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 81.4MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 72.7MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 108MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.55MB/s]Download complete:  13.1GB,  238MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  429MB/s  Fetching 4 files: 100% 4/4 [00:44<00:00, 44.03s/it]Loading weights: 100% 339/339 [00:04<00:00, 97.01it/s]generation_config.json: 100% 243/243 [00:00<00:00, 28.0kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | H=3584 | QH=28 KVH=4 HD=128 | frozen BF16
+      GQA group: 7 query heads per KV head
+
+[2/7] Pre-forging oracle A memories and fixed B-address bank...
+      ITEM 01 Aldren | A contains Aldren→FEN | hidden B=M09
+      ITEM 02 Elara  | A contains Elara→VAN | hidden B=M21
+      ITEM 03 Ilyra  | A contains Ilyra→BEK | hidden B=M11
+      ITEM 04 Joren  | A contains Joren→TUR | hidden B=M02
+      ITEM 05 Neris  | A contains Neris→CER | hidden B=M22
+      ITEM 06 Ralen  | A contains Ralen→XAL | hidden B=M26
+      Cartridge address headers frozen before latent-query evaluation.
+      No query-dependent candidate forging.
+
+[3/7] Extracting A pre-answer latent traces...
+      ITEM 01 Aldren | trace captured at 28 layers | decoded Seal: NO
+      ITEM 02 Elara  | trace captured at 28 layers | decoded Seal: NO
+      ITEM 03 Ilyra  | trace captured at 28 layers | decoded Seal: NO
+      ITEM 04 Joren  | trace captured at 28 layers | decoded Seal: NO
+      ITEM 05 Neris  | trace captured at 28 layers | decoded Seal: NO
+      ITEM 06 Ralen  | trace captured at 28 layers | decoded Seal: NO
+      All traces captured before generation of the first answer token.
+
+[4/7] DISCOVERY — items 01–16 only...
+      #01 KMAX  L02 | R1=0.1875 R5=0.2500 R16=0.5000 MRR=0.242203 median=17.5
+      #02 KMAX  L20 | R1=0.1250 R5=0.2500 R16=0.6250 MRR=0.206270 median=10.0
+      #03 KMAX  L19 | R1=0.0625 R5=0.3125 R16=0.6250 MRR=0.196828 median=10.0
+      #04 KMAX  L07 | R1=0.0625 R5=0.2500 R16=0.5625 MRR=0.195823 median=13.5
+      #05 KMAX  L06 | R1=0.0625 R5=0.2500 R16=0.5625 MRR=0.187898 median=14.0
+      #06 KMAX  L03 | R1=0.0625 R5=0.3125 R16=0.5625 MRR=0.183471 median=14.0
+      #07 KMAX  L17 | R1=0.0625 R5=0.1875 R16=0.5625 MRR=0.169516 median=9.5
+      #08 KMAX  L18 | R1=0.0625 R5=0.1875 R16=0.4375 MRR=0.167015 median=19.0
+      #09 KMAX  L22 | R1=0.0625 R5=0.1875 R16=0.5000 MRR=0.164631 median=14.5
+      #10 KMEAN L07 | R1=0.0625 R5=0.2500 R16=0.5625 MRR=0.161982 median=16.0
+
+      FROZEN CHANNEL → KMAX / L02
+      Evaluation items have NOT participated in this selection.
+
+[5/7] FROZEN EVALUATION — items 17–32...
+      [17/32] Yalen  latent A→B | gold=M29 pred=M13 rank=25 | gold=+0.40493 topWrong=+0.41135 margin=-0.00642
+      [18/32] Coren  latent A→B | gold=M02 pred=M05 rank=29 | gold=+0.40821 topWrong=+0.41314 margin=-0.00493
+      [19/32] Derin  latent A→B | gold=M05 pred=M13 rank=12 | gold=+0.40797 topWrong=+0.41188 margin=-0.00391
+      [20/32] Heron  latent A→B | gold=M21 pred=M19 rank= 9 | gold=+0.40998 topWrong=+0.41370 margin=-0.00372
+      [21/32] Laven  latent A→B | gold=M31 pred=M11 rank= 3 | gold=+0.41167 topWrong=+0.41276 margin=-0.00109
+      [22/32] Moris  latent A→B | gold=M09 pred=M17 rank=23 | gold=+0.40815 topWrong=+0.41234 margin=-0.00419
+      [23/32] Rovis  latent A→B | gold=M11 pred=M13 rank=22 | gold=+0.41029 topWrong=+0.41463 margin=-0.00434
+      [24/32] Veris  latent A→B | gold=M19 pred=M14 rank=29 | gold=+0.40439 topWrong=+0.41373 margin=-0.00935
+      [25/32] Waren  latent A→B | gold=M06 pred=M20 rank=22 | gold=+0.40829 topWrong=+0.41361 margin=-0.00531
+      [26/32] Aren   latent A→B | gold=M04 pred=M13 rank= 5 | gold=+0.40957 topWrong=+0.41157 margin=-0.00201
+      [27/32] Elen   latent A→B | gold=M06 pred=M29 rank=14 | gold=+0.41003 topWrong=+0.41207 margin=-0.00204
+      [28/32] Faren  latent A→B | gold=M02 pred=M02 rank= 1 | gold=+0.41152 topWrong=+0.41097 margin=+0.00055
+      [29/32] Joris  latent A→B | gold=M27 pred=M19 rank=23 | gold=+0.40576 topWrong=+0.41319 margin=-0.00743
+      [30/32] Noren  latent A→B | gold=M02 pred=M08 rank=12 | gold=+0.40904 topWrong=+0.41310 margin=-0.00407
+      [31/32] Oris   latent A→B | gold=M29 pred=M09 rank= 2 | gold=+0.41406 topWrong=+0.41418 margin=-0.00013
+      [32/32] Toren  latent A→B | gold=M30 pred=M13 rank=24 | gold=+0.40638 topWrong=+0.41190 margin=-0.00552
+
+[6/7] Frozen-channel statistics...
+      CHANNEL             : KMAX / L02
+      DISCOVERY R1        : 0.1875
+      DISCOVERY R5        : 0.2500
+      DISCOVERY MRR       : 0.242203
+      EVAL R1             : 0.0625
+      EVAL R5             : 0.2500
+      EVAL R16            : 0.5000
+      EVAL MRR            : 0.169440
+      EVAL MEDIAN RANK    : 18.0
+      MEAN GOLD MARGIN    : -0.003994
+      MEDIAN GOLD MARGIN  : -0.004127
+      POSITIVE MARGIN     : 0.0625
+      NULL R1 mean / P99  : 0.0322 / 0.1875
+      NULL MRR mean / P99 : 0.129873 / 0.266250
+
+[7/7] Mechanistic classification...
+      Query-time candidate model forwards : 0
+      Intermediate Seal decoding           : 0
+      YES/NO candidate queries              : 0
+      Frozen-model A trace forwards/item    : 1
+      Candidate headers                     : precomputed before query
+      Discovery/evaluation separation       : YES
+      Evaluation channel reselection        : NO
+      Exact address scoring                 : YES — discovery measurement
+      ANN/sublinear index                   : NOT YET TESTED
+
+==========================================================================================================================================================================
+TEST509 FINAL RESULT — AKBASCORE MAM · LATENT BELLEKBAĞ / ÇAĞRIİZ DISCOVERY X-RAY
+==========================================================================================================================================================================
+MODEL                         : Qwen/Qwen2.5-7B-Instruct · frozen
+PARENT                        : TEST508
+PARENT LOCK                   : 47512c7860268517670ca5b45b6e76fe1582362dd38e447d164f33c756a1a2ca
+TASK                          : Oracle A → latent trace → direct B address
+B-CANDIDATE BANK              : 31
+TRUE B                        : 1
+DISTRACTORS                   : 30
+A ADDRESS                     : ORACLE — isolation control
+INTERMEDIATE SEAL TEXT        : NEVER GENERATED
+PER-CANDIDATE MODEL FORWARD   : NONE
+YES/NO SCAN                   : NONE
+TRAINING                      : NONE
+DRA / STEERING                : NONE
+VTOKEN                        : NONE
+LEARNED ROUTER                : NONE
+ANN                           : NONE — exact address scoring only
+DISCOVERY                     : items 01–16
+FROZEN EVALUATION             : items 17–32
+CANDIDATES                    : KMEAN/KMAX × 28 layers
+FROZEN ADDRESS CHANNEL        : KMAX / L02
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DISCOVERY · R1                : 0.1875
+DISCOVERY · R5                : 0.2500
+DISCOVERY · MRR               : 0.242203
+FROZEN EVAL · R1              : 0.0625
+FROZEN EVAL · R5              : 0.2500
+FROZEN EVAL · R16             : 0.5000
+FROZEN EVAL · MRR             : 0.169440
+FROZEN EVAL · MEDIAN RANK     : 18.0
+FROZEN EVAL · POS MARGIN      : 0.0625
+NULL · R1 MEAN                : 0.0322
+NULL · MRR MEAN               : 0.129873
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST508 LOCK SHA              : 47512c7860268517670ca5b45b6e76fe1582362dd38e447d164f33c756a1a2ca
+TEST509 LOCK SHA              : 4b5b78841ebf0d9b458306136e122fd3108b33bdfd89924585f891f748eca0d8
+TOTAL TEST TIME                : 115.26s
+EXPLORATORY VERDICT           : MODEL_NATIVE_A_TO_B_DIRECT_ADDRESS_TRACE_NOT_YET_OBSERVED
+==========================================================================================================================================================================
