@@ -1,0 +1,561 @@
+ ==========================================================================================================================================================
+TEST489 — AKBASCORE MAM · RECALL ATTRACTOR ERROR ANATOMY X-RAY
+EXACT TEST488 64 PANEL · FROZEN 11 CHANNELS · TRUE TARGET vs WRONG ATTRACTOR · NO SELECTION
+==========================================================================================================================================================
+LOCK SHA: ed03fb4b6f1afa410e1a28329d05b744889b8836f69f3572c4b52032b8b70fb0
+TEST488 LOCK: d2c2e744532e1fe9b4c5be745fce6892720745dd590b49eca59ca3ef753fdfd8
+FROZEN CHANNELS: ['TOKENMAX_L10', 'TOKENMAX_L13', 'HMEAN_COS_L11', 'TOKENMAX_L14', 'TOKENMAX_L09', 'DELTA_COS_L12', 'TOKENMAX_L11', 'HMEAN_COS_L08', 'TOKENMAX_L15', 'TOKENMAX_L12', 'DELTA_COS_L10']
+[1/6] Loading frozen Qwen...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 81.3kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 899kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 72.3MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 69.8MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 129MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.48MB/s]Download complete:  13.1GB,  412MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  368MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.70s/it]Loading weights: 100% 339/339 [00:03<00:00, 98.99it/s]generation_config.json: 100% 243/243 [00:00<00:00, 31.4kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | frozen BF16
+[2/6] Capturing exact TEST488 memory/query states...
+      memories 16/64
+      memories 32/64
+      memories 48/64
+      memories 64/64
+      queries  16/64
+      queries  32/64
+      queries  48/64
+      queries  64/64
+[3/6] Reconstructing frozen 11-channel atlas...
+      TOKENMAX L09
+      TOKENMAX L10
+      TOKENMAX L11
+      TOKENMAX L12
+      TOKENMAX L13
+      TOKENMAX L14
+      TOKENMAX L15
+      HMEAN    L08
+      HMEAN    L11
+      DELTA    L10
+      DELTA    L12
+[4/6] True-target vs dominant wrong-attractor anatomy...
+      ALL : {'N': 64, 'GOLD_R1': 0.609375, 'GOLD_R5': 0.875, 'MED_GOLD_RANK': 1.0, 'MED_MARGIN': 0.010100960731506348, 'MEAN_TRUE_VOTES': 6.25, 'MEAN_WRONG_VOTES': 4.75}
+      NON-R1: {'N': 25, 'GOLD_R1': 0.0, 'GOLD_R5': 0.68, 'MED_GOLD_RANK': 4.0, 'MED_MARGIN': -0.08225119113922119, 'MEAN_TRUE_VOTES': 2.6, 'MEAN_WRONG_VOTES': 8.4}
+
+[5/6] Failure X-ray + cross-channel persistence...
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[60] ADVERSARIAL GOLD rank=48  azure protractor -> NE-186
+     QUERY : the blue geometry tool for quantifying an angle rather than a straight-line length
+     WRONG : [19] bamboo protractor -> VH-307 | consensus-rank=1 | gold-wrong margin=-0.5830
+     VOTES : GOLD=0 WRONG=11 TIE=0 | top5 GOLD=0/11 WRONG=8/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                    20       1     -0.30159     +0.416872     +0.437541  W
+     TOKENMAX_L13                    48       2     -0.73016     +0.466263     +0.501372  W
+     HMEAN_COS_L11                   64       7     -0.90476     +0.732687     +0.774229  W
+     TOKENMAX_L14                    52       2     -0.79365     +0.500905     +0.531407  W
+     TOKENMAX_L09                    24       1     -0.36508     +0.391469     +0.412970  W
+     DELTA_COS_L12                   54      17     -0.58730     +0.271633     +0.312106  W
+     TOKENMAX_L11                    55       3     -0.82540     +0.466042     +0.490522  W
+     HMEAN_COS_L08                   20       7     -0.20635     +0.702052     +0.712640  W
+     TOKENMAX_L15                    24       4     -0.31746     +0.481085     +0.500261  W
+     TOKENMAX_L12                    34       5     -0.46032     +0.482038     +0.499864  W
+     DELTA_COS_L10                   60       2     -0.92063     +0.338937     +0.419023  W
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[26] HARD        GOLD rank=39  crystal level -> CT-364
+     QUERY : transparent construction tool whose trapped bubble reveals whether a surface is horizontal
+     WRONG : [43] ceramic magnifier -> VL-341 | consensus-rank=1 | gold-wrong margin=-0.4834
+     VOTES : GOLD=0 WRONG=11 TIE=0 | top5 GOLD=0/11 WRONG=8/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                    13       5     -0.12698     +0.417509     +0.421458  W
+     TOKENMAX_L13                    36       4     -0.50794     +0.468104     +0.483683  W
+     HMEAN_COS_L11                   44       3     -0.65079     +0.749881     +0.766766  W
+     TOKENMAX_L14                    58       3     -0.87302     +0.501108     +0.524266  W
+     TOKENMAX_L09                    38       8     -0.47619     +0.391776     +0.401620  W
+     DELTA_COS_L12                   62      18     -0.69841     +0.249368     +0.314017  W
+     TOKENMAX_L11                    31       3     -0.44444     +0.477460     +0.493320  W
+     HMEAN_COS_L08                    9       2     -0.11111     +0.711450     +0.722583  W
+     TOKENMAX_L15                    35       1     -0.53968     +0.476819     +0.492584  W
+     TOKENMAX_L12                    38       4     -0.53968     +0.480579     +0.496197  W
+     DELTA_COS_L10                   36      14     -0.34921     +0.390896     +0.408068  W
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[42] EXTREME     GOLD rank=31  silver stopwatch -> UK-795
+     QUERY : the metallic object a race official would trigger at the start and stop at the finish to quantify what happened between them
+     WRONG : [32] cobalt altimeter -> JZ-843 | consensus-rank=1 | gold-wrong margin=-0.3795
+     VOTES : GOLD=2 WRONG=9 TIE=0 | top5 GOLD=0/11 WRONG=7/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                    37       1     -0.57143     +0.360258     +0.374526  W
+     TOKENMAX_L13                    35       1     -0.53968     +0.416892     +0.451844  W
+     HMEAN_COS_L11                   40       3     -0.58730     +0.715602     +0.736723  W
+     TOKENMAX_L14                    38       1     -0.58730     +0.453638     +0.486111  W
+     TOKENMAX_L09                    29      16     -0.20635     +0.352804     +0.357373  W
+     DELTA_COS_L12                   38      16     -0.34921     +0.209197     +0.230643  W
+     TOKENMAX_L11                    54       1     -0.84127     +0.419754     +0.445448  W
+     HMEAN_COS_L08                    7      25     +0.28571     +0.683723     +0.670807  G
+     TOKENMAX_L15                    22       1     -0.33333     +0.428436     +0.447874  W
+     TOKENMAX_L12                    33       1     -0.50794     +0.427495     +0.456280  W
+     DELTA_COS_L10                   16      20     +0.06349     +0.359472     +0.354925  G
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[45] EXTREME     GOLD rank=21  silk atlas -> XN-476
+     QUERY : the smooth-bound thing opened when someone knows a country exists but cannot picture where on Earth it lies
+     WRONG : [13] silk map -> PB-972 | consensus-rank=1 | gold-wrong margin=-0.2771
+     VOTES : GOLD=2 WRONG=9 TIE=0 | top5 GOLD=1/11 WRONG=5/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                    36       1     -0.55556     +0.355585     +0.369761  W
+     TOKENMAX_L13                    13       4     -0.14286     +0.407436     +0.412986  W
+     HMEAN_COS_L11                   38       7     -0.49206     +0.698773     +0.711596  W
+     TOKENMAX_L14                    11      12     +0.01587     +0.459591     +0.459113  G
+     TOKENMAX_L09                    25       3     -0.34921     +0.337517     +0.344808  W
+     DELTA_COS_L12                   54      20     -0.53968     +0.208172     +0.237365  W
+     TOKENMAX_L11                    10       2     -0.12698     +0.413570     +0.418569  W
+     HMEAN_COS_L08                   29       6     -0.36508     +0.645972     +0.662679  W
+     TOKENMAX_L15                    11      15     +0.06349     +0.429414     +0.427697  G
+     TOKENMAX_L12                     4       2     -0.03175     +0.420021     +0.421174  W
+     DELTA_COS_L10                   43      10     -0.52381     +0.323825     +0.347871  W
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[28] HARD        GOLD rank=16  bronze odometer -> EV-249
+     QUERY : metal instrument that accumulates how far a vehicle has travelled
+     WRONG : [59] steel odometer -> MD-743 | consensus-rank=1 | gold-wrong margin=-0.2713
+     VOTES : GOLD=1 WRONG=10 TIE=0 | top5 GOLD=1/11 WRONG=10/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                    26       3     -0.36508     +0.420231     +0.432313  W
+     TOKENMAX_L13                     4       1     -0.04762     +0.490565     +0.504874  W
+     HMEAN_COS_L11                   20       1     -0.30159     +0.749242     +0.766726  W
+     TOKENMAX_L14                     6       2     -0.06349     +0.526640     +0.540528  W
+     TOKENMAX_L09                    17       3     -0.22222     +0.405181     +0.415751  W
+     DELTA_COS_L12                   17       4     -0.20635     +0.296833     +0.307453  W
+     TOKENMAX_L11                    47       3     -0.69841     +0.476100     +0.494256  W
+     HMEAN_COS_L08                   10       1     -0.14286     +0.684954     +0.706795  W
+     TOKENMAX_L15                    33       3     -0.47619     +0.481901     +0.497899  W
+     TOKENMAX_L12                    34       2     -0.50794     +0.484769     +0.505679  W
+     DELTA_COS_L10                   13      16     +0.04762     +0.424024     +0.421239  G
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[61] ADVERSARIAL GOLD rank=16  golden ruler -> PF-659
+     QUERY : the yellow straight tool for linear extent rather than angular extent
+     WRONG : [32] cobalt altimeter -> JZ-843 | consensus-rank=1 | gold-wrong margin=-0.2569
+     VOTES : GOLD=2 WRONG=9 TIE=0 | top5 GOLD=1/11 WRONG=8/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                     6       2     -0.06349     +0.428921     +0.435086  W
+     TOKENMAX_L13                    30       1     -0.46032     +0.491860     +0.521417  W
+     HMEAN_COS_L11                   12       1     -0.17460     +0.772062     +0.780314  W
+     TOKENMAX_L14                    53       1     -0.82540     +0.523992     +0.559783  W
+     TOKENMAX_L09                    26       6     -0.31746     +0.398215     +0.404928  W
+     DELTA_COS_L12                   24       4     -0.31746     +0.323238     +0.356679  W
+     TOKENMAX_L11                    20       1     -0.30159     +0.488516     +0.505316  W
+     HMEAN_COS_L08                    3      22     +0.30159     +0.709274     +0.693974  G
+     TOKENMAX_L15                    30       1     -0.46032     +0.499147     +0.519776  W
+     TOKENMAX_L12                    32       1     -0.49206     +0.495749     +0.522686  W
+     DELTA_COS_L10                   10      28     +0.28571     +0.392147     +0.377007  G
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[46] EXTREME     GOLD rank=13  jade abacus -> YP-603
+     QUERY : the green object on which quantities can be manipulated physically without writing numerals or using electronics
+     WRONG : [57] black barometer -> KB-271 | consensus-rank=1 | gold-wrong margin=-0.1977
+     VOTES : GOLD=3 WRONG=8 TIE=0 | top5 GOLD=2/11 WRONG=7/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                    21       1     -0.31746     +0.382686     +0.389666  W
+     TOKENMAX_L13                     5       2     -0.04762     +0.447856     +0.449503  W
+     HMEAN_COS_L11                   45       3     -0.66667     +0.727930     +0.743860  W
+     TOKENMAX_L14                    22       4     -0.28571     +0.490476     +0.497669  W
+     TOKENMAX_L09                    10      11     +0.01587     +0.356146     +0.356049  G
+     DELTA_COS_L12                    1      19     +0.28571     +0.327365     +0.299695  G
+     TOKENMAX_L11                    34       2     -0.50794     +0.444938     +0.456501  W
+     HMEAN_COS_L08                   44      15     -0.46032     +0.654099     +0.667783  W
+     TOKENMAX_L15                    23       2     -0.33333     +0.452305     +0.462627  W
+     TOKENMAX_L12                    10       2     -0.12698     +0.461990     +0.468755  W
+     DELTA_COS_L10                    6      23     +0.26984     +0.394052     +0.374643  G
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[50] EXTREME     GOLD rank= 9  onyx pendulum -> CU-761
+     QUERY : the dark suspended mass whose repeated journey from side to side can provide a regular physical rhythm
+     WRONG : [11] crimson funnel -> MZ-746 | consensus-rank=1 | gold-wrong margin=-0.1876
+     VOTES : GOLD=3 WRONG=8 TIE=0 | top5 GOLD=2/11 WRONG=9/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                     2       5     +0.04762     +0.386153     +0.383152  G
+     TOKENMAX_L13                    21       1     -0.31746     +0.439166     +0.453225  W
+     HMEAN_COS_L11                    8       3     -0.07937     +0.740503     +0.744256  W
+     TOKENMAX_L14                    20       1     -0.30159     +0.483557     +0.501622  W
+     TOKENMAX_L09                     1      24     +0.36508     +0.382350     +0.360952  G
+     DELTA_COS_L12                   29       1     -0.44444     +0.317587     +0.363836  W
+     TOKENMAX_L11                     6       1     -0.07937     +0.445758     +0.451940  W
+     HMEAN_COS_L08                    7       9     +0.03175     +0.679594     +0.676988  G
+     TOKENMAX_L15                    27       1     -0.41270     +0.454653     +0.475731  W
+     TOKENMAX_L12                    19       1     -0.28571     +0.450575     +0.467522  W
+     DELTA_COS_L10                   39       2     -0.58730     +0.388031     +0.441325  W
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[25] HARD        GOLD rank= 4  cedar hourglass -> BS-927
+     QUERY : wood-framed object in which grains descend through a narrow waist to mark an interval
+     WRONG : [52] wooden periscope -> EW-654 | consensus-rank=1 | gold-wrong margin=-0.1818
+     VOTES : GOLD=1 WRONG=10 TIE=0 | top5 GOLD=2/11 WRONG=10/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                    13       1     -0.19048     +0.398006     +0.418866  W
+     TOKENMAX_L13                    13       2     -0.17460     +0.462572     +0.479724  W
+     HMEAN_COS_L11                    8       2     -0.09524     +0.765251     +0.768475  W
+     TOKENMAX_L14                    13       2     -0.17460     +0.504310     +0.516720  W
+     TOKENMAX_L09                    27       1     -0.41270     +0.362674     +0.391509  W
+     DELTA_COS_L12                   18       1     -0.26984     +0.262571     +0.307563  W
+     TOKENMAX_L11                     5       1     -0.06349     +0.463833     +0.479336  W
+     HMEAN_COS_L08                   27       2     -0.39683     +0.703978     +0.729769  W
+     TOKENMAX_L15                    18       4     -0.22222     +0.472730     +0.482182  W
+     TOKENMAX_L12                     7       2     -0.07937     +0.465602     +0.478376  W
+     DELTA_COS_L10                    1       6     +0.07937     +0.475741     +0.433170  G
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[10] STANDARD    GOLD rank= 4  ivory ruler -> LY-391
+     QUERY : pale straight-edged tool marked for determining linear dimensions
+     WRONG : [34] ivory caliper -> LB-914 | consensus-rank=1 | gold-wrong margin=-0.1443
+     VOTES : GOLD=0 WRONG=11 TIE=0 | top5 GOLD=2/11 WRONG=11/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                    10       1     -0.14286     +0.404960     +0.430943  W
+     TOKENMAX_L13                     4       1     -0.04762     +0.496611     +0.510948  W
+     HMEAN_COS_L11                    8       1     -0.11111     +0.776523     +0.788563  W
+     TOKENMAX_L14                     6       2     -0.06349     +0.529649     +0.545403  W
+     TOKENMAX_L09                    20       1     -0.30159     +0.380549     +0.395645  W
+     DELTA_COS_L12                   28       1     -0.42857     +0.324628     +0.388335  W
+     TOKENMAX_L11                     9       1     -0.12698     +0.489632     +0.513423  W
+     HMEAN_COS_L08                   13       4     -0.14286     +0.680203     +0.687968  W
+     TOKENMAX_L15                     6       1     -0.07937     +0.510087     +0.525113  W
+     TOKENMAX_L12                     9       1     -0.12698     +0.497675     +0.520488  W
+     DELTA_COS_L10                    2       1     -0.01587     +0.452273     +0.463659  W
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[40] EXTREME     GOLD rank= 4  obsidian compass -> SH-684
+     QUERY : the dark object you would want after becoming disoriented in featureless terrain when north is no longer obvious
+     WRONG : [57] black barometer -> KB-271 | consensus-rank=1 | gold-wrong margin=-0.1198
+     VOTES : GOLD=2 WRONG=9 TIE=0 | top5 GOLD=3/11 WRONG=9/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                    22       1     -0.33333     +0.363930     +0.378266  W
+     TOKENMAX_L13                     4       1     -0.04762     +0.426331     +0.434064  W
+     HMEAN_COS_L11                    8       1     -0.11111     +0.720829     +0.732153  W
+     TOKENMAX_L14                     6       1     -0.07937     +0.468679     +0.480624  W
+     TOKENMAX_L09                     2       3     +0.01587     +0.358838     +0.358566  G
+     DELTA_COS_L12                   32       8     -0.38095     +0.238419     +0.259110  W
+     TOKENMAX_L11                    16       1     -0.23810     +0.418521     +0.435486  W
+     HMEAN_COS_L08                    4       3     -0.01587     +0.679477     +0.679542  W
+     TOKENMAX_L15                     6       1     -0.07937     +0.437535     +0.447369  W
+     TOKENMAX_L12                     6       1     -0.07937     +0.427232     +0.440178  W
+     DELTA_COS_L10                   14      16     +0.03175     +0.415534     +0.415317  G
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[33] HARD        GOLD rank= 4  maple metronome -> KA-275
+     QUERY : wooden device musicians follow when they need evenly spaced beats
+     WRONG : [04] wooden sundial -> ER-572 | consensus-rank=1 | gold-wrong margin=-0.0924
+     VOTES : GOLD=1 WRONG=10 TIE=0 | top5 GOLD=6/11 WRONG=11/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                     3       2     -0.01587     +0.424760     +0.439907  W
+     TOKENMAX_L13                    12       2     -0.15873     +0.449726     +0.474998  W
+     HMEAN_COS_L11                    3       1     -0.03175     +0.752974     +0.759575  W
+     TOKENMAX_L14                    22       2     -0.31746     +0.488795     +0.512361  W
+     TOKENMAX_L09                     3       1     -0.03175     +0.415020     +0.443701  W
+     DELTA_COS_L12                    2       1     -0.01587     +0.257997     +0.259538  W
+     TOKENMAX_L11                     4       2     -0.03175     +0.474857     +0.493712  W
+     HMEAN_COS_L08                   11       1     -0.15873     +0.689834     +0.707735  W
+     TOKENMAX_L15                    12       1     -0.17460     +0.465627     +0.483326  W
+     TOKENMAX_L12                     9       2     -0.11111     +0.463893     +0.486281  W
+     DELTA_COS_L10                    1       3     +0.03175     +0.424894     +0.408810  G
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[58] ADVERSARIAL GOLD rank= 4  coral altimeter -> LC-508
+     QUERY : the reddish instrument answering how high an aircraft is, not how far it has travelled along the ground
+     WRONG : [32] cobalt altimeter -> JZ-843 | consensus-rank=1 | gold-wrong margin=-0.0418
+     VOTES : GOLD=4 WRONG=7 TIE=0 | top5 GOLD=9/11 WRONG=10/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                     4       1     -0.04762     +0.382796     +0.393061  W
+     TOKENMAX_L13                     3       1     -0.03175     +0.440125     +0.461189  W
+     HMEAN_COS_L11                    2       3     +0.01587     +0.738877     +0.735401  G
+     TOKENMAX_L14                     4       1     -0.04762     +0.468043     +0.492636  W
+     TOKENMAX_L09                     1       2     +0.01587     +0.375616     +0.370411  G
+     DELTA_COS_L12                    4       5     +0.01587     +0.265415     +0.261585  G
+     TOKENMAX_L11                     4       1     -0.04762     +0.435620     +0.452210  W
+     HMEAN_COS_L08                   14      19     +0.07937     +0.655904     +0.653753  G
+     TOKENMAX_L15                     5       1     -0.06349     +0.439027     +0.454177  W
+     TOKENMAX_L12                     3       1     -0.03175     +0.440987     +0.459324  W
+     DELTA_COS_L10                   23       3     -0.31746     +0.386436     +0.410959  W
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[49] EXTREME     GOLD rank= 3  linen funnel -> BT-395
+     QUERY : the fabric-covered helper chosen because pouring directly from a wide vessel into a tiny mouth would otherwise spill
+     WRONG : [43] ceramic magnifier -> VL-341 | consensus-rank=1 | gold-wrong margin=-0.0823
+     VOTES : GOLD=2 WRONG=9 TIE=0 | top5 GOLD=5/11 WRONG=10/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                     7       3     -0.06349     +0.390254     +0.393346  W
+     TOKENMAX_L13                     4       2     -0.03175     +0.444111     +0.447011  W
+     HMEAN_COS_L11                    8       2     -0.09524     +0.744649     +0.753378  W
+     TOKENMAX_L14                     4       1     -0.04762     +0.486176     +0.488652  W
+     TOKENMAX_L09                     4       2     -0.03175     +0.364540     +0.365921  W
+     DELTA_COS_L12                   36      13     -0.36508     +0.256960     +0.273414  W
+     TOKENMAX_L11                     6       1     -0.07937     +0.441879     +0.446708  W
+     HMEAN_COS_L08                    8       1     -0.11111     +0.687382     +0.700304  W
+     TOKENMAX_L15                     1       3     +0.03175     +0.470680     +0.469834  G
+     TOKENMAX_L12                    10       1     -0.14286     +0.445650     +0.452428  W
+     DELTA_COS_L10                    3       5     +0.03175     +0.401589     +0.394387  G
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[30] HARD        GOLD rank= 3  jade seismograph -> GX-132
+     QUERY : green-stone housed apparatus that records vibrations travelling through the ground
+     WRONG : [38] amber phonograph -> QF-809 | consensus-rank=1 | gold-wrong margin=-0.0231
+     VOTES : GOLD=7 WRONG=4 TIE=0 | top5 GOLD=9/11 WRONG=9/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                     1       3     +0.03175     +0.452025     +0.442700  G
+     TOKENMAX_L13                     2       1     -0.01587     +0.519502     +0.519528  W
+     HMEAN_COS_L11                   23       2     -0.33333     +0.790759     +0.803842  W
+     TOKENMAX_L14                     2       3     +0.01587     +0.548337     +0.548085  G
+     TOKENMAX_L09                     1       2     +0.01587     +0.441779     +0.433108  G
+     DELTA_COS_L12                    4       2     -0.03175     +0.371371     +0.377130  W
+     TOKENMAX_L11                     2       3     +0.01587     +0.508981     +0.508358  G
+     HMEAN_COS_L08                   30      19     -0.17460     +0.722517     +0.727599  W
+     TOKENMAX_L15                     3       5     +0.03175     +0.518839     +0.516577  G
+     TOKENMAX_L12                     2       3     +0.01587     +0.520096     +0.519042  G
+     DELTA_COS_L10                    5      16     +0.17460     +0.440896     +0.427092  G
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[56] ADVERSARIAL GOLD rank= 3  white anemometer -> JA-936
+     QUERY : the pale weather device concerned with moving air rather than the force exerted by the atmosphere itself
+     WRONG : [29] porcelain anemometer -> FW-670 | consensus-rank=1 | gold-wrong margin=-0.0231
+     VOTES : GOLD=5 WRONG=6 TIE=0 | top5 GOLD=5/11 WRONG=7/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                     3       4     +0.01587     +0.409071     +0.407928  G
+     TOKENMAX_L13                     3       4     +0.01587     +0.465344     +0.464638  G
+     HMEAN_COS_L11                    1       3     +0.03175     +0.754046     +0.752714  G
+     TOKENMAX_L14                     9       6     -0.04762     +0.494994     +0.498889  W
+     TOKENMAX_L09                     9       4     -0.07937     +0.376180     +0.380439  W
+     DELTA_COS_L12                    2      13     +0.17460     +0.315004     +0.297324  G
+     TOKENMAX_L11                     7       3     -0.06349     +0.462141     +0.464926  W
+     HMEAN_COS_L08                   20       4     -0.25397     +0.665922     +0.677969  W
+     TOKENMAX_L15                     6       8     +0.03175     +0.469421     +0.467614  G
+     TOKENMAX_L12                     4       3     -0.01587     +0.472444     +0.472851  W
+     DELTA_COS_L10                   23      19     -0.06349     +0.358657     +0.361989  W
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[08] STANDARD    GOLD rank= 2  jade magnifier -> JW-257
+     QUERY : green-stone framed lens used to make small details appear larger
+     WRONG : [43] ceramic magnifier -> VL-341 | consensus-rank=1 | gold-wrong margin=-0.0635
+     VOTES : GOLD=1 WRONG=10 TIE=0 | top5 GOLD=6/11 WRONG=10/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                     5       1     -0.06349     +0.422545     +0.432590  W
+     TOKENMAX_L13                     2       1     -0.01587     +0.504781     +0.507413  W
+     HMEAN_COS_L11                   19       1     -0.28571     +0.776023     +0.788061  W
+     TOKENMAX_L14                     2       1     -0.01587     +0.541304     +0.546680  W
+     TOKENMAX_L09                     1       2     +0.01587     +0.411584     +0.410649  G
+     DELTA_COS_L12                   12       6     -0.09524     +0.339536     +0.345401  W
+     TOKENMAX_L11                     6       1     -0.07937     +0.490147     +0.503324  W
+     HMEAN_COS_L08                   10       4     -0.09524     +0.722796     +0.733522  W
+     TOKENMAX_L15                     2       1     -0.01587     +0.510570     +0.514205  W
+     TOKENMAX_L12                     3       1     -0.03175     +0.502443     +0.516873  W
+     DELTA_COS_L10                    6       5     -0.01587     +0.447084     +0.447869  W
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[07] STANDARD    GOLD rank= 2  linen atlas -> HV-683
+     QUERY : fabric-bound book containing organized maps of geographical regions
+     WRONG : [13] silk map -> PB-972 | consensus-rank=1 | gold-wrong margin=-0.0418
+     VOTES : GOLD=1 WRONG=10 TIE=0 | top5 GOLD=9/11 WRONG=11/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                     3       1     -0.03175     +0.470956     +0.494373  W
+     TOKENMAX_L13                     5       1     -0.06349     +0.505359     +0.541763  W
+     HMEAN_COS_L11                    7       1     -0.09524     +0.771198     +0.780673  W
+     TOKENMAX_L14                     4       1     -0.04762     +0.540295     +0.565420  W
+     TOKENMAX_L09                     2       1     -0.01587     +0.451311     +0.480654  W
+     DELTA_COS_L12                    5       2     -0.04762     +0.327352     +0.356661  W
+     TOKENMAX_L11                     3       1     -0.03175     +0.517807     +0.545457  W
+     HMEAN_COS_L08                    6       1     -0.07937     +0.707697     +0.720541  W
+     TOKENMAX_L15                     4       1     -0.04762     +0.514761     +0.536344  W
+     TOKENMAX_L12                     3       1     -0.03175     +0.518885     +0.549103  W
+     DELTA_COS_L10                    1       3     +0.03175     +0.450452     +0.438091  G
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[18] STANDARD    GOLD rank= 2  pearl binoculars -> UG-854
+     QUERY : pale paired optical tubes used with both eyes to inspect distant scenes
+     WRONG : [62] quartz binoculars -> QG-324 | consensus-rank=1 | gold-wrong margin=-0.0245
+     VOTES : GOLD=2 WRONG=9 TIE=0 | top5 GOLD=10/11 WRONG=11/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                     2       1     -0.01587     +0.437772     +0.443061  W
+     TOKENMAX_L13                     2       1     -0.01587     +0.498644     +0.511296  W
+     HMEAN_COS_L11                    3       1     -0.03175     +0.765112     +0.777050  W
+     TOKENMAX_L14                     3       2     -0.01587     +0.516700     +0.528718  W
+     TOKENMAX_L09                     2       1     -0.01587     +0.417830     +0.427368  W
+     DELTA_COS_L12                    1       2     +0.01587     +0.414683     +0.397534  G
+     TOKENMAX_L11                     2       1     -0.01587     +0.489176     +0.495499  W
+     HMEAN_COS_L08                   11       1     -0.15873     +0.716548     +0.733712  W
+     TOKENMAX_L15                     2       1     -0.01587     +0.496433     +0.507873  W
+     TOKENMAX_L12                     2       1     -0.01587     +0.504603     +0.515616  W
+     DELTA_COS_L10                    1       2     +0.01587     +0.484389     +0.474334  G
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[41] EXTREME     GOLD rank= 2  velvet thermometer -> TJ-237
+     QUERY : the soft-covered thing someone might reach for when a child feels unusually warm and they want a number rather than a guess
+     WRONG : [27] woolen thesaurus -> DU-815 | consensus-rank=1 | gold-wrong margin=-0.0245
+     VOTES : GOLD=6 WRONG=5 TIE=0 | top5 GOLD=9/11 WRONG=8/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                     1       6     +0.07937     +0.344338     +0.333355  G
+     TOKENMAX_L13                     1       3     +0.03175     +0.374776     +0.371859  G
+     HMEAN_COS_L11                    2       1     -0.01587     +0.688931     +0.690231  W
+     TOKENMAX_L14                     4       2     -0.03175     +0.421615     +0.422971  W
+     TOKENMAX_L09                     3       8     +0.07937     +0.318465     +0.315422  G
+     DELTA_COS_L12                   32       6     -0.41270     +0.210627     +0.230791  W
+     TOKENMAX_L11                     1       5     +0.06349     +0.392601     +0.382565  G
+     HMEAN_COS_L08                    4       1     -0.04762     +0.623666     +0.636278  W
+     TOKENMAX_L15                     1       2     +0.01587     +0.411529     +0.410287  G
+     TOKENMAX_L12                     1       4     +0.04762     +0.388014     +0.386777  G
+     DELTA_COS_L10                    7       2     -0.07937     +0.363595     +0.377992  W
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[15] STANDARD    GOLD rank= 2  opal prism -> RD-625
+     QUERY : gemlike transparent solid that separates incoming white light into colors
+     WRONG : [48] opal prism -> AS-842 | consensus-rank=1 | gold-wrong margin=-0.0130
+     VOTES : GOLD=3 WRONG=8 TIE=0 | top5 GOLD=10/11 WRONG=11/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                     1       2     +0.01587     +0.418919     +0.418791  G
+     TOKENMAX_L13                     2       1     -0.01587     +0.490886     +0.491655  W
+     HMEAN_COS_L11                    2       1     -0.01587     +0.749454     +0.749898  W
+     TOKENMAX_L14                     2       1     -0.01587     +0.518140     +0.518677  W
+     TOKENMAX_L09                     2       3     +0.01587     +0.396089     +0.395524  G
+     DELTA_COS_L12                    2       1     -0.01587     +0.321260     +0.329334  W
+     TOKENMAX_L11                     1       2     +0.01587     +0.485140     +0.485025  G
+     HMEAN_COS_L08                    8       3     -0.07937     +0.690112     +0.697219  W
+     TOKENMAX_L15                     2       1     -0.01587     +0.486151     +0.486346  W
+     TOKENMAX_L12                     2       1     -0.01587     +0.499840     +0.499999  W
+     DELTA_COS_L10                    2       1     -0.01587     +0.456782     +0.462552  W
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[47] EXTREME     GOLD rank= 2  brass plumb bob -> ZQ-157
+     QUERY : the metal object a builder lets gravity pull downward when needing a line that does not depend on eyesight or the wall
+     WRONG : [17] iron plumb bob -> TF-219 | consensus-rank=1 | gold-wrong margin=-0.0087
+     VOTES : GOLD=4 WRONG=7 TIE=0 | top5 GOLD=10/11 WRONG=10/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                     2       1     -0.01587     +0.368722     +0.372054  W
+     TOKENMAX_L13                     2       3     +0.01587     +0.423776     +0.421313  G
+     HMEAN_COS_L11                    2       1     -0.01587     +0.737976     +0.739817  W
+     TOKENMAX_L14                     2       3     +0.01587     +0.471798     +0.470370  G
+     TOKENMAX_L09                     3       2     -0.01587     +0.330281     +0.333063  W
+     DELTA_COS_L12                    1       2     +0.01587     +0.298988     +0.296692  G
+     TOKENMAX_L11                     2       1     -0.01587     +0.421475     +0.425746  W
+     HMEAN_COS_L08                   12       8     -0.06349     +0.665401     +0.668291  W
+     TOKENMAX_L15                     1       3     +0.03175     +0.437352     +0.429547  G
+     TOKENMAX_L12                     3       2     -0.01587     +0.420325     +0.421122  W
+     DELTA_COS_L10                    3       1     -0.03175     +0.388508     +0.408308  W
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[14] STANDARD    GOLD rank= 2  brass pendulum -> QC-163
+     QUERY : metal weight suspended so that gravity makes it swing back and forth
+     WRONG : [17] iron plumb bob -> TF-219 | consensus-rank=1 | gold-wrong margin=-0.0043
+     VOTES : GOLD=4 WRONG=7 TIE=0 | top5 GOLD=11/11 WRONG=11/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                     1       2     +0.01587     +0.456612     +0.451889  G
+     TOKENMAX_L13                     2       1     -0.01587     +0.497910     +0.499624  W
+     HMEAN_COS_L11                    2       1     -0.01587     +0.759468     +0.764707  W
+     TOKENMAX_L14                     3       1     -0.03175     +0.522020     +0.528853  W
+     TOKENMAX_L09                     1       3     +0.03175     +0.445378     +0.432335  G
+     DELTA_COS_L12                    1       2     +0.01587     +0.342982     +0.312746  G
+     TOKENMAX_L11                     2       1     -0.01587     +0.496090     +0.503201  W
+     HMEAN_COS_L08                    1       3     +0.03175     +0.686908     +0.680735  G
+     TOKENMAX_L15                     3       1     -0.03175     +0.495578     +0.502201  W
+     TOKENMAX_L12                     2       1     -0.01587     +0.499102     +0.500090  W
+     DELTA_COS_L10                    2       1     -0.01587     +0.454725     +0.474176  W
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[35] HARD        GOLD rank= 2  glass kaleidoscope -> MC-368
+     QUERY : transparent viewing tube in which reflections repeatedly reorganize colored fragments into symmetrical patterns
+     WRONG : [43] ceramic magnifier -> VL-341 | consensus-rank=1 | gold-wrong margin=-0.0014
+     VOTES : GOLD=7 WRONG=4 TIE=0 | top5 GOLD=8/11 WRONG=9/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                     1       4     +0.04762     +0.391404     +0.380423  G
+     TOKENMAX_L13                     6       5     -0.01587     +0.444552     +0.444577  W
+     HMEAN_COS_L11                    1       2     +0.01587     +0.765954     +0.756081  G
+     TOKENMAX_L14                    16       5     -0.17460     +0.477439     +0.489172  W
+     TOKENMAX_L09                     1       2     +0.01587     +0.371161     +0.358238  G
+     DELTA_COS_L12                    1       8     +0.11111     +0.327831     +0.295962  G
+     TOKENMAX_L11                     5       1     -0.06349     +0.449583     +0.453307  W
+     HMEAN_COS_L08                    1       2     +0.01587     +0.694498     +0.685391  G
+     TOKENMAX_L15                     7       1     -0.09524     +0.457929     +0.469123  W
+     TOKENMAX_L12                     4       5     +0.01587     +0.450318     +0.448224  G
+     DELTA_COS_L10                    1       8     +0.11111     +0.452739     +0.396074  G
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+[53] EXTREME     GOLD rank= 2  bronze gyroscope -> FX-319
+     QUERY : the spinning bronze mechanism whose axis seems stubborn about keeping its direction even while its support is moved
+     WRONG : [06] bronze gyroscope -> GU-148 | consensus-rank=1 | gold-wrong margin=+0.0000
+     VOTES : GOLD=2 WRONG=9 TIE=0 | top5 GOLD=11/11 WRONG=10/11
+     CHANNEL                     GOLD_R WRONG_R   ΔRANKSCORE      GOLD_RAW      WRONG_RAW
+     TOKENMAX_L10                     2       1     -0.01587     +0.428486     +0.429572  W
+     TOKENMAX_L13                     2       1     -0.01587     +0.455044     +0.455356  W
+     HMEAN_COS_L11                    1       2     +0.01587     +0.753527     +0.747444  G
+     TOKENMAX_L14                     2       1     -0.01587     +0.484361     +0.484759  W
+     TOKENMAX_L09                     2       1     -0.01587     +0.393678     +0.394040  W
+     DELTA_COS_L12                    2       1     -0.01587     +0.319868     +0.322394  W
+     TOKENMAX_L11                     2       1     -0.01587     +0.464899     +0.465286  W
+     HMEAN_COS_L08                    3      11     +0.12698     +0.680476     +0.670060  G
+     TOKENMAX_L15                     2       1     -0.01587     +0.453264     +0.453867  W
+     TOKENMAX_L12                     2       1     -0.01587     +0.455363     +0.455831  W
+     DELTA_COS_L10                    2       1     -0.01587     +0.400366     +0.402884  W
+
+==========================================================================================================================================================
+TOP CROSS-CHANNEL WRONG ATTRACTORS
+01. [60] azure protractor       gold-rank=48 <- [19] bamboo protractor      beats gold in 11/11 channels
+02. [42] silver stopwatch       gold-rank=31 <- [55] marble sundial         beats gold in 11/11 channels
+03. [26] crystal level          gold-rank=39 <- [43] ceramic magnifier      beats gold in 11/11 channels
+04. [10] ivory ruler            gold-rank= 4 <- [34] ivory caliper          beats gold in 11/11 channels
+05. [45] silk atlas             gold-rank=21 <- [11] crimson funnel         beats gold in 10/11 channels
+06. [33] maple metronome        gold-rank= 4 <- [04] wooden sundial         beats gold in 10/11 channels
+07. [28] bronze odometer        gold-rank=16 <- [59] steel odometer         beats gold in 10/11 channels
+08. [25] cedar hourglass        gold-rank= 4 <- [04] wooden sundial         beats gold in 10/11 channels
+09. [08] jade magnifier         gold-rank= 2 <- [43] ceramic magnifier      beats gold in 10/11 channels
+10. [07] linen atlas            gold-rank= 2 <- [13] silk map               beats gold in 10/11 channels
+11. [61] golden ruler           gold-rank=16 <- [32] cobalt altimeter       beats gold in  9/11 channels
+12. [53] bronze gyroscope       gold-rank= 2 <- [06] bronze gyroscope       beats gold in  9/11 channels
+13. [49] linen funnel           gold-rank= 3 <- [43] ceramic magnifier      beats gold in  9/11 channels
+14. [46] jade abacus            gold-rank=13 <- [20] quartz stopwatch       beats gold in  9/11 channels
+15. [40] obsidian compass       gold-rank= 4 <- [57] black barometer        beats gold in  9/11 channels
+16. [21] canvas stencil         gold-rank= 1 <- [54] canvas stencil         beats gold in  9/11 channels
+17. [18] pearl binoculars       gold-rank= 2 <- [62] quartz binoculars      beats gold in  9/11 channels
+18. [63] scarlet stethoscope    gold-rank= 1 <- [24] scarlet stethoscope    beats gold in  8/11 channels
+19. [56] white anemometer       gold-rank= 3 <- [32] cobalt altimeter       beats gold in  8/11 channels
+20. [50] onyx pendulum          gold-rank= 9 <- [03] amber tuning fork      beats gold in  8/11 channels
+
+[6/6] Counterfactual diagnostic — channel leave-one-out (analysis only, NO selection)...
+      DROP TOKENMAX_L11                R1=0.6406 (+0.0312) R5=0.8750 MRR=0.7366 (+0.0149)
+      DROP TOKENMAX_L14                R1=0.6406 (+0.0312) R5=0.8750 MRR=0.7355 (+0.0138)
+      DROP TOKENMAX_L15                R1=0.6406 (+0.0312) R5=0.8750 MRR=0.7339 (+0.0121)
+      DROP TOKENMAX_L10                R1=0.6250 (+0.0156) R5=0.8750 MRR=0.7261 (+0.0044)
+      DROP HMEAN_COS_L11               R1=0.6094 (+0.0000) R5=0.8750 MRR=0.7252 (+0.0034)
+      DROP TOKENMAX_L13                R1=0.6250 (+0.0156) R5=0.8750 MRR=0.7246 (+0.0029)
+      DROP TOKENMAX_L12                R1=0.6094 (+0.0000) R5=0.8750 MRR=0.7223 (+0.0006)
+      DROP TOKENMAX_L09                R1=0.6094 (+0.0000) R5=0.8750 MRR=0.7129 (-0.0088)
+      DROP DELTA_COS_L12               R1=0.6094 (+0.0000) R5=0.8750 MRR=0.7118 (-0.0099)
+      DROP DELTA_COS_L10               R1=0.5938 (-0.0156) R5=0.8594 MRR=0.7031 (-0.0186)
+      DROP HMEAN_COS_L08               R1=0.5312 (-0.0781) R5=0.8438 MRR=0.6814 (-0.0403)
+
+==========================================================================================================================================================
+TEST489 FINAL RESULT — RECALL ATTRACTOR ERROR ANATOMY
+==========================================================================================================================================================
+FOUNDATION          : TEST488 exact 64-memory held-out panel
+TEST482 BLOB SHA    : ecc630144a44479cb35c432c50eb0d09bc6866d7
+TEST488 LOCK SHA    : d2c2e744532e1fe9b4c5be745fce6892720745dd590b49eca59ca3ef753fdfd8
+TEST489 LOCK SHA    : ed03fb4b6f1afa410e1a28329d05b744889b8836f69f3572c4b52032b8b70fb0
+CHANNELS            : exact frozen TEST487 11
+BASE CONSENSUS      : R1=0.609375 R5=0.875000 MRR=0.721709
+NON-R1 CASES        : 25 / 64
+FAILURE TYPES       : {'DISTRIBUTED_WRONG_ATTRACTOR': 18, 'SPLIT_EVIDENCE': 5, 'NARROW_CHANNEL_CAPTURE': 2}
+HARD-CASE REPRO     : {26: 39, 42: 31, 45: 21, 60: 48} OK= True
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+MOST PERSISTENT WRONG ATTRACTORS:
+  [60] azure protractor <- [19] bamboo protractor | wrong beats gold 11/11 | gold rank 48
+  [42] silver stopwatch <- [55] marble sundial | wrong beats gold 11/11 | gold rank 31
+  [26] crystal level <- [43] ceramic magnifier | wrong beats gold 11/11 | gold rank 39
+  [10] ivory ruler <- [34] ivory caliper | wrong beats gold 11/11 | gold rank 4
+  [45] silk atlas <- [11] crimson funnel | wrong beats gold 10/11 | gold rank 21
+  [33] maple metronome <- [04] wooden sundial | wrong beats gold 10/11 | gold rank 4
+  [28] bronze odometer <- [59] steel odometer | wrong beats gold 10/11 | gold rank 16
+  [25] cedar hourglass <- [04] wooden sundial | wrong beats gold 10/11 | gold rank 4
+  [08] jade magnifier <- [43] ceramic magnifier | wrong beats gold 10/11 | gold rank 2
+  [07] linen atlas <- [13] silk map | wrong beats gold 10/11 | gold rank 2
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+LEAVE-ONE-OUT       : DIAGNOSTIC ONLY; no channel is selected/removed by this test.
+POST-HOC OPTIMIZER  : NONE
+NEW ENSEMBLE        : NONE
+ORACLE ROUTING      : NONE
+ROUTER / ANN / GRAPH: NONE
+CARTRIDGE READOUT   : NOT USED
+TRAINING / LoRA     : NONE
+MODEL CHANGE        : NONE
+INTERPRETATION      : distinguishes distributed false attractors, split evidence, and narrow-channel capture.
+NEXT                : design TEST490 only from the observed failure mechanism; do not tune TEST489 itself.
+TOTAL TIME          : 66.89s
+==========================================================================================================================================================
