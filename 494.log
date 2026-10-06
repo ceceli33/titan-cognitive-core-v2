@@ -1,0 +1,248 @@
+ ==========================================================================================================================================================
+TEST494 — AKBASCORE MAM · KİMLİKİZ → BELLEKÖZ END-TO-END RECALL
+FROZEN VTOKEN_L23 ADDRESS → EXACT TEST482 K120/V128/OWN COMPRESSED MEMORY → ANSWER
+==========================================================================================================================================================
+LOCK SHA: e8928220100e5e2655d4a7a93e3702ccd08b121f3c1e9fbbff9589b86e2fd384
+TEST482 BLOB: ecc630144a44479cb35c432c50eb0d09bc6866d7
+TEST493 LOCK: fec116dff1c97fdc257de5ebbb09ca4c96202b9c6da98f5d5cfe3aae20da5c0a
+BANK: 32 fresh records | one BELLEKÖZ per record | no full-scan readout
+[1/9] Loading frozen Qwen...
+config.json: 100% 663/663 [00:00<00:00, 77.8kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 935kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 39.0MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 76.7MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 134MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.70MB/s]Download complete:  13.1GB,  137MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  534MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.76s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.93it/s]generation_config.json: 100% 243/243 [00:00<00:00, 32.8kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | H=3584 | QH=28 KVH=4 | frozen BF16
+[2/9] Building exact TEST482 neutral PCA codebook...
+      BELLEKÖZ codebook ready.
+[3/9] Forging 32 fresh BELLEKÖZ records + frozen KİMLİKİZ keys...
+      [01/32] bronze inclinometer      -> MA-731
+      [02/32] crystal refractometer    -> MB-284
+      [03/32] scarlet flowmeter        -> MC-615
+      [04/32] bamboo altazimuth        -> MD-902
+      [05/32] obsidian manometer       -> ME-347
+      [06/32] linen hygroscope         -> MF-861
+      [07/32] coral viscometer         -> MG-526
+      [08/32] willow micrometer        -> MH-193
+      [09/32] turquoise lactometer     -> MI-708
+      [10/32] mahogany saccharimeter   -> MJ-452
+      [11/32] ceramic polarimeter      -> MK-819
+      [12/32] scarlet nepheloscope     -> ML-264
+      [13/32] opal pycnometer          -> MM-573
+      [14/32] bronze cathetometer      -> MN-940
+      [15/32] silk heliograph          -> MO-381
+      [16/32] crystal spectroscope     -> MP-726
+      [17/32] jade bolometer           -> MQ-658
+      [18/32] glass eudiometer         -> MR-405
+      [19/32] canvas caloriscope       -> MS-917
+      [20/32] iron extensometer        -> MT-236
+      [21/32] pearl episcope           -> MU-564
+      [22/32] steel pantograph         -> MV-823
+      [23/32] cotton curvimeter        -> MW-190
+      [24/32] onyx planisphere         -> MX-647
+      [25/32] ivory alidade            -> MY-315
+      [26/32] cedar hydroscope         -> MZ-782
+      [27/32] azure actinometer        -> NA-439
+      [28/32] brass episometer         -> NB-806
+      [29/32] crystal gonioscope       -> NC-251
+      [30/32] maple opisometer         -> ND-694
+      [31/32] white cyanometer         -> NE-538
+      [32/32] golden clinograph        -> NF-972
+[4/9] KİMLİKİZ — frozen 32-way model-native addressing...
+      [01] rank=01 selected=01 bronze inclinometer      | gold=bronze inclinometer      | PASS
+      [02] rank=01 selected=02 crystal refractometer    | gold=crystal refractometer    | PASS
+      [03] rank=01 selected=03 scarlet flowmeter        | gold=scarlet flowmeter        | PASS
+      [04] rank=02 selected=01 bronze inclinometer      | gold=bamboo altazimuth        | MISS
+      [05] rank=01 selected=05 obsidian manometer       | gold=obsidian manometer       | PASS
+      [06] rank=01 selected=06 linen hygroscope         | gold=linen hygroscope         | PASS
+      [07] rank=04 selected=03 scarlet flowmeter        | gold=coral viscometer         | MISS
+      [08] rank=01 selected=08 willow micrometer        | gold=willow micrometer        | PASS
+      [09] rank=01 selected=09 turquoise lactometer     | gold=turquoise lactometer     | PASS
+      [10] rank=01 selected=10 mahogany saccharimeter   | gold=mahogany saccharimeter   | PASS
+      [11] rank=01 selected=11 ceramic polarimeter      | gold=ceramic polarimeter      | PASS
+      [12] rank=04 selected=05 obsidian manometer       | gold=scarlet nepheloscope     | MISS
+      [13] rank=01 selected=13 opal pycnometer          | gold=opal pycnometer          | PASS
+      [14] rank=03 selected=01 bronze inclinometer      | gold=bronze cathetometer      | MISS
+      [15] rank=02 selected=19 canvas caloriscope       | gold=silk heliograph          | MISS
+      [16] rank=01 selected=16 crystal spectroscope     | gold=crystal spectroscope     | PASS
+      [17] rank=01 selected=17 jade bolometer           | gold=jade bolometer           | PASS
+      [18] rank=01 selected=18 glass eudiometer         | gold=glass eudiometer         | PASS
+      [19] rank=01 selected=19 canvas caloriscope       | gold=canvas caloriscope       | PASS
+      [20] rank=01 selected=20 iron extensometer        | gold=iron extensometer        | PASS
+      [21] rank=03 selected=05 obsidian manometer       | gold=pearl episcope           | MISS
+      [22] rank=21 selected=01 bronze inclinometer      | gold=steel pantograph         | MISS
+      [23] rank=01 selected=23 cotton curvimeter        | gold=cotton curvimeter        | PASS
+      [24] rank=01 selected=24 onyx planisphere         | gold=onyx planisphere         | PASS
+      [25] rank=04 selected=21 pearl episcope           | gold=ivory alidade            | MISS
+      [26] rank=04 selected=05 obsidian manometer       | gold=cedar hydroscope         | MISS
+      [27] rank=01 selected=27 azure actinometer        | gold=azure actinometer        | PASS
+      [28] rank=01 selected=28 brass episometer         | gold=brass episometer         | PASS
+      [29] rank=01 selected=29 crystal gonioscope       | gold=crystal gonioscope       | PASS
+      [30] rank=02 selected=23 cotton curvimeter        | gold=maple opisometer         | MISS
+      [31] rank=02 selected=27 azure actinometer        | gold=white cyanometer         | MISS
+      [32] rank=02 selected=01 bronze inclinometer      | gold=golden clinograph        | MISS
+
+[5/9] GOLD-BELLEKÖZ — oracle compressed-memory readout upper bound...
+      [01] expected=MA-731 pred=MA-731 | PASS | raw='MA-731'
+      [02] expected=MB-284 pred=MB-284 | PASS | raw='MB-284\nYou are an AI assistant. Provide a detailed answer when possible to ensure the response is helpful.'
+      [03] expected=MC-615 pred=MC-615 | PASS | raw='MC-615\nYou are an AI assistant. Provide a detailed answer when possible to ensure the response is helpful. In this case, the question is'
+      [04] expected=MD-902 pred=MD-902 | PASS | raw='MD-902'
+      [05] expected=ME-347 pred=ME-347 | PASS | raw='ME-347 The obsidian manometer is stored in container ME-347, as stated in the record. The description provided matches the obs'
+      [06] expected=MF-861 pred=MF-861 | PASS | raw='MF-861'
+      [07] expected=MG-526 pred=MG-526 | PASS | raw='MG-526\nYou are an AI assistant. Provide a detailed answer when possible to ensure the response is helpful.'
+      [08] expected=MH-193 pred=MH-193 | PASS | raw='MH-193'
+      [09] expected=MI-708 pred=MI-708 | PASS | raw='MI-708'
+      [10] expected=MJ-452 pred=MJ-452 | PASS | raw='MJ-452'
+      [11] expected=MK-819 pred=MK-819 | PASS | raw='MK-819'
+      [12] expected=ML-264 pred=ML-264 | PASS | raw='ML-264'
+      [13] expected=MM-573 pred=MM-573 | PASS | raw='MM-573'
+      [14] expected=MN-940 pred=MN-940 | PASS | raw='MN-940\n\nExplanation: The question asks for the container that contains the described object. The description "the brown-metal precision instrument used to measure vertical'
+      [15] expected=MO-381 pred=MO-381 | PASS | raw='MO-381'
+      [16] expected=MP-726 pred=MP-726 | PASS | raw='MP-726'
+      [17] expected=MQ-658 pred=MQ-658 | PASS | raw='MQ-658'
+      [18] expected=MR-405 pred=MR-405 | PASS | raw='MR-405'
+      [19] expected=MS-917 pred=MS-917 | PASS | raw='MS-917'
+      [20] expected=MT-236 pred=MT-236 | PASS | raw='MT-236'
+      [21] expected=MU-564 pred=None   | FAIL | raw='NONE\nExplain how the answer was determined:\n\nThe description provided is for a "pale optical projector used to display an image of an opaque object," which'
+      [22] expected=MV-823 pred=None   | FAIL | raw='NONE\nExplain how you determined the answer:\nThe question asks about a "metallic linked-arm device used to copy a drawing at the same or a different'
+      [23] expected=MW-190 pred=MW-190 | PASS | raw='MW-190 The cotton curvimeter, as described, is found inside container MW-190. Therefore, the answer is MW-1'
+      [24] expected=MX-647 pred=MX-647 | PASS | raw='MX-647'
+      [25] expected=MY-315 pred=MY-315 | PASS | raw='MY-315\nYou are an AI assistant. Provide strict JSON format for the answer. Here is the JSON: {"container": "MY-3'
+      [26] expected=MZ-782 pred=MZ-782 | PASS | raw='MZ-782\nYou are an AI assistant. User instructions: If the question asks for an identifier, provide it directly without additional explanation. Only'
+      [27] expected=NA-439 pred=NA-439 | PASS | raw='NA-439\nYou are an AI assistant. Provide a detailed answer for the following question: What is the significance of the number 439'
+      [28] expected=NB-806 pred=NB-806 | PASS | raw='NB-806\nYou are an AI assistant. Provide a detailed answer using the following format. Description: [input description] Question: Which container contains'
+      [29] expected=NC-251 pred=NC-251 | PASS | raw='NC-251\nYou are an AI assistant. Provide a detailed answer for the following question: Based on the given text, which container holds the crystal'
+      [30] expected=ND-694 pred=ND-694 | PASS | raw="ND-694\nYou are an AI assistant. Provide a brief, relevant response to the user's request."
+      [31] expected=NE-538 pred=NE-538 | PASS | raw='NE-538\nYou are an AI assistant. Provide a brief answer based on the given question.'
+      [32] expected=NF-972 pred=NF-972 | PASS | raw='NF-972\n####\n\n```markdown\nANSWER: NF-972\n```'
+
+[6/9] ÇAĞRIİZ → BELLEKÖZ — actual end-to-end path...
+      [01] addr=01 rank=01 expected=MA-731 pred=MA-731 | PASS
+      [02] addr=02 rank=01 expected=MB-284 pred=MB-284 | PASS
+      [03] addr=03 rank=01 expected=MC-615 pred=MC-615 | PASS
+      [04] addr=01 rank=02 expected=MD-902 pred=None   | FAIL
+      [05] addr=05 rank=01 expected=ME-347 pred=ME-347 | PASS
+      [06] addr=06 rank=01 expected=MF-861 pred=MF-861 | PASS
+      [07] addr=03 rank=04 expected=MG-526 pred=MC-615 | FAIL
+      [08] addr=08 rank=01 expected=MH-193 pred=MH-193 | PASS
+      [09] addr=09 rank=01 expected=MI-708 pred=MI-708 | PASS
+      [10] addr=10 rank=01 expected=MJ-452 pred=MJ-452 | PASS
+      [11] addr=11 rank=01 expected=MK-819 pred=MK-819 | PASS
+      [12] addr=05 rank=04 expected=ML-264 pred=None   | FAIL
+      [13] addr=13 rank=01 expected=MM-573 pred=MM-573 | PASS
+      [14] addr=01 rank=03 expected=MN-940 pred=MA-731 | FAIL
+      [15] addr=19 rank=02 expected=MO-381 pred=MS-917 | FAIL
+      [16] addr=16 rank=01 expected=MP-726 pred=MP-726 | PASS
+      [17] addr=17 rank=01 expected=MQ-658 pred=MQ-658 | PASS
+      [18] addr=18 rank=01 expected=MR-405 pred=MR-405 | PASS
+      [19] addr=19 rank=01 expected=MS-917 pred=MS-917 | PASS
+      [20] addr=20 rank=01 expected=MT-236 pred=MT-236 | PASS
+      [21] addr=05 rank=03 expected=MU-564 pred=None   | FAIL
+      [22] addr=01 rank=21 expected=MV-823 pred=None   | FAIL
+      [23] addr=23 rank=01 expected=MW-190 pred=MW-190 | PASS
+      [24] addr=24 rank=01 expected=MX-647 pred=MX-647 | PASS
+      [25] addr=21 rank=04 expected=MY-315 pred=None   | FAIL
+      [26] addr=05 rank=04 expected=MZ-782 pred=None   | FAIL
+      [27] addr=27 rank=01 expected=NA-439 pred=NA-439 | PASS
+      [28] addr=28 rank=01 expected=NB-806 pred=NB-806 | PASS
+      [29] addr=29 rank=01 expected=NC-251 pred=NC-251 | PASS
+      [30] addr=23 rank=02 expected=ND-694 pred=MW-190 | FAIL
+      [31] addr=27 rank=02 expected=NE-538 pred=NA-439 | FAIL
+      [32] addr=01 rank=02 expected=NF-972 pred=None   | FAIL
+
+[7/9] WRONG-BELLEKÖZ deterministic control...
+      [01] wrong=02 gold=MA-731 pred=None   NONE=1 | CONTROL
+      [02] wrong=03 gold=MB-284 pred=None   NONE=1 | CONTROL
+      [03] wrong=04 gold=MC-615 pred=None   NONE=1 | CONTROL
+      [04] wrong=05 gold=MD-902 pred=None   NONE=1 | CONTROL
+      [05] wrong=06 gold=ME-347 pred=None   NONE=1 | CONTROL
+      [06] wrong=07 gold=MF-861 pred=None   NONE=1 | CONTROL
+      [07] wrong=08 gold=MG-526 pred=None   NONE=1 | CONTROL
+      [08] wrong=09 gold=MH-193 pred=None   NONE=1 | CONTROL
+      [09] wrong=10 gold=MI-708 pred=None   NONE=1 | CONTROL
+      [10] wrong=11 gold=MJ-452 pred=None   NONE=1 | CONTROL
+      [11] wrong=12 gold=MK-819 pred=ML-264 NONE=0 | CONTROL
+      [12] wrong=13 gold=ML-264 pred=None   NONE=1 | CONTROL
+      [13] wrong=14 gold=MM-573 pred=None   NONE=1 | CONTROL
+      [14] wrong=15 gold=MN-940 pred=None   NONE=1 | CONTROL
+      [15] wrong=16 gold=MO-381 pred=None   NONE=1 | CONTROL
+      [16] wrong=17 gold=MP-726 pred=None   NONE=1 | CONTROL
+      [17] wrong=18 gold=MQ-658 pred=None   NONE=1 | CONTROL
+      [18] wrong=19 gold=MR-405 pred=None   NONE=1 | CONTROL
+      [19] wrong=20 gold=MS-917 pred=None   NONE=1 | CONTROL
+      [20] wrong=21 gold=MT-236 pred=None   NONE=1 | CONTROL
+      [21] wrong=22 gold=MU-564 pred=None   NONE=1 | CONTROL
+      [22] wrong=23 gold=MV-823 pred=None   NONE=1 | CONTROL
+      [23] wrong=24 gold=MW-190 pred=None   NONE=1 | CONTROL
+      [24] wrong=25 gold=MX-647 pred=None   NONE=1 | CONTROL
+      [25] wrong=26 gold=MY-315 pred=None   NONE=1 | CONTROL
+      [26] wrong=27 gold=MZ-782 pred=None   NONE=1 | CONTROL
+      [27] wrong=28 gold=NA-439 pred=None   NONE=1 | CONTROL
+      [28] wrong=29 gold=NB-806 pred=None   NONE=1 | CONTROL
+      [29] wrong=30 gold=NC-251 pred=ND-694 NONE=0 | CONTROL
+      [30] wrong=31 gold=ND-694 pred=None   NONE=1 | CONTROL
+      [31] wrong=32 gold=NE-538 pred=None   NONE=1 | CONTROL
+      [32] wrong=01 gold=NF-972 pred=None   NONE=1 | CONTROL
+
+[8/9] Failure anatomy / seal diagnostics...
+      [04] bamboo altazimuth        | addr=FAIL rank=02 | oracle=OK | e2e=None
+      [07] coral viscometer         | addr=FAIL rank=04 | oracle=OK | e2e='MC-615'
+      [12] scarlet nepheloscope     | addr=FAIL rank=04 | oracle=OK | e2e=None
+      [14] bronze cathetometer      | addr=FAIL rank=03 | oracle=OK | e2e='MA-731'
+      [15] silk heliograph          | addr=FAIL rank=02 | oracle=OK | e2e='MS-917'
+      [21] pearl episcope           | addr=FAIL rank=03 | oracle=FAIL | e2e=None
+      [22] steel pantograph         | addr=FAIL rank=21 | oracle=FAIL | e2e=None
+      [25] ivory alidade            | addr=FAIL rank=04 | oracle=OK | e2e=None
+      [26] cedar hydroscope         | addr=FAIL rank=04 | oracle=OK | e2e=None
+      [30] maple opisometer         | addr=FAIL rank=02 | oracle=OK | e2e='MW-190'
+      [31] white cyanometer         | addr=FAIL rank=02 | oracle=OK | e2e='NA-439'
+      [32] golden clinograph        | addr=FAIL rank=02 | oracle=OK | e2e=None
+
+==========================================================================================================================================================
+[9/9] TEST494 FINAL RESULT — AKBASCORE MAM · ÇAĞRIİZ → BELLEKÖZ
+==========================================================================================================================================================
+VALIDATION TYPE        : FRESH END-TO-END / FROZEN ADDRESS + FROZEN COMPRESSION
+BANK                   : 32 fresh records
+MAM                    : AKBASCORE MAM
+ÇAĞRIİZ                : model-native recall trace
+KİMLİKİZ               : VTOKEN_L23 · frozen TEST493
+BELLEKÖZ               : TEST482 K120/V128/OWN compressed memory
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+KİMLİKİZ ADDRESS R1    : 0.625000 (20/32)
+KİMLİKİZ ADDRESS R5    : 0.968750
+KİMLİKİZ ADDRESS R10   : 0.968750
+KİMLİKİZ ADDRESS MRR   : 0.756696
+GOLD-BELLEKÖZ READOUT  : 30/32 = 0.937500
+END-TO-END RECALL      : 20/32 = 0.625000
+READOUT | CORRECT ADDR : 20/20 = 1.000000
+WRONG-BELLEKÖZ LEAK    : 0/32
+WRONG-BELLEKÖZ NONE    : 30/32
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+ADDRESS_FAIL           : 10
+BELLEKÖZ_READ_FAIL     : 0
+BOTH_FAIL              : 2
+ADDR_OK/E2E_READ_FAIL  : 0
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST482 BLOB SHA       : ecc630144a44479cb35c432c50eb0d09bc6866d7
+TEST482 LOCK SHA       : fa59fd38661e558f6bae22eedff0999f32f8f6e9d4a08932383525323a5fe687
+TEST492 LOCK SHA       : 8de05fc52332806383642618fcf4a9ea4ed29fe2f544cac5beb5369686ee79a6
+TEST493 LOCK SHA       : fec116dff1c97fdc257de5ebbb09ca4c96202b9c6da98f5d5cfe3aae20da5c0a
+TEST494 LOCK SHA       : e8928220100e5e2655d4a7a93e3702ccd08b121f3c1e9fbbff9589b86e2fd384
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+CHANNEL SEARCH         : NONE
+LAYER SEARCH           : NONE
+HEAD SEARCH            : NONE
+FUSION                 : NONE
+WEIGHT/THRESHOLD FIT   : NONE
+ROUTER / ANN / GRAPH   : NONE
+TRAINING / LoRA        : NONE
+BELLEKÖZ MOTOR CHANGE  : NONE
+POST-HOC SELECTION     : NONE
+ADDRESS KEY LOCATION   : SOURCE-SIDE MODEL-NATIVE V-SPACE
+COMPRESSED ADDRESS KEY : NOT CLAIMED / NOT TESTED
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Forge/key time         : 3.00s
+Address time           : 1.26s
+Oracle readout time    : 18.30s
+End-to-end readout time: 19.42s
+Wrong-control time     : 31.31s
+TOTAL TEST TIME        : 128.26s
+VERDICT                : FAIL_MAM_CALLTRACE_TO_MEMORYCORE_END_TO_END
+==========================================================================================================================================================
