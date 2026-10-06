@@ -1,0 +1,594 @@
+ ==============================================================================================================================================================
+TEST490 — AKBASCORE MAM · SEMANTIC BASIN vs INSTANCE-IDENTITY X-RAY
+EXACT TEST488/489 PANEL · TOKEN×TOKEN L8-L15 · SAME-CONCEPT PAIRS · NO NEW ADDRESSER
+==============================================================================================================================================================
+LOCK SHA: 237f3c7a9cc2478b2ca55944f0a356101c8f87c5a7ef250f6267fc04a9fc1dd2
+TEST489 LOCK: ed03fb4b6f1afa410e1a28329d05b744889b8836f69f3572c4b52032b8b70fb0
+PAIRS: {'hygrometer': [0, 51], 'abacus': [1, 46], 'periscope': [2, 52], 'tuning fork': [3, 44], 'sundial': [4, 55], 'thermometer': [5, 41], 'gyroscope': [6, 53], 'atlas': [7, 45], 'magnifier': [8, 43], 'prism': [15, 48], 'plumb bob': [17, 47], 'binoculars': [18, 62], 'protractor': [19, 60], 'stencil': [21, 54], 'stethoscope': [24, 63], 'odometer': [28, 59], 'anemometer': [29, 56], 'altimeter': [32, 58]}
+[1/7] Loading frozen Qwen...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 79.7kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 956kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 66.4MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 61.5MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 115MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.27MB/s]Download complete:  13.1GB,  522MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  473MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.59s/it]Loading weights: 100% 339/339 [00:03<00:00, 98.12it/s]generation_config.json: 100% 243/243 [00:00<00:00, 34.1kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | frozen BF16
+[2/7] Capturing exact 64 memory/query token states...
+      memories 16/64
+      memories 32/64
+      memories 48/64
+      memories 64/64
+      queries  16/64
+      queries  32/64
+      queries  48/64
+      queries  64/64
+[3/7] Measuring semantic-basin capture across repeated concepts...
+      L08 FAMILY-R1=0.528 FAMILY-R5=0.889 INSTANCE-R1=0.389 INSTANCE-R5=0.778
+      L09 FAMILY-R1=0.639 FAMILY-R5=0.917 INSTANCE-R1=0.500 INSTANCE-R5=0.833
+      L10 FAMILY-R1=0.806 FAMILY-R5=0.944 INSTANCE-R1=0.528 INSTANCE-R5=0.889
+      L11 FAMILY-R1=0.694 FAMILY-R5=0.944 INSTANCE-R1=0.500 INSTANCE-R5=0.833
+      L12 FAMILY-R1=0.611 FAMILY-R5=0.972 INSTANCE-R1=0.444 INSTANCE-R5=0.917
+      L13 FAMILY-R1=0.611 FAMILY-R5=0.972 INSTANCE-R1=0.417 INSTANCE-R5=0.944
+      L14 FAMILY-R1=0.528 FAMILY-R5=0.889 INSTANCE-R1=0.389 INSTANCE-R5=0.833
+      L15 FAMILY-R1=0.556 FAMILY-R5=0.889 INSTANCE-R1=0.389 INSTANCE-R5=0.833
+[4/7] Token-level shared-concept vs discriminative-residual anatomy...
+      L08 mean-own=+0.41172 mean-pair=+0.40049 identity-margin=+0.01124 positive-token-frac=0.465 max-residual=+0.14300
+      L09 mean-own=+0.40207 mean-pair=+0.39155 identity-margin=+0.01052 positive-token-frac=0.451 max-residual=+0.14159
+      L10 mean-own=+0.42281 mean-pair=+0.41241 identity-margin=+0.01040 positive-token-frac=0.462 max-residual=+0.13693
+      L11 mean-own=+0.47800 mean-pair=+0.46846 identity-margin=+0.00954 positive-token-frac=0.464 max-residual=+0.11521
+      L12 mean-own=+0.48261 mean-pair=+0.47397 identity-margin=+0.00863 positive-token-frac=0.459 max-residual=+0.11143
+      L13 mean-own=+0.47951 mean-pair=+0.47135 identity-margin=+0.00816 positive-token-frac=0.429 max-residual=+0.11262
+      L14 mean-own=+0.51227 mean-pair=+0.50542 identity-margin=+0.00685 positive-token-frac=0.435 max-residual=+0.09848
+      L15 mean-own=+0.48284 mean-pair=+0.47517 identity-margin=+0.00767 positive-token-frac=0.442 max-residual=+0.10480
+[5/7] Same-concept pair X-ray...
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+CONCEPT: HYGROMETER | [00] copper hygrometer <-> [51] crystal hygrometer
+
+  QUERY [00] copper hygrometer (STANDARD)
+  copper instrument used to determine how much moisture is present in the air
+    L08 own=+0.48685 pair=+0.43896 Δ=+0.04789 | ID q=' copper' Δmax=+0.47932 -> own:' copper' pair:' crystal' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.45912 pair=+0.41695 Δ=+0.04217 | ID q=' copper' Δmax=+0.47054 -> own:' copper' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.47440 pair=+0.42599 Δ=+0.04841 | ID q=' copper' Δmax=+0.45434 -> own:' copper' pair:' crystal' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.52769 pair=+0.48503 Δ=+0.04266 | ID q=' copper' Δmax=+0.38007 -> own:' copper' pair:' crystal' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.53054 pair=+0.49911 Δ=+0.03143 | ID q=' copper' Δmax=+0.35903 -> own:' copper' pair:' crystal' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.52820 pair=+0.49574 Δ=+0.03246 | ID q=' copper' Δmax=+0.35721 -> own:' copper' pair:' crystal' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.55756 pair=+0.52770 Δ=+0.02986 | ID q=' copper' Δmax=+0.33205 -> own:' copper' pair:' crystal' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.53284 pair=+0.50208 Δ=+0.03076 | ID q=' copper' Δmax=+0.33834 -> own:' copper' pair:' crystal' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L10 mean-margin=+0.04841 token=' copper' own-match=' copper' pair-match=' crystal'
+
+  QUERY [51] crystal hygrometer (EXTREME)
+  the transparent device that answers whether the surrounding air is unusually dry or saturated without asking about temperature
+    L08 own=+0.39646 pair=+0.39455 Δ=+0.00190 | ID q=' transparent' Δmax=+0.03628 -> own:' crystal' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.38519 pair=+0.38151 Δ=+0.00368 | ID q=' transparent' Δmax=+0.06321 -> own:' crystal' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.40967 pair=+0.41340 Δ=-0.00373 | ID q=' transparent' Δmax=+0.03867 -> own:' crystal' pair:' copper' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.47429 pair=+0.48090 Δ=-0.00661 | ID q=' transparent' Δmax=+0.02460 -> own:' crystal' pair:' copper' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.47630 pair=+0.47405 Δ=+0.00225 | ID q=' saturated' Δmax=+0.02045 -> own:'rometer' pair:'rometer' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.47605 pair=+0.47600 Δ=+0.00005 | ID q=' transparent' Δmax=+0.02323 -> own:' crystal' pair:' copper' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.49968 pair=+0.49997 Δ=-0.00029 | ID q=' saturated' Δmax=+0.02102 -> own:'rometer' pair:'rometer' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.46973 pair=+0.47073 Δ=-0.00100 | ID q=' transparent' Δmax=+0.02550 -> own:' crystal' pair:' copper' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L09 mean-margin=+0.00368 token=' transparent' own-match=' crystal' pair-match=' container'
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+CONCEPT: ABACUS | [01] velvet abacus <-> [46] jade abacus
+
+  QUERY [01] velvet abacus (STANDARD)
+  velvet-covered counting frame whose sliding pieces support manual arithmetic
+    L08 own=+0.46909 pair=+0.42890 Δ=+0.04018 | ID q=' velvet' Δmax=+0.57799 -> own:' velvet' pair:' jade' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.47480 pair=+0.43811 Δ=+0.03669 | ID q=' velvet' Δmax=+0.54159 -> own:' velvet' pair:' jade' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.51171 pair=+0.46795 Δ=+0.04375 | ID q=' velvet' Δmax=+0.51960 -> own:' velvet' pair:' jade' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.56097 pair=+0.52351 Δ=+0.03747 | ID q=' velvet' Δmax=+0.41452 -> own:' velvet' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.56762 pair=+0.53790 Δ=+0.02972 | ID q=' velvet' Δmax=+0.39147 -> own:' velvet' pair:' jade' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.56065 pair=+0.53268 Δ=+0.02797 | ID q=' velvet' Δmax=+0.38564 -> own:' velvet' pair:' jade' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.58462 pair=+0.55426 Δ=+0.03036 | ID q=' velvet' Δmax=+0.35790 -> own:' velvet' pair:' jade' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.55490 pair=+0.52673 Δ=+0.02818 | ID q=' velvet' Δmax=+0.36273 -> own:' velvet' pair:' jade' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L10 mean-margin=+0.04375 token=' velvet' own-match=' velvet' pair-match=' jade'
+
+  QUERY [46] jade abacus (EXTREME)
+  the green object on which quantities can be manipulated physically without writing numerals or using electronics
+    L08 own=+0.37273 pair=+0.36325 Δ=+0.00948 | ID q=' green' Δmax=+0.04387 -> own:' jade' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.35615 pair=+0.34742 Δ=+0.00873 | ID q=' green' Δmax=+0.05707 -> own:' jade' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.38269 pair=+0.38005 Δ=+0.00264 | ID q=' container' Δmax=+0.01954 -> own:' container' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.44494 pair=+0.44656 Δ=-0.00162 | ID q=' container' Δmax=+0.02104 -> own:' container' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.46199 pair=+0.45756 Δ=+0.00443 | ID q=' be' Δmax=+0.02420 -> own:' is' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.44786 pair=+0.44745 Δ=+0.00040 | ID q=' holds' Δmax=+0.02240 -> own:' container' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.49048 pair=+0.49099 Δ=-0.00051 | ID q=' holds' Δmax=+0.01657 -> own:' container' pair:' stored' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.45231 pair=+0.44964 Δ=+0.00266 | ID q=' can' Δmax=+0.02185 -> own:' is' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L08 mean-margin=+0.00948 token=' green' own-match=' jade' pair-match=' is'
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+CONCEPT: PERISCOPE | [02] silver periscope <-> [52] wooden periscope
+
+  QUERY [02] silver periscope (STANDARD)
+  silver optical device allowing someone to see over or around an obstruction
+    L08 own=+0.44987 pair=+0.39545 Δ=+0.05442 | ID q=' silver' Δmax=+0.46862 -> own:' silver' pair:' wooden' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.42593 pair=+0.38677 Δ=+0.03916 | ID q=' silver' Δmax=+0.44598 -> own:' silver' pair:' wooden' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.43343 pair=+0.39465 Δ=+0.03878 | ID q=' silver' Δmax=+0.41347 -> own:' silver' pair:' wooden' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.48524 pair=+0.46039 Δ=+0.02485 | ID q=' silver' Δmax=+0.32326 -> own:' silver' pair:' wooden' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.48806 pair=+0.46616 Δ=+0.02190 | ID q=' silver' Δmax=+0.28617 -> own:' silver' pair:' wooden' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.49894 pair=+0.47559 Δ=+0.02336 | ID q=' silver' Δmax=+0.28871 -> own:' silver' pair:' wooden' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.51939 pair=+0.50470 Δ=+0.01469 | ID q=' silver' Δmax=+0.25208 -> own:' silver' pair:' wooden' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.49367 pair=+0.47482 Δ=+0.01886 | ID q=' silver' Δmax=+0.27958 -> own:' silver' pair:' wooden' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L08 mean-margin=+0.05442 token=' silver' own-match=' silver' pair-match=' wooden'
+
+  QUERY [52] wooden periscope (EXTREME)
+  the wooden optical arrangement useful when your eyes must remain below an obstacle while your view somehow reaches above it
+    L08 own=+0.38997 pair=+0.36426 Δ=+0.02571 | ID q=' wooden' Δmax=+0.48072 -> own:' wooden' pair:' silver' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.38297 pair=+0.35237 Δ=+0.03061 | ID q=' wooden' Δmax=+0.46414 -> own:' wooden' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.40048 pair=+0.37445 Δ=+0.02602 | ID q=' wooden' Δmax=+0.41846 -> own:' wooden' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.44516 pair=+0.41889 Δ=+0.02627 | ID q=' wooden' Δmax=+0.36721 -> own:' wooden' pair:' stored' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.44601 pair=+0.42275 Δ=+0.02327 | ID q=' wooden' Δmax=+0.35953 -> own:' wooden' pair:' stored' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.44369 pair=+0.42154 Δ=+0.02214 | ID q=' wooden' Δmax=+0.35987 -> own:' wooden' pair:' silver' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.48227 pair=+0.45798 Δ=+0.02428 | ID q=' wooden' Δmax=+0.29633 -> own:' wooden' pair:' stored' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.44519 pair=+0.42717 Δ=+0.01802 | ID q=' wooden' Δmax=+0.29903 -> own:' wooden' pair:' silver' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L09 mean-margin=+0.03061 token=' wooden' own-match=' wooden' pair-match=' container'
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+CONCEPT: TUNING FORK | [03] amber tuning fork <-> [44] copper tuning fork
+
+  QUERY [03] amber tuning fork (STANDARD)
+  amber-colored two-pronged object that produces a reference pitch when struck
+    L08 own=+0.46643 pair=+0.41475 Δ=+0.05168 | ID q=' amber' Δmax=+0.61697 -> own:' amber' pair:' copper' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.43935 pair=+0.39020 Δ=+0.04915 | ID q=' amber' Δmax=+0.58577 -> own:' amber' pair:' copper' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.45227 pair=+0.41120 Δ=+0.04107 | ID q=' amber' Δmax=+0.57238 -> own:' amber' pair:' copper' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.51575 pair=+0.47946 Δ=+0.03630 | ID q=' amber' Δmax=+0.44961 -> own:' amber' pair:' copper' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.52573 pair=+0.48589 Δ=+0.03984 | ID q=' amber' Δmax=+0.41963 -> own:' amber' pair:' copper' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.51917 pair=+0.48200 Δ=+0.03717 | ID q=' amber' Δmax=+0.40200 -> own:' amber' pair:' copper' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.55464 pair=+0.52204 Δ=+0.03260 | ID q=' amber' Δmax=+0.36040 -> own:' amber' pair:' copper' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.53505 pair=+0.49930 Δ=+0.03576 | ID q=' amber' Δmax=+0.35808 -> own:' amber' pair:' copper' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L08 mean-margin=+0.05168 token=' amber' own-match=' amber' pair-match=' copper'
+
+  QUERY [44] copper tuning fork (EXTREME)
+  the copper object a musician could strike before tuning another instrument when a stable reference note is needed
+    L08 own=+0.44959 pair=+0.42193 Δ=+0.02766 | ID q=' copper' Δmax=+0.48679 -> own:' copper' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.43805 pair=+0.41395 Δ=+0.02410 | ID q=' copper' Δmax=+0.47845 -> own:' copper' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.44399 pair=+0.41789 Δ=+0.02610 | ID q=' copper' Δmax=+0.48071 -> own:' copper' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.49915 pair=+0.47904 Δ=+0.02010 | ID q=' copper' Δmax=+0.37842 -> own:' copper' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.49349 pair=+0.47796 Δ=+0.01553 | ID q=' copper' Δmax=+0.35363 -> own:' copper' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.49590 pair=+0.47375 Δ=+0.02215 | ID q=' copper' Δmax=+0.36785 -> own:' copper' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.52489 pair=+0.50564 Δ=+0.01925 | ID q=' copper' Δmax=+0.31115 -> own:' copper' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.49989 pair=+0.47874 Δ=+0.02116 | ID q=' copper' Δmax=+0.35577 -> own:' copper' pair:' amber' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L08 mean-margin=+0.02766 token=' copper' own-match=' copper' pair-match=' is'
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+CONCEPT: SUNDIAL | [04] wooden sundial <-> [55] marble sundial
+
+  QUERY [04] wooden sundial (STANDARD)
+  wooden device that indicates daytime by the position of a shadow cast by the sun
+    L08 own=+0.43084 pair=+0.40524 Δ=+0.02559 | ID q=' wooden' Δmax=+0.45335 -> own:' wooden' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.42564 pair=+0.40209 Δ=+0.02355 | ID q=' wooden' Δmax=+0.42196 -> own:' wooden' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.44798 pair=+0.42208 Δ=+0.02590 | ID q=' wooden' Δmax=+0.39481 -> own:' wooden' pair:' marble' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.48880 pair=+0.46039 Δ=+0.02842 | ID q=' wooden' Δmax=+0.31259 -> own:' wooden' pair:' marble' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.47484 pair=+0.45161 Δ=+0.02322 | ID q=' wooden' Δmax=+0.29206 -> own:' wooden' pair:' marble' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.47858 pair=+0.45510 Δ=+0.02348 | ID q=' wooden' Δmax=+0.28713 -> own:' wooden' pair:' marble' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.50479 pair=+0.49002 Δ=+0.01477 | ID q=' wooden' Δmax=+0.25061 -> own:' wooden' pair:' marble' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.48237 pair=+0.46688 Δ=+0.01549 | ID q=' wooden' Δmax=+0.25995 -> own:' wooden' pair:' marble' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L11 mean-margin=+0.02842 token=' wooden' own-match=' wooden' pair-match=' marble'
+
+  QUERY [55] marble sundial (EXTREME)
+  the stone object that can tell part of the day while having no battery, gears or display, provided the sky supplies a moving shadow
+    L08 own=+0.38412 pair=+0.37164 Δ=+0.01249 | ID q=' stone' Δmax=+0.06902 -> own:' marble' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.37734 pair=+0.36872 Δ=+0.00862 | ID q=' stone' Δmax=+0.09111 -> own:' marble' pair:' wooden' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.41142 pair=+0.40023 Δ=+0.01119 | ID q=' stone' Δmax=+0.09406 -> own:' marble' pair:' stored' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.45739 pair=+0.45324 Δ=+0.00415 | ID q=' stone' Δmax=+0.08607 -> own:' marble' pair:' wooden' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.45659 pair=+0.45051 Δ=+0.00608 | ID q=' stone' Δmax=+0.09942 -> own:' marble' pair:' wooden' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.45673 pair=+0.45526 Δ=+0.00147 | ID q=' stone' Δmax=+0.09538 -> own:' marble' pair:' wooden' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.50097 pair=+0.49598 Δ=+0.00499 | ID q=' stone' Δmax=+0.07834 -> own:' marble' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.47088 pair=+0.46436 Δ=+0.00653 | ID q=' stone' Δmax=+0.08434 -> own:' marble' pair:' wooden' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L08 mean-margin=+0.01249 token=' stone' own-match=' marble' pair-match=' is'
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+CONCEPT: THERMOMETER | [05] glass thermometer <-> [41] velvet thermometer
+
+  QUERY [05] glass thermometer (STANDARD)
+  transparent instrument used to determine how hot or cold something is
+    L08 own=+0.42434 pair=+0.40473 Δ=+0.01961 | ID q=' transparent' Δmax=+0.13232 -> own:' glass' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.41234 pair=+0.39004 Δ=+0.02230 | ID q=' transparent' Δmax=+0.12458 -> own:' glass' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.41460 pair=+0.40546 Δ=+0.00914 | ID q=' transparent' Δmax=+0.09308 -> own:' glass' pair:' thermometer' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.48770 pair=+0.48322 Δ=+0.00448 | ID q=' transparent' Δmax=+0.05500 -> own:' glass' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.49949 pair=+0.48658 Δ=+0.01292 | ID q=' is' Δmax=+0.06502 -> own:' is' pair:' thermometer' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.50113 pair=+0.49323 Δ=+0.00790 | ID q=' is' Δmax=+0.06167 -> own:' is' pair:' thermometer' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.52609 pair=+0.52010 Δ=+0.00600 | ID q=' is' Δmax=+0.05971 -> own:' is' pair:' thermometer' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.49311 pair=+0.49194 Δ=+0.00118 | ID q=' is' Δmax=+0.06653 -> own:' is' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L09 mean-margin=+0.02230 token=' transparent' own-match=' glass' pair-match=' container'
+
+  QUERY [41] velvet thermometer (EXTREME)
+  the soft-covered thing someone might reach for when a child feels unusually warm and they want a number rather than a guess
+    L08 own=+0.32887 pair=+0.32732 Δ=+0.00156 | ID q=' warm' Δmax=+0.05025 -> own:' thermometer' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.31846 pair=+0.31195 Δ=+0.00652 | ID q=' soft' Δmax=+0.04350 -> own:' velvet' pair:' glass' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.34434 pair=+0.32704 Δ=+0.01730 | ID q=' warm' Δmax=+0.06821 -> own:' thermometer' pair:' thermometer' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.39260 pair=+0.36988 Δ=+0.02273 | ID q=' warm' Δmax=+0.08091 -> own:' thermometer' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.38801 pair=+0.37648 Δ=+0.01154 | ID q=' soft' Δmax=+0.05454 -> own:' velvet' pair:' glass' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.37478 pair=+0.36470 Δ=+0.01007 | ID q=' number' Δmax=+0.06882 -> own:' thermometer' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.42161 pair=+0.41412 Δ=+0.00749 | ID q=' soft' Δmax=+0.07148 -> own:' velvet' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.41153 pair=+0.39287 Δ=+0.01866 | ID q=' soft' Δmax=+0.08040 -> own:' velvet' pair:' glass' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L11 mean-margin=+0.02273 token=' warm' own-match=' thermometer' pair-match=' is'
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+CONCEPT: GYROSCOPE | [06] bronze gyroscope <-> [53] bronze gyroscope
+
+  QUERY [06] bronze gyroscope (STANDARD)
+  bronze spinning device that resists changes to its orientation
+    L08 own=+0.48000 pair=+0.47919 Δ=+0.00082 | ID q='?\n\n' Δmax=+0.01225 -> own:'.\n\n' pair:'.\n\n' | SHARED q=' bronze' -> own:' bronze' pair:' bronze'
+    L09 own=+0.47874 pair=+0.47853 Δ=+0.00021 | ID q='?\n\n' Δmax=+0.00949 -> own:'.\n\n' pair:'.\n\n' | SHARED q=' bronze' -> own:' bronze' pair:' bronze'
+    L10 own=+0.50162 pair=+0.50113 Δ=+0.00049 | ID q='?\n\n' Δmax=+0.00737 -> own:'.\n\n' pair:'.\n\n' | SHARED q=' bronze' -> own:' bronze' pair:' bronze'
+    L11 own=+0.55471 pair=+0.55456 Δ=+0.00015 | ID q='?\n\n' Δmax=+0.00196 -> own:'.\n\n' pair:'.\n\n' | SHARED q=' bronze' -> own:' bronze' pair:' bronze'
+    L12 own=+0.54509 pair=+0.54463 Δ=+0.00046 | ID q='?\n\n' Δmax=+0.00549 -> own:'.\n\n' pair:'.\n\n' | SHARED q=' bronze' -> own:' bronze' pair:' bronze'
+    L13 own=+0.54121 pair=+0.54112 Δ=+0.00010 | ID q='?\n\n' Δmax=+0.00146 -> own:'.\n\n' pair:'.\n\n' | SHARED q=' bronze' -> own:' bronze' pair:' bronze'
+    L14 own=+0.57745 pair=+0.57706 Δ=+0.00039 | ID q='?\n\n' Δmax=+0.00665 -> own:'.\n\n' pair:'.\n\n' | SHARED q=' bronze' -> own:' bronze' pair:' bronze'
+    L15 own=+0.54299 pair=+0.54200 Δ=+0.00099 | ID q='?\n\n' Δmax=+0.01365 -> own:'.\n\n' pair:'.\n\n' | SHARED q=' bronze' -> own:' bronze' pair:' bronze'
+  BEST IDENTITY LAYER: L15 mean-margin=+0.00099 token='?\n\n' own-match='.\n\n' pair-match='.\n\n'
+
+  QUERY [53] bronze gyroscope (EXTREME)
+  the spinning bronze mechanism whose axis seems stubborn about keeping its direction even while its support is moved
+    L08 own=+0.39310 pair=+0.39358 Δ=-0.00048 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q=' bronze' -> own:' bronze' pair:' bronze'
+    L09 own=+0.39368 pair=+0.39404 Δ=-0.00036 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q=' bronze' -> own:' bronze' pair:' bronze'
+    L10 own=+0.42849 pair=+0.42957 Δ=-0.00109 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.46490 pair=+0.46529 Δ=-0.00039 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q=' bronze' -> own:' bronze' pair:' bronze'
+    L12 own=+0.45536 pair=+0.45583 Δ=-0.00047 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q=' bronze' -> own:' bronze' pair:' bronze'
+    L13 own=+0.45504 pair=+0.45536 Δ=-0.00031 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.48436 pair=+0.48476 Δ=-0.00040 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.45326 pair=+0.45387 Δ=-0.00060 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L13 mean-margin=-0.00031 token='Which' own-match='The' pair-match='The'
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+CONCEPT: ATLAS | [07] linen atlas <-> [45] silk atlas
+
+  QUERY [07] linen atlas (STANDARD)
+  fabric-bound book containing organized maps of geographical regions
+    L08 own=+0.45081 pair=+0.44556 Δ=+0.00525 | ID q=' maps' Δmax=+0.04809 -> own:' atlas' pair:' atlas' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.45131 pair=+0.43859 Δ=+0.01272 | ID q=' maps' Δmax=+0.04933 -> own:' atlas' pair:' atlas' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.47096 pair=+0.45138 Δ=+0.01958 | ID q=' maps' Δmax=+0.09751 -> own:' atlas' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.51781 pair=+0.50394 Δ=+0.01386 | ID q=' maps' Δmax=+0.08250 -> own:' atlas' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.51889 pair=+0.50806 Δ=+0.01083 | ID q=' maps' Δmax=+0.07047 -> own:' atlas' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.50536 pair=+0.49576 Δ=+0.00960 | ID q=' maps' Δmax=+0.05434 -> own:' atlas' pair:' atlas' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.54029 pair=+0.53063 Δ=+0.00967 | ID q=' maps' Δmax=+0.04639 -> own:' atlas' pair:' atlas' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.51476 pair=+0.50362 Δ=+0.01114 | ID q=' maps' Δmax=+0.05437 -> own:' atlas' pair:' atlas' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L10 mean-margin=+0.01958 token=' maps' own-match=' atlas' pair-match=' is'
+
+  QUERY [45] silk atlas (EXTREME)
+  the smooth-bound thing opened when someone knows a country exists but cannot picture where on Earth it lies
+    L08 own=+0.35010 pair=+0.34866 Δ=+0.00144 | ID q=' Earth' Δmax=+0.04911 -> own:' X' pair:' atlas' | SHARED q=' container' -> own:' container' pair:' container'
+    L09 own=+0.33752 pair=+0.33639 Δ=+0.00112 | ID q=' smooth' Δmax=+0.05522 -> own:' silk' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.35559 pair=+0.35738 Δ=-0.00179 | ID q=' smooth' Δmax=+0.06557 -> own:' silk' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.41357 pair=+0.40831 Δ=+0.00526 | ID q=' Earth' Δmax=+0.04932 -> own:' X' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.42002 pair=+0.41074 Δ=+0.00928 | ID q=' Earth' Δmax=+0.05182 -> own:' X' pair:' atlas' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.40744 pair=+0.40051 Δ=+0.00692 | ID q=' smooth' Δmax=+0.03174 -> own:' silk' pair:' linen' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.45959 pair=+0.45455 Δ=+0.00504 | ID q=' Earth' Δmax=+0.04544 -> own:' X' pair:' atlas' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.42941 pair=+0.42827 Δ=+0.00114 | ID q=' Earth' Δmax=+0.05077 -> own:' X' pair:' in' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L12 mean-margin=+0.00928 token=' Earth' own-match=' X' pair-match=' atlas'
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+CONCEPT: MAGNIFIER | [08] jade magnifier <-> [43] ceramic magnifier
+
+  QUERY [08] jade magnifier (STANDARD)
+  green-stone framed lens used to make small details appear larger
+    L08 own=+0.43584 pair=+0.43623 Δ=-0.00039 | ID q=' green' Δmax=+0.04243 -> own:' jade' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.41158 pair=+0.41065 Δ=+0.00094 | ID q='one' Δmax=+0.06103 -> own:' jade' pair:' ceramic' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.42255 pair=+0.43259 Δ=-0.01004 | ID q='one' Δmax=+0.08687 -> own:' jade' pair:' ceramic' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.49015 pair=+0.50332 Δ=-0.01318 | ID q='one' Δmax=+0.04004 -> own:' jade' pair:' ceramic' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.50244 pair=+0.51687 Δ=-0.01443 | ID q='one' Δmax=+0.04741 -> own:' jade' pair:' ceramic' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.50478 pair=+0.50741 Δ=-0.00263 | ID q='one' Δmax=+0.03711 -> own:' jade' pair:' ceramic' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.54130 pair=+0.54668 Δ=-0.00538 | ID q='?\n\n' Δmax=+0.02552 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.51057 pair=+0.51421 Δ=-0.00364 | ID q='one' Δmax=+0.03725 -> own:' jade' pair:' ceramic' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L09 mean-margin=+0.00094 token='one' own-match=' jade' pair-match=' ceramic'
+
+  QUERY [43] ceramic magnifier (EXTREME)
+  the pottery-framed helper chosen when printed letters are present but too small for the eye to resolve comfortably
+    L08 own=+0.38850 pair=+0.37361 Δ=+0.01489 | ID q=' pottery' Δmax=+0.22149 -> own:' ceramic' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.37831 pair=+0.36476 Δ=+0.01355 | ID q=' pottery' Δmax=+0.14274 -> own:' ceramic' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.40088 pair=+0.38910 Δ=+0.01178 | ID q=' pottery' Δmax=+0.13241 -> own:' ceramic' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.46026 pair=+0.44435 Δ=+0.01591 | ID q=' pottery' Δmax=+0.16826 -> own:' ceramic' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.45559 pair=+0.43950 Δ=+0.01609 | ID q=' pottery' Δmax=+0.18284 -> own:' ceramic' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.45599 pair=+0.44579 Δ=+0.01020 | ID q=' pottery' Δmax=+0.19102 -> own:' ceramic' pair:' jade' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.49654 pair=+0.48824 Δ=+0.00830 | ID q=' pottery' Δmax=+0.15986 -> own:' ceramic' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.46984 pair=+0.45973 Δ=+0.01011 | ID q=' pottery' Δmax=+0.16202 -> own:' ceramic' pair:' jade' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L12 mean-margin=+0.01609 token=' pottery' own-match=' ceramic' pair-match=' is'
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+CONCEPT: PRISM | [15] opal prism <-> [48] opal prism
+
+  QUERY [15] opal prism (STANDARD)
+  gemlike transparent solid that separates incoming white light into colors
+    L08 own=+0.41309 pair=+0.41267 Δ=+0.00042 | ID q='?\n\n' Δmax=+0.00675 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.39609 pair=+0.39552 Δ=+0.00056 | ID q='?\n\n' Δmax=+0.00903 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.41892 pair=+0.41879 Δ=+0.00013 | ID q='?\n\n' Δmax=+0.00205 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.48514 pair=+0.48502 Δ=+0.00012 | ID q='?\n\n' Δmax=+0.00185 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.49984 pair=+0.50000 Δ=-0.00016 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.49089 pair=+0.49165 Δ=-0.00077 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.51814 pair=+0.51868 Δ=-0.00054 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.48615 pair=+0.48635 Δ=-0.00019 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L09 mean-margin=+0.00056 token='?\n\n' own-match='.\n\n' pair-match='.\n\n'
+
+  QUERY [48] opal prism (EXTREME)
+  the gemlike object that can make apparently colorless illumination reveal that it was carrying many visible colors
+    L08 own=+0.37757 pair=+0.37773 Δ=-0.00016 | ID q=' that' Δmax=+0.00039 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.35030 pair=+0.35056 Δ=-0.00026 | ID q=' that' Δmax=+0.00179 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.38610 pair=+0.38647 Δ=-0.00037 | ID q=' that' Δmax=+0.00088 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.44766 pair=+0.44769 Δ=-0.00003 | ID q=' that' Δmax=+0.00142 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.44216 pair=+0.44186 Δ=+0.00030 | ID q=' that' Δmax=+0.00535 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.43520 pair=+0.43472 Δ=+0.00049 | ID q='?\n\n' Δmax=+0.01171 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.47999 pair=+0.47943 Δ=+0.00056 | ID q=' that' Δmax=+0.00680 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.44298 pair=+0.44287 Δ=+0.00011 | ID q='?\n\n' Δmax=+0.00267 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L14 mean-margin=+0.00056 token=' that' own-match='.\n\n' pair-match='.\n\n'
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+CONCEPT: PLUMB BOB | [17] iron plumb bob <-> [47] brass plumb bob
+
+  QUERY [17] iron plumb bob (STANDARD)
+  heavy metal weight hanging from a line to establish a true vertical direction
+    L08 own=+0.41233 pair=+0.40415 Δ=+0.00818 | ID q=' metal' Δmax=+0.08387 -> own:' iron' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.40769 pair=+0.40100 Δ=+0.00669 | ID q=' metal' Δmax=+0.05599 -> own:' iron' pair:' brass' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.43667 pair=+0.42624 Δ=+0.01043 | ID q=' metal' Δmax=+0.05253 -> own:' iron' pair:' brass' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.50455 pair=+0.49340 Δ=+0.01115 | ID q=' heavy' Δmax=+0.03770 -> own:' is' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.50047 pair=+0.49692 Δ=+0.00355 | ID q=' heavy' Δmax=+0.03939 -> own:' is' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.49998 pair=+0.49858 Δ=+0.00140 | ID q=' metal' Δmax=+0.04673 -> own:' iron' pair:' brass' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.53020 pair=+0.52894 Δ=+0.00126 | ID q=' metal' Δmax=+0.04646 -> own:' iron' pair:' brass' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.50200 pair=+0.50273 Δ=-0.00073 | ID q=' heavy' Δmax=+0.06618 -> own:' iron' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L11 mean-margin=+0.01115 token=' heavy' own-match=' is' pair-match=' is'
+
+  QUERY [47] brass plumb bob (EXTREME)
+  the metal object a builder lets gravity pull downward when needing a line that does not depend on eyesight or the wall
+    L08 own=+0.34930 pair=+0.35433 Δ=-0.00502 | ID q='?\n\n' Δmax=+0.01913 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.33028 pair=+0.33306 Δ=-0.00278 | ID q=' eyes' Δmax=+0.02729 -> own:' Z' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.36872 pair=+0.37205 Δ=-0.00333 | ID q=' line' Δmax=+0.03845 -> own:'umb' pair:' bob' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.42147 pair=+0.42575 Δ=-0.00427 | ID q=' line' Δmax=+0.04697 -> own:'umb' pair:'umb' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.42032 pair=+0.42112 Δ=-0.00080 | ID q=' line' Δmax=+0.05528 -> own:'umb' pair:'umb' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.42378 pair=+0.42131 Δ=+0.00246 | ID q=' line' Δmax=+0.05128 -> own:'umb' pair:' bob' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.47180 pair=+0.47037 Δ=+0.00143 | ID q=' line' Δmax=+0.04146 -> own:'umb' pair:' bob' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.43735 pair=+0.42955 Δ=+0.00781 | ID q=' line' Δmax=+0.05719 -> own:'umb' pair:' bob' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L15 mean-margin=+0.00781 token=' line' own-match='umb' pair-match=' bob'
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+CONCEPT: BINOCULARS | [18] pearl binoculars <-> [62] quartz binoculars
+
+  QUERY [18] pearl binoculars (STANDARD)
+  pale paired optical tubes used with both eyes to inspect distant scenes
+    L08 own=+0.42383 pair=+0.42663 Δ=-0.00280 | ID q=' container' Δmax=+0.00806 -> own:' container' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.41783 pair=+0.42737 Δ=-0.00954 | ID q=' container' Δmax=+0.01127 -> own:' container' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.43777 pair=+0.44306 Δ=-0.00529 | ID q='?\n\n' Δmax=+0.00888 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.48918 pair=+0.49550 Δ=-0.00632 | ID q=' to' Δmax=+0.00848 -> own:'ocular' pair:'ocular' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.50460 pair=+0.51562 Δ=-0.01101 | ID q=' container' Δmax=+0.00912 -> own:' container' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.49864 pair=+0.51130 Δ=-0.01265 | ID q=' container' Δmax=+0.00889 -> own:' container' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.51670 pair=+0.52872 Δ=-0.01202 | ID q='?\n\n' Δmax=+0.00309 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.49643 pair=+0.50787 Δ=-0.01144 | ID q=' container' Δmax=+0.00338 -> own:' container' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L08 mean-margin=-0.00280 token=' container' own-match=' container' pair-match=' container'
+
+  QUERY [62] quartz binoculars (ADVERSARIAL)
+  the crystal-framed paired optics intended for distant viewing with both eyes rather than enlarging nearby print
+    L08 own=+0.39676 pair=+0.39084 Δ=+0.00593 | ID q=' crystal' Δmax=+0.04380 -> own:' quartz' pair:' pearl' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.40393 pair=+0.39348 Δ=+0.01045 | ID q=' crystal' Δmax=+0.04645 -> own:' quartz' pair:' pearl' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.42014 pair=+0.41081 Δ=+0.00933 | ID q=' crystal' Δmax=+0.06440 -> own:' quartz' pair:' pearl' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.46934 pair=+0.46054 Δ=+0.00880 | ID q=' crystal' Δmax=+0.06821 -> own:' quartz' pair:' pearl' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.48306 pair=+0.47462 Δ=+0.00844 | ID q=' crystal' Δmax=+0.06650 -> own:' quartz' pair:' pearl' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.47933 pair=+0.46649 Δ=+0.01284 | ID q=' crystal' Δmax=+0.07345 -> own:' quartz' pair:' pearl' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.49752 pair=+0.48607 Δ=+0.01144 | ID q=' crystal' Δmax=+0.08002 -> own:' quartz' pair:' pearl' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.47788 pair=+0.46670 Δ=+0.01119 | ID q=' crystal' Δmax=+0.06464 -> own:' quartz' pair:' pearl' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L13 mean-margin=+0.01284 token=' crystal' own-match=' quartz' pair-match=' pearl'
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+CONCEPT: PROTRACTOR | [19] bamboo protractor <-> [60] azure protractor
+
+  QUERY [19] bamboo protractor (STANDARD)
+  plant-stem angle tool marked with a semicircular scale
+    L08 own=+0.41347 pair=+0.38361 Δ=+0.02985 | ID q='ircular' Δmax=+0.07117 -> own:'tractor' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.41731 pair=+0.37912 Δ=+0.03819 | ID q=' scale' Δmax=+0.10544 -> own:'tractor' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.42712 pair=+0.38364 Δ=+0.04348 | ID q=' scale' Δmax=+0.11877 -> own:'tractor' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.48825 pair=+0.43538 Δ=+0.05288 | ID q=' scale' Δmax=+0.14613 -> own:'tractor' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.49120 pair=+0.45129 Δ=+0.03991 | ID q=' scale' Δmax=+0.10977 -> own:'tractor' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.48643 pair=+0.43458 Δ=+0.05186 | ID q=' scale' Δmax=+0.14331 -> own:'tractor' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.52705 pair=+0.48641 Δ=+0.04063 | ID q='ircular' Δmax=+0.10639 -> own:'tractor' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.49719 pair=+0.46059 Δ=+0.03660 | ID q=' scale' Δmax=+0.09847 -> own:'tractor' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L11 mean-margin=+0.05288 token=' scale' own-match='tractor' pair-match='.\n\n'
+
+  QUERY [60] azure protractor (ADVERSARIAL)
+  the blue geometry tool for quantifying an angle rather than a straight-line length
+    L08 own=+0.40587 pair=+0.41318 Δ=-0.00731 | ID q=' blue' Δmax=+0.09604 -> own:' azure' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.39147 pair=+0.41297 Δ=-0.02150 | ID q=' blue' Δmax=+0.18321 -> own:' azure' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.41687 pair=+0.43754 Δ=-0.02067 | ID q=' blue' Δmax=+0.13580 -> own:' azure' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.46604 pair=+0.49052 Δ=-0.02448 | ID q=' blue' Δmax=+0.08949 -> own:' azure' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.48204 pair=+0.49986 Δ=-0.01783 | ID q=' blue' Δmax=+0.10720 -> own:' azure' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.46626 pair=+0.50137 Δ=-0.03511 | ID q=' blue' Δmax=+0.10396 -> own:' azure' pair:' bamboo' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.50091 pair=+0.53141 Δ=-0.03050 | ID q=' blue' Δmax=+0.04216 -> own:' azure' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.48108 pair=+0.50026 Δ=-0.01918 | ID q=' blue' Δmax=+0.09382 -> own:' azure' pair:' bamboo' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L08 mean-margin=-0.00731 token=' blue' own-match=' azure' pair-match=' is'
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+CONCEPT: STENCIL | [21] canvas stencil <-> [54] canvas stencil
+
+  QUERY [21] canvas stencil (STANDARD)
+  cloth template with openings through which a repeated shape can be transferred
+    L08 own=+0.42777 pair=+0.42929 Δ=-0.00152 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.39955 pair=+0.40179 Δ=-0.00224 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.42905 pair=+0.43105 Δ=-0.00200 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.48544 pair=+0.48620 Δ=-0.00077 | ID q=' the' Δmax=+0.00373 -> own:'.\n\n' pair:' in' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.48339 pair=+0.48373 Δ=-0.00034 | ID q=' through' Δmax=+0.00810 -> own:'-' pair:' in' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.48354 pair=+0.48443 Δ=-0.00090 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.51914 pair=+0.51983 Δ=-0.00069 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.48415 pair=+0.48500 Δ=-0.00085 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L12 mean-margin=-0.00034 token=' through' own-match='-' pair-match=' in'
+
+  QUERY [54] canvas stencil (EXTREME)
+  the cloth aid used when the same outline must appear repeatedly without drawing that outline freehand each time
+    L08 own=+0.35340 pair=+0.35153 Δ=+0.00188 | ID q='?\n\n' Δmax=+0.02647 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.34101 pair=+0.33930 Δ=+0.00171 | ID q='?\n\n' Δmax=+0.03565 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.36963 pair=+0.36678 Δ=+0.00285 | ID q='?\n\n' Δmax=+0.02858 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.42139 pair=+0.41853 Δ=+0.00286 | ID q=' free' Δmax=+0.01965 -> own:' G' pair:' stored' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.42988 pair=+0.42680 Δ=+0.00308 | ID q=' free' Δmax=+0.01998 -> own:' G' pair:'4' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.42292 pair=+0.42205 Δ=+0.00087 | ID q='?\n\n' Δmax=+0.01294 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.45527 pair=+0.45473 Δ=+0.00055 | ID q='?\n\n' Δmax=+0.01085 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.42055 pair=+0.41930 Δ=+0.00124 | ID q='?\n\n' Δmax=+0.01341 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L12 mean-margin=+0.00308 token=' free' own-match=' G' pair-match='4'
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+CONCEPT: STETHOSCOPE | [24] scarlet stethoscope <-> [63] scarlet stethoscope
+
+  QUERY [24] scarlet stethoscope (HARD)
+  red device a clinician places against the body to listen to sounds produced inside the chest
+    L08 own=+0.41176 pair=+0.41219 Δ=-0.00043 | ID q='?\n\n' Δmax=+0.00397 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.39894 pair=+0.39837 Δ=+0.00058 | ID q='?\n\n' Δmax=+0.01267 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.42888 pair=+0.42760 Δ=+0.00128 | ID q='?\n\n' Δmax=+0.01932 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.48117 pair=+0.47987 Δ=+0.00129 | ID q='?\n\n' Δmax=+0.01818 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.48989 pair=+0.48856 Δ=+0.00133 | ID q='?\n\n' Δmax=+0.01519 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.49094 pair=+0.49018 Δ=+0.00076 | ID q='?\n\n' Δmax=+0.01672 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.51334 pair=+0.51195 Δ=+0.00139 | ID q=' a' Δmax=+0.01589 -> own:'.\n\n' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.48460 pair=+0.48383 Δ=+0.00077 | ID q='?\n\n' Δmax=+0.01703 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L14 mean-margin=+0.00139 token=' a' own-match='.\n\n' pair-match=' is'
+
+  QUERY [63] scarlet stethoscope (ADVERSARIAL)
+  the red clinical listening device for internal body sounds rather than an instrument for measuring body heat
+    L08 own=+0.41439 pair=+0.41454 Δ=-0.00015 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.41194 pair=+0.41263 Δ=-0.00070 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.43042 pair=+0.43156 Δ=-0.00114 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.48234 pair=+0.48310 Δ=-0.00077 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.49230 pair=+0.49299 Δ=-0.00069 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.49242 pair=+0.49319 Δ=-0.00077 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.51579 pair=+0.51639 Δ=-0.00060 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.49164 pair=+0.49244 Δ=-0.00080 | ID q='Which' Δmax=+0.00000 -> own:'The' pair:'The' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L08 mean-margin=-0.00015 token='Which' own-match='The' pair-match='The'
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+CONCEPT: ODOMETER | [28] bronze odometer <-> [59] steel odometer
+
+  QUERY [28] bronze odometer (HARD)
+  metal instrument that accumulates how far a vehicle has travelled
+    L08 own=+0.41892 pair=+0.43921 Δ=-0.02029 | ID q=' container' Δmax=+0.00557 -> own:' container' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.40518 pair=+0.41575 Δ=-0.01057 | ID q=' container' Δmax=+0.01624 -> own:' container' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.42023 pair=+0.43231 Δ=-0.01208 | ID q=' container' Δmax=+0.01997 -> own:' container' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.47610 pair=+0.49426 Δ=-0.01816 | ID q='?\n\n' Δmax=+0.00580 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.48477 pair=+0.50568 Δ=-0.02091 | ID q=' accum' Δmax=+0.00829 -> own:' is' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.49057 pair=+0.50487 Δ=-0.01431 | ID q=' accum' Δmax=+0.01064 -> own:' is' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.52664 pair=+0.54053 Δ=-0.01389 | ID q='?\n\n' Δmax=+0.01670 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.48190 pair=+0.49790 Δ=-0.01600 | ID q='?\n\n' Δmax=+0.01184 -> own:'.\n\n' pair:'.\n\n' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L09 mean-margin=-0.01057 token=' container' own-match=' container' pair-match=' container'
+
+  QUERY [59] steel odometer (ADVERSARIAL)
+  the metal vehicle instrument accumulating travelled distance rather than elapsed journey time
+    L08 own=+0.43552 pair=+0.41189 Δ=+0.02362 | ID q=' metal' Δmax=+0.14581 -> own:' steel' pair:' bronze' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.44774 pair=+0.43061 Δ=+0.01713 | ID q=' metal' Δmax=+0.12787 -> own:' steel' pair:' bronze' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.45394 pair=+0.43532 Δ=+0.01862 | ID q=' metal' Δmax=+0.11637 -> own:' steel' pair:' bronze' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.50316 pair=+0.47860 Δ=+0.02456 | ID q=' instrument' Δmax=+0.09495 -> own:'eter' pair:'eter' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.51077 pair=+0.48213 Δ=+0.02865 | ID q=' instrument' Δmax=+0.11243 -> own:'eter' pair:'eter' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.51559 pair=+0.49335 Δ=+0.02224 | ID q=' instrument' Δmax=+0.10894 -> own:'eter' pair:'eter' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.54385 pair=+0.52523 Δ=+0.01862 | ID q=' instrument' Δmax=+0.10932 -> own:'eter' pair:'eter' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.50256 pair=+0.47951 Δ=+0.02305 | ID q=' instrument' Δmax=+0.10707 -> own:'eter' pair:'eter' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L12 mean-margin=+0.02865 token=' instrument' own-match='eter' pair-match='eter'
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+CONCEPT: ANEMOMETER | [29] porcelain anemometer <-> [56] white anemometer
+
+  QUERY [29] porcelain anemometer (HARD)
+  ceramic weather instrument whose moving parts reveal how quickly air is flowing
+    L08 own=+0.43710 pair=+0.41119 Δ=+0.02591 | ID q=' ceramic' Δmax=+0.22099 -> own:' porcelain' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.43091 pair=+0.40703 Δ=+0.02389 | ID q=' ceramic' Δmax=+0.21619 -> own:' porcelain' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.44119 pair=+0.41833 Δ=+0.02285 | ID q=' ceramic' Δmax=+0.19581 -> own:' porcelain' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.50467 pair=+0.47285 Δ=+0.03182 | ID q=' ceramic' Δmax=+0.21686 -> own:' porcelain' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.52457 pair=+0.49492 Δ=+0.02965 | ID q=' ceramic' Δmax=+0.22494 -> own:' porcelain' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.51314 pair=+0.48738 Δ=+0.02576 | ID q=' ceramic' Δmax=+0.25003 -> own:' porcelain' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.54392 pair=+0.51693 Δ=+0.02699 | ID q=' ceramic' Δmax=+0.21161 -> own:' porcelain' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.50930 pair=+0.48745 Δ=+0.02186 | ID q=' ceramic' Δmax=+0.20819 -> own:' porcelain' pair:' white' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L11 mean-margin=+0.03182 token=' ceramic' own-match=' porcelain' pair-match=' container'
+
+  QUERY [56] white anemometer (ADVERSARIAL)
+  the pale weather device concerned with moving air rather than the force exerted by the atmosphere itself
+    L08 own=+0.37150 pair=+0.37328 Δ=-0.00179 | ID q=' pale' Δmax=+0.08215 -> own:' white' pair:' an' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.37618 pair=+0.38044 Δ=-0.00426 | ID q=' pale' Δmax=+0.05790 -> own:' white' pair:' porcelain' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.40907 pair=+0.40793 Δ=+0.00114 | ID q=' pale' Δmax=+0.08915 -> own:' white' pair:' porcelain' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.46214 pair=+0.46493 Δ=-0.00278 | ID q=' pale' Δmax=+0.07624 -> own:' white' pair:' an' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.47244 pair=+0.47285 Δ=-0.00041 | ID q=' pale' Δmax=+0.07034 -> own:' white' pair:' an' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.46534 pair=+0.46464 Δ=+0.00071 | ID q=' pale' Δmax=+0.09122 -> own:' white' pair:' an' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.49499 pair=+0.49889 Δ=-0.00389 | ID q=' pale' Δmax=+0.08546 -> own:' white' pair:' an' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.46942 pair=+0.46761 Δ=+0.00181 | ID q=' pale' Δmax=+0.10750 -> own:' white' pair:' porcelain' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L15 mean-margin=+0.00181 token=' pale' own-match=' white' pair-match=' porcelain'
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+CONCEPT: ALTIMETER | [32] cobalt altimeter <-> [58] coral altimeter
+
+  QUERY [32] cobalt altimeter (HARD)
+  blue instrument used by a pilot to determine height above a reference level
+    L08 own=+0.44254 pair=+0.43303 Δ=+0.00951 | ID q=' height' Δmax=+0.03573 -> own:'imeter' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.42624 pair=+0.42343 Δ=+0.00281 | ID q=' to' Δmax=+0.03988 -> own:' is' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.43669 pair=+0.42261 Δ=+0.01407 | ID q=' to' Δmax=+0.05137 -> own:' is' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.50320 pair=+0.47979 Δ=+0.02341 | ID q=' height' Δmax=+0.06683 -> own:'imeter' pair:'imeter' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.51503 pair=+0.49251 Δ=+0.02252 | ID q=' instrument' Δmax=+0.06620 -> own:'imeter' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.51571 pair=+0.48822 Δ=+0.02749 | ID q=' determine' Δmax=+0.07660 -> own:'imeter' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.55205 pair=+0.52259 Δ=+0.02946 | ID q=' determine' Δmax=+0.07591 -> own:'imeter' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.51582 pair=+0.49503 Δ=+0.02079 | ID q=' height' Δmax=+0.06434 -> own:'imeter' pair:'imeter' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L14 mean-margin=+0.02946 token=' determine' own-match='imeter' pair-match=' is'
+
+  QUERY [58] coral altimeter (ADVERSARIAL)
+  the reddish instrument answering how high an aircraft is, not how far it has travelled along the ground
+    L08 own=+0.36938 pair=+0.37042 Δ=-0.00104 | ID q='ish' Δmax=+0.02932 -> own:' coral' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L09 own=+0.37562 pair=+0.37041 Δ=+0.00521 | ID q='ish' Δmax=+0.04485 -> own:' coral' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+    L10 own=+0.38280 pair=+0.39306 Δ=-0.01027 | ID q='ish' Δmax=+0.03023 -> own:' coral' pair:'alt' | SHARED q='Which' -> own:'The' pair:'The'
+    L11 own=+0.43562 pair=+0.45221 Δ=-0.01659 | ID q=' container' Δmax=+0.00981 -> own:' container' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L12 own=+0.44099 pair=+0.45932 Δ=-0.01834 | ID q=' container' Δmax=+0.01013 -> own:' container' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L13 own=+0.44013 pair=+0.46119 Δ=-0.02106 | ID q=' container' Δmax=+0.01234 -> own:' container' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L14 own=+0.46804 pair=+0.49264 Δ=-0.02459 | ID q=' container' Δmax=+0.00165 -> own:' container' pair:' container' | SHARED q='Which' -> own:'The' pair:'The'
+    L15 own=+0.43903 pair=+0.45418 Δ=-0.01515 | ID q=' it' Δmax=+0.00690 -> own:' is' pair:' is' | SHARED q='Which' -> own:'The' pair:'The'
+  BEST IDENTITY LAYER: L09 mean-margin=+0.00521 token='ish' own-match=' coral' pair-match=' is'
+[6/7] General wrong-attractor residual test...
+      NON-R1 cases: 25
+      cases with at least one positive token residual: 24 / 25
+      cases with max residual > .01: 23 / 25
+      cases with max residual > .02: 20 / 25
+
+      FAILURE RESIDUALS
+      [60] rank=48 azure protractor       <- bamboo protractor      | best L09 token=' blue' maxΔ=+0.18321 meanΔ=-0.02150
+      [26] rank=39 crystal level          <- ceramic magnifier      | best L08 token=' horizontal' maxΔ=+0.06519 meanΔ=-0.00964
+      [42] rank=31 silver stopwatch       <- cobalt altimeter       | best L09 token=' stop' maxΔ=+0.09062 meanΔ=-0.00457
+      [45] rank=21 silk atlas             <- silk map               | best L15 token=' someone' maxΔ=+0.03003 meanΔ=+0.00172
+      [28] rank=16 bronze odometer        <- steel odometer         | best L10 token=' container' maxΔ=+0.01997 meanΔ=-0.01208
+      [61] rank=16 golden ruler           <- cobalt altimeter       | best L10 token=' yellow' maxΔ=+0.06012 meanΔ=-0.00617
+      [46] rank=13 jade abacus            <- black barometer        | best L13 token=' numer' maxΔ=+0.06025 meanΔ=-0.00165
+      [50] rank= 9 onyx pendulum          <- crimson funnel         | best L09 token=' rhythm' maxΔ=+0.11071 meanΔ=+0.02140
+      [10] rank= 4 ivory ruler            <- ivory caliper          | best L15 token=' determining' maxΔ=+0.01685 meanΔ=-0.01503
+      [25] rank= 4 cedar hourglass        <- wooden periscope       | best L11 token=' waist' maxΔ=+0.05038 meanΔ=-0.01550
+      [33] rank= 4 maple metronome        <- wooden sundial         | best L10 token=' beats' maxΔ=+0.08505 meanΔ=-0.01515
+      [40] rank= 4 obsidian compass       <- black barometer        | best L10 token=' north' maxΔ=+0.07212 meanΔ=-0.01434
+      [58] rank= 4 coral altimeter        <- cobalt altimeter       | best L09 token='ish' maxΔ=+0.04485 meanΔ=+0.00521
+      [30] rank= 3 jade seismograph       <- amber phonograph       | best L09 token=' vibrations' maxΔ=+0.10386 meanΔ=+0.00867
+      [49] rank= 3 linen funnel           <- ceramic magnifier      | best L10 token=' fabric' maxΔ=+0.06464 meanΔ=-0.00309
+      [56] rank= 3 white anemometer       <- porcelain anemometer   | best L15 token=' pale' maxΔ=+0.10750 meanΔ=+0.00181
+      [07] rank= 2 linen atlas            <- silk map               | best L09 token=' book' maxΔ=+0.03692 meanΔ=-0.02934
+      [08] rank= 2 jade magnifier         <- ceramic magnifier      | best L10 token='one' maxΔ=+0.08687 meanΔ=-0.01004
+      [14] rank= 2 brass pendulum         <- iron plumb bob         | best L08 token=' swing' maxΔ=+0.21270 meanΔ=+0.01832
+      [15] rank= 2 opal prism             <- opal prism             | best L09 token='?\n\n' maxΔ=+0.00903 meanΔ=+0.00056
+      [18] rank= 2 pearl binoculars       <- quartz binoculars      | best L09 token=' container' maxΔ=+0.01127 meanΔ=-0.00954
+      [35] rank= 2 glass kaleidoscope     <- ceramic magnifier      | best L08 token=' transparent' maxΔ=+0.07332 meanΔ=+0.00841
+      [41] rank= 2 velvet thermometer     <- woolen thesaurus       | best L13 token=' warm' maxΔ=+0.11007 meanΔ=+0.00292
+      [47] rank= 2 brass plumb bob        <- iron plumb bob         | best L15 token=' line' maxΔ=+0.05719 meanΔ=+0.00781
+      [53] rank= 2 bronze gyroscope       <- bronze gyroscope       | best L08 token='Which' maxΔ=+0.00000 meanΔ=-0.00048
+[7/7] Aggregate decomposition...
+
+==============================================================================================================================================================
+TEST490 FINAL RESULT — SEMANTIC BASIN vs INSTANCE IDENTITY
+==============================================================================================================================================================
+FOUNDATION          : TEST489 exact error anatomy
+TEST482 BLOB SHA    : ecc630144a44479cb35c432c50eb0d09bc6866d7
+TEST488 LOCK SHA    : d2c2e744532e1fe9b4c5be745fce6892720745dd590b49eca59ca3ef753fdfd8
+TEST489 LOCK SHA    : ed03fb4b6f1afa410e1a28329d05b744889b8836f69f3572c4b52032b8b70fb0
+TEST490 LOCK SHA    : 237f3c7a9cc2478b2ca55944f0a356101c8f87c5a7ef250f6267fc04a9fc1dd2
+REPEATED CONCEPTS   : 18
+TOKEN XRAY LAYERS   : L08-L15
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+L10 FAMILY BASIN    : R1=0.805556 R5=0.944444
+L10 EXACT INSTANCE  : R1=0.527778 R5=0.888889
+PAIR MEAN-ID POS    : 0.6909722222222222
+PAIR TOKEN-ID POS   : 0.9097222222222222
+PAIR TOKEN-ID >.01  : 0.7951388888888888
+BEST MEAN-ID LAYER  : L08
+BEST TOKEN-ID LAYER : L08
+489 NON-R1          : 25
+FAIL TOKEN RES >0   : 24 / 25
+FAIL TOKEN RES >.01 : 23 / 25
+FAIL TOKEN RES >.02 : 20 / 25
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+VERDICT             : SEMANTIC_BASIN_STRONGER_THAN_INSTANCE_IDENTITY_WITH_RECOVERABLE_TOKEN_RESIDUAL
+INTERPRETATION      : tests whether concept-family attraction and instance-specific evidence separate naturally in frozen token geometry.
+NEW ADDRESSER       : NONE
+WEIGHT / CHANNEL FIT: NONE
+POST-HOC SELECTION  : NONE
+ROUTER / ANN / GRAPH: NONE
+CARTRIDGE READOUT   : NOT USED
+TRAINING / LoRA     : NONE
+MODEL CHANGE        : NONE
+NEXT                : only if split is observed, freeze a basin+residual rule and validate it on fresh unseen concept-pairs.
+TOTAL TIME          : 72.78s
+==============================================================================================================================================================
