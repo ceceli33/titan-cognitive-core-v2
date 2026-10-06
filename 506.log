@@ -1,0 +1,144 @@
+ ======================================================================================================================================================================
+TEST506 — AKBASCORE MAM · 32-CARTRIDGE CONTENT-ADDRESSED RELAY
+STRICT TEST505 REPLICATION × MODEL-NATIVE YES/NO LOGIT RANKING × WRONG-TRACE CONTROL
+======================================================================================================================================================================
+LOCK SHA: 5f14f6660c5ce99813544c93420b00559a9fc4612813d326fa02df4f76d65327
+TEST505 LOCK: 6d093a5d082b43ff56f09bb94cfed1839c0bd0d76a967822937996a5d1948e43
+ITEMS: 32 | BANK: 32 | REQUIRED: 2 | DISTRACTORS: 30
+CONTENT ADDRESSING: exhaustive O(N); gold cartridge addresses hidden from CONTENT arms
+COMPRESSION / JOINT RE-FORGE / DRA / VTOKEN / ANN / LEARNED ROUTER / GRAPH / TRAINING: NONE
+
+[1/7] Loading frozen Qwen...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 76.3kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 937kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 38.8MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 70.9MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 110MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.23MB/s]Download complete:  13.1GB,  311MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  331MB/s  Fetching 4 files: 100% 4/4 [00:42<00:00, 42.50s/it]Loading weights: 100% 339/339 [00:03<00:00, 93.92it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.7kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | H=3584 | QH=28 KVH=4 HD=128 | frozen BF16
+      Ranking tokens: YES=14080 ' YES' | NO=5664 ' NO'
+
+[2/7] Bank seal...
+      ITEM 01 entity=Aldren trace=FEN target=WAL | hidden A=M28 B=M31
+      ITEM 02 entity=Elara  trace=VAN target=SOD | hidden A=M14 B=M09
+      ITEM 03 entity=Ilyra  trace=BEK target=CER | hidden A=M29 B=M07
+      ITEM 04 entity=Joren  trace=TUR target=NEX | hidden A=M09 B=M15
+      ITEM 05 entity=Neris  trace=CER target=GAM | hidden A=M22 B=M24
+      ITEM 06 entity=Ralen  trace=XAL target=ROK | hidden A=M19 B=M27
+      32 independent memories/item; addresses hidden from STRICT and RANKED.
+      Gold entity, bridge seal and final class absent from all 30 distractors.
+
+[3/7] Forging and running 32-cartridge banks...
+      [01/32] Aldren FEN->WAL | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [02/32] Elara  VAN->SOD | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [03/32] Ilyra  BEK->CER | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [04/32] Joren  TUR->NEX | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [05/32] Neris  CER->GAM | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [06/32] Ralen  XAL->ROK | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [07/32] Saren  RUK->LER | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [08/32] Weyra  MUR->WER | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [09/32] Avel   VIR->XEN | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [10/32] Brann  FER->CAL | DIR=0 OR=1 STRICT=1 | RANK A=0(r2) TRACE=0 B=0(r23) VALUE=0 E2E=0 | WRONG=0
+               hidden=M08->M23 | selected=M04 trace='FAL' second=M20 final='123'
+               topA: M4:-8.12 M8:-8.12 M3:-8.50
+               topB: M20:-11.25 M18:-11.62 M28:-11.88
+      [11/32] Felis  HIL->RIM | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [12/32] Jaris  CIR->JAX | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [13/32] Koren  CEN->BUN | DIR=0 OR=1 STRICT=0 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [14/32] Orel   SEN->BOL | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [15/32] Teren  SUL->VEX | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [16/32] Urian  GUL->ZOL | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [17/32] Yalen  ZOR->YER | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [18/32] Coren  IVO->ZAR | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [19/32] Derin  RAS->NUR | DIR=0 OR=1 STRICT=0 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [20/32] Heron  NUR->HIN | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [21/32] Laven  FIR->LEV | DIR=0 OR=0 STRICT=0 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=0 E2E=0 | WRONG=0
+               hidden=M01->M28 | selected=M01 trace='FIR' second=M28 final='FIR'
+               topA: M1:+5.00 M28:-9.00 M9:-9.38
+               topB: M28:+3.12 M24:-11.38 M10:-11.62
+      [22/32] Moris  KET->KON | DIR=0 OR=1 STRICT=0 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [23/32] Rovis  RIN->VIL | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [24/32] Veris  TEV->VOL | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [25/32] Waren  KOR->CIX | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [26/32] Aren   URB->HES | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [27/32] Elen   VEL->JUR | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [28/32] Faren  XEN->LAR | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [29/32] Joris  TOL->PIV | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [30/32] Noren  YOR->LUM | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [31/32] Oris   MAR->SAL | DIR=0 OR=1 STRICT=0 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+      [32/32] Toren  PEL->PER | DIR=0 OR=1 STRICT=1 | RANK A=1(r1) TRACE=1 B=1(r1) VALUE=1 E2E=1 | WRONG=0
+
+[4/7] Accuracy...
+      DIRECT 32 ONE-SHOT      :  0/32 = 0.0000
+      ORACLE ADDR E2E         : 31/32 = 0.9688
+      STRICT CONTENT E2E      : 27/32 = 0.8438
+      RANKED A ADDRESS        : 31/32 = 0.9688
+      RANKED A+TRACE          : 31/32 = 0.9688
+      RANKED B ADDRESS        : 31/32 = 0.9688
+      RANKED B+VALUE          : 30/32 = 0.9375
+      RANKED END-TO-END       : 30/32 = 0.9375
+      WRONG TRACE→GOLD B      :  0/32 = 0.0000
+      WRONG TRACE→GOLD FINAL  :  0/32 = 0.0000
+
+[5/7] Retrieval ranks and paired effects...
+      A rank: R1=0.9688 R5=1.0000 R16=1.0000 MRR=0.984375 median=1.0
+      B rank: R1=0.9688 R5=0.9688 R16=0.9688 MRR=0.970109 median=1.0
+      RANK_E2E-DIRECT: Δ=+0.9375 | bootstrap95=[+0.8438,+1.0000]
+      RANK_E2E-STRICT: Δ=+0.0938 | bootstrap95=[-0.0312,+0.2188]
+      ORACLE-RANK_E2E: Δ=+0.0312 | bootstrap95=[+0.0000,+0.0938]
+      RANK_E2E-WRONG_FINAL: Δ=+0.9375 | bootstrap95=[+0.8438,+1.0000]
+
+[6/7] Failure localization...
+      Oracle relay capacity             : 31/32
+      Strict 32-bank E2E                : 27/32
+      Ranked first address              : 31/32
+      Ranked correct model trace        : 31/32
+      Ranked second address             : 31/32
+      Ranked second value               : 30/32
+      Ranked complete traversal         : 30/32
+      Wrong-trace gold-final leakage    : 0/32
+      B complete | correct Stage-1 trace: 30/31 = 0.9677
+
+[7/7] Mechanistic classification...
+
+======================================================================================================================================================================
+TEST506 FINAL RESULT — AKBASCORE MAM · 32-CARTRIDGE CONTENT-ADDRESSED RELAY
+======================================================================================================================================================================
+MODEL                         : Qwen/Qwen2.5-7B-Instruct · frozen
+BANK                          : 32 independently forged RAW BELLEKÖZ
+REQUIRED                      : 2
+DISTRACTORS                   : 30
+REQUIRED ADDRESSES TO CONTENT : NO
+TASK                          : Entity → Seal → Class
+TARGET ENTITY IN DISTRACTORS  : NO
+BRIDGE SEAL IN DISTRACTORS    : NO
+FINAL CLASS IN DISTRACTORS    : NO
+COMPRESSION                   : OFF
+JOINT RE-FORGE                : NONE
+DRA / STEERING                : NONE
+VTOKEN / ADDRESS VECTOR       : OFF
+ANN / LEARNED ROUTER          : NONE
+GRAPH                          : NONE
+TRAINING / LoRA               : NONE
+POST-HOC SELECTION            : NONE
+CONTENT SEARCH                : exhaustive O(N)
+RANK SIGNAL                   : model first-token logit(YES)-logit(NO)
+INTERMEDIATE                  : model-produced textual trace
+STAGE-2 REUSES STAGE-1 MEMORY : NO
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DIRECT · 32 ONE-SHOT           :  0/32 = 0.0000
+ORACLE ADDRESS RELAY           : 31/32 = 0.9688
+STRICT CONTENT E2E             : 27/32 = 0.8438
+RANKED · FIRST ADDRESS         : 31/32 = 0.9688
+RANKED · FIRST TRACE           : 31/32 = 0.9688
+RANKED · SECOND ADDRESS        : 31/32 = 0.9688
+RANKED · SECOND VALUE          : 30/32 = 0.9375
+RANKED · END-TO-END            : 30/32 = 0.9375
+WRONG TRACE · GOLD B           :  0/32 = 0.0000
+WRONG TRACE · GOLD FINAL       :  0/32 = 0.0000
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST501 LOCK SHA              : 1a3e6ea2a9f6c72d7b8dacb0c0844e9f2a6f8595bb232f1554eb41af7a20dc41
+TEST502 LOCK SHA              : f852b6efc6ee887bae54db08cbc11f987e749499a51cebeb5132f569e74edb89
+TEST503 LOCK SHA              : 2cb70ffa53a98efb249590dba7ef184b9e41cf72a99291bda65e6c93b82cb5de
+TEST504 LOCK SHA              : 74c375373666c840105cc165b90977c56c8698cf3d5617c63f619a0139386846
+TEST505 LOCK SHA              : 6d093a5d082b43ff56f09bb94cfed1839c0bd0d76a967822937996a5d1948e43
+TEST506 LOCK SHA              : 5f14f6660c5ce99813544c93420b00559a9fc4612813d326fa02df4f76d65327
+TOTAL TEST TIME                : 1058.05s
+EXPLORATORY VERDICT           : 32_BANK_SELECTIVE_ASSOCIATIVE_RELAY_REPLICATED
+======================================================================================================================================================================
