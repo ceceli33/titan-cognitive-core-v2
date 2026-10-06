@@ -1,0 +1,379 @@
+ ================================================================================================================================================================================
+TEST523 — AKBASCORE MAM · FROZEN L23H12 EXTERNAL REPLICATION SEAL
+128 EXTERNAL ITEMS · NO DISCOVERY · L23H12 → L02-V UNCENTERED
+================================================================================================================================================================================
+
+[1/11] Loading frozen Qwen...
+config.json: 100% 663/663 [00:00<00:00, 83.9kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 638kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 76.3MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 75.1MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 128MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.86MB/s]Download complete:  13.1GB,  672MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  411MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.31s/it]Loading weights: 100% 339/339 [00:04<00:00, 92.47it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.3kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L H=3584 QH=28 KVH=4 HD=128
+      POINTER LOCK : L23H12
+      ADDRESS LOCK : L02-V · UNCENTERED
+      DISCOVERY    : NONE
+      PANEL        : EXTERNAL 128
+      Native code pool: 2538 | seals=384 classes=384
+      TEST523 LOCK: 9cd1072abbb5b5e7063e48a72d1d32dc90560b2d36aeb2a196ff47be9d6835b8
+      PARENT521   : e1eeaa869cdb15532fb99419cf53fc7f1ba922807a925357934ce0fade7784de
+      PARENT522   : bb82c131b79d1ef4c2f384f4f5d49776a43a1f55bada5f40372d411105077833
+      Frozen before panel evaluation: L23H12 → L02-V UNCENTERED
+
+[2/11] OFFLINE FORGE — 128 completely new external items...
+      ITEM 001 | A=27 B=29 tokens
+      ITEM 002 | A=29 B=30 tokens
+      ITEM 003 | A=27 B=31 tokens
+      ITEM 004 | A=30 B=30 tokens
+      ITEM 005 | A=25 B=28 tokens
+      256 independent BELLEKÖZ forged.
+      No TEST523 parameter selected from this panel.
+
+[3/11] Building persistent B address bank...
+      B address source             : persistent L02-V tensors only
+      Query-time candidate-B forward: 0
+      Gold span                    : diagnostic only
+
+[4/11] EXTERNAL PRIMARY — frozen L23H12 → L02-V...
+      [001/128] rank=  1 selected=001 | ptr= 7 span=[7] hit=1 mass=0.5764 span-rank= 1
+      [002/128] rank=  1 selected=002 | ptr=27 span=[26, 27] hit=1 mass=0.8786 span-rank= 1
+      [003/128] rank=  1 selected=003 | ptr=25 span=[25] hit=1 mass=0.8959 span-rank= 1
+      [004/128] rank=  1 selected=004 | ptr= 9 span=[8, 9] hit=1 mass=0.6065 span-rank= 1
+      [005/128] rank= 35 selected=110 | ptr= 7 span=[15] hit=0 mass=0.2591 span-rank= 2
+      [006/128] rank=  1 selected=006 | ptr= 9 span=[8, 9] hit=1 mass=0.4771 span-rank= 1
+      [007/128] rank=  1 selected=007 | ptr= 8 span=[7, 8] hit=1 mass=0.7166 span-rank= 1
+      [008/128] rank=  1 selected=008 | ptr= 8 span=[7, 8, 9] hit=1 mass=0.6789 span-rank= 1
+      [009/128] rank=  1 selected=009 | ptr= 7 span=[7] hit=1 mass=0.5552 span-rank= 1
+      [010/128] rank=  1 selected=010 | ptr=17 span=[16, 17, 18] hit=1 mass=0.8672 span-rank= 1
+      [011/128] rank=  1 selected=011 | ptr=16 span=[15, 16] hit=1 mass=0.8311 span-rank= 1
+      [012/128] rank=  1 selected=012 | ptr=26 span=[26] hit=1 mass=0.8562 span-rank= 1
+      [013/128] rank=  1 selected=013 | ptr= 9 span=[8] hit=0 mass=0.2745 span-rank= 2
+      [014/128] rank=  1 selected=014 | ptr=26 span=[25, 26] hit=1 mass=0.9564 span-rank= 1
+      [015/128] rank=  1 selected=015 | ptr=17 span=[17] hit=1 mass=0.4800 span-rank= 1
+      [016/128] rank=  1 selected=016 | ptr=26 span=[25, 26] hit=1 mass=0.8893 span-rank= 1
+      [017/128] rank=  1 selected=017 | ptr=15 span=[15] hit=1 mass=0.7445 span-rank= 1
+      [018/128] rank=  1 selected=018 | ptr= 8 span=[7, 8] hit=1 mass=0.8242 span-rank= 1
+      [019/128] rank=  1 selected=019 | ptr= 7 span=[7] hit=1 mass=0.5152 span-rank= 1
+      [020/128] rank=  1 selected=020 | ptr=15 span=[15] hit=1 mass=0.7232 span-rank= 1
+      [021/128] rank=  1 selected=021 | ptr=23 span=[23] hit=1 mass=0.7433 span-rank= 1
+      [022/128] rank=  1 selected=022 | ptr=16 span=[15] hit=0 mass=0.2638 span-rank= 2
+      [023/128] rank=  1 selected=023 | ptr= 7 span=[6, 7] hit=1 mass=0.9735 span-rank= 1
+      [024/128] rank=  1 selected=024 | ptr= 7 span=[6, 7] hit=1 mass=0.9748 span-rank= 1
+      [025/128] rank=  1 selected=025 | ptr=22 span=[22] hit=1 mass=0.7488 span-rank= 1
+      [026/128] rank=  1 selected=026 | ptr=22 span=[22] hit=1 mass=0.5929 span-rank= 1
+      [027/128] rank=  1 selected=027 | ptr= 6 span=[6] hit=1 mass=0.4899 span-rank= 1
+      [028/128] rank=  1 selected=028 | ptr=15 span=[14] hit=0 mass=0.2983 span-rank= 2
+      [029/128] rank=  1 selected=029 | ptr= 8 span=[7, 8] hit=1 mass=0.8147 span-rank= 1
+      [030/128] rank=  1 selected=030 | ptr= 7 span=[7] hit=1 mass=0.2616 span-rank= 1
+      [031/128] rank=  1 selected=031 | ptr= 8 span=[7, 8] hit=1 mass=0.6267 span-rank= 1
+      [032/128] rank=  1 selected=032 | ptr= 7 span=[7] hit=1 mass=0.6352 span-rank= 1
+      [033/128] rank=  1 selected=033 | ptr= 8 span=[7, 8] hit=1 mass=0.8630 span-rank= 1
+      [034/128] rank=  1 selected=034 | ptr=16 span=[15, 16] hit=1 mass=0.9092 span-rank= 1
+      [035/128] rank=  1 selected=035 | ptr= 7 span=[6, 7, 8] hit=1 mass=0.9555 span-rank= 1
+      [036/128] rank=  1 selected=036 | ptr= 9 span=[8, 9] hit=1 mass=0.8276 span-rank= 1
+      [037/128] rank=  1 selected=037 | ptr= 8 span=[7, 8] hit=1 mass=0.8756 span-rank= 1
+      [038/128] rank=  2 selected=075 | ptr= 3 span=[8] hit=0 mass=0.2051 span-rank= 2
+      [039/128] rank=  2 selected=054 | ptr=19 span=[18, 19, 20] hit=1 mass=0.8949 span-rank= 1
+      [040/128] rank=  1 selected=040 | ptr=27 span=[26, 27] hit=1 mass=0.8598 span-rank= 1
+      [041/128] rank=  1 selected=041 | ptr=27 span=[26, 27] hit=1 mass=0.8160 span-rank= 1
+      [042/128] rank=  1 selected=042 | ptr= 8 span=[7, 8] hit=1 mass=0.9028 span-rank= 1
+      [043/128] rank=  1 selected=043 | ptr=18 span=[17, 18] hit=1 mass=0.8102 span-rank= 1
+      [044/128] rank=  5 selected=108 | ptr=27 span=[26, 27] hit=1 mass=0.6036 span-rank= 1
+      [045/128] rank= 19 selected=008 | ptr= 9 span=[8] hit=0 mass=0.2461 span-rank= 2
+      [046/128] rank=  1 selected=046 | ptr= 9 span=[8, 9] hit=1 mass=0.9303 span-rank= 1
+      [047/128] rank=  1 selected=047 | ptr=17 span=[17] hit=1 mass=0.3496 span-rank= 1
+      [048/128] rank=  1 selected=048 | ptr=27 span=[26, 27] hit=1 mass=0.9660 span-rank= 1
+      [049/128] rank=  1 selected=049 | ptr= 8 span=[7, 8] hit=1 mass=0.8081 span-rank= 1
+      [050/128] rank=  1 selected=050 | ptr=27 span=[27, 28] hit=1 mass=0.6012 span-rank= 1
+      [051/128] rank=  1 selected=051 | ptr=16 span=[15] hit=0 mass=0.2700 span-rank= 2
+      [052/128] rank=  1 selected=052 | ptr=17 span=[17, 18] hit=1 mass=0.4983 span-rank= 1
+      [053/128] rank=  1 selected=053 | ptr=16 span=[15, 16, 17] hit=1 mass=0.9749 span-rank= 1
+      [054/128] rank=  1 selected=054 | ptr=24 span=[23, 24, 25, 26] hit=1 mass=0.9207 span-rank= 1
+      [055/128] rank=  1 selected=055 | ptr=15 span=[15, 16] hit=1 mass=0.8436 span-rank= 1
+      [056/128] rank=  1 selected=056 | ptr= 9 span=[8, 9] hit=1 mass=0.8463 span-rank= 1
+      [057/128] rank=  3 selected=105 | ptr= 7 span=[7, 8] hit=1 mass=0.4937 span-rank= 1
+      [058/128] rank=  1 selected=058 | ptr=18 span=[17] hit=0 mass=0.3765 span-rank= 2
+      [059/128] rank=  1 selected=059 | ptr=15 span=[15] hit=1 mass=0.4659 span-rank= 1
+      [060/128] rank=  1 selected=060 | ptr=18 span=[17] hit=0 mass=0.2674 span-rank= 2
+      [061/128] rank=  1 selected=061 | ptr= 8 span=[7, 8] hit=1 mass=0.8738 span-rank= 1
+      [062/128] rank=  1 selected=062 | ptr=26 span=[25, 26] hit=1 mass=0.9433 span-rank= 1
+      [063/128] rank=  1 selected=063 | ptr= 6 span=[6] hit=1 mass=0.5995 span-rank= 1
+      [064/128] rank=  1 selected=064 | ptr= 7 span=[7] hit=1 mass=0.4916 span-rank= 1
+      [065/128] rank=  1 selected=065 | ptr=15 span=[14, 15] hit=1 mass=0.5947 span-rank= 1
+      [066/128] rank=  1 selected=066 | ptr=15 span=[14] hit=0 mass=0.2454 span-rank= 2
+      [067/128] rank=  1 selected=067 | ptr=25 span=[25] hit=1 mass=0.5328 span-rank= 1
+      [068/128] rank=  1 selected=068 | ptr=15 span=[15] hit=1 mass=0.5959 span-rank= 1
+      [069/128] rank=  1 selected=069 | ptr=23 span=[22, 23] hit=1 mass=0.8823 span-rank= 1
+      [070/128] rank=  1 selected=070 | ptr=16 span=[16] hit=1 mass=0.6878 span-rank= 1
+      [071/128] rank=  1 selected=071 | ptr= 7 span=[7] hit=1 mass=0.2768 span-rank= 1
+      [072/128] rank=  1 selected=072 | ptr=28 span=[28] hit=1 mass=0.6908 span-rank= 1
+      [073/128] rank=  1 selected=073 | ptr= 7 span=[7] hit=1 mass=0.4531 span-rank= 1
+      [074/128] rank=  1 selected=074 | ptr= 7 span=[7] hit=1 mass=0.4843 span-rank= 1
+      [075/128] rank=  1 selected=075 | ptr= 8 span=[7, 8] hit=1 mass=0.5035 span-rank= 1
+      [076/128] rank=  1 selected=076 | ptr=26 span=[26] hit=1 mass=0.8567 span-rank= 1
+      [077/128] rank=  1 selected=077 | ptr=26 span=[26] hit=1 mass=0.8644 span-rank= 1
+      [078/128] rank=  1 selected=078 | ptr=26 span=[25, 26] hit=1 mass=0.9528 span-rank= 1
+      [079/128] rank=  1 selected=079 | ptr=26 span=[25, 26] hit=1 mass=0.8953 span-rank= 1
+      [080/128] rank=  2 selected=125 | ptr=16 span=[15] hit=0 mass=0.2124 span-rank= 2
+      [081/128] rank=  1 selected=081 | ptr=25 span=[24, 25] hit=1 mass=0.9102 span-rank= 1
+      [082/128] rank=  1 selected=082 | ptr=27 span=[26, 27] hit=1 mass=0.8980 span-rank= 1
+      [083/128] rank=  1 selected=083 | ptr=29 span=[28, 29] hit=1 mass=0.9832 span-rank= 1
+      [084/128] rank=  1 selected=084 | ptr=28 span=[27, 28] hit=1 mass=0.9494 span-rank= 1
+      [085/128] rank=  1 selected=085 | ptr=16 span=[16] hit=1 mass=0.4931 span-rank= 1
+      [086/128] rank=  1 selected=086 | ptr= 9 span=[8, 9] hit=1 mass=0.7321 span-rank= 1
+      [087/128] rank=  1 selected=087 | ptr=15 span=[15] hit=1 mass=0.4409 span-rank= 1
+      [088/128] rank=  1 selected=088 | ptr=27 span=[26, 27] hit=1 mass=0.8502 span-rank= 1
+      [089/128] rank=  1 selected=089 | ptr=27 span=[26, 27] hit=1 mass=0.9391 span-rank= 1
+      [090/128] rank=  1 selected=090 | ptr=27 span=[26, 27] hit=1 mass=0.9604 span-rank= 1
+      [091/128] rank=  1 selected=091 | ptr=17 span=[17] hit=1 mass=0.7689 span-rank= 1
+      [092/128] rank=  2 selected=098 | ptr= 8 span=[7, 8, 9] hit=1 mass=0.9578 span-rank= 1
+      [093/128] rank=  1 selected=093 | ptr=16 span=[16] hit=1 mass=0.8253 span-rank= 1
+      [094/128] rank=  1 selected=094 | ptr=16 span=[16] hit=1 mass=0.6317 span-rank= 1
+      [095/128] rank=  1 selected=095 | ptr= 8 span=[7, 8] hit=1 mass=0.8730 span-rank= 1
+      [096/128] rank=  2 selected=105 | ptr=16 span=[15, 16, 17] hit=1 mass=0.7200 span-rank= 1
+      [097/128] rank=  1 selected=097 | ptr=16 span=[15, 16] hit=1 mass=0.4890 span-rank= 1
+      [098/128] rank=  1 selected=098 | ptr=15 span=[15] hit=1 mass=0.3670 span-rank= 1
+      [099/128] rank=  3 selected=104 | ptr=17 span=[16, 17, 18] hit=1 mass=0.9500 span-rank= 1
+      [100/128] rank=  1 selected=100 | ptr=17 span=[16, 17] hit=1 mass=0.8773 span-rank= 1
+      [101/128] rank=  1 selected=101 | ptr=25 span=[25] hit=1 mass=0.6590 span-rank= 1
+      [102/128] rank=  1 selected=102 | ptr=17 span=[16, 17] hit=1 mass=0.9668 span-rank= 1
+      [103/128] rank=  1 selected=103 | ptr=18 span=[17] hit=0 mass=0.3065 span-rank= 2
+      [104/128] rank=  1 selected=104 | ptr= 8 span=[8] hit=1 mass=0.4117 span-rank= 1
+      [105/128] rank=  1 selected=105 | ptr=18 span=[17, 18] hit=1 mass=0.9311 span-rank= 1
+      [106/128] rank=  1 selected=106 | ptr= 8 span=[8] hit=1 mass=0.7452 span-rank= 1
+      [107/128] rank=  1 selected=107 | ptr= 8 span=[7, 8] hit=1 mass=0.8755 span-rank= 1
+      [108/128] rank=  1 selected=108 | ptr=27 span=[27] hit=1 mass=0.6403 span-rank= 1
+      [109/128] rank=  1 selected=109 | ptr=17 span=[16, 17, 18] hit=1 mass=0.9391 span-rank= 1
+      [110/128] rank=  1 selected=110 | ptr=26 span=[26] hit=1 mass=0.6390 span-rank= 1
+      [111/128] rank=  1 selected=111 | ptr=26 span=[25, 26] hit=1 mass=0.9683 span-rank= 1
+      [112/128] rank=  1 selected=112 | ptr=17 span=[16, 17] hit=1 mass=0.8787 span-rank= 1
+      [113/128] rank=  1 selected=113 | ptr=23 span=[23] hit=1 mass=0.7228 span-rank= 1
+      [114/128] rank=  1 selected=114 | ptr=25 span=[24, 25] hit=1 mass=0.9508 span-rank= 1
+      [115/128] rank=  1 selected=115 | ptr= 7 span=[6, 7] hit=1 mass=0.5898 span-rank= 1
+      [116/128] rank=  1 selected=116 | ptr= 8 span=[7, 8] hit=1 mass=0.9018 span-rank= 1
+      [117/128] rank=  1 selected=117 | ptr=17 span=[16, 17] hit=1 mass=0.8667 span-rank= 1
+      [118/128] rank=  1 selected=118 | ptr=16 span=[16] hit=1 mass=0.7182 span-rank= 1
+      [119/128] rank=  1 selected=119 | ptr=22 span=[22] hit=1 mass=0.7002 span-rank= 1
+      [120/128] rank=  1 selected=120 | ptr=22 span=[22] hit=1 mass=0.6074 span-rank= 1
+      [121/128] rank=  1 selected=121 | ptr=14 span=[13] hit=0 mass=0.3952 span-rank= 2
+      [122/128] rank=  1 selected=122 | ptr= 7 span=[6, 7] hit=1 mass=0.7765 span-rank= 1
+      [123/128] rank=  1 selected=123 | ptr= 9 span=[8, 9] hit=1 mass=0.8711 span-rank= 1
+      [124/128] rank=  1 selected=124 | ptr= 8 span=[8] hit=1 mass=0.4827 span-rank= 1
+      [125/128] rank=  1 selected=125 | ptr=27 span=[26, 27] hit=1 mass=0.8868 span-rank= 1
+      [126/128] rank=  1 selected=126 | ptr=17 span=[17] hit=1 mass=0.9605 span-rank= 1
+      [127/128] rank=  1 selected=127 | ptr=17 span=[16, 17] hit=1 mass=0.9050 span-rank= 1
+      [128/128] rank=  1 selected=128 | ptr=17 span=[16] hit=0 mass=0.3514 span-rank= 2
+      PRIMARY R1/R5/R16/MRR: 0.9219 / 0.9844 / 0.9844 / 0.948811
+      POINTER argmax gold-span: 114/128 = 0.8906
+      POINTER mean gold mass  : 0.697762
+      POINTER median span rank: 1.0
+
+[5/11] EXTERNAL CONTROLS — UNIFORM / SHIFTED / NO-A ZERO...
+      UNIFORM R1/R5/R16/MRR: 0.0312 / 0.1016 / 0.1719 / 0.072389
+      SHIFTED R1/R5/R16/MRR: 0.0078 / 0.0156 / 0.1172 / 0.034596
+      NO-A    R1/R5/R16/MRR: 0.0078 / 0.0391 / 0.1250 / 0.042446
+
+[6/11] EXTERNAL COUNTERFACTUAL FOLLOW...
+      [001/128] target=038 rank=  1 selected=038 follow=1 | ptr-hit=0 mass=0.2943
+      [002/128] target=039 rank=  2 selected=054 follow=0 | ptr-hit=1 mass=0.9058
+      [003/128] target=040 rank=  1 selected=040 follow=1 | ptr-hit=1 mass=0.8499
+      [004/128] target=041 rank=  1 selected=041 follow=1 | ptr-hit=1 mass=0.8442
+      [005/128] target=042 rank=  1 selected=042 follow=1 | ptr-hit=1 mass=0.7564
+      [006/128] target=043 rank=  1 selected=043 follow=1 | ptr-hit=1 mass=0.4024
+      [007/128] target=044 rank=  1 selected=044 follow=1 | ptr-hit=1 mass=0.7393
+      [008/128] target=045 rank=  1 selected=045 follow=1 | ptr-hit=0 mass=0.3643
+      [009/128] target=046 rank=  1 selected=046 follow=1 | ptr-hit=1 mass=0.8144
+      [010/128] target=047 rank=  1 selected=047 follow=1 | ptr-hit=1 mass=0.4341
+      [011/128] target=048 rank=  1 selected=048 follow=1 | ptr-hit=1 mass=0.7697
+      [012/128] target=049 rank=  1 selected=049 follow=1 | ptr-hit=1 mass=0.9270
+      [013/128] target=050 rank=  1 selected=050 follow=1 | ptr-hit=0 mass=0.4008
+      [014/128] target=051 rank=  1 selected=051 follow=1 | ptr-hit=1 mass=0.4097
+      [015/128] target=052 rank=  1 selected=052 follow=1 | ptr-hit=1 mass=0.4947
+      [016/128] target=053 rank=  1 selected=053 follow=1 | ptr-hit=1 mass=0.9707
+      [017/128] target=054 rank=  1 selected=054 follow=1 | ptr-hit=1 mass=0.8240
+      [018/128] target=055 rank=  1 selected=055 follow=1 | ptr-hit=1 mass=0.9149
+      [019/128] target=056 rank=  1 selected=056 follow=1 | ptr-hit=1 mass=0.8906
+      [020/128] target=057 rank=  4 selected=105 follow=0 | ptr-hit=1 mass=0.3965
+      [021/128] target=058 rank=  1 selected=058 follow=1 | ptr-hit=0 mass=0.3552
+      [022/128] target=059 rank=  1 selected=059 follow=1 | ptr-hit=1 mass=0.7119
+      [023/128] target=060 rank=  1 selected=060 follow=1 | ptr-hit=0 mass=0.3092
+      [024/128] target=061 rank=  1 selected=061 follow=1 | ptr-hit=1 mass=0.8480
+      [025/128] target=062 rank=  1 selected=062 follow=1 | ptr-hit=1 mass=0.9329
+      [026/128] target=063 rank=  1 selected=063 follow=1 | ptr-hit=1 mass=0.6327
+      [027/128] target=064 rank=  3 selected=086 follow=0 | ptr-hit=0 mass=0.2582
+      [028/128] target=065 rank=  1 selected=065 follow=1 | ptr-hit=0 mass=0.3345
+      [029/128] target=066 rank=  5 selected=006 follow=0 | ptr-hit=0 mass=0.2204
+      [030/128] target=067 rank=  1 selected=067 follow=1 | ptr-hit=1 mass=0.5591
+      [031/128] target=068 rank=  1 selected=068 follow=1 | ptr-hit=1 mass=0.5621
+      [032/128] target=069 rank=  1 selected=069 follow=1 | ptr-hit=1 mass=0.7800
+      [033/128] target=070 rank=  1 selected=070 follow=1 | ptr-hit=1 mass=0.6453
+      [034/128] target=071 rank=  3 selected=086 follow=0 | ptr-hit=0 mass=0.1895
+      [035/128] target=072 rank=  1 selected=072 follow=1 | ptr-hit=0 mass=0.3116
+      [036/128] target=073 rank=  1 selected=073 follow=1 | ptr-hit=1 mass=0.3286
+      [037/128] target=074 rank=  1 selected=074 follow=1 | ptr-hit=1 mass=0.5504
+      [038/128] target=075 rank=  1 selected=075 follow=1 | ptr-hit=1 mass=0.8070
+      [039/128] target=076 rank=  1 selected=076 follow=1 | ptr-hit=1 mass=0.7937
+      [040/128] target=077 rank=  1 selected=077 follow=1 | ptr-hit=1 mass=0.8768
+      [041/128] target=078 rank=  1 selected=078 follow=1 | ptr-hit=1 mass=0.9036
+      [042/128] target=079 rank=  1 selected=079 follow=1 | ptr-hit=1 mass=0.7889
+      [043/128] target=080 rank=  1 selected=080 follow=1 | ptr-hit=0 mass=0.2685
+      [044/128] target=081 rank=  1 selected=081 follow=1 | ptr-hit=1 mass=0.8635
+      [045/128] target=082 rank=  1 selected=082 follow=1 | ptr-hit=1 mass=0.8836
+      [046/128] target=083 rank=  1 selected=083 follow=1 | ptr-hit=1 mass=0.8844
+      [047/128] target=084 rank=  1 selected=084 follow=1 | ptr-hit=1 mass=0.9240
+      [048/128] target=085 rank=  1 selected=085 follow=1 | ptr-hit=0 mass=0.3269
+      [049/128] target=086 rank=  1 selected=086 follow=1 | ptr-hit=1 mass=0.7957
+      [050/128] target=087 rank=  2 selected=072 follow=0 | ptr-hit=0 mass=0.1590
+      [051/128] target=088 rank=  1 selected=088 follow=1 | ptr-hit=1 mass=0.7930
+      [052/128] target=089 rank=  1 selected=089 follow=1 | ptr-hit=1 mass=0.9333
+      [053/128] target=090 rank=  1 selected=090 follow=1 | ptr-hit=1 mass=0.8995
+      [054/128] target=091 rank=  1 selected=091 follow=1 | ptr-hit=1 mass=0.7738
+      [055/128] target=092 rank=  2 selected=098 follow=0 | ptr-hit=1 mass=0.9888
+      [056/128] target=093 rank=  1 selected=093 follow=1 | ptr-hit=1 mass=0.8781
+      [057/128] target=094 rank=  1 selected=094 follow=1 | ptr-hit=1 mass=0.7097
+      [058/128] target=095 rank=  1 selected=095 follow=1 | ptr-hit=1 mass=0.8945
+      [059/128] target=096 rank=  1 selected=096 follow=1 | ptr-hit=1 mass=0.9552
+      [060/128] target=097 rank=  1 selected=097 follow=1 | ptr-hit=1 mass=0.7429
+      [061/128] target=098 rank=  1 selected=098 follow=1 | ptr-hit=1 mass=0.6363
+      [062/128] target=099 rank=  3 selected=056 follow=0 | ptr-hit=1 mass=0.9092
+      [063/128] target=100 rank=  1 selected=100 follow=1 | ptr-hit=1 mass=0.7838
+      [064/128] target=101 rank=  1 selected=101 follow=1 | ptr-hit=1 mass=0.3734
+      [065/128] target=102 rank=  1 selected=102 follow=1 | ptr-hit=1 mass=0.9565
+      [066/128] target=103 rank=  1 selected=103 follow=1 | ptr-hit=1 mass=0.5369
+      [067/128] target=104 rank=  1 selected=104 follow=1 | ptr-hit=1 mass=0.4900
+      [068/128] target=105 rank=  1 selected=105 follow=1 | ptr-hit=1 mass=0.8919
+      [069/128] target=106 rank=  1 selected=106 follow=1 | ptr-hit=1 mass=0.6484
+      [070/128] target=107 rank=  1 selected=107 follow=1 | ptr-hit=1 mass=0.8992
+      [071/128] target=108 rank=  1 selected=108 follow=1 | ptr-hit=1 mass=0.3016
+      [072/128] target=109 rank=  1 selected=109 follow=1 | ptr-hit=1 mass=0.9525
+      [073/128] target=110 rank=  1 selected=110 follow=1 | ptr-hit=1 mass=0.5486
+      [074/128] target=111 rank=  1 selected=111 follow=1 | ptr-hit=1 mass=0.8843
+      [075/128] target=112 rank=  1 selected=112 follow=1 | ptr-hit=1 mass=0.9372
+      [076/128] target=113 rank=  1 selected=113 follow=1 | ptr-hit=1 mass=0.7304
+      [077/128] target=114 rank=  1 selected=114 follow=1 | ptr-hit=1 mass=0.9412
+      [078/128] target=115 rank=  1 selected=115 follow=1 | ptr-hit=1 mass=0.6287
+      [079/128] target=116 rank=  1 selected=116 follow=1 | ptr-hit=1 mass=0.9311
+      [080/128] target=117 rank=  1 selected=117 follow=1 | ptr-hit=1 mass=0.7917
+      [081/128] target=118 rank=  1 selected=118 follow=1 | ptr-hit=1 mass=0.3452
+      [082/128] target=119 rank=  1 selected=119 follow=1 | ptr-hit=1 mass=0.6970
+      [083/128] target=120 rank=  1 selected=120 follow=1 | ptr-hit=1 mass=0.8289
+      [084/128] target=121 rank=  1 selected=121 follow=1 | ptr-hit=1 mass=0.3797
+      [085/128] target=122 rank=  1 selected=122 follow=1 | ptr-hit=1 mass=0.7479
+      [086/128] target=123 rank=  1 selected=123 follow=1 | ptr-hit=1 mass=0.9751
+      [087/128] target=124 rank=  1 selected=124 follow=1 | ptr-hit=1 mass=0.5992
+      [088/128] target=125 rank=  1 selected=125 follow=1 | ptr-hit=1 mass=0.7714
+      [089/128] target=126 rank=  1 selected=126 follow=1 | ptr-hit=1 mass=0.9937
+      [090/128] target=127 rank=  1 selected=127 follow=1 | ptr-hit=1 mass=0.9545
+      [091/128] target=128 rank= 53 selected=068 follow=0 | ptr-hit=0 mass=0.1922
+      [092/128] target=001 rank=  1 selected=001 follow=1 | ptr-hit=1 mass=0.6479
+      [093/128] target=002 rank=  1 selected=002 follow=1 | ptr-hit=1 mass=0.8280
+      [094/128] target=003 rank=  1 selected=003 follow=1 | ptr-hit=1 mass=0.8634
+      [095/128] target=004 rank=  1 selected=004 follow=1 | ptr-hit=1 mass=0.9406
+      [096/128] target=005 rank= 14 selected=039 follow=0 | ptr-hit=0 mass=0.1801
+      [097/128] target=006 rank=  1 selected=006 follow=1 | ptr-hit=1 mass=0.8806
+      [098/128] target=007 rank=  1 selected=007 follow=1 | ptr-hit=1 mass=0.9390
+      [099/128] target=008 rank=  1 selected=008 follow=1 | ptr-hit=1 mass=0.9552
+      [100/128] target=009 rank=  1 selected=009 follow=1 | ptr-hit=1 mass=0.6114
+      [101/128] target=010 rank=  1 selected=010 follow=1 | ptr-hit=1 mass=0.9440
+      [102/128] target=011 rank=  1 selected=011 follow=1 | ptr-hit=1 mass=0.8195
+      [103/128] target=012 rank=  1 selected=012 follow=1 | ptr-hit=1 mass=0.6887
+      [104/128] target=013 rank=  1 selected=013 follow=1 | ptr-hit=1 mass=0.4370
+      [105/128] target=014 rank=  1 selected=014 follow=1 | ptr-hit=1 mass=0.8400
+      [106/128] target=015 rank=  1 selected=015 follow=1 | ptr-hit=1 mass=0.6422
+      [107/128] target=016 rank=  1 selected=016 follow=1 | ptr-hit=1 mass=0.8786
+      [108/128] target=017 rank=  1 selected=017 follow=1 | ptr-hit=1 mass=0.6009
+      [109/128] target=018 rank=  1 selected=018 follow=1 | ptr-hit=1 mass=0.9136
+      [110/128] target=019 rank=  1 selected=019 follow=1 | ptr-hit=1 mass=0.4921
+      [111/128] target=020 rank=  1 selected=020 follow=1 | ptr-hit=1 mass=0.8933
+      [112/128] target=021 rank=  1 selected=021 follow=1 | ptr-hit=1 mass=0.7125
+      [113/128] target=022 rank=  9 selected=108 follow=0 | ptr-hit=0 mass=0.2543
+      [114/128] target=023 rank=  1 selected=023 follow=1 | ptr-hit=1 mass=0.9631
+      [115/128] target=024 rank=  1 selected=024 follow=1 | ptr-hit=1 mass=0.9300
+      [116/128] target=025 rank=  1 selected=025 follow=1 | ptr-hit=1 mass=0.8663
+      [117/128] target=026 rank=  1 selected=026 follow=1 | ptr-hit=1 mass=0.5220
+      [118/128] target=027 rank=  1 selected=027 follow=1 | ptr-hit=1 mass=0.5255
+      [119/128] target=028 rank=  1 selected=028 follow=1 | ptr-hit=0 mass=0.2406
+      [120/128] target=029 rank=  1 selected=029 follow=1 | ptr-hit=1 mass=0.9630
+      [121/128] target=030 rank=  1 selected=030 follow=1 | ptr-hit=1 mass=0.3795
+      [122/128] target=031 rank=  1 selected=031 follow=1 | ptr-hit=1 mass=0.9478
+      [123/128] target=032 rank=  1 selected=032 follow=1 | ptr-hit=1 mass=0.9536
+      [124/128] target=033 rank=  1 selected=033 follow=1 | ptr-hit=1 mass=0.8397
+      [125/128] target=034 rank=  1 selected=034 follow=1 | ptr-hit=1 mass=0.9211
+      [126/128] target=035 rank=  1 selected=035 follow=1 | ptr-hit=1 mass=0.9900
+      [127/128] target=036 rank=  1 selected=036 follow=1 | ptr-hit=1 mass=0.9485
+      [128/128] target=037 rank=  1 selected=037 follow=1 | ptr-hit=1 mass=0.9731
+      CF FOLLOW R1/R5/R16/MRR: 0.9141 / 0.9766 / 0.9922 / 0.938683
+      CF pointer gold-span hit : 111/128 = 0.8672
+      CF mean gold-span mass   : 0.702827
+
+[7/11] Mechanistic diagnostics...
+      Retrieval R1 | pointer-hit      : 0.9474 n=114
+      Retrieval R1 | pointer-miss     : 0.7143 n=14
+      Mean gold mass | retrieval R1   : 0.709922
+      Mean gold mass | retrieval fail : 0.554279
+      PRIMARY - UNIFORM R1            : +0.8906
+      PRIMARY - SHIFTED R1            : +0.9141
+      PRIMARY - NO-A R1               : +0.9141
+
+[8/11] Wilson intervals...
+      PRIMARY : 118/128 = 0.9219 | 95% Wilson [0.8622,0.9570]
+      UNIFORM :   4/128 = 0.0312 | 95% Wilson [0.0122,0.0776]
+      SHIFTED :   1/128 = 0.0078 | 95% Wilson [0.0014,0.0429]
+      NO_A    :   1/128 = 0.0078 | 95% Wilson [0.0014,0.0429]
+      CF      : 117/128 = 0.9141 | 95% Wilson [0.8527,0.9513]
+
+[9/11] PREDECLARED EXTERNAL SEAL...
+      PASS   : True
+      STRONG : True
+      VERDICT: STRONG_EXTERNAL_REPLICATION_SEAL_L23H12_CAGRIIIZ
+
+[10/11] Protocol audit...
+      Model frozen                              : YES
+      External panel                            : YES — 128
+      DISC in TEST523                           : NONE
+      Layer/head scan                           : NONE
+      Top-K scan                                : NONE
+      Pointer                                   : FROZEN L23H12
+      Pointer math                              : TEST522 unchanged
+      Address                                   : FROZEN L02-V UNCENTERED
+      Match                                     : max cosine
+      Gold span used by retrieval               : NO
+      Gold span diagnostic only                 : YES
+      Token-ID/text/LM-head address             : NONE
+      Query-time candidate-B forwards           : 0
+      Training / DRA / learned router           : NONE
+      Post-hoc TEST523 selection                : NONE
+      Counterfactual same frozen mechanism      : YES
+      NO-A                                      : zero-address negative control
+
+[11/11] FINAL...
+
+================================================================================================================================================================================
+TEST523 FINAL RESULT — FROZEN L23H12 EXTERNAL REPLICATION SEAL
+================================================================================================================================================================================
+MODEL                              : Qwen/Qwen2.5-7B-Instruct · frozen
+EXTERNAL BANK                      : 128 items / 256 BELLEKÖZ
+POINTER                            : L23H12 · native Q·K + RoPE
+ADDRESS                            : L02-V · UNCENTERED
+MATCH                              : max cosine
+DISCOVERY / SELECTION              : NONE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PRIMARY                            : R1=0.9219 R5=0.9844 R16=0.9844 MRR=0.948811
+UNIFORM                            : R1=0.0312 R5=0.1016 R16=0.1719 MRR=0.072389
+SHIFTED                            : R1=0.0078 R5=0.0156 R16=0.1172 MRR=0.034596
+NO-A                               : R1=0.0078 R5=0.0391 R16=0.1250 MRR=0.042446
+COUNTERFACTUAL FOLLOW              : R1=0.9141 R5=0.9766 R16=0.9922 MRR=0.938683
+POINTER GOLD-SPAN ARGMAX HIT       : 114/128 = 0.8906
+POINTER MEAN GOLD-SPAN MASS        : 0.697762
+POINTER MEDIAN GOLD-SPAN RANK      : 1.0
+CF POINTER GOLD-SPAN HIT           : 111/128 = 0.8672
+CF POINTER MEAN GOLD-SPAN MASS     : 0.702827
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PREDECLARED SEAL                   : PRIMARY R1>=.85 R5>=.95; CF>=.80; UNIFORM/SHIFTED/NO-A<=.10
+STRONG SEAL                        : PRIMARY R1>=.90; CF>=.85; all controls<=.05
+PASS                               : True
+STRONG                             : True
+TEST521 LOCK                       : e1eeaa869cdb15532fb99419cf53fc7f1ba922807a925357934ce0fade7784de
+TEST522 LOCK                       : bb82c131b79d1ef4c2f384f4f5d49776a43a1f55bada5f40372d411105077833
+TEST523 LOCK                       : 9cd1072abbb5b5e7063e48a72d1d32dc90560b2d36aeb2a196ff47be9d6835b8
+TOTAL TEST TIME                    : 92.37s
+VERDICT                            : STRONG_EXTERNAL_REPLICATION_SEAL_L23H12_CAGRIIIZ
+NEXT                               : TEST524 / MAM DEMO PROTOTYPE
+================================================================================================================================================================================
