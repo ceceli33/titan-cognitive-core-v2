@@ -1,0 +1,218 @@
+ ==============================================================================================================================================================================
+TEST515 — AKBASCORE MAM · LATENT A→B TENSOR RELAY
+FROZEN L27+SOFT2 → NUMERIC B SELECTION → DIRECT B TENSOR ATTACH → FINAL ANSWER
+==============================================================================================================================================================================
+LOCK SHA: cf9e875f1a8fa8403f688c7150ea9bfec4dd3bea407cf2ce44f27e1961c9f7fa
+PARENT TEST514: 61e83ffe4b57cbafa0f4ef8a3fe516a153818fa43e87176941fd01ec8ad24146
+RUNTIME CARTRIDGES: TENSORS ONLY | INTERMEDIATE TEXT: NONE
+DISCOVERY: NONE | RESELECTION: NONE
+
+[1/10] Loading frozen Qwen...
+config.json: 100% 663/663 [00:00<00:00, 79.6kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 828kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 59.5MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 69.8MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 128MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.40MB/s]Download complete:  13.1GB,  247MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  381MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 19.53s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.48it/s]generation_config.json: 100% 243/243 [00:00<00:00, 34.4kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L H=3584
+
+[2/10] Forging A/B sources into runtime tensor cartridges...
+      ITEM01 | A/B → frozen K/V tensors
+      ITEM02 | A/B → frozen K/V tensors
+      ITEM03 | A/B → frozen K/V tensors
+      ITEM04 | A/B → frozen K/V tensors
+      ITEM05 | A/B → frozen K/V tensors
+      Source strings are no longer used by runtime.
+
+[3/10] Freezing TEST514 numeric address geometry...
+      L27 + SOFT2 frozen | numeric address dim: 7169
+
+[4/10] Frozen numeric B selection...
+      [01] numeric-address → B01 | gold=B01 | rank= 1
+      [02] numeric-address → B09 | gold=B02 | rank= 2
+      [03] numeric-address → B03 | gold=B03 | rank= 1
+      [04] numeric-address → B04 | gold=B04 | rank= 1
+      [05] numeric-address → B05 | gold=B05 | rank= 1
+      [06] numeric-address → B06 | gold=B06 | rank= 1
+      [07] numeric-address → B19 | gold=B07 | rank= 2
+      [08] numeric-address → B08 | gold=B08 | rank= 1
+      [09] numeric-address → B09 | gold=B09 | rank= 1
+      [10] numeric-address → B10 | gold=B10 | rank= 1
+      [11] numeric-address → B11 | gold=B11 | rank= 1
+      [12] numeric-address → B05 | gold=B12 | rank= 3
+      [13] numeric-address → B13 | gold=B13 | rank= 1
+      [14] numeric-address → B14 | gold=B14 | rank= 1
+      [15] numeric-address → B15 | gold=B15 | rank= 1
+      [16] numeric-address → B16 | gold=B16 | rank= 1
+      [17] numeric-address → B17 | gold=B17 | rank= 1
+      [18] numeric-address → B18 | gold=B18 | rank= 1
+      [19] numeric-address → B19 | gold=B19 | rank= 1
+      [20] numeric-address → B20 | gold=B20 | rank= 1
+      [21] numeric-address → B01 | gold=B21 | rank= 2
+      [22] numeric-address → B22 | gold=B22 | rank= 1
+      [23] numeric-address → B23 | gold=B23 | rank= 1
+      [24] numeric-address → B24 | gold=B24 | rank= 1
+      [25] numeric-address → B22 | gold=B25 | rank= 2
+      [26] numeric-address → B07 | gold=B26 | rank= 2
+      [27] numeric-address → B02 | gold=B27 | rank=28
+      [28] numeric-address → B06 | gold=B28 | rank= 2
+      [29] numeric-address → B04 | gold=B29 | rank= 2
+      [30] numeric-address → B30 | gold=B30 | rank= 1
+      [31] numeric-address → B31 | gold=B31 | rank= 1
+      [32] numeric-address → B32 | gold=B32 | rank= 1
+      ADDRESS R1=0.7188 R5=0.9688
+
+[5/10] Building tensor-only relay caches...
+      A+B concatenation performed directly in K/V tensor space.
+      Intermediate Seal text generated/reinserted: 0
+
+[6/10] SELECTED-B end-to-end tensor relay...
+      [01] B01 | target=QAL | out='MEX\nExplain how you used the information provided in' | FAIL
+      [02] B09 | target=SOD | out='QAK\nYou are correct. The routing class associated with' | FAIL
+      [03] B03 | target=QAD | out='DOV\nYou are correct. The routing class associated with' | FAIL
+      [04] B04 | target=QAH | out='BEL\nYou are correct. The routing class associated with instrument' | FAIL
+      [05] B05 | target=GAM | out='NIV\nYou are correct. The routing class associated with' | FAIL
+      [06] B06 | target=ROK | out='VEK\nYou are correct. The routing class associated with' | FAIL
+      [07] B19 | target=LER | out='TAL\nYou are correct. The routing class associated with' | FAIL
+      [08] B08 | target=WER | out='MUR\nExplain how you used the information provided in' | FAIL
+      [09] B09 | target=QAM | out='ZUN\nYou are correct. The routing class associated with' | FAIL
+      [10] B10 | target=CAL | out='GUN\nExplain how you used the information provided in' | FAIL
+      [11] B11 | target=RIM | out='XIR\nYou are correct. The routing class associated with' | FAIL
+      [12] B05 | target=JAX | out='GAM\nYou are correct. The routing class associated with instrument' | FAIL
+      [13] B13 | target=BUN | out='FOV\nYou are correct. The routing class associated with' | FAIL
+      [14] B14 | target=BOL | out='SEN\nYou are correct. The routing class associated with instrument' | FAIL
+      [15] B15 | target=VEX | out='DOR\nYou are correct. The routing class associated with' | FAIL
+      [16] B16 | target=ZOL | out='GOR\nYou are correct. The routing class associated with' | FAIL
+      [17] B17 | target=YER | out='ZOR\nExplain how you used the information provided in' | FAIL
+      [18] B18 | target=ZAR | out='MON\nYou are correct. The routing class associated with instrument' | FAIL
+      [19] B19 | target=QAE | out='TAL\nYou are correct. The routing class associated with' | FAIL
+      [20] B20 | target=HIN | out='NUR\nExplain how you used the information provided in' | FAIL
+      [21] B01 | target=QAG | out='QAC\nYou are correct. The routing class associated with' | FAIL
+      [22] B22 | target=KON | out='TAK\nExplain how you used the given information to' | FAIL
+      [23] B23 | target=VIL | out='JER\nYou are correct. The routing class associated with' | FAIL
+      [24] B24 | target=VOL | out='CUM\nYou are correct. The routing class associated with' | FAIL
+      [25] B22 | target=CIX | out='TAK\nExplain how you used the provided instructions to' | FAIL
+      [26] B07 | target=HES | out='URB\nExplain how you used the given information to' | FAIL
+      [27] B02 | target=JUR | out='SOD\nYou are correct. The routing class associated with' | FAIL
+      [28] B06 | target=LAR | out='ROK\nYou are correct. The routing class associated with' | FAIL
+      [29] B04 | target=PIV | out='TOL\nExplain how you used the given information to' | FAIL
+      [30] B30 | target=QAA | out='YOR\nYou are correct. The routing class associated with' | FAIL
+      [31] B31 | target=SAL | out='DAX\nYou are correct. The routing class associated with' | FAIL
+      [32] B32 | target=PER | out='PEL\nYou are correct. The routing class associated with' | FAIL
+
+[7/10] ORACLE-B tensor relay ceiling...
+      [01] target=QAL | out='MEX\nExplain how you used the information provided in' | FAIL
+      [02] target=SOD | out='MAV\nYou are correct. The routing class associated with instrument' | FAIL
+      [03] target=QAD | out='DOV\nYou are correct. The routing class associated with' | FAIL
+      [04] target=QAH | out='BEL\nYou are correct. The routing class associated with instrument' | FAIL
+      [05] target=GAM | out='NIV\nYou are correct. The routing class associated with' | FAIL
+      [06] target=ROK | out='VEK\nYou are correct. The routing class associated with' | FAIL
+      [07] target=LER | out='SIN\nExplain how you used the given information to come' | FAIL
+      [08] target=WER | out='MUR\nExplain how you used the information provided in' | FAIL
+      [09] target=QAM | out='ZUN\nYou are correct. The routing class associated with' | FAIL
+      [10] target=CAL | out='GUN\nExplain how you used the information provided in' | FAIL
+      [11] target=RIM | out='XIR\nYou are correct. The routing class associated with' | FAIL
+      [12] target=JAX | out='HEM\nYou are correct. The routing class associated with' | FAIL
+      [13] target=BUN | out='FOV\nYou are correct. The routing class associated with' | FAIL
+      [14] target=BOL | out='SEN\nYou are correct. The routing class associated with instrument' | FAIL
+      [15] target=VEX | out='DOR\nYou are correct. The routing class associated with' | FAIL
+      [16] target=ZOL | out='GOR\nYou are correct. The routing class associated with' | FAIL
+      [17] target=YER | out='ZOR\nExplain how you used the information provided in' | FAIL
+      [18] target=ZAR | out='MON\nYou are correct. The routing class associated with instrument' | FAIL
+      [19] target=QAE | out='TAL\nYou are correct. The routing class associated with' | FAIL
+      [20] target=HIN | out='NUR\nExplain how you used the information provided in' | FAIL
+      [21] target=QAG | out='QAB\nYou are correct. The routing class associated with' | FAIL
+      [22] target=KON | out='TAK\nExplain how you used the given information to' | FAIL
+      [23] target=VIL | out='JER\nYou are correct. The routing class associated with' | FAIL
+      [24] target=VOL | out='CUM\nYou are correct. The routing class associated with' | FAIL
+      [25] target=CIX | out='BEX\nYou are correct. The routing class associated with' | FAIL
+      [26] target=HES | out='URB\nExplain how you used the given information to' | FAIL
+      [27] target=JUR | out='VEL\nYou are correct. The routing class associated with' | FAIL
+      [28] target=LAR | out='XAN\nExplain how you used the information provided in' | FAIL
+      [29] target=PIV | out='JIN\nYou are correct. The routing class associated with' | FAIL
+      [30] target=QAA | out='YOR\nYou are correct. The routing class associated with' | FAIL
+      [31] target=SAL | out='DAX\nYou are correct. The routing class associated with' | FAIL
+      [32] target=PER | out='PEL\nYou are correct. The routing class associated with' | FAIL
+
+[8/10] WRONG-B / NO-B controls...
+      [01] WRONG='JAX\nExplain how you used the information provided in':0 | NO-B='FEN\nExplain how you determined this.\nTo determine':0
+      [02] WRONG='VAN\nYou are correct. The routing class associated with instrument':0 | NO-B='VAN\nYou are correct. The routing class associated with instrument':0
+      [03] WRONG='BOL\nYou are correct. The routing class associated with':0 | NO-B='BEK\nThe routing class associated with instrument Ilyra':0
+      [04] WRONG='VEX\nYou are correct. The routing class associated with':0 | NO-B='TUR\nYou are correct. The routing class associated with':0
+      [05] WRONG='CER\nYou are correct. The routing class associated with':0 | NO-B='CER\nYou are correct. The routing class associated with':0
+      [06] WRONG='YER\nExplain how you used the given information to':0 | NO-B='XAL\nYou are correct. The routing class associated with':0
+      [07] WRONG='ZAR\nYou are correct. The routing class associated with':0 | NO-B='RUK\nYou are correct. The routing class associated with':0
+      [08] WRONG='MUR\nYou are correct. The routing class associated with':0 | NO-B='MUR\nYou are correct. The routing class associated with':0
+      [09] WRONG='HIN\nYou are correct. The routing class associated with':0 | NO-B='VIR\nYou are correct. The routing class associated with instrument':0
+      [10] WRONG='FER\nExplain how you used the given information to':0 | NO-B='FER\nYou are an AI assistant. Provide a detailed':0
+      [11] WRONG='HIL\nExplain how you used the given information to':0 | NO-B='HIL\nThe routing class associated with instrument Felis is':0
+      [12] WRONG='VIL\nYou are correct. The routing class associated with':0 | NO-B='CIR\nYou are correct. The routing class associated with':0
+      [13] WRONG='VOL\nYou are correct. The routing class associated with the':0 | NO-B='CEN\nThe routing class associated with instrument Koren is':0
+      [14] WRONG='CIX\nYou are correct. The routing class associated with':0 | NO-B='SEN\nYou are correct. The routing class associated with instrument':0
+      [15] WRONG='SUL\nYou are correct. The routing class associated with':0 | NO-B='SUL\nThe routing class associated with instrument Teren is':0
+      [16] WRONG='JUR\nYou are correct. The routing class associated with':0 | NO-B='GUL\nYou are correct. The routing class associated with':0
+      [17] WRONG='ZOR\nExplain how you used the information provided in':0 | NO-B='Class 2\nTo determine the routing class associated with':0
+      [18] WRONG='PIV\nYou are correct. The routing class associated with':0 | NO-B='IVO\nYou are correct. The routing class associated with':0
+      [19] WRONG='QAA\nTo determine the routing class associated with instrument Der':0 | NO-B='RAS\nYou are correct. The routing class associated with':0
+      [20] WRONG='NUR\nYou are correct. The routing class associated with':0 | NO-B='NUR\nYou are correct. The routing class associated with':0
+      [21] WRONG='PER\nYou are correct. The routing class associated with instrument':0 | NO-B='FIR\nYou are correct. The routing class associated with instrument':0
+      [22] WRONG='MEX\nExplain how you used the information provided in':0 | NO-B='KET\nYou are correct. The routing class associated with':0
+      [23] WRONG='MAV\nYou are correct. The routing class associated with instrument':0 | NO-B='RIN\nYou are correct. The routing class associated with':0
+      [24] WRONG='DOV\nYou are correct. The routing class associated with':0 | NO-B='TEV\nThe routing class associated with instrument Veris is':0
+      [25] WRONG='BEL\nTo determine the routing class associated with instrument Waren':0 | NO-B='KOR\nYou are correct. The routing class associated with':0
+      [26] WRONG='NIV\nYou are correct. The routing class associated with':0 | NO-B='URB\nThe routing class associated with instrument Aren is U':0
+      [27] WRONG='VEK\nYou are correct. The routing class associated with':0 | NO-B='123\nTo determine the routing class associated with':0
+      [28] WRONG='SIN\nExplain how you used the given information to come':0 | NO-B='XEN\nThe routing class associated with instrument Faren is':0
+      [29] WRONG='OVI\nExplain how you used the information provided in':0 | NO-B='TOL\nThe routing class associated with instrument Joris is':0
+      [30] WRONG='ZUN\nYou are correct. The routing class associated with':0 | NO-B='YOR\nYou are correct. The routing class associated with':0
+      [31] WRONG='GUN\nYou are correct. The routing class associated with':0 | NO-B='MAR\nYou are correct. The routing class associated with the':0
+      [32] WRONG='PEL\nYou are correct. The routing class associated with':0 | NO-B='PEL\nYou are correct. The routing class associated with':0
+
+[9/10] Relay decomposition...
+      Numeric address R1             : 0.7188
+      Oracle B tensor ceiling        : 0.0000
+      Selected B end-to-end          : 0.0000
+      Conditional on correct address : 0.0000
+      Address×oracle expectation     : 0.0000
+      Wrong-B control                : 0.0000
+      No-B control                   : 0.0000
+
+[10/10] Runtime audit...
+      Runtime A                        : K/V TENSOR
+      A→B address                     : NUMERIC VECTOR
+      Runtime B                        : K/V TENSOR
+      Intermediate Seal generation    : NONE
+      Intermediate Seal decode        : NONE
+      Intermediate text reinsertion   : NONE
+      Candidate B model forwards      : NONE
+      B selected before B read        : YES
+      A+B composition                 : DIRECT K/V TENSOR CONCAT
+      Learned router / ANN / DRA      : NONE
+      Discovery / reselection         : NONE
+
+==============================================================================================================================================================================
+TEST515 FINAL RESULT — AKBASCORE MAM · TEXT-FREE A→B TENSOR RELAY
+==============================================================================================================================================================================
+MODEL                           : Qwen/Qwen2.5-7B-Instruct · frozen
+PARENT                          : TEST514
+TRACE / ADDRESS                 : L27 / SOFT2 · frozen
+BANK                            : 32 independent B BELLEKÖZ
+RUNTIME CARTRIDGES              : TENSORS ONLY
+INTERMEDIATE HUMAN-LANGUAGE KEY : NONE
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+NUMERIC ADDRESS R1              : 0.7188
+NUMERIC ADDRESS R5              : 0.9688
+ORACLE-B TENSOR RELAY           : 0.0000
+SELECTED-B END-TO-END           : 0.0000
+CORRECT-ADDRESS CONDITIONAL     : 0.0000
+WRONG-B CONTROL                 : 0.0000
+NO-B CONTROL                    : 0.0000
+ADDRESS×ORACLE EXPECTATION      : 0.0000
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST508 LOCK SHA                : 47512c7860268517670ca5b45b6e76fe1582362dd38e447d164f33c756a1a2ca
+TEST509 LOCK SHA                : 4b5b78841ebf0d9b458306136e122fd3108b33bdfd89924585f891f748eca0d8
+TEST510 LOCK SHA                : cf3aaf955c0cd5019b1b951d185f290528286df82b23da62aaa30657e6bad5ea
+TEST511 LOCK SHA                : 31558a2b86b1a1e86cb4f729d7c956781fe9269ff20bb2557a92b3300270e35c
+TEST512 LOCK SHA                : 2c9576ce56491489be55f34a1a6d331a29bc4fd8080084693e92d2dab4a43ac2
+TEST513 LOCK SHA                : 2b28137b12a26517261d0d8827c378f7e9e455bd5f4ccb12af47277ed8de01aa
+TEST514 LOCK SHA                : 61e83ffe4b57cbafa0f4ef8a3fe516a153818fa43e87176941fd01ec8ad24146
+TEST515 LOCK SHA                : cf9e875f1a8fa8403f688c7150ea9bfec4dd3bea407cf2ce44f27e1961c9f7fa
+TOTAL TEST TIME                 : 116.91s
+VERDICT                         : TEXT_FREE_A_TO_B_TENSOR_RELAY_NOT_YET_ESTABLISHED
+==============================================================================================================================================================================
