@@ -1,0 +1,243 @@
+ ================================================================================================================================================================================
+TEST520 — AKBASCORE MAM · NATIVE ATTENTION-POINTER → SAME-ROLE TENSOR ADDRESS
+QUERY Q·K → A POSITION POINTER → CENTERED A K/V ↔ B K/V · TOKEN-ID-FREE PRIMARY ADDRESS
+================================================================================================================================================================================
+
+[1/12] Loading frozen Qwen...
+config.json: 100% 663/663 [00:00<00:00, 79.1kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 764kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 61.3MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 73.8MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 131MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.15MB/s]Download complete:  13.1GB,  461MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  507MB/s  Fetching 4 files: 100% 4/4 [00:45<00:00, 45.60s/it]Loading weights: 100% 339/339 [00:04<00:00, 98.55it/s]generation_config.json: 100% 243/243 [00:00<00:00, 29.2kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L H=3584 QH=28 KVH=4 HD=128 | frozen BF16
+      TEST520 LOCK: fb44f20176ae72ce58d9eaf99436e237f4e0548b893a7ee51d8f4d7768b0b806
+      PARENT518   : d335fa02068644efbe3c54eba8b6ae3a4678fbba3abed972d3f31a401590ae3c
+      PARENT519   : 2bcf12382a2341ca84fcb1c21a9b52d4c4de79af50ba21d8d3b853f34c9f0f1a
+      DISC/EVAL   : 24 / 24
+      Primary     : native attention pointer → centered same-role tensor address
+
+[2/12] OFFLINE FORGE — exact corrected TEST518 panel...
+      ITEM 01 | A=25 B=31 tokens
+      ITEM 02 | A=24 B=27 tokens
+      ITEM 03 | A=23 B=29 tokens
+      ITEM 04 | A=24 B=30 tokens
+      ITEM 05 | A=23 B=30 tokens
+      96 BELLEKÖZ forged.
+      Raw K/V retained only as persistent numeric cartridge state.
+
+[3/12] Computing tensor-only bank means...
+      Means computed from cartridge tensors only; PAD excluded.
+
+[4/12] PERSISTENCE RESET...
+      Source text/token IDs are NOT used by PRIMARY address after forge.
+      Gold positions exist only for pointer-localization scoring.
+
+[5/12] Native Q·K pointer extraction...
+      [01/48] Alden   | pointer=24 gold=-1 hit=0 peak=0.2005
+      [02/48] Allis   | pointer=23 gold=-1 hit=0 peak=0.2049
+      [03/48] Altal   | pointer=13 gold=-1 hit=0 peak=0.1966
+      [04/48] Belden  | pointer=23 gold=-1 hit=0 peak=0.2090
+      [05/48] Bellis  | pointer=22 gold=-1 hit=0 peak=0.2142
+      [06/48] Beltal  | pointer=21 gold=-1 hit=0 peak=0.1962
+      [07/48] Corden  | pointer=23 gold=-1 hit=0 peak=0.1974
+      [08/48] Corlis  | pointer=23 gold=-1 hit=0 peak=0.2108
+      [09/48] Cortal  | pointer=24 gold=-1 hit=0 peak=0.1762
+      [10/48] Darden  | pointer=22 gold=-1 hit=0 peak=0.2565
+      [11/48] Darlis  | pointer=23 gold=-1 hit=0 peak=0.2308
+      [12/48] Dartal  | pointer=23 gold=-1 hit=0 peak=0.1939
+      [13/48] Elden   | pointer=22 gold=-1 hit=0 peak=0.2215
+      [14/48] Ellis   | pointer=21 gold=-1 hit=0 peak=0.1872
+      [15/48] Eltal   | pointer=22 gold=-1 hit=0 peak=0.1996
+      [16/48] Fenden  | pointer=22 gold=-1 hit=0 peak=0.1881
+      [17/48] Fenlis  | pointer=22 gold=-1 hit=0 peak=0.1802
+      [18/48] Fental  | pointer= 6 gold=-1 hit=0 peak=0.1960
+      [19/48] Galden  | pointer=23 gold=-1 hit=0 peak=0.2001
+      [20/48] Gallis  | pointer=23 gold=-1 hit=0 peak=0.2870
+      [21/48] Galtal  | pointer=25 gold=-1 hit=0 peak=0.2060
+      [22/48] Harden  | pointer=21 gold=-1 hit=0 peak=0.1795
+      [23/48] Harlis  | pointer=22 gold=-1 hit=0 peak=0.2153
+      [24/48] Hartal  | pointer=25 gold=-1 hit=0 peak=0.2127
+      [25/48] Ilden   | pointer=22 gold=-1 hit=0 peak=0.2012
+      [26/48] Illis   | pointer=22 gold=-1 hit=0 peak=0.2117
+      [27/48] Iltal   | pointer=24 gold=-1 hit=0 peak=0.2169
+      [28/48] Jarden  | pointer=23 gold=-1 hit=0 peak=0.2213
+      [29/48] Jarlis  | pointer=25 gold=-1 hit=0 peak=0.1971
+      [30/48] Jartal  | pointer=23 gold=-1 hit=0 peak=0.2130
+      [31/48] Kelden  | pointer=22 gold=-1 hit=0 peak=0.2137
+      [32/48] Kellis  | pointer=22 gold=-1 hit=0 peak=0.1956
+      [33/48] Keltal  | pointer=24 gold=-1 hit=0 peak=0.2056
+      [34/48] Lorden  | pointer=23 gold=-1 hit=0 peak=0.1982
+      [35/48] Lorlis  | pointer=24 gold=-1 hit=0 peak=0.2842
+      [36/48] Lortal  | pointer=24 gold=-1 hit=0 peak=0.2477
+      [37/48] Marden  | pointer=22 gold=-1 hit=0 peak=0.2311
+      [38/48] Marlis  | pointer=23 gold=-1 hit=0 peak=0.2339
+      [39/48] Martal  | pointer=22 gold=-1 hit=0 peak=0.2523
+      [40/48] Norden  | pointer=23 gold=-1 hit=0 peak=0.1969
+      [41/48] Norlis  | pointer=23 gold=-1 hit=0 peak=0.2096
+      [42/48] Nortal  | pointer=23 gold=-1 hit=0 peak=0.2282
+      [43/48] Orden   | pointer=23 gold=-1 hit=0 peak=0.1866
+      [44/48] Orlis   | pointer=25 gold=-1 hit=0 peak=0.1872
+      [45/48] Ortal   | pointer=24 gold=-1 hit=0 peak=0.2233
+      [46/48] Parden  | pointer=23 gold=-1 hit=0 peak=0.2208
+      [47/48] Parlis  | pointer=23 gold=-1 hit=0 peak=0.2176
+      [48/48] Partal  | pointer=21 gold=-1 hit=0 peak=0.2146
+      Pointer argmax gold localization: 0/48 = 0.0000
+
+[6/12] DISC — selecting comparison layer/role on items 01..24 only...
+      L01-K | R1=0.0000 R5=0.0833 R16=0.3750 MRR=0.078330
+      L01-V | R1=0.1250 R5=0.1667 R16=0.2500 MRR=0.167237
+      L02-K | R1=0.0417 R5=0.1667 R16=0.3333 MRR=0.119913
+      L02-V | R1=0.0833 R5=0.2083 R16=0.4167 MRR=0.171138
+      L04-K | R1=0.0417 R5=0.1250 R16=0.2083 MRR=0.109637
+      L04-V | R1=0.0417 R5=0.0833 R16=0.4583 MRR=0.107670
+      L08-K | R1=0.0000 R5=0.1250 R16=0.3333 MRR=0.082953
+      L08-V | R1=0.0417 R5=0.1667 R16=0.3750 MRR=0.135863
+      L12-K | R1=0.0000 R5=0.1250 R16=0.3750 MRR=0.077016
+      L12-V | R1=0.0000 R5=0.0833 R16=0.4583 MRR=0.071805
+      L16-K | R1=0.0000 R5=0.0833 R16=0.3750 MRR=0.084433
+      L16-V | R1=0.0000 R5=0.1667 R16=0.3333 MRR=0.093772
+      FROZEN BEFORE EVAL: L02-V | DISC MRR=0.171138
+
+[7/12] EVAL — frozen primary + controls on items 25..48...
+      [25/48] PRIMARY=15 UNIFORM= 7 UNCENTERED=12 | selected B=23
+      [26/48] PRIMARY=28 UNIFORM=23 UNCENTERED= 4 | selected B=36
+      [27/48] PRIMARY=48 UNIFORM= 7 UNCENTERED= 1 | selected B=06
+      [28/48] PRIMARY=30 UNIFORM=15 UNCENTERED= 1 | selected B=10
+      [29/48] PRIMARY= 7 UNIFORM=42 UNCENTERED= 1 | selected B=44
+      [30/48] PRIMARY=42 UNIFORM=10 UNCENTERED= 1 | selected B=44
+      [31/48] PRIMARY=39 UNIFORM=38 UNCENTERED= 1 | selected B=06
+      [32/48] PRIMARY=41 UNIFORM=39 UNCENTERED= 8 | selected B=38
+      [33/48] PRIMARY=19 UNIFORM= 2 UNCENTERED=12 | selected B=16
+      [34/48] PRIMARY= 4 UNIFORM=25 UNCENTERED=36 | selected B=20
+      [35/48] PRIMARY=39 UNIFORM=39 UNCENTERED= 1 | selected B=08
+      [36/48] PRIMARY=46 UNIFORM= 2 UNCENTERED= 1 | selected B=21
+      [37/48] PRIMARY=18 UNIFORM= 1 UNCENTERED= 1 | selected B=42
+      [38/48] PRIMARY=11 UNIFORM=22 UNCENTERED=16 | selected B=42
+      [39/48] PRIMARY=34 UNIFORM= 4 UNCENTERED=31 | selected B=10
+      [40/48] PRIMARY=26 UNIFORM= 1 UNCENTERED= 1 | selected B=17
+      [41/48] PRIMARY=48 UNIFORM=43 UNCENTERED= 1 | selected B=23
+      [42/48] PRIMARY=46 UNIFORM= 8 UNCENTERED= 1 | selected B=06
+      [43/48] PRIMARY=26 UNIFORM= 7 UNCENTERED=17 | selected B=37
+      [44/48] PRIMARY= 8 UNIFORM= 2 UNCENTERED= 6 | selected B=17
+      [45/48] PRIMARY=22 UNIFORM= 7 UNCENTERED=16 | selected B=23
+      [46/48] PRIMARY=19 UNIFORM=12 UNCENTERED= 1 | selected B=23
+      [47/48] PRIMARY=18 UNIFORM=26 UNCENTERED= 1 | selected B=23
+      [48/48] PRIMARY=36 UNIFORM=23 UNCENTERED= 1 | selected B=10
+      PRIMARY    R1/R5/R16/MRR: 0.0000 / 0.0417 / 0.2083 / 0.055210
+      UNIFORM    R1/R5/R16/MRR: 0.0833 / 0.2500 / 0.5833 / 0.209665
+      UNCENTERED R1/R5/R16/MRR: 0.5833 / 0.6250 / 0.8750 / 0.623008
+
+[8/12] NO-A control...
+      NO_A R1/R5/R16/MRR: 0.0000 / 0.0000 / 0.0000 / 0.028452
+
+[9/12] Counterfactual pointer-follow control...
+      [25] target B=32 rank=42 selected=44 follow=0
+      [26] target B=33 rank=22 selected=23 follow=0
+      [27] target B=34 rank=32 selected=28 follow=0
+      [28] target B=35 rank=25 selected=17 follow=0
+      [29] target B=36 rank=44 selected=30 follow=0
+      [30] target B=37 rank=44 selected=44 follow=0
+      [31] target B=38 rank=14 selected=06 follow=0
+      [32] target B=39 rank=38 selected=06 follow=0
+      [33] target B=40 rank=12 selected=41 follow=0
+      [34] target B=41 rank=31 selected=44 follow=0
+      [35] target B=42 rank=41 selected=44 follow=0
+      [36] target B=43 rank=26 selected=21 follow=0
+      [37] target B=44 rank=27 selected=30 follow=0
+      [38] target B=45 rank=14 selected=41 follow=0
+      [39] target B=46 rank=12 selected=36 follow=0
+      [40] target B=47 rank=16 selected=44 follow=0
+      [41] target B=48 rank=31 selected=10 follow=0
+      [42] target B=25 rank=35 selected=30 follow=0
+      [43] target B=26 rank=27 selected=21 follow=0
+      [44] target B=27 rank=14 selected=17 follow=0
+      [45] target B=28 rank=31 selected=06 follow=0
+      [46] target B=29 rank=30 selected=23 follow=0
+      [47] target B=30 rank=15 selected=21 follow=0
+      [48] target B=31 rank=30 selected=23 follow=0
+      CF FOLLOW R1/R5/R16/MRR: 0.0000 / 0.0000 / 0.2917 / 0.043806
+
+[10/12] ACETATE diagnostic — fixed L24/r4 Q→K-subspace projection energy...
+      [25/48] ACETATE rank=43 selected B=34
+      [26/48] ACETATE rank=18 selected B=13
+      [27/48] ACETATE rank=22 selected B=13
+      [28/48] ACETATE rank=44 selected B=13
+      [29/48] ACETATE rank=18 selected B=13
+      [30/48] ACETATE rank=20 selected B=13
+      [31/48] ACETATE rank=43 selected B=13
+      [32/48] ACETATE rank=19 selected B=16
+      [33/48] ACETATE rank=28 selected B=13
+      [34/48] ACETATE rank= 6 selected B=16
+      [35/48] ACETATE rank=33 selected B=13
+      [36/48] ACETATE rank=13 selected B=13
+      [37/48] ACETATE rank=26 selected B=20
+      [38/48] ACETATE rank= 7 selected B=13
+      [39/48] ACETATE rank=44 selected B=13
+      [40/48] ACETATE rank=38 selected B=24
+      [41/48] ACETATE rank=25 selected B=13
+      [42/48] ACETATE rank=40 selected B=20
+      [43/48] ACETATE rank=22 selected B=13
+      [44/48] ACETATE rank=34 selected B=13
+      [45/48] ACETATE rank=11 selected B=13
+      [46/48] ACETATE rank= 9 selected B=13
+      [47/48] ACETATE rank=36 selected B=16
+      [48/48] ACETATE rank=41 selected B=13
+      ACETATE L24/r4 R1/R5/R16/MRR: 0.0000 / 0.0000 / 0.2083 / 0.052602
+
+[11/12] Wilson intervals + predeclared decision...
+      PRIMARY  :  0/24 = 0.0000 | 95% Wilson [0.0000,0.1380]
+      UNIFORM  :  2/24 = 0.0833 | 95% Wilson [0.0232,0.2585]
+      NO_A     :  0/24 = 0.0000 | 95% Wilson [0.0000,0.1380]
+      CF       :  0/24 = 0.0000 | 95% Wilson [0.0000,0.1380]
+      ACETATE  :  0/24 = 0.0000 | 95% Wilson [0.0000,0.1380]
+      Primary pass : False
+      Strong pass  : False
+      VERDICT      : HEAD_AVERAGED_NATIVE_ATTENTION_POINTER_NOT_ESTABLISHED
+
+[12/12] Protocol audit...
+      Model frozen                              : YES
+      TEST518 corrected 48-item panel           : YES
+      DISC / EVAL separated                     : YES — 24 / 24
+      EVAL used for arm selection               : NO
+      Query pointer uses native q_proj           : YES
+      Query pointer uses native RoPE             : YES
+      Pointer target uses installed RoPE A K     : YES
+      Pointer layers                             : FIXED L14-L27
+      Gold A position used by address            : NO
+      Gold A position used for diagnostic only   : YES
+      Primary B address token IDs                : NO
+      Primary B address decoded text             : NO
+      Primary B address LM-head rows             : NO
+      Primary B address gold key position        : NO
+      Query-time candidate-B forwards            : 0
+      Primary persistent address source          : BELLEKÖZ K/V ONLY
+      Bank centering source                      : BELLEKÖZ K/V ONLY
+      Training / DRA / learned router            : NONE
+      Acetate L24/r4                             : DIAGNOSTIC ONLY
+      Acetate allowed to replace primary         : NO
+
+================================================================================================================================================================================
+TEST520 FINAL RESULT — AKBASCORE MAM · NATIVE ATTENTION-POINTER ADDRESS
+================================================================================================================================================================================
+MODEL                              : Qwen/Qwen2.5-7B-Instruct · frozen
+PANEL                              : TEST518 corrected 48-item panel
+DISC / EVAL                        : 24 / 24
+FROZEN PRIMARY ARM                 : L02-V
+POINTER                            : native Q·K · RoPE · L14-L27 · A positions
+ADDRESS                            : centered pointed-A tensor ↔ B tensor positions
+TOKEN-ID / GOLD / TEXT ADDRESS     : NONE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DISC PRIMARY                       : R1=0.0833 R5=0.2083 R16=0.4167 MRR=0.171138
+EVAL PRIMARY                       : R1=0.0000 R5=0.0417 R16=0.2083 MRR=0.055210
+EVAL UNIFORM POINTER               : R1=0.0833 R5=0.2500 R16=0.5833 MRR=0.209665
+EVAL NO_A                          : R1=0.0000 R5=0.0000 R16=0.0000 MRR=0.028452
+EVAL COUNTERFACTUAL FOLLOW         : R1=0.0000 R5=0.0000 R16=0.2917 MRR=0.043806
+POINTER GOLD LOCALIZATION          : 0/48 = 0.0000
+ACETATE L24/r4 DIAGNOSTIC          : R1=0.0000 R5=0.0000 R16=0.2083 MRR=0.052602
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PREDECLARED PASS                   : EVAL R1>=.60; R5>=.85; UNIFORM<=.15; NO_A<=.10; CF>=.70
+PRIMARY PASS                       : False
+STRONG PASS                        : False
+TEST518 LOCK                       : d335fa02068644efbe3c54eba8b6ae3a4678fbba3abed972d3f31a401590ae3c
+TEST519 LOCK                       : 2bcf12382a2341ca84fcb1c21a9b52d4c4de79af50ba21d8d3b853f34c9f0f1a
+TEST520 LOCK                       : fb44f20176ae72ce58d9eaf99436e237f4e0548b893a7ee51d8f4d7768b0b806
+TOTAL TEST TIME                    : 75.29s
+VERDICT                            : HEAD_AVERAGED_NATIVE_ATTENTION_POINTER_NOT_ESTABLISHED
+================================================================================================================================================================================
