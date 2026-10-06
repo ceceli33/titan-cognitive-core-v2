@@ -1,0 +1,238 @@
+ 
+==============================================================================================================================================================
+TEST495 — AKBASCORE MAM · MULTI-BELLEKÖZ COMPOSITION / EMERGENT RECONSTRUCTION
+FROZEN TEST482 K120/V128/OWN → PARALLEL MEMORY WORKSPACE → DISTRIBUTED SYNTHESIS
+==============================================================================================================================================================
+LOCK SHA: 2bae3f2497fefb50b3d18d8fb7035c63a08fdd67d80077dd92f4e9c56eca787e
+TEST482 BLOB: ecc630144a44479cb35c432c50eb0d09bc6866d7
+TEST494 LOCK: e8928220100e5e2655d4a7a93e3702ccd08b121f3c1e9fbbff9589b86e2fd384
+TARGET: K-17
+TARGET LITERAL PRESENT IN ANY MEMORY: NO
+
+MEMORY PANEL
+M1: The missing Meridian instrument was transferred with the instruments assigned to the western archive route.
+M2: Only mechanical instruments on the western archive route were moved into the protected recovery section.
+M3: The Meridian instrument is mechanical rather than optical.
+M4: For protected recovery records, the destination code is formed from the archive section letter followed by a hyphen and the active bay number.
+M5: During this transfer, the western archive's protected recovery section was assigned the section letter K.
+M6: The Meridian transfer occurred after the old recovery bay had been permanently closed.
+M7: After the old bay closed, the protected recovery section used bay number seventeen for mechanical instruments.
+M8: The transfer ledger states that the Meridian instrument remained in that protected recovery section and was not moved again.
+
+QUESTION
+What is the complete recovery location code for the missing Meridian instrument? Give only the complete code. If the available records are insufficient to determine the complete code, answer NONE.
+
+[1/10] Loading frozen Qwen...
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 82.1kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 884kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 37.8MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 55.9MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 107MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.59MB/s]
+Download complete: 
+
+ 13.1GB,  277MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  460MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:42<00:00, 42.63s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 100.95it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 28.7kB/s]
+      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | H=3584 | QH=28 KVH=4 | frozen BF16
+[2/10] Building exact TEST482 neutral PCA codebook...
+      BELLEKÖZ codebook ready.
+[3/10] Forging 8 complementary BELLEKÖZ + controls...
+      M1 [1/8] The missing Meridian instrument was transferred with the instruments assigned to the western archive route.
+      M2 [2/8] Only mechanical instruments on the western archive route were moved into the protected recovery section.
+      M3 [3/8] The Meridian instrument is mechanical rather than optical.
+      M4 [4/8] For protected recovery records, the destination code is formed from the archive section letter followed by a hyphen and the active bay number.
+      M5 [5/8] During this transfer, the western archive's protected recovery section was assigned the section letter K.
+      M6 [6/8] The Meridian transfer occurred after the old recovery bay had been permanently closed.
+      M7 [7/8] After the old bay closed, the protected recovery section used bay number seventeen for mechanical instruments.
+      M8 [8/8] The transfer ledger states that the Meridian instrument remained in that protected recovery section and was not moved again.
+      8 primary + 8 distractor + 2 swap packets ready.
+
+[4/10] k=1 regression — TEST482 single-memory install vs parallel workspace...
+      M1 equal=1 | old='NONE\nTo determine the complete recovery location code for the missing Meridian instrument, we need to analyze the given statement and' | new='NONE\nTo determine the complete recovery location code for the missing Meridian instrument, we need to analyze the given statement and'
+      M2 equal=1 | old='00000000000000000000000' | new='00000000000000000000000'
+      M3 equal=1 | old='NONE\n\nThe provided statement "The Meridian instrument is mechanical rather than optical" does not contain any information that would allow' | new='NONE\n\nThe provided statement "The Meridian instrument is mechanical rather than optical" does not contain any information that would allow'
+      M4 equal=1 | old='B-12\n\nThe destination code for the protected recovery records is formed by combining the archive section letter with the active' | new='B-12\n\nThe destination code for the protected recovery records is formed by combining the archive section letter with the active'
+      M5 equal=1 | old='K12\nTo determine the complete recovery location code for the missing Meridian instrument, we need to follow the information' | new='K12\nTo determine the complete recovery location code for the missing Meridian instrument, we need to follow the information'
+      M6 equal=1 | old='NONE\n\nThe provided context does not give any specific information about the recovery location code for the missing Meridian instrument. The' | new='NONE\n\nThe provided context does not give any specific information about the recovery location code for the missing Meridian instrument. The'
+      M7 equal=1 | old='NONE\n\nThe provided answer is correct. The given information does not provide enough details to determine the complete recovery location code for' | new='NONE\n\nThe provided answer is correct. The given information does not provide enough details to determine the complete recovery location code for'
+      M8 equal=1 | old='123456789012\n\nThe provided answer, 12345' | new='123456789012\n\nThe provided answer, 12345'
+
+[5/10] Human-readable critical conditions...
+      NO MEMORY -> '12345678901234567890\n\nThe provided' | target=0
+      M1 ONLY -> 'NONE\nTo determine the complete recovery location code for the missing Meridian instrument, we need to analyze the given statement and' | target=0
+      M2 ONLY -> '00000000000000000000000' | target=0
+      M3 ONLY -> 'NONE\n\nThe provided statement "The Meridian instrument is mechanical rather than optical" does not contain any information that would allow' | target=0
+      M4 ONLY -> 'B-12\n\nThe destination code for the protected recovery records is formed by combining the archive section letter with the active' | target=0
+      M5 ONLY -> 'K12\nTo determine the complete recovery location code for the missing Meridian instrument, we need to follow the information' | target=0
+      M6 ONLY -> 'NONE\n\nThe provided context does not give any specific information about the recovery location code for the missing Meridian instrument. The' | target=0
+      M7 ONLY -> 'NONE\n\nThe provided answer is correct. The given information does not provide enough details to determine the complete recovery location code for' | target=0
+      M8 ONLY -> '123456789012\n\nThe provided answer, 12345' | target=0
+
+      ALL 8 -> 'K-17\n\nExplanation:\nThe question states that the Meridian instrument was transferred to the protected recovery section, and' | target=1
+      ALL EXCEPT M1 -> 'K-17\n\nExplanation:\nThe question states that the Meridian instrument was moved to a protected recovery section where the' | target=1
+      ALL EXCEPT M2 -> 'K-17\n\nThe Meridian instrument\'s recovery location code is formed from the archive section letter "K" followed' | target=1
+      ALL EXCEPT M3 -> 'K-17\n\nExplanation:\nThe question states that the protected recovery section uses the format of the archive section letter followed' | target=1
+      ALL EXCEPT M4 -> "K17\n\nThe Meridian instrument's recovery location code is derived from the information that the protected recovery section where it" | target=1
+      ALL EXCEPT M5 -> 'NONE\n\nThe provided statement does not give enough information to determine the specific bay number for the Meridian instrument. The statement' | target=0
+      ALL EXCEPT M6 -> 'K-17\n\nExplanation:\nThe question states that the Meridian instrument was assigned the section letter K and the active' | target=1
+      ALL EXCEPT M7 -> 'K-1234\n\nExplanation:\nThe question states that the Meridian instrument was transferred to a protected recovery section' | target=0
+      ALL EXCEPT M8 -> 'K-17\n\nExplanation:\nThe question states that the protected recovery section uses the format of the archive section letter followed' | target=1
+
+[6/10] Exhaustive subset lattice — all 255 non-empty subsets...
+      M1                          n=1 margin(TARGET-NONE)=+1.45275
+      M2                          n=1 margin(TARGET-NONE)=+3.65529
+      M3                          n=1 margin(TARGET-NONE)=+2.00832
+      M4                          n=1 margin(TARGET-NONE)=+7.26915
+      M5                          n=1 margin(TARGET-NONE)=+7.54224
+      M6                          n=1 margin(TARGET-NONE)=+2.53218
+      M7                          n=1 margin(TARGET-NONE)=+3.14580
+      M8                          n=1 margin(TARGET-NONE)=+4.99338
+      M1+M2+M3+M4+M5+M6+M7        n=7 margin(TARGET-NONE)=+11.35245
+      M1+M2+M3+M4+M5+M6+M8        n=7 margin(TARGET-NONE)=+9.54270
+      M1+M2+M3+M4+M5+M7+M8        n=7 margin(TARGET-NONE)=+11.90190
+      M1+M2+M3+M4+M6+M7+M8        n=7 margin(TARGET-NONE)=+5.10617
+      M1+M2+M3+M5+M6+M7+M8        n=7 margin(TARGET-NONE)=+8.83094
+      M1+M2+M4+M5+M6+M7+M8        n=7 margin(TARGET-NONE)=+11.82802
+      M1+M3+M4+M5+M6+M7+M8        n=7 margin(TARGET-NONE)=+11.70140
+      M2+M3+M4+M5+M6+M7+M8        n=7 margin(TARGET-NONE)=+12.02716
+      M1+M2+M3+M4+M5+M6+M7+M8     n=8 margin(TARGET-NONE)=+11.14485
+      FULL margin       : +11.144852
+      BEST proper subset: M4+M5+M7+M8 | +13.969626
+      COMPOSITION INDEX : -2.824775
+
+[7/10] Full-set permutation stability — 32 deterministic orders...
+      [01/32] M1-M2-M3-M4-M5-M6-M7-M8 -> 'K-17' | target=1
+      [02/32] M6-M4-M8-M7-M1-M5-M2-M3 -> 'K-17' | target=1
+      [03/32] M4-M1-M7-M5-M8-M2-M3-M6 -> 'K-17' | target=1
+      [04/32] M4-M5-M1-M6-M8-M7-M2-M3 -> 'K-17' | target=1
+      [05/32] M8-M3-M2-M1-M4-M5-M7-M6 -> 'K-17' | target=1
+      [06/32] M4-M1-M6-M3-M5-M8-M2-M7 -> 'K-17' | target=1
+      [07/32] M4-M6-M7-M1-M2-M8-M3-M5 -> 'K-17' | target=1
+      [08/32] M8-M1-M3-M6-M2-M4-M7-M5 -> 'K-17' | target=1
+      [09/32] M2-M8-M3-M5-M7-M4-M1-M6 -> 'K-17' | target=1
+      [10/32] M6-M3-M2-M7-M8-M4-M5-M1 -> 'K-17' | target=1
+      [11/32] M3-M6-M4-M7-M2-M1-M5-M8 -> 'K-17' | target=1
+      [12/32] M4-M8-M3-M7-M2-M1-M5-M6 -> 'K-17' | target=1
+      [13/32] M6-M1-M2-M3-M4-M5-M7-M8 -> 'K-17' | target=1
+      [14/32] M8-M1-M4-M6-M3-M7-M2-M5 -> 'K-17' | target=1
+      [15/32] M4-M2-M1-M8-M7-M3-M6-M5 -> 'K-17' | target=1
+      [16/32] M7-M8-M4-M6-M5-M1-M2-M3 -> 'K-17' | target=1
+      [17/32] M5-M6-M8-M3-M7-M1-M4-M2 -> 'K-17' | target=1
+      [18/32] M4-M8-M3-M6-M2-M7-M1-M5 -> 'K-17' | target=1
+      [19/32] M2-M8-M1-M3-M4-M7-M6-M5 -> 'K-17' | target=1
+      [20/32] M1-M2-M3-M4-M7-M8-M6-M5 -> 'K-17' | target=1
+      [21/32] M6-M5-M3-M2-M7-M8-M1-M4 -> 'K-17' | target=1
+      [22/32] M3-M4-M5-M8-M1-M6-M7-M2 -> 'K-17' | target=1
+      [23/32] M2-M5-M7-M8-M3-M6-M4-M1 -> 'K-17' | target=1
+      [24/32] M7-M2-M1-M5-M4-M3-M6-M8 -> 'K-17' | target=1
+      [25/32] M1-M3-M7-M2-M6-M8-M5-M4 -> 'K-17' | target=1
+      [26/32] M2-M4-M3-M1-M7-M5-M6-M8 -> 'K-17' | target=1
+      [27/32] M8-M2-M6-M5-M4-M1-M3-M7 -> 'K-17' | target=1
+      [28/32] M2-M6-M1-M7-M5-M3-M4-M8 -> 'K-17' | target=1
+      [29/32] M8-M1-M6-M2-M7-M3-M4-M5 -> 'K-17' | target=1
+      [30/32] M3-M4-M8-M5-M1-M6-M2-M7 -> 'K-17' | target=1
+      [31/32] M3-M2-M8-M6-M5-M1-M7-M4 -> 'K-17' | target=1
+      [32/32] M5-M6-M8-M4-M7-M2-M3-M1 -> 'K-17' | target=1
+
+[8/10] Distractor and causal-swap controls...
+      +D1 -> 'K-17\n\nThe Meridian instrument\'s recovery location code is formed from the archive section letter "K" followed' | target=1
+      +D2 -> 'K-17\n\nThe Meridian instrument\'s recovery location code is formed from the archive section letter "K" followed' | target=1
+      +D3 -> 'K-17\n\nExplanation:\nThe question states that the Meridian instrument was moved to a protected recovery section, and' | target=1
+      +D4 -> 'K-17\n\nExplanation:\nThe question states that the Meridian instrument was transferred to the protected recovery section, and' | target=1
+      +D5 -> 'K-17\n\nThe Meridian instrument\'s recovery location code is formed from the archive section letter "K" followed' | target=1
+      +D6 -> 'K-17\n\nExplanation:\nThe question states that the Meridian instrument was transferred to the protected recovery section, and' | target=1
+      +D7 -> 'K-17\n\nThe Meridian instrument\'s recovery location code is formed from the archive section letter "K" followed' | target=1
+      +D8 -> 'K-17\n\nExplanation:\nThe question states that the Meridian instrument was transferred to the protected recovery section, and' | target=1
+      M5 K→Q SWAP -> 'Q-17\n\nExplanation:\nThe question states that the Meridian instrument was transferred to the protected recovery section, and' | original-target=0
+      M7 17→23 SWAP -> 'K-23\n\nExplanation:\nThe question states that the Meridian instrument was transferred to the protected recovery section, and' | original-target=0
+
+[9/10] Contribution anatomy...
+      remove M1 | full=+11.144852 minus-one=+12.027163 Δ=-0.882311 | greedy='K-17\n\nExplanation:\nThe question states that the Meridian instrument was moved to a protected recovery section where the'
+      remove M2 | full=+11.144852 minus-one=+11.701399 Δ=-0.556547 | greedy='K-17\n\nThe Meridian instrument\'s recovery location code is formed from the archive section letter "K" followed'
+      remove M3 | full=+11.144852 minus-one=+11.828021 Δ=-0.683170 | greedy='K-17\n\nExplanation:\nThe question states that the protected recovery section uses the format of the archive section letter followed'
+      remove M4 | full=+11.144852 minus-one=+8.830938 Δ=+2.313913 | greedy="K17\n\nThe Meridian instrument's recovery location code is derived from the information that the protected recovery section where it"
+      remove M5 | full=+11.144852 minus-one=+5.106171 Δ=+6.038681 | greedy='NONE\n\nThe provided statement does not give enough information to determine the specific bay number for the Meridian instrument. The statement'
+      remove M6 | full=+11.144852 minus-one=+11.901897 Δ=-0.757045 | greedy='K-17\n\nExplanation:\nThe question states that the Meridian instrument was assigned the section letter K and the active'
+      remove M7 | full=+11.144852 minus-one=+9.542696 Δ=+1.602155 | greedy='K-1234\n\nExplanation:\nThe question states that the Meridian instrument was transferred to a protected recovery section'
+      remove M8 | full=+11.144852 minus-one=+11.352451 Δ=-0.207599 | greedy='K-17\n\nExplanation:\nThe question states that the protected recovery section uses the format of the archive section letter followed'
+
+==============================================================================================================================================================
+[10/10] TEST495 FINAL RESULT — MULTI-BELLEKÖZ COMPOSITION
+==============================================================================================================================================================
+VALIDATION TYPE             : FIRST MECHANISM / ORACLE MEMORY NEIGHBORHOOD
+MODEL                       : Qwen/Qwen2.5-7B-Instruct · frozen
+BELLEKÖZ                    : TEST482 K120/V128/OWN · unchanged
+MEMORY COUNT                : 8 complementary compressed memories
+TARGET                      : K-17
+TARGET LITERAL IN SOURCES   : NO
+ADDRESS / VTOKEN            : OFF
+MEMORY PRIOR                : NONE
+K/V AVERAGING               : NONE
+MEMORY INTERACTION          : PARALLEL SEQUENCE-DIMENSION CACHE CONCAT
+LOCAL MEMORY POSITIONS      : EACH BELLEKÖZ 0..T-1
+READER POSITION START       : MAX LOCAL BELLEKÖZ LENGTH
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+k=1 REGRESSION              : 8/8 exact greedy-output equality
+NO-MEMORY TARGET            : 0
+SINGLE-MEMORY TARGET        : 0/8
+FULL 8-MEMORY TARGET        : 1
+LEAVE-ONE-OUT TARGET        : 6/8
+PERMUTATION TARGET          : 32/32
+DISTRACTOR TARGET           : 8/8
+POSITIVE REMOVAL Δ          : 3/8
+FULL TARGET-NONE MARGIN     : +11.144852
+BEST PROPER-SUBSET MARGIN   : +13.969626
+COMPOSITION INDEX           : -2.824775
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+NO MEMORY RAW               : '12345678901234567890\n\nThe provided'
+FULL COMPOSITION RAW        : 'K-17\n\nExplanation:\nThe question states that the Meridian instrument was transferred to the protected recovery section, and'
+LETTER-SWAP RAW             : 'Q-17\n\nExplanation:\nThe question states that the Meridian instrument was transferred to the protected recovery section, and'
+BAY-SWAP RAW                : 'K-23\n\nExplanation:\nThe question states that the Meridian instrument was transferred to the protected recovery section, and'
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST482 BLOB SHA            : ecc630144a44479cb35c432c50eb0d09bc6866d7
+TEST482 LOCK SHA            : fa59fd38661e558f6bae22eedff0999f32f8f6e9d4a08932383525323a5fe687
+TEST494 LOCK SHA            : e8928220100e5e2655d4a7a93e3702ccd08b121f3c1e9fbbff9589b86e2fd384
+TEST495 LOCK SHA            : 2bae3f2497fefb50b3d18d8fb7035c63a08fdd67d80077dd92f4e9c56eca787e
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+RETRIEVAL                    : ORACLE / NOT TESTED
+CHANNEL SEARCH               : NONE
+LAYER SEARCH                 : NONE
+HEAD SEARCH                  : NONE
+VTOKEN                       : OFF
+FUSION WEIGHT FIT            : NONE
+ROUTER / ANN / GRAPH         : NONE
+TRAINING / LoRA              : NONE
+BELLEKÖZ COMPRESSION CHANGE  : NONE
+POST-HOC MEMORY SELECTION    : NONE
+TOTAL TEST TIME              : 140.45s
+EXPLORATORY VERDICT          : MULTI_MEMORY_COMPOSITION_NOT_YET_OBSERVED
+
+
+==============================================================================================================================================================
