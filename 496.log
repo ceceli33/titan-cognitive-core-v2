@@ -1,0 +1,289 @@
+ ==============================================================================================================================================================
+TEST496 — AKBASCORE MAM · NECESSARY MULTI-BELLEKÖZ COMPOSITION
+FROZEN TEST482 K120/V128/OWN → TEST495 PARALLEL WORKSPACE → NECESSARY DISTRIBUTED SYNTHESIS
+==============================================================================================================================================================
+LOCK SHA: 5985c4917ad98c83537990b4cb54a7a3a751dbdb1a3b82774839c3cafac8ca67
+TEST482 BLOB: ecc630144a44479cb35c432c50eb0d09bc6866d7
+TEST495 LOCK: 2bae3f2497fefb50b3d18d8fb7035c63a08fdd67d80077dd92f4e9c56eca787e
+TARGET: Q-23
+TARGET LITERAL PRESENT IN PRIMARY MEMORIES: NO
+
+PRIMARY MEMORY PANEL
+M1: The missing Meridian instrument carries seal ORIN. The Atlas instrument carries seal NERA. The Helix instrument carries seal PAVO.
+M2: In the recovery ledger, seal ORIN corresponds to routing class TAV; seal NERA corresponds to class BEX; seal PAVO corresponds to class LUM.
+M3: Routing class TAV is assigned archive section Q; class BEX is assigned section R; class LUM is assigned section V.
+M4: The missing Meridian instrument belongs to transfer batch SEL. The Atlas instrument belongs to batch DOR. The Helix instrument belongs to batch NIM.
+M5: Transfer batch SEL uses active recovery bay 23; batch DOR uses bay 41; batch NIM uses bay 68.
+M6: A complete recovery code is constructed from the instrument's archive section letter, then a hyphen, then its active recovery bay number.
+
+UNRELATED SECOND AXIS
+D1: In the coastal weather survey, station Aster uses wind scale 14 while station Brine uses wind scale 37.
+D2: The botanical archive maps cedar samples to tray J and maple samples to tray W.
+D3: For the lunar photography project, camera group Rho uses exposure sequence 52 and group Sigma uses sequence 19.
+D4: The marine catalog assigns coral specimens to shelf Q while shell specimens are assigned to shelf M.
+D5: In the railway timetable, route Delta reaches platform 23 while route Gamma reaches platform 44.
+D6: The acoustics laboratory labels resonance family TAV as experiment group C and family BEX as experiment group H.
+D7: The astronomy notebook associates marker ORIN with star field 71 and marker NERA with star field 16.
+D8: The greenhouse inventory uses code Q-23 for a fertilizer cabinet unrelated to recovery instruments.
+
+QUESTION
+According to the available records, what is the complete current recovery code of the missing Meridian instrument? Give only the exact code. If the complete code cannot be logically determined from the available records, answer NONE.
+
+[1/11] Loading frozen Qwen...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 83.6kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 955kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 44.5MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 77.6MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 139MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.18MB/s]Download complete:  13.1GB,  168MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  521MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.04s/it]Loading weights: 100% 339/339 [00:03<00:00, 101.01it/s]generation_config.json: 100% 243/243 [00:00<00:00, 32.4kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | H=3584 | QH=28 KVH=4 | frozen BF16
+[2/11] Building exact TEST482 neutral PCA codebook...
+      BELLEKÖZ codebook ready.
+[3/11] Forging primary BELLEKÖZ + unrelated axis + causal controls...
+      M1 [1/6] The missing Meridian instrument carries seal ORIN. The Atlas instrument carries seal NERA. The Helix instrument carries seal PAVO.
+      M2 [2/6] In the recovery ledger, seal ORIN corresponds to routing class TAV; seal NERA corresponds to class BEX; seal PAVO corresponds to class LUM.
+      M3 [3/6] Routing class TAV is assigned archive section Q; class BEX is assigned section R; class LUM is assigned section V.
+      M4 [4/6] The missing Meridian instrument belongs to transfer batch SEL. The Atlas instrument belongs to batch DOR. The Helix instrument belongs to batch NIM.
+      M5 [5/6] Transfer batch SEL uses active recovery bay 23; batch DOR uses bay 41; batch NIM uses bay 68.
+      M6 [6/6] A complete recovery code is constructed from the instrument's archive section letter, then a hyphen, then its active recovery bay number.
+      6 primary + 8 unrelated-axis + 2 causal-swap BELLEKÖZ ready.
+
+[4/11] k=1 regression — TEST482 install vs TEST495 workspace...
+      M1 equal=1 | old='ORIN\n\nThe question asks for the complete current recovery code of the missing Meridian instrument. According' | new='ORIN\n\nThe question asks for the complete current recovery code of the missing Meridian instrument. According'
+      M2 equal=1 | old='NONE\n\nExplanation:\nThe provided information only gives the correspondence between seals and routing classes, but it does' | new='NONE\n\nExplanation:\nThe provided information only gives the correspondence between seals and routing classes, but it does'
+      M3 equal=1 | old='NONE\n\nThe provided information only specifies the archive sections for different routing classes (TAV, BEX' | new='NONE\n\nThe provided information only specifies the archive sections for different routing classes (TAV, BEX'
+      M4 equal=1 | old='NONE\n\nThe provided information does not include any specific recovery codes for the instruments. It only mentions the' | new='NONE\n\nThe provided information does not include any specific recovery codes for the instruments. It only mentions the'
+      M5 equal=1 | old='NONE\n\nThe provided information only specifies the recovery bays for different batches (SEL, DOR,' | new='NONE\n\nThe provided information only specifies the recovery bays for different batches (SEL, DOR,'
+      M6 equal=1 | old='B-2\n\nTo determine the complete current recovery code of the missing Meridian instrument, we need' | new='B-2\n\nTo determine the complete current recovery code of the missing Meridian instrument, we need'
+
+[5/11] Critical human-readable conditions...
+      NO MEMORY -> '1234567890\n\nThe provided answer, 123' | exact-target=0
+      M1 ONLY -> 'ORIN\n\nThe question asks for the complete current recovery code of the missing Meridian instrument. According' | exact-target=0
+      M2 ONLY -> 'NONE\n\nExplanation:\nThe provided information only gives the correspondence between seals and routing classes, but it does' | exact-target=0
+      M3 ONLY -> 'NONE\n\nThe provided information only specifies the archive sections for different routing classes (TAV, BEX' | exact-target=0
+      M4 ONLY -> 'NONE\n\nThe provided information does not include any specific recovery codes for the instruments. It only mentions the' | exact-target=0
+      M5 ONLY -> 'NONE\n\nThe provided information only specifies the recovery bays for different batches (SEL, DOR,' | exact-target=0
+      M6 ONLY -> 'B-2\n\nTo determine the complete current recovery code of the missing Meridian instrument, we need' | exact-target=0
+
+      ALL 6 -> 'ORIN-23\n\nThe recovery code for the missing Meridian instrument is given as "OR' | exact-target=0
+      ALL EXCEPT M1 -> 'ORIN-23\n\nThe recovery code for the missing Meridian instrument is constructed by combining the' | exact-target=0
+      ALL EXCEPT M2 -> 'ORIN-23\n\nThe reasoning is as follows:\n- The problem states that the missing Mer' | exact-target=0
+      ALL EXCEPT M3 -> 'ORIN-23\n\nThe recovery code for the missing Meridian instrument is constructed by combining the' | exact-target=0
+      ALL EXCEPT M4 -> 'ORIN-23\n\nThe recovery code for the missing Meridian instrument is given by the information' | exact-target=0
+      ALL EXCEPT M5 -> "ORIN\n\nThe missing Meridian instrument's recovery code is ORIN, as per the information provided" | exact-target=0
+      ALL EXCEPT M6 -> 'ORIN\n\nThe reasoning is as follows:\n\n1. The problem states that the missing Meridian instrument' | exact-target=0
+
+[6/11] Exhaustive subset lattice — all 63 non-empty subsets...
+      M1                   n=1 target-v-bestfoil=-1.37919
+      M2                   n=1 target-v-bestfoil=-1.38141
+      M3                   n=1 target-v-bestfoil=+0.44770
+      M4                   n=1 target-v-bestfoil=-0.48541
+      M5                   n=1 target-v-bestfoil=-1.87945
+      M6                   n=1 target-v-bestfoil=-0.29755
+      M1+M2                n=2 target-v-bestfoil=+0.45581
+      M1+M3                n=2 target-v-bestfoil=-0.53163
+      M1+M4                n=2 target-v-bestfoil=-0.88231
+      M1+M5                n=2 target-v-bestfoil=-1.54651
+      M1+M6                n=2 target-v-bestfoil=-2.98045
+      M2+M3                n=2 target-v-bestfoil=-0.59834
+      M2+M4                n=2 target-v-bestfoil=-0.94293
+      M2+M5                n=2 target-v-bestfoil=-1.57737
+      M2+M6                n=2 target-v-bestfoil=-1.61042
+      M3+M4                n=2 target-v-bestfoil=-0.36458
+      M3+M5                n=2 target-v-bestfoil=-0.12385
+      M3+M6                n=2 target-v-bestfoil=-0.63808
+      M4+M5                n=2 target-v-bestfoil=-1.81926
+      M4+M6                n=2 target-v-bestfoil=-2.62263
+      M5+M6                n=2 target-v-bestfoil=-2.16753
+      M1+M2+M3             n=3 target-v-bestfoil=-0.15101
+      M1+M2+M4             n=3 target-v-bestfoil=+0.46409
+      M1+M2+M5             n=3 target-v-bestfoil=-0.90056
+      M1+M2+M6             n=3 target-v-bestfoil=-1.50264
+      M1+M3+M4             n=3 target-v-bestfoil=-1.44940
+      M1+M3+M5             n=3 target-v-bestfoil=-1.74812
+      M1+M3+M6             n=3 target-v-bestfoil=+0.06487
+      M1+M4+M5             n=3 target-v-bestfoil=-1.74471
+      M1+M4+M6             n=3 target-v-bestfoil=-2.85410
+      M1+M5+M6             n=3 target-v-bestfoil=-2.32238
+      M2+M3+M4             n=3 target-v-bestfoil=-0.48044
+      M2+M3+M5             n=3 target-v-bestfoil=-0.07332
+      M2+M3+M6             n=3 target-v-bestfoil=-1.17248
+      M2+M4+M5             n=3 target-v-bestfoil=-2.27533
+      M2+M4+M6             n=3 target-v-bestfoil=-2.45828
+      M2+M5+M6             n=3 target-v-bestfoil=-2.22006
+      M3+M4+M5             n=3 target-v-bestfoil=-0.33257
+      M3+M4+M6             n=3 target-v-bestfoil=+0.31320
+      M3+M5+M6             n=3 target-v-bestfoil=-0.51362
+      M4+M5+M6             n=3 target-v-bestfoil=-2.43902
+      M1+M2+M3+M4          n=4 target-v-bestfoil=-1.02572
+      M1+M2+M3+M5          n=4 target-v-bestfoil=-2.32700
+      M1+M2+M3+M6          n=4 target-v-bestfoil=+0.24873
+      M1+M2+M4+M5          n=4 target-v-bestfoil=-0.71093
+      M1+M2+M4+M6          n=4 target-v-bestfoil=-1.95699
+      M1+M2+M5+M6          n=4 target-v-bestfoil=-1.62941
+      M1+M3+M4+M5          n=4 target-v-bestfoil=-1.89264
+      M1+M3+M4+M6          n=4 target-v-bestfoil=+0.28630
+      M1+M3+M5+M6          n=4 target-v-bestfoil=+0.80786
+      M1+M4+M5+M6          n=4 target-v-bestfoil=-2.20598
+      M2+M3+M4+M5          n=4 target-v-bestfoil=-1.31243
+      M2+M3+M4+M6          n=4 target-v-bestfoil=+0.28019
+      M2+M3+M5+M6          n=4 target-v-bestfoil=-0.53541
+      M2+M4+M5+M6          n=4 target-v-bestfoil=-2.58971
+      M3+M4+M5+M6          n=4 target-v-bestfoil=+2.83136
+      M1+M2+M3+M4+M5       n=5 target-v-bestfoil=-2.50355
+      M1+M2+M3+M4+M6       n=5 target-v-bestfoil=+0.33982
+      M1+M2+M3+M5+M6       n=5 target-v-bestfoil=+0.21069
+      M1+M2+M4+M5+M6       n=5 target-v-bestfoil=-1.78489
+      M1+M3+M4+M5+M6       n=5 target-v-bestfoil=+0.70540
+      M2+M3+M4+M5+M6       n=5 target-v-bestfoil=+1.27839
+      M1+M2+M3+M4+M5+M6    n=6 target-v-bestfoil=+0.30522
+      FULL margin       : +0.305220
+      BEST proper subset: M3+M4+M5+M6 | +2.831356
+      COMPOSITION INDEX : -2.526136
+
+[7/11] All leave-one-out contribution diagnostics...
+      remove M1 | full=+0.305220 minus-one=+1.278386 Δ=-0.973165 | raw='ORIN-23\n\nThe recovery code for the missing Meridian instrument is constructed by combining the'
+      remove M2 | full=+0.305220 minus-one=+0.705402 Δ=-0.400182 | raw='ORIN-23\n\nThe reasoning is as follows:\n- The problem states that the missing Mer'
+      remove M3 | full=+0.305220 minus-one=-1.784895 Δ=+2.090115 | raw='ORIN-23\n\nThe recovery code for the missing Meridian instrument is constructed by combining the'
+      remove M4 | full=+0.305220 minus-one=+0.210687 Δ=+0.094533 | raw='ORIN-23\n\nThe recovery code for the missing Meridian instrument is given by the information'
+      remove M5 | full=+0.305220 minus-one=+0.339817 Δ=-0.034597 | raw="ORIN\n\nThe missing Meridian instrument's recovery code is ORIN, as per the information provided"
+      remove M6 | full=+0.305220 minus-one=-2.503555 Δ=+2.808775 | raw='ORIN\n\nThe reasoning is as follows:\n\n1. The problem states that the missing Meridian instrument'
+
+[8/11] Full-set order invariance — 64 deterministic permutations...
+      [01/64] M1-M2-M3-M4-M5-M6 -> 'ORIN-23' | exact=0
+      [02/64] M3-M2-M1-M5-M4-M6 -> 'ORIN-23' | exact=0
+      [03/64] M4-M1-M3-M5-M2-M6 -> 'ORIN-23' | exact=0
+      [04/64] M1-M4-M6-M3-M5-M2 -> 'ORIN-23' | exact=0
+      [05/64] M3-M4-M5-M2-M1-M6 -> 'ORIN-23' | exact=0
+      [06/64] M4-M3-M1-M6-M2-M5 -> 'ORIN-23' | exact=0
+      [07/64] M2-M1-M4-M3-M6-M5 -> 'ORIN-23' | exact=0
+      [08/64] M1-M3-M4-M6-M5-M2 -> 'ORIN-23' | exact=0
+      [09/64] M3-M1-M6-M2-M4-M5 -> 'ORIN-23' | exact=0
+      [10/64] M3-M5-M1-M4-M2-M6 -> 'ORIN-23' | exact=0
+      [11/64] M6-M3-M5-M4-M1-M2 -> 'ORIN' | exact=0
+      [12/64] M3-M2-M1-M6-M4-M5 -> 'ORIN-23' | exact=0
+      [13/64] M5-M3-M1-M4-M6-M2 -> 'ORIN-23' | exact=0
+      [14/64] M4-M6-M2-M5-M1-M3 -> 'ORIN-23' | exact=0
+      [15/64] M6-M1-M3-M4-M2-M5 -> 'ORIN-23' | exact=0
+      [16/64] M5-M1-M2-M6-M3-M4 -> 'ORIN-23' | exact=0
+      [17/64] M4-M2-M1-M5-M3-M6 -> 'ORIN-23' | exact=0
+      [18/64] M3-M1-M5-M6-M2-M4 -> 'ORIN-23' | exact=0
+      [19/64] M4-M3-M5-M1-M2-M6 -> 'ORIN-23' | exact=0
+      [20/64] M5-M6-M2-M1-M3-M4 -> 'ORIN-23' | exact=0
+      [21/64] M3-M1-M4-M2-M6-M5 -> 'ORIN-23' | exact=0
+      [22/64] M2-M3-M4-M1-M5-M6 -> 'ORIN-23' | exact=0
+      [23/64] M4-M3-M1-M2-M6-M5 -> 'ORIN-23' | exact=0
+      [24/64] M4-M1-M6-M5-M2-M3 -> 'ORIN-23' | exact=0
+      [25/64] M2-M5-M1-M3-M4-M6 -> 'ORIN-23' | exact=0
+      [26/64] M2-M5-M6-M4-M3-M1 -> 'ORIN-23' | exact=0
+      [27/64] M2-M5-M1-M6-M4-M3 -> 'ORIN-23' | exact=0
+      [28/64] M6-M1-M4-M3-M5-M2 -> 'ORIN-23' | exact=0
+      [29/64] M1-M4-M2-M6-M3-M5 -> 'ORIN-23' | exact=0
+      [30/64] M4-M1-M5-M2-M3-M6 -> 'ORIN-23' | exact=0
+      [31/64] M4-M3-M6-M5-M2-M1 -> 'ORIN-23' | exact=0
+      [32/64] M4-M3-M2-M6-M1-M5 -> 'ORIN-23' | exact=0
+      [33/64] M5-M4-M6-M1-M3-M2 -> 'ORIN-23' | exact=0
+      [34/64] M2-M4-M1-M6-M5-M3 -> 'ORIN-23' | exact=0
+      [35/64] M1-M4-M6-M5-M2-M3 -> 'ORIN-23' | exact=0
+      [36/64] M2-M1-M4-M5-M3-M6 -> 'ORIN-23' | exact=0
+      [37/64] M3-M4-M5-M1-M2-M6 -> 'ORIN-23' | exact=0
+      [38/64] M6-M5-M2-M1-M4-M3 -> 'ORIN-23' | exact=0
+      [39/64] M1-M2-M3-M6-M5-M4 -> 'ORIN-23' | exact=0
+      [40/64] M1-M6-M2-M4-M5-M3 -> 'ORIN-23' | exact=0
+      [41/64] M3-M4-M2-M5-M6-M1 -> 'ORIN-23' | exact=0
+      [42/64] M6-M2-M3-M4-M1-M5 -> 'ORIN-23' | exact=0
+      [43/64] M6-M2-M4-M3-M5-M1 -> 'ORIN-23' | exact=0
+      [44/64] M5-M6-M4-M3-M2-M1 -> 'ORIN-23' | exact=0
+      [45/64] M1-M3-M4-M6-M2-M5 -> 'ORIN-23' | exact=0
+      [46/64] M4-M6-M2-M1-M5-M3 -> 'ORIN-23' | exact=0
+      [47/64] M3-M2-M4-M5-M1-M6 -> 'ORIN-23' | exact=0
+      [48/64] M4-M5-M6-M1-M3-M2 -> 'ORIN-23' | exact=0
+      [49/64] M6-M4-M3-M1-M5-M2 -> 'ORIN-23' | exact=0
+      [50/64] M6-M5-M2-M3-M4-M1 -> 'ORIN-23' | exact=0
+      [51/64] M2-M5-M1-M4-M3-M6 -> 'ORIN-23' | exact=0
+      [52/64] M3-M5-M6-M4-M1-M2 -> 'ORIN-23' | exact=0
+      [53/64] M4-M2-M1-M5-M6-M3 -> 'ORIN-23' | exact=0
+      [54/64] M1-M3-M4-M5-M6-M2 -> 'ORIN-23' | exact=0
+      [55/64] M5-M6-M1-M2-M4-M3 -> 'ORIN-23' | exact=0
+      [56/64] M3-M4-M1-M2-M6-M5 -> 'ORIN-23' | exact=0
+      [57/64] M6-M2-M5-M1-M4-M3 -> 'ORIN-23' | exact=0
+      [58/64] M3-M4-M2-M1-M6-M5 -> 'ORIN-23' | exact=0
+      [59/64] M3-M1-M2-M4-M5-M6 -> 'ORIN-23' | exact=0
+      [60/64] M5-M4-M6-M1-M2-M3 -> 'ORIN-23' | exact=0
+      [61/64] M5-M2-M4-M3-M1-M6 -> 'ORIN-23' | exact=0
+      [62/64] M5-M6-M2-M3-M4-M1 -> 'ORIN-23' | exact=0
+      [63/64] M4-M5-M2-M1-M6-M3 -> 'ORIN-23' | exact=0
+      [64/64] M3-M1-M6-M4-M2-M5 -> 'ORIN-23' | exact=0
+
+[9/11] Unrelated-axis contamination...
+      +D1 -> 'ORIN-23\n\nThe recovery code for the missing Meridian instrument is constructed by combining the' | exact-target=0
+      +D2 -> "ORIN\n\nThe missing Meridian instrument's recovery code is ORIN, as per the information provided" | exact-target=0
+      +D3 -> 'ORIN-23\n\nThe recovery code for the missing Meridian instrument is given as the instrument' | exact-target=0
+      +D4 -> 'ORIN-23\n\nThe reasoning is as follows:\n- The problem states that the Meridian' | exact-target=0
+      +D5 -> 'ORIN-23\n\nThe recovery code for the missing Meridian instrument is constructed by combining the' | exact-target=0
+      +D6 -> 'TAV-23\n\nThe reasoning is as follows:\n\n1. The problem states that the Mer' | exact-target=0
+      +D7 -> 'ORIN-23\n\nThe reasoning is as follows:\n- The problem states that the missing Mer' | exact-target=0
+      +D8 -> "Q-23\n\nThe missing Meridian instrument's recovery code is Q-23, as" | exact-target=1
+
+[10/11] Causal substitutions...
+      M3 Q→Z intervention -> 'ORIN-23\n\nThe recovery code for the missing Meridian instrument is given as "OR' | expected Z-23=0
+      M5 23→57 intervention -> "ORIN\n\nThe missing Meridian instrument's recovery code is ORIN, as per the information provided" | expected Q-57=0
+
+==============================================================================================================================================================
+[11/11] TEST496 FINAL RESULT — NECESSARY MULTI-BELLEKÖZ COMPOSITION
+==============================================================================================================================================================
+VALIDATION TYPE             : FROZEN MECHANISM / NECESSARY-COMPOSITION TEST
+MODEL                       : Qwen/Qwen2.5-7B-Instruct · frozen
+BELLEKÖZ                    : TEST482 K120/V128/OWN · unchanged
+WORKSPACE                   : TEST495 parallel sequence-dimension concat · unchanged
+PRIMARY MEMORY COUNT        : 6
+UNRELATED AXIS COUNT        : 8 controls
+TARGET                      : Q-23
+TARGET LITERAL IN PRIMARY   : NO
+ADDRESS / VTOKEN            : OFF
+TOP-K                       : NONE
+ROUTER                      : NONE
+ANN / GRAPH                 : NONE
+MEMORY PRIOR                : NONE
+K/V AVERAGING               : NONE
+ORACLE NEIGHBORHOOD         : YES · composition isolation only
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+k=1 REGRESSION              : 6/6
+NO-MEMORY EXACT TARGET      : 0
+SINGLE EXACT TARGET         : 0/6
+FULL 6 EXACT TARGET         : 0
+LEAVE-ONE-OUT EXACT TARGET  : 0/6
+POSITIVE REMOVAL Δ          : 3/6
+PERMUTATION EXACT TARGET    : 0/64
+UNRELATED-AXIS EXACT TARGET : 1/8
+SECTION CAUSAL SWAP         : FAIL
+BAY CAUSAL SWAP             : FAIL
+FULL TARGET-v-FOIL MARGIN   : +0.305220
+BEST PROPER-SUBSET MARGIN   : +2.831356
+COMPOSITION INDEX           : -2.526136
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+NO MEMORY RAW               : '1234567890\n\nThe provided answer, 123'
+FULL COMPOSITION RAW        : 'ORIN-23\n\nThe recovery code for the missing Meridian instrument is given as "OR'
+WITHOUT M1 RAW             : 'ORIN-23\n\nThe recovery code for the missing Meridian instrument is constructed by combining the'
+WITHOUT M2 RAW             : 'ORIN-23\n\nThe reasoning is as follows:\n- The problem states that the missing Mer'
+WITHOUT M3 RAW             : 'ORIN-23\n\nThe recovery code for the missing Meridian instrument is constructed by combining the'
+WITHOUT M4 RAW             : 'ORIN-23\n\nThe recovery code for the missing Meridian instrument is given by the information'
+WITHOUT M5 RAW             : "ORIN\n\nThe missing Meridian instrument's recovery code is ORIN, as per the information provided"
+WITHOUT M6 RAW             : 'ORIN\n\nThe reasoning is as follows:\n\n1. The problem states that the missing Meridian instrument'
+SECTION-SWAP RAW            : 'ORIN-23\n\nThe recovery code for the missing Meridian instrument is given as "OR'
+BAY-SWAP RAW                : "ORIN\n\nThe missing Meridian instrument's recovery code is ORIN, as per the information provided"
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST482 BLOB SHA            : ecc630144a44479cb35c432c50eb0d09bc6866d7
+TEST482 LOCK SHA            : fa59fd38661e558f6bae22eedff0999f32f8f6e9d4a08932383525323a5fe687
+TEST495 LOCK SHA            : 2bae3f2497fefb50b3d18d8fb7035c63a08fdd67d80077dd92f4e9c56eca787e
+TEST496 LOCK SHA            : 5985c4917ad98c83537990b4cb54a7a3a751dbdb1a3b82774839c3cafac8ca67
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+HUMAN FILE SYSTEM           : NONE
+RETRIEVAL                    : NOT TESTED / ORACLE ISOLATION
+CHANNEL SEARCH               : NONE
+LAYER SEARCH                 : NONE
+HEAD SEARCH                  : NONE
+VTOKEN                       : OFF
+FUSION WEIGHT FIT            : NONE
+TRAINING / LoRA              : NONE
+BELLEKÖZ COMPRESSION CHANGE  : NONE
+POST-HOC MEMORY SELECTION    : NONE
+TOTAL TEST TIME              : 142.94s
+EXPLORATORY VERDICT          : NECESSARY_MULTI_MEMORY_COMPOSITION_NOT_YET_OBSERVED
+==============================================================================================================================================================
