@@ -1,0 +1,203 @@
+ ================================================================================================================================================================================
+TEST516 — AKBASCORE MAM · TEXT-FREE NUMERIC HANDOFF INTO AN INDEPENDENT BELLEKÖZ
+FROZEN L27+SOFT2 ADDRESS → FRESH B SESSION → NUMERIC TWO-SLOT HANDOFF → FINAL VALUE
+================================================================================================================================================================================
+LOCK SHA: 53f4fa86f1bc4f2c4db412bde68a2b004afc5a6c6cf84d1c3345b175ab1a3e8d
+PARENT TEST504: 74c375373666c840105cc165b90977c56c8698cf3d5617c63f619a0139386846
+PARENT TEST514: 61e83ffe4b57cbafa0f4ef8a3fe516a153818fa43e87176941fd01ec8ad24146
+PARENT TEST515: cf9e875f1a8fa8403f688c7150ea9bfec4dd3bea407cf2ce44f27e1961c9f7fa
+A||B CACHE CONCATENATION: FORBIDDEN
+INTERMEDIATE DECODE / TEXT REINSERTION: NONE
+
+[1/9] Loading frozen Qwen...
+config.json: 100% 663/663 [00:00<00:00, 81.2kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 717kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+vocab.json: 100% 2.78M/2.78M [00:00<00:00, 83.0MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 56.0MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 121MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.49MB/s]Download complete:  13.1GB,  203MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  435MB/s  Fetching 4 files: 100% 4/4 [00:45<00:00,  9.00s/it]Loading weights: 100% 339/339 [00:04<00:00, 99.25it/s]generation_config.json: 100% 243/243 [00:00<00:00, 31.0kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L H=3584 QH=28 KVH=4 HD=128 | frozen BF16
+
+[2/9] Freezing TEST513/514 SOFT2 geometry...
+      L27: FROZEN
+      SOFT2: FROZEN
+      Address dimension: 7169
+      Handoff carrier: 2 numeric H-dimensional slots
+      No Seal string is decoded into runtime handoff.
+
+[3/9] OFFLINE FORGE — building persistent A/B tensor cartridges...
+      ITEM 01 | A tokens=25 B tokens=32
+      ITEM 02 | A tokens=24 B tokens=30
+      ITEM 03 | A tokens=25 B tokens=31
+      ITEM 04 | A tokens=24 B tokens=29
+      ITEM 05 | A tokens=26 B tokens=31
+      64 persistent tensor cartridges forged.
+
+[4/9] PERSISTENCE RESET...
+      Forge-time runtime state discarded.
+      Persistent BELLEKÖZ memory = tensor packets only.
+      Human-readable ITEMS remain host-side construction/evaluation metadata.
+      New query sessions create fresh DynamicCache objects.
+      Model parameters remain frozen.
+
+[5/9] Fresh-session address phase...
+      [01/32] Aldren | B-rank= 1 selected=B01
+      [02/32] Elara  | B-rank= 2 selected=B09
+      [03/32] Ilyra  | B-rank= 1 selected=B03
+      [04/32] Joren  | B-rank= 1 selected=B04
+      [05/32] Neris  | B-rank= 1 selected=B05
+      [06/32] Ralen  | B-rank= 1 selected=B06
+      [07/32] Saren  | B-rank= 2 selected=B19
+      [08/32] Weyra  | B-rank= 1 selected=B08
+      [09/32] Avel   | B-rank= 1 selected=B09
+      [10/32] Brann  | B-rank= 1 selected=B10
+      [11/32] Felis  | B-rank= 1 selected=B11
+      [12/32] Jaris  | B-rank= 3 selected=B05
+      [13/32] Koren  | B-rank= 1 selected=B13
+      [14/32] Orel   | B-rank= 1 selected=B14
+      [15/32] Teren  | B-rank= 1 selected=B15
+      [16/32] Urian  | B-rank= 1 selected=B16
+      [17/32] Yalen  | B-rank= 1 selected=B17
+      [18/32] Coren  | B-rank= 1 selected=B18
+      [19/32] Derin  | B-rank= 1 selected=B19
+      [20/32] Heron  | B-rank= 1 selected=B20
+      [21/32] Laven  | B-rank= 2 selected=B01
+      [22/32] Moris  | B-rank= 1 selected=B22
+      [23/32] Rovis  | B-rank= 1 selected=B23
+      [24/32] Veris  | B-rank= 1 selected=B24
+      [25/32] Waren  | B-rank= 2 selected=B22
+      [26/32] Aren   | B-rank= 2 selected=B07
+      [27/32] Elen   | B-rank=28 selected=B02
+      [28/32] Faren  | B-rank= 2 selected=B06
+      [29/32] Joris  | B-rank= 2 selected=B04
+      [30/32] Noren  | B-rank= 1 selected=B30
+      [31/32] Oris   | B-rank= 1 selected=B31
+      [32/32] Toren  | B-rank= 1 selected=B32
+      ADDRESS R1/R5/MRR: 0.7188 / 0.9688 / 0.839658
+
+[6/9] Independent B numeric-handoff arms...
+      [01/32] Aldren FEN->QAL | addr=1 SEL=0 OR=1 WRONG=0 ZERO=0
+               selected B=B01 | selected='QAC'
+               oracle='QAL' | wrong='MEX' | zero='QAC'
+      [02/32] Elara  VAN->SOD | addr=0 SEL=0 OR=1 WRONG=1 ZERO=1
+               selected B=B09 | selected='QAM'
+               oracle='SOD' | wrong='SOD' | zero='SOD'
+      [03/32] Ilyra  BEK->QAD | addr=1 SEL=1 OR=1 WRONG=0 ZERO=0
+      [04/32] Joren  TUR->QAH | addr=1 SEL=1 OR=1 WRONG=0 ZERO=0
+      [05/32] Neris  CER->GAM | addr=1 SEL=1 OR=1 WRONG=1 ZERO=1
+      [06/32] Ralen  XAL->ROK | addr=1 SEL=1 OR=1 WRONG=0 ZERO=0
+      [07/32] Saren  RUK->LER | addr=0 SEL=0 OR=1 WRONG=0 ZERO=0
+               selected B=B19 | selected='HAX'
+               oracle='LER' | wrong='VOR' | zero='VOR'
+      [08/32] Weyra  MUR->WER | addr=1 SEL=1 OR=1 WRONG=1 ZERO=1
+      [09/32] Avel   VIR->QAM | addr=1 SEL=1 OR=1 WRONG=0 ZERO=0
+      [10/32] Brann  FER->CAL | addr=1 SEL=1 OR=1 WRONG=0 ZERO=0
+      [11/32] Felis  HIL->RIM | addr=1 SEL=1 OR=1 WRONG=0 ZERO=0
+      [12/32] Jaris  CIR->JAX | addr=0 SEL=0 OR=1 WRONG=0 ZERO=1
+               selected B=B05 | selected='GAM'
+               oracle='JAX' | wrong='RIN' | zero='JAX'
+      [13/32] Koren  CEN->BUN | addr=1 SEL=0 OR=1 WRONG=0 ZERO=0
+               selected B=B13 | selected='FOV'
+               oracle='BUN' | wrong='FOV' | zero='FOV'
+      [14/32] Orel   SEN->BOL | addr=1 SEL=1 OR=1 WRONG=1 ZERO=1
+      [15/32] Teren  SUL->VEX | addr=1 SEL=1 OR=1 WRONG=0 ZERO=0
+      [16/32] Urian  GUL->ZOL | addr=1 SEL=1 OR=1 WRONG=1 ZERO=0
+      [17/32] Yalen  ZOR->YER | addr=1 SEL=1 OR=1 WRONG=0 ZERO=1
+      [18/32] Coren  IVO->ZAR | addr=1 SEL=1 OR=1 WRONG=0 ZERO=0
+      [19/32] Derin  RAS->QAE | addr=1 SEL=0 OR=0 WRONG=0 ZERO=0
+               selected B=B19 | selected='RAS'
+               oracle='RAS' | wrong='HAX' | zero='HAX'
+      [20/32] Heron  NUR->HIN | addr=1 SEL=1 OR=1 WRONG=1 ZERO=1
+      [21/32] Laven  FIR->QAG | addr=0 SEL=0 OR=1 WRONG=0 ZERO=0
+               selected B=B01 | selected='QAC'
+               oracle='QAG' | wrong='QAB' | zero='QAB'
+      [22/32] Moris  KET->KON | addr=1 SEL=1 OR=1 WRONG=0 ZERO=0
+      [23/32] Rovis  RIN->VIL | addr=1 SEL=1 OR=1 WRONG=1 ZERO=0
+      [24/32] Veris  TEV->VOL | addr=1 SEL=1 OR=1 WRONG=0 ZERO=0
+      [25/32] Waren  KOR->CIX | addr=0 SEL=0 OR=1 WRONG=0 ZERO=0
+               selected B=B22 | selected='KON'
+               oracle='CIX' | wrong='KAV' | zero='BEX'
+      [26/32] Aren   URB->HES | addr=0 SEL=0 OR=1 WRONG=1 ZERO=0
+               selected B=B07 | selected='LER'
+               oracle='HES' | wrong='HES' | zero='YUL'
+      [27/32] Elen   VEL->JUR | addr=0 SEL=0 OR=1 WRONG=1 ZERO=0
+               selected B=B02 | selected='SOD'
+               oracle='JUR' | wrong='JUR' | zero='TEK'
+      [28/32] Faren  XEN->LAR | addr=0 SEL=0 OR=1 WRONG=0 ZERO=0
+               selected B=B06 | selected='ROK'
+               oracle='LAR' | wrong='GEL' | zero='GEL'
+      [29/32] Joris  TOL->PIV | addr=0 SEL=0 OR=1 WRONG=1 ZERO=0
+               selected B=B04 | selected='HUR'
+               oracle='PIV' | wrong='PIV' | zero='SUM'
+      [30/32] Noren  YOR->QAA | addr=1 SEL=1 OR=1 WRONG=0 ZERO=1
+      [31/32] Oris   MAR->SAL | addr=1 SEL=1 OR=1 WRONG=0 ZERO=0
+      [32/32] Toren  PEL->PER | addr=1 SEL=1 OR=1 WRONG=1 ZERO=0
+
+[7/9] Failure localization...
+      SELECTED    : 20/32 = 0.6250
+      ORACLE      : 31/32 = 0.9688
+      WRONG       : 11/32 = 0.3438
+      NO_CARRIER  :  8/32 = 0.2500
+      Correct address                    : 23/32 = 0.7188
+      SELECTED success | address correct : 20/23 = 0.8696
+      Correct address but handoff fail   : 3
+      Wrong address but accidental pass  : 0
+
+[8/9] Causal controls...
+      ORACLE - WRONG carrier : +0.6250
+      ORACLE - ZERO carrier  : +0.7188
+      SELECTED - ZERO        : +0.3750
+
+[9/9] Protocol audit...
+      Model weights frozen                  : YES
+      Forge/runtime state separated          : YES
+      Fresh cache each query/read            : YES
+      A and B cache concatenated             : NO
+      Gold B used in SELECTED arm            : NO
+      Intermediate Seal decoded              : NO
+      Intermediate Seal token IDs inserted   : NO
+      Intermediate text reinserted           : NO
+      Candidate B model forwards to select   : 0
+      Learned router / ANN / DRA / training  : NONE
+      Item-specific reader prompt            : NO
+      Numeric handoff slots                  : 2
+      Persistent BELLEKÖZ representation     : TENSOR
+      Human-readable ITEMS at runtime host   : EVALUATION METADATA ONLY
+      SELECTED path reads gold metadata      : NO
+      ORACLE/WRONG controls read gold metadata: YES — CONTROL ARMS ONLY
+
+================================================================================================================================================================================
+TEST516 FINAL RESULT — AKBASCORE MAM · TEXT-FREE NUMERIC HANDOFF
+================================================================================================================================================================================
+MODEL                              : Qwen/Qwen2.5-7B-Instruct · frozen
+PERSISTENCE                        : forge → reset → fresh runtime state
+PERSISTENT BELLEKÖZ                : tensor packets
+A/B RELATION                       : NEVER CONCATENATED
+TRACE                              : L27 · frozen
+ADDRESS                            : SOFT2 · frozen
+INTERMEDIATE DECODE                : NONE
+TEXT REINSERTION                   : NONE
+B READ                             : independent fresh session
+HANDOFF                            : numeric 2-slot embedding carrier
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ADDRESS R1                         : 0.7188
+ADDRESS R5                         : 0.9688
+ADDRESS MRR                        : 0.839658
+SELECTED NUMERIC E2E               : 20/32 = 0.6250
+ORACLE NUMERIC HANDOFF             : 31/32 = 0.9688
+WRONG NUMERIC CARRIER              : 11/32 = 0.3438
+ZERO CARRIER                       :  8/32 = 0.2500
+SELECTED | CORRECT ADDRESS         : 20/23 = 0.8696
+CORRECT ADDRESS / HANDOFF FAIL     : 3
+WRONG ADDRESS / ACCIDENTAL PASS    : 0
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ORACLE - WRONG                     : +0.6250
+ORACLE - ZERO                      : +0.7188
+SELECTED - ZERO                    : +0.3750
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST503 LOCK                       : 2cb70ffa53a98efb249590dba7ef184b9e41cf72a99291bda65e6c93b82cb5de
+TEST504 LOCK                       : 74c375373666c840105cc165b90977c56c8698cf3d5617c63f619a0139386846
+TEST508 LOCK                       : 47512c7860268517670ca5b45b6e76fe1582362dd38e447d164f33c756a1a2ca
+TEST513 LOCK                       : 2b28137b12a26517261d0d8827c378f7e9e455bd5f4ccb12af47277ed8de01aa
+TEST514 LOCK                       : 61e83ffe4b57cbafa0f4ef8a3fe516a153818fa43e87176941fd01ec8ad24146
+TEST515 LOCK                       : cf9e875f1a8fa8403f688c7150ea9bfec4dd3bea407cf2ce44f27e1961c9f7fa
+TEST516 LOCK                       : 53f4fa86f1bc4f2c4db412bde68a2b004afc5a6c6cf84d1c3345b175ab1a3e8d
+TOTAL TEST TIME                    : 107.82s
+VERDICT                            : TEXT_FREE_NUMERIC_HANDOFF_INTO_INDEPENDENT_B_OBSERVED
+================================================================================================================================================================================
