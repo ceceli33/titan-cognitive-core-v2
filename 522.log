@@ -1,0 +1,223 @@
+ ================================================================================================================================================================================
+TEST522 — AKBASCORE MAM · ÇAĞRIİZ HEAD×LAYER X-RAY
+392 NATIVE ATTENTION CHANNELS · FROZEN L02-V UNCENTERED ADDRESS · DISC32 / INTERNAL-EVAL32
+================================================================================================================================================================================
+
+[1/11] Loading frozen Qwen...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 86.4kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 949kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 85.7MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 75.2MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 121MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 2.64MB/s]Download complete:  13.1GB,  406MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  484MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.18s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.13it/s]generation_config.json: 100% 243/243 [00:00<00:00, 29.8kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L H=3584 QH=28 KVH=4 HD=128
+      ADDRESS LOCK : L02-V · UNCENTERED
+      X-RAY        : 14 layers × 28 heads = 392 channels
+      TEST522 LOCK: bb82c131b79d1ef4c2f384f4f5d49776a43a1f55bada5f40372d411105077833
+      PARENT521   : e1eeaa869cdb15532fb99419cf53fc7f1ba922807a925357934ce0fade7784de
+      DISC/EVAL   : 32 / 32
+      TEST522     : mechanism discovery; TEST523 remains external confirmation
+
+[2/11] OFFLINE FORGE — fresh 64-item X-ray panel...
+      ITEM 01 | A=26 B=30 tokens
+      ITEM 02 | A=27 B=29 tokens
+      ITEM 03 | A=26 B=29 tokens
+      ITEM 04 | A=28 B=30 tokens
+      ITEM 05 | A=27 B=31 tokens
+      128 independent BELLEKÖZ forged.
+
+[3/11] Extracting 392-channel ÇAĞRIİZ X-ray...
+      [01/64] Aevadan  | T=26 all392-arg=25 gold-mass=0.1941
+      [02/64] Aevdil   | T=27 all392-arg=26 gold-mass=0.1477
+      [03/64] Aevgin   | T=26 all392-arg=25 gold-mass=0.1150
+      [04/64] Aevjun   | T=28 all392-arg=27 gold-mass=0.1281
+      [05/64] Aevmun   | T=27 all392-arg=26 gold-mass=0.1193
+      [06/64] Aevpir   | T=26 all392-arg=25 gold-mass=0.2114
+      [07/64] Bexcor   | T=27 all392-arg=26 gold-mass=0.2011
+      [08/64] Bexfal   | T=26 all392-arg=25 gold-mass=0.0987
+      [09/64] Bexisk   | T=26 all392-arg=25 gold-mass=0.1593
+      [10/64] Bexlom   | T=28 all392-arg=27 gold-mass=0.1443
+      [11/64] Bexos    | T=25 all392-arg=24 gold-mass=0.1629
+      [12/64] Cyrbek   | T=26 all392-arg=25 gold-mass=0.1089
+      [13/64] Cyreron  | T=25 all392-arg=24 gold-mass=0.1406
+      [14/64] Cyrhor   | T=25 all392-arg=24 gold-mass=0.1746
+      [15/64] Cyrkel   | T=26 all392-arg=16 gold-mass=0.1621
+      [16/64] Cyrnar   | T=24 all392-arg=23 gold-mass=0.2259
+      [17/64] Dovadan  | T=27 all392-arg=26 gold-mass=0.1211
+      [18/64] Dovdil   | T=26 all392-arg=25 gold-mass=0.1590
+      [19/64] Dovgin   | T=25 all392-arg=24 gold-mass=0.1001
+      [20/64] Dovjun   | T=28 all392-arg=27 gold-mass=0.1343
+      [21/64] Dovmun   | T=27 all392-arg=26 gold-mass=0.1258
+      [22/64] Dovpir   | T=27 all392-arg=26 gold-mass=0.0835
+      [23/64] Erycor   | T=27 all392-arg=26 gold-mass=0.1122
+      [24/64] Eryfal   | T=26 all392-arg=25 gold-mass=0.2103
+      [25/64] Eryisk   | T=28 all392-arg=27 gold-mass=0.1752
+      [26/64] Erylom   | T=31 all392-arg=30 gold-mass=0.1914
+      [27/64] Eryos    | T=27 all392-arg=26 gold-mass=0.1838
+      [28/64] Fynbek   | T=28 all392-arg=27 gold-mass=0.2318
+      [29/64] Fyneron  | T=30 all392-arg=29 gold-mass=0.1478
+      [30/64] Fynhor   | T=27 all392-arg=26 gold-mass=0.1278
+      [31/64] Fynkel   | T=29 all392-arg=28 gold-mass=0.1335
+      [32/64] Fynnar   | T=26 all392-arg=25 gold-mass=0.1810
+      [33/64] Gexadan  | T=26 all392-arg=25 gold-mass=0.1043
+      [34/64] Gexdil   | T=27 all392-arg=26 gold-mass=0.1687
+      [35/64] Gexgin   | T=25 all392-arg=24 gold-mass=0.1116
+      [36/64] Gexjun   | T=26 all392-arg=25 gold-mass=0.1797
+      [37/64] Gexmun   | T=26 all392-arg=25 gold-mass=0.1916
+      [38/64] Gexpir   | T=25 all392-arg=24 gold-mass=0.0818
+      [39/64] Hovcor   | T=27 all392-arg=26 gold-mass=0.1459
+      [40/64] Hovfal   | T=27 all392-arg=26 gold-mass=0.2234
+      [41/64] Hovisk   | T=28 all392-arg=27 gold-mass=0.0830
+      [42/64] Hovlom   | T=30 all392-arg=29 gold-mass=0.1825
+      [43/64] Hovos    | T=26 all392-arg=25 gold-mass=0.1722
+      [44/64] Ivrbek   | T=28 all392-arg=27 gold-mass=0.2770
+      [45/64] Ivreron  | T=27 all392-arg=26 gold-mass=0.1164
+      [46/64] Ivrhor   | T=29 all392-arg=28 gold-mass=0.1741
+      [47/64] Ivrkel   | T=27 all392-arg=26 gold-mass=0.2119
+      [48/64] Ivrnar   | T=27 all392-arg=26 gold-mass=0.1389
+      [49/64] Jexadan  | T=26 all392-arg=25 gold-mass=0.1083
+      [50/64] Jexdil   | T=28 all392-arg=27 gold-mass=0.1265
+      [51/64] Jexgin   | T=26 all392-arg=25 gold-mass=0.0996
+      [52/64] Jexjun   | T=29 all392-arg=27 gold-mass=0.2403
+      [53/64] Jexmun   | T=28 all392-arg=27 gold-mass=0.2282
+      [54/64] Jexpir   | T=26 all392-arg=25 gold-mass=0.1159
+      [55/64] Kyrcor   | T=26 all392-arg=25 gold-mass=0.1404
+      [56/64] Kyrfal   | T=28 all392-arg=27 gold-mass=0.1062
+      [57/64] Kyrisk   | T=27 all392-arg=26 gold-mass=0.1699
+      [58/64] Kyrlom   | T=25 all392-arg=24 gold-mass=0.0908
+      [59/64] Kyros    | T=26 all392-arg=25 gold-mass=0.1448
+      [60/64] Luvbek   | T=28 all392-arg=27 gold-mass=0.2590
+      [61/64] Luveron  | T=26 all392-arg=25 gold-mass=0.1058
+      [62/64] Luvhor   | T=27 all392-arg=26 gold-mass=0.1417
+      [63/64] Luvkel   | T=27 all392-arg=26 gold-mass=0.1224
+      [64/64] Luvnar   | T=27 all392-arg=26 gold-mass=0.1210
+      X-ray extraction complete.
+
+[4/11] DISC — individual channel retrieval atlas (items 01..32)...
+      TOP 20 DISC CHANNELS:
+      #01 L23H12 | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000 gold-mass=0.7830
+      #02 L22H12 | R1=0.9688 R5=1.0000 R16=1.0000 MRR=0.984375 gold-mass=0.5544
+      #03 L22H25 | R1=0.9688 R5=1.0000 R16=1.0000 MRR=0.984375 gold-mass=0.7873
+      #04 L21H24 | R1=0.9375 R5=0.9688 R16=0.9688 MRR=0.953970 gold-mass=0.5062
+      #05 L24H25 | R1=0.9062 R5=1.0000 R16=1.0000 MRR=0.947917 gold-mass=0.6332
+      #06 L24H21 | R1=0.9062 R5=1.0000 R16=1.0000 MRR=0.942708 gold-mass=0.7829
+      #07 L22H17 | R1=0.9062 R5=1.0000 R16=1.0000 MRR=0.940104 gold-mass=0.5184
+      #08 L22H23 | R1=0.9062 R5=0.9688 R16=0.9688 MRR=0.938447 gold-mass=0.3953
+      #09 L22H24 | R1=0.9062 R5=0.9688 R16=0.9688 MRR=0.938419 gold-mass=0.8538
+      #10 L24H26 | R1=0.9062 R5=0.9375 R16=0.9688 MRR=0.917708 gold-mass=0.5931
+      #11 L22H26 | R1=0.8750 R5=0.9375 R16=1.0000 MRR=0.913318 gold-mass=0.5978
+      #12 L21H14 | R1=0.8750 R5=0.9688 R16=0.9688 MRR=0.912660 gold-mass=0.6133
+      #13 L22H22 | R1=0.8750 R5=0.9688 R16=0.9688 MRR=0.908936 gold-mass=0.6293
+      #14 L22H13 | R1=0.8750 R5=0.9375 R16=0.9375 MRR=0.893866 gold-mass=0.6328
+      #15 L22H07 | R1=0.8438 R5=0.9375 R16=0.9375 MRR=0.885243 gold-mass=0.5619
+      #16 L22H01 | R1=0.8438 R5=0.9375 R16=0.9375 MRR=0.878622 gold-mass=0.8680
+      #17 L26H15 | R1=0.8125 R5=0.9375 R16=0.9688 MRR=0.858507 gold-mass=0.7729
+      #18 L22H15 | R1=0.8125 R5=0.9062 R16=0.9375 MRR=0.853822 gold-mass=0.3586
+      #19 L21H13 | R1=0.8125 R5=0.8750 R16=0.9375 MRR=0.851890 gold-mass=0.3477
+      #20 L23H06 | R1=0.7812 R5=0.8750 R16=0.9688 MRR=0.831645 gold-mass=0.4557
+
+[5/11] DISC — frozen Top-K ensembles...
+      TOP001 | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      TOP002 | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      TOP004 | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      TOP008 | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      TOP016 | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      TOP032 | R1=0.9062 R5=1.0000 R16=1.0000 MRR=0.945312
+      TOP064 | R1=0.8438 R5=0.9375 R16=1.0000 MRR=0.889137
+      TOP128 | R1=0.7812 R5=0.8750 R16=0.9688 MRR=0.828918
+      TEST523 CANDIDATE FROZEN FROM DISC ONLY: TOP1
+      CHANNELS: L23H12
+
+[6/11] INTERNAL-EVAL — all392 baseline vs DISC-frozen ensembles...
+      ALL392 | R1=0.5312 R5=0.6250 R16=0.7500 MRR=0.591953
+      TOP001 | R1=0.9688 R5=0.9688 R16=1.0000 MRR=0.973958  <-- DISC-FROZEN CANDIDATE
+      TOP002 | R1=0.9688 R5=0.9688 R16=1.0000 MRR=0.973958
+      TOP004 | R1=0.9688 R5=0.9688 R16=1.0000 MRR=0.971591
+      TOP008 | R1=0.9688 R5=0.9688 R16=1.0000 MRR=0.972656
+      TOP016 | R1=0.9688 R5=0.9688 R16=1.0000 MRR=0.972656
+      TOP032 | R1=0.9375 R5=0.9688 R16=1.0000 MRR=0.951823
+      TOP064 | R1=0.8125 R5=0.9375 R16=1.0000 MRR=0.874740
+      TOP128 | R1=0.7188 R5=0.8750 R16=0.9688 MRR=0.783562
+
+[7/11] Layer concentration X-ray...
+      L14 | DISC R1=0.0625 MRR=0.1385 | EVAL R1=0.0312 MRR=0.0605
+      L15 | DISC R1=0.0625 MRR=0.1238 | EVAL R1=0.0000 MRR=0.0631
+      L16 | DISC R1=0.1562 MRR=0.2094 | EVAL R1=0.1250 MRR=0.2190
+      L17 | DISC R1=0.2812 MRR=0.3796 | EVAL R1=0.1875 MRR=0.2836
+      L18 | DISC R1=0.4062 MRR=0.4938 | EVAL R1=0.2500 MRR=0.3543
+      L19 | DISC R1=0.3125 MRR=0.3918 | EVAL R1=0.2812 MRR=0.3343
+      L20 | DISC R1=0.5000 MRR=0.5823 | EVAL R1=0.4688 MRR=0.5192
+      L21 | DISC R1=0.5625 MRR=0.6055 | EVAL R1=0.5625 MRR=0.6055
+      L22 | DISC R1=0.8438 MRR=0.8995 | EVAL R1=0.9062 MRR=0.9269
+      L23 | DISC R1=0.7188 MRR=0.7872 | EVAL R1=0.7812 MRR=0.8500
+      L24 | DISC R1=0.8750 MRR=0.8838 | EVAL R1=0.6562 MRR=0.7285
+      L25 | DISC R1=0.5625 MRR=0.6646 | EVAL R1=0.2812 MRR=0.3876
+      L26 | DISC R1=0.8125 MRR=0.8435 | EVAL R1=0.4688 MRR=0.5479
+      L27 | DISC R1=0.5000 MRR=0.5841 | EVAL R1=0.4688 MRR=0.5813
+
+[8/11] Head-index concentration across layers...
+      H26 | DISC R1=0.7812 MRR=0.8388 | EVAL R1=0.5625 MRR=0.6536
+      H24 | DISC R1=0.7812 MRR=0.8250 | EVAL R1=0.6875 MRR=0.7199
+      H17 | DISC R1=0.7812 MRR=0.8213 | EVAL R1=0.6250 MRR=0.6883
+      H12 | DISC R1=0.7500 MRR=0.7953 | EVAL R1=0.5312 MRR=0.6248
+      H25 | DISC R1=0.7188 MRR=0.7913 | EVAL R1=0.6875 MRR=0.7340
+      H15 | DISC R1=0.7500 MRR=0.7906 | EVAL R1=0.5625 MRR=0.6306
+      H01 | DISC R1=0.6875 MRR=0.7596 | EVAL R1=0.5000 MRR=0.5589
+      H27 | DISC R1=0.6562 MRR=0.7315 | EVAL R1=0.5312 MRR=0.5786
+      H21 | DISC R1=0.6875 MRR=0.7287 | EVAL R1=0.5938 MRR=0.6205
+      H23 | DISC R1=0.6250 MRR=0.6742 | EVAL R1=0.4062 MRR=0.4730
+
+[9/11] Gold-span enrichment vs retrieval quality...
+      corr(channel gold-mass, DISC R1)  = +0.903403
+      corr(channel gold-mass, DISC MRR) = +0.898804
+      TOP GOLD-SPAN-MASS CHANNELS:
+      L23H11 | mass=0.9886 DISC R1=0.7500 MRR=0.8278
+      L22H01 | mass=0.8680 DISC R1=0.8438 MRR=0.8786
+      L22H24 | mass=0.8538 DISC R1=0.9062 MRR=0.9384
+      L25H25 | mass=0.8473 DISC R1=0.6875 MRR=0.7933
+      L22H25 | mass=0.7873 DISC R1=0.9688 MRR=0.9844
+      L23H12 | mass=0.7830 DISC R1=1.0000 MRR=1.0000
+      L24H21 | mass=0.7829 DISC R1=0.9062 MRR=0.9427
+      L26H15 | mass=0.7729 DISC R1=0.8125 MRR=0.8585
+      L24H25 | mass=0.6332 DISC R1=0.9062 MRR=0.9479
+      L22H13 | mass=0.6328 DISC R1=0.8750 MRR=0.8939
+
+[10/11] Mechanism classification...
+      DISC TOP1: R1=1.0000 MRR=1.000000
+      EVAL ALL392 : R1=0.5312 MRR=0.591953
+      EVAL TOP1: R1=0.9688 MRR=0.973958
+      VERDICT: CAGRIIIZ_SIGNAL_CONCENTRATED_IN_DISCOVERED_NATIVE_CHANNEL_SUBSET
+
+[11/11] Protocol audit + final...
+      Model frozen                         : YES
+      Address geometry                     : TEST521 L02-V UNCENTERED
+      Address geometry changed             : NO
+      New panel                            : YES
+      DISC / internal-eval                 : 32 / 32
+      Channels inspected                   : 392
+      Channel ranking uses DISC only       : YES
+      K selection uses DISC only           : YES
+      Internal-eval changes selection      : NO
+      Gold span used for channel selection : NO
+      Gold span diagnostic only            : YES
+      Token-ID / text / LM-head address    : NONE
+      Training / DRA / learned router      : NONE
+      TEST523 still required               : YES
+
+================================================================================================================================================================================
+TEST522 FINAL RESULT — ÇAĞRIİZ HEAD×LAYER X-RAY
+================================================================================================================================================================================
+MODEL                              : Qwen/Qwen2.5-7B-Instruct · frozen
+ADDRESS                            : L02-V · UNCENTERED
+XRAY                               : L14-L27 × H00-H27 = 392 channels
+DISC / INTERNAL-EVAL               : 32 / 32
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DISC-FROZEN CANDIDATE              : TOP1
+FROZEN CHANNELS                    : L23H12
+DISC TOP1                    : R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+INTERNAL-EVAL ALL392               : R1=0.5312 R5=0.6250 R16=0.7500 MRR=0.591953
+INTERNAL-EVAL TOP1           : R1=0.9688 R5=0.9688 R16=1.0000 MRR=0.973958
+GOLD-MASS ↔ CHANNEL R1 CORR        : +0.903403
+GOLD-MASS ↔ CHANNEL MRR CORR       : +0.898804
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST521 LOCK                       : e1eeaa869cdb15532fb99419cf53fc7f1ba922807a925357934ce0fade7784de
+TEST522 LOCK                       : bb82c131b79d1ef4c2f384f4f5d49776a43a1f55bada5f40372d411105077833
+TOTAL TEST TIME                    : 132.66s
+VERDICT                            : CAGRIIIZ_SIGNAL_CONCENTRATED_IN_DISCOVERED_NATIVE_CHANNEL_SUBSET
+================================================================================================================================================================================
