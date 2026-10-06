@@ -1,0 +1,188 @@
+ ================================================================================================================================================================
+TEST497 — AKBASCORE MAM × DRA · RELATIONAL-PATH PRESSURE
+TEST496 EXACT MAM → TARGET-BLIND SEASC/DRA L0-L19 → MULTI-BELLEKÖZ RELATIONAL COMPLETION
+================================================================================================================================================================
+LOCK SHA: e11b05a5828e837c3c8298cf54561be871aa75f1dd3e9e97ec80f14db3122c83
+TEST496 LOCK: 5985c4917ad98c83537990b4cb54a7a3a751dbdb1a3b82774839c3cafac8ca67
+TEST482 BLOB: ecc630144a44479cb35c432c50eb0d09bc6866d7
+TARGET: Q-23
+DRA TARGET LEAK: NONE
+DRA: L0-L19 | IVME=0.10 | SONUM=0.30 | ZIRVE=0.70 | TABAN=0.20
+
+[1/12] Loading frozen Qwen...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 77.6kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 911kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 84.1MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 55.9MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 119MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.47MB/s]Download complete:  13.1GB,  301MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  488MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.78s/it]Loading weights: 100% 339/339 [00:03<00:00, 98.37it/s]generation_config.json: 100% 243/243 [00:00<00:00, 28.5kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L H=3584 QH=28 KVH=4 BF16
+      DRA envelope: L0:10.000%, L1:9.713%, L2:9.052%, L3:8.230%, L4:7.376%, L5:6.561%, L6:5.822%, L7:5.175%, L8:4.621%, L9:4.156%, L10:3.771%, L11:3.456%, L12:3.200%, L13:2.994%, L14:2.829%, L15:2.697%, L16:2.593%, L17:2.511%, L18:2.447%, L19:2.397%
+
+[2/12] Extracting target-blind RELATIONAL-CONTINUATION ↔ SHORTCUT compass...
+      L00 raw=0.684996 unit=1.000000 dose=10.000%
+      L01 raw=1.036024 unit=1.000000 dose=9.713%
+      L02 raw=1.472282 unit=1.000000 dose=9.052%
+      L03 raw=2.361478 unit=1.000000 dose=8.230%
+      L04 raw=3.519239 unit=1.000000 dose=7.376%
+      L05 raw=3.938078 unit=1.000000 dose=6.561%
+      L06 raw=4.894916 unit=1.000000 dose=5.822%
+      L07 raw=9.442632 unit=1.000000 dose=5.175%
+      L08 raw=10.525805 unit=1.000000 dose=4.621%
+      L09 raw=11.861012 unit=1.000000 dose=4.156%
+      L10 raw=13.249708 unit=1.000000 dose=3.771%
+      L11 raw=15.812734 unit=1.000000 dose=3.456%
+      L12 raw=16.850708 unit=1.000000 dose=3.200%
+      L13 raw=18.116030 unit=1.000000 dose=2.994%
+      L14 raw=19.973326 unit=1.000000 dose=2.829%
+      L15 raw=21.325941 unit=1.000000 dose=2.697%
+      L16 raw=22.597607 unit=1.000000 dose=2.593%
+      L17 raw=23.547747 unit=1.000000 dose=2.511%
+      L18 raw=30.449181 unit=1.000000 dose=2.447%
+      L19 raw=36.014210 unit=1.000000 dose=2.397%
+
+[3/12] Building exact TEST482 neutral PCA codebook...
+      BELLEKÖZ codebook ready.
+
+[4/12] Forging TEST496 BELLEKÖZ packets with DRA OFF...
+      M1 [1/6]
+      M2 [2/6]
+      M3 [3/6]
+      M4 [4/6]
+      M5 [5/6]
+      M6 [6/6]
+      6 primary + 8 unrelated-axis + 2 causal-swap packets ready.
+
+[5/12] TEST496 mechanical regression — DRA OFF...
+      M1 equal=1 | 'ORIN'
+      M2 equal=1 | 'NONE'
+      M3 equal=1 | 'NONE'
+      M4 equal=1 | 'NONE'
+      M5 equal=1 | 'NONE'
+      M6 equal=1 | 'B-2'
+      TEST496 FULL / DRA OFF -> 'ORIN-23\n\nThe recovery code for the missing Meridian instrument is given as "OR'
+      expected historical shortcut ORIN-23 = 1
+
+[6/12] Directional A/B — DRA OFF / +RELATIONAL / -RELATIONAL...
+      OFF       -> 'ORIN-23\n\nThe recovery code for the missing Meridian instrument is given as "OR' | target=0
+      +DRA      -> 'ORIN-23\n\nThe problem requires us to determine the complete recovery code for the missing Mer' | target=0
+      -DRA CTRL -> "ORIN\n\nThe missing Meridian instrument's recovery code is ORIN, as per the information provided" | target=0
+
+[7/12] Chain-depth X-Ray — same BELLEKÖZ, no architecture change...
+      P1 expected=ORIN  | OFF='ORIN' [1] | +DRA='ORIN' [1]
+      P2 expected=TAV   | OFF='ORIN' [0] | +DRA='ORIN' [0]
+      P3 expected=Q     | OFF='Q' [1] | +DRA='ORIN' [0]
+      P4 expected=SEL   | OFF='SEL' [1] | +DRA='SEL' [1]
+      P5 expected=23    | OFF='23' [1] | +DRA='23' [1]
+      P6 expected=Q-23  | OFF='ORIN-23' [0] | +DRA='ORIN-23' [0]
+
+[8/12] Causal substitutions — decisive anti-cheating control...
+      Q→Z | OFF='ORIN-23' | +DRA='ORIN-23' | expected Z-23=0
+      23→57 | OFF='ORIN' | +DRA='ORIN-57' | expected Q-57=0
+
+[9/12] Necessity under +DRA — all leave-one-out...
+      -M1 | OFF='ORIN-23' | +DRA='To determine the complete current recovery code of the missing Meridian instrument, we need to follow the given' | target-leak=0
+      -M2 | OFF='ORIN-23' | +DRA='ORIN-23' | target-leak=0
+      -M3 | OFF='ORIN-23' | +DRA='ORIN-23' | target-leak=0
+      -M4 | OFF='ORIN-23' | +DRA='ORIN-23' | target-leak=0
+      -M5 | OFF='ORIN' | +DRA='ORIN-TAV' | target-leak=0
+      -M6 | OFF='ORIN' | +DRA='ORIN' | target-leak=0
+
+[10/12] Order invariance under +DRA — 32 deterministic permutations...
+      [01/32] M1-M2-M3-M4-M5-M6 -> 'ORIN-23' | target=0
+      [02/32] M6-M1-M4-M2-M5-M3 -> 'ORIN-23' | target=0
+      [03/32] M5-M6-M4-M1-M2-M3 -> 'ORIN-23' | target=0
+      [04/32] M1-M2-M4-M6-M5-M3 -> 'ORIN-23' | target=0
+      [05/32] M2-M5-M6-M3-M4-M1 -> 'ORIN-23' | target=0
+      [06/32] M3-M5-M4-M1-M2-M6 -> 'ORIN-23' | target=0
+      [07/32] M3-M1-M4-M5-M2-M6 -> 'ORIN-23' | target=0
+      [08/32] M5-M4-M6-M1-M3-M2 -> 'ORIN-23' | target=0
+      [09/32] M5-M1-M4-M3-M2-M6 -> 'ORIN-23' | target=0
+      [10/32] M4-M6-M5-M3-M2-M1 -> 'ORIN-23' | target=0
+      [11/32] M2-M5-M6-M4-M3-M1 -> 'ORIN-23' | target=0
+      [12/32] M6-M2-M3-M1-M4-M5 -> 'ORIN-23' | target=0
+      [13/32] M1-M6-M2-M3-M4-M5 -> 'ORIN-23' | target=0
+      [14/32] M6-M3-M5-M4-M1-M2 -> 'ORIN-23' | target=0
+      [15/32] M5-M6-M3-M1-M2-M4 -> 'ORIN-23' | target=0
+      [16/32] M4-M2-M3-M5-M1-M6 -> 'ORIN-23' | target=0
+      [17/32] M6-M4-M5-M1-M2-M3 -> 'ORIN-23' | target=0
+      [18/32] M3-M1-M2-M6-M5-M4 -> 'ORIN-23' | target=0
+      [19/32] M2-M5-M4-M1-M6-M3 -> 'ORIN-23' | target=0
+      [20/32] M4-M3-M2-M6-M5-M1 -> 'ORIN-23' | target=0
+      [21/32] M2-M6-M4-M1-M3-M5 -> 'ORIN-23' | target=0
+      [22/32] M4-M3-M6-M1-M2-M5 -> 'ORIN-23' | target=0
+      [23/32] M2-M3-M1-M4-M6-M5 -> 'ORIN-23' | target=0
+      [24/32] M2-M6-M5-M4-M3-M1 -> 'ORIN-23' | target=0
+      [25/32] M6-M2-M5-M4-M3-M1 -> 'ORIN-23' | target=0
+      [26/32] M1-M6-M5-M4-M2-M3 -> 'ORIN-23' | target=0
+      [27/32] M5-M2-M3-M1-M6-M4 -> 'ORIN-23' | target=0
+      [28/32] M4-M2-M3-M5-M6-M1 -> 'ORIN-23' | target=0
+      [29/32] M2-M6-M4-M5-M3-M1 -> 'ORIN-23' | target=0
+      [30/32] M6-M4-M3-M1-M2-M5 -> 'ORIN-23' | target=0
+      [31/32] M3-M2-M5-M6-M1-M4 -> 'ORIN-23' | target=0
+      [32/32] M3-M6-M1-M2-M5-M4 -> 'ORIN-23' | target=0
+
+[11/12] Unrelated-axis contamination under +DRA...
+      +D1 -> 'ORIN-23' | target=0
+      +D2 -> 'ORIN-23' | target=0
+      +D3 -> 'ORIN-23' | target=0
+      +D4 -> 'ORIN-23' | target=0
+      +D5 -> 'ORIN-23' | target=0
+      +D6 -> 'TAV-23' | target=0
+      +D7 -> 'ORIN-TAV' | target=0
+      +D8 -> 'Q-23' | target=1 [LITERAL-TARGET-DISTRACTOR]
+
+================================================================================================================================================================
+[12/12] TEST497 FINAL RESULT — MAM × DRA RELATIONAL-PATH PRESSURE
+================================================================================================================================================================
+MODEL                         : Qwen/Qwen2.5-7B-Instruct · frozen
+BELLEKÖZ                      : TEST482 K120/V128/OWN · unchanged
+WORKSPACE                     : TEST495 parallel sequence concat · unchanged
+TEST496 TASK                  : unchanged
+STEERING                      : AkbasCore 3.0 SEASC/DRA frozen-norm direct dose
+STEERED LAYERS                : L0-L19
+IVME / SONUM / ZIRVE / TABAN  : 0.10 / 0.30 / 0.70 / 0.20
+COMPASS                       : target-blind RELATIONAL-CONTINUATION ↔ SHORTCUT
+TARGET DATA IN COMPASS        : NONE
+ANSWER VECTOR                 : NONE
+ADDRESS / VTOKEN              : OFF
+TOP-K / ROUTER / ANN / GRAPH  : NONE
+TRAINING / LoRA               : NONE
+DOSE SEARCH                   : NONE
+LAYER / HEAD SEARCH           : NONE
+POST-HOC TUNING               : NONE
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+k=1 REGRESSION                : 6/6
+DRA OFF                       : 'ORIN-23\n\nThe recovery code for the missing Meridian instrument is given as "OR'
+DRA +RELATIONAL               : 'ORIN-23\n\nThe problem requires us to determine the complete recovery code for the missing Mer'
+DRA -RELATIONAL CONTROL       : "ORIN\n\nThe missing Meridian instrument's recovery code is ORIN, as per the information provided"
+OFF EXACT TARGET              : 0
++DRA EXACT TARGET             : 0
+-DRA EXACT TARGET             : 0
+CHAIN PROBES OFF              : 4/6
+CHAIN PROBES +DRA             : 3/6
+CAUSAL SECTION Q→Z            : FAIL | 'ORIN-23'
+CAUSAL BAY 23→57              : FAIL | 'ORIN-57'
++DRA LEAVE-ONE-OUT TARGET LEAK: 0/6
++DRA ORDER INVARIANCE         : 0/32
++DRA NONLITERAL DISTRACTORS   : 0/7
++DRA ALL DISTRACTORS          : 1/8
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
++DRA requested dose mean      : 4.9801%
++DRA realized dose mean       : 4.9839%
++DRA hook calls               : 400
+-DRA requested dose mean      : 4.9801%
+-DRA realized dose mean       : 4.9840%
+-DRA hook calls               : 400
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+P1 expected=ORIN  | OFF='ORIN' [1] | +DRA='ORIN' [1]
+P2 expected=TAV   | OFF='ORIN' [0] | +DRA='ORIN' [0]
+P3 expected=Q     | OFF='Q' [1] | +DRA='ORIN' [0]
+P4 expected=SEL   | OFF='SEL' [1] | +DRA='SEL' [1]
+P5 expected=23    | OFF='23' [1] | +DRA='23' [1]
+P6 expected=Q-23  | OFF='ORIN-23' [0] | +DRA='ORIN-23' [0]
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST482 BLOB SHA              : ecc630144a44479cb35c432c50eb0d09bc6866d7
+TEST482 LOCK SHA              : fa59fd38661e558f6bae22eedff0999f32f8f6e9d4a08932383525323a5fe687
+TEST495 LOCK SHA              : 2bae3f2497fefb50b3d18d8fb7035c63a08fdd67d80077dd92f4e9c56eca787e
+TEST496 LOCK SHA              : 5985c4917ad98c83537990b4cb54a7a3a751dbdb1a3b82774839c3cafac8ca67
+TEST497 LOCK SHA              : e11b05a5828e837c3c8298cf54561be871aa75f1dd3e9e97ec80f14db3122c83
+TOTAL TEST TIME               : 131.17s
+EXPLORATORY VERDICT           : TARGET_BLIND_DRA_RESCUE_NOT_YET_OBSERVED
+================================================================================================================================================================
