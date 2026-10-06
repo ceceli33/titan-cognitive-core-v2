@@ -1,0 +1,308 @@
+ ================================================================================================================================================================================
+TEST521 — AKBASCORE MAM · HELD-OUT CAUSAL VALIDATION OF UNCENTERED NATIVE POINTER ADDRESS
+FROZEN L02-V UNCENTERED · NEW 64-ITEM BANK · POINTER LOCALIZATION + SHIFT + COUNTERFACTUAL CAUSAL CONTROLS
+================================================================================================================================================================================
+
+[1/11] Loading frozen Qwen...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 84.6kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 933kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 50.7MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 71.0MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 130MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.40MB/s]Download complete:  13.1GB,  337MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  414MB/s  Fetching 4 files: 100% 4/4 [00:42<00:00, 42.89s/it]Loading weights: 100% 339/339 [00:03<00:00, 94.69it/s]generation_config.json: 100% 243/243 [00:00<00:00, 34.6kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L H=3584 QH=28 KVH=4 HD=128 | frozen BF16
+      PRIMARY LOCK: L02-V · UNCENTERED · PTR L14-L27
+      TEST521 LOCK: e1eeaa869cdb15532fb99419cf53fc7f1ba922807a925357934ce0fade7784de
+      PARENT520   : fb44f20176ae72ce58d9eaf99436e237f4e0548b893a7ee51d8f4d7768b0b806
+      NEW BANK    : 64 items / 128 independent BELLEKÖZ
+      DISCOVERY   : NONE
+      Selection   : NONE
+
+[2/11] OFFLINE FORGE — fresh held-out 64-item panel...
+      ITEM 01 | A=25 B=30 tokens
+      ITEM 02 | A=24 B=28 tokens
+      ITEM 03 | A=25 B=32 tokens
+      ITEM 04 | A=24 B=31 tokens
+      ITEM 05 | A=28 B=28 tokens
+      128 BELLEKÖZ forged.
+      Runtime address will use only persistent tensor state.
+
+[3/11] Correct gold-span diagnostic map via character offsets...
+      ITEM 01 gold span=[22, 23]
+      ITEM 02 gold span=[15]
+      ITEM 03 gold span=[14, 15]
+      ITEM 04 gold span=[14]
+      ITEM 05 gold span=[25, 26]
+      Gold spans are DIAGNOSTIC ONLY and never enter address computation.
+
+[4/11] Native pointer extraction + corrected localization diagnostics...
+      [01/64] Quador   | ptr=24 gold=[22, 23] hit=0 mass=0.2220 span-rank= 2 peak=0.2308
+      [02/64] Quanis   | ptr=23 gold=[15] hit=0 mass=0.1183 span-rank= 3 peak=0.2117
+      [03/64] Quaton   | ptr=24 gold=[14, 15] hit=0 mass=0.1602 span-rank= 3 peak=0.2111
+      [04/64] Quazar   | ptr=23 gold=[14] hit=0 mass=0.1383 span-rank= 3 peak=0.1725
+      [05/64] Quafer   | ptr=27 gold=[25, 26] hit=0 mass=0.2884 span-rank= 2 peak=0.1967
+      [06/64] Quajor   | ptr=22 gold=[21] hit=0 mass=0.1442 span-rank= 2 peak=0.2378
+      [07/64] Renmar   | ptr=23 gold=[13, 14] hit=0 mass=0.1339 span-rank= 3 peak=0.2019
+      [08/64] Renris   | ptr=23 gold=[21, 22] hit=0 mass=0.2443 span-rank= 2 peak=0.2493
+      [09/64] Renwyn   | ptr=23 gold=[6, 7] hit=0 mass=0.1217 span-rank= 3 peak=0.2204
+      [10/64] Rencus   | ptr=24 gold=[7] hit=0 mass=0.0913 span-rank= 3 peak=0.1950
+      [11/64] Renhel   | ptr=23 gold=[14, 15] hit=0 mass=0.1192 span-rank= 3 peak=0.2139
+      [12/64] Sollen   | ptr=22 gold=[20, 21] hit=0 mass=0.1762 span-rank= 3 peak=0.2100
+      [13/64] Solpel   | ptr=22 gold=[21] hit=0 mass=0.1256 span-rank= 2 peak=0.2416
+      [14/64] Solvek   | ptr=24 gold=[6] hit=0 mass=0.0944 span-rank= 2 peak=0.2175
+      [15/64] Solbis   | ptr=21 gold=[20] hit=0 mass=0.1183 span-rank= 2 peak=0.2473
+      [16/64] Solgos   | ptr=24 gold=[22, 23] hit=0 mass=0.1399 span-rank= 2 peak=0.2829
+      [17/64] Tordor   | ptr=24 gold=[7] hit=0 mass=0.1315 span-rank= 2 peak=0.2292
+      [18/64] Tornis   | ptr=24 gold=[15, 16] hit=0 mass=0.1469 span-rank= 4 peak=0.2090
+      [19/64] Torton   | ptr=25 gold=[15, 16] hit=0 mass=0.1548 span-rank= 3 peak=0.2294
+      [20/64] Torzar   | ptr=24 gold=[6, 7] hit=0 mass=0.1174 span-rank= 3 peak=0.1947
+      [21/64] Torfer   | ptr=25 gold=[6, 7] hit=0 mass=0.1227 span-rank= 5 peak=0.2117
+      [22/64] Torjor   | ptr=28 gold=[16, 17, 18, 19] hit=0 mass=0.2309 span-rank= 3 peak=0.1961
+      [23/64] Ulmar    | ptr=25 gold=[24] hit=0 mass=0.1248 span-rank= 2 peak=0.2742
+      [24/64] Ulris    | ptr=23 gold=[14, 15] hit=0 mass=0.1429 span-rank= 3 peak=0.2063
+      [25/64] Ulwyn    | ptr=21 gold=[6] hit=0 mass=0.1130 span-rank= 3 peak=0.1961
+      [26/64] Ulcus    | ptr=24 gold=[22, 23] hit=0 mass=0.2862 span-rank= 2 peak=0.2540
+      [27/64] Ulhel    | ptr=24 gold=[14] hit=0 mass=0.1177 span-rank= 3 peak=0.2107
+      [28/64] Varlen   | ptr=25 gold=[15, 16] hit=0 mass=0.1664 span-rank= 3 peak=0.2214
+      [29/64] Varpel   | ptr=23 gold=[14] hit=0 mass=0.1081 span-rank= 3 peak=0.2050
+      [30/64] Varvek   | ptr=23 gold=[22] hit=0 mass=0.1925 span-rank= 2 peak=0.2206
+      [31/64] Varbis   | ptr=25 gold=[6, 7] hit=0 mass=0.1312 span-rank= 3 peak=0.2220
+      [32/64] Vargos   | ptr=26 gold=[17] hit=0 mass=0.1032 span-rank= 3 peak=0.1894
+      [33/64] Wendor   | ptr=24 gold=[6] hit=0 mass=0.1248 span-rank= 2 peak=0.2195
+      [34/64] Wennis   | ptr=22 gold=[20, 21] hit=0 mass=0.1951 span-rank= 2 peak=0.2349
+      [35/64] Wenton   | ptr=25 gold=[23, 24] hit=0 mass=0.1505 span-rank= 2 peak=0.2617
+      [36/64] Wenzar   | ptr=24 gold=[14] hit=0 mass=0.0840 span-rank= 3 peak=0.2139
+      [37/64] Wenfer   | ptr=25 gold=[14, 15] hit=0 mass=0.2162 span-rank= 2 peak=0.1986
+      [38/64] Wenjor   | ptr=27 gold=[7, 8] hit=0 mass=0.0818 span-rank= 5 peak=0.2041
+      [39/64] Xanmar   | ptr=23 gold=[6] hit=0 mass=0.1297 span-rank= 2 peak=0.2019
+      [40/64] Xanris   | ptr=17 gold=[17] hit=1 mass=0.1768 span-rank= 1 peak=0.1768
+      [41/64] Xanwyn   | ptr=26 gold=[7] hit=0 mass=0.1115 span-rank= 3 peak=0.1934
+      [42/64] Xancus   | ptr=28 gold=[16, 17, 18] hit=0 mass=0.2458 span-rank= 2 peak=0.1788
+      [43/64] Xanhel   | ptr=27 gold=[25, 26] hit=0 mass=0.2484 span-rank= 2 peak=0.2299
+      [44/64] Yorlen   | ptr=26 gold=[25] hit=0 mass=0.1853 span-rank= 2 peak=0.2386
+      [45/64] Yorpel   | ptr=23 gold=[15] hit=0 mass=0.1353 span-rank= 3 peak=0.2028
+      [46/64] Yorvek   | ptr=28 gold=[26, 27] hit=0 mass=0.2222 span-rank= 2 peak=0.2061
+      [47/64] Yorbis   | ptr=26 gold=[16] hit=0 mass=0.1539 span-rank= 2 peak=0.1806
+      [48/64] Yorgos   | ptr=27 gold=[16, 17] hit=0 mass=0.1522 span-rank= 4 peak=0.1724
+      [49/64] Zendor   | ptr=24 gold=[15] hit=0 mass=0.1076 span-rank= 3 peak=0.2076
+      [50/64] Zennis   | ptr=24 gold=[22, 23] hit=0 mass=0.2400 span-rank= 2 peak=0.2101
+      [51/64] Zenton   | ptr=24 gold=[6, 7] hit=0 mass=0.1529 span-rank= 4 peak=0.2046
+      [52/64] Zenzar   | ptr=26 gold=[7, 8, 9] hit=0 mass=0.1650 span-rank= 5 peak=0.1819
+      [53/64] Zenfer   | ptr=24 gold=[6, 7] hit=0 mass=0.1158 span-rank= 5 peak=0.2265
+      [54/64] Zenjor   | ptr=24 gold=[15] hit=0 mass=0.1248 span-rank= 3 peak=0.2015
+      [55/64] Bramar   | ptr=22 gold=[13, 14] hit=0 mass=0.1698 span-rank= 4 peak=0.2169
+      [56/64] Braris   | ptr=24 gold=[15, 16] hit=0 mass=0.1091 span-rank= 5 peak=0.2394
+      [57/64] Brawyn   | ptr=23 gold=[14] hit=0 mass=0.1183 span-rank= 3 peak=0.1983
+      [58/64] Bracus   | ptr=22 gold=[6] hit=0 mass=0.1056 span-rank= 2 peak=0.2406
+      [59/64] Brahel   | ptr=24 gold=[22, 23] hit=0 mass=0.1654 span-rank= 2 peak=0.2665
+      [60/64] Crelen   | ptr=26 gold=[24, 25] hit=0 mass=0.1543 span-rank= 2 peak=0.2718
+      [61/64] Crepel   | ptr=23 gold=[21, 22] hit=0 mass=0.1776 span-rank= 2 peak=0.2656
+      [62/64] Crevek   | ptr=25 gold=[15, 16] hit=0 mass=0.1362 span-rank= 3 peak=0.2086
+      [63/64] Crebis   | ptr=22 gold=[14] hit=0 mass=0.1114 span-rank= 3 peak=0.1918
+      [64/64] Cregos   | ptr=25 gold=[7, 8] hit=0 mass=0.1362 span-rank= 3 peak=0.2319
+      Argmax-in-gold-span : 1/64 = 0.0156
+      Mean gold-span mass : 0.152027
+      Median span rank    : 3.0
+
+[5/11] PRIMARY held-out retrieval — frozen L02-V UNCENTERED...
+      [01/64] rank= 3 selected B=27
+      [02/64] rank= 2 selected B=24
+      [03/64] rank= 2 selected B=24
+      [04/64] rank=19 selected B=34
+      [05/64] rank= 1 selected B=05
+      [06/64] rank=16 selected B=61
+      [07/64] rank= 2 selected B=24
+      [08/64] rank= 1 selected B=08
+      [09/64] rank=20 selected B=24
+      [10/64] rank= 2 selected B=24
+      [11/64] rank= 8 selected B=01
+      [12/64] rank= 1 selected B=12
+      [13/64] rank= 1 selected B=13
+      [14/64] rank= 2 selected B=03
+      [15/64] rank= 4 selected B=11
+      [16/64] rank=13 selected B=24
+      [17/64] rank=10 selected B=16
+      [18/64] rank=19 selected B=24
+      [19/64] rank= 4 selected B=46
+      [20/64] rank=23 selected B=09
+      [21/64] rank=28 selected B=24
+      [22/64] rank= 7 selected B=03
+      [23/64] rank= 1 selected B=23
+      [24/64] rank= 1 selected B=24
+      [25/64] rank=12 selected B=15
+      [26/64] rank= 1 selected B=26
+      [27/64] rank=24 selected B=29
+      [28/64] rank= 1 selected B=28
+      [29/64] rank= 1 selected B=29
+      [30/64] rank= 1 selected B=30
+      [31/64] rank= 3 selected B=02
+      [32/64] rank= 1 selected B=32
+      [33/64] rank= 1 selected B=33
+      [34/64] rank= 1 selected B=34
+      [35/64] rank= 1 selected B=35
+      [36/64] rank= 1 selected B=36
+      [37/64] rank= 3 selected B=19
+      [38/64] rank=36 selected B=19
+      [39/64] rank= 1 selected B=39
+      [40/64] rank= 1 selected B=40
+      [41/64] rank=18 selected B=01
+      [42/64] rank= 1 selected B=42
+      [43/64] rank=13 selected B=19
+      [44/64] rank= 1 selected B=44
+      [45/64] rank= 1 selected B=45
+      [46/64] rank= 1 selected B=46
+      [47/64] rank= 1 selected B=47
+      [48/64] rank= 5 selected B=24
+      [49/64] rank= 1 selected B=49
+      [50/64] rank= 1 selected B=50
+      [51/64] rank= 1 selected B=51
+      [52/64] rank= 2 selected B=63
+      [53/64] rank=41 selected B=01
+      [54/64] rank= 1 selected B=54
+      [55/64] rank= 2 selected B=24
+      [56/64] rank=43 selected B=19
+      [57/64] rank= 1 selected B=57
+      [58/64] rank=17 selected B=01
+      [59/64] rank= 6 selected B=49
+      [60/64] rank= 1 selected B=60
+      [61/64] rank=20 selected B=06
+      [62/64] rank=35 selected B=15
+      [63/64] rank= 4 selected B=52
+      [64/64] rank=55 selected B=15
+      PRIMARY R1/R5/R16/MRR: 0.4375 / 0.6562 / 0.7812 / 0.544483
+
+[6/11] Causal ablations — UNIFORM / SHIFTED / NO-A...
+      UNIFORM R1/R5/R16/MRR: 0.0312 / 0.1406 / 0.3281 / 0.097375
+      SHIFTED R1/R5/R16/MRR: 0.0156 / 0.0625 / 0.2656 / 0.076549
+      NO-A    R1/R5/R16/MRR: 0.0156 / 0.0781 / 0.2500 / 0.074123
+
+[7/11] Counterfactual causal-follow — UNCENTERED L02-V...
+      [01/64] target B=18 rank=15 selected=24 follow=0 ptr-hit=0 mass=0.1139
+      [02/64] target B=19 rank= 2 selected=24 follow=0 ptr-hit=0 mass=0.1223
+      [03/64] target B=20 rank=11 selected=56 follow=0 ptr-hit=0 mass=0.1806
+      [04/64] target B=21 rank=25 selected=46 follow=0 ptr-hit=0 mass=0.2178
+      [05/64] target B=22 rank= 2 selected=13 follow=0 ptr-hit=0 mass=0.3628
+      [06/64] target B=23 rank= 1 selected=23 follow=1 ptr-hit=0 mass=0.1167
+      [07/64] target B=24 rank= 1 selected=24 follow=1 ptr-hit=0 mass=0.1632
+      [08/64] target B=25 rank= 5 selected=24 follow=0 ptr-hit=0 mass=0.1168
+      [09/64] target B=26 rank=44 selected=15 follow=0 ptr-hit=0 mass=0.1520
+      [10/64] target B=27 rank=37 selected=24 follow=0 ptr-hit=0 mass=0.1071
+      [11/64] target B=28 rank= 1 selected=28 follow=1 ptr-hit=0 mass=0.1398
+      [12/64] target B=29 rank= 1 selected=29 follow=1 ptr-hit=0 mass=0.0864
+      [13/64] target B=30 rank= 1 selected=30 follow=1 ptr-hit=0 mass=0.0970
+      [14/64] target B=31 rank= 1 selected=31 follow=1 ptr-hit=0 mass=0.2158
+      [15/64] target B=32 rank= 1 selected=32 follow=1 ptr-hit=0 mass=0.1619
+      [16/64] target B=33 rank= 1 selected=33 follow=1 ptr-hit=0 mass=0.1265
+      [17/64] target B=34 rank= 3 selected=19 follow=0 ptr-hit=0 mass=0.1310
+      [18/64] target B=35 rank= 1 selected=35 follow=1 ptr-hit=0 mass=0.1512
+      [19/64] target B=36 rank= 1 selected=36 follow=1 ptr-hit=0 mass=0.1012
+      [20/64] target B=37 rank= 3 selected=19 follow=0 ptr-hit=0 mass=0.1206
+      [21/64] target B=38 rank=18 selected=24 follow=0 ptr-hit=0 mass=0.1006
+      [22/64] target B=39 rank= 1 selected=39 follow=1 ptr-hit=0 mass=0.1987
+      [23/64] target B=40 rank= 1 selected=40 follow=1 ptr-hit=0 mass=0.1241
+      [24/64] target B=41 rank= 1 selected=41 follow=1 ptr-hit=0 mass=0.1832
+      [25/64] target B=42 rank= 1 selected=42 follow=1 ptr-hit=0 mass=0.2898
+      [26/64] target B=43 rank=10 selected=61 follow=0 ptr-hit=0 mass=0.1139
+      [27/64] target B=44 rank= 1 selected=44 follow=1 ptr-hit=0 mass=0.1763
+      [28/64] target B=45 rank= 1 selected=45 follow=1 ptr-hit=0 mass=0.1073
+      [29/64] target B=46 rank= 1 selected=46 follow=1 ptr-hit=0 mass=0.1191
+      [30/64] target B=47 rank= 1 selected=47 follow=1 ptr-hit=0 mass=0.0793
+      [31/64] target B=48 rank= 2 selected=24 follow=0 ptr-hit=0 mass=0.1640
+      [32/64] target B=49 rank= 1 selected=49 follow=1 ptr-hit=0 mass=0.0952
+      [33/64] target B=50 rank= 2 selected=24 follow=0 ptr-hit=0 mass=0.1579
+      [34/64] target B=51 rank= 4 selected=48 follow=0 ptr-hit=0 mass=0.1391
+      [35/64] target B=52 rank= 3 selected=63 follow=0 ptr-hit=0 mass=0.2245
+      [36/64] target B=53 rank=22 selected=01 follow=0 ptr-hit=0 mass=0.1060
+      [37/64] target B=54 rank= 2 selected=24 follow=0 ptr-hit=0 mass=0.0894
+      [38/64] target B=55 rank=53 selected=19 follow=0 ptr-hit=0 mass=0.1097
+      [39/64] target B=56 rank= 3 selected=19 follow=0 ptr-hit=0 mass=0.1441
+      [40/64] target B=57 rank= 1 selected=57 follow=1 ptr-hit=0 mass=0.1330
+      [41/64] target B=58 rank= 1 selected=58 follow=1 ptr-hit=0 mass=0.1454
+      [42/64] target B=59 rank= 8 selected=01 follow=0 ptr-hit=0 mass=0.1176
+      [43/64] target B=60 rank=16 selected=24 follow=0 ptr-hit=0 mass=0.0932
+      [44/64] target B=61 rank=45 selected=19 follow=0 ptr-hit=0 mass=0.0872
+      [45/64] target B=62 rank=22 selected=24 follow=0 ptr-hit=0 mass=0.1005
+      [46/64] target B=63 rank= 5 selected=24 follow=0 ptr-hit=0 mass=0.1163
+      [47/64] target B=64 rank=33 selected=47 follow=0 ptr-hit=0 mass=0.1024
+      [48/64] target B=01 rank= 5 selected=62 follow=0 ptr-hit=0 mass=0.1582
+      [49/64] target B=02 rank= 4 selected=24 follow=0 ptr-hit=0 mass=0.1287
+      [50/64] target B=03 rank= 2 selected=24 follow=0 ptr-hit=0 mass=0.1320
+      [51/64] target B=04 rank= 1 selected=04 follow=1 ptr-hit=0 mass=0.1541
+      [52/64] target B=05 rank=24 selected=38 follow=0 ptr-hit=0 mass=0.1546
+      [53/64] target B=06 rank= 8 selected=61 follow=0 ptr-hit=0 mass=0.1166
+      [54/64] target B=07 rank= 1 selected=07 follow=1 ptr-hit=0 mass=0.1234
+      [55/64] target B=08 rank= 2 selected=52 follow=0 ptr-hit=0 mass=0.1767
+      [56/64] target B=09 rank=11 selected=39 follow=0 ptr-hit=0 mass=0.1603
+      [57/64] target B=10 rank= 1 selected=10 follow=1 ptr-hit=0 mass=0.1013
+      [58/64] target B=11 rank= 1 selected=11 follow=1 ptr-hit=0 mass=0.1957
+      [59/64] target B=12 rank= 1 selected=12 follow=1 ptr-hit=0 mass=0.2051
+      [60/64] target B=13 rank= 1 selected=13 follow=1 ptr-hit=0 mass=0.1017
+      [61/64] target B=14 rank=27 selected=59 follow=0 ptr-hit=0 mass=0.0851
+      [62/64] target B=15 rank= 1 selected=15 follow=1 ptr-hit=0 mass=0.1128
+      [63/64] target B=16 rank= 6 selected=24 follow=0 ptr-hit=0 mass=0.1498
+      [64/64] target B=17 rank= 1 selected=17 follow=1 ptr-hit=0 mass=0.2145
+      CF FOLLOW R1/R5/R16/MRR: 0.4531 / 0.7031 / 0.8281 / 0.564802
+      CF pointer span hit       : 0/64 = 0.0000
+
+[8/11] Mechanistic association diagnostics...
+      Retrieval R1 | pointer-hit     : 1.0000  n=1
+      Retrieval R1 | pointer-miss    : 0.4286  n=63
+      Mean gold mass | retrieval R1  : 0.166418  n=28
+      Mean gold mass | retrieval fail: 0.140834  n=36
+      PRIMARY minus UNIFORM R1       : +0.4062
+      PRIMARY minus SHIFTED R1       : +0.4219
+
+[9/11] Wilson intervals...
+      PRIMARY : 28/64 = 0.4375 | 95% Wilson [0.3229,0.5591]
+      UNIFORM :  2/64 = 0.0312 | 95% Wilson [0.0086,0.1070]
+      SHIFTED :  1/64 = 0.0156 | 95% Wilson [0.0028,0.0833]
+      NO_A    :  1/64 = 0.0156 | 95% Wilson [0.0028,0.0833]
+      CF      : 29/64 = 0.4531 | 95% Wilson [0.3373,0.5743]
+
+[10/11] Predeclared decision...
+      PASS   : False
+      STRONG : False
+      VERDICT: UNCENTERED_NATIVE_POINTER_SIGNAL_PARTIAL_INCONCLUSIVE
+
+[11/11] Protocol audit + final result...
+      Model frozen                              : YES
+      Panel reused from TEST520                 : NO
+      Fresh held-out items                      : 64
+      DISC / layer selection                    : NONE
+      Primary layer/representation              : L02-V PRE-LOCKED
+      Centering                                 : OFF PRE-LOCKED
+      Pointer layers                            : L14-L27 PRE-LOCKED
+      Primary address token IDs                 : NO
+      Primary address decoded Seal/text         : NO
+      Primary address LM-head rows              : NO
+      Gold Seal span used by address            : NO
+      Gold Seal span used diagnostic only       : YES
+      Query-time candidate-B forwards           : 0
+      Training / DRA / learned router           : NONE
+      Counterfactual uses same frozen mechanism : YES
+      Shift control preserves pointer weights   : YES
+
+================================================================================================================================================================================
+TEST521 FINAL RESULT — HELD-OUT CAUSAL VALIDATION
+================================================================================================================================================================================
+MODEL                              : Qwen/Qwen2.5-7B-Instruct · frozen
+BANK                               : NEW 64-item held-out panel
+PRIMARY                            : L02-V · UNCENTERED
+POINTER                            : native Q·K · RoPE · L14-L27
+DISCOVERY / POST-HOC SELECTION     : NONE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PRIMARY                            : R1=0.4375 R5=0.6562 R16=0.7812 MRR=0.544483
+UNIFORM                            : R1=0.0312 R5=0.1406 R16=0.3281 MRR=0.097375
+SHIFTED POINTER                    : R1=0.0156 R5=0.0625 R16=0.2656 MRR=0.076549
+NO-A                               : R1=0.0156 R5=0.0781 R16=0.2500 MRR=0.074123
+COUNTERFACTUAL FOLLOW              : R1=0.4531 R5=0.7031 R16=0.8281 MRR=0.564802
+POINTER GOLD-SPAN ARGMAX HIT       : 1/64 = 0.0156
+POINTER MEAN GOLD-SPAN MASS        : 0.152027
+POINTER MEDIAN GOLD-SPAN RANK      : 3.0
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PREDECLARED PASS                   : PRIMARY R1>=.50 R5>=.75; CF>=.60; UNIFORM<=.15; SHIFTED<=.20; NO-A<=.10
+PRIMARY PASS                       : False
+STRONG PASS                        : False
+TEST518 LOCK                       : d335fa02068644efbe3c54eba8b6ae3a4678fbba3abed972d3f31a401590ae3c
+TEST519 LOCK                       : 2bcf12382a2341ca84fcb1c21a9b52d4c4de79af50ba21d8d3b853f34c9f0f1a
+TEST520 LOCK                       : fb44f20176ae72ce58d9eaf99436e237f4e0548b893a7ee51d8f4d7768b0b806
+TEST521 LOCK                       : e1eeaa869cdb15532fb99419cf53fc7f1ba922807a925357934ce0fade7784de
+TOTAL TEST TIME                    : 74.75s
+VERDICT                            : UNCENTERED_NATIVE_POINTER_SIGNAL_PARTIAL_INCONCLUSIVE
+================================================================================================================================================================================
