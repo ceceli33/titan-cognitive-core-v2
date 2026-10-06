@@ -1,0 +1,154 @@
+ ==============================================================================================================================================================================
+TEST512 — AKBASCORE MAM · L27 ÇAĞRIİZ → B-ADDRESS BRIDGE
+ORACLE A → PRE-DECODE L27 TRACE → PRECOMPUTED MODEL-NATIVE B ADDRESS
+==============================================================================================================================================================================
+LOCK SHA: 2c9576ce56491489be55f34a1a6d331a29bc4fd8080084693e92d2dab4a43ac2
+PARENT TEST511 LOCK: 31558a2b86b1a1e86cb4f729d7c956781fe9269ff20bb2557a92b3300270e35c
+PARENT TEST510 LOCK: cf3aaf955c0cd5019b1b951d185f290528286df82b23da62aaa30657e6bad5ea
+PARENT TEST509 LOCK: 4b5b78841ebf0d9b458306136e122fd3108b33bdfd89924585f891f748eca0d8
+PARENT TEST508 LOCK: 47512c7860268517670ca5b45b6e76fe1582362dd38e447d164f33c756a1a2ca
+TRACE DEPTH: L27 — SEALED BY TEST511
+BANK: 32 REAL B BELLEKÖZ | DISCOVERY: 16 | FROZEN EVAL: 16
+QUERY-TIME MODEL FORWARDS PER B CANDIDATE: 0
+INTERMEDIATE SEAL DECODE: NONE
+TEXT REINSERTION: NONE
+DISTRACTORS: GRAMMATICAL + MEANINGFUL + SAME MODEL-NATIVE PIPELINE
+
+[1/8] Loading frozen Qwen...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 77.5kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 748kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 36.5MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 65.7MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 129MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.54MB/s]Download complete:  13.1GB,  962MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  277MB/s  Fetching 4 files: 100% 4/4 [00:45<00:00,  8.77s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.70it/s]generation_config.json: 100% 243/243 [00:00<00:00, 26.2kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | H=3584 | QH=28 KVH=4 HD=128 | vocab=152064
+
+[2/8] Building exact Seal token identities...
+      Seal token lengths: {1: 5, 2: 27}
+      Complete Seal sequences retained; first-token collisions are NOT treated as identity.
+
+[3/8] Precomputing real B BELLEKÖZ and address fingerprints...
+      B01 | Seal FEN → Class QAL | real packet tokens=32 | Seal subtokens=2
+      B02 | Seal VAN → Class SOD | real packet tokens=30 | Seal subtokens=2
+      B03 | Seal BEK → Class QAD | real packet tokens=31 | Seal subtokens=2
+      B04 | Seal TUR → Class QAH | real packet tokens=29 | Seal subtokens=2
+      B05 | Seal CER → Class GAM | real packet tokens=31 | Seal subtokens=2
+      B06 | Seal XAL → Class ROK | real packet tokens=31 | Seal subtokens=2
+      32 real grammatical B BELLEKÖZ precomputed.
+
+[4/8] Pre-forging A and capturing TEST511-sealed L27 ÇAĞRIİZ...
+      ITEM 01 Aldren | L27 trace captured | target Seal text decoded: NO
+      ITEM 02 Elara  | L27 trace captured | target Seal text decoded: NO
+      ITEM 03 Ilyra  | L27 trace captured | target Seal text decoded: NO
+      ITEM 04 Joren  | L27 trace captured | target Seal text decoded: NO
+      ITEM 05 Neris  | L27 trace captured | target Seal text decoded: NO
+      ITEM 06 Ralen  | L27 trace captured | target Seal text decoded: NO
+      One A+query forward/item. No B candidate was queried.
+
+      Building frozen query carriers...
+      FULLVOC and TOP256 carriers ready.
+
+[5/8] DISCOVERY — address bridge selection, items 01–16 only...
+      #01 TOP256 /TOKFIRST | R1=0.5625 R5=0.6875 R16=0.8125 MRR=0.632068 median=1.0
+      #02 FULLVOC/TOKFIRST | R1=0.5625 R5=0.6875 R16=0.8125 MRR=0.632068 median=1.0
+      #03 TOP256 /TOKSUM   | R1=0.4375 R5=0.7500 R16=0.8750 MRR=0.581287 median=2.0
+      #04 FULLVOC/TOKSUM   | R1=0.4375 R5=0.7500 R16=0.8750 MRR=0.581287 median=2.0
+      #05 TOP256 /TOKMEAN  | R1=0.4375 R5=0.7500 R16=0.8750 MRR=0.581287 median=2.0
+      #06 FULLVOC/TOKMEAN  | R1=0.4375 R5=0.7500 R16=0.8750 MRR=0.581287 median=2.0
+      #07 TOP256 /TOKLAST  | R1=0.0000 R5=0.0625 R16=0.5625 MRR=0.095495 median=16.0
+      #08 FULLVOC/TOKLAST  | R1=0.0000 R5=0.0625 R16=0.5625 MRR=0.095495 median=16.0
+
+      FROZEN BRIDGE → TOP256 / TOKFIRST
+      Evaluation items have NOT participated in bridge selection.
+
+[6/8] FROZEN EVALUATION — L27 ÇAĞRIİZ → 32 real B addresses...
+      [17/32] Yalen  | gold=B17(ZOR) pred=B17(ZOR) rank= 1 | margin=+0.557131
+      [18/32] Coren  | gold=B18(IVO) pred=B15(SUL) rank=30 | margin=-0.323100
+      [19/32] Derin  | gold=B19(RAS) pred=B07(RUK) rank= 2 | margin=+0.000000
+      [20/32] Heron  | gold=B20(NUR) pred=B20(NUR) rank= 1 | margin=+0.472808
+      [21/32] Laven  | gold=B21(FIR) pred=B04(TUR) rank=11 | margin=-0.012944
+      [22/32] Moris  | gold=B22(KET) pred=B22(KET) rank= 1 | margin=+0.000000
+      [23/32] Rovis  | gold=B23(RIN) pred=B07(RUK) rank= 3 | margin=+0.000000
+      [24/32] Veris  | gold=B24(TEV) pred=B04(TUR) rank=27 | margin=-0.132515
+      [25/32] Waren  | gold=B25(KOR) pred=B22(KET) rank= 2 | margin=+0.000000
+      [26/32] Aren   | gold=B26(URB) pred=B15(SUL) rank=24 | margin=-0.058169
+      [27/32] Elen   | gold=B27(VEL) pred=B02(VAN) rank=28 | margin=-0.691556
+      [28/32] Faren  | gold=B28(XEN) pred=B06(XAL) rank= 2 | margin=+0.000000
+      [29/32] Joris  | gold=B29(TOL) pred=B04(TUR) rank= 2 | margin=+0.000000
+      [30/32] Noren  | gold=B30(YOR) pred=B30(YOR) rank= 1 | margin=+0.484258
+      [31/32] Oris   | gold=B31(MAR) pred=B31(MAR) rank= 1 | margin=+0.000283
+      [32/32] Toren  | gold=B32(PEL) pred=B15(SUL) rank=24 | margin=-0.104581
+
+[7/8] Frozen bridge statistics + random-label null...
+      BRIDGE                : TOP256/TOKFIRST
+      DISCOVERY R1          : 0.5625
+      DISCOVERY R5          : 0.6875
+      DISCOVERY MRR         : 0.632068
+      EVAL R1               : 0.3125
+      EVAL R5               : 0.6250
+      EVAL R16              : 0.6875
+      EVAL MRR              : 0.475854
+      EVAL MEDIAN RANK      : 2.0
+      POSITIVE MARGIN       : 0.2500
+      MEAN MARGIN           : +0.011976
+      NULL R1 mean / P99    : 0.0314 / 0.1875
+      NULL MRR mean / P99   : 0.127270 / 0.259567
+
+[8/8] Mechanistic classification...
+      A address                           : ORACLE
+      ÇAĞRIİZ depth                       : L27 — TEST511 sealed
+      A+query forwards/item               : 1
+      Answer tokens generated             : 0
+      Intermediate Seal decoded           : 0
+      Intermediate text reinserted        : 0
+      B candidates                        : 32 real BELLEKÖZ
+      Query-time B candidate forwards     : 0
+      B content read before selection     : 0
+      Address fingerprints                : precomputed
+      Learned router                      : NONE
+      ANN                                 : NONE
+      DRA / steering                      : NONE
+      Training                            : NONE
+      Distractor placeholders/noise       : FORBIDDEN
+      Discovery/evaluation separation     : YES
+      Evaluation bridge reselection       : NO
+
+==============================================================================================================================================================================
+TEST512 FINAL RESULT — AKBASCORE MAM · L27 ÇAĞRIİZ → B-ADDRESS BRIDGE
+==============================================================================================================================================================================
+MODEL                         : Qwen/Qwen2.5-7B-Instruct · frozen
+PARENT                        : TEST511
+PARENT TEST511 LOCK           : 31558a2b86b1a1e86cb4f729d7c956781fe9269ff20bb2557a92b3300270e35c
+PARENT TEST510 LOCK           : cf3aaf955c0cd5019b1b951d185f290528286df82b23da62aaa30657e6bad5ea
+PARENT TEST509 LOCK           : 4b5b78841ebf0d9b458306136e122fd3108b33bdfd89924585f891f748eca0d8
+PARENT TEST508 LOCK           : 47512c7860268517670ca5b45b6e76fe1582362dd38e447d164f33c756a1a2ca
+TASK                          : L27 ÇAĞRIİZ → precomputed B address
+TRACE DEPTH                   : L27
+B BANK                        : 32 real grammatical BELLEKÖZ
+ANSWER GENERATION             : NONE
+INTERMEDIATE TEXT             : NONE
+QUERY-TIME CANDIDATE FORWARD  : NONE
+B READ BEFORE ADDRESS         : NONE
+LEARNED ROUTER                : NONE
+ANN                           : NONE
+TRAINING                      : NONE
+DISCOVERY                     : items 01–16
+FROZEN EVALUATION             : items 17–32
+FROZEN BRIDGE                 : TOP256/TOKFIRST
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DISCOVERY · R1                : 0.5625
+DISCOVERY · R5                : 0.6875
+DISCOVERY · MRR               : 0.632068
+FROZEN EVAL · R1              : 0.3125
+FROZEN EVAL · R5              : 0.6250
+FROZEN EVAL · R16             : 0.6875
+FROZEN EVAL · MRR             : 0.475854
+FROZEN EVAL · MEDIAN RANK     : 2.0
+FROZEN EVAL · POS MARGIN      : 0.2500
+NULL · R1 MEAN                : 0.0314
+NULL · MRR MEAN               : 0.127270
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST508 LOCK SHA              : 47512c7860268517670ca5b45b6e76fe1582362dd38e447d164f33c756a1a2ca
+TEST509 LOCK SHA              : 4b5b78841ebf0d9b458306136e122fd3108b33bdfd89924585f891f748eca0d8
+TEST510 LOCK SHA              : cf3aaf955c0cd5019b1b951d185f290528286df82b23da62aaa30657e6bad5ea
+TEST511 LOCK SHA              : 31558a2b86b1a1e86cb4f729d7c956781fe9269ff20bb2557a92b3300270e35c
+TEST512 LOCK SHA              : 2c9576ce56491489be55f34a1a6d331a29bc4fd8080084693e92d2dab4a43ac2
+TOTAL TEST TIME               : 163.01s
+EXPLORATORY VERDICT           : LATENT_CAGRIIZ_TO_B_ADDRESS_BRIDGE_NOT_YET_OBSERVED
+==============================================================================================================================================================================
