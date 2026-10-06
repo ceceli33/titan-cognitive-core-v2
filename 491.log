@@ -1,0 +1,178 @@
+ 
+==============================================================================================================================================================
+TEST491 — AKBASCORE MAM · FROZEN BASIN+RESIDUAL ADDRESSER · FRESH HELD-OUT CONCEPT PAIRS
+FROZEN FROM TEST490 · BASIN TOKENMAX L10 → TOKEN-LOCAL IDENTITY RESIDUAL L08 · NO SEARCH/TUNING
+==============================================================================================================================================================
+LOCK SHA: 582fdc3e39d58863685be094c1bbfcfac8e398845d90624598197c97be9632bd
+TEST490 LOCK: 237f3c7a9cc2478b2ca55944f0a356101c8f87c5a7ef250f6267fc04a9fc1dd2
+PANEL: 64 records / 32 fresh concepts / 2 instances each
+[1/8] Loading frozen Qwen...
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 77.5kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 853kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 61.1MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 49.3MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 101MB/s]
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.14MB/s]
+Download complete: 
+
+ 13.1GB,  285MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  554MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:43<00:00, 43.17s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 100.10it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 31.2kB/s]
+      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | frozen BF16
+[2/8] Capturing fresh memory/query token states...
+      memories 16/64
+      memories 32/64
+      memories 48/64
+      memories 64/64
+      queries  16/64
+      queries  32/64
+      queries  48/64
+      queries  64/64
+[3/8] Frozen Stage-1 semantic basin...
+      TOKENMAX L10: {'R1': 0.578125, 'R5': 0.828125, 'R16': 0.9375, 'MRR': 0.7008080587055165, 'MEDR': 1.0, 'MEANR': 4.921875}
+[4/8] Applying frozen basin+residual rule...
+      BASIN+RESIDUAL: {'R1': 0.484375, 'R5': 0.828125, 'R16': 0.859375, 'MRR': 0.6346413251275878, 'MEDR': 2.0, 'MEANR': 6.734375}
+[5/8] Family-vs-instance held-out decomposition...
+      L10 FAMILY R1=0.750000 R5=0.875000
+      L10 INSTANCE R1=0.578125 R5=0.828125
+      FUSED INSTANCE R1=0.484375 R5=0.828125
+[6/8] Difficulty strata + pair discrimination...
+      STANDARD    n=18 BASE-R1=0.611 BASE-R5=0.833 FUSED-R1=0.667 FUSED-R5=0.833
+      HARD        n=14 BASE-R1=0.714 BASE-R5=0.857 FUSED-R1=0.571 FUSED-R5=0.857
+      EXTREME     n=26 BASE-R1=0.462 BASE-R5=0.769 FUSED-R1=0.346 FUSED-R5=0.769
+      ADVERSARIAL n=06 BASE-R1=0.667 BASE-R5=1.000 FUSED-R1=0.333 FUSED-R5=1.000
+      PAIR BASE correct=0.750000
+      BOTH INSTANCES IN TOP5=0.656250
+      PAIR FUSED correct when both visible=0.666667
+[7/8] Per-query audit...
+      [00] OK   ebony microscope          base-r= 1 final-r= 1 | base=ebony microscope          final=ebony microscope          | id-token=' optical'
+      [01] MISS ivory microscope          base-r= 2 final-r= 2 | base=ebony microscope          final=ebony microscope          | id-token=' viewing'
+      [02] MISS navy sphygmomanometer     base-r= 1 final-r= 2 | base=navy sphygmomanometer     final=blue salinometer          | id-token=' blue'
+      [03] OK   linen sphygmomanometer    base-r= 1 final-r= 1 | base=linen sphygmomanometer    final=linen sphygmomanometer    | id-token=' fabric'
+      [04] OK   yellow geiger counter     base-r= 1 final-r= 1 | base=yellow geiger counter     final=yellow geiger counter     | id-token=' yellow'
+      [05] OK   steel geiger counter      base-r= 2 final-r= 1 | base=yellow geiger counter     final=steel geiger counter      | id-token=' radioactive'
+      [06] OK   black oscilloscope        base-r= 1 final-r= 1 | base=black oscilloscope        final=black oscilloscope        | id-token=' dark'
+      [07] MISS silver oscilloscope       base-r=32 final-r=13 | base=ceramic salinometer       final=brass tachometer          | id-token=' bench'
+      [08] MISS red tachometer            base-r= 2 final-r= 2 | base=brass tachometer          final=brass tachometer          | id-token=' turning'
+      [09] OK   brass tachometer          base-r= 1 final-r= 2 | base=brass tachometer          final=brass tachometer          | id-token=' gauge'
+      [10] OK   glass calorimeter         base-r= 1 final-r= 1 | base=glass calorimeter         final=glass calorimeter         | id-token=' heat'
+      [11] MISS copper calorimeter        base-r=51 final-r=16 | base=violet spectrometer       final=violet spectrometer       | id-token=' experimental'
+      [12] OK   white densitometer        base-r= 1 final-r= 1 | base=white densitometer        final=white densitometer        | id-token=' of'
+      [13] MISS ceramic densitometer      base-r=13 final-r=18 | base=ceramic salinometer       final=ceramic salinometer       | id-token='-c'
+      [14] OK   violet spectrometer       base-r= 1 final-r= 1 | base=violet spectrometer       final=violet spectrometer       | id-token=' purple'
+      [15] MISS aluminum spectrometer     base-r= 2 final-r= 2 | base=violet spectrometer       final=violet spectrometer       | id-token=' wavelength'
+      [16] MISS green theodolite          base-r= 2 final-r= 2 | base=green spirit level        final=green spirit level        | id-token=' horizontal'
+      [17] MISS bronze theodolite         base-r= 2 final-r= 3 | base=green spirit level        final=green spirit level        | id-token=' when'
+      [18] MISS glass hydrometer          base-r=16 final-r=22 | base=white densitometer        final=ceramic densitometer      | id-token=' density'
+      [19] OK   wooden hydrometer         base-r= 1 final-r= 1 | base=wooden hydrometer         final=wooden hydrometer         | id-token=' wood'
+      [20] MISS cobalt galvanometer       base-r=38 final-r=23 | base=orange multimeter         final=orange multimeter         | id-token=' instrument'
+      [21] MISS brass galvanometer        base-r=16 final-r=25 | base=yellow geiger counter     final=yellow geiger counter     | id-token=' yellow'
+      [22] MISS iron dynamometer          base-r= 7 final-r=26 | base=onyx lux meter            final=onyx lux meter            | id-token=' heavy'
+      [23] MISS crystal dynamometer       base-r=14 final-r=28 | base=green spirit level        final=green spirit level        | id-token=' holds'
+      [24] OK   amber refractometer       base-r= 1 final-r= 1 | base=amber refractometer       final=amber refractometer       | id-token=' amber'
+      [25] MISS steel refractometer       base-r= 3 final-r= 2 | base=ceramic salinometer       final=ceramic salinometer       | id-token=' used'
+      [26] OK   copper manometer          base-r= 1 final-r= 1 | base=copper manometer          final=copper manometer          | id-token=' or'
+      [27] MISS quartz manometer          base-r= 1 final-r= 4 | base=quartz manometer          final=copper manometer          | id-token=' or'
+      [28] OK   black pedometer           base-r= 1 final-r= 1 | base=black pedometer           final=black pedometer           | id-token=' steps'
+      [29] OK   jade pedometer            base-r= 1 final-r= 2 | base=jade pedometer            final=jade pedometer            | id-token=' distance'
+      [30] OK   silver rangefinder        base-r= 1 final-r= 1 | base=silver rangefinder        final=silver rangefinder        | id-token=' to'
+      [31] OK   mahogany rangefinder      base-r= 1 final-r= 1 | base=mahogany rangefinder      final=mahogany rangefinder      | id-token=' distance'
+      [32] OK   ivory clinometer          base-r= 1 final-r= 1 | base=ivory clinometer          final=ivory clinometer          | id-token=' pale'
+      [33] MISS azure clinometer          base-r= 1 final-r= 3 | base=azure clinometer          final=green spirit level        | id-token=' steep'
+      [34] MISS white lux meter           base-r= 3 final-r= 2 | base=onyx lux meter            final=onyx lux meter            | id-token=' amount'
+      [35] MISS onyx lux meter            base-r= 1 final-r= 3 | base=onyx lux meter            final=black dosimeter           | id-token=' device'
+      [36] OK   yellow sound level meter  base-r= 1 final-r= 1 | base=yellow sound level meter  final=yellow sound level meter  | id-token=' yellow'
+      [37] OK   steel sound level meter   base-r= 1 final-r= 1 | base=steel sound level meter   final=steel sound level meter   | id-token=' metallic'
+      [38] OK   chrome torque wrench      base-r= 1 final-r= 1 | base=chrome torque wrench      final=chrome torque wrench      | id-token='ener'
+      [39] MISS red torque wrench         base-r= 1 final-r= 2 | base=red torque wrench         final=chrome torque wrench      | id-token=' bolt'
+      [40] OK   green spirit level        base-r= 1 final-r= 1 | base=green spirit level        final=green spirit level        | id-token=' green'
+      [41] MISS aluminum spirit level     base-r= 2 final-r= 3 | base=green spirit level        final=green spirit level        | id-token=' container'
+      [42] OK   orange multimeter         base-r= 1 final-r= 1 | base=orange multimeter         final=orange multimeter         | id-token=' orange'
+      [43] MISS black multimeter          base-r= 3 final-r= 3 | base=orange multimeter         final=orange multimeter         | id-token=' quantities'
+      [44] MISS brass compass divider     base-r= 2 final-r= 3 | base=steel compass divider     final=yellow geiger counter     | id-token=' yellow'
+      [45] MISS steel compass divider     base-r= 4 final-r= 3 | base=ceramic salinometer       final=brass tachometer          | id-token=' h'
+      [46] OK   blue micrometer           base-r= 2 final-r= 1 | base=bronze micrometer         final=blue micrometer           | id-token=' blue'
+      [47] OK   bronze micrometer         base-r= 1 final-r= 1 | base=bronze micrometer         final=bronze micrometer         | id-token=' measuring'
+      [48] MISS glass pipette             base-r= 6 final-r=52 | base=red pipette               final=ceramic salinometer       | id-token=' of'
+      [49] OK   red pipette               base-r= 1 final-r= 1 | base=red pipette               final=red pipette               | id-token=' red'
+      [50] OK   white centrifuge          base-r= 1 final-r= 1 | base=white centrifuge          final=white centrifuge          | id-token=' spins'
+      [51] MISS steel centrifuge          base-r= 4 final-r= 2 | base=ceramic salinometer       final=brass tachometer          | id-token=' rapid'
+      [52] OK   clear burette             base-r= 1 final-r= 1 | base=clear burette             final=clear burette             | id-token=' transparent'
+      [53] MISS amber burette             base-r= 2 final-r= 2 | base=amber refractometer       final=amber refractometer       | id-token=' re'
+      [54] MISS brass sextant             base-r= 1 final-r= 4 | base=brass sextant             final=black sextant             | id-token=' celestial'
+      [55] OK   black sextant             base-r= 1 final-r= 1 | base=black sextant             final=black sextant             | id-token=' dark'
+      [56] OK   silver polarimeter        base-r= 1 final-r= 1 | base=silver polarimeter        final=silver polarimeter        | id-token=' silver'
+      [57] OK   wooden polarimeter        base-r= 1 final-r= 1 | base=wooden polarimeter        final=wooden polarimeter        | id-token=' wood'
+      [58] MISS glass viscometer          base-r= 6 final-r=60 | base=white densitometer        final=ceramic salinometer       | id-token=' used'
+      [59] MISS copper viscometer         base-r=40 final-r=61 | base=red tachometer            final=green spirit level        | id-token=' a'
+      [60] MISS white dosimeter           base-r= 2 final-r= 3 | base=black dosimeter           final=black dosimeter           | id-token=' radiation'
+      [61] OK   black dosimeter           base-r= 1 final-r= 1 | base=black dosimeter           final=black dosimeter           | id-token=' dark'
+      [62] OK   blue salinometer          base-r= 1 final-r= 1 | base=blue salinometer          final=blue salinometer          | id-token=' blue'
+      [63] OK   ceramic salinometer       base-r= 1 final-r= 1 | base=ceramic salinometer       final=ceramic salinometer       | id-token=' salt'
+[8/8] Fixed permutation null + final seal...
+
+==============================================================================================================================================================
+TEST491 FINAL RESULT — FROZEN BASIN+RESIDUAL HELD-OUT VALIDATION
+==============================================================================================================================================================
+FOUNDATION          : TEST490 semantic-basin / token-residual split
+TEST482 BLOB SHA    : ecc630144a44479cb35c432c50eb0d09bc6866d7
+TEST488 LOCK SHA    : d2c2e744532e1fe9b4c5be745fce6892720745dd590b49eca59ca3ef753fdfd8
+TEST489 LOCK SHA    : ed03fb4b6f1afa410e1a28329d05b744889b8836f69f3572c4b52032b8b70fb0
+TEST490 LOCK SHA    : 237f3c7a9cc2478b2ca55944f0a356101c8f87c5a7ef250f6267fc04a9fc1dd2
+TEST491 LOCK SHA    : 582fdc3e39d58863685be094c1bbfcfac8e398845d90624598197c97be9632bd
+FRESH PANEL         : 64 records / 32 unseen concepts / 2 instances each
+BASIN               : TOKENMAX L10 · global top-5
+IDENTITY             : L08 max positive token-local residual inside basin
+FUSION               : equal rank-normalized basin + residual; frozen
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+BASE TOKENMAX L10   : {'R1': 0.578125, 'R5': 0.828125, 'R16': 0.9375, 'MRR': 0.7008080587055165, 'MEDR': 1.0, 'MEANR': 4.921875}
+FROZEN BASIN+ID     : {'R1': 0.484375, 'R5': 0.828125, 'R16': 0.859375, 'MRR': 0.6346413251275878, 'MEDR': 2.0, 'MEANR': 6.734375}
+ΔR1                  : -0.09375
+ΔMRR                 : -0.0661667335779288
+NULL MRR mean        : 0.07261327681361675
+NULL MRR P99         : 0.1167656839762241
+PAIR BASE ACC        : 0.75
+PAIR BOTH IN TOP5    : 0.65625
+PAIR FUSED ACC       : 0.6666666666666666
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+VERDICT              : SEMANTIC_ADDRESS_SIGNAL_REPLICATED_BUT_RESIDUAL_RULE_NOT_VALIDATED
+LAYER SEARCH         : NONE
+THRESHOLD SEARCH     : NONE
+WEIGHT FIT           : NONE
+CHANNEL FIT          : NONE
+POST-HOC SELECTION   : NONE
+ROUTER / ANN / GRAPH : NONE
+CARTRIDGE READOUT    : NOT USED
+TRAINING / LoRA      : NONE
+MODEL CHANGE         : NONE
+NEXT                 : if validated, test frozen mechanism against larger distractor banks; otherwise inspect failure without retuning this panel.
+==============================================================================================================================================================
+
