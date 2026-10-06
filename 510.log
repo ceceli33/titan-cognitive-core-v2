@@ -1,0 +1,158 @@
+ ==============================================================================================================================================================================
+TEST510 — AKBASCORE MAM · ÇAĞRIİZ LATENT TRACE ATLAS
+WHERE DOES THE NEXT KEY EXIST? · ORACLE A → PRE-ANSWER LATENT STATE → FIXED SEAL REFERENCE BANK
+==============================================================================================================================================================================
+LOCK SHA: cf3aaf955c0cd5019b1b951d185f290528286df82b23da62aaa30657e6bad5ea
+PARENT TEST509 LOCK: 4b5b78841ebf0d9b458306136e122fd3108b33bdfd89924585f891f748eca0d8
+PARENT TEST508 LOCK: 47512c7860268517670ca5b45b6e76fe1582362dd38e447d164f33c756a1a2ca
+ITEMS: 32 | DISCOVERY: 16 | FROZEN EVAL: 16 | SEAL REFERENCE BANK: 32
+TEXTUAL INTERMEDIATE SEAL DECODE: NONE
+B-CARTRIDGE SEARCH: NONE
+QUERY-TIME MODEL FORWARDS PER SEAL CANDIDATE: 0
+CANDIDATES: HRAW / HNORM / QMEAN / KPROJ / VPROJ × layers 0..27
+
+[1/7] Loading frozen Qwen...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 87.1kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 817kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 76.6MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 73.0MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 127MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.65MB/s]Download complete:  13.1GB,  133MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  489MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 44.00s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.84it/s]generation_config.json: 100% 243/243 [00:00<00:00, 32.2kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | H=3584 | QH=28 KVH=4 HD=128 | torch.bfloat16
+      GQA group: 7 query heads per KV head
+
+[2/7] Pre-forging oracle A memories...
+      ITEM 01 Aldren | A contains Aldren→FEN
+      ITEM 02 Elara  | A contains Elara→VAN
+      ITEM 03 Ilyra  | A contains Ilyra→BEK
+      ITEM 04 Joren  | A contains Joren→TUR
+      ITEM 05 Neris  | A contains Neris→CER
+      ITEM 06 Ralen  | A contains Ralen→XAL
+      Same TEST509 RAW A-memory construction retained.
+
+[3/7] Building fixed Seal reference bank and extracting A latent atlas...
+      REF 01 Seal BEK
+      REF 02 Seal CEN
+      REF 03 Seal CER
+      REF 04 Seal CIR
+      REF 05 Seal FEN
+      REF 06 Seal FER
+      Fixed reference bank complete: 32 independently encoded Seals.
+      ITEM 01 Aldren | 28-layer × 5-family atlas captured | Seal decoded: NO
+      ITEM 02 Elara  | 28-layer × 5-family atlas captured | Seal decoded: NO
+      ITEM 03 Ilyra  | 28-layer × 5-family atlas captured | Seal decoded: NO
+      ITEM 04 Joren  | 28-layer × 5-family atlas captured | Seal decoded: NO
+      ITEM 05 Neris  | 28-layer × 5-family atlas captured | Seal decoded: NO
+      ITEM 06 Ralen  | 28-layer × 5-family atlas captured | Seal decoded: NO
+      All A traces captured before generation of any answer token.
+
+[4/7] DISCOVERY — items 01–16 only...
+      #01 QMEAN  L17 | R1=0.1250 R5=0.1875 R16=0.6875 MRR=0.200016 median=14.0
+      #02 HNORM  L14 | R1=0.0625 R5=0.2500 R16=0.6250 MRR=0.188508 median=14.0
+      #03 QMEAN  L04 | R1=0.0625 R5=0.2500 R16=0.5625 MRR=0.185810 median=10.5
+      #04 QMEAN  L16 | R1=0.0625 R5=0.3125 R16=0.6875 MRR=0.184925 median=13.5
+      #05 VPROJ  L09 | R1=0.0625 R5=0.2500 R16=0.6250 MRR=0.180427 median=13.5
+      #06 HRAW   L07 | R1=0.0625 R5=0.2500 R16=0.5000 MRR=0.175805 median=17.5
+      #07 HRAW   L09 | R1=0.0625 R5=0.2500 R16=0.5000 MRR=0.175549 median=15.5
+      #08 KPROJ  L01 | R1=0.0625 R5=0.1875 R16=0.6250 MRR=0.175307 median=13.5
+      #09 HRAW   L08 | R1=0.0625 R5=0.2500 R16=0.4375 MRR=0.169960 median=18.0
+      #10 KPROJ  L20 | R1=0.0625 R5=0.2500 R16=0.6250 MRR=0.169369 median=14.0
+      #11 HNORM  L17 | R1=0.0625 R5=0.2500 R16=0.6250 MRR=0.165606 median=13.0
+      #12 HRAW   L06 | R1=0.0625 R5=0.2500 R16=0.5000 MRR=0.165008 median=16.0
+      #13 HNORM  L15 | R1=0.0625 R5=0.2500 R16=0.6250 MRR=0.164410 median=14.0
+      #14 KPROJ  L17 | R1=0.0625 R5=0.1875 R16=0.6875 MRR=0.164249 median=12.5
+      #15 KPROJ  L07 | R1=0.0625 R5=0.2500 R16=0.3750 MRR=0.163136 median=20.5
+
+      FROZEN CHANNEL → QMEAN / L17
+      Evaluation items have NOT participated in channel selection.
+
+[5/7] FROZEN EVALUATION — items 17–32...
+      [17/32] Yalen  | gold=ZOR pred=VAN rank= 8 | gold=+0.84896 topWrong=+0.85635 margin=-0.00739
+      [18/32] Coren  | gold=IVO pred=YOR rank=26 | gold=+0.82577 topWrong=+0.84792 margin=-0.02215
+      [19/32] Derin  | gold=RAS pred=VAN rank=28 | gold=+0.83705 topWrong=+0.85947 margin=-0.02242
+      [20/32] Heron  | gold=NUR pred=VAN rank=16 | gold=+0.83809 topWrong=+0.84849 margin=-0.01040
+      [21/32] Laven  | gold=FIR pred=YOR rank=29 | gold=+0.82948 topWrong=+0.85238 margin=-0.02290
+      [22/32] Moris  | gold=KET pred=YOR rank=21 | gold=+0.84268 topWrong=+0.85591 margin=-0.01323
+      [23/32] Rovis  | gold=RIN pred=VAN rank=17 | gold=+0.84300 topWrong=+0.85574 margin=-0.01274
+      [24/32] Veris  | gold=TEV pred=YOR rank=24 | gold=+0.83259 topWrong=+0.85146 margin=-0.01887
+      [25/32] Waren  | gold=KOR pred=VAN rank=24 | gold=+0.83599 topWrong=+0.85636 margin=-0.02036
+      [26/32] Aren   | gold=URB pred=YOR rank=22 | gold=+0.83882 topWrong=+0.85554 margin=-0.01672
+      [27/32] Elen   | gold=VEL pred=VAN rank=10 | gold=+0.84743 topWrong=+0.85717 margin=-0.00975
+      [28/32] Faren  | gold=XEN pred=VAN rank=30 | gold=+0.83745 topWrong=+0.86216 margin=-0.02471
+      [29/32] Joris  | gold=TOL pred=VAN rank=12 | gold=+0.84655 topWrong=+0.85725 margin=-0.01070
+      [30/32] Noren  | gold=YOR pred=YOR rank= 1 | gold=+0.85419 topWrong=+0.85322 margin=+0.00096
+      [31/32] Oris   | gold=MAR pred=GUL rank= 9 | gold=+0.84957 topWrong=+0.85887 margin=-0.00929
+      [32/32] Toren  | gold=PEL pred=VAN rank=21 | gold=+0.83417 topWrong=+0.84979 margin=-0.01562
+
+[6/7] Frozen-channel statistics...
+      CHANNEL             : QMEAN / L17
+      DISCOVERY R1        : 0.1250
+      DISCOVERY R5        : 0.1875
+      DISCOVERY R16       : 0.6875
+      DISCOVERY MRR       : 0.200016
+      EVAL R1             : 0.0625
+      EVAL R5             : 0.0625
+      EVAL R16            : 0.3750
+      EVAL MRR            : 0.119174
+      EVAL MEDIAN RANK    : 21.0
+      MEAN GOLD MARGIN    : -0.014767
+      MEDIAN GOLD MARGIN  : -0.014426
+      POSITIVE MARGIN     : 0.0625
+      NULL R1 mean / P99  : 0.0316 / 0.1875
+      NULL MRR mean / P99 : 0.127416 / 0.263020
+
+[7/7] Mechanistic classification...
+      A address                           : ORACLE
+      A latent forwards/item              : 1
+      Answer tokens generated             : 0
+      Intermediate Seal decoded           : 0
+      B cartridges queried                : 0
+      Per-Seal query-time model forwards  : 0
+      Seal references                     : precomputed
+      Discovery/evaluation separation     : YES
+      Evaluation channel reselection      : NO
+      Projection dtype path               : MODEL DTYPE → FP32 ANALYSIS
+      DRA / steering                      : NONE
+      Training / learned router           : NONE
+
+==============================================================================================================================================================================
+TEST510 FINAL RESULT — AKBASCORE MAM · ÇAĞRIİZ LATENT TRACE ATLAS
+==============================================================================================================================================================================
+MODEL                         : Qwen/Qwen2.5-7B-Instruct · frozen
+PARENT                        : TEST509
+PARENT TEST509 LOCK           : 4b5b78841ebf0d9b458306136e122fd3108b33bdfd89924585f891f748eca0d8
+PARENT TEST508 LOCK           : 47512c7860268517670ca5b45b6e76fe1582362dd38e447d164f33c756a1a2ca
+TASK                          : Oracle A → latent state → next-key Seal
+SEAL REFERENCE BANK           : 32
+A ADDRESS                     : ORACLE — isolation control
+ANSWER TOKEN GENERATION       : NONE
+INTERMEDIATE SEAL TEXT        : NEVER DECODED
+B-CARTRIDGE SEARCH            : NONE
+PER-CANDIDATE MODEL FORWARD   : NONE
+REFERENCE ENCODING            : frozen model · one-time
+PROJECTION COMPUTE DTYPE      : torch.bfloat16
+ANALYSIS DTYPE                : FP32
+TRAINING                      : NONE
+DRA / STEERING                : NONE
+VTOKEN                        : NONE
+ANN                           : NONE
+DISCOVERY                     : items 01–16
+FROZEN EVALUATION             : items 17–32
+CANDIDATES                    : HRAW/HNORM/QMEAN/KPROJ/VPROJ × 28 layers
+FROZEN TRACE CHANNEL          : QMEAN / L17
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DISCOVERY · R1                : 0.1250
+DISCOVERY · R5                : 0.1875
+DISCOVERY · R16               : 0.6875
+DISCOVERY · MRR               : 0.200016
+FROZEN EVAL · R1              : 0.0625
+FROZEN EVAL · R5              : 0.0625
+FROZEN EVAL · R16             : 0.3750
+FROZEN EVAL · MRR             : 0.119174
+FROZEN EVAL · MEDIAN RANK     : 21.0
+FROZEN EVAL · POS MARGIN      : 0.0625
+NULL · R1 MEAN                : 0.0316
+NULL · MRR MEAN               : 0.127416
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST508 LOCK SHA              : 47512c7860268517670ca5b45b6e76fe1582362dd38e447d164f33c756a1a2ca
+TEST509 LOCK SHA              : 4b5b78841ebf0d9b458306136e122fd3108b33bdfd89924585f891f748eca0d8
+TEST510 LOCK SHA              : cf3aaf955c0cd5019b1b951d185f290528286df82b23da62aaa30657e6bad5ea
+TOTAL TEST TIME                : 68.56s
+EXPLORATORY VERDICT           : NEXT_KEY_LATENT_TRACE_NOT_YET_LOCALIZED
+==============================================================================================================================================================================
