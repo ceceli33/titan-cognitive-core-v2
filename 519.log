@@ -1,0 +1,276 @@
+ 
+================================================================================================================================================================================
+TEST519 — AKBASCORE MAM · TENSOR-NATIVE BELLEKÖZ ADDRESS FROM FROZEN K/V GEOMETRY
+A QUERY K/V TRACE → B RAW K/V TENSOR HEADER · NO B TOKEN-ID ADDRESS · NO GOLD KEY POSITION
+================================================================================================================================================================================
+
+[1/11] Loading frozen Qwen...
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 84.6kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 865kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 59.0MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 71.5MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 134MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.45MB/s]
+Download complete: 
+
+ 13.1GB, 1.04GB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  495MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:42<00:00, 42.50s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 98.65it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 29.7kB/s]
+      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L H=3584 QH=28 KVH=4 HD=128 | V=152064 | frozen BF16
+      TEST519 LOCK: 2bcf12382a2341ca84fcb1c21a9b52d4c4de79af50ba21d8d3b853f34c9f0f1a
+      PARENT518   : d335fa02068644efbe3c54eba8b6ae3a4678fbba3abed972d3f31a401590ae3c
+      Primary     : L23 same-projection K/V tensor address
+      B token IDs : FORBIDDEN IN EXPERIMENTAL ADDRESS
+
+[2/11] OFFLINE FORGE — preserving raw and installed BELLEKÖZ tensors...
+      ITEM 01 | A=25 B=31 tokens
+      ITEM 02 | A=24 B=27 tokens
+      ITEM 03 | A=23 B=29 tokens
+      ITEM 04 | A=24 B=30 tokens
+      ITEM 05 | A=23 B=30 tokens
+      96 BELLEKÖZ forged.
+      Experimental B address source = RAW K/V TENSORS ONLY.
+      Frozen H2 control inventory = 302 token IDs (handoff control only)
+
+[3/11] PERSISTENCE RESET...
+      Forge-time DynamicCache discarded.
+      Fresh cache will be created for every query/read.
+      Tensor-native address sees B_RAW K/V only.
+      No B source token IDs are passed to tensor address scoring.
+
+[4/11] TENSOR-NATIVE ADDRESS — K23 / V23 / KV23 / KV15 / KV27 / KVCONS...
+      [01/48] Alden   | K23=48 V23=12 KV23=24 K15= 6 K27=29 CONS=20 NOA=30
+      [02/48] Allis   | K23= 9 V23=32 KV23=27 K15=15 K27=22 CONS=19 NOA=37
+      [03/48] Altal   | K23=44 V23=35 KV23=41 K15= 8 K27=20 CONS=25 NOA=41
+      [04/48] Belden  | K23= 2 V23= 8 KV23= 7 K15= 7 K27= 3 CONS= 2 NOA= 9
+      [05/48] Bellis  | K23=21 V23=39 KV23=32 K15=18 K27=38 CONS=30 NOA=42
+      [06/48] Beltal  | K23= 7 V23=19 KV23=16 K15=42 K27= 2 CONS= 4 NOA= 3
+      [07/48] Corden  | K23=47 V23=27 KV23=38 K15=14 K27=16 CONS=20 NOA=23
+      [08/48] Corlis  | K23=34 V23=28 KV23=30 K15=39 K27=38 CONS=43 NOA=20
+      [09/48] Cortal  | K23= 3 V23= 5 KV23= 4 K15=25 K27= 6 CONS= 3 NOA=14
+      [10/48] Darden  | K23=34 V23=30 KV23=33 K15=34 K27=32 CONS=36 NOA=29
+      [11/48] Darlis  | K23=45 V23=34 KV23=40 K15=46 K27= 7 CONS=21 NOA=26
+      [12/48] Dartal  | K23=36 V23=42 KV23=42 K15=38 K27= 5 CONS=21 NOA=47
+      [13/48] Elden   | K23=32 V23=25 KV23=26 K15=48 K27=13 CONS=25 NOA=23
+      [14/48] Ellis   | K23=15 V23= 6 KV23= 6 K15=21 K27=31 CONS=21 NOA=11
+      [15/48] Eltal   | K23=20 V23=18 KV23=18 K15=36 K27=40 CONS=37 NOA= 8
+      [16/48] Fenden  | K23=44 V23=47 KV23=47 K15= 7 K27=35 CONS=39 NOA=42
+      [17/48] Fenlis  | K23= 9 V23= 4 KV23= 4 K15=33 K27=14 CONS= 7 NOA=11
+      [18/48] Fental  | K23= 5 V23=43 KV23=35 K15=13 K27=16 CONS=17 NOA=35
+      [19/48] Galden  | K23= 1 V23= 4 KV23= 2 K15=28 K27= 2 CONS= 1 NOA= 5
+      [20/48] Gallis  | K23=31 V23=48 KV23=48 K15=20 K27=33 CONS=46 NOA=43
+      [21/48] Galtal  | K23=23 V23=10 KV23=10 K15= 1 K27=10 CONS= 3 NOA=22
+      [22/48] Harden  | K23=36 V23=28 KV23=30 K15=35 K27=25 CONS=30 NOA=34
+      [23/48] Harlis  | K23=10 V23=18 KV23=15 K15= 5 K27=12 CONS= 6 NOA= 5
+      [24/48] Hartal  | K23=37 V23= 8 KV23=17 K15=35 K27=22 CONS=21 NOA=27
+      [25/48] Ilden   | K23=48 V23=39 KV23=48 K15=42 K27=48 CONS=48 NOA=48
+      [26/48] Illis   | K23=27 V23=44 KV23=39 K15=22 K27=32 CONS=40 NOA=43
+      [27/48] Iltal   | K23=17 V23=14 KV23=12 K15=47 K27=17 CONS=25 NOA=10
+      [28/48] Jarden  | K23=39 V23=29 KV23=34 K15=22 K27=29 CONS=31 NOA=17
+      [29/48] Jarlis  | K23=21 V23= 7 KV23= 9 K15= 7 K27=43 CONS=13 NOA=16
+      [30/48] Jartal  | K23= 6 V23=18 KV23=11 K15=16 K27=43 CONS=35 NOA=23
+      [31/48] Kelden  | K23=34 V23= 1 KV23= 1 K15= 4 K27= 3 CONS= 1 NOA=20
+      [32/48] Kellis  | K23=25 V23=25 KV23=25 K15=22 K27=27 CONS=26 NOA=41
+      [33/48] Keltal  | K23=38 V23=35 KV23=36 K15=25 K27=39 CONS=40 NOA=39
+      [34/48] Lorden  | K23= 4 V23=13 KV23= 8 K15= 2 K27= 1 CONS= 1 NOA=16
+      [35/48] Lorlis  | K23=26 V23=27 KV23=29 K15=16 K27=25 CONS=24 NOA=33
+      [36/48] Lortal  | K23=20 V23=33 KV23=26 K15=17 K27= 9 CONS=11 NOA=13
+      [37/48] Marden  | K23=31 V23=28 KV23=30 K15=34 K27=17 CONS=28 NOA=11
+      [38/48] Marlis  | K23=31 V23=17 KV23=20 K15=41 K27= 5 CONS=13 NOA= 5
+      [39/48] Martal  | K23=42 V23=19 KV23=29 K15=39 K27=42 CONS=45 NOA=43
+      [40/48] Norden  | K23= 4 V23=20 KV23=14 K15=32 K27=31 CONS=24 NOA=21
+      [41/48] Norlis  | K23=15 V23=21 KV23=20 K15=46 K27= 8 CONS=21 NOA=19
+      [42/48] Nortal  | K23= 8 V23= 3 KV23= 3 K15=10 K27= 8 CONS= 4 NOA=33
+      [43/48] Orden   | K23=27 V23=38 KV23=36 K15=20 K27=12 CONS=20 NOA=44
+      [44/48] Orlis   | K23=15 V23=28 KV23=24 K15=23 K27= 6 CONS=13 NOA=17
+      [45/48] Ortal   | K23=26 V23=23 KV23=23 K15=15 K27= 3 CONS= 7 NOA= 5
+      [46/48] Parden  | K23=18 V23= 8 KV23=10 K15=34 K27= 6 CONS=10 NOA= 2
+      [47/48] Parlis  | K23= 8 V23= 9 KV23= 7 K15=35 K27=30 CONS=21 NOA=21
+      [48/48] Partal  | K23=13 V23=20 KV23=20 K15=40 K27=30 CONS=33 NOA= 7
+
+[5/11] Address metrics...
+      K23        R1/R5/R16/MRR: 0.0208 / 0.1250 / 0.3542 / 0.098778
+      V23        R1/R5/R16/MRR: 0.0208 / 0.1042 / 0.3125 / 0.091351
+      KV23       R1/R5/R16/MRR: 0.0208 / 0.1042 / 0.3542 / 0.097374
+      KV15       R1/R5/R16/MRR: 0.0208 / 0.0833 / 0.3333 / 0.088707
+      KV27       R1/R5/R16/MRR: 0.0208 / 0.1667 / 0.4583 / 0.121574
+      KVCONS     R1/R5/R16/MRR: 0.0625 / 0.1667 / 0.3333 / 0.140452
+      NOA_KV23   R1/R5/R16/MRR: 0.0000 / 0.1250 / 0.3542 / 0.078028
+
+[6/11] Rebuilding frozen TEST518 H2 carriers...
+      [01/48] H2 ready
+      [02/48] H2 ready
+      [03/48] H2 ready
+      [04/48] H2 ready
+      [05/48] H2 ready
+      [08/48] H2 ready
+      [16/48] H2 ready
+      [24/48] H2 ready
+      [32/48] H2 ready
+      [40/48] H2 ready
+      [48/48] H2 ready
+
+[7/11] H2 oracle-B control + tensor-address E2E...
+      [01/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [02/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [03/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [04/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [05/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [06/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [07/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [08/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [09/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [10/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=0
+      [11/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=0
+      [12/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=0
+      [13/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [14/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [15/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [16/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [17/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [18/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [19/48] addr23=0 E23=0 | cons=1 ECONS=1 | OR=1
+      [20/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [21/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=0
+      [22/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [23/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [24/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [25/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [26/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [27/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [28/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [29/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [30/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [31/48] addr23=1 E23=1 | cons=1 ECONS=1 | OR=1
+      [32/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [33/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [34/48] addr23=0 E23=0 | cons=1 ECONS=1 | OR=1
+      [35/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [36/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [37/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [38/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [39/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [40/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [41/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [42/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [43/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [44/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [45/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [46/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=0
+      [47/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+      [48/48] addr23=0 E23=0 | cons=0 ECONS=0 | OR=1
+
+[8/11] Failure localization...
+      KV23 correct address                  : 1/48 = 0.0208
+      H2 oracle-B                           : 43/48 = 0.8958
+      KV23+H2 E2E                           : 1/48 = 0.0208
+      KVCONS+H2 E2E                         : 3/48 = 0.0625
+      E2E success | KV23 address correct    : 1/1 = 1.0000
+      Correct KV23 address / handoff fail   : 0
+      Wrong KV23 address / accidental pass  : 0
+
+[9/11] Wilson intervals...
+      K23       :  1/48 = 0.0208 | R1 95% Wilson [0.0037,0.1090]
+      V23       :  1/48 = 0.0208 | R1 95% Wilson [0.0037,0.1090]
+      KV23      :  1/48 = 0.0208 | R1 95% Wilson [0.0037,0.1090]
+      KV15      :  1/48 = 0.0208 | R1 95% Wilson [0.0037,0.1090]
+      KV27      :  1/48 = 0.0208 | R1 95% Wilson [0.0037,0.1090]
+      KVCONS    :  3/48 = 0.0625 | R1 95% Wilson [0.0215,0.1684]
+      NOA_KV23  :  0/48 = 0.0000 | R1 95% Wilson [0.0000,0.0741]
+      H2_ORACLE : 43/48 = 0.8958 | 95% Wilson [0.7783,0.9547]
+      E2E_KV23  :  1/48 = 0.0208 | 95% Wilson [0.0037,0.1090]
+      E2E_CONS  :  3/48 = 0.0625 | 95% Wilson [0.0215,0.1684]
+
+[10/11] Predeclared primary decision...
+      KV23 address pass : False
+      KV23 E2E pass     : False
+      H2 control pass   : True
+      VERDICT           : SAME_LAYER_KV_TENSOR_ADDRESS_NOT_ESTABLISHED
+
+[11/11] Protocol audit...
+      Model weights frozen                         : YES
+      TEST518 panel preserved                      : YES
+      Fresh cache each query/read                   : YES
+      A/B cache concatenation                       : NO
+      Experimental B address reads B token IDs      : NO
+      Experimental B address reads decoded B text   : NO
+      Experimental B address reads LM-head rows     : NO
+      Experimental B address reads gold Seal        : NO
+      Experimental B address reads gold key pos     : NO
+      Experimental B address source                 : RAW BELLEKÖZ K/V
+      Query/B comparison basis                      : SAME FROZEN k_proj/v_proj
+      Native KV heads preserved                     : YES
+      Residual reshaped into fake heads              : NO
+      B K comparison                                : PRE-RoPE ↔ PRE-RoPE
+      Query-time candidate-B model forwards         : 0
+      Learned router / ANN / DRA / training         : NONE
+      Post-hoc primary channel selection             : NO
+      PRIMARY fixed before results                   : KV23
+      H2 vocabulary inventory                       : YES — DOWNSTREAM CONTROL ONLY
+      TEST519 claim if positive                     : TENSOR-NATIVE ADDRESS, NOT YET FULL VOCAB-FREE E2E
+
+================================================================================================================================================================================
+TEST519 FINAL RESULT — AKBASCORE MAM · TENSOR-NATIVE BELLEKÖZ ADDRESS
+================================================================================================================================================================================
+MODEL                              : Qwen/Qwen2.5-7B-Instruct · frozen
+PARENT                             : TEST518
+PANEL                              : exact TEST518 48-item corrected panel
+PRIMARY ADDRESS                    : L23 raw K/V · same projection · max position · mean native heads
+B TOKEN-ID ADDRESS                 : NONE
+B GOLD KEY POSITION                : NONE
+B LM-HEAD ADDRESS                  : NONE
+QUERY-TIME B FORWARDS              : 0
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+K23                               : R1=0.0208 R5=0.1250 R16=0.3542 MRR=0.098778
+V23                               : R1=0.0208 R5=0.1042 R16=0.3125 MRR=0.091351
+KV23                              : R1=0.0208 R5=0.1042 R16=0.3542 MRR=0.097374
+KV15                              : R1=0.0208 R5=0.0833 R16=0.3333 MRR=0.088707
+KV27                              : R1=0.0208 R5=0.1667 R16=0.4583 MRR=0.121574
+KVCONS                            : R1=0.0625 R5=0.1667 R16=0.3333 MRR=0.140452
+NOA_KV23                          : R1=0.0000 R5=0.1250 R16=0.3542 MRR=0.078028
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+H2 ORACLE-B CONTROL                : 43/48 = 0.8958
+E2E KV23 + H2                      :  1/48 = 0.0208
+E2E KVCONS + H2                    :  3/48 = 0.0625
+E2E | CORRECT KV23 ADDRESS         : 1/1 = 1.0000
+CORRECT ADDRESS / HANDOFF FAIL     : 0
+WRONG ADDRESS / ACCIDENTAL PASS    : 0
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PREDECLARED PRIMARY PASS           : KV23 R1>=.70; R5>=.85; NO_A R1<=.10; KV23+H2 E2E>=.60
+ADDRESS PASS                       : False
+E2E PASS                           : False
+H2 CONTROL PASS                    : True
+TEST516 LOCK                       : 53f4fa86f1bc4f2c4db412bde68a2b004afc5a6c6cf84d1c3345b175ab1a3e8d
+TEST518 LOCK                       : d335fa02068644efbe3c54eba8b6ae3a4678fbba3abed972d3f31a401590ae3c
+TEST519 LOCK                       : 2bcf12382a2341ca84fcb1c21a9b52d4c4de79af50ba21d8d3b853f34c9f0f1a
+TOTAL TEST TIME                    : 135.45s
+VERDICT                            : SAME_LAYER_KV_TENSOR_ADDRESS_NOT_ESTABLISHED
+
+
+================================================================================================================================================================================
