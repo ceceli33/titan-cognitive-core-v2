@@ -1,0 +1,236 @@
+ ================================================================================================================================================================
+TEST504 — AKBASCORE MAM · RUNTIME MEMORY-TO-MEMORY RELAY
+INDEPENDENT BELLEKÖZ A → MODEL-PRODUCED TRACE → INDEPENDENT BELLEKÖZ B
+================================================================================================================================================================
+LOCK SHA: 74c375373666c840105cc165b90977c56c8698cf3d5617c63f619a0139386846
+TEST501 LOCK: 1a3e6ea2a9f6c72d7b8dacb0c0844e9f2a6f8595bb232f1554eb41af7a20dc41
+TEST502 LOCK: f852b6efc6ee887bae54db08cbc11f987e749499a51cebeb5132f569e74edb89
+TEST503 LOCK: 2cb70ffa53a98efb249590dba7ef184b9e41cf72a99291bda65e6c93b82cb5de
+ITEMS: 32
+JOINT RE-FORGE / COMPRESSION / DRA / ROUTER / TRAINING: NONE
+
+[1/5] Loading frozen Qwen...
+config.json: 100% 663/663 [00:00<00:00, 77.5kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 908kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 40.6MB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+merges.txt: 100% 1.67M/1.67M [00:00<00:00, 57.4MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 99.1MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.25MB/s]Download complete:  13.1GB,  340MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  509MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.19s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.31it/s]generation_config.json: 100% 243/243 [00:00<00:00, 32.0kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | H=3584 | QH=28 KVH=4 HD=128 | frozen BF16
+
+[2/5] Panel seal...
+      ITEM 01 entity=Aldren seal=FEN target=WAL positions=[0, 1]
+      ITEM 02 entity=Elara seal=VAN target=SOD positions=[1, 2]
+      ITEM 03 entity=Ilyra seal=BEK target=CER positions=[2, 0]
+      ITEM 04 entity=Joren seal=TUR target=NEX positions=[0, 1]
+      TEST502/503 deterministic panel reproduced.
+      Gold seal is used only in the explicitly labelled oracle control.
+      Predicted relay receives only the model-produced Stage-1 trace.
+
+[3/5] Running independent direct / Stage-1 / oracle relay / predicted relay...
+      [01/32] Aldren FEN->WAL | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='MEX'
+               stage1='FEN' | trace='FEN'
+               oracle='WAL'
+               relay ='WAL'
+      [02/32] Elara  VAN->SOD | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='MAV'
+               stage1='VAN' | trace='VAN'
+               oracle='SOD'
+               relay ='SOD'
+      [03/32] Ilyra  BEK->CER | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='DOV'
+               stage1='BEK' | trace='BEK'
+               oracle='CER'
+               relay ='CER'
+      [04/32] Joren  TUR->NEX | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='BEL'
+               stage1='TUR' | trace='TUR'
+               oracle='NEX'
+               relay ='NEX'
+      [05/32] Neris  CER->GAM | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='NIV'
+               stage1='CER' | trace='CER'
+               oracle='GAM'
+               relay ='GAM'
+      [06/32] Ralen  XAL->ROK | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='VEK'
+               stage1='XAL' | trace='XAL'
+               oracle='ROK'
+               relay ='ROK'
+      [07/32] Saren  RUK->LER | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='SIN'
+               stage1='RUK' | trace='RUK'
+               oracle='LER'
+               relay ='LER'
+      [08/32] Weyra  MUR->WER | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='MUR'
+               stage1='MUR' | trace='MUR'
+               oracle='WER'
+               relay ='WER'
+      [09/32] Avel   VIR->XEN | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='VIR'
+               stage1='VIR' | trace='VIR'
+               oracle='XEN'
+               relay ='XEN'
+      [10/32] Brann  FER->CAL | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='GUN'
+               stage1='FER' | trace='FER'
+               oracle='CAL'
+               relay ='CAL'
+      [11/32] Felis  HIL->RIM | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='XIR'
+               stage1='HIL' | trace='HIL'
+               oracle='RIM'
+               relay ='RIM'
+      [12/32] Jaris  CIR->JAX | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='CIR'
+               stage1='CIR' | trace='CIR'
+               oracle='JAX'
+               relay ='JAX'
+      [13/32] Koren  CEN->BUN | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='FOV'
+               stage1='CEN' | trace='CEN'
+               oracle='BUN'
+               relay ='BUN'
+      [14/32] Orel   SEN->BOL | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='SEN'
+               stage1='SEN' | trace='SEN'
+               oracle='BOL'
+               relay ='BOL'
+      [15/32] Teren  SUL->VEX | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='DOR'
+               stage1='SUL' | trace='SUL'
+               oracle='VEX'
+               relay ='VEX'
+      [16/32] Urian  GUL->ZOL | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='GOR'
+               stage1='GUL' | trace='GUL'
+               oracle='ZOL'
+               relay ='ZOL'
+      [17/32] Yalen  ZOR->YER | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='YAV'
+               stage1='ZOR' | trace='ZOR'
+               oracle='YER'
+               relay ='YER'
+      [18/32] Coren  IVO->ZAR | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='MON'
+               stage1='IVO' | trace='IVO'
+               oracle='ZAR'
+               relay ='ZAR'
+      [19/32] Derin  RAS->NUR | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='TAL'
+               stage1='RAS' | trace='RAS'
+               oracle='NUR'
+               relay ='NUR'
+      [20/32] Heron  NUR->HIN | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='SAV'
+               stage1='NUR' | trace='NUR'
+               oracle='HIN'
+               relay ='HIN'
+      [21/32] Laven  FIR->LEV | DIRECT=0 S1=1 ORACLE=0 RELAY=0
+               direct='FIR'
+               stage1='FIR' | trace='FIR'
+               oracle='FIR'
+               relay ='FIR'
+      [22/32] Moris  KET->KON | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='TAK'
+               stage1='KET' | trace='KET'
+               oracle='KON'
+               relay ='KON'
+      [23/32] Rovis  RIN->VIL | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='JER'
+               stage1='RIN' | trace='RIN'
+               oracle='VIL'
+               relay ='VIL'
+      [24/32] Veris  TEV->VOL | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='CUM'
+               stage1='TEV' | trace='TEV'
+               oracle='VOL'
+               relay ='VOL'
+      [25/32] Waren  KOR->CIX | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='BEX'
+               stage1='KOR' | trace='KOR'
+               oracle='CIX'
+               relay ='CIX'
+      [26/32] Aren   URB->HES | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='URB'
+               stage1='URB' | trace='URB'
+               oracle='HES'
+               relay ='HES'
+      [27/32] Elen   VEL->JUR | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='VEL'
+               stage1='VEL' | trace='VEL'
+               oracle='JUR'
+               relay ='JUR'
+      [28/32] Faren  XEN->LAR | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='XAN'
+               stage1='XEN' | trace='XEN'
+               oracle='LAR'
+               relay ='LAR'
+      [29/32] Joris  TOL->PIV | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='JIN'
+               stage1='TOL' | trace='TOL'
+               oracle='PIV'
+               relay ='PIV'
+      [30/32] Noren  YOR->LUM | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='LIV'
+               stage1='YOR' | trace='YOR'
+               oracle='LUM'
+               relay ='LUM'
+      [31/32] Oris   MAR->SAL | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='DAX'
+               stage1='MAR' | trace='MAR'
+               oracle='SAL'
+               relay ='SAL'
+      [32/32] Toren  PEL->PER | DIRECT=0 S1=1 ORACLE=1 RELAY=1
+               direct='PEL'
+               stage1='PEL' | trace='PEL'
+               oracle='PER'
+               relay ='PER'
+
+[4/5] Relay anatomy...
+      DIRECT INDEP  :  0/32 = 0.0000
+      A→TRACE       : 32/32 = 1.0000
+      GOLD→B        : 31/32 = 0.9688
+      A→TRACE→B     : 31/32 = 0.9688
+      S1 pass & relay pass : 31/32
+      S1 pass & oracle pass: 31/32
+      DIRECT fail→RELAY pass: 31/32
+      S1 fail→RELAY pass    : 0/32
+
+      Paired bootstrap accuracy differences:
+      RELAY-DIRECT: Δ=+0.9688 | bootstrap95=[+0.9062,+1.0000]
+      ORACLE-RELAY: Δ=+0.0000 | bootstrap95=[+0.0000,+0.0000]
+      S1-RELAY: Δ=+0.0312 | bootstrap95=[+0.0000,+0.0938]
+
+[5/5] Mechanistic classification...
+
+================================================================================================================================================================
+TEST504 FINAL RESULT — AKBASCORE MAM · RUNTIME MEMORY-TO-MEMORY RELAY
+================================================================================================================================================================
+MODEL                       : Qwen/Qwen2.5-7B-Instruct · frozen
+TASK                        : 2 edges · Entity → Seal → Class
+MEMORY A                    : independently forged RAW K/V
+MEMORY B                    : independently forged RAW K/V
+JOINT RE-FORGE              : NONE
+RUNTIME INTERMEDIATE        : model-produced Stage-1 text trace
+GOLD INTERMEDIATE IN RELAY  : NO
+COMPRESSION                 : OFF
+DRA / STEERING              : NONE
+VTOKEN / ADDRESS            : OFF
+TOP-K / ROUTER / ANN        : NONE
+GRAPH                        : NONE
+TRAINING / LoRA             : NONE
+POST-HOC ITEM SELECTION     : NONE
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+DIRECT · A+B ONE-SHOT        :  0/32 = 0.0000
+STAGE1 · A→TRACE             : 32/32 = 1.0000
+ORACLE · GOLD TRACE→B        : 31/32 = 0.9688
+RELAY  · A→TRACE→B           : 31/32 = 0.9688
+RELAY | STAGE1 CORRECT       : 31/32 = 0.9688
+DIRECT FAIL → RELAY PASS     : 31/32
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST501 LOCK SHA            : 1a3e6ea2a9f6c72d7b8dacb0c0844e9f2a6f8595bb232f1554eb41af7a20dc41
+TEST502 LOCK SHA            : f852b6efc6ee887bae54db08cbc11f987e749499a51cebeb5132f569e74edb89
+TEST503 LOCK SHA            : 2cb70ffa53a98efb249590dba7ef184b9e41cf72a99291bda65e6c93b82cb5de
+TEST504 LOCK SHA            : 74c375373666c840105cc165b90977c56c8698cf3d5617c63f619a0139386846
+TOTAL TEST TIME              : 174.96s
+EXPLORATORY VERDICT         : EXPLICIT_RUNTIME_MEMORY_RELAY_REPLICATED
+================================================================================================================================================================
