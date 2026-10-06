@@ -1,0 +1,272 @@
+ ====================================================================================================================================================================
+TEST500 — AKBASCORE MAM · WRITE-TIME BRIDGING vs INDEPENDENT BELLEKÖZ
+CLEAN 32-ITEM FALSIFICATION PANEL · TEXT → CONTIG RAW → INDEPENDENT RAW → K120/V128 → EXPLICIT TRACE
+====================================================================================================================================================================
+LOCK SHA: 4e4465cf12dc34d3624b8e7a7564bfae9ee0d43f2ebbe9b01acd71f0118a4185
+TEST482 BLOB: ecc630144a44479cb35c432c50eb0d09bc6866d7
+TEST495 LOCK: 2bae3f2497fefb50b3d18d8fb7035c63a08fdd67d80077dd92f4e9c56eca787e
+ITEMS: 32
+DRA / STEERING: NONE
+
+[1/7] Loading frozen Qwen...
+config.json: 100% 663/663 [00:00<00:00, 81.0kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 884kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 42.5MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 70.7MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 137MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.81MB/s]Download complete:  13.1GB,  376MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  493MB/s  Fetching 4 files: 100% 4/4 [00:42<00:00, 42.41s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.10it/s]generation_config.json: 100% 243/243 [00:00<00:00, 29.4kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | H=3584 | QH=28 KVH=4 HD=128 | frozen BF16
+[2/7] Building frozen TEST482 neutral PCA codebook...
+      Codebook ready.
+[3/7] Panel seal...
+      ITEM 01 target=Q-154 entity=Aldren gold={'seal': 'YEK', 'class': 'CER', 'section': 'Q', 'batch': 'XIR', 'bay': '154'}
+      ITEM 02 target=T-155 entity=Elara gold={'seal': 'POR', 'class': 'JUR', 'section': 'T', 'batch': 'CAL', 'bay': '155'}
+      ITEM 03 target=O-193 entity=Ilyra gold={'seal': 'KET', 'class': 'VOR', 'section': 'O', 'batch': 'OVA', 'bay': '193'}
+      ITEM 04 target=P-145 entity=Joren gold={'seal': 'LOR', 'class': 'PUL', 'section': 'P', 'batch': 'KUR', 'bay': '145'}
+      ...
+      Target-row positions rotate across records; no fixed first-row gold shortcut.
+
+[4/7] Running 32 fresh items across A/B/C/D/E...
+      [01/32] Aldren target=Q-154 | A=0 B=0 C=0 D=0 E=0
+               A='NONE'
+               B='NONE'
+               C='YEK'
+               D='YEK'
+               E='SEAL > NUR > W | XIR > 102 | YEK'
+      [02/32] Elara  target=T-155 | A=0 B=0 C=0 D=0 E=0
+               A='NONE'
+               B='NONE'
+               C='POR'
+               D='POR'
+               E='SEAL > JOV > Y | POR | Elara'
+      [03/32] Ilyra  target=O-193 | A=0 B=0 C=0 D=0 E=0
+               A='NONE'
+               B='O-U-193'
+               C='U'
+               D='U'
+               E='SEAL > XEN > U | OVA > 160 | ILYRA'
+      [04/32] Joren  target=P-145 | A=0 B=0 C=0 D=0 E=0
+               A='NONE'
+               B='NONE'
+               C='LOR'
+               D='LOR'
+               E='SEAL > Joren > ROUTING_CLASS > HIN | TRANSFER_BATCH > KUR | ACTIVE_BAY > 183 | FINAL_IDENTIFIER > LOR'
+      [05/32] Neris  target=F-113 | A=0 B=0 C=0 D=0 E=0
+               A='NONE'
+               B='To determine the final paired identifier for instrument Neris, we need to follow these steps:'
+               C='SIM'
+               D='SIM'
+               E='SEAL > KAV > CIN | JOR > 107 | SIM'
+      [06/32] Ralen  target=K-149 | A=0 B=1 C=0 D=0 E=0
+               A='NONE'
+               B='K-149'
+               C='NONE'
+               D='NONE'
+               E='SEAL > DOV > RUM | 174 | RUM'
+      [07/32] Saren  target=L-104 | A=0 B=0 C=0 D=0 E=0
+               A='NONE'
+               B='GEL-104'
+               C='IVO'
+               D='IVO'
+               E='SEAL > SAREN > Z | KEL > 109 | IVO'
+      [08/32] Weyra  target=V-185 | A=0 B=0 C=0 D=0 E=0
+               A='NONE'
+               B='To determine the final paired identifier for instrument Weyra, we need to follow these steps:'
+               C='NONE'
+               D='NONE'
+               E='SEAL > YUL > LEV | 166 | CAV'
+      [09/32] Avel   target=Q-124 | A=0 B=0 C=0 D=0 E=0
+               A='NONE'
+               B='M-124'
+               C='MUM'
+               D='MUM'
+               E='SEAL > ZAR > M | YUM | AVEL'
+      [10/32] Brann  target=W-103 | A=0 B=0 C=0 D=0 E=0
+               A='HEM-103'
+               B='HEM-103'
+               C='BAV'
+               D='BAV'
+               E='SEAL > BAV > R | LUR | Brann'
+      [11/32] Felis  target=Y-188 | A=0 B=0 C=0 D=0 E=0
+               A='NONE'
+               B='To determine the final paired identifier for instrument Felis, we need to follow these steps:'
+               C='NONE'
+               D='NONE'
+               E='SEAL > TUR > ARCHIVE_SECTION > CER | TRANSFER_BATCH > BER | FINAL_IDENTIFIER > Felis'
+      [12/32] Jaris  target=P-182 | A=0 B=0 C=0 D=0 E=0
+               A='NONE'
+               B='NONE'
+               C='To determine the final paired identifier for instrument Jaris, we need to follow the given information step by step:'
+               D='To determine the final paired identifier for instrument Jaris, we need to follow the given information step by step:'
+               E='SEAL > SIN > O | ZEN > 194 | Jaris'
+      [13/32] Koren  target=A-130 | A=0 B=0 C=0 D=0 E=0
+               A='To determine the final paired identifier for instrument Koren, we need to follow the information provided in the records step by step'
+               B='S-130'
+               C='To determine the final paired identifier for instrument Koren, we need to follow the information provided in the problem statement.'
+               D='IRV'
+               E='SEAL > WIR > DOR | ZAL > 142 | Koren'
+      [14/32] Orel   target=G-110 | A=0 B=0 C=0 D=0 E=0
+               A='NONE'
+               B='NONE'
+               C='NONE'
+               D='NONE'
+               E='SEAL > GUN > VEX | XAR > 131 | PEL'
+      [15/32] Teren  target=L-178 | A=0 B=0 C=0 D=0 E=0
+               A='NONE'
+               B='K-178'
+               C='NONE'
+               D='NONE'
+               E='SEAL > VOL > K | WEN > 190 | TEREN'
+      [16/32] Urian  target=Z-157 | A=0 B=0 C=0 D=0 E=0
+               A='X-157'
+               B='NONE'
+               C='BEK'
+               D='BEK'
+               E='SEAL > GAM > C | RIL > 118 | Urian'
+      [17/32] Yalen  target=B-146 | A=0 B=0 C=0 D=0 E=0
+               A='NONE'
+               B='NONE'
+               C='JOS'
+               D='JOS'
+               E='SEAL > TIX > ARCHIVE_SECTION > GOS | TRANSFER_BATCH > YALEN | ACTIVE_BAY > 156 | FINAL_IDENTIFIER > ZOR'
+      [18/32] Coren  target=W-192 | A=0 B=0 C=0 D=0 E=0
+               A='M-151'
+               B='URB-W-192'
+               C='M'
+               D='M'
+               E='SEAL > BOL > M | JOV | Coren'
+      [19/32] Derin  target=E-195 | A=0 B=0 C=0 D=0 E=0
+               A='NONE'
+               B='NONE'
+               C='To determine the final paired identifier for instrument Derin, we need to follow the information provided in the problem statement:'
+               D='JUN'
+               E='SEAL > VIL > T | RAX > 126 | KOR'
+      [20/32] Heron  target=U-153 | A=0 B=0 C=0 D=0 E=0
+               A='NONE'
+               B='NONE'
+               C='ROL'
+               D='ROL'
+               E='SEAL > CAL > NIM > Y | 101 | ROL'
+      [21/32] Laven  target=A-138 | A=0 B=1 C=0 D=0 E=0
+               A='NONE'
+               B='A-138'
+               C='To determine the final paired identifier for instrument Laven, we need to follow the given information step by step.'
+               D='To determine the final paired identifier for instrument Laven, we need to follow the given information step by step.'
+               E='SEAL > LAVEN > WOR | P > 158 | TOL'
+      [22/32] Moris  target=S-105 | A=0 B=0 C=0 D=0 E=0
+               A='NONE'
+               B='NONE'
+               C='FAL'
+               D='FAL'
+               E='SEAL > NIV > F | PIR > 143 | Moris'
+      [23/32] Rovis  target=H-175 | A=0 B=0 C=0 D=0 E=0
+               A='NONE'
+               B='NONE'
+               C='RIM'
+               D='RIM'
+               E='SEAL > BAR > TRANSFER_BATCH > RIM | ACTIVE_BAY > 162 | FINAL_IDENTIFIER > ZAM'
+      [24/32] Veris  target=Z-196 | A=0 B=1 C=0 D=0 E=0
+               A='NONE'
+               B='Z-196'
+               C='To determine the final paired identifier for instrument Veris, we need to follow the given information step by step.'
+               D='To determine the final paired identifier for instrument Veris, we need to follow the given information step by step.'
+               E='SEAL > WON > ARCHIVE_SECTION > L | TRANSFER_BATCH > CER | ACTIVE_BAY > 165 | FINAL_IDENTIFIER > VERIS'
+      [25/32] Waren  target=X-159 | A=0 B=0 C=0 D=0 E=0
+               A='NONE'
+               B='NONE'
+               C='NONE'
+               D='NONE'
+               E='SEAL > DEM > ARCHIVE_SECTION > C | TRANSFER_BATCH > TOL | FINAL_IDENTIFIER > Waren'
+      [26/32] Aren   target=N-127 | A=0 B=0 C=0 D=0 E=0
+               A='NONE'
+               B='NONE'
+               C='GEM'
+               D='GEM'
+               E='SEAL > ROK > TRANSFER_BATCH > NOR | ACTIVE_BAY 144 | NOR'
+      [27/32] Elen   target=E-117 | A=0 B=1 C=0 D=0 E=0
+               A='NONE'
+               B='E-117'
+               C='ZUN'
+               D='ZUN'
+               E='SEAL > SAV > Q | - | ZEL'
+      [28/32] Faren  target=R-167 | A=0 B=0 C=0 D=0 E=0
+               A='NONE'
+               B='NONE'
+               C='CIR'
+               D='BIR'
+               E='SEAL > ZIM > FAREN > 122 | JIM'
+      [29/32] Joris  target=I-181 | A=0 B=0 C=0 D=0 E=0
+               A='NONE'
+               B='NONE'
+               C='BOS'
+               D='BOS'
+               E='SEAL > RIM > TRANSFER_BATCH > BOS | ACTIVE_BAY > 115 | FINAL_IDENTIFIER > Joris'
+      [30/32] Noren  target=S-119 | A=1 B=0 C=0 D=0 E=0
+               A='S-119'
+               B='NONE'
+               C='FOR'
+               D='FOR'
+               E='SEAL > LEV > ARCHIVE_SECTION > P | TRANSFER_BATCH > LUM | FINAL_IDENTIFIER > Noren'
+      [31/32] Oris   target=D-168 | A=0 B=1 C=0 D=0 E=0
+               A='NONE'
+               B='D-168'
+               C='MAR'
+               D='MAR'
+               E='SEAL > MAR > FEX | 116 | Oris'
+      [32/32] Toren  target=J-161 | A=0 B=0 C=0 D=0 E=0
+               A='NONE'
+               B='NONE'
+               C="Toren's final paired identifier is determined by its transfer batch, which is LIX. According to the given information,"
+               D="Toren's final paired identifier is determined by its transfer batch, which is LIX. According to the given information,"
+               E='SEAL > VEX > H | LIX > 147 | Toren'
+
+[5/7] Pairwise transition anatomy...
+      A∩B correct                 : 0/32
+      A∩C correct                 : 0/32
+      B∩C correct                 : 0/32
+      A correct → B fail          : 1/32
+      B correct → C fail          : 5/32
+      C correct → D fail          : 0/32
+      D correct → E fail          : 0/32
+      D fail → E rescue           : 0/32
+      E complete-hop trace        : 0/32
+
+[6/7] Bootstrap paired accuracy differences...
+      A-B : Δ=-0.1250 | bootstrap95=[-0.2812,+0.0000]
+      B-C : Δ=+0.1562 | bootstrap95=[+0.0312,+0.2812]
+      C-D : Δ=+0.0000 | bootstrap95=[+0.0000,+0.0000]
+      E-D : Δ=+0.0000 | bootstrap95=[+0.0000,+0.0000]
+
+[7/7] Mechanistic classification...
+
+====================================================================================================================================================================
+TEST500 FINAL RESULT — CLEAN WRITE-TIME BRIDGING FALSIFICATION
+====================================================================================================================================================================
+VALIDATION TYPE             : FRESH 32-ITEM MECHANISTIC DIAGNOSTIC
+MODEL                       : Qwen/Qwen2.5-7B-Instruct · frozen
+TEST496 MAM ENGINE          : PRESERVED
+TEST482 CODEBOOK            : PRESERVED
+K/V COMPRESSION             : K120 / V128
+TARGET LITERAL IN MEMORY    : NO
+GOLD-FIRST SHORTCUT         : REMOVED / ROTATING POSITIONS
+DRA / STEERING              : NONE
+VTOKEN / ADDRESS            : OFF
+TOP-K / ROUTER / ANN        : NONE
+GRAPH                        : NONE
+TRAINING / LoRA             : NONE
+POST-HOC ITEM SELECTION     : NONE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+A · CONTIGUOUS TEXT          :  1/32 = 0.0312
+B · CONTIGUOUS RAW K/V       :  5/32 = 0.1562
+C · INDEPENDENT RAW K/V      :  0/32 = 0.0000
+D · INDEPENDENT K120/V128    :  0/32 = 0.0000
+E · D + EXPLICIT HOP TRACE   :  0/32 = 0.0000
+E · COMPLETE HOP CONTENT     :  0/32
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+B PASS → C FAIL              : 5/32
+C PASS → D FAIL              : 0/32
+D FAIL → E RESCUE            : 0/32
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST482 BLOB SHA            : ecc630144a44479cb35c432c50eb0d09bc6866d7
+TEST482 LOCK SHA            : fa59fd38661e558f6bae22eedff0999f32f8f6e9d4a08932383525323a5fe687
+TEST495 LOCK SHA            : 2bae3f2497fefb50b3d18d8fb7035c63a08fdd67d80077dd92f4e9c56eca787e
+TEST500 LOCK SHA            : 4e4465cf12dc34d3624b8e7a7564bfae9ee0d43f2ebbe9b01acd71f0118a4185
+TOTAL TEST TIME              : 215.20s
+EXPLORATORY VERDICT          : BASE_TASK_NOT_RELIABLY_SOLVED
+====================================================================================================================================================================
