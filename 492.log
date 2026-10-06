@@ -1,0 +1,229 @@
+ ==============================================================================================================================================================
+TEST492 — AKBASCORE MAM · INSTANCE-IDENTITY NATIVE SIGNAL ATLAS
+EXACT TEST491 PANEL · SAME-FAMILY PAIR DISCRIMINATION · PASSIVE X-RAY ONLY
+==============================================================================================================================================================
+LOCK SHA: 8de05fc52332806383642618fcf4a9ea4ed29fe2f544cac5beb5369686ee79a6
+TEST491 LOCK: 582fdc3e39d58863685be094c1bbfcfac8e398845d90624598197c97be9632bd
+PANEL: 64 records / 32 concept-pairs / 28 layers / no new addresser
+[1/8] Loading frozen Qwen...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 87.7kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 884kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 65.5MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 53.6MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 125MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.32MB/s]Download complete:  13.1GB,  164MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  376MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.52s/it]Loading weights: 100% 339/339 [00:03<00:00, 101.48it/s]generation_config.json: 100% 243/243 [00:00<00:00, 31.5kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | H=3584 | QH=28 KVH=4 | frozen BF16
+[2/8] Capturing exact TEST491 states + native K/V...
+      memories 16/64
+      memories 32/64
+      memories 48/64
+      memories 64/64
+      queries  16/64
+      queries  32/64
+      queries  48/64
+      queries  64/64
+[3/8] Scanning passive identity channels across all 28 layers...
+      channels: 280
+[4/8] Layer-family atlas...
+      HMEAN   BEST=HMEAN_L07      PAIR-ACC=0.828125 MEANΔ=+0.010502 MEDΔ=+0.009412
+      LAST    BEST=LAST_L04       PAIR-ACC=0.546875 MEANΔ=+0.000426 MEDΔ=+0.000253
+      TQMEAN  BEST=TQMEAN_L07     PAIR-ACC=0.875000 MEANΔ=+0.009886 MEDΔ=+0.006386
+      TMAX    BEST=TMAX_L00       PAIR-ACC=0.609375 MEANΔ=+0.014377 MEDΔ=+0.002925
+      TTOP3   BEST=TTOP3_L14      PAIR-ACC=0.640625 MEANΔ=+0.003643 MEDΔ=+0.003431
+      DELTA   BEST=DELTA_L09      PAIR-ACC=0.843750 MEANΔ=+0.009307 MEDΔ=+0.006178
+      KMEAN   BEST=KMEAN_L02      PAIR-ACC=0.671875 MEANΔ=+0.000452 MEDΔ=+0.000403
+      KTOKEN  BEST=KTOKEN_L08     PAIR-ACC=0.828125 MEANΔ=+0.004924 MEDΔ=+0.004259
+      VMEAN   BEST=VMEAN_L23      PAIR-ACC=0.671875 MEANΔ=+0.023363 MEDΔ=+0.021987
+      VTOKEN  BEST=VTOKEN_L23     PAIR-ACC=0.875000 MEANΔ=+0.013399 MEDΔ=+0.010026
+[5/8] Global top native identity signals...
+      01. VTOKEN_L23     ACC=0.875000 Δ=+0.013399 MED=+0.010026
+      02. TQMEAN_L07     ACC=0.875000 Δ=+0.009886 MED=+0.006386
+      03. DELTA_L09      ACC=0.843750 Δ=+0.009307 MED=+0.006178
+      04. HMEAN_L07      ACC=0.828125 Δ=+0.010502 MED=+0.009412
+      05. TQMEAN_L08     ACC=0.828125 Δ=+0.009817 MED=+0.007629
+      06. KTOKEN_L08     ACC=0.828125 Δ=+0.004924 MED=+0.004259
+      07. HMEAN_L08      ACC=0.812500 Δ=+0.010896 MED=+0.009468
+      08. TQMEAN_L03     ACC=0.812500 Δ=+0.005962 MED=+0.004107
+      09. DELTA_L02      ACC=0.796875 Δ=+0.014716 MED=+0.007774
+      10. VTOKEN_L09     ACC=0.796875 Δ=+0.013246 MED=+0.013173
+      11. VTOKEN_L22     ACC=0.796875 Δ=+0.010789 MED=+0.010698
+      12. VTOKEN_L21     ACC=0.796875 Δ=+0.009639 MED=+0.009174
+      13. VTOKEN_L26     ACC=0.781250 Δ=+0.012062 MED=+0.010962
+      14. VTOKEN_L03     ACC=0.781250 Δ=+0.011011 MED=+0.009142
+      15. VTOKEN_L07     ACC=0.781250 Δ=+0.009078 MED=+0.008236
+      16. DELTA_L01      ACC=0.765625 Δ=+0.014194 MED=+0.006125
+      17. HMEAN_L09      ACC=0.765625 Δ=+0.011873 MED=+0.010898
+      18. TQMEAN_L09     ACC=0.765625 Δ=+0.010159 MED=+0.005543
+      19. DELTA_L08      ACC=0.765625 Δ=+0.008870 MED=+0.003408
+      20. DELTA_L10      ACC=0.765625 Δ=+0.008334 MED=+0.005365
+      21. DELTA_L17      ACC=0.765625 Δ=+0.005867 MED=+0.003829
+      22. DELTA_L00      ACC=0.750000 Δ=+0.011299 MED=+0.004294
+      23. VTOKEN_L25     ACC=0.750000 Δ=+0.009093 MED=+0.006959
+      24. VTOKEN_L24     ACC=0.750000 Δ=+0.008049 MED=+0.006046
+      25. TQMEAN_L10     ACC=0.750000 Δ=+0.007522 MED=+0.006715
+      26. TQMEAN_L04     ACC=0.750000 Δ=+0.005493 MED=+0.004279
+      27. VTOKEN_L27     ACC=0.734375 Δ=+0.012181 MED=+0.010426
+      28. VTOKEN_L11     ACC=0.734375 Δ=+0.007598 MED=+0.006657
+      29. DELTA_L12      ACC=0.734375 Δ=+0.007452 MED=+0.004133
+      30. DELTA_L13      ACC=0.734375 Δ=+0.006843 MED=+0.004557
+[6/8] Head-local K/V identity atlas...
+      01. VTOKEN_L21_H0    ACC=0.890625 Δ=+0.024768 MED=+0.021861
+      02. VTOKEN_L23_H0    ACC=0.843750 Δ=+0.021300 MED=+0.021743
+      03. VTOKEN_L07_H1    ACC=0.843750 Δ=+0.019300 MED=+0.015927
+      04. VTOKEN_L03_H0    ACC=0.843750 Δ=+0.019264 MED=+0.012574
+      05. VTOKEN_L22_H1    ACC=0.843750 Δ=+0.016538 MED=+0.015049
+      06. VTOKEN_L09_H0    ACC=0.812500 Δ=+0.021377 MED=+0.018264
+      07. KTOKEN_L08_H3    ACC=0.812500 Δ=+0.012476 MED=+0.012788
+      08. VTOKEN_L25_H3    ACC=0.796875 Δ=+0.018240 MED=+0.016878
+      09. VTOKEN_L23_H2    ACC=0.796875 Δ=+0.016670 MED=+0.014641
+      10. VTOKEN_L26_H0    ACC=0.796875 Δ=+0.016439 MED=+0.013583
+      11. VTOKEN_L19_H3    ACC=0.781250 Δ=+0.018483 MED=+0.016808
+      12. VTOKEN_L09_H3    ACC=0.781250 Δ=+0.017010 MED=+0.015667
+      13. VTOKEN_L26_H2    ACC=0.781250 Δ=+0.015737 MED=+0.013850
+      14. VTOKEN_L14_H2    ACC=0.765625 Δ=+0.015296 MED=+0.015518
+      15. VTOKEN_L11_H2    ACC=0.765625 Δ=+0.009845 MED=+0.009023
+      16. VTOKEN_L03_H2    ACC=0.750000 Δ=+0.016312 MED=+0.014470
+      17. KTOKEN_L03_H1    ACC=0.750000 Δ=+0.002858 MED=+0.001371
+      18. KTOKEN_L03_H0    ACC=0.750000 Δ=+0.000064 MED=+0.000034
+      19. VTOKEN_L27_H0    ACC=0.734375 Δ=+0.015317 MED=+0.012714
+      20. VTOKEN_L22_H2    ACC=0.734375 Δ=+0.013507 MED=+0.012742
+      21. VTOKEN_L27_H2    ACC=0.734375 Δ=+0.013114 MED=+0.009494
+      22. VTOKEN_L09_H1    ACC=0.734375 Δ=+0.010010 MED=+0.009441
+      23. KTOKEN_L14_H1    ACC=0.734375 Δ=+0.005494 MED=+0.004752
+      24. KTOKEN_L05_H2    ACC=0.734375 Δ=+0.004471 MED=+0.004016
+[7/8] Complementarity / failure anatomy...
+      TOP64 ANY-POSITIVE identity evidence: 64/64 = 1.000000
+      mean positive-channel votes: 49.594 / 64
+      >=16 positive votes: 1.000000
+      >=32 positive votes: 0.906250
+
+      TOKEN RESIDUAL LAYER ATLAS
+      L08 POS=1.000000 MAXΔ=+0.134191 MEANΔ=+0.009817
+      L07 POS=1.000000 MAXΔ=+0.132697 MEANΔ=+0.009886
+      L09 POS=1.000000 MAXΔ=+0.126691 MEANΔ=+0.010159
+      L00 POS=1.000000 MAXΔ=+0.123658 MEANΔ=+0.006767
+      L01 POS=1.000000 MAXΔ=+0.116992 MEANΔ=+0.006788
+      L02 POS=1.000000 MAXΔ=+0.110288 MEANΔ=+0.006573
+      L10 POS=1.000000 MAXΔ=+0.102376 MEANΔ=+0.007522
+      L12 POS=1.000000 MAXΔ=+0.099108 MEANΔ=+0.006778
+      L11 POS=1.000000 MAXΔ=+0.098312 MEANΔ=+0.006757
+      L13 POS=1.000000 MAXΔ=+0.082452 MEANΔ=+0.005100
+      L04 POS=1.000000 MAXΔ=+0.074145 MEANΔ=+0.005493
+      L17 POS=1.000000 MAXΔ=+0.067827 MEANΔ=+0.003832
+      L03 POS=1.000000 MAXΔ=+0.064946 MEANΔ=+0.005962
+      L18 POS=1.000000 MAXΔ=+0.063380 MEANΔ=+0.003928
+      L27 POS=1.000000 MAXΔ=+0.063004 MEANΔ=+0.002393
+      L20 POS=1.000000 MAXΔ=+0.056303 MEANΔ=+0.003424
+      L19 POS=1.000000 MAXΔ=+0.055270 MEANΔ=+0.003662
+      L21 POS=1.000000 MAXΔ=+0.051077 MEANΔ=+0.002844
+      L22 POS=1.000000 MAXΔ=+0.050867 MEANΔ=+0.002482
+      L25 POS=1.000000 MAXΔ=+0.036572 MEANΔ=+0.001884
+      L05 POS=0.984375 MAXΔ=+0.094982 MEANΔ=+0.006304
+      L06 POS=0.984375 MAXΔ=+0.094307 MEANΔ=+0.005971
+      L14 POS=0.984375 MAXΔ=+0.090987 MEANΔ=+0.005658
+      L15 POS=0.984375 MAXΔ=+0.074689 MEANΔ=+0.004513
+      L16 POS=0.984375 MAXΔ=+0.074598 MEANΔ=+0.004335
+      L23 POS=0.984375 MAXΔ=+0.050062 MEANΔ=+0.002909
+      L24 POS=0.984375 MAXΔ=+0.041405 MEANΔ=+0.002370
+      L26 POS=0.984375 MAXΔ=+0.035986 MEANΔ=+0.001594
+
+      BEST TOKEN-RESIDUAL LAYER DIAGNOSTIC: L08
+      [00] ebony microscope          vs ivory microscope          maxΔ=+0.01954 meanΔ=-0.00122 token='?'
+      [01] ivory microscope          vs ebony microscope          maxΔ=+0.00914 meanΔ=-0.00434 token=' container'
+      [02] navy sphygmomanometer     vs linen sphygmomanometer    maxΔ=+0.01874 meanΔ=+0.00008 token=' container'
+      [03] linen sphygmomanometer    vs navy sphygmomanometer     maxΔ=+0.08152 meanΔ=+0.00626 token=' fabric'
+      [04] yellow geiger counter     vs steel geiger counter      maxΔ=+0.32381 meanΔ=+0.02868 token=' yellow'
+      [05] steel geiger counter      vs yellow geiger counter     maxΔ=+0.08207 meanΔ=+0.00742 token=' metallic'
+      [06] black oscilloscope        vs silver oscilloscope       maxΔ=+0.12907 meanΔ=+0.00178 token=' dark'
+      [07] silver oscilloscope       vs black oscilloscope        maxΔ=+0.04629 meanΔ=+0.00833 token=' metallic'
+      [08] red tachometer            vs brass tachometer          maxΔ=+0.26995 meanΔ=+0.01429 token=' red'
+      [09] brass tachometer          vs red tachometer            maxΔ=+0.05129 meanΔ=+0.00826 token=' gauge'
+      [10] glass calorimeter         vs copper calorimeter        maxΔ=+0.04416 meanΔ=+0.01653 token=' transparent'
+      [11] copper calorimeter        vs glass calorimeter         maxΔ=+0.02082 meanΔ=-0.00487 token='-metal'
+      [12] white densitometer        vs ceramic densitometer      maxΔ=+0.05616 meanΔ=+0.00811 token=' measuring'
+      [13] ceramic densitometer      vs white densitometer        maxΔ=+0.05615 meanΔ=+0.00069 token='-c'
+      [14] violet spectrometer       vs aluminum spectrometer     maxΔ=+0.24361 meanΔ=+0.02371 token=' purple'
+      [15] aluminum spectrometer     vs violet spectrometer       maxΔ=+0.05115 meanΔ=+0.00124 token=' metallic'
+      [16] green theodolite          vs bronze theodolite         maxΔ=+0.30250 meanΔ=+0.01521 token=' green'
+      [17] bronze theodolite         vs green theodolite          maxΔ=+0.06330 meanΔ=+0.00784 token='-metal'
+      [18] glass hydrometer          vs wooden hydrometer         maxΔ=+0.05788 meanΔ=-0.00193 token=' transparent'
+      [19] wooden hydrometer         vs glass hydrometer          maxΔ=+0.24005 meanΔ=+0.02487 token=' wood'
+      [20] cobalt galvanometer       vs brass galvanometer        maxΔ=+0.01537 meanΔ=-0.00157 token=' instrument'
+      [21] brass galvanometer        vs cobalt galvanometer       maxΔ=+0.07492 meanΔ=+0.00248 token='-metal'
+      [22] iron dynamometer          vs crystal dynamometer       maxΔ=+0.03757 meanΔ=+0.00583 token=' measure'
+      [23] crystal dynamometer       vs iron dynamometer          maxΔ=+0.01193 meanΔ=-0.00030 token=' chosen'
+      [24] amber refractometer       vs steel refractometer       maxΔ=+0.39718 meanΔ=+0.03043 token=' amber'
+      [25] steel refractometer       vs amber refractometer       maxΔ=+0.08156 meanΔ=+0.00487 token=' metallic'
+      [26] copper manometer          vs quartz manometer          maxΔ=+0.22617 meanΔ=+0.01836 token=' copper'
+      [27] quartz manometer          vs copper manometer          maxΔ=+0.12526 meanΔ=+0.00627 token=' crystal'
+      [28] black pedometer           vs jade pedometer            maxΔ=+0.10341 meanΔ=+0.00958 token=' dark'
+      [29] jade pedometer            vs black pedometer           maxΔ=+0.02102 meanΔ=+0.00035 token=' distance'
+      [30] silver rangefinder        vs mahogany rangefinder      maxΔ=+0.25214 meanΔ=+0.02966 token=' silver'
+      [31] mahogany rangefinder      vs silver rangefinder        maxΔ=+0.13430 meanΔ=+0.00616 token='wood'
+      [32] ivory clinometer          vs azure clinometer          maxΔ=+0.03613 meanΔ=+0.00295 token=' pale'
+      [33] azure clinometer          vs ivory clinometer          maxΔ=+0.12811 meanΔ=+0.00642 token=' blue'
+      [34] white lux meter           vs onyx lux meter            maxΔ=+0.28964 meanΔ=+0.02043 token=' white'
+      [35] onyx lux meter            vs white lux meter           maxΔ=+0.02040 meanΔ=-0.00638 token=' the'
+      [36] yellow sound level meter  vs steel sound level meter   maxΔ=+0.33009 meanΔ=+0.02273 token=' yellow'
+      [37] steel sound level meter   vs yellow sound level meter  maxΔ=+0.09572 meanΔ=+0.01027 token=' metallic'
+      [38] chrome torque wrench      vs red torque wrench         maxΔ=+0.04074 meanΔ=+0.02458 token='ener'
+      [39] red torque wrench         vs chrome torque wrench      maxΔ=+0.31671 meanΔ=+0.00127 token=' red'
+      [40] green spirit level        vs aluminum spirit level     maxΔ=+0.34408 meanΔ=+0.02323 token=' green'
+      [41] aluminum spirit level     vs green spirit level        maxΔ=+0.05028 meanΔ=+0.00188 token="'s"
+      [42] orange multimeter         vs black multimeter          maxΔ=+0.33099 meanΔ=+0.03037 token=' orange'
+      [43] black multimeter          vs orange multimeter         maxΔ=+0.12679 meanΔ=+0.00280 token=' dark'
+      [44] brass compass divider     vs steel compass divider     maxΔ=+0.01809 meanΔ=+0.00252 token='-legged'
+      [45] steel compass divider     vs brass compass divider     maxΔ=+0.07518 meanΔ=+0.00398 token=' metallic'
+      [46] blue micrometer           vs bronze micrometer         maxΔ=+0.29397 meanΔ=-0.00059 token=' blue'
+      [47] bronze micrometer         vs blue micrometer           maxΔ=+0.05703 meanΔ=+0.01648 token='-metal'
+      [48] glass pipette             vs red pipette               maxΔ=+0.09038 meanΔ=+0.03003 token=' tube'
+      [49] red pipette               vs glass pipette             maxΔ=+0.35770 meanΔ=+0.01093 token=' red'
+      [50] white centrifuge          vs steel centrifuge          maxΔ=+0.02863 meanΔ=-0.00099 token=' laboratory'
+      [51] steel centrifuge          vs white centrifuge          maxΔ=+0.08542 meanΔ=+0.01143 token=' metallic'
+      [52] clear burette             vs amber burette             maxΔ=+0.13233 meanΔ=+0.00852 token=' transparent'
+      [53] amber burette             vs clear burette             maxΔ=+0.37623 meanΔ=+0.03071 token=' amber'
+      [54] brass sextant             vs black sextant             maxΔ=+0.02953 meanΔ=-0.00354 token=' yellow'
+      [55] black sextant             vs brass sextant             maxΔ=+0.13356 meanΔ=+0.01410 token=' dark'
+      [56] silver polarimeter        vs wooden polarimeter        maxΔ=+0.29134 meanΔ=+0.02978 token=' silver'
+      [57] wooden polarimeter        vs silver polarimeter        maxΔ=+0.22627 meanΔ=+0.01406 token=' wood'
+      [58] glass viscometer          vs copper viscometer         maxΔ=+0.05474 meanΔ=+0.00291 token=' transparent'
+      [59] copper viscometer         vs glass viscometer          maxΔ=+0.02745 meanΔ=+0.00490 token='ish'
+      [60] white dosimeter           vs black dosimeter           maxΔ=+0.01446 meanΔ=-0.00449 token=' pale'
+      [61] black dosimeter           vs white dosimeter           maxΔ=+0.12637 meanΔ=+0.01192 token=' dark'
+      [62] blue salinometer          vs ceramic salinometer       maxΔ=+0.30932 meanΔ=+0.01082 token=' blue'
+      [63] ceramic salinometer       vs blue salinometer          maxΔ=+0.10253 meanΔ=+0.02126 token='-c'
+[8/8] Null controls + seal...
+      ORACLE-COVER +1: VTOKEN_L23     gain=56 covered=56/64
+      ORACLE-COVER +2: TQMEAN_L07     gain=06 covered=62/64
+      ORACLE-COVER +3: DELTA_L09      gain=02 covered=64/64
+
+==============================================================================================================================================================
+TEST492 FINAL RESULT — INSTANCE-IDENTITY NATIVE SIGNAL ATLAS
+==============================================================================================================================================================
+FOUNDATION          : TEST491 residual-rule falsification
+TEST482 BLOB SHA    : ecc630144a44479cb35c432c50eb0d09bc6866d7
+TEST488 LOCK SHA    : d2c2e744532e1fe9b4c5be745fce6892720745dd590b49eca59ca3ef753fdfd8
+TEST489 LOCK SHA    : ed03fb4b6f1afa410e1a28329d05b744889b8836f69f3572c4b52032b8b70fb0
+TEST490 LOCK SHA    : 237f3c7a9cc2478b2ca55944f0a356101c8f87c5a7ef250f6267fc04a9fc1dd2
+TEST491 LOCK SHA    : 582fdc3e39d58863685be094c1bbfcfac8e398845d90624598197c97be9632bd
+TEST492 LOCK SHA    : 8de05fc52332806383642618fcf4a9ea4ed29fe2f544cac5beb5369686ee79a6
+DISCOVERY PANEL     : exact TEST491 64 / 32 same-family pairs
+PASSIVE CHANNELS    : 280 + 224 head-local K/V
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+BEST CHANNEL        : VTOKEN_L23
+BEST PAIR ACC       : 0.875
+BEST MEAN MARGIN    : 0.013398670125752687
+LABEL-SWAP NULL P95 : 0.59375
+LABEL-SWAP NULL P99 : 0.640625
+EMPIRICAL P         : 9.999000099990002e-05
+ANY-POS ORACLE      : 64 / 64
+GREEDY ORACLE COVER : 64 / 64
+GREEDY DIAGNOSTIC   : ['VTOKEN_L23', 'TQMEAN_L07', 'DELTA_L09']
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+VERDICT             : NATIVE_INSTANCE_IDENTITY_SIGNAL_FOUND
+NEW ADDRESSER       : NONE
+FUSION RULE         : NONE
+WEIGHT / THRESHOLD  : NONE
+ROUTER / ANN / GRAPH: NONE
+CARTRIDGE READOUT   : NOT USED
+TRAINING / LoRA     : NONE
+MODEL CHANGE        : NONE
+POST-HOC STATUS     : DISCOVERY/X-RAY ONLY
+NEXT                : freeze only a predeclared identity hypothesis from this atlas, then TEST493 on entirely fresh concepts/instances.
+==============================================================================================================================================================
