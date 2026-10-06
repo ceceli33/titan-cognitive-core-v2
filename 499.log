@@ -1,0 +1,245 @@
+ ================================================================================================================================================================
+TEST498B — AKBASCORE · ENDOGENOUS REASONING MICRO-CIRCUIT X-RAY
+SUCCESS↔STUCK TRANSITION SUBSPACE → SINGLE-LAYER MICRO-PULSE → FRESH HELD-OUT
+================================================================================================================================================================
+LOCK SHA: a0a457e6e44ab98e3d4b36b64325187a89d6882fc1612d5a05eb8e94edf0c830
+TEST498A LOCK: 59fb65f14f171af26ed91f701e11eae31e861e6869f7eae32b69e51ee3e03e75
+DISCOVERY=32 | HELD-OUT=24 | RANKS=(1, 2, 3, 4) | PULSE=1.000%
+MAM/BELLEKÖZ: OFF | NATURAL-LANGUAGE COMPASS: NONE | TEST496 SYMBOL LEAK: NONE
+
+[1/10] Loading frozen Qwen...
+config.json: 100% 663/663 [00:00<00:00, 87.4kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 693kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 56.8MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 62.4MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 128MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.26MB/s]Download complete:  13.1GB, 78.1MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  442MB/s  Fetching 4 files: 100% 4/4 [00:42<00:00, 42.40s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.93it/s]generation_config.json: 100% 243/243 [00:00<00:00, 31.2kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L H=3584 QH=28 KVH=4 | BF16 | weights frozen
+
+[2/10] Capturing endogenous SUCCESS/STUCK discovery states...
+      04/32
+      08/32
+      12/32
+      16/32
+      20/32
+      24/32
+      28/32
+      32/32
+
+[3/10] SVD — endogenous transition geometry...
+      L00 | meanΔ=3.37593 | PC1= 89.44% | PC1-2= 91.79% | PC1-4= 95.52% | mean cos(Δ,meanΔ)=+0.9466
+      L01 | meanΔ=5.24890 | PC1= 93.35% | PC1-2= 94.61% | PC1-4= 96.56% | mean cos(Δ,meanΔ)=+0.9663
+      L02 | meanΔ=5.72153 | PC1= 93.60% | PC1-2= 94.75% | PC1-4= 96.52% | mean cos(Δ,meanΔ)=+0.9676
+      L03 | meanΔ=8.00646 | PC1= 91.95% | PC1-2= 93.06% | PC1-4= 94.85% | mean cos(Δ,meanΔ)=+0.9590
+      L04 | meanΔ=13.02643 | PC1= 95.18% | PC1-2= 95.90% | PC1-4= 96.85% | mean cos(Δ,meanΔ)=+0.9757
+      L05 | meanΔ=14.15159 | PC1= 96.09% | PC1-2= 96.70% | PC1-4= 97.48% | mean cos(Δ,meanΔ)=+0.9803
+      L06 | meanΔ=17.05938 | PC1= 97.13% | PC1-2= 97.54% | PC1-4= 98.09% | mean cos(Δ,meanΔ)=+0.9855
+      L07 | meanΔ=22.94777 | PC1= 97.80% | PC1-2= 98.16% | PC1-4= 98.58% | mean cos(Δ,meanΔ)=+0.9889
+      L08 | meanΔ=25.79772 | PC1= 97.63% | PC1-2= 98.04% | PC1-4= 98.49% | mean cos(Δ,meanΔ)=+0.9881
+      L09 | meanΔ=27.07429 | PC1= 97.65% | PC1-2= 98.06% | PC1-4= 98.50% | mean cos(Δ,meanΔ)=+0.9882
+      L10 | meanΔ=29.73379 | PC1= 97.27% | PC1-2= 97.69% | PC1-4= 98.31% | mean cos(Δ,meanΔ)=+0.9863
+      L11 | meanΔ=34.50720 | PC1= 97.10% | PC1-2= 97.60% | PC1-4= 98.24% | mean cos(Δ,meanΔ)=+0.9854
+      L12 | meanΔ=36.18288 | PC1= 97.11% | PC1-2= 97.60% | PC1-4= 98.20% | mean cos(Δ,meanΔ)=+0.9854
+      L13 | meanΔ=44.56803 | PC1= 96.40% | PC1-2= 96.93% | PC1-4= 97.66% | mean cos(Δ,meanΔ)=+0.9818
+      L14 | meanΔ=42.20877 | PC1= 96.27% | PC1-2= 96.83% | PC1-4= 97.55% | mean cos(Δ,meanΔ)=+0.9812
+      L15 | meanΔ=47.51696 | PC1= 96.29% | PC1-2= 96.85% | PC1-4= 97.56% | mean cos(Δ,meanΔ)=+0.9812
+      L16 | meanΔ=49.98829 | PC1= 95.93% | PC1-2= 96.54% | PC1-4= 97.36% | mean cos(Δ,meanΔ)=+0.9794
+      L17 | meanΔ=52.12017 | PC1= 95.07% | PC1-2= 95.78% | PC1-4= 96.81% | mean cos(Δ,meanΔ)=+0.9751
+      L18 | meanΔ=54.60093 | PC1= 94.48% | PC1-2= 95.20% | PC1-4= 96.38% | mean cos(Δ,meanΔ)=+0.9720
+      L19 | meanΔ=59.74992 | PC1= 93.07% | PC1-2= 94.17% | PC1-4= 95.55% | mean cos(Δ,meanΔ)=+0.9647
+      L20 | meanΔ=69.68096 | PC1= 91.28% | PC1-2= 92.69% | PC1-4= 94.37% | mean cos(Δ,meanΔ)=+0.9554
+      L21 | meanΔ=82.68174 | PC1= 89.46% | PC1-2= 91.15% | PC1-4= 93.35% | mean cos(Δ,meanΔ)=+0.9458
+      L22 | meanΔ=101.67850 | PC1= 87.92% | PC1-2= 90.03% | PC1-4= 92.61% | mean cos(Δ,meanΔ)=+0.9376
+      L23 | meanΔ=121.70473 | PC1= 87.45% | PC1-2= 89.73% | PC1-4= 92.35% | mean cos(Δ,meanΔ)=+0.9346
+      L24 | meanΔ=142.25569 | PC1= 85.70% | PC1-2= 88.20% | PC1-4= 91.15% | mean cos(Δ,meanΔ)=+0.9252
+      L25 | meanΔ=165.41441 | PC1= 85.06% | PC1-2= 87.56% | PC1-4= 90.64% | mean cos(Δ,meanΔ)=+0.9216
+      L26 | meanΔ=197.41115 | PC1= 83.42% | PC1-2= 86.10% | PC1-4= 89.35% | mean cos(Δ,meanΔ)=+0.9127
+      L27 | meanΔ=143.64276 | PC1= 80.92% | PC1-2= 85.30% | PC1-4= 88.93% | mean cos(Δ,meanΔ)=+0.8983
+
+[4/10] DISCOVERY baseline...
+      [01] BAFEN100→CENIR101→DIXOR102 | OFF='HAYAL105' | target=0 | mid=0
+      [02] RIKOP112→SOTOM113→TUCOR114 | OFF='TUCOR114' | target=1 | mid=0
+      [03] GUPEX124→HAYAL125→JEHUR126 | OFF='BAFEN120' | target=0 | mid=0
+      [04] KIRUL127→LOZEP128→MUJEX129 | OFF='To answer this question, we need to follow the' | target=0 | mid=0
+      [05] ZUWEN139→BAFEN140→CENIR141 | OFF='CENIR141' | target=1 | mid=0
+      [06] PEBIN151→RIKOP152→SOTOM153 | OFF='NASAV150' | target=0 | mid=0
+      [07] TUCOR154→VELUM155→WOVIK156 | OFF='ZUWEN159' | target=0 | mid=0
+      [08] JEHUR166→KIRUL167→LOZEP168 | OFF='LOZEP165' | target=0 | mid=0
+      [09] YEMAV178→ZUWEN179→BAFEN180 | OFF='BAFEN180' | target=1 | mid=0
+      [10] CENIR181→DIXOR182→FOGIL183 | OFF='JEHUR186' | target=0 | mid=0
+      [11] SOTOM193→TUCOR194→VELUM195 | OFF='RIKOP192' | target=0 | mid=0
+      [12] HAYAL205→JEHUR206→KIRUL207 | OFF='KIRUL207' | target=1 | mid=0
+      [13] LOZEP208→MUJEX209→NASAV210 | OFF='NASAV210' | target=1 | mid=0
+      [14] BAFEN220→CENIR221→DIXOR222 | OFF='ZUWEN219' | target=0 | mid=0
+      [15] RIKOP232→SOTOM233→TUCOR234 | OFF='LOZEP234' | target=0 | mid=0
+      [16] VELUM235→WOVIK236→XADAX237 | OFF='XADAX237' | target=1 | mid=0
+      [17] KIRUL247→LOZEP248→MUJEX249 | OFF='To determine the terminal identifier starting from marker KIR' | target=0 | mid=0
+      [18] ZUWEN259→BAFEN260→CENIR261 | OFF='CENIR261' | target=1 | mid=0
+      [19] DIXOR262→FOGIL263→GUPEX264 | OFF='KIRUL267' | target=0 | mid=0
+      [20] TUCOR274→VELUM275→WOVIK276 | OFF='WOVIK276' | target=1 | mid=0
+      [21] JEHUR286→KIRUL287→LOZEP288 | OFF='LOZEP288' | target=1 | mid=0
+      [22] MUJEX289→NASAV290→PEBIN291 | OFF='PEBIN291' | target=1 | mid=0
+      [23] CENIR301→DIXOR302→FOGIL303 | OFF='JEHUR306' | target=0 | mid=0
+      [24] SOTOM313→TUCOR314→VELUM315 | OFF='VELUM315' | target=1 | mid=0
+      [25] WOVIK316→XADAX317→YEMAV318 | OFF='YEMAV318' | target=1 | mid=0
+      [26] LOZEP328→MUJEX329→NASAV330 | OFF='NASAV330' | target=1 | mid=0
+      [27] BAFEN340→CENIR341→DIXOR342 | OFF='DIXOR342' | target=1 | mid=0
+      [28] FOGIL343→GUPEX344→HAYAL345 | OFF='LOZEP345' | target=0 | mid=0
+      [29] VELUM355→WOVIK356→XADAX357 | OFF='XADAX357' | target=1 | mid=0
+      [30] KIRUL367→LOZEP368→MUJEX369 | OFF='MUJEX369' | target=1 | mid=0
+      [31] NASAV370→PEBIN371→RIKOP372 | OFF='RIKOP372' | target=1 | mid=0
+      [32] DIXOR382→FOGIL383→GUPEX384 | OFF='KIRUL387' | target=0 | mid=0
+      OFF target=17/32 | intermediate=0/32
+
+[5/10] DISCOVERY micro-pulse scan — layer × rank, fixed 1.000%...
+      L04 R1 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L04 R2 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L04 R3 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L04 R4 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L06 R1 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L06 R2 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L06 R3 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L06 R4 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L08 R1 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L08 R2 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L08 R3 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L08 R4 | +=17 -=16 rnd=17 | rescue=00 damage=00 mid=00 | score=+0.00
+      L10 R1 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L10 R2 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L10 R3 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L10 R4 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L12 R1 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L12 R2 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L12 R3 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L12 R4 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L14 R1 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L14 R2 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L14 R3 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L14 R4 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L16 R1 | +=17 -=16 rnd=17 | rescue=00 damage=00 mid=00 | score=+0.00
+      L16 R2 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L16 R3 | +=17 -=16 rnd=17 | rescue=00 damage=00 mid=00 | score=+0.00
+      L16 R4 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L18 R1 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L18 R2 | +=17 -=17 rnd=16 | rescue=00 damage=00 mid=00 | score=-1.00
+      L18 R3 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L18 R4 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L20 R1 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L20 R2 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L20 R3 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L20 R4 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L22 R1 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L22 R2 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L22 R3 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L22 R4 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L24 R1 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L24 R2 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L24 R3 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+      L24 R4 | +=17 -=17 rnd=17 | rescue=00 damage=00 mid=00 | score=-1.00
+
+      FROZEN DISCOVERY SELECTION: L16 R1 | +=17/32 -=16/32 random=17/32 | rescue=0 damage=0
+      INTERVENTION FREEZE SHA: 5c87802f6cccdd0478c454525771482c842baf2dd14417597000b2cccf594f41
+
+[6/10] FRESH HELD-OUT — OFF / +MICRO / -MICRO / RANDOM...
+      [01] BAFEN400→CENIR401→DIXOR402 | OFF='DIXOR402'[1] | +='DIXOR402'[1] | -='DIXOR402'[1] | RND='DIXOR402'[1]
+      [02] RIKOP412→SOTOM413→TUCOR414 | OFF='TUCOR414'[1] | +='TUCOR414'[1] | -='TUCOR414'[1] | RND='TUCOR414'[1]
+      [03] GUPEX424→HAYAL425→JEHUR426 | OFF='JEHUR426'[1] | +='JEHUR426'[1] | -='JEHUR426'[1] | RND='JEHUR426'[1]
+      [04] KIRUL427→LOZEP428→MUJEX429 | OFF='VELUM435'[0] | +='VELUM435'[0] | -='VELUM435'[0] | RND='VELUM435'[0]
+      [05] ZUWEN439→BAFEN440→CENIR441 | OFF='CENIR441'[1] | +='CENIR441'[1] | -='CENIR441'[1] | RND='CENIR441'[1]
+      [06] PEBIN451→RIKOP452→SOTOM453 | OFF='KIRUL447'[0] | +='KIRUL447'[0] | -='KIRUL447'[0] | RND='KIRUL447'[0]
+      [07] TUCOR454→VELUM455→WOVIK456 | OFF='ZUWEN459'[0] | +='ZUWEN459'[0] | -='ZUWEN459'[0] | RND='ZUWEN459'[0]
+      [08] JEHUR466→KIRUL467→LOZEP468 | OFF='LOZEP465'[0] | +='LOZEP465'[0] | -='LOZEP465'[0] | RND='LOZEP465'[0]
+      [09] YEMAV478→ZUWEN479→BAFEN480 | OFF='BAFEN480'[1] | +='BAFEN480'[1] | -='BAFEN480'[1] | RND='BAFEN480'[1]
+      [10] CENIR481→DIXOR482→FOGIL483 | OFF='JEHUR486'[0] | +='JEHUR486'[0] | -='JEHUR486'[0] | RND='JEHUR486'[0]
+      [11] SOTOM493→TUCOR494→VELUM495 | OFF='YEMAV498'[0] | +='YEMAV498'[0] | -='YEMAV498'[0] | RND='YEMAV498'[0]
+      [12] HAYAL505→JEHUR506→KIRUL507 | OFF='CENIR501'[0] | +='CENIR501'[0] | -='CENIR501'[0] | RND='CENIR501'[0]
+      [13] LOZEP508→MUJEX509→NASAV510 | OFF='NASAV510 SOTOM51'[0] | +='NASAV510 SOTOM51'[0] | -='NASAV510 SOTOM51'[0] | RND='NASAV510 SOTOM51'[0]
+      [14] BAFEN520→CENIR521→DIXOR522 | OFF='HAYAL525'[0] | +='HAYAL525'[0] | -='HAYAL525'[0] | RND='HAYAL525'[0]
+      [15] RIKOP532→SOTOM533→TUCOR534 | OFF='LOZEP528'[0] | +='LOZEP528'[0] | -='LOZEP528'[0] | RND='LOZEP528'[0]
+      [16] VELUM535→WOVIK536→XADAX537 | OFF='BAFEN540'[0] | +='BAFEN540'[0] | -='BAFEN540'[0] | RND='BAFEN540'[0]
+      [17] KIRUL547→LOZEP548→MUJEX549 | OFF='JEHUR546'[0] | +='JEHUR546'[0] | -='JEHUR546'[0] | RND='JEHUR546'[0]
+      [18] ZUWEN559→BAFEN560→CENIR561 | OFF='CENIR561'[1] | +='CENIR561'[1] | -='CENIR561'[1] | RND='CENIR561'[1]
+      [19] DIXOR562→FOGIL563→GUPEX564 | OFF='KIRUL567'[0] | +='KIRUL567'[0] | -='KIRUL567'[0] | RND='KIRUL567'[0]
+      [20] TUCOR574→VELUM575→WOVIK576 | OFF='WOVIK576'[1] | +='WOVIK576'[1] | -='WOVIK576'[1] | RND='WOVIK576'[1]
+      [21] JEHUR586→KIRUL587→LOZEP588 | OFF='LOZEP588'[1] | +='LOZEP588'[1] | -='LOZEP588'[1] | RND='LOZEP588'[1]
+      [22] MUJEX589→NASAV590→PEBIN591 | OFF='TUCOR594'[0] | +='TUCOR594'[0] | -='TUCOR594'[0] | RND='TUCOR594'[0]
+      [23] CENIR601→DIXOR602→FOGIL603 | OFF='BAFEN600'[0] | +='BAFEN600'[0] | -='BAFEN600'[0] | RND='BAFEN600'[0]
+      [24] SOTOM613→TUCOR614→VELUM615 | OFF='VELUM615'[1] | +='VELUM615'[1] | -='VELUM615'[1] | RND='VELUM615'[1]
+
+[7/10] Downstream X-Ray — selected micro-pulse...
+      L16 | mean relative Δ=  0.0000% | cos(Δ,pulse)=+0.0000
+      L17 | mean relative Δ=  1.4254% | cos(Δ,pulse)=+0.5488
+      L18 | mean relative Δ=  1.7379% | cos(Δ,pulse)=+0.3686
+      L19 | mean relative Δ=  2.0210% | cos(Δ,pulse)=+0.2409
+      L20 | mean relative Δ=  2.4090% | cos(Δ,pulse)=+0.1630
+      L21 | mean relative Δ=  2.6900% | cos(Δ,pulse)=+0.1453
+      L22 | mean relative Δ=  2.9912% | cos(Δ,pulse)=+0.1247
+      L23 | mean relative Δ=  3.1351% | cos(Δ,pulse)=+0.1093
+      L24 | mean relative Δ=  3.1234% | cos(Δ,pulse)=+0.1010
+      L25 | mean relative Δ=  3.1262% | cos(Δ,pulse)=+0.0951
+      L26 | mean relative Δ=  3.1301% | cos(Δ,pulse)=+0.0810
+      L27 | mean relative Δ=  3.8095% | cos(Δ,pulse)=+0.0531
+
+[8/10] Fresh 3-edge transfer — frozen pulse...
+      [01] BAFEN640→CENIR641→DIXOR642→FOGIL643 | OFF='FOGIL643'[1] | +='FOGIL643'[1] | -='FOGIL643'[1] | RND='FOGIL643'[1]
+      [02] GUPEX644→HAYAL645→JEHUR646→KIRUL647 | OFF='KIRUL647'[1] | +='KIRUL647'[1] | -='KIRUL647'[1] | RND='KIRUL647'[1]
+      [03] LOZEP648→MUJEX649→NASAV650→PEBIN651 | OFF='PEBIN651'[1] | +='PEBIN651'[1] | -='PEBIN651'[1] | RND='PEBIN651'[1]
+      [04] RIKOP652→SOTOM653→TUCOR654→VELUM655 | OFF='VELUM655'[1] | +='VELUM655'[1] | -='VELUM655'[1] | RND='To determine the terminal identifier starting from marker RIK'[0]
+      [05] WOVIK656→XADAX657→YEMAV658→ZUWEN659 | OFF='ZUWEN659'[1] | +='ZUWEN659'[1] | -='ZUWEN659'[1] | RND='ZUWEN659'[1]
+      [06] BAFEN660→CENIR661→DIXOR662→FOGIL663 | OFF='FOGIL663'[1] | +='FOGIL663'[1] | -='FOGIL663'[1] | RND='FOGIL663'[1]
+      [07] GUPEX664→HAYAL665→JEHUR666→KIRUL667 | OFF='KIRUL667'[1] | +='KIRUL667'[1] | -='KIRUL667'[1] | RND='To determine the terminal identifier starting from marker GUPE'[0]
+      [08] LOZEP668→MUJEX669→NASAV670→PEBIN671 | OFF='PEBIN671'[1] | +='PEBIN671'[1] | -='PEBIN671'[1] | RND='PEBIN671'[1]
+
+[9/10] Frozen criterion...
+      +MICRO > OFF held-out       : 0
+      +MICRO > -MICRO held-out    : 0
+      +MICRO > RANDOM held-out    : 0
+      rescue > damage             : 0
+      damage <= 3                 : 1
+      3-edge +MICRO >= OFF        : 1
+      3-edge +MICRO >= -MICRO     : 1
+      3-edge +MICRO >= RANDOM     : 1
+
+================================================================================================================================================================
+[10/10] TEST498B FINAL RESULT — ENDOGENOUS REASONING MICRO-CIRCUIT X-RAY
+================================================================================================================================================================
+MODEL                         : Qwen/Qwen2.5-7B-Instruct · frozen
+MAM / BELLEKÖZ                : OFF
+VECTOR SOURCE                 : endogenous SUCCESS-STUCK activation differences
+NATURAL-LANGUAGE COMPASS      : NONE
+TEST496 IDENTITIES            : NONE
+DISCOVERY / HELD-OUT          : 32 / 24
+DISCOVERY-HELDOUT OVERLAP     : 0
+CANDIDATE LAYERS              : (4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24)
+CANDIDATE SUBSPACE RANKS      : (1, 2, 3, 4)
+PULSE DOSE                    : 1.000%
+TRAINING / LoRA               : NONE
+WEIGHT UPDATE                 : NONE
+HELD-OUT PARAMETER SELECTION  : NONE
+POST-HOC TUNING               : NONE
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+DISCOVERY OFF                 : 17/32
+SELECTED LAYER / RANK         : L16 / R1
+SELECTED DISCOVERY +MICRO     : 17/32
+SELECTED DISCOVERY -MICRO     : 16/32
+SELECTED DISCOVERY RANDOM     : 17/32
+SELECTED RESCUE / DAMAGE      : 0 / 0
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+HELD-OUT OFF                  : 9/24
+HELD-OUT +MICRO               : 9/24
+HELD-OUT -MICRO               : 9/24
+HELD-OUT RANDOM               : 9/24
+HELD-OUT OFF MID COLLAPSE     : 0/24
+HELD-OUT +MICRO MID COLLAPSE  : 0/24
+HELD-OUT RESCUE / DAMAGE      : 0 / 0
+HELD-OUT NET RESCUE           : +0
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+3-EDGE OFF                    : 8/8
+3-EDGE +MICRO                 : 8/8
+3-EDGE -MICRO                 : 8/8
+3-EDGE RANDOM                 : 6/8
+REQUESTED SINGLE-LAYER DOSE   : 1.0000%
+REALIZED SINGLE-LAYER DOSE    : 1.0071%
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST498A LOCK SHA             : 59fb65f14f171af26ed91f701e11eae31e861e6869f7eae32b69e51ee3e03e75
+TEST498B LOCK SHA             : a0a457e6e44ab98e3d4b36b64325187a89d6882fc1612d5a05eb8e94edf0c830
+INTERVENTION FREEZE SHA       : 5c87802f6cccdd0478c454525771482c842baf2dd14417597000b2cccf594f41
+TOTAL TEST TIME               : 1458.37s
+EXPLORATORY VERDICT           : ENDOGENOUS_REASONING_MICRO_PULSE_NOT_YET_OBSERVED
+================================================================================================================================================================
