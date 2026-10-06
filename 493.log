@@ -1,0 +1,151 @@
+ ==============================================================================================================================================================
+TEST493 — AKBASCORE MAM · FROZEN INSTANCE-IDENTITY REPLICATION
+FRESH HELD-OUT 32 CONCEPT PAIRS · PRIMARY VTOKEN L23 · NO SEARCH / NO FUSION / NO RETUNING
+==============================================================================================================================================================
+LOCK SHA: fec116dff1c97fdc257de5ebbb09ca4c96202b9c6da98f5d5cfe3aae20da5c0a
+TEST492 LOCK: 8de05fc52332806383642618fcf4a9ea4ed29fe2f544cac5beb5369686ee79a6
+PANEL: 64 fresh records / 32 unseen concepts / 2 instances each
+[1/8] Loading frozen Qwen...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 80.2kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 835kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 80.4MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 57.7MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 122MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.22MB/s]Download complete:  13.1GB,  278MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  277MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00,  8.36s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.86it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.5kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L | H=3584 | QH=28 KVH=4 | frozen BF16
+[2/8] Capturing fresh held-out states...
+      memories 16/64
+      memories 32/64
+      memories 48/64
+      memories 64/64
+      queries  16/64
+      queries  32/64
+      queries  48/64
+      queries  64/64
+[3/8] PRIMARY frozen pair replication...
+      VTOKEN_L23 PAIR-ACC=0.921875 (59/64) MEANΔ=+0.016401 MEDΔ=+0.013404
+      exact binomial p=4.501408469e-13
+[4/8] PREDECLARED secondary replication...
+      TQMEAN_L07   PAIR-ACC=0.843750 (54/64) MEANΔ=+0.011443 MEDΔ=+0.009731 p=9.982491119e-09
+      DELTA_L09    PAIR-ACC=0.781250 (50/64) MEANΔ=+0.009378 MEDΔ=+0.007845 p=3.534743771e-06
+[5/8] Global retrieval diagnostic — each frozen channel independently...
+      VTOKEN_L23   R1=0.750000 R5=0.937500 R16=1.000000 MRR=0.840755 MEDR=1.0
+      TQMEAN_L07   R1=0.515625 R5=0.812500 R16=0.921875 MRR=0.647908 MEDR=1.0
+      DELTA_L09    R1=0.468750 R5=0.765625 R16=0.906250 MRR=0.601607 MEDR=2.0
+[6/8] Family retrieval vs instance discrimination...
+      VTOKEN_L23   FAMILY-R1=0.765625 FAMILY-R5=0.953125 INSTANCE-R1=0.750000 INSTANCE-R5=0.937500
+      TQMEAN_L07   FAMILY-R1=0.562500 FAMILY-R5=0.828125 INSTANCE-R1=0.515625 INSTANCE-R5=0.812500
+      DELTA_L09    FAMILY-R1=0.562500 FAMILY-R5=0.828125 INSTANCE-R1=0.468750 INSTANCE-R5=0.765625
+[7/8] Difficulty strata + per-pair audit...
+
+      VTOKEN_L23
+      STANDARD    n=17 ACC=1.000000 MEANΔ=+0.023077
+      HARD        n=19 ACC=0.947368 MEANΔ=+0.016552
+      EXTREME     n=28 ACC=0.857143 MEANΔ=+0.012246
+
+      TQMEAN_L07
+      STANDARD    n=17 ACC=0.823529 MEANΔ=+0.013231
+      HARD        n=19 ACC=0.736842 MEANΔ=+0.011898
+      EXTREME     n=28 ACC=0.928571 MEANΔ=+0.010050
+
+      DELTA_L09
+      STANDARD    n=17 ACC=0.764706 MEANΔ=+0.014153
+      HARD        n=19 ACC=0.789474 MEANΔ=+0.011052
+      EXTREME     n=28 ACC=0.785714 MEANΔ=+0.005343
+
+      PRIMARY VTOKEN_L23 AUDIT
+      [00] OK   gold chronometer         > black chronometer        Δ=+0.020845
+      [01] OK   black chronometer        > gold chronometer         Δ=+0.006509
+      [02] OK   red ammeter              > wooden ammeter           Δ=+0.039074
+      [03] OK   wooden ammeter           > red ammeter              Δ=+0.028447
+      [04] OK   blue voltmeter           > brass voltmeter          Δ=+0.026646
+      [05] OK   brass voltmeter          > blue voltmeter           Δ=+0.005315
+      [06] OK   white ohmmeter           > steel ohmmeter           Δ=+0.006564
+      [07] OK   steel ohmmeter           > white ohmmeter           Δ=+0.013290
+      [08] OK   green barograph          > copper barograph         Δ=+0.026900
+      [09] OK   copper barograph         > green barograph          Δ=+0.002814
+      [10] OK   silver pyrometer         > ceramic pyrometer        Δ=+0.044412
+      [11] OK   ceramic pyrometer        > silver pyrometer         Δ=+0.005034
+      [12] OK   amber nephelometer       > black nephelometer       Δ=+0.031969
+      [13] OK   black nephelometer       > amber nephelometer       Δ=+0.008204
+      [14] OK   violet photometer        > aluminum photometer      Δ=+0.037254
+      [15] OK   aluminum photometer      > violet photometer        Δ=+0.001454
+      [16] OK   orange colorimeter       > glass colorimeter        Δ=+0.041707
+      [17] OK   glass colorimeter        > orange colorimeter       Δ=+0.010883
+      [18] OK   ivory turbidimeter       > jade turbidimeter        Δ=+0.011623
+      [19] MISS jade turbidimeter        > ivory turbidimeter       Δ=-0.006093
+      [20] MISS cobalt electrometer      > brass electrometer       Δ=-0.006009
+      [21] OK   brass electrometer       > cobalt electrometer      Δ=+0.008225
+      [22] OK   iron accelerometer       > crystal accelerometer    Δ=+0.004158
+      [23] MISS crystal accelerometer    > iron accelerometer       Δ=-0.005111
+      [24] OK   amber magnetometer       > steel magnetometer       Δ=+0.030928
+      [25] OK   steel magnetometer       > amber magnetometer       Δ=+0.000939
+      [26] OK   copper gravimeter        > quartz gravimeter        Δ=+0.035353
+      [27] OK   quartz gravimeter        > copper gravimeter        Δ=+0.020629
+      [28] OK   black radiometer         > jade radiometer          Δ=+0.022746
+      [29] OK   jade radiometer          > black radiometer         Δ=+0.004488
+      [30] OK   silver interferometer    > mahogany interferometer  Δ=+0.044727
+      [31] OK   mahogany interferometer  > silver interferometer    Δ=+0.008309
+      [32] OK   ivory goniometer         > azure goniometer         Δ=+0.000677
+      [33] OK   azure goniometer         > ivory goniometer         Δ=+0.017950
+      [34] OK   white planimeter         > onyx planimeter          Δ=+0.008576
+      [35] MISS onyx planimeter          > white planimeter         Δ=-0.000636
+      [36] OK   yellow sclerometer       > steel sclerometer        Δ=+0.039832
+      [37] OK   steel sclerometer        > yellow sclerometer       Δ=+0.031327
+      [38] OK   chrome durometer         > red durometer            Δ=+0.001449
+      [39] OK   red durometer            > chrome durometer         Δ=+0.013517
+      [40] OK   green tensiometer        > aluminum tensiometer     Δ=+0.046789
+      [41] OK   aluminum tensiometer     > green tensiometer        Δ=+0.010534
+      [42] OK   orange hygrograph        > black hygrograph         Δ=+0.037330
+      [43] OK   black hygrograph         > orange hygrograph        Δ=+0.014775
+      [44] OK   brass thermocouple       > steel thermocouple       Δ=+0.017034
+      [45] MISS steel thermocouple       > brass thermocouple       Δ=-0.007123
+      [46] OK   blue potentiometer       > bronze potentiometer     Δ=+0.025133
+      [47] OK   bronze potentiometer     > blue potentiometer       Δ=+0.019041
+      [48] OK   glass rheostat           > red rheostat             Δ=+0.001045
+      [49] OK   red rheostat             > glass rheostat           Δ=+0.021580
+      [50] OK   white tachograph         > steel tachograph         Δ=+0.008871
+      [51] OK   steel tachograph         > white tachograph         Δ=+0.013530
+      [52] OK   clear spirometer         > amber spirometer         Δ=+0.008522
+      [53] OK   amber spirometer         > clear spirometer         Δ=+0.022911
+      [54] OK   brass audiometer         > black audiometer         Δ=+0.003785
+      [55] OK   black audiometer         > brass audiometer         Δ=+0.014020
+      [56] OK   silver ophthalmoscope    > wooden ophthalmoscope    Δ=+0.029119
+      [57] OK   wooden ophthalmoscope    > silver ophthalmoscope    Δ=+0.037535
+      [58] OK   glass otoscope           > copper otoscope          Δ=+0.006287
+      [59] OK   copper otoscope          > glass otoscope           Δ=+0.013629
+      [60] OK   white respirometer       > black respirometer       Δ=+0.010638
+      [61] OK   black respirometer       > white respirometer       Δ=+0.010071
+      [62] OK   blue polarograph         > ceramic polarograph      Δ=+0.028604
+      [63] OK   ceramic polarograph      > blue polarograph         Δ=+0.011097
+[8/8] Fixed null + final seal...
+
+==============================================================================================================================================================
+TEST493 FINAL RESULT — FROZEN INSTANCE-IDENTITY REPLICATION
+==============================================================================================================================================================
+TEST482 BLOB SHA    : ecc630144a44479cb35c432c50eb0d09bc6866d7
+TEST488 LOCK SHA    : d2c2e744532e1fe9b4c5be745fce6892720745dd590b49eca59ca3ef753fdfd8
+TEST489 LOCK SHA    : ed03fb4b6f1afa410e1a28329d05b744889b8836f69f3572c4b52032b8b70fb0
+TEST490 LOCK SHA    : 237f3c7a9cc2478b2ca55944f0a356101c8f87c5a7ef250f6267fc04a9fc1dd2
+TEST491 LOCK SHA    : 582fdc3e39d58863685be094c1bbfcfac8e398845d90624598197c97be9632bd
+TEST492 LOCK SHA    : 8de05fc52332806383642618fcf4a9ea4ed29fe2f544cac5beb5369686ee79a6
+TEST493 LOCK SHA    : fec116dff1c97fdc257de5ebbb09ca4c96202b9c6da98f5d5cfe3aae20da5c0a
+FRESH PANEL         : 64 records / 32 unseen concepts / 2 instances
+PRIMARY             : VTOKEN_L23 — frozen before this panel
+SECONDARY           : TQMEAN_L07 / DELTA_L09 — frozen before this panel
+PAIR CHANCE         : 0.50
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+VTOKEN_L23          : PAIR=0.921875 (59/64) Δ=+0.016401 BINOM-p=4.5014085e-13 | GLOBAL R1=0.750000 R5=0.937500 MRR=0.840755 | NULL-P99=0.640625
+TQMEAN_L07          : PAIR=0.843750 (54/64) Δ=+0.011443 BINOM-p=9.9824911e-09 | GLOBAL R1=0.515625 R5=0.812500 MRR=0.647908 | NULL-P99=0.640625
+DELTA_L09           : PAIR=0.781250 (50/64) Δ=+0.009378 BINOM-p=3.5347438e-06 | GLOBAL R1=0.468750 R5=0.765625 MRR=0.601607 | NULL-P99=0.640625
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+PRIMARY VERDICT     : FROZEN_NATIVE_INSTANCE_IDENTITY_REPLICATED
+CHANNEL SEARCH      : NONE
+LAYER SEARCH        : NONE
+HEAD SEARCH         : NONE
+THRESHOLD SEARCH    : NONE
+WEIGHT FIT          : NONE
+FUSION              : NONE
+POST-HOC SELECTION  : NONE
+ROUTER / ANN / GRAPH: NONE
+CARTRIDGE READOUT   : NOT USED
+TRAINING / LoRA     : NONE
+MODEL CHANGE        : NONE
+NEXT                : only after this seal, decide whether the replicated identity signal should become part of MAM cartridge addressing.
+==============================================================================================================================================================
