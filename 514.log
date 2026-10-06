@@ -1,0 +1,136 @@
+ ==============================================================================================================================================================================
+TEST514 — AKBASCORE MAM · FROZEN ÇAĞRIİZ ADDRESS CAUSALITY
+TEST513 L27+SOFT2 FROZEN · CORRECT-A / NO-A / WRONG-A / COUNTERFACTUAL-A
+==============================================================================================================================================================================
+LOCK SHA: 61e83ffe4b57cbafa0f4ef8a3fe516a153818fa43e87176941fd01ec8ad24146
+PARENT TEST513: 2b28137b12a26517261d0d8827c378f7e9e455bd5f4ccb12af47277ed8de01aa
+L27 + SOFT2: FROZEN | DISCOVERY: NONE | RESELECTION: NONE
+RUNTIME ADDRESS: NUMERIC VECTOR ONLY
+
+[1/9] Loading frozen Qwen...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 75.4kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 632kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 83.5MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 75.3MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 130MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.65MB/s]Download complete:  13.1GB,  352MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  471MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.83s/it]Loading weights: 100% 339/339 [00:03<00:00, 97.47it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.9kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | 28L H=3584
+
+[2/9] Freezing TEST513 numeric address geometry...
+      SOFT2 address geometry frozen. Dimension: 7169
+
+[3/9] Precomputing real B BELLEKÖZ bank...
+      B01 | tensor packet tokens=32
+      B02 | tensor packet tokens=30
+      B03 | tensor packet tokens=31
+      B04 | tensor packet tokens=29
+      B05 | tensor packet tokens=31
+      32/32 real B cartridges forged.
+
+[4/9] Precomputing CORRECT / WRONG / COUNTERFACTUAL A tensor cartridges...
+      CORRECT-A        : 32
+      WRONG-A          : 32
+      COUNTERFACTUAL-A : 32
+      Runtime inputs after forge are tensors.
+
+[5/9] Running four frozen causal arms...
+      [01] Aldren | correct r= 1 | noA r=20 | wrongA r=24 | CF→MUR r= 1
+      [02] Elara  | correct r= 2 | noA r= 3 | wrongA r=19 | CF→VIR r= 1
+      [03] Ilyra  | correct r= 1 | noA r= 4 | wrongA r= 2 | CF→FER r=28
+      [04] Joren  | correct r= 1 | noA r=23 | wrongA r=10 | CF→HIL r= 1
+      [05] Neris  | correct r= 1 | noA r=24 | wrongA r=10 | CF→CIR r= 2
+      [06] Ralen  | correct r= 1 | noA r=17 | wrongA r= 6 | CF→CEN r= 2
+      [07] Saren  | correct r= 2 | noA r=25 | wrongA r= 1 | CF→SEN r= 1
+      [08] Weyra  | correct r= 1 | noA r= 3 | wrongA r= 5 | CF→SUL r= 1
+
+[6/9] Arm statistics...
+      CORRECT_A        | R1=0.7188 R5=0.9688 R16=0.9688 MRR=0.839658 median=1.0
+      NO_A             | R1=0.0000 R5=0.1875 R16=0.3125 MRR=0.112912 median=22.5
+      WRONG_A          | R1=0.0625 R5=0.1250 R16=0.5000 MRR=0.149141 median=17.0
+      COUNTERFACTUAL_A | R1=0.7188 R5=0.9375 R16=0.9375 MRR=0.825149 median=1.0
+
+[7/9] Direct causal movement tests...
+      correct target score > NO-A       : 0.9688
+      correct target score > WRONG-A    : 0.9688
+      CF new target score > old target  : 0.9062
+      mean correct-minus-NO score        : +0.418698
+      mean correct-minus-WRONG score     : +0.370696
+      mean CF new-minus-old score        : +0.317102
+
+[8/9] Counterfactual item audit...
+      [01] Aldren | old=FEN new=MUR | pred=MUR | new-rank= 1
+      [02] Elara  | old=VAN new=VIR | pred=VIR | new-rank= 1
+      [03] Ilyra  | old=BEK new=FER | pred=CER | new-rank=28
+      [04] Joren  | old=TUR new=HIL | pred=HIL | new-rank= 1
+      [05] Neris  | old=CER new=CIR | pred=CER | new-rank= 2
+      [06] Ralen  | old=XAL new=CEN | pred=CER | new-rank= 2
+      [07] Saren  | old=RUK new=SEN | pred=SEN | new-rank= 1
+      [08] Weyra  | old=MUR new=SUL | pred=SUL | new-rank= 1
+      [09] Avel   | old=VIR new=GUL | pred=GUL | new-rank= 1
+      [10] Brann  | old=FER new=ZOR | pred=ZOR | new-rank= 1
+      [11] Felis  | old=HIL new=IVO | pred=IVO | new-rank= 1
+      [12] Jaris  | old=CIR new=RAS | pred=RAS | new-rank= 1
+      [13] Koren  | old=CEN new=NUR | pred=NUR | new-rank= 1
+      [14] Orel   | old=SEN new=FIR | pred=FIR | new-rank= 1
+      [15] Teren  | old=SUL new=KET | pred=KET | new-rank= 1
+      [16] Urian  | old=GUL new=RIN | pred=RIN | new-rank= 1
+      [17] Yalen  | old=ZOR new=TEV | pred=TEV | new-rank= 1
+      [18] Coren  | old=IVO new=KOR | pred=KET | new-rank= 2
+      [19] Derin  | old=RAS new=URB | pred=URB | new-rank= 1
+      [20] Heron  | old=NUR new=VEL | pred=VAN | new-rank=28
+      [21] Laven  | old=FIR new=XEN | pred=XAL | new-rank= 2
+      [22] Moris  | old=KET new=TOL | pred=TOL | new-rank= 1
+      [23] Rovis  | old=RIN new=YOR | pred=YOR | new-rank= 1
+      [24] Veris  | old=TEV new=MAR | pred=MAR | new-rank= 1
+      [25] Waren  | old=KOR new=PEL | pred=PEL | new-rank= 1
+      [26] Aren   | old=URB new=FEN | pred=FIR | new-rank= 2
+      [27] Elen   | old=VEL new=VAN | pred=VIR | new-rank= 2
+      [28] Faren  | old=XEN new=BEK | pred=BEK | new-rank= 1
+      [29] Joris  | old=TOL new=TUR | pred=TUR | new-rank= 1
+      [30] Noren  | old=YOR new=CER | pred=CER | new-rank= 1
+      [31] Oris   | old=MAR new=XAL | pred=XAL | new-rank= 1
+      [32] Toren  | old=PEL new=RUK | pred=RAS | new-rank= 3
+
+[9/9] Final classification...
+      L27                               : FROZEN
+      SOFT2                             : FROZEN
+      Discovery                         : NONE
+      Reselection                       : NONE
+      Human-readable runtime address    : NONE
+      Answer generation                 : NONE
+      Teacher forcing                   : NONE
+      Second autoregressive forward     : NONE
+      Intermediate decode               : NONE
+      Query-time B candidate forwards   : NONE
+      Learned router / ANN / DRA        : NONE
+
+==============================================================================================================================================================================
+TEST514 FINAL RESULT — AKBASCORE MAM · FROZEN ÇAĞRIİZ ADDRESS CAUSALITY
+==============================================================================================================================================================================
+MODEL                          : Qwen/Qwen2.5-7B-Instruct · frozen
+PARENT                         : TEST513
+TRACE                          : L27 · frozen
+ADDRESS                        : SOFT2 · frozen
+DISCOVERY / RESELECTION        : NONE / NONE
+RUNTIME ADDRESS                : NUMERIC VECTOR
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CORRECT_A          R1/R5/MRR : 0.7188 / 0.9688 / 0.839658
+NO_A               R1/R5/MRR : 0.0000 / 0.1875 / 0.112912
+WRONG_A            R1/R5/MRR : 0.0625 / 0.1250 / 0.149141
+COUNTERFACTUAL_A   R1/R5/MRR : 0.7188 / 0.9375 / 0.825149
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CORRECT − NO-A R1              : +0.7188
+CORRECT − WRONG-A R1           : +0.6562
+CORRECT SCORE > NO-A           : 0.9688
+CORRECT SCORE > WRONG-A        : 0.9688
+CF NEW > OLD SCORE             : 0.9062
+CF NEW TARGET R1               : 0.7188
+CF OLD TARGET R1               : 0.0312
+CF NEW − OLD MEAN SCORE        : +0.317102
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST508 LOCK SHA               : 47512c7860268517670ca5b45b6e76fe1582362dd38e447d164f33c756a1a2ca
+TEST509 LOCK SHA               : 4b5b78841ebf0d9b458306136e122fd3108b33bdfd89924585f891f748eca0d8
+TEST510 LOCK SHA               : cf3aaf955c0cd5019b1b951d185f290528286df82b23da62aaa30657e6bad5ea
+TEST511 LOCK SHA               : 31558a2b86b1a1e86cb4f729d7c956781fe9269ff20bb2557a92b3300270e35c
+TEST512 LOCK SHA               : 2c9576ce56491489be55f34a1a6d331a29bc4fd8080084693e92d2dab4a43ac2
+TEST513 LOCK SHA               : 2b28137b12a26517261d0d8827c378f7e9e455bd5f4ccb12af47277ed8de01aa
+TEST514 LOCK SHA               : 61e83ffe4b57cbafa0f4ef8a3fe516a153818fa43e87176941fd01ec8ad24146
+TOTAL TEST TIME                : 70.55s
+VERDICT                        : FROZEN_LATENT_ADDRESS_IS_CAUSALLY_MEMORY_DEPENDENT
+==============================================================================================================================================================================
