@@ -1,0 +1,281 @@
+ ================================================================================================================================================================================
+TEST518 — AKBASCORE MAM · HUMAN-SCAFFOLD ABLATION ON A CORRECTED PANEL
+TEST516 VOCABULARY BRIDGE PRESERVED → CLOSED GOLD LIST / GOLD B ADDRESS REMOVED STEPWISE
+================================================================================================================================================================================
+
+[1/11] Loading frozen Qwen...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 69.8kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 859kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 81.4MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 70.0MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 111MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.29MB/s]Download complete:  13.1GB,  256MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  475MB/s  Fetching 4 files: 100% 4/4 [00:47<00:00, 20.45s/it]Loading weights: 100% 339/339 [00:03<00:00, 101.02it/s]generation_config.json: 100% 243/243 [00:00<00:00, 31.7kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA L4 | 28L H=3584 QH=28 KVH=4 HD=128 | V=152064 | frozen BF16
+      TEST518 LOCK: d335fa02068644efbe3c54eba8b6ae3a4678fbba3abed972d3f31a401590ae3c
+      PARENT516   : 53f4fa86f1bc4f2c4db412bde68a2b004afc5a6c6cf84d1c3345b175ab1a3e8d
+      Panel       : 48 new items; each gold Seal occurs in exactly one B; A distractors absent from its B
+      Seal codes  : tokenizer-native single tokens; no FIRST/SECOND gold candidate machinery
+
+[2/11] OFFLINE FORGE — persistent A/B BELLEKÖZ...
+      ITEM 01 | A=25 B=31 tokens | gold=ION
+      ITEM 02 | A=24 B=27 tokens | gold=ENT
+      ITEM 03 | A=23 B=29 tokens | gold=ERR
+      ITEM 04 | A=24 B=30 tokens | gold=ANT
+      ITEM 05 | A=23 B=30 tokens | gold=ILE
+      96 tensor cartridges forged.
+
+[3/11] Numeric address headers frozen...
+      Full vocabulary: 152064 tokens
+      Bank inventory : 302 unique token IDs derived from stored B sources
+      AD2/AD3 header : every B token position; no gold/key position labels
+
+[4/11] PERSISTENCE RESET...
+      Forge-time runtime state discarded; fresh DynamicCache per query/read.
+      Persistent experiment state: BELLEKÖZ tensors + numeric token-position headers/inventory.
+
+[5/11] ADDRESS ABLATION — AD0/AD1/AD2/AD3 + NO_A...
+      [01/48] Alden   | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA= 1
+      [02/48] Allis   | AD0= 1 AD1= 1 AD2= 9 AD3= 9 NOA=23
+      [03/48] Altal   | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA= 6
+      [04/48] Belden  | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA= 5
+      [05/48] Bellis  | AD0= 1 AD1= 1 AD2= 2 AD3= 2 NOA= 1
+      [06/48] Beltal  | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA= 8
+      [07/48] Corden  | AD0= 2 AD1= 2 AD2= 3 AD3= 3 NOA= 7
+      [08/48] Corlis  | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA= 4
+      [09/48] Cortal  | AD0= 1 AD1= 1 AD2= 3 AD3= 3 NOA=25
+      [10/48] Darden  | AD0= 1 AD1= 1 AD2=10 AD3=10 NOA=10
+      [11/48] Darlis  | AD0= 1 AD1= 1 AD2=11 AD3=11 NOA=11
+      [12/48] Dartal  | AD0= 1 AD1= 1 AD2=12 AD3=12 NOA=26
+      [13/48] Elden   | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA=13
+      [14/48] Ellis   | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA=14
+      [15/48] Eltal   | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA=38
+      [16/48] Fenden  | AD0= 1 AD1= 1 AD2=16 AD3=16 NOA=28
+      [17/48] Fenlis  | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA=23
+      [18/48] Fental  | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA=11
+      [19/48] Galden  | AD0=11 AD1=11 AD2=19 AD3=19 NOA=21
+      [20/48] Gallis  | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA=36
+      [21/48] Galtal  | AD0= 3 AD1= 3 AD2=21 AD3=21 NOA=21
+      [22/48] Harden  | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA=22
+      [23/48] Harlis  | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA=26
+      [24/48] Hartal  | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA=24
+      [25/48] Ilden   | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA=32
+      [26/48] Illis   | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA=26
+      [27/48] Iltal   | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA=29
+      [28/48] Jarden  | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA=26
+      [29/48] Jarlis  | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA=31
+      [30/48] Jartal  | AD0= 1 AD1= 1 AD2=30 AD3=30 NOA=32
+      [31/48] Kelden  | AD0= 1 AD1= 1 AD2=14 AD3=14 NOA= 7
+      [32/48] Kellis  | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA= 3
+      [33/48] Keltal  | AD0= 2 AD1= 2 AD2= 2 AD3= 2 NOA= 8
+      [34/48] Lorden  | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA=36
+      [35/48] Lorlis  | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA=36
+      [36/48] Lortal  | AD0= 1 AD1= 1 AD2= 2 AD3= 2 NOA=43
+      [37/48] Marden  | AD0= 4 AD1= 4 AD2= 2 AD3= 2 NOA=44
+      [38/48] Marlis  | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA= 5
+      [39/48] Martal  | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA=26
+      [40/48] Norden  | AD0= 1 AD1= 1 AD2= 2 AD3= 2 NOA=31
+      [41/48] Norlis  | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA= 2
+      [42/48] Nortal  | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA=42
+      [43/48] Orden   | AD0= 1 AD1= 1 AD2= 3 AD3= 3 NOA= 1
+      [44/48] Orlis   | AD0= 1 AD1= 1 AD2= 6 AD3= 6 NOA=44
+      [45/48] Ortal   | AD0=11 AD1=11 AD2= 1 AD3= 1 NOA=19
+      [46/48] Parden  | AD0= 1 AD1= 1 AD2=46 AD3=46 NOA=46
+      [47/48] Parlis  | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA=47
+      [48/48] Partal  | AD0= 1 AD1= 1 AD2= 1 AD3= 1 NOA=48
+      AD0  R1/R5/R16/MRR: 0.8750 / 0.9583 / 1.0000 / 0.911774
+      AD1  R1/R5/R16/MRR: 0.8750 / 0.9583 / 1.0000 / 0.911774
+      AD2  R1/R5/R16/MRR: 0.6042 / 0.7708 / 0.9167 / 0.694610
+      AD3  R1/R5/R16/MRR: 0.6042 / 0.7708 / 0.9167 / 0.694610
+      NO_A R1/R5/R16/MRR: 0.0625 / 0.1667 / 0.3750 / 0.138195
+
+[6/11] Building H0/H1/H2 continuous carriers with soft rollout...
+      [01/48] carriers ready
+      [02/48] carriers ready
+      [03/48] carriers ready
+      [04/48] carriers ready
+      [05/48] carriers ready
+      [08/48] carriers ready
+      [16/48] carriers ready
+      [24/48] carriers ready
+      [32/48] carriers ready
+      [40/48] carriers ready
+      [48/48] carriers ready
+
+[7/11] HANDOFF ABLATION — oracle B: H0/H1/H2/ZERO/WRONG/DISTRACTOR...
+      [01/48] H0=1 H1=1 H2=1 Z=1 W=0 CF=1
+      [02/48] H0=1 H1=0 H2=1 Z=0 W=1 CF=1
+      [03/48] H0=1 H1=0 H2=1 Z=0 W=0 CF=1
+      [04/48] H0=1 H1=1 H2=1 Z=1 W=0 CF=1
+      [05/48] H0=1 H1=1 H2=1 Z=1 W=1 CF=1
+      [06/48] H0=1 H1=1 H2=1 Z=0 W=0 CF=1
+      [07/48] H0=1 H1=1 H2=1 Z=0 W=0 CF=1
+      [08/48] H0=1 H1=1 H2=1 Z=0 W=1 CF=1
+      [09/48] H0=1 H1=0 H2=1 Z=0 W=0 CF=1
+      [10/48] H0=1 H1=0 H2=0 Z=0 W=0 CF=1
+      [11/48] H0=0 H1=0 H2=0 Z=0 W=0 CF=0
+      [12/48] H0=1 H1=0 H2=0 Z=0 W=0 CF=1
+      [13/48] H0=0 H1=1 H2=1 Z=1 W=1 CF=1
+      [14/48] H0=1 H1=1 H2=1 Z=1 W=1 CF=1
+      [15/48] H0=1 H1=0 H2=1 Z=0 W=0 CF=1
+      [16/48] H0=1 H1=0 H2=1 Z=0 W=0 CF=1
+      [17/48] H0=1 H1=0 H2=1 Z=0 W=0 CF=1
+      [18/48] H0=1 H1=1 H2=1 Z=1 W=1 CF=1
+      [19/48] H0=1 H1=1 H2=1 Z=1 W=0 CF=1
+      [20/48] H0=1 H1=1 H2=1 Z=0 W=0 CF=1
+      [21/48] H0=0 H1=0 H2=0 Z=0 W=0 CF=1
+      [22/48] H0=1 H1=1 H2=1 Z=1 W=0 CF=1
+      [23/48] H0=1 H1=1 H2=1 Z=0 W=0 CF=1
+      [24/48] H0=1 H1=1 H2=1 Z=0 W=0 CF=1
+      [25/48] H0=1 H1=0 H2=1 Z=1 W=0 CF=1
+      [26/48] H0=1 H1=0 H2=1 Z=0 W=0 CF=1
+      [27/48] H0=1 H1=0 H2=1 Z=0 W=0 CF=1
+      [28/48] H0=1 H1=1 H2=1 Z=1 W=1 CF=1
+      [29/48] H0=1 H1=1 H2=1 Z=1 W=1 CF=1
+      [30/48] H0=1 H1=1 H2=1 Z=1 W=1 CF=1
+      [31/48] H0=1 H1=1 H2=1 Z=1 W=0 CF=1
+      [32/48] H0=1 H1=0 H2=1 Z=0 W=0 CF=1
+      [33/48] H0=0 H1=0 H2=1 Z=0 W=0 CF=1
+      [34/48] H0=1 H1=0 H2=1 Z=0 W=0 CF=1
+      [35/48] H0=1 H1=1 H2=1 Z=0 W=0 CF=1
+      [36/48] H0=0 H1=1 H2=1 Z=0 W=0 CF=1
+      [37/48] H0=1 H1=0 H2=1 Z=0 W=0 CF=1
+      [38/48] H0=0 H1=0 H2=1 Z=0 W=1 CF=1
+      [39/48] H0=1 H1=0 H2=1 Z=0 W=0 CF=1
+      [40/48] H0=1 H1=1 H2=1 Z=1 W=0 CF=1
+      [41/48] H0=1 H1=0 H2=1 Z=1 W=0 CF=1
+      [42/48] H0=1 H1=1 H2=1 Z=1 W=1 CF=1
+      [43/48] H0=1 H1=1 H2=1 Z=0 W=1 CF=1
+      [44/48] H0=1 H1=1 H2=1 Z=0 W=0 CF=1
+      [45/48] H0=0 H1=1 H2=1 Z=0 W=0 CF=1
+      [46/48] H0=1 H1=0 H2=0 Z=0 W=0 CF=1
+      [47/48] H0=1 H1=0 H2=1 Z=0 W=0 CF=1
+      [48/48] H0=1 H1=1 H2=1 Z=1 W=0 CF=1
+      H0       : 41/48 = 0.8542
+      H1       : 26/48 = 0.5417
+      H2       : 43/48 = 0.8958
+      ZERO     : 17/48 = 0.3542
+      WRONG    : 12/48 = 0.2500
+      CF_FOLLOW: 47/48 = 0.9792
+
+[8/11] E2E — AD2+H1 and primary AD3+H2...
+      [01/48] AD2+H1=1 AD3+H2=1 | B2=01 B3=01
+      [02/48] AD2+H1=0 AD3+H2=0 | B2=10 B3=10
+      [03/48] AD2+H1=0 AD3+H2=1 | B2=03 B3=03
+      [04/48] AD2+H1=1 AD3+H2=1 | B2=04 B3=04
+      [05/48] AD2+H1=0 AD3+H2=0 | B2=01 B3=01
+      [06/48] AD2+H1=1 AD3+H2=1 | B2=06 B3=06
+      [07/48] AD2+H1=0 AD3+H2=0 | B2=01 B3=01
+      [08/48] AD2+H1=1 AD3+H2=1 | B2=08 B3=08
+      [09/48] AD2+H1=0 AD3+H2=0 | B2=07 B3=07
+      [10/48] AD2+H1=0 AD3+H2=0 | B2=01 B3=01
+      [11/48] AD2+H1=0 AD3+H2=0 | B2=01 B3=01
+      [12/48] AD2+H1=0 AD3+H2=0 | B2=01 B3=01
+      [13/48] AD2+H1=1 AD3+H2=1 | B2=13 B3=13
+      [14/48] AD2+H1=1 AD3+H2=1 | B2=14 B3=14
+      [15/48] AD2+H1=0 AD3+H2=1 | B2=15 B3=15
+      [16/48] AD2+H1=0 AD3+H2=0 | B2=01 B3=01
+      [17/48] AD2+H1=0 AD3+H2=1 | B2=17 B3=17
+      [18/48] AD2+H1=1 AD3+H2=1 | B2=18 B3=18
+      [19/48] AD2+H1=0 AD3+H2=0 | B2=01 B3=01
+      [20/48] AD2+H1=1 AD3+H2=1 | B2=20 B3=20
+      [21/48] AD2+H1=0 AD3+H2=0 | B2=01 B3=01
+      [22/48] AD2+H1=1 AD3+H2=1 | B2=22 B3=22
+      [23/48] AD2+H1=1 AD3+H2=1 | B2=23 B3=23
+      [24/48] AD2+H1=1 AD3+H2=1 | B2=24 B3=24
+      [25/48] AD2+H1=0 AD3+H2=1 | B2=25 B3=25
+      [26/48] AD2+H1=0 AD3+H2=1 | B2=26 B3=26
+      [27/48] AD2+H1=0 AD3+H2=1 | B2=27 B3=27
+      [28/48] AD2+H1=1 AD3+H2=1 | B2=28 B3=28
+      [29/48] AD2+H1=1 AD3+H2=1 | B2=29 B3=29
+      [30/48] AD2+H1=0 AD3+H2=0 | B2=01 B3=01
+      [31/48] AD2+H1=0 AD3+H2=0 | B2=01 B3=01
+      [32/48] AD2+H1=0 AD3+H2=1 | B2=32 B3=32
+      [33/48] AD2+H1=0 AD3+H2=0 | B2=19 B3=19
+      [34/48] AD2+H1=0 AD3+H2=1 | B2=34 B3=34
+      [35/48] AD2+H1=1 AD3+H2=1 | B2=35 B3=35
+      [36/48] AD2+H1=0 AD3+H2=0 | B2=01 B3=01
+      [37/48] AD2+H1=0 AD3+H2=0 | B2=32 B3=32
+      [38/48] AD2+H1=0 AD3+H2=1 | B2=38 B3=38
+      [39/48] AD2+H1=0 AD3+H2=1 | B2=39 B3=39
+      [40/48] AD2+H1=0 AD3+H2=0 | B2=02 B3=02
+      [41/48] AD2+H1=0 AD3+H2=1 | B2=41 B3=41
+      [42/48] AD2+H1=1 AD3+H2=1 | B2=42 B3=42
+      [43/48] AD2+H1=0 AD3+H2=0 | B2=14 B3=14
+      [44/48] AD2+H1=0 AD3+H2=0 | B2=06 B3=06
+      [45/48] AD2+H1=1 AD3+H2=1 | B2=45 B3=45
+      [46/48] AD2+H1=0 AD3+H2=0 | B2=01 B3=01
+      [47/48] AD2+H1=0 AD3+H2=1 | B2=47 B3=47
+      [48/48] AD2+H1=1 AD3+H2=1 | B2=48 B3=48
+
+[9/11] Wilson intervals + causal deltas...
+      AD0      : 42/48 = 0.8750 | 95% Wilson [0.7530,0.9414]
+      AD1      : 42/48 = 0.8750 | 95% Wilson [0.7530,0.9414]
+      AD2      : 29/48 = 0.6042 | 95% Wilson [0.4631,0.7298]
+      AD3      : 29/48 = 0.6042 | 95% Wilson [0.4631,0.7298]
+      NO_A     :  3/48 = 0.0625 | 95% Wilson [0.0215,0.1684]
+      H0       : 41/48 = 0.8542 | 95% Wilson [0.7283,0.9275]
+      H1       : 26/48 = 0.5417 | 95% Wilson [0.4029,0.6742]
+      H2       : 43/48 = 0.8958 | 95% Wilson [0.7783,0.9547]
+      ZERO     : 17/48 = 0.3542 | 95% Wilson [0.2343,0.4956]
+      WRONG    : 12/48 = 0.2500 | 95% Wilson [0.1492,0.3878]
+      CF_FOLLOW: 47/48 = 0.9792 | 95% Wilson [0.8910,0.9963]
+      AD2_H1   : 17/48 = 0.3542 | 95% Wilson [0.2343,0.4956]
+      AD3_H2   : 29/48 = 0.6042 | 95% Wilson [0.4631,0.7298]
+      H2 - ZERO: +0.5417
+
+[10/11] Predeclared decision...
+      Address pass : False
+      Handoff pass : True
+      E2E pass     : True
+      VERDICT      : SCAFFOLD_ABLATION_PARTIAL_INCONCLUSIVE
+
+[11/11] Protocol audit...
+      Model weights frozen                    : YES
+      Fresh cache each query/read              : YES
+      A/B cache concatenation                  : NO
+      Intermediate Seal decode/reinsert        : NO
+      AD2/AD3 gold B/key-position label        : NO
+      AD3 candidate inventory                  : DERIVED FROM B BANK CONTENT
+      AD3 gold-only Seal list                  : NO
+      H2 gold-only Seal list                   : NO
+      Query-time candidate-B model forwards    : 0
+      Learned router / ANN / DRA / training    : NONE
+      Eval-time tuning/reselection             : NONE
+      Corrected panel gold Seal unique to B_i  : YES
+      A_i distractor Seals absent from B_i     : YES
+      Counterfactual B-distractor carrier      : YES
+
+================================================================================================================================================================================
+TEST518 FINAL RESULT — AKBASCORE MAM · HUMAN-SCAFFOLD ABLATION
+================================================================================================================================================================================
+MODEL                              : Qwen/Qwen2.5-7B-Instruct · frozen
+PARENT                             : TEST516
+PANEL                              : 48 new corrected items
+TRACE                              : L27 · frozen
+VOCABULARY INTERFACE               : PRESERVED
+AD3 GOLD KEY LABEL                 : NONE
+AD3/H2 GOLD CANDIDATE LIST         : NONE
+AD3/H2 INVENTORY                   : B-bank-derived numeric token inventory
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AD0                               : R1=0.8750 R5=0.9583 R16=1.0000 MRR=0.911774
+AD1                               : R1=0.8750 R5=0.9583 R16=1.0000 MRR=0.911774
+AD2                               : R1=0.6042 R5=0.7708 R16=0.9167 MRR=0.694610
+AD3                               : R1=0.6042 R5=0.7708 R16=0.9167 MRR=0.694610
+NO_A                              : R1=0.0625 R5=0.1667 R16=0.3750 MRR=0.138195
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+H0                                : 41/48 = 0.8542
+H1                                : 26/48 = 0.5417
+H2                                : 43/48 = 0.8958
+ZERO                              : 17/48 = 0.3542
+WRONG                             : 12/48 = 0.2500
+CF_FOLLOW                         : 47/48 = 0.9792
+H2 - ZERO                         : +0.5417
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+E2E AD2 + H1                      : 17/48 = 0.3542
+E2E AD3 + H2 (PRIMARY)            : 29/48 = 0.6042
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PREDECLARED PASS                  : AD3 R1>=.70 & NO_A R1<=.10; H2>=.80; H2-ZERO>=.40; CF>=.80; E2E>=.60
+ADDRESS PASS                       : False
+HANDOFF PASS                       : True
+E2E PASS                           : True
+TEST516 LOCK                       : 53f4fa86f1bc4f2c4db412bde68a2b004afc5a6c6cf84d1c3345b175ab1a3e8d
+TEST518 LOCK                       : d335fa02068644efbe3c54eba8b6ae3a4678fbba3abed972d3f31a401590ae3c
+TOTAL TEST TIME                    : 349.03s
+VERDICT                            : SCAFFOLD_ABLATION_PARTIAL_INCONCLUSIVE
+================================================================================================================================================================================
