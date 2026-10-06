@@ -1,0 +1,106 @@
+ ======================================================================================================================================================
+AKBASCORE MAM — TEST501
+QWEN BASE CAPACITY CALIBRATION
+======================================================================================================================================================
+LOCK SHA: 1a3e6ea2a9f6c72d7b8dacb0c0844e9f2a6f8595bb232f1554eb41af7a20dc41
+ITEMS: 32
+
+[1/4] Loading frozen Qwen...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 84.5kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 692kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 33.9MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 66.5MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 124MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.04MB/s]Download complete:  13.1GB,  412MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  376MB/s  Fetching 4 files: 100% 4/4 [00:42<00:00, 42.74s/it]Loading weights: 100% 339/339 [00:03<00:00, 97.91it/s]generation_config.json: 100% 243/243 [00:00<00:00, 32.9kB/s]      Qwen/Qwen2.5-7B-Instruct | NVIDIA A100-SXM4-40GB | frozen BF16
+
+[2/4] Running increasing relational-depth panel...
+      [01/32] Aldren | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=0 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [02/32] Elara  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=1 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [03/32] Ilyra  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=0 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [04/32] Joren  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=0 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [05/32] Neris  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=0 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [06/32] Ralen  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=0 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [07/32] Saren  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=0 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [08/32] Weyra  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=0 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [09/32] Avel   | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=0 L3_ENTITY_TO_SECTION=1 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=1
+      [10/32] Brann  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=0 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [11/32] Felis  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=1 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [12/32] Jaris  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=1 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [13/32] Koren  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=0 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [14/32] Orel   | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=1 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=1
+      [15/32] Teren  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=0 L3_ENTITY_TO_SECTION=1 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=1
+      [16/32] Urian  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=1 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [17/32] Yalen  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=0 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [18/32] Coren  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=0 L3_ENTITY_TO_SECTION=0 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [19/32] Derin  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=1 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=1
+      [20/32] Heron  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=1 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [21/32] Laven  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=0 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [22/32] Moris  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=1 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [23/32] Rovis  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=1 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [24/32] Veris  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=1 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [25/32] Waren  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=1 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=1
+      [26/32] Aren   | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=0 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [27/32] Elen   | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=0 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [28/32] Faren  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=0 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+      [29/32] Joris  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=0 B2_ENTITY_TO_BAY=0 JOIN_SECTION_BAY=0
+      [30/32] Noren  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=1 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=1
+      [31/32] Oris   | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=0 L3_ENTITY_TO_SECTION=1 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=1
+      [32/32] Toren  | L1_ENTITY_TO_SEAL=1 L2_ENTITY_TO_CLASS=1 L3_ENTITY_TO_SECTION=1 B2_ENTITY_TO_BAY=1 JOIN_SECTION_BAY=0
+
+[3/4] Accuracy and transition anatomy...
+      L1_ENTITY_TO_SEAL   : 32/32 = 1.0000
+      L2_ENTITY_TO_CLASS  : 28/32 = 0.8750
+      L3_ENTITY_TO_SECTION: 16/32 = 0.5000
+      B2_ENTITY_TO_BAY    : 31/32 = 0.9688
+      JOIN_SECTION_BAY    :  7/32 = 0.2188
+
+      Failure examples:
+
+      L1_ENTITY_TO_SEAL:
+         NONE
+
+      L2_ENTITY_TO_CLASS:
+         item=09 target='XEN' raw='ZUN'
+         item=15 target='VEX' raw='FEX'
+         item=18 target='ZAR' raw='JOV'
+         item=31 target='SAL' raw='To determine the routing class corresponding to instrument Oris, we need to follow the information provided in the records step by step.'
+
+      L3_ENTITY_TO_SECTION:
+         item=01 target='Q' raw='E'
+         item=03 target='O' raw='U'
+         item=04 target='P' raw='A'
+         item=05 target='F' raw='D'
+         item=06 target='K' raw='J'
+
+      B2_ENTITY_TO_BAY:
+         item=29 target='108' raw='131'
+
+      JOIN_SECTION_BAY:
+         item=01 target='Q-113' raw='E-113'
+         item=02 target='T-118' raw='R-118'
+         item=03 target='O-188' raw='U-188'
+         item=04 target='P-103' raw='A-103'
+         item=05 target='F-163' raw='D-163'
+
+      L1 PASS -> L2 PASS: 28/32
+      L2 PASS -> L3 PASS: 13/28
+
+[4/4] Capacity boundary...
+
+======================================================================================================================================================
+AKBASCORE MAM — TEST501 FINAL RESULT
+======================================================================================================================================================
+MODEL                       : Qwen/Qwen2.5-7B-Instruct · frozen
+MAM MEMORY                  : OFF
+BELLEKÖZ COMPRESSION        : OFF
+STEERING                    : OFF
+TRAINING                    : OFF
+------------------------------------------------------------------------------------------------------------------------------------------------------
+L1 ENTITY → SEAL            : 32/32 = 1.0000
+L2 ENTITY → CLASS           : 28/32 = 0.8750
+L3 ENTITY → SECTION         : 16/32 = 0.5000
+B2 ENTITY → BAY             : 31/32 = 0.9688
+JOIN SECTION + BAY          :  7/32 = 0.2188
+------------------------------------------------------------------------------------------------------------------------------------------------------
+RELIABLE DEPTH BOUNDARY     : L2
+TEST501 LOCK SHA            : 1a3e6ea2a9f6c72d7b8dacb0c0844e9f2a6f8595bb232f1554eb41af7a20dc41
+TOTAL TEST TIME              : 199.17s
+EXPLORATORY VERDICT         : NATIVE_CAPACITY_BOUNDARY_AT_TWO_HOPS
+======================================================================================================================================================
