@@ -1,0 +1,447 @@
+ 
+================================================================================================================================================================================
+TEST528 — AKBASCORE MAM · MISTRAL FINAL UNTOUCHED EXTERNAL SEAL
+FRESH 128 · FROZEN L28H00 → L00-V UNCENTERED · NATIVE SINGLE-TOKEN · NO DISCOVERY / NO TUNING
+================================================================================================================================================================================
+
+[1/12] Loading frozen Mistral...
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 64.8kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 14.1MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 92.9MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.1kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 47.4kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.86MB/s]
+Download complete: 
+
+ 12.4GB,  228MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  530MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:41<00:00, 41.32s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 76.90it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 16.7kB/s]
+      mistralai/Mistral-7B-Instruct-v0.3 | NVIDIA A100-SXM4-40GB
+      32L H=4096 QH=32 KVH=8 HD=128 REP=4 ADDRESS=1024
+      POINTER LOCK : L28H00
+      ADDRESS LOCK : L00-V · UNCENTERED
+      PREDECLARED  : primary>=0.90 cf>=0.90 gaps>=0.70 ptr>=0.85 cfptr>=0.85
+      Model frozen · BF16 · SDPA · trainable=0
+      Native single-token pool : 220
+      Unique target seals      : 128
+      Distractor pool          : 92
+      Fresh deterministic panel seed: 528528
+      TEST528 LOCK: 4ddcea61a56eab327afe28f190cef7eec6670c9b55706b49de5d5c6be53a7f77
+
+[2/12] OFFLINE FORGE — fresh external 128...
+      ITEM 001 | A=32 B=39 | target=PCI
+      ITEM 002 | A=31 B=39 | target=LED
+      ITEM 003 | A=31 B=39 | target=SORT
+      ITEM 004 | A=33 B=39 | target=USA
+      ITEM 005 | A=32 B=39 | target=LIMITED
+      256 independent raw numeric memories forged.
+      No TEST528 result used for mechanism selection.
+
+[3/12] Building frozen L00-V B bank...
+      B matrices            : 128
+      Address dimension     : 1024
+      Candidate-B live calls: 0
+
+[4/12] PRIMARY — untouched external evaluation...
+      [001/128] rank=  1 selected=001 expected=001 | ptr-hit=1 mass=0.9622 margin=+0.339395
+      [002/128] rank=  1 selected=002 expected=002 | ptr-hit=1 mass=0.8549 margin=+0.373955
+      [003/128] rank=  1 selected=003 expected=003 | ptr-hit=1 mass=0.9189 margin=+0.349687
+      [004/128] rank=  1 selected=004 expected=004 | ptr-hit=1 mass=0.8377 margin=+0.361659
+      [005/128] rank=  1 selected=005 expected=005 | ptr-hit=1 mass=0.8673 margin=+0.405366
+      [006/128] rank=  1 selected=006 expected=006 | ptr-hit=1 mass=0.9242 margin=+0.217441
+      [007/128] rank=  1 selected=007 expected=007 | ptr-hit=1 mass=0.8459 margin=+0.401391
+      [008/128] rank=  1 selected=008 expected=008 | ptr-hit=1 mass=0.7764 margin=+0.393125
+      [009/128] rank=  1 selected=009 expected=009 | ptr-hit=1 mass=0.9355 margin=+0.477531
+      [010/128] rank=  1 selected=010 expected=010 | ptr-hit=1 mass=0.7749 margin=+0.379118
+      [011/128] rank=  1 selected=011 expected=011 | ptr-hit=1 mass=0.9650 margin=+0.370435
+      [012/128] rank=  1 selected=012 expected=012 | ptr-hit=1 mass=0.7457 margin=+0.368918
+      [013/128] rank=  1 selected=013 expected=013 | ptr-hit=1 mass=0.7371 margin=+0.389891
+      [014/128] rank=  1 selected=014 expected=014 | ptr-hit=1 mass=0.9034 margin=+0.470989
+      [015/128] rank=  1 selected=015 expected=015 | ptr-hit=1 mass=0.9789 margin=+0.310804
+      [016/128] rank=  1 selected=016 expected=016 | ptr-hit=1 mass=0.9244 margin=+0.425414
+      [017/128] rank=  1 selected=017 expected=017 | ptr-hit=1 mass=0.8675 margin=+0.373202
+      [018/128] rank=  1 selected=018 expected=018 | ptr-hit=1 mass=0.7809 margin=+0.369518
+      [019/128] rank=  1 selected=019 expected=019 | ptr-hit=1 mass=0.9077 margin=+0.413861
+      [020/128] rank=  1 selected=020 expected=020 | ptr-hit=1 mass=0.8770 margin=+0.282834
+      [021/128] rank=  1 selected=021 expected=021 | ptr-hit=1 mass=0.9116 margin=+0.434606
+      [022/128] rank=  1 selected=022 expected=022 | ptr-hit=1 mass=0.8350 margin=+0.355201
+      [023/128] rank=  1 selected=023 expected=023 | ptr-hit=1 mass=0.7864 margin=+0.322114
+      [024/128] rank=  1 selected=024 expected=024 | ptr-hit=1 mass=0.9555 margin=+0.389563
+      [025/128] rank=  1 selected=025 expected=025 | ptr-hit=1 mass=0.9164 margin=+0.385441
+      [026/128] rank=  1 selected=026 expected=026 | ptr-hit=1 mass=0.9462 margin=+0.235993
+      [027/128] rank=  1 selected=027 expected=027 | ptr-hit=1 mass=0.7611 margin=+0.464179
+      [028/128] rank=  1 selected=028 expected=028 | ptr-hit=1 mass=0.9114 margin=+0.224386
+      [029/128] rank=  1 selected=029 expected=029 | ptr-hit=1 mass=0.8800 margin=+0.289873
+      [030/128] rank=  1 selected=030 expected=030 | ptr-hit=1 mass=0.9274 margin=+0.283161
+      [031/128] rank=  1 selected=031 expected=031 | ptr-hit=1 mass=0.9373 margin=+0.223737
+      [032/128] rank=  1 selected=032 expected=032 | ptr-hit=1 mass=0.9860 margin=+0.430990
+      [033/128] rank=  1 selected=033 expected=033 | ptr-hit=1 mass=0.9348 margin=+0.403662
+      [034/128] rank=  1 selected=034 expected=034 | ptr-hit=1 mass=0.8730 margin=+0.396398
+      [035/128] rank=  1 selected=035 expected=035 | ptr-hit=1 mass=0.9651 margin=+0.444698
+      [036/128] rank=  1 selected=036 expected=036 | ptr-hit=1 mass=0.9686 margin=+0.437808
+      [037/128] rank=  1 selected=037 expected=037 | ptr-hit=1 mass=0.8566 margin=+0.423800
+      [038/128] rank=  1 selected=038 expected=038 | ptr-hit=1 mass=0.8960 margin=+0.331423
+      [039/128] rank=  1 selected=039 expected=039 | ptr-hit=1 mass=0.8198 margin=+0.319389
+      [040/128] rank=  1 selected=040 expected=040 | ptr-hit=1 mass=0.9744 margin=+0.435452
+      [041/128] rank=  1 selected=041 expected=041 | ptr-hit=1 mass=0.9414 margin=+0.366887
+      [042/128] rank=  1 selected=042 expected=042 | ptr-hit=1 mass=0.8826 margin=+0.356963
+      [043/128] rank=  1 selected=043 expected=043 | ptr-hit=1 mass=0.8934 margin=+0.420337
+      [044/128] rank=  1 selected=044 expected=044 | ptr-hit=1 mass=0.8751 margin=+0.434814
+      [045/128] rank=  1 selected=045 expected=045 | ptr-hit=1 mass=0.8585 margin=+0.434123
+      [046/128] rank=  1 selected=046 expected=046 | ptr-hit=1 mass=0.9123 margin=+0.422261
+      [047/128] rank=  1 selected=047 expected=047 | ptr-hit=1 mass=0.8684 margin=+0.379030
+      [048/128] rank=  1 selected=048 expected=048 | ptr-hit=1 mass=0.9097 margin=+0.351321
+      [049/128] rank=  1 selected=049 expected=049 | ptr-hit=1 mass=0.8898 margin=+0.347052
+      [050/128] rank=  1 selected=050 expected=050 | ptr-hit=1 mass=0.9655 margin=+0.354809
+      [051/128] rank=  1 selected=051 expected=051 | ptr-hit=1 mass=0.9343 margin=+0.342288
+      [052/128] rank=  1 selected=052 expected=052 | ptr-hit=1 mass=0.9428 margin=+0.420427
+      [053/128] rank=  1 selected=053 expected=053 | ptr-hit=0 mass=0.1968 margin=+0.115562
+      [054/128] rank=  1 selected=054 expected=054 | ptr-hit=1 mass=0.9772 margin=+0.377335
+      [055/128] rank=  1 selected=055 expected=055 | ptr-hit=1 mass=0.7800 margin=+0.372862
+      [056/128] rank=  1 selected=056 expected=056 | ptr-hit=1 mass=0.8352 margin=+0.422715
+      [057/128] rank=  1 selected=057 expected=057 | ptr-hit=1 mass=0.9309 margin=+0.315948
+      [058/128] rank=  1 selected=058 expected=058 | ptr-hit=1 mass=0.6485 margin=+0.239615
+      [059/128] rank=  1 selected=059 expected=059 | ptr-hit=1 mass=0.9019 margin=+0.352126
+      [060/128] rank=  1 selected=060 expected=060 | ptr-hit=1 mass=0.9883 margin=+0.378384
+      [061/128] rank=  1 selected=061 expected=061 | ptr-hit=1 mass=0.9635 margin=+0.360563
+      [062/128] rank=  1 selected=062 expected=062 | ptr-hit=1 mass=0.7970 margin=+0.408128
+      [063/128] rank=  1 selected=063 expected=063 | ptr-hit=1 mass=0.8521 margin=+0.370669
+      [064/128] rank=  1 selected=064 expected=064 | ptr-hit=1 mass=0.8383 margin=+0.407304
+      [065/128] rank=  1 selected=065 expected=065 | ptr-hit=1 mass=0.8267 margin=+0.441577
+      [066/128] rank=  1 selected=066 expected=066 | ptr-hit=1 mass=0.9231 margin=+0.320837
+      [067/128] rank=  1 selected=067 expected=067 | ptr-hit=1 mass=0.8275 margin=+0.296829
+      [068/128] rank=  1 selected=068 expected=068 | ptr-hit=1 mass=0.7701 margin=+0.384785
+      [069/128] rank=  1 selected=069 expected=069 | ptr-hit=1 mass=0.9635 margin=+0.390728
+      [070/128] rank=  1 selected=070 expected=070 | ptr-hit=1 mass=0.4210 margin=+0.201495
+      [071/128] rank=  1 selected=071 expected=071 | ptr-hit=1 mass=0.8622 margin=+0.383258
+      [072/128] rank=  1 selected=072 expected=072 | ptr-hit=1 mass=0.9196 margin=+0.355819
+      [073/128] rank=  1 selected=073 expected=073 | ptr-hit=1 mass=0.8860 margin=+0.375232
+      [074/128] rank=  1 selected=074 expected=074 | ptr-hit=1 mass=0.9378 margin=+0.351462
+      [075/128] rank=  1 selected=075 expected=075 | ptr-hit=1 mass=0.8479 margin=+0.416266
+      [076/128] rank=  1 selected=076 expected=076 | ptr-hit=1 mass=0.9586 margin=+0.443013
+      [077/128] rank=  1 selected=077 expected=077 | ptr-hit=1 mass=0.9301 margin=+0.350374
+      [078/128] rank=  1 selected=078 expected=078 | ptr-hit=1 mass=0.9160 margin=+0.299254
+      [079/128] rank=  1 selected=079 expected=079 | ptr-hit=1 mass=0.9064 margin=+0.298179
+      [080/128] rank=  1 selected=080 expected=080 | ptr-hit=1 mass=0.8856 margin=+0.340135
+      [081/128] rank=  1 selected=081 expected=081 | ptr-hit=1 mass=0.8263 margin=+0.417867
+      [082/128] rank=  1 selected=082 expected=082 | ptr-hit=1 mass=0.9707 margin=+0.416486
+      [083/128] rank=  1 selected=083 expected=083 | ptr-hit=1 mass=0.7899 margin=+0.358337
+      [084/128] rank=  1 selected=084 expected=084 | ptr-hit=1 mass=0.9833 margin=+0.453543
+      [085/128] rank=  1 selected=085 expected=085 | ptr-hit=1 mass=0.8381 margin=+0.441517
+      [086/128] rank=  1 selected=086 expected=086 | ptr-hit=1 mass=0.6932 margin=+0.462197
+      [087/128] rank=  1 selected=087 expected=087 | ptr-hit=1 mass=0.9816 margin=+0.239035
+      [088/128] rank=  1 selected=088 expected=088 | ptr-hit=1 mass=0.8956 margin=+0.371641
+      [089/128] rank=  1 selected=089 expected=089 | ptr-hit=1 mass=0.7623 margin=+0.395228
+      [090/128] rank=  1 selected=090 expected=090 | ptr-hit=1 mass=0.8205 margin=+0.395775
+      [091/128] rank=  1 selected=091 expected=091 | ptr-hit=1 mass=0.7942 margin=+0.349063
+      [092/128] rank=  1 selected=092 expected=092 | ptr-hit=1 mass=0.9662 margin=+0.412358
+      [093/128] rank=  1 selected=093 expected=093 | ptr-hit=1 mass=0.9205 margin=+0.486086
+      [094/128] rank=  1 selected=094 expected=094 | ptr-hit=1 mass=0.9422 margin=+0.371043
+      [095/128] rank=  1 selected=095 expected=095 | ptr-hit=1 mass=0.9736 margin=+0.178363
+      [096/128] rank=  1 selected=096 expected=096 | ptr-hit=1 mass=0.9396 margin=+0.415916
+      [097/128] rank=  1 selected=097 expected=097 | ptr-hit=1 mass=0.9514 margin=+0.445797
+      [098/128] rank=  1 selected=098 expected=098 | ptr-hit=1 mass=0.9578 margin=+0.395299
+      [099/128] rank=  1 selected=099 expected=099 | ptr-hit=1 mass=0.7213 margin=+0.370230
+      [100/128] rank=  1 selected=100 expected=100 | ptr-hit=1 mass=0.8306 margin=+0.198462
+      [101/128] rank=  1 selected=101 expected=101 | ptr-hit=1 mass=0.9130 margin=+0.342471
+      [102/128] rank=  1 selected=102 expected=102 | ptr-hit=1 mass=0.9308 margin=+0.460510
+      [103/128] rank=  1 selected=103 expected=103 | ptr-hit=1 mass=0.7239 margin=+0.311114
+      [104/128] rank=  1 selected=104 expected=104 | ptr-hit=1 mass=0.9650 margin=+0.398123
+      [105/128] rank=  1 selected=105 expected=105 | ptr-hit=1 mass=0.4282 margin=+0.290257
+      [106/128] rank=  1 selected=106 expected=106 | ptr-hit=1 mass=0.7654 margin=+0.334590
+      [107/128] rank=  1 selected=107 expected=107 | ptr-hit=1 mass=0.7518 margin=+0.263756
+      [108/128] rank=  1 selected=108 expected=108 | ptr-hit=1 mass=0.5151 margin=+0.155531
+      [109/128] rank=  1 selected=109 expected=109 | ptr-hit=1 mass=0.8510 margin=+0.484039
+      [110/128] rank=  1 selected=110 expected=110 | ptr-hit=1 mass=0.7232 margin=+0.414914
+      [111/128] rank=  1 selected=111 expected=111 | ptr-hit=1 mass=0.6977 margin=+0.392741
+      [112/128] rank=  1 selected=112 expected=112 | ptr-hit=1 mass=0.9367 margin=+0.444687
+      [113/128] rank=  1 selected=113 expected=113 | ptr-hit=1 mass=0.9510 margin=+0.380005
+      [114/128] rank=  1 selected=114 expected=114 | ptr-hit=1 mass=0.9697 margin=+0.224452
+      [115/128] rank=  1 selected=115 expected=115 | ptr-hit=1 mass=0.8028 margin=+0.456540
+      [116/128] rank=  1 selected=116 expected=116 | ptr-hit=1 mass=0.4458 margin=+0.262906
+      [117/128] rank=  1 selected=117 expected=117 | ptr-hit=1 mass=0.9256 margin=+0.348885
+      [118/128] rank=  1 selected=118 expected=118 | ptr-hit=1 mass=0.9339 margin=+0.386750
+      [119/128] rank=  1 selected=119 expected=119 | ptr-hit=1 mass=0.9193 margin=+0.367917
+      [120/128] rank=  1 selected=120 expected=120 | ptr-hit=1 mass=0.6839 margin=+0.279183
+      [121/128] rank=  1 selected=121 expected=121 | ptr-hit=1 mass=0.8662 margin=+0.297510
+      [122/128] rank=  2 selected=042 expected=122 | ptr-hit=0 mass=0.1788 margin=+0.003633
+      [123/128] rank=  1 selected=123 expected=123 | ptr-hit=1 mass=0.9242 margin=+0.419503
+      [124/128] rank=  1 selected=124 expected=124 | ptr-hit=1 mass=0.7807 margin=+0.295602
+      [125/128] rank=  1 selected=125 expected=125 | ptr-hit=1 mass=0.8176 margin=+0.179178
+      [126/128] rank=  1 selected=126 expected=126 | ptr-hit=1 mass=0.9503 margin=+0.262200
+      [127/128] rank=  1 selected=127 expected=127 | ptr-hit=1 mass=0.7581 margin=+0.217885
+      [128/128] rank=  1 selected=128 expected=128 | ptr-hit=1 mass=0.8057 margin=+0.417086
+      PRIMARY R1/R5/R16/MRR : 0.9922 / 1.0000 / 1.0000 / 0.996094
+      POINTER HIT            : 126/128 = 0.9844
+      POINTER MASS           : 0.853656
+      POINTER MEDIAN RANK    : 1.0
+      MEAN TOP1-TOP2 MARGIN : +0.357605
+
+[5/12] NEGATIVE CONTROLS...
+      PRIMARY : R1=0.9922 R5=1.0000 R16=1.0000 MRR=0.996094
+      UNIFORM : R1=0.1016 R5=0.2422 R16=0.4062 MRR=0.184419
+      SHIFTED : R1=0.0000 R5=0.0469 R16=0.1562 MRR=0.035604
+      NO-A    : R1=0.0078 R5=0.0391 R16=0.1250 MRR=0.042446
+
+[6/12] COUNTERFACTUAL FOLLOW...
+      [001/128] target=054 rank=  1 selected=054 follow=1 | ptr-hit=1 mass=0.9127
+      [002/128] target=055 rank=  1 selected=055 follow=1 | ptr-hit=1 mass=0.6313
+      [003/128] target=056 rank=  1 selected=056 follow=1 | ptr-hit=1 mass=0.9193
+      [004/128] target=057 rank=  1 selected=057 follow=1 | ptr-hit=1 mass=0.8869
+      [005/128] target=058 rank=  1 selected=058 follow=1 | ptr-hit=1 mass=0.9254
+      [006/128] target=059 rank=  1 selected=059 follow=1 | ptr-hit=1 mass=0.8953
+      [007/128] target=060 rank=  1 selected=060 follow=1 | ptr-hit=1 mass=0.8605
+      [008/128] target=061 rank=  1 selected=061 follow=1 | ptr-hit=1 mass=0.9134
+      [009/128] target=062 rank=  1 selected=062 follow=1 | ptr-hit=1 mass=0.9642
+      [010/128] target=063 rank=  1 selected=063 follow=1 | ptr-hit=1 mass=0.8653
+      [011/128] target=064 rank=  1 selected=064 follow=1 | ptr-hit=1 mass=0.8858
+      [012/128] target=065 rank=  1 selected=065 follow=1 | ptr-hit=1 mass=0.9718
+      [013/128] target=066 rank=  1 selected=066 follow=1 | ptr-hit=1 mass=0.9763
+      [014/128] target=067 rank=  1 selected=067 follow=1 | ptr-hit=1 mass=0.8902
+      [015/128] target=068 rank=  1 selected=068 follow=1 | ptr-hit=1 mass=0.9622
+      [016/128] target=069 rank=  1 selected=069 follow=1 | ptr-hit=1 mass=0.9228
+      [017/128] target=070 rank=  1 selected=070 follow=1 | ptr-hit=1 mass=0.9008
+      [018/128] target=071 rank=  1 selected=071 follow=1 | ptr-hit=1 mass=0.7484
+      [019/128] target=072 rank=  1 selected=072 follow=1 | ptr-hit=1 mass=0.8853
+      [020/128] target=073 rank=  1 selected=073 follow=1 | ptr-hit=0 mass=0.2888
+      [021/128] target=074 rank=  1 selected=074 follow=1 | ptr-hit=1 mass=0.8974
+      [022/128] target=075 rank=  1 selected=075 follow=1 | ptr-hit=1 mass=0.8716
+      [023/128] target=076 rank=  1 selected=076 follow=1 | ptr-hit=1 mass=0.9698
+      [024/128] target=077 rank=  1 selected=077 follow=1 | ptr-hit=1 mass=0.9832
+      [025/128] target=078 rank=  1 selected=078 follow=1 | ptr-hit=1 mass=0.7850
+      [026/128] target=079 rank=  1 selected=079 follow=1 | ptr-hit=1 mass=0.9370
+      [027/128] target=080 rank=  1 selected=080 follow=1 | ptr-hit=1 mass=0.9003
+      [028/128] target=081 rank=  1 selected=081 follow=1 | ptr-hit=1 mass=0.5102
+      [029/128] target=082 rank=  1 selected=082 follow=1 | ptr-hit=1 mass=0.9541
+      [030/128] target=083 rank=  1 selected=083 follow=1 | ptr-hit=1 mass=0.4427
+      [031/128] target=084 rank=  1 selected=084 follow=1 | ptr-hit=1 mass=0.8438
+      [032/128] target=085 rank=  1 selected=085 follow=1 | ptr-hit=1 mass=0.9259
+      [033/128] target=086 rank=  1 selected=086 follow=1 | ptr-hit=1 mass=0.7880
+      [034/128] target=087 rank=  1 selected=087 follow=1 | ptr-hit=1 mass=0.7181
+      [035/128] target=088 rank=  1 selected=088 follow=1 | ptr-hit=1 mass=0.9203
+      [036/128] target=089 rank=  1 selected=089 follow=1 | ptr-hit=1 mass=0.9365
+      [037/128] target=090 rank=  1 selected=090 follow=1 | ptr-hit=1 mass=0.9691
+      [038/128] target=091 rank=  1 selected=091 follow=1 | ptr-hit=1 mass=0.9465
+      [039/128] target=092 rank=  1 selected=092 follow=1 | ptr-hit=1 mass=0.8646
+      [040/128] target=093 rank= 94 selected=042 follow=0 | ptr-hit=0 mass=0.0671
+      [041/128] target=094 rank=  1 selected=094 follow=1 | ptr-hit=1 mass=0.9480
+      [042/128] target=095 rank=  1 selected=095 follow=1 | ptr-hit=1 mass=0.8508
+      [043/128] target=096 rank=  1 selected=096 follow=1 | ptr-hit=1 mass=0.9790
+      [044/128] target=097 rank=  1 selected=097 follow=1 | ptr-hit=1 mass=0.9765
+      [045/128] target=098 rank=  1 selected=098 follow=1 | ptr-hit=1 mass=0.8743
+      [046/128] target=099 rank=  1 selected=099 follow=1 | ptr-hit=1 mass=0.9530
+      [047/128] target=100 rank=  1 selected=100 follow=1 | ptr-hit=1 mass=0.9493
+      [048/128] target=101 rank=  1 selected=101 follow=1 | ptr-hit=1 mass=0.8414
+      [049/128] target=102 rank=  1 selected=102 follow=1 | ptr-hit=1 mass=0.9651
+      [050/128] target=103 rank=  1 selected=103 follow=1 | ptr-hit=1 mass=0.9308
+      [051/128] target=104 rank=  1 selected=104 follow=1 | ptr-hit=1 mass=0.9664
+      [052/128] target=105 rank=  1 selected=105 follow=1 | ptr-hit=1 mass=0.7528
+      [053/128] target=106 rank=  1 selected=106 follow=1 | ptr-hit=1 mass=0.8905
+      [054/128] target=107 rank=  1 selected=107 follow=1 | ptr-hit=1 mass=0.8917
+      [055/128] target=108 rank=  1 selected=108 follow=1 | ptr-hit=1 mass=0.5799
+      [056/128] target=109 rank=  1 selected=109 follow=1 | ptr-hit=1 mass=0.9326
+      [057/128] target=110 rank=  1 selected=110 follow=1 | ptr-hit=1 mass=0.8406
+      [058/128] target=111 rank=  1 selected=111 follow=1 | ptr-hit=1 mass=0.4143
+      [059/128] target=112 rank=  1 selected=112 follow=1 | ptr-hit=1 mass=0.6743
+      [060/128] target=113 rank=  1 selected=113 follow=1 | ptr-hit=1 mass=0.7369
+      [061/128] target=114 rank=  1 selected=114 follow=1 | ptr-hit=1 mass=0.9871
+      [062/128] target=115 rank=  1 selected=115 follow=1 | ptr-hit=1 mass=0.9729
+      [063/128] target=116 rank=  1 selected=116 follow=1 | ptr-hit=1 mass=0.8487
+      [064/128] target=117 rank=  1 selected=117 follow=1 | ptr-hit=1 mass=0.8763
+      [065/128] target=118 rank=  1 selected=118 follow=1 | ptr-hit=1 mass=0.8326
+      [066/128] target=119 rank=  1 selected=119 follow=1 | ptr-hit=1 mass=0.9403
+      [067/128] target=120 rank=  1 selected=120 follow=1 | ptr-hit=1 mass=0.8176
+      [068/128] target=121 rank=  1 selected=121 follow=1 | ptr-hit=1 mass=0.8657
+      [069/128] target=122 rank=  1 selected=122 follow=1 | ptr-hit=1 mass=0.9007
+      [070/128] target=123 rank=  1 selected=123 follow=1 | ptr-hit=1 mass=0.9803
+      [071/128] target=124 rank=124 selected=001 follow=0 | ptr-hit=0 mass=0.3052
+      [072/128] target=125 rank=  1 selected=125 follow=1 | ptr-hit=1 mass=0.7025
+      [073/128] target=126 rank=  1 selected=126 follow=1 | ptr-hit=1 mass=0.9453
+      [074/128] target=127 rank=  1 selected=127 follow=1 | ptr-hit=1 mass=0.3554
+      [075/128] target=128 rank=  1 selected=128 follow=1 | ptr-hit=1 mass=0.7087
+      [076/128] target=001 rank=  1 selected=001 follow=1 | ptr-hit=1 mass=0.9308
+      [077/128] target=002 rank=  1 selected=002 follow=1 | ptr-hit=1 mass=0.7544
+      [078/128] target=003 rank=  1 selected=003 follow=1 | ptr-hit=1 mass=0.9410
+      [079/128] target=004 rank=  1 selected=004 follow=1 | ptr-hit=1 mass=0.8525
+      [080/128] target=005 rank=  1 selected=005 follow=1 | ptr-hit=1 mass=0.8779
+      [081/128] target=006 rank=  1 selected=006 follow=1 | ptr-hit=1 mass=0.9435
+      [082/128] target=007 rank=  1 selected=007 follow=1 | ptr-hit=1 mass=0.9400
+      [083/128] target=008 rank=  1 selected=008 follow=1 | ptr-hit=1 mass=0.6312
+      [084/128] target=009 rank=  1 selected=009 follow=1 | ptr-hit=1 mass=0.7700
+      [085/128] target=010 rank=  1 selected=010 follow=1 | ptr-hit=1 mass=0.9284
+      [086/128] target=011 rank=  1 selected=011 follow=1 | ptr-hit=1 mass=0.7125
+      [087/128] target=012 rank=  1 selected=012 follow=1 | ptr-hit=1 mass=0.7635
+      [088/128] target=013 rank=  1 selected=013 follow=1 | ptr-hit=1 mass=0.7944
+      [089/128] target=014 rank=  1 selected=014 follow=1 | ptr-hit=1 mass=0.7005
+      [090/128] target=015 rank=  1 selected=015 follow=1 | ptr-hit=1 mass=0.9160
+      [091/128] target=016 rank=  1 selected=016 follow=1 | ptr-hit=1 mass=0.9067
+      [092/128] target=017 rank=  1 selected=017 follow=1 | ptr-hit=1 mass=0.9745
+      [093/128] target=018 rank=  1 selected=018 follow=1 | ptr-hit=1 mass=0.8487
+      [094/128] target=019 rank=  1 selected=019 follow=1 | ptr-hit=1 mass=0.9805
+      [095/128] target=020 rank=  1 selected=020 follow=1 | ptr-hit=1 mass=0.8972
+      [096/128] target=021 rank=  1 selected=021 follow=1 | ptr-hit=1 mass=0.9430
+      [097/128] target=022 rank=  1 selected=022 follow=1 | ptr-hit=1 mass=0.7573
+      [098/128] target=023 rank=  1 selected=023 follow=1 | ptr-hit=1 mass=0.8762
+      [099/128] target=024 rank=  1 selected=024 follow=1 | ptr-hit=1 mass=0.8694
+      [100/128] target=025 rank=  1 selected=025 follow=1 | ptr-hit=1 mass=0.9952
+      [101/128] target=026 rank=  1 selected=026 follow=1 | ptr-hit=1 mass=0.9321
+      [102/128] target=027 rank=  1 selected=027 follow=1 | ptr-hit=1 mass=0.7354
+      [103/128] target=028 rank=  1 selected=028 follow=1 | ptr-hit=1 mass=0.9886
+      [104/128] target=029 rank=  1 selected=029 follow=1 | ptr-hit=1 mass=0.9391
+      [105/128] target=030 rank=  1 selected=030 follow=1 | ptr-hit=1 mass=0.9388
+      [106/128] target=031 rank=  1 selected=031 follow=1 | ptr-hit=1 mass=0.9440
+      [107/128] target=032 rank=  1 selected=032 follow=1 | ptr-hit=1 mass=0.8610
+      [108/128] target=033 rank=  1 selected=033 follow=1 | ptr-hit=1 mass=0.9470
+      [109/128] target=034 rank=  1 selected=034 follow=1 | ptr-hit=1 mass=0.7698
+      [110/128] target=035 rank=  1 selected=035 follow=1 | ptr-hit=1 mass=0.6917
+      [111/128] target=036 rank=  1 selected=036 follow=1 | ptr-hit=1 mass=0.9606
+      [112/128] target=037 rank=  1 selected=037 follow=1 | ptr-hit=1 mass=0.9768
+      [113/128] target=038 rank=  1 selected=038 follow=1 | ptr-hit=1 mass=0.9342
+      [114/128] target=039 rank=  1 selected=039 follow=1 | ptr-hit=1 mass=0.7307
+      [115/128] target=040 rank=  1 selected=040 follow=1 | ptr-hit=1 mass=0.9429
+      [116/128] target=041 rank=  1 selected=041 follow=1 | ptr-hit=1 mass=0.8240
+      [117/128] target=042 rank=  1 selected=042 follow=1 | ptr-hit=1 mass=0.9341
+      [118/128] target=043 rank=  1 selected=043 follow=1 | ptr-hit=1 mass=0.8476
+      [119/128] target=044 rank=  1 selected=044 follow=1 | ptr-hit=1 mass=0.6325
+      [120/128] target=045 rank=  1 selected=045 follow=1 | ptr-hit=1 mass=0.7043
+      [121/128] target=046 rank=  1 selected=046 follow=1 | ptr-hit=1 mass=0.9713
+      [122/128] target=047 rank=  1 selected=047 follow=1 | ptr-hit=1 mass=0.8100
+      [123/128] target=048 rank=  1 selected=048 follow=1 | ptr-hit=1 mass=0.9142
+      [124/128] target=049 rank=  1 selected=049 follow=1 | ptr-hit=1 mass=0.8498
+      [125/128] target=050 rank=  1 selected=050 follow=1 | ptr-hit=1 mass=0.9637
+      [126/128] target=051 rank=  1 selected=051 follow=1 | ptr-hit=1 mass=0.8303
+      [127/128] target=052 rank=  1 selected=052 follow=1 | ptr-hit=1 mass=0.9876
+      [128/128] target=053 rank= 53 selected=001 follow=0 | ptr-hit=1 mass=0.3703
+      CF R1/R5/R16/MRR       : 0.9766 / 0.9766 / 0.9766 / 0.976856
+      CF POINTER HIT          : 125/128 = 0.9766
+      CF POINTER MASS         : 0.842685
+
+[7/12] CAUSAL / FAILURE DIAGNOSTICS...
+      Retrieval R1 | ptr-hit       : 1.0000 n=126
+      Retrieval R1 | ptr-miss      : 0.5000 n=2
+      PRIMARY - UNIFORM            : +0.8906
+      PRIMARY - SHIFTED            : +0.9922
+      PRIMARY - NO-A               : +0.9844
+      Unique primary selections    : 127/128
+      Unique CF selections         : 125/128
+      Primary failures             : [122]
+      Counterfactual failures      : [40, 71, 128]
+
+[8/12] STATISTICAL SUMMARY...
+      PRIMARY : 127/128 = 0.9922 | 95% Wilson [0.9571,0.9986]
+      UNIFORM :  13/128 = 0.1016 | 95% Wilson [0.0603,0.1660]
+      SHIFTED :   0/128 = 0.0000 | 95% Wilson [0.0000,0.0291]
+      NO_A    :   1/128 = 0.0078 | 95% Wilson [0.0014,0.0429]
+      CF      : 125/128 = 0.9766 | 95% Wilson [0.9334,0.9920]
+
+[9/12] PREDECLARED GATES...
+      PRIMARY_R1              : PASS
+      COUNTERFACTUAL_R1       : PASS
+      PRIMARY_SHIFTED_GAP     : PASS
+      PRIMARY_NOA_GAP         : PASS
+      POINTER_HIT             : PASS
+      CF_POINTER_HIT          : PASS
+
+[10/12] REPLAY / DETERMINISM CHECK...
+      ITEM 001 | rank 1->1 | selected 001->001 | pointer_exact=True | PASS
+      ITEM 032 | rank 1->1 | selected 032->032 | pointer_exact=True | PASS
+      ITEM 064 | rank 1->1 | selected 064->064 | pointer_exact=True | PASS
+      ITEM 096 | rank 1->1 | selected 096->096 | pointer_exact=True | PASS
+      ITEM 128 | rank 1->1 | selected 128->128 | pointer_exact=True | PASS
+
+[11/12] PROTOCOL AUDIT...
+      Model frozen                         : True
+      Trainable tensors                    : 0
+      Pointer                              : L28H00 frozen before TEST528
+      Address                              : L00-V uncentered frozen before TEST528
+      Pointer/head discovery               : NONE
+      Address/layer discovery              : NONE
+      Centering discovery                  : NONE
+      Threshold tuning                     : NONE
+      Native target seals                  : 128 unique single-token
+      Gold span used in retrieval          : NO
+      Gold span diagnostic                 : exact standalone seal only
+      Retrieval uses decoded answer        : NO
+      Retrieval uses token-ID address      : NO
+      Query-time candidate-B forwards      : 0
+      Training / LoRA / optimizer / DRA    : NONE
+      Post-hoc mechanism selection         : NONE
+      Deterministic replay                 : True
+
+[12/12] FINAL SEAL...
+
+================================================================================================================================================================================
+TEST528 FINAL RESULT — AKBASCORE MAM · MISTRAL FINAL UNTOUCHED EXTERNAL SEAL
+================================================================================================================================================================================
+MODEL                              : mistralai/Mistral-7B-Instruct-v0.3 · frozen
+EXTERNAL PANEL                     : 128 fresh deterministic records
+POINTER                            : L28H00 · FROZEN
+ADDRESS                            : L00-V · UNCENTERED · 1024D · FROZEN
+IDENTITY                           : NATIVE SINGLE-TOKEN
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PRIMARY                            : R1=0.9922 R5=1.0000 R16=1.0000 MRR=0.996094
+UNIFORM                            : R1=0.1016 R5=0.2422 R16=0.4062 MRR=0.184419
+SHIFTED                            : R1=0.0000 R5=0.0469 R16=0.1562 MRR=0.035604
+NO-A                               : R1=0.0078 R5=0.0391 R16=0.1250 MRR=0.042446
+COUNTERFACTUAL                     : R1=0.9766 R5=0.9766 R16=0.9766 MRR=0.976856
+POINTER HIT                        : 126/128 = 0.9844
+POINTER MASS                       : 0.853656
+CF POINTER HIT                     : 125/128 = 0.9766
+CF POINTER MASS                    : 0.842685
+PRIMARY-SHIFTED GAP                : +0.9922
+PRIMARY-NO-A GAP                   : +0.9844
+MEAN TOP1-TOP2 MARGIN              : +0.357605
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PRIMARY_R1                         : PASS
+COUNTERFACTUAL_R1                  : PASS
+PRIMARY_SHIFTED_GAP                : PASS
+PRIMARY_NOA_GAP                    : PASS
+POINTER_HIT                        : PASS
+CF_POINTER_HIT                     : PASS
+WEIGHT_SENTINEL                    : PASS
+REPLAY                             : PASS
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+WEIGHT SENTINEL                    : PASS
+DETERMINISTIC REPLAY               : PASS
+QUERY-TIME CANDIDATE-B FORWARDS    : 0
+TEST525 LOCK                       : a656140e1b484212ef8956c2cbde6fe2df3b76eb19ca901eccd5f66f8442f209
+TEST526 LOCK                       : 8df772191e27c4cee99bfe48aa1d15fb2869c9f2d732b5bc88c0a60829ebff98
+TEST527 LOCK                       : eed9acbdc7d307935872c9d268fc99a71520bc47dbb1abf107bf53a26c2e89d7
+TEST528 PRE-RESULT LOCK            : 4ddcea61a56eab327afe28f190cef7eec6670c9b55706b49de5d5c6be53a7f77
+TEST528 RESULT SHA                 : 9235ed38c944f41a9ede0426d3aabaa12b5b20646f30e2be921e618f9471d3c2
+TOTAL TEST TIME                    : 94.32s
+VERDICT                            : MISTRAL_MAM_FINAL_EXTERNAL_SEAL_PASS
+STATUS                             : MISTRAL MAM EXTERNAL REPLICATION SEALED
+NEXT                               : archive TEST525-528 chain; no further calibration on this sealed result
+
+
+================================================================================================================================================================================
