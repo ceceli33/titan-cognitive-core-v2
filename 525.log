@@ -1,0 +1,220 @@
+ ================================================================================================================================================================================
+TEST525 — AKBASCORE MAM · MISTRAL POINTER + ADDRESS CALIBRATION
+DISC 16 + INTERNAL-EVAL 16 · 32x32 NATIVE ATTENTION SCAN · V-LAYER x CENTER MODE
+================================================================================================================================================================================
+
+[1/10] Loading frozen Mistral...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 601/601 [00:00<00:00, 48.2kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 11.9MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 91.1MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 57.0kB/s  tokenizer.model: downloading bytes:   448kB, 43.5kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 49.5kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 2.99MB/s]Download complete:  12.4GB,  276MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  566MB/s  Fetching 3 files: 100% 3/3 [00:41<00:00, 41.11s/it]Loading weights: 100% 291/291 [00:03<00:00, 80.25it/s]generation_config.json: 100% 116/116 [00:00<00:00, 14.4kB/s]      mistralai/Mistral-7B-Instruct-v0.3 | NVIDIA A100-SXM4-40GB
+      32L H=4096 QH=32 KVH=8 HD=128 REP=4 ADDRESS=1024
+      Model frozen · BF16 · SDPA · trainable=0
+      Native code pool: 220 | required=192
+      Calibration panel: 32 | DISC=16 INTERNAL-EVAL=16
+
+[2/10] OFFLINE FORGE — independent raw A/B memories...
+      ITEM 01 | A=33 B=33 tokens
+      ITEM 02 | A=33 B=33 tokens
+      ITEM 03 | A=33 B=33 tokens
+      ITEM 04 | A=31 B=33 tokens
+      64 independent raw numeric memories forged.
+      Natural Mistral address dimension: 1024
+
+[3/10] ÇAĞRIİZ DISCOVERY — 32 layers x 32 query heads...
+      DISC 16/16
+      TOP POINTER CHANNELS — DISC
+      L28H00 | hit=1.0000 mass=0.861190 medrank=1.0
+      L19H17 | hit=1.0000 mass=0.520850 medrank=1.0
+      L19H08 | hit=0.9375 mass=0.518729 medrank=1.0
+      L21H03 | hit=0.9375 mass=0.512289 medrank=1.0
+      L18H22 | hit=0.8125 mass=0.477789 medrank=1.0
+      L18H03 | hit=0.8125 mass=0.446648 medrank=1.0
+      L30H02 | hit=0.8125 mass=0.435607 medrank=1.0
+      L18H11 | hit=0.8125 mass=0.330506 medrank=1.0
+      L17H26 | hit=0.7500 mass=0.416607 medrank=1.0
+      L19H09 | hit=0.6875 mass=0.545091 medrank=1.0
+      L20H17 | hit=0.6875 mass=0.343531 medrank=1.0
+      L19H16 | hit=0.6250 mass=0.369342 medrank=1.0
+      L17H00 | hit=0.6250 mass=0.327837 medrank=1.0
+      L17H24 | hit=0.6250 mass=0.280468 medrank=1.0
+      L15H16 | hit=0.5625 mass=0.201701 medrank=1.0
+      L24H05 | hit=0.5000 mass=0.410829 medrank=1.5
+
+      SELECTED POINTER: L28H00 | DISC hit=1.0000 mass=0.861190
+
+[4/10] POINTER INTERNAL-EVAL — coordinates frozen...
+      EVAL 01/16 | hit=1 mass=0.7510 span-rank= 1
+      EVAL 02/16 | hit=1 mass=0.8699 span-rank= 1
+      EVAL 03/16 | hit=1 mass=0.9611 span-rank= 1
+      EVAL 04/16 | hit=1 mass=0.8518 span-rank= 1
+      EVAL 05/16 | hit=1 mass=0.9555 span-rank= 1
+      EVAL 06/16 | hit=1 mass=0.9606 span-rank= 1
+      EVAL 07/16 | hit=1 mass=0.8781 span-rank= 1
+      EVAL 08/16 | hit=1 mass=0.8558 span-rank= 1
+      EVAL 09/16 | hit=1 mass=0.8384 span-rank= 1
+      EVAL 10/16 | hit=1 mass=0.8889 span-rank= 1
+      EVAL 11/16 | hit=1 mass=0.7573 span-rank= 1
+      EVAL 12/16 | hit=1 mass=0.5964 span-rank= 1
+      EVAL 13/16 | hit=1 mass=0.8595 span-rank= 1
+      EVAL 14/16 | hit=1 mass=0.4919 span-rank= 1
+      EVAL 15/16 | hit=1 mass=0.8893 span-rank= 1
+      EVAL 16/16 | hit=1 mass=0.8166 span-rank= 1
+      POINTER INTERNAL-EVAL: hit=1.0000 mass=0.826385 median-rank=1.0
+
+[5/10] ADDRESS DISCOVERY — V layer x UNCENTERED/CENTERED on DISC only...
+      L00-V UNCENTERED | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L00-V CENTERED   | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L01-V UNCENTERED | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L01-V CENTERED   | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L02-V UNCENTERED | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L02-V CENTERED   | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L03-V UNCENTERED | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L03-V CENTERED   | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L04-V UNCENTERED | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L04-V CENTERED   | R1=0.8750 R5=0.9375 R16=1.0000 MRR=0.915179
+      L05-V UNCENTERED | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L05-V CENTERED   | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L06-V UNCENTERED | R1=0.9375 R5=1.0000 R16=1.0000 MRR=0.968750
+      L06-V CENTERED   | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L07-V UNCENTERED | R1=0.9375 R5=1.0000 R16=1.0000 MRR=0.953125
+      L07-V CENTERED   | R1=0.8125 R5=0.9375 R16=1.0000 MRR=0.853646
+      L08-V UNCENTERED | R1=0.9375 R5=1.0000 R16=1.0000 MRR=0.950000
+      L08-V CENTERED   | R1=0.9375 R5=0.9375 R16=1.0000 MRR=0.944444
+      L09-V UNCENTERED | R1=0.6250 R5=0.8750 R16=1.0000 MRR=0.716617
+      L09-V CENTERED   | R1=0.3750 R5=0.6250 R16=1.0000 MRR=0.493552
+      L10-V UNCENTERED | R1=0.5625 R5=0.7500 R16=1.0000 MRR=0.678943
+      L10-V CENTERED   | R1=0.4375 R5=0.7500 R16=1.0000 MRR=0.604601
+      L11-V UNCENTERED | R1=0.5625 R5=0.8125 R16=1.0000 MRR=0.649479
+      L11-V CENTERED   | R1=0.2500 R5=0.6250 R16=1.0000 MRR=0.441421
+      L12-V UNCENTERED | R1=0.5625 R5=0.7500 R16=1.0000 MRR=0.671828
+      L12-V CENTERED   | R1=0.3125 R5=0.6875 R16=1.0000 MRR=0.469097
+      L13-V UNCENTERED | R1=0.3125 R5=0.6875 R16=1.0000 MRR=0.514238
+      L13-V CENTERED   | R1=0.2500 R5=0.5625 R16=1.0000 MRR=0.391520
+      L14-V UNCENTERED | R1=0.5625 R5=0.8125 R16=1.0000 MRR=0.670340
+      L14-V CENTERED   | R1=0.5000 R5=0.6875 R16=1.0000 MRR=0.632666
+      L15-V UNCENTERED | R1=0.6250 R5=0.8750 R16=1.0000 MRR=0.747396
+      L15-V CENTERED   | R1=0.5625 R5=0.8125 R16=1.0000 MRR=0.652584
+      L16-V UNCENTERED | R1=0.6250 R5=0.9375 R16=1.0000 MRR=0.735417
+      L16-V CENTERED   | R1=0.5625 R5=0.7500 R16=1.0000 MRR=0.644044
+      L17-V UNCENTERED | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L17-V CENTERED   | R1=0.9375 R5=1.0000 R16=1.0000 MRR=0.968750
+      L18-V UNCENTERED | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L18-V CENTERED   | R1=0.8750 R5=1.0000 R16=1.0000 MRR=0.937500
+      L19-V UNCENTERED | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L19-V CENTERED   | R1=0.9375 R5=1.0000 R16=1.0000 MRR=0.968750
+      L20-V UNCENTERED | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L20-V CENTERED   | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L21-V UNCENTERED | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L21-V CENTERED   | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L22-V UNCENTERED | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L22-V CENTERED   | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L23-V UNCENTERED | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L23-V CENTERED   | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L24-V UNCENTERED | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L24-V CENTERED   | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L25-V UNCENTERED | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L25-V CENTERED   | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L26-V UNCENTERED | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L26-V CENTERED   | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L27-V UNCENTERED | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L27-V CENTERED   | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L28-V UNCENTERED | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L28-V CENTERED   | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L29-V UNCENTERED | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L29-V CENTERED   | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L30-V UNCENTERED | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L30-V CENTERED   | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L31-V UNCENTERED | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L31-V CENTERED   | R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+
+      TOP ADDRESS CANDIDATES — DISC
+      L00-V UNCENTERED | R1=1.0000 R5=1.0000 MRR=1.000000
+      L01-V UNCENTERED | R1=1.0000 R5=1.0000 MRR=1.000000
+      L02-V UNCENTERED | R1=1.0000 R5=1.0000 MRR=1.000000
+      L03-V UNCENTERED | R1=1.0000 R5=1.0000 MRR=1.000000
+      L04-V UNCENTERED | R1=1.0000 R5=1.0000 MRR=1.000000
+      L05-V UNCENTERED | R1=1.0000 R5=1.0000 MRR=1.000000
+      L17-V UNCENTERED | R1=1.0000 R5=1.0000 MRR=1.000000
+      L18-V UNCENTERED | R1=1.0000 R5=1.0000 MRR=1.000000
+      L19-V UNCENTERED | R1=1.0000 R5=1.0000 MRR=1.000000
+      L20-V UNCENTERED | R1=1.0000 R5=1.0000 MRR=1.000000
+      L21-V UNCENTERED | R1=1.0000 R5=1.0000 MRR=1.000000
+      L22-V UNCENTERED | R1=1.0000 R5=1.0000 MRR=1.000000
+
+      SELECTED ADDRESS: L00-V · UNCENTERED
+
+[6/10] ADDRESS INTERNAL-EVAL — address frozen...
+      [01/16] rank= 1 selected=17 expected=17
+      [02/16] rank= 1 selected=18 expected=18
+      [03/16] rank= 1 selected=19 expected=19
+      [04/16] rank= 1 selected=20 expected=20
+      [05/16] rank= 1 selected=21 expected=21
+      [06/16] rank= 1 selected=22 expected=22
+      [07/16] rank= 1 selected=23 expected=23
+      [08/16] rank= 1 selected=24 expected=24
+      [09/16] rank= 1 selected=25 expected=25
+      [10/16] rank= 1 selected=26 expected=26
+      [11/16] rank= 1 selected=27 expected=27
+      [12/16] rank= 1 selected=28 expected=28
+      [13/16] rank= 1 selected=29 expected=29
+      [14/16] rank= 1 selected=30 expected=30
+      [15/16] rank= 1 selected=31 expected=31
+      [16/16] rank= 1 selected=32 expected=32
+      INTERNAL-EVAL R1/R5/R16/MRR: 1.0000 / 1.0000 / 1.0000 / 1.000000
+
+[7/10] INTERNAL-EVAL CONTROLS — frozen pointer/address...
+      PRIMARY : R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      UNIFORM : R1=0.2500 R5=0.5625 R16=1.0000 MRR=0.402232
+      SHIFTED : R1=0.0625 R5=0.2500 R16=1.0000 MRR=0.204459
+      NO-A    : R1=0.0625 R5=0.3125 R16=1.0000 MRR=0.211296
+
+[8/10] SOURCE / MODEL / PROTOCOL AUDIT...
+      Model frozen                         : True
+      Trainable parameter tensors          : 0
+      Mistral geometry                     : 32L / H4096 / QH32 / KVH8 / HD128
+      Natural address dimension            : 1024
+      Native code pool                     : 220
+      Native codes consumed                : 192
+      A/B independent model forwards       : 64
+      Query-time candidate-B forwards      : 0
+      Pointer discovery                    : DISC only
+      Address discovery                    : DISC only
+      INTERNAL-EVAL used for selection     : NO
+      Gold span used in retrieval          : NO
+      Gold span use                        : pointer calibration diagnostic only
+      Training / LoRA / optimizer / DRA    : NONE
+      D120 / PCA / old cartridge readout   : NONE
+
+[9/10] CALIBRATION DECISION...
+      Pointer eval >= .75              : True
+      Address eval R1 >= .75           : True
+      Primary-control gap >= .40       : True
+      VERDICT                          : MISTRAL_MAM_CALIBRATION_LOCK_READY
+
+[10/10] FINAL...
+
+================================================================================================================================================================================
+TEST525 FINAL RESULT — MISTRAL MAM CALIBRATION
+================================================================================================================================================================================
+MODEL                              : mistralai/Mistral-7B-Instruct-v0.3 · frozen
+CALIBRATION PANEL                  : 32 items · DISC 16 / INTERNAL-EVAL 16
+MISTRAL GEOMETRY                   : 32L · H=4096 · QH=32 · KVH=8 · HD=128
+ADDRESS DIMENSION                  : 1024
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POINTER LOCK CANDIDATE             : L28H00
+POINTER DISC HIT / MASS            : 1.0000 / 0.861190
+POINTER INTERNAL-EVAL HIT / MASS   : 1.0000 / 0.826385
+ADDRESS LOCK CANDIDATE             : L00-V · UNCENTERED
+ADDRESS DISC R1/R5/MRR             : 1.0000 / 1.0000 / 1.000000
+ADDRESS EVAL R1/R5/R16/MRR         : 1.0000 / 1.0000 / 1.0000 / 1.000000
+UNIFORM EVAL R1                    : 0.2500
+SHIFTED EVAL R1                    : 0.0625
+NO-A EVAL R1                       : 0.0625
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+WEIGHT SENTINEL                    : PASS
+QUERY-TIME CANDIDATE-B FORWARDS    : 0
+TEST525 LOCK SHA                   : a656140e1b484212ef8956c2cbde6fe2df3b76eb19ca901eccd5f66f8442f209
+TOTAL TEST TIME                    : 63.83s
+VERDICT                            : MISTRAL_MAM_CALIBRATION_LOCK_READY
+NEXT                               : freeze L28H00 -> L00-V UNCENTERED and run fresh external TEST526
+================================================================================================================================================================================
