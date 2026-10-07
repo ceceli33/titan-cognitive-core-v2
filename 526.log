@@ -1,0 +1,434 @@
+ 
+================================================================================================================================================================================
+TEST526 — AKBASCORE MAM · MISTRAL FROZEN EXTERNAL REPLICATION SEAL
+128 FRESH EXTERNAL ITEMS · NO DISCOVERY · L28H00 → L00-V UNCENTERED
+================================================================================================================================================================================
+
+[1/11] Loading frozen Mistral...
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 67.6kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 16.6MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 95.7MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.1kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.6kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 52.3kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.13MB/s]
+Download complete: 
+
+ 12.4GB,  273MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  271MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:41<00:00,  9.43s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 78.13it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 15.3kB/s]
+      mistralai/Mistral-7B-Instruct-v0.3 | NVIDIA A100-SXM4-40GB
+      32L H=4096 QH=32 KVH=8 HD=128 REP=4 ADDRESS=1024
+      POINTER LOCK : L28H00
+      ADDRESS LOCK : L00-V · UNCENTERED
+      DISCOVERY    : NONE
+      PANEL        : FRESH EXTERNAL 128
+      Model frozen · BF16 · SDPA · trainable=0
+      Multi-token identity pool: 768 unique
+      Token lengths: min=8 max=8 mean=8.00
+      seals=384 classes=384
+      TEST526 LOCK: 8df772191e27c4cee99bfe48aa1d15fb2869c9f2d732b5bc88c0a60829ebff98
+      PARENT525   : a656140e1b484212ef8956c2cbde6fe2df3b76eb19ca901eccd5f66f8442f209
+      Frozen before panel evaluation: L28H00 → L00-V UNCENTERED
+
+[2/11] OFFLINE FORGE — 128 fresh external items...
+      ITEM 001 | A=54 B=75 tokens
+      ITEM 002 | A=54 B=75 tokens
+      ITEM 003 | A=54 B=75 tokens
+      ITEM 004 | A=52 B=75 tokens
+      ITEM 005 | A=52 B=75 tokens
+      256 independent raw numeric memories forged.
+      No TEST526 parameter selected from this panel.
+
+[3/11] Building persistent frozen B address bank...
+      Persistent B bank              : 128 numeric address matrices
+      Address dimension              : 1024
+      B source text                  : REMOVED
+      Query-time candidate-B forward : 0
+      Gold span                      : diagnostic only
+
+[4/11] EXTERNAL PRIMARY — frozen L28H00 → L00-V UNCENTERED...
+      [001/128] rank=  1 selected=001 | ptr=26 span=[43, 44, 45, 46, 47, 48, 49, 50] hit=0 mass=0.2392 margin=+0.00000
+      [002/128] rank=  2 selected=001 | ptr=26 span=[26, 27, 28, 29, 30, 31, 32, 33] hit=1 mass=0.3523 margin=+0.00000
+      [003/128] rank=  3 selected=001 | ptr=26 span=[43, 44, 45, 46, 47, 48, 49, 50] hit=0 mass=0.1827 margin=+0.00000
+      [004/128] rank=  4 selected=001 | ptr=25 span=[41, 42, 43, 44, 45, 46, 47, 48] hit=0 mass=0.1851 margin=+0.00000
+      [005/128] rank=  5 selected=001 | ptr=25 span=[25, 26, 27, 28, 29, 30, 31, 32] hit=1 mass=0.3049 margin=+0.00000
+      [006/128] rank=  6 selected=001 | ptr=25 span=[25, 26, 27, 28, 29, 30, 31, 32] hit=1 mass=0.2954 margin=+0.00000
+      [007/128] rank=  7 selected=001 | ptr=25 span=[25, 26, 27, 28, 29, 30, 31, 32] hit=1 mass=0.2917 margin=+0.00000
+      [008/128] rank=  8 selected=001 | ptr=26 span=[9, 10, 11, 12, 13, 14, 15, 16] hit=0 mass=0.1697 margin=+0.00000
+      [009/128] rank=  9 selected=001 | ptr=25 span=[9, 10, 11, 12, 13, 14, 15, 16] hit=0 mass=0.1714 margin=+0.00000
+      [010/128] rank= 10 selected=001 | ptr=24 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.1553 margin=+0.00000
+      [011/128] rank= 11 selected=001 | ptr=24 span=[40, 41, 42, 43, 44, 45, 46, 47] hit=0 mass=0.2394 margin=+0.00000
+      [012/128] rank= 12 selected=001 | ptr=24 span=[24, 25, 26, 27, 28, 29, 30, 31] hit=1 mass=0.4086 margin=+0.00000
+      [013/128] rank= 13 selected=001 | ptr=25 span=[25, 26, 27, 28, 29, 30, 31, 32] hit=1 mass=0.3826 margin=+0.00000
+      [014/128] rank= 14 selected=001 | ptr=24 span=[40, 41, 42, 43, 44, 45, 46, 47] hit=0 mass=0.2846 margin=+0.00000
+      [015/128] rank= 15 selected=001 | ptr=25 span=[9, 10, 11, 12, 13, 14, 15, 16] hit=0 mass=0.1446 margin=+0.00000
+      [016/128] rank= 16 selected=001 | ptr=40 span=[40, 41, 42, 43, 44, 45, 46, 47] hit=1 mass=0.3227 margin=+0.00000
+      [017/128] rank= 17 selected=001 | ptr=24 span=[24, 25, 26, 27, 28, 29, 30, 31] hit=1 mass=0.3444 margin=+0.00000
+      [018/128] rank= 18 selected=001 | ptr=24 span=[24, 25, 26, 27, 28, 29, 30, 31] hit=1 mass=0.3886 margin=+0.00000
+      [019/128] rank= 19 selected=001 | ptr=24 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.1886 margin=+0.00000
+      [020/128] rank= 20 selected=001 | ptr=24 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.1868 margin=+0.00000
+      [021/128] rank= 21 selected=001 | ptr=24 span=[24, 25, 26, 27, 28, 29, 30, 31] hit=1 mass=0.3300 margin=+0.00000
+      [022/128] rank= 22 selected=001 | ptr=22 span=[22, 23, 24, 25, 26, 27, 28, 29] hit=1 mass=0.3351 margin=+0.00000
+      [023/128] rank= 23 selected=001 | ptr=23 span=[7, 8, 9, 10, 11, 12, 13, 14] hit=0 mass=0.1649 margin=+0.00000
+      [024/128] rank= 24 selected=001 | ptr=23 span=[7, 8, 9, 10, 11, 12, 13, 14] hit=0 mass=0.0968 margin=+0.00000
+      [025/128] rank= 25 selected=001 | ptr=22 span=[7, 8, 9, 10, 11, 12, 13, 14] hit=0 mass=0.1797 margin=+0.00000
+      [026/128] rank= 26 selected=001 | ptr=24 span=[24, 25, 26, 27, 28, 29, 30, 31] hit=1 mass=0.3153 margin=+0.00000
+      [027/128] rank= 27 selected=001 | ptr=26 span=[26, 27, 28, 29, 30, 31, 32, 33] hit=1 mass=0.3339 margin=+0.00000
+      [028/128] rank= 28 selected=001 | ptr=26 span=[26, 27, 28, 29, 30, 31, 32, 33] hit=1 mass=0.3401 margin=+0.00000
+      [029/128] rank= 29 selected=001 | ptr=43 span=[43, 44, 45, 46, 47, 48, 49, 50] hit=1 mass=0.2646 margin=+0.00000
+      [030/128] rank= 30 selected=001 | ptr=25 span=[25, 26, 27, 28, 29, 30, 31, 32] hit=1 mass=0.2933 margin=+0.00000
+      [031/128] rank= 31 selected=001 | ptr=25 span=[9, 10, 11, 12, 13, 14, 15, 16] hit=0 mass=0.1909 margin=+0.00000
+      [032/128] rank= 32 selected=001 | ptr=26 span=[9, 10, 11, 12, 13, 14, 15, 16] hit=0 mass=0.2050 margin=+0.00000
+      [033/128] rank= 33 selected=001 | ptr=24 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.1301 margin=+0.00000
+      [034/128] rank= 34 selected=001 | ptr=26 span=[26, 27, 28, 29, 30, 31, 32, 33] hit=1 mass=0.1854 margin=+0.00000
+      [035/128] rank= 35 selected=001 | ptr=26 span=[26, 27, 28, 29, 30, 31, 32, 33] hit=1 mass=0.3404 margin=+0.00000
+      [036/128] rank= 36 selected=001 | ptr=25 span=[41, 42, 43, 44, 45, 46, 47, 48] hit=0 mass=0.2292 margin=+0.00000
+      [037/128] rank= 37 selected=001 | ptr=24 span=[40, 41, 42, 43, 44, 45, 46, 47] hit=0 mass=0.2244 margin=+0.00000
+      [038/128] rank= 38 selected=001 | ptr=41 span=[41, 42, 43, 44, 45, 46, 47, 48] hit=1 mass=0.3204 margin=+0.00000
+      [039/128] rank= 39 selected=001 | ptr=24 span=[41, 42, 43, 44, 45, 46, 47, 48] hit=0 mass=0.2408 margin=+0.00000
+      [040/128] rank= 40 selected=001 | ptr=25 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.1886 margin=+0.00000
+      [041/128] rank= 41 selected=001 | ptr=25 span=[9, 10, 11, 12, 13, 14, 15, 16] hit=0 mass=0.2129 margin=+0.00000
+      [042/128] rank= 42 selected=001 | ptr=24 span=[40, 41, 42, 43, 44, 45, 46, 47] hit=0 mass=0.2726 margin=+0.00000
+      [043/128] rank= 43 selected=001 | ptr=24 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.2390 margin=+0.00000
+      [044/128] rank= 44 selected=001 | ptr=25 span=[41, 42, 43, 44, 45, 46, 47, 48] hit=0 mass=0.2772 margin=+0.00000
+      [045/128] rank= 45 selected=001 | ptr=26 span=[26, 27, 28, 29, 30, 31, 32, 33] hit=1 mass=0.3333 margin=+0.00000
+      [046/128] rank= 46 selected=001 | ptr=25 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.1832 margin=+0.00000
+      [047/128] rank= 47 selected=001 | ptr=25 span=[9, 10, 11, 12, 13, 14, 15, 16] hit=0 mass=0.1341 margin=+0.00000
+      [048/128] rank= 48 selected=001 | ptr=25 span=[41, 42, 43, 44, 45, 46, 47, 48] hit=0 mass=0.1999 margin=+0.00000
+      [049/128] rank= 49 selected=001 | ptr=25 span=[25, 26, 27, 28, 29, 30, 31, 32] hit=1 mass=0.3232 margin=+0.00000
+      [050/128] rank= 50 selected=001 | ptr=24 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.1274 margin=+0.00000
+      [051/128] rank= 51 selected=001 | ptr=25 span=[41, 42, 43, 44, 45, 46, 47, 48] hit=0 mass=0.2191 margin=+0.00000
+      [052/128] rank= 52 selected=001 | ptr=24 span=[24, 25, 26, 27, 28, 29, 30, 31] hit=1 mass=0.2823 margin=+0.00000
+      [053/128] rank= 53 selected=001 | ptr=25 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.0906 margin=+0.00000
+      [054/128] rank= 54 selected=001 | ptr=26 span=[26, 27, 28, 29, 30, 31, 32, 33] hit=1 mass=0.3205 margin=+0.00000
+      [055/128] rank= 55 selected=001 | ptr=26 span=[9, 10, 11, 12, 13, 14, 15, 16] hit=0 mass=0.1264 margin=+0.00000
+      [056/128] rank= 56 selected=001 | ptr=25 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.1455 margin=+0.00000
+      [057/128] rank= 57 selected=001 | ptr=24 span=[24, 25, 26, 27, 28, 29, 30, 31] hit=1 mass=0.2482 margin=+0.00000
+      [058/128] rank= 58 selected=001 | ptr=26 span=[26, 27, 28, 29, 30, 31, 32, 33] hit=1 mass=0.3774 margin=+0.00000
+      [059/128] rank= 59 selected=001 | ptr=41 span=[41, 42, 43, 44, 45, 46, 47, 48] hit=1 mass=0.3010 margin=+0.00000
+      [060/128] rank= 60 selected=001 | ptr=26 span=[9, 10, 11, 12, 13, 14, 15, 16] hit=0 mass=0.1757 margin=+0.00000
+      [061/128] rank= 61 selected=001 | ptr=25 span=[25, 26, 27, 28, 29, 30, 31, 32] hit=1 mass=0.2860 margin=+0.00000
+      [062/128] rank= 62 selected=001 | ptr=24 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.2567 margin=+0.00000
+      [063/128] rank= 63 selected=001 | ptr=25 span=[25, 26, 27, 28, 29, 30, 31, 32] hit=1 mass=0.3514 margin=+0.00000
+      [064/128] rank= 64 selected=001 | ptr=26 span=[26, 27, 28, 29, 30, 31, 32, 33] hit=1 mass=0.3048 margin=+0.00000
+      [065/128] rank= 65 selected=001 | ptr=25 span=[42, 43, 44, 45, 46, 47, 48, 49] hit=0 mass=0.2863 margin=+0.00000
+      [066/128] rank= 66 selected=001 | ptr=24 span=[24, 25, 26, 27, 28, 29, 30, 31] hit=1 mass=0.3720 margin=+0.00000
+      [067/128] rank= 67 selected=001 | ptr=24 span=[41, 42, 43, 44, 45, 46, 47, 48] hit=0 mass=0.1765 margin=+0.00000
+      [068/128] rank= 68 selected=001 | ptr=41 span=[41, 42, 43, 44, 45, 46, 47, 48] hit=1 mass=0.2465 margin=+0.00000
+      [069/128] rank= 69 selected=001 | ptr=24 span=[24, 25, 26, 27, 28, 29, 30, 31] hit=1 mass=0.2837 margin=+0.00000
+      [070/128] rank= 70 selected=001 | ptr=24 span=[24, 25, 26, 27, 28, 29, 30, 31] hit=1 mass=0.2898 margin=+0.00000
+      [071/128] rank= 71 selected=001 | ptr=25 span=[25, 26, 27, 28, 29, 30, 31, 32] hit=1 mass=0.3031 margin=+0.00000
+      [072/128] rank= 72 selected=001 | ptr=24 span=[24, 25, 26, 27, 28, 29, 30, 31] hit=1 mass=0.2759 margin=+0.00000
+      [073/128] rank= 73 selected=001 | ptr=26 span=[9, 10, 11, 12, 13, 14, 15, 16] hit=0 mass=0.1198 margin=+0.00000
+      [074/128] rank= 74 selected=001 | ptr=40 span=[40, 41, 42, 43, 44, 45, 46, 47] hit=1 mass=0.2134 margin=+0.00000
+      [075/128] rank= 75 selected=001 | ptr=24 span=[7, 8, 9, 10, 11, 12, 13, 14] hit=0 mass=0.1686 margin=+0.00000
+      [076/128] rank= 76 selected=001 | ptr=24 span=[24, 25, 26, 27, 28, 29, 30, 31] hit=1 mass=0.2706 margin=+0.00000
+      [077/128] rank= 77 selected=001 | ptr=40 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.1836 margin=+0.00000
+      [078/128] rank= 78 selected=001 | ptr=40 span=[40, 41, 42, 43, 44, 45, 46, 47] hit=1 mass=0.2184 margin=+0.00000
+      [079/128] rank= 79 selected=001 | ptr=25 span=[42, 43, 44, 45, 46, 47, 48, 49] hit=0 mass=0.2890 margin=+0.00000
+      [080/128] rank= 80 selected=001 | ptr=24 span=[39, 40, 41, 42, 43, 44, 45, 46] hit=0 mass=0.2819 margin=+0.00000
+      [081/128] rank= 81 selected=001 | ptr=26 span=[42, 43, 44, 45, 46, 47, 48, 49] hit=0 mass=0.2806 margin=+0.00000
+      [082/128] rank= 82 selected=001 | ptr=40 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.1891 margin=+0.00000
+      [083/128] rank= 83 selected=001 | ptr=24 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.1486 margin=+0.00000
+      [084/128] rank= 84 selected=001 | ptr=25 span=[25, 26, 27, 28, 29, 30, 31, 32] hit=1 mass=0.3418 margin=+0.00000
+      [085/128] rank= 85 selected=001 | ptr=40 span=[40, 41, 42, 43, 44, 45, 46, 47] hit=1 mass=0.3259 margin=+0.00000
+      [086/128] rank= 86 selected=001 | ptr=42 span=[9, 10, 11, 12, 13, 14, 15, 16] hit=0 mass=0.1686 margin=+0.00000
+      [087/128] rank= 87 selected=001 | ptr=24 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.1419 margin=+0.00000
+      [088/128] rank= 88 selected=001 | ptr=43 span=[43, 44, 45, 46, 47, 48, 49, 50] hit=1 mass=0.3373 margin=+0.00000
+      [089/128] rank= 89 selected=001 | ptr=26 span=[9, 10, 11, 12, 13, 14, 15, 16] hit=0 mass=0.1765 margin=+0.00000
+      [090/128] rank= 90 selected=001 | ptr=42 span=[42, 43, 44, 45, 46, 47, 48, 49] hit=1 mass=0.3356 margin=+0.00000
+      [091/128] rank= 91 selected=001 | ptr=26 span=[26, 27, 28, 29, 30, 31, 32, 33] hit=1 mass=0.3296 margin=+0.00000
+      [092/128] rank= 92 selected=001 | ptr=25 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.1611 margin=+0.00000
+      [093/128] rank= 93 selected=001 | ptr=25 span=[9, 10, 11, 12, 13, 14, 15, 16] hit=0 mass=0.1722 margin=+0.00000
+      [094/128] rank= 94 selected=001 | ptr=41 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.1025 margin=+0.00000
+      [095/128] rank= 95 selected=001 | ptr=25 span=[25, 26, 27, 28, 29, 30, 31, 32] hit=1 mass=0.3818 margin=+0.00000
+      [096/128] rank= 96 selected=001 | ptr=24 span=[24, 25, 26, 27, 28, 29, 30, 31] hit=1 mass=0.3205 margin=+0.00000
+      [097/128] rank= 97 selected=001 | ptr=25 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.1942 margin=+0.00000
+      [098/128] rank= 98 selected=001 | ptr=26 span=[9, 10, 11, 12, 13, 14, 15, 16] hit=0 mass=0.1323 margin=+0.00000
+      [099/128] rank= 99 selected=001 | ptr=24 span=[24, 25, 26, 27, 28, 29, 30, 31] hit=1 mass=0.3741 margin=+0.00000
+      [100/128] rank=100 selected=001 | ptr=24 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.1753 margin=+0.00000
+      [101/128] rank=101 selected=001 | ptr=25 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.2119 margin=+0.00000
+      [102/128] rank=102 selected=001 | ptr=24 span=[24, 25, 26, 27, 28, 29, 30, 31] hit=1 mass=0.3293 margin=+0.00000
+      [103/128] rank=103 selected=001 | ptr=24 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.2369 margin=+0.00000
+      [104/128] rank=104 selected=001 | ptr=25 span=[25, 26, 27, 28, 29, 30, 31, 32] hit=1 mass=0.3354 margin=+0.00000
+      [105/128] rank=105 selected=001 | ptr= 9 span=[26, 27, 28, 29, 30, 31, 32, 33] hit=0 mass=0.2431 margin=+0.00000
+      [106/128] rank=106 selected=001 | ptr=26 span=[26, 27, 28, 29, 30, 31, 32, 33] hit=1 mass=0.3139 margin=+0.00000
+      [107/128] rank=107 selected=001 | ptr=25 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.1989 margin=+0.00000
+      [108/128] rank=108 selected=001 | ptr=24 span=[24, 25, 26, 27, 28, 29, 30, 31] hit=1 mass=0.2229 margin=+0.00000
+      [109/128] rank=109 selected=001 | ptr=24 span=[9, 10, 11, 12, 13, 14, 15, 16] hit=0 mass=0.1507 margin=+0.00000
+      [110/128] rank=110 selected=001 | ptr=26 span=[9, 10, 11, 12, 13, 14, 15, 16] hit=0 mass=0.2087 margin=+0.00000
+      [111/128] rank=111 selected=001 | ptr=25 span=[25, 26, 27, 28, 29, 30, 31, 32] hit=1 mass=0.3224 margin=+0.00000
+      [112/128] rank=112 selected=001 | ptr=25 span=[9, 10, 11, 12, 13, 14, 15, 16] hit=0 mass=0.1772 margin=+0.00000
+      [113/128] rank=113 selected=001 | ptr=25 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.1540 margin=+0.00000
+      [114/128] rank=114 selected=001 | ptr=26 span=[26, 27, 28, 29, 30, 31, 32, 33] hit=1 mass=0.3546 margin=+0.00000
+      [115/128] rank=115 selected=001 | ptr=26 span=[9, 10, 11, 12, 13, 14, 15, 16] hit=0 mass=0.2026 margin=+0.00000
+      [116/128] rank=116 selected=001 | ptr=25 span=[25, 26, 27, 28, 29, 30, 31, 32] hit=1 mass=0.3581 margin=+0.00000
+      [117/128] rank=117 selected=001 | ptr=26 span=[9, 10, 11, 12, 13, 14, 15, 16] hit=0 mass=0.1940 margin=+0.00000
+      [118/128] rank=118 selected=001 | ptr=41 span=[41, 42, 43, 44, 45, 46, 47, 48] hit=1 mass=0.3101 margin=+0.00000
+      [119/128] rank=119 selected=001 | ptr=25 span=[25, 26, 27, 28, 29, 30, 31, 32] hit=1 mass=0.2853 margin=+0.00000
+      [120/128] rank=120 selected=001 | ptr=23 span=[7, 8, 9, 10, 11, 12, 13, 14] hit=0 mass=0.1951 margin=+0.00000
+      [121/128] rank=121 selected=001 | ptr=25 span=[25, 26, 27, 28, 29, 30, 31, 32] hit=1 mass=0.3329 margin=+0.00000
+      [122/128] rank=122 selected=001 | ptr=27 span=[43, 44, 45, 46, 47, 48, 49, 50] hit=0 mass=0.2359 margin=+0.00000
+      [123/128] rank=123 selected=001 | ptr=44 span=[44, 45, 46, 47, 48, 49, 50, 51] hit=1 mass=0.3279 margin=+0.00000
+      [124/128] rank=124 selected=001 | ptr=43 span=[26, 27, 28, 29, 30, 31, 32, 33] hit=0 mass=0.2953 margin=+0.00000
+      [125/128] rank=125 selected=001 | ptr=27 span=[10, 11, 12, 13, 14, 15, 16, 17] hit=0 mass=0.1135 margin=+0.00000
+      [126/128] rank=126 selected=001 | ptr=26 span=[43, 44, 45, 46, 47, 48, 49, 50] hit=0 mass=0.2713 margin=+0.00000
+      [127/128] rank=127 selected=001 | ptr=26 span=[8, 9, 10, 11, 12, 13, 14, 15] hit=0 mass=0.1728 margin=+0.00000
+      [128/128] rank=128 selected=001 | ptr=43 span=[43, 44, 45, 46, 47, 48, 49, 50] hit=1 mass=0.3675 margin=+0.00000
+      PRIMARY R1/R5/R16/MRR: 0.0078 / 0.0391 / 0.1250 / 0.042446
+      POINTER argmax gold-span: 58/128 = 0.4531
+      POINTER mean gold mass  : 0.248647
+      POINTER median span rank: 2.0
+      Mean Top1-Top2 margin   : +0.000000
+
+[5/11] EXTERNAL CONTROLS — UNIFORM / SHIFTED / NO-A ZERO...
+      UNIFORM R1/R5/R16/MRR: 0.0078 / 0.0391 / 0.1250 / 0.042487
+      SHIFTED R1/R5/R16/MRR: 0.0078 / 0.0391 / 0.1250 / 0.042474
+      NO-A    R1/R5/R16/MRR: 0.0078 / 0.0391 / 0.1250 / 0.042446
+
+[6/11] EXTERNAL COUNTERFACTUAL FOLLOW...
+      [001/128] target=038 rank= 38 selected=001 follow=0 | ptr-hit=1 mass=0.3371
+      [002/128] target=039 rank= 39 selected=001 follow=0 | ptr-hit=1 mass=0.3487
+      [003/128] target=040 rank= 40 selected=001 follow=0 | ptr-hit=0 mass=0.2170
+      [004/128] target=041 rank= 41 selected=001 follow=0 | ptr-hit=1 mass=0.2898
+      [005/128] target=042 rank= 42 selected=001 follow=0 | ptr-hit=1 mass=0.3316
+      [006/128] target=043 rank= 43 selected=001 follow=0 | ptr-hit=0 mass=0.2830
+      [007/128] target=044 rank= 44 selected=001 follow=0 | ptr-hit=0 mass=0.1174
+      [008/128] target=045 rank= 45 selected=001 follow=0 | ptr-hit=0 mass=0.1748
+      [009/128] target=046 rank= 46 selected=001 follow=0 | ptr-hit=0 mass=0.2269
+      [010/128] target=047 rank= 47 selected=001 follow=0 | ptr-hit=1 mass=0.4230
+      [011/128] target=048 rank= 48 selected=001 follow=0 | ptr-hit=0 mass=0.1454
+      [012/128] target=049 rank= 49 selected=001 follow=0 | ptr-hit=0 mass=0.1458
+      [013/128] target=050 rank= 50 selected=001 follow=0 | ptr-hit=0 mass=0.3180
+      [014/128] target=051 rank= 51 selected=001 follow=0 | ptr-hit=0 mass=0.1569
+      [015/128] target=052 rank= 52 selected=001 follow=0 | ptr-hit=0 mass=0.1409
+      [016/128] target=053 rank= 53 selected=001 follow=0 | ptr-hit=0 mass=0.1155
+      [017/128] target=054 rank= 54 selected=001 follow=0 | ptr-hit=1 mass=0.3576
+      [018/128] target=055 rank= 55 selected=001 follow=0 | ptr-hit=1 mass=0.3689
+      [019/128] target=056 rank= 56 selected=001 follow=0 | ptr-hit=0 mass=0.1713
+      [020/128] target=057 rank= 57 selected=001 follow=0 | ptr-hit=0 mass=0.1758
+      [021/128] target=058 rank= 58 selected=001 follow=0 | ptr-hit=0 mass=0.1525
+      [022/128] target=059 rank= 59 selected=001 follow=0 | ptr-hit=0 mass=0.0865
+      [023/128] target=060 rank= 60 selected=001 follow=0 | ptr-hit=0 mass=0.2173
+      [024/128] target=061 rank= 61 selected=001 follow=0 | ptr-hit=0 mass=0.1044
+      [025/128] target=062 rank= 62 selected=001 follow=0 | ptr-hit=0 mass=0.1689
+      [026/128] target=063 rank= 63 selected=001 follow=0 | ptr-hit=1 mass=0.3188
+      [027/128] target=064 rank= 64 selected=001 follow=0 | ptr-hit=1 mass=0.3290
+      [028/128] target=065 rank= 65 selected=001 follow=0 | ptr-hit=0 mass=0.2471
+      [029/128] target=066 rank= 66 selected=001 follow=0 | ptr-hit=0 mass=0.1830
+      [030/128] target=067 rank= 67 selected=001 follow=0 | ptr-hit=1 mass=0.3012
+      [031/128] target=068 rank= 68 selected=001 follow=0 | ptr-hit=0 mass=0.2091
+      [032/128] target=069 rank= 69 selected=001 follow=0 | ptr-hit=0 mass=0.2345
+      [033/128] target=070 rank= 70 selected=001 follow=0 | ptr-hit=0 mass=0.1679
+      [034/128] target=071 rank= 71 selected=001 follow=0 | ptr-hit=1 mass=0.2017
+      [035/128] target=072 rank= 72 selected=001 follow=0 | ptr-hit=0 mass=0.1550
+      [036/128] target=073 rank= 73 selected=001 follow=0 | ptr-hit=0 mass=0.2823
+      [037/128] target=074 rank= 74 selected=001 follow=0 | ptr-hit=0 mass=0.1964
+      [038/128] target=075 rank= 75 selected=001 follow=0 | ptr-hit=0 mass=0.1677
+      [039/128] target=076 rank= 76 selected=001 follow=0 | ptr-hit=0 mass=0.2013
+      [040/128] target=077 rank= 77 selected=001 follow=0 | ptr-hit=0 mass=0.1827
+      [041/128] target=078 rank= 78 selected=001 follow=0 | ptr-hit=1 mass=0.3140
+      [042/128] target=079 rank= 79 selected=001 follow=0 | ptr-hit=0 mass=0.1741
+      [043/128] target=080 rank= 80 selected=001 follow=0 | ptr-hit=1 mass=0.3797
+      [044/128] target=081 rank= 81 selected=001 follow=0 | ptr-hit=1 mass=0.3165
+      [045/128] target=082 rank= 82 selected=001 follow=0 | ptr-hit=0 mass=0.2462
+      [046/128] target=083 rank= 83 selected=001 follow=0 | ptr-hit=0 mass=0.1926
+      [047/128] target=084 rank= 84 selected=001 follow=0 | ptr-hit=1 mass=0.3317
+      [048/128] target=085 rank= 85 selected=001 follow=0 | ptr-hit=0 mass=0.2294
+      [049/128] target=086 rank= 86 selected=001 follow=0 | ptr-hit=1 mass=0.3579
+      [050/128] target=087 rank= 87 selected=001 follow=0 | ptr-hit=0 mass=0.1246
+      [051/128] target=088 rank= 88 selected=001 follow=0 | ptr-hit=0 mass=0.2675
+      [052/128] target=089 rank= 89 selected=001 follow=0 | ptr-hit=0 mass=0.1237
+      [053/128] target=090 rank= 90 selected=001 follow=0 | ptr-hit=0 mass=0.1388
+      [054/128] target=091 rank= 91 selected=001 follow=0 | ptr-hit=1 mass=0.3208
+      [055/128] target=092 rank= 92 selected=001 follow=0 | ptr-hit=0 mass=0.1456
+      [056/128] target=093 rank= 93 selected=001 follow=0 | ptr-hit=0 mass=0.1804
+      [057/128] target=094 rank= 94 selected=001 follow=0 | ptr-hit=0 mass=0.1356
+      [058/128] target=095 rank= 95 selected=001 follow=0 | ptr-hit=1 mass=0.3056
+      [059/128] target=096 rank= 96 selected=001 follow=0 | ptr-hit=1 mass=0.3163
+      [060/128] target=097 rank= 97 selected=001 follow=0 | ptr-hit=0 mass=0.1527
+      [061/128] target=098 rank= 98 selected=001 follow=0 | ptr-hit=0 mass=0.2038
+      [062/128] target=099 rank= 99 selected=001 follow=0 | ptr-hit=1 mass=0.3454
+      [063/128] target=100 rank=100 selected=001 follow=0 | ptr-hit=1 mass=0.3964
+      [064/128] target=101 rank=101 selected=001 follow=0 | ptr-hit=1 mass=0.3311
+      [065/128] target=102 rank=102 selected=001 follow=0 | ptr-hit=0 mass=0.2997
+      [066/128] target=103 rank=103 selected=001 follow=0 | ptr-hit=1 mass=0.3419
+      [067/128] target=104 rank=104 selected=001 follow=0 | ptr-hit=0 mass=0.2068
+      [068/128] target=105 rank=105 selected=001 follow=0 | ptr-hit=1 mass=0.3200
+      [069/128] target=106 rank=106 selected=001 follow=0 | ptr-hit=1 mass=0.3272
+      [070/128] target=107 rank=107 selected=001 follow=0 | ptr-hit=1 mass=0.2971
+      [071/128] target=108 rank=108 selected=001 follow=0 | ptr-hit=1 mass=0.3132
+      [072/128] target=109 rank=109 selected=001 follow=0 | ptr-hit=1 mass=0.3388
+      [073/128] target=110 rank=110 selected=001 follow=0 | ptr-hit=0 mass=0.2350
+      [074/128] target=111 rank=111 selected=001 follow=0 | ptr-hit=1 mass=0.3645
+      [075/128] target=112 rank=112 selected=001 follow=0 | ptr-hit=0 mass=0.1898
+      [076/128] target=113 rank=113 selected=001 follow=0 | ptr-hit=0 mass=0.0190
+      [077/128] target=114 rank=114 selected=001 follow=0 | ptr-hit=1 mass=0.3503
+      [078/128] target=115 rank=115 selected=001 follow=0 | ptr-hit=1 mass=0.3429
+      [079/128] target=116 rank=116 selected=001 follow=0 | ptr-hit=0 mass=0.1666
+      [080/128] target=117 rank=117 selected=001 follow=0 | ptr-hit=0 mass=0.2318
+      [081/128] target=118 rank=118 selected=001 follow=0 | ptr-hit=0 mass=0.1680
+      [082/128] target=119 rank=119 selected=001 follow=0 | ptr-hit=1 mass=0.4264
+      [083/128] target=120 rank=120 selected=001 follow=0 | ptr-hit=0 mass=0.3344
+      [084/128] target=121 rank=121 selected=001 follow=0 | ptr-hit=0 mass=0.1949
+      [085/128] target=122 rank=122 selected=001 follow=0 | ptr-hit=1 mass=0.4188
+      [086/128] target=123 rank=123 selected=001 follow=0 | ptr-hit=1 mass=0.4014
+      [087/128] target=124 rank=124 selected=001 follow=0 | ptr-hit=0 mass=0.1520
+      [088/128] target=125 rank=125 selected=001 follow=0 | ptr-hit=1 mass=0.3834
+      [089/128] target=126 rank=126 selected=001 follow=0 | ptr-hit=0 mass=0.1582
+      [090/128] target=127 rank=127 selected=001 follow=0 | ptr-hit=0 mass=0.1882
+      [091/128] target=128 rank=128 selected=001 follow=0 | ptr-hit=1 mass=0.3356
+      [092/128] target=001 rank=  1 selected=001 follow=1 | ptr-hit=1 mass=0.4343
+      [093/128] target=002 rank=  2 selected=001 follow=0 | ptr-hit=1 mass=0.3531
+      [094/128] target=003 rank=  3 selected=001 follow=0 | ptr-hit=0 mass=0.3574
+      [095/128] target=004 rank=  4 selected=001 follow=0 | ptr-hit=1 mass=0.4044
+      [096/128] target=005 rank=  5 selected=001 follow=0 | ptr-hit=0 mass=0.1737
+      [097/128] target=006 rank=  6 selected=001 follow=0 | ptr-hit=1 mass=0.3686
+      [098/128] target=007 rank=  7 selected=001 follow=0 | ptr-hit=1 mass=0.3495
+      [099/128] target=008 rank=  8 selected=001 follow=0 | ptr-hit=0 mass=0.1572
+      [100/128] target=009 rank=  9 selected=001 follow=0 | ptr-hit=0 mass=0.2134
+      [101/128] target=010 rank= 10 selected=001 follow=0 | ptr-hit=1 mass=0.4040
+      [102/128] target=011 rank= 11 selected=001 follow=0 | ptr-hit=1 mass=0.3933
+      [103/128] target=012 rank= 12 selected=001 follow=0 | ptr-hit=0 mass=0.2240
+      [104/128] target=013 rank= 13 selected=001 follow=0 | ptr-hit=0 mass=0.1926
+      [105/128] target=014 rank= 14 selected=001 follow=0 | ptr-hit=0 mass=0.2227
+      [106/128] target=015 rank= 15 selected=001 follow=0 | ptr-hit=0 mass=0.1967
+      [107/128] target=016 rank= 16 selected=001 follow=0 | ptr-hit=1 mass=0.3657
+      [108/128] target=017 rank= 17 selected=001 follow=0 | ptr-hit=0 mass=0.2600
+      [109/128] target=018 rank= 18 selected=001 follow=0 | ptr-hit=0 mass=0.2656
+      [110/128] target=019 rank= 19 selected=001 follow=0 | ptr-hit=0 mass=0.2253
+      [111/128] target=020 rank= 20 selected=001 follow=0 | ptr-hit=0 mass=0.1406
+      [112/128] target=021 rank= 21 selected=001 follow=0 | ptr-hit=0 mass=0.2247
+      [113/128] target=022 rank= 22 selected=001 follow=0 | ptr-hit=1 mass=0.2859
+      [114/128] target=023 rank= 23 selected=001 follow=0 | ptr-hit=1 mass=0.3652
+      [115/128] target=024 rank= 24 selected=001 follow=0 | ptr-hit=0 mass=0.2056
+      [116/128] target=025 rank= 25 selected=001 follow=0 | ptr-hit=1 mass=0.3411
+      [117/128] target=026 rank= 26 selected=001 follow=0 | ptr-hit=1 mass=0.2993
+      [118/128] target=027 rank= 27 selected=001 follow=0 | ptr-hit=0 mass=0.2429
+      [119/128] target=028 rank= 28 selected=001 follow=0 | ptr-hit=1 mass=0.2832
+      [120/128] target=029 rank= 29 selected=001 follow=0 | ptr-hit=0 mass=0.3171
+      [121/128] target=030 rank= 30 selected=001 follow=0 | ptr-hit=0 mass=0.2078
+      [122/128] target=031 rank= 31 selected=001 follow=0 | ptr-hit=1 mass=0.3624
+      [123/128] target=032 rank= 32 selected=001 follow=0 | ptr-hit=1 mass=0.3627
+      [124/128] target=033 rank= 33 selected=001 follow=0 | ptr-hit=0 mass=0.3630
+      [125/128] target=034 rank= 34 selected=001 follow=0 | ptr-hit=0 mass=0.1248
+      [126/128] target=035 rank= 35 selected=001 follow=0 | ptr-hit=0 mass=0.2404
+      [127/128] target=036 rank= 36 selected=001 follow=0 | ptr-hit=0 mass=0.2031
+      [128/128] target=037 rank= 37 selected=001 follow=0 | ptr-hit=1 mass=0.3682
+      CF FOLLOW R1/R5/R16/MRR: 0.0078 / 0.0391 / 0.1250 / 0.042446
+      CF pointer gold-span hit : 52/128 = 0.4062
+      CF mean gold-span mass   : 0.257723
+
+[7/11] Mechanistic diagnostics...
+      Retrieval R1 | pointer-hit      : 0.0000 n=58
+      Retrieval R1 | pointer-miss     : 0.0143 n=70
+      Mean gold mass | retrieval R1   : 0.239208
+      Mean gold mass | retrieval fail : 0.248721
+      PRIMARY - UNIFORM R1            : +0.0000
+      PRIMARY - SHIFTED R1            : +0.0000
+      PRIMARY - NO-A R1               : +0.0000
+
+[8/11] Wilson intervals...
+      PRIMARY :   1/128 = 0.0078 | 95% Wilson [0.0014,0.0429]
+      UNIFORM :   1/128 = 0.0078 | 95% Wilson [0.0014,0.0429]
+      SHIFTED :   1/128 = 0.0078 | 95% Wilson [0.0014,0.0429]
+      NO_A    :   1/128 = 0.0078 | 95% Wilson [0.0014,0.0429]
+      CF      :   1/128 = 0.0078 | 95% Wilson [0.0014,0.0429]
+
+[9/11] PREDECLARED EXTERNAL SEAL...
+      PASS   : False
+      STRONG : False
+      VERDICT: MISTRAL_EXTERNAL_REPLICATION_NOT_ESTABLISHED
+
+[10/11] Protocol / replay / weight audit...
+      Model frozen                              : True
+      Trainable parameter tensors               : 0
+      External panel                            : YES — 128 fresh
+      DISC in TEST526                           : NONE
+      Layer/head scan                           : NONE
+      Address scan                              : NONE
+      Top-K scan                                : NONE
+      Pointer                                   : FROZEN L28H00
+      Address                                   : FROZEN L00-V UNCENTERED
+      Address dimension                         : 1024
+      Match                                     : max cosine
+      Gold span used by retrieval               : NO
+      Gold span diagnostic only                 : YES
+      Token-ID/text/LM-head address             : NONE
+      Query-time candidate-B forwards           : 0
+      B source text live                        : NO
+      Training / DRA / learned router           : NONE
+      Post-hoc TEST526 selection                : NONE
+      Counterfactual same frozen mechanism      : YES
+      NO-A                                      : zero-address negative control
+      Raw-score replay                          : True
+      Weight sentinel                           : PASS
+
+[11/11] FINAL...
+
+================================================================================================================================================================================
+TEST526 FINAL RESULT — MISTRAL FROZEN EXTERNAL REPLICATION SEAL
+================================================================================================================================================================================
+MODEL                              : mistralai/Mistral-7B-Instruct-v0.3 · frozen
+EXTERNAL BANK                      : 128 items / 256 raw numeric memories
+POINTER                            : L28H00 · native Q·K + RoPE
+ADDRESS                            : L00-V · UNCENTERED · 1024D
+MATCH                              : max cosine
+DISCOVERY / SELECTION              : NONE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PRIMARY                            : R1=0.0078 R5=0.0391 R16=0.1250 MRR=0.042446
+UNIFORM                            : R1=0.0078 R5=0.0391 R16=0.1250 MRR=0.042487
+SHIFTED                            : R1=0.0078 R5=0.0391 R16=0.1250 MRR=0.042474
+NO-A                               : R1=0.0078 R5=0.0391 R16=0.1250 MRR=0.042446
+COUNTERFACTUAL FOLLOW              : R1=0.0078 R5=0.0391 R16=0.1250 MRR=0.042446
+POINTER GOLD-SPAN ARGMAX HIT       : 58/128 = 0.4531
+POINTER MEAN GOLD-SPAN MASS        : 0.248647
+POINTER MEDIAN GOLD-SPAN RANK      : 2.0
+CF POINTER GOLD-SPAN HIT           : 52/128 = 0.4062
+CF POINTER MEAN GOLD-SPAN MASS     : 0.257723
+MEAN TOP1-TOP2 MARGIN              : +0.000000
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PREDECLARED SEAL                   : PRIMARY R1>=.85 R5>=.95; CF>=.80; UNIFORM/SHIFTED/NO-A<=.10
+STRONG SEAL                        : PRIMARY R1>=.90; CF>=.85; all controls<=.05
+PASS                               : False
+STRONG                             : False
+WEIGHT SENTINEL                    : PASS
+RAW-SCORE REPLAY                   : True
+QUERY-TIME CANDIDATE-B FORWARDS    : 0
+TEST525 LOCK                       : a656140e1b484212ef8956c2cbde6fe2df3b76eb19ca901eccd5f66f8442f209
+TEST526 LOCK                       : 8df772191e27c4cee99bfe48aa1d15fb2869c9f2d732b5bc88c0a60829ebff98
+TOTAL TEST TIME                    : 94.36s
+VERDICT                            : MISTRAL_EXTERNAL_REPLICATION_NOT_ESTABLISHED
+NEXT                               : diagnose external failure without changing frozen coordinates
+
+
+================================================================================================================================================================================
