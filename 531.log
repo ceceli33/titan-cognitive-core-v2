@@ -1,0 +1,282 @@
+ ================================================================================================================================================================================
+TEST531 — AKBASCORE MAM · VARAN 1 FINAL · UNTOUCHED MULTI-TOKEN IDENTITY VALIDATION
+FRESH N=1024 · L=2/3/4 · FROZEN L28H00 → L00-V · LOCKED CONCATCOS · NO SELECTION / NO TUNING
+================================================================================================================================================================================
+
+[1/12] Loading frozen Mistral...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 601/601 [00:00<00:00, 67.8kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 16.6MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 50.2MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 58.1kB/s  tokenizer.model: downloading bytes:   448kB, 44.3kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 50.0kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 3.05MB/s]Download complete:  12.4GB, 1.07GB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  452MB/s  Fetching 3 files: 100% 3/3 [00:40<00:00, 40.36s/it]Loading weights: 100% 291/291 [00:03<00:00, 80.18it/s]generation_config.json: 100% 116/116 [00:00<00:00, 14.0kB/s]      mistralai/Mistral-7B-Instruct-v0.3 | NVIDIA A100-SXM4-40GB
+      32L H=4096 QH=32 KVH=8 HD=128 ADDRESS=1024
+      POINTER : L28H00 · FROZEN
+      ADDRESS : L00-V UNCENTERED · FROZEN
+      MATCH   : CONCATCOS · FROZEN BEFORE TEST531
+      PANEL   : 1024 fresh identities · L=2/3/4
+      MODEL   : frozen · BF16 · SDPA · trainable=0
+      Native model-token atom pool: 220
+
+[2/12] Building fresh deterministic identity panel...
+      Required identity pools: {2: 1774, 3: 1769, 4: 1769}
+      Generated identity pools: {2: 1774, 3: 1769, 4: 1769}
+      L=2: 342
+      L=3: 341
+      L=4: 341
+      Remaining reserve: {2: 64, 3: 64, 4: 64}
+      Fresh deterministic seed: 531531
+      TEST531 LOCK: 759eaa59596902eb647285fed14a8eb6d649c9e0695eea6deb509cd06dad4e60
+
+[3/12] OFFLINE FORGE — fresh A/B memories...
+      forged   64/1024
+      forged  128/1024
+      forged  192/1024
+      forged  256/1024
+      forged  320/1024
+      forged  384/1024
+      forged  448/1024
+      forged  512/1024
+      forged  576/1024
+      forged  640/1024
+      forged  704/1024
+      forged  768/1024
+      forged  832/1024
+      forged  896/1024
+      forged  960/1024
+      forged 1024/1024
+      A memories: 1024
+      B memories: 1024
+      Query-time candidate-B forwards: 0
+
+[4/12] Building locked CONCATCOS candidate banks...
+      L=2 windows: 13680 | shape=(13680, 2, 1024)
+      L=3 windows: 14322 | shape=(14322, 3, 1024)
+      L=4 windows: 15004 | shape=(15004, 4, 1024)
+      Every contiguous B window of matching length indexed.
+      Gold B position used: NO
+
+[5/12] PRIMARY — locked CONCATCOS only...
+      [0001/1024] L=2 start= 20 gold= 20 rank=   1 sel=0001 ptr=1 mass=0.7029 margin=+0.204588
+      [0002/1024] L=3 start= 23 gold= 23 rank=   1 sel=0002 ptr=1 mass=0.9659 margin=+0.405582
+      [0003/1024] L=4 start=  9 gold=  9 rank=   1 sel=0003 ptr=1 mass=0.8178 margin=+0.406536
+      [0004/1024] L=2 start= 32 gold= 32 rank=   1 sel=0004 ptr=1 mass=0.9781 margin=+0.243172
+      [0005/1024] L=3 start=  8 gold=  8 rank=   1 sel=0005 ptr=1 mass=0.8896 margin=+0.334723
+      [0006/1024] L=4 start= 35 gold= 35 rank=   1 sel=0006 ptr=1 mass=0.8577 margin=+0.308446
+      [0007/1024] L=2 start=  8 gold=  8 rank=   1 sel=0007 ptr=1 mass=0.9786 margin=+0.218496
+      [0008/1024] L=3 start= 21 gold= 21 rank=   1 sel=0008 ptr=1 mass=0.9702 margin=+0.339905
+      [0016/1024] L=2 start= 30 gold= 30 rank=   1 sel=0016 ptr=1 mass=0.9702 margin=+0.210649
+      [0032/1024] L=3 start= 33 gold= 33 rank=   1 sel=0032 ptr=1 mass=0.8283 margin=+0.352867
+      [0048/1024] L=4 start=  9 gold=  9 rank=   1 sel=0048 ptr=1 mass=0.7982 margin=+0.355752
+      [0064/1024] L=2 start=  9 gold=  9 rank=   1 sel=0064 ptr=1 mass=0.8783 margin=+0.285881
+      [0080/1024] L=3 start=  9 gold=  9 rank=   1 sel=0080 ptr=1 mass=0.8272 margin=+0.152831
+      [0096/1024] L=4 start= 34 gold= 34 rank=   1 sel=0096 ptr=1 mass=0.9682 margin=+0.400898
+      [0112/1024] L=2 start=  8 gold=  8 rank=   1 sel=0112 ptr=1 mass=0.6016 margin=+0.218083
+      [0128/1024] L=3 start= 21 gold= 21 rank=   1 sel=0128 ptr=1 mass=0.8588 margin=+0.314408
+      [0144/1024] L=4 start=  8 gold=  9 rank=   1 sel=0144 ptr=0 mass=0.3508 margin=+0.247989
+      [0160/1024] L=2 start= 31 gold= 31 rank=   1 sel=0160 ptr=1 mass=0.9304 margin=+0.234230
+      [0176/1024] L=3 start= 21 gold= 21 rank=   1 sel=0176 ptr=1 mass=0.7165 margin=+0.346810
+      [0192/1024] L=4 start= 21 gold= 21 rank=   1 sel=0192 ptr=1 mass=0.9371 margin=+0.335293
+      [0208/1024] L=2 start=  9 gold=  9 rank=   1 sel=0208 ptr=1 mass=0.9678 margin=+0.275813
+      [0224/1024] L=3 start=  9 gold=  9 rank=   1 sel=0224 ptr=1 mass=0.9292 margin=+0.365327
+      [0240/1024] L=4 start=  9 gold=  9 rank=   1 sel=0240 ptr=1 mass=0.9074 margin=+0.372244
+      [0256/1024] L=2 start= 31 gold= 31 rank=   1 sel=0256 ptr=1 mass=0.8621 margin=+0.256794
+      [0272/1024] L=3 start= 21 gold= 21 rank=   1 sel=0272 ptr=1 mass=0.9770 margin=+0.196569
+      [0288/1024] L=4 start= 35 gold= 35 rank=   1 sel=0288 ptr=1 mass=0.9336 margin=+0.389976
+      [0304/1024] L=2 start=  9 gold=  9 rank=   1 sel=0304 ptr=1 mass=0.9478 margin=+0.252943
+      [0320/1024] L=3 start=  9 gold=  9 rank=   1 sel=0320 ptr=1 mass=0.9059 margin=+0.401407
+      [0336/1024] L=4 start=  9 gold=  9 rank=   1 sel=0336 ptr=1 mass=0.8693 margin=+0.295186
+      [0352/1024] L=2 start= 31 gold= 31 rank=   1 sel=0352 ptr=1 mass=0.9859 margin=+0.139180
+      [0368/1024] L=3 start=  9 gold=  9 rank=   1 sel=0368 ptr=1 mass=0.9260 margin=+0.338476
+      [0384/1024] L=4 start= 35 gold= 35 rank=   1 sel=0384 ptr=1 mass=0.9902 margin=+0.380253
+      [0400/1024] L=2 start=  8 gold=  8 rank=   1 sel=0400 ptr=1 mass=0.9488 margin=+0.284747
+      [0416/1024] L=3 start= 32 gold= 32 rank=   1 sel=0416 ptr=1 mass=0.9667 margin=+0.288476
+      [0432/1024] L=4 start=  9 gold=  9 rank=   1 sel=0432 ptr=1 mass=0.9620 margin=+0.351704
+      [0448/1024] L=2 start=  9 gold=  9 rank=   1 sel=0448 ptr=1 mass=0.8639 margin=+0.247182
+      [0464/1024] L=3 start=  9 gold=  9 rank=   1 sel=0464 ptr=1 mass=0.9854 margin=+0.309584
+      [0480/1024] L=4 start= 35 gold= 35 rank=   1 sel=0480 ptr=1 mass=0.9151 margin=+0.403637
+      [0496/1024] L=2 start=  9 gold=  8 rank= 207 sel=0346 ptr=1 mass=0.9590 margin=+0.000000
+      [0512/1024] L=3 start= 33 gold= 33 rank=   1 sel=0512 ptr=1 mass=0.9842 margin=+0.149090
+      [0528/1024] L=4 start= 22 gold= 22 rank=   1 sel=0528 ptr=1 mass=0.8396 margin=+0.278707
+      [0544/1024] L=2 start= 20 gold= 20 rank=   1 sel=0544 ptr=1 mass=0.9378 margin=+0.272534
+      [0560/1024] L=3 start=  9 gold=  9 rank=   1 sel=0560 ptr=1 mass=0.9665 margin=+0.342896
+      [0576/1024] L=4 start=  9 gold=  9 rank=   1 sel=0576 ptr=1 mass=0.9202 margin=+0.375013
+      [0592/1024] L=2 start= 20 gold= 20 rank=   1 sel=0592 ptr=1 mass=0.9312 margin=+0.255598
+      [0608/1024] L=3 start=  9 gold=  9 rank=   1 sel=0608 ptr=1 mass=0.7085 margin=+0.387962
+      [0624/1024] L=4 start= 35 gold= 35 rank=   1 sel=0624 ptr=1 mass=0.9894 margin=+0.394378
+      [0640/1024] L=2 start=  9 gold=  9 rank=   1 sel=0640 ptr=1 mass=0.8769 margin=+0.275600
+      [0656/1024] L=3 start= 31 gold= 31 rank=   1 sel=0656 ptr=1 mass=0.9633 margin=+0.362451
+      [0672/1024] L=4 start= 35 gold= 35 rank=   1 sel=0672 ptr=1 mass=0.8959 margin=+0.408788
+      [0688/1024] L=2 start=  9 gold=  9 rank=   1 sel=0688 ptr=1 mass=0.9436 margin=+0.221843
+      [0704/1024] L=3 start= 21 gold= 21 rank=   1 sel=0704 ptr=1 mass=0.7434 margin=+0.358883
+      [0720/1024] L=4 start= 32 gold= 32 rank=   1 sel=0720 ptr=1 mass=0.9894 margin=+0.420239
+      [0736/1024] L=2 start=  9 gold=  9 rank=   1 sel=0736 ptr=1 mass=0.9851 margin=+0.220785
+      [0752/1024] L=3 start= 31 gold= 31 rank=   1 sel=0752 ptr=1 mass=0.9207 margin=+0.346321
+      [0768/1024] L=4 start= 35 gold= 35 rank=   1 sel=0768 ptr=1 mass=0.8562 margin=+0.417910
+      [0784/1024] L=2 start= 20 gold= 20 rank=   1 sel=0784 ptr=1 mass=0.9162 margin=+0.258504
+      [0800/1024] L=3 start=  8 gold=  8 rank=   1 sel=0800 ptr=1 mass=0.7708 margin=+0.323945
+      [0816/1024] L=4 start= 22 gold= 22 rank=   1 sel=0816 ptr=1 mass=0.9469 margin=+0.388125
+      [0832/1024] L=2 start= 31 gold= 31 rank=   1 sel=0832 ptr=1 mass=0.9761 margin=+0.278727
+      [0848/1024] L=3 start= 34 gold= 34 rank=   1 sel=0848 ptr=1 mass=0.9109 margin=+0.346729
+      [0864/1024] L=4 start= 22 gold= 22 rank=   1 sel=0864 ptr=1 mass=0.8551 margin=+0.415194
+      [0880/1024] L=2 start= 19 gold= 19 rank=   1 sel=0880 ptr=1 mass=0.9413 margin=+0.241177
+      [0896/1024] L=3 start= 22 gold= 22 rank=   1 sel=0896 ptr=1 mass=0.9365 margin=+0.347042
+      [0912/1024] L=4 start= 22 gold= 22 rank=   1 sel=0912 ptr=1 mass=0.9402 margin=+0.277234
+      [0928/1024] L=2 start= 30 gold= 30 rank=   1 sel=0928 ptr=1 mass=0.8541 margin=+0.227755
+      [0944/1024] L=3 start= 34 gold= 34 rank=   1 sel=0944 ptr=1 mass=0.9487 margin=+0.344330
+      [0960/1024] L=4 start=  9 gold=  9 rank=   1 sel=0960 ptr=1 mass=0.9824 margin=+0.343142
+      [0976/1024] L=2 start= 20 gold= 20 rank=   1 sel=0976 ptr=1 mass=0.7732 margin=+0.252812
+      [0992/1024] L=3 start=  8 gold=  8 rank=   1 sel=0992 ptr=1 mass=0.8792 margin=+0.350543
+      [1008/1024] L=4 start= 22 gold= 22 rank=   1 sel=1008 ptr=1 mass=0.8545 margin=+0.383672
+      [1024/1024] L=2 start= 19 gold= 19 rank=   1 sel=1024 ptr=1 mass=0.8036 margin=+0.268807
+      PRIMARY R1/R5/R16/MRR : 0.9824/0.9834/0.9844/0.983123
+      L=2 R1/R5/MRR       : 0.9766/0.9766/0.976788 n=342
+      L=3 R1/R5/MRR       : 0.9883/0.9912/0.989794 n=341
+      L=4 R1/R5/MRR       : 0.9824/0.9824/0.982804 n=341
+      POINTER HIT            : 0.9912
+      POINTER MASS           : 0.885546
+      MEAN MARGIN            : +0.306091
+
+[6/12] NEGATIVE CONTROLS...
+      PRIMARY : R1=0.9824 R5=0.9834
+      SHIFTED : R1=0.0078 R5=0.0186
+      NO-A    : R1=0.0020 R5=0.0039
+
+[7/12] COUNTERFACTUAL FOLLOW...
+      [0001/1024] L=4 target=0354 rank=   1 sel=0354 ptr=1 mass=0.9852
+      [0002/1024] L=2 target=0355 rank=  10 sel=0346 ptr=1 mass=0.7434
+      [0003/1024] L=3 target=0356 rank=   1 sel=0356 ptr=1 mass=0.9863
+      [0004/1024] L=4 target=0357 rank=   1 sel=0357 ptr=1 mass=0.9291
+      [0005/1024] L=2 target=0358 rank=   1 sel=0358 ptr=1 mass=0.9494
+      [0032/1024] L=2 target=0385 rank=   1 sel=0385 ptr=1 mass=0.8738
+      [0064/1024] L=4 target=0417 rank=   1 sel=0417 ptr=1 mass=0.9829
+      [0096/1024] L=3 target=0449 rank=   1 sel=0449 ptr=1 mass=0.8993
+      [0128/1024] L=2 target=0481 rank=   1 sel=0481 ptr=1 mass=0.8895
+      [0160/1024] L=4 target=0513 rank=   1 sel=0513 ptr=1 mass=0.5901
+      [0192/1024] L=3 target=0545 rank=   1 sel=0545 ptr=1 mass=0.9600
+      [0224/1024] L=2 target=0577 rank=   1 sel=0577 ptr=1 mass=0.3785
+      [0256/1024] L=4 target=0609 rank=   1 sel=0609 ptr=1 mass=0.9431
+      [0288/1024] L=3 target=0641 rank=   1 sel=0641 ptr=1 mass=0.7751
+      [0320/1024] L=2 target=0673 rank=   1 sel=0673 ptr=1 mass=0.9688
+      [0352/1024] L=4 target=0705 rank=   1 sel=0705 ptr=1 mass=0.5925
+      [0384/1024] L=3 target=0737 rank=   1 sel=0737 ptr=1 mass=0.8186
+      [0416/1024] L=2 target=0769 rank=   1 sel=0769 ptr=1 mass=0.8778
+      [0448/1024] L=4 target=0801 rank=   1 sel=0801 ptr=1 mass=0.9256
+      [0480/1024] L=3 target=0833 rank=   1 sel=0833 ptr=1 mass=0.8864
+      [0512/1024] L=2 target=0865 rank=   1 sel=0865 ptr=1 mass=0.7144
+      [0544/1024] L=4 target=0897 rank=   1 sel=0897 ptr=1 mass=0.9493
+      [0576/1024] L=3 target=0929 rank=   1 sel=0929 ptr=1 mass=0.9794
+      [0608/1024] L=2 target=0961 rank=   1 sel=0961 ptr=1 mass=0.8202
+      [0640/1024] L=4 target=0993 rank=   1 sel=0993 ptr=1 mass=0.9075
+      [0672/1024] L=2 target=0001 rank=   1 sel=0001 ptr=1 mass=0.9725
+      [0704/1024] L=4 target=0033 rank=   1 sel=0033 ptr=1 mass=0.9672
+      [0736/1024] L=3 target=0065 rank=   1 sel=0065 ptr=1 mass=0.8894
+      [0768/1024] L=2 target=0097 rank=   1 sel=0097 ptr=1 mass=0.8688
+      [0800/1024] L=4 target=0129 rank=   1 sel=0129 ptr=1 mass=0.9049
+      [0832/1024] L=3 target=0161 rank=   1 sel=0161 ptr=1 mass=0.9537
+      [0864/1024] L=2 target=0193 rank=   1 sel=0193 ptr=1 mass=0.9096
+      [0896/1024] L=4 target=0225 rank=   1 sel=0225 ptr=1 mass=0.9648
+      [0928/1024] L=3 target=0257 rank=   1 sel=0257 ptr=1 mass=0.8937
+      [0960/1024] L=2 target=0289 rank=   1 sel=0289 ptr=1 mass=0.9309
+      [0992/1024] L=4 target=0321 rank=   1 sel=0321 ptr=1 mass=0.4878
+      [1024/1024] L=3 target=0353 rank=   1 sel=0353 ptr=1 mass=0.9048
+      CF R1/R5/R16/MRR : 0.9805/0.9805/0.9824/0.980800
+      CF POINTER HIT    : 0.9912
+      CF POINTER MASS   : 0.881303
+
+[8/12] FAILURE / LENGTH DIAGNOSTICS...
+      L=2 failures: 8/342
+      L=3 failures: 4/341
+      L=4 failures: 6/341
+      Overall failures       : 18/1024
+      Primary failure IDs    : [172, 451, 477, 496, 509, 545, 568, 699, 716, 738, 789, 808, 941, 946, 949, 987, 1015, 1017]
+      CF failure IDs         : [2, 85, 89, 98, 124, 175, 303, 340, 476, 560, 584, 593, 596, 634, 662, 696, 710, 765, 897, 995]
+      Unique selections      : 1006/1024
+
+[9/12] STATISTICAL SUMMARY...
+      PRIMARY : 1006/1024 = 0.9824 | 95% Wilson [0.9724,0.9889]
+      L2      :  334/ 342 = 0.9766 | 95% Wilson [0.9545,0.9881]
+      L3      :  337/ 341 = 0.9883 | 95% Wilson [0.9702,0.9954]
+      L4      :  335/ 341 = 0.9824 | 95% Wilson [0.9622,0.9919]
+      SHIFTED :    8/1024 = 0.0078 | 95% Wilson [0.0040,0.0153]
+      NO_A    :    2/1024 = 0.0020 | 95% Wilson [0.0005,0.0071]
+      CF      : 1004/1024 = 0.9805 | 95% Wilson [0.9700,0.9873]
+
+[10/12] PREDECLARED VARAN-1 FINAL GATES...
+      OVERALL_R1              : PASS
+      OVERALL_R5              : FAIL
+      L2_R1                   : PASS
+      L3_R1                   : PASS
+      L4_R1                   : PASS
+      COUNTERFACTUAL_R1       : PASS
+      POINTER_HIT             : PASS
+      CF_POINTER_HIT          : PASS
+      SHIFTED_R1              : PASS
+      NOA_R1                  : PASS
+
+[11/12] PROTOCOL AUDIT...
+      Weight sentinel                     : PASS
+      Trainable tensors                   : 0
+      Pointer                             : L28H00 frozen
+      Address                             : L00-V uncentered frozen
+      Match                               : CONCATCOS frozen from TEST530
+      Alternative arms tested             : NO
+      Head/layer/address discovery        : NONE
+      Threshold tuning                    : NONE
+      Gold span used for retrieval        : NO
+      Pointer argmax determines A start   : YES
+      All matching-length B windows       : YES
+      Gold B position used                : NO
+      Token-ID routing                    : NO
+      Decoded identity routing            : NO
+      Query-time candidate-B forwards     : 0
+      Training / LoRA / optimizer / DRA   : NONE
+      Learned router/scorer               : NONE
+      Post-hoc mechanism selection        : NONE
+
+[12/12] FINAL...
+
+================================================================================================================================================================================
+TEST531 FINAL RESULT — AKBASCORE MAM · VARAN 1 FINAL
+================================================================================================================================================================================
+MODEL                              : mistralai/Mistral-7B-Instruct-v0.3 · frozen
+EXTERNAL PANEL                     : 1024 fresh deterministic identities
+POINTER                            : L28H00 · FROZEN
+ADDRESS                            : L00-V · UNCENTERED · 1024D · FROZEN
+IDENTITY                           : ORDERED MODEL-NATIVE 2/3/4 TOKEN
+MATCH                              : LOCKED CONCATCOS
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PRIMARY                            : R1=0.9824 R5=0.9834 R16=0.9844 MRR=0.983123
+L=2                                : R1=0.9766 R5=0.9766 R16=0.9766 MRR=0.976788
+L=3                                : R1=0.9883 R5=0.9912 R16=0.9912 MRR=0.989794
+L=4                                : R1=0.9824 R5=0.9824 R16=0.9853 MRR=0.982804
+COUNTERFACTUAL                     : R1=0.9805 R5=0.9805 R16=0.9824 MRR=0.980800
+SHIFTED                            : R1=0.0078 R5=0.0186 R16=0.0420 MRR=0.023317
+NO-A                               : R1=0.0020 R5=0.0039 R16=0.0186 MRR=0.007558
+POINTER HIT                        : 0.9912
+POINTER MASS                       : 0.885546
+CF POINTER HIT                     : 0.9912
+CF POINTER MASS                    : 0.881303
+MEAN TOP1-TOP2 MARGIN              : +0.306091
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+OVERALL_R1                         : PASS
+OVERALL_R5                         : FAIL
+L2_R1                              : PASS
+L3_R1                              : PASS
+L4_R1                              : PASS
+COUNTERFACTUAL_R1                  : PASS
+POINTER_HIT                        : PASS
+CF_POINTER_HIT                     : PASS
+SHIFTED_R1                         : PASS
+NOA_R1                             : PASS
+WEIGHT_SENTINEL                    : PASS
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+WEIGHT SENTINEL                    : PASS
+QUERY-TIME CANDIDATE-B FORWARDS    : 0
+TEST528 RESULT SHA                 : 9235ed38c944f41a9ede0426d3aabaa12b5b20646f30e2be921e618f9471d3c2
+TEST529 RESULT SHA                 : 27ba703872f0d8a6ed870a6ba041d0cd0703d2eca467deac97186a90497795a0
+TEST530 RESULT SHA                 : 289247c88dfd4358cbe5ffb8499891546b27acc6912caf525a155ae81338db7b
+TEST531 PRE-RESULT LOCK            : 759eaa59596902eb647285fed14a8eb6d649c9e0695eea6deb509cd06dad4e60
+TEST531 RESULT SHA                 : 20257d7d613a49e55b03603946f07ec493009924f40ac26ab74cb817e1466528
+TOTAL TEST TIME                    : 362.96s
+VERDICT                            : MISTRAL_MAM_VARAN1_FINAL_FAIL
+STATUS                             : VARAN 1 NOT SEALED
+NEXT                               : preserve TEST531 unchanged; diagnose only in a new test
+================================================================================================================================================================================
