@@ -1,0 +1,254 @@
+ ================================================================================================================================================================================
+TEST538 — AKBASCORE MAM · VARAN 1 · UNKNOWN-LENGTH GLOBAL-BANK MECHANISM VALIDATION
+TEST537 LAW FROZEN · L NOT SUPPLIED · L2/L3/L4 GLOBAL COMPETITION · NO LENGTH ROUTER
+================================================================================================================================================================================
+
+[1/12] Loading frozen Mistral...
+config.json: 100% 601/601 [00:00<00:00, 52.5kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 141k/141k [00:00<00:00, 15.7MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 39.6MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 58.4kB/s  tokenizer.model: downloading bytes:   448kB, 44.5kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 52.5kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 3.06MB/s]Download complete:  12.4GB,  521MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  517MB/s  Fetching 3 files: 100% 3/3 [00:40<00:00, 40.95s/it]Loading weights: 100% 291/291 [00:03<00:00, 80.92it/s]generation_config.json: 100% 116/116 [00:00<00:00, 16.2kB/s]      mistralai/Mistral-7B-Instruct-v0.3 | NVIDIA A100-SXM4-40GB
+      32L H=4096 QH=32 KVH=8 HD=128 ADDRESS=1024
+      POINTER : L28H00 · FROZEN
+      ADDRESS : L00-V UNCENTERED · FROZEN
+      MATCH   : CONCATCOS · LOCKED
+      TOPK    : 8 · FROZEN
+      LAW     : log(pointer)-log(max(1-CONCATCOS,float32_eps)) · FROZEN
+      LENGTH  : UNKNOWN TO RETRIEVAL
+      BANK    : GLOBAL L2+L3+L4 OWNER COMPETITION
+      MODEL   : frozen · BF16 · SDPA · trainable=0
+      Native model-token atom pool: 220
+
+[2/12] Reconstructing exact sealed development panel...
+      Required identity pools: {2: 1774, 3: 1769, 4: 1769}
+      L=2: 342
+      L=3: 341
+      L=4: 341
+      Remaining reserve: {2: 64, 3: 64, 4: 64}
+      Development panel seed: 531531
+      TEST538 LOCK: a5e9cc54ca196f28272d2453758881b2bdc6928e4aa608e2043789eaf00253b4
+
+[3/12] OFFLINE FORGE — exact A/B construction...
+      forged   64/1024
+      forged  128/1024
+      forged  192/1024
+      forged  256/1024
+      forged  320/1024
+      forged  384/1024
+      forged  448/1024
+      forged  512/1024
+      forged  576/1024
+      forged  640/1024
+      forged  704/1024
+      forged  768/1024
+      forged  832/1024
+      forged  896/1024
+      forged  960/1024
+      forged 1024/1024
+      A memories: 1024
+      B memories: 1024
+      Query-time candidate-B forwards: 0
+
+[4/12] Building frozen length banks for GLOBAL owner competition...
+      L=2 windows: 13680 | shape=(13680, 2, 1024)
+      L=3 windows: 14322 | shape=(14322, 3, 1024)
+      L=4 windows: 15004 | shape=(15004, 4, 1024)
+      Retrieval receives L       : NO
+      All candidate lengths tried: 2,3,4
+      Final owner ranking         : GLOBAL 1024-way
+
+[5/12] PRIMARY — UNKNOWN LENGTH · GLOBAL L2/L3/L4 COMPETITION...
+      [0001/1024] trueL=2 predL=2 rank=   1 sel=0001 origin= 20 peak= 20
+      [0002/1024] trueL=3 predL=3 rank=   1 sel=0002 origin= 23 peak= 23
+      [0003/1024] trueL=4 predL=4 rank=   1 sel=0003 origin=  9 peak=  9
+      [0004/1024] trueL=2 predL=2 rank=   1 sel=0004 origin= 32 peak= 32
+      [0005/1024] trueL=3 predL=3 rank=   1 sel=0005 origin=  8 peak=  8
+      [0006/1024] trueL=4 predL=4 rank=   1 sel=0006 origin= 35 peak= 35
+      [0007/1024] trueL=2 predL=2 rank=   1 sel=0007 origin=  8 peak=  8
+      [0008/1024] trueL=3 predL=3 rank=   1 sel=0008 origin= 21 peak= 21
+      [0009/1024] trueL=4 predL=2 rank=   2 sel=0982 origin=  9 peak=  9
+      [0064/1024] trueL=2 predL=2 rank=   1 sel=0064 origin=  9 peak=  9
+      [0128/1024] trueL=3 predL=3 rank=   1 sel=0128 origin= 21 peak= 21
+      [0192/1024] trueL=4 predL=4 rank=   1 sel=0192 origin= 21 peak= 21
+      [0256/1024] trueL=2 predL=2 rank=   1 sel=0256 origin= 31 peak= 31
+      [0303/1024] trueL=4 predL=2 rank=   2 sel=0136 origin= 22 peak= 22
+      [0320/1024] trueL=3 predL=3 rank=   1 sel=0320 origin=  9 peak=  9
+      [0384/1024] trueL=4 predL=4 rank=   1 sel=0384 origin= 35 peak= 35
+      [0399/1024] trueL=4 predL=2 rank=   2 sel=0610 origin= 22 peak= 22
+      [0410/1024] trueL=3 predL=2 rank=   2 sel=0283 origin=  9 peak=  9
+      [0448/1024] trueL=2 predL=2 rank=   1 sel=0448 origin=  9 peak=  9
+      [0486/1024] trueL=4 predL=2 rank=   2 sel=0673 origin=  9 peak=  9
+      [0512/1024] trueL=3 predL=3 rank=   1 sel=0512 origin= 33 peak= 33
+      [0576/1024] trueL=4 predL=4 rank=   1 sel=0576 origin=  9 peak=  9
+      [0615/1024] trueL=4 predL=2 rank=   2 sel=0121 origin= 22 peak= 22
+      [0617/1024] trueL=3 predL=2 rank=   2 sel=0427 origin= 21 peak= 21
+      [0640/1024] trueL=2 predL=2 rank=   1 sel=0640 origin=  9 peak=  9
+      [0656/1024] trueL=3 predL=2 rank=   2 sel=0226 origin= 31 peak= 31
+      [0704/1024] trueL=3 predL=3 rank=   1 sel=0704 origin= 21 peak= 21
+      [0768/1024] trueL=4 predL=4 rank=   1 sel=0768 origin= 35 peak= 35
+      [0794/1024] trueL=3 predL=2 rank=   2 sel=0619 origin= 22 peak= 22
+      [0832/1024] trueL=2 predL=2 rank=   1 sel=0832 origin= 31 peak= 31
+      [0885/1024] trueL=4 predL=2 rank=   2 sel=0202 origin= 35 peak= 35
+      [0896/1024] trueL=3 predL=3 rank=   1 sel=0896 origin= 22 peak= 22
+      [0932/1024] trueL=3 predL=2 rank=   2 sel=0967 origin= 33 peak= 33
+      [0960/1024] trueL=4 predL=4 rank=   1 sel=0960 origin=  9 peak=  9
+      [1024/1024] trueL=2 predL=2 rank=   1 sel=1024 origin= 19 peak= 19
+      GLOBAL UNKNOWN-LENGTH : R1=0.9893 R5=1.0000 R16=1.0000 MRR=0.994629
+      TRUE L=2: R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      TRUE L=3: R1=0.9853 R5=1.0000 R16=1.0000 MRR=0.992669
+      TRUE L=4: R1=0.9824 R5=1.0000 R16=1.0000 MRR=0.991202
+      Failures: 11 / 1024
+      Failure IDs: [9, 303, 399, 410, 486, 615, 617, 656, 794, 885, 932]
+
+[6/12] PRIMARY LENGTH DIAGNOSTIC — POST-HOC ONLY...
+      rows=true L, cols=selected-owner L [2,3,4]
+      L=2: [342, 0, 0]
+      L=3: [5, 336, 0]
+      L=4: [6, 0, 335]
+      Selected owner length correct: 1013 / 1024
+
+[7/12] COUNTERFACTUAL — UNKNOWN LENGTH · GLOBAL L2/L3/L4 COMPETITION...
+      [0001/1024] target=0354 trueL=4 predL=4 rank=   1 sel=0354 origin= 35 peak= 35
+      [0002/1024] target=0355 trueL=2 predL=2 rank=   1 sel=0355 origin= 10 peak= 11
+      [0003/1024] target=0356 trueL=3 predL=3 rank=   1 sel=0356 origin= 32 peak= 32
+      [0004/1024] target=0357 trueL=4 predL=4 rank=   1 sel=0357 origin= 23 peak= 23
+      [0005/1024] target=0358 trueL=2 predL=2 rank=   1 sel=0358 origin= 30 peak= 30
+      [0046/1024] target=0399 trueL=4 predL=2 rank=   2 sel=0610 origin= 35 peak= 35
+      [0057/1024] target=0410 trueL=3 predL=2 rank=   2 sel=0283 origin= 33 peak= 33
+      [0064/1024] target=0417 trueL=4 predL=4 rank=   1 sel=0417 origin= 34 peak= 34
+      [0128/1024] target=0481 trueL=2 predL=2 rank=   1 sel=0481 origin=  9 peak=  9
+      [0133/1024] target=0486 trueL=4 predL=2 rank=   2 sel=0673 origin= 36 peak= 36
+      [0192/1024] target=0545 trueL=3 predL=3 rank=   1 sel=0545 origin= 32 peak= 32
+      [0256/1024] target=0609 trueL=4 predL=4 rank=   1 sel=0609 origin= 22 peak= 22
+      [0262/1024] target=0615 trueL=4 predL=2 rank=   2 sel=0121 origin= 35 peak= 35
+      [0264/1024] target=0617 trueL=3 predL=2 rank=   2 sel=0427 origin= 22 peak= 22
+      [0303/1024] target=0656 trueL=3 predL=2 rank=   2 sel=0226 origin= 21 peak= 22
+      [0320/1024] target=0673 trueL=2 predL=2 rank=   1 sel=0673 origin= 20 peak= 20
+      [0384/1024] target=0737 trueL=3 predL=3 rank=   1 sel=0737 origin= 21 peak= 21
+      [0441/1024] target=0794 trueL=3 predL=2 rank=   2 sel=0619 origin= 34 peak= 34
+      [0448/1024] target=0801 trueL=4 predL=4 rank=   1 sel=0801 origin= 21 peak= 21
+      [0462/1024] target=0815 trueL=3 predL=2 rank=   2 sel=0586 origin=  9 peak=  9
+      [0512/1024] target=0865 trueL=2 predL=2 rank=   1 sel=0865 origin= 20 peak= 20
+      [0532/1024] target=0885 trueL=4 predL=2 rank=   2 sel=0202 origin= 23 peak= 23
+      [0540/1024] target=0893 trueL=3 predL=2 rank=   2 sel=0124 origin= 10 peak= 10
+      [0576/1024] target=0929 trueL=3 predL=3 rank=   1 sel=0929 origin=  9 peak=  9
+      [0579/1024] target=0932 trueL=3 predL=2 rank=   2 sel=0967 origin= 10 peak= 10
+      [0640/1024] target=0993 trueL=4 predL=4 rank=   1 sel=0993 origin= 22 peak= 22
+      [0680/1024] target=0009 trueL=4 predL=2 rank=   2 sel=0982 origin= 35 peak= 35
+      [0691/1024] target=0020 trueL=3 predL=2 rank=   2 sel=0190 origin= 33 peak= 33
+      [0704/1024] target=0033 trueL=4 predL=4 rank=   1 sel=0033 origin= 35 peak= 35
+      [0768/1024] target=0097 trueL=2 predL=2 rank=   1 sel=0097 origin= 10 peak= 10
+      [0832/1024] target=0161 trueL=3 predL=3 rank=   1 sel=0161 origin= 10 peak= 10
+      [0896/1024] target=0225 trueL=4 predL=4 rank=   1 sel=0225 origin= 36 peak= 36
+      [0960/1024] target=0289 trueL=2 predL=2 rank=   1 sel=0289 origin= 20 peak= 20
+      [0974/1024] target=0303 trueL=4 predL=2 rank=   2 sel=0136 origin= 21 peak= 21
+      [1024/1024] target=0353 trueL=3 predL=3 rank=   1 sel=0353 origin=  8 peak=  8
+      CF GLOBAL UNKNOWN-LENGTH : R1=0.9863 R5=1.0000 R16=1.0000 MRR=0.993164
+      CF Failures: 14 / 1024
+      CF Failure IDs: [46, 57, 133, 262, 264, 303, 441, 462, 532, 540, 579, 680, 691, 974]
+
+[8/12] COUNTERFACTUAL LENGTH DIAGNOSTIC — POST-HOC ONLY...
+      rows=true L, cols=selected-owner L [2,3,4]
+      L=2: [342, 0, 0]
+      L=3: [8, 333, 0]
+      L=4: [6, 0, 335]
+      CF selected owner length correct: 1010 / 1024
+
+[9/12] STATISTICAL SUMMARY...
+      GLOBAL    : 1013/1024 = 0.9893 | 95% Wilson [0.9809,0.9940]
+      GLOBAL_L2 :  342/ 342 = 1.0000 | 95% Wilson [0.9889,1.0000]
+      GLOBAL_L3 :  336/ 341 = 0.9853 | 95% Wilson [0.9661,0.9937]
+      GLOBAL_L4 :  335/ 341 = 0.9824 | 95% Wilson [0.9622,0.9919]
+      CF_GLOBAL : 1010/1024 = 0.9863 | 95% Wilson [0.9772,0.9918]
+
+[10/12] PREDECLARED GATES...
+      GLOBAL_R1                       : FAIL
+      GLOBAL_R5                       : PASS
+      GLOBAL_L2_R1                    : PASS
+      GLOBAL_L3_R1                    : FAIL
+      GLOBAL_L4_R1                    : FAIL
+      CF_GLOBAL_R1                    : FAIL
+
+[11/12] PROTOCOL AUDIT...
+      Weight sentinel                    : PASS
+      Trainable tensors                  : 0
+      Pointer                            : L28H00 unchanged
+      Address                            : L00-V uncentered unchanged
+      Pointer K                          : 8 unchanged
+      Match                              : CONCATCOS unchanged
+      TEST537 law                        : UNCHANGED
+      Retrieval receives identity L      : NO
+      Candidate lengths                  : 2,3,4 simultaneously
+      Final competition                  : GLOBAL 1024 owners
+      Length classifier/router           : NONE
+      Length prior                       : NONE
+      Per-length threshold               : NONE
+      Per-length fitted normalization    : NONE
+      Gold L used in retrieval           : NO
+      Gold span used in retrieval        : NO
+      Gold B position used               : NO
+      Token-ID / decoded-ID routing      : NO
+      K/lambda/threshold scan            : NONE
+      Head/layer/address/match scan      : NONE
+      Training / LoRA / optimizer / DRA : NONE
+      Learned router/scorer              : NONE
+      Query-time candidate-B forwards    : 0
+      Existing panel                     : YES — mechanism validation
+      Untouched final seal               : NOT THIS TEST
+
+[12/12] FINAL...
+
+================================================================================================================================================================================
+TEST538 FINAL RESULT — AKBASCORE MAM · VARAN 1 · UNKNOWN-LENGTH GLOBAL-BANK MECHANISM VALIDATION
+================================================================================================================================================================================
+MODEL                              : mistralai/Mistral-7B-Instruct-v0.3 · frozen
+PANEL                              : existing deterministic development panel · N=1024
+POINTER                            : L28H00 · UNCHANGED
+ADDRESS                            : L00-V · UNCENTERED · 1024D · UNCHANGED
+MATCH                              : CONCATCOS · UNCHANGED
+POINTER CANDIDATES                 : TOP-8 · UNCHANGED
+LAW                                : log(pointer)-log(max(1-CONCATCOS,float32_eps)) · UNCHANGED
+RETRIEVAL KNOWS IDENTITY LENGTH    : NO
+GLOBAL LENGTH COMPETITION          : YES · L2+L3+L4
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PRIMARY GLOBAL                     : R1=0.9893 R5=1.0000 R16=1.0000 MRR=0.994629
+PRIMARY TRUE L=2                  : R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+PRIMARY TRUE L=3                  : R1=0.9853 R5=1.0000 R16=1.0000 MRR=0.992669
+PRIMARY TRUE L=4                  : R1=0.9824 R5=1.0000 R16=1.0000 MRR=0.991202
+COUNTERFACTUAL GLOBAL              : R1=0.9863 R5=1.0000 R16=1.0000 MRR=0.993164
+PRIMARY FAILURES                   : 11
+CF FAILURES                        : 14
+PRIMARY SELECTED-LENGTH CORRECT    : 1013 / 1024
+CF SELECTED-LENGTH CORRECT         : 1010 / 1024
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+GLOBAL_R1                          : FAIL
+GLOBAL_R5                          : PASS
+GLOBAL_L2_R1                       : PASS
+GLOBAL_L3_R1                       : FAIL
+GLOBAL_L4_R1                       : FAIL
+CF_GLOBAL_R1                       : FAIL
+WEIGHT_SENTINEL                    : PASS
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+WEIGHT SENTINEL                    : PASS
+TRAINABLE TENSORS                  : 0
+QUERY-TIME CANDIDATE-B FORWARDS    : 0
+KNOWN IDENTITY LENGTH              : NO
+CROSS-LENGTH GLOBAL COMPETITION    : YES
+LENGTH ROUTER                      : NONE
+LENGTH PRIOR                       : NONE
+FITTED LENGTH NORMALIZATION        : NONE
+TEST528 RESULT SHA                 : 9235ed38c944f41a9ede0426d3aabaa12b5b20646f30e2be921e618f9471d3c2
+TEST529 RESULT SHA                 : 27ba703872f0d8a6ed870a6ba041d0cd0703d2eca467deac97186a90497795a0
+TEST530 RESULT SHA                 : 289247c88dfd4358cbe5ffb8499891546b27acc6912caf525a155ae81338db7b
+TEST531 RESULT SHA                 : 20257d7d613a49e55b03603946f07ec493009924f40ac26ab74cb817e1466528
+TEST532 RESULT SHA                 : 9e37a473a322a19f7b3862a25162835ab6396998dc4fc416bc90bc9b718df188
+TEST533 RESULT SHA                 : 5239fb585b87a22f5da778c61a1011379b216a25bf7d05dc5d01952cbb22a5c6
+TEST534 RESULT SHA                 : b25128d17176790b2a8694c8ec9e7db5eaad469ff02a87a46876b2ffd45a9bb1
+TEST535 RESULT SHA                 : fc407885133d48f84a952249b15e884b201749136f6b16a49e7db11b0e9e5087
+TEST536 RESULT SHA                 : NOT INSERTED IN SOURCE
+TEST537 RESULT SHA                 : 9a4b6856a5d2a4f440ffa66cf4ba8c57b308b4f3a1cb7db4d0d8b826dd87cbf9
+TEST538 PRE-RESULT LOCK            : a5e9cc54ca196f28272d2453758881b2bdc6928e4aa608e2043789eaf00253b4
+TEST538 RESULT SHA                 : 51bbc7059421c1795d26ca5489f3f6aa97ac1dfcd1f70ab478596832b939c31a
+TOTAL TEST TIME                    : 503.59s
+VERDICT                            : TEST538_UNKNOWN_LENGTH_GLOBAL_BANK_NOT_FULLY_SUPPORTED
+NEXT                               : preserve TEST538 unchanged; diagnose cross-length failures without changing the frozen TEST537 law on this run
+================================================================================================================================================================================
