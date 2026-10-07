@@ -1,0 +1,174 @@
+============================================================================================================================================
+AKBASCORE MAM · Mistral-7B associative retrieval instrument — READABLE RUN LOG
+Mustafa Akbaş · Mersin, Türkiye · Copyright © 2026 Mustafa Akbaş. All rights reserved.
+============================================================================================================================================
+Derived from MAM528DEMO-20261007-072035-0001-I001_FULL_RUN_LOG_payload.json (SHA-256 6ad043b8e84625dd85e2575ddf8a28678a152316f270537c6ef87343faf97461). Manifest: run_manifest_MAM528DEMO-20261007-072035-0001-I001.json.
+This is a live demonstration run of the frozen TEST528 mechanism. It is not TEST528; archived TEST528 values are reproduced verbatim, never recomputed.
+RUN ID                        : MAM528DEMO-20261007-072035-0001-I001
+START UTC                     : 2026-10-07T07:20:35.186+00:00
+END UTC                       : 2026-10-07T07:20:36.848+00:00
+SEALED UTC                    : 2026-10-07T07:20:37.045+00:00
+VERDICT                       : ITEM_001_PRIMARY_CORRECT_CF_FOLLOWED_INTEGRITY_VERIFIED
+MODEL                         : mistralai/Mistral-7B-Instruct-v0.3 · frozen · bfloat16 · attention sdpa
+ARCHITECTURE                  : 32 layers · hidden 4096 · 32 Q heads · 8 KV heads · head 128 · GQA 4:1
+GPU                           : NVIDIA A100-SXM4-40GB (canonical: NVIDIA A100-SXM4-40GB; same: True)
+TORCH / TRANSFORMERS / GRADIO : 2.11.0+cu130 / 5.18.0 / 6.29.0
+ENGINE FILE                   : MAM_MISTRAL_128_DEMO_ENGINE.py · SHA-256 df17ba861d4f585162a190da0cd795d5b110e716f1c4953945489f6b0324d2fe
+POINTER                       : L28H00
+ADDRESS                       : L00-V · centered=False · 1024 dimensions
+CANDIDATES                    : 128 precomputed B address matrices
+MATCH                         : max cosine over all rows of each B matrix; argmax over 128 candidates; ties → lower index
+ENGINE SEED                   : 528528
+TEST528 LOCK                  : 4ddcea61a56eab327afe28f190cef7eec6670c9b55706b49de5d5c6be53a7f77
+TEST528 RESULT SHA            : 9235ed38c944f41a9ede0426d3aabaa12b5b20646f30e2be921e618f9471d3c2
+
+ITEM
+--------------------------------------------------------------------------------------------------------------------------------------------
+item 001 · entity Zyrhyn · question: What seal does instrument Zyrhyn carry? Give only the exact seal.
+question tokens (FMT template) = 27 · active A memory slots T = 32
+expected B candidate 001 · expected seal PCI (audit metadata; not an input to retrieval)
+
+PRIMARY RETRIEVAL · retrieve(item)  [LIVE]
+--------------------------------------------------------------------------------------------------------------------------------------------
+selected B#001 (seal PCI) · CORRECT · rank of expected 1/128
+top1 +0.999649 · top2 +0.660254 · margin +0.339395 · non-selected median +0.594695 · (top1−mean)/sd 7.04
+pointer L28H00: argmax slot 28 of 32 · peak 0.9622 · entropy 0.332 bits · effective slots 1.26
+diagnostic only: target-span positions [28] · pointer mass on span 0.9622 · pointer hit True
+latency (engine) 254.3 ms · measured model forwards 1: [{'input_len': 27, 'has_past': True, 'past_len': 32}]
+top-10: #001:+0.999649 #006:+0.660254 #010:+0.653754 #102:+0.653754 #074:+0.624003 #054:+0.619396 #124:+0.611176 #028:+0.608681 #120:+0.608681 #005:+0.606654
+repeat retrieve(): selected B#001 · max |Δscore| 0.000e+00 · get_pointer_data() max |Δw| 0.000e+00
+address p (1024-D) and best-matching row of selected B: slot 15 of 38 rows · cos +0.999649 (recomputed with engine functions; equals reported score)
+
+CONTROLS · run_controls(item)  [LIVE, single item]
+--------------------------------------------------------------------------------------------------------------------------------------------
+PRIMARY  selected B#001 · rank of expected   1/128 · top1 +0.999649 · margin +0.339395
+UNIFORM  selected B#033 · rank of expected  66/128 · top1 +0.528964 · margin +0.000000
+SHIFTED  selected B#067 · rank of expected  74/128 · top1 +0.358205 · margin +0.002472
+NO_A     selected B#001 · rank of expected   1/128 · top1 +0.000000 · margin +0.000000 · all scores equal (zero address): argmax falls to B#001 by index
+measured model forwards: [{'input_len': 27, 'has_past': True, 'past_len': 32}]
+
+COUNTERFACTUAL · counterfactual(item, target)  [LIVE]
+--------------------------------------------------------------------------------------------------------------------------------------------
+original association: Zyrhyn → PCI (B#001) · counterfactual: Zyrhyn → COL (B#054)
+selected B#054 · followed counterfactual True · rank of counterfactual target 1/128 · rank of original B under counterfactual A 5/128
+top1 +0.997579 · margin +0.380893 · pointer mass on diagnostic span 0.9127 · hit True · measured forwards [{'input_len': 32, 'has_past': False, 'past_len': None}, {'input_len': 27, 'has_past': True, 'past_len': 32}]
+
+SEALED TEST528 REFERENCE (archived; not produced by this run)
+--------------------------------------------------------------------------------------------------------------------------------------------
+PRIMARY         127/128 = 99.22% top-1
+COUNTERFACTUAL  125/128 = 97.66% top-1
+SHIFTED         0/128 = 0.00% top-1
+NO-A            1/128 = 0.78% top-1
+identity regime: native uppercase single-token seals
+cross-model context (archived): TEST523 Qwen2.5-7B-Instruct L23H12 L02-V uncentered 512-D 118/128 = 92.19% | TEST528 Mistral-7B-Instruct-v0.3 L28H00 L00-V uncentered 1024-D 127/128 = 99.22%
+The mechanism transferred across model families; the internal coordinates did not.
+
+MEASURED MODEL FORWARDS (instrumentation)
+--------------------------------------------------------------------------------------------------------------------------------------------
+retrieve       : [{'input_len': 27, 'has_past': True, 'past_len': 32}]
+repeat         : [{'input_len': 27, 'has_past': True, 'past_len': 32}]
+pointer_data   : [{'input_len': 27, 'has_past': True, 'past_len': 32}]
+controls       : [{'input_len': 27, 'has_past': True, 'past_len': 32}]
+counterfactual : [{'input_len': 32, 'has_past': False, 'past_len': None}, {'input_len': 27, 'has_past': True, 'past_len': 32}]
+every retrieval forward processed only the question tokens (27) over the installed A cache (32 slots); no B memory was installed or forwarded.
+
+ENGINE VERIFICATION · verify_engine() after the run
+--------------------------------------------------------------------------------------------------------------------------------------------
+weight_sentinel_pass              : True
+initial_weight_sentinel           : a5b79cdca219ea2e8eb6861e03e910788cf55ade3fbdc2a566803180599c5ccc
+current_weight_sentinel           : a5b79cdca219ea2e8eb6861e03e910788cf55ade3fbdc2a566803180599c5ccc
+trainable_tensors                 : 0
+pointer                           : L28H00
+address                           : L00-V UNCENTERED
+address_dim                       : 1024
+candidate_count                   : 128
+query_time_candidate_B_forwards   : 0
+test528_lock                      : 4ddcea61a56eab327afe28f190cef7eec6670c9b55706b49de5d5c6be53a7f77
+test528_result_sha                : 9235ed38c944f41a9ede0426d3aabaa12b5b20646f30e2be921e618f9471d3c2
+
+FROZEN MODEL
+--------------------------------------------------------------------------------------------------------------------------------------------
+sentinel_startup  : a5b79cdca219ea2e8eb6861e03e910788cf55ade3fbdc2a566803180599c5ccc
+sentinel_before   : a5b79cdca219ea2e8eb6861e03e910788cf55ade3fbdc2a566803180599c5ccc
+sentinel_after    : a5b79cdca219ea2e8eb6861e03e910788cf55ade3fbdc2a566803180599c5ccc
+guard_startup     : 3d7204fa9df9a0d3e8ebf9a41e154be586947f40bf171561b2702a0e979faa03
+guard_before      : 3d7204fa9df9a0d3e8ebf9a41e154be586947f40bf171561b2702a0e979faa03
+guard_after       : 3d7204fa9df9a0d3e8ebf9a41e154be586947f40bf171561b2702a0e979faa03
+trainable tensors=0 · lora=False · optimizer=False · training_mode=False · foreign hooks outside API calls 0→0
+all-parameter guard: SHA-256 over (name, shape, dtype, sum, |sum|, sum of squares) of every parameter tensor
+engine _sentinel(): SHA-256 over 16 slices × 256 values of 7 weight tensors
+
+DEMONSTRATED IN THIS RUN
+--------------------------------------------------------------------------------------------------------------------------------------------
+• For the selected item, the active numeric A memory and a natural-language question drive one frozen forward pass of Mistral-7B-Instruct-v0.3.
+• Attention head L28H00 (query head 0 of layer 28) at the final query token yields a pointer distribution over the A memory slots (ÇAĞRIİZ).
+• The pointer weights the layer-0 value vectors of the A slots into a 1024-dimensional uncentered address.
+• The address is compared by maximum cosine similarity with every row of all 128 precomputed B address matrices; the highest score selects the B memory.
+• Model forwards during retrieval are counted by instrumentation: one forward, with only the A memory installed as cache.
+• A counterfactual A memory (changed seal association, re-forged) changes the selected B memory under the same frozen mechanism.
+
+ARCHIVED
+--------------------------------------------------------------------------------------------------------------------------------------------
+• TEST528 aggregate results (128 items) are sealed reference values from the archived experiment log. They are displayed, never recomputed from demo interactions.
+• Cross-model context: TEST523 (Qwen2.5-7B-Instruct) and TEST528 (Mistral-7B-Instruct-v0.3) used different internal coordinates and different panels; the two values are not a head-to-head comparison.
+
+NOT ESTABLISHED BY THIS RUN OR BY TEST528
+--------------------------------------------------------------------------------------------------------------------------------------------
+• Generalisation to arbitrary token identities: the TEST528 identity regime uses native uppercase single-token seals.
+• Retrieval of the first (A) memory from an empty bank: A is the active memory in this protocol.
+• Natural-language answer generation from the selected B memory: this instrument measures associative retrieval only.
+• Transfer of internal coordinates between models: pointer and address coordinates were identified per model family.
+• Behaviour beyond the 128-candidate bank used here.
+
+TECHNICAL NOTES
+--------------------------------------------------------------------------------------------------------------------------------------------
+• L00-V is the layer-0 value projection of the RMS-normalised input token embedding at each A slot; the address is therefore a pointer-weighted combination of token-level value vectors.
+• Gold-span (target seal token) positions are computed by the engine for diagnostics only and are not an input to any retrieval step.
+• The expected B candidate is defined by panel construction: item i's target seal occurs in B memory i only (target and distractor pools are disjoint).
+• Candidate-B forwards: the engine reports a constant 0; this instrument additionally measures every model forward during each API call.
+• The engine keeps its forge-time item records (ITEMS) in memory; retrieve() reads only the A packet, the A tensors, the question string and the B address matrices.
+
+PRE-SEAL CHECKS
+--------------------------------------------------------------------------------------------------------------------------------------------
+PASS · engine source SHA-256 = supplied engine file
+PASS · frozen configuration unchanged (L28H00 · L00-V · uncentered · 1024-D · 128 candidates · Mistral-7B-Instruct-v0.3)
+PASS · engine status reports L28H00 / L00-V UNCENTERED / 1024 / 128
+PASS · archived TEST528 lock and result SHA match the engine constants
+PASS · weight sentinel before run = value at initialisation
+PASS · all-parameter guard before run = value at startup
+PASS · trainable tensors = 0, eval mode, no LoRA, no optimizer
+PASS · no foreign forward/backward hooks outside API calls
+PASS · item and counterfactual target in 1..128 and distinct
+PASS · demo item metadata consistent (expected candidate = item)
+PASS · retrieve(): exactly one model forward — question tokens over the installed A cache only
+PASS · retrieve(): selection, rank, top-1/top-2 and margin re-derived from the 128 raw scores
+PASS · retrieve(): question = engine template for the item; mode PRIMARY
+PASS · pointer: T weights over the A slots, slot 0 excluded, sum = 1
+PASS · retrieve(): engine reports 0 query-time candidate-B forwards and frozen model
+PASS · repeat retrieve(): one forward of the same form; same selected candidate
+PASS · get_pointer_data(): one forward; same pointer argmax as retrieve()
+PASS · address recomputed with engine functions: 1024-D; best row cosine = reported score of the selected B
+PASS · run_controls(): one forward of the query form
+PASS · run_controls(): modes PRIMARY, UNIFORM, SHIFTED, NO_A
+PASS · run_controls(): every mode re-derived from its raw scores
+PASS · run_controls() PRIMARY selects the same candidate as retrieve()
+PASS · counterfactual(): two forwards — forge of the new A (no cache), then the question over that A
+PASS · counterfactual(): selection and rank re-derived from raw scores
+PASS · verify_engine(): sentinel PASS · trainable 0 · 128 candidates · L28H00 · L00-V UNCENTERED · 1024
+PASS · all-parameter guard after run = before run = startup (weights unchanged)
+PASS · weight sentinel after run = value at initialisation
+PASS · trainable tensors = 0 and no foreign hooks after run
+
+TIMING (seconds)
+--------------------------------------------------------------------------------------------------------------------------------------------
+guard                   : 0.493
+retrieve                : 0.260
+repeat                  : 0.070
+pointer                 : 0.046
+controls                : 0.096
+counterfactual          : 0.471
+engine_total            : 1.634
+peak GPU memory 15.25 GiB
+
+All raw score vectors, pointer weights and the 1024-D address are in MAM528DEMO-20261007-072035-0001-I001_FULL_RUN_LOG_payload.json and MAM528DEMO-20261007-072035-0001-I001_RAW_VECTORS.jsonl.
+============================================================================================================================================
