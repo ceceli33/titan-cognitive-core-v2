@@ -1,0 +1,224 @@
+ 
+============================================================================================================================================================
+TEST544 — AKBASCORE MAM · VARAN 1 · COMPLEMENTARITY X-RAY
+STATIC · Q↔K · GATE↔UP · J↔OV · 2×2 DOUBLE-DISSOCIATION · ROLE/TIME/SUBJECT · RETRIEVAL YOK
+============================================================================================================================================================
+
+[1/9] Donmuş Mistral...
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 76.8kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 14.9MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 86.2MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.0kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 53.9kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.72MB/s]
+Download complete: 
+
+ 12.4GB,  171MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  529MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:40<00:00, 40.92s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 80.89it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 14.1kB/s]
+      mistralai/Mistral-7B-Instruct-v0.3 | NVIDIA A100-SXM4-40GB | 32L H=4096 QH=32 KVH=8 HD=128 | trainable=0
+      LOCK SHA: ceac837c5dd2553b73f4b020252c4a17bc8adea799568d493e9e37d0f964c771
+
+[2/9] WRITE/QUERY izleri...
+      01/24
+      02/24
+      03/24
+      04/24
+      05/24
+      06/24
+      07/24
+      08/24
+      09/24
+      10/24
+      11/24
+      12/24
+      13/24
+      14/24
+      15/24
+      16/24
+      17/24
+      18/24
+      19/24
+      20/24
+      21/24
+      22/24
+      23/24
+      24/24
+
+[3/9] STATIC / Q↔K / GATE↔UP 2×2...
+      STATIC_I       global=+0.040155 min=+0.000266 max=+0.123926
+      QK_I           global=+0.004113 min=-0.036916 max=+0.092452
+      GATEUP_SIGNED  global=-0.000009 min=-0.000822 max=+0.000559
+      GATEUP_SURV_I  global=+0.000989 min=-0.002120 max=+0.008468
+
+[4/9] SUBJECT / ROLE / TIME / PARAPHRASE / TÜRKÇE...
+      ST   SUBJECT=+0.007194 ROLE=+0.004369 TIME=+0.046150 PARA=+0.466502 TR=+0.341251
+      QK   SUBJECT=+0.000293 ROLE=-0.001849 TIME=+0.004919 PARA=-0.034609 TR=-0.038278
+      GUN  SUBJECT=-0.000251 ROLE=-0.001350 TIME=-0.001489 PARA=+0.229014 TR=+0.255044
+
+[5/9] Layer/head profilleri — seçim YOK...
+      L00 STATIC_I=+0.00027 QK_I=+0.00000 QK_std=0.00000 GU_SIGN=+0.00000 GU_SURV=+0.00005
+      L01 STATIC_I=+0.00951 QK_I=-0.00003 QK_std=0.00007 GU_SIGN=+0.00000 GU_SURV=+0.00026
+      L02 STATIC_I=+0.00922 QK_I=+0.00059 QK_std=0.00112 GU_SIGN=+0.00001 GU_SURV=+0.00051
+      L03 STATIC_I=+0.00353 QK_I=+0.00080 QK_std=0.00109 GU_SIGN=+0.00000 GU_SURV=+0.00024
+      L04 STATIC_I=+0.02060 QK_I=+0.00043 QK_std=0.00274 GU_SIGN=-0.00007 GU_SURV=+0.00148
+      L05 STATIC_I=+0.09917 QK_I=+0.00047 QK_std=0.00380 GU_SIGN=+0.00002 GU_SURV=+0.00357
+      L06 STATIC_I=+0.12393 QK_I=-0.00043 QK_std=0.00698 GU_SIGN=+0.00006 GU_SURV=+0.00007
+      L07 STATIC_I=+0.10770 QK_I=+0.00504 QK_std=0.01634 GU_SIGN=-0.00028 GU_SURV=+0.00240
+      L08 STATIC_I=+0.11740 QK_I=-0.00003 QK_std=0.01389 GU_SIGN=+0.00026 GU_SURV=+0.00274
+      L09 STATIC_I=+0.09559 QK_I=+0.00954 QK_std=0.02262 GU_SIGN=-0.00028 GU_SURV=+0.00253
+      L10 STATIC_I=+0.06245 QK_I=+0.00693 QK_std=0.01433 GU_SIGN=+0.00009 GU_SURV=-0.00145
+      L11 STATIC_I=+0.04550 QK_I=+0.01034 QK_std=0.01391 GU_SIGN=-0.00015 GU_SURV=-0.00167
+      L12 STATIC_I=+0.04730 QK_I=+0.01426 QK_std=0.01566 GU_SIGN=-0.00007 GU_SURV=-0.00212
+      L13 STATIC_I=+0.05204 QK_I=+0.00903 QK_std=0.01092 GU_SIGN=+0.00009 GU_SURV=+0.00216
+      L14 STATIC_I=+0.05172 QK_I=+0.01217 QK_std=0.01879 GU_SIGN=-0.00019 GU_SURV=+0.00450
+      L15 STATIC_I=+0.05020 QK_I=+0.00957 QK_std=0.02112 GU_SIGN=+0.00028 GU_SURV=-0.00117
+      L16 STATIC_I=+0.03948 QK_I=+0.01014 QK_std=0.01295 GU_SIGN=+0.00011 GU_SURV=+0.00847
+      L17 STATIC_I=+0.03222 QK_I=+0.00049 QK_std=0.00483 GU_SIGN=-0.00003 GU_SURV=+0.00430
+      L18 STATIC_I=+0.03069 QK_I=+0.00758 QK_std=0.00831 GU_SIGN=+0.00009 GU_SURV=+0.00253
+      L19 STATIC_I=+0.03955 QK_I=+0.00183 QK_std=0.00772 GU_SIGN=+0.00002 GU_SURV=+0.00160
+      L20 STATIC_I=+0.03240 QK_I=+0.00339 QK_std=0.00561 GU_SIGN=+0.00056 GU_SURV=+0.00221
+      L21 STATIC_I=+0.02742 QK_I=+0.00273 QK_std=0.00441 GU_SIGN=+0.00013 GU_SURV=-0.00211
+      L22 STATIC_I=+0.02462 QK_I=+0.00391 QK_std=0.00508 GU_SIGN=+0.00011 GU_SURV=+0.00246
+      L23 STATIC_I=+0.02348 QK_I=-0.00029 QK_std=0.00438 GU_SIGN=-0.00020 GU_SURV=-0.00083
+      L24 STATIC_I=+0.02096 QK_I=+0.00472 QK_std=0.00533 GU_SIGN=+0.00047 GU_SURV=-0.00119
+      L25 STATIC_I=+0.01890 QK_I=+0.00252 QK_std=0.00499 GU_SIGN=+0.00000 GU_SURV=-0.00022
+      L26 STATIC_I=+0.01825 QK_I=+0.00169 QK_std=0.00457 GU_SIGN=+0.00006 GU_SURV=+0.00010
+      L27 STATIC_I=+0.01683 QK_I=+0.00171 QK_std=0.00376 GU_SIGN=-0.00016 GU_SURV=+0.00174
+      L28 STATIC_I=+0.01804 QK_I=+0.00350 QK_std=0.00522 GU_SIGN=-0.00002 GU_SURV=-0.00191
+      L29 STATIC_I=+0.01610 QK_I=+0.00333 QK_std=0.00312 GU_SIGN=-0.00082 GU_SURV=+0.00177
+      L30 STATIC_I=+0.01704 QK_I=+0.00306 QK_std=0.00405 GU_SIGN=+0.00001 GU_SURV=-0.00139
+      L31 STATIC_I=+0.01285 QK_I=+0.00259 QK_std=0.00370 GU_SIGN=-0.00041 GU_SURV=+0.00001
+
+[6/9] J↔OV VJP X-ray · sabit worlds=[0, 1, 2, 3, 4, 5, 6, 7] · probes=8...
+      01/8 world=00 QC/QL/QC2/QTR
+      02/8 world=01 QC/QL/QC2/QTR
+      03/8 world=02 QC/QL/QC2/QTR
+      04/8 world=03 QC/QL/QC2/QTR
+      05/8 world=04 QC/QL/QC2/QTR
+      06/8 world=05 QC/QL/QC2/QTR
+      07/8 world=06 QC/QL/QC2/QTR
+      08/8 world=07 QC/QL/QC2/QTR
+      J_OV_I signed=+0.00001417 abs=0.00059532 rms=0.00077104
+      J_OV_ROLE abs=0.00057357 TIME abs=0.00072641 SUBJECT abs=0.00044091
+
+[7/9] J↔OV layer profili — tek layer/head seçimi YOK...
+      L00 J_I=+0.00000000 |J_I|=0.00000000 RMS=0.00000000
+      L01 J_I=-0.00000515 |J_I|=0.00019942 RMS=0.00027433
+      L02 J_I=-0.00004774 |J_I|=0.00084339 RMS=0.00118765
+      L03 J_I=+0.00003283 |J_I|=0.00065373 RMS=0.00087196
+      L04 J_I=-0.00006704 |J_I|=0.00114210 RMS=0.00145227
+      L05 J_I=-0.00000624 |J_I|=0.00091377 RMS=0.00118992
+      L06 J_I=+0.00010416 |J_I|=0.00101698 RMS=0.00133187
+      L07 J_I=+0.00011373 |J_I|=0.00100563 RMS=0.00132352
+      L08 J_I=+0.00007091 |J_I|=0.00108670 RMS=0.00148309
+      L09 J_I=-0.00001044 |J_I|=0.00102080 RMS=0.00132029
+      L10 J_I=+0.00004944 |J_I|=0.00099794 RMS=0.00130097
+      L11 J_I=-0.00001218 |J_I|=0.00094474 RMS=0.00121785
+      L12 J_I=+0.00002372 |J_I|=0.00087723 RMS=0.00111353
+      L13 J_I=-0.00001980 |J_I|=0.00096235 RMS=0.00120370
+      L14 J_I=-0.00001842 |J_I|=0.00110521 RMS=0.00142319
+      L15 J_I=+0.00001282 |J_I|=0.00092071 RMS=0.00115017
+      L16 J_I=+0.00002202 |J_I|=0.00086244 RMS=0.00108663
+      L17 J_I=+0.00004500 |J_I|=0.00053536 RMS=0.00067264
+      L18 J_I=-0.00000158 |J_I|=0.00054833 RMS=0.00070672
+      L19 J_I=+0.00006355 |J_I|=0.00055160 RMS=0.00071624
+      L20 J_I=+0.00004177 |J_I|=0.00040819 RMS=0.00051574
+      L21 J_I=-0.00000001 |J_I|=0.00033192 RMS=0.00042385
+      L22 J_I=+0.00001174 |J_I|=0.00026169 RMS=0.00033405
+      L23 J_I=+0.00001680 |J_I|=0.00026654 RMS=0.00034085
+      L24 J_I=+0.00001312 |J_I|=0.00025682 RMS=0.00032827
+      L25 J_I=+0.00000792 |J_I|=0.00024521 RMS=0.00031199
+      L26 J_I=+0.00000151 |J_I|=0.00022669 RMS=0.00028912
+      L27 J_I=+0.00000231 |J_I|=0.00020304 RMS=0.00026123
+      L28 J_I=+0.00000232 |J_I|=0.00020762 RMS=0.00026587
+      L29 J_I=+0.00001274 |J_I|=0.00020972 RMS=0.00026617
+      L30 J_I=-0.00000667 |J_I|=0.00014090 RMS=0.00017855
+      L31 J_I=+0.00000016 |J_I|=0.00010335 RMS=0.00013119
+
+[8/9] Kör özet — winner/retrieval kararı YOK...
+      STATIC_I            : +0.04015458
+      QK_I                : +0.00411263
+      GATEUP_SIGNED_I     : -0.00000929
+      GATEUP_SURV_I       : +0.00098855
+      J_OV_I              : +0.00001417
+      J_OV_I_ABS          : +0.00059532
+      J_OV_I_RMS          : +0.00077104
+      STATIC_SUBJECT      : +0.00719408
+      QK_SUBJECT          : +0.00029350
+      GU_SUBJECT          : -0.00025104
+      STATIC_ROLE         : +0.00436898
+      QK_ROLE             : -0.00184893
+      GU_ROLE             : -0.00135047
+      STATIC_TIME         : +0.04615003
+      QK_TIME             : +0.00491915
+      GU_TIME             : -0.00148910
+      QK_PARAPHRASE       : -0.03460878
+      QK_TURKISH          : -0.03827765
+      GU_PARAPHRASE       : +0.22901359
+      GU_TURKISH          : +0.25504386
+      J_ROLE_ABS          : +0.00057357
+      J_TIME_ABS          : +0.00072641
+      J_SUBJECT_ABS       : +0.00044091
+      J_PARA_ABS          : +0.00119711
+      J_TURKISH_ABS       : +0.00189749
+
+[9/9] Sentinel / mühür...
+      Weight sentinel              : PASS
+      Trainable tensors            : 0
+      Retrieval / argmax / winner  : YOK
+      Threshold / router / scorer  : YOK
+      Memory-ID / token-ID address : YOK
+      Tek layer/head adresi        : YOK
+      Gold reader/Jacobian         : YOK
+      Forward intervention         : YOK
+      Training/LoRA/optimizer      : YOK
+
+============================================================================================================================================================
+TEST544 SONUÇ — COMPLEMENTARITY X-RAY
+============================================================================================================================================================
+MODEL                         : mistralai/Mistral-7B-Instruct-v0.3
+DÜNYA                         : 24 | J-VJP dünya: 8 | fixed probes: 8
+STATIC 2×2 I                 : +0.04015458
+QUERY-Q ↔ WRITE-K 2×2 I      : +0.00411263
+QUERY-GATE ↔ WRITE-UP 2×2 I  : +0.00098855
+QUERY-J ↔ WRITE-OV 2×2 I     : +0.00001417 | abs 0.00059532 | rms 0.00077104
+WEIGHT SENTINEL               : PASS
+TEST543 RESULT SHA            : e759d757db399443d9f6f273e070a5fe28306a0af24dc528b46ef66736c14ba9
+TEST544 ÖN KİLİT SHA          : ceac837c5dd2553b73f4b020252c4a17bc8adea799568d493e9e37d0f964c771
+TEST544 RESULT SHA            : 4e22925805401354061dcf00aaeeb92beaa1991fbb93cfab845408c4dd7b253b
+TOPLAM SÜRE                   : 95.36s
+KARAR                         : TEST544_COMPLEMENTARITY_XRAY_TAMAMLANDI
+YORUM KURALI                  : Tek layer/head seçme; STATIC, 2×2, subject/role/time ve paraphrase/TR yapılarını birlikte değerlendir.
+
+
+============================================================================================================================================================
