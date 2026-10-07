@@ -1,0 +1,589 @@
+ ================================================================================================================================================================================
+TEST532 — AKBASCORE MAM · VARAN 1 · SPAN-ORIGIN X-RAY
+TEST531 FAILURE DIAGNOSIS · SAME PANEL · ARGMAX vs MAX-CONTIGUOUS-POINTER-MASS · CONCATCOS LOCKED
+================================================================================================================================================================================
+
+[1/12] Loading frozen Mistral...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 601/601 [00:00<00:00, 55.3kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 15.8MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 40.1MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 58.3kB/s  tokenizer.model: downloading bytes:   448kB, 44.5kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 50.6kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 3.20MB/s]Download complete:  12.4GB,  540MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  496MB/s  Fetching 3 files: 100% 3/3 [00:40<00:00, 40.58s/it]Loading weights: 100% 291/291 [00:03<00:00, 80.39it/s]generation_config.json: 100% 116/116 [00:00<00:00, 15.2kB/s]      mistralai/Mistral-7B-Instruct-v0.3 | NVIDIA A100-SXM4-40GB
+      32L H=4096 QH=32 KVH=8 HD=128 ADDRESS=1024
+      POINTER : L28H00 · FROZEN
+      ADDRESS : L00-V UNCENTERED · FROZEN
+      MATCH   : CONCATCOS · LOCKED FROM TEST530
+      PANEL   : exact TEST531 deterministic construction
+      ORIGINS : ARGMAX baseline + MASS_WINDOW diagnostic
+      MODEL   : frozen · BF16 · SDPA · trainable=0
+      Native model-token atom pool: 220
+
+[2/12] Reconstructing exact TEST531 deterministic panel...
+      Required identity pools: {2: 1774, 3: 1769, 4: 1769}
+      L=2: 342
+      L=3: 341
+      L=4: 341
+      Remaining reserve: {2: 64, 3: 64, 4: 64}
+      TEST531 seed: 531531
+      TEST532 LOCK: 571c8c8102ba993c4f8ab2a8cb017d1e10a244117b748f73eb03a38ab5589e73
+
+[3/12] OFFLINE FORGE — exact TEST531 A/B construction...
+      forged   64/1024
+      forged  128/1024
+      forged  192/1024
+      forged  256/1024
+      forged  320/1024
+      forged  384/1024
+      forged  448/1024
+      forged  512/1024
+      forged  576/1024
+      forged  640/1024
+      forged  704/1024
+      forged  768/1024
+      forged  832/1024
+      forged  896/1024
+      forged  960/1024
+      forged 1024/1024
+      A memories: 1024
+      B memories: 1024
+      Query-time candidate-B forwards: 0
+
+[4/12] Building locked CONCATCOS banks...
+      L=2 windows: 13680 | shape=(13680, 2, 1024)
+      L=3 windows: 14322 | shape=(14322, 3, 1024)
+      L=4 windows: 15004 | shape=(15004, 4, 1024)
+      Match law unchanged: CONCATCOS
+      Gold B position used: NO
+
+[5/12] PRIMARY X-RAY — ARGMAX vs MASS_WINDOW...
+      [0001/1024] L=2 gold= 20 arg= 20 mass= 19 inside=1 | BASE=   1 MASS=   4 sel=0001/0862 pmass=0.7029
+      [0002/1024] L=3 gold= 23 arg= 23 mass= 23 inside=1 | BASE=   1 MASS=   1 sel=0002/0002 pmass=0.9659
+      [0003/1024] L=4 gold=  9 arg=  9 mass=  8 inside=1 | BASE=   1 MASS=   1 sel=0003/0003 pmass=0.8178
+      [0004/1024] L=2 gold= 32 arg= 32 mass= 31 inside=1 | BASE=   1 MASS=   3 sel=0004/0742 pmass=0.9781
+      [0005/1024] L=3 gold=  8 arg=  8 mass=  7 inside=1 | BASE=   1 MASS=   1 sel=0005/0005 pmass=0.8896
+      [0006/1024] L=4 gold= 35 arg= 35 mass= 33 inside=1 | BASE=   1 MASS=   1 sel=0006/0006 pmass=0.8577
+      [0007/1024] L=2 gold=  8 arg=  8 mass=  8 inside=1 | BASE=   1 MASS=   1 sel=0007/0007 pmass=0.9786
+      [0008/1024] L=3 gold= 21 arg= 21 mass= 20 inside=1 | BASE=   1 MASS=   1 sel=0008/0008 pmass=0.9702
+      [0019/1024] L=2 gold= 31 arg= 31 mass= 30 inside=1 | BASE=   1 MASS=   2 sel=0019/0157 pmass=0.8335
+      [0020/1024] L=3 gold= 21 arg= 21 mass= 19 inside=1 | BASE=   1 MASS=   8 sel=0020/0851 pmass=0.8305
+      [0031/1024] L=2 gold=  9 arg=  9 mass=  8 inside=1 | BASE=   1 MASS=   3 sel=0031/0091 pmass=0.7955
+      [0035/1024] L=3 gold= 21 arg= 21 mass= 19 inside=1 | BASE=   1 MASS=   7 sel=0035/0599 pmass=0.9147
+      [0037/1024] L=2 gold= 20 arg= 20 mass= 19 inside=1 | BASE=   1 MASS=   4 sel=0037/0055 pmass=0.8946
+      [0047/1024] L=3 gold= 33 arg= 33 mass= 31 inside=1 | BASE=   1 MASS=   7 sel=0047/0407 pmass=0.9099
+      [0053/1024] L=3 gold= 21 arg= 21 mass= 19 inside=1 | BASE=   1 MASS=   4 sel=0053/0908 pmass=0.9486
+      [0064/1024] L=2 gold=  9 arg=  9 mass=  9 inside=1 | BASE=   1 MASS=   1 sel=0064/0064 pmass=0.8783
+      [0068/1024] L=3 gold= 34 arg= 34 mass= 32 inside=1 | BASE=   1 MASS=   3 sel=0068/0839 pmass=0.9440
+      [0069/1024] L=4 gold= 33 arg= 33 mass= 30 inside=1 | BASE=   1 MASS=  15 sel=0069/0213 pmass=0.9653
+      [0070/1024] L=2 gold= 29 arg= 29 mass= 28 inside=1 | BASE=   1 MASS=   2 sel=0070/0343 pmass=0.7407
+      [0080/1024] L=3 gold=  9 arg=  9 mass=  7 inside=1 | BASE=   1 MASS=   8 sel=0080/0053 pmass=0.8272
+      [0086/1024] L=3 gold=  9 arg=  9 mass=  7 inside=1 | BASE=   1 MASS=   2 sel=0086/0482 pmass=0.5759
+      [0088/1024] L=2 gold= 19 arg= 19 mass= 18 inside=1 | BASE=   1 MASS=   2 sel=0088/0931 pmass=0.7549
+      [0092/1024] L=3 gold= 19 arg= 19 mass= 18 inside=1 | BASE=   1 MASS=   2 sel=0092/0044 pmass=0.8807
+      [0118/1024] L=2 gold=  9 arg=  9 mass=  8 inside=1 | BASE=   1 MASS=   5 sel=0118/0667 pmass=0.8963
+      [0124/1024] L=2 gold=  9 arg=  9 mass=  8 inside=1 | BASE=   1 MASS=   3 sel=0124/0274 pmass=0.9281
+      [0127/1024] L=2 gold= 19 arg= 19 mass= 18 inside=1 | BASE=   1 MASS=   9 sel=0127/1006 pmass=0.9717
+      [0128/1024] L=3 gold= 21 arg= 21 mass= 20 inside=1 | BASE=   1 MASS=   1 sel=0128/0128 pmass=0.8588
+      [0130/1024] L=2 gold= 32 arg= 32 mass= 31 inside=1 | BASE=   1 MASS=   5 sel=0130/1009 pmass=0.8973
+      [0134/1024] L=3 gold=  9 arg=  9 mass=  7 inside=1 | BASE=   1 MASS=   9 sel=0134/0053 pmass=0.8617
+      [0139/1024] L=2 gold= 29 arg= 29 mass= 28 inside=1 | BASE=   1 MASS=   4 sel=0139/0772 pmass=0.9691
+      [0148/1024] L=2 gold= 20 arg= 20 mass= 19 inside=1 | BASE=   1 MASS=   4 sel=0148/0433 pmass=0.8118
+      [0161/1024] L=3 gold= 10 arg= 10 mass=  8 inside=1 | BASE=   1 MASS=   6 sel=0161/0278 pmass=0.9677
+      [0163/1024] L=2 gold=  9 arg=  9 mass=  8 inside=1 | BASE=   1 MASS=   7 sel=0163/0448 pmass=0.9390
+      [0172/1024] L=2 gold=  9 arg= 10 mass=  9 inside=1 | BASE= 342 MASS=   1 sel=0346/0172 pmass=0.8389
+      [0173/1024] L=3 gold= 21 arg= 21 mass= 19 inside=1 | BASE=   1 MASS=   4 sel=0173/0449 pmass=0.9061
+      [0178/1024] L=2 gold= 20 arg= 20 mass= 19 inside=1 | BASE=   1 MASS=   3 sel=0178/0922 pmass=0.9410
+      [0179/1024] L=3 gold=  9 arg=  9 mass=  7 inside=1 | BASE=   1 MASS=   7 sel=0179/0722 pmass=0.4371
+      [0192/1024] L=4 gold= 21 arg= 21 mass= 21 inside=1 | BASE=   1 MASS=   1 sel=0192/0192 pmass=0.9371
+      [0193/1024] L=2 gold= 31 arg= 31 mass= 30 inside=1 | BASE=   1 MASS=   7 sel=0193/0613 pmass=0.9674
+      [0206/1024] L=3 gold=  8 arg=  8 mass=  6 inside=1 | BASE=   1 MASS=   7 sel=0206/0848 pmass=0.9244
+      [0207/1024] L=4 gold= 34 arg= 34 mass= 31 inside=1 | BASE=   1 MASS=  57 sel=0207/0705 pmass=0.9184
+      [0208/1024] L=2 gold=  9 arg=  9 mass=  8 inside=1 | BASE=   1 MASS=   4 sel=0208/0226 pmass=0.9678
+      [0218/1024] L=3 gold=  9 arg=  9 mass=  7 inside=1 | BASE=   1 MASS=   2 sel=0218/0473 pmass=0.8697
+      [0220/1024] L=2 gold= 31 arg= 31 mass= 30 inside=1 | BASE=   1 MASS=   5 sel=0220/0373 pmass=0.7633
+      [0226/1024] L=2 gold=  9 arg=  9 mass=  8 inside=1 | BASE=   1 MASS=   4 sel=0226/0757 pmass=0.9831
+      [0229/1024] L=2 gold= 21 arg= 21 mass= 20 inside=1 | BASE=   1 MASS=   5 sel=0229/0316 pmass=0.8228
+      [0232/1024] L=2 gold= 20 arg= 20 mass= 19 inside=1 | BASE=   1 MASS=   4 sel=0232/0769 pmass=0.7878
+      [0235/1024] L=2 gold= 30 arg= 30 mass= 29 inside=1 | BASE=   1 MASS=   6 sel=0235/0556 pmass=0.9636
+      [0248/1024] L=3 gold= 21 arg= 21 mass= 19 inside=1 | BASE=   1 MASS=   5 sel=0248/0794 pmass=0.8953
+      [0256/1024] L=2 gold= 31 arg= 31 mass= 30 inside=1 | BASE=   1 MASS=   4 sel=0256/0595 pmass=0.8621
+      [0284/1024] L=3 gold=  9 arg=  9 mass=  7 inside=1 | BASE=   1 MASS=   3 sel=0284/0938 pmass=0.9248
+      [0292/1024] L=2 gold= 31 arg= 31 mass= 30 inside=1 | BASE=   1 MASS=   7 sel=0292/0025 pmass=0.9832
+      [0298/1024] L=2 gold= 32 arg= 32 mass= 31 inside=1 | BASE=   1 MASS=   6 sel=0298/0472 pmass=0.9870
+      [0310/1024] L=2 gold= 32 arg= 32 mass= 31 inside=1 | BASE=   1 MASS=   5 sel=0310/0994 pmass=0.8955
+      [0313/1024] L=2 gold= 19 arg= 19 mass= 18 inside=1 | BASE=   1 MASS=   2 sel=0313/0448 pmass=0.8686
+      [0319/1024] L=2 gold= 20 arg= 20 mass= 19 inside=1 | BASE=   1 MASS=   5 sel=0319/0148 pmass=0.8220
+      [0320/1024] L=3 gold=  9 arg=  9 mass=  9 inside=1 | BASE=   1 MASS=   1 sel=0320/0320 pmass=0.9059
+      [0323/1024] L=3 gold= 20 arg= 20 mass= 18 inside=1 | BASE=   1 MASS=   8 sel=0323/0359 pmass=0.6930
+      [0326/1024] L=3 gold=  9 arg=  9 mass=  7 inside=1 | BASE=   1 MASS=   9 sel=0326/0359 pmass=0.9869
+      [0328/1024] L=2 gold= 19 arg= 19 mass= 18 inside=1 | BASE=   1 MASS=   2 sel=0328/0079 pmass=0.7764
+      [0329/1024] L=3 gold=  9 arg=  9 mass=  7 inside=1 | BASE=   1 MASS=   2 sel=0329/0173 pmass=0.7576
+      [0341/1024] L=3 gold= 34 arg= 34 mass= 32 inside=1 | BASE=   1 MASS=   4 sel=0341/0257 pmass=0.9818
+      [0344/1024] L=3 gold= 10 arg= 10 mass=  8 inside=1 | BASE=   1 MASS=   5 sel=0344/0647 pmass=0.7629
+      [0345/1024] L=4 gold= 35 arg= 35 mass= 33 inside=1 | BASE=   1 MASS=   2 sel=0345/0207 pmass=0.9744
+      [0353/1024] L=3 gold=  9 arg=  9 mass=  7 inside=1 | BASE=   1 MASS=   2 sel=0353/0416 pmass=0.9001
+      [0362/1024] L=3 gold=  9 arg=  9 mass=  7 inside=1 | BASE=   1 MASS=   7 sel=0362/0368 pmass=0.9791
+      [0364/1024] L=2 gold= 21 arg= 21 mass= 20 inside=1 | BASE=   1 MASS=   2 sel=0364/0430 pmass=0.7890
+      [0370/1024] L=2 gold= 31 arg= 31 mass= 30 inside=1 | BASE=   1 MASS=   3 sel=0370/0892 pmass=0.8717
+      [0371/1024] L=3 gold= 20 arg= 20 mass= 18 inside=1 | BASE=   1 MASS=   4 sel=0371/0485 pmass=0.8977
+      [0374/1024] L=3 gold= 21 arg= 21 mass= 19 inside=1 | BASE=   1 MASS=   3 sel=0374/0788 pmass=0.9825
+      [0376/1024] L=2 gold= 20 arg= 20 mass= 19 inside=1 | BASE=   1 MASS=   3 sel=0376/0199 pmass=0.8844
+      [0384/1024] L=4 gold= 35 arg= 35 mass= 35 inside=1 | BASE=   1 MASS=   1 sel=0384/0384 pmass=0.9902
+      [0391/1024] L=2 gold= 30 arg= 30 mass= 29 inside=1 | BASE=   1 MASS=   5 sel=0391/0040 pmass=0.7109
+      [0406/1024] L=2 gold= 31 arg= 31 mass= 30 inside=1 | BASE=   1 MASS=   5 sel=0406/0316 pmass=0.9662
+      [0409/1024] L=2 gold= 31 arg= 31 mass= 30 inside=1 | BASE=   1 MASS=   7 sel=0409/0427 pmass=0.9347
+      [0410/1024] L=3 gold=  9 arg=  9 mass=  7 inside=1 | BASE=   1 MASS=   5 sel=0410/0668 pmass=0.9603
+      [0415/1024] L=2 gold= 20 arg= 20 mass= 19 inside=1 | BASE=   1 MASS=   2 sel=0415/0748 pmass=0.5139
+      [0417/1024] L=4 gold=  9 arg=  9 mass=  6 inside=1 | BASE=   1 MASS=  62 sel=0417/0747 pmass=0.9762
+      [0418/1024] L=2 gold=  9 arg=  9 mass=  8 inside=1 | BASE=   1 MASS=   5 sel=0418/0835 pmass=0.6553
+      [0436/1024] L=2 gold= 32 arg= 32 mass= 31 inside=1 | BASE=   1 MASS=   4 sel=0436/0760 pmass=0.9546
+      [0439/1024] L=2 gold= 20 arg= 20 mass= 19 inside=1 | BASE=   1 MASS=   2 sel=0439/0397 pmass=0.8982
+      [0448/1024] L=2 gold=  9 arg=  9 mass=  9 inside=1 | BASE=   1 MASS=   1 sel=0448/0448 pmass=0.8639
+      [0449/1024] L=3 gold= 21 arg= 21 mass= 19 inside=1 | BASE=   1 MASS=   3 sel=0449/0032 pmass=0.9506
+      [0451/1024] L=2 gold=  9 arg= 10 mass= 10 inside=1 | BASE= 177 MASS= 177 sel=0346/0346 pmass=0.8697
+      [0454/1024] L=2 gold= 31 arg= 31 mass= 30 inside=1 | BASE=   1 MASS=   2 sel=0454/0742 pmass=0.9735
+      [0472/1024] L=2 gold= 19 arg= 19 mass= 18 inside=1 | BASE=   1 MASS=   2 sel=0472/0139 pmass=0.9403
+      [0475/1024] L=2 gold=  9 arg=  9 mass=  8 inside=1 | BASE=   1 MASS=   2 sel=0475/0724 pmass=0.8771
+      [0477/1024] L=4 gold= 22 arg= 25 mass= 22 inside=1 | BASE= 238 MASS=   1 sel=0873/0477 pmass=0.9632
+      [0478/1024] L=2 gold= 32 arg= 32 mass= 31 inside=1 | BASE=   1 MASS=   4 sel=0478/0040 pmass=0.9070
+      [0481/1024] L=2 gold= 29 arg= 29 mass= 28 inside=1 | BASE=   1 MASS=   2 sel=0481/0442 pmass=0.9815
+      [0491/1024] L=3 gold= 32 arg= 32 mass= 30 inside=1 | BASE=   1 MASS=   2 sel=0491/0728 pmass=0.9299
+      [0496/1024] L=2 gold=  8 arg=  9 mass=  8 inside=1 | BASE= 207 MASS=   1 sel=0346/0496 pmass=0.9590
+      [0499/1024] L=2 gold= 32 arg= 32 mass= 31 inside=1 | BASE=   1 MASS=   4 sel=0499/0601 pmass=0.9501
+      [0500/1024] L=3 gold= 20 arg= 20 mass= 18 inside=1 | BASE=   1 MASS=   4 sel=0500/0407 pmass=0.7913
+      [0508/1024] L=2 gold= 32 arg= 32 mass= 31 inside=1 | BASE=   1 MASS=   2 sel=0508/0829 pmass=0.8561
+      [0509/1024] L=3 gold=  9 arg= 10 mass=  9 inside=1 | BASE=   2 MASS=   1 sel=0989/0509 pmass=0.8992
+      [0512/1024] L=3 gold= 33 arg= 33 mass= 32 inside=1 | BASE=   1 MASS=   1 sel=0512/0512 pmass=0.9842
+      [0514/1024] L=2 gold=  9 arg=  9 mass=  8 inside=1 | BASE=   1 MASS=   7 sel=0514/0850 pmass=0.9035
+      [0532/1024] L=2 gold= 19 arg= 19 mass= 18 inside=1 | BASE=   1 MASS=   2 sel=0532/0199 pmass=0.8902
+      [0545/1024] L=3 gold=  9 arg= 11 mass= 10 inside=1 | BASE=  94 MASS=   1 sel=0311/0545 pmass=0.8092
+      [0547/1024] L=2 gold=  9 arg=  9 mass=  8 inside=1 | BASE=   1 MASS=   3 sel=0547/0724 pmass=0.9305
+      [0550/1024] L=2 gold= 19 arg= 19 mass= 18 inside=1 | BASE=   1 MASS=   5 sel=0550/0427 pmass=0.7423
+      [0551/1024] L=3 gold= 21 arg= 21 mass= 19 inside=1 | BASE=   1 MASS=   4 sel=0551/0695 pmass=0.9119
+      [0556/1024] L=2 gold= 21 arg= 21 mass= 20 inside=1 | BASE=   1 MASS=   2 sel=0556/0199 pmass=0.6270
+      [0559/1024] L=2 gold= 20 arg= 20 mass= 19 inside=1 | BASE=   1 MASS=   4 sel=0559/1006 pmass=0.9718
+      [0560/1024] L=3 gold=  9 arg=  9 mass=  7 inside=1 | BASE=   1 MASS=   2 sel=0560/0467 pmass=0.9665
+      [0562/1024] L=2 gold=  9 arg=  9 mass=  8 inside=1 | BASE=   1 MASS=   7 sel=0562/0364 pmass=0.6750
+      [0568/1024] L=2 gold= 20 arg= 31 mass= 30 inside=0 | BASE= 171 MASS=  45 sel=0442/0709 pmass=0.1704
+      [0576/1024] L=4 gold=  9 arg=  9 mass=  8 inside=1 | BASE=   1 MASS=   1 sel=0576/0576 pmass=0.9202
+      [0589/1024] L=2 gold= 18 arg= 18 mass= 17 inside=1 | BASE=   1 MASS=   3 sel=0589/0361 pmass=0.9228
+      [0590/1024] L=3 gold= 21 arg= 21 mass= 19 inside=1 | BASE=   1 MASS=   5 sel=0590/0824 pmass=0.6740
+      [0592/1024] L=2 gold= 20 arg= 20 mass= 19 inside=1 | BASE=   1 MASS=   2 sel=0592/0784 pmass=0.9312
+      [0595/1024] L=2 gold= 30 arg= 30 mass= 29 inside=1 | BASE=   1 MASS=   4 sel=0595/0724 pmass=0.9401
+      [0613/1024] L=2 gold= 32 arg= 32 mass= 31 inside=1 | BASE=   1 MASS=   4 sel=0613/0736 pmass=0.8371
+      [0622/1024] L=2 gold= 31 arg= 31 mass= 30 inside=1 | BASE=   1 MASS=   2 sel=0622/0826 pmass=0.9806
+      [0631/1024] L=2 gold= 20 arg= 20 mass= 19 inside=1 | BASE=   1 MASS=   4 sel=0631/0955 pmass=0.8585
+      [0634/1024] L=2 gold=  9 arg=  9 mass=  8 inside=1 | BASE=   1 MASS=   5 sel=0634/0406 pmass=0.9706
+      [0637/1024] L=2 gold= 30 arg= 30 mass= 29 inside=1 | BASE=   1 MASS=   8 sel=0637/0850 pmass=0.8935
+      [0640/1024] L=2 gold=  9 arg=  9 mass=  9 inside=1 | BASE=   1 MASS=   1 sel=0640/0640 pmass=0.8769
+      [0653/1024] L=3 gold= 21 arg= 21 mass= 19 inside=1 | BASE=   1 MASS=   2 sel=0653/0794 pmass=0.8866
+      [0655/1024] L=2 gold= 21 arg= 21 mass= 20 inside=1 | BASE=   1 MASS=   5 sel=0655/0742 pmass=0.6422
+      [0667/1024] L=2 gold= 20 arg= 20 mass= 19 inside=1 | BASE=   1 MASS=   3 sel=0667/0079 pmass=0.8745
+      [0668/1024] L=3 gold= 20 arg= 20 mass= 18 inside=1 | BASE=   1 MASS=   6 sel=0668/0848 pmass=0.8395
+      [0670/1024] L=2 gold= 19 arg= 19 mass= 18 inside=1 | BASE=   1 MASS=   4 sel=0670/0766 pmass=0.8813
+      [0673/1024] L=2 gold=  9 arg=  9 mass=  8 inside=1 | BASE=   1 MASS=   5 sel=0673/0736 pmass=0.9889
+      [0683/1024] L=3 gold= 10 arg= 10 mass=  8 inside=1 | BASE=   1 MASS=   6 sel=0683/0005 pmass=0.6097
+      [0691/1024] L=2 gold= 20 arg= 20 mass= 19 inside=1 | BASE=   1 MASS=   7 sel=0691/0520 pmass=0.8735
+      [0698/1024] L=3 gold= 32 arg= 32 mass= 30 inside=1 | BASE=   1 MASS=   7 sel=0698/0053 pmass=0.9478
+      [0699/1024] L=4 gold=  9 arg= 34 mass= 34 inside=0 | BASE= 259 MASS= 259 sel=0162/0162 pmass=0.3129
+      [0703/1024] L=2 gold= 20 arg= 20 mass= 19 inside=1 | BASE=   1 MASS=   3 sel=0703/0772 pmass=0.8401
+      [0704/1024] L=3 gold= 21 arg= 21 mass= 20 inside=1 | BASE=   1 MASS=   1 sel=0704/0704 pmass=0.7434
+      [0706/1024] L=2 gold= 20 arg= 20 mass= 19 inside=1 | BASE=   1 MASS=   4 sel=0706/0079 pmass=0.5873
+      [0709/1024] L=2 gold= 31 arg= 31 mass= 30 inside=1 | BASE=   1 MASS=   2 sel=0709/0868 pmass=0.9053
+      [0712/1024] L=2 gold= 21 arg= 21 mass= 20 inside=1 | BASE=   1 MASS=   4 sel=0712/0745 pmass=0.6967
+      [0715/1024] L=2 gold= 30 arg= 30 mass= 29 inside=1 | BASE=   1 MASS=   4 sel=0715/0199 pmass=0.9519
+      [0716/1024] L=3 gold=  9 arg= 11 mass=  9 inside=1 | BASE= 164 MASS=   1 sel=0311/0716 pmass=0.8091
+      [0718/1024] L=2 gold= 31 arg= 31 mass= 30 inside=1 | BASE=   1 MASS=   2 sel=0718/0679 pmass=0.7900
+      [0719/1024] L=3 gold= 21 arg= 21 mass= 19 inside=1 | BASE=   1 MASS=   5 sel=0719/0392 pmass=0.9216
+      [0721/1024] L=2 gold= 19 arg= 19 mass= 18 inside=1 | BASE=   1 MASS=   4 sel=0721/0724 pmass=0.9689
+      [0730/1024] L=2 gold= 30 arg= 30 mass= 29 inside=1 | BASE=   1 MASS=   6 sel=0730/0745 pmass=0.9436
+      [0738/1024] L=4 gold=  9 arg= 12 mass=  9 inside=1 | BASE= 243 MASS=   1 sel=0873/0738 pmass=0.4968
+      [0740/1024] L=3 gold=  9 arg=  9 mass=  7 inside=1 | BASE=   1 MASS=   3 sel=0740/0002 pmass=0.9747
+      [0743/1024] L=3 gold= 21 arg= 21 mass= 19 inside=1 | BASE=   1 MASS=   7 sel=0743/0203 pmass=0.9411
+      [0746/1024] L=3 gold= 33 arg= 33 mass= 32 inside=1 | BASE=   1 MASS=   2 sel=0746/0506 pmass=0.9451
+      [0760/1024] L=2 gold= 31 arg= 31 mass= 30 inside=1 | BASE=   1 MASS=   6 sel=0760/0034 pmass=0.8528
+      [0761/1024] L=3 gold= 21 arg= 21 mass= 19 inside=1 | BASE=   1 MASS=   5 sel=0761/0554 pmass=0.9053
+      [0767/1024] L=3 gold= 21 arg= 21 mass= 19 inside=1 | BASE=   1 MASS=   7 sel=0767/0539 pmass=0.8971
+      [0768/1024] L=4 gold= 35 arg= 35 mass= 35 inside=1 | BASE=   1 MASS=   1 sel=0768/0768 pmass=0.8562
+      [0773/1024] L=3 gold= 32 arg= 32 mass= 30 inside=1 | BASE=   1 MASS=   6 sel=0773/0464 pmass=0.9079
+      [0789/1024] L=4 gold=  9 arg= 12 mass=  9 inside=1 | BASE=  88 MASS=   1 sel=0873/0789 pmass=0.8363
+      [0790/1024] L=2 gold= 30 arg= 30 mass= 29 inside=1 | BASE=   1 MASS=   4 sel=0790/0607 pmass=0.9325
+      [0802/1024] L=2 gold= 29 arg= 29 mass= 28 inside=1 | BASE=   1 MASS=   4 sel=0802/0736 pmass=0.8947
+      [0806/1024] L=3 gold= 33 arg= 33 mass= 31 inside=1 | BASE=   1 MASS=   9 sel=0806/0884 pmass=0.9820
+      [0808/1024] L=2 gold= 20 arg= 31 mass= 30 inside=0 | BASE=  47 MASS=  32 sel=0391/0568 pmass=0.2787
+      [0809/1024] L=3 gold= 21 arg= 21 mass= 19 inside=1 | BASE=   1 MASS=   5 sel=0809/0452 pmass=0.8915
+      [0817/1024] L=2 gold=  9 arg=  9 mass=  8 inside=1 | BASE=   1 MASS=   2 sel=0817/0784 pmass=0.8854
+      [0818/1024] L=3 gold=  9 arg=  9 mass=  7 inside=1 | BASE=   1 MASS=   8 sel=0818/0566 pmass=0.8443
+      [0826/1024] L=2 gold= 20 arg= 20 mass= 19 inside=1 | BASE=   1 MASS=   2 sel=0826/0457 pmass=0.8449
+      [0832/1024] L=2 gold= 31 arg= 31 mass= 31 inside=1 | BASE=   1 MASS=   1 sel=0832/0832 pmass=0.9761
+      [0835/1024] L=2 gold=  9 arg=  9 mass=  8 inside=1 | BASE=   1 MASS=   6 sel=0835/0412 pmass=0.6882
+      [0839/1024] L=3 gold=  8 arg=  8 mass=  6 inside=1 | BASE=   1 MASS=   7 sel=0839/0668 pmass=0.9530
+      [0841/1024] L=2 gold= 21 arg= 21 mass= 20 inside=1 | BASE=   1 MASS=  12 sel=0841/0559 pmass=0.9310
+      [0845/1024] L=3 gold= 21 arg= 21 mass= 19 inside=1 | BASE=   1 MASS=   5 sel=0845/0851 pmass=0.9179
+      [0862/1024] L=2 gold= 30 arg= 30 mass= 29 inside=1 | BASE=   1 MASS=   4 sel=0862/0016 pmass=0.8255
+      [0871/1024] L=2 gold= 33 arg= 33 mass= 32 inside=1 | BASE=   1 MASS=   3 sel=0871/0355 pmass=0.9601
+      [0872/1024] L=3 gold= 33 arg= 33 mass= 31 inside=1 | BASE=   1 MASS=   5 sel=0872/0086 pmass=0.7944
+      [0880/1024] L=2 gold= 19 arg= 19 mass= 18 inside=1 | BASE=   1 MASS=   5 sel=0880/0874 pmass=0.9413
+      [0884/1024] L=3 gold= 32 arg= 32 mass= 30 inside=1 | BASE=   1 MASS=   5 sel=0884/0464 pmass=0.9654
+      [0886/1024] L=2 gold= 30 arg= 30 mass= 29 inside=1 | BASE=   1 MASS=   4 sel=0886/0706 pmass=0.9932
+      [0887/1024] L=3 gold=  9 arg=  9 mass=  7 inside=1 | BASE=   1 MASS=   6 sel=0887/0368 pmass=0.9707
+      [0889/1024] L=2 gold= 19 arg= 19 mass= 18 inside=1 | BASE=   1 MASS=   4 sel=0889/0826 pmass=0.9430
+      [0890/1024] L=3 gold=  8 arg=  8 mass=  6 inside=1 | BASE=   1 MASS=   7 sel=0890/0929 pmass=0.6998
+      [0893/1024] L=3 gold= 21 arg= 21 mass= 19 inside=1 | BASE=   1 MASS=   3 sel=0893/0803 pmass=0.9506
+      [0896/1024] L=3 gold= 22 arg= 22 mass= 22 inside=1 | BASE=   1 MASS=   1 sel=0896/0896 pmass=0.9365
+      [0897/1024] L=4 gold= 20 arg= 20 mass= 18 inside=1 | BASE=   1 MASS=   2 sel=0897/0942 pmass=0.9332
+      [0907/1024] L=2 gold= 31 arg= 31 mass= 30 inside=1 | BASE=   1 MASS=   2 sel=0907/0139 pmass=0.8067
+      [0928/1024] L=2 gold= 30 arg= 30 mass= 29 inside=1 | BASE=   1 MASS=   5 sel=0928/0850 pmass=0.8541
+      [0934/1024] L=2 gold= 29 arg= 29 mass= 28 inside=1 | BASE=   1 MASS=   4 sel=0934/0772 pmass=0.9018
+      [0940/1024] L=2 gold= 33 arg= 33 mass= 32 inside=1 | BASE=   1 MASS=   4 sel=0940/0577 pmass=0.9407
+      [0941/1024] L=3 gold=  9 arg=  1 mass=  1 inside=0 | BASE= 338 MASS= 338 sel=0176/0176 pmass=0.2415
+      [0946/1024] L=2 gold=  9 arg= 10 mass=  9 inside=1 | BASE= 227 MASS=   1 sel=0346/0946 pmass=0.7896
+      [0947/1024] L=3 gold= 33 arg= 33 mass= 32 inside=1 | BASE=   1 MASS=   2 sel=0947/0572 pmass=0.9397
+      [0949/1024] L=2 gold=  8 arg=  1 mass=  1 inside=0 | BASE=  76 MASS=  76 sel=0157/0157 pmass=0.2191
+      [0952/1024] L=2 gold= 19 arg= 19 mass= 18 inside=1 | BASE=   1 MASS=   3 sel=0952/0127 pmass=0.9045
+      [0953/1024] L=3 gold=  8 arg=  8 mass=  6 inside=1 | BASE=   1 MASS=   3 sel=0953/0566 pmass=0.9250
+      [0955/1024] L=2 gold= 20 arg= 20 mass= 19 inside=1 | BASE=   1 MASS=   4 sel=0955/0835 pmass=0.8636
+      [0960/1024] L=4 gold=  9 arg=  9 mass=  7 inside=1 | BASE=   1 MASS=   1 sel=0960/0960 pmass=0.9824
+      [0964/1024] L=2 gold= 19 arg= 19 mass= 18 inside=1 | BASE=   1 MASS=   7 sel=0964/0802 pmass=0.8439
+      [0965/1024] L=3 gold=  8 arg=  8 mass=  6 inside=1 | BASE=   1 MASS=   5 sel=0965/0524 pmass=0.8164
+      [0971/1024] L=3 gold=  9 arg=  9 mass=  7 inside=1 | BASE=   1 MASS=   2 sel=0971/0320 pmass=0.8624
+      [0976/1024] L=2 gold= 20 arg= 20 mass= 19 inside=1 | BASE=   1 MASS=   3 sel=0976/0256 pmass=0.7732
+      [0979/1024] L=2 gold= 30 arg= 30 mass= 29 inside=1 | BASE=   1 MASS=   2 sel=0979/1006 pmass=0.9836
+      [0980/1024] L=3 gold= 33 arg= 33 mass= 31 inside=1 | BASE=   1 MASS=   3 sel=0980/0647 pmass=0.9601
+      [0987/1024] L=4 gold= 35 arg= 22 mass= 19 inside=0 | BASE=  28 MASS= 247 sel=0189/0261 pmass=0.2968
+      [0988/1024] L=2 gold=  9 arg=  9 mass=  8 inside=1 | BASE=   1 MASS=   3 sel=0988/0826 pmass=0.8175
+      [0997/1024] L=2 gold= 20 arg= 20 mass= 19 inside=1 | BASE=   1 MASS=   2 sel=0997/0148 pmass=0.7481
+      [1001/1024] L=3 gold=  9 arg=  9 mass=  7 inside=1 | BASE=   1 MASS=   3 sel=1001/0530 pmass=0.8959
+      [1003/1024] L=2 gold=  9 arg=  9 mass=  8 inside=1 | BASE=   1 MASS=   9 sel=1003/0955 pmass=0.5727
+      [1010/1024] L=3 gold= 33 arg= 33 mass= 31 inside=1 | BASE=   1 MASS=   2 sel=1010/0497 pmass=0.9373
+      [1015/1024] L=2 gold=  9 arg= 10 mass= 10 inside=1 | BASE= 284 MASS= 284 sel=0346/0346 pmass=0.9420
+      [1017/1024] L=4 gold=  8 arg=  1 mass=  7 inside=0 | BASE=  13 MASS=   1 sel=0066/1017 pmass=0.4281
+      [1024/1024] L=2 gold= 19 arg= 19 mass= 19 inside=1 | BASE=   1 MASS=   1 sel=1024/1024 pmass=0.8036
+      BASELINE ARGMAX R1/R5/R16/MRR : 0.9824/0.9834/0.9844/0.983123
+      MASS_WINDOW     R1/R5/R16/MRR : 0.8330/0.9512/0.9902/0.877984
+      L=2 BASE R1=0.9766 | MASS R1=0.6988 R5=0.9357
+      L=3 BASE R1=0.9883 | MASS R1=0.8211 R5=0.9326
+      L=4 BASE R1=0.9824 | MASS R1=0.9795 R5=0.9853
+      BASE argmax inside gold span  : 0.9912
+      BASE exact gold-start hit     : 0.9707
+      MASS exact gold-start hit     : 0.5508
+      Pointer gold-span mass        : 0.885546
+
+[6/12] TEST531 FAILURE ANATOMY...
+      Baseline failures                    : 18/1024
+      Failure: argmax inside identity      : 11/18
+      Failure: inside but not first token  : 11/18
+      Failure: argmax != gold start        : 18/18
+      Failures recovered by MASS_WINDOW    : 10/18
+      Previously-correct broken by MASS    : 163
+      Baseline failure IDs                 : [172, 451, 477, 496, 509, 545, 568, 699, 716, 738, 789, 808, 941, 946, 949, 987, 1015, 1017]
+      Recovered IDs                        : [172, 477, 496, 509, 545, 716, 738, 789, 946, 1017]
+      Broken IDs                           : [1, 4, 19, 20, 31, 35, 37, 47, 53, 68, 69, 70, 80, 86, 88, 92, 118, 124, 127, 130, 134, 139, 148, 161, 163, 173, 178, 179, 193, 206, 207, 208, 218, 220, 226, 229, 232, 235, 248, 256, 284, 292, 298, 310, 313, 319, 323, 326, 328, 329, 341, 344, 345, 353, 362, 364, 370, 371, 374, 376, 391, 406, 409, 410, 415, 417, 418, 436, 439, 449, 454, 472, 475, 478, 481, 491, 499, 500, 508, 514]
+
+[7/12] COUNTERFACTUAL X-RAY...
+      [0001/1024] L=4 target=0354 gold= 35 arg= 35 mass= 35 BASE=   1 MASS=   1
+      [0002/1024] L=2 target=0355 gold= 10 arg= 11 mass= 10 BASE=  10 MASS=   1
+      [0003/1024] L=3 target=0356 gold= 32 arg= 32 mass= 31 BASE=   1 MASS=   1
+      [0004/1024] L=4 target=0357 gold= 23 arg= 23 mass= 23 BASE=   1 MASS=   1
+      [0005/1024] L=2 target=0358 gold= 30 arg= 30 mass= 30 BASE=   1 MASS=   1
+      [0008/1024] L=2 target=0361 gold= 32 arg= 32 mass= 31 BASE=   1 MASS=   4
+      [0011/1024] L=2 target=0364 gold=  9 arg=  9 mass=  8 BASE=   1 MASS=   2
+      [0012/1024] L=3 target=0365 gold= 19 arg= 19 mass= 17 BASE=   1 MASS=   6
+      [0017/1024] L=2 target=0370 gold= 30 arg= 30 mass= 29 BASE=   1 MASS=   3
+      [0020/1024] L=2 target=0373 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   3
+      [0021/1024] L=3 target=0374 gold= 21 arg= 21 mass= 19 BASE=   1 MASS=   3
+      [0027/1024] L=3 target=0380 gold= 21 arg= 21 mass= 19 BASE=   1 MASS=   4
+      [0030/1024] L=3 target=0383 gold= 20 arg= 20 mass= 18 BASE=   1 MASS=   7
+      [0038/1024] L=2 target=0391 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   5
+      [0047/1024] L=2 target=0400 gold=  9 arg=  9 mass=  8 BASE=   1 MASS=   4
+      [0053/1024] L=2 target=0406 gold= 10 arg= 10 mass=  9 BASE=   1 MASS=   5
+      [0054/1024] L=3 target=0407 gold=  9 arg=  9 mass=  7 BASE=   1 MASS=   6
+      [0062/1024] L=2 target=0415 gold=  9 arg=  9 mass=  8 BASE=   1 MASS=   2
+      [0064/1024] L=4 target=0417 gold= 34 arg= 34 mass= 34 BASE=   1 MASS=   1
+      [0065/1024] L=2 target=0418 gold= 32 arg= 32 mass= 31 BASE=   1 MASS=   5
+      [0085/1024] L=4 target=0438 gold=  9 arg= 21 mass= 19 BASE=  73 MASS= 286
+      [0086/1024] L=2 target=0439 gold=  9 arg=  9 mass=  8 BASE=   1 MASS=   2
+      [0089/1024] L=2 target=0442 gold= 20 arg= 21 mass= 20 BASE= 182 MASS=   1
+      [0098/1024] L=2 target=0451 gold= 10 arg= 11 mass= 11 BASE= 177 MASS= 177
+      [0101/1024] L=2 target=0454 gold=  9 arg=  9 mass=  8 BASE=   1 MASS=   2
+      [0113/1024] L=2 target=0466 gold= 20 arg= 20 mass= 19 BASE=   1 MASS=   2
+      [0114/1024] L=3 target=0467 gold= 20 arg= 20 mass= 18 BASE=   1 MASS=   3
+      [0117/1024] L=3 target=0470 gold= 33 arg= 33 mass= 31 BASE=   1 MASS=   6
+      [0122/1024] L=2 target=0475 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   2
+      [0124/1024] L=4 target=0477 gold= 22 arg= 25 mass= 22 BASE= 238 MASS=   1
+      [0125/1024] L=2 target=0478 gold= 20 arg= 20 mass= 19 BASE=   1 MASS=   4
+      [0128/1024] L=2 target=0481 gold=  9 arg=  9 mass=  9 BASE=   1 MASS=   1
+      [0131/1024] L=2 target=0484 gold= 30 arg= 30 mass= 29 BASE=   1 MASS=   2
+      [0134/1024] L=2 target=0487 gold= 20 arg= 20 mass=  9 BASE=   1 MASS=  22
+      [0137/1024] L=2 target=0490 gold= 19 arg= 19 mass= 18 BASE=   1 MASS=   6
+      [0138/1024] L=3 target=0491 gold= 32 arg= 32 mass= 30 BASE=   1 MASS=   2
+      [0146/1024] L=2 target=0499 gold= 30 arg= 30 mass= 29 BASE=   1 MASS=   4
+      [0147/1024] L=3 target=0500 gold=  9 arg=  9 mass=  7 BASE=   1 MASS=   4
+      [0155/1024] L=2 target=0508 gold= 28 arg= 28 mass= 27 BASE=   1 MASS=   2
+      [0161/1024] L=2 target=0514 gold= 10 arg= 10 mass=  9 BASE=   1 MASS=   7
+      [0170/1024] L=2 target=0523 gold= 29 arg= 29 mass= 28 BASE=   1 MASS=   3
+      [0175/1024] L=4 target=0528 gold=  9 arg= 12 mass=  9 BASE= 305 MASS=   1
+      [0179/1024] L=2 target=0532 gold=  9 arg=  9 mass=  8 BASE=   1 MASS=   2
+      [0192/1024] L=3 target=0545 gold= 32 arg= 32 mass= 31 BASE=   1 MASS=   1
+      [0194/1024] L=2 target=0547 gold= 19 arg= 19 mass= 18 BASE=   1 MASS=   3
+      [0197/1024] L=2 target=0550 gold= 20 arg= 20 mass= 19 BASE=   1 MASS=   5
+      [0198/1024] L=3 target=0551 gold= 32 arg= 32 mass= 30 BASE=   1 MASS=   4
+      [0203/1024] L=2 target=0556 gold= 32 arg= 32 mass= 31 BASE=   1 MASS=   2
+      [0207/1024] L=3 target=0560 gold= 10 arg= 10 mass=  8 BASE=   1 MASS=   2
+      [0209/1024] L=2 target=0562 gold= 10 arg= 10 mass=  9 BASE=   1 MASS=   7
+      [0236/1024] L=2 target=0589 gold= 20 arg= 20 mass= 19 BASE=   1 MASS=   3
+      [0239/1024] L=2 target=0592 gold= 30 arg= 30 mass= 29 BASE=   1 MASS=   2
+      [0242/1024] L=2 target=0595 gold= 20 arg= 20 mass= 19 BASE=   1 MASS=   4
+      [0248/1024] L=2 target=0601 gold= 30 arg= 30 mass= 29 BASE=   1 MASS=   5
+      [0251/1024] L=2 target=0604 gold= 19 arg= 19 mass= 18 BASE=   1 MASS=   7
+      [0256/1024] L=4 target=0609 gold= 22 arg= 22 mass= 22 BASE=   1 MASS=   1
+      [0261/1024] L=3 target=0614 gold=  8 arg=  8 mass=  6 BASE=   1 MASS=   2
+      [0264/1024] L=3 target=0617 gold= 22 arg= 22 mass= 20 BASE=   1 MASS=   3
+      [0278/1024] L=2 target=0631 gold= 30 arg= 30 mass= 29 BASE=   1 MASS=   4
+      [0281/1024] L=2 target=0634 gold=  8 arg=  8 mass=  7 BASE=   1 MASS=   5
+      [0300/1024] L=3 target=0653 gold= 20 arg= 20 mass= 18 BASE=   1 MASS=   2
+      [0302/1024] L=2 target=0655 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   5
+      [0303/1024] L=3 target=0656 gold= 21 arg= 15 mass= 13 BASE= 160 MASS= 188
+      [0308/1024] L=2 target=0661 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   7
+      [0314/1024] L=2 target=0667 gold= 19 arg= 19 mass= 18 BASE=   1 MASS=   3
+      [0315/1024] L=3 target=0668 gold= 32 arg= 32 mass= 31 BASE=   1 MASS=   2
+      [0317/1024] L=2 target=0670 gold=  9 arg=  9 mass=  8 BASE=   1 MASS=   4
+      [0320/1024] L=2 target=0673 gold= 20 arg= 20 mass= 19 BASE=   1 MASS=   5
+      [0323/1024] L=2 target=0676 gold= 19 arg= 19 mass= 18 BASE=   1 MASS=   5
+      [0338/1024] L=2 target=0691 gold= 30 arg= 30 mass= 29 BASE=   1 MASS=   7
+      [0340/1024] L=4 target=0693 gold=  9 arg=  1 mass=  7 BASE=  15 MASS=   1
+      [0341/1024] L=2 target=0694 gold= 32 arg= 32 mass= 31 BASE=   1 MASS=   3
+      [0345/1024] L=3 target=0698 gold= 21 arg= 21 mass= 19 BASE=   1 MASS=   7
+      [0350/1024] L=2 target=0703 gold=  8 arg=  8 mass=  7 BASE=   1 MASS=   3
+      [0353/1024] L=2 target=0706 gold= 19 arg= 19 mass= 18 BASE=   1 MASS=   4
+      [0356/1024] L=2 target=0709 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   2
+      [0359/1024] L=2 target=0712 gold= 32 arg= 32 mass= 31 BASE=   1 MASS=   4
+      [0362/1024] L=2 target=0715 gold= 20 arg= 20 mass= 19 BASE=   1 MASS=   4
+      [0365/1024] L=2 target=0718 gold= 20 arg= 20 mass= 19 BASE=   1 MASS=   2
+      [0366/1024] L=3 target=0719 gold= 21 arg= 21 mass= 19 BASE=   1 MASS=   5
+      [0368/1024] L=2 target=0721 gold= 20 arg= 20 mass= 19 BASE=   1 MASS=   4
+      [0374/1024] L=2 target=0727 gold= 32 arg= 32 mass= 31 BASE=   1 MASS=   6
+      [0377/1024] L=2 target=0730 gold= 20 arg= 20 mass= 19 BASE=   1 MASS=   6
+      [0384/1024] L=3 target=0737 gold= 21 arg= 21 mass= 20 BASE=   1 MASS=   1
+      [0387/1024] L=3 target=0740 gold=  9 arg=  9 mass=  7 BASE=   1 MASS=   3
+      [0393/1024] L=3 target=0746 gold= 32 arg= 32 mass= 31 BASE=   1 MASS=   2
+      [0395/1024] L=2 target=0748 gold= 28 arg= 28 mass= 27 BASE=   1 MASS=   6
+      [0401/1024] L=2 target=0754 gold=  9 arg=  9 mass=  8 BASE=   1 MASS=   4
+      [0407/1024] L=2 target=0760 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   6
+      [0416/1024] L=2 target=0769 gold= 30 arg= 30 mass= 29 BASE=   1 MASS=   5
+      [0425/1024] L=2 target=0778 gold= 30 arg= 30 mass= 29 BASE=   1 MASS=   3
+      [0428/1024] L=2 target=0781 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   4
+      [0437/1024] L=2 target=0790 gold= 32 arg= 32 mass= 31 BASE=   1 MASS=   4
+      [0446/1024] L=2 target=0799 gold=  9 arg=  9 mass=  8 BASE=   1 MASS=   3
+      [0448/1024] L=4 target=0801 gold= 21 arg= 21 mass= 20 BASE=   1 MASS=   1
+      [0455/1024] L=2 target=0808 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   2
+      [0461/1024] L=2 target=0814 gold= 30 arg= 30 mass= 29 BASE=   1 MASS=   6
+      [0464/1024] L=2 target=0817 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   2
+      [0465/1024] L=3 target=0818 gold=  9 arg=  9 mass=  7 BASE=   1 MASS=   8
+      [0473/1024] L=2 target=0826 gold= 29 arg= 29 mass= 28 BASE=   1 MASS=   2
+      [0476/1024] L=2 target=0829 gold=  9 arg= 10 mass=  9 BASE=  84 MASS=   1
+      [0488/1024] L=2 target=0841 gold= 19 arg= 19 mass= 18 BASE=   1 MASS=  12
+      [0503/1024] L=2 target=0856 gold=  9 arg=  9 mass=  8 BASE=   1 MASS=   4
+      [0509/1024] L=2 target=0862 gold= 32 arg= 32 mass= 31 BASE=   1 MASS=   4
+      [0512/1024] L=2 target=0865 gold= 20 arg= 20 mass= 19 BASE=   1 MASS=   3
+      [0515/1024] L=2 target=0868 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   2
+      [0518/1024] L=2 target=0871 gold= 29 arg= 29 mass= 28 BASE=   1 MASS=   3
+      [0519/1024] L=3 target=0872 gold= 20 arg= 20 mass= 18 BASE=   1 MASS=   5
+      [0522/1024] L=3 target=0875 gold=  8 arg=  8 mass=  6 BASE=   1 MASS=   3
+      [0534/1024] L=3 target=0887 gold= 31 arg= 31 mass= 29 BASE=   1 MASS=   6
+      [0551/1024] L=2 target=0904 gold= 19 arg= 19 mass= 18 BASE=   1 MASS=   3
+      [0552/1024] L=3 target=0905 gold= 20 arg= 20 mass= 18 BASE=   1 MASS=   3
+      [0560/1024] L=2 target=0913 gold= 30 arg= 31 mass= 30 BASE= 247 MASS=   1
+      [0575/1024] L=2 target=0928 gold= 30 arg= 30 mass= 29 BASE=   1 MASS=   5
+      [0576/1024] L=3 target=0929 gold=  9 arg=  9 mass=  9 BASE=   1 MASS=   1
+      [0578/1024] L=2 target=0931 gold= 19 arg= 19 mass= 18 BASE=   1 MASS=   3
+      [0581/1024] L=2 target=0934 gold= 20 arg= 20 mass= 19 BASE=   1 MASS=   4
+      [0582/1024] L=3 target=0935 gold=  8 arg=  8 mass=  6 BASE=   1 MASS=   6
+      [0584/1024] L=2 target=0937 gold= 19 arg= 20 mass= 19 BASE= 267 MASS=   1
+      [0590/1024] L=2 target=0943 gold= 20 arg= 20 mass= 19 BASE=   1 MASS=   5
+      [0593/1024] L=2 target=0946 gold=  9 arg= 10 mass=  9 BASE= 227 MASS=   1
+      [0596/1024] L=2 target=0949 gold=  9 arg=  1 mass=  1 BASE=  76 MASS=  76
+      [0599/1024] L=2 target=0952 gold= 20 arg= 20 mass= 19 BASE=   1 MASS=   3
+      [0602/1024] L=2 target=0955 gold= 30 arg= 30 mass= 29 BASE=   1 MASS=   4
+      [0605/1024] L=2 target=0958 gold= 29 arg= 29 mass= 28 BASE=   1 MASS=   7
+      [0611/1024] L=2 target=0964 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   7
+      [0618/1024] L=3 target=0971 gold= 32 arg= 32 mass= 30 BASE=   1 MASS=   2
+      [0626/1024] L=2 target=0979 gold= 30 arg= 30 mass= 29 BASE=   1 MASS=   2
+      [0627/1024] L=3 target=0980 gold=  9 arg=  9 mass=  7 BASE=   1 MASS=   3
+      [0634/1024] L=4 target=0987 gold= 34 arg= 21 mass= 18 BASE=  28 MASS= 249
+      [0635/1024] L=2 target=0988 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   3
+      [0640/1024] L=4 target=0993 gold= 22 arg= 22 mass= 22 BASE=   1 MASS=   1
+      [0644/1024] L=2 target=0997 gold= 19 arg= 19 mass= 18 BASE=   1 MASS=   2
+      [0648/1024] L=3 target=1001 gold=  9 arg=  9 mass=  7 BASE=   1 MASS=   3
+      [0662/1024] L=2 target=1015 gold=  9 arg= 10 mass= 10 BASE= 284 MASS= 284
+      [0663/1024] L=3 target=1016 gold= 19 arg= 19 mass= 17 BASE=   1 MASS=   8
+      [0672/1024] L=2 target=0001 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   4
+      [0675/1024] L=2 target=0004 gold= 20 arg= 20 mass= 19 BASE=   1 MASS=   3
+      [0679/1024] L=3 target=0008 gold=  8 arg=  8 mass=  6 BASE=   1 MASS=   3
+      [0691/1024] L=3 target=0020 gold=  9 arg=  9 mass=  7 BASE=   1 MASS=   8
+      [0696/1024] L=2 target=0025 gold= 19 arg=  8 mass= 18 BASE=  92 MASS=   3
+      [0704/1024] L=4 target=0033 gold= 35 arg= 35 mass= 33 BASE=   1 MASS=   1
+      [0706/1024] L=3 target=0035 gold= 33 arg= 33 mass= 31 BASE=   1 MASS=   7
+      [0708/1024] L=2 target=0037 gold= 19 arg= 19 mass= 18 BASE=   1 MASS=   4
+      [0710/1024] L=4 target=0039 gold= 22 arg= 13 mass= 20 BASE= 154 MASS=   1
+      [0715/1024] L=3 target=0044 gold=  9 arg=  9 mass=  7 BASE=   1 MASS=   4
+      [0717/1024] L=2 target=0046 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   5
+      [0724/1024] L=3 target=0053 gold= 21 arg= 21 mass= 19 BASE=   1 MASS=   4
+      [0729/1024] L=2 target=0058 gold= 30 arg= 30 mass= 29 BASE=   1 MASS=   2
+      [0739/1024] L=3 target=0068 gold= 21 arg= 21 mass= 19 BASE=   1 MASS=   3
+      [0740/1024] L=4 target=0069 gold= 35 arg= 35 mass= 32 BASE=   1 MASS=  50
+      [0741/1024] L=2 target=0070 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   2
+      [0745/1024] L=3 target=0074 gold= 22 arg= 22 mass= 20 BASE=   1 MASS=   8
+      [0752/1024] L=4 target=0081 gold= 20 arg= 20 mass= 17 BASE=   1 MASS=  11
+      [0759/1024] L=2 target=0088 gold= 20 arg= 20 mass= 19 BASE=   1 MASS=   2
+      [0765/1024] L=2 target=0094 gold=  9 arg= 10 mass=  9 BASE= 240 MASS=   1
+      [0768/1024] L=2 target=0097 gold= 10 arg= 10 mass= 10 BASE=   1 MASS=   1
+      [0789/1024] L=2 target=0118 gold=  9 arg=  9 mass=  8 BASE=   1 MASS=   5
+      [0795/1024] L=2 target=0124 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   3
+      [0799/1024] L=3 target=0128 gold= 20 arg= 20 mass= 18 BASE=   1 MASS=   4
+      [0805/1024] L=3 target=0134 gold= 21 arg= 21 mass= 19 BASE=   1 MASS=   9
+      [0807/1024] L=2 target=0136 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   3
+      [0810/1024] L=2 target=0139 gold= 20 arg= 20 mass= 19 BASE=   1 MASS=   4
+      [0814/1024] L=3 target=0143 gold=  9 arg=  9 mass=  7 BASE=   1 MASS=   5
+      [0819/1024] L=2 target=0148 gold= 19 arg= 19 mass= 18 BASE=   1 MASS=   4
+      [0825/1024] L=2 target=0154 gold= 20 arg= 20 mass= 19 BASE=   1 MASS=   3
+      [0828/1024] L=2 target=0157 gold= 32 arg= 32 mass= 31 BASE=   1 MASS=   2
+      [0832/1024] L=3 target=0161 gold= 10 arg= 10 mass=  8 BASE=   1 MASS=   6
+      [0838/1024] L=3 target=0167 gold= 20 arg= 20 mass= 18 BASE=   1 MASS=   4
+      [0843/1024] L=2 target=0172 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   3
+      [0844/1024] L=3 target=0173 gold= 21 arg= 21 mass= 19 BASE=   1 MASS=   4
+      [0849/1024] L=2 target=0178 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   3
+      [0850/1024] L=3 target=0179 gold=  9 arg=  9 mass=  7 BASE=   1 MASS=   7
+      [0864/1024] L=2 target=0193 gold= 20 arg= 20 mass= 19 BASE=   1 MASS=   7
+      [0870/1024] L=2 target=0199 gold= 22 arg= 22 mass= 21 BASE=   1 MASS=   5
+      [0876/1024] L=2 target=0205 gold= 20 arg= 20 mass= 19 BASE=   1 MASS=   8
+      [0877/1024] L=3 target=0206 gold= 32 arg= 32 mass= 30 BASE=   1 MASS=   7
+      [0882/1024] L=2 target=0211 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   3
+      [0889/1024] L=3 target=0218 gold= 20 arg= 20 mass= 18 BASE=   1 MASS=   2
+      [0892/1024] L=3 target=0221 gold= 21 arg= 21 mass= 19 BASE=   1 MASS=   7
+      [0896/1024] L=4 target=0225 gold= 36 arg= 36 mass= 35 BASE=   1 MASS=   1
+      [0897/1024] L=2 target=0226 gold= 18 arg=  8 mass=  8 BASE=  35 MASS=  35
+      [0903/1024] L=2 target=0232 gold= 10 arg= 10 mass=  9 BASE=   1 MASS=   4
+      [0906/1024] L=2 target=0235 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   6
+      [0916/1024] L=3 target=0245 gold=  9 arg=  9 mass=  7 BASE=   1 MASS=   3
+      [0942/1024] L=2 target=0271 gold= 32 arg= 32 mass= 31 BASE=   1 MASS=   3
+      [0955/1024] L=3 target=0284 gold= 33 arg= 33 mass= 31 BASE=   1 MASS=   3
+      [0957/1024] L=2 target=0286 gold= 30 arg= 30 mass= 29 BASE=   1 MASS=   6
+      [0960/1024] L=2 target=0289 gold= 20 arg= 20 mass= 20 BASE=   1 MASS=   1
+      [0969/1024] L=2 target=0298 gold= 20 arg= 20 mass= 19 BASE=   1 MASS=   6
+      [0982/1024] L=3 target=0311 gold= 33 arg= 33 mass= 31 BASE=   1 MASS=   4
+      [0990/1024] L=2 target=0319 gold= 31 arg= 31 mass= 30 BASE=   1 MASS=   5
+      [0994/1024] L=3 target=0323 gold=  9 arg=  9 mass=  7 BASE=   1 MASS=   8
+      [0995/1024] L=4 target=0324 gold=  8 arg=  1 mass=  1 BASE= 144 MASS= 144
+      [1012/1024] L=3 target=0341 gold= 33 arg= 33 mass= 31 BASE=   1 MASS=   4
+      [1015/1024] L=3 target=0344 gold= 21 arg= 21 mass= 19 BASE=   1 MASS=   5
+      [1016/1024] L=4 target=0345 gold= 10 arg= 10 mass=  8 BASE=   1 MASS=   2
+      [1023/1024] L=2 target=0352 gold=  9 arg=  9 mass=  8 BASE=   1 MASS=   5
+      [1024/1024] L=3 target=0353 gold=  8 arg=  8 mass=  8 BASE=   1 MASS=   1
+      CF BASE R1/R5/R16/MRR : 0.9805/0.9805/0.9824/0.980800
+      CF MASS R1/R5/R16/MRR : 0.8330/0.9531/0.9902/0.878374
+      CF BASE exact start    : 0.9766
+      CF MASS exact start    : 0.5508
+      CF pointer span mass   : 0.881303
+
+[8/12] ORIGIN ERROR DISTRIBUTION...
+      ARGMAX start offset histogram:
+       {-13: 1, -8: 1, -7: 2, -1: 2, 0: 994, 1: 14, 2: 4, 3: 3, 11: 2, 25: 1}
+      MASS_WINDOW start offset histogram:
+       {-16: 1, -8: 1, -7: 1, -3: 3, -2: 156, -1: 292, 0: 564, 1: 3, 10: 2, 25: 1}
+      L=2 exact-start: ARGMAX=0.9766 MASS_WINDOW=0.6550
+      L=3 exact-start: ARGMAX=0.9824 MASS_WINDOW=0.5425
+      L=4 exact-start: ARGMAX=0.9531 MASS_WINDOW=0.4545
+
+[9/12] STATISTICAL SUMMARY...
+      BASE    : 1006/1024 = 0.9824 | 95% Wilson [0.9724,0.9889]
+      MASS    :  853/1024 = 0.8330 | 95% Wilson [0.8089,0.8546]
+      MASS_L2 :  239/ 342 = 0.6988 | 95% Wilson [0.6482,0.7450]
+      MASS_L3 :  280/ 341 = 0.8211 | 95% Wilson [0.7769,0.8581]
+      MASS_L4 :  334/ 341 = 0.9795 | 95% Wilson [0.9582,0.9900]
+      CF_BASE : 1004/1024 = 0.9805 | 95% Wilson [0.9700,0.9873]
+      CF_MASS :  853/1024 = 0.8330 | 95% Wilson [0.8089,0.8546]
+
+[10/12] PREDECLARED DIAGNOSTIC GATES...
+      BASELINE_REPRO_R1           : PASS
+      MASS_WINDOW_R1              : FAIL
+      MASS_WINDOW_R5              : FAIL
+      MASS_L2_R1                  : FAIL
+      MASS_L3_R1                  : FAIL
+      MASS_L4_R1                  : FAIL
+      MASS_CF_R1                  : FAIL
+      MASS_GOLD_START_HIT         : FAIL
+      MASS_CF_GOLD_START_HIT      : FAIL
+
+[11/12] PROTOCOL AUDIT...
+      Weight sentinel                     : PASS
+      Trainable tensors                   : 0
+      Pointer                             : L28H00 unchanged
+      Address                             : L00-V uncentered unchanged
+      Match                               : CONCATCOS unchanged
+      TEST531 panel reconstruction        : YES
+      Origin arms                         : ARGMAX + MASS_WINDOW only
+      MASS_WINDOW thresholds              : NONE
+      MASS_WINDOW uses gold span          : NO
+      MASS_WINDOW uses decoded identity   : NO
+      MASS_WINDOW uses token IDs          : NO
+      All A windows of width L considered : YES
+      All matching-length B windows       : YES
+      Gold B position used                : NO
+      Gold A span                         : DIAGNOSTIC ONLY
+      Head/layer/address discovery        : NONE
+      Match-law scan                      : NONE
+      Training / LoRA / optimizer / DRA   : NONE
+      Learned router/scorer               : NONE
+      Query-time candidate-B forwards     : 0
+      TEST531 retroactively changed       : NO
+
+[12/12] FINAL...
+
+================================================================================================================================================================================
+TEST532 FINAL RESULT — AKBASCORE MAM · VARAN 1 · SPAN-ORIGIN X-RAY
+================================================================================================================================================================================
+MODEL                              : mistralai/Mistral-7B-Instruct-v0.3 · frozen
+PANEL                              : TEST531 deterministic reconstruction · N=1024
+POINTER                            : L28H00 · UNCHANGED
+ADDRESS                            : L00-V · UNCENTERED · 1024D · UNCHANGED
+MATCH                              : CONCATCOS · UNCHANGED
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BASELINE ARGMAX                    : R1=0.9824 R5=0.9834 R16=0.9844 MRR=0.983123
+MASS_WINDOW                        : R1=0.8330 R5=0.9512 R16=0.9902 MRR=0.877984
+MASS L=2                           : R1=0.6988 R5=0.9357 R16=0.9854 MRR=0.784062
+MASS L=3                           : R1=0.8211 R5=0.9326 R16=0.9971 MRR=0.867443
+MASS L=4                           : R1=0.9795 R5=0.9853 R16=0.9883 MRR=0.982722
+CF BASELINE                        : R1=0.9805 R5=0.9805 R16=0.9824 MRR=0.980800
+CF MASS_WINDOW                     : R1=0.8330 R5=0.9531 R16=0.9902 MRR=0.878374
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ARGMAX EXACT GOLD-START HIT        : 0.9707
+MASS EXACT GOLD-START HIT          : 0.5508
+CF ARGMAX EXACT GOLD-START HIT     : 0.9766
+CF MASS EXACT GOLD-START HIT       : 0.5508
+ARGMAX INSIDE GOLD SPAN            : 0.9912
+BASELINE FAILURES                  : 18
+FAIL: INSIDE BUT NOT START         : 11
+FAILURES RECOVERED BY MASS         : 10
+CORRECT CASES BROKEN BY MASS       : 163
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BASELINE_REPRO_R1                  : PASS
+MASS_WINDOW_R1                     : FAIL
+MASS_WINDOW_R5                     : FAIL
+MASS_L2_R1                         : FAIL
+MASS_L3_R1                         : FAIL
+MASS_L4_R1                         : FAIL
+MASS_CF_R1                         : FAIL
+MASS_GOLD_START_HIT                : FAIL
+MASS_CF_GOLD_START_HIT             : FAIL
+WEIGHT_SENTINEL                    : PASS
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+WEIGHT SENTINEL                    : PASS
+QUERY-TIME CANDIDATE-B FORWARDS    : 0
+TEST528 RESULT SHA                 : 9235ed38c944f41a9ede0426d3aabaa12b5b20646f30e2be921e618f9471d3c2
+TEST529 RESULT SHA                 : 27ba703872f0d8a6ed870a6ba041d0cd0703d2eca467deac97186a90497795a0
+TEST530 RESULT SHA                 : 289247c88dfd4358cbe5ffb8499891546b27acc6912caf525a155ae81338db7b
+TEST531 RESULT SHA                 : 20257d7d613a49e55b03603946f07ec493009924f40ac26ab74cb817e1466528
+TEST532 PRE-RESULT LOCK            : 571c8c8102ba993c4f8ab2a8cb017d1e10a244117b748f73eb03a38ab5589e73
+TEST532 RESULT SHA                 : 9e37a473a322a19f7b3862a25162835ab6396998dc4fc416bc90bc9b718df188
+TOTAL TEST TIME                    : 328.66s
+VERDICT                            : TEST532_SPAN_ORIGIN_HYPOTHESIS_NOT_FULLY_SUPPORTED
+NEXT                               : preserve TEST532 unchanged; diagnose residual failure in a new test
+================================================================================================================================================================================
