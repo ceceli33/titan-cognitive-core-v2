@@ -1,0 +1,427 @@
+ 
+================================================================================================================================================================================
+TEST539 — AKBASCORE MAM · VARAN 1 · CROSS-LENGTH SCORE CALIBRATION X-RAY
+TEST538 FOLLOW-UP · FROZEN TEST537 LAW · L2/L3/L4 SCORE ANATOMY · NO NEW RETRIEVAL LAW
+================================================================================================================================================================================
+
+[1/12] Loading frozen Mistral...
+
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 77.98it/s]
+      mistralai/Mistral-7B-Instruct-v0.3 | NVIDIA A100-SXM4-40GB
+      32L H=4096 QH=32 KVH=8 HD=128 ADDRESS=1024
+      POINTER : L28H00 · FROZEN
+      ADDRESS : L00-V UNCENTERED · FROZEN
+      MATCH   : CONCATCOS · LOCKED
+      TOPK    : 8 · FROZEN
+      LAW     : log(pointer)-log(max(1-CONCATCOS,float32_eps)) · FROZEN
+      X-RAY   : CROSS-LENGTH SCORE ANATOMY ONLY
+      MODEL   : frozen · BF16 · SDPA · trainable=0
+      Native model-token atom pool: 220
+
+[2/12] Reconstructing exact TEST538 panel...
+      Required identity pools: {2: 1774, 3: 1769, 4: 1769}
+      L=2: 342
+      L=3: 341
+      L=4: 341
+      Remaining reserve: {2: 64, 3: 64, 4: 64}
+      Panel seed: 531531
+      TEST539 LOCK: 273c00ebf321725a50f27f42702844cfee6c62533a35df78cdbd3b997125b194
+
+[3/12] OFFLINE FORGE...
+      forged   64/1024
+      forged  128/1024
+      forged  192/1024
+      forged  256/1024
+      forged  320/1024
+      forged  384/1024
+      forged  448/1024
+      forged  512/1024
+      forged  576/1024
+      forged  640/1024
+      forged  704/1024
+      forged  768/1024
+      forged  832/1024
+      forged  896/1024
+      forged  960/1024
+      forged 1024/1024
+      A memories: 1024
+      B memories: 1024
+      Query-time candidate-B forwards: 0
+
+[4/12] Building frozen B banks...
+      L=2: 13680 windows | (13680, 2, 1024)
+      L=3: 14322 windows | (14322, 3, 1024)
+      L=4: 15004 windows | (15004, 4, 1024)
+
+[5/12] PRIMARY — exact TEST538 reproduction + per-length X-ray...
+      [0001/1024] rank=1 trueL=2 predL=2
+      [0002/1024] rank=1 trueL=3 predL=3
+      [0003/1024] rank=1 trueL=4 predL=4
+      [0004/1024] rank=1 trueL=2 predL=2
+      [0005/1024] rank=1 trueL=3 predL=3
+
+      PRIMARY FAIL item=0009 trueL=4 predL=2 gold-rank=2
+        GOLD : L4 owner=0009 joint=+12.989513 p=0.93941295 cos=0.999997854 res=2.14576721e-06 ide=+13.052013 start=9 peak=9
+        WRONG: L2 owner=0982 joint=+13.240828 p=0.93941295 cos=0.999998331 res=1.66893005e-06 ide=+13.303328 start=9 peak=9
+        Δjoint wrong-gold = +0.251314163
+        BEST L2: L2 owner=0982 joint=+13.240828 p=0.93941295 cos=0.999998331 res=1.66893005e-06 ide=+13.303328 start=9 peak=9
+        BEST L3: L3 owner=0002 joint=+5.191850 p=0.00533705 cos=0.999970317 res=2.96831131e-05 ide=+10.424932 start=39 peak=40
+        BEST L4: L4 owner=0009 joint=+12.989513 p=0.93941295 cos=0.999997854 res=2.14576721e-06 ide=+13.052013 start=9 peak=9
+      [0128/1024] rank=1 trueL=3 predL=3
+      [0256/1024] rank=1 trueL=2 predL=2
+
+      PRIMARY FAIL item=0303 trueL=4 predL=2 gold-rank=2
+        GOLD : L4 owner=0303 joint=+15.851947 p=0.91353148 cos=1.000031710 res=1.1920929e-07 ide=+15.942385 start=22 peak=22
+        WRONG: L2 owner=0136 joint=+15.851947 p=0.91353148 cos=1.000064135 res=1.1920929e-07 ide=+15.942385 start=22 peak=22
+        Δjoint wrong-gold = +0.000000000
+        BEST L2: L2 owner=0136 joint=+15.851947 p=0.91353148 cos=1.000064135 res=1.1920929e-07 ide=+15.942385 start=22 peak=22
+        BEST L3: L3 owner=0002 joint=+5.575332 p=0.00783150 cos=0.999970317 res=2.96831131e-05 ide=+10.424932 start=39 peak=40
+        BEST L4: L4 owner=0303 joint=+15.851947 p=0.91353148 cos=1.000031710 res=1.1920929e-07 ide=+15.942385 start=22 peak=22
+      [0384/1024] rank=1 trueL=4 predL=4
+
+      PRIMARY FAIL item=0399 trueL=4 predL=2 gold-rank=2
+        GOLD : L4 owner=0399 joint=+10.832465 p=0.91755760 cos=0.999981880 res=1.8119812e-05 ide=+10.918505 start=22 peak=22
+        WRONG: L2 owner=0610 joint=+13.052985 p=0.91755760 cos=0.999998033 res=1.96695328e-06 ide=+13.139025 start=22 peak=22
+        Δjoint wrong-gold = +2.220520020
+        BEST L2: L2 owner=0610 joint=+13.052985 p=0.91755760 cos=0.999998033 res=1.96695328e-06 ide=+13.139025 start=22 peak=22
+        BEST L3: L3 owner=0002 joint=+6.055668 p=0.01266056 cos=0.999970317 res=2.96831131e-05 ide=+10.424932 start=40 peak=41
+        BEST L4: L4 owner=0399 joint=+10.832465 p=0.91755760 cos=0.999981880 res=1.8119812e-05 ide=+10.918505 start=22 peak=22
+
+      PRIMARY FAIL item=0410 trueL=3 predL=2 gold-rank=2
+        GOLD : L3 owner=0410 joint=+15.900063 p=0.95856076 cos=1.000008106 res=1.1920929e-07 ide=+15.942385 start=9 peak=9
+        WRONG: L2 owner=0283 joint=+15.900063 p=0.95856076 cos=1.000013113 res=1.1920929e-07 ide=+15.942385 start=9 peak=9
+        Δjoint wrong-gold = +0.000000000
+        BEST L2: L2 owner=0283 joint=+15.900063 p=0.95856076 cos=1.000013113 res=1.1920929e-07 ide=+15.942385 start=9 peak=9
+        BEST L3: L3 owner=0410 joint=+15.900063 p=0.95856076 cos=1.000008106 res=1.1920929e-07 ide=+15.942385 start=9 peak=9
+        BEST L4: L4 owner=0675 joint=+0.812988 p=0.95856076 cos=0.574848592 res=0.425151408 ide=+0.855310 start=8 peak=9
+
+      PRIMARY FAIL item=0486 trueL=4 predL=2 gold-rank=2
+        GOLD : L4 owner=0486 joint=+15.899555 p=0.95807481 cos=1.000002146 res=1.1920929e-07 ide=+15.942385 start=9 peak=9
+        WRONG: L2 owner=0673 joint=+15.899555 p=0.95807481 cos=1.000029087 res=1.1920929e-07 ide=+15.942385 start=9 peak=9
+        Δjoint wrong-gold = +0.000000000
+        BEST L2: L2 owner=0673 joint=+15.899555 p=0.95807481 cos=1.000029087 res=1.1920929e-07 ide=+15.942385 start=9 peak=9
+        BEST L3: L3 owner=0002 joint=+5.113852 p=0.00493659 cos=0.999970317 res=2.96831131e-05 ide=+10.424932 start=39 peak=40
+        BEST L4: L4 owner=0486 joint=+15.899555 p=0.95807481 cos=1.000002146 res=1.1920929e-07 ide=+15.942385 start=9 peak=9
+      [0512/1024] rank=1 trueL=3 predL=3
+
+      PRIMARY FAIL item=0615 trueL=4 predL=2 gold-rank=2
+        GOLD : L4 owner=0615 joint=+15.918262 p=0.97616529 cos=1.000003338 res=1.1920929e-07 ide=+15.942385 start=22 peak=22
+        WRONG: L2 owner=0121 joint=+15.918262 p=0.97616529 cos=1.000005722 res=1.1920929e-07 ide=+15.942385 start=22 peak=22
+        Δjoint wrong-gold = +0.000000000
+        BEST L2: L2 owner=0121 joint=+15.918262 p=0.97616529 cos=1.000005722 res=1.1920929e-07 ide=+15.942385 start=22 peak=22
+        BEST L3: L3 owner=0002 joint=+4.676607 p=0.00318811 cos=0.999970317 res=2.96831131e-05 ide=+10.424932 start=39 peak=40
+        BEST L4: L4 owner=0615 joint=+15.918262 p=0.97616529 cos=1.000003338 res=1.1920929e-07 ide=+15.942385 start=22 peak=22
+
+      PRIMARY FAIL item=0617 trueL=3 predL=2 gold-rank=2
+        GOLD : L3 owner=0617 joint=+11.407928 p=0.73519266 cos=0.999991834 res=8.16583633e-06 ide=+11.715551 start=21 peak=21
+        WRONG: L2 owner=0427 joint=+13.069813 p=0.73519266 cos=0.999998450 res=1.54972076e-06 ide=+13.377436 start=21 peak=21
+        Δjoint wrong-gold = +1.661884308
+        BEST L2: L2 owner=0427 joint=+13.069813 p=0.73519266 cos=0.999998450 res=1.54972076e-06 ide=+13.377436 start=21 peak=21
+        BEST L3: L3 owner=0617 joint=+11.407928 p=0.73519266 cos=0.999991834 res=8.16583633e-06 ide=+11.715551 start=21 peak=21
+        BEST L4: L4 owner=0420 joint=+0.514913 p=0.73519266 cos=0.560683608 res=0.439316392 ide=+0.822535 start=20 peak=21
+      [0640/1024] rank=1 trueL=2 predL=2
+
+      PRIMARY FAIL item=0656 trueL=3 predL=2 gold-rank=2
+        GOLD : L3 owner=0656 joint=+11.748100 p=0.93505490 cos=0.999992609 res=7.39097595e-06 ide=+11.815251 start=31 peak=31
+        WRONG: L2 owner=0226 joint=+11.814792 p=0.93505490 cos=0.999993086 res=6.91413879e-06 ide=+11.881942 start=31 peak=31
+        Δjoint wrong-gold = +0.066691399
+        BEST L2: L2 owner=0226 joint=+11.814792 p=0.93505490 cos=0.999993086 res=6.91413879e-06 ide=+11.881942 start=31 peak=31
+        BEST L3: L3 owner=0656 joint=+11.748100 p=0.93505490 cos=0.999992609 res=7.39097595e-06 ide=+11.815251 start=31 peak=31
+        BEST L4: L4 owner=0339 joint=+0.802257 p=0.93505490 cos=0.580799758 res=0.419200242 ide=+0.869407 start=30 peak=31
+      [0768/1024] rank=1 trueL=4 predL=4
+
+      PRIMARY FAIL item=0794 trueL=3 predL=2 gold-rank=2
+        GOLD : L3 owner=0794 joint=+15.677681 p=0.76743352 cos=1.000018001 res=1.1920929e-07 ide=+15.942385 start=22 peak=22
+        WRONG: L2 owner=0619 joint=+15.677681 p=0.76743352 cos=1.000039816 res=1.1920929e-07 ide=+15.942385 start=22 peak=22
+        Δjoint wrong-gold = +0.000000000
+        BEST L2: L2 owner=0619 joint=+15.677681 p=0.76743352 cos=1.000039816 res=1.1920929e-07 ide=+15.942385 start=22 peak=22
+        BEST L3: L3 owner=0794 joint=+15.677681 p=0.76743352 cos=1.000018001 res=1.1920929e-07 ide=+15.942385 start=22 peak=22
+        BEST L4: L4 owner=0684 joint=+0.708417 p=0.76743352 cos=0.622098088 res=0.377901912 ide=+0.973121 start=21 peak=22
+
+      PRIMARY FAIL item=0885 trueL=4 predL=2 gold-rank=2
+        GOLD : L4 owner=0885 joint=+10.638026 p=0.86227494 cos=0.999979317 res=2.06828117e-05 ide=+10.786208 start=9 peak=9
+        WRONG: L2 owner=0202 joint=+11.559685 p=0.01249159 cos=1.000029802 res=1.1920929e-07 ide=+15.942385 start=35 peak=35
+        Δjoint wrong-gold = +0.921658516
+        BEST L2: L2 owner=0202 joint=+11.559685 p=0.01249159 cos=1.000029802 res=1.1920929e-07 ide=+15.942385 start=35 peak=35
+        BEST L3: L3 owner=0692 joint=+0.850222 p=0.86227494 cos=0.631532550 res=0.36846745 ide=+0.998403 start=9 peak=9
+        BEST L4: L4 owner=0885 joint=+10.638026 p=0.86227494 cos=0.999979317 res=2.06828117e-05 ide=+10.786208 start=9 peak=9
+      [0896/1024] rank=1 trueL=3 predL=3
+
+      PRIMARY FAIL item=0932 trueL=3 predL=2 gold-rank=2
+        GOLD : L3 owner=0932 joint=+10.077884 p=0.88559270 cos=0.999962807 res=3.71932983e-05 ide=+10.199382 start=33 peak=33
+        WRONG: L2 owner=0967 joint=+10.500319 p=0.88559270 cos=0.999975622 res=2.43782997e-05 ide=+10.621817 start=33 peak=33
+        Δjoint wrong-gold = +0.422435760
+        BEST L2: L2 owner=0967 joint=+10.500319 p=0.88559270 cos=0.999975622 res=2.43782997e-05 ide=+10.621817 start=33 peak=33
+        BEST L3: L3 owner=0932 joint=+10.077884 p=0.88559270 cos=0.999962807 res=3.71932983e-05 ide=+10.199382 start=33 peak=33
+        BEST L4: L4 owner=1011 joint=+0.927646 p=0.88559270 cos=0.649762690 res=0.35023731 ide=+1.049144 start=32 peak=33
+      [1024/1024] rank=1 trueL=2 predL=2
+
+      PRIMARY reproduction: 1013/1024 = 0.9893
+      Failure IDs: [9, 303, 399, 410, 486, 615, 617, 656, 794, 885, 932]
+
+[6/12] PRIMARY CROSS-LENGTH DISTRIBUTIONS...
+      L=2 best-joint : {'n': 1024, 'mean': 8.238336856244132, 'median': 6.239498853683472, 'min': -0.31380605697631836, 'max': 15.938419342041016, 'p05': 1.6244394958019264, 'p95': 15.892897129058838}
+          best-cos   : {'n': 1024, 'mean': 0.9870127364993095, 'median': 0.9999731779098511, 'min': 0.6864985823631287, 'max': 1.00006902217865, 'p05': 0.8178077012300493, 'p95': 1.0000269055366515}
+          pointer-p  : {'n': 1024, 'mean': 0.3463411571081565, 'median': 0.01656330283731222, 'min': 0.0005019778618589044, 'max': 0.9974901676177979, 'p05': 0.0016546227736398578, 'p95': 0.9703781753778458}
+      L=3 best-joint : {'n': 1024, 'mean': 8.127719267329667, 'median': 6.111353158950806, 'min': -0.1700676679611206, 'max': 15.93405532836914, 'p05': 3.443772387504578, 'p95': 15.88829140663147}
+          best-cos   : {'n': 1024, 'mean': 0.9861741304630414, 'median': 0.9999703168869019, 'min': 0.6076783537864685, 'max': 1.000053882598877, 'p05': 0.9999684542417526, 'p95': 1.0000194311141968}
+          pointer-p  : {'n': 1024, 'mean': 0.32450758463625107, 'median': 0.01577499695122242, 'min': 0.00029517049551941454, 'max': 0.9928845763206482, 'p05': 0.0018278234696481378, 'p95': 0.9668766945600509}
+      L=4 best-joint : {'n': 1024, 'mean': 5.1340372906124685, 'median': 0.8668995797634125, 'min': -0.9275398850440979, 'max': 15.939044952392578, 'p05': 0.45838025510311126, 'p95': 15.88305959701538}
+          best-cos   : {'n': 1024, 'mean': 0.7251220081816427, 'median': 0.6106321215629578, 'min': 0.27126258611679077, 'max': 1.00006103515625, 'p05': 0.5294526934623718, 'p95': 1.0000158190727233}
+          pointer-p  : {'n': 1024, 'mean': 0.8631271327758441, 'median': 0.9070071578025818, 'min': 0.1913798600435257, 'max': 0.9974901676177979, 'p05': 0.5873961567878723, 'p95': 0.9825570493936538}
+      Failure Δjoint wrongL2-gold: {'n': 11, 'mean': 0.5040458332408558, 'median': 0.06669139862060547, 'min': 0.0, 'max': 2.22052001953125, 'p05': 0.0, 'p95': 1.941202163696289}
+      Failure GOLD joint         : {'n': 11, 'mean': 13.358311306346547, 'median': 12.989513397216797, 'min': 10.07788372039795, 'max': 15.918261528015137, 'p05': 10.357954978942871, 'p95': 15.909162044525146}
+      Failure WRONG joint        : {'n': 11, 'mean': 13.862357139587402, 'median': 13.240827560424805, 'min': 10.500319480895996, 'max': 15.918261528015137, 'p05': 11.030002117156982, 'p95': 15.909162044525146}
+      Failure GOLD cos           : {'n': 11, 'mean': 0.9999972365119241, 'median': 0.9999978542327881, 'min': 0.9999628067016602, 'max': 1.0000317096710205, 'p05': 0.9999710619449615, 'p95': 1.0000248551368713}
+      Failure WRONG cos          : {'n': 11, 'mean': 1.0000131997195156, 'median': 1.0000057220458984, 'min': 0.9999756217002869, 'max': 1.0000641345977783, 'p05': 0.9999843537807465, 'p95': 1.0000519752502441}
+      Failure GOLD pointer-p     : {'n': 11, 'mean': 0.895350147377361, 'median': 0.9175575971603394, 'min': 0.7351926565170288, 'max': 0.9761652946472168, 'p05': 0.7513130903244019, 'p95': 0.967363029718399}
+      Failure WRONG pointer-p    : {'n': 11, 'mean': 0.8180971151556481, 'median': 0.9175575971603394, 'min': 0.012491590343415737, 'max': 0.9761652946472168, 'p05': 0.3738421234302223, 'p95': 0.967363029718399}
+      Failure GOLD id-evidence   : {'n': 11, 'mean': 13.472621407764912, 'median': 13.052013394982577, 'min': 10.199381965069259, 'max': 15.942385152878742, 'p05': 10.492794759280542, 'p95': 15.942385152878742}
+      Failure WRONG id-evidence  : {'n': 11, 'mean': 14.361623511604865, 'median': 15.942385152878742, 'min': 10.621817177395886, 'max': 15.942385152878742, 'p05': 11.251879659864105, 'p95': 15.942385152878742}
+
+[7/12] COUNTERFACTUAL — exact TEST538 reproduction + per-length X-ray...
+      [0001/1024] target=0354 rank=1 trueL=4 predL=4
+      [0002/1024] target=0355 rank=1 trueL=2 predL=2
+      [0003/1024] target=0356 rank=1 trueL=3 predL=3
+      [0004/1024] target=0357 rank=1 trueL=4 predL=4
+      [0005/1024] target=0358 rank=1 trueL=2 predL=2
+
+      CF FAIL item=0046 target=0399 trueL=4 predL=2 gold-rank=2
+        GOLD : L4 owner=0399 joint=+10.865817 p=0.94867593 cos=0.999981880 res=1.8119812e-05 ide=+10.918505 start=35 peak=35
+        WRONG: L2 owner=0610 joint=+13.086337 p=0.94867593 cos=0.999998033 res=1.96695328e-06 ide=+13.139025 start=35 peak=35
+        Δjoint wrong-gold = +2.220520020
+        BEST L2: L2 owner=0610 joint=+13.086337 p=0.94867593 cos=0.999998033 res=1.96695328e-06 ide=+13.139025 start=35 peak=35
+        BEST L3: L3 owner=0002 joint=+5.539050 p=0.00755245 cos=0.999970317 res=2.96831131e-05 ide=+10.424932 start=39 peak=40
+        BEST L4: L4 owner=0399 joint=+10.865817 p=0.94867593 cos=0.999981880 res=1.8119812e-05 ide=+10.918505 start=35 peak=35
+
+      CF FAIL item=0057 target=0410 trueL=3 predL=2 gold-rank=2
+        GOLD : L3 owner=0410 joint=+15.911343 p=0.96943516 cos=1.000008106 res=1.1920929e-07 ide=+15.942385 start=33 peak=33
+        WRONG: L2 owner=0283 joint=+15.911343 p=0.96943516 cos=1.000013113 res=1.1920929e-07 ide=+15.942385 start=33 peak=33
+        Δjoint wrong-gold = +0.000000000
+        BEST L2: L2 owner=0283 joint=+15.911343 p=0.96943516 cos=1.000013113 res=1.1920929e-07 ide=+15.942385 start=33 peak=33
+        BEST L3: L3 owner=0410 joint=+15.911343 p=0.96943516 cos=1.000008106 res=1.1920929e-07 ide=+15.942385 start=33 peak=33
+        BEST L4: L4 owner=0675 joint=+0.824268 p=0.96943516 cos=0.574848592 res=0.425151408 ide=+0.855310 start=32 peak=33
+      [0128/1024] target=0481 rank=1 trueL=2 predL=2
+
+      CF FAIL item=0133 target=0486 trueL=4 predL=2 gold-rank=2
+        GOLD : L4 owner=0486 joint=+15.920585 p=0.97843552 cos=1.000002146 res=1.1920929e-07 ide=+15.942385 start=36 peak=36
+        WRONG: L2 owner=0673 joint=+15.920585 p=0.97843552 cos=1.000029087 res=1.1920929e-07 ide=+15.942385 start=36 peak=36
+        Δjoint wrong-gold = +0.000000000
+        BEST L2: L2 owner=0673 joint=+15.920585 p=0.97843552 cos=1.000029087 res=1.1920929e-07 ide=+15.942385 start=36 peak=36
+        BEST L3: L3 owner=0002 joint=+4.892043 p=0.00395455 cos=0.999970317 res=2.96831131e-05 ide=+10.424932 start=40 peak=41
+        BEST L4: L4 owner=0486 joint=+15.920585 p=0.97843552 cos=1.000002146 res=1.1920929e-07 ide=+15.942385 start=36 peak=36
+      [0256/1024] target=0609 rank=1 trueL=4 predL=4
+
+      CF FAIL item=0262 target=0615 trueL=4 predL=2 gold-rank=2
+        GOLD : L4 owner=0615 joint=+15.857908 p=0.91899353 cos=1.000003338 res=1.1920929e-07 ide=+15.942385 start=35 peak=35
+        WRONG: L2 owner=0121 joint=+15.857908 p=0.91899353 cos=1.000005722 res=1.1920929e-07 ide=+15.942385 start=35 peak=35
+        Δjoint wrong-gold = +0.000000000
+        BEST L2: L2 owner=0121 joint=+15.857908 p=0.91899353 cos=1.000005722 res=1.1920929e-07 ide=+15.942385 start=35 peak=35
+        BEST L3: L3 owner=0002 joint=+5.780549 p=0.00961546 cos=0.999970317 res=2.96831131e-05 ide=+10.424932 start=39 peak=40
+        BEST L4: L4 owner=0615 joint=+15.857908 p=0.91899353 cos=1.000003338 res=1.1920929e-07 ide=+15.942385 start=35 peak=35
+
+      CF FAIL item=0264 target=0617 trueL=3 predL=2 gold-rank=2
+        GOLD : L3 owner=0617 joint=+11.346467 p=0.69136709 cos=0.999991834 res=8.16583633e-06 ide=+11.715551 start=22 peak=22
+        WRONG: L2 owner=0427 joint=+13.008351 p=0.69136709 cos=0.999998450 res=1.54972076e-06 ide=+13.377436 start=22 peak=22
+        Δjoint wrong-gold = +1.661884308
+        BEST L2: L2 owner=0427 joint=+13.008351 p=0.69136709 cos=0.999998450 res=1.54972076e-06 ide=+13.377436 start=22 peak=22
+        BEST L3: L3 owner=0617 joint=+11.346467 p=0.69136709 cos=0.999991834 res=8.16583633e-06 ide=+11.715551 start=22 peak=22
+        BEST L4: L4 owner=0420 joint=+0.453451 p=0.69136709 cos=0.560683608 res=0.439316392 ide=+0.822535 start=21 peak=22
+
+      CF FAIL item=0303 target=0656 trueL=3 predL=2 gold-rank=2
+        GOLD : L3 owner=0656 joint=+9.540597 p=0.10283252 cos=0.999992609 res=7.39097595e-06 ide=+11.815251 start=21 peak=22
+        WRONG: L2 owner=0226 joint=+9.607288 p=0.10283252 cos=0.999993086 res=6.91413879e-06 ide=+11.881942 start=21 peak=22
+        Δjoint wrong-gold = +0.066691399
+        BEST L2: L2 owner=0226 joint=+9.607288 p=0.10283252 cos=0.999993086 res=6.91413879e-06 ide=+11.881942 start=21 peak=22
+        BEST L3: L3 owner=0656 joint=+9.540597 p=0.10283252 cos=0.999992609 res=7.39097595e-06 ide=+11.815251 start=21 peak=22
+        BEST L4: L4 owner=0339 joint=-0.914029 p=0.19781245 cos=0.506586194 res=0.493413806 ide=+0.706407 start=22 peak=25
+      [0384/1024] target=0737 rank=1 trueL=3 predL=3
+
+      CF FAIL item=0441 target=0794 trueL=3 predL=2 gold-rank=2
+        GOLD : L3 owner=0794 joint=+15.845664 p=0.90780932 cos=1.000018001 res=1.1920929e-07 ide=+15.942385 start=34 peak=34
+        WRONG: L2 owner=0619 joint=+15.845664 p=0.90780932 cos=1.000039816 res=1.1920929e-07 ide=+15.942385 start=34 peak=34
+        Δjoint wrong-gold = +0.000000000
+        BEST L2: L2 owner=0619 joint=+15.845664 p=0.90780932 cos=1.000039816 res=1.1920929e-07 ide=+15.942385 start=34 peak=34
+        BEST L3: L3 owner=0794 joint=+15.845664 p=0.90780932 cos=1.000018001 res=1.1920929e-07 ide=+15.942385 start=34 peak=34
+        BEST L4: L4 owner=0684 joint=+0.876400 p=0.90780932 cos=0.622098088 res=0.377901912 ide=+0.973121 start=33 peak=34
+
+      CF FAIL item=0462 target=0815 trueL=3 predL=2 gold-rank=2
+        GOLD : L3 owner=0815 joint=+15.755796 p=0.82978565 cos=1.000036120 res=1.1920929e-07 ide=+15.942385 start=9 peak=9
+        WRONG: L2 owner=0586 joint=+15.755796 p=0.82978565 cos=1.000052094 res=1.1920929e-07 ide=+15.942385 start=9 peak=9
+        Δjoint wrong-gold = +0.000000000
+        BEST L2: L2 owner=0586 joint=+15.755796 p=0.82978565 cos=1.000052094 res=1.1920929e-07 ide=+15.942385 start=9 peak=9
+        BEST L3: L3 owner=0815 joint=+15.755796 p=0.82978565 cos=1.000036120 res=1.1920929e-07 ide=+15.942385 start=9 peak=9
+        BEST L4: L4 owner=0747 joint=+0.700010 p=0.82978565 cos=0.587944865 res=0.412055135 ide=+0.886598 start=8 peak=9
+      [0512/1024] target=0865 rank=1 trueL=2 predL=2
+
+      CF FAIL item=0532 target=0885 trueL=4 predL=2 gold-rank=2
+        GOLD : L4 owner=0885 joint=+10.526752 p=0.77147162 cos=0.999979317 res=2.06828117e-05 ide=+10.786208 start=9 peak=9
+        WRONG: L2 owner=0202 joint=+11.585243 p=0.01281497 cos=1.000029802 res=1.1920929e-07 ide=+15.942385 start=23 peak=23
+        Δjoint wrong-gold = +1.058491707
+        BEST L2: L2 owner=0202 joint=+11.585243 p=0.01281497 cos=1.000029802 res=1.1920929e-07 ide=+15.942385 start=23 peak=23
+        BEST L3: L3 owner=0692 joint=+0.738948 p=0.77147162 cos=0.631532550 res=0.36846745 ide=+0.998403 start=9 peak=9
+        BEST L4: L4 owner=0885 joint=+10.526752 p=0.77147162 cos=0.999979317 res=2.06828117e-05 ide=+10.786208 start=9 peak=9
+
+      CF FAIL item=0540 target=0893 trueL=3 predL=2 gold-rank=2
+        GOLD : L3 owner=0893 joint=+10.493101 p=0.95446235 cos=0.999973536 res=2.64644623e-05 ide=+10.539708 start=20 peak=20
+        WRONG: L2 owner=0124 joint=+11.181439 p=0.00855752 cos=1.000010371 res=1.1920929e-07 ide=+15.942385 start=10 peak=10
+        Δjoint wrong-gold = +0.688338280
+        BEST L2: L2 owner=0124 joint=+11.181439 p=0.00855752 cos=1.000010371 res=1.1920929e-07 ide=+15.942385 start=10 peak=10
+        BEST L3: L3 owner=0893 joint=+10.493101 p=0.95446235 cos=0.999973536 res=2.64644623e-05 ide=+10.539708 start=20 peak=20
+        BEST L4: L4 owner=0300 joint=+0.842709 p=0.95446235 cos=0.589063466 res=0.410936534 ide=+0.889316 start=19 peak=20
+
+      CF FAIL item=0579 target=0932 trueL=3 predL=2 gold-rank=2
+        GOLD : L3 owner=0932 joint=+10.157387 p=0.95887452 cos=0.999962807 res=3.71932983e-05 ide=+10.199382 start=10 peak=10
+        WRONG: L2 owner=0967 joint=+10.579823 p=0.95887452 cos=0.999975622 res=2.43782997e-05 ide=+10.621817 start=10 peak=10
+        Δjoint wrong-gold = +0.422435760
+        BEST L2: L2 owner=0967 joint=+10.579823 p=0.95887452 cos=0.999975622 res=2.43782997e-05 ide=+10.621817 start=10 peak=10
+        BEST L3: L3 owner=0932 joint=+10.157387 p=0.95887452 cos=0.999962807 res=3.71932983e-05 ide=+10.199382 start=10 peak=10
+        BEST L4: L4 owner=1011 joint=+1.007149 p=0.95887452 cos=0.649762690 res=0.35023731 ide=+1.049144 start=9 peak=10
+      [0640/1024] target=0993 rank=1 trueL=4 predL=4
+
+      CF FAIL item=0680 target=0009 trueL=4 predL=2 gold-rank=2
+        GOLD : L4 owner=0009 joint=+12.750803 p=0.73992187 cos=0.999997854 res=2.14576721e-06 ide=+13.052013 start=35 peak=35
+        WRONG: L2 owner=0982 joint=+13.002117 p=0.73992187 cos=0.999998331 res=1.66893005e-06 ide=+13.303328 start=35 peak=35
+        Δjoint wrong-gold = +0.251314163
+        BEST L2: L2 owner=0982 joint=+13.002117 p=0.73992187 cos=0.999998331 res=1.66893005e-06 ide=+13.303328 start=35 peak=35
+        BEST L3: L3 owner=0002 joint=+6.953140 p=0.03106130 cos=0.999970317 res=2.96831131e-05 ide=+10.424932 start=39 peak=40
+        BEST L4: L4 owner=0009 joint=+12.750803 p=0.73992187 cos=0.999997854 res=2.14576721e-06 ide=+13.052013 start=35 peak=35
+
+      CF FAIL item=0691 target=0020 trueL=3 predL=2 gold-rank=2
+        GOLD : L3 owner=0020 joint=+11.291462 p=0.66869473 cos=0.999991655 res=8.34465027e-06 ide=+11.693890 start=9 peak=9
+        WRONG: L2 owner=0190 joint=+11.599442 p=0.01299821 cos=1.000018954 res=1.1920929e-07 ide=+15.942385 start=33 peak=33
+        Δjoint wrong-gold = +0.307979584
+        BEST L2: L2 owner=0190 joint=+11.599442 p=0.01299821 cos=1.000018954 res=1.1920929e-07 ide=+15.942385 start=33 peak=33
+        BEST L3: L3 owner=0020 joint=+11.291462 p=0.66869473 cos=0.999991655 res=8.34465027e-06 ide=+11.693890 start=9 peak=9
+        BEST L4: L4 owner=0120 joint=+0.500831 p=0.66869473 cos=0.594752967 res=0.405247033 ide=+0.903258 start=9 peak=9
+      [0768/1024] target=0097 rank=1 trueL=2 predL=2
+      [0896/1024] target=0225 rank=1 trueL=4 predL=4
+
+      CF FAIL item=0974 target=0303 trueL=4 predL=2 gold-rank=2
+        GOLD : L4 owner=0303 joint=+15.890932 p=0.94984853 cos=1.000031710 res=1.1920929e-07 ide=+15.942385 start=21 peak=21
+        WRONG: L2 owner=0136 joint=+15.890932 p=0.94984853 cos=1.000064135 res=1.1920929e-07 ide=+15.942385 start=21 peak=21
+        Δjoint wrong-gold = +0.000000000
+        BEST L2: L2 owner=0136 joint=+15.890932 p=0.94984853 cos=1.000064135 res=1.1920929e-07 ide=+15.942385 start=21 peak=21
+        BEST L3: L3 owner=0002 joint=+4.832251 p=0.00372502 cos=0.999970317 res=2.96831131e-05 ide=+10.424932 start=38 peak=39
+        BEST L4: L4 owner=0303 joint=+15.890932 p=0.94984853 cos=1.000031710 res=1.1920929e-07 ide=+15.942385 start=21 peak=21
+      [1024/1024] target=0353 rank=1 trueL=3 predL=3
+
+      CF reproduction: 1010/1024 = 0.9863
+      CF Failure IDs: [46, 57, 133, 262, 264, 303, 441, 462, 532, 540, 579, 680, 691, 974]
+
+[8/12] COUNTERFACTUAL CROSS-LENGTH DISTRIBUTIONS...
+      L=2 best-joint : {'n': 1024, 'mean': 8.207729444722645, 'median': 6.305349588394165, 'min': -0.6417635679244995, 'max': 15.940705299377441, 'p05': 1.5709561169147492, 'p95': 15.887543106079102}
+          best-cos   : {'n': 1024, 'mean': 0.9862924523185939, 'median': 0.9999731779098511, 'min': 0.6864985823631287, 'max': 1.00006902217865, 'p05': 0.819096302986145, 'p95': 1.0000272989273071}
+          pointer-p  : {'n': 1024, 'mean': 0.3478140189533292, 'median': 0.01783511321991682, 'min': 0.00021296963677741587, 'max': 0.998322069644928, 'p05': 0.0016856056230608375, 'p95': 0.9687479466199875}
+      L=3 best-joint : {'n': 1024, 'mean': 8.0647953824664, 'median': 6.09490442276001, 'min': -0.6560458540916443, 'max': 15.935914993286133, 'p05': 1.1665434539318087, 'p95': 15.894829559326173}
+          best-cos   : {'n': 1024, 'mean': 0.9810439495486207, 'median': 0.9999703168869019, 'min': 0.3503050208091736, 'max': 1.000053882598877, 'p05': 0.7688463240861894, 'p95': 1.0000194311141968}
+          pointer-p  : {'n': 1024, 'mean': 0.33642123467357976, 'median': 0.017583602108061314, 'min': 0.00011962429562117904, 'max': 0.9935511350631714, 'p05': 0.001942071632947773, 'p95': 0.967260906100273}
+      L=4 best-joint : {'n': 1024, 'mean': 5.129589681921061, 'median': 0.8655547201633453, 'min': -1.1281309127807617, 'max': 15.933006286621094, 'p05': 0.4398280382156372, 'p95': 15.882304763793945}
+          best-cos   : {'n': 1024, 'mean': 0.7251903909491375, 'median': 0.6125824451446533, 'min': 0.29177987575531006, 'max': 1.00006103515625, 'p05': 0.5279507130384445, 'p95': 1.0000158190727233}
+          pointer-p  : {'n': 1024, 'mean': 0.8611120003333781, 'median': 0.9072360694408417, 'min': 0.06865347921848297, 'max': 0.998322069644928, 'p05': 0.5506498217582703, 'p95': 0.984417924284935}
+      CF Failure Δjoint wrongL2-gold: {'n': 14, 'mean': 0.4769753728594099, 'median': 0.15900278091430664, 'min': 0.0, 'max': 2.22052001953125, 'p05': 0.0, 'p95': 1.8574068069458005}
+      CF Failure GOLD joint         : {'n': 14, 'mean': 13.01104382106236, 'median': 12.048635005950928, 'min': 9.540596961975098, 'max': 15.920584678649902, 'p05': 9.941510343551636, 'p95': 15.914577341079712}
+      CF Failure WRONG joint        : {'n': 14, 'mean': 13.48801919392177, 'median': 13.047344207763672, 'min': 9.607288360595703, 'max': 15.920584678649902, 'p05': 10.239435577392578, 'p95': 15.914577341079712}
+      CF Failure GOLD cos           : {'n': 14, 'mean': 0.9999979223523822, 'median': 0.999995231628418, 'min': 0.9999628067016602, 'max': 1.0000361204147339, 'p05': 0.9999697804450989, 'p95': 1.00003325343132}
+      CF Failure WRONG cos          : {'n': 14, 'mean': 1.0000161869185311, 'median': 1.0000117421150208, 'min': 0.9999756217002869, 'max': 1.0000641345977783, 'p05': 0.9999869734048843, 'p95': 1.0000563085079193}
+      CF Failure GOLD pointer-p     : {'n': 14, 'mean': 0.8136148809322289, 'median': 0.9134014248847961, 'min': 0.10283251851797104, 'max': 0.9784355163574219, 'p05': 0.4706429589539767, 'p95': 0.9725852817296982}
+      CF Failure WRONG pointer-p    : {'n': 14, 'mean': 0.6450250233257455, 'median': 0.8687974810600281, 'min': 0.008557516150176525, 'max': 0.9784355163574219, 'p05': 0.011324858572334052, 'p95': 0.9725852817296982}
+      CF Failure GOLD id-evidence   : {'n': 14, 'mean': 13.31248702286633, 'median': 12.433632081408113, 'min': 10.199381965069259, 'max': 15.942385152878742, 'p05': 10.42059373892844, 'p95': 15.942385152878742}
+      CF Failure WRONG id-evidence  : {'n': 14, 'mean': 14.700358149020698, 'median': 15.942385152878742, 'min': 10.621817177395886, 'max': 15.942385152878742, 'p05': 11.44089840460457, 'p95': 15.942385152878742}
+
+[9/12] FAILURE STRUCTURE...
+      PRIMARY count: 11
+      trueL -> selectedL: {(4, 2): 6, (3, 2): 5}
+      gold ranks: {2: 11}
+      wrong-gold Δjoint: {'n': 11, 'mean': 0.5040458332408558, 'median': 0.06669139862060547, 'min': 0.0, 'max': 2.22052001953125, 'p05': 0.0, 'p95': 1.941202163696289}
+      COUNTERFACTUAL count: 14
+      trueL -> selectedL: {(4, 2): 6, (3, 2): 8}
+      gold ranks: {2: 14}
+      wrong-gold Δjoint: {'n': 14, 'mean': 0.4769753728594099, 'median': 0.15900278091430664, 'min': 0.0, 'max': 2.22052001953125, 'p05': 0.0, 'p95': 1.8574068069458005}
+
+[10/12] REPRODUCTION GATES...
+      TEST538_PRIMARY_REPRO           : PASS
+      TEST538_CF_REPRO                : PASS
+      PRIMARY_FAILURE_COUNT           : PASS
+      CF_FAILURE_COUNT                : PASS
+      PRIMARY_ALL_WRONG_L2            : PASS
+      CF_ALL_WRONG_L2                 : PASS
+      NO_SELECTION_LAW_CHANGE         : PASS
+
+[11/12] PROTOCOL AUDIT...
+      Weight sentinel                    : PASS
+      Trainable tensors                  : 0
+      Pointer                            : L28H00 unchanged
+      Address                            : L00-V uncentered unchanged
+      Pointer K                          : 8 unchanged
+      Match                              : CONCATCOS unchanged
+      TEST537 law                        : unchanged
+      TEST538 global competition         : reproduced
+      New retrieval law                  : NONE
+      Length penalty                     : NONE
+      Length normalization               : NONE
+      Length prior/router                : NONE
+      Threshold/lambda/K scan            : NONE
+      Head/layer/address/match scan      : NONE
+      Gold used for selection            : NO
+      Gold used for post-hoc X-ray       : YES
+      Training / LoRA / optimizer / DRA : NONE
+      Learned router/scorer              : NONE
+      Query-time candidate-B forwards    : 0
+      TEST539 purpose                    : DIAGNOSTIC ONLY
+
+[12/12] FINAL...
+
+================================================================================================================================================================================
+TEST539 FINAL RESULT — AKBASCORE MAM · VARAN 1 · CROSS-LENGTH SCORE CALIBRATION X-RAY
+================================================================================================================================================================================
+MODEL                              : mistralai/Mistral-7B-Instruct-v0.3 · frozen
+PANEL                              : exact TEST538 development panel · N=1024
+POINTER                            : L28H00 · UNCHANGED
+ADDRESS                            : L00-V UNCENTERED · UNCHANGED
+MATCH                              : CONCATCOS · UNCHANGED
+TOPK                               : 8 · UNCHANGED
+LAW                                : TEST537 · UNCHANGED
+NEW RETRIEVAL LAW                  : NONE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PRIMARY TEST538 REPRO              : 1013/1024 = 0.9893
+CF TEST538 REPRO                   : 1010/1024 = 0.9863
+PRIMARY CROSS-LENGTH FAILURES      : 11
+CF CROSS-LENGTH FAILURES           : 14
+PRIMARY Δjoint wrong-gold          : {'n': 11, 'mean': 0.5040458332408558, 'median': 0.06669139862060547, 'min': 0.0, 'max': 2.22052001953125, 'p05': 0.0, 'p95': 1.941202163696289}
+CF Δjoint wrong-gold               : {'n': 14, 'mean': 0.4769753728594099, 'median': 0.15900278091430664, 'min': 0.0, 'max': 2.22052001953125, 'p05': 0.0, 'p95': 1.8574068069458005}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PRIMARY L2 BEST-JOINT             : {'n': 1024, 'mean': 8.238336856244132, 'median': 6.239498853683472, 'min': -0.31380605697631836, 'max': 15.938419342041016, 'p05': 1.6244394958019264, 'p95': 15.892897129058838}
+PRIMARY L3 BEST-JOINT             : {'n': 1024, 'mean': 8.127719267329667, 'median': 6.111353158950806, 'min': -0.1700676679611206, 'max': 15.93405532836914, 'p05': 3.443772387504578, 'p95': 15.88829140663147}
+PRIMARY L4 BEST-JOINT             : {'n': 1024, 'mean': 5.1340372906124685, 'median': 0.8668995797634125, 'min': -0.9275398850440979, 'max': 15.939044952392578, 'p05': 0.45838025510311126, 'p95': 15.88305959701538}
+CF L2 BEST-JOINT                  : {'n': 1024, 'mean': 8.207729444722645, 'median': 6.305349588394165, 'min': -0.6417635679244995, 'max': 15.940705299377441, 'p05': 1.5709561169147492, 'p95': 15.887543106079102}
+CF L3 BEST-JOINT                  : {'n': 1024, 'mean': 8.0647953824664, 'median': 6.09490442276001, 'min': -0.6560458540916443, 'max': 15.935914993286133, 'p05': 1.1665434539318087, 'p95': 15.894829559326173}
+CF L4 BEST-JOINT                  : {'n': 1024, 'mean': 5.129589681921061, 'median': 0.8655547201633453, 'min': -1.1281309127807617, 'max': 15.933006286621094, 'p05': 0.4398280382156372, 'p95': 15.882304763793945}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TEST538_PRIMARY_REPRO              : PASS
+TEST538_CF_REPRO                   : PASS
+PRIMARY_FAILURE_COUNT              : PASS
+CF_FAILURE_COUNT                   : PASS
+PRIMARY_ALL_WRONG_L2               : PASS
+CF_ALL_WRONG_L2                    : PASS
+NO_SELECTION_LAW_CHANGE            : PASS
+WEIGHT_SENTINEL                    : PASS
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+WEIGHT SENTINEL                    : PASS
+TRAINABLE TENSORS                  : 0
+QUERY-TIME CANDIDATE-B FORWARDS    : 0
+TEST537 LAW CHANGED                : NO
+TEST538 SELECTION CHANGED          : NO
+LENGTH CORRECTION FITTED           : NO
+TEST537 RESULT SHA                 : 9a4b6856a5d2a4f440ffa66cf4ba8c57b308b4f3a1cb7db4d0d8b826dd87cbf9
+TEST538 RESULT SHA                 : 51bbc7059421c1795d26ca5489f3f6aa97ac1dfcd1f70ab478596832b939c31a
+TEST539 PRE-RESULT LOCK            : 273c00ebf321725a50f27f42702844cfee6c62533a35df78cdbd3b997125b194
+TEST539 RESULT SHA                 : ab174946f58e3f0088881ce8e37b4cb76e32169d8d4e4d88219bce0a4ecb1520
+TOTAL TEST TIME                    : 460.59s
+VERDICT                            : TEST539_CROSS_LENGTH_SCORE_XRAY_COMPLETE
+NEXT                               : preserve TEST539 unchanged; use measured cross-length anatomy to predeclare exactly one TEST540 comparison law, then test it without scanning this panel
+
+
+================================================================================================================================================================================
