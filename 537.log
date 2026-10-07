@@ -1,0 +1,303 @@
+ 
+================================================================================================================================================================================
+TEST537 — AKBASCORE MAM · VARAN 1 · POINTER-PRIOR × IDENTITY-EVIDENCE JOINT RESOLUTION
+TEST536 FOLLOW-UP · FROZEN TOP-8 · LOCKED CONCATCOS · PARAMETER-FREE LOG PRIOR + LOG IDENTITY EVIDENCE
+================================================================================================================================================================================
+
+[1/12] Loading frozen Mistral...
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 73.5kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 15.4MB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 34.3MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.2kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.4kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 49.2kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.04MB/s]
+Download complete: 
+
+ 12.4GB,  993MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  584MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:41<00:00, 41.15s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 80.77it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 15.3kB/s]
+      mistralai/Mistral-7B-Instruct-v0.3 | NVIDIA A100-SXM4-40GB
+      32L H=4096 QH=32 KVH=8 HD=128 ADDRESS=1024
+      POINTER : L28H00 · FROZEN
+      ADDRESS : L00-V UNCENTERED · FROZEN
+      MATCH   : CONCATCOS · LOCKED FROM TEST530
+      TOPK    : 8 · FROZEN FROM TEST535
+      EPS     : float32 machine epsilon = 1.19209289551e-07
+      LAW     : log(pointer) - log(max(1-CONCATCOS,eps))
+      FITTED PARAMETERS : NONE
+      MODEL   : frozen · BF16 · SDPA · trainable=0
+      Native model-token atom pool: 220
+
+[2/12] Reconstructing exact sealed panel...
+      Required identity pools: {2: 1774, 3: 1769, 4: 1769}
+      L=2: 342
+      L=3: 341
+      L=4: 341
+      Remaining reserve: {2: 64, 3: 64, 4: 64}
+      Sealed panel seed: 531531
+      TEST537 LOCK: 6ed85960f5d7b99661e47b2a60d285a9ad26ab800347b54f064df226a1340b99
+
+[3/12] OFFLINE FORGE — exact sealed A/B construction...
+      forged   64/1024
+      forged  128/1024
+      forged  192/1024
+      forged  256/1024
+      forged  320/1024
+      forged  384/1024
+      forged  448/1024
+      forged  512/1024
+      forged  576/1024
+      forged  640/1024
+      forged  704/1024
+      forged  768/1024
+      forged  832/1024
+      forged  896/1024
+      forged  960/1024
+      forged 1024/1024
+      A memories: 1024
+      B memories: 1024
+      Query-time candidate-B forwards: 0
+
+[4/12] Building locked CONCATCOS banks...
+      L=2 windows: 13680 | shape=(13680, 2, 1024)
+      L=3 windows: 14322 | shape=(14322, 3, 1024)
+      L=4 windows: 15004 | shape=(15004, 4, 1024)
+
+[5/12] PRIMARY — PEAK / TOP8 reproduction + TEST537 law...
+      [0001/1024] L=2 PEAK=   1 TOP8=   1 TEST537=   1 sel=0001
+      [0002/1024] L=3 PEAK=   1 TOP8=   1 TEST537=   1 sel=0002
+      [0003/1024] L=4 PEAK=   1 TOP8=   1 TEST537=   1 sel=0003
+      [0004/1024] L=2 PEAK=   1 TOP8=   1 TEST537=   1 sel=0004
+      [0005/1024] L=3 PEAK=   1 TOP8=   1 TEST537=   1 sel=0005
+      [0006/1024] L=4 PEAK=   1 TOP8=   1 TEST537=   1 sel=0006
+      [0007/1024] L=2 PEAK=   1 TOP8= 288 TEST537=   1 sel=0007
+      [0008/1024] L=3 PEAK=   1 TOP8=   1 TEST537=   1 sel=0008
+      [0064/1024] L=2 PEAK=   1 TOP8=   1 TEST537=   1 sel=0064
+      [0128/1024] L=3 PEAK=   1 TOP8=   1 TEST537=   1 sel=0128
+      [0192/1024] L=4 PEAK=   1 TOP8=   1 TEST537=   1 sel=0192
+      [0256/1024] L=2 PEAK=   1 TOP8=   1 TEST537=   1 sel=0256
+      [0320/1024] L=3 PEAK=   1 TOP8=   1 TEST537=   1 sel=0320
+      [0384/1024] L=4 PEAK=   1 TOP8=   1 TEST537=   1 sel=0384
+      [0448/1024] L=2 PEAK=   1 TOP8=   1 TEST537=   1 sel=0448
+      [0512/1024] L=3 PEAK=   1 TOP8=   1 TEST537=   1 sel=0512
+      [0568/1024] L=2 PEAK= 172 TOP8=   1 TEST537=   1 sel=0568
+      [0576/1024] L=4 PEAK=   1 TOP8=   1 TEST537=   1 sel=0576
+      [0640/1024] L=2 PEAK=   1 TOP8=   1 TEST537=   1 sel=0640
+      [0699/1024] L=4 PEAK= 267 TOP8=   1 TEST537=   1 sel=0699
+      [0704/1024] L=3 PEAK=   1 TOP8=   1 TEST537=   1 sel=0704
+      [0768/1024] L=4 PEAK=   1 TOP8=   1 TEST537=   1 sel=0768
+      [0808/1024] L=2 PEAK=  52 TOP8=   1 TEST537=   1 sel=0808
+      [0832/1024] L=2 PEAK=   1 TOP8=   1 TEST537=   1 sel=0832
+      [0896/1024] L=3 PEAK=   1 TOP8=   1 TEST537=   1 sel=0896
+      [0941/1024] L=3 PEAK= 338 TOP8=   1 TEST537=   1 sel=0941
+      [0949/1024] L=2 PEAK=  76 TOP8=   1 TEST537=   1 sel=0949
+      [0960/1024] L=4 PEAK=   1 TOP8=   1 TEST537=   1 sel=0960
+      [0987/1024] L=4 PEAK=  34 TOP8=   1 TEST537=   1 sel=0987
+      [1017/1024] L=4 PEAK=  13 TOP8=   1 TEST537=   1 sel=1017
+      [1024/1024] L=2 PEAK=   1 TOP8=   1 TEST537=   1 sel=1024
+      PEAK_CONTAIN : 0.9932/0.9932/0.9941/0.993312
+      TOP8_JOINT   : 0.9570/0.9580/0.9590/0.957721
+      TEST537 LAW  : 1.0000/1.0000/1.0000/1.000000
+      L=2: R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L=3: R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      L=4: R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      PEAK failures recovered : 7
+      PEAK-correct broken     : 0
+      TEST537 failure IDs     : []
+
+[6/12] PRIMARY TRANSITION...
+      PEAK failures           : 7/1024
+      TEST537 failures        : 0/1024
+      recovered               : 7/7
+      previously-correct broken: 0
+      recovered IDs           : [568, 699, 808, 941, 949, 987, 1017]
+      broken IDs              : []
+
+[7/12] COUNTERFACTUAL...
+      [0001/1024] target=0354 L=4 PEAK=   1 TOP8=   1 TEST537=   1 sel=0354
+      [0002/1024] target=0355 L=2 PEAK=   1 TOP8=   1 TEST537=   1 sel=0355
+      [0003/1024] target=0356 L=3 PEAK=   1 TOP8=   1 TEST537=   1 sel=0356
+      [0004/1024] target=0357 L=4 PEAK=   1 TOP8=   1 TEST537=   1 sel=0357
+      [0005/1024] target=0358 L=2 PEAK=   1 TOP8=   1 TEST537=   1 sel=0358
+      [0064/1024] target=0417 L=4 PEAK=   1 TOP8=   1 TEST537=   1 sel=0417
+      [0085/1024] target=0438 L=4 PEAK=  87 TOP8=   1 TEST537=   1 sel=0438
+      [0128/1024] target=0481 L=2 PEAK=   1 TOP8=   1 TEST537=   1 sel=0481
+      [0192/1024] target=0545 L=3 PEAK=   1 TOP8=   1 TEST537=   1 sel=0545
+      [0256/1024] target=0609 L=4 PEAK=   1 TOP8=   1 TEST537=   1 sel=0609
+      [0303/1024] target=0656 L=3 PEAK= 238 TOP8=   1 TEST537=   1 sel=0656
+      [0320/1024] target=0673 L=2 PEAK=   1 TOP8=   1 TEST537=   1 sel=0673
+      [0340/1024] target=0693 L=4 PEAK=  15 TOP8=   1 TEST537=   1 sel=0693
+      [0384/1024] target=0737 L=3 PEAK=   1 TOP8=   1 TEST537=   1 sel=0737
+      [0448/1024] target=0801 L=4 PEAK=   1 TOP8=   1 TEST537=   1 sel=0801
+      [0512/1024] target=0865 L=2 PEAK=   1 TOP8=   1 TEST537=   1 sel=0865
+      [0576/1024] target=0929 L=3 PEAK=   1 TOP8=   1 TEST537=   1 sel=0929
+      [0596/1024] target=0949 L=2 PEAK=  76 TOP8=   1 TEST537=   1 sel=0949
+      [0634/1024] target=0987 L=4 PEAK=  34 TOP8=   1 TEST537=   1 sel=0987
+      [0640/1024] target=0993 L=4 PEAK=   1 TOP8=   1 TEST537=   1 sel=0993
+      [0696/1024] target=0025 L=2 PEAK=  94 TOP8= 278 TEST537=   1 sel=0025
+      [0704/1024] target=0033 L=4 PEAK=   1 TOP8=   1 TEST537=   1 sel=0033
+      [0710/1024] target=0039 L=4 PEAK= 280 TOP8=   1 TEST537=   1 sel=0039
+      [0768/1024] target=0097 L=2 PEAK=   1 TOP8=   1 TEST537=   1 sel=0097
+      [0832/1024] target=0161 L=3 PEAK=   1 TOP8=   1 TEST537=   1 sel=0161
+      [0896/1024] target=0225 L=4 PEAK=   1 TOP8=   1 TEST537=   1 sel=0225
+      [0897/1024] target=0226 L=2 PEAK=  35 TOP8=   1 TEST537=   1 sel=0226
+      [0960/1024] target=0289 L=2 PEAK=   1 TOP8=   1 TEST537=   1 sel=0289
+      [0995/1024] target=0324 L=4 PEAK= 144 TOP8=   1 TEST537=   1 sel=0324
+      [1024/1024] target=0353 L=3 PEAK=   1 TOP8=   1 TEST537=   1 sel=0353
+      CF PEAK_CONTAIN : 0.9912/0.9912/0.9922/0.991382
+      CF TOP8_JOINT   : 0.9580/0.9590/0.9600/0.958691
+      CF TEST537 LAW  : 1.0000/1.0000/1.0000/1.000000
+      CF PEAK failures recovered : 9
+      CF PEAK-correct broken     : 0
+      CF TEST537 failure IDs     : []
+
+[8/12] COUNTERFACTUAL TRANSITION...
+      CF PEAK failures           : 9/1024
+      CF TEST537 failures        : 0/1024
+      CF recovered               : 9/9
+      CF previously-correct broken: 0
+      CF recovered IDs           : [85, 303, 340, 596, 634, 696, 710, 897, 995]
+      CF broken IDs              : []
+
+[9/12] STATISTICAL SUMMARY...
+      PEAK    : 1017/1024 = 0.9932 | 95% Wilson [0.9860,0.9967]
+      TOP8    :  980/1024 = 0.9570 | 95% Wilson [0.9428,0.9678]
+      TEST537 : 1024/1024 = 1.0000 | 95% Wilson [0.9963,1.0000]
+      537_L2  :  342/ 342 = 1.0000 | 95% Wilson [0.9889,1.0000]
+      537_L3  :  341/ 341 = 1.0000 | 95% Wilson [0.9889,1.0000]
+      537_L4  :  341/ 341 = 1.0000 | 95% Wilson [0.9889,1.0000]
+      CF_PEAK : 1015/1024 = 0.9912 | 95% Wilson [0.9834,0.9954]
+      CF_TOP8 :  981/1024 = 0.9580 | 95% Wilson [0.9439,0.9687]
+      CF_537  : 1024/1024 = 1.0000 | 95% Wilson [0.9963,1.0000]
+
+[10/12] PREDECLARED GATES...
+      PRIMARY_PEAK_REPRO              : PASS
+      PRIMARY_TOP8_REPRO              : PASS
+      CF_PEAK_REPRO                   : PASS
+      CF_TOP8_REPRO                   : PASS
+      TEST537_R1                      : PASS
+      TEST537_R5                      : PASS
+      TEST537_L2_R1                   : PASS
+      TEST537_L3_R1                   : PASS
+      TEST537_L4_R1                   : PASS
+      TEST537_CF_R1                   : PASS
+      NO_PRIMARY_PEAK_REGRESSION      : PASS
+      NO_CF_PEAK_REGRESSION           : PASS
+
+[11/12] PROTOCOL AUDIT...
+      Weight sentinel                    : PASS
+      Trainable tensors                  : 0
+      Pointer                            : L28H00 unchanged
+      Address                            : L00-V uncentered unchanged
+      Match                              : CONCATCOS unchanged
+      Pointer candidate K                : 8 unchanged
+      Candidate law                      : log(pointer)-log(max(1-cos,eps))
+      Fitted coefficient                 : NONE
+      Lambda                             : NONE
+      Threshold                          : NONE
+      K scan                             : NONE
+      Head/layer/address/match scan      : NONE
+      Identity length L                  : PROTOCOL-KNOWN
+      Cross-length competition           : NO
+      Gold span used for selection       : NO
+      Gold B position used               : NO
+      Token-ID / decoded-ID routing      : NO
+      Training / LoRA / optimizer / DRA : NONE
+      Learned router/scorer              : NONE
+      Query-time candidate-B forwards    : 0
+      TEST536 retroactively changed      : NO
+
+[12/12] FINAL...
+
+================================================================================================================================================================================
+TEST537 FINAL RESULT — AKBASCORE MAM · VARAN 1 · POINTER-PRIOR × IDENTITY-EVIDENCE JOINT RESOLUTION
+================================================================================================================================================================================
+MODEL                              : mistralai/Mistral-7B-Instruct-v0.3 · frozen
+PANEL                              : TEST531–536 deterministic reconstruction · N=1024
+POINTER                            : L28H00 · UNCHANGED
+ADDRESS                            : L00-V · UNCENTERED · 1024D · UNCHANGED
+MATCH                              : CONCATCOS · UNCHANGED
+POINTER CANDIDATES                 : TOP-8 · UNCHANGED
+LAW                                : log(pointer)-log(max(1-CONCATCOS,float32_eps))
+FITTED PARAMETERS                  : 0
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PRIMARY PEAK_CONTAIN               : R1=0.9932 R5=0.9932 R16=0.9941 MRR=0.993312
+PRIMARY TOP8_JOINT                 : R1=0.9570 R5=0.9580 R16=0.9590 MRR=0.957721
+PRIMARY TEST537                    : R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+TEST537 L=2                       : R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+TEST537 L=3                       : R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+TEST537 L=4                       : R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+CF PEAK_CONTAIN                    : R1=0.9912 R5=0.9912 R16=0.9922 MRR=0.991382
+CF TOP8_JOINT                      : R1=0.9580 R5=0.9590 R16=0.9600 MRR=0.958691
+CF TEST537                         : R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PRIMARY PEAK FAILURES RECOVERED    : 7
+PRIMARY PEAK-CORRECT BROKEN        : 0
+CF PEAK FAILURES RECOVERED         : 9
+CF PEAK-CORRECT BROKEN             : 0
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PRIMARY_PEAK_REPRO                 : PASS
+PRIMARY_TOP8_REPRO                 : PASS
+CF_PEAK_REPRO                      : PASS
+CF_TOP8_REPRO                      : PASS
+TEST537_R1                         : PASS
+TEST537_R5                         : PASS
+TEST537_L2_R1                      : PASS
+TEST537_L3_R1                      : PASS
+TEST537_L4_R1                      : PASS
+TEST537_CF_R1                      : PASS
+NO_PRIMARY_PEAK_REGRESSION         : PASS
+NO_CF_PEAK_REGRESSION              : PASS
+WEIGHT_SENTINEL                    : PASS
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+WEIGHT SENTINEL                    : PASS
+TRAINABLE TENSORS                  : 0
+QUERY-TIME CANDIDATE-B FORWARDS    : 0
+KNOWN IDENTITY LENGTH              : YES
+CROSS-LENGTH GLOBAL COMPETITION    : NO
+TEST528 RESULT SHA                 : 9235ed38c944f41a9ede0426d3aabaa12b5b20646f30e2be921e618f9471d3c2
+TEST529 RESULT SHA                 : 27ba703872f0d8a6ed870a6ba041d0cd0703d2eca467deac97186a90497795a0
+TEST530 RESULT SHA                 : 289247c88dfd4358cbe5ffb8499891546b27acc6912caf525a155ae81338db7b
+TEST531 RESULT SHA                 : 20257d7d613a49e55b03603946f07ec493009924f40ac26ab74cb817e1466528
+TEST532 RESULT SHA                 : 9e37a473a322a19f7b3862a25162835ab6396998dc4fc416bc90bc9b718df188
+TEST533 RESULT SHA                 : 5239fb585b87a22f5da778c61a1011379b216a25bf7d05dc5d01952cbb22a5c6
+TEST534 RESULT SHA                 : b25128d17176790b2a8694c8ec9e7db5eaad469ff02a87a46876b2ffd45a9bb1
+TEST535 RESULT SHA                 : fc407885133d48f84a952249b15e884b201749136f6b16a49e7db11b0e9e5087
+TEST536 RESULT SHA                 : INSERT TEST536 RESULT SHA
+TEST537 PRE-RESULT LOCK            : 6ed85960f5d7b99661e47b2a60d285a9ad26ab800347b54f064df226a1340b99
+TEST537 RESULT SHA                 : 9a4b6856a5d2a4f440ffa66cf4ba8c57b308b4f3a1cb7db4d0d8b826dd87cbf9
+TOTAL TEST TIME                    : 428.02s
+VERDICT                            : TEST537_POINTER_PRIOR_IDENTITY_EVIDENCE_STRONG_CANDIDATE
+NEXT                               : freeze TEST537 law; next remove protocol-known L and same-length bank partition, then run a fresh untouched Varan 1 final validation
+
+
+================================================================================================================================================================================
