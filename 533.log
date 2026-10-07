@@ -1,0 +1,266 @@
+ ================================================================================================================================================================================
+TEST533 — AKBASCORE MAM · VARAN 1 · PEAK-CONTAINED ORIGIN RESOLUTION
+TEST532 FOLLOW-UP · ARGMAX BASELINE vs PEAK-CONTAIN · CONCATCOS LOCKED
+================================================================================================================================================================================
+
+[1/12] Loading frozen Mistral...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 601/601 [00:00<00:00, 63.6kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 11.2MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 86.4MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 56.9kB/s  tokenizer.model: downloading bytes:   448kB, 43.4kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 44.5kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 2.64MB/s]Download complete:  12.4GB,  157MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  560MB/s  Fetching 3 files: 100% 3/3 [00:41<00:00, 41.78s/it]Loading weights: 100% 291/291 [00:03<00:00, 78.43it/s]generation_config.json: 100% 116/116 [00:00<00:00, 12.9kB/s]      mistralai/Mistral-7B-Instruct-v0.3 | NVIDIA A100-SXM4-40GB
+      32L H=4096 QH=32 KVH=8 HD=128 ADDRESS=1024
+      POINTER : L28H00 · FROZEN
+      ADDRESS : L00-V UNCENTERED · FROZEN
+      MATCH   : CONCATCOS · LOCKED FROM TEST530
+      PANEL   : exact TEST531/532 deterministic construction
+      ORIGINS : ARGMAX baseline + PEAK_CONTAIN candidate law
+      MODEL   : frozen · BF16 · SDPA · trainable=0
+      Native model-token atom pool: 220
+
+[2/12] Reconstructing exact TEST531/532 deterministic panel...
+      Required identity pools: {2: 1774, 3: 1769, 4: 1769}
+      L=2: 342
+      L=3: 341
+      L=4: 341
+      Remaining reserve: {2: 64, 3: 64, 4: 64}
+      TEST531/532 seed: 531531
+      TEST533 LOCK: 48ae22547a92d8dbf4197f43119d16e2402c5aee251df0d5c25e9d4bf51f0111
+
+[3/12] OFFLINE FORGE — exact TEST532 construction...
+      forged   64/1024
+      forged  128/1024
+      forged  192/1024
+      forged  256/1024
+      forged  320/1024
+      forged  384/1024
+      forged  448/1024
+      forged  512/1024
+      forged  576/1024
+      forged  640/1024
+      forged  704/1024
+      forged  768/1024
+      forged  832/1024
+      forged  896/1024
+      forged  960/1024
+      forged 1024/1024
+      A memories: 1024
+      B memories: 1024
+      Query-time candidate-B forwards: 0
+
+[4/12] Building locked CONCATCOS banks...
+      L=2 windows: 13680 | shape=(13680, 2, 1024)
+      L=3 windows: 14322 | shape=(14322, 3, 1024)
+      L=4 windows: 15004 | shape=(15004, 4, 1024)
+      Match law unchanged: CONCATCOS
+      Gold B position used: NO
+
+[5/12] PRIMARY — ARGMAX vs PEAK_CONTAIN...
+      [0001/1024] L=2 gold= 20 peak= 20 new= 20 inside=1 | BASE=   1 NEW=   1 sel=0001/0001
+      [0002/1024] L=3 gold= 23 peak= 23 new= 23 inside=1 | BASE=   1 NEW=   1 sel=0002/0002
+      [0003/1024] L=4 gold=  9 peak=  9 new=  9 inside=1 | BASE=   1 NEW=   1 sel=0003/0003
+      [0004/1024] L=2 gold= 32 peak= 32 new= 32 inside=1 | BASE=   1 NEW=   1 sel=0004/0004
+      [0005/1024] L=3 gold=  8 peak=  8 new=  8 inside=1 | BASE=   1 NEW=   1 sel=0005/0005
+      [0006/1024] L=4 gold= 35 peak= 35 new= 35 inside=1 | BASE=   1 NEW=   1 sel=0006/0006
+      [0007/1024] L=2 gold=  8 peak=  8 new=  8 inside=1 | BASE=   1 NEW=   1 sel=0007/0007
+      [0008/1024] L=3 gold= 21 peak= 21 new= 21 inside=1 | BASE=   1 NEW=   1 sel=0008/0008
+      [0064/1024] L=2 gold=  9 peak=  9 new=  9 inside=1 | BASE=   1 NEW=   1 sel=0064/0064
+      [0128/1024] L=3 gold= 21 peak= 21 new= 21 inside=1 | BASE=   1 NEW=   1 sel=0128/0128
+      [0172/1024] L=2 gold=  9 peak= 10 new=  9 inside=1 | BASE= 342 NEW=   1 sel=0346/0172
+      [0192/1024] L=4 gold= 21 peak= 21 new= 21 inside=1 | BASE=   1 NEW=   1 sel=0192/0192
+      [0256/1024] L=2 gold= 31 peak= 31 new= 31 inside=1 | BASE=   1 NEW=   1 sel=0256/0256
+      [0320/1024] L=3 gold=  9 peak=  9 new=  9 inside=1 | BASE=   1 NEW=   1 sel=0320/0320
+      [0384/1024] L=4 gold= 35 peak= 35 new= 35 inside=1 | BASE=   1 NEW=   1 sel=0384/0384
+      [0448/1024] L=2 gold=  9 peak=  9 new=  9 inside=1 | BASE=   1 NEW=   1 sel=0448/0448
+      [0451/1024] L=2 gold=  9 peak= 10 new=  9 inside=1 | BASE= 177 NEW=   1 sel=0346/0451
+      [0477/1024] L=4 gold= 22 peak= 25 new= 22 inside=1 | BASE= 238 NEW=   1 sel=0873/0477
+      [0496/1024] L=2 gold=  8 peak=  9 new=  8 inside=1 | BASE= 207 NEW=   1 sel=0346/0496
+      [0509/1024] L=3 gold=  9 peak= 10 new=  9 inside=1 | BASE=   2 NEW=   1 sel=0989/0509
+      [0512/1024] L=3 gold= 33 peak= 33 new= 33 inside=1 | BASE=   1 NEW=   1 sel=0512/0512
+      [0545/1024] L=3 gold=  9 peak= 11 new=  9 inside=1 | BASE=  94 NEW=   1 sel=0311/0545
+      [0568/1024] L=2 gold= 20 peak= 31 new= 31 inside=0 | BASE= 171 NEW= 172 sel=0442/0442
+      [0576/1024] L=4 gold=  9 peak=  9 new=  9 inside=1 | BASE=   1 NEW=   1 sel=0576/0576
+      [0640/1024] L=2 gold=  9 peak=  9 new=  9 inside=1 | BASE=   1 NEW=   1 sel=0640/0640
+      [0699/1024] L=4 gold=  9 peak= 34 new= 34 inside=0 | BASE= 259 NEW= 267 sel=0162/0162
+      [0704/1024] L=3 gold= 21 peak= 21 new= 21 inside=1 | BASE=   1 NEW=   1 sel=0704/0704
+      [0716/1024] L=3 gold=  9 peak= 11 new=  9 inside=1 | BASE= 164 NEW=   1 sel=0311/0716
+      [0738/1024] L=4 gold=  9 peak= 12 new=  9 inside=1 | BASE= 243 NEW=   1 sel=0873/0738
+      [0768/1024] L=4 gold= 35 peak= 35 new= 35 inside=1 | BASE=   1 NEW=   1 sel=0768/0768
+      [0789/1024] L=4 gold=  9 peak= 12 new=  9 inside=1 | BASE=  88 NEW=   1 sel=0873/0789
+      [0808/1024] L=2 gold= 20 peak= 31 new= 31 inside=0 | BASE=  47 NEW=  52 sel=0391/0391
+      [0832/1024] L=2 gold= 31 peak= 31 new= 31 inside=1 | BASE=   1 NEW=   1 sel=0832/0832
+      [0896/1024] L=3 gold= 22 peak= 22 new= 22 inside=1 | BASE=   1 NEW=   1 sel=0896/0896
+      [0941/1024] L=3 gold=  9 peak=  1 new=  1 inside=0 | BASE= 338 NEW= 338 sel=0176/0176
+      [0946/1024] L=2 gold=  9 peak= 10 new=  9 inside=1 | BASE= 227 NEW=   1 sel=0346/0946
+      [0949/1024] L=2 gold=  8 peak=  1 new=  1 inside=0 | BASE=  76 NEW=  76 sel=0157/0157
+      [0960/1024] L=4 gold=  9 peak=  9 new=  9 inside=1 | BASE=   1 NEW=   1 sel=0960/0960
+      [0987/1024] L=4 gold= 35 peak= 22 new= 22 inside=0 | BASE=  28 NEW=  34 sel=0189/0189
+      [1015/1024] L=2 gold=  9 peak= 10 new=  9 inside=1 | BASE= 284 NEW=   1 sel=0346/1015
+      [1017/1024] L=4 gold=  8 peak=  1 new=  1 inside=0 | BASE=  13 NEW=  13 sel=0066/0066
+      [1024/1024] L=2 gold= 19 peak= 19 new= 19 inside=1 | BASE=   1 NEW=   1 sel=1024/1024
+      BASELINE ARGMAX R1/R5/R16/MRR : 0.9824/0.9834/0.9844/0.983123
+      PEAK_CONTAIN    R1/R5/R16/MRR : 0.9932/0.9932/0.9941/0.993312
+      L=2 BASE R1=0.9766 | NEW R1=0.9912 R5=0.9912
+      L=3 BASE R1=0.9883 | NEW R1=0.9971 R5=0.9971
+      L=4 BASE R1=0.9824 | NEW R1=0.9912 R5=0.9912
+      BASE peak inside gold span     : 0.9912
+      BASE exact gold-start hit      : 0.9707
+      NEW selected gold-start hit    : 0.9912
+      Pointer gold-span mass         : 0.885546
+
+[6/12] RESIDUAL FAILURE ANATOMY...
+      Baseline failures              : 18/1024
+      Failures with peak inside ID   : 11/18
+      Failures recovered by NEW      : 11/18
+      Previously-correct broken NEW  : 0
+      Baseline failure IDs           : [172, 451, 477, 496, 509, 545, 568, 699, 716, 738, 789, 808, 941, 946, 949, 987, 1015, 1017]
+      Recovered IDs                  : [172, 451, 477, 496, 509, 545, 716, 738, 789, 946, 1015]
+      Broken IDs                     : []
+
+[7/12] COUNTERFACTUAL...
+      [0001/1024] L=4 target=0354 gold= 35 peak= 35 new= 35 BASE=   1 NEW=   1
+      [0002/1024] L=2 target=0355 gold= 10 peak= 11 new= 10 BASE=  10 NEW=   1
+      [0003/1024] L=3 target=0356 gold= 32 peak= 32 new= 32 BASE=   1 NEW=   1
+      [0004/1024] L=4 target=0357 gold= 23 peak= 23 new= 23 BASE=   1 NEW=   1
+      [0005/1024] L=2 target=0358 gold= 30 peak= 30 new= 30 BASE=   1 NEW=   1
+      [0064/1024] L=4 target=0417 gold= 34 peak= 34 new= 34 BASE=   1 NEW=   1
+      [0085/1024] L=4 target=0438 gold=  9 peak= 21 new= 21 BASE=  73 NEW=  87
+      [0089/1024] L=2 target=0442 gold= 20 peak= 21 new= 20 BASE= 182 NEW=   1
+      [0098/1024] L=2 target=0451 gold= 10 peak= 11 new= 10 BASE= 177 NEW=   1
+      [0124/1024] L=4 target=0477 gold= 22 peak= 25 new= 22 BASE= 238 NEW=   1
+      [0128/1024] L=2 target=0481 gold=  9 peak=  9 new=  9 BASE=   1 NEW=   1
+      [0175/1024] L=4 target=0528 gold=  9 peak= 12 new=  9 BASE= 305 NEW=   1
+      [0192/1024] L=3 target=0545 gold= 32 peak= 32 new= 32 BASE=   1 NEW=   1
+      [0256/1024] L=4 target=0609 gold= 22 peak= 22 new= 22 BASE=   1 NEW=   1
+      [0303/1024] L=3 target=0656 gold= 21 peak= 15 new= 14 BASE= 160 NEW= 238
+      [0320/1024] L=2 target=0673 gold= 20 peak= 20 new= 20 BASE=   1 NEW=   1
+      [0340/1024] L=4 target=0693 gold=  9 peak=  1 new=  1 BASE=  15 NEW=  15
+      [0384/1024] L=3 target=0737 gold= 21 peak= 21 new= 21 BASE=   1 NEW=   1
+      [0448/1024] L=4 target=0801 gold= 21 peak= 21 new= 21 BASE=   1 NEW=   1
+      [0476/1024] L=2 target=0829 gold=  9 peak= 10 new=  9 BASE=  84 NEW=   1
+      [0512/1024] L=2 target=0865 gold= 20 peak= 20 new= 20 BASE=   1 NEW=   1
+      [0560/1024] L=2 target=0913 gold= 30 peak= 31 new= 30 BASE= 247 NEW=   1
+      [0576/1024] L=3 target=0929 gold=  9 peak=  9 new=  9 BASE=   1 NEW=   1
+      [0584/1024] L=2 target=0937 gold= 19 peak= 20 new= 19 BASE= 267 NEW=   1
+      [0593/1024] L=2 target=0946 gold=  9 peak= 10 new=  9 BASE= 227 NEW=   1
+      [0596/1024] L=2 target=0949 gold=  9 peak=  1 new=  1 BASE=  76 NEW=  76
+      [0634/1024] L=4 target=0987 gold= 34 peak= 21 new= 21 BASE=  28 NEW=  34
+      [0640/1024] L=4 target=0993 gold= 22 peak= 22 new= 22 BASE=   1 NEW=   1
+      [0662/1024] L=2 target=1015 gold=  9 peak= 10 new=  9 BASE= 284 NEW=   1
+      [0696/1024] L=2 target=0025 gold= 19 peak=  8 new=  8 BASE=  92 NEW=  94
+      [0704/1024] L=4 target=0033 gold= 35 peak= 35 new= 35 BASE=   1 NEW=   1
+      [0710/1024] L=4 target=0039 gold= 22 peak= 13 new= 10 BASE= 154 NEW= 280
+      [0765/1024] L=2 target=0094 gold=  9 peak= 10 new=  9 BASE= 240 NEW=   1
+      [0768/1024] L=2 target=0097 gold= 10 peak= 10 new= 10 BASE=   1 NEW=   1
+      [0832/1024] L=3 target=0161 gold= 10 peak= 10 new= 10 BASE=   1 NEW=   1
+      [0896/1024] L=4 target=0225 gold= 36 peak= 36 new= 36 BASE=   1 NEW=   1
+      [0897/1024] L=2 target=0226 gold= 18 peak=  8 new=  8 BASE=  35 NEW=  35
+      [0960/1024] L=2 target=0289 gold= 20 peak= 20 new= 20 BASE=   1 NEW=   1
+      [0995/1024] L=4 target=0324 gold=  8 peak=  1 new=  1 BASE= 144 NEW= 144
+      [1024/1024] L=3 target=0353 gold=  8 peak=  8 new=  8 BASE=   1 NEW=   1
+      CF BASE R1/R5/R16/MRR : 0.9805/0.9805/0.9824/0.980800
+      CF NEW  R1/R5/R16/MRR : 0.9912/0.9912/0.9922/0.991382
+      CF BASE exact start    : 0.9766
+      CF NEW selected start  : 0.9912
+      CF BASE peak in span   : 0.9912
+      CF pointer span mass   : 0.881303
+
+[8/12] ORIGIN ERROR DISTRIBUTION...
+      ARGMAX start offset histogram:
+       {-13: 1, -8: 1, -7: 2, -1: 2, 0: 994, 1: 14, 2: 4, 3: 3, 11: 2, 25: 1}
+      PEAK_CONTAIN selected-origin histogram:
+       {-13: 1, -8: 1, -7: 2, -1: 2, 0: 1015, 11: 2, 25: 1}
+      L=2 exact-start: ARGMAX=0.9766 PEAK_CONTAIN=0.9912
+      L=3 exact-start: ARGMAX=0.9824 PEAK_CONTAIN=0.9971
+      L=4 exact-start: ARGMAX=0.9531 PEAK_CONTAIN=0.9853
+
+[9/12] STATISTICAL SUMMARY...
+      BASE    : 1006/1024 = 0.9824 | 95% Wilson [0.9724,0.9889]
+      NEW     : 1017/1024 = 0.9932 | 95% Wilson [0.9860,0.9967]
+      NEW_L2  :  339/ 342 = 0.9912 | 95% Wilson [0.9745,0.9970]
+      NEW_L3  :  340/ 341 = 0.9971 | 95% Wilson [0.9836,0.9995]
+      NEW_L4  :  338/ 341 = 0.9912 | 95% Wilson [0.9745,0.9970]
+      CF_BASE : 1004/1024 = 0.9805 | 95% Wilson [0.9700,0.9873]
+      CF_NEW  : 1015/1024 = 0.9912 | 95% Wilson [0.9834,0.9954]
+
+[10/12] PREDECLARED GATES...
+      BASELINE_REPRO_R1           : PASS
+      PEAK_CONTAIN_R1             : FAIL
+      PEAK_CONTAIN_R5             : FAIL
+      PEAK_L2_R1                  : PASS
+      PEAK_L3_R1                  : PASS
+      PEAK_L4_R1                  : PASS
+      PEAK_CF_R1                  : PASS
+
+[11/12] PROTOCOL AUDIT...
+      Weight sentinel                     : PASS
+      Trainable tensors                   : 0
+      Pointer                             : L28H00 unchanged
+      Address                             : L00-V uncentered unchanged
+      Match                               : CONCATCOS unchanged
+      TEST532 panel reconstruction        : YES
+      Baseline origin                     : ARGMAX unchanged
+      New origin candidates               : ONLY width-L windows containing pointer peak
+      Origin/B selection                  : GLOBAL locked CONCATCOS maximum
+      Thresholds in origin selection      : NONE
+      Pointer-mass rule                   : NONE
+      Gold span used for selection        : NO
+      Decoded identity used               : NO
+      Token IDs used for routing          : NO
+      Gold B position used                : NO
+      Gold A span                         : DIAGNOSTIC ONLY
+      Head/layer/address discovery        : NONE
+      Match-law scan                      : NONE
+      Training / LoRA / optimizer / DRA   : NONE
+      Learned router/scorer               : NONE
+      Query-time candidate-B forwards     : 0
+      TEST532 retroactively changed       : NO
+
+[12/12] FINAL...
+
+================================================================================================================================================================================
+TEST533 FINAL RESULT — AKBASCORE MAM · VARAN 1 · PEAK-CONTAINED ORIGIN RESOLUTION
+================================================================================================================================================================================
+MODEL                              : mistralai/Mistral-7B-Instruct-v0.3 · frozen
+PANEL                              : TEST531/532 deterministic reconstruction · N=1024
+POINTER                            : L28H00 · UNCHANGED
+ADDRESS                            : L00-V · UNCENTERED · 1024D · UNCHANGED
+MATCH                              : CONCATCOS · UNCHANGED
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BASELINE ARGMAX                    : R1=0.9824 R5=0.9834 R16=0.9844 MRR=0.983123
+PEAK_CONTAIN                       : R1=0.9932 R5=0.9932 R16=0.9941 MRR=0.993312
+PEAK L=2                           : R1=0.9912 R5=0.9912 R16=0.9912 MRR=0.991340
+PEAK L=3                           : R1=0.9971 R5=0.9971 R16=0.9971 MRR=0.997076
+PEAK L=4                           : R1=0.9912 R5=0.9912 R16=0.9941 MRR=0.991525
+CF BASELINE                        : R1=0.9805 R5=0.9805 R16=0.9824 MRR=0.980800
+CF PEAK_CONTAIN                    : R1=0.9912 R5=0.9912 R16=0.9922 MRR=0.991382
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ARGMAX EXACT GOLD-START HIT        : 0.9707
+PEAK SELECTED GOLD-START HIT       : 0.9912
+CF ARGMAX EXACT GOLD-START HIT     : 0.9766
+CF PEAK SELECTED GOLD-START HIT    : 0.9912
+ARGMAX INSIDE GOLD SPAN            : 0.9912
+BASELINE FAILURES                  : 18
+FAILURES RECOVERED BY PEAK         : 11
+CORRECT CASES BROKEN BY PEAK       : 0
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BASELINE_REPRO_R1                  : PASS
+PEAK_CONTAIN_R1                    : FAIL
+PEAK_CONTAIN_R5                    : FAIL
+PEAK_L2_R1                         : PASS
+PEAK_L3_R1                         : PASS
+PEAK_L4_R1                         : PASS
+PEAK_CF_R1                         : PASS
+WEIGHT_SENTINEL                    : PASS
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+WEIGHT SENTINEL                    : PASS
+QUERY-TIME CANDIDATE-B FORWARDS    : 0
+TEST528 RESULT SHA                 : 9235ed38c944f41a9ede0426d3aabaa12b5b20646f30e2be921e618f9471d3c2
+TEST529 RESULT SHA                 : 27ba703872f0d8a6ed870a6ba041d0cd0703d2eca467deac97186a90497795a0
+TEST530 RESULT SHA                 : 289247c88dfd4358cbe5ffb8499891546b27acc6912caf525a155ae81338db7b
+TEST531 RESULT SHA                 : 20257d7d613a49e55b03603946f07ec493009924f40ac26ab74cb817e1466528
+TEST532 RESULT SHA                 : 9e37a473a322a19f7b3862a25162835ab6396998dc4fc416bc90bc9b718df188
+TEST533 PRE-RESULT LOCK            : 48ae22547a92d8dbf4197f43119d16e2402c5aee251df0d5c25e9d4bf51f0111
+TEST533 RESULT SHA                 : 5239fb585b87a22f5da778c61a1011379b216a25bf7d05dc5d01952cbb22a5c6
+TOTAL TEST TIME                    : 347.30s
+VERDICT                            : TEST533_PEAK_CONTAIN_HYPOTHESIS_NOT_FULLY_SUPPORTED
+NEXT                               : preserve TEST533 unchanged; diagnose remaining residual failures in a new test
+================================================================================================================================================================================
