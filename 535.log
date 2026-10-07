@@ -1,0 +1,388 @@
+ 
+================================================================================================================================================================================
+TEST535 — AKBASCORE MAM · VARAN 1 · TOP-8 MULTI-PEAK JOINT RESOLUTION
+TEST534 FOLLOW-UP · FROZEN TOP-8 POINTER CANDIDATES → LOCAL ORIGINS → LOCKED CONCATCOS GLOBAL JOINT SELECTION
+================================================================================================================================================================================
+
+[1/12] Loading frozen Mistral...
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 69.7kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 15.0MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 30.1MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.4kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 59.2kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.82MB/s]
+Download complete: 
+
+ 12.4GB, 35.6MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  185MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:52<00:00, 15.47s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 76.20it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 15.2kB/s]
+      mistralai/Mistral-7B-Instruct-v0.3 | NVIDIA A100-SXM4-40GB
+      32L H=4096 QH=32 KVH=8 HD=128 ADDRESS=1024
+      POINTER : L28H00 · FROZEN
+      ADDRESS : L00-V UNCENTERED · FROZEN
+      MATCH   : CONCATCOS · LOCKED FROM TEST530
+      PANEL   : exact TEST531/532/533/534 deterministic construction
+      POINTER CANDIDATES : TOP-8 · FROZEN BEFORE TEST535
+      MODEL   : frozen · BF16 · SDPA · trainable=0
+      Native model-token atom pool: 220
+
+[2/12] Reconstructing exact sealed panel...
+      Required identity pools: {2: 1774, 3: 1769, 4: 1769}
+      L=2: 342
+      L=3: 341
+      L=4: 341
+      Remaining reserve: {2: 64, 3: 64, 4: 64}
+      Sealed panel seed: 531531
+      TEST535 LOCK: 33a833c481b055bca0e2c6bb8ca1240cb635e9d7232852b543de4ff1d61f81c6
+
+[3/12] OFFLINE FORGE — exact sealed A/B construction...
+      forged   64/1024
+      forged  128/1024
+      forged  192/1024
+      forged  256/1024
+      forged  320/1024
+      forged  384/1024
+      forged  448/1024
+      forged  512/1024
+      forged  576/1024
+      forged  640/1024
+      forged  704/1024
+      forged  768/1024
+      forged  832/1024
+      forged  896/1024
+      forged  960/1024
+      forged 1024/1024
+      A memories: 1024
+      B memories: 1024
+      Query-time candidate-B forwards: 0
+
+[4/12] Building locked CONCATCOS banks...
+      L=2 windows: 13680 | shape=(13680, 2, 1024)
+      L=3 windows: 14322 | shape=(14322, 3, 1024)
+      L=4 windows: 15004 | shape=(15004, 4, 1024)
+      Match law unchanged: CONCATCOS
+      Gold B position used: NO
+
+[5/12] PRIMARY — ARGMAX vs PEAK_CONTAIN vs TOP8_JOINT...
+      [0001/1024] L=2 gold= 20 peak= 20 pOrigin= 20 top8Origin= 20 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=0001/0001/0001
+      [0002/1024] L=3 gold= 23 peak= 23 pOrigin= 23 top8Origin= 23 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=0002/0002/0002
+      [0003/1024] L=4 gold=  9 peak=  9 pOrigin=  9 top8Origin=  9 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=0003/0003/0003
+      [0004/1024] L=2 gold= 32 peak= 32 pOrigin= 32 top8Origin= 32 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=0004/0004/0004
+      [0005/1024] L=3 gold=  8 peak=  8 pOrigin=  8 top8Origin=  8 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=0005/0005/0005
+      [0006/1024] L=4 gold= 35 peak= 35 pOrigin= 35 top8Origin= 35 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=0006/0006/0006
+      [0007/1024] L=2 gold=  8 peak=  8 pOrigin=  8 top8Origin= 33 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 288 sel=0007/0007/0346
+      [0008/1024] L=3 gold= 21 peak= 21 pOrigin= 21 top8Origin= 21 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=0008/0008/0008
+      [0013/1024] L=2 gold= 20 peak= 20 pOrigin= 20 top8Origin= 34 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 285 sel=0013/0013/0346
+      [0022/1024] L=2 gold= 31 peak= 31 pOrigin= 31 top8Origin= 34 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 268 sel=0022/0022/0346
+      [0025/1024] L=2 gold= 30 peak= 30 pOrigin= 30 top8Origin= 33 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 278 sel=0025/0025/0346
+      [0064/1024] L=2 gold=  9 peak=  9 pOrigin=  9 top8Origin=  9 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=0064/0064/0064
+      [0080/1024] L=3 gold=  9 peak=  9 pOrigin=  9 top8Origin= 36 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 331 sel=0080/0080/0344
+      [0088/1024] L=2 gold= 19 peak= 19 pOrigin= 19 top8Origin= 33 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 243 sel=0088/0088/0346
+      [0094/1024] L=2 gold= 30 peak= 30 pOrigin= 30 top8Origin= 33 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 240 sel=0094/0094/0346
+      [0128/1024] L=3 gold= 21 peak= 21 pOrigin= 21 top8Origin= 21 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=0128/0128/0128
+      [0136/1024] L=2 gold=  8 peak=  8 pOrigin=  8 top8Origin= 33 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 265 sel=0136/0136/0346
+      [0192/1024] L=4 gold= 21 peak= 21 pOrigin= 21 top8Origin= 21 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=0192/0192/0192
+      [0223/1024] L=2 gold= 20 peak= 20 pOrigin= 20 top8Origin= 34 goldTop8=1 | BASE=   1 PEAK=   1 NEW=  82 sel=0223/0223/0346
+      [0247/1024] L=2 gold= 20 peak= 20 pOrigin= 20 top8Origin= 34 goldTop8=1 | BASE=   1 PEAK=   1 NEW=  69 sel=0247/0247/0346
+      [0250/1024] L=2 gold= 30 peak= 30 pOrigin= 30 top8Origin= 33 goldTop8=1 | BASE=   1 PEAK=   1 NEW=  67 sel=0250/0250/0346
+      [0256/1024] L=2 gold= 31 peak= 31 pOrigin= 31 top8Origin= 31 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=0256/0256/0256
+      [0316/1024] L=2 gold= 20 peak= 20 pOrigin= 20 top8Origin= 34 goldTop8=1 | BASE=   1 PEAK=   1 NEW=  87 sel=0316/0316/0346
+      [0320/1024] L=3 gold=  9 peak=  9 pOrigin=  9 top8Origin=  9 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=0320/0320/0320
+      [0384/1024] L=4 gold= 35 peak= 35 pOrigin= 35 top8Origin= 35 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=0384/0384/0384
+      [0385/1024] L=2 gold= 31 peak= 31 pOrigin= 31 top8Origin= 34 goldTop8=1 | BASE=   1 PEAK=   1 NEW=  48 sel=0385/0385/0346
+      [0418/1024] L=2 gold=  9 peak=  9 pOrigin=  9 top8Origin= 33 goldTop8=1 | BASE=   1 PEAK=   1 NEW=  30 sel=0418/0418/0346
+      [0448/1024] L=2 gold=  9 peak=  9 pOrigin=  9 top8Origin=  9 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=0448/0448/0448
+      [0475/1024] L=2 gold=  9 peak=  9 pOrigin=  9 top8Origin= 34 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 218 sel=0475/0475/0346
+      [0508/1024] L=2 gold= 32 peak= 32 pOrigin= 32 top8Origin= 35 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 200 sel=0508/0508/0346
+      [0511/1024] L=2 gold= 30 peak= 30 pOrigin= 30 top8Origin= 33 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 198 sel=0511/0511/0346
+      [0512/1024] L=3 gold= 33 peak= 33 pOrigin= 33 top8Origin= 33 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=0512/0512/0512
+      [0524/1024] L=3 gold=  9 peak=  9 pOrigin=  9 top8Origin= 37 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 135 sel=0524/0524/0344
+      [0533/1024] L=3 gold= 21 peak= 21 pOrigin= 21 top8Origin= 36 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 130 sel=0533/0533/0344
+      [0538/1024] L=2 gold= 20 peak= 20 pOrigin= 20 top8Origin= 33 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 128 sel=0538/0538/0346
+      [0568/1024] L=2 gold= 20 peak= 31 pOrigin= 31 top8Origin= 20 goldTop8=1 | BASE= 171 PEAK= 172 NEW=   1 sel=0442/0442/0568
+      [0576/1024] L=4 gold=  9 peak=  9 pOrigin=  9 top8Origin=  9 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=0576/0576/0576
+      [0589/1024] L=2 gold= 18 peak= 18 pOrigin= 18 top8Origin= 32 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 154 sel=0589/0589/0346
+      [0598/1024] L=2 gold=  9 peak=  9 pOrigin=  9 top8Origin= 34 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 149 sel=0598/0598/0346
+      [0604/1024] L=2 gold= 30 peak= 30 pOrigin= 30 top8Origin= 33 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 146 sel=0604/0604/0346
+      [0640/1024] L=2 gold=  9 peak=  9 pOrigin=  9 top8Origin=  9 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=0640/0640/0640
+      [0643/1024] L=2 gold= 29 peak= 29 pOrigin= 29 top8Origin= 32 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 162 sel=0643/0643/0346
+      [0683/1024] L=3 gold= 10 peak= 10 pOrigin= 10 top8Origin= 37 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 196 sel=0683/0683/0344
+      [0698/1024] L=3 gold= 32 peak= 32 pOrigin= 32 top8Origin= 35 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 194 sel=0698/0698/0344
+      [0699/1024] L=4 gold=  9 peak= 34 pOrigin= 34 top8Origin=  9 goldTop8=1 | BASE= 259 PEAK= 267 NEW=   1 sel=0162/0162/0699
+      [0704/1024] L=3 gold= 21 peak= 21 pOrigin= 21 top8Origin= 21 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=0704/0704/0704
+      [0709/1024] L=2 gold= 31 peak= 31 pOrigin= 31 top8Origin= 34 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 219 sel=0709/0709/0346
+      [0724/1024] L=2 gold= 31 peak= 31 pOrigin= 31 top8Origin= 34 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 176 sel=0724/0724/0346
+      [0727/1024] L=2 gold= 10 peak= 10 pOrigin= 10 top8Origin= 35 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 179 sel=0727/0727/0346
+      [0742/1024] L=2 gold=  9 peak=  9 pOrigin=  9 top8Origin= 33 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 191 sel=0742/0742/0346
+      [0748/1024] L=2 gold=  8 peak=  8 pOrigin=  8 top8Origin= 32 goldTop8=1 | BASE=   1 PEAK=   1 NEW=  31 sel=0748/0748/0346
+      [0757/1024] L=2 gold=  8 peak=  8 pOrigin=  8 top8Origin= 33 goldTop8=1 | BASE=   1 PEAK=   1 NEW=  39 sel=0757/0757/0346
+      [0763/1024] L=2 gold= 20 peak= 20 pOrigin= 20 top8Origin= 34 goldTop8=1 | BASE=   1 PEAK=   1 NEW=  44 sel=0763/0763/0346
+      [0768/1024] L=4 gold= 35 peak= 35 pOrigin= 35 top8Origin= 35 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=0768/0768/0768
+      [0781/1024] L=2 gold=  9 peak=  9 pOrigin=  9 top8Origin= 34 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   4 sel=0781/0781/0346
+      [0793/1024] L=2 gold= 10 peak= 10 pOrigin= 10 top8Origin= 35 goldTop8=1 | BASE=   1 PEAK=   1 NEW=  14 sel=0793/0793/0346
+      [0808/1024] L=2 gold= 20 peak= 31 pOrigin= 31 top8Origin= 20 goldTop8=1 | BASE=  47 PEAK=  52 NEW=   1 sel=0391/0391/0808
+      [0814/1024] L=2 gold=  9 peak=  9 pOrigin=  9 top8Origin= 34 goldTop8=1 | BASE=   1 PEAK=   1 NEW=  86 sel=0814/0814/0346
+      [0823/1024] L=2 gold= 20 peak= 20 pOrigin= 20 top8Origin= 34 goldTop8=1 | BASE=   1 PEAK=   1 NEW=  93 sel=0823/0823/0346
+      [0832/1024] L=2 gold= 31 peak= 31 pOrigin= 31 top8Origin= 31 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=0832/0832/0832
+      [0850/1024] L=2 gold= 20 peak= 20 pOrigin= 20 top8Origin= 33 goldTop8=1 | BASE=   1 PEAK=   1 NEW=  60 sel=0850/0850/0346
+      [0866/1024] L=3 gold= 33 peak= 33 pOrigin= 33 top8Origin= 36 goldTop8=1 | BASE=   1 PEAK=   1 NEW=  73 sel=0866/0866/0344
+      [0896/1024] L=3 gold= 22 peak= 22 pOrigin= 22 top8Origin= 22 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=0896/0896/0896
+      [0925/1024] L=2 gold= 19 peak= 19 pOrigin= 19 top8Origin= 33 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 245 sel=0925/0925/0346
+      [0932/1024] L=3 gold= 33 peak= 33 pOrigin= 33 top8Origin= 36 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 262 sel=0932/0932/0344
+      [0941/1024] L=3 gold=  9 peak=  1 pOrigin=  1 top8Origin=  9 goldTop8=1 | BASE= 338 PEAK= 338 NEW=   1 sel=0176/0176/0941
+      [0949/1024] L=2 gold=  8 peak=  1 pOrigin=  1 top8Origin=  8 goldTop8=1 | BASE=  76 PEAK=  76 NEW=   1 sel=0157/0157/0949
+      [0960/1024] L=4 gold=  9 peak=  9 pOrigin=  9 top8Origin=  9 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=0960/0960/0960
+      [0961/1024] L=2 gold= 19 peak= 19 pOrigin= 19 top8Origin= 33 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 239 sel=0961/0961/0346
+      [0987/1024] L=4 gold= 35 peak= 22 pOrigin= 22 top8Origin= 35 goldTop8=1 | BASE=  28 PEAK=  34 NEW=   1 sel=0189/0189/0987
+      [0991/1024] L=2 gold= 20 peak= 20 pOrigin= 20 top8Origin= 34 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 311 sel=0991/0991/0346
+      [1004/1024] L=3 gold= 34 peak= 34 pOrigin= 34 top8Origin= 37 goldTop8=1 | BASE=   1 PEAK=   1 NEW= 250 sel=1004/1004/0344
+      [1017/1024] L=4 gold=  8 peak=  1 pOrigin=  1 top8Origin=  8 goldTop8=1 | BASE=  13 PEAK=  13 NEW=   1 sel=0066/0066/1017
+      [1024/1024] L=2 gold= 19 peak= 19 pOrigin= 19 top8Origin= 19 goldTop8=1 | BASE=   1 PEAK=   1 NEW=   1 sel=1024/1024/1024
+      BASELINE ARGMAX R1/R5/R16/MRR : 0.9824/0.9834/0.9844/0.983123
+      PEAK_CONTAIN    R1/R5/R16/MRR : 0.9932/0.9932/0.9941/0.993312
+      TOP8_JOINT      R1/R5/R16/MRR : 0.9570/0.9580/0.9590/0.957721
+      L=2 TOP8 R1=0.8947 R5=0.8977 R16=0.9006
+      L=3 TOP8 R1=0.9765 R5=0.9765 R16=0.9765
+      L=4 TOP8 R1=1.0000 R5=1.0000 R16=1.0000
+      Gold identity represented Top8 : 1.0000
+
+[6/12] PRIMARY FAILURE TRANSITION...
+      PEAK_CONTAIN failures              : 7/1024
+      TOP8_JOINT failures                : 44/1024
+      PEAK failures recovered TOP8       : 7/7
+      Previously-correct PEAK broken     : 44
+      PEAK failure IDs                   : [568, 699, 808, 941, 949, 987, 1017]
+      TOP8 failure IDs                   : [7, 13, 22, 25, 80, 88, 94, 136, 223, 247, 250, 316, 385, 418, 475, 508, 511, 524, 533, 538, 589, 598, 604, 643, 683, 698, 709, 724, 727, 742, 748, 757, 763, 781, 793, 814, 823, 850, 866, 925, 932, 961, 991, 1004]
+      Recovered IDs                      : [568, 699, 808, 941, 949, 987, 1017]
+      Broken IDs                         : [7, 13, 22, 25, 80, 88, 94, 136, 223, 247, 250, 316, 385, 418, 475, 508, 511, 524, 533, 538, 589, 598, 604, 643, 683, 698, 709, 724, 727, 742, 748, 757, 763, 781, 793, 814, 823, 850, 866, 925, 932, 961, 991, 1004]
+
+[7/12] COUNTERFACTUAL...
+      [0001/1024] target=0354 L=4 gold= 35 peak= 35 pOrigin= 35 top8Origin= 35 goldTop8=1 BASE=   1 PEAK=   1 NEW=   1
+      [0002/1024] target=0355 L=2 gold= 10 peak= 11 pOrigin= 10 top8Origin= 10 goldTop8=1 BASE=  10 PEAK=   1 NEW=   1
+      [0003/1024] target=0356 L=3 gold= 32 peak= 32 pOrigin= 32 top8Origin= 32 goldTop8=1 BASE=   1 PEAK=   1 NEW=   1
+      [0004/1024] target=0357 L=4 gold= 23 peak= 23 pOrigin= 23 top8Origin= 23 goldTop8=1 BASE=   1 PEAK=   1 NEW=   1
+      [0005/1024] target=0358 L=2 gold= 30 peak= 30 pOrigin= 30 top8Origin= 30 goldTop8=1 BASE=   1 PEAK=   1 NEW=   1
+      [0032/1024] target=0385 L=2 gold= 20 peak= 20 pOrigin= 20 top8Origin= 34 goldTop8=1 BASE=   1 PEAK=   1 NEW=  48
+      [0064/1024] target=0417 L=4 gold= 34 peak= 34 pOrigin= 34 top8Origin= 34 goldTop8=1 BASE=   1 PEAK=   1 NEW=   1
+      [0065/1024] target=0418 L=2 gold= 32 peak= 32 pOrigin= 32 top8Origin= 35 goldTop8=1 BASE=   1 PEAK=   1 NEW=  30
+      [0085/1024] target=0438 L=4 gold=  9 peak= 21 pOrigin= 21 top8Origin=  9 goldTop8=1 BASE=  73 PEAK=  87 NEW=   1
+      [0122/1024] target=0475 L=2 gold= 31 peak= 31 pOrigin= 31 top8Origin= 34 goldTop8=1 BASE=   1 PEAK=   1 NEW= 218
+      [0128/1024] target=0481 L=2 gold=  9 peak=  9 pOrigin=  9 top8Origin=  9 goldTop8=1 BASE=   1 PEAK=   1 NEW=   1
+      [0155/1024] target=0508 L=2 gold= 28 peak= 28 pOrigin= 28 top8Origin= 31 goldTop8=1 BASE=   1 PEAK=   1 NEW= 200
+      [0158/1024] target=0511 L=2 gold=  9 peak=  9 pOrigin=  9 top8Origin= 34 goldTop8=1 BASE=   1 PEAK=   1 NEW= 198
+      [0171/1024] target=0524 L=3 gold= 34 peak= 34 pOrigin= 34 top8Origin= 37 goldTop8=1 BASE=   1 PEAK=   1 NEW= 135
+      [0180/1024] target=0533 L=3 gold= 33 peak= 33 pOrigin= 33 top8Origin= 36 goldTop8=1 BASE=   1 PEAK=   1 NEW= 130
+      [0185/1024] target=0538 L=2 gold=  9 peak=  9 pOrigin=  9 top8Origin= 34 goldTop8=1 BASE=   1 PEAK=   1 NEW= 128
+      [0192/1024] target=0545 L=3 gold= 32 peak= 32 pOrigin= 32 top8Origin= 32 goldTop8=1 BASE=   1 PEAK=   1 NEW=   1
+      [0236/1024] target=0589 L=2 gold= 20 peak= 20 pOrigin= 20 top8Origin= 34 goldTop8=1 BASE=   1 PEAK=   1 NEW= 154
+      [0245/1024] target=0598 L=2 gold= 20 peak= 20 pOrigin= 20 top8Origin= 34 goldTop8=1 BASE=   1 PEAK=   1 NEW= 149
+      [0251/1024] target=0604 L=2 gold= 19 peak= 19 pOrigin= 19 top8Origin= 33 goldTop8=1 BASE=   1 PEAK=   1 NEW= 146
+      [0256/1024] target=0609 L=4 gold= 22 peak= 22 pOrigin= 22 top8Origin= 22 goldTop8=1 BASE=   1 PEAK=   1 NEW=   1
+      [0290/1024] target=0643 L=2 gold= 20 peak= 20 pOrigin= 20 top8Origin= 34 goldTop8=1 BASE=   1 PEAK=   1 NEW= 162
+      [0303/1024] target=0656 L=3 gold= 21 peak= 15 pOrigin= 14 top8Origin= 21 goldTop8=1 BASE= 160 PEAK= 238 NEW=   1
+      [0320/1024] target=0673 L=2 gold= 20 peak= 20 pOrigin= 20 top8Origin= 20 goldTop8=1 BASE=   1 PEAK=   1 NEW=   1
+      [0330/1024] target=0683 L=3 gold= 21 peak= 21 pOrigin= 21 top8Origin= 36 goldTop8=1 BASE=   1 PEAK=   1 NEW= 196
+      [0339/1024] target=0692 L=3 gold= 32 peak= 32 pOrigin= 32 top8Origin= 35 goldTop8=1 BASE=   1 PEAK=   1 NEW= 203
+      [0340/1024] target=0693 L=4 gold=  9 peak=  1 pOrigin=  1 top8Origin=  9 goldTop8=1 BASE=  15 PEAK=  15 NEW=   1
+      [0345/1024] target=0698 L=3 gold= 21 peak= 21 pOrigin= 21 top8Origin= 36 goldTop8=1 BASE=   1 PEAK=   1 NEW= 194
+      [0356/1024] target=0709 L=2 gold= 31 peak= 31 pOrigin= 31 top8Origin= 34 goldTop8=1 BASE=   1 PEAK=   1 NEW= 219
+      [0371/1024] target=0724 L=2 gold=  9 peak=  9 pOrigin=  9 top8Origin= 33 goldTop8=1 BASE=   1 PEAK=   1 NEW= 176
+      [0374/1024] target=0727 L=2 gold= 32 peak= 32 pOrigin= 32 top8Origin= 35 goldTop8=1 BASE=   1 PEAK=   1 NEW= 179
+      [0384/1024] target=0737 L=3 gold= 21 peak= 21 pOrigin= 21 top8Origin= 21 goldTop8=1 BASE=   1 PEAK=   1 NEW=   1
+      [0389/1024] target=0742 L=2 gold= 30 peak= 30 pOrigin= 30 top8Origin= 33 goldTop8=1 BASE=   1 PEAK=   1 NEW= 191
+      [0395/1024] target=0748 L=2 gold= 28 peak= 28 pOrigin= 28 top8Origin= 31 goldTop8=1 BASE=   1 PEAK=   1 NEW=  31
+      [0404/1024] target=0757 L=2 gold=  9 peak=  9 pOrigin=  9 top8Origin= 34 goldTop8=1 BASE=   1 PEAK=   1 NEW=  39
+      [0410/1024] target=0763 L=2 gold= 31 peak= 31 pOrigin= 31 top8Origin= 34 goldTop8=1 BASE=   1 PEAK=   1 NEW=  44
+      [0428/1024] target=0781 L=2 gold= 31 peak= 31 pOrigin= 31 top8Origin= 34 goldTop8=1 BASE=   1 PEAK=   1 NEW=   4
+      [0440/1024] target=0793 L=2 gold=  9 peak=  9 pOrigin=  9 top8Origin= 34 goldTop8=1 BASE=   1 PEAK=   1 NEW=  14
+      [0448/1024] target=0801 L=4 gold= 21 peak= 21 pOrigin= 21 top8Origin= 21 goldTop8=1 BASE=   1 PEAK=   1 NEW=   1
+      [0461/1024] target=0814 L=2 gold= 30 peak= 30 pOrigin= 30 top8Origin= 33 goldTop8=1 BASE=   1 PEAK=   1 NEW=  86
+      [0470/1024] target=0823 L=2 gold= 31 peak= 31 pOrigin= 31 top8Origin= 34 goldTop8=1 BASE=   1 PEAK=   1 NEW=  93
+      [0497/1024] target=0850 L=2 gold= 19 peak= 19 pOrigin= 19 top8Origin= 34 goldTop8=1 BASE=   1 PEAK=   1 NEW=  60
+      [0512/1024] target=0865 L=2 gold= 20 peak= 20 pOrigin= 20 top8Origin= 20 goldTop8=1 BASE=   1 PEAK=   1 NEW=   1
+      [0513/1024] target=0866 L=3 gold=  8 peak=  8 pOrigin=  8 top8Origin= 34 goldTop8=1 BASE=   1 PEAK=   1 NEW=  73
+      [0572/1024] target=0925 L=2 gold= 29 peak= 29 pOrigin= 29 top8Origin= 32 goldTop8=1 BASE=   1 PEAK=   1 NEW= 245
+      [0576/1024] target=0929 L=3 gold=  9 peak=  9 pOrigin=  9 top8Origin=  9 goldTop8=1 BASE=   1 PEAK=   1 NEW=   1
+      [0596/1024] target=0949 L=2 gold=  9 peak=  1 pOrigin=  1 top8Origin=  9 goldTop8=1 BASE=  76 PEAK=  76 NEW=   1
+      [0608/1024] target=0961 L=2 gold=  9 peak=  9 pOrigin=  9 top8Origin= 33 goldTop8=1 BASE=   1 PEAK=   1 NEW= 239
+      [0634/1024] target=0987 L=4 gold= 34 peak= 21 pOrigin= 21 top8Origin= 34 goldTop8=1 BASE=  28 PEAK=  34 NEW=   1
+      [0638/1024] target=0991 L=2 gold= 30 peak= 30 pOrigin= 30 top8Origin= 33 goldTop8=1 BASE=   1 PEAK=   1 NEW= 311
+      [0640/1024] target=0993 L=4 gold= 22 peak= 22 pOrigin= 22 top8Origin= 22 goldTop8=1 BASE=   1 PEAK=   1 NEW=   1
+      [0651/1024] target=1004 L=3 gold= 21 peak= 21 pOrigin= 21 top8Origin= 36 goldTop8=1 BASE=   1 PEAK=   1 NEW= 250
+      [0678/1024] target=0007 L=2 gold= 31 peak= 31 pOrigin= 31 top8Origin= 34 goldTop8=1 BASE=   1 PEAK=   1 NEW= 288
+      [0684/1024] target=0013 L=2 gold= 30 peak= 30 pOrigin= 30 top8Origin= 33 goldTop8=1 BASE=   1 PEAK=   1 NEW= 285
+      [0693/1024] target=0022 L=2 gold= 32 peak= 32 pOrigin= 32 top8Origin= 35 goldTop8=1 BASE=   1 PEAK=   1 NEW= 268
+      [0696/1024] target=0025 L=2 gold= 19 peak=  8 pOrigin=  8 top8Origin= 32 goldTop8=1 BASE=  92 PEAK=  94 NEW= 278
+      [0704/1024] target=0033 L=4 gold= 35 peak= 35 pOrigin= 35 top8Origin= 35 goldTop8=1 BASE=   1 PEAK=   1 NEW=   1
+      [0710/1024] target=0039 L=4 gold= 22 peak= 13 pOrigin= 10 top8Origin= 22 goldTop8=1 BASE= 154 PEAK= 280 NEW=   1
+      [0751/1024] target=0080 L=3 gold=  9 peak=  9 pOrigin=  9 top8Origin= 37 goldTop8=1 BASE=   1 PEAK=   1 NEW= 331
+      [0759/1024] target=0088 L=2 gold= 20 peak= 20 pOrigin= 20 top8Origin= 34 goldTop8=1 BASE=   1 PEAK=   1 NEW= 243
+      [0768/1024] target=0097 L=2 gold= 10 peak= 10 pOrigin= 10 top8Origin= 10 goldTop8=1 BASE=   1 PEAK=   1 NEW=   1
+      [0807/1024] target=0136 L=2 gold= 31 peak= 31 pOrigin= 31 top8Origin= 34 goldTop8=1 BASE=   1 PEAK=   1 NEW= 265
+      [0832/1024] target=0161 L=3 gold= 10 peak= 10 pOrigin= 10 top8Origin= 10 goldTop8=1 BASE=   1 PEAK=   1 NEW=   1
+      [0896/1024] target=0225 L=4 gold= 36 peak= 36 pOrigin= 36 top8Origin= 36 goldTop8=1 BASE=   1 PEAK=   1 NEW=   1
+      [0897/1024] target=0226 L=2 gold= 18 peak=  8 pOrigin=  8 top8Origin= 18 goldTop8=1 BASE=  35 PEAK=  35 NEW=   1
+      [0918/1024] target=0247 L=2 gold=  9 peak=  9 pOrigin=  9 top8Origin= 34 goldTop8=1 BASE=   1 PEAK=   1 NEW=  69
+      [0921/1024] target=0250 L=2 gold= 20 peak= 20 pOrigin= 20 top8Origin= 35 goldTop8=1 BASE=   1 PEAK=   1 NEW=  67
+      [0946/1024] target=0275 L=3 gold= 32 peak= 32 pOrigin= 32 top8Origin= 35 goldTop8=1 BASE=   1 PEAK=   1 NEW= 109
+      [0960/1024] target=0289 L=2 gold= 20 peak= 20 pOrigin= 20 top8Origin= 20 goldTop8=1 BASE=   1 PEAK=   1 NEW=   1
+      [0987/1024] target=0316 L=2 gold= 20 peak= 20 pOrigin= 20 top8Origin= 34 goldTop8=1 BASE=   1 PEAK=   1 NEW=  87
+      [0995/1024] target=0324 L=4 gold=  8 peak=  1 pOrigin=  1 top8Origin=  8 goldTop8=1 BASE= 144 PEAK= 144 NEW=   1
+      [1024/1024] target=0353 L=3 gold=  8 peak=  8 pOrigin=  8 top8Origin=  8 goldTop8=1 BASE=   1 PEAK=   1 NEW=   1
+      CF BASE R1/R5/R16/MRR : 0.9805/0.9805/0.9824/0.980800
+      CF PEAK R1/R5/R16/MRR : 0.9912/0.9912/0.9922/0.991382
+      CF TOP8 R1/R5/R16/MRR : 0.9580/0.9590/0.9600/0.958691
+      CF gold identity represented Top8 : 1.0000
+
+[8/12] COUNTERFACTUAL FAILURE TRANSITION...
+      CF PEAK_CONTAIN failures           : 9/1024
+      CF TOP8_JOINT failures             : 43/1024
+      CF PEAK failures recovered TOP8    : 8/9
+      CF previously-correct PEAK broken  : 42
+      CF PEAK failure IDs                : [85, 303, 340, 596, 634, 696, 710, 897, 995]
+      CF TOP8 failure IDs                : [32, 65, 122, 155, 158, 171, 180, 185, 236, 245, 251, 290, 330, 339, 345, 356, 371, 374, 389, 395, 404, 410, 428, 440, 461, 470, 497, 513, 572, 608, 638, 651, 678, 684, 693, 696, 751, 759, 807, 918, 921, 946, 987]
+      CF recovered IDs                   : [85, 303, 340, 596, 634, 710, 897, 995]
+      CF broken IDs                      : [32, 65, 122, 155, 158, 171, 180, 185, 236, 245, 251, 290, 330, 339, 345, 356, 371, 374, 389, 395, 404, 410, 428, 440, 461, 470, 497, 513, 572, 608, 638, 651, 678, 684, 693, 751, 759, 807, 918, 921, 946, 987]
+
+[9/12] STATISTICAL SUMMARY...
+      BASE    : 1006/1024 = 0.9824 | 95% Wilson [0.9724,0.9889]
+      PEAK    : 1017/1024 = 0.9932 | 95% Wilson [0.9860,0.9967]
+      TOP8    :  980/1024 = 0.9570 | 95% Wilson [0.9428,0.9678]
+      TOP8_L2 :  306/ 342 = 0.8947 | 95% Wilson [0.8577,0.9230]
+      TOP8_L3 :  333/ 341 = 0.9765 | 95% Wilson [0.9544,0.9881]
+      TOP8_L4 :  341/ 341 = 1.0000 | 95% Wilson [0.9889,1.0000]
+      CF_BASE : 1004/1024 = 0.9805 | 95% Wilson [0.9700,0.9873]
+      CF_PEAK : 1015/1024 = 0.9912 | 95% Wilson [0.9834,0.9954]
+      CF_TOP8 :  981/1024 = 0.9580 | 95% Wilson [0.9439,0.9687]
+
+[10/12] PREDECLARED GATES...
+      BASELINE_REPRO_R1           : PASS
+      PEAK_REPRO_R1               : PASS
+      TOP8_JOINT_R1               : FAIL
+      TOP8_JOINT_R5               : FAIL
+      TOP8_L2_R1                  : FAIL
+      TOP8_L3_R1                  : FAIL
+      TOP8_L4_R1                  : PASS
+      TOP8_CF_R1                  : FAIL
+      NO_PRIMARY_REGRESSION       : FAIL
+      NO_CF_REGRESSION            : FAIL
+
+[11/12] PROTOCOL AUDIT...
+      Weight sentinel                     : PASS
+      Trainable tensors                   : 0
+      Pointer                             : L28H00 unchanged
+      Address                             : L00-V uncentered unchanged
+      Match                               : CONCATCOS unchanged
+      Panel                               : exact sealed deterministic reconstruction
+      Pointer candidate K                 : 8 · FROZEN
+      K scan                              : NONE
+      Baseline                            : ARGMAX unchanged
+      PEAK_CONTAIN                       : TEST533 rule unchanged
+      TOP8_JOINT                         : Top8 peaks -> containing width-L origins -> global CONCATCOS
+      Identity length L                  : PROTOCOL-KNOWN
+      Cross-length competition           : NO
+      Selection threshold                : NONE
+      Gold span used for selection       : NO
+      Decoded identity routing           : NO
+      Token-ID routing                   : NO
+      Gold B position used               : NO
+      Gold A span                        : DIAGNOSTIC ONLY
+      Head/layer/address discovery       : NONE
+      Match-law scan                     : NONE
+      Training / LoRA / optimizer / DRA  : NONE
+      Learned router/scorer              : NONE
+      Query-time candidate-B forwards    : 0
+      TEST534 retroactively changed      : NO
+
+[12/12] FINAL...
+
+================================================================================================================================================================================
+TEST535 FINAL RESULT — AKBASCORE MAM · VARAN 1 · TOP-8 MULTI-PEAK JOINT RESOLUTION
+================================================================================================================================================================================
+MODEL                              : mistralai/Mistral-7B-Instruct-v0.3 · frozen
+PANEL                              : TEST531/532/533/534 deterministic reconstruction · N=1024
+POINTER                            : L28H00 · UNCHANGED
+ADDRESS                            : L00-V · UNCENTERED · 1024D · UNCHANGED
+MATCH                              : CONCATCOS · UNCHANGED
+POINTER CANDIDATES                 : TOP-8 · FROZEN
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BASELINE ARGMAX                    : R1=0.9824 R5=0.9834 R16=0.9844 MRR=0.983123
+PEAK_CONTAIN                       : R1=0.9932 R5=0.9932 R16=0.9941 MRR=0.993312
+TOP8_JOINT                         : R1=0.9570 R5=0.9580 R16=0.9590 MRR=0.957721
+TOP8 L=2                           : R1=0.8947 R5=0.8977 R16=0.9006 MRR=0.896655
+TOP8 L=3                           : R1=0.9765 R5=0.9765 R16=0.9765 MRR=0.976686
+TOP8 L=4                           : R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+CF BASELINE                        : R1=0.9805 R5=0.9805 R16=0.9824 MRR=0.980800
+CF PEAK_CONTAIN                    : R1=0.9912 R5=0.9912 R16=0.9922 MRR=0.991382
+CF TOP8_JOINT                      : R1=0.9580 R5=0.9590 R16=0.9600 MRR=0.958691
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PEAK FAILURES                      : 7
+TOP8 FAILURES                      : 44
+PEAK FAILURES RECOVERED            : 7
+PEAK CORRECT BROKEN                : 44
+CF PEAK FAILURES                   : 9
+CF TOP8 FAILURES                   : 43
+CF PEAK FAILURES RECOVERED         : 8
+CF PEAK CORRECT BROKEN             : 42
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BASELINE_REPRO_R1                  : PASS
+PEAK_REPRO_R1                      : PASS
+TOP8_JOINT_R1                      : FAIL
+TOP8_JOINT_R5                      : FAIL
+TOP8_L2_R1                         : FAIL
+TOP8_L3_R1                         : FAIL
+TOP8_L4_R1                         : PASS
+TOP8_CF_R1                         : FAIL
+NO_PRIMARY_REGRESSION              : FAIL
+NO_CF_REGRESSION                   : FAIL
+WEIGHT_SENTINEL                    : PASS
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+WEIGHT SENTINEL                    : PASS
+TRAINABLE TENSORS                  : 0
+QUERY-TIME CANDIDATE-B FORWARDS    : 0
+KNOWN IDENTITY LENGTH              : YES
+CROSS-LENGTH GLOBAL COMPETITION    : NO
+TEST528 RESULT SHA                 : 9235ed38c944f41a9ede0426d3aabaa12b5b20646f30e2be921e618f9471d3c2
+TEST529 RESULT SHA                 : 27ba703872f0d8a6ed870a6ba041d0cd0703d2eca467deac97186a90497795a0
+TEST530 RESULT SHA                 : 289247c88dfd4358cbe5ffb8499891546b27acc6912caf525a155ae81338db7b
+TEST531 RESULT SHA                 : 20257d7d613a49e55b03603946f07ec493009924f40ac26ab74cb817e1466528
+TEST532 RESULT SHA                 : 9e37a473a322a19f7b3862a25162835ab6396998dc4fc416bc90bc9b718df188
+TEST533 RESULT SHA                 : 5239fb585b87a22f5da778c61a1011379b216a25bf7d05dc5d01952cbb22a5c6
+TEST534 RESULT SHA                 : b25128d17176790b2a8694c8ec9e7db5eaad469ff02a87a46876b2ffd45a9bb1
+TEST535 PRE-RESULT LOCK            : 33a833c481b055bca0e2c6bb8ca1240cb635e9d7232852b543de4ff1d61f81c6
+TEST535 RESULT SHA                 : fc407885133d48f84a952249b15e884b201749136f6b16a49e7db11b0e9e5087
+TOTAL TEST TIME                    : 378.43s
+VERDICT                            : TEST535_TOP8_MULTI_PEAK_JOINT_NOT_FULLY_SUPPORTED
+NEXT                               : preserve TEST535 unchanged; diagnose residual failures without scanning K/head/layer/address/match
+
+
+================================================================================================================================================================================
