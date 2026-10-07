@@ -1,0 +1,204 @@
+ ==========================================================================================================================================================
+TEST542 — AKBASCORE MAM · VARAN 1 · TRANSFORMER İÇ GÖKYÜZÜ / BÜTÜNSEL GEOMETRİ X-RAY
+WRITE → RELATE → RECALL · TEK ADRES YOK · TEK VEKTÖR KEY YOK · ROUTER YOK · RETRIEVAL YOK
+==========================================================================================================================================================
+
+[1/10] Donmuş Mistral yükleniyor...
+config.json: 100% 601/601 [00:00<00:00, 70.3kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 141k/141k [00:00<00:00, 17.1MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 29.7MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 57.5kB/s  tokenizer.model: downloading bytes:   448kB, 43.8kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 47.9kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 2.96MB/s]Download complete:  12.4GB,  986MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  413MB/s  Fetching 3 files: 100% 3/3 [00:40<00:00, 40.44s/it]Loading weights: 100% 291/291 [00:03<00:00, 80.66it/s]generation_config.json: 100% 116/116 [00:00<00:00, 15.2kB/s]      Model      : mistralai/Mistral-7B-Instruct-v0.3
+      GPU        : NVIDIA A100-SXM4-40GB
+      Mimari     : 32L · H=4096 · QH=32 · KVH=8 · HD=128
+      Frozen     : EVET
+      Trainable  : 0
+      TEST542 kilit SHA: 252a4fa3ca392279d2c950a6f5d5b7005f1d4db3fd3d5892ab11a1e993c78fab
+
+[2/10] WRITE → RELATE → RECALL bütünsel izleri çıkarılıyor...
+      Dünya 1/6
+      Dünya 2/6
+      Dünya 3/6
+      Dünya 4/6
+      Dünya 5/6
+      Dünya 6/6
+
+[3/10] 32-layer residual gökyüzü geometrisi...
+      WR     mean=+0.989288 median=+0.989393 std=0.004977 min=+0.978118 max=+0.996255
+      LR     mean=+0.986806 median=+0.988568 std=0.005150 min=+0.977763 max=+0.994690
+      WB     mean=+0.992532 median=+0.992568 std=0.002111 min=+0.988658 max=+0.996923
+      LB     mean=+0.990630 median=+0.991346 std=0.002229 min=+0.987313 max=+0.993867
+      WN     mean=+0.990325 median=+0.990146 std=0.003411 min=+0.983191 max=+0.995467
+      WF     mean=+0.991571 median=+0.993134 std=0.003087 min=+0.985631 max=+0.995429
+      CROSS  mean=+0.989177 median=+0.989753 std=0.004739 min=+0.977862 max=+0.997336
+
+[4/10] Katmanlar-arası hareket/yörünge geometrisi...
+      WR     mean=+0.805619 median=+0.803354 std=0.037066 min=+0.717028 max=+0.881113
+      LR     mean=+0.774355 median=+0.766552 std=0.043249 min=+0.683461 max=+0.863350
+      WB     mean=+0.834120 median=+0.833788 std=0.030759 min=+0.764669 max=+0.884642
+      LB     mean=+0.814991 median=+0.813932 std=0.039914 min=+0.763453 max=+0.881767
+      WN     mean=+0.799526 median=+0.789294 std=0.032325 min=+0.760163 max=+0.868286
+      WF     mean=+0.815135 median=+0.826548 std=0.036068 min=+0.735729 max=+0.856792
+      CROSS  mean=+0.803198 median=+0.806003 std=0.037338 min=+0.663427 max=+0.892569
+
+[5/10] Bütünsel Q-head takımyıldızı...
+      L00 WR=+0.96226 LR=+0.96226 WB=+0.96226 LB=+0.96226 NEAR=+0.96226 FAR=+0.96226 CROSS=+0.96226
+      L01 WR=+0.99505 LR=+0.99394 WB=+0.99462 LB=+0.99341 NEAR=+0.99465 FAR=+0.99439 CROSS=+0.99492
+      L02 WR=+0.96037 LR=+0.96037 WB=+0.96150 LB=+0.96115 NEAR=+0.95930 FAR=+0.95867 CROSS=+0.95906
+      L03 WR=+0.98722 LR=+0.98705 WB=+0.98656 LB=+0.98633 NEAR=+0.98425 FAR=+0.98117 CROSS=+0.98648
+      L04 WR=+0.96402 LR=+0.96823 WB=+0.96906 LB=+0.97285 NEAR=+0.95670 FAR=+0.95325 CROSS=+0.96017
+      L05 WR=+0.94619 LR=+0.94299 WB=+0.94745 LB=+0.95130 NEAR=+0.94117 FAR=+0.93977 CROSS=+0.94402
+      L06 WR=+0.94878 LR=+0.95396 WB=+0.95166 LB=+0.96305 NEAR=+0.94550 FAR=+0.93536 CROSS=+0.94579
+      L07 WR=+0.93308 LR=+0.92087 WB=+0.93152 LB=+0.93212 NEAR=+0.92454 FAR=+0.91302 CROSS=+0.92758
+      L08 WR=+0.94856 LR=+0.94547 WB=+0.94729 LB=+0.95367 NEAR=+0.94096 FAR=+0.93756 CROSS=+0.94345
+      L09 WR=+0.89444 LR=+0.86850 WB=+0.89265 LB=+0.89428 NEAR=+0.88690 FAR=+0.86904 CROSS=+0.87828
+      L10 WR=+0.93818 LR=+0.92633 WB=+0.93244 LB=+0.93412 NEAR=+0.92563 FAR=+0.91881 CROSS=+0.93368
+      L11 WR=+0.89758 LR=+0.87193 WB=+0.88457 LB=+0.89006 NEAR=+0.86773 FAR=+0.85878 CROSS=+0.88578
+      L12 WR=+0.90438 LR=+0.90025 WB=+0.90321 LB=+0.91992 NEAR=+0.89139 FAR=+0.87038 CROSS=+0.89425
+      L13 WR=+0.90410 LR=+0.89492 WB=+0.90759 LB=+0.91539 NEAR=+0.90248 FAR=+0.89382 CROSS=+0.90125
+      L14 WR=+0.86524 LR=+0.83532 WB=+0.85810 LB=+0.85310 NEAR=+0.86942 FAR=+0.85105 CROSS=+0.86233
+      L15 WR=+0.85989 LR=+0.85902 WB=+0.86699 LB=+0.87335 NEAR=+0.86483 FAR=+0.84468 CROSS=+0.85529
+      L16 WR=+0.83639 LR=+0.82899 WB=+0.85307 LB=+0.85909 NEAR=+0.85880 FAR=+0.87212 CROSS=+0.83302
+      L17 WR=+0.89784 LR=+0.90286 WB=+0.91279 LB=+0.92026 NEAR=+0.90356 FAR=+0.91509 CROSS=+0.89605
+      L18 WR=+0.84449 LR=+0.82626 WB=+0.86189 LB=+0.84213 NEAR=+0.86110 FAR=+0.88911 CROSS=+0.84494
+      L19 WR=+0.88988 LR=+0.88609 WB=+0.90590 LB=+0.89705 NEAR=+0.90631 FAR=+0.91348 CROSS=+0.88824
+      L20 WR=+0.87153 LR=+0.85617 WB=+0.88489 LB=+0.86804 NEAR=+0.87950 FAR=+0.88688 CROSS=+0.86774
+      L21 WR=+0.89355 LR=+0.89213 WB=+0.90528 LB=+0.90046 NEAR=+0.90395 FAR=+0.91657 CROSS=+0.89171
+      L22 WR=+0.87946 LR=+0.86909 WB=+0.89367 LB=+0.88772 NEAR=+0.88314 FAR=+0.90190 CROSS=+0.87844
+      L23 WR=+0.92259 LR=+0.92487 WB=+0.93207 LB=+0.93511 NEAR=+0.92783 FAR=+0.94034 CROSS=+0.92287
+      L24 WR=+0.88562 LR=+0.86949 WB=+0.89494 LB=+0.88395 NEAR=+0.88780 FAR=+0.88999 CROSS=+0.88449
+      L25 WR=+0.85329 LR=+0.83690 WB=+0.86824 LB=+0.85702 NEAR=+0.85929 FAR=+0.86442 CROSS=+0.85022
+      L26 WR=+0.86630 LR=+0.85013 WB=+0.88277 LB=+0.86838 NEAR=+0.87736 FAR=+0.89291 CROSS=+0.86432
+      L27 WR=+0.90026 LR=+0.90121 WB=+0.90710 LB=+0.91239 NEAR=+0.90474 FAR=+0.90669 CROSS=+0.89646
+      L28 WR=+0.88363 LR=+0.87203 WB=+0.90006 LB=+0.89064 NEAR=+0.88334 FAR=+0.89319 CROSS=+0.87922
+      L29 WR=+0.89850 LR=+0.89113 WB=+0.92021 LB=+0.91932 NEAR=+0.91291 FAR=+0.91707 CROSS=+0.89490
+      L30 WR=+0.88804 LR=+0.88642 WB=+0.89538 LB=+0.89681 NEAR=+0.89231 FAR=+0.90189 CROSS=+0.88469
+      L31 WR=+0.89471 LR=+0.89024 WB=+0.91466 LB=+0.91651 NEAR=+0.90160 FAR=+0.91480 CROSS=+0.89131
+
+[6/10] Bütünsel K/V-head takımyıldızları...
+      ---- K ----
+      L00 WR=+0.95301 LR=+0.95301 WB=+0.95301 LB=+0.95301 NEAR=+0.95301 FAR=+0.95301 CROSS=+0.95301
+      L01 WR=+0.98244 LR=+0.98152 WB=+0.98219 LB=+0.98076 NEAR=+0.98195 FAR=+0.98073 CROSS=+0.98239
+      L02 WR=+0.49082 LR=+0.52105 WB=+0.55222 LB=+0.57436 NEAR=+0.43819 FAR=+0.45810 CROSS=+0.49845
+      L03 WR=+0.89291 LR=+0.88659 WB=+0.89682 LB=+0.88769 NEAR=+0.89806 FAR=+0.87777 CROSS=+0.89003
+      L04 WR=+0.76791 LR=+0.71491 WB=+0.76305 LB=+0.74109 NEAR=+0.72012 FAR=+0.72881 CROSS=+0.74284
+      L05 WR=+0.64367 LR=+0.61227 WB=+0.64848 LB=+0.63291 NEAR=+0.62043 FAR=+0.53858 CROSS=+0.62918
+      L06 WR=+0.64271 LR=+0.63381 WB=+0.66796 LB=+0.68734 NEAR=+0.63212 FAR=+0.57216 CROSS=+0.58864
+      L07 WR=+0.58020 LR=+0.33978 WB=+0.53970 LB=+0.39304 NEAR=+0.43107 FAR=+0.35693 CROSS=+0.53535
+      L08 WR=+0.71243 LR=+0.56901 WB=+0.60199 LB=+0.54132 NEAR=+0.59082 FAR=+0.53298 CROSS=+0.68658
+      L09 WR=+0.41473 LR=+0.46362 WB=+0.35301 LB=+0.45235 NEAR=+0.33010 FAR=+0.28531 CROSS=+0.34624
+      L10 WR=+0.34553 LR=+0.38900 WB=+0.27697 LB=+0.45488 NEAR=+0.22943 FAR=+0.24503 CROSS=+0.25686
+      L11 WR=+0.62367 LR=+0.41684 WB=+0.49886 LB=+0.53687 NEAR=+0.53724 FAR=+0.49380 CROSS=+0.58813
+      L12 WR=+0.46864 LR=+0.41561 WB=+0.40600 LB=+0.54830 NEAR=+0.40738 FAR=+0.28185 CROSS=+0.40744
+      L13 WR=+0.61046 LR=+0.51073 WB=+0.63822 LB=+0.61716 NEAR=+0.53409 FAR=+0.34009 CROSS=+0.57863
+      L14 WR=+0.42314 LR=+0.36029 WB=+0.39800 LB=+0.47716 NEAR=+0.41898 FAR=+0.21095 CROSS=+0.38736
+      L15 WR=+0.64053 LR=+0.49921 WB=+0.65271 LB=+0.62130 NEAR=+0.62192 FAR=+0.55870 CROSS=+0.60062
+      L16 WR=+0.43722 LR=+0.40434 WB=+0.42141 LB=+0.44576 NEAR=+0.41018 FAR=+0.28901 CROSS=+0.39576
+      L17 WR=+0.72278 LR=+0.68802 WB=+0.63694 LB=+0.64938 NEAR=+0.66309 FAR=+0.58000 CROSS=+0.68965
+      L18 WR=+0.53421 LR=+0.42053 WB=+0.55333 LB=+0.58604 NEAR=+0.56748 FAR=+0.44183 CROSS=+0.49741
+      L19 WR=+0.65339 LR=+0.60252 WB=+0.59678 LB=+0.63660 NEAR=+0.63685 FAR=+0.49543 CROSS=+0.60836
+      L20 WR=+0.53243 LR=+0.58582 WB=+0.48497 LB=+0.61927 NEAR=+0.47635 FAR=+0.51554 CROSS=+0.50939
+      L21 WR=+0.57471 LR=+0.53660 WB=+0.57170 LB=+0.52154 NEAR=+0.53412 FAR=+0.52863 CROSS=+0.54925
+      L22 WR=+0.55683 LR=+0.58939 WB=+0.50694 LB=+0.57899 NEAR=+0.52844 FAR=+0.41937 CROSS=+0.53596
+      L23 WR=+0.49799 LR=+0.50468 WB=+0.55988 LB=+0.57727 NEAR=+0.56365 FAR=+0.54146 CROSS=+0.47891
+      L24 WR=+0.52236 LR=+0.54242 WB=+0.42444 LB=+0.44769 NEAR=+0.45980 FAR=+0.37462 CROSS=+0.50639
+      L25 WR=+0.62574 LR=+0.60520 WB=+0.66312 LB=+0.67125 NEAR=+0.61275 FAR=+0.61845 CROSS=+0.61435
+      L26 WR=+0.35457 LR=+0.25580 WB=+0.43916 LB=+0.34982 NEAR=+0.39051 FAR=+0.31621 CROSS=+0.36827
+      L27 WR=+0.85796 LR=+0.87033 WB=+0.87785 LB=+0.88982 NEAR=+0.87209 FAR=+0.86887 CROSS=+0.84356
+      L28 WR=+0.54880 LR=+0.52945 WB=+0.51705 LB=+0.59339 NEAR=+0.58888 FAR=+0.44380 CROSS=+0.53032
+      L29 WR=+0.46870 LR=+0.33444 WB=+0.52033 LB=+0.44089 NEAR=+0.51309 FAR=+0.50079 CROSS=+0.43821
+      L30 WR=+0.59258 LR=+0.49380 WB=+0.68408 LB=+0.60023 NEAR=+0.67825 FAR=+0.69896 CROSS=+0.58139
+      L31 WR=+0.51698 LR=+0.44776 WB=+0.52113 LB=+0.50105 NEAR=+0.49551 FAR=+0.57891 CROSS=+0.49845
+      ---- V ----
+      L00 WR=-0.16071 LR=-0.16071 WB=-0.16071 LB=-0.16071 NEAR=-0.16071 FAR=-0.16071 CROSS=-0.16071
+      L01 WR=-0.02212 LR=-0.11544 WB=+0.01894 LB=-0.08501 NEAR=-0.03184 FAR=-0.05994 CROSS=-0.03272
+      L02 WR=+0.45512 LR=+0.26945 WB=+0.42736 LB=+0.32483 NEAR=+0.43061 FAR=+0.28474 CROSS=+0.42867
+      L03 WR=+0.22490 LR=+0.30690 WB=+0.28981 LB=+0.37553 NEAR=+0.17908 FAR=+0.21616 CROSS=+0.24949
+      L04 WR=+0.12606 LR=+0.22610 WB=+0.16411 LB=+0.25948 NEAR=+0.10938 FAR=+0.26082 CROSS=+0.15826
+      L05 WR=+0.27414 LR=+0.26572 WB=+0.23747 LB=+0.18048 NEAR=+0.09780 FAR=+0.11256 CROSS=+0.28610
+      L06 WR=+0.01583 LR=-0.01498 WB=+0.02883 LB=+0.16220 NEAR=+0.04315 FAR=-0.03715 CROSS=+0.02299
+      L07 WR=+0.05550 LR=-0.02691 WB=-0.01421 LB=+0.07116 NEAR=-0.01663 FAR=-0.00536 CROSS=+0.06188
+      L08 WR=+0.17013 LR=+0.07044 WB=+0.24081 LB=+0.27669 NEAR=+0.17584 FAR=+0.15339 CROSS=+0.12425
+      L09 WR=+0.06165 LR=+0.08346 WB=-0.00065 LB=+0.11212 NEAR=+0.04081 FAR=+0.01353 CROSS=+0.04584
+      L10 WR=-0.08104 LR=+0.01501 WB=-0.02020 LB=-0.00721 NEAR=-0.09589 FAR=-0.01974 CROSS=-0.03114
+      L11 WR=+0.14436 LR=+0.12360 WB=+0.10189 LB=+0.10409 NEAR=+0.13110 FAR=+0.20514 CROSS=+0.14561
+      L12 WR=+0.25012 LR=+0.18631 WB=+0.26966 LB=+0.26955 NEAR=+0.12339 FAR=+0.07900 CROSS=+0.24690
+      L13 WR=+0.06412 LR=+0.01793 WB=+0.03329 LB=+0.09855 NEAR=+0.06200 FAR=+0.01570 CROSS=+0.01850
+      L14 WR=+0.04909 LR=+0.08819 WB=+0.16303 LB=+0.26514 NEAR=-0.01773 FAR=+0.00291 CROSS=-0.01019
+      L15 WR=+0.08917 LR=+0.07860 WB=-0.07158 LB=+0.13050 NEAR=+0.03814 FAR=-0.09463 CROSS=+0.01195
+      L16 WR=+0.14302 LR=-0.11064 WB=+0.20134 LB=+0.12227 NEAR=+0.11277 FAR=-0.01867 CROSS=+0.10317
+      L17 WR=+0.14107 LR=+0.10821 WB=+0.12046 LB=+0.15189 NEAR=+0.10082 FAR=-0.07063 CROSS=+0.13029
+      L18 WR=+0.06655 LR=+0.06758 WB=+0.01251 LB=+0.07656 NEAR=+0.02749 FAR=+0.02777 CROSS=+0.07856
+      L19 WR=+0.14216 LR=+0.07149 WB=+0.08987 LB=+0.12263 NEAR=+0.15908 FAR=+0.06625 CROSS=+0.12885
+      L20 WR=+0.13164 LR=+0.18894 WB=+0.03671 LB=+0.17977 NEAR=+0.15977 FAR=-0.03335 CROSS=+0.02941
+      L21 WR=+0.07134 LR=+0.10861 WB=-0.03028 LB=+0.08434 NEAR=-0.02929 FAR=+0.04935 CROSS=+0.01315
+      L22 WR=+0.07128 LR=+0.15583 WB=+0.02494 LB=+0.11744 NEAR=+0.12163 FAR=+0.08261 CROSS=+0.12099
+      L23 WR=-0.02940 LR=+0.07393 WB=+0.02672 LB=+0.15267 NEAR=+0.02119 FAR=+0.01407 CROSS=-0.04251
+      L24 WR=-0.07523 LR=-0.09820 WB=-0.22536 LB=-0.22404 NEAR=-0.08412 FAR=+0.05844 CROSS=-0.09350
+      L25 WR=+0.06942 LR=+0.07619 WB=-0.01259 LB=+0.08738 NEAR=-0.03959 FAR=+0.06324 CROSS=+0.01960
+      L26 WR=+0.11288 LR=+0.13386 WB=+0.13102 LB=+0.17562 NEAR=+0.02905 FAR=+0.11936 CROSS=+0.10825
+      L27 WR=+0.19032 LR=+0.13834 WB=+0.15270 LB=+0.08938 NEAR=+0.14865 FAR=+0.06841 CROSS=+0.13336
+      L28 WR=+0.04630 LR=-0.02804 WB=+0.12658 LB=-0.02156 NEAR=+0.11415 FAR=+0.03147 CROSS=+0.02477
+      L29 WR=+0.20193 LR=+0.14984 WB=+0.12671 LB=+0.07552 NEAR=+0.13754 FAR=+0.03953 CROSS=+0.09859
+      L30 WR=+0.11360 LR=+0.05204 WB=+0.11834 LB=-0.02788 NEAR=+0.11575 FAR=+0.08039 CROSS=+0.00403
+      L31 WR=+0.18894 LR=+0.16201 WB=+0.10434 LB=+0.24045 NEAR=+0.23339 FAR=+0.15783 CROSS=+0.10224
+
+[7/10] 32×32 katman ilişki haritasının bütünsel korunumu...
+      WR     mean=+0.990196 median=+0.990348 std=0.004609 min=+0.979671 max=+0.996711
+      LR     mean=+0.988000 median=+0.989478 std=0.004637 min=+0.980053 max=+0.995351
+      WB     mean=+0.993222 median=+0.993137 std=0.001940 min=+0.989650 max=+0.997306
+      LB     mean=+0.991528 median=+0.992143 std=0.002044 min=+0.988413 max=+0.994545
+      WN     mean=+0.991302 median=+0.991087 std=0.003145 min=+0.984597 max=+0.996006
+      WF     mean=+0.992590 median=+0.993925 std=0.002695 min=+0.987447 max=+0.995996
+      CROSS  mean=+0.990105 median=+0.990546 std=0.004341 min=+0.979707 max=+0.997608
+
+[8/10] WRITE → RELATE → BRIDGE üçlü geometri kontrolü...
+      WRITE↔RELATE mean : +0.996041
+      WRITE↔BRIDGE mean : +0.992532
+      RELATE↔BRIDGE mean: +0.990630
+
+[9/10] Protokol denetimi...
+      Weight sentinel                    : PASS
+      Trainable tensor                   : 0
+      Eğitim / LoRA / optimizer          : YOK
+      Retrieval                          : YOK
+      İnsan memory ID                    : YASAK / KULLANILMADI
+      Harf-rakam memory adresi           : YASAK / KULLANILMADI
+      Token-ID memory adresi             : YASAK / KULLANILMADI
+      Tek layer adresi                   : YASAK / KULLANILMADI
+      Tek head adresi                    : YASAK / KULLANILMADI
+      Tek vektör key                     : YASAK / KULLANILMADI
+      Max-cosine retrieval               : YASAK / KULLANILMADI
+      Semantik label router              : YASAK / KULLANILMADI
+      Threshold/lambda                   : YOK
+      Gold ile seçim                     : YOK
+      Bütünsel geometri                  : X-RAY
+      WRITE→RELATE→RECALL                 : ÖLÇÜLDÜ
+      Model ağırlıkları                  : DEĞİŞMEDİ
+
+[10/10] Sonuç...
+
+==========================================================================================================================================================
+TEST542 SONUÇ — TRANSFORMER İÇ GÖKYÜZÜ / BÜTÜNSEL GEOMETRİ
+==========================================================================================================================================================
+MODEL                         : mistralai/Mistral-7B-Instruct-v0.3
+DÜNYA SAYISI                  : 6
+MOD                           : KEŞİF / X-RAY
+RETRIEVAL                     : YOK
+TEK ADRES                     : YOK
+TEK VEKTÖR KEY                : YOK
+İNSAN MEMORY ID               : YOK
+ROUTER                        : YOK
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+RESIDUAL GÖKYÜZÜ WR/CROSS    : +0.989288 / +0.989177
+YÖRÜNGE WR/CROSS             : +0.805619 / +0.803198
+LAYER-HARİTASI WR/CROSS      : +0.990196 / +0.990105
+WRITE↔RELATE↔BRIDGE          : +0.996041 / +0.992532 / +0.990630
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+WEIGHT SENTINEL               : PASS
+TRAINABLE TENSORS             : 0
+TEST541 RESULT SHA            : d070361b8d9cc72e79e834ea8e030c764bfe73ae8faf817c6fa5a39c51207ea6
+TEST542 ÖN KİLİT SHA          : 252a4fa3ca392279d2c950a6f5d5b7005f1d4db3fd3d5892ab11a1e993c78fab
+TEST542 RESULT SHA            : 6e14e03cda7a28f8a49f7c0cdbd94719df020e4390167f000dfb457bae0c294c
+TOPLAM SÜRE                   : 60.75s
+KARAR                         : TEST542_BUTUNSEL_TRANSFORMER_GEOMETRISI_XRAY_TAMAMLANDI
+SONRAKİ ADIM                  : Haritanın doğal yapısını incele; hiçbir koordinatı memory adresine dönüştürme.
+==========================================================================================================================================================
