@@ -1,0 +1,186 @@
+ ================================================================================================================================================================================
+TEST530 — AKBASCORE MAM · VARAN 1 · MULTI-TOKEN ADDRESS COMPOSITION X-RAY
+TEST529 BOUNDARY FOLLOW-UP · FROZEN L28H00 → L00-V · L=2 ONLY · PARAMETER-FREE
+================================================================================================================================================================================
+
+[1/12] Loading frozen Mistral...
+config.json: 100% 601/601 [00:00<00:00, 66.2kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 141k/141k [00:00<00:00, 17.1MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 42.4MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 58.3kB/s  tokenizer.model: downloading bytes:   448kB, 44.5kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 53.2kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 3.21MB/s]Download complete:  12.4GB,  582MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  431MB/s  Fetching 3 files: 100% 3/3 [00:40<00:00, 40.35s/it]Loading weights: 100% 291/291 [00:03<00:00, 80.51it/s]generation_config.json: 100% 116/116 [00:00<00:00, 16.0kB/s]      mistralai/Mistral-7B-Instruct-v0.3 | NVIDIA A100-SXM4-40GB
+      32L H=4096 QH=32 KVH=8 HD=128 ADDRESS=1024
+      POINTER : L28H00 FROZEN
+      ADDRESS : L00-V UNCENTERED FROZEN
+      PANEL   : L=2 ONLY · N=512
+      MODEL   : frozen · BF16 · SDPA · trainable=0
+      Native model-token atom pool: 220
+
+[2/12] Building deterministic L=2 panel...
+      Targets     : 512
+      A distractors: 1024
+      B distractors: 1024
+      TEST530 LOCK: 7fceaa4e25d0d9754ec05c0ecdb868874f96677444d2362a3f4255a1a372ac3f
+
+[3/12] OFFLINE FORGE...
+      forged   64/512
+      forged  128/512
+      forged  192/512
+      forged  256/512
+      forged  320/512
+      forged  384/512
+      forged  448/512
+      forged  512/512
+      A memories: 512
+      B memories: 512
+      Query-time B forwards: 0
+
+[4/12] Building ALL contiguous B width-2 candidates...
+      Candidate windows: 20480
+      Gold B window selection: NO
+      Every contiguous width-2 B window indexed.
+
+[5/12] POINTER X-RAY + COMPOSITION ARMS...
+      [001/512] ptr=1 mass=0.9461 ratio=0.997/0.003 | SUM=   1 PTR_RATIO=   1 MAX=   3 CONCAT=   1
+      [002/512] ptr=1 mass=0.8891 ratio=1.000/0.000 | SUM=   1 PTR_RATIO=   1 MAX=   1 CONCAT=   1
+      [003/512] ptr=1 mass=0.8920 ratio=0.982/0.018 | SUM=   1 PTR_RATIO=   1 MAX=  10 CONCAT=   1
+      [004/512] ptr=1 mass=0.9059 ratio=0.994/0.006 | SUM=   1 PTR_RATIO=   1 MAX=  17 CONCAT=   1
+      [005/512] ptr=1 mass=0.7254 ratio=0.999/0.001 | SUM=   1 PTR_RATIO=   1 MAX=  20 CONCAT=   1
+      [006/512] ptr=1 mass=0.9269 ratio=0.998/0.002 | SUM=   1 PTR_RATIO=   1 MAX=   9 CONCAT=   1
+      [007/512] ptr=1 mass=0.8637 ratio=0.969/0.031 | SUM=   1 PTR_RATIO=   1 MAX=   8 CONCAT=   1
+      [008/512] ptr=1 mass=0.9665 ratio=1.000/0.000 | SUM=   1 PTR_RATIO=  12 MAX=  11 CONCAT=   1
+      [016/512] ptr=1 mass=0.5059 ratio=0.997/0.003 | SUM=   1 PTR_RATIO=   1 MAX=   3 CONCAT=   1
+      [032/512] ptr=1 mass=0.8372 ratio=0.960/0.040 | SUM=   1 PTR_RATIO=   1 MAX=   3 CONCAT=   1
+      [048/512] ptr=1 mass=0.8838 ratio=0.999/0.001 | SUM=   1 PTR_RATIO=   1 MAX=   1 CONCAT=   1
+      [064/512] ptr=1 mass=0.8791 ratio=0.998/0.002 | SUM=   1 PTR_RATIO=   1 MAX=   5 CONCAT=   1
+      [080/512] ptr=1 mass=0.7057 ratio=0.612/0.388 | SUM=   1 PTR_RATIO=   1 MAX=  15 CONCAT=   1
+      [096/512] ptr=1 mass=0.8320 ratio=0.997/0.003 | SUM=   1 PTR_RATIO=   1 MAX=  12 CONCAT=   1
+      [112/512] ptr=1 mass=0.9518 ratio=1.000/0.000 | SUM=   1 PTR_RATIO=   1 MAX=  12 CONCAT=   1
+      [128/512] ptr=1 mass=0.9422 ratio=0.998/0.002 | SUM=   1 PTR_RATIO=   1 MAX=   5 CONCAT=   1
+      [144/512] ptr=1 mass=0.8564 ratio=0.999/0.001 | SUM=   1 PTR_RATIO=   1 MAX=   9 CONCAT=   1
+      [160/512] ptr=1 mass=0.9603 ratio=0.995/0.005 | SUM=   1 PTR_RATIO=   1 MAX=  11 CONCAT=   1
+      [176/512] ptr=1 mass=0.8730 ratio=0.995/0.005 | SUM=   1 PTR_RATIO=   1 MAX=   7 CONCAT=   1
+      [192/512] ptr=1 mass=0.9708 ratio=1.000/0.000 | SUM=   1 PTR_RATIO=   4 MAX=   1 CONCAT=   1
+      [208/512] ptr=1 mass=0.7682 ratio=0.984/0.016 | SUM=   1 PTR_RATIO=   1 MAX=   4 CONCAT=   1
+      [224/512] ptr=1 mass=0.9862 ratio=0.998/0.002 | SUM=   1 PTR_RATIO=   1 MAX=   8 CONCAT=   1
+      [240/512] ptr=1 mass=0.9155 ratio=0.999/0.001 | SUM=   1 PTR_RATIO=   1 MAX=  10 CONCAT=   1
+      [256/512] ptr=1 mass=0.7321 ratio=0.982/0.018 | SUM=   1 PTR_RATIO=   1 MAX=   3 CONCAT=   1
+      [272/512] ptr=1 mass=0.8541 ratio=1.000/0.000 | SUM=   1 PTR_RATIO=   5 MAX=   4 CONCAT=   1
+      [288/512] ptr=1 mass=0.7050 ratio=0.950/0.050 | SUM=   1 PTR_RATIO=   1 MAX=   1 CONCAT=   1
+      [304/512] ptr=1 mass=0.9887 ratio=1.000/0.000 | SUM=   1 PTR_RATIO=   1 MAX=  12 CONCAT=   1
+      [320/512] ptr=1 mass=0.9213 ratio=0.958/0.042 | SUM=   1 PTR_RATIO=   1 MAX=  10 CONCAT=   1
+      [336/512] ptr=1 mass=0.9534 ratio=0.996/0.004 | SUM=   1 PTR_RATIO=   1 MAX=   7 CONCAT=   1
+      [352/512] ptr=1 mass=0.6717 ratio=0.991/0.009 | SUM=   1 PTR_RATIO=   1 MAX=  12 CONCAT=   1
+      [368/512] ptr=1 mass=0.9338 ratio=0.999/0.001 | SUM=   1 PTR_RATIO=   1 MAX=   1 CONCAT=   1
+      [384/512] ptr=1 mass=0.9524 ratio=0.994/0.006 | SUM=   1 PTR_RATIO=   1 MAX=  10 CONCAT=   1
+      [400/512] ptr=1 mass=0.9048 ratio=0.999/0.001 | SUM=   1 PTR_RATIO=   1 MAX=  14 CONCAT=   1
+      [416/512] ptr=1 mass=0.9813 ratio=0.997/0.003 | SUM=   1 PTR_RATIO=   1 MAX=   9 CONCAT=   1
+      [432/512] ptr=1 mass=0.6559 ratio=0.996/0.004 | SUM=   1 PTR_RATIO=   1 MAX=   4 CONCAT=   1
+      [448/512] ptr=1 mass=0.9430 ratio=1.000/0.000 | SUM=   1 PTR_RATIO=   1 MAX=   9 CONCAT=   1
+      [464/512] ptr=1 mass=0.9201 ratio=0.998/0.002 | SUM=   1 PTR_RATIO=   1 MAX=   3 CONCAT=   1
+      [480/512] ptr=1 mass=0.9344 ratio=1.000/0.000 | SUM=   1 PTR_RATIO=   3 MAX=   9 CONCAT=   1
+      [496/512] ptr=1 mass=0.7272 ratio=1.000/0.000 | SUM=   1 PTR_RATIO=   1 MAX=   3 CONCAT=   1
+      [512/512] ptr=1 mass=0.8661 ratio=0.993/0.007 | SUM=   1 PTR_RATIO=   1 MAX=  13 CONCAT=   1
+      SUM       R1/R5/R16/MRR : 0.9844/1.0000/1.0000/0.992188
+      MEAN      R1/R5/R16/MRR : 0.9844/1.0000/1.0000/0.992188
+      PTR_RATIO R1/R5/R16/MRR : 0.8574/0.9180/1.0000/0.885645
+      MAX_TOKEN R1/R5/R16/MRR : 0.0723/0.3496/0.9727/0.228417
+      CONCATCOS R1/R5/R16/MRR : 1.0000/1.0000/1.0000/1.000000
+      POINTER HIT             : 0.9922
+      POINTER MASS            : 0.875188
+
+[6/12] POINTER RATIO GEOMETRY...
+      Mean token-1 mass ratio : 0.975861
+      Mean token-2 mass ratio : 0.024139
+      Mean dominant ratio     : 0.982858
+      Median dominant ratio   : 0.997395
+      Dominant >= .70         : 0.9902
+      Dominant >= .80         : 0.9805
+      Dominant >= .90         : 0.9668
+
+[7/12] POSITIONAL ORIENTATION DIAGNOSTIC...
+      CONCAT normal  R1/R5/MRR : 1.0000/1.0000/1.000000
+      CONCAT reverse R1/R5/MRR : 0.0039/0.0215/0.072552
+      Orientation gap R1       : +0.9961
+
+[8/12] GOLD-CANDIDATE GEOMETRY DIAGNOSTIC...
+      Gold same-token cos #1  : 1.000000
+      Gold same-token cos #2  : 1.000000
+      Gold summed-pair cosine : 1.000000
+      Gold positional cosine  : 1.000000
+
+[9/12] ARM COMPARISON...
+      SUM       : R1=0.9844 R5=1.0000 R16=1.0000 MRR=0.992188
+      MEAN      : R1=0.9844 R5=1.0000 R16=1.0000 MRR=0.992188
+      PTR_RATIO : R1=0.8574 R5=0.9180 R16=1.0000 MRR=0.885645
+      MAX_TOKEN : R1=0.0723 R5=0.3496 R16=0.9727 MRR=0.228417
+      CONCATCOS : R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+      BEST PREDECLARED ARM: CONCATCOS
+      BEST R1            : 1.0000
+      Gain vs TEST529 L2 : +0.9620
+
+[10/12] DIAGNOSTIC GATES...
+      POINTER_STILL_INTACT    : PASS
+      DECISIVE_RECOVERY       : PASS
+      STRONG_RECOVERY         : PASS
+      R5_RECOVERY             : PASS
+
+[11/12] PROTOCOL AUDIT...
+      Weight sentinel                     : PASS
+      Trainable tensors                   : 0
+      Pointer                             : L28H00 unchanged
+      Address                             : L00-V uncentered unchanged
+      Identity                            : L=2 only
+      Head/layer/address discovery        : NONE
+      Candidate B windows                 : ALL contiguous width-2
+      Gold B window used for retrieval    : NO
+      Gold B span used in diagnostics     : YES, after scoring only
+      Token-ID routing                    : NO
+      Decoded identity routing            : NO
+      Training / LoRA / DRA               : NONE
+      Learned router/scorer               : NONE
+      Query-time candidate-B forwards     : 0
+
+[12/12] FINAL...
+
+================================================================================================================================================================================
+TEST530 FINAL RESULT — AKBASCORE MAM · VARAN 1 · L2 COMPOSITION X-RAY
+================================================================================================================================================================================
+MODEL                              : mistralai/Mistral-7B-Instruct-v0.3 · frozen
+PARENTS                            : TEST528 + TEST529
+PANEL                              : 512 L=2 independent memories
+POINTER                            : L28H00 · UNCHANGED
+ADDRESS                            : L00-V · UNCENTERED · 1024D · UNCHANGED
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SUM                                : R1=0.9844 R5=1.0000 R16=1.0000 MRR=0.992188
+MEAN                               : R1=0.9844 R5=1.0000 R16=1.0000 MRR=0.992188
+PTR_RATIO                          : R1=0.8574 R5=0.9180 R16=1.0000 MRR=0.885645
+MAX_TOKEN                          : R1=0.0723 R5=0.3496 R16=0.9727 MRR=0.228417
+CONCATCOS                          : R1=1.0000 R5=1.0000 R16=1.0000 MRR=1.000000
+CONCAT_REVERSE                     : R1=0.0039 R5=0.0215 R16=0.4941 MRR=0.072552
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POINTER HIT                        : 0.9922
+POINTER MASS                       : 0.875188
+MEAN DOMINANT TOKEN RATIO          : 0.982858
+GOLD TOKEN-1 COSINE                : 1.000000
+GOLD TOKEN-2 COSINE                : 1.000000
+GOLD SUM COSINE                    : 1.000000
+GOLD POSITIONAL COSINE             : 1.000000
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BEST PREDECLARED ARM               : CONCATCOS
+BEST R1                            : 1.0000
+GAIN VS TEST529 L2                 : +0.9620
+POINTER_STILL_INTACT               : PASS
+DECISIVE_RECOVERY                  : PASS
+STRONG_RECOVERY                    : PASS
+R5_RECOVERY                        : PASS
+WEIGHT_SENTINEL                    : PASS
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+WEIGHT SENTINEL                    : PASS
+QUERY-TIME CANDIDATE-B FORWARDS    : 0
+TEST528 RESULT SHA                 : 9235ed38c944f41a9ede0426d3aabaa12b5b20646f30e2be921e618f9471d3c2
+TEST529 RESULT SHA                 : 27ba703872f0d8a6ed870a6ba041d0cd0703d2eca467deac97186a90497795a0
+TEST530 PRE-RESULT LOCK            : 7fceaa4e25d0d9754ec05c0ecdb868874f96677444d2362a3f4255a1a372ac3f
+TEST530 RESULT SHA                 : 289247c88dfd4358cbe5ffb8499891546b27acc6912caf525a155ae81338db7b
+TOTAL TEST TIME                    : 171.91s
+VERDICT                            : TEST530_L2_COMPOSITION_LAW_STRONG_CANDIDATE
+NEXT                               : validate winning composition independently in TEST531
+================================================================================================================================================================================
