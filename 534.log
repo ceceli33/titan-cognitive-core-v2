@@ -1,0 +1,346 @@
+ 
+================================================================================================================================================================================
+TEST534 — AKBASCORE MAM · VARAN 1 · POINTER-MISS X-RAY
+TEST533 FOLLOW-UP · FROZEN L28H00 POINTER RESIDUAL-FAILURE ANATOMY · NO NEW RETRIEVAL LAW
+================================================================================================================================================================================
+
+[1/11] Loading frozen Mistral...
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 70.9kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 15.4MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 88.7MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.1kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.6kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 49.9kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 3.18MB/s]
+Download complete: 
+
+ 12.4GB,  771MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  533MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:41<00:00, 41.11s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 76.45it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 15.7kB/s]
+      mistralai/Mistral-7B-Instruct-v0.3 | NVIDIA A100-SXM4-40GB
+      32L H=4096 QH=32 KVH=8 HD=128 ADDRESS=1024
+      POINTER : L28H00 · FROZEN
+      ADDRESS : L00-V UNCENTERED · FROZEN
+      MATCH   : CONCATCOS · FROZEN
+      PANEL   : exact TEST531/532/533 deterministic construction
+      MODE    : POINTER X-RAY ONLY · NO NEW RETRIEVAL RULE
+      MODEL   : frozen · BF16 · SDPA · trainable=0
+      Native model-token atom pool: 220
+
+[2/11] Reconstructing exact sealed panel...
+      Required identity pools: {2: 1774, 3: 1769, 4: 1769}
+      L=2: 342
+      L=3: 341
+      L=4: 341
+      Remaining reserve: {2: 64, 3: 64, 4: 64}
+      Sealed panel seed: 531531
+      TEST534 LOCK: feb1f405711ac75c00b0c98b86f3ed3818c6eda2d878380409a2e08f47d88baa
+
+[3/11] OFFLINE FORGE — A memories only...
+      forged   64/1024
+      forged  128/1024
+      forged  192/1024
+      forged  256/1024
+      forged  320/1024
+      forged  384/1024
+      forged  448/1024
+      forged  512/1024
+      forged  576/1024
+      forged  640/1024
+      forged  704/1024
+      forged  768/1024
+      forged  832/1024
+      forged  896/1024
+      forged  960/1024
+      forged 1024/1024
+      A memories: 1024
+      B candidate forwards required: 0
+      Retrieval executed: NO
+      Pointer X-ray only: YES
+
+[4/11] PRIMARY POINTER X-RAY...
+      [0001/1024] L=2 gold= 20 peak= 20 inside=1 mass=0.7029 tokR=  1 maxR=  1 sumR=  2
+      [0002/1024] L=3 gold= 23 peak= 23 inside=1 mass=0.9659 tokR=  1 maxR=  1 sumR=  1
+      [0003/1024] L=4 gold=  9 peak=  9 inside=1 mass=0.8178 tokR=  1 maxR=  4 sumR=  2
+      [0004/1024] L=2 gold= 32 peak= 32 inside=1 mass=0.9781 tokR=  1 maxR=  2 sumR=  2
+      [0005/1024] L=3 gold=  8 peak=  8 inside=1 mass=0.8896 tokR=  1 maxR=  3 sumR=  2
+      [0006/1024] L=4 gold= 35 peak= 35 inside=1 mass=0.8577 tokR=  1 maxR=  1 sumR=  2
+      [0007/1024] L=2 gold=  8 peak=  8 inside=1 mass=0.9786 tokR=  1 maxR=  2 sumR=  1
+      [0008/1024] L=3 gold= 21 peak= 21 inside=1 mass=0.9702 tokR=  1 maxR=  1 sumR=  3
+      [0064/1024] L=2 gold=  9 peak=  9 inside=1 mass=0.8783 tokR=  1 maxR=  2 sumR=  1
+      [0128/1024] L=3 gold= 21 peak= 21 inside=1 mass=0.8588 tokR=  1 maxR=  3 sumR=  3
+      [0144/1024] L=4 gold=  9 peak=  8 inside=0 mass=0.3508 tokR=  2 maxR=  7 sumR=  4
+      [0192/1024] L=4 gold= 21 peak= 21 inside=1 mass=0.9371 tokR=  1 maxR=  1 sumR=  1
+      [0256/1024] L=2 gold= 31 peak= 31 inside=1 mass=0.8621 tokR=  1 maxR=  2 sumR=  2
+      [0282/1024] L=4 gold=  8 peak=  7 inside=0 mass=0.4630 tokR=  2 maxR=  5 sumR=  4
+      [0320/1024] L=3 gold=  9 peak=  9 inside=1 mass=0.9059 tokR=  1 maxR=  1 sumR=  1
+      [0384/1024] L=4 gold= 35 peak= 35 inside=1 mass=0.9902 tokR=  1 maxR=  1 sumR=  1
+      [0448/1024] L=2 gold=  9 peak=  9 inside=1 mass=0.8639 tokR=  1 maxR=  1 sumR=  1
+      [0512/1024] L=3 gold= 33 peak= 33 inside=1 mass=0.9842 tokR=  1 maxR=  1 sumR=  2
+      [0568/1024] L=2 gold= 20 peak= 31 inside=0 mass=0.1704 tokR=  2 maxR=  3 sumR=  3
+      [0576/1024] L=4 gold=  9 peak=  9 inside=1 mass=0.9202 tokR=  1 maxR=  4 sumR=  3
+      [0640/1024] L=2 gold=  9 peak=  9 inside=1 mass=0.8769 tokR=  1 maxR=  2 sumR=  1
+      [0699/1024] L=4 gold=  9 peak= 34 inside=0 mass=0.3129 tokR=  2 maxR=  8 sumR=  5
+      [0704/1024] L=3 gold= 21 peak= 21 inside=1 mass=0.7434 tokR=  1 maxR=  1 sumR=  2
+      [0768/1024] L=4 gold= 35 peak= 35 inside=1 mass=0.8562 tokR=  1 maxR=  4 sumR=  1
+      [0808/1024] L=2 gold= 20 peak= 31 inside=0 mass=0.2787 tokR=  2 maxR=  3 sumR=  4
+      [0832/1024] L=2 gold= 31 peak= 31 inside=1 mass=0.9761 tokR=  1 maxR=  1 sumR=  1
+      [0896/1024] L=3 gold= 22 peak= 22 inside=1 mass=0.9365 tokR=  1 maxR=  1 sumR=  1
+      [0941/1024] L=3 gold=  9 peak=  1 inside=0 mass=0.2415 tokR=  2 maxR=  2 sumR=  4
+      [0949/1024] L=2 gold=  8 peak=  1 inside=0 mass=0.2191 tokR=  2 maxR=  3 sumR=  2
+      [0960/1024] L=4 gold=  9 peak=  9 inside=1 mass=0.9824 tokR=  1 maxR=  4 sumR=  2
+      [0987/1024] L=4 gold= 35 peak= 22 inside=0 mass=0.2968 tokR=  2 maxR=  5 sumR=  8
+      [1017/1024] L=4 gold=  8 peak=  1 inside=0 mass=0.4281 tokR=  2 maxR=  5 sumR=  2
+      [1024/1024] L=2 gold= 19 peak= 19 inside=1 mass=0.8036 tokR=  1 maxR=  2 sumR=  1
+
+      PRIMARY ALL:
+      pointer peak inside gold span       : 0.9912
+      pointer exact gold-start            : 0.9707
+      mean gold-span mass                 : 0.885546
+      median gold-span mass               : 0.918674
+      residual pointer misses             : 9/1024
+      gold token present in pointer Top-1  : 0.9912
+      gold token present in pointer Top-2  : 1.0000
+      gold token present in pointer Top-3  : 1.0000
+      gold token present in pointer Top-5  : 1.0000
+      gold token present in pointer Top-8  : 1.0000
+      gold token present in pointer Top-16 : 1.0000
+
+      PRIMARY POINTER-MISS ONLY:
+      count                               : 9
+      mean gold-span mass                 : 0.306815
+      median gold-span mass               : 0.296767
+      mean best-gold-token rank           : 2.000
+      median best-gold-token rank         : 2.000
+      mean gold MAX-window rank           : 4.556
+      mean gold SUM-window rank           : 4.000
+      miss: gold token in Top-1           : 0/9
+      miss: gold token in Top-2           : 9/9
+      miss: gold token in Top-3           : 9/9
+      miss: gold token in Top-5           : 9/9
+      miss: gold token in Top-8           : 9/9
+      miss: gold token in Top-16          : 9/9
+
+[5/11] PRIMARY RESIDUAL FAILURE DETAIL...
+      ID=0144 L=4 gold=  9 peak=  8 bestGold= 11 tokenRank=  2 goldMass=0.350822 maxWinRank=  7 sumWinRank=  4 bestNG=  8 ratio=0.7232 TopK={1: 0, 2: 1, 3: 1, 5: 1, 8: 1, 16: 1}
+      ID=0282 L=4 gold=  8 peak=  7 bestGold=  8 tokenRank=  2 goldMass=0.462975 maxWinRank=  5 sumWinRank=  4 bestNG=  7 ratio=0.8474 TopK={1: 0, 2: 1, 3: 1, 5: 1, 8: 1, 16: 1}
+      ID=0568 L=2 gold= 20 peak= 31 bestGold= 20 tokenRank=  2 goldMass=0.170408 maxWinRank=  3 sumWinRank=  3 bestNG= 31 ratio=0.2245 TopK={1: 0, 2: 1, 3: 1, 5: 1, 8: 1, 16: 1}
+      ID=0699 L=4 gold=  9 peak= 34 bestGold=  9 tokenRank=  2 goldMass=0.312854 maxWinRank=  8 sumWinRank=  5 bestNG= 34 ratio=0.3316 TopK={1: 0, 2: 1, 3: 1, 5: 1, 8: 1, 16: 1}
+      ID=0808 L=2 gold= 20 peak= 31 bestGold= 20 tokenRank=  2 goldMass=0.278749 maxWinRank=  3 sumWinRank=  4 bestNG= 31 ratio=0.6591 TopK={1: 0, 2: 1, 3: 1, 5: 1, 8: 1, 16: 1}
+      ID=0941 L=3 gold=  9 peak=  1 bestGold=  9 tokenRank=  2 goldMass=0.241549 maxWinRank=  2 sumWinRank=  4 bestNG=  1 ratio=0.5012 TopK={1: 0, 2: 1, 3: 1, 5: 1, 8: 1, 16: 1}
+      ID=0949 L=2 gold=  8 peak=  1 bestGold=  8 tokenRank=  2 goldMass=0.219079 maxWinRank=  3 sumWinRank=  2 bestNG=  1 ratio=0.7213 TopK={1: 0, 2: 1, 3: 1, 5: 1, 8: 1, 16: 1}
+      ID=0987 L=4 gold= 35 peak= 22 bestGold= 35 tokenRank=  2 goldMass=0.296767 maxWinRank=  5 sumWinRank=  8 bestNG= 22 ratio=0.4374 TopK={1: 0, 2: 1, 3: 1, 5: 1, 8: 1, 16: 1}
+      ID=1017 L=4 gold=  8 peak=  1 bestGold=  8 tokenRank=  2 goldMass=0.428135 maxWinRank=  5 sumWinRank=  2 bestNG=  1 ratio=0.8975 TopK={1: 0, 2: 1, 3: 1, 5: 1, 8: 1, 16: 1}
+
+[6/11] COUNTERFACTUAL POINTER X-RAY...
+      [0001/1024] target=0354 L=4 gold= 35 peak= 35 inside=1 mass=0.9852 tokR=  1 maxR=  3 sumR=  1
+      [0002/1024] target=0355 L=2 gold= 10 peak= 11 inside=1 mass=0.7434 tokR=  1 maxR=  1 sumR=  1
+      [0003/1024] target=0356 L=3 gold= 32 peak= 32 inside=1 mass=0.9863 tokR=  1 maxR=  1 sumR=  2
+      [0004/1024] target=0357 L=4 gold= 23 peak= 23 inside=1 mass=0.9291 tokR=  1 maxR=  1 sumR=  1
+      [0005/1024] target=0358 L=2 gold= 30 peak= 30 inside=1 mass=0.9494 tokR=  1 maxR=  1 sumR=  1
+      [0064/1024] target=0417 L=4 gold= 34 peak= 34 inside=1 mass=0.9829 tokR=  1 maxR=  4 sumR=  1
+      [0085/1024] target=0438 L=4 gold=  9 peak= 21 inside=0 mass=0.2390 tokR=  2 maxR=  8 sumR=  5
+      [0128/1024] target=0481 L=2 gold=  9 peak=  9 inside=1 mass=0.8895 tokR=  1 maxR=  2 sumR=  1
+      [0192/1024] target=0545 L=3 gold= 32 peak= 32 inside=1 mass=0.9600 tokR=  1 maxR=  1 sumR=  2
+      [0256/1024] target=0609 L=4 gold= 22 peak= 22 inside=1 mass=0.9431 tokR=  1 maxR=  1 sumR=  1
+      [0303/1024] target=0656 L=3 gold= 21 peak= 15 inside=0 mass=0.1257 tokR=  5 maxR= 12 sumR= 11
+      [0320/1024] target=0673 L=2 gold= 20 peak= 20 inside=1 mass=0.9688 tokR=  1 maxR=  1 sumR=  2
+      [0340/1024] target=0693 L=4 gold=  9 peak=  1 inside=0 mass=0.3219 tokR=  2 maxR=  5 sumR=  4
+      [0384/1024] target=0737 L=3 gold= 21 peak= 21 inside=1 mass=0.8186 tokR=  1 maxR=  1 sumR=  3
+      [0448/1024] target=0801 L=4 gold= 21 peak= 21 inside=1 mass=0.9256 tokR=  1 maxR=  1 sumR=  3
+      [0512/1024] target=0865 L=2 gold= 20 peak= 20 inside=1 mass=0.7144 tokR=  1 maxR=  1 sumR=  2
+      [0576/1024] target=0929 L=3 gold=  9 peak=  9 inside=1 mass=0.9794 tokR=  1 maxR=  3 sumR=  1
+      [0596/1024] target=0949 L=2 gold=  9 peak=  1 inside=0 mass=0.0822 tokR=  6 maxR= 10 sumR=  9
+      [0634/1024] target=0987 L=4 gold= 34 peak= 21 inside=0 mass=0.3793 tokR=  2 maxR=  5 sumR=  8
+      [0640/1024] target=0993 L=4 gold= 22 peak= 22 inside=1 mass=0.9075 tokR=  1 maxR=  1 sumR=  1
+      [0696/1024] target=0025 L=2 gold= 19 peak=  8 inside=0 mass=0.2925 tokR=  2 maxR=  3 sumR=  4
+      [0704/1024] target=0033 L=4 gold= 35 peak= 35 inside=1 mass=0.9672 tokR=  1 maxR=  1 sumR=  4
+      [0710/1024] target=0039 L=4 gold= 22 peak= 13 inside=0 mass=0.3878 tokR=  2 maxR=  5 sumR=  2
+      [0768/1024] target=0097 L=2 gold= 10 peak= 10 inside=1 mass=0.8688 tokR=  1 maxR=  1 sumR=  1
+      [0832/1024] target=0161 L=3 gold= 10 peak= 10 inside=1 mass=0.9537 tokR=  1 maxR=  3 sumR=  3
+      [0896/1024] target=0225 L=4 gold= 36 peak= 36 inside=1 mass=0.9648 tokR=  1 maxR=  2 sumR=  3
+      [0897/1024] target=0226 L=2 gold= 18 peak=  8 inside=0 mass=0.3805 tokR=  2 maxR=  3 sumR=  4
+      [0960/1024] target=0289 L=2 gold= 20 peak= 20 inside=1 mass=0.9309 tokR=  1 maxR=  2 sumR=  1
+      [0995/1024] target=0324 L=4 gold=  8 peak=  1 inside=0 mass=0.1438 tokR=  4 maxR= 10 sumR=  7
+      [1024/1024] target=0353 L=3 gold=  8 peak=  8 inside=1 mass=0.9048 tokR=  1 maxR=  3 sumR=  1
+
+      COUNTERFACTUAL ALL:
+      pointer peak inside gold span       : 0.9912
+      pointer exact gold-start            : 0.9766
+      mean gold-span mass                 : 0.881303
+      median gold-span mass               : 0.921424
+      residual pointer misses             : 9/1024
+      gold token present in pointer Top-1  : 0.9912
+      gold token present in pointer Top-2  : 0.9971
+      gold token present in pointer Top-3  : 0.9971
+      gold token present in pointer Top-5  : 0.9990
+      gold token present in pointer Top-8  : 1.0000
+      gold token present in pointer Top-16 : 1.0000
+
+      COUNTERFACTUAL POINTER-MISS ONLY:
+      count                               : 9
+      mean gold-span mass                 : 0.261422
+      median gold-span mass               : 0.292501
+      mean best-gold-token rank           : 3.000
+      median best-gold-token rank         : 2.000
+      mean gold MAX-window rank           : 6.778
+      mean gold SUM-window rank           : 6.000
+      miss: gold token in Top-1           : 0/9
+      miss: gold token in Top-2           : 6/9
+      miss: gold token in Top-3           : 6/9
+      miss: gold token in Top-5           : 8/9
+      miss: gold token in Top-8           : 9/9
+      miss: gold token in Top-16          : 9/9
+
+[7/11] COUNTERFACTUAL RESIDUAL FAILURE DETAIL...
+      ID=0085 target=0438 L=4 gold=  9 peak= 21 bestGold=  9 tokenRank=  2 goldMass=0.238977 maxWinRank=  8 sumWinRank=  5 bestNG= 21 ratio=0.3434 TopK={1: 0, 2: 1, 3: 1, 5: 1, 8: 1, 16: 1}
+      ID=0303 target=0656 L=3 gold= 21 peak= 15 bestGold= 22 tokenRank=  5 goldMass=0.125721 maxWinRank= 12 sumWinRank= 11 bestNG= 15 ratio=0.4915 TopK={1: 0, 2: 0, 3: 0, 5: 1, 8: 1, 16: 1}
+      ID=0340 target=0693 L=4 gold=  9 peak=  1 bestGold=  9 tokenRank=  2 goldMass=0.321945 maxWinRank=  5 sumWinRank=  4 bestNG=  1 ratio=0.9815 TopK={1: 0, 2: 1, 3: 1, 5: 1, 8: 1, 16: 1}
+      ID=0596 target=0949 L=2 gold=  9 peak=  1 bestGold=  9 tokenRank=  6 goldMass=0.082161 maxWinRank= 10 sumWinRank=  9 bestNG=  1 ratio=0.2405 TopK={1: 0, 2: 0, 3: 0, 5: 0, 8: 1, 16: 1}
+      ID=0634 target=0987 L=4 gold= 34 peak= 21 bestGold= 34 tokenRank=  2 goldMass=0.379269 maxWinRank=  5 sumWinRank=  8 bestNG= 21 ratio=0.6562 TopK={1: 0, 2: 1, 3: 1, 5: 1, 8: 1, 16: 1}
+      ID=0696 target=0025 L=2 gold= 19 peak=  8 bestGold= 19 tokenRank=  2 goldMass=0.292501 maxWinRank=  3 sumWinRank=  4 bestNG=  8 ratio=0.9965 TopK={1: 0, 2: 1, 3: 1, 5: 1, 8: 1, 16: 1}
+      ID=0710 target=0039 L=4 gold= 22 peak= 13 bestGold= 22 tokenRank=  2 goldMass=0.387833 maxWinRank=  5 sumWinRank=  2 bestNG= 13 ratio=0.9792 TopK={1: 0, 2: 1, 3: 1, 5: 1, 8: 1, 16: 1}
+      ID=0897 target=0226 L=2 gold= 18 peak=  8 bestGold= 18 tokenRank=  2 goldMass=0.380539 maxWinRank=  3 sumWinRank=  4 bestNG=  8 ratio=0.9424 TopK={1: 0, 2: 1, 3: 1, 5: 1, 8: 1, 16: 1}
+      ID=0995 target=0324 L=4 gold=  8 peak=  1 bestGold=  8 tokenRank=  4 goldMass=0.143848 maxWinRank= 10 sumWinRank=  7 bestNG=  1 ratio=0.2036 TopK={1: 0, 2: 0, 3: 0, 5: 1, 8: 1, 16: 1}
+
+[8/11] RESIDUAL POINTER-RANK STRUCTURE...
+      PRIMARY:
+        Gold identity represented in Top-1 : 0/9
+        Gold identity represented in Top-2 : 9/9
+        Gold identity represented in Top-3 : 9/9
+        Gold identity represented in Top-5 : 9/9
+        Gold identity represented in Top-8 : 9/9
+        Gold identity represented in Top-16: 9/9
+        Best-gold-token ranks : [2, 2, 2, 2, 2, 2, 2, 2, 2]
+        Gold MAX-window ranks : [7, 5, 3, 8, 3, 2, 3, 5, 5]
+        Gold SUM-window ranks : [4, 4, 3, 5, 4, 4, 2, 8, 2]
+        Gold-span masses      : [0.350822, 0.462975, 0.170408, 0.312854, 0.278749, 0.241549, 0.219079, 0.296767, 0.428135]
+      COUNTERFACTUAL:
+        Gold identity represented in Top-1 : 0/9
+        Gold identity represented in Top-2 : 6/9
+        Gold identity represented in Top-3 : 6/9
+        Gold identity represented in Top-5 : 8/9
+        Gold identity represented in Top-8 : 9/9
+        Gold identity represented in Top-16: 9/9
+        Best-gold-token ranks : [2, 5, 2, 6, 2, 2, 2, 2, 4]
+        Gold MAX-window ranks : [8, 12, 5, 10, 5, 3, 5, 3, 10]
+        Gold SUM-window ranks : [5, 11, 4, 9, 8, 4, 2, 4, 7]
+        Gold-span masses      : [0.238977, 0.125721, 0.321945, 0.082161, 0.379269, 0.292501, 0.387833, 0.380539, 0.143848]
+
+[9/11] LENGTH-STRATIFIED POINTER MISS...
+      PRIMARY
+        L=2: miss= 3/342 peak-hit=0.9912 exact-start=0.9766 mass=0.880007
+        L=3: miss= 1/341 peak-hit=0.9971 exact-start=0.9824 mass=0.888407
+        L=4: miss= 5/341 peak-hit=0.9853 exact-start=0.9531 mass=0.888240
+      CF
+        L=2: miss= 3/342 peak-hit=0.9912 exact-start=0.9649 mass=0.873478
+        L=3: miss= 1/341 peak-hit=0.9971 exact-start=0.9971 mass=0.888491
+        L=4: miss= 5/341 peak-hit=0.9853 exact-start=0.9677 mass=0.881963
+
+[10/11] PROTOCOL AUDIT...
+      Weight sentinel                     : PASS
+      Trainable tensors                   : 0
+      Pointer                             : L28H00 unchanged
+      Address                             : L00-V uncentered unchanged
+      Match                               : CONCATCOS unchanged
+      Panel                               : exact sealed deterministic reconstruction
+      New retrieval law                   : NONE
+      New origin law                      : NONE
+      Pointer threshold                   : NONE
+      Gold span used for pointer          : NO
+      Gold span used for selection        : NO SELECTION PERFORMED
+      Gold span used for X-ray scoring    : YES
+      Decoded identity routing            : NO
+      Token-ID routing                    : NO
+      Head/layer/address scan             : NONE
+      Match-law scan                      : NONE
+      Training / LoRA / optimizer / DRA   : NONE
+      Learned router/scorer               : NONE
+      Query-time candidate-B forwards     : 0
+      TEST533 retroactively changed       : NO
+
+[11/11] FINAL...
+
+================================================================================================================================================================================
+TEST534 FINAL RESULT — AKBASCORE MAM · VARAN 1 · POINTER-MISS X-RAY
+================================================================================================================================================================================
+MODEL                              : mistralai/Mistral-7B-Instruct-v0.3 · frozen
+PANEL                              : TEST531/532/533 deterministic reconstruction · N=1024
+POINTER                            : L28H00 · UNCHANGED
+ADDRESS                            : L00-V · UNCENTERED · 1024D · UNCHANGED
+MATCH                              : CONCATCOS · UNCHANGED
+NEW RETRIEVAL / ORIGIN LAW         : NONE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PRIMARY POINTER PEAK HIT           : 0.9912
+PRIMARY EXACT GOLD-START           : 0.9707
+PRIMARY POINTER MISSES             : 9/1024
+PRIMARY MEAN GOLD-SPAN MASS        : 0.885546
+PRIMARY MISS GOLD IN TOP-1        : 0/9
+PRIMARY MISS GOLD IN TOP-2        : 9/9
+PRIMARY MISS GOLD IN TOP-3        : 9/9
+PRIMARY MISS GOLD IN TOP-5        : 9/9
+PRIMARY MISS GOLD IN TOP-8        : 9/9
+PRIMARY MISS GOLD IN TOP-16       : 9/9
+PRIMARY MISS TOKEN RANKS           : [2, 2, 2, 2, 2, 2, 2, 2, 2]
+PRIMARY MISS MAX-WINDOW RANKS      : [7, 5, 3, 8, 3, 2, 3, 5, 5]
+PRIMARY MISS SUM-WINDOW RANKS      : [4, 4, 3, 5, 4, 4, 2, 8, 2]
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CF POINTER PEAK HIT                : 0.9912
+CF EXACT GOLD-START                : 0.9766
+CF POINTER MISSES                  : 9/1024
+CF MEAN GOLD-SPAN MASS             : 0.881303
+CF MISS GOLD IN TOP-1             : 0/9
+CF MISS GOLD IN TOP-2             : 6/9
+CF MISS GOLD IN TOP-3             : 6/9
+CF MISS GOLD IN TOP-5             : 8/9
+CF MISS GOLD IN TOP-8             : 9/9
+CF MISS GOLD IN TOP-16            : 9/9
+CF MISS TOKEN RANKS                : [2, 5, 2, 6, 2, 2, 2, 2, 4]
+CF MISS MAX-WINDOW RANKS           : [8, 12, 5, 10, 5, 3, 5, 3, 10]
+CF MISS SUM-WINDOW RANKS           : [5, 11, 4, 9, 8, 4, 2, 4, 7]
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+WEIGHT SENTINEL                    : PASS
+TRAINABLE TENSORS                  : 0
+QUERY-TIME CANDIDATE-B FORWARDS    : 0
+TEST528 RESULT SHA                 : 9235ed38c944f41a9ede0426d3aabaa12b5b20646f30e2be921e618f9471d3c2
+TEST529 RESULT SHA                 : 27ba703872f0d8a6ed870a6ba041d0cd0703d2eca467deac97186a90497795a0
+TEST530 RESULT SHA                 : 289247c88dfd4358cbe5ffb8499891546b27acc6912caf525a155ae81338db7b
+TEST531 RESULT SHA                 : 20257d7d613a49e55b03603946f07ec493009924f40ac26ab74cb817e1466528
+TEST532 RESULT SHA                 : 9e37a473a322a19f7b3862a25162835ab6396998dc4fc416bc90bc9b718df188
+TEST533 RESULT SHA                 : 5239fb585b87a22f5da778c61a1011379b216a25bf7d05dc5d01952cbb22a5c6
+TEST534 PRE-RESULT LOCK            : feb1f405711ac75c00b0c98b86f3ed3818c6eda2d878380409a2e08f47d88baa
+TEST534 RESULT SHA                 : b25128d17176790b2a8694c8ec9e7db5eaad469ff02a87a46876b2ffd45a9bb1
+TOTAL TEST TIME                    : 270.80s
+VERDICT                            : TEST534_POINTER_MISS_XRAY_COMPLETE
+NEXT                               : preserve TEST534 unchanged; choose next mechanism only from this frozen diagnostic evidence
+
+
+================================================================================================================================================================================
