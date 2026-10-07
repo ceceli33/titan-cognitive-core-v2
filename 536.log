@@ -1,0 +1,1557 @@
+ ================================================================================================================================================================================
+TEST536 — AKBASCORE MAM · VARAN 1 · MULTI-PEAK DISCRIMINATION X-RAY
+TEST535 FOLLOW-UP · FROZEN TOP-8 POINTER CANDIDATES · FEATURE ANATOMY ONLY · NO NEW RETRIEVAL LAW
+================================================================================================================================================================================
+
+[1/12] Loading frozen Mistral...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 601/601 [00:00<00:00, 63.5kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 16.2MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 71.5MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 57.1kB/s  tokenizer.model: downloading bytes:   448kB, 43.5kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 49.3kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 2.90MB/s]Download complete:  12.4GB,  178MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  587MB/s  Fetching 3 files: 100% 3/3 [00:41<00:00, 41.32s/it]Loading weights: 100% 291/291 [00:03<00:00, 81.13it/s]generation_config.json: 100% 116/116 [00:00<00:00, 15.9kB/s]      mistralai/Mistral-7B-Instruct-v0.3 | NVIDIA A100-SXM4-40GB
+      32L H=4096 QH=32 KVH=8 HD=128 ADDRESS=1024
+      POINTER : L28H00 · FROZEN
+      ADDRESS : L00-V UNCENTERED · FROZEN
+      MATCH   : CONCATCOS · LOCKED FROM TEST530
+      PANEL   : exact TEST531/532/533/534/535 deterministic construction
+      POINTER CANDIDATES : TOP-8 · FROZEN
+      MODE    : X-RAY ONLY · NO NEW RETRIEVAL / ORIGIN LAW
+      MODEL   : frozen · BF16 · SDPA · trainable=0
+      Native model-token atom pool: 220
+
+[2/12] Reconstructing exact sealed panel...
+      Required identity pools: {2: 1774, 3: 1769, 4: 1769}
+      L=2: 342
+      L=3: 341
+      L=4: 341
+      Remaining reserve: {2: 64, 3: 64, 4: 64}
+      Sealed panel seed: 531531
+      TEST536 LOCK: d8d869fcb09f6d16d08b50727d5cfe8500c7f7603e1d0c70e52f1ea70830db25
+
+[3/12] OFFLINE FORGE — exact sealed A/B construction...
+      forged   64/1024
+      forged  128/1024
+      forged  192/1024
+      forged  256/1024
+      forged  320/1024
+      forged  384/1024
+      forged  448/1024
+      forged  512/1024
+      forged  576/1024
+      forged  640/1024
+      forged  704/1024
+      forged  768/1024
+      forged  832/1024
+      forged  896/1024
+      forged  960/1024
+      forged 1024/1024
+      A memories: 1024
+      B memories: 1024
+      Query-time candidate-B forwards: 0
+
+[4/12] Building locked CONCATCOS banks...
+      L=2 windows: 13680 | shape=(13680, 2, 1024)
+      L=3 windows: 14322 | shape=(14322, 3, 1024)
+      L=4 windows: 15004 | shape=(15004, 4, 1024)
+      Match law unchanged: CONCATCOS
+      Gold B position used: NO
+
+[5/12] PRIMARY — reproduce TEST533/535 arms + collect frozen Top-8 X-ray...
+      [0001/1024] L=2 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1] peakOrigin= 20 top8Origin= 20
+      [0002/1024] L=3 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 3, 6] peakOrigin= 23 top8Origin= 23
+      [0003/1024] L=4 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 2, 5] peakOrigin=  9 top8Origin=  9
+      [0004/1024] L=2 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1] peakOrigin= 32 top8Origin= 32
+      [0005/1024] L=3 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 2] peakOrigin=  8 top8Origin=  8
+      [0006/1024] L=4 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 6, 7] peakOrigin= 35 top8Origin= 35
+      [0007/1024] L=2 PEAK=   1 TOP8= 288 case=REGRESSION goldPeakRanks=[1, 6] peakOrigin=  8 top8Origin= 33
+      [0008/1024] L=3 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1] peakOrigin= 21 top8Origin= 21
+      [0013/1024] L=2 PEAK=   1 TOP8= 285 case=REGRESSION goldPeakRanks=[1, 2] peakOrigin= 20 top8Origin= 34
+      [0022/1024] L=2 PEAK=   1 TOP8= 268 case=REGRESSION goldPeakRanks=[1] peakOrigin= 31 top8Origin= 34
+      [0025/1024] L=2 PEAK=   1 TOP8= 278 case=REGRESSION goldPeakRanks=[1, 7] peakOrigin= 30 top8Origin= 33
+      [0064/1024] L=2 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 5] peakOrigin=  9 top8Origin=  9
+      [0080/1024] L=3 PEAK=   1 TOP8= 331 case=REGRESSION goldPeakRanks=[1, 6] peakOrigin=  9 top8Origin= 36
+      [0088/1024] L=2 PEAK=   1 TOP8= 243 case=REGRESSION goldPeakRanks=[1] peakOrigin= 19 top8Origin= 33
+      [0094/1024] L=2 PEAK=   1 TOP8= 240 case=REGRESSION goldPeakRanks=[1, 4] peakOrigin= 30 top8Origin= 33
+      [0128/1024] L=3 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1] peakOrigin= 21 top8Origin= 21
+      [0136/1024] L=2 PEAK=   1 TOP8= 265 case=REGRESSION goldPeakRanks=[1] peakOrigin=  8 top8Origin= 33
+      [0192/1024] L=4 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1] peakOrigin= 21 top8Origin= 21
+      [0223/1024] L=2 PEAK=   1 TOP8=  82 case=REGRESSION goldPeakRanks=[1] peakOrigin= 20 top8Origin= 34
+      [0247/1024] L=2 PEAK=   1 TOP8=  69 case=REGRESSION goldPeakRanks=[1] peakOrigin= 20 top8Origin= 34
+      [0250/1024] L=2 PEAK=   1 TOP8=  67 case=REGRESSION goldPeakRanks=[1, 7] peakOrigin= 30 top8Origin= 33
+      [0256/1024] L=2 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1] peakOrigin= 31 top8Origin= 31
+      [0316/1024] L=2 PEAK=   1 TOP8=  87 case=REGRESSION goldPeakRanks=[1] peakOrigin= 20 top8Origin= 34
+      [0320/1024] L=3 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 2, 4] peakOrigin=  9 top8Origin=  9
+      [0384/1024] L=4 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 4] peakOrigin= 35 top8Origin= 35
+      [0385/1024] L=2 PEAK=   1 TOP8=  48 case=REGRESSION goldPeakRanks=[1, 4] peakOrigin= 31 top8Origin= 34
+      [0418/1024] L=2 PEAK=   1 TOP8=  30 case=REGRESSION goldPeakRanks=[1] peakOrigin=  9 top8Origin= 33
+      [0448/1024] L=2 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 8] peakOrigin=  9 top8Origin=  9
+      [0475/1024] L=2 PEAK=   1 TOP8= 218 case=REGRESSION goldPeakRanks=[1] peakOrigin=  9 top8Origin= 34
+      [0508/1024] L=2 PEAK=   1 TOP8= 200 case=REGRESSION goldPeakRanks=[1] peakOrigin= 32 top8Origin= 35
+      [0511/1024] L=2 PEAK=   1 TOP8= 198 case=REGRESSION goldPeakRanks=[1, 8] peakOrigin= 30 top8Origin= 33
+      [0512/1024] L=3 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 3] peakOrigin= 33 top8Origin= 33
+      [0524/1024] L=3 PEAK=   1 TOP8= 135 case=REGRESSION goldPeakRanks=[1, 5] peakOrigin=  9 top8Origin= 37
+      [0533/1024] L=3 PEAK=   1 TOP8= 130 case=REGRESSION goldPeakRanks=[1, 5] peakOrigin= 21 top8Origin= 36
+      [0538/1024] L=2 PEAK=   1 TOP8= 128 case=REGRESSION goldPeakRanks=[1] peakOrigin= 20 top8Origin= 33
+      [0568/1024] L=2 PEAK= 172 TOP8=   1 case=RECOVERED  goldPeakRanks=[2] peakOrigin= 31 top8Origin= 20
+      [0576/1024] L=4 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 2, 4] peakOrigin=  9 top8Origin=  9
+      [0589/1024] L=2 PEAK=   1 TOP8= 154 case=REGRESSION goldPeakRanks=[1] peakOrigin= 18 top8Origin= 32
+      [0598/1024] L=2 PEAK=   1 TOP8= 149 case=REGRESSION goldPeakRanks=[1, 7] peakOrigin=  9 top8Origin= 34
+      [0604/1024] L=2 PEAK=   1 TOP8= 146 case=REGRESSION goldPeakRanks=[1, 5] peakOrigin= 30 top8Origin= 33
+      [0640/1024] L=2 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 3] peakOrigin=  9 top8Origin=  9
+      [0643/1024] L=2 PEAK=   1 TOP8= 162 case=REGRESSION goldPeakRanks=[1, 3] peakOrigin= 29 top8Origin= 32
+      [0683/1024] L=3 PEAK=   1 TOP8= 196 case=REGRESSION goldPeakRanks=[1] peakOrigin= 10 top8Origin= 37
+      [0698/1024] L=3 PEAK=   1 TOP8= 194 case=REGRESSION goldPeakRanks=[1] peakOrigin= 32 top8Origin= 35
+      [0699/1024] L=4 PEAK= 267 TOP8=   1 case=RECOVERED  goldPeakRanks=[2, 3, 5] peakOrigin= 34 top8Origin=  9
+      [0704/1024] L=3 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1] peakOrigin= 21 top8Origin= 21
+      [0709/1024] L=2 PEAK=   1 TOP8= 219 case=REGRESSION goldPeakRanks=[1, 8] peakOrigin= 31 top8Origin= 34
+      [0724/1024] L=2 PEAK=   1 TOP8= 176 case=REGRESSION goldPeakRanks=[1, 3] peakOrigin= 31 top8Origin= 34
+      [0727/1024] L=2 PEAK=   1 TOP8= 179 case=REGRESSION goldPeakRanks=[1, 4] peakOrigin= 10 top8Origin= 35
+      [0742/1024] L=2 PEAK=   1 TOP8= 191 case=REGRESSION goldPeakRanks=[1, 3] peakOrigin=  9 top8Origin= 33
+      [0748/1024] L=2 PEAK=   1 TOP8=  31 case=REGRESSION goldPeakRanks=[1, 4] peakOrigin=  8 top8Origin= 32
+      [0757/1024] L=2 PEAK=   1 TOP8=  39 case=REGRESSION goldPeakRanks=[1, 7] peakOrigin=  8 top8Origin= 33
+      [0763/1024] L=2 PEAK=   1 TOP8=  44 case=REGRESSION goldPeakRanks=[1, 3] peakOrigin= 20 top8Origin= 34
+      [0768/1024] L=4 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 4, 6] peakOrigin= 35 top8Origin= 35
+      [0781/1024] L=2 PEAK=   1 TOP8=   4 case=REGRESSION goldPeakRanks=[1, 6] peakOrigin=  9 top8Origin= 34
+      [0793/1024] L=2 PEAK=   1 TOP8=  14 case=REGRESSION goldPeakRanks=[1, 4] peakOrigin= 10 top8Origin= 35
+      [0808/1024] L=2 PEAK=  52 TOP8=   1 case=RECOVERED  goldPeakRanks=[2] peakOrigin= 31 top8Origin= 20
+      [0814/1024] L=2 PEAK=   1 TOP8=  86 case=REGRESSION goldPeakRanks=[1, 7] peakOrigin=  9 top8Origin= 34
+      [0823/1024] L=2 PEAK=   1 TOP8=  93 case=REGRESSION goldPeakRanks=[1, 6] peakOrigin= 20 top8Origin= 34
+      [0832/1024] L=2 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1] peakOrigin= 31 top8Origin= 31
+      [0850/1024] L=2 PEAK=   1 TOP8=  60 case=REGRESSION goldPeakRanks=[1, 5] peakOrigin= 20 top8Origin= 33
+      [0866/1024] L=3 PEAK=   1 TOP8=  73 case=REGRESSION goldPeakRanks=[1, 4] peakOrigin= 33 top8Origin= 36
+      [0896/1024] L=3 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 2, 4] peakOrigin= 22 top8Origin= 22
+      [0925/1024] L=2 PEAK=   1 TOP8= 245 case=REGRESSION goldPeakRanks=[1, 7] peakOrigin= 19 top8Origin= 33
+      [0932/1024] L=3 PEAK=   1 TOP8= 262 case=REGRESSION goldPeakRanks=[1, 4] peakOrigin= 33 top8Origin= 36
+      [0941/1024] L=3 PEAK= 338 TOP8=   1 case=RECOVERED  goldPeakRanks=[2] peakOrigin=  1 top8Origin=  9
+      [0949/1024] L=2 PEAK=  76 TOP8=   1 case=RECOVERED  goldPeakRanks=[2] peakOrigin=  1 top8Origin=  8
+      [0960/1024] L=4 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1] peakOrigin=  9 top8Origin=  9
+      [0961/1024] L=2 PEAK=   1 TOP8= 239 case=REGRESSION goldPeakRanks=[1] peakOrigin= 19 top8Origin= 33
+      [0987/1024] L=4 PEAK=  34 TOP8=   1 case=RECOVERED  goldPeakRanks=[2] peakOrigin= 22 top8Origin= 35
+      [0991/1024] L=2 PEAK=   1 TOP8= 311 case=REGRESSION goldPeakRanks=[1, 5] peakOrigin= 20 top8Origin= 34
+      [1004/1024] L=3 PEAK=   1 TOP8= 250 case=REGRESSION goldPeakRanks=[1, 3] peakOrigin= 34 top8Origin= 37
+      [1017/1024] L=4 PEAK=  13 TOP8=   1 case=RECOVERED  goldPeakRanks=[2, 4, 6] peakOrigin=  1 top8Origin=  8
+      [1024/1024] L=2 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 7] peakOrigin= 19 top8Origin= 19
+      PEAK_CONTAIN reproduction : 0.9932/0.9932/0.9941/0.993312
+      TOP8_JOINT reproduction   : 0.9570/0.9580/0.9590/0.957721
+      Case counts               : {'RECOVERED': 7, 'REGRESSION': 44, 'BOTH_FAIL': 0, 'STABLE': 973}
+
+[6/12] PRIMARY MULTI-PEAK FEATURE ANATOMY...
+
+      [RECOVERED] items=7
+      ALL TOP8 CANDIDATES: n=56
+        pointer rank mean/median     : 4.500/4.500
+        pointer weight mean/median   : 0.119223/0.036289
+        top1 ratio mean/median       : 0.258674/0.087548
+        local±1 mass mean/median     : 0.179105/0.125679
+        local±2 mass mean/median     : 0.239626/0.188535
+        left weight mean             : 0.023694
+        right weight mean            : 0.036188
+        best CONCATCOS mean/median   : 0.696311/0.653462
+        recovers gold owner          : 15/56
+      GOLD-SPAN PEAKS: n=11
+        pointer rank mean/median     : 2.909/2.000
+        pointer weight mean/median   : 0.172171/0.191380
+        top1 ratio mean/median       : 0.376880/0.331622
+        local±1 mass mean/median     : 0.243107/0.222234
+        local±2 mass mean/median     : 0.314605/0.297117
+        left weight mean             : 0.055523
+        right weight mean            : 0.015413
+        best CONCATCOS mean/median   : 0.999995/0.999999
+        recovers gold owner          : 11/11
+      NON-GOLD PEAKS: n=45
+        pointer rank mean/median     : 4.889/5.000
+        pointer weight mean/median   : 0.106280/0.025810
+        top1 ratio mean/median       : 0.229779/0.057297
+        local±1 mass mean/median     : 0.163460/0.071828
+        local±2 mass mean/median     : 0.221297/0.153324
+        left weight mean             : 0.015914
+        right weight mean            : 0.041266
+        best CONCATCOS mean/median   : 0.622077/0.617772
+        recovers gold owner          : 4/45
+      PEAKS RECOVERING GOLD OWNER: n=15
+        pointer rank mean/median     : 3.533/3.000
+        pointer weight mean/median   : 0.134782/0.094598
+        top1 ratio mean/median       : 0.295579/0.156739
+        local±1 mass mean/median     : 0.207088/0.217798
+        local±2 mass mean/median     : 0.263632/0.276127
+        left weight mean             : 0.049144
+        right weight mean            : 0.023162
+        best CONCATCOS mean/median   : 0.903887/0.999979
+        recovers gold owner          : 15/15
+
+      [REGRESSION] items=44
+      ALL TOP8 CANDIDATES: n=352
+        pointer rank mean/median     : 4.500/4.500
+        pointer weight mean/median   : 0.123004/0.007019
+        top1 ratio mean/median       : 0.142723/0.008425
+        local±1 mass mean/median     : 0.213848/0.020173
+        local±2 mass mean/median     : 0.348136/0.060619
+        left weight mean             : 0.065819
+        right weight mean            : 0.025025
+        best CONCATCOS mean/median   : 0.751895/0.734697
+        recovers gold owner          : 79/352
+      GOLD-SPAN PEAKS: n=74
+        pointer rank mean/median     : 2.649/1.000
+        pointer weight mean/median   : 0.524362/0.802153
+        top1 ratio mean/median       : 0.598250/1.000000
+        local±1 mass mean/median     : 0.822858/0.907841
+        local±2 mass mean/median     : 0.910789/0.935358
+        left weight mean             : 0.290151
+        right weight mean            : 0.008345
+        best CONCATCOS mean/median   : 0.999965/0.999967
+        recovers gold owner          : 74/74
+      NON-GOLD PEAKS: n=278
+        pointer rank mean/median     : 4.993/5.000
+        pointer weight mean/median   : 0.016168/0.005811
+        top1 ratio mean/median       : 0.021468/0.006381
+        local±1 mass mean/median     : 0.051737/0.013124
+        local±2 mass mean/median     : 0.198365/0.022924
+        left weight mean             : 0.006104
+        right weight mean            : 0.029465
+        best CONCATCOS mean/median   : 0.685862/0.641527
+        recovers gold owner          : 5/278
+      PEAKS RECOVERING GOLD OWNER: n=79
+        pointer rank mean/median     : 2.797/1.000
+        pointer weight mean/median   : 0.491959/0.752918
+        top1 ratio mean/median       : 0.561511/1.000000
+        local±1 mass mean/median     : 0.796320/0.907073
+        local±2 mass mean/median     : 0.878723/0.933579
+        left weight mean             : 0.271922
+        right weight mean            : 0.032439
+        best CONCATCOS mean/median   : 0.980437/0.999966
+        recovers gold owner          : 79/79
+
+      [BOTH_FAIL] items=0
+      ALL TOP8 CANDIDATES: n=0
+      GOLD-SPAN PEAKS: n=0
+      NON-GOLD PEAKS: n=0
+      PEAKS RECOVERING GOLD OWNER: n=0
+
+      [STABLE] items=973
+      ALL TOP8 CANDIDATES: n=7784
+        pointer rank mean/median     : 4.500/4.500
+        pointer weight mean/median   : 0.122900/0.007587
+        top1 ratio mean/median       : 0.146112/0.008803
+        local±1 mass mean/median     : 0.218395/0.019047
+        local±2 mass mean/median     : 0.309568/0.036102
+        left weight mean             : 0.061691
+        right weight mean            : 0.033803
+        best CONCATCOS mean/median   : 0.741117/0.720643
+        recovers gold owner          : 2591/7784
+      GOLD-SPAN PEAKS: n=1846
+        pointer rank mean/median     : 2.836/1.000
+        pointer weight mean/median   : 0.468483/0.600568
+        top1 ratio mean/median       : 0.547593/1.000000
+        local±1 mass mean/median     : 0.724054/0.893078
+        local±2 mass mean/median     : 0.853171/0.927504
+        left weight mean             : 0.236947
+        right weight mean            : 0.018624
+        best CONCATCOS mean/median   : 1.000003/1.000002
+        recovers gold owner          : 1846/1846
+      NON-GOLD PEAKS: n=5938
+        pointer rank mean/median     : 5.017/5.000
+        pointer weight mean/median   : 0.015466/0.005742
+        top1 ratio mean/median       : 0.021300/0.006609
+        local±1 mass mean/median     : 0.061196/0.011903
+        local±2 mass mean/median     : 0.140573/0.018214
+        left weight mean             : 0.007208
+        right weight mean            : 0.038522
+        best CONCATCOS mean/median   : 0.660634/0.630552
+        recovers gold owner          : 745/5938
+      PEAKS RECOVERING GOLD OWNER: n=2591
+        pointer rank mean/median     : 3.471/3.000
+        pointer weight mean/median   : 0.338369/0.025452
+        top1 ratio mean/median       : 0.397587/0.032968
+        local±1 mass mean/median     : 0.578306/0.833810
+        local±2 mass mean/median     : 0.702844/0.900074
+        left weight mean             : 0.172458
+        right weight mean            : 0.067478
+        best CONCATCOS mean/median   : 0.908913/0.999994
+        recovers gold owner          : 2591/2591
+
+      PRIMARY item-level discrimination details...
+      ITEM 0007 L=2 case=REGRESSION PEAKrank=1 TOP8rank=288
+        k=1 pos=  8 GR w=0.976816 ratio=1.0000 l1=0.978983 l2=0.987978 L/R=0.000418/0.001749 start=  8 owner=0007 goldRank=   1 score=0.999966
+        k=2 pos= 10 -- w=0.008796 ratio=0.0090 l1=0.010983 l2=0.987840 L/R=0.001749/0.000437 start=  9 owner=0346 goldRank= 288 score=0.638081
+        k=3 pos= 33 -- w=0.003840 ratio=0.0039 l1=0.004454 l2=0.004456 L/R=0.000329/0.000285 start= 33 owner=0346 goldRank= 288 score=0.999973
+        k=4 pos=  1 -- w=0.002553 ratio=0.0026 l1=0.002596 l2=0.004371 L/R=0.000000/0.000043 start=  1 owner=0157 goldRank=  27 score=0.321838
+        k=5 pos=  3 -- w=0.001775 ratio=0.0018 l1=0.002045 l2=0.004675 L/R=0.000043/0.000227 start=  2 owner=0862 goldRank= 231 score=0.401737
+        k=6 pos=  9 GR w=0.001749 ratio=0.0018 l1=0.987361 l2=0.988217 L/R=0.976816/0.008796 start=  8 owner=0007 goldRank=   1 score=0.999966
+        k=7 pos= 21 -- w=0.001073 ratio=0.0011 l1=0.001407 l2=0.001613 L/R=0.000279/0.000055 start= 20 owner=0346 goldRank= 288 score=0.614106
+        k=8 pos= 11 -- w=0.000437 ratio=0.0004 l1=0.009275 l2=0.011051 L/R=0.008796/0.000041 start= 10 owner=0346 goldRank= 288 score=0.602141
+      ITEM 0013 L=2 case=REGRESSION PEAKrank=1 TOP8rank=285
+        k=1 pos= 20 GR w=0.956797 ratio=1.0000 l1=0.976682 l2=0.978148 L/R=0.003363/0.016522 start= 20 owner=0013 goldRank=   1 score=0.999971
+        k=2 pos= 21 GR w=0.016522 ratio=0.0173 l1=0.974665 l2=0.978149 L/R=0.956797/0.001346 start= 20 owner=0013 goldRank=   1 score=0.999971
+        k=3 pos= 11 -- w=0.011992 ratio=0.0125 l1=0.013057 l2=0.013586 L/R=0.000785/0.000281 start= 11 owner=0346 goldRank= 285 score=0.602141
+        k=4 pos=  8 -- w=0.003440 ratio=0.0036 l1=0.003883 l2=0.004833 L/R=0.000029/0.000414 start=  8 owner=0448 goldRank= 188 score=0.676138
+        k=5 pos= 19 -- w=0.003363 ratio=0.0035 l1=0.960280 l2=0.976871 L/R=0.000120/0.956797 start= 19 owner=0613 goldRank=   6 score=0.686237
+        k=6 pos= 34 -- w=0.002182 ratio=0.0023 l1=0.002896 l2=0.003022 L/R=0.000650/0.000064 start= 34 owner=0346 goldRank= 285 score=0.999973
+        k=7 pos= 22 -- w=0.001346 ratio=0.0014 l1=0.017989 l2=0.974990 L/R=0.016522/0.000121 start= 22 owner=0346 goldRank= 285 score=0.602141
+        k=8 pos= 10 -- w=0.000785 ratio=0.0008 l1=0.013190 l2=0.016911 L/R=0.000414/0.011992 start=  9 owner=0880 goldRank= 311 score=0.743985
+      ITEM 0022 L=2 case=REGRESSION PEAKrank=1 TOP8rank=268
+        k=1 pos= 31 GR w=0.883268 ratio=1.0000 l1=0.884351 l2=0.905891 L/R=0.000759/0.000324 start= 31 owner=0022 goldRank=   1 score=0.999961
+        k=2 pos= 11 -- w=0.054797 ratio=0.0620 l1=0.059865 l2=0.060659 L/R=0.000028/0.005040 start= 10 owner=0346 goldRank= 268 score=0.646243
+        k=3 pos= 33 -- w=0.021403 ratio=0.0242 l1=0.031257 l2=0.914898 L/R=0.000324/0.009529 start= 33 owner=0346 goldRank= 268 score=0.999969
+        k=4 pos= 34 -- w=0.009529 ratio=0.0108 l1=0.031306 l2=0.031630 L/R=0.021403/0.000374 start= 34 owner=0346 goldRank= 268 score=0.999973
+        k=5 pos= 23 -- w=0.009318 ratio=0.0105 l1=0.014815 l2=0.015319 L/R=0.000464/0.005032 start= 22 owner=0346 goldRank= 268 score=0.602141
+        k=6 pos=  1 -- w=0.005283 ratio=0.0060 l1=0.005671 l2=0.006358 L/R=0.000000/0.000388 start=  1 owner=0157 goldRank= 297 score=0.321838
+        k=7 pos= 12 -- w=0.005040 ratio=0.0057 l1=0.060314 l2=0.060579 L/R=0.054797/0.000477 start= 11 owner=0346 goldRank= 268 score=0.602141
+        k=8 pos= 24 -- w=0.005032 ratio=0.0057 l1=0.014725 l2=0.015565 L/R=0.009318/0.000375 start= 24 owner=0346 goldRank= 268 score=0.429661
+      ITEM 0025 L=2 case=REGRESSION PEAKrank=1 TOP8rank=278
+        k=1 pos= 30 GR w=0.712742 ratio=1.0000 l1=0.722654 l2=0.730244 L/R=0.000349/0.009564 start= 30 owner=0025 goldRank=   1 score=0.999969
+        k=2 pos= 10 -- w=0.126435 ratio=0.1774 l1=0.131956 l2=0.171950 L/R=0.001197/0.004324 start=  9 owner=0346 goldRank= 278 score=0.622296
+        k=3 pos=  8 -- w=0.039270 ratio=0.0551 l1=0.040612 l2=0.167437 L/R=0.000144/0.001197 start=  8 owner=0784 goldRank=  94 score=0.756403
+        k=4 pos= 33 -- w=0.026378 ratio=0.0370 l1=0.034527 l2=0.044090 L/R=0.007497/0.000652 start= 33 owner=0346 goldRank= 278 score=0.999973
+        k=5 pos= 19 -- w=0.024220 ratio=0.0340 l1=0.025688 l2=0.028564 L/R=0.000673/0.000795 start= 19 owner=0334 goldRank= 299 score=0.756636
+        k=6 pos= 24 -- w=0.019423 ratio=0.0273 l1=0.028931 l2=0.031627 L/R=0.003598/0.005910 start= 24 owner=0346 goldRank= 278 score=0.392069
+        k=7 pos= 31 GR w=0.009564 ratio=0.0134 l1=0.729803 l2=0.756530 L/R=0.712742/0.007497 start= 30 owner=0025 goldRank=   1 score=0.999969
+        k=8 pos= 32 -- w=0.007497 ratio=0.0105 l1=0.043439 l2=0.756832 L/R=0.009564/0.026378 start= 32 owner=0346 goldRank= 278 score=0.999969
+      ITEM 0080 L=3 case=REGRESSION PEAKrank=1 TOP8rank=331
+        k=1 pos=  9 GR w=0.812973 ratio=1.0000 l1=0.820063 l2=0.853847 L/R=0.003552/0.003537 start=  9 owner=0080 goldRank=   1 score=0.999963
+        k=2 pos= 12 -- w=0.058585 ratio=0.0721 l1=0.072858 l2=0.077580 L/R=0.010680/0.003592 start= 10 owner=0845 goldRank=   2 score=0.629959
+        k=3 pos=  7 -- w=0.023104 ratio=0.0284 l1=0.027847 l2=0.842579 L/R=0.001190/0.003552 start=  7 owner=0053 goldRank=   7 score=0.564703
+        k=4 pos=  3 -- w=0.014547 ratio=0.0179 l1=0.018751 l2=0.027120 L/R=0.001158/0.003046 start=  1 owner=0176 goldRank= 301 score=0.342596
+        k=5 pos= 37 -- w=0.013679 ratio=0.0168 l1=0.017652 l2=0.017701 L/R=0.002127/0.001847 start= 36 owner=0344 goldRank= 331 score=0.999970
+        k=6 pos= 11 GR w=0.010680 ratio=0.0131 l1=0.072803 l2=0.889368 L/R=0.003537/0.058585 start=  9 owner=0080 goldRank=   1 score=0.999963
+        k=7 pos= 19 -- w=0.006956 ratio=0.0086 l1=0.011330 l2=0.017702 L/R=0.000045/0.004330 start= 19 owner=1010 goldRank= 259 score=0.578816
+        k=8 pos=  1 -- w=0.006609 ratio=0.0081 l1=0.007767 l2=0.022314 L/R=0.000000/0.001158 start=  1 owner=0176 goldRank= 278 score=0.342596
+      ITEM 0088 L=2 case=REGRESSION PEAKrank=1 TOP8rank=243
+        k=1 pos= 19 GR w=0.752918 ratio=1.0000 l1=0.757230 l2=0.782550 L/R=0.002355/0.001957 start= 19 owner=0088 goldRank=   1 score=0.999968
+        k=2 pos= 11 -- w=0.142143 ratio=0.1888 l1=0.153439 l2=0.169403 L/R=0.003710/0.007585 start= 10 owner=0346 goldRank= 243 score=0.641729
+        k=3 pos= 21 -- w=0.017280 ratio=0.0230 l1=0.026189 l2=0.780196 L/R=0.001957/0.006953 start= 20 owner=0346 goldRank= 243 score=0.626246
+        k=4 pos=  9 -- w=0.015328 ratio=0.0204 l1=0.020239 l2=0.165540 L/R=0.001201/0.003710 start=  9 owner=0856 goldRank= 269 score=0.790500
+        k=5 pos= 33 -- w=0.012672 ratio=0.0168 l1=0.019083 l2=0.019246 L/R=0.005363/0.001047 start= 33 owner=0346 goldRank= 243 score=0.999973
+        k=6 pos= 17 -- w=0.008040 ratio=0.0107 l1=0.010496 l2=0.763596 L/R=0.000100/0.002355 start= 17 owner=0559 goldRank= 258 score=0.400258
+        k=7 pos= 12 -- w=0.007585 ratio=0.0101 l1=0.150365 l2=0.154219 L/R=0.142143/0.000636 start= 11 owner=0346 goldRank= 243 score=0.602141
+        k=8 pos= 22 -- w=0.006953 ratio=0.0092 l1=0.025321 l2=0.027729 L/R=0.017280/0.001089 start= 21 owner=0346 goldRank= 243 score=0.602141
+      ITEM 0094 L=2 case=REGRESSION PEAKrank=1 TOP8rank=240
+        k=1 pos= 30 GR w=0.981273 ratio=1.0000 l1=0.983681 l2=0.984382 L/R=0.000241/0.002168 start= 30 owner=0094 goldRank=   1 score=0.999972
+        k=2 pos= 10 -- w=0.009497 ratio=0.0097 l1=0.009737 l2=0.010078 L/R=0.000064/0.000176 start=  9 owner=0346 goldRank= 240 score=0.646243
+        k=3 pos= 33 -- w=0.003018 ratio=0.0031 l1=0.003681 l2=0.005849 L/R=0.000652/0.000012 start= 33 owner=0346 goldRank= 240 score=0.999973
+        k=4 pos= 31 GR w=0.002168 ratio=0.0022 l1=0.984093 l2=0.987351 L/R=0.981273/0.000652 start= 30 owner=0094 goldRank=   1 score=0.999972
+        k=5 pos= 19 -- w=0.001684 ratio=0.0017 l1=0.001757 l2=0.002072 L/R=0.000039/0.000035 start= 19 owner=0298 goldRank=  12 score=0.721420
+        k=6 pos= 32 -- w=0.000652 ratio=0.0007 l1=0.005838 l2=0.987122 L/R=0.002168/0.003018 start= 32 owner=0346 goldRank= 240 score=0.999969
+        k=7 pos=  8 -- w=0.000333 ratio=0.0003 l1=0.000473 l2=0.010006 L/R=0.000076/0.000064 start=  8 owner=0115 goldRank=  13 score=0.767836
+        k=8 pos= 21 -- w=0.000259 ratio=0.0003 l1=0.000303 l2=0.002034 L/R=0.000035/0.000009 start= 20 owner=0346 goldRank= 240 score=0.624497
+      ITEM 0136 L=2 case=REGRESSION PEAKrank=1 TOP8rank=265
+        k=1 pos=  8 GR w=0.859352 ratio=1.0000 l1=0.862289 l2=0.933579 L/R=0.001311/0.001626 start=  8 owner=0136 goldRank=   1 score=0.999968
+        k=2 pos= 10 -- w=0.068903 ratio=0.0802 l1=0.075473 l2=0.934971 L/R=0.001626/0.004945 start=  9 owner=0346 goldRank= 265 score=0.657874
+        k=3 pos= 33 -- w=0.018359 ratio=0.0214 l1=0.020963 l2=0.023493 L/R=0.001225/0.001379 start= 33 owner=0346 goldRank= 265 score=0.999973
+        k=4 pos=  1 -- w=0.015397 ratio=0.0179 l1=0.015673 l2=0.015816 L/R=0.000000/0.000276 start=  1 owner=0157 goldRank=  11 score=0.321838
+        k=5 pos= 11 -- w=0.004945 ratio=0.0058 l1=0.073993 l2=0.075711 L/R=0.068903/0.000145 start= 10 owner=0346 goldRank= 265 score=0.602141
+        k=6 pos= 21 -- w=0.004749 ratio=0.0055 l1=0.005923 l2=0.011327 L/R=0.000550/0.000624 start= 20 owner=0346 goldRank= 265 score=0.606748
+        k=7 pos= 19 -- w=0.004722 ratio=0.0055 l1=0.006193 l2=0.014858 L/R=0.000921/0.000550 start= 19 owner=0667 goldRank=  99 score=0.766067
+        k=8 pos= 17 -- w=0.003916 ratio=0.0046 l1=0.004859 l2=0.009605 L/R=0.000023/0.000921 start= 17 owner=0559 goldRank= 111 score=0.400258
+      ITEM 0223 L=2 case=REGRESSION PEAKrank=1 TOP8rank=82
+        k=1 pos= 20 GR w=0.821909 ratio=1.0000 l1=0.829976 l2=0.834638 L/R=0.002233/0.005835 start= 20 owner=0223 goldRank=   1 score=0.999947
+        k=2 pos= 11 -- w=0.088652 ratio=0.1079 l1=0.102682 l2=0.115984 L/R=0.003071/0.010960 start= 11 owner=0346 goldRank=  82 score=0.602141
+        k=3 pos= 34 -- w=0.013698 ratio=0.0167 l1=0.016079 l2=0.016148 L/R=0.001430/0.000951 start= 34 owner=0346 goldRank=  82 score=0.999973
+        k=4 pos=  9 -- w=0.012365 ratio=0.0150 l1=0.016296 l2=0.106172 L/R=0.000861/0.003071 start=  9 owner=0943 goldRank=  73 score=0.768020
+        k=5 pos= 12 -- w=0.010960 ratio=0.0133 l1=0.100549 l2=0.104263 L/R=0.088652/0.000937 start= 11 owner=0346 goldRank=  82 score=0.602141
+        k=6 pos= 25 -- w=0.006996 ratio=0.0085 l1=0.013482 l2=0.019371 L/R=0.005886/0.000599 start= 24 owner=0904 goldRank=  83 score=0.430787
+        k=7 pos= 24 -- w=0.005886 ratio=0.0072 l1=0.018767 l2=0.022816 L/R=0.005884/0.006996 start= 24 owner=0904 goldRank=  83 score=0.430787
+        k=8 pos= 23 -- w=0.005884 ratio=0.0072 l1=0.015220 l2=0.028051 L/R=0.003449/0.005886 start= 22 owner=0346 goldRank=  82 score=0.602141
+      ITEM 0247 L=2 case=REGRESSION PEAKrank=1 TOP8rank=69
+        k=1 pos= 20 GR w=0.875326 ratio=1.0000 l1=0.878525 l2=0.889202 L/R=0.000630/0.002569 start= 20 owner=0247 goldRank=   1 score=0.999972
+        k=2 pos= 11 -- w=0.064458 ratio=0.0736 l1=0.070259 l2=0.083666 L/R=0.000063/0.005738 start= 10 owner=0346 goldRank=  69 score=0.777610
+        k=3 pos=  9 -- w=0.013066 ratio=0.0149 l1=0.013446 l2=0.078442 L/R=0.000317/0.000063 start=  9 owner=1003 goldRank= 220 score=0.760928
+        k=4 pos= 34 -- w=0.009871 ratio=0.0113 l1=0.014489 l2=0.014717 L/R=0.003907/0.000711 start= 34 owner=0346 goldRank=  69 score=0.999973
+        k=5 pos= 22 -- w=0.009385 ratio=0.0107 l1=0.013784 l2=0.890030 L/R=0.002569/0.001830 start= 22 owner=0346 goldRank=  69 score=0.602141
+        k=6 pos= 12 -- w=0.005738 ratio=0.0066 l1=0.070537 l2=0.071164 L/R=0.064458/0.000341 start= 11 owner=0346 goldRank=  69 score=0.602141
+        k=7 pos=  1 -- w=0.004800 ratio=0.0055 l1=0.005085 l2=0.005182 L/R=0.000000/0.000285 start=  1 owner=0157 goldRank=  68 score=0.321838
+        k=8 pos= 33 -- w=0.003907 ratio=0.0045 l1=0.014006 l2=0.015281 L/R=0.000228/0.009871 start= 33 owner=0346 goldRank=  69 score=0.999969
+      ITEM 0250 L=2 case=REGRESSION PEAKrank=1 TOP8rank=67
+        k=1 pos= 30 GR w=0.997490 ratio=1.0000 l1=0.997611 l2=0.997911 L/R=0.000019/0.000102 start= 30 owner=0250 goldRank=   1 score=0.999971
+        k=2 pos= 11 -- w=0.001320 ratio=0.0013 l1=0.001466 l2=0.001525 L/R=0.000129/0.000018 start= 10 owner=0346 goldRank=  67 score=0.638374
+        k=3 pos= 32 -- w=0.000295 ratio=0.0003 l1=0.000608 l2=0.998107 L/R=0.000102/0.000210 start= 32 owner=0346 goldRank=  67 score=0.999969
+        k=4 pos= 33 -- w=0.000210 ratio=0.0002 l1=0.000514 l2=0.000617 L/R=0.000295/0.000009 start= 33 owner=0346 goldRank=  67 score=0.999973
+        k=5 pos= 10 -- w=0.000129 ratio=0.0001 l1=0.001506 l2=0.001531 L/R=0.000057/0.001320 start=  9 owner=0907 goldRank=  83 score=0.748986
+        k=6 pos= 26 -- w=0.000127 ratio=0.0001 l1=0.000188 l2=0.000195 L/R=0.000050/0.000011 start= 25 owner=0523 goldRank=  68 score=0.411552
+        k=7 pos= 31 GR w=0.000102 ratio=0.0001 l1=0.997888 l2=0.998117 L/R=0.997490/0.000295 start= 30 owner=0250 goldRank=   1 score=0.999971
+        k=8 pos=  9 -- w=0.000057 ratio=0.0001 l1=0.000194 l2=0.001520 L/R=0.000007/0.000129 start=  9 owner=0907 goldRank= 169 score=0.748986
+      ITEM 0316 L=2 case=REGRESSION PEAKrank=1 TOP8rank=87
+        k=1 pos= 20 GR w=0.850443 ratio=1.0000 l1=0.854661 l2=0.867167 L/R=0.003482/0.000736 start= 20 owner=0316 goldRank=   1 score=0.999957
+        k=2 pos= 11 -- w=0.086373 ratio=0.1016 l1=0.088815 l2=0.094209 L/R=0.001320/0.001122 start= 10 owner=0346 goldRank=  87 score=0.718493
+        k=3 pos= 34 -- w=0.017850 ratio=0.0210 l1=0.019909 l2=0.020004 L/R=0.001444/0.000616 start= 34 owner=0346 goldRank=  87 score=0.999973
+        k=4 pos= 18 -- w=0.008931 ratio=0.0105 l1=0.012515 l2=0.863013 L/R=0.000101/0.003482 start= 18 owner=0559 goldRank=  18 score=0.400258
+        k=5 pos=  9 -- w=0.005359 ratio=0.0063 l1=0.007382 l2=0.099094 L/R=0.000703/0.001320 start=  9 owner=0448 goldRank= 127 score=0.740073
+        k=6 pos=  7 -- w=0.005339 ratio=0.0063 l1=0.006073 l2=0.011465 L/R=0.000031/0.000703 start=  7 owner=0559 goldRank=  27 score=0.400258
+        k=7 pos= 29 -- w=0.003914 ratio=0.0046 l1=0.006807 l2=0.007707 L/R=0.000046/0.002847 start= 29 owner=0559 goldRank=  25 score=0.400258
+        k=8 pos= 22 -- w=0.003575 ratio=0.0042 l1=0.004890 l2=0.855465 L/R=0.000736/0.000578 start= 21 owner=0346 goldRank=  87 score=0.657874
+      ITEM 0385 L=2 case=REGRESSION PEAKrank=1 TOP8rank=48
+        k=1 pos= 31 GR w=0.917904 ratio=1.0000 l1=0.927997 l2=0.932366 L/R=0.001784/0.008309 start= 31 owner=0385 goldRank=   1 score=0.999961
+        k=2 pos= 11 -- w=0.041474 ratio=0.0452 l1=0.041740 l2=0.042250 L/R=0.000025/0.000240 start= 10 owner=0346 goldRank=  48 score=0.641326
+        k=3 pos= 34 -- w=0.010980 ratio=0.0120 l1=0.015321 l2=0.023630 L/R=0.003977/0.000364 start= 34 owner=0346 goldRank=  48 score=0.999973
+        k=4 pos= 32 GR w=0.008309 ratio=0.0091 l1=0.930190 l2=0.942954 L/R=0.917904/0.003977 start= 31 owner=0385 goldRank=   1 score=0.999961
+        k=5 pos= 14 -- w=0.006149 ratio=0.0067 l1=0.007228 l2=0.007768 L/R=0.000086/0.000993 start= 14 owner=0346 goldRank=  48 score=0.469601
+        k=6 pos= 33 -- w=0.003977 ratio=0.0043 l1=0.023266 l2=0.941534 L/R=0.008309/0.010980 start= 33 owner=0346 goldRank=  48 score=0.999969
+        k=7 pos= 30 -- w=0.001784 ratio=0.0019 l1=0.920080 l2=0.928400 L/R=0.000392/0.917904 start= 30 owner=0259 goldRank=   6 score=0.710170
+        k=8 pos= 25 -- w=0.001388 ratio=0.0015 l1=0.001892 l2=0.002204 L/R=0.000416/0.000088 start= 24 owner=0862 goldRank=  49 score=0.408797
+      ITEM 0418 L=2 case=REGRESSION PEAKrank=1 TOP8rank=30
+        k=1 pos=  9 GR w=0.649132 ratio=1.0000 l1=0.665799 l2=0.823550 L/R=0.010456/0.006211 start=  9 owner=0418 goldRank=   1 score=0.999968
+        k=2 pos= 11 -- w=0.146232 ratio=0.2253 l1=0.170534 l2=0.820678 L/R=0.006211/0.018090 start= 10 owner=0346 goldRank=  30 score=0.623978
+        k=3 pos=  1 -- w=0.061504 ratio=0.0947 l1=0.067170 l2=0.068764 L/R=0.000000/0.005666 start=  1 owner=0157 goldRank= 211 score=0.321838
+        k=4 pos= 33 -- w=0.025230 ratio=0.0389 l1=0.029595 l2=0.029838 L/R=0.001420/0.002946 start= 33 owner=0346 goldRank=  30 score=0.999973
+        k=5 pos= 12 -- w=0.018090 ratio=0.0279 l1=0.165335 l2=0.173455 L/R=0.146232/0.001013 start= 11 owner=0346 goldRank=  30 score=0.602141
+        k=6 pos= 22 -- w=0.016354 ratio=0.0252 l1=0.023451 l2=0.029389 L/R=0.005231/0.001867 start= 21 owner=0346 goldRank=  30 score=0.602141
+        k=7 pos=  7 -- w=0.011519 ratio=0.0177 l1=0.022454 l2=0.673086 L/R=0.000480/0.010456 start=  7 owner=0559 goldRank=  11 score=0.400258
+        k=8 pos=  8 -- w=0.010456 ratio=0.0161 l1=0.671106 l2=0.677797 L/R=0.011519/0.649132 start=  8 owner=0835 goldRank=   5 score=0.676606
+      ITEM 0475 L=2 case=REGRESSION PEAKrank=1 TOP8rank=218
+        k=1 pos=  9 GR w=0.873389 ratio=1.0000 l1=0.908609 l2=0.964171 L/R=0.031492/0.003729 start=  9 owner=0475 goldRank=   1 score=0.999952
+        k=2 pos= 11 -- w=0.051213 ratio=0.0586 l1=0.056676 l2=0.930404 L/R=0.003729/0.001734 start= 11 owner=0346 goldRank= 218 score=0.602141
+        k=3 pos=  8 -- w=0.031492 ratio=0.0361 l1=0.909229 l2=0.913530 L/R=0.004348/0.873389 start=  8 owner=0724 goldRank=   3 score=0.686585
+        k=4 pos= 34 -- w=0.007778 ratio=0.0089 l1=0.009330 l2=0.009600 L/R=0.001078/0.000474 start= 34 owner=0346 goldRank= 218 score=0.999973
+        k=5 pos= 19 -- w=0.005400 ratio=0.0062 l1=0.007591 l2=0.007669 L/R=0.001917/0.000273 start= 19 owner=0556 goldRank= 213 score=0.677008
+        k=6 pos=  1 -- w=0.004522 ratio=0.0052 l1=0.004798 l2=0.006336 L/R=0.000000/0.000276 start=  1 owner=0157 goldRank= 232 score=0.321838
+        k=7 pos=  7 -- w=0.004348 ratio=0.0050 l1=0.036412 l2=0.910470 L/R=0.000572/0.031492 start=  7 owner=0559 goldRank= 160 score=0.400258
+        k=8 pos= 22 -- w=0.004113 ratio=0.0047 l1=0.004934 l2=0.005406 L/R=0.000055/0.000766 start= 21 owner=0346 goldRank= 218 score=0.626246
+      ITEM 0508 L=2 case=REGRESSION PEAKrank=1 TOP8rank=200
+        k=1 pos= 32 GR w=0.855308 ratio=1.0000 l1=0.857546 l2=0.864547 L/R=0.001471/0.000767 start= 32 owner=0508 goldRank=   1 score=0.999967
+        k=2 pos= 11 -- w=0.075447 ratio=0.0882 l1=0.093675 l2=0.096523 L/R=0.016238/0.001990 start= 11 owner=0346 goldRank= 200 score=0.602141
+        k=3 pos= 35 -- w=0.021800 ratio=0.0255 l1=0.028053 l2=0.028820 L/R=0.005919/0.000334 start= 35 owner=0346 goldRank= 200 score=0.999973
+        k=4 pos= 10 -- w=0.016238 ratio=0.0190 l1=0.094383 l2=0.096444 L/R=0.002698/0.075447 start=  9 owner=0658 goldRank= 202 score=0.731233
+        k=5 pos= 34 -- w=0.005919 ratio=0.0069 l1=0.028486 l2=0.884128 L/R=0.000767/0.021800 start= 34 owner=0346 goldRank= 200 score=0.999969
+        k=6 pos= 14 -- w=0.005737 ratio=0.0067 l1=0.007098 l2=0.009166 L/R=0.000150/0.001211 start= 14 owner=0346 goldRank= 200 score=0.596638
+        k=7 pos=  9 -- w=0.002698 ratio=0.0032 l1=0.019007 l2=0.094824 L/R=0.000071/0.016238 start=  9 owner=0658 goldRank=  84 score=0.731233
+        k=8 pos= 12 -- w=0.001990 ratio=0.0023 l1=0.077586 l2=0.099562 L/R=0.075447/0.000150 start= 11 owner=0346 goldRank= 200 score=0.602141
+      ITEM 0511 L=2 case=REGRESSION PEAKrank=1 TOP8rank=198
+        k=1 pos= 30 GR w=0.984152 ratio=1.0000 l1=0.984347 l2=0.984748 L/R=0.000047/0.000147 start= 30 owner=0511 goldRank=   1 score=0.999960
+        k=2 pos= 11 -- w=0.010534 ratio=0.0107 l1=0.010663 l2=0.010873 L/R=0.000064/0.000065 start= 10 owner=0346 goldRank= 198 score=0.609614
+        k=3 pos= 33 -- w=0.002655 ratio=0.0027 l1=0.003074 l2=0.003221 L/R=0.000365/0.000054 start= 33 owner=0346 goldRank= 198 score=0.999973
+        k=4 pos= 19 -- w=0.000757 ratio=0.0008 l1=0.000785 l2=0.001139 L/R=0.000019/0.000009 start= 19 owner=0799 goldRank= 110 score=0.741532
+        k=5 pos= 32 -- w=0.000365 ratio=0.0004 l1=0.003167 l2=0.987373 L/R=0.000147/0.002655 start= 32 owner=0346 goldRank= 198 score=0.999969
+        k=6 pos= 21 -- w=0.000273 ratio=0.0003 l1=0.000319 l2=0.001138 L/R=0.000009/0.000037 start= 20 owner=0346 goldRank= 198 score=0.605483
+        k=7 pos=  9 -- w=0.000205 ratio=0.0002 l1=0.000274 l2=0.010840 L/R=0.000006/0.000064 start=  9 owner=0289 goldRank=  93 score=0.736428
+        k=8 pos= 31 GR w=0.000147 ratio=0.0001 l1=0.984664 l2=0.987366 L/R=0.984152/0.000365 start= 30 owner=0511 goldRank=   1 score=0.999960
+      ITEM 0524 L=3 case=REGRESSION PEAKrank=1 TOP8rank=135
+        k=1 pos=  9 GR w=0.952191 ratio=1.0000 l1=0.953603 l2=0.958428 L/R=0.001286/0.000126 start=  9 owner=0524 goldRank=   1 score=0.999968
+        k=2 pos= 12 -R w=0.017888 ratio=0.0188 l1=0.025077 l2=0.025276 L/R=0.004345/0.002845 start= 10 owner=0524 goldRank=   1 score=0.629945
+        k=3 pos= 38 -- w=0.005939 ratio=0.0062 l1=0.007031 l2=0.007040 L/R=0.000740/0.000352 start= 37 owner=0344 goldRank= 135 score=0.999970
+        k=4 pos=  1 -- w=0.005904 ratio=0.0062 l1=0.006258 l2=0.006714 L/R=0.000000/0.000353 start=  1 owner=0284 goldRank= 135 score=0.343520
+        k=5 pos= 11 GR w=0.004345 ratio=0.0046 l1=0.022358 l2=0.977394 L/R=0.000126/0.017888 start=  9 owner=0524 goldRank=   1 score=0.999968
+        k=6 pos= 13 -- w=0.002845 ratio=0.0030 l1=0.020805 l2=0.025157 L/R=0.017888/0.000072 start= 11 owner=0311 goldRank= 102 score=0.492544
+        k=7 pos= 24 -- w=0.001873 ratio=0.0020 l1=0.002327 l2=0.002458 L/R=0.000279/0.000174 start= 22 owner=0170 goldRank= 136 score=0.555963
+        k=8 pos= 34 -- w=0.001420 ratio=0.0015 l1=0.002901 l2=0.002923 L/R=0.000345/0.001136 start= 34 owner=0116 goldRank= 202 score=0.746561
+      ITEM 0533 L=3 case=REGRESSION PEAKrank=1 TOP8rank=130
+        k=1 pos= 21 GR w=0.961162 ratio=1.0000 l1=0.961455 l2=0.965198 L/R=0.000229/0.000064 start= 21 owner=0533 goldRank=   1 score=0.999962
+        k=2 pos= 12 -- w=0.015988 ratio=0.0166 l1=0.017071 l2=0.019635 L/R=0.000283/0.000800 start= 10 owner=0002 goldRank= 132 score=0.568291
+        k=3 pos= 37 -- w=0.004496 ratio=0.0047 l1=0.005682 l2=0.005688 L/R=0.001074/0.000112 start= 36 owner=0344 goldRank= 130 score=0.999970
+        k=4 pos=  9 -- w=0.004089 ratio=0.0043 l1=0.006762 l2=0.007076 L/R=0.000200/0.002473 start=  9 owner=0569 goldRank=  70 score=0.683518
+        k=5 pos= 23 GR w=0.003703 ratio=0.0039 l1=0.006350 l2=0.967802 L/R=0.000064/0.002582 start= 21 owner=0533 goldRank=   1 score=0.999962
+        k=6 pos= 24 -R w=0.002582 ratio=0.0027 l1=0.006576 l2=0.006836 L/R=0.003703/0.000290 start= 22 owner=0533 goldRank=   1 score=0.629952
+        k=7 pos= 10 -- w=0.002473 ratio=0.0026 l1=0.006845 l2=0.023033 L/R=0.004089/0.000283 start=  9 owner=0569 goldRank=  70 score=0.683518
+        k=8 pos= 36 -- w=0.001074 ratio=0.0011 l1=0.005576 l2=0.005710 L/R=0.000006/0.004496 start= 36 owner=0344 goldRank= 130 score=0.999970
+      ITEM 0538 L=2 case=REGRESSION PEAKrank=1 TOP8rank=128
+        k=1 pos= 20 GR w=0.963828 ratio=1.0000 l1=0.964443 l2=0.966889 L/R=0.000059/0.000556 start= 20 owner=0538 goldRank=   1 score=0.999969
+        k=2 pos= 11 -- w=0.018973 ratio=0.0197 l1=0.021468 l2=0.022024 L/R=0.001418/0.001077 start= 10 owner=0346 goldRank= 128 score=0.613537
+        k=3 pos= 33 -- w=0.006875 ratio=0.0071 l1=0.008289 l2=0.008339 L/R=0.001242/0.000172 start= 33 owner=0346 goldRank= 128 score=0.999973
+        k=4 pos= 22 -- w=0.002279 ratio=0.0024 l1=0.003014 l2=0.966933 L/R=0.000556/0.000179 start= 21 owner=0346 goldRank= 128 score=0.604064
+        k=5 pos= 10 -- w=0.001418 ratio=0.0015 l1=0.020889 l2=0.022064 L/R=0.000498/0.018973 start=  9 owner=0835 goldRank= 129 score=0.761175
+        k=6 pos= 32 -- w=0.001242 ratio=0.0013 l1=0.008167 l2=0.009046 L/R=0.000050/0.006875 start= 32 owner=0346 goldRank= 128 score=0.999969
+        k=7 pos= 12 -- w=0.001077 ratio=0.0011 l1=0.020107 l2=0.021710 L/R=0.018973/0.000058 start= 11 owner=0346 goldRank= 128 score=0.602141
+        k=8 pos= 30 -- w=0.000706 ratio=0.0007 l1=0.001126 l2=0.002391 L/R=0.000369/0.000050 start= 30 owner=0955 goldRank=  40 score=0.749458
+      ITEM 0568 L=2 case=RECOVERED PEAKrank=172 TOP8rank=1
+        k=1 pos= 31 -- w=0.750815 ratio=1.0000 l1=0.753526 l2=0.756970 L/R=0.001603/0.001108 start= 31 owner=0442 goldRank= 172 score=0.756152
+        k=2 pos= 20 GR w=0.168567 ratio=0.2245 l1=0.170909 l2=0.174407 L/R=0.000501/0.001841 start= 20 owner=0568 goldRank=   1 score=0.999999
+        k=3 pos= 11 -- w=0.043760 ratio=0.0583 l1=0.046026 l2=0.054896 L/R=0.000153/0.002112 start= 10 owner=0346 goldRank= 125 score=0.624497
+        k=4 pos=  9 -- w=0.008798 ratio=0.0117 l1=0.009018 l2=0.053062 L/R=0.000066/0.000153 start=  9 owner=0388 goldRank= 327 score=0.723730
+        k=5 pos= 34 -- w=0.005648 ratio=0.0075 l1=0.009045 l2=0.010153 L/R=0.003157/0.000240 start= 34 owner=0346 goldRank= 125 score=0.999973
+        k=6 pos= 33 -- w=0.003157 ratio=0.0042 l1=0.009913 l2=0.760968 L/R=0.001108/0.005648 start= 33 owner=0346 goldRank= 125 score=0.999969
+        k=7 pos= 22 -- w=0.002877 ratio=0.0038 l1=0.006305 l2=0.175099 L/R=0.001841/0.001587 start= 22 owner=0346 goldRank= 125 score=0.602141
+        k=8 pos= 14 -- w=0.002670 ratio=0.0036 l1=0.003056 l2=0.005193 L/R=0.000072/0.000314 start= 13 owner=0262 goldRank= 170 score=0.373545
+      ITEM 0589 L=2 case=REGRESSION PEAKrank=1 TOP8rank=154
+        k=1 pos= 18 GR w=0.922501 ratio=1.0000 l1=0.924032 l2=0.927215 L/R=0.001215/0.000317 start= 18 owner=0589 goldRank=   1 score=0.999972
+        k=2 pos= 10 -- w=0.039661 ratio=0.0430 l1=0.048626 l2=0.050663 L/R=0.006347/0.002618 start=  9 owner=0346 goldRank= 154 score=0.641019
+        k=3 pos= 32 -- w=0.008375 ratio=0.0091 l1=0.010652 l2=0.010775 L/R=0.001977/0.000301 start= 32 owner=0346 goldRank= 154 score=0.999973
+        k=4 pos=  9 -- w=0.006347 ratio=0.0069 l1=0.048008 l2=0.051156 L/R=0.002000/0.039661 start=  8 owner=0736 goldRank= 160 score=0.750248
+        k=5 pos= 29 -- w=0.005192 ratio=0.0056 l1=0.007100 l2=0.009326 L/R=0.001785/0.000123 start= 29 owner=0511 goldRank= 270 score=0.773003
+        k=6 pos= 11 -- w=0.002618 ratio=0.0028 l1=0.042317 l2=0.048940 L/R=0.039661/0.000037 start= 10 owner=0346 goldRank= 154 score=0.602141
+        k=7 pos= 20 -- w=0.002340 ratio=0.0025 l1=0.003222 l2=0.925902 L/R=0.000317/0.000566 start= 19 owner=0346 goldRank= 154 score=0.606740
+        k=8 pos=  8 -- w=0.002000 ratio=0.0022 l1=0.008877 l2=0.049030 L/R=0.000530/0.006347 start=  8 owner=0736 goldRank=  52 score=0.750248
+      ITEM 0598 L=2 case=REGRESSION PEAKrank=1 TOP8rank=149
+        k=1 pos=  9 GR w=0.933139 ratio=1.0000 l1=0.937645 l2=0.953219 L/R=0.000583/0.003924 start=  9 owner=0598 goldRank=   1 score=0.999964
+        k=2 pos= 20 -- w=0.023368 ratio=0.0250 l1=0.023854 l2=0.025555 L/R=0.000298/0.000188 start= 20 owner=0787 goldRank= 134 score=0.720475
+        k=3 pos= 11 -- w=0.015290 ratio=0.0164 l1=0.023973 l2=0.957327 L/R=0.003924/0.004759 start= 11 owner=0346 goldRank= 149 score=0.602141
+        k=4 pos=  1 -- w=0.006458 ratio=0.0069 l1=0.006687 l2=0.006759 L/R=0.000000/0.000230 start=  1 owner=0157 goldRank=  48 score=0.321838
+        k=5 pos= 12 -- w=0.004759 ratio=0.0051 l1=0.020265 l2=0.024214 L/R=0.015290/0.000216 start= 11 owner=0346 goldRank= 149 score=0.602141
+        k=6 pos= 34 -- w=0.004750 ratio=0.0051 l1=0.006934 l2=0.007067 L/R=0.001843/0.000341 start= 34 owner=0346 goldRank= 149 score=0.999973
+        k=7 pos= 10 GR w=0.003924 ratio=0.0042 l1=0.952353 l2=0.957695 L/R=0.933139/0.015290 start=  9 owner=0598 goldRank=   1 score=0.999964
+        k=8 pos= 33 -- w=0.001843 ratio=0.0020 l1=0.006726 l2=0.007262 L/R=0.000133/0.004750 start= 33 owner=0346 goldRank= 149 score=0.999969
+      ITEM 0604 L=2 case=REGRESSION PEAKrank=1 TOP8rank=146
+        k=1 pos= 30 GR w=0.844144 ratio=1.0000 l1=0.854298 l2=0.858783 L/R=0.003253/0.006902 start= 30 owner=0604 goldRank=   1 score=0.999966
+        k=2 pos= 11 -- w=0.068464 ratio=0.0811 l1=0.069674 l2=0.103581 L/R=0.000071/0.001140 start= 11 owner=0346 goldRank= 146 score=0.602141
+        k=3 pos=  9 -- w=0.030807 ratio=0.0365 l1=0.031605 l2=0.101020 L/R=0.000727/0.000071 start=  9 owner=0757 goldRank=  50 score=0.708893
+        k=4 pos= 33 -- w=0.016141 ratio=0.0191 l1=0.020934 l2=0.027836 L/R=0.003698/0.001096 start= 33 owner=0346 goldRank= 146 score=0.999973
+        k=5 pos= 31 GR w=0.006902 ratio=0.0082 l1=0.854744 l2=0.874137 L/R=0.844144/0.003698 start= 30 owner=0604 goldRank=   1 score=0.999966
+        k=6 pos= 18 -- w=0.003909 ratio=0.0046 l1=0.006493 l2=0.006718 L/R=0.001085/0.001500 start= 18 owner=0835 goldRank=  22 score=0.675472
+        k=7 pos= 23 -- w=0.003904 ratio=0.0046 l1=0.008578 l2=0.009772 L/R=0.001298/0.003375 start= 23 owner=0064 goldRank= 147 score=0.457036
+        k=8 pos= 32 -- w=0.003698 ratio=0.0044 l1=0.026741 l2=0.871980 L/R=0.006902/0.016141 start= 32 owner=0346 goldRank= 146 score=0.999969
+      ITEM 0643 L=2 case=REGRESSION PEAKrank=1 TOP8rank=162
+        k=1 pos= 29 GR w=0.960629 ratio=1.0000 l1=0.968407 l2=0.969589 L/R=0.000737/0.007041 start= 29 owner=0643 goldRank=   1 score=0.999969
+        k=2 pos= 10 -- w=0.012258 ratio=0.0128 l1=0.012442 l2=0.013541 L/R=0.000112/0.000071 start=  9 owner=0346 goldRank= 162 score=0.609651
+        k=3 pos= 30 GR w=0.007041 ratio=0.0073 l1=0.968776 l2=0.972411 L/R=0.960629/0.001106 start= 29 owner=0643 goldRank=   1 score=0.999969
+        k=4 pos= 24 -- w=0.005996 ratio=0.0062 l1=0.006088 l2=0.006154 L/R=0.000035/0.000056 start= 24 owner=0346 goldRank= 162 score=0.482049
+        k=5 pos= 19 -- w=0.003420 ratio=0.0036 l1=0.004854 l2=0.005260 L/R=0.001256/0.000178 start= 19 owner=0688 goldRank= 172 score=0.763102
+        k=6 pos= 32 -- w=0.002899 ratio=0.0030 l1=0.004189 l2=0.011230 L/R=0.001106/0.000184 start= 32 owner=0346 goldRank= 162 score=0.999973
+        k=7 pos= 13 -- w=0.001579 ratio=0.0016 l1=0.001651 l2=0.001767 L/R=0.000015/0.000057 start= 12 owner=0796 goldRank= 163 score=0.401652
+        k=8 pos= 18 -- w=0.001256 ratio=0.0013 l1=0.004843 l2=0.005067 L/R=0.000167/0.003420 start= 18 owner=0958 goldRank= 286 score=0.675455
+      ITEM 0683 L=3 case=REGRESSION PEAKrank=1 TOP8rank=196
+        k=1 pos= 10 GR w=0.607780 ratio=1.0000 l1=0.609597 l2=0.611735 L/R=0.000487/0.001329 start= 10 owner=0683 goldRank=   1 score=0.999967
+        k=2 pos= 36 -- w=0.262221 ratio=0.4314 l1=0.263422 l2=0.301751 L/R=0.000168/0.001033 start= 36 owner=0689 goldRank= 181 score=0.775156
+        k=3 pos= 13 -R w=0.040074 ratio=0.0659 l1=0.045765 l2=0.047467 L/R=0.000584/0.005107 start= 11 owner=0683 goldRank=   1 score=0.629944
+        k=4 pos= 34 -- w=0.031025 ratio=0.0510 l1=0.033042 l2=0.295572 L/R=0.001848/0.000168 start= 34 owner=0314 goldRank= 277 score=0.650568
+        k=5 pos=  1 -- w=0.017749 ratio=0.0292 l1=0.018423 l2=0.018967 L/R=0.000000/0.000675 start=  1 owner=0203 goldRank= 199 score=0.324210
+        k=6 pos= 22 -- w=0.007732 ratio=0.0127 l1=0.010837 l2=0.012268 L/R=0.002205/0.000900 start= 22 owner=1016 goldRank= 236 score=0.684189
+        k=7 pos= 38 -- w=0.007303 ratio=0.0120 l1=0.008512 l2=0.270733 L/R=0.001033/0.000176 start= 37 owner=0344 goldRank= 196 score=0.999970
+        k=8 pos= 14 -- w=0.005107 ratio=0.0084 l1=0.045553 l2=0.046180 L/R=0.040074/0.000373 start= 12 owner=0311 goldRank= 106 score=0.451455
+      ITEM 0698 L=3 case=REGRESSION PEAKrank=1 TOP8rank=194
+        k=1 pos= 32 GR w=0.947400 ratio=1.0000 l1=0.948803 l2=0.950820 L/R=0.001166/0.000237 start= 32 owner=0698 goldRank=   1 score=0.999959
+        k=2 pos= 12 -- w=0.030305 ratio=0.0320 l1=0.030604 l2=0.030760 L/R=0.000119/0.000180 start= 10 owner=0872 goldRank= 155 score=0.532746
+        k=3 pos= 36 -- w=0.007487 ratio=0.0079 l1=0.010133 l2=0.010289 L/R=0.002525/0.000121 start= 35 owner=0344 goldRank= 194 score=0.999970
+        k=4 pos= 26 -- w=0.002821 ratio=0.0030 l1=0.003719 l2=0.003923 L/R=0.000641/0.000257 start= 26 owner=0344 goldRank= 194 score=0.367869
+        k=5 pos= 35 -- w=0.002525 ratio=0.0027 l1=0.010167 l2=0.010525 L/R=0.000155/0.007487 start= 35 owner=0344 goldRank= 194 score=0.999970
+        k=6 pos= 30 -- w=0.001862 ratio=0.0020 l1=0.003339 l2=0.950758 L/R=0.000311/0.001166 start= 30 owner=0053 goldRank=   7 score=0.564703
+        k=7 pos= 31 -R w=0.001166 ratio=0.0012 l1=0.950428 l2=0.950976 L/R=0.001862/0.947400 start= 31 owner=0698 goldRank=   1 score=0.783607
+        k=8 pos= 18 -- w=0.000818 ratio=0.0009 l1=0.000978 l2=0.001096 L/R=0.000047/0.000114 start= 18 owner=0959 goldRank= 162 score=0.537755
+      ITEM 0699 L=4 case=RECOVERED PEAKrank=267 TOP8rank=1
+        k=1 pos= 34 -- w=0.603540 ratio=1.0000 l1=0.607839 l2=0.608247 L/R=0.000464/0.003834 start= 34 owner=0162 goldRank= 267 score=0.627589
+        k=2 pos=  9 GR w=0.200147 ratio=0.3316 l1=0.217798 l2=0.221322 L/R=0.002285/0.015365 start=  9 owner=0699 goldRank=   1 score=0.999970
+        k=3 pos= 12 GR w=0.094598 ratio=0.1567 l1=0.131923 l2=0.151063 L/R=0.002744/0.034581 start=  9 owner=0699 goldRank=   1 score=0.999970
+        k=4 pos= 13 -R w=0.034581 ratio=0.0573 l1=0.132954 l2=0.135926 L/R=0.094598/0.003775 start= 10 owner=0699 goldRank=   1 score=0.722446
+        k=5 pos= 10 GR w=0.015365 ratio=0.0255 l1=0.218256 l2=0.315140 L/R=0.200147/0.002744 start=  9 owner=0699 goldRank=   1 score=0.999970
+        k=6 pos= 22 -- w=0.010871 ratio=0.0180 l1=0.013585 l2=0.017414 L/R=0.000229/0.002485 start= 22 owner=0522 goldRank= 294 score=0.621515
+        k=7 pos= 39 -- w=0.009324 ratio=0.0154 l1=0.009766 l2=0.011771 L/R=0.000395/0.000047 start= 37 owner=0573 goldRank=  51 score=0.797302
+        k=8 pos=  1 -- w=0.005562 ratio=0.0092 l1=0.006534 l2=0.006816 L/R=0.000000/0.000972 start=  1 owner=0264 goldRank=  45 score=0.308359
+      ITEM 0709 L=2 case=REGRESSION PEAKrank=1 TOP8rank=219
+        k=1 pos= 31 GR w=0.904312 ratio=1.0000 l1=0.907073 l2=0.923017 L/R=0.001798/0.000963 start= 31 owner=0709 goldRank=   1 score=0.999959
+        k=2 pos= 11 -- w=0.050701 ratio=0.0561 l1=0.051334 l2=0.052226 L/R=0.000197/0.000437 start= 10 owner=0346 goldRank= 219 score=0.634055
+        k=3 pos= 33 -- w=0.015336 ratio=0.0170 l1=0.031026 l2=0.936547 L/R=0.000963/0.014727 start= 33 owner=0346 goldRank= 219 score=0.999969
+        k=4 pos= 34 -- w=0.014727 ratio=0.0163 l1=0.031271 l2=0.032234 L/R=0.015336/0.001208 start= 34 owner=0346 goldRank= 219 score=0.999973
+        k=5 pos= 22 -- w=0.004104 ratio=0.0045 l1=0.004603 l2=0.005644 L/R=0.000306/0.000192 start= 21 owner=0346 goldRank= 219 score=0.606049
+        k=6 pos= 30 -- w=0.001798 ratio=0.0020 l1=0.906718 l2=0.907730 L/R=0.000608/0.904312 start= 30 owner=0868 goldRank=   2 score=0.687994
+        k=7 pos= 35 -- w=0.001208 ratio=0.0013 l1=0.015935 l2=0.031271 L/R=0.014727/0.000000 start= 34 owner=0346 goldRank= 219 score=0.999973
+        k=8 pos= 32 GR w=0.000963 ratio=0.0011 l1=0.920612 l2=0.937136 L/R=0.904312/0.015336 start= 31 owner=0709 goldRank=   1 score=0.999959
+      ITEM 0724 L=2 case=REGRESSION PEAKrank=1 TOP8rank=176
+        k=1 pos= 31 GR w=0.976031 ratio=1.0000 l1=0.980970 l2=0.982615 L/R=0.000693/0.004246 start= 31 owner=0724 goldRank=   1 score=0.999961
+        k=2 pos= 11 -- w=0.011354 ratio=0.0116 l1=0.011510 l2=0.011555 L/R=0.000047/0.000109 start= 11 owner=0346 goldRank= 176 score=0.602141
+        k=3 pos= 32 GR w=0.004246 ratio=0.0044 l1=0.981881 l2=0.986612 L/R=0.976031/0.001604 start= 31 owner=0724 goldRank=   1 score=0.999961
+        k=4 pos= 34 -- w=0.004039 ratio=0.0041 l1=0.005731 l2=0.009977 L/R=0.001604/0.000089 start= 34 owner=0346 goldRank= 176 score=0.999973
+        k=5 pos= 33 -- w=0.001604 ratio=0.0016 l1=0.009888 l2=0.986008 L/R=0.004246/0.004039 start= 33 owner=0346 goldRank= 176 score=0.999969
+        k=6 pos= 30 -- w=0.000693 ratio=0.0007 l1=0.976765 l2=0.981036 L/R=0.000041/0.976031 start= 30 owner=0532 goldRank=   3 score=0.683321
+        k=7 pos= 25 -- w=0.000344 ratio=0.0004 l1=0.000406 l2=0.000519 L/R=0.000045/0.000017 start= 24 owner=0862 goldRank= 176 score=0.408797
+        k=8 pos= 22 -- w=0.000317 ratio=0.0003 l1=0.000424 l2=0.000579 L/R=0.000007/0.000100 start= 21 owner=0346 goldRank= 176 score=0.611152
+      ITEM 0727 L=2 case=REGRESSION PEAKrank=1 TOP8rank=179
+        k=1 pos= 10 GR w=0.792643 ratio=1.0000 l1=0.818376 l2=0.893005 L/R=0.000831/0.024903 start= 10 owner=0727 goldRank=   1 score=0.999968
+        k=2 pos= 12 -- w=0.064820 ratio=0.0818 l1=0.093538 l2=0.886464 L/R=0.024903/0.003815 start= 12 owner=0346 goldRank= 179 score=0.602141
+        k=3 pos= 21 -- w=0.055276 ratio=0.0697 l1=0.056846 l2=0.062530 L/R=0.000835/0.000735 start= 21 owner=0025 goldRank= 185 score=0.768933
+        k=4 pos= 11 GR w=0.024903 ratio=0.0314 l1=0.882365 l2=0.887012 L/R=0.792643/0.064820 start= 10 owner=0727 goldRank=   1 score=0.999968
+        k=5 pos= 35 -- w=0.016514 ratio=0.0208 l1=0.020406 l2=0.020476 L/R=0.002306/0.001585 start= 35 owner=0346 goldRank= 179 score=0.999973
+        k=6 pos=  8 -- w=0.009809 ratio=0.0124 l1=0.011976 l2=0.804934 L/R=0.001336/0.000831 start=  8 owner=0559 goldRank=   3 score=0.400258
+        k=7 pos=  1 -- w=0.004930 ratio=0.0062 l1=0.005938 l2=0.008515 L/R=0.000000/0.001008 start=  1 owner=0157 goldRank= 198 score=0.321838
+        k=8 pos= 13 -- w=0.003815 ratio=0.0048 l1=0.068919 l2=0.097033 L/R=0.064820/0.000283 start= 12 owner=0346 goldRank= 179 score=0.602141
+      ITEM 0742 L=2 case=REGRESSION PEAKrank=1 TOP8rank=191
+        k=1 pos=  9 GR w=0.974712 ratio=1.0000 l1=0.983179 l2=0.992234 L/R=0.000234/0.008234 start=  9 owner=0742 goldRank=   1 score=0.999966
+        k=2 pos= 11 -- w=0.008733 ratio=0.0090 l1=0.017696 l2=0.992438 L/R=0.008234/0.000730 start= 10 owner=0346 goldRank= 191 score=0.685430
+        k=3 pos= 10 GR w=0.008234 ratio=0.0084 l1=0.991678 l2=0.992641 L/R=0.974712/0.008733 start=  9 owner=0742 goldRank=   1 score=0.999966
+        k=4 pos= 33 -- w=0.001991 ratio=0.0020 l1=0.002512 l2=0.002667 L/R=0.000444/0.000076 start= 33 owner=0346 goldRank= 191 score=0.999973
+        k=5 pos=  1 -- w=0.001622 ratio=0.0017 l1=0.001683 l2=0.001770 L/R=0.000000/0.000061 start=  1 owner=0157 goldRank= 208 score=0.321838
+        k=6 pos= 12 -- w=0.000730 ratio=0.0007 l1=0.009492 l2=0.017747 L/R=0.008733/0.000030 start= 11 owner=0346 goldRank= 191 score=0.602141
+        k=7 pos= 18 -- w=0.000577 ratio=0.0006 l1=0.000817 l2=0.000852 L/R=0.000079/0.000161 start= 18 owner=0466 goldRank=  80 score=0.675462
+        k=8 pos= 21 -- w=0.000486 ratio=0.0005 l1=0.000788 l2=0.001007 L/R=0.000031/0.000272 start= 20 owner=0346 goldRank= 191 score=0.614573
+      ITEM 0748 L=2 case=REGRESSION PEAKrank=1 TOP8rank=31
+        k=1 pos=  8 GR w=0.897889 ratio=1.0000 l1=0.913609 l2=0.957358 L/R=0.000354/0.015365 start=  8 owner=0748 goldRank=   1 score=0.999968
+        k=2 pos= 10 -- w=0.042918 ratio=0.0478 l1=0.063061 l2=0.961498 L/R=0.015365/0.004778 start=  9 owner=0346 goldRank=  31 score=0.608347
+        k=3 pos= 32 -- w=0.018623 ratio=0.0207 l1=0.019482 l2=0.019504 L/R=0.000535/0.000325 start= 32 owner=0346 goldRank=  31 score=0.999973
+        k=4 pos=  9 GR w=0.015365 ratio=0.0171 l1=0.956172 l2=0.961304 L/R=0.897889/0.042918 start=  8 owner=0748 goldRank=   1 score=0.999968
+        k=5 pos=  1 -- w=0.006874 ratio=0.0077 l1=0.007353 l2=0.008810 L/R=0.000000/0.000479 start=  1 owner=0157 goldRank= 212 score=0.321838
+        k=6 pos= 11 -- w=0.004778 ratio=0.0053 l1=0.048244 l2=0.063613 L/R=0.042918/0.000548 start= 10 owner=0346 goldRank=  31 score=0.602141
+        k=7 pos= 19 -- w=0.003311 ratio=0.0037 l1=0.004292 l2=0.006174 L/R=0.000553/0.000427 start= 19 owner=0061 goldRank=  94 score=0.744658
+        k=8 pos=  3 -- w=0.001456 ratio=0.0016 l1=0.002307 l2=0.009211 L/R=0.000479/0.000371 start=  2 owner=0346 goldRank=  31 score=0.469982
+      ITEM 0757 L=2 case=REGRESSION PEAKrank=1 TOP8rank=39
+        k=1 pos=  8 GR w=0.957153 ratio=1.0000 l1=0.960027 l2=0.967048 L/R=0.000744/0.002129 start=  8 owner=0757 goldRank=   1 score=0.999972
+        k=2 pos=  3 -- w=0.011159 ratio=0.0117 l1=0.011875 l2=0.022310 L/R=0.000289/0.000426 start=  2 owner=0862 goldRank=  41 score=0.401737
+        k=3 pos=  1 -- w=0.010370 ratio=0.0108 l1=0.010659 l2=0.021818 L/R=0.000000/0.000289 start=  1 owner=0157 goldRank=  34 score=0.321838
+        k=4 pos= 10 -- w=0.006068 ratio=0.0063 l1=0.012227 l2=0.969565 L/R=0.002129/0.004030 start= 10 owner=0346 goldRank=  39 score=0.602141
+        k=5 pos= 11 -- w=0.004030 ratio=0.0042 l1=0.010283 l2=0.012445 L/R=0.006068/0.000185 start= 10 owner=0346 goldRank=  39 score=0.602141
+        k=6 pos= 33 -- w=0.002403 ratio=0.0025 l1=0.003461 l2=0.003723 L/R=0.000820/0.000238 start= 33 owner=0346 goldRank=  39 score=0.999973
+        k=7 pos=  9 GR w=0.002129 ratio=0.0022 l1=0.965351 l2=0.970125 L/R=0.957153/0.006068 start=  8 owner=0757 goldRank=   1 score=0.999972
+        k=8 pos=  6 -- w=0.000954 ratio=0.0010 l1=0.001763 l2=0.959343 L/R=0.000065/0.000744 start=  6 owner=0559 goldRank=  35 score=0.400258
+      ITEM 0763 L=2 case=REGRESSION PEAKrank=1 TOP8rank=44
+        k=1 pos= 20 GR w=0.858478 ratio=1.0000 l1=0.889488 l2=0.904116 L/R=0.002319/0.028691 start= 20 owner=0763 goldRank=   1 score=0.999973
+        k=2 pos= 11 -- w=0.056736 ratio=0.0661 l1=0.061132 l2=0.066863 L/R=0.001347/0.003049 start= 11 owner=0346 goldRank=  44 score=0.602141
+        k=3 pos= 21 GR w=0.028691 ratio=0.0334 l1=0.901146 l2=0.905745 L/R=0.858478/0.013977 start= 20 owner=0763 goldRank=   1 score=0.999973
+        k=4 pos= 22 -- w=0.013977 ratio=0.0163 l1=0.044948 l2=0.904018 L/R=0.028691/0.002280 start= 21 owner=0346 goldRank=  44 score=0.640070
+        k=5 pos= 34 -- w=0.010836 ratio=0.0126 l1=0.013292 l2=0.013365 L/R=0.001440/0.001016 start= 34 owner=0346 goldRank=  44 score=0.999973
+        k=6 pos=  9 -- w=0.005513 ratio=0.0064 l1=0.007521 l2=0.065010 L/R=0.000662/0.001347 start=  9 owner=0520 goldRank=  48 score=0.764305
+        k=7 pos= 31 -- w=0.005127 ratio=0.0060 l1=0.007011 l2=0.008676 L/R=0.001811/0.000073 start= 31 owner=0226 goldRank= 103 score=0.732966
+        k=8 pos= 12 -- w=0.003049 ratio=0.0036 l1=0.060004 l2=0.062085 L/R=0.056736/0.000219 start= 11 owner=0346 goldRank=  44 score=0.602141
+      ITEM 0781 L=2 case=REGRESSION PEAKrank=1 TOP8rank=4
+        k=1 pos=  9 GR w=0.976649 ratio=1.0000 l1=0.977685 l2=0.990955 L/R=0.000414/0.000622 start=  9 owner=0781 goldRank=   1 score=0.999957
+        k=2 pos= 11 -- w=0.012798 ratio=0.0131 l1=0.013527 l2=0.990182 L/R=0.000622/0.000107 start= 10 owner=0346 goldRank=   4 score=0.647030
+        k=3 pos= 34 -- w=0.003728 ratio=0.0038 l1=0.004022 l2=0.004149 L/R=0.000230/0.000064 start= 34 owner=0346 goldRank=   4 score=0.999973
+        k=4 pos=  5 -- w=0.000845 ratio=0.0009 l1=0.001950 l2=0.002507 L/R=0.000743/0.000362 start=  4 owner=0583 goldRank=   6 score=0.317301
+        k=5 pos=  4 -- w=0.000743 ratio=0.0008 l1=0.001674 l2=0.002055 L/R=0.000086/0.000845 start=  3 owner=0346 goldRank=   4 score=0.443900
+        k=6 pos= 10 GR w=0.000622 ratio=0.0006 l1=0.990069 l2=0.990590 L/R=0.976649/0.012798 start=  9 owner=0781 goldRank=   1 score=0.999957
+        k=7 pos=  1 -- w=0.000525 ratio=0.0005 l1=0.000544 l2=0.000630 L/R=0.000000/0.000019 start=  1 owner=0157 goldRank=  16 score=0.321838
+        k=8 pos= 30 -- w=0.000509 ratio=0.0005 l1=0.001042 l2=0.001174 L/R=0.000110/0.000423 start= 30 owner=0877 goldRank= 128 score=0.698445
+      ITEM 0793 L=2 case=REGRESSION PEAKrank=1 TOP8rank=14
+        k=1 pos= 10 GR w=0.980894 ratio=1.0000 l1=0.983371 l2=0.991298 L/R=0.000105/0.002372 start= 10 owner=0793 goldRank=   1 score=0.999972
+        k=2 pos= 12 -- w=0.007451 ratio=0.0076 l1=0.010944 l2=0.991959 L/R=0.002372/0.001122 start= 12 owner=0346 goldRank=  14 score=0.602141
+        k=3 pos=  1 -- w=0.002498 ratio=0.0025 l1=0.002596 l2=0.002928 L/R=0.000000/0.000099 start=  1 owner=0157 goldRank= 135 score=0.321838
+        k=4 pos= 11 GR w=0.002372 ratio=0.0024 l1=0.990716 l2=0.991943 L/R=0.980894/0.007451 start= 10 owner=0793 goldRank=   1 score=0.999972
+        k=5 pos= 35 -- w=0.001338 ratio=0.0014 l1=0.001675 l2=0.001705 L/R=0.000236/0.000101 start= 35 owner=0346 goldRank=  14 score=0.999973
+        k=6 pos= 13 -- w=0.001122 ratio=0.0011 l1=0.008693 l2=0.011074 L/R=0.007451/0.000121 start= 12 owner=0346 goldRank=  14 score=0.602141
+        k=7 pos= 24 -- w=0.000614 ratio=0.0006 l1=0.001026 l2=0.001229 L/R=0.000098/0.000313 start= 23 owner=0346 goldRank=  14 score=0.606748
+        k=8 pos=  4 -- w=0.000515 ratio=0.0005 l1=0.000868 l2=0.000978 L/R=0.000332/0.000021 start=  4 owner=0727 goldRank=  13 score=0.403176
+      ITEM 0808 L=2 case=RECOVERED PEAKrank=52 TOP8rank=1
+        k=1 pos= 31 -- w=0.419406 ratio=1.0000 l1=0.427456 l2=0.429129 L/R=0.007072/0.000978 start= 31 owner=0391 goldRank=  52 score=0.869275
+        k=2 pos= 20 GR w=0.276420 ratio=0.6591 l1=0.285245 l2=0.290095 L/R=0.006496/0.002329 start= 20 owner=0808 goldRank=   1 score=0.999991
+        k=3 pos=  9 -- w=0.131248 ratio=0.3129 l1=0.139177 l2=0.243484 L/R=0.007216/0.000712 start=  9 owner=0649 goldRank= 144 score=0.748532
+        k=4 pos= 11 -- w=0.103504 ratio=0.2468 l1=0.109079 l2=0.240587 L/R=0.000712/0.004863 start= 10 owner=0346 goldRank=  26 score=0.615633
+        k=5 pos= 34 -- w=0.017726 ratio=0.0423 l1=0.019632 l2=0.020610 L/R=0.001151/0.000755 start= 34 owner=0346 goldRank=  26 score=0.999973
+        k=6 pos=  8 -- w=0.007216 ratio=0.0172 l1=0.139268 l2=0.140803 L/R=0.000803/0.131248 start=  8 owner=0442 goldRank= 150 score=0.681400
+        k=7 pos= 30 -- w=0.007072 ratio=0.0169 l1=0.427001 l2=0.428018 L/R=0.000522/0.419406 start= 30 owner=0568 goldRank=  32 score=0.675462
+        k=8 pos= 19 -- w=0.006496 ratio=0.0155 l1=0.284466 l2=0.286830 L/R=0.001550/0.276420 start= 19 owner=0364 goldRank=   2 score=0.695175
+      ITEM 0814 L=2 case=REGRESSION PEAKrank=1 TOP8rank=86
+        k=1 pos=  9 GR w=0.764953 ratio=1.0000 l1=0.788241 l2=0.829470 L/R=0.002533/0.020755 start=  9 owner=0814 goldRank=   1 score=0.999956
+        k=2 pos= 31 -- w=0.045045 ratio=0.0589 l1=0.047837 l2=0.050601 L/R=0.002342/0.000451 start= 31 owner=0280 goldRank= 155 score=0.704824
+        k=3 pos=  1 -- w=0.040019 ratio=0.0523 l1=0.042621 l2=0.042838 L/R=0.000000/0.002602 start=  1 owner=0157 goldRank=  22 score=0.321838
+        k=4 pos= 11 -- w=0.034563 ratio=0.0452 l1=0.085041 l2=0.850840 L/R=0.020755/0.029723 start= 10 owner=0346 goldRank=  86 score=0.646243
+        k=5 pos= 12 -- w=0.029723 ratio=0.0389 l1=0.065132 l2=0.086050 L/R=0.034563/0.000847 start= 11 owner=0346 goldRank=  86 score=0.602141
+        k=6 pos= 20 -- w=0.022960 ratio=0.0300 l1=0.025506 l2=0.032199 L/R=0.001718/0.000828 start= 20 owner=0556 goldRank= 338 score=0.765837
+        k=7 pos= 10 GR w=0.020755 ratio=0.0271 l1=0.820271 l2=0.852526 L/R=0.764953/0.034563 start=  9 owner=0814 goldRank=   1 score=0.999956
+        k=8 pos= 34 -- w=0.008728 ratio=0.0114 l1=0.010251 l2=0.010702 L/R=0.001164/0.000359 start= 34 owner=0346 goldRank=  86 score=0.999973
+      ITEM 0823 L=2 case=REGRESSION PEAKrank=1 TOP8rank=93
+        k=1 pos= 20 GR w=0.811663 ratio=1.0000 l1=0.824753 l2=0.845144 L/R=0.004773/0.008316 start= 20 owner=0823 goldRank=   1 score=0.999971
+        k=2 pos= 11 -- w=0.091209 ratio=0.1124 l1=0.093772 l2=0.095702 L/R=0.000315/0.002248 start= 11 owner=0346 goldRank=  93 score=0.602141
+        k=3 pos= 34 -- w=0.017242 ratio=0.0212 l1=0.021137 l2=0.022288 L/R=0.002597/0.001298 start= 34 owner=0346 goldRank=  93 score=0.999973
+        k=4 pos= 22 -- w=0.014060 ratio=0.0173 l1=0.023681 l2=0.836357 L/R=0.008316/0.001305 start= 22 owner=0346 goldRank=  93 score=0.602141
+        k=5 pos= 31 -- w=0.011146 ratio=0.0137 l1=0.015780 l2=0.020003 L/R=0.003482/0.001151 start= 31 owner=0580 goldRank=  30 score=0.744829
+        k=6 pos= 21 GR w=0.008316 ratio=0.0102 l1=0.834040 l2=0.840117 L/R=0.811663/0.014060 start= 20 owner=0823 goldRank=   1 score=0.999971
+        k=7 pos= 18 -- w=0.006331 ratio=0.0078 l1=0.011232 l2=0.822918 L/R=0.000128/0.004773 start= 18 owner=0559 goldRank= 114 score=0.400258
+        k=8 pos=  8 -- w=0.006056 ratio=0.0075 l1=0.013624 l2=0.014140 L/R=0.005861/0.001707 start=  8 owner=0406 goldRank= 314 score=0.675452
+      ITEM 0850 L=2 case=REGRESSION PEAKrank=1 TOP8rank=60
+        k=1 pos= 20 GR w=0.889492 ratio=1.0000 l1=0.896278 l2=0.903057 L/R=0.001324/0.005463 start= 20 owner=0850 goldRank=   1 score=0.999967
+        k=2 pos= 11 -- w=0.055165 ratio=0.0620 l1=0.060323 l2=0.066038 L/R=0.002610/0.002548 start= 11 owner=0346 goldRank=  60 score=0.602141
+        k=3 pos= 33 -- w=0.009530 ratio=0.0107 l1=0.012567 l2=0.012833 L/R=0.002420/0.000617 start= 33 owner=0346 goldRank=  60 score=0.999973
+        k=4 pos= 22 -- w=0.006203 ratio=0.0070 l1=0.013308 l2=0.903718 L/R=0.005463/0.001642 start= 21 owner=0346 goldRank=  60 score=0.627997
+        k=5 pos= 21 GR w=0.005463 ratio=0.0061 l1=0.901158 l2=0.904124 L/R=0.889492/0.006203 start= 20 owner=0850 goldRank=   1 score=0.999967
+        k=6 pos=  9 -- w=0.005121 ratio=0.0058 l1=0.008210 l2=0.064356 L/R=0.000479/0.002610 start=  9 owner=0703 goldRank= 263 score=0.777955
+        k=7 pos=  1 -- w=0.004501 ratio=0.0051 l1=0.004850 l2=0.006175 L/R=0.000000/0.000350 start=  1 owner=0157 goldRank=  86 score=0.321838
+        k=8 pos= 10 -- w=0.002610 ratio=0.0029 l1=0.062896 l2=0.065922 L/R=0.005121/0.055165 start=  9 owner=0703 goldRank=  85 score=0.777955
+      ITEM 0866 L=3 case=REGRESSION PEAKrank=1 TOP8rank=73
+        k=1 pos= 33 GR w=0.914710 ratio=1.0000 l1=0.916039 l2=0.921308 L/R=0.000890/0.000439 start= 33 owner=0866 goldRank=   1 score=0.999959
+        k=2 pos= 12 -- w=0.050846 ratio=0.0556 l1=0.051264 l2=0.051575 L/R=0.000198/0.000220 start= 10 owner=0188 goldRank=  75 score=0.563465
+        k=3 pos= 37 -- w=0.009771 ratio=0.0107 l1=0.011866 l2=0.015794 L/R=0.001789/0.000306 start= 36 owner=0344 goldRank=  73 score=0.999970
+        k=4 pos= 35 GR w=0.003929 ratio=0.0043 l1=0.006157 l2=0.930638 L/R=0.000439/0.001789 start= 33 owner=0866 goldRank=   1 score=0.999959
+        k=5 pos= 24 -- w=0.002268 ratio=0.0025 l1=0.003978 l2=0.006081 L/R=0.001598/0.000112 start= 22 owner=0344 goldRank=  73 score=0.572297
+        k=6 pos= 36 -- w=0.001789 ratio=0.0020 l1=0.015489 l2=0.016234 L/R=0.003929/0.009771 start= 36 owner=0344 goldRank=  73 score=0.999970
+        k=7 pos= 22 -- w=0.001767 ratio=0.0019 l1=0.004643 l2=0.007181 L/R=0.001278/0.001598 start= 21 owner=0440 goldRank=  87 score=0.700425
+        k=8 pos= 23 -- w=0.001598 ratio=0.0017 l1=0.005633 l2=0.007023 L/R=0.001767/0.002268 start= 21 owner=0440 goldRank=  86 score=0.700425
+      ITEM 0925 L=2 case=REGRESSION PEAKrank=1 TOP8rank=245
+        k=1 pos= 19 GR w=0.501936 ratio=1.0000 l1=0.514758 l2=0.546324 L/R=0.003602/0.009219 start= 19 owner=0925 goldRank=   1 score=0.999970
+        k=2 pos= 11 -- w=0.264337 ratio=0.5266 l1=0.274798 l2=0.321460 L/R=0.002159/0.008302 start= 10 owner=0346 goldRank= 245 score=0.620732
+        k=3 pos= 33 -- w=0.064082 ratio=0.1277 l1=0.087534 l2=0.088650 L/R=0.017725/0.005728 start= 33 owner=0346 goldRank= 245 score=0.999973
+        k=4 pos=  9 -- w=0.046309 ratio=0.0923 l1=0.049515 l2=0.314580 L/R=0.001047/0.002159 start=  9 owner=0415 goldRank= 200 score=0.737797
+        k=5 pos= 21 -- w=0.030267 ratio=0.0603 l1=0.044946 l2=0.550153 L/R=0.009219/0.005459 start= 21 owner=0346 goldRank= 245 score=0.602141
+        k=6 pos= 32 -- w=0.017725 ratio=0.0353 l1=0.082922 l2=0.091940 L/R=0.001116/0.064082 start= 32 owner=0346 goldRank= 245 score=0.999969
+        k=7 pos= 20 GR w=0.009219 ratio=0.0184 l1=0.541423 l2=0.550484 L/R=0.501936/0.030267 start= 19 owner=0925 goldRank=   1 score=0.999970
+        k=8 pos=  1 -- w=0.008836 ratio=0.0176 l1=0.009631 l2=0.013762 L/R=0.000000/0.000795 start=  1 owner=0157 goldRank= 283 score=0.321838
+      ITEM 0932 L=3 case=REGRESSION PEAKrank=1 TOP8rank=262
+        k=1 pos= 33 GR w=0.885593 ratio=1.0000 l1=0.887926 l2=0.896008 L/R=0.001189/0.001144 start= 33 owner=0932 goldRank=   1 score=0.999963
+        k=2 pos=  9 -- w=0.061947 ratio=0.0700 l1=0.062398 l2=0.065073 L/R=0.000128/0.000322 start=  9 owner=0140 goldRank=  33 score=0.835797
+        k=3 pos= 12 -- w=0.025060 ratio=0.0283 l1=0.027051 l2=0.027547 L/R=0.001364/0.000627 start= 10 owner=0389 goldRank=   3 score=0.600170
+        k=4 pos= 35 GR w=0.006017 ratio=0.0068 l1=0.008315 l2=0.899210 L/R=0.001144/0.001155 start= 33 owner=0932 goldRank=   1 score=0.999963
+        k=5 pos= 37 -- w=0.005302 ratio=0.0060 l1=0.006634 l2=0.012651 L/R=0.001155/0.000178 start= 36 owner=0344 goldRank= 262 score=0.999970
+        k=6 pos= 19 -- w=0.002475 ratio=0.0028 l1=0.002786 l2=0.003774 L/R=0.000023/0.000288 start= 19 owner=0938 goldRank= 277 score=0.548924
+        k=7 pos= 31 -- w=0.002066 ratio=0.0023 l1=0.003297 l2=0.888904 L/R=0.000042/0.001189 start= 31 owner=0074 goldRank=   6 score=0.538085
+        k=8 pos= 11 -- w=0.001364 ratio=0.0015 l1=0.026746 l2=0.089320 L/R=0.000322/0.025060 start=  9 owner=0140 goldRank=  15 score=0.835797
+      ITEM 0941 L=3 case=RECOVERED PEAKrank=338 TOP8rank=1
+        k=1 pos=  1 -- w=0.446919 ratio=1.0000 l1=0.450263 l2=0.463551 L/R=0.000000/0.003344 start=  1 owner=0176 goldRank= 338 score=0.342596
+        k=2 pos=  9 GR w=0.224007 ratio=0.5012 l1=0.241624 l2=0.276127 L/R=0.008768/0.008849 start=  9 owner=0941 goldRank=   1 score=1.000019
+        k=3 pos= 13 -- w=0.121107 ratio=0.2710 l1=0.144476 l2=0.153324 L/R=0.022536/0.000833 start= 11 owner=0311 goldRank= 186 score=0.549089
+        k=4 pos= 24 -- w=0.042635 ratio=0.0954 l1=0.044608 l2=0.044690 L/R=0.000818/0.001155 start= 22 owner=0311 goldRank= 186 score=0.466202
+        k=5 pos= 20 -- w=0.035397 ratio=0.0792 l1=0.036968 l2=0.046004 L/R=0.001331/0.000239 start= 20 owner=0848 goldRank= 291 score=0.631461
+        k=6 pos=  7 -- w=0.025810 ratio=0.0578 l1=0.034826 l2=0.260469 L/R=0.000248/0.008768 start=  7 owner=0275 goldRank=   5 score=0.566469
+        k=7 pos= 12 -R w=0.022536 ratio=0.0504 l1=0.152336 l2=0.162018 L/R=0.008693/0.121107 start= 10 owner=0941 goldRank=   1 score=0.629997
+        k=8 pos=  3 -- w=0.013288 ratio=0.0297 l1=0.020741 l2=0.469297 L/R=0.003344/0.004109 start=  1 owner=0176 goldRank= 259 score=0.342596
+      ITEM 0949 L=2 case=RECOVERED PEAKrank=76 TOP8rank=1
+        k=1 pos=  1 -- w=0.265318 ratio=1.0000 l1=0.268044 l2=0.274065 L/R=0.000000/0.002726 start=  1 owner=0157 goldRank=  76 score=0.321838
+        k=2 pos=  8 GR w=0.191380 ratio=0.7213 l1=0.222234 l2=0.421658 L/R=0.003155/0.027699 start=  8 owner=0949 goldRank=   1 score=0.999979
+        k=3 pos=  6 -- w=0.107601 ratio=0.4056 l1=0.119434 l2=0.339596 L/R=0.008678/0.003155 start=  6 owner=0559 goldRank= 337 score=0.400258
+        k=4 pos= 10 -- w=0.091823 ratio=0.3461 l1=0.193995 l2=0.386286 L/R=0.027699/0.074474 start= 10 owner=0346 goldRank= 230 score=0.602141
+        k=5 pos= 11 -- w=0.074474 ratio=0.2807 l1=0.167207 l2=0.201970 L/R=0.091823/0.000911 start= 10 owner=0346 goldRank= 230 score=0.602141
+        k=6 pos= 20 -- w=0.069050 ratio=0.2603 l1=0.072953 l2=0.106523 L/R=0.000511/0.003392 start= 20 owner=0328 goldRank= 220 score=0.756538
+        k=7 pos= 34 -- w=0.037182 ratio=0.1401 l1=0.042842 l2=0.043439 L/R=0.003811/0.001849 start= 34 owner=0346 goldRank= 230 score=0.999973
+        k=8 pos=  4 -- w=0.028782 ratio=0.1085 l1=0.043480 l2=0.153807 L/R=0.006020/0.008678 start=  3 owner=0346 goldRank= 230 score=0.455128
+      ITEM 0961 L=2 case=REGRESSION PEAKrank=1 TOP8rank=239
+        k=1 pos= 19 GR w=0.830234 ratio=1.0000 l1=0.834181 l2=0.857552 L/R=0.001963/0.001985 start= 19 owner=0961 goldRank=   1 score=0.999968
+        k=2 pos= 11 -- w=0.079975 ratio=0.0963 l1=0.086608 l2=0.090644 L/R=0.004848/0.001784 start= 11 owner=0346 goldRank= 239 score=0.602141
+        k=3 pos= 21 -- w=0.020371 ratio=0.0245 l1=0.023075 l2=0.854061 L/R=0.001985/0.000719 start= 20 owner=0346 goldRank= 239 score=0.641326
+        k=4 pos= 33 -- w=0.015841 ratio=0.0191 l1=0.023659 l2=0.024297 L/R=0.006088/0.001730 start= 33 owner=0346 goldRank= 239 score=0.999973
+        k=5 pos= 30 -- w=0.011232 ratio=0.0135 l1=0.015248 l2=0.022787 L/R=0.003377/0.000638 start= 30 owner=0487 goldRank= 201 score=0.777306
+        k=6 pos= 32 -- w=0.006088 ratio=0.0073 l1=0.022567 l2=0.035529 L/R=0.000638/0.015841 start= 32 owner=0346 goldRank= 239 score=0.999969
+        k=7 pos= 10 -- w=0.004848 ratio=0.0058 l1=0.088281 l2=0.091098 L/R=0.003457/0.079975 start=  9 owner=0442 goldRank= 281 score=0.759387
+        k=8 pos=  9 -- w=0.003457 ratio=0.0042 l1=0.009339 l2=0.091000 L/R=0.001033/0.004848 start=  9 owner=0442 goldRank= 301 score=0.759387
+      ITEM 0987 L=4 case=RECOVERED PEAKrank=34 TOP8rank=1
+        k=1 pos= 22 -- w=0.677569 ratio=1.0000 l1=0.678133 l2=0.678260 L/R=0.000541/0.000023 start= 22 owner=0189 goldRank=  34 score=0.617772
+        k=2 pos= 35 GR w=0.296347 ratio=0.4374 l1=0.296887 l2=0.297117 L/R=0.000369/0.000170 start= 35 owner=0987 goldRank=   1 score=1.000011
+        k=3 pos= 13 -- w=0.016143 ratio=0.0238 l1=0.016392 l2=0.016556 L/R=0.000014/0.000236 start= 10 owner=0396 goldRank= 264 score=0.588993
+        k=4 pos= 40 -- w=0.003641 ratio=0.0054 l1=0.004133 l2=0.004174 L/R=0.000425/0.000067 start= 38 owner=0573 goldRank= 100 score=0.807799
+        k=5 pos=  9 -- w=0.001212 ratio=0.0018 l1=0.001691 l2=0.001849 L/R=0.000419/0.000060 start=  9 owner=0195 goldRank= 232 score=0.614394
+        k=6 pos= 21 -- w=0.000541 ratio=0.0008 l1=0.678204 l2=0.678317 L/R=0.000094/0.677569 start= 21 owner=0459 goldRank=  22 score=0.575808
+        k=7 pos= 39 -- w=0.000425 ratio=0.0006 l1=0.004107 l2=0.004382 L/R=0.000042/0.003641 start= 38 owner=0573 goldRank= 100 score=0.807799
+        k=8 pos=  8 -- w=0.000419 ratio=0.0006 l1=0.001735 l2=0.001903 L/R=0.000105/0.001212 start=  8 owner=0396 goldRank= 276 score=0.582419
+      ITEM 0991 L=2 case=REGRESSION PEAKrank=1 TOP8rank=311
+        k=1 pos= 20 GR w=0.816164 ratio=1.0000 l1=0.824113 l2=0.829141 L/R=0.000550/0.007400 start= 20 owner=0991 goldRank=   1 score=0.999966
+        k=2 pos=  9 -- w=0.113615 ratio=0.1392 l1=0.118217 l2=0.148861 L/R=0.001140/0.003461 start=  9 owner=0733 goldRank=  71 score=0.747538
+        k=3 pos= 11 -- w=0.029664 ratio=0.0363 l1=0.034196 l2=0.147902 L/R=0.003461/0.001071 start= 10 owner=0346 goldRank= 311 score=0.606627
+        k=4 pos= 34 -- w=0.008833 ratio=0.0108 l1=0.010263 l2=0.010442 L/R=0.000873/0.000558 start= 34 owner=0346 goldRank= 311 score=0.999973
+        k=5 pos= 21 GR w=0.007400 ratio=0.0091 l1=0.828297 l2=0.829235 L/R=0.816164/0.004733 start= 20 owner=0991 goldRank=   1 score=0.999966
+        k=6 pos= 22 -- w=0.004733 ratio=0.0058 l1=0.012521 l2=0.829042 L/R=0.007400/0.000388 start= 21 owner=0346 goldRank= 311 score=0.636851
+        k=7 pos=  3 -- w=0.003776 ratio=0.0046 l1=0.003963 l2=0.005664 L/R=0.000128/0.000059 start=  3 owner=0178 goldRank= 235 score=0.418710
+        k=8 pos= 10 -- w=0.003461 ratio=0.0042 l1=0.146741 l2=0.148951 L/R=0.113615/0.029664 start=  9 owner=0733 goldRank= 311 score=0.747538
+      ITEM 1004 L=3 case=REGRESSION PEAKrank=1 TOP8rank=250
+        k=1 pos= 34 GR w=0.989482 ratio=1.0000 l1=0.989994 l2=0.992207 L/R=0.000283/0.000229 start= 34 owner=1004 goldRank=   1 score=0.999967
+        k=2 pos= 12 -- w=0.003050 ratio=0.0031 l1=0.003051 l2=0.003069 L/R=0.000000/0.000001 start= 10 owner=0239 goldRank= 250 score=0.550253
+        k=3 pos= 36 GR w=0.002057 ratio=0.0021 l1=0.002434 l2=0.992833 L/R=0.000229/0.000148 start= 34 owner=1004 goldRank=   1 score=0.999967
+        k=4 pos=  9 -- w=0.001927 ratio=0.0019 l1=0.002175 l2=0.002242 L/R=0.000234/0.000014 start=  9 owner=0047 goldRank= 191 score=0.622136
+        k=5 pos= 38 -- w=0.000917 ratio=0.0009 l1=0.001077 l2=0.003134 L/R=0.000148/0.000012 start= 37 owner=0344 goldRank= 250 score=0.999970
+        k=6 pos= 21 -- w=0.000434 ratio=0.0004 l1=0.000844 l2=0.001144 L/R=0.000241/0.000169 start= 21 owner=0575 goldRank=  21 score=0.715651
+        k=7 pos= 33 -R w=0.000283 ratio=0.0003 l1=0.989921 l2=0.990152 L/R=0.000156/0.989482 start= 33 owner=1004 goldRank=   1 score=0.783631
+        k=8 pos= 20 -- w=0.000241 ratio=0.0002 l1=0.000752 l2=0.000921 L/R=0.000077/0.000434 start= 20 owner=0710 goldRank= 168 score=0.682291
+      ITEM 1017 L=4 case=RECOVERED PEAKrank=13 TOP8rank=1
+        k=1 pos=  1 -- w=0.392376 ratio=1.0000 l1=0.412468 l2=0.419479 L/R=0.000000/0.020091 start=  1 owner=0066 goldRank=  13 score=0.317249
+        k=2 pos=  8 GR w=0.352166 ratio=0.8975 l1=0.386284 l2=0.432582 L/R=0.002846/0.031272 start=  8 owner=1017 goldRank=   1 score=1.000013
+        k=3 pos= 13 -R w=0.048708 ratio=0.1241 l1=0.075034 l2=0.076141 L/R=0.022032/0.004293 start= 10 owner=1017 goldRank=   1 score=0.483429
+        k=4 pos= 10 GR w=0.043610 ratio=0.1111 l1=0.075969 l2=0.450167 L/R=0.031272/0.001087 start=  8 owner=1017 goldRank=   1 score=1.000013
+        k=5 pos= 26 -- w=0.043242 ratio=0.1102 l1=0.046691 l2=0.046955 L/R=0.000768/0.002682 start= 23 owner=0873 goldRank= 210 score=0.448977
+        k=6 pos=  9 GR w=0.031272 ratio=0.0797 l1=0.427047 l2=0.430981 L/R=0.352166/0.043610 start=  8 owner=1017 goldRank=   1 score=1.000013
+        k=7 pos= 12 -R w=0.022032 ratio=0.0562 l1=0.071828 l2=0.119731 L/R=0.001087/0.048708 start=  9 owner=1017 goldRank=   1 score=0.722479
+        k=8 pos=  2 -- w=0.020091 ratio=0.0512 l1=0.419479 l2=0.419611 L/R=0.392376/0.007011 start=  1 owner=0066 goldRank=  14 score=0.317249
+
+[7/12] COUNTERFACTUAL — reproduce TEST533/535 arms + collect frozen Top-8 X-ray...
+      [0001/1024] target=0354 L=4 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 2, 4, 5] peakOrigin= 35 top8Origin= 35
+      [0002/1024] target=0355 L=2 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 2] peakOrigin= 10 top8Origin= 10
+      [0003/1024] target=0356 L=3 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 5] peakOrigin= 32 top8Origin= 32
+      [0004/1024] target=0357 L=4 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 7] peakOrigin= 23 top8Origin= 23
+      [0005/1024] target=0358 L=2 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1] peakOrigin= 30 top8Origin= 30
+      [0032/1024] target=0385 L=2 PEAK=   1 TOP8=  48 case=REGRESSION goldPeakRanks=[1, 3] peakOrigin= 20 top8Origin= 34
+      [0064/1024] target=0417 L=4 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1] peakOrigin= 34 top8Origin= 34
+      [0065/1024] target=0418 L=2 PEAK=   1 TOP8=  30 case=REGRESSION goldPeakRanks=[1] peakOrigin= 32 top8Origin= 35
+      [0085/1024] target=0438 L=4 PEAK=  87 TOP8=   1 case=RECOVERED  goldPeakRanks=[2, 7] peakOrigin= 21 top8Origin=  9
+      [0122/1024] target=0475 L=2 PEAK=   1 TOP8= 218 case=REGRESSION goldPeakRanks=[1] peakOrigin= 31 top8Origin= 34
+      [0128/1024] target=0481 L=2 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 6] peakOrigin=  9 top8Origin=  9
+      [0155/1024] target=0508 L=2 PEAK=   1 TOP8= 200 case=REGRESSION goldPeakRanks=[1] peakOrigin= 28 top8Origin= 31
+      [0158/1024] target=0511 L=2 PEAK=   1 TOP8= 198 case=REGRESSION goldPeakRanks=[1] peakOrigin=  9 top8Origin= 34
+      [0171/1024] target=0524 L=3 PEAK=   1 TOP8= 135 case=REGRESSION goldPeakRanks=[1, 8] peakOrigin= 34 top8Origin= 37
+      [0180/1024] target=0533 L=3 PEAK=   1 TOP8= 130 case=REGRESSION goldPeakRanks=[1, 5] peakOrigin= 33 top8Origin= 36
+      [0185/1024] target=0538 L=2 PEAK=   1 TOP8= 128 case=REGRESSION goldPeakRanks=[1, 7] peakOrigin=  9 top8Origin= 34
+      [0192/1024] target=0545 L=3 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1] peakOrigin= 32 top8Origin= 32
+      [0236/1024] target=0589 L=2 PEAK=   1 TOP8= 154 case=REGRESSION goldPeakRanks=[1] peakOrigin= 20 top8Origin= 34
+      [0245/1024] target=0598 L=2 PEAK=   1 TOP8= 149 case=REGRESSION goldPeakRanks=[1, 4] peakOrigin= 20 top8Origin= 34
+      [0251/1024] target=0604 L=2 PEAK=   1 TOP8= 146 case=REGRESSION goldPeakRanks=[1, 6] peakOrigin= 19 top8Origin= 33
+      [0256/1024] target=0609 L=4 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 8] peakOrigin= 22 top8Origin= 22
+      [0290/1024] target=0643 L=2 PEAK=   1 TOP8= 162 case=REGRESSION goldPeakRanks=[1, 3] peakOrigin= 20 top8Origin= 34
+      [0303/1024] target=0656 L=3 PEAK= 238 TOP8=   1 case=RECOVERED  goldPeakRanks=[5] peakOrigin= 14 top8Origin= 21
+      [0320/1024] target=0673 L=2 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1] peakOrigin= 20 top8Origin= 20
+      [0330/1024] target=0683 L=3 PEAK=   1 TOP8= 196 case=REGRESSION goldPeakRanks=[1] peakOrigin= 21 top8Origin= 36
+      [0339/1024] target=0692 L=3 PEAK=   1 TOP8= 203 case=REGRESSION goldPeakRanks=[1, 6] peakOrigin= 32 top8Origin= 35
+      [0340/1024] target=0693 L=4 PEAK=  15 TOP8=   1 case=RECOVERED  goldPeakRanks=[2] peakOrigin=  1 top8Origin=  9
+      [0345/1024] target=0698 L=3 PEAK=   1 TOP8= 194 case=REGRESSION goldPeakRanks=[1] peakOrigin= 21 top8Origin= 36
+      [0356/1024] target=0709 L=2 PEAK=   1 TOP8= 219 case=REGRESSION goldPeakRanks=[1, 8] peakOrigin= 31 top8Origin= 34
+      [0371/1024] target=0724 L=2 PEAK=   1 TOP8= 176 case=REGRESSION goldPeakRanks=[1, 2] peakOrigin=  9 top8Origin= 33
+      [0374/1024] target=0727 L=2 PEAK=   1 TOP8= 179 case=REGRESSION goldPeakRanks=[1] peakOrigin= 32 top8Origin= 35
+      [0384/1024] target=0737 L=3 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1] peakOrigin= 21 top8Origin= 21
+      [0389/1024] target=0742 L=2 PEAK=   1 TOP8= 191 case=REGRESSION goldPeakRanks=[1] peakOrigin= 30 top8Origin= 33
+      [0395/1024] target=0748 L=2 PEAK=   1 TOP8=  31 case=REGRESSION goldPeakRanks=[1, 8] peakOrigin= 28 top8Origin= 31
+      [0404/1024] target=0757 L=2 PEAK=   1 TOP8=  39 case=REGRESSION goldPeakRanks=[1, 6] peakOrigin=  9 top8Origin= 34
+      [0410/1024] target=0763 L=2 PEAK=   1 TOP8=  44 case=REGRESSION goldPeakRanks=[1, 2] peakOrigin= 31 top8Origin= 34
+      [0428/1024] target=0781 L=2 PEAK=   1 TOP8=   4 case=REGRESSION goldPeakRanks=[1] peakOrigin= 31 top8Origin= 34
+      [0440/1024] target=0793 L=2 PEAK=   1 TOP8=  14 case=REGRESSION goldPeakRanks=[1, 4] peakOrigin=  9 top8Origin= 34
+      [0448/1024] target=0801 L=4 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1] peakOrigin= 21 top8Origin= 21
+      [0461/1024] target=0814 L=2 PEAK=   1 TOP8=  86 case=REGRESSION goldPeakRanks=[1] peakOrigin= 30 top8Origin= 33
+      [0470/1024] target=0823 L=2 PEAK=   1 TOP8=  93 case=REGRESSION goldPeakRanks=[1] peakOrigin= 31 top8Origin= 34
+      [0497/1024] target=0850 L=2 PEAK=   1 TOP8=  60 case=REGRESSION goldPeakRanks=[1, 7] peakOrigin= 19 top8Origin= 34
+      [0512/1024] target=0865 L=2 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1] peakOrigin= 20 top8Origin= 20
+      [0513/1024] target=0866 L=3 PEAK=   1 TOP8=  73 case=REGRESSION goldPeakRanks=[1, 2, 7] peakOrigin=  8 top8Origin= 34
+      [0572/1024] target=0925 L=2 PEAK=   1 TOP8= 245 case=REGRESSION goldPeakRanks=[1] peakOrigin= 29 top8Origin= 32
+      [0576/1024] target=0929 L=3 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 3, 4] peakOrigin=  9 top8Origin=  9
+      [0596/1024] target=0949 L=2 PEAK=  76 TOP8=   1 case=RECOVERED  goldPeakRanks=[6] peakOrigin=  1 top8Origin=  9
+      [0608/1024] target=0961 L=2 PEAK=   1 TOP8= 239 case=REGRESSION goldPeakRanks=[1] peakOrigin=  9 top8Origin= 33
+      [0634/1024] target=0987 L=4 PEAK=  34 TOP8=   1 case=RECOVERED  goldPeakRanks=[2] peakOrigin= 21 top8Origin= 34
+      [0638/1024] target=0991 L=2 PEAK=   1 TOP8= 311 case=REGRESSION goldPeakRanks=[1, 6] peakOrigin= 30 top8Origin= 33
+      [0640/1024] target=0993 L=4 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 4] peakOrigin= 22 top8Origin= 22
+      [0651/1024] target=1004 L=3 PEAK=   1 TOP8= 250 case=REGRESSION goldPeakRanks=[1, 4] peakOrigin= 21 top8Origin= 36
+      [0678/1024] target=0007 L=2 PEAK=   1 TOP8= 288 case=REGRESSION goldPeakRanks=[1, 5] peakOrigin= 31 top8Origin= 34
+      [0684/1024] target=0013 L=2 PEAK=   1 TOP8= 285 case=REGRESSION goldPeakRanks=[1, 4] peakOrigin= 30 top8Origin= 33
+      [0693/1024] target=0022 L=2 PEAK=   1 TOP8= 268 case=REGRESSION goldPeakRanks=[1] peakOrigin= 32 top8Origin= 35
+      [0696/1024] target=0025 L=2 PEAK=  94 TOP8= 278 case=BOTH_FAIL  goldPeakRanks=[2] peakOrigin=  8 top8Origin= 32
+      [0704/1024] target=0033 L=4 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1] peakOrigin= 35 top8Origin= 35
+      [0710/1024] target=0039 L=4 PEAK= 280 TOP8=   1 case=RECOVERED  goldPeakRanks=[2, 4] peakOrigin= 10 top8Origin= 22
+      [0751/1024] target=0080 L=3 PEAK=   1 TOP8= 331 case=REGRESSION goldPeakRanks=[1, 3] peakOrigin=  9 top8Origin= 37
+      [0759/1024] target=0088 L=2 PEAK=   1 TOP8= 243 case=REGRESSION goldPeakRanks=[1] peakOrigin= 20 top8Origin= 34
+      [0768/1024] target=0097 L=2 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 2] peakOrigin= 10 top8Origin= 10
+      [0807/1024] target=0136 L=2 PEAK=   1 TOP8= 265 case=REGRESSION goldPeakRanks=[1] peakOrigin= 31 top8Origin= 34
+      [0832/1024] target=0161 L=3 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 7] peakOrigin= 10 top8Origin= 10
+      [0896/1024] target=0225 L=4 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 7] peakOrigin= 36 top8Origin= 36
+      [0897/1024] target=0226 L=2 PEAK=  35 TOP8=   1 case=RECOVERED  goldPeakRanks=[2] peakOrigin=  8 top8Origin= 18
+      [0918/1024] target=0247 L=2 PEAK=   1 TOP8=  69 case=REGRESSION goldPeakRanks=[1, 3] peakOrigin=  9 top8Origin= 34
+      [0921/1024] target=0250 L=2 PEAK=   1 TOP8=  67 case=REGRESSION goldPeakRanks=[1, 8] peakOrigin= 20 top8Origin= 35
+      [0946/1024] target=0275 L=3 PEAK=   1 TOP8= 109 case=REGRESSION goldPeakRanks=[1, 5] peakOrigin= 32 top8Origin= 35
+      [0960/1024] target=0289 L=2 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 7] peakOrigin= 20 top8Origin= 20
+      [0987/1024] target=0316 L=2 PEAK=   1 TOP8=  87 case=REGRESSION goldPeakRanks=[1] peakOrigin= 20 top8Origin= 34
+      [0995/1024] target=0324 L=4 PEAK= 144 TOP8=   1 case=RECOVERED  goldPeakRanks=[4, 5] peakOrigin=  1 top8Origin=  8
+      [1024/1024] target=0353 L=3 PEAK=   1 TOP8=   1 case=STABLE     goldPeakRanks=[1, 4] peakOrigin=  8 top8Origin=  8
+      CF PEAK_CONTAIN reproduction : 0.9912/0.9912/0.9922/0.991382
+      CF TOP8_JOINT reproduction   : 0.9580/0.9590/0.9600/0.958691
+      CF case counts               : {'RECOVERED': 8, 'REGRESSION': 42, 'BOTH_FAIL': 1, 'STABLE': 973}
+
+[8/12] COUNTERFACTUAL MULTI-PEAK FEATURE ANATOMY...
+
+      [RECOVERED] items=8
+      ALL TOP8 CANDIDATES: n=64
+        pointer rank mean/median     : 4.500/4.500
+        pointer weight mean/median   : 0.113194/0.049683
+        top1 ratio mean/median       : 0.330996/0.177198
+        local±1 mass mean/median     : 0.195943/0.140532
+        local±2 mass mean/median     : 0.244910/0.225109
+        left weight mean             : 0.048377
+        right weight mean            : 0.034372
+        best CONCATCOS mean/median   : 0.653377/0.620536
+        recovers gold owner          : 18/64
+      GOLD-SPAN PEAKS: n=11
+        pointer rank mean/median     : 3.727/4.000
+        pointer weight mean/median   : 0.178581/0.102833
+        top1 ratio mean/median       : 0.463591/0.343449
+        local±1 mass mean/median     : 0.255164/0.234893
+        local±2 mass mean/median     : 0.286071/0.281602
+        left weight mean             : 0.063755
+        right weight mean            : 0.012828
+        best CONCATCOS mean/median   : 0.999998/1.000003
+        recovers gold owner          : 11/11
+      NON-GOLD PEAKS: n=53
+        pointer rank mean/median     : 4.660/5.000
+        pointer weight mean/median   : 0.099623/0.040539
+        top1 ratio mean/median       : 0.303477/0.122473
+        local±1 mass mean/median     : 0.183652/0.127930
+        local±2 mass mean/median     : 0.236368/0.214752
+        left weight mean             : 0.045186
+        right weight mean            : 0.038843
+        best CONCATCOS mean/median   : 0.581437/0.602141
+        recovers gold owner          : 7/53
+      PEAKS RECOVERING GOLD OWNER: n=18
+        pointer rank mean/median     : 3.944/4.000
+        pointer weight mean/median   : 0.132073/0.065645
+        top1 ratio mean/median       : 0.353095/0.222088
+        local±1 mass mean/median     : 0.215700/0.220209
+        local±2 mass mean/median     : 0.252900/0.238560
+        left weight mean             : 0.043586
+        right weight mean            : 0.040041
+        best CONCATCOS mean/median   : 0.881209/0.999978
+        recovers gold owner          : 18/18
+
+      [REGRESSION] items=42
+      ALL TOP8 CANDIDATES: n=336
+        pointer rank mean/median     : 4.500/4.500
+        pointer weight mean/median   : 0.123172/0.005210
+        top1 ratio mean/median       : 0.143060/0.006103
+        local±1 mass mean/median     : 0.224191/0.015765
+        local±2 mass mean/median     : 0.354927/0.043647
+        left weight mean             : 0.055962
+        right weight mean            : 0.045057
+        best CONCATCOS mean/median   : 0.755740/0.734697
+        recovers gold owner          : 71/336
+      GOLD-SPAN PEAKS: n=67
+        pointer rank mean/median     : 2.507/1.000
+        pointer weight mean/median   : 0.559648/0.819228
+        top1 ratio mean/median       : 0.634003/1.000000
+        local±1 mass mean/median     : 0.828946/0.932574
+        local±2 mass mean/median     : 0.906089/0.957532
+        left weight mean             : 0.260331
+        right weight mean            : 0.008966
+        best CONCATCOS mean/median   : 0.999966/0.999967
+        recovers gold owner          : 67/67
+      NON-GOLD PEAKS: n=269
+        pointer rank mean/median     : 4.996/5.000
+        pointer weight mean/median   : 0.014458/0.004253
+        top1 ratio mean/median       : 0.020781/0.004625
+        local±1 mass mean/median     : 0.073564/0.010380
+        local±2 mass mean/median     : 0.217649/0.018540
+        left weight mean             : 0.005060
+        right weight mean            : 0.054046
+        best CONCATCOS mean/median   : 0.694911/0.676138
+        recovers gold owner          : 4/269
+      PEAKS RECOVERING GOLD OWNER: n=71
+        pointer rank mean/median     : 2.690/1.000
+        pointer weight mean/median   : 0.529099/0.811422
+        top1 ratio mean/median       : 0.599727/1.000000
+        local±1 mass mean/median     : 0.808426/0.927792
+        local±2 mass mean/median     : 0.881431/0.956531
+        left weight mean             : 0.247199
+        right weight mean            : 0.032128
+        best CONCATCOS mean/median   : 0.983449/0.999967
+        recovers gold owner          : 71/71
+
+      [BOTH_FAIL] items=1
+      ALL TOP8 CANDIDATES: n=8
+        pointer rank mean/median     : 4.500/4.500
+        pointer weight mean/median   : 0.118376/0.053770
+        top1 ratio mean/median       : 0.407296/0.185005
+        local±1 mass mean/median     : 0.188510/0.225385
+        local±2 mass mean/median     : 0.254913/0.268395
+        left weight mean             : 0.031386
+        right weight mean            : 0.038747
+        best CONCATCOS mean/median   : 0.716839/0.715928
+        recovers gold owner          : 1/8
+      GOLD-SPAN PEAKS: n=1
+        pointer rank mean/median     : 2.000/2.000
+        pointer weight mean/median   : 0.289611/0.289611
+        top1 ratio mean/median       : 0.996462/0.996462
+        local±1 mass mean/median     : 0.307129/0.307129
+        local±2 mass mean/median     : 0.318030/0.318030
+        left weight mean             : 0.014628
+        right weight mean            : 0.002890
+        best CONCATCOS mean/median   : 0.999969/0.999969
+        recovers gold owner          : 1/1
+      NON-GOLD PEAKS: n=7
+        pointer rank mean/median     : 4.857/5.000
+        pointer weight mean/median   : 0.093914/0.043532
+        top1 ratio mean/median       : 0.323130/0.149779
+        local±1 mass mean/median     : 0.171564/0.224893
+        local±2 mass mean/median     : 0.245896/0.228041
+        left weight mean             : 0.033781
+        right weight mean            : 0.043870
+        best CONCATCOS mean/median   : 0.676391/0.675453
+        recovers gold owner          : 0/7
+      PEAKS RECOVERING GOLD OWNER: n=1
+        pointer rank mean/median     : 2.000/2.000
+        pointer weight mean/median   : 0.289611/0.289611
+        top1 ratio mean/median       : 0.996462/0.996462
+        local±1 mass mean/median     : 0.307129/0.307129
+        local±2 mass mean/median     : 0.318030/0.318030
+        left weight mean             : 0.014628
+        right weight mean            : 0.002890
+        best CONCATCOS mean/median   : 0.999969/0.999969
+        recovers gold owner          : 1/1
+
+      [STABLE] items=973
+      ALL TOP8 CANDIDATES: n=7784
+        pointer rank mean/median     : 4.500/4.500
+        pointer weight mean/median   : 0.122787/0.007929
+        top1 ratio mean/median       : 0.146229/0.009113
+        local±1 mass mean/median     : 0.220858/0.020365
+        local±2 mass mean/median     : 0.308039/0.035475
+        left weight mean             : 0.063451
+        right weight mean            : 0.034619
+        best CONCATCOS mean/median   : 0.739582/0.712728
+        recovers gold owner          : 2564/7784
+      GOLD-SPAN PEAKS: n=1842
+        pointer rank mean/median     : 2.849/1.000
+        pointer weight mean/median   : 0.467566/0.573974
+        top1 ratio mean/median       : 0.545375/1.000000
+        local±1 mass mean/median     : 0.728974/0.898888
+        local±2 mass mean/median     : 0.852992/0.929950
+        left weight mean             : 0.244621
+        right weight mean            : 0.016787
+        best CONCATCOS mean/median   : 1.000004/1.000002
+        recovers gold owner          : 1842/1842
+      NON-GOLD PEAKS: n=5942
+        pointer rank mean/median     : 5.012/5.000
+        pointer weight mean/median   : 0.015907/0.006099
+        top1 ratio mean/median       : 0.022495/0.006947
+        local±1 mass mean/median     : 0.063343/0.012662
+        local±2 mass mean/median     : 0.139105/0.019195
+        left weight mean             : 0.007289
+        right weight mean            : 0.040147
+        best CONCATCOS mean/median   : 0.658852/0.629977
+        recovers gold owner          : 722/5942
+      PEAKS RECOVERING GOLD OWNER: n=2564
+        pointer rank mean/median     : 3.469/3.000
+        pointer weight mean/median   : 0.340309/0.022884
+        top1 ratio mean/median       : 0.398159/0.030086
+        local±1 mass mean/median     : 0.590096/0.844113
+        local±2 mass mean/median     : 0.704533/0.905398
+        left weight mean             : 0.178962
+        right weight mean            : 0.070824
+        best CONCATCOS mean/median   : 0.909877/0.999995
+        recovers gold owner          : 2564/2564
+
+      COUNTERFACTUAL item-level discrimination details...
+      ITEM 0032 target=0385 L=2 case=REGRESSION PEAKrank=1 TOP8rank=48
+        k=1 pos= 20 GR w=0.848245 ratio=1.0000 l1=0.874730 l2=0.885820 L/R=0.000949/0.025536 start= 20 owner=0385 goldRank=   1 score=0.999961
+        k=2 pos= 11 -- w=0.081416 ratio=0.0960 l1=0.082299 l2=0.085542 L/R=0.000046/0.000837 start= 10 owner=0346 goldRank=  48 score=0.605154
+        k=3 pos= 21 GR w=0.025536 ratio=0.0301 l1=0.883841 l2=0.885291 L/R=0.848245/0.010060 start= 20 owner=0385 goldRank=   1 score=0.999961
+        k=4 pos= 34 -- w=0.014050 ratio=0.0166 l1=0.016635 l2=0.016741 L/R=0.001878/0.000708 start= 34 owner=0346 goldRank=  48 score=0.999973
+        k=5 pos= 22 -- w=0.010060 ratio=0.0119 l1=0.036096 l2=0.884634 L/R=0.025536/0.000500 start= 22 owner=0346 goldRank=  48 score=0.602141
+        k=6 pos=  9 -- w=0.003132 ratio=0.0037 l1=0.003722 l2=0.087807 L/R=0.000544/0.000046 start=  9 owner=0268 goldRank= 111 score=0.743836
+        k=7 pos= 30 -- w=0.002718 ratio=0.0032 l1=0.004047 l2=0.004163 L/R=0.000447/0.000882 start= 30 owner=0718 goldRank= 125 score=0.681806
+        k=8 pos=  7 -- w=0.002670 ratio=0.0031 l1=0.003385 l2=0.006655 L/R=0.000172/0.000544 start=  7 owner=0559 goldRank= 215 score=0.400258
+      ITEM 0065 target=0418 L=2 case=REGRESSION PEAKrank=1 TOP8rank=30
+        k=1 pos= 32 GR w=0.960929 ratio=1.0000 l1=0.962706 l2=0.967892 L/R=0.001293/0.000484 start= 32 owner=0418 goldRank=   1 score=0.999968
+        k=2 pos= 11 -- w=0.015924 ratio=0.0166 l1=0.016234 l2=0.017550 L/R=0.000032/0.000278 start= 10 owner=0346 goldRank=  30 score=0.605816
+        k=3 pos= 35 -- w=0.008465 ratio=0.0088 l1=0.013602 l2=0.014086 L/R=0.004997/0.000139 start= 35 owner=0346 goldRank=  30 score=0.999973
+        k=4 pos= 34 -- w=0.004997 ratio=0.0052 l1=0.013947 l2=0.975015 L/R=0.000484/0.008465 start= 34 owner=0346 goldRank=  30 score=0.999969
+        k=5 pos= 20 -- w=0.001567 ratio=0.0016 l1=0.002460 l2=0.003779 L/R=0.000101/0.000791 start= 20 owner=0256 goldRank= 144 score=0.793285
+        k=6 pos= 31 -- w=0.001293 ratio=0.0013 l1=0.962411 l2=0.962929 L/R=0.000189/0.960929 start= 31 owner=0835 goldRank=   5 score=0.676606
+        k=7 pos=  9 -- w=0.001287 ratio=0.0013 l1=0.001492 l2=0.017519 L/R=0.000173/0.000032 start=  9 owner=0346 goldRank=  68 score=0.738297
+        k=8 pos= 22 -- w=0.001139 ratio=0.0012 l1=0.002279 l2=0.003950 L/R=0.000791/0.000349 start= 21 owner=0346 goldRank=  30 score=0.622547
+      ITEM 0085 target=0438 L=4 case=RECOVERED PEAKrank=87 TOP8rank=1
+        k=1 pos= 21 -- w=0.647925 ratio=1.0000 l1=0.660933 l2=0.661505 L/R=0.002836/0.010172 start= 21 owner=0888 goldRank=  87 score=0.627751
+        k=2 pos=  9 GR w=0.222529 ratio=0.3434 l1=0.232454 l2=0.237327 L/R=0.000816/0.009109 start=  9 owner=0438 goldRank=   1 score=1.000013
+        k=3 pos= 34 -- w=0.020979 ratio=0.0324 l1=0.023186 l2=0.023767 L/R=0.001894/0.000314 start= 34 owner=0546 goldRank= 108 score=0.616458
+        k=4 pos= 13 -R w=0.020518 ratio=0.0317 l1=0.031312 l2=0.035542 L/R=0.004084/0.006710 start= 10 owner=0438 goldRank=   1 score=0.722484
+        k=5 pos=  1 -- w=0.018276 ratio=0.0282 l1=0.021001 l2=0.021371 L/R=0.000000/0.002725 start=  1 owner=0735 goldRank= 141 score=0.303859
+        k=6 pos= 22 -- w=0.010172 ratio=0.0157 l1=0.658179 l2=0.662505 L/R=0.647925/0.000081 start= 21 owner=0888 goldRank=  88 score=0.627751
+        k=7 pos= 10 GR w=0.009109 ratio=0.0141 l1=0.234893 l2=0.239793 L/R=0.222529/0.003256 start=  9 owner=0438 goldRank=   1 score=1.000013
+        k=8 pos=  6 -- w=0.009103 ratio=0.0140 l1=0.010793 l2=0.011927 L/R=0.000072/0.001618 start=  6 owner=0096 goldRank= 174 score=0.485890
+      ITEM 0122 target=0475 L=2 case=REGRESSION PEAKrank=1 TOP8rank=218
+        k=1 pos= 31 GR w=0.987534 ratio=1.0000 l1=0.988234 l2=0.989583 L/R=0.000440/0.000261 start= 31 owner=0475 goldRank=   1 score=0.999952
+        k=2 pos= 11 -- w=0.006973 ratio=0.0071 l1=0.007409 l2=0.007532 L/R=0.000380/0.000056 start= 10 owner=0346 goldRank= 218 score=0.608251
+        k=3 pos= 33 -- w=0.001326 ratio=0.0013 l1=0.002876 l2=0.990442 L/R=0.000261/0.001289 start= 33 owner=0346 goldRank= 218 score=0.999969
+        k=4 pos= 34 -- w=0.001289 ratio=0.0013 l1=0.002647 l2=0.002908 L/R=0.001326/0.000032 start= 34 owner=0346 goldRank= 218 score=0.999973
+        k=5 pos= 22 -- w=0.000514 ratio=0.0005 l1=0.000591 l2=0.000677 L/R=0.000041/0.000036 start= 21 owner=0346 goldRank= 218 score=0.626246
+        k=6 pos= 30 -- w=0.000440 ratio=0.0004 l1=0.987996 l2=0.988258 L/R=0.000023/0.987534 start= 30 owner=0724 goldRank=   3 score=0.686585
+        k=7 pos= 10 -- w=0.000380 ratio=0.0004 l1=0.007468 l2=0.007895 L/R=0.000115/0.006973 start=  9 owner=0271 goldRank= 223 score=0.750415
+        k=8 pos=  8 -- w=0.000371 ratio=0.0004 l1=0.000503 l2=0.000896 L/R=0.000017/0.000115 start=  8 owner=0013 goldRank= 220 score=0.682468
+      ITEM 0155 target=0508 L=2 case=REGRESSION PEAKrank=1 TOP8rank=200
+        k=1 pos= 28 GR w=0.924100 ratio=1.0000 l1=0.926049 l2=0.930529 L/R=0.001466/0.000483 start= 28 owner=0508 goldRank=   1 score=0.999967
+        k=2 pos=  9 -- w=0.031209 ratio=0.0338 l1=0.047876 l2=0.053067 L/R=0.016221/0.000446 start=  9 owner=0346 goldRank= 200 score=0.602141
+        k=3 pos=  8 -- w=0.016221 ratio=0.0176 l1=0.052528 l2=0.053075 L/R=0.005098/0.031209 start=  7 owner=0658 goldRank= 202 score=0.731233
+        k=4 pos= 31 -- w=0.012037 ratio=0.0130 l1=0.015608 l2=0.016090 L/R=0.003403/0.000167 start= 31 owner=0346 goldRank= 200 score=0.999973
+        k=5 pos=  7 -- w=0.005098 ratio=0.0055 l1=0.021420 l2=0.053033 L/R=0.000101/0.016221 start=  7 owner=0658 goldRank=  84 score=0.731233
+        k=6 pos= 30 -- w=0.003403 ratio=0.0037 l1=0.015923 l2=0.940190 L/R=0.000483/0.012037 start= 30 owner=0346 goldRank= 200 score=0.999969
+        k=7 pos= 27 -- w=0.001466 ratio=0.0016 l1=0.926643 l2=0.927187 L/R=0.001077/0.924100 start= 27 owner=0829 goldRank=   2 score=0.675440
+        k=8 pos= 26 -- w=0.001077 ratio=0.0012 l1=0.002604 l2=0.926735 L/R=0.000061/0.001466 start= 26 owner=0559 goldRank=  18 score=0.400258
+      ITEM 0158 target=0511 L=2 case=REGRESSION PEAKrank=1 TOP8rank=198
+        k=1 pos=  9 GR w=0.904021 ratio=1.0000 l1=0.905024 l2=0.963843 L/R=0.000221/0.000782 start=  9 owner=0511 goldRank=   1 score=0.999960
+        k=2 pos= 11 -- w=0.057533 ratio=0.0636 l1=0.058653 l2=0.962779 L/R=0.000782/0.000337 start= 11 owner=0346 goldRank= 198 score=0.602141
+        k=3 pos= 34 -- w=0.012601 ratio=0.0139 l1=0.013946 l2=0.013975 L/R=0.001071/0.000274 start= 34 owner=0346 goldRank= 198 score=0.999973
+        k=4 pos= 31 -- w=0.006617 ratio=0.0073 l1=0.007828 l2=0.009721 L/R=0.001183/0.000029 start= 31 owner=0799 goldRank= 110 score=0.741532
+        k=5 pos= 20 -- w=0.002831 ratio=0.0031 l1=0.004118 l2=0.007130 L/R=0.000663/0.000625 start= 20 owner=0289 goldRank=  93 score=0.736428
+        k=6 pos=  3 -- w=0.002139 ratio=0.0024 l1=0.002489 l2=0.003911 L/R=0.000117/0.000232 start=  2 owner=0262 goldRank= 148 score=0.373545
+        k=7 pos= 18 -- w=0.001523 ratio=0.0017 l1=0.002189 l2=0.005025 L/R=0.000003/0.000663 start= 18 owner=0559 goldRank= 148 score=0.400258
+        k=8 pos= 22 -- w=0.001489 ratio=0.0016 l1=0.002373 l2=0.005587 L/R=0.000625/0.000259 start= 21 owner=0346 goldRank= 198 score=0.609614
+      ITEM 0171 target=0524 L=3 case=REGRESSION PEAKrank=1 TOP8rank=135
+        k=1 pos= 34 GR w=0.913385 ratio=1.0000 l1=0.914108 l2=0.914925 L/R=0.000626/0.000097 start= 34 owner=0524 goldRank=   1 score=0.999968
+        k=2 pos= 12 -- w=0.042602 ratio=0.0466 l1=0.044155 l2=0.044400 L/R=0.000579/0.000975 start= 10 owner=0170 goldRank= 136 score=0.555963
+        k=3 pos= 23 -- w=0.020728 ratio=0.0227 l1=0.021319 l2=0.021839 L/R=0.000582/0.000010 start= 22 owner=0116 goldRank= 159 score=0.746561
+        k=4 pos= 38 -- w=0.013123 ratio=0.0144 l1=0.016554 l2=0.017256 L/R=0.003247/0.000184 start= 37 owner=0344 goldRank= 135 score=0.999970
+        k=5 pos= 37 -- w=0.003247 ratio=0.0036 l1=0.017072 l2=0.017353 L/R=0.000702/0.013123 start= 37 owner=0344 goldRank= 135 score=0.999970
+        k=6 pos= 13 -- w=0.000975 ratio=0.0011 l1=0.043619 l2=0.044254 L/R=0.042602/0.000043 start= 11 owner=0311 goldRank= 102 score=0.467846
+        k=7 pos= 28 -- w=0.000708 ratio=0.0008 l1=0.000932 l2=0.001063 L/R=0.000082/0.000143 start= 28 owner=0344 goldRank= 135 score=0.390213
+        k=8 pos= 36 GR w=0.000702 ratio=0.0008 l1=0.004045 l2=0.930554 L/R=0.000097/0.003247 start= 34 owner=0524 goldRank=   1 score=0.999968
+      ITEM 0180 target=0533 L=3 case=REGRESSION PEAKrank=1 TOP8rank=130
+        k=1 pos= 33 GR w=0.983902 ratio=1.0000 l1=0.984144 l2=0.985409 L/R=0.000179/0.000063 start= 33 owner=0533 goldRank=   1 score=0.999962
+        k=2 pos= 12 -- w=0.007428 ratio=0.0075 l1=0.007564 l2=0.007582 L/R=0.000002/0.000134 start= 10 owner=0476 goldRank= 133 score=0.582192
+        k=3 pos= 37 -- w=0.002900 ratio=0.0029 l1=0.003718 l2=0.004977 L/R=0.000789/0.000029 start= 36 owner=0344 goldRank= 130 score=0.999970
+        k=4 pos= 21 -- w=0.001645 ratio=0.0017 l1=0.002349 l2=0.002373 L/R=0.000140/0.000564 start= 21 owner=0569 goldRank=  70 score=0.683518
+        k=5 pos= 35 GR w=0.001259 ratio=0.0013 l1=0.002111 l2=0.988913 L/R=0.000063/0.000789 start= 33 owner=0533 goldRank=   1 score=0.999962
+        k=6 pos= 36 -- w=0.000789 ratio=0.0008 l1=0.004948 l2=0.005040 L/R=0.001259/0.002900 start= 36 owner=0344 goldRank= 130 score=0.999970
+        k=7 pos= 22 -- w=0.000564 ratio=0.0006 l1=0.002217 l2=0.002691 L/R=0.001645/0.000008 start= 21 owner=0569 goldRank=  70 score=0.683518
+        k=8 pos= 24 -- w=0.000334 ratio=0.0003 l1=0.000450 l2=0.001078 L/R=0.000008/0.000108 start= 22 owner=0002 goldRank= 132 score=0.568291
+      ITEM 0185 target=0538 L=2 case=REGRESSION PEAKrank=1 TOP8rank=128
+        k=1 pos=  9 GR w=0.974041 ratio=1.0000 l1=0.974825 l2=0.987261 L/R=0.000173/0.000611 start=  9 owner=0538 goldRank=   1 score=0.999969
+        k=2 pos= 11 -- w=0.011925 ratio=0.0122 l1=0.013851 l2=0.987980 L/R=0.000611/0.001315 start= 10 owner=0346 goldRank= 128 score=0.604064
+        k=3 pos=  1 -- w=0.003152 ratio=0.0032 l1=0.003240 l2=0.003459 L/R=0.000000/0.000088 start=  1 owner=0157 goldRank=  72 score=0.321838
+        k=4 pos= 34 -- w=0.002298 ratio=0.0024 l1=0.002894 l2=0.002965 L/R=0.000335/0.000260 start= 34 owner=0346 goldRank= 128 score=0.999973
+        k=5 pos= 12 -- w=0.001315 ratio=0.0014 l1=0.013328 l2=0.013979 L/R=0.011925/0.000088 start= 11 owner=0346 goldRank= 128 score=0.602141
+        k=6 pos=  4 -- w=0.000694 ratio=0.0007 l1=0.001263 l2=0.001796 L/R=0.000219/0.000350 start=  3 owner=0346 goldRank= 128 score=0.453942
+        k=7 pos= 10 GR w=0.000611 ratio=0.0006 l1=0.986577 l2=0.988065 L/R=0.974041/0.011925 start=  9 owner=0538 goldRank=   1 score=0.999969
+        k=8 pos= 19 -- w=0.000526 ratio=0.0005 l1=0.001066 l2=0.001263 L/R=0.000315/0.000225 start= 19 owner=0457 goldRank= 204 score=0.676411
+      ITEM 0236 target=0589 L=2 case=REGRESSION PEAKrank=1 TOP8rank=154
+        k=1 pos= 20 GR w=0.922066 ratio=1.0000 l1=0.923417 l2=0.927494 L/R=0.001064/0.000287 start= 20 owner=0589 goldRank=   1 score=0.999972
+        k=2 pos= 11 -- w=0.045371 ratio=0.0492 l1=0.051890 l2=0.053190 L/R=0.004514/0.002005 start= 10 owner=0346 goldRank= 154 score=0.641019
+        k=3 pos= 34 -- w=0.008313 ratio=0.0090 l1=0.009675 l2=0.009714 L/R=0.001076/0.000286 start= 34 owner=0346 goldRank= 154 score=0.999973
+        k=4 pos= 10 -- w=0.004514 ratio=0.0049 l1=0.051151 l2=0.054010 L/R=0.001266/0.045371 start=  9 owner=0736 goldRank= 160 score=0.750248
+        k=5 pos= 22 -- w=0.002876 ratio=0.0031 l1=0.003655 l2=0.925921 L/R=0.000287/0.000492 start= 21 owner=0346 goldRank= 154 score=0.606740
+        k=6 pos= 12 -- w=0.002005 ratio=0.0022 l1=0.047410 l2=0.051964 L/R=0.045371/0.000034 start= 11 owner=0346 goldRank= 154 score=0.602141
+        k=7 pos= 30 -- w=0.001893 ratio=0.0021 l1=0.003770 l2=0.003914 L/R=0.000279/0.001598 start= 30 owner=0433 goldRank= 172 score=0.698448
+        k=8 pos=  1 -- w=0.001747 ratio=0.0019 l1=0.001915 l2=0.002028 L/R=0.000000/0.000168 start=  1 owner=0157 goldRank= 183 score=0.321838
+      ITEM 0245 target=0598 L=2 case=REGRESSION PEAKrank=1 TOP8rank=149
+        k=1 pos= 20 GR w=0.884258 ratio=1.0000 l1=0.890012 l2=0.893796 L/R=0.000473/0.005281 start= 20 owner=0598 goldRank=   1 score=0.999964
+        k=2 pos=  9 -- w=0.075423 ratio=0.0853 l1=0.076355 l2=0.097184 L/R=0.000299/0.000633 start=  9 owner=0787 goldRank= 134 score=0.720475
+        k=3 pos= 11 -- w=0.020742 ratio=0.0235 l1=0.022615 l2=0.098087 L/R=0.000633/0.001240 start= 11 owner=0346 goldRank= 149 score=0.602141
+        k=4 pos= 21 GR w=0.005281 ratio=0.0060 l1=0.893188 l2=0.893853 L/R=0.884258/0.003649 start= 20 owner=0598 goldRank=   1 score=0.999964
+        k=5 pos= 34 -- w=0.004090 ratio=0.0046 l1=0.005104 l2=0.005228 L/R=0.000841/0.000173 start= 34 owner=0346 goldRank= 149 score=0.999973
+        k=6 pos= 22 -- w=0.003649 ratio=0.0041 l1=0.009122 l2=0.893444 L/R=0.005281/0.000192 start= 22 owner=0346 goldRank= 149 score=0.602141
+        k=7 pos= 12 -- w=0.001240 ratio=0.0014 l1=0.022032 l2=0.022928 L/R=0.020742/0.000049 start= 11 owner=0346 goldRank= 149 score=0.602141
+        k=8 pos=  1 -- w=0.000866 ratio=0.0010 l1=0.000935 l2=0.000940 L/R=0.000000/0.000069 start=  1 owner=0157 goldRank=  48 score=0.321838
+      ITEM 0251 target=0604 L=2 case=REGRESSION PEAKrank=1 TOP8rank=146
+        k=1 pos= 19 GR w=0.551419 ratio=1.0000 l1=0.622928 l2=0.633392 L/R=0.043883/0.027625 start= 19 owner=0604 goldRank=   1 score=0.999966
+        k=2 pos= 11 -- w=0.156281 ratio=0.2834 l1=0.158798 l2=0.275907 L/R=0.000940/0.001577 start= 11 owner=0346 goldRank= 146 score=0.602141
+        k=3 pos=  9 -- w=0.115355 ratio=0.2092 l1=0.127874 l2=0.285801 L/R=0.011579/0.000940 start=  9 owner=0757 goldRank=  50 score=0.708893
+        k=4 pos= 18 -- w=0.043883 ratio=0.0796 l1=0.598812 l2=0.626605 L/R=0.003509/0.551419 start= 18 owner=0568 goldRank=   7 score=0.675462
+        k=5 pos= 33 -- w=0.032885 ratio=0.0596 l1=0.037499 l2=0.041185 L/R=0.003245/0.001369 start= 33 owner=0346 goldRank= 146 score=0.999973
+        k=6 pos= 20 GR w=0.027625 ratio=0.0501 l1=0.585999 l2=0.632392 L/R=0.551419/0.006954 start= 19 owner=0604 goldRank=   1 score=0.999966
+        k=7 pos=  8 -- w=0.011579 ratio=0.0210 l1=0.128580 l2=0.130072 L/R=0.001646/0.115355 start=  8 owner=0802 goldRank=  39 score=0.693147
+        k=8 pos= 14 -- w=0.010220 ratio=0.0185 l1=0.012021 l2=0.013764 L/R=0.001755/0.000046 start= 13 owner=0862 goldRank= 150 score=0.380051
+      ITEM 0290 target=0643 L=2 case=REGRESSION PEAKrank=1 TOP8rank=162
+        k=1 pos= 20 GR w=0.949515 ratio=1.0000 l1=0.962770 l2=0.965243 L/R=0.001335/0.011920 start= 20 owner=0643 goldRank=   1 score=0.999969
+        k=2 pos= 11 -- w=0.015427 ratio=0.0162 l1=0.016207 l2=0.025955 L/R=0.000679/0.000100 start= 11 owner=0346 goldRank= 162 score=0.602141
+        k=3 pos= 21 GR w=0.011920 ratio=0.0126 l1=0.963680 l2=0.965091 L/R=0.949515/0.002245 start= 20 owner=0643 goldRank=   1 score=0.999969
+        k=4 pos=  9 -- w=0.009725 ratio=0.0102 l1=0.011306 l2=0.026833 L/R=0.000902/0.000679 start=  9 owner=0688 goldRank= 172 score=0.763102
+        k=5 pos= 34 -- w=0.003652 ratio=0.0038 l1=0.004278 l2=0.004404 L/R=0.000325/0.000301 start= 34 owner=0346 goldRank= 162 score=0.999973
+        k=6 pos= 22 -- w=0.002245 ratio=0.0024 l1=0.014241 l2=0.964078 L/R=0.011920/0.000076 start= 22 owner=0346 goldRank= 162 score=0.602141
+        k=7 pos= 30 -- w=0.001762 ratio=0.0019 l1=0.002081 l2=0.002220 L/R=0.000055/0.000265 start= 30 owner=0427 goldRank= 217 score=0.675471
+        k=8 pos= 19 -- w=0.001335 ratio=0.0014 l1=0.951078 l2=0.963097 L/R=0.000228/0.949515 start= 19 owner=0226 goldRank=   6 score=0.675438
+      ITEM 0303 target=0656 L=3 case=RECOVERED PEAKrank=238 TOP8rank=1
+        k=1 pos= 15 -- w=0.209207 ratio=1.0000 l1=0.235962 l2=0.320779 L/R=0.022730/0.004025 start= 14 owner=0707 goldRank= 238 score=0.336565
+        k=2 pos= 25 -- w=0.197812 ratio=0.9455 l1=0.211374 l2=0.214752 L/R=0.002439/0.011123 start= 23 owner=0311 goldRank= 337 score=0.477891
+        k=3 pos=  1 -- w=0.135713 ratio=0.6487 l1=0.143307 l2=0.143859 L/R=0.000000/0.007593 start=  1 owner=0749 goldRank= 119 score=0.351183
+        k=4 pos= 12 -- w=0.110998 ratio=0.5306 l1=0.195298 l2=0.218789 L/R=0.000176/0.084124 start= 10 owner=0362 goldRank= 118 score=0.538715
+        k=5 pos= 22 GR w=0.102833 ratio=0.4915 l1=0.125721 l2=0.131634 L/R=0.020138/0.002750 start= 21 owner=0656 goldRank=   1 score=0.999993
+        k=6 pos= 13 -- w=0.084124 ratio=0.4021 l1=0.217852 l2=0.427235 L/R=0.110998/0.022730 start= 11 owner=0311 goldRank= 337 score=0.479963
+        k=7 pos= 37 -- w=0.044488 ratio=0.2127 l1=0.049294 l2=0.049895 L/R=0.002560/0.002246 start= 36 owner=0344 goldRank= 118 score=0.999970
+        k=8 pos= 14 -- w=0.022730 ratio=0.1086 l1=0.316061 l2=0.431084 L/R=0.084124/0.209207 start= 12 owner=0344 goldRank= 118 score=0.418544
+      ITEM 0330 target=0683 L=3 case=REGRESSION PEAKrank=1 TOP8rank=196
+        k=1 pos= 21 GR w=0.810038 ratio=1.0000 l1=0.811514 l2=0.812073 L/R=0.000996/0.000481 start= 21 owner=0683 goldRank=   1 score=0.999967
+        k=2 pos= 12 -- w=0.086010 ratio=0.1062 l1=0.089404 l2=0.097243 L/R=0.000252/0.003141 start= 10 owner=0860 goldRank= 198 score=0.568278
+        k=3 pos= 35 -- w=0.051616 ratio=0.0637 l1=0.054719 l2=0.074055 L/R=0.000052/0.003052 start= 35 owner=0689 goldRank= 181 score=0.775156
+        k=4 pos= 37 -- w=0.017722 ratio=0.0219 l1=0.021365 l2=0.072981 L/R=0.003052/0.000592 start= 36 owner=0344 goldRank= 196 score=0.999970
+        k=5 pos= 10 -- w=0.007611 ratio=0.0094 l1=0.008467 l2=0.095269 L/R=0.000604/0.000252 start=  9 owner=1016 goldRank= 251 score=0.684189
+        k=6 pos= 25 -- w=0.004957 ratio=0.0061 l1=0.007569 l2=0.008600 L/R=0.001176/0.001437 start= 23 owner=0311 goldRank= 106 score=0.451455
+        k=7 pos= 13 -- w=0.003141 ratio=0.0039 l1=0.089380 l2=0.089775 L/R=0.086010/0.000228 start= 11 owner=0311 goldRank= 106 score=0.454712
+        k=8 pos= 36 -- w=0.003052 ratio=0.0038 l1=0.072389 l2=0.073033 L/R=0.051616/0.017722 start= 36 owner=0344 goldRank= 196 score=0.999970
+      ITEM 0339 target=0692 L=3 case=REGRESSION PEAKrank=1 TOP8rank=203
+        k=1 pos= 32 GR w=0.971299 ratio=1.0000 l1=0.972700 l2=0.972741 L/R=0.000072/0.001328 start= 32 owner=0692 goldRank=   1 score=0.999965
+        k=2 pos= 22 -- w=0.018172 ratio=0.0187 l1=0.020330 l2=0.020614 L/R=0.001559/0.000600 start= 21 owner=0101 goldRank= 209 score=0.676791
+        k=3 pos= 12 -- w=0.004422 ratio=0.0046 l1=0.004451 l2=0.004533 L/R=0.000014/0.000015 start= 10 owner=0110 goldRank= 154 score=0.592325
+        k=4 pos= 21 -- w=0.001559 ratio=0.0016 l1=0.019733 l2=0.020342 L/R=0.000002/0.018172 start= 21 owner=0101 goldRank= 160 score=0.676791
+        k=5 pos= 36 -- w=0.001334 ratio=0.0014 l1=0.001756 l2=0.001793 L/R=0.000414/0.000008 start= 35 owner=0344 goldRank= 203 score=0.999970
+        k=6 pos= 33 GR w=0.001328 ratio=0.0014 l1=0.972665 l2=0.973150 L/R=0.971299/0.000037 start= 32 owner=0692 goldRank=   1 score=0.999965
+        k=7 pos= 23 -- w=0.000600 ratio=0.0006 l1=0.019053 l2=0.020622 L/R=0.018172/0.000281 start= 21 owner=0101 goldRank= 209 score=0.676791
+        k=8 pos= 35 -- w=0.000414 ratio=0.0004 l1=0.001785 l2=0.003121 L/R=0.000037/0.001334 start= 35 owner=0344 goldRank= 203 score=0.999970
+      ITEM 0340 target=0693 L=4 case=RECOVERED PEAKrank=15 TOP8rank=1
+        k=1 pos=  1 -- w=0.312267 ratio=1.0000 l1=0.322613 l2=0.328558 L/R=0.000000/0.010346 start=  1 owner=0858 goldRank=  15 score=0.271886
+        k=2 pos=  9 GR w=0.306494 ratio=0.9815 l1=0.315539 l2=0.378764 L/R=0.000821/0.008224 start=  9 owner=0693 goldRank=   1 score=1.000003
+        k=3 pos= 14 -R w=0.160794 ratio=0.5149 l1=0.218108 l2=0.224883 L/R=0.054878/0.002436 start= 11 owner=0693 goldRank=   1 score=0.483439
+        k=4 pos=  7 -R w=0.062636 ratio=0.2006 l1=0.063668 l2=0.370491 L/R=0.000212/0.000821 start=  7 owner=0693 goldRank=   1 score=0.650717
+        k=5 pos= 13 -R w=0.054878 ratio=0.1757 l1=0.222310 l2=0.225335 L/R=0.006638/0.160794 start= 10 owner=0693 goldRank=   1 score=0.722480
+        k=6 pos= 27 -- w=0.025829 ratio=0.0827 l1=0.032178 l2=0.032729 L/R=0.001303/0.005046 start= 24 owner=0954 goldRank=  20 score=0.445000
+        k=7 pos= 40 -- w=0.011769 ratio=0.0377 l1=0.016849 l2=0.016956 L/R=0.002601/0.002479 start= 38 owner=0573 goldRank=  65 score=0.803360
+        k=8 pos=  2 -- w=0.010346 ratio=0.0331 l1=0.328558 l2=0.329045 L/R=0.312267/0.005944 start=  1 owner=0858 goldRank=  15 score=0.271886
+      ITEM 0345 target=0698 L=3 case=REGRESSION PEAKrank=1 TOP8rank=194
+        k=1 pos= 21 GR w=0.702417 ratio=1.0000 l1=0.706684 l2=0.712409 L/R=0.003246/0.001021 start= 21 owner=0698 goldRank=   1 score=0.999959
+        k=2 pos= 12 -- w=0.198453 ratio=0.2825 l1=0.204262 l2=0.207065 L/R=0.002773/0.003035 start= 10 owner=0821 goldRank= 207 score=0.558822
+        k=3 pos= 37 -- w=0.042824 ratio=0.0610 l1=0.045741 l2=0.045968 L/R=0.001831/0.001086 start= 36 owner=0344 goldRank= 194 score=0.999970
+        k=4 pos= 24 -R w=0.009826 ratio=0.0140 l1=0.010959 l2=0.012460 L/R=0.000502/0.000631 start= 22 owner=0698 goldRank=   1 score=0.629955
+        k=5 pos= 19 -- w=0.005223 ratio=0.0074 l1=0.008817 l2=0.712003 L/R=0.000348/0.003246 start= 19 owner=0053 goldRank=   7 score=0.564703
+        k=6 pos=  7 -- w=0.004574 ratio=0.0065 l1=0.007427 l2=0.009898 L/R=0.001433/0.001420 start=  7 owner=0959 goldRank= 167 score=0.537755
+        k=7 pos= 32 -- w=0.003628 ratio=0.0052 l1=0.006455 l2=0.006812 L/R=0.001459/0.001368 start= 32 owner=0677 goldRank= 181 score=0.674754
+        k=8 pos= 20 -R w=0.003246 ratio=0.0046 l1=0.710886 l2=0.712255 L/R=0.005223/0.702417 start= 20 owner=0698 goldRank=   1 score=0.783607
+      ITEM 0356 target=0709 L=2 case=REGRESSION PEAKrank=1 TOP8rank=219
+        k=1 pos= 31 GR w=0.889076 ratio=1.0000 l1=0.894286 l2=0.907003 L/R=0.002760/0.002449 start= 31 owner=0709 goldRank=   1 score=0.999959
+        k=2 pos= 10 -- w=0.061633 ratio=0.0693 l1=0.062582 l2=0.064243 L/R=0.000416/0.000533 start=  9 owner=0346 goldRank= 219 score=0.634055
+        k=3 pos= 34 -- w=0.014497 ratio=0.0163 l1=0.027695 l2=0.030144 L/R=0.012327/0.000871 start= 34 owner=0346 goldRank= 219 score=0.999973
+        k=4 pos= 33 -- w=0.012327 ratio=0.0139 l1=0.029274 l2=0.919221 L/R=0.002449/0.014497 start= 33 owner=0346 goldRank= 219 score=0.999969
+        k=5 pos= 25 -- w=0.003914 ratio=0.0044 l1=0.005193 l2=0.005441 L/R=0.000142/0.001137 start= 24 owner=0796 goldRank= 220 score=0.401652
+        k=6 pos= 22 -- w=0.003305 ratio=0.0037 l1=0.003875 l2=0.005780 L/R=0.000360/0.000210 start= 21 owner=0346 goldRank= 219 score=0.606049
+        k=7 pos= 30 -- w=0.002760 ratio=0.0031 l1=0.892226 l2=0.894716 L/R=0.000389/0.889076 start= 30 owner=0868 goldRank=   2 score=0.687994
+        k=8 pos= 32 GR w=0.002449 ratio=0.0028 l1=0.903853 l2=0.921110 L/R=0.889076/0.012327 start= 31 owner=0709 goldRank=   1 score=0.999959
+      ITEM 0371 target=0724 L=2 case=REGRESSION PEAKrank=1 TOP8rank=176
+        k=1 pos=  9 GR w=0.869157 ratio=1.0000 l1=0.920107 l2=0.970436 L/R=0.005415/0.045535 start=  9 owner=0724 goldRank=   1 score=0.999961
+        k=2 pos= 10 GR w=0.045535 ratio=0.0524 l1=0.959059 l2=0.966109 L/R=0.869157/0.044366 start=  9 owner=0724 goldRank=   1 score=0.999961
+        k=3 pos= 11 -- w=0.044366 ratio=0.0510 l1=0.091537 l2=0.960742 L/R=0.045535/0.001636 start= 10 owner=0346 goldRank= 176 score=0.619239
+        k=4 pos= 33 -- w=0.009339 ratio=0.0107 l1=0.010177 l2=0.010270 L/R=0.000602/0.000237 start= 33 owner=0346 goldRank= 176 score=0.999973
+        k=5 pos=  7 -- w=0.005962 ratio=0.0069 l1=0.011684 l2=0.881567 L/R=0.000307/0.005415 start=  7 owner=0559 goldRank=   9 score=0.400258
+        k=6 pos=  8 -- w=0.005415 ratio=0.0062 l1=0.880534 l2=0.926376 L/R=0.005962/0.869157 start=  8 owner=0532 goldRank=   3 score=0.683321
+        k=7 pos=  1 -- w=0.004791 ratio=0.0055 l1=0.004881 l2=0.005884 L/R=0.000000/0.000090 start=  1 owner=0157 goldRank= 243 score=0.321838
+        k=8 pos= 17 -- w=0.002716 ratio=0.0031 l1=0.004250 l2=0.006148 L/R=0.000048/0.001485 start= 17 owner=0559 goldRank=  31 score=0.400258
+      ITEM 0374 target=0727 L=2 case=REGRESSION PEAKrank=1 TOP8rank=179
+        k=1 pos= 32 GR w=0.951626 ratio=1.0000 l1=0.952603 l2=0.956531 L/R=0.000617/0.000359 start= 32 owner=0727 goldRank=   1 score=0.999968
+        k=2 pos= 12 -- w=0.026155 ratio=0.0275 l1=0.026484 l2=0.031621 L/R=0.000137/0.000192 start= 11 owner=0346 goldRank= 179 score=0.636611
+        k=3 pos= 35 -- w=0.008216 ratio=0.0086 l1=0.011570 l2=0.011929 L/R=0.003137/0.000217 start= 35 owner=0346 goldRank= 179 score=0.999973
+        k=4 pos= 10 -- w=0.005098 ratio=0.0054 l1=0.005289 l2=0.031798 L/R=0.000054/0.000137 start= 10 owner=0025 goldRank= 185 score=0.768933
+        k=5 pos= 34 -- w=0.003137 ratio=0.0033 l1=0.011711 l2=0.963555 L/R=0.000359/0.008216 start= 34 owner=0346 goldRank= 179 score=0.999969
+        k=6 pos= 23 -- w=0.000879 ratio=0.0009 l1=0.000921 l2=0.001478 L/R=0.000010/0.000033 start= 22 owner=0346 goldRank= 179 score=0.608210
+        k=7 pos= 19 -- w=0.000865 ratio=0.0009 l1=0.000924 l2=0.001365 L/R=0.000009/0.000050 start= 19 owner=0559 goldRank=   3 score=0.400258
+        k=8 pos= 30 -- w=0.000792 ratio=0.0008 l1=0.001420 l2=0.953058 L/R=0.000010/0.000617 start= 30 owner=0559 goldRank=   3 score=0.400258
+      ITEM 0389 target=0742 L=2 case=REGRESSION PEAKrank=1 TOP8rank=191
+        k=1 pos= 30 GR w=0.984555 ratio=1.0000 l1=0.984972 l2=0.986056 L/R=0.000207/0.000210 start= 30 owner=0742 goldRank=   1 score=0.999966
+        k=2 pos= 11 -- w=0.008215 ratio=0.0083 l1=0.008871 l2=0.009125 L/R=0.000259/0.000397 start= 10 owner=0346 goldRank= 191 score=0.614573
+        k=3 pos= 33 -- w=0.002067 ratio=0.0021 l1=0.003177 l2=0.003386 L/R=0.001041/0.000068 start= 33 owner=0346 goldRank= 191 score=0.999973
+        k=4 pos= 20 -- w=0.001076 ratio=0.0011 l1=0.001793 l2=0.001966 L/R=0.000142/0.000575 start= 19 owner=0931 goldRank= 191 score=0.752861
+        k=5 pos= 32 -- w=0.001041 ratio=0.0011 l1=0.003318 l2=0.987942 L/R=0.000210/0.002067 start= 32 owner=0346 goldRank= 191 score=0.999969
+        k=6 pos= 21 -- w=0.000575 ratio=0.0006 l1=0.001807 l2=0.002164 L/R=0.001076/0.000156 start= 20 owner=0346 goldRank= 191 score=0.657624
+        k=7 pos= 12 -- w=0.000397 ratio=0.0004 l1=0.008717 l2=0.009011 L/R=0.008215/0.000105 start= 11 owner=0346 goldRank= 191 score=0.602141
+        k=8 pos= 10 -- w=0.000259 ratio=0.0003 l1=0.008624 l2=0.009047 L/R=0.000149/0.008215 start=  9 owner=0751 goldRank=  98 score=0.769823
+      ITEM 0395 target=0748 L=2 case=REGRESSION PEAKrank=1 TOP8rank=31
+        k=1 pos= 28 GR w=0.929907 ratio=1.0000 l1=0.934892 l2=0.937096 L/R=0.004128/0.000857 start= 28 owner=0748 goldRank=   1 score=0.999968
+        k=2 pos=  9 -- w=0.043430 ratio=0.0467 l1=0.043927 l2=0.044694 L/R=0.000123/0.000375 start=  9 owner=0346 goldRank=  31 score=0.602141
+        k=3 pos= 31 -- w=0.011752 ratio=0.0126 l1=0.013683 l2=0.014540 L/R=0.001810/0.000121 start= 31 owner=0346 goldRank=  31 score=0.999973
+        k=4 pos= 27 -- w=0.004128 ratio=0.0044 l1=0.934429 l2=0.935301 L/R=0.000394/0.929907 start= 27 owner=0448 goldRank=   6 score=0.676138
+        k=5 pos= 30 -- w=0.001810 ratio=0.0019 l1=0.014419 l2=0.944447 L/R=0.000857/0.011752 start= 30 owner=0346 goldRank=  31 score=0.999969
+        k=6 pos= 17 -- w=0.001523 ratio=0.0016 l1=0.002082 l2=0.002106 L/R=0.000273/0.000286 start= 17 owner=0955 goldRank= 134 score=0.695782
+        k=7 pos= 23 -- w=0.001249 ratio=0.0013 l1=0.001849 l2=0.002367 L/R=0.000568/0.000032 start= 23 owner=0832 goldRank= 196 score=0.417704
+        k=8 pos= 29 GR w=0.000857 ratio=0.0009 l1=0.932574 l2=0.948454 L/R=0.929907/0.001810 start= 28 owner=0748 goldRank=   1 score=0.999968
+      ITEM 0404 target=0757 L=2 case=REGRESSION PEAKrank=1 TOP8rank=39
+        k=1 pos=  9 GR w=0.969629 ratio=1.0000 l1=0.972180 l2=0.983502 L/R=0.000602/0.001949 start=  9 owner=0757 goldRank=   1 score=0.999972
+        k=2 pos= 11 -- w=0.010834 ratio=0.0112 l1=0.015391 l2=0.985109 L/R=0.001949/0.002609 start= 11 owner=0346 goldRank=  39 score=0.602141
+        k=3 pos=  1 -- w=0.005199 ratio=0.0054 l1=0.005542 l2=0.005898 L/R=0.000000/0.000343 start=  1 owner=0157 goldRank=  34 score=0.321838
+        k=4 pos= 34 -- w=0.003037 ratio=0.0031 l1=0.003437 l2=0.003457 L/R=0.000185/0.000215 start= 34 owner=0346 goldRank=  39 score=0.999973
+        k=5 pos= 12 -- w=0.002609 ratio=0.0027 l1=0.013531 l2=0.015492 L/R=0.010834/0.000089 start= 11 owner=0346 goldRank=  39 score=0.602141
+        k=6 pos= 10 GR w=0.001949 ratio=0.0020 l1=0.982412 l2=0.985623 L/R=0.969629/0.010834 start=  9 owner=0757 goldRank=   1 score=0.999972
+        k=7 pos= 22 -- w=0.001681 ratio=0.0017 l1=0.002362 l2=0.002674 L/R=0.000573/0.000109 start= 22 owner=0346 goldRank=  39 score=0.602141
+        k=8 pos=  6 -- w=0.000664 ratio=0.0007 l1=0.001257 l2=0.001944 L/R=0.000106/0.000488 start=  6 owner=0859 goldRank=  20 score=0.390408
+      ITEM 0410 target=0763 L=2 case=REGRESSION PEAKrank=1 TOP8rank=44
+        k=1 pos= 31 GR w=0.935250 ratio=1.0000 l1=0.969416 l2=0.971689 L/R=0.000863/0.033303 start= 31 owner=0763 goldRank=   1 score=0.999973
+        k=2 pos= 32 GR w=0.033303 ratio=0.0356 l1=0.970627 l2=0.976115 L/R=0.935250/0.002074 start= 31 owner=0763 goldRank=   1 score=0.999973
+        k=3 pos= 11 -- w=0.014467 ratio=0.0155 l1=0.014596 l2=0.018222 L/R=0.000015/0.000114 start= 10 owner=0346 goldRank=  44 score=0.620745
+        k=4 pos= 34 -- w=0.004625 ratio=0.0049 l1=0.006847 l2=0.040150 L/R=0.002074/0.000148 start= 34 owner=0346 goldRank=  44 score=0.999973
+        k=5 pos=  9 -- w=0.003584 ratio=0.0038 l1=0.003847 l2=0.018540 L/R=0.000249/0.000015 start=  9 owner=0226 goldRank= 103 score=0.732966
+        k=6 pos= 33 -- w=0.002074 ratio=0.0022 l1=0.040002 l2=0.975400 L/R=0.033303/0.004625 start= 33 owner=0346 goldRank=  44 score=0.999969
+        k=7 pos= 25 -- w=0.001022 ratio=0.0011 l1=0.001352 l2=0.001528 L/R=0.000129/0.000201 start= 25 owner=0346 goldRank=  44 score=0.425729
+        k=8 pos= 30 -- w=0.000863 ratio=0.0009 l1=0.936312 l2=0.969634 L/R=0.000199/0.935250 start= 30 owner=0829 goldRank=   7 score=0.709771
+      ITEM 0428 target=0781 L=2 case=REGRESSION PEAKrank=1 TOP8rank=4
+        k=1 pos= 31 GR w=0.953877 ratio=1.0000 l1=0.954699 l2=0.956247 L/R=0.000765/0.000058 start= 31 owner=0781 goldRank=   1 score=0.999957
+        k=2 pos= 11 -- w=0.028898 ratio=0.0303 l1=0.029315 l2=0.029482 L/R=0.000244/0.000174 start= 11 owner=0346 goldRank=   4 score=0.602141
+        k=3 pos= 34 -- w=0.009265 ratio=0.0097 l1=0.010665 l2=0.010723 L/R=0.001321/0.000080 start= 34 owner=0346 goldRank=   4 score=0.999973
+        k=4 pos= 33 -- w=0.001321 ratio=0.0014 l1=0.010643 l2=0.964600 L/R=0.000058/0.009265 start= 33 owner=0346 goldRank=   4 score=0.999969
+        k=5 pos= 20 -- w=0.001182 ratio=0.0012 l1=0.001832 l2=0.003270 L/R=0.000292/0.000358 start= 20 owner=0469 goldRank= 156 score=0.761109
+        k=6 pos= 22 -- w=0.001148 ratio=0.0012 l1=0.001600 l2=0.003098 L/R=0.000358/0.000093 start= 22 owner=0346 goldRank=   4 score=0.602141
+        k=7 pos= 30 -- w=0.000765 ratio=0.0008 l1=0.954868 l2=0.955015 L/R=0.000227/0.953877 start= 30 owner=0745 goldRank=   4 score=0.675429
+        k=8 pos= 21 -- w=0.000358 ratio=0.0004 l1=0.002688 l2=0.003074 L/R=0.001182/0.001148 start= 20 owner=0469 goldRank=  59 score=0.761109
+      ITEM 0440 target=0793 L=2 case=REGRESSION PEAKrank=1 TOP8rank=14
+        k=1 pos=  9 GR w=0.964806 ratio=1.0000 l1=0.968236 l2=0.983626 L/R=0.000172/0.003258 start=  9 owner=0793 goldRank=   1 score=0.999972
+        k=2 pos= 11 -- w=0.013941 ratio=0.0144 l1=0.019643 l2=0.984810 L/R=0.003258/0.002443 start= 11 owner=0346 goldRank=  14 score=0.602141
+        k=3 pos=  1 -- w=0.005085 ratio=0.0053 l1=0.005342 l2=0.005542 L/R=0.000000/0.000257 start=  1 owner=0157 goldRank= 135 score=0.321838
+        k=4 pos= 10 GR w=0.003258 ratio=0.0034 l1=0.982006 l2=0.984621 L/R=0.964806/0.013941 start=  9 owner=0793 goldRank=   1 score=0.999972
+        k=5 pos= 34 -- w=0.002586 ratio=0.0027 l1=0.003257 l2=0.003687 L/R=0.000541/0.000129 start= 34 owner=0346 goldRank=  14 score=0.999973
+        k=6 pos= 12 -- w=0.002443 ratio=0.0025 l1=0.016745 l2=0.020032 L/R=0.013941/0.000361 start= 11 owner=0346 goldRank=  14 score=0.602141
+        k=7 pos=  7 -- w=0.001449 ratio=0.0015 l1=0.001790 l2=0.966696 L/R=0.000170/0.000172 start=  7 owner=0559 goldRank=  83 score=0.400258
+        k=8 pos= 22 -- w=0.001031 ratio=0.0011 l1=0.001993 l2=0.002255 L/R=0.000188/0.000774 start= 22 owner=0346 goldRank=  14 score=0.602141
+      ITEM 0461 target=0814 L=2 case=REGRESSION PEAKrank=1 TOP8rank=86
+        k=1 pos= 30 GR w=0.982080 ratio=1.0000 l1=0.982750 l2=0.983719 L/R=0.000622/0.000048 start= 30 owner=0814 goldRank=   1 score=0.999956
+        k=2 pos= 11 -- w=0.008808 ratio=0.0090 l1=0.009151 l2=0.009738 L/R=0.000173/0.000170 start= 10 owner=0346 goldRank=  86 score=0.609459
+        k=3 pos= 33 -- w=0.002046 ratio=0.0021 l1=0.002525 l2=0.002573 L/R=0.000415/0.000064 start= 33 owner=0346 goldRank=  86 score=0.999973
+        k=4 pos= 19 -- w=0.001331 ratio=0.0014 l1=0.001678 l2=0.003019 L/R=0.000296/0.000051 start= 19 owner=0280 goldRank= 155 score=0.704824
+        k=5 pos= 17 -- w=0.001013 ratio=0.0010 l1=0.001318 l2=0.002653 L/R=0.000009/0.000296 start= 17 owner=0559 goldRank= 170 score=0.400258
+        k=6 pos= 29 -- w=0.000622 ratio=0.0006 l1=0.983256 l2=0.983311 L/R=0.000554/0.982080 start= 29 owner=0226 goldRank=   3 score=0.685300
+        k=7 pos= 28 -- w=0.000554 ratio=0.0006 l1=0.001182 l2=0.983266 L/R=0.000007/0.000622 start= 28 owner=0559 goldRank= 127 score=0.400258
+        k=8 pos=  9 -- w=0.000511 ratio=0.0005 l1=0.000746 l2=0.009811 L/R=0.000062/0.000173 start=  9 owner=0556 goldRank= 338 score=0.765837
+      ITEM 0470 target=0823 L=2 case=REGRESSION PEAKrank=1 TOP8rank=93
+        k=1 pos= 31 GR w=0.953425 ratio=1.0000 l1=0.954807 l2=0.957532 L/R=0.000396/0.000987 start= 31 owner=0823 goldRank=   1 score=0.999971
+        k=2 pos= 11 -- w=0.027414 ratio=0.0288 l1=0.027729 l2=0.030521 L/R=0.000181/0.000134 start= 11 owner=0346 goldRank=  93 score=0.602141
+        k=3 pos= 34 -- w=0.004253 ratio=0.0045 l1=0.005588 l2=0.006575 L/R=0.001221/0.000114 start= 34 owner=0346 goldRank=  93 score=0.999973
+        k=4 pos=  9 -- w=0.002727 ratio=0.0029 l1=0.003089 l2=0.031928 L/R=0.000181/0.000181 start=  9 owner=0580 goldRank=  30 score=0.744829
+        k=5 pos= 14 -- w=0.001840 ratio=0.0019 l1=0.001946 l2=0.002091 L/R=0.000066/0.000041 start= 14 owner=0346 goldRank=  93 score=0.454424
+        k=6 pos= 18 -- w=0.001673 ratio=0.0018 l1=0.001972 l2=0.002482 L/R=0.000002/0.000297 start= 18 owner=0559 goldRank= 164 score=0.400258
+        k=7 pos= 29 -- w=0.001503 ratio=0.0016 l1=0.001904 l2=0.955345 L/R=0.000005/0.000396 start= 29 owner=0559 goldRank= 132 score=0.400258
+        k=8 pos=  7 -- w=0.001426 ratio=0.0015 l1=0.001615 l2=0.004358 L/R=0.000008/0.000181 start=  7 owner=0559 goldRank= 164 score=0.400258
+      ITEM 0497 target=0850 L=2 case=REGRESSION PEAKrank=1 TOP8rank=60
+        k=1 pos= 19 GR w=0.403745 ratio=1.0000 l1=0.425340 l2=0.444315 L/R=0.004074/0.017522 start= 19 owner=0850 goldRank=   1 score=0.999967
+        k=2 pos= 11 -- w=0.191595 ratio=0.4745 l1=0.293663 l2=0.448664 L/R=0.094095/0.007973 start= 11 owner=0346 goldRank=  60 score=0.602141
+        k=3 pos=  9 -- w=0.154259 ratio=0.3821 l1=0.253780 l2=0.452497 L/R=0.005426/0.094095 start=  9 owner=0856 goldRank= 308 score=0.774050
+        k=4 pos= 10 -- w=0.094095 ratio=0.2331 l1=0.439948 l2=0.453348 L/R=0.154259/0.191595 start=  9 owner=0856 goldRank=  74 score=0.774050
+        k=5 pos= 31 -- w=0.023228 ratio=0.0575 l1=0.026793 l2=0.029867 L/R=0.002944/0.000621 start= 31 owner=0703 goldRank= 263 score=0.777955
+        k=6 pos= 34 -- w=0.021875 ratio=0.0542 l1=0.024841 l2=0.025462 L/R=0.001913/0.001053 start= 34 owner=0346 goldRank=  60 score=0.999973
+        k=7 pos= 20 GR w=0.017522 ratio=0.0434 l1=0.435865 l2=0.445453 L/R=0.403745/0.014599 start= 19 owner=0850 goldRank=   1 score=0.999967
+        k=8 pos= 21 -- w=0.014599 ratio=0.0362 l1=0.037634 l2=0.443434 L/R=0.017522/0.005514 start= 20 owner=0346 goldRank=  60 score=0.627997
+      ITEM 0513 target=0866 L=3 case=REGRESSION PEAKrank=1 TOP8rank=73
+        k=1 pos=  8 GR w=0.670973 ratio=1.0000 l1=0.682098 l2=0.793842 L/R=0.001309/0.009816 start=  8 owner=0866 goldRank=   1 score=0.999959
+        k=2 pos= 10 GR w=0.102934 ratio=0.1534 l1=0.168363 l2=0.846788 L/R=0.009816/0.055612 start=  8 owner=0866 goldRank=   1 score=0.999959
+        k=3 pos= 11 -R w=0.055612 ratio=0.0829 l1=0.165999 l2=0.177036 L/R=0.102934/0.007453 start=  9 owner=0866 goldRank=   1 score=0.629955
+        k=4 pos=  3 -- w=0.053773 ratio=0.0801 l1=0.058563 l2=0.086366 L/R=0.002823/0.001968 start=  3 owner=0812 goldRank=  78 score=0.369275
+        k=5 pos=  1 -- w=0.024829 ratio=0.0370 l1=0.027652 l2=0.081425 L/R=0.000000/0.002823 start=  1 owner=0284 goldRank=  94 score=0.336071
+        k=6 pos= 35 -- w=0.014628 ratio=0.0218 l1=0.020640 l2=0.020789 L/R=0.003486/0.002525 start= 34 owner=0344 goldRank=  73 score=0.999970
+        k=7 pos=  9 GR w=0.009816 ratio=0.0146 l1=0.783723 l2=0.840644 L/R=0.670973/0.102934 start=  8 owner=0866 goldRank=   1 score=0.999959
+        k=8 pos= 22 -- w=0.009214 ratio=0.0137 l1=0.011652 l2=0.016275 L/R=0.000628/0.001810 start= 20 owner=0344 goldRank=  73 score=0.572297
+      ITEM 0572 target=0925 L=2 case=REGRESSION PEAKrank=1 TOP8rank=245
+        k=1 pos= 29 GR w=0.866502 ratio=1.0000 l1=0.868806 l2=0.877089 L/R=0.001029/0.001275 start= 29 owner=0925 goldRank=   1 score=0.999970
+        k=2 pos= 10 -- w=0.066046 ratio=0.0762 l1=0.069502 l2=0.073564 L/R=0.000479/0.002977 start=  9 owner=0346 goldRank= 245 score=0.620732
+        k=3 pos= 32 -- w=0.019292 ratio=0.0223 l1=0.028748 l2=0.030023 L/R=0.008100/0.001356 start= 32 owner=0346 goldRank= 245 score=0.999973
+        k=4 pos= 13 -- w=0.012153 ratio=0.0140 l1=0.012614 l2=0.015662 L/R=0.000205/0.000256 start= 13 owner=0346 goldRank= 245 score=0.449044
+        k=5 pos= 31 -- w=0.008100 ratio=0.0093 l1=0.028668 l2=0.896525 L/R=0.001275/0.019292 start= 31 owner=0346 goldRank= 245 score=0.999969
+        k=6 pos= 21 -- w=0.004707 ratio=0.0054 l1=0.006847 l2=0.008770 L/R=0.000634/0.001506 start= 20 owner=0346 goldRank= 245 score=0.639931
+        k=7 pos=  8 -- w=0.003856 ratio=0.0045 l1=0.004712 l2=0.071005 L/R=0.000377/0.000479 start=  8 owner=0415 goldRank= 200 score=0.737797
+        k=8 pos= 24 -- w=0.003477 ratio=0.0040 l1=0.004529 l2=0.006052 L/R=0.000904/0.000149 start= 23 owner=0862 goldRank= 229 score=0.401737
+      ITEM 0596 target=0949 L=2 case=RECOVERED PEAKrank=76 TOP8rank=1
+        k=1 pos=  1 -- w=0.229207 ratio=1.0000 l1=0.234579 l2=0.374300 L/R=0.000000/0.005372 start=  1 owner=0157 goldRank=  76 score=0.321838
+        k=2 pos=  3 -- w=0.139721 ratio=0.6096 l1=0.164230 l2=0.405028 L/R=0.005372/0.019137 start=  2 owner=0580 goldRank= 230 score=0.406474
+        k=3 pos= 11 -- w=0.102535 ratio=0.4473 l1=0.214610 l2=0.271695 L/R=0.027029/0.085046 start= 11 owner=0346 goldRank= 230 score=0.602141
+        k=4 pos= 12 -- w=0.085046 ratio=0.3710 l1=0.189534 l2=0.225535 L/R=0.102535/0.001953 start= 11 owner=0346 goldRank= 230 score=0.602141
+        k=5 pos=  7 -- w=0.080200 ratio=0.3499 l1=0.102736 l2=0.169458 L/R=0.005829/0.016707 start=  7 owner=0559 goldRank= 285 score=0.400258
+        k=6 pos=  9 GR w=0.055132 ratio=0.2405 l1=0.098868 l2=0.281602 L/R=0.016707/0.027029 start=  9 owner=0949 goldRank=   1 score=0.999979
+        k=7 pos= 34 -- w=0.040539 ratio=0.1769 l1=0.045717 l2=0.046708 L/R=0.004165/0.001013 start= 34 owner=0346 goldRank= 230 score=0.999973
+        k=8 pos= 18 -- w=0.040231 ratio=0.1755 l1=0.043744 l2=0.071603 L/R=0.000129/0.003384 start= 18 owner=0559 goldRank= 325 score=0.400258
+      ITEM 0608 target=0961 L=2 case=REGRESSION PEAKrank=1 TOP8rank=239
+        k=1 pos=  9 GR w=0.817296 ratio=1.0000 l1=0.822440 l2=0.915076 L/R=0.002200/0.002944 start=  9 owner=0961 goldRank=   1 score=0.999968
+        k=2 pos= 11 -- w=0.087221 ratio=0.1067 l1=0.093296 l2=0.910862 L/R=0.002944/0.003130 start= 10 owner=0346 goldRank= 239 score=0.641326
+        k=3 pos= 33 -- w=0.022503 ratio=0.0275 l1=0.028839 l2=0.029168 L/R=0.003459/0.002876 start= 33 owner=0346 goldRank= 239 score=0.999973
+        k=4 pos=  1 -- w=0.006665 ratio=0.0082 l1=0.007524 l2=0.007878 L/R=0.000000/0.000859 start=  1 owner=0157 goldRank= 308 score=0.321838
+        k=5 pos= 19 -- w=0.006376 ratio=0.0078 l1=0.008722 l2=0.017518 L/R=0.001136/0.001210 start= 19 owner=0442 goldRank= 301 score=0.759387
+        k=6 pos=  7 -- w=0.005415 ratio=0.0066 l1=0.011387 l2=0.832350 L/R=0.003772/0.002200 start=  7 owner=0559 goldRank= 342 score=0.400258
+        k=7 pos= 21 -- w=0.005171 ratio=0.0063 l1=0.007145 l2=0.014261 L/R=0.001210/0.000763 start= 21 owner=0346 goldRank= 239 score=0.602141
+        k=8 pos= 14 -- w=0.004134 ratio=0.0051 l1=0.005210 l2=0.009174 L/R=0.000271/0.000805 start= 14 owner=0058 goldRank= 281 score=0.431924
+      ITEM 0634 target=0987 L=4 case=RECOVERED PEAKrank=34 TOP8rank=1
+        k=1 pos= 21 -- w=0.577433 ratio=1.0000 l1=0.578093 l2=0.578254 L/R=0.000642/0.000018 start= 21 owner=0189 goldRank=  34 score=0.617772
+        k=2 pos= 34 GR w=0.378886 ratio=0.6562 l1=0.379687 l2=0.379925 L/R=0.000667/0.000134 start= 34 owner=0987 goldRank=   1 score=1.000011
+        k=3 pos= 12 -- w=0.031545 ratio=0.0546 l1=0.031812 l2=0.032081 L/R=0.000006/0.000261 start=  9 owner=0396 goldRank= 264 score=0.588993
+        k=4 pos= 39 -- w=0.005344 ratio=0.0093 l1=0.006064 l2=0.006113 L/R=0.000659/0.000061 start= 37 owner=0573 goldRank= 100 score=0.807799
+        k=5 pos=  8 -- w=0.001089 ratio=0.0019 l1=0.001435 l2=0.001638 L/R=0.000301/0.000046 start=  8 owner=0195 goldRank= 232 score=0.614394
+        k=6 pos= 33 -R w=0.000667 ratio=0.0012 l1=0.379591 l2=0.379790 L/R=0.000038/0.378886 start= 33 owner=0987 goldRank=   1 score=0.837744
+        k=7 pos= 38 -- w=0.000659 ratio=0.0011 l1=0.006052 l2=0.006313 L/R=0.000049/0.005344 start= 37 owner=0573 goldRank= 100 score=0.807799
+        k=8 pos= 20 -- w=0.000642 ratio=0.0011 l1=0.578216 l2=0.578277 L/R=0.000140/0.577433 start= 20 owner=0459 goldRank=  22 score=0.575808
+      ITEM 0638 target=0991 L=2 case=REGRESSION PEAKrank=1 TOP8rank=311
+        k=1 pos= 30 GR w=0.985141 ratio=1.0000 l1=0.985560 l2=0.985893 L/R=0.000126/0.000292 start= 30 owner=0991 goldRank=   1 score=0.999966
+        k=2 pos= 11 -- w=0.007719 ratio=0.0078 l1=0.007827 l2=0.010399 L/R=0.000068/0.000040 start= 10 owner=0346 goldRank= 311 score=0.606627
+        k=3 pos=  9 -- w=0.002558 ratio=0.0026 l1=0.002680 l2=0.010464 L/R=0.000054/0.000068 start=  9 owner=0733 goldRank=  71 score=0.747538
+        k=4 pos= 33 -- w=0.002247 ratio=0.0023 l1=0.002539 l2=0.002831 L/R=0.000268/0.000024 start= 33 owner=0346 goldRank= 311 score=0.999973
+        k=5 pos= 14 -- w=0.000408 ratio=0.0004 l1=0.000476 l2=0.000518 L/R=0.000014/0.000055 start= 13 owner=0796 goldRank= 312 score=0.401652
+        k=6 pos= 31 GR w=0.000292 ratio=0.0003 l1=0.985701 l2=0.988074 L/R=0.985141/0.000268 start= 30 owner=0991 goldRank=   1 score=0.999966
+        k=7 pos= 20 -- w=0.000291 ratio=0.0003 l1=0.000356 l2=0.000591 L/R=0.000058/0.000008 start= 20 owner=0700 goldRank= 197 score=0.774815
+        k=8 pos= 32 -- w=0.000268 ratio=0.0003 l1=0.002807 l2=0.987972 L/R=0.000292/0.002247 start= 32 owner=0346 goldRank= 311 score=0.999969
+      ITEM 0651 target=1004 L=3 case=REGRESSION PEAKrank=1 TOP8rank=250
+        k=1 pos= 21 GR w=0.969834 ratio=1.0000 l1=0.971551 l2=0.975650 L/R=0.000922/0.000795 start= 21 owner=1004 goldRank=   1 score=0.999967
+        k=2 pos= 12 -- w=0.010438 ratio=0.0108 l1=0.010754 l2=0.011764 L/R=0.000291/0.000024 start= 10 owner=0710 goldRank= 240 score=0.567289
+        k=3 pos= 33 -- w=0.007387 ratio=0.0076 l1=0.007953 l2=0.008014 L/R=0.000550/0.000015 start= 33 owner=0047 goldRank= 191 score=0.622136
+        k=4 pos= 23 GR w=0.003814 ratio=0.0039 l1=0.004925 l2=0.974772 L/R=0.000795/0.000316 start= 21 owner=1004 goldRank=   1 score=0.999967
+        k=5 pos=  9 -- w=0.002044 ratio=0.0021 l1=0.003548 l2=0.004002 L/R=0.000500/0.001005 start=  9 owner=0575 goldRank=  21 score=0.715651
+        k=6 pos= 37 -- w=0.001253 ratio=0.0013 l1=0.001326 l2=0.001330 L/R=0.000059/0.000014 start= 36 owner=0344 goldRank= 250 score=0.999970
+        k=7 pos= 10 -- w=0.001005 ratio=0.0010 l1=0.003340 l2=0.014278 L/R=0.002044/0.000291 start=  9 owner=0575 goldRank=  21 score=0.715651
+        k=8 pos= 20 -R w=0.000922 ratio=0.0010 l1=0.971042 l2=0.971891 L/R=0.000286/0.969834 start= 20 owner=1004 goldRank=   1 score=0.783631
+      ITEM 0678 target=0007 L=2 case=REGRESSION PEAKrank=1 TOP8rank=288
+        k=1 pos= 31 GR w=0.969779 ratio=1.0000 l1=0.971228 l2=0.973254 L/R=0.000447/0.001002 start= 31 owner=0007 goldRank=   1 score=0.999966
+        k=2 pos= 11 -- w=0.015513 ratio=0.0160 l1=0.016374 l2=0.016752 L/R=0.000499/0.000362 start= 10 owner=0346 goldRank= 288 score=0.614106
+        k=3 pos= 34 -- w=0.007287 ratio=0.0075 l1=0.009534 l2=0.010536 L/R=0.001984/0.000263 start= 34 owner=0346 goldRank= 288 score=0.999973
+        k=4 pos= 33 -- w=0.001984 ratio=0.0020 l1=0.010273 l2=0.980315 L/R=0.001002/0.007287 start= 33 owner=0346 goldRank= 288 score=0.999969
+        k=5 pos= 32 GR w=0.001002 ratio=0.0010 l1=0.972765 l2=0.980499 L/R=0.969779/0.001984 start= 31 owner=0007 goldRank=   1 score=0.999966
+        k=6 pos= 22 -- w=0.000815 ratio=0.0008 l1=0.000889 l2=0.001095 L/R=0.000026/0.000048 start= 21 owner=0346 goldRank= 288 score=0.696219
+        k=7 pos= 10 -- w=0.000499 ratio=0.0005 l1=0.016372 l2=0.016800 L/R=0.000360/0.015513 start=  9 owner=0160 goldRank= 328 score=0.767168
+        k=8 pos= 30 -- w=0.000447 ratio=0.0005 l1=0.970268 l2=0.971279 L/R=0.000042/0.969779 start= 30 owner=0736 goldRank=   7 score=0.692757
+      ITEM 0684 target=0013 L=2 case=REGRESSION PEAKrank=1 TOP8rank=285
+        k=1 pos= 30 GR w=0.976700 ratio=1.0000 l1=0.982755 l2=0.983065 L/R=0.002638/0.003417 start= 30 owner=0013 goldRank=   1 score=0.999971
+        k=2 pos= 11 -- w=0.005859 ratio=0.0060 l1=0.006215 l2=0.006430 L/R=0.000319/0.000037 start= 11 owner=0346 goldRank= 285 score=0.602141
+        k=3 pos= 18 -- w=0.005338 ratio=0.0055 l1=0.006167 l2=0.006310 L/R=0.000073/0.000757 start= 18 owner=0448 goldRank= 188 score=0.676138
+        k=4 pos= 31 GR w=0.003417 ratio=0.0035 l1=0.980363 l2=0.984043 L/R=0.976700/0.000246 start= 30 owner=0013 goldRank=   1 score=0.999971
+        k=5 pos= 29 -- w=0.002638 ratio=0.0027 l1=0.979402 l2=0.982819 L/R=0.000064/0.976700 start= 29 owner=0613 goldRank=   6 score=0.686237
+        k=6 pos=  8 -- w=0.002302 ratio=0.0024 l1=0.002524 l2=0.002850 L/R=0.000026/0.000196 start=  8 owner=0256 goldRank=  33 score=0.685637
+        k=7 pos= 33 -- w=0.001041 ratio=0.0011 l1=0.001314 l2=0.004730 L/R=0.000246/0.000026 start= 33 owner=0346 goldRank= 285 score=0.999973
+        k=8 pos= 19 -- w=0.000757 ratio=0.0008 l1=0.006212 l2=0.006542 L/R=0.005338/0.000118 start= 19 owner=0880 goldRank= 112 score=0.743985
+      ITEM 0693 target=0022 L=2 case=REGRESSION PEAKrank=1 TOP8rank=268
+        k=1 pos= 32 GR w=0.832995 ratio=1.0000 l1=0.834228 l2=0.864774 L/R=0.000827/0.000405 start= 32 owner=0022 goldRank=   1 score=0.999961
+        k=2 pos= 11 -- w=0.075805 ratio=0.0910 l1=0.084709 l2=0.086219 L/R=0.000076/0.008827 start= 10 owner=0346 goldRank= 268 score=0.646243
+        k=3 pos= 34 -- w=0.030447 ratio=0.0366 l1=0.041902 l2=0.876035 L/R=0.000405/0.011049 start= 34 owner=0346 goldRank= 268 score=0.999969
+        k=4 pos= 24 -- w=0.016582 ratio=0.0199 l1=0.022436 l2=0.024781 L/R=0.002126/0.003727 start= 23 owner=0346 goldRank= 268 score=0.602141
+        k=5 pos= 35 -- w=0.011049 ratio=0.0133 l1=0.042634 l2=0.043040 L/R=0.030447/0.001138 start= 35 owner=0346 goldRank= 268 score=0.999973
+        k=6 pos= 12 -- w=0.008827 ratio=0.0106 l1=0.085135 l2=0.085828 L/R=0.075805/0.000503 start= 11 owner=0346 goldRank= 268 score=0.602141
+        k=7 pos=  1 -- w=0.008716 ratio=0.0105 l1=0.009657 l2=0.009716 L/R=0.000000/0.000941 start=  1 owner=0157 goldRank= 297 score=0.321838
+        k=8 pos= 25 -- w=0.003727 ratio=0.0045 l1=0.022498 l2=0.024711 L/R=0.016582/0.002188 start= 25 owner=0346 goldRank= 268 score=0.429783
+      ITEM 0696 target=0025 L=2 case=BOTH_FAIL PEAKrank=94 TOP8rank=278
+        k=1 pos=  8 -- w=0.290639 ratio=1.0000 l1=0.299701 l2=0.514865 L/R=0.006776/0.002286 start=  8 owner=0784 goldRank=  94 score=0.756403
+        k=2 pos= 19 GR w=0.289611 ratio=0.9965 l1=0.307129 l2=0.318030 L/R=0.014628/0.002890 start= 19 owner=0025 goldRank=   1 score=0.999969
+        k=3 pos= 10 -- w=0.212867 ratio=0.7324 l1=0.225876 l2=0.517818 L/R=0.002286/0.010723 start=  9 owner=0346 goldRank= 278 score=0.622296
+        k=4 pos= 32 -- w=0.064008 ratio=0.2202 l1=0.071267 l2=0.071898 L/R=0.005301/0.001958 start= 32 owner=0346 goldRank= 278 score=0.999973
+        k=5 pos= 29 -- w=0.043532 ratio=0.1498 l1=0.052414 l2=0.058018 L/R=0.008251/0.000632 start= 29 owner=0334 goldRank= 299 score=0.756636
+        k=6 pos=  1 -- w=0.021003 ratio=0.0723 l1=0.021577 l2=0.021886 L/R=0.000000/0.000574 start=  1 owner=0157 goldRank=  60 score=0.321838
+        k=7 pos= 18 -- w=0.014628 ratio=0.0503 l1=0.305222 l2=0.308748 L/R=0.000983/0.289611 start= 18 owner=0424 goldRank=   3 score=0.675453
+        k=8 pos= 11 -- w=0.010723 ratio=0.0369 l1=0.224893 l2=0.228041 L/R=0.212867/0.001303 start= 10 owner=0346 goldRank= 278 score=0.602141
+      ITEM 0710 target=0039 L=4 case=RECOVERED PEAKrank=280 TOP8rank=1
+        k=1 pos= 13 -- w=0.364536 ratio=1.0000 l1=0.371345 l2=0.372670 L/R=0.000066/0.006743 start= 10 owner=0246 goldRank= 280 score=0.530177
+        k=2 pos= 22 GR w=0.356939 ratio=0.9792 l1=0.383948 l2=0.396120 L/R=0.001666/0.025344 start= 22 owner=0039 goldRank=   1 score=1.000008
+        k=3 pos= 40 -- w=0.099069 ratio=0.2718 l1=0.116194 l2=0.119216 L/R=0.015611/0.001514 start= 38 owner=0573 goldRank= 229 score=0.813514
+        k=4 pos= 23 GR w=0.025344 ratio=0.0695 l1=0.384208 l2=0.389499 L/R=0.356939/0.001925 start= 22 owner=0039 goldRank=   1 score=1.000008
+        k=5 pos= 26 -R w=0.019221 ratio=0.0527 l1=0.032882 l2=0.038766 L/R=0.003626/0.010036 start= 23 owner=0039 goldRank=   1 score=0.722471
+        k=6 pos=  9 -- w=0.018354 ratio=0.0503 l1=0.020277 l2=0.026296 L/R=0.001289/0.000634 start=  9 owner=0852 goldRank=  45 score=0.625844
+        k=7 pos= 35 -- w=0.017726 ratio=0.0486 l1=0.021024 l2=0.034564 L/R=0.002940/0.000358 start= 35 owner=0222 goldRank= 130 score=0.616244
+        k=8 pos= 39 -- w=0.015611 ratio=0.0428 l1=0.117701 l2=0.128469 L/R=0.003022/0.099069 start= 38 owner=0573 goldRank= 229 score=0.813514
+      ITEM 0751 target=0080 L=3 case=REGRESSION PEAKrank=1 TOP8rank=331
+        k=1 pos=  9 GR w=0.811422 ratio=1.0000 l1=0.818044 l2=0.853248 L/R=0.002721/0.003901 start=  9 owner=0080 goldRank=   1 score=0.999963
+        k=2 pos= 12 -- w=0.048153 ratio=0.0593 l1=0.076164 l2=0.081448 L/R=0.024372/0.003640 start= 10 owner=0845 goldRank=   2 score=0.629959
+        k=3 pos= 11 GR w=0.024372 ratio=0.0300 l1=0.076425 l2=0.891488 L/R=0.003901/0.048153 start=  9 owner=0080 goldRank=   1 score=0.999963
+        k=4 pos= 22 -- w=0.013393 ratio=0.0165 l1=0.018067 l2=0.028640 L/R=0.004487/0.000186 start= 22 owner=0158 goldRank=  82 score=0.664359
+        k=5 pos= 38 -- w=0.012132 ratio=0.0150 l1=0.016985 l2=0.017183 L/R=0.003259/0.001594 start= 37 owner=0344 goldRank= 331 score=0.999970
+        k=6 pos= 34 -- w=0.011943 ratio=0.0147 l1=0.019136 l2=0.021235 L/R=0.007043/0.000149 start= 34 owner=0881 goldRank= 119 score=0.685019
+        k=7 pos=  7 -- w=0.010832 ratio=0.0133 l1=0.015138 l2=0.828399 L/R=0.001585/0.002721 start=  7 owner=0053 goldRank=   3 score=0.564703
+        k=8 pos=  1 -- w=0.008820 ratio=0.0109 l1=0.010319 l2=0.013628 L/R=0.000000/0.001498 start=  1 owner=0029 goldRank= 265 score=0.343261
+      ITEM 0759 target=0088 L=2 case=REGRESSION PEAKrank=1 TOP8rank=243
+        k=1 pos= 20 GR w=0.819228 ratio=1.0000 l1=0.825175 l2=0.846031 L/R=0.003532/0.002415 start= 20 owner=0088 goldRank=   1 score=0.999968
+        k=2 pos= 11 -- w=0.098534 ratio=0.1203 l1=0.105200 l2=0.118335 L/R=0.002315/0.004351 start= 10 owner=0346 goldRank= 243 score=0.641729
+        k=3 pos= 22 -- w=0.015637 ratio=0.0191 l1=0.020987 l2=0.841061 L/R=0.002415/0.002935 start= 21 owner=0346 goldRank= 243 score=0.626246
+        k=4 pos=  9 -- w=0.012925 ratio=0.0158 l1=0.016814 l2=0.116634 L/R=0.001574/0.002315 start=  9 owner=0856 goldRank= 269 score=0.790500
+        k=5 pos= 34 -- w=0.011686 ratio=0.0143 l1=0.018366 l2=0.018470 L/R=0.005723/0.000957 start= 34 owner=0346 goldRank= 243 score=0.999973
+        k=6 pos= 33 -- w=0.005723 ratio=0.0070 l1=0.017513 l2=0.018879 L/R=0.000105/0.011686 start= 33 owner=0346 goldRank= 243 score=0.999969
+        k=7 pos= 18 -- w=0.005220 ratio=0.0064 l1=0.008765 l2=0.828080 L/R=0.000013/0.003532 start= 18 owner=0559 goldRank=  85 score=0.400258
+        k=8 pos= 12 -- w=0.004351 ratio=0.0053 l1=0.103095 l2=0.105618 L/R=0.098534/0.000209 start= 11 owner=0346 goldRank= 243 score=0.602141
+      ITEM 0807 target=0136 L=2 case=REGRESSION PEAKrank=1 TOP8rank=265
+        k=1 pos= 31 GR w=0.926596 ratio=1.0000 l1=0.927792 l2=0.933298 L/R=0.000709/0.000487 start= 31 owner=0136 goldRank=   1 score=0.999968
+        k=2 pos= 11 -- w=0.044429 ratio=0.0479 l1=0.045768 l2=0.046101 L/R=0.000463/0.000877 start= 10 owner=0346 goldRank= 265 score=0.606748
+        k=3 pos= 34 -- w=0.010286 ratio=0.0111 l1=0.014897 l2=0.015384 L/R=0.004259/0.000353 start= 34 owner=0346 goldRank= 265 score=0.999973
+        k=4 pos= 33 -- w=0.004259 ratio=0.0046 l1=0.015031 l2=0.941980 L/R=0.000487/0.010286 start= 33 owner=0346 goldRank= 265 score=0.999969
+        k=5 pos= 21 -- w=0.003568 ratio=0.0039 l1=0.005872 l2=0.006239 L/R=0.001330/0.000974 start= 20 owner=0103 goldRank= 253 score=0.750554
+        k=6 pos= 20 -- w=0.001330 ratio=0.0014 l1=0.005085 l2=0.007203 L/R=0.000186/0.003568 start= 20 owner=0103 goldRank= 241 score=0.750554
+        k=7 pos= 29 -- w=0.001248 ratio=0.0013 l1=0.001974 l2=0.928582 L/R=0.000017/0.000709 start= 29 owner=0559 goldRank=  22 score=0.400258
+        k=8 pos= 18 -- w=0.001144 ratio=0.0012 l1=0.001333 l2=0.002700 L/R=0.000003/0.000186 start= 18 owner=0559 goldRank=  22 score=0.400258
+      ITEM 0897 target=0226 L=2 case=RECOVERED PEAKrank=35 TOP8rank=1
+        k=1 pos=  8 -- w=0.401767 ratio=1.0000 l1=0.487412 l2=0.529530 L/R=0.002863/0.082781 start=  8 owner=0055 goldRank=  35 score=0.755021
+        k=2 pos= 18 GR w=0.378626 ratio=0.9424 l1=0.383649 l2=0.394970 L/R=0.003111/0.001913 start= 18 owner=0226 goldRank=   1 score=0.999993
+        k=3 pos=  9 -- w=0.082781 ratio=0.2060 l1=0.526061 l2=0.541146 L/R=0.401767/0.041513 start=  8 owner=0055 goldRank=  88 score=0.755021
+        k=4 pos= 10 -- w=0.041513 ratio=0.1033 l1=0.136516 l2=0.539143 L/R=0.082781/0.012222 start=  9 owner=0346 goldRank=  81 score=0.620327
+        k=5 pos= 21 -- w=0.013929 ratio=0.0347 l1=0.025491 l2=0.027491 L/R=0.010278/0.001285 start= 20 owner=0346 goldRank=  81 score=0.602141
+        k=6 pos= 29 -- w=0.013592 ratio=0.0338 l1=0.015792 l2=0.022592 L/R=0.001716/0.000485 start= 29 owner=0451 goldRank= 251 score=0.750544
+        k=7 pos= 11 -- w=0.012222 ratio=0.0304 l1=0.054595 l2=0.137517 L/R=0.041513/0.000861 start= 10 owner=0346 goldRank=  81 score=0.602141
+        k=8 pos= 20 -- w=0.010278 ratio=0.0256 l1=0.026119 l2=0.406030 L/R=0.001913/0.013929 start= 19 owner=0346 goldRank=  81 score=0.620745
+      ITEM 0918 target=0247 L=2 case=REGRESSION PEAKrank=1 TOP8rank=69
+        k=1 pos=  9 GR w=0.966815 ratio=1.0000 l1=0.972381 l2=0.984483 L/R=0.000569/0.004997 start=  9 owner=0247 goldRank=   1 score=0.999972
+        k=2 pos= 11 -- w=0.011276 ratio=0.0117 l1=0.017976 l2=0.984871 L/R=0.004997/0.001702 start= 11 owner=0346 goldRank=  69 score=0.602141
+        k=3 pos= 10 GR w=0.004997 ratio=0.0052 l1=0.983089 l2=0.985360 L/R=0.966815/0.011276 start=  9 owner=0247 goldRank=   1 score=0.999972
+        k=4 pos= 34 -- w=0.004719 ratio=0.0049 l1=0.005696 l2=0.005757 L/R=0.000789/0.000188 start= 34 owner=0346 goldRank=  69 score=0.999973
+        k=5 pos=  1 -- w=0.003240 ratio=0.0034 l1=0.003358 l2=0.003499 L/R=0.000000/0.000118 start=  1 owner=0157 goldRank=  68 score=0.321838
+        k=6 pos= 12 -- w=0.001702 ratio=0.0018 l1=0.013059 l2=0.018111 L/R=0.011276/0.000080 start= 11 owner=0346 goldRank=  69 score=0.602141
+        k=7 pos= 20 -- w=0.001603 ratio=0.0017 l1=0.001925 l2=0.003686 L/R=0.000310/0.000012 start= 20 owner=1003 goldRank= 220 score=0.760928
+        k=8 pos= 22 -- w=0.001411 ratio=0.0015 l1=0.001486 l2=0.003131 L/R=0.000012/0.000063 start= 21 owner=0346 goldRank=  69 score=0.777610
+      ITEM 0921 target=0250 L=2 case=REGRESSION PEAKrank=1 TOP8rank=67
+        k=1 pos= 20 GR w=0.966141 ratio=1.0000 l1=0.967420 l2=0.969689 L/R=0.000365/0.000913 start= 20 owner=0250 goldRank=   1 score=0.999971
+        k=2 pos= 12 -- w=0.019729 ratio=0.0204 l1=0.022086 l2=0.023292 L/R=0.001734/0.000623 start= 11 owner=0346 goldRank=  67 score=0.638374
+        k=3 pos= 35 -- w=0.003229 ratio=0.0033 l1=0.004596 l2=0.004661 L/R=0.001227/0.000140 start= 35 owner=0346 goldRank=  67 score=0.999973
+        k=4 pos= 22 -- w=0.002183 ratio=0.0023 l1=0.003347 l2=0.969549 L/R=0.000913/0.000251 start= 22 owner=0346 goldRank=  67 score=0.602141
+        k=5 pos= 11 -- w=0.001734 ratio=0.0018 l1=0.022648 l2=0.023426 L/R=0.001184/0.019729 start= 10 owner=0907 goldRank=  83 score=0.748986
+        k=6 pos= 34 -- w=0.001227 ratio=0.0013 l1=0.004521 l2=0.005052 L/R=0.000065/0.003229 start= 34 owner=0346 goldRank=  67 score=0.999969
+        k=7 pos= 10 -- w=0.001184 ratio=0.0012 l1=0.003074 l2=0.022849 L/R=0.000156/0.001734 start= 10 owner=0907 goldRank= 169 score=0.748986
+        k=8 pos= 21 GR w=0.000913 ratio=0.0009 l1=0.969237 l2=0.969854 L/R=0.966141/0.002183 start= 20 owner=0250 goldRank=   1 score=0.999971
+      ITEM 0946 target=0275 L=3 case=REGRESSION PEAKrank=1 TOP8rank=109
+        k=1 pos= 32 GR w=0.650370 ratio=1.0000 l1=0.668173 l2=0.676905 L/R=0.003504/0.014299 start= 32 owner=0275 goldRank=   1 score=0.999969
+        k=2 pos= 12 -- w=0.186458 ratio=0.2867 l1=0.199281 l2=0.199912 L/R=0.007325/0.005499 start= 10 owner=0728 goldRank= 113 score=0.573157
+        k=3 pos= 36 -- w=0.043979 ratio=0.0676 l1=0.054920 l2=0.063000 L/R=0.010447/0.000494 start= 35 owner=0344 goldRank= 109 score=0.999970
+        k=4 pos= 20 -- w=0.021142 ratio=0.0325 l1=0.025576 l2=0.030824 L/R=0.000617/0.003817 start= 20 owner=0971 goldRank= 217 score=0.780022
+        k=5 pos= 33 GR w=0.014299 ratio=0.0220 l1=0.672749 l2=0.686700 L/R=0.650370/0.008080 start= 32 owner=0275 goldRank=   1 score=0.999969
+        k=6 pos=  9 -- w=0.014036 ratio=0.0216 l1=0.015075 l2=0.023827 L/R=0.000618/0.000420 start=  9 owner=0761 goldRank= 169 score=0.770609
+        k=7 pos= 35 -- w=0.010447 ratio=0.0161 l1=0.062506 l2=0.077299 L/R=0.008080/0.043979 start= 35 owner=0344 goldRank= 109 score=0.999970
+        k=8 pos= 23 -- w=0.008087 ratio=0.0124 l1=0.011910 l2=0.017120 L/R=0.002618/0.001205 start= 21 owner=0971 goldRank= 112 score=0.582567
+      ITEM 0987 target=0316 L=2 case=REGRESSION PEAKrank=1 TOP8rank=87
+        k=1 pos= 20 GR w=0.847336 ratio=1.0000 l1=0.851727 l2=0.862470 L/R=0.003319/0.001072 start= 20 owner=0316 goldRank=   1 score=0.999957
+        k=2 pos= 11 -- w=0.086069 ratio=0.1016 l1=0.089981 l2=0.095169 L/R=0.003127/0.000785 start= 10 owner=0346 goldRank=  87 score=0.718493
+        k=3 pos= 34 -- w=0.021315 ratio=0.0252 l1=0.023468 l2=0.023709 L/R=0.001521/0.000632 start= 34 owner=0346 goldRank=  87 score=0.999973
+        k=4 pos= 18 -- w=0.005849 ratio=0.0069 l1=0.009215 l2=0.856592 L/R=0.000047/0.003319 start= 18 owner=0559 goldRank=  66 score=0.400258
+        k=5 pos=  9 -- w=0.005157 ratio=0.0061 l1=0.009146 l2=0.097933 L/R=0.000862/0.003127 start=  9 owner=0448 goldRank= 127 score=0.740073
+        k=6 pos= 30 -- w=0.005044 ratio=0.0060 l1=0.010380 l2=0.010672 L/R=0.003763/0.001573 start= 30 owner=0619 goldRank=  79 score=0.696921
+        k=7 pos= 22 -- w=0.004894 ratio=0.0058 l1=0.006420 l2=0.854276 L/R=0.001072/0.000453 start= 21 owner=0346 goldRank=  87 score=0.657874
+        k=8 pos= 29 -- w=0.003763 ratio=0.0044 l1=0.008858 l2=0.010497 L/R=0.000051/0.005044 start= 29 owner=0559 goldRank=  18 score=0.400258
+      ITEM 0995 target=0324 L=4 case=RECOVERED PEAKrank=144 TOP8rank=1
+        k=1 pos=  1 -- w=0.337126 ratio=1.0000 l1=0.368524 l2=0.400530 L/R=0.000000/0.031398 start=  1 owner=0264 goldRank= 144 score=0.301374
+        k=2 pos= 33 -- w=0.128002 ratio=0.3797 l1=0.148373 l2=0.154945 L/R=0.006529/0.013842 start= 33 owner=0636 goldRank= 296 score=0.643453
+        k=3 pos= 12 -R w=0.094200 ratio=0.2794 l1=0.127930 l2=0.130617 L/R=0.013774/0.019957 start=  9 owner=0324 goldRank=   1 score=0.722453
+        k=4 pos=  8 GR w=0.068653 ratio=0.2036 l1=0.137758 l2=0.164046 L/R=0.009255/0.059850 start=  8 owner=0324 goldRank=   1 score=0.999978
+        k=5 pos=  9 GR w=0.059850 ratio=0.1775 l1=0.130075 l2=0.153103 L/R=0.068653/0.001572 start=  8 owner=0324 goldRank=   1 score=0.999978
+        k=6 pos=  4 -- w=0.041289 ratio=0.1225 l1=0.076851 l2=0.132967 L/R=0.032006/0.003557 start=  2 owner=0264 goldRank= 144 score=0.367329
+        k=7 pos=  3 -- w=0.032006 ratio=0.0949 l1=0.104693 l2=0.445376 L/R=0.031398/0.041289 start=  2 owner=0264 goldRank= 144 score=0.367329
+        k=8 pos=  2 -- w=0.031398 ratio=0.0931 l1=0.400530 l2=0.441819 L/R=0.337126/0.032006 start=  2 owner=0264 goldRank= 144 score=0.367329
+
+[9/12] CROSS-STRATUM DIAGNOSTIC SUMMARY...
+      PRIMARY
+        RECOVERED : items=   7 gold-peak-items=   7 gold-recovery-items=   7 candidates=   56 gold=  11 nongold=   45
+        REGRESSION: items=  44 gold-peak-items=  44 gold-recovery-items=  44 candidates=  352 gold=  74 nongold=  278
+        BOTH_FAIL : items=   0 gold-peak-items=   0 gold-recovery-items=   0 candidates=    0 gold=   0 nongold=    0
+        STABLE    : items= 973 gold-peak-items= 973 gold-recovery-items= 973 candidates= 7784 gold=1846 nongold= 5938
+      COUNTERFACTUAL
+        RECOVERED : items=   8 gold-peak-items=   8 gold-recovery-items=   8 candidates=   64 gold=  11 nongold=   53
+        REGRESSION: items=  42 gold-peak-items=  42 gold-recovery-items=  42 candidates=  336 gold=  67 nongold=  269
+        BOTH_FAIL : items=   1 gold-peak-items=   1 gold-recovery-items=   1 candidates=    8 gold=   1 nongold=    7
+        STABLE    : items= 973 gold-peak-items= 973 gold-recovery-items= 973 candidates= 7784 gold=1842 nongold= 5942
+
+      PRIMARY best gold-peak vs best non-gold-peak CONCATCOS:
+        RECOVERED : n=   7 meanΔ=+0.148717 medianΔ=+0.192213 gold>non=7 tie=0 gold<non=0
+        REGRESSION: n=  44 meanΔ=-0.000007 medianΔ=-0.000006 gold>non=0 tie=0 gold<non=44
+        BOTH_FAIL : n=0
+        STABLE    : n= 973 meanΔ=+0.076742 medianΔ=+0.000048 gold>non=973 tie=0 gold<non=0
+
+      CF best gold-peak vs best non-gold-peak CONCATCOS:
+        RECOVERED : n=   8 meanΔ=+0.168182 medianΔ=+0.191568 gold>non=8 tie=0 gold<non=0
+        REGRESSION: n=  42 meanΔ=-0.000007 medianΔ=-0.000005 gold>non=0 tie=0 gold<non=42
+        BOTH_FAIL : n=   1 meanΔ=-0.000004 medianΔ=-0.000004 gold>non=0 tie=0 gold<non=1
+        STABLE    : n= 973 meanΔ=+0.080031 medianΔ=+0.000049 gold>non=973 tie=0 gold<non=0
+
+[10/12] REPRODUCTION / DIAGNOSTIC GATES...
+      PRIMARY_PEAK_REPRO              : PASS
+      PRIMARY_TOP8_REPRO              : PASS
+      CF_PEAK_REPRO                   : PASS
+      CF_TOP8_REPRO                   : PASS
+      PRIMARY_RECOVERED_REPRO         : PASS
+      PRIMARY_REGRESSION_REPRO        : PASS
+      CF_RECOVERED_REPRO              : PASS
+      CF_REGRESSION_REPRO             : PASS
+
+[11/12] PROTOCOL AUDIT...
+      Weight sentinel                     : PASS
+      Trainable tensors                   : 0
+      Pointer                             : L28H00 unchanged
+      Address                             : L00-V uncentered unchanged
+      Match                               : CONCATCOS unchanged
+      Panel                               : exact sealed deterministic reconstruction
+      Pointer candidate K                 : 8 · FROZEN FROM TEST535
+      K scan                              : NONE
+      Baseline retrieval under diagnosis : PEAK_CONTAIN + TOP8_JOINT reproductions only
+      New retrieval law                   : NONE
+      New origin law                      : NONE
+      Feature-based selection             : NONE
+      Threshold selection                 : NONE
+      Identity length L                   : PROTOCOL-KNOWN
+      Cross-length competition           : NO
+      Gold span used for selection       : NO
+      Gold span usage                    : POST-HOC DIAGNOSTIC ONLY
+      Decoded identity routing           : NO
+      Token-ID routing                   : NO
+      Gold B position used               : NO
+      Head/layer/address discovery       : NONE
+      Match-law scan                     : NONE
+      Training / LoRA / optimizer / DRA  : NONE
+      Learned router/scorer              : NONE
+      Query-time candidate-B forwards    : 0
+      TEST535 retroactively changed      : NO
+
+[12/12] FINAL...
+
+================================================================================================================================================================================
+TEST536 FINAL RESULT — AKBASCORE MAM · VARAN 1 · MULTI-PEAK DISCRIMINATION X-RAY
+================================================================================================================================================================================
+MODEL                              : mistralai/Mistral-7B-Instruct-v0.3 · frozen
+PANEL                              : TEST531/532/533/534/535 deterministic reconstruction · N=1024
+POINTER                            : L28H00 · UNCHANGED
+ADDRESS                            : L00-V · UNCENTERED · 1024D · UNCHANGED
+MATCH                              : CONCATCOS · UNCHANGED
+POINTER CANDIDATES                 : TOP-8 · FROZEN FROM TEST535
+MODE                               : X-RAY ONLY · NO NEW RETRIEVAL LAW
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PRIMARY PEAK_CONTAIN               : R1=0.9932 R5=0.9932 R16=0.9941 MRR=0.993312
+PRIMARY TOP8_JOINT                 : R1=0.9570 R5=0.9580 R16=0.9590 MRR=0.957721
+PRIMARY RECOVERED                  : 7
+PRIMARY REGRESSION                 : 44
+PRIMARY BOTH_FAIL                  : 0
+PRIMARY STABLE                     : 973
+CF PEAK_CONTAIN                    : R1=0.9912 R5=0.9912 R16=0.9922 MRR=0.991382
+CF TOP8_JOINT                      : R1=0.9580 R5=0.9590 R16=0.9600 MRR=0.958691
+CF RECOVERED                       : 8
+CF REGRESSION                      : 42
+CF BOTH_FAIL                       : 1
+CF STABLE                          : 973
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PRIMARY_PEAK_REPRO                 : PASS
+PRIMARY_TOP8_REPRO                 : PASS
+CF_PEAK_REPRO                      : PASS
+CF_TOP8_REPRO                      : PASS
+PRIMARY_RECOVERED_REPRO            : PASS
+PRIMARY_REGRESSION_REPRO           : PASS
+CF_RECOVERED_REPRO                 : PASS
+CF_REGRESSION_REPRO                : PASS
+WEIGHT_SENTINEL                    : PASS
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+WEIGHT SENTINEL                    : PASS
+TRAINABLE TENSORS                  : 0
+QUERY-TIME CANDIDATE-B FORWARDS    : 0
+KNOWN IDENTITY LENGTH              : YES
+CROSS-LENGTH GLOBAL COMPETITION    : NO
+NEW RETRIEVAL LAW                  : NONE
+FEATURE-BASED SELECTION            : NONE
+TEST528 RESULT SHA                 : 9235ed38c944f41a9ede0426d3aabaa12b5b20646f30e2be921e618f9471d3c2
+TEST529 RESULT SHA                 : 27ba703872f0d8a6ed870a6ba041d0cd0703d2eca467deac97186a90497795a0
+TEST530 RESULT SHA                 : 289247c88dfd4358cbe5ffb8499891546b27acc6912caf525a155ae81338db7b
+TEST531 RESULT SHA                 : 20257d7d613a49e55b03603946f07ec493009924f40ac26ab74cb817e1466528
+TEST532 RESULT SHA                 : 9e37a473a322a19f7b3862a25162835ab6396998dc4fc416bc90bc9b718df188
+TEST533 RESULT SHA                 : 5239fb585b87a22f5da778c61a1011379b216a25bf7d05dc5d01952cbb22a5c6
+TEST534 RESULT SHA                 : b25128d17176790b2a8694c8ec9e7db5eaad469ff02a87a46876b2ffd45a9bb1
+TEST535 RESULT SHA                 : fc407885133d48f84a952249b15e884b201749136f6b16a49e7db11b0e9e5087
+TEST536 PRE-RESULT LOCK            : d8d869fcb09f6d16d08b50727d5cfe8500c7f7603e1d0c70e52f1ea70830db25
+TEST536 RESULT SHA                 : 828b0923aecd22e39f09b345f74d300fe983c49d6991c5112537baecec9bf50a
+TOTAL TEST TIME                    : 435.73s
+VERDICT                            : TEST536_MULTI_PEAK_DISCRIMINATION_XRAY_COMPLETE
+NEXT                               : preserve TEST536 unchanged; derive any candidate discrimination law only in a new predeclared test
+================================================================================================================================================================================
