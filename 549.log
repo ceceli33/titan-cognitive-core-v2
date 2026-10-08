@@ -1,0 +1,307 @@
+ ==================================================================================================================================================================================
+TEST549 — AKBASCORE MAM · VARAN 1 · MULTI-CARTRIDGE NATIVE BINDING
+GATE-A RoPE REBASE VALIDATION → GATE-B SEALED MULTI-PKV POPULATION → QUERY
+NO RETRIEVAL · NO ROUTER · NO SCORER · NO QUERY-DEPENDENT CACHE/MASK · NO SOURCE REPLAY · NO TRAINING
+==================================================================================================================================================================================
+
+[1/10] Donmuş Mistral...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 601/601 [00:00<00:00, 54.4kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 13.4MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 34.7MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 58.4kB/s  tokenizer.model: downloading bytes:   448kB,   ???B/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 46.1kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 2.70MB/s]Downloading bytes:  12.4GB,  728MB/s  Reconstructing (incomplete total...):  96% 13.8GB / 14.5GB,  406MB/s  Fetching 3 files:   0% 0/3 [00:00<?, ?it/s]Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]generation_config.json: 100% 116/116 [00:00<00:00, 15.4kB/s]      mistralai/Mistral-7B-Instruct-v0.3 | NVIDIA A100-SXM4-40GB | Torch 2.11.0+cu130 | Transformers 5.18.0
+      32L H=4096 QH=32 KVH=8 HD=128 | torch.bfloat16 | trainable=0
+      LOCK SHA: 0577f807f63e253b74d3a7d30a3ac3f5d4d0905b0c614514bba6fe5689ac22a5
+
+[2/10] Protokol...
+      GATE-A önce RoPE rebasing'i gerçek Mistral PKV üzerinde doğrular.
+      GATE-A geçmeden multi-cartridge native-binding sonucu yorumlanmaz.
+      GATE-B'de bütün cartridge population QUERY'DEN ÖNCE kurulur ve SHA ile mühürlenir.
+      Query geldikten sonra cartridge seçimi/sıralaması/döndürmesi/ağırlığı/maskesi YOK.
+      Model bütün numerical population'a kendi doğal attention/OV/residual/MLP zinciriyle erişir.
+
+[3/10] TEST548 uyumlu 96 bağımsız native PKV forge...
+      01/24 Zorvan
+      02/24 Kelvar
+      03/24 Tarev
+      04/24 Belnor
+      05/24 Ravik
+      06/24 Nemor
+      07/24 Darsen
+      08/24 Feron
+      09/24 Larev
+      10/24 Torven
+      11/24 Selnor
+      12/24 Mirev
+      13/24 Varen
+      14/24 Kelor
+      15/24 Narev
+      16/24 Dervan
+      17/24 Calnor
+      18/24 Parel
+      19/24 Sorven
+      20/24 Barel
+      21/24 Ralen
+      22/24 Norel
+      23/24 Tervan
+      24/24 Karev
+      Cartridges: 96
+      Length min/mean/max: 39 39.90 41
+
+[4/10] GATE-A — model-native RoPE rebase fizik doğrulaması...
+      C00 CURRENT  L=40 δ=007 | Kmax=0.12500000 Vmax=0.09765625 | answer_same=True
+      C00 CURRENT  L=40 δ=031 | Kmax=0.18750000 Vmax=0.21875000 | answer_same=True
+      C00 CURRENT  L=40 δ=079 | Kmax=0.12500000 Vmax=0.11328125 | answer_same=True
+      C01 NEAR     L=40 δ=007 | Kmax=0.15625000 Vmax=0.15039062 | answer_same=True
+      C01 NEAR     L=40 δ=031 | Kmax=0.12500000 Vmax=0.21875000 | answer_same=True
+      C01 NEAR     L=40 δ=079 | Kmax=0.12500000 Vmax=0.10156250 | answer_same=True
+      C02 FORMER   L=41 δ=007 | Kmax=0.12500000 Vmax=0.09765625 | answer_same=True
+      C02 FORMER   L=41 δ=031 | Kmax=0.12500000 Vmax=0.21875000 | answer_same=True
+      C02 FORMER   L=41 δ=079 | Kmax=0.12500000 Vmax=0.08984375 | answer_same=True
+      C03 ROLE     L=41 δ=007 | Kmax=0.18750000 Vmax=0.09765625 | answer_same=True
+      C03 ROLE     L=41 δ=031 | Kmax=0.12500000 Vmax=0.21875000 | answer_same=True
+      C03 ROLE     L=41 δ=079 | Kmax=0.12500000 Vmax=0.11328125 | answer_same=True
+      C05 NEAR     L=39 δ=007 | Kmax=0.12500000 Vmax=0.10156250 | answer_same=True
+      C05 NEAR     L=39 δ=031 | Kmax=0.12500000 Vmax=0.21875000 | answer_same=True
+      C05 NEAR     L=39 δ=079 | Kmax=0.12500000 Vmax=0.10937500 | answer_same=True
+      C06 FORMER   L=40 δ=007 | Kmax=0.18750000 Vmax=0.09765625 | answer_same=True
+      C06 FORMER   L=40 δ=031 | Kmax=0.25000000 Vmax=0.21875000 | answer_same=True
+      C06 FORMER   L=40 δ=079 | Kmax=0.12500000 Vmax=0.08984375 | answer_same=True
+      C07 ROLE     L=40 δ=007 | Kmax=0.12500000 Vmax=0.09765625 | answer_same=True
+      C07 ROLE     L=40 δ=031 | Kmax=0.12500000 Vmax=0.21875000 | answer_same=True
+      C07 ROLE     L=40 δ=079 | Kmax=0.12500000 Vmax=0.11328125 | answer_same=True
+      C08 CURRENT  L=41 δ=007 | Kmax=0.12500000 Vmax=0.09765625 | answer_same=True
+      C08 CURRENT  L=41 δ=031 | Kmax=0.12500000 Vmax=0.21875000 | answer_same=True
+      C08 CURRENT  L=41 δ=079 | Kmax=0.12500000 Vmax=0.11328125 | answer_same=True
+      GATE-A answer equivalence: 24/24
+      GATE-A global Kmax=0.25000000 Vmax=0.21875000
+
+[5/10] GATE-B population plan — QUERY görülmeden...
+      Fixed order SHA: 23d04a32a653dc5e4d66a7547457ed2dc6f08bfb070618aa374614ac37a053fc
+      Order first 16 : [32, 23, 11, 62, 79, 9, 60, 33, 47, 29, 46, 19, 63, 95, 91, 54]
+      N=02 tokens=0081 SEALED_SHA=f63b08d3be479abc7fc9429b24bc970fc1be71488217f58e5d2cd1732f3ec2a2
+      N=08 tokens=0322 SEALED_SHA=052a13f5f76887a9ef205543701f034cd8e700198e5e89d3756cda3235b70750
+      N=32 tokens=1283 SEALED_SHA=4467a78fcbb942f9bfea31b18ad9aac4df93d9d834bdb1381deb07f9546e7036
+      N=96 tokens=3830 SEALED_SHA=9357088bee92921f7b206c27e149ee290cdc7b4abfebb64f13b6c48340cec162
+      Populations sealed. Bundan sonra query'ye göre cache işlemi YOK.
+
+[6/10] Native binding — sealed numerical populations...
+
+      N=02 | cartridges=2 | tokens=81
+      01/02 C32 W08 CURRENT  gold=Nerith     -> 'Nemor' FAIL
+      02/02 C23 W05 ROLE     gold=Nemor      -> 'Nemor' PASS
+      N=02 ACC=1/2=0.500000 | CACHE_SHA_UNCHANGED=PASS
+
+      N=08 | cartridges=8 | tokens=322
+      01/08 C32 W08 CURRENT  gold=Nerith     -> 'Calder' FAIL
+      02/08 C23 W05 ROLE     gold=Nemor      -> 'Calder' FAIL
+      03/08 C11 W02 ROLE     gold=Tarev      -> "Mireth's capital is not specified in the provided information, so I" FAIL
+      04/08 C62 W15 FORMER   gold=Orsen      -> 'Dervan does not have a specified former capital mentioned in the provided information.' FAIL
+      05/08 C79 W19 ROLE     gold=Barel      -> "Solmar's current capital is not explicitly stated in the provided information. However" FAIL
+      06/08 C09 W02 NEAR     gold=Varos      -> 'Mirel (Note: There seems to be a typo in your question' FAIL
+      07/08 C60 W15 CURRENT  gold=Mirel      -> 'Calder' FAIL
+      08/08 C33 W08 NEAR     gold=Calder     -> 'Calder' PASS
+      N=08 ACC=1/8=0.125000 | CACHE_SHA_UNCHANGED=PASS
+
+      N=32 | cartridges=32 | tokens=1283
+      01/32 C32 W08 CURRENT  gold=Nerith     -> 'Larev (There is no information provided about Larev in the given' FAIL
+      02/32 C23 W05 ROLE     gold=Nemor      -> 'Dovren (Dovren is not provided in the information given. The' FAIL
+      03/32 C11 W02 ROLE     gold=Tarev      -> 'Mireth (Mirev (There is no information about Mireth' FAIL
+      04/32 C62 W15 FORMER   gold=Orsen      -> 'Dervan is not provided in the information. (Dervan is not' FAIL
+      05/32 C79 W19 ROLE     gold=Barel      -> 'Solmar (There is no information provided about Solmar in the given information.' FAIL
+      06/32 C09 W02 NEAR     gold=Varos      -> 'Tarev is not provided in the information. (Tarev is not' FAIL
+      07/32 C60 W15 CURRENT  gold=Mirel      -> 'Dervan is not provided in the given information. (Dervan is' FAIL
+      08/32 C33 W08 NEAR     gold=Calder     -> 'Larev (There is no information provided about Larev in the given' FAIL
+      09/32 C47 W11 ROLE     gold=Mirev      -> 'Sorvik (Sorvik) ( Sorvik (Sorvik)' FAIL
+      10/32 C29 W07 NEAR     gold=Merith     -> "Feron's capital is not provided in the given information. (There is" FAIL
+      11/32 C46 W11 FORMER   gold=Kelmar     -> 'Mirev is not provided in the question, Mirev.' FAIL
+      12/32 C19 W04 ROLE     gold=Ravik      -> 'Nerik (N/A) Nerik (There is no information' FAIL
+      13/32 C63 W15 ROLE     gold=Dervan     -> 'Kelron ( Kelron ( Kelron ( Kelron ( Kelron (There' FAIL
+      14/32 C95 W23 ROLE     gold=Karev      -> 'Talrek ( Talrek ( Talrek ( Talrek is not provided in the' FAIL
+      15/32 C91 W22 ROLE     gold=Tervan     -> 'Karven ( Karven ( Karven ( Karven (Karven)' FAIL
+      16/32 C54 W13 FORMER   gold=Toren      -> 'Kelor is not provided in the information. (There is no capital named Kel' FAIL
+      17/32 C80 W20 CURRENT  gold=Mervor     -> 'Ralen ( Ralen ( Ralen ( Ralen ( Ralen ( R' FAIL
+      18/32 C93 W23 NEAR     gold=Dareth     -> 'Karev is not provided in the given information. (There is no information' FAIL
+      19/32 C44 W11 CURRENT  gold=Taldor     -> 'Mirev (There is no information about Mirev in the provided information' FAIL
+      20/32 C94 W23 FORMER   gold=Mirven     -> 'Karev is not provided in the information. (Karev is not' FAIL
+      21/32 C28 W07 CURRENT  gold=Talven     -> "Feron's capital is not provided in the given information. (There is" FAIL
+      22/32 C22 W05 FORMER   gold=Pareth     -> 'Nemor ( Nemor ( Nemor ( Nemor ( Nemor (I' FAIL
+      23/32 C55 W13 ROLE     gold=Kelor      -> 'Narell (There is no information provided about Narell in the given' FAIL
+      24/32 C53 W13 NEAR     gold=Velmar     -> 'Kelor is not provided in the information. (There is no information about the' FAIL
+      25/32 C10 W02 FORMER   gold=Cedran     -> 'Tarev is not provided in the question, Tarev is not a' FAIL
+      26/32 C59 W14 ROLE     gold=Narev      -> 'Dorvik (Dorvik (Dorvik) is not provided in the' FAIL
+      27/32 C65 W16 NEAR     gold=Naldor     -> 'Calnor (Calnor ( Calnor (Calnor)' FAIL
+      28/32 C84 W21 CURRENT  gold=Valdor     -> 'Norel (Norel (Norel is not provided in the' FAIL
+      29/32 C61 W15 NEAR     gold=Talvek     -> 'Dervan is not provided in the information. (Dervan is not' FAIL
+      30/32 C43 W10 ROLE     gold=Selnor     -> 'Mervek is not provided in the information. (There is no information about' FAIL
+      31/32 C06 W01 FORMER   gold=Branik     -> 'Kelvar ( Kelvar ( Kelvar ( Kelvar (Kelvar)' FAIL
+      32/32 C85 W21 NEAR     gold=Serith     -> 'Norel (Norel (There is no information provided about the name' FAIL
+      N=32 ACC=0/32=0.000000 | CACHE_SHA_UNCHANGED=PASS
+
+      N=96 | cartridges=96 | tokens=3830
+      01/96 C32 W08 CURRENT  gold=Nerith     -> 'Calnor' FAIL
+      02/96 C23 W05 ROLE     gold=Nemor      -> 'Dovren ( Dovren ( Dovren ( Dovren (' FAIL
+      03/96 C11 W02 ROLE     gold=Tarev      -> 'Mirel' FAIL
+      04/96 C62 W15 FORMER   gold=Orsen      -> 'Dervan' FAIL
+      05/96 C79 W19 ROLE     gold=Barel      -> 'Solven' FAIL
+      06/96 C09 W02 NEAR     gold=Varos      -> 'Tarev Tarev' FAIL
+      07/96 C60 W15 CURRENT  gold=Mirel      -> 'Dervan ( Dervan ( Dervan ( Dervan (' FAIL
+      08/96 C33 W08 NEAR     gold=Calder     -> 'Larev Larev' FAIL
+      09/96 C47 W11 ROLE     gold=Mirev      -> 'Sorvik ( Sorvik' FAIL
+      10/96 C29 W07 NEAR     gold=Merith     -> 'Feron' FAIL
+      11/96 C46 W11 FORMER   gold=Kelmar     -> 'Miren' FAIL
+      12/96 C19 W04 ROLE     gold=Ravik      -> 'Nerik\n\n\n\n\n\n\n\n\n\n\n\nN' FAIL
+      13/96 C63 W15 ROLE     gold=Dervan     -> 'Kelron' FAIL
+      14/96 C95 W23 ROLE     gold=Karev      -> 'Talven' FAIL
+      15/96 C91 W22 ROLE     gold=Tervan     -> 'Karven' FAIL
+      16/96 C54 W13 FORMER   gold=Toren      -> 'Kelor' FAIL
+      17/96 C80 W20 CURRENT  gold=Mervor     -> 'Calnor' FAIL
+      18/96 C93 W23 NEAR     gold=Dareth     -> 'Karev Karev' FAIL
+      19/96 C44 W11 CURRENT  gold=Taldor     -> 'Miren' FAIL
+      20/96 C94 W23 FORMER   gold=Mirven     -> 'Karev Karev Karev' FAIL
+      21/96 C28 W07 CURRENT  gold=Talven     -> 'Feron' FAIL
+      22/96 C22 W05 FORMER   gold=Pareth     -> 'Nemor' FAIL
+      23/96 C55 W13 ROLE     gold=Kelor      -> 'Narell' FAIL
+      24/96 C53 W13 NEAR     gold=Velmar     -> 'Kelor' FAIL
+      25/96 C10 W02 FORMER   gold=Cedran     -> 'Tarev Tarev' FAIL
+      26/96 C59 W14 ROLE     gold=Narev      -> 'Dorvik ( Dorvik' FAIL
+      27/96 C65 W16 NEAR     gold=Naldor     -> 'Calnor' FAIL
+      28/96 C84 W21 CURRENT  gold=Valdor     -> 'Norel\n\n\n\n\n\n\n\n\n\n\n\nN' FAIL
+      29/96 C61 W15 NEAR     gold=Talvek     -> 'Dervan ( Dervan ( Dervan ( Dervan (' FAIL
+      30/96 C43 W10 ROLE     gold=Selnor     -> 'Mervek' FAIL
+      31/96 C06 W01 FORMER   gold=Branik     -> 'Kelvar' FAIL
+      32/96 C85 W21 NEAR     gold=Serith     -> 'Norel\n\n\n\n\n\n\n\n\n\n\n\nN' FAIL
+      33/96 C14 W03 FORMER   gold=Kesmar     -> 'Belnor' FAIL
+      34/96 C15 W03 ROLE     gold=Belnor     -> 'Falven ( Falven' FAIL
+      35/96 C89 W22 NEAR     gold=Mardin     -> 'Terven\n\n\n\n\n\n\n\n\n\n\n\nT' FAIL
+      36/96 C38 W09 FORMER   gold=Dorin      -> 'Torven' FAIL
+      37/96 C35 W08 ROLE     gold=Larev      -> 'Tormen\n\n\n\n\n\n\n\n\n\n\n\nT' FAIL
+      38/96 C88 W22 CURRENT  gold=Orel       -> 'Terven\n\n\n\n\n\n\n\n\n\n\n\nT' FAIL
+      39/96 C50 W12 FORMER   gold=Malvek     -> 'Varen' FAIL
+      40/96 C02 W00 FORMER   gold=Oakhaven   -> 'Zoran: Zoran: Zoran: Zoran is' FAIL
+      41/96 C64 W16 CURRENT  gold=Verith     -> 'Calnor' FAIL
+      42/96 C66 W16 FORMER   gold=Seren      -> 'Calnor' FAIL
+      43/96 C13 W03 NEAR     gold=Dorel      -> 'Belnor' FAIL
+      44/96 C18 W04 FORMER   gold=Maldor     -> 'Ravik' FAIL
+      45/96 C07 W01 ROLE     gold=Kelvar     -> 'Tarsen\n\n\n\n\n\n\n\n\n\n\n\nT' FAIL
+      46/96 C90 W22 FORMER   gold=Velos      -> 'Terven\n\n\n\n\n\n\n\n\n\n\n\nT' FAIL
+      47/96 C76 W19 CURRENT  gold=Corith     -> 'Calnor' FAIL
+      48/96 C71 W17 ROLE     gold=Parel      -> 'Terven\n\n\n\n\n\n\n\n\n\n\n\nT' FAIL
+      49/96 C70 W17 FORMER   gold=Maros      -> 'Parvel' FAIL
+      50/96 C78 W19 FORMER   gold=Derik      -> 'Valdor' FAIL
+      51/96 C49 W12 NEAR     gold=Deran      -> 'Varen' FAIL
+      52/96 C41 W10 NEAR     gold=Valen      -> 'Selnor' FAIL
+      53/96 C12 W03 CURRENT  gold=Arven      -> 'Belnor' FAIL
+      54/96 C37 W09 NEAR     gold=Marvek     -> 'Torven' FAIL
+      55/96 C52 W13 CURRENT  gold=Ardin      -> 'Kelor' FAIL
+      56/96 C45 W11 NEAR     gold=Neris      -> 'Miren' FAIL
+      57/96 C24 W06 CURRENT  gold=Velora     -> 'Darsen' FAIL
+      58/96 C77 W19 NEAR     gold=Laven      -> 'Zorven' FAIL
+      59/96 C72 W18 CURRENT  gold=Tarell     -> 'Calnor' FAIL
+      60/96 C87 W21 ROLE     gold=Norel      -> 'Darvek' FAIL
+      61/96 C48 W12 CURRENT  gold=Solith     -> 'Varen' FAIL
+      62/96 C83 W20 ROLE     gold=Ralen      -> 'Noreth\n\n\n\n\n\n\n\n\n\n\n\nN' FAIL
+      63/96 C27 W06 ROLE     gold=Darsen     -> 'Sarnel' FAIL
+      64/96 C51 W12 ROLE     gold=Varen      -> 'Cordan' FAIL
+      65/96 C81 W20 NEAR     gold=Talith     -> 'Calnor' FAIL
+      66/96 C04 W01 CURRENT  gold=Nareth     -> 'Kelvar' FAIL
+      67/96 C92 W23 CURRENT  gold=Solen      -> 'Karev Karev Karev is Karev' FAIL
+      68/96 C58 W14 FORMER   gold=Sareth     -> 'Nareth\n\n\n\n\n\n\n\n\n\n\n\nN' FAIL
+      69/96 C20 W05 CURRENT  gold=Calven     -> 'Nemor' FAIL
+      70/96 C01 W00 NEAR     gold=Dravel     -> 'Zoran: Zoran: Zoran: Zoran is' FAIL
+      71/96 C26 W06 FORMER   gold=Orvek      -> 'Darsen' FAIL
+      72/96 C69 W17 NEAR     gold=Kelith     -> 'Parel' FAIL
+      73/96 C36 W09 CURRENT  gold=Elsar      -> 'Torven' FAIL
+      74/96 C34 W08 FORMER   gold=Veyron     -> 'Calnor' FAIL
+      75/96 C40 W10 CURRENT  gold=Kareth     -> 'Selnor' FAIL
+      76/96 C05 W01 NEAR     gold=Solven     -> 'Kelvar' FAIL
+      77/96 C03 W00 ROLE     gold=Zorvan     -> 'Pelnor' FAIL
+      78/96 C21 W05 NEAR     gold=Istral     -> 'Nemor' FAIL
+      79/96 C82 W20 FORMER   gold=Kesven     -> 'Calnor' FAIL
+      80/96 C56 W14 CURRENT  gold=Belith     -> 'Nareth\n\n\n\n\n\n\n\n\n\n\n\nN' FAIL
+      81/96 C73 W18 NEAR     gold=Vindor     -> 'Sorven ( Sorven' FAIL
+      82/96 C00 W00 CURRENT  gold=Melket     -> 'Zoran: Zoran: Zoran: Zoran is' FAIL
+      83/96 C08 W02 CURRENT  gold=Luneth     -> 'Tarev Tarev Tarev' FAIL
+      84/96 C17 W04 NEAR     gold=Terven     -> 'Ravik' FAIL
+      85/96 C57 W14 NEAR     gold=Corven     -> 'Nareth\n\n\n\n\n\n\n\n\n\n\n\nN' FAIL
+      86/96 C68 W17 CURRENT  gold=Dorven     -> 'Parvel' FAIL
+      87/96 C30 W07 FORMER   gold=Sovran     -> 'Feron' FAIL
+      88/96 C42 W10 FORMER   gold=Ordan      -> 'Selnor' FAIL
+      89/96 C86 W21 FORMER   gold=Calvenor   -> 'Norel\n\n\n\n\n\n\n\n\n\n\n\nN' FAIL
+      90/96 C25 W06 NEAR     gold=Keldin     -> 'Darsen Darsen ( Darsen' FAIL
+      91/96 C75 W18 ROLE     gold=Sorven     -> 'Calnor' FAIL
+      92/96 C16 W04 CURRENT  gold=Selora     -> 'Ravik' FAIL
+      93/96 C74 W18 FORMER   gold=Nelmar     -> 'Valdor' FAIL
+      94/96 C31 W07 ROLE     gold=Feron      -> 'Viktor' FAIL
+      95/96 C39 W09 ROLE     gold=Torven     -> 'Kaleth Kaleth ( Kaleth Kaleth' FAIL
+      96/96 C67 W16 ROLE     gold=Calnor     -> 'Parvek\n\n\n\n\n\n\n\n\n\n\n\nPar' FAIL
+      N=96 ACC=0/96=0.000000 | CACHE_SHA_UNCHANGED=PASS
+
+[7/10] Sonuç kırılımı...
+      N=02: 01/02 = 0.500000
+      N=08: 01/08 = 0.125000
+      N=32: 00/32 = 0.000000
+      N=96: 00/96 = 0.000000
+      N=96 CURRENT : 00/24 = 0.000000
+      N=96 FORMER  : 00/24 = 0.000000
+      N=96 NEAR    : 00/24 = 0.000000
+      N=96 ROLE    : 00/24 = 0.000000
+
+[8/10] No-memory kontrolü...
+      C32 CURRENT  gold=Nerith     -> "I'm sorry for any confusion, but I don't have the information" MISS
+      C23 ROLE     gold=Nemor      -> 'Valdoria' MISS
+      C11 ROLE     gold=Tarev      -> "I'm sorry for any confusion, but I don't have the current" MISS
+      C62 FORMER   gold=Orsen      -> 'Zaraethustra' MISS
+      C79 ROLE     gold=Barel      -> "I'm sorry for any confusion, but I don't have the information" MISS
+      C09 NEAR     gold=Varos      -> "I'm sorry for any confusion, but the question does not provide information about" MISS
+      C60 CURRENT  gold=Mirel      -> "I'm sorry for any confusion, but as of my last update, D" MISS
+      C33 NEAR     gold=Calder     -> 'Larev does not appear to be a recognized geographical entity. Therefore,' MISS
+      C47 ROLE     gold=Mirev      -> 'Helvete' MISS
+      C29 NEAR     gold=Merith     -> 'Feronia (assuming the city names follow the country naming pattern)' MISS
+      C46 FORMER   gold=Kelmar     -> 'Zubroff' MISS
+      C19 ROLE     gold=Ravik      -> "I'm sorry for any confusion, but I don't have the information" MISS
+      C63 ROLE     gold=Dervan     -> 'Zephyria' MISS
+      C95 ROLE     gold=Karev      -> 'Zoraxia' MISS
+      C91 ROLE     gold=Tervan     -> "I'm sorry for any confusion, but the question doesn't provide any" MISS
+      C54 FORMER   gold=Toren      -> 'Zorpmort' MISS
+      NO-MEMORY=0/16
+
+[9/10] Anti-retrieval / seal audit...
+      Population composed before query      : EVET
+      Population SHA unchanged              : PASS
+      Query-dependent cartridge selection   : YOK
+      Query-dependent cache transform       : YOK
+      Query-dependent cartridge ordering    : YOK
+      Query-dependent mask                  : YOK
+      External score / cosine / ANN         : YOK
+      Router / classifier / learned gate    : YOK
+      Source text replay at query           : YOK
+      Candidate source forward at query     : YOK
+      RAG / external file search            : YOK
+      Training / LoRA / optimizer           : YOK
+
+[10/10] Sentinel / mühür...
+      GATE-A physical validation : PASS
+      Population seal            : PASS
+      Weight sentinel            : PASS
+      Trainable tensors          : 0
+
+==================================================================================================================================================================================
+TEST549 SONUÇ — MULTI-CARTRIDGE NUMERICAL NATIVE BINDING
+==================================================================================================================================================================================
+MODEL                         : mistralai/Mistral-7B-Instruct-v0.3
+CARTRIDGES FORGED             : 96
+GATE-A REBASE ANSWER SAME     : 24/24
+GATE-A K MAX ERROR            : 0.25000000
+GATE-A V MAX ERROR            : 0.21875000
+N=2   NATIVE BINDING ACC       : 1/2 = 0.500000
+N=8   NATIVE BINDING ACC       : 1/8 = 0.125000
+N=32  NATIVE BINDING ACC       : 0/32 = 0.000000
+N=96  NATIVE BINDING ACC       : 0/96 = 0.000000
+NO-MEMORY CONTROL             : 0/16
+POPULATION SEAL               : PASS
+WEIGHT SENTINEL               : PASS
+TEST548 RESULT SHA            : 68e1594d7095cf7828286572a2ae6250bfcd5a7e3612e6db9c15a429bc4a8a87
+TEST549 ÖN KİLİT SHA          : 0577f807f63e253b74d3a7d30a3ac3f5d4d0905b0c614514bba6fe5689ac22a5
+TEST549 RESULT SHA            : f92d5ea0e4e29224ea0e72d163d4c855c18969be14622d151bf54f5fae674186
+TOPLAM SÜRE                   : 168.01s
+KARAR                         : TEST549_MULTI_CARTRIDGE_NATIVE_BINDING_MEASURED
+==================================================================================================================================================================================
