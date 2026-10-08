@@ -1,0 +1,155 @@
+ ==================================================================================================================================================================================
+TEST552 — AKBASCORE MAM · CARTRIDGE-PARALLEL CO-TERMINAL ATTENTION
+TEST548 FORGE PRESERVED · SEQ-DUP / SEQ-SHR / COT-DUP / COT-SHR · FIRST/MIDDLE/LAST
+NO RETRIEVAL · NO ROUTER · NO SCORER · NO TOP-K · NO THRESHOLD · NO TRAINING
+==================================================================================================================================================================================
+
+[1/10] Donmuş Mistral...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 601/601 [00:00<00:00, 66.5kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 10.8MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 42.8MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 58.2kB/s  tokenizer.model: downloading bytes:   448kB, 44.4kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 52.9kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 2.67MB/s]Download complete:  12.4GB,  812MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  489MB/s  Fetching 3 files: 100% 3/3 [00:40<00:00, 40.70s/it]Loading weights: 100% 291/291 [00:03<00:00, 80.61it/s]generation_config.json: 100% 116/116 [00:00<00:00, 15.5kB/s]      mistralai/Mistral-7B-Instruct-v0.3 | NVIDIA A100-SXM4-40GB | Torch 2.11.0+cu130 | Transformers 5.18.0
+      32L H=4096 QH=32 KVH=8 HD=128 | rope_theta=10000 | torch.bfloat16 | trainable=0
+      Canonical prefix tokens=27 | first_id=1 | bos_id=1
+      LOCK SHA: fbd6b27a1057b31e9e74b9483cf1dc500434e4626db8d907e479c4a60ebae4da
+
+[2/10] TEST548 sözleşmesiyle 96 bağımsız cartridge forge...
+      01/24 Zorvan
+      02/24 Kelvar
+      03/24 Tarev
+      04/24 Belnor
+      05/24 Ravik
+      06/24 Nemor
+      07/24 Darsen
+      08/24 Feron
+      09/24 Larev
+      10/24 Torven
+      11/24 Selnor
+      12/24 Mirev
+      13/24 Varen
+      14/24 Kelor
+      15/24 Narev
+      16/24 Dervan
+      17/24 Calnor
+      18/24 Parel
+      19/24 Sorven
+      20/24 Barel
+      21/24 Ralen
+      22/24 Norel
+      23/24 Tervan
+      24/24 Karev
+      Cartridges=96 | full min/mean/max=39/39.90/41 | body min/mean/max=12/12.90/14
+
+[3/10] Shared-prefix numerical identity audit...
+      Prefix K maxΔ=0.00000000 | V maxΔ=0.00000000
+      PANEL SHA: 0b5cccba3fef19842d277ad1c98edbad29fe0fe26814493331f0889203c9f5b9
+
+[4/10] G0 — N=1 TEST548 reduction...
+      N=1 COT-DUP = 24/24
+
+[5/10] 2×2 motor panel — k=5 × FIRST/MIDDLE/LAST...
+
+      [SEQ-DUP]
+      FIRST  01/24 = 0.041667
+      MIDDLE 00/24 = 0.000000
+      LAST   00/24 = 0.000000
+
+      [SEQ-SHR]
+      FIRST  03/24 = 0.125000
+      MIDDLE 14/24 = 0.583333
+      LAST   00/24 = 0.000000
+
+      [COT-DUP]
+      FIRST  03/24 = 0.125000
+      MIDDLE 03/24 = 0.125000
+      LAST   03/24 = 0.125000
+
+      [COT-SHR]
+      FIRST  02/24 = 0.083333
+      MIDDLE 02/24 = 0.083333
+      LAST   02/24 = 0.083333
+
+[6/10] G2 — permutation invariance...
+      SEQ-DUP SAME F↔M=00/24 F↔L=00/24 | maxlogitΔ F↔M=15.87500000 F↔L=15.46875000
+      SEQ-SHR SAME F↔M=01/24 F↔L=00/24 | maxlogitΔ F↔M=17.68750000 F↔L=19.15625000
+      COT-DUP SAME F↔M=23/24 F↔L=23/24 | maxlogitΔ F↔M=0.43750000 F↔L=0.31250000
+      COT-SHR SAME F↔M=21/24 F↔L=23/24 | maxlogitΔ F↔M=0.25000000 F↔L=0.25000000
+
+[7/10] Faktöriyel özet...
+      SEQ-DUP FIRST : 01/24
+      SEQ-DUP MIDDLE: 00/24
+      SEQ-DUP LAST  : 00/24
+      SEQ-SHR FIRST : 03/24
+      SEQ-SHR MIDDLE: 14/24
+      SEQ-SHR LAST  : 00/24
+      COT-DUP FIRST : 03/24
+      COT-DUP MIDDLE: 03/24
+      COT-DUP LAST  : 03/24
+      COT-SHR FIRST : 02/24
+      COT-SHR MIDDLE: 02/24
+      COT-SHR LAST  : 02/24
+
+      COT-SHR CASE-BY-CASE:
+      00 W00 CURRENT  gold=Melket     | F='Melket' | M='Melket' | L='Melket'
+      01 W01 FORMER   gold=Branik     | F='Orsen (from the information provided, it was incorrectly stated as the former' | M='Orsen (from the information provided, it was incorrectly stated as the former' | L='Orsen (according to the provided information, it was a mistake as Kel'
+      02 W02 NEAR     gold=Varos      | F='Valen' | M='Valen' | L='Valen'
+      03 W03 ROLE     gold=Belnor     | F='Neris (incorrect, but this is due to the miscon' | M='Neris (incorrect, but based on the provided information, the' | L='Neris (incorrect, but this is due to the miscon'
+      04 W04 CURRENT  gold=Selora     | F='Varen (capital of Ravik) is currently located in the city of' | M='Varen (capital of Ravik) is currently located in the city of' | L='Varen (capital of Ravik) is currently located in the city of'
+      05 W05 FORMER   gold=Pareth     | F='Ravik (correct spelling should be Ravik, as per the information provided' | M='Solen (as it was the former capital of Nemor, not Kare' | L='Ravik (correct spelling should be Ravik, as per the information provided'
+      06 W06 NEAR     gold=Keldin     | F='Melket' | M='Melket' | L='Melket'
+      07 W07 ROLE     gold=Feron      | F='Corven' | M='Corven' | L='Corven'
+      08 W08 CURRENT  gold=Nerith     | F='Selnor' | M='Selnor' | L='Selnor'
+      09 W09 FORMER   gold=Dorin      | F='Neris' | M='Neris' | L='Neris'
+      10 W10 NEAR     gold=Valen      | F='Parel' | M='Parel' | L='Parel'
+      11 W11 ROLE     gold=Mirev      | F='Darsen (mistake in the question, it should be Sorvik' | M='Darsen (mistake in the question, it should be Sorvik' | L='Darsen (mistake in the question, it should be Sorvik'
+      12 W12 CURRENT  gold=Solith     | F='Talvek' | M='Talvek' | L='Talvek'
+      13 W13 FORMER   gold=Toren      | F='Terven' | M='Terven' | L='Terven'
+      14 W14 NEAR     gold=Corven     | F='Velmar' | M='Velmar' | L='Velmar'
+      15 W15 ROLE     gold=Dervan     | F='Ardin (correcting the error in the question)' | M='Ardin (correctly written as it is the current capital of Kelron' | L='Ardin (correcting the error in the question)'
+      16 W16 CURRENT  gold=Verith     | F='Deran (as per the information provided, it was the former capital, but' | M='Deran (as per the information provided, it was the former capital, but' | L='Deran (as per the information provided, it was the former capital, but'
+      17 W17 FORMER   gold=Maros      | F='Mervor' | M='Mervor' | L='Mervor'
+      18 W18 NEAR     gold=Vindor     | F='Neris' | M='Neris' | L='Neris'
+      19 W19 ROLE     gold=Barel      | F='Tarev' | M='Tarev' | L='Tarev'
+      20 W20 CURRENT  gold=Mervor     | F='Dravel' | M='Dravel' | L='Dravel'
+      21 W21 FORMER   gold=Calvenor   | F='Sorven' | M='Sorven' | L='Sorven'
+      22 W22 NEAR     gold=Mardin     | F='Corven' | M='Corven' | L='Corven'
+      23 W23 ROLE     gold=Karev      | F='Karev (incorrect, but this is due to a typo' | M='Karev (incorrect, but this is due to a typo' | L='Karev (incorrect, but this is due to a typo'
+
+[8/10] Yasak-mekanizma audit...
+      Source text replay at query : YOK
+      Candidate search / retrieval: YOK
+      Cartridge ID as address     : YOK
+      Cosine / ANN / top-k        : YOK
+      Router / classifier         : YOK
+      Relevance threshold         : YOK
+      Learned/fitted scorer       : YOK
+      Training / LoRA / optimizer : YOK
+      Query-dependent selection   : YOK
+      Only intervention           : physical memory geometry / shared-prefix factor
+
+[9/10] Sentinel / karar...
+      G0 N=1 reduction            : 24/24 PASS
+      COT-SHR permutation outputs : 20/24 FAIL
+      COT-SHR min positional acc  : 2/24
+      Weight sentinel             : PASS
+      Trainable tensors           : 0
+      DECISION                    : TEST552_OPERATOR_OR_GEOMETRY_GATE_FAIL
+
+[10/10] Sonuç...
+==================================================================================================================================================================================
+TEST552 SONUÇ — CARTRIDGE-PARALLEL CO-TERMINAL ATTENTION
+==================================================================================================================================================================================
+SEQ-DUP  FIRST=01/24 MIDDLE=00/24 LAST=00/24
+SEQ-SHR  FIRST=03/24 MIDDLE=14/24 LAST=00/24
+COT-DUP  FIRST=03/24 MIDDLE=03/24 LAST=03/24
+COT-SHR  FIRST=02/24 MIDDLE=02/24 LAST=02/24
+G0 N=1                       : 24/24
+COT-SHR SAME F=M=L          : 20/24
+WEIGHT SENTINEL             : PASS
+TEST548 RESULT SHA          : 68e1594d7095cf7828286572a2ae6250bfcd5a7e3612e6db9c15a429bc4a8a87
+TEST551 RESULT SHA          : 69a6c6275298ee028ad9399dca869128989778fd34c5ad450ec9dc0b6c49c08b
+TEST552 ÖN KİLİT SHA        : fbd6b27a1057b31e9e74b9483cf1dc500434e4626db8d907e479c4a60ebae4da
+TEST552 PANEL SHA           : 0b5cccba3fef19842d277ad1c98edbad29fe0fe26814493331f0889203c9f5b9
+TEST552 RESULT SHA          : 603d858510fb438defbb5427c391264374387f33bc306c18d58e4e1161622f6e
+TOPLAM SÜRE                 : 174.91s
+KARAR                       : TEST552_OPERATOR_OR_GEOMETRY_GATE_FAIL
+==================================================================================================================================================================================
