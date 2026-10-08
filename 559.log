@@ -1,0 +1,162 @@
+ 
+======================================================================================================================================================
+TEST559 — AKBASCORE MAM · DEFERRED NUMERICAL CONSOLIDATION
+TEST558 BACKBONE · INDEPENDENT H6/H10 CHECKPOINTS · SOURCE-FREE RECONSTRUCTION
+FROZEN MISTRAL · NO TRAINING · NO RETRIEVAL · NO ROUTER · NO QSF
+======================================================================================================================================================
+
+[1/10] Frozen Mistral...
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 68.9kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 14.6MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 32.6MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 58.3kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 44.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 57.3kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.54MB/s]
+Download complete: 
+
+ 12.4GB,  184MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  678MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:41<00:00, 41.01s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 79.76it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 14.8kB/s]
+MODEL: mistralai/Mistral-7B-Instruct-v0.3
+GPU: NVIDIA A100-SXM4-40GB
+TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+NL=32 H=4096 QH=32 KVH=8 HD=128 DTYPE=torch.bfloat16
+ROPE: {'rope_theta': 1000000.0, 'rope_type': 'default'}
+TRAINABLE: 0
+
+[2/10] Panel provenance...
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+PANEL PROVENANCE: PASS
+
+[3/10] Mask and numerical checkpoint contract...
+MASK CONTRACT: PASS | TOKENS=93 PREFIX=27 FULL=66
+INDEPENDENT H6 CHECKPOINT: PASS
+ROPE ROUNDTRIP MAX ERROR: 0.062500
+ROPE NUMERICAL GATE: PASS (BF16 tolerance; not a 1-ULP identity claim)
+
+[4/10] TEST558 baseline replication...
+JOINT: {'FIRST': 24, 'MIDDLE': 24, 'LAST': 24}
+INDEP: {'FIRST': 4, 'MIDDLE': 3, 'LAST': 6}
+BASELINE REPLICATION: PASS
+
+[5/10] Deferred numerical consolidation...
+CASE 00 complete
+CASE 01 complete
+CASE 02 complete
+CASE 03 complete
+PROGRESS 4/24 | elapsed=120.4s
+CASE 04 complete
+CASE 05 complete
+CASE 06 complete
+CASE 07 complete
+PROGRESS 8/24 | elapsed=152.5s
+CASE 08 complete
+CASE 09 complete
+CASE 10 complete
+CASE 11 complete
+PROGRESS 12/24 | elapsed=186.4s
+CASE 12 complete
+CASE 13 complete
+CASE 14 complete
+CASE 15 complete
+PROGRESS 16/24 | elapsed=222.7s
+CASE 16 complete
+CASE 17 complete
+CASE 18 complete
+CASE 19 complete
+PROGRESS 20/24 | elapsed=255.5s
+CASE 20 complete
+CASE 21 complete
+CASE 22 complete
+CASE 23 complete
+PROGRESS 24/24 | elapsed=288.6s
+
+[6/10] Raw integrity...
+ROWS: 504 EXPECTED: 504
+RAW INTEGRITY: PASS
+
+[7/10] Composition scores...
+INDEP                  FIRST=04/24 MIDDLE=03/24 LAST=06/24 TOTAL=13/72
+JOINT                  FIRST=24/24 MIDDLE=24/24 LAST=24/24 TOTAL=72/72
+SWITCH6_REF            FIRST=24/24 MIDDLE=24/24 LAST=24/24 TOTAL=72/72
+DC6_CANON              FIRST=24/24 MIDDLE=24/24 LAST=24/24 TOTAL=72/72
+DC6_FINALPOS           FIRST=24/24 MIDDLE=24/24 LAST=24/24 TOTAL=72/72
+DC10_CANON             FIRST=19/24 MIDDLE=08/24 LAST=16/24 TOTAL=43/72
+DC6_NOCROSS            FIRST=01/24 MIDDLE=02/24 LAST=05/24 TOTAL=08/72
+
+[8/10] Case-level gain/loss and identity...
+JOINT                  GAIN=59 LOSS=00 NET=+59 | OK-ID-JOINT=72/72 ANS-ID-JOINT=72/72
+SWITCH6_REF            GAIN=59 LOSS=00 NET=+59 | OK-ID-JOINT=72/72 ANS-ID-JOINT=72/72
+DC6_CANON              GAIN=59 LOSS=00 NET=+59 | OK-ID-JOINT=72/72 ANS-ID-JOINT=71/72
+DC6_FINALPOS           GAIN=59 LOSS=00 NET=+59 | OK-ID-JOINT=72/72 ANS-ID-JOINT=72/72
+DC10_CANON             GAIN=32 LOSS=02 NET=+30 | OK-ID-JOINT=43/72 ANS-ID-JOINT=19/72
+DC6_NOCROSS            GAIN=01 LOSS=06 NET=-05 | OK-ID-JOINT=08/72 ANS-ID-JOINT=06/72
+
+[9/10] Engineering decision...
+GATE JOINT: PASS
+GATE INDEP: PASS
+GATE SWITCH6_REF: PASS
+SWITCH6: 72 /72
+DC6-FINALPOS: 72 /72
+DC6-CANON: 72 /72
+DC10-CANON: 43 /72
+DC6-NOCROSS: 8 /72
+DECISION: STRONG SOURCE-FREE NUMERICAL CONSOLIDATION — POSITION TRANSFER SUPPORTED
+CAUTION: DC6-FINALPOS uses independently forged numerical checkpoints at their eventual global positions; this is a diagnostic control, not position-independent deployment.
+CAUTION: DC6-CANON stores H6 residuals in addition to early K/V. It tests an augmented numerical cartridge, not strict KV-only sufficiency.
+CAUTION: This experiment tests BLOCK-style composition and numerical consolidation, not behavioral identity with the original P-SEQ cartridge-concatenation protocol.
+
+[10/10] Final research record...
+======================================================================================================================================================
+TEST559 — FINAL RESEARCH RECORD
+======================================================================================================================================================
+MODEL                  : mistralai/Mistral-7B-Instruct-v0.3
+PANEL SHA              : 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+LOCK SHA               : 95cfe1e7f3d220f7b77afd94d37d6ecac793e90d38934d478bd43fff4443c711
+RESULT SHA             : fd44d97ccc02e5b9fa61972701596f890cf162d3c9e20d4a84f02fb4e27b135e
+INDEP                   : {'FIRST': 4, 'MIDDLE': 3, 'LAST': 6, 'TOTAL': 13}
+JOINT                   : {'FIRST': 24, 'MIDDLE': 24, 'LAST': 24, 'TOTAL': 72}
+SWITCH6_REF             : {'FIRST': 24, 'MIDDLE': 24, 'LAST': 24, 'TOTAL': 72}
+DC6_CANON               : {'FIRST': 24, 'MIDDLE': 24, 'LAST': 24, 'TOTAL': 72}
+DC6_FINALPOS            : {'FIRST': 24, 'MIDDLE': 24, 'LAST': 24, 'TOTAL': 72}
+DC10_CANON              : {'FIRST': 19, 'MIDDLE': 8, 'LAST': 16, 'TOTAL': 43}
+DC6_NOCROSS             : {'FIRST': 1, 'MIDDLE': 2, 'LAST': 5, 'TOTAL': 8}
+REFERENCE GATES        : {'JOINT': True, 'INDEP': True, 'SWITCH6_REF': True}
+ENGINEERING DECISION   : STRONG SOURCE-FREE NUMERICAL CONSOLIDATION — POSITION TRANSFER SUPPORTED
+WEIGHT SENTINEL        : PASS
+TRAINABLE              : 0
+TOTAL TIME             : 288.61s
+INTERPRETATION         : Independent numerical checkpoints are consolidated without replaying source tokens during the consolidation pass.
+NEXT TEST              : TEST560 only after TEST559 interpretation
+
+
+======================================================================================================================================================
