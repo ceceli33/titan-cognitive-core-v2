@@ -1,0 +1,406 @@
+ ==========================================================================================================================================================================================
+TEST552R-OWN — AKBASCORE MAM · OWNERSHIP GATE + TEST552 RoPE REPAIR
+TEST548 SINGLE-CARTRIDGE CONTRACT · TEXT↔PKV OWNERSHIP · MODEL-NATIVE rotary_emb · REPAIRED COT-SHR
+NO RETRIEVAL · NO ROUTER · NO SCORER · NO TOP-K · NO THRESHOLD · NO TRAINING
+==========================================================================================================================================================================================
+
+[1/11] Donmuş Mistral...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 601/601 [00:00<00:00, 64.9kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 16.1MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 32.5MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 58.3kB/s  tokenizer.model: downloading bytes:   448kB, 44.5kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 44.8kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 2.74MB/s]Download complete:  12.4GB,  735MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  515MB/s  Fetching 3 files: 100% 3/3 [00:40<00:00, 40.96s/it]Loading weights: 100% 291/291 [00:03<00:00, 80.65it/s]generation_config.json: 100% 116/116 [00:00<00:00, 14.6kB/s]      mistralai/Mistral-7B-Instruct-v0.3 | NVIDIA A100-SXM4-40GB | Torch 2.11.0+cu130 | Transformers 5.18.0
+      32L H=4096 QH=32 KVH=8 HD=128 | torch.bfloat16 | SDPA | trainable=0
+      config.rope_theta      : None
+      config.rope_parameters : {'rope_theta': 1000000.0, 'rope_type': 'default'}
+      LOCK SHA: ca5e75d5a20ed3285c4a6b58aadc49a6999d15216b3e3e506798eb6a761d1e4c
+
+[2/11] TEST548 sözleşmesiyle 96 bağımsız cartridge forge...
+      01/24 Zorvan
+      02/24 Kelvar
+      03/24 Tarev
+      04/24 Belnor
+      05/24 Ravik
+      06/24 Nemor
+      07/24 Darsen
+      08/24 Feron
+      09/24 Larev
+      10/24 Torven
+      11/24 Selnor
+      12/24 Mirev
+      13/24 Varen
+      14/24 Kelor
+      15/24 Narev
+      16/24 Dervan
+      17/24 Calnor
+      18/24 Parel
+      19/24 Sorven
+      20/24 Barel
+      21/24 Ralen
+      22/24 Norel
+      23/24 Tervan
+      24/24 Karev
+      Cartridges=96 | min/mean/max= 39 39.90 41
+
+[3/11] G-R — model-native rotary_emb rebase doğrulaması...
+      δ= 1 | K maxΔ=0.18750000 | V maxΔ=0.14062500
+      δ= 2 | K maxΔ=0.18750000 | V maxΔ=0.12500000
+      δ= 7 | K maxΔ=0.12500000 | V maxΔ=0.09765625
+      δ=31 | K maxΔ=0.18750000 | V maxΔ=0.21875000
+      G-R: PASS
+
+[4/11] PART-A — N=1 OWNERSHIP panel hazırlanıyor...
+      Cases=24 | per case: 1 correct + 3 same-subject/wrong-relation + 4 foreign-subject
+      OWNERSHIP PANEL SHA: ca548716f1104d39d046d2cc1f7d59f8b975031add096f3db47d15b0fc2cb7da
+
+[5/11] PART-A — TEXT + PKV ownership çalışıyor...
+
+      CASE 00 W00 CURRENT  query='What is the current capital of Zorvan?' gold=Melket
+      CORRECT           C00 CURRENT  | TEXT=CORRECT       'Melket' | PKV=CORRECT       'Melket'
+      SAME_REL_MISMATCH C01 NEAR     | TEXT=FOREIGN_VALUE 'Dravel (Note: The question asks for the capital, but the information provided' | PKV=FOREIGN_VALUE 'The information provided does not specify that Dravel is the capital of Zorvan'
+      SAME_REL_MISMATCH C02 FORMER   | TEXT=REFUSAL       'The information provided does not specify the current capital of Zorvan. Therefore,' | PKV=REFUSAL       'The information provided does not state the current capital of Zorvan. Therefore,'
+      SAME_REL_MISMATCH C03 ROLE     | TEXT=FOREIGN_VALUE 'Not provided in the information. The capital of Zorvan is not specified.' | PKV=FOREIGN_VALUE 'Not provided in the information. The capital of Zorvan is not specified.'
+      FOREIGN_SUBJECT   C58 FORMER   | TEXT=REFUSAL       'The information provided does not give any details about the current capital of Zorvan' | PKV=REFUSAL       'The information provided does not give any details about the current capital of Zorvan'
+      FOREIGN_SUBJECT   C85 NEAR     | TEXT=REFUSAL       'The information provided does not specify the capital of Zorvan. Therefore, I' | PKV=REFUSAL       'The information provided does not give any details about the capital of Zorvan.'
+      FOREIGN_SUBJECT   C90 FORMER   | TEXT=REFUSAL       'The information provided does not give any details about the current capital of Zorvan' | PKV=REFUSAL       'The information provided does not give any details about the current capital of Zorvan'
+      FOREIGN_SUBJECT   C16 CURRENT  | TEXT=REFUSAL       'The information provided does not specify the capital of Zorvan. Therefore, I' | PKV=REFUSAL       'The information provided does not specify the capital of Zorvan. Therefore, I'
+
+      CASE 01 W01 FORMER   query='What was the former capital of Kelvar?' gold=Branik
+      CORRECT           C06 FORMER   | TEXT=CORRECT       'Branik' | PKV=CORRECT       'Branik'
+      SAME_REL_MISMATCH C04 CURRENT  | TEXT=REFUSAL       'The question does not provide information about the former capital of Kelvar. Therefore,' | PKV=REFUSAL       'The question does not provide information about the former capital of Kelvar. Therefore,'
+      SAME_REL_MISMATCH C05 NEAR     | TEXT=OTHER         'The question asks for the former capital, not the largest city. Without any information' | PKV=OTHER         'The question asks for the former capital, not the largest city. Without information about'
+      SAME_REL_MISMATCH C07 ROLE     | TEXT=FOREIGN_VALUE 'The question does not provide information about the former capital of Kelvar, as it' | PKV=FOREIGN_VALUE 'The question does not provide information about the former capital of Kelvar, as it'
+      FOREIGN_SUBJECT   C54 FORMER   | TEXT=FOREIGN_VALUE "Toren (assuming the spelling is a typo and it's" | PKV=FOREIGN_VALUE "Toren (assuming there's no typo in the provided information and"
+      FOREIGN_SUBJECT   C92 CURRENT  | TEXT=REFUSAL       'The question does not provide information about the former capital of Kelvar. Therefore,' | PKV=REFUSAL       'The question does not provide information about the former capital of Kelvar. Therefore,'
+      FOREIGN_SUBJECT   C70 FORMER   | TEXT=OTHER         'The question asks for the former capital of Kelvar, but the provided information is' | PKV=OTHER         'The question asks for the former capital of Kelvar, but the provided information is'
+      FOREIGN_SUBJECT   C28 CURRENT  | TEXT=REFUSAL       'The question does not provide information about the former capital of Kelvar.' | PKV=REFUSAL       'The question does not provide information about the former capital of Kelvar.'
+
+      CASE 02 W02 NEAR     query='What is the largest city of Tarev?' gold=Varos
+      CORRECT           C09 NEAR     | TEXT=CORRECT       'Varos' | PKV=CORRECT       'Varos'
+      SAME_REL_MISMATCH C08 CURRENT  | TEXT=REFUSAL       'The information provided does not specify the largest city of Tarev.' | PKV=REFUSAL       'The information provided does not specify the largest city of Tarev.'
+      SAME_REL_MISMATCH C10 FORMER   | TEXT=REFUSAL       'The information provided does not specify the largest city of Tarev.' | PKV=REFUSAL       'The information provided does not specify the largest city of Tarev.'
+      SAME_REL_MISMATCH C11 ROLE     | TEXT=FOREIGN_VALUE 'The information provided does not include details about the largest city of Tarev.' | PKV=FOREIGN_VALUE 'The information provided does not contain details about the largest city of Tarev.'
+      FOREIGN_SUBJECT   C18 FORMER   | TEXT=REFUSAL       'The question does not provide information about the largest city of Tarev, so' | PKV=REFUSAL       'The question does not provide information about the largest city of Tarev, so'
+      FOREIGN_SUBJECT   C45 NEAR     | TEXT=REFUSAL       'The question asks for the largest city of Tarev, but no information about' | PKV=REFUSAL       'The question asks for the largest city of Tarev, but no information about'
+      FOREIGN_SUBJECT   C56 CURRENT  | TEXT=REFUSAL       'The question does not provide information about the largest city of Tarev. Therefore' | PKV=REFUSAL       'The question does not provide information about the largest city of Tarev. Therefore'
+      FOREIGN_SUBJECT   C40 CURRENT  | TEXT=REFUSAL       'The question does not provide information about the largest city of Tarev, so' | PKV=REFUSAL       'The question does not provide information about the largest city of Tarev, so'
+
+      CASE 03 W03 ROLE     query='What is the current capital of Falven?' gold=Belnor
+      CORRECT           C15 ROLE     | TEXT=CORRECT       'Belnor' | PKV=CORRECT       'Belnor'
+      SAME_REL_MISMATCH C12 CURRENT  | TEXT=REFUSAL       'The information provided does not specify the capital of Falven. Therefore, I cannot' | PKV=REFUSAL       'The information provided does not specify the capital of Falven. Therefore, I cannot'
+      SAME_REL_MISMATCH C13 NEAR     | TEXT=REFUSAL       'The information provided does not specify the capital of Falven. Therefore, I cannot' | PKV=REFUSAL       'The question does not provide information about the capital of Falven, so I cannot'
+      SAME_REL_MISMATCH C14 FORMER   | TEXT=REFUSAL       'The information provided does not give any details about the current capital of Falven.' | PKV=REFUSAL       'The question does not provide information about the current capital of Falven, so I'
+      FOREIGN_SUBJECT   C83 ROLE     | TEXT=REFUSAL       'The information provided does not specify the capital of Falven. Therefore, I cannot' | PKV=REFUSAL       'The information provided does not specify the capital of Falven. Therefore, I cannot'
+      FOREIGN_SUBJECT   C36 CURRENT  | TEXT=REFUSAL       'The information provided does not mention the capital of Falven.' | PKV=REFUSAL       'The information provided does not mention the capital of Falven.'
+      FOREIGN_SUBJECT   C67 ROLE     | TEXT=REFUSAL       'The information provided does not specify the capital of Falven. Therefore, I cannot' | PKV=REFUSAL       'The information provided does not specify the capital of Falven. Therefore, I cannot'
+      FOREIGN_SUBJECT   C20 CURRENT  | TEXT=REFUSAL       'The information provided does not mention the capital of Falven. Therefore, I cannot' | PKV=REFUSAL       'The information provided does not mention the capital of Falven.'
+
+      CASE 04 W04 CURRENT  query='What is the current capital of Ravik?' gold=Selora
+      CORRECT           C16 CURRENT  | TEXT=CORRECT       'Selora' | PKV=CORRECT       'Selora'
+      SAME_REL_MISMATCH C17 NEAR     | TEXT=FOREIGN_VALUE 'The information provided does not specify that Terven is the current capital of Rav' | PKV=REFUSAL       'The information provided does not specify the current capital of Ravik, only the largest'
+      SAME_REL_MISMATCH C18 FORMER   | TEXT=REFUSAL       'The information provided does not state the current capital of Ravik. Therefore, I' | PKV=REFUSAL       'The information provided does not state the current capital of Ravik. Therefore, I'
+      SAME_REL_MISMATCH C19 ROLE     | TEXT=FOREIGN_VALUE 'Nerik (not Ravik) is the current capital.' | PKV=FOREIGN_VALUE 'Nerik (not Ravik) is the current capital.'
+      FOREIGN_SUBJECT   C10 FORMER   | TEXT=REFUSAL       'The information provided does not give any details about the current capital of Ravik.' | PKV=REFUSAL       'The information provided does not give any details about the current capital of Ravik.'
+      FOREIGN_SUBJECT   C63 ROLE     | TEXT=REFUSAL       'The information provided does not specify the capital of Ravik. Therefore, I cannot' | PKV=REFUSAL       'The information provided does not specify the capital of Ravik. Therefore, I cannot'
+      FOREIGN_SUBJECT   C69 NEAR     | TEXT=REFUSAL       'The information provided does not give any details about the capital of Ravik. Therefore' | PKV=REFUSAL       'The information provided does not give any details about the capital of Ravik. Therefore'
+      FOREIGN_SUBJECT   C95 ROLE     | TEXT=REFUSAL       'The information provided does not specify the capital of Ravik. Therefore, I cannot' | PKV=REFUSAL       'The information provided does not specify the capital of Ravik. Therefore, I cannot'
+
+      CASE 05 W05 FORMER   query='What was the former capital of Nemor?' gold=Pareth
+      CORRECT           C22 FORMER   | TEXT=CORRECT       'Pareth' | PKV=CORRECT       'Pareth'
+      SAME_REL_MISMATCH C20 CURRENT  | TEXT=REFUSAL       'The question does not provide information about a former capital of Nemor. Therefore,' | PKV=REFUSAL       'The question does not provide information about a former capital of Nemor.'
+      SAME_REL_MISMATCH C21 NEAR     | TEXT=FOREIGN_VALUE 'Istral (as there is no information provided about a former capital)' | PKV=FOREIGN_VALUE 'Istral (as there is no information provided about a former capital)'
+      SAME_REL_MISMATCH C23 ROLE     | TEXT=FOREIGN_VALUE 'The question does not provide information about the former capital of Nemor. Therefore,' | PKV=FOREIGN_VALUE 'The question does not provide information about the former capital of Nemor. Therefore,'
+      FOREIGN_SUBJECT   C01 NEAR     | TEXT=REFUSAL       'The question does not provide information about the former capital of Nemor.' | PKV=REFUSAL       'The question does not provide information about the former capital of Nemor.'
+      FOREIGN_SUBJECT   C76 CURRENT  | TEXT=REFUSAL       'The question does not provide information about the former capital of Nemor.' | PKV=REFUSAL       'The question does not provide information about the former capital of Nemor.'
+      FOREIGN_SUBJECT   C44 CURRENT  | TEXT=REFUSAL       'The question does not provide information about the former capital of Nemor. Therefore,' | PKV=REFUSAL       'The question does not provide information about the former capital of Nemor. Therefore,'
+      FOREIGN_SUBJECT   C54 FORMER   | TEXT=REFUSAL       'The information provided does not specify the former capital of Nemor. Therefore, I' | PKV=REFUSAL       'The information provided does not specify the former capital of Nemor. Therefore, I'
+
+      CASE 06 W06 NEAR     query='What is the largest city of Darsen?' gold=Keldin
+      CORRECT           C25 NEAR     | TEXT=CORRECT       'Keldin' | PKV=CORRECT       'Keldin'
+      SAME_REL_MISMATCH C24 CURRENT  | TEXT=REFUSAL       'The information provided does not specify the largest city of Darsen.' | PKV=REFUSAL       'The information provided does not specify the largest city of Darsen.'
+      SAME_REL_MISMATCH C26 FORMER   | TEXT=REFUSAL       'The information provided does not specify the largest city of Darsen.' | PKV=REFUSAL       'The information provided does not specify the largest city of Darsen.'
+      SAME_REL_MISMATCH C27 ROLE     | TEXT=FOREIGN_VALUE 'The question does not provide information about the largest city of Darsen. Therefore' | PKV=FOREIGN_VALUE 'The question does not provide information about the largest city of Darsen. Therefore'
+      FOREIGN_SUBJECT   C40 CURRENT  | TEXT=REFUSAL       'The question does not provide information about the largest city of Darsen, so' | PKV=REFUSAL       'The question does not provide information about the largest city of Darsen, so'
+      FOREIGN_SUBJECT   C87 ROLE     | TEXT=REFUSAL       'The information provided does not specify the largest city of Darsen.' | PKV=REFUSAL       'The information provided does not specify the largest city of Darsen.'
+      FOREIGN_SUBJECT   C34 FORMER   | TEXT=REFUSAL       'The information provided does not give any details about the largest city of Darsen' | PKV=REFUSAL       'The information provided does not give any details about the largest city of Darsen'
+      FOREIGN_SUBJECT   C45 NEAR     | TEXT=REFUSAL       'The question asks for the largest city of Darsen, but no information about' | PKV=REFUSAL       'The question asks for the largest city of Darsen, but no information about'
+
+      CASE 07 W07 ROLE     query='What is the current capital of Belvik?' gold=Feron
+      CORRECT           C31 ROLE     | TEXT=CORRECT       'Feron' | PKV=CORRECT       'Feron'
+      SAME_REL_MISMATCH C28 CURRENT  | TEXT=REFUSAL       'The information provided does not specify the capital of Belvik. Therefore, I cannot' | PKV=REFUSAL       'The question asks for the capital of Belvik, but no information about Belvik'
+      SAME_REL_MISMATCH C29 NEAR     | TEXT=REFUSAL       'The information provided does not specify the capital of Belvik, so I cannot answer' | PKV=REFUSAL       'The information provided does not specify the capital of Belvik, so I cannot answer'
+      SAME_REL_MISMATCH C30 FORMER   | TEXT=REFUSAL       'The information provided does not give any details about the current capital of Belvik.' | PKV=REFUSAL       'The information provided does not give any details about the current capital of Belvik.'
+      FOREIGN_SUBJECT   C51 ROLE     | TEXT=REFUSAL       'The information provided does not specify the capital of Belvik. Therefore, I cannot' | PKV=REFUSAL       'The information provided does not specify the capital of Belvik. Therefore, I cannot'
+      FOREIGN_SUBJECT   C62 FORMER   | TEXT=REFUSAL       'The information provided does not give any details about the current capital of Belvik.' | PKV=REFUSAL       'The information provided does not give any details about the current capital of Belvik.'
+      FOREIGN_SUBJECT   C94 FORMER   | TEXT=REFUSAL       'The information provided does not give any details about the current capital of Belvik.' | PKV=REFUSAL       'The information provided does not give any details about the current capital of Belvik.'
+      FOREIGN_SUBJECT   C20 CURRENT  | TEXT=REFUSAL       'The question asks for the current capital of Belvik, but no information about Bel' | PKV=REFUSAL       'The information provided does not contain any details about the capital of Belvik. Therefore'
+
+      CASE 08 W08 CURRENT  query='What is the current capital of Larev?' gold=Nerith
+      CORRECT           C32 CURRENT  | TEXT=CORRECT       'Nerith' | PKV=CORRECT       'Nerith'
+      SAME_REL_MISMATCH C33 NEAR     | TEXT=FOREIGN_VALUE 'The information provided does not specify that Calder is the capital of Larev' | PKV=FOREIGN_VALUE 'The information provided does not specify that Calder is the capital of Larev'
+      SAME_REL_MISMATCH C34 FORMER   | TEXT=REFUSAL       'The information provided does not state the current capital of Larev. Therefore,' | PKV=REFUSAL       'The information provided does not state the current capital of Larev. Therefore,'
+      SAME_REL_MISMATCH C35 ROLE     | TEXT=FOREIGN_VALUE 'The question is asking for the capital of Larev, but according to the' | PKV=FOREIGN_VALUE 'The question is asking for the capital of Larev, but according to the'
+      FOREIGN_SUBJECT   C63 ROLE     | TEXT=REFUSAL       'The information provided does not specify the capital of Larev. Therefore, I' | PKV=REFUSAL       'The information provided does not specify the capital of Larev. Therefore, I'
+      FOREIGN_SUBJECT   C31 ROLE     | TEXT=REFUSAL       'The information provided does not contain details about the capital of Larev. Therefore' | PKV=REFUSAL       'The information provided does not contain details about the capital of Larev. Therefore'
+      FOREIGN_SUBJECT   C37 NEAR     | TEXT=REFUSAL       'The information provided does not specify the capital of Larev. Therefore, I' | PKV=REFUSAL       'The information provided does not specify the capital of Larev. Therefore, I'
+      FOREIGN_SUBJECT   C26 FORMER   | TEXT=REFUSAL       'The information provided does not give any details about the current capital of Larev' | PKV=REFUSAL       'The information provided does not give any details about the current capital of Larev'
+
+      CASE 09 W09 FORMER   query='What was the former capital of Torven?' gold=Dorin
+      CORRECT           C38 FORMER   | TEXT=CORRECT       'Dorin' | PKV=CORRECT       'Dorin'
+      SAME_REL_MISMATCH C36 CURRENT  | TEXT=REFUSAL       'The question does not provide information about the former capital of Torven. Therefore,' | PKV=REFUSAL       'The question does not provide information about the former capital of Torven. Therefore,'
+      SAME_REL_MISMATCH C37 NEAR     | TEXT=REFUSAL       'There is no information provided about the former capital of Torven.' | PKV=OTHER         'The question asks for the former capital, but the information provided only mentions the'
+      SAME_REL_MISMATCH C39 ROLE     | TEXT=FOREIGN_VALUE 'The question does not provide information about the former capital of Torven, as Tor' | PKV=FOREIGN_VALUE 'The question does not provide information about the former capital of Torven, as Tor'
+      FOREIGN_SUBJECT   C11 ROLE     | TEXT=REFUSAL       'The question does not provide information about the former capital of Torven.' | PKV=REFUSAL       'The question does not provide information about the former capital of Torven. Therefore,'
+      FOREIGN_SUBJECT   C54 FORMER   | TEXT=OTHER         'The question asks for the former capital of Torven, but the provided information is' | PKV=OTHER         'The question asks for the former capital of Torven, but the provided information is'
+      FOREIGN_SUBJECT   C12 CURRENT  | TEXT=REFUSAL       'The question does not provide information about the former capital of Torven, so I' | PKV=REFUSAL       'The question does not provide information about the former capital of Torven, so I'
+      FOREIGN_SUBJECT   C70 FORMER   | TEXT=REFUSAL       'The question does not provide information about the former capital of Torven. Therefore,' | PKV=OTHER         'The question asks for the former capital of a place named Torven, but no'
+
+      CASE 10 W10 NEAR     query='What is the largest city of Selnor?' gold=Valen
+      CORRECT           C41 NEAR     | TEXT=CORRECT       'Valen' | PKV=CORRECT       'Valen'
+      SAME_REL_MISMATCH C40 CURRENT  | TEXT=REFUSAL       'The information provided does not specify the largest city of Selnor.' | PKV=REFUSAL       'The information provided does not specify the largest city of Selnor.'
+      SAME_REL_MISMATCH C42 FORMER   | TEXT=REFUSAL       'The information provided does not specify the largest city of Selnor.' | PKV=REFUSAL       'The information provided does not specify the largest city of Selnor.'
+      SAME_REL_MISMATCH C43 ROLE     | TEXT=FOREIGN_VALUE 'The question does not provide information about the largest city of Selnor. Therefore,' | PKV=FOREIGN_VALUE 'The question does not provide information about the largest city of Selnor. Therefore,'
+      FOREIGN_SUBJECT   C13 NEAR     | TEXT=REFUSAL       'Not provided in the information.' | PKV=REFUSAL       'Not provided in the information.'
+      FOREIGN_SUBJECT   C18 FORMER   | TEXT=REFUSAL       'The question does not provide information about the largest city of Selnor, so I' | PKV=REFUSAL       'The question does not provide information about the largest city of Selnor, so I'
+      FOREIGN_SUBJECT   C02 FORMER   | TEXT=REFUSAL       'The question does not provide information about the largest city of Selnor, so I' | PKV=REFUSAL       'The question does not provide information about the largest city of Selnor, so I'
+      FOREIGN_SUBJECT   C23 ROLE     | TEXT=REFUSAL       'The question does not provide information about the largest city of Selnor, so I' | PKV=REFUSAL       'The question does not provide information about the largest city of Selnor, so I'
+
+      CASE 11 W11 ROLE     query='What is the current capital of Sorvik?' gold=Mirev
+      CORRECT           C47 ROLE     | TEXT=CORRECT       'Mirev' | PKV=CORRECT       'Mirev'
+      SAME_REL_MISMATCH C44 CURRENT  | TEXT=REFUSAL       'The information provided does not specify the capital of Sorvik. Therefore, I cannot' | PKV=REFUSAL       'The information provided does not specify the capital of Sorvik. Therefore, I cannot'
+      SAME_REL_MISMATCH C45 NEAR     | TEXT=REFUSAL       'The information provided does not specify the capital of Sorvik. Therefore, I cannot' | PKV=REFUSAL       'The information provided does not specify the capital of Sorvik. Therefore, I cannot'
+      SAME_REL_MISMATCH C46 FORMER   | TEXT=REFUSAL       'The information provided does not give any details about the current capital of Sorvik.' | PKV=REFUSAL       'The information provided does not give any details about the current capital of Sorvik.'
+      FOREIGN_SUBJECT   C35 ROLE     | TEXT=REFUSAL       'The information provided does not specify the capital of Sorvik.' | PKV=REFUSAL       'The information provided does not specify the capital of Sorvik.'
+      FOREIGN_SUBJECT   C52 CURRENT  | TEXT=REFUSAL       'The information provided does not specify the capital of Sorvik. Therefore, I cannot' | PKV=REFUSAL       'The information provided does not include the capital of Sorvik. Therefore, I cannot'
+      FOREIGN_SUBJECT   C03 ROLE     | TEXT=REFUSAL       'The information provided does not specify the capital of Sorvik. Therefore, I cannot' | PKV=REFUSAL       'The information provided does not specify the capital of Sorvik. Therefore, I cannot'
+      FOREIGN_SUBJECT   C20 CURRENT  | TEXT=REFUSAL       'The information provided does not include the capital of Sorvik. Therefore, I cannot' | PKV=REFUSAL       'The information provided does not include the capital of Sorvik. Therefore, I cannot'
+
+      CASE 12 W12 CURRENT  query='What is the current capital of Varen?' gold=Solith
+      CORRECT           C48 CURRENT  | TEXT=CORRECT       'Solith' | PKV=CORRECT       'Solith'
+      SAME_REL_MISMATCH C49 NEAR     | TEXT=FOREIGN_VALUE 'Deran (assuming the capital is the largest city)' | PKV=FOREIGN_VALUE "Deran (as per the provided information, it's the largest city,"
+      SAME_REL_MISMATCH C50 FORMER   | TEXT=REFUSAL       'The information provided does not state the current capital of Varen. Therefore, I' | PKV=REFUSAL       'The information provided does not state the current capital of Varen. Therefore, I'
+      SAME_REL_MISMATCH C51 ROLE     | TEXT=FOREIGN_VALUE 'Not provided in the information. The question asks for the capital of Varen,' | PKV=FOREIGN_VALUE 'Not provided in the information. The question asks for the capital of Varen,'
+      FOREIGN_SUBJECT   C95 ROLE     | TEXT=REFUSAL       'The information provided does not specify the capital of Varen.' | PKV=REFUSAL       'The information provided does not specify the capital of Varen.'
+      FOREIGN_SUBJECT   C53 NEAR     | TEXT=REFUSAL       'The information provided does not specify the capital of Varen. Therefore, I cannot' | PKV=REFUSAL       'The information provided does not specify the capital of Varen. Therefore, I cannot'
+      FOREIGN_SUBJECT   C15 ROLE     | TEXT=REFUSAL       'The information provided does not specify the capital of Varen. Therefore, I cannot' | PKV=REFUSAL       'The information provided does not specify the capital of Varen. Therefore, I cannot'
+      FOREIGN_SUBJECT   C21 NEAR     | TEXT=REFUSAL       'The information provided does not contain any details about the capital of Varen.' | PKV=REFUSAL       'The information provided does not contain any details about the capital of Varen. Therefore'
+
+      CASE 13 W13 FORMER   query='What was the former capital of Kelor?' gold=Toren
+      CORRECT           C54 FORMER   | TEXT=CORRECT       'Toren' | PKV=CORRECT       'Toren'
+      SAME_REL_MISMATCH C52 CURRENT  | TEXT=REFUSAL       'The question does not provide information about the former capital of Kelor. Therefore,' | PKV=REFUSAL       'The question does not provide information about the former capital of Kelor. Therefore,'
+      SAME_REL_MISMATCH C53 NEAR     | TEXT=OTHER         'The question asks for the former capital, but the information provided only mentions the' | PKV=OTHER         'The question asks for the former capital, but the information provided only mentions the'
+      SAME_REL_MISMATCH C55 ROLE     | TEXT=FOREIGN_VALUE 'The question does not provide information about the former capital of Kelor, so it' | PKV=FOREIGN_VALUE 'The question does not provide information about the former capital of Kelor, so it'
+      FOREIGN_SUBJECT   C86 FORMER   | TEXT=OTHER         'The question asks for the former capital of a different city, Kelor, not' | PKV=OTHER         'The question asks for the former capital of Kelor, but the provided information is'
+      FOREIGN_SUBJECT   C28 CURRENT  | TEXT=REFUSAL       'The question does not provide information about the former capital of Kelor.' | PKV=REFUSAL       'The question does not provide information about the former capital of Kelor.'
+      FOREIGN_SUBJECT   C33 NEAR     | TEXT=REFUSAL       'The question does not provide information about the former capital of Kelor.' | PKV=REFUSAL       'The question does not provide information about the former capital of Kelor.'
+      FOREIGN_SUBJECT   C12 CURRENT  | TEXT=REFUSAL       'The question does not provide information about the former capital of Kelor. Therefore,' | PKV=REFUSAL       'The question does not provide information about the former capital of Kelor. Therefore,'
+
+      CASE 14 W14 NEAR     query='What is the largest city of Narev?' gold=Corven
+      CORRECT           C57 NEAR     | TEXT=CORRECT       'Corven' | PKV=CORRECT       'Corven'
+      SAME_REL_MISMATCH C56 CURRENT  | TEXT=REFUSAL       'The information provided does not specify the largest city of Narev.' | PKV=REFUSAL       'The information provided does not specify the largest city of Narev.'
+      SAME_REL_MISMATCH C58 FORMER   | TEXT=REFUSAL       'The information provided does not specify the largest city of Narev.' | PKV=REFUSAL       'The information provided does not specify the largest city of Narev.'
+      SAME_REL_MISMATCH C59 ROLE     | TEXT=FOREIGN_VALUE 'The information provided does not specify the largest city of Narev.' | PKV=FOREIGN_VALUE 'The information provided does not specify the largest city of Narev.'
+      FOREIGN_SUBJECT   C82 FORMER   | TEXT=REFUSAL       'The question does not provide information about the largest city of Narev, so' | PKV=REFUSAL       'The question does not provide information about the largest city of Narev, so'
+      FOREIGN_SUBJECT   C71 ROLE     | TEXT=REFUSAL       'The information provided does not specify the largest city of Narev.' | PKV=REFUSAL       'The information provided does not specify the largest city of Narev.'
+      FOREIGN_SUBJECT   C02 FORMER   | TEXT=REFUSAL       'The question does not provide information about the largest city of Narev, so' | PKV=REFUSAL       'The question does not provide information about the largest city of Narev, so'
+      FOREIGN_SUBJECT   C61 NEAR     | TEXT=REFUSAL       'The information provided does not specify the largest city of Narev.' | PKV=REFUSAL       'The question asks for the largest city of Narev, but no information about'
+
+      CASE 15 W15 ROLE     query='What is the current capital of Kelron?' gold=Dervan
+      CORRECT           C63 ROLE     | TEXT=CORRECT       'Dervan' | PKV=CORRECT       'Dervan'
+      SAME_REL_MISMATCH C60 CURRENT  | TEXT=REFUSAL       'The information provided does not specify the capital of Kelron.' | PKV=REFUSAL       'The information provided does not include any details about the capital of Kelron. Therefore'
+      SAME_REL_MISMATCH C61 NEAR     | TEXT=REFUSAL       'The information provided does not give any details about the capital of Kelron. Therefore' | PKV=REFUSAL       'The information provided does not give any details about the capital of Kelron. Therefore'
+      SAME_REL_MISMATCH C62 FORMER   | TEXT=REFUSAL       'The information provided does not give any details about the current capital of Kelron.' | PKV=REFUSAL       'The information provided does not give any details about the current capital of Kelron.'
+      FOREIGN_SUBJECT   C03 ROLE     | TEXT=REFUSAL       'The information provided does not specify the capital of Kelron. Therefore, I cannot' | PKV=REFUSAL       'The information provided does not specify the capital of Kelron. Therefore, I cannot'
+      FOREIGN_SUBJECT   C52 CURRENT  | TEXT=REFUSAL       'Kelron does not appear in the provided information, so I cannot determine its capital' | PKV=REFUSAL       'Kelron does not appear in the provided information, so I cannot determine its capital'
+      FOREIGN_SUBJECT   C36 CURRENT  | TEXT=REFUSAL       'The information provided does not contain any details about the capital of Kelron. Therefore' | PKV=REFUSAL       'The information provided does not include details about the capital of Kelron. Therefore,'
+      FOREIGN_SUBJECT   C41 NEAR     | TEXT=REFUSAL       'The information provided does not specify the capital of Kelron. Therefore, I cannot' | PKV=REFUSAL       'The information provided does not specify the capital of Kelron. Therefore, I cannot'
+
+      CASE 16 W16 CURRENT  query='What is the current capital of Calnor?' gold=Verith
+      CORRECT           C64 CURRENT  | TEXT=CORRECT       'Verith' | PKV=CORRECT       'Verith'
+      SAME_REL_MISMATCH C65 NEAR     | TEXT=FOREIGN_VALUE 'Naldor (assuming the role of the capital has not been specified and' | PKV=FOREIGN_VALUE "Naldor (as per the provided information, it's the largest city"
+      SAME_REL_MISMATCH C66 FORMER   | TEXT=REFUSAL       'The information provided does not specify the current capital of Calnor.' | PKV=REFUSAL       'The information provided does not specify the current capital of Calnor.'
+      SAME_REL_MISMATCH C67 ROLE     | TEXT=FOREIGN_VALUE 'Not provided in the information. The question asks for the capital of Calnor,' | PKV=FOREIGN_VALUE 'Not provided in the information. The question asks for the capital of Calnor,'
+      FOREIGN_SUBJECT   C48 CURRENT  | TEXT=REFUSAL       'The question asks for the capital of Calnor, but no information about Calnor' | PKV=REFUSAL       'The question asks for the capital of Calnor, but no information about Calnor'
+      FOREIGN_SUBJECT   C47 ROLE     | TEXT=REFUSAL       'The information provided does not mention the capital of Calnor.' | PKV=REFUSAL       'The information provided does not mention the capital of Calnor.'
+      FOREIGN_SUBJECT   C21 NEAR     | TEXT=REFUSAL       'The information provided does not specify the current capital of Calnor.' | PKV=REFUSAL       'The information provided does not specify the current capital of Calnor.'
+      FOREIGN_SUBJECT   C42 FORMER   | TEXT=REFUSAL       'The information provided does not give any details about the current capital of Calnor.' | PKV=REFUSAL       'The information provided does not give any details about the current capital of Calnor.'
+
+      CASE 17 W17 FORMER   query='What was the former capital of Parel?' gold=Maros
+      CORRECT           C70 FORMER   | TEXT=CORRECT       'Maros' | PKV=CORRECT       'Maros'
+      SAME_REL_MISMATCH C68 CURRENT  | TEXT=REFUSAL       'The question does not provide information about the former capital of Parel. Therefore,' | PKV=REFUSAL       'The question does not provide information about the former capital of Parel. Therefore,'
+      SAME_REL_MISMATCH C69 NEAR     | TEXT=OTHER         'The question asks for the former capital, but the information provided only mentions the' | PKV=OTHER         'The question asks for the former capital, but the information provided only mentions the'
+      SAME_REL_MISMATCH C71 ROLE     | TEXT=FOREIGN_VALUE 'The question does not provide information about the former capital of Parel. Therefore,' | PKV=FOREIGN_VALUE 'The question does not provide information about the former capital of Parel. Therefore,'
+      FOREIGN_SUBJECT   C92 CURRENT  | TEXT=REFUSAL       'The question does not provide information about the former capital of Parel. Therefore,' | PKV=REFUSAL       'The question does not provide information about the former capital of Parel.'
+      FOREIGN_SUBJECT   C44 CURRENT  | TEXT=REFUSAL       'The question does not provide information about the former capital of Parel.' | PKV=REFUSAL       'The question does not provide information about the former capital of Parel. Therefore,'
+      FOREIGN_SUBJECT   C27 ROLE     | TEXT=REFUSAL       'The question does not provide information about the former capital of Parel.' | PKV=REFUSAL       'The question does not provide information about the former capital of Parel.'
+      FOREIGN_SUBJECT   C91 ROLE     | TEXT=REFUSAL       'The question does not provide information about the former capital of Parel.' | PKV=REFUSAL       'The question does not provide information about the former capital of Parel.'
+
+      CASE 18 W18 NEAR     query='What is the largest city of Sorven?' gold=Vindor
+      CORRECT           C73 NEAR     | TEXT=CORRECT       'Vindor' | PKV=CORRECT       'Vindor'
+      SAME_REL_MISMATCH C72 CURRENT  | TEXT=REFUSAL       'The information provided does not specify the largest city of Sorven.' | PKV=REFUSAL       'The information provided does not specify the largest city of Sorven.'
+      SAME_REL_MISMATCH C74 FORMER   | TEXT=REFUSAL       'The information provided does not specify the largest city of Sorven.' | PKV=REFUSAL       'The information provided does not specify the largest city of Sorven.'
+      SAME_REL_MISMATCH C75 ROLE     | TEXT=FOREIGN_VALUE 'The question does not provide information about the largest city of Sorven. Therefore,' | PKV=FOREIGN_VALUE 'The question does not provide information about the largest city of Sorven. Therefore,'
+      FOREIGN_SUBJECT   C93 NEAR     | TEXT=REFUSAL       "Not provided (as Sorven's largest city is not given in the information" | PKV=REFUSAL       "Not provided (as Sorven's largest city is not given in the information"
+      FOREIGN_SUBJECT   C56 CURRENT  | TEXT=REFUSAL       'The information provided does not specify the largest city of Sorven.' | PKV=REFUSAL       'The information provided does not specify the largest city of Sorven.'
+      FOREIGN_SUBJECT   C55 ROLE     | TEXT=REFUSAL       'The question does not provide information about the largest city of Sorven, so I' | PKV=REFUSAL       'The question does not provide information about the largest city of Sorven, so I'
+      FOREIGN_SUBJECT   C71 ROLE     | TEXT=REFUSAL       'The information provided does not specify the largest city of Sorven.' | PKV=REFUSAL       'The information provided does not specify the largest city of Sorven.'
+
+      CASE 19 W19 ROLE     query='What is the current capital of Solmar?' gold=Barel
+      CORRECT           C79 ROLE     | TEXT=CORRECT       'Barel' | PKV=CORRECT       'Barel'
+      SAME_REL_MISMATCH C76 CURRENT  | TEXT=REFUSAL       'The question asks for the capital of Solmar, but no information about Solmar' | PKV=REFUSAL       'The question asks for the capital of Solmar, but no information about Solmar'
+      SAME_REL_MISMATCH C77 NEAR     | TEXT=REFUSAL       'The information provided does not give any details about the capital of Solmar, so' | PKV=REFUSAL       'The information provided does not give any details about the capital of Solmar, so'
+      SAME_REL_MISMATCH C78 FORMER   | TEXT=REFUSAL       'The information provided does not give any details about the current capital of Solmar.' | PKV=REFUSAL       'The information provided does not give any details about the current capital of Solmar.'
+      FOREIGN_SUBJECT   C94 FORMER   | TEXT=REFUSAL       'The information provided does not give any details about the current capital of Solmar.' | PKV=REFUSAL       'The information provided does not give any details about the current capital of Solmar.'
+      FOREIGN_SUBJECT   C04 CURRENT  | TEXT=REFUSAL       'Not provided in the information.' | PKV=REFUSAL       'Not provided in the information.'
+      FOREIGN_SUBJECT   C30 FORMER   | TEXT=REFUSAL       'The information provided does not give any details about the current capital of Solmar.' | PKV=REFUSAL       'The information provided does not give any details about the current capital of Solmar.'
+      FOREIGN_SUBJECT   C83 ROLE     | TEXT=REFUSAL       'The question asks for the current capital of Solmar, but no information about Sol' | PKV=REFUSAL       'The question asks for the capital of Solmar, but no information about Solmar'
+
+      CASE 20 W20 CURRENT  query='What is the current capital of Ralen?' gold=Mervor
+      CORRECT           C80 CURRENT  | TEXT=CORRECT       'Mervor' | PKV=CORRECT       'Mervor'
+      SAME_REL_MISMATCH C81 NEAR     | TEXT=FOREIGN_VALUE 'The information provided does not specify that Talith is the current capital of Ralen' | PKV=FOREIGN_VALUE 'The information provided does not specify that Talith is the current capital of Ralen'
+      SAME_REL_MISMATCH C82 FORMER   | TEXT=REFUSAL       'The information provided does not state the current capital of Ralen. Therefore, I' | PKV=REFUSAL       'The information provided does not state the current capital of Ralen. Therefore, I'
+      SAME_REL_MISMATCH C83 ROLE     | TEXT=FOREIGN_VALUE 'Not provided in the information. The question asks for the capital of Ralen,' | PKV=FOREIGN_VALUE 'Not provided in the information. The question asks for the capital of Ralen,'
+      FOREIGN_SUBJECT   C48 CURRENT  | TEXT=REFUSAL       'The information provided does not specify the capital of Ralen.' | PKV=REFUSAL       'The information provided does not specify the capital of Ralen.'
+      FOREIGN_SUBJECT   C53 NEAR     | TEXT=REFUSAL       'The information provided does not specify the capital of Ralen. Therefore, I cannot' | PKV=REFUSAL       'The information provided does not specify the capital of Ralen. Therefore, I cannot'
+      FOREIGN_SUBJECT   C63 ROLE     | TEXT=REFUSAL       'The information provided does not specify the capital of Ralen. Therefore, I cannot' | PKV=REFUSAL       'The information provided does not specify the capital of Ralen. Therefore, I cannot'
+      FOREIGN_SUBJECT   C10 FORMER   | TEXT=REFUSAL       'The information provided does not give any details about the current capital of Ralen.' | PKV=REFUSAL       'The information provided does not give any details about the current capital of Ralen.'
+
+      CASE 21 W21 FORMER   query='What was the former capital of Norel?' gold=Calvenor
+      CORRECT           C86 FORMER   | TEXT=CORRECT       'Calvenor' | PKV=CORRECT       'Calvenor'
+      SAME_REL_MISMATCH C84 CURRENT  | TEXT=REFUSAL       'The question does not provide information about the former capital of Norel. Therefore' | PKV=REFUSAL       'The question does not provide information about the former capital of Norel. Therefore'
+      SAME_REL_MISMATCH C85 NEAR     | TEXT=OTHER         'The question asks for the former capital, not the largest city. Without additional information' | PKV=OTHER         'The question asks for the former capital, not the largest city. Without additional information'
+      SAME_REL_MISMATCH C87 ROLE     | TEXT=FOREIGN_VALUE 'The question does not provide information about the former capital of Norel, so' | PKV=FOREIGN_VALUE 'The question does not provide information about the former capital of Norel, so'
+      FOREIGN_SUBJECT   C75 ROLE     | TEXT=REFUSAL       'The question does not provide information about the former capital of Norel.' | PKV=REFUSAL       'The question does not provide information about the former capital of Norel.'
+      FOREIGN_SUBJECT   C06 FORMER   | TEXT=REFUSAL       "Norel's information was not provided, so I cannot answer the question" | PKV=REFUSAL       "Norel's information was not provided, so I cannot answer the question"
+      FOREIGN_SUBJECT   C38 FORMER   | TEXT=REFUSAL       "Norel's information was not provided, so I cannot answer the question" | PKV=REFUSAL       "Norel's information was not provided, so I cannot answer the question"
+      FOREIGN_SUBJECT   C60 CURRENT  | TEXT=REFUSAL       'The question does not provide information about the former capital of Norel. Therefore' | PKV=REFUSAL       'The question does not provide information about the former capital of Norel. Therefore'
+
+      CASE 22 W22 NEAR     query='What is the largest city of Tervan?' gold=Mardin
+      CORRECT           C89 NEAR     | TEXT=CORRECT       'Mardin' | PKV=CORRECT       'Mardin'
+      SAME_REL_MISMATCH C88 CURRENT  | TEXT=FOREIGN_VALUE 'Orel (assuming it is the largest city, as the information provided does' | PKV=REFUSAL       'The information provided does not specify the largest city of Tervan. Therefore,'
+      SAME_REL_MISMATCH C90 FORMER   | TEXT=REFUSAL       'The information provided does not specify the largest city of Tervan.' | PKV=REFUSAL       'The information provided does not specify the largest city of Tervan.'
+      SAME_REL_MISMATCH C91 ROLE     | TEXT=FOREIGN_VALUE 'The information provided does not include details about the largest city of Tervan.' | PKV=FOREIGN_VALUE 'The information provided does not include details about the largest city of Tervan.'
+      FOREIGN_SUBJECT   C87 ROLE     | TEXT=REFUSAL       'The information provided does not specify the largest city of Tervan. Therefore,' | PKV=REFUSAL       'The information provided does not specify the largest city of Tervan. Therefore,'
+      FOREIGN_SUBJECT   C71 ROLE     | TEXT=REFUSAL       'The information provided does not specify the largest city of Tervan.' | PKV=REFUSAL       'The information provided does not specify the largest city of Tervan.'
+      FOREIGN_SUBJECT   C50 FORMER   | TEXT=REFUSAL       'The information provided does not give any details about the largest city of Tervan' | PKV=REFUSAL       'The information provided does not give any details about the largest city of Tervan'
+      FOREIGN_SUBJECT   C61 NEAR     | TEXT=REFUSAL       'There is no information provided about the largest city of Tervan.' | PKV=REFUSAL       'There is no information provided about the largest city of Tervan.'
+
+      CASE 23 W23 ROLE     query='What is the current capital of Talrek?' gold=Karev
+      CORRECT           C95 ROLE     | TEXT=CORRECT       'Karev' | PKV=CORRECT       'Karev'
+      SAME_REL_MISMATCH C92 CURRENT  | TEXT=REFUSAL       'The question asks for the current capital of Talrek, but no information about Tal' | PKV=REFUSAL       'The information provided does not specify the capital of Talrek. Therefore, I cannot'
+      SAME_REL_MISMATCH C93 NEAR     | TEXT=REFUSAL       'The information provided does not specify the capital of Talrek, so I cannot answer' | PKV=REFUSAL       'The information provided does not specify the capital of Talrek, so I cannot answer'
+      SAME_REL_MISMATCH C94 FORMER   | TEXT=REFUSAL       'The information provided does not give any details about the current capital of Talrek.' | PKV=REFUSAL       'The information provided does not give any details about the current capital of Talrek.'
+      FOREIGN_SUBJECT   C09 NEAR     | TEXT=REFUSAL       'The information provided does not give any details about the capital of Talrek, so' | PKV=REFUSAL       'The information provided does not give any details about the capital of Talrek, so'
+      FOREIGN_SUBJECT   C36 CURRENT  | TEXT=REFUSAL       'The question asks for the current capital of Talrek, but no information about Tal' | PKV=REFUSAL       'The question asks for the current capital of Talrek, but no information about Tal'
+      FOREIGN_SUBJECT   C41 NEAR     | TEXT=REFUSAL       'The information provided does not specify the capital of Talrek. Therefore, I cannot' | PKV=REFUSAL       'The information provided does not specify the capital of Talrek, so I cannot answer'
+      FOREIGN_SUBJECT   C19 ROLE     | TEXT=REFUSAL       'The information provided does not specify the capital of Talrek. Therefore, I cannot' | PKV=REFUSAL       'The question asks for the current capital of Talrek, but no information about Tal'
+
+[6/11] Ownership agregasyonu...
+
+      TEXT
+      CORRECT           n= 24 | {'CORRECT': 24}
+      SAME_REL_MISMATCH n= 72 | {'FOREIGN_VALUE': 26, 'REFUSAL': 42, 'OTHER': 4}
+      FOREIGN_SUBJECT   n= 96 | {'REFUSAL': 92, 'FOREIGN_VALUE': 1, 'OTHER': 3}
+
+      PKV
+      CORRECT           n= 24 | {'CORRECT': 24}
+      SAME_REL_MISMATCH n= 72 | {'FOREIGN_VALUE': 24, 'REFUSAL': 43, 'OTHER': 5}
+      FOREIGN_SUBJECT   n= 96 | {'REFUSAL': 91, 'FOREIGN_VALUE': 1, 'OTHER': 4}
+
+      PKV mismatch ALL foreign-value=25/168=0.148810 | refusal=134/168=0.797619
+      SAME SUBJECT / wrong relation foreign-value=0.333333 | refusal=0.597222
+      FOREIGN SUBJECT foreign-value=0.010417 | refusal=0.947917
+
+[7/11] PART-B — TEST552 panelini aynı tohumla yeniden kur...
+      Reconstructed PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+      Expected TEST552 SHA    : 0b5cccba3fef19842d277ad1c98edbad29fe0fe26814493331f0889203c9f5b9
+      PANEL MATCH             : FAIL — COT-SHR result descriptive only
+      Canonical prefix tokens : 27
+
+[8/11] Repaired COT-SHR için shared-prefix body bankaları...
+      Bodies=96 | min/mean/max= 12 12.90 14
+
+[9/11] Repaired COT-SHR — FIRST/MIDDLE/LAST...
+      00 W00 CURRENT  gold=Melket     | F='The question asks for the current capital, but the information provided states that the former' | M='The question asks for the current capital, but the information provided states that the former' | L='The question asks for the current capital, but the information provided states that the former'
+      01 W01 FORMER   gold=Branik     | F='Laven' | M='Laven' | L='Laven'
+      02 W02 NEAR     gold=Varos      | F='Selnor' | M='Selnor' | L='Selnor'
+      03 W03 ROLE     gold=Belnor     | F='Kelvar' | M='Kelvar' | L='Kelvar'
+      04 W04 CURRENT  gold=Selora     | F='Kelor' | M='Kelor' | L='Kelor'
+      05 W05 FORMER   gold=Pareth     | F='Talvek' | M='Talvek' | L='Talvek'
+      06 W06 NEAR     gold=Keldin     | F='Keldin' | M='Keldin' | L='Keldin'
+      07 W07 ROLE     gold=Feron      | F='Tarev' | M='Tarev' | L='Tarev'
+      08 W08 CURRENT  gold=Nerith     | F='Solith (mistake in the question, it should be Larev' | M='Solith (mistake in the question, it should be Larev' | L='Solith (mistake in the question, it should be Larev'
+      09 W09 FORMER   gold=Dorin      | F='Taldor (incorrect, but this is due to a typo' | M='Taldor (incorrect, but this is due to a typo' | L='Taldor (incorrect, but this is due to a typo'
+      10 W10 NEAR     gold=Valen      | F='Vindor' | M='Vindor' | L='Vindor'
+      11 W11 ROLE     gold=Mirev      | F='Mirev' | M='Mirev' | L='Mirev'
+      12 W12 CURRENT  gold=Solith     | F='Terven (correctly, it should be the capital of the fictional' | M='Terven' | L='Terven'
+      13 W13 FORMER   gold=Toren      | F='Velos (from the information given, it was the former capital of Kelor' | M='Velos (from the information given, it was the former capital of Kelor' | L='Velos (from the information given, it was the former capital of Kelor'
+      14 W14 NEAR     gold=Corven     | F='Mirel (assuming a typo in the question, as the information' | M='Mirel (assuming a typo in the question, as Nare' | L='Mirel (assuming a typo in the question, as Nare'
+      15 W15 ROLE     gold=Dervan     | F='The question asks for the current capital of Kelron, but the information provided only' | M='The question asks for the current capital of Kelron, but the information provided only' | L='The question asks for the current capital of Kelron, but the information provided only'
+      16 W16 CURRENT  gold=Verith     | F='Parel' | M='Parel' | L='Parel'
+      17 W17 FORMER   gold=Maros      | F='Melket' | M='Melket' | L='Melket'
+      18 W18 NEAR     gold=Vindor     | F='Neris' | M='Neris' | L='Neris'
+      19 W19 ROLE     gold=Barel      | F='Tervan (but the question asks for the current capital, so the correct' | M='Tervan (but the question asks for the current capital, so the correct' | L='Tervan (but the question asks for the current capital, so the correct'
+      20 W20 CURRENT  gold=Mervor     | F='Istral' | M='Istral' | L='Istral'
+      21 W21 FORMER   gold=Calvenor   | F='Ardin (Capital of Norel is incorrect as per the provided' | M='Ardin (Capital of Norel is incorrect as per the provided' | L='Ardin (Capital of Norel is incorrect as per the provided'
+      22 W22 NEAR     gold=Mardin     | F='Deran (from the information provided, it should be noted that the error is' | M='Deran (from the information provided, it should be noted that the error is' | L='Deran (from the information provided, it should be noted that the error is'
+      23 W23 ROLE     gold=Karev      | F='Laven (but the information given states it was the former capital, so technically' | M='Laven (but the information given states it was the former capital, so technically' | L='Laven (but the information given states it was the former capital, so technically'
+
+      REPAIRED COT-SHR FIRST =02/24
+      REPAIRED COT-SHR MIDDLE=02/24
+      REPAIRED COT-SHR LAST  =02/24
+      SAME F=M=L             =22/24
+
+[10/11] Mekanizma kararı...
+      Correct PKV reference       : 24/24
+      Mismatch foreign-value rate : 0.148810
+      Mismatch refusal rate       : 0.797619
+      Ownership mechanism         : PARTIAL
+      Repaired COT-SHR min acc    : 2/24
+      Next                        : QSF_PARTIAL_PRECONDITION__REPORT_SPLIT_AND_TEST_CAUTIOUSLY
+
+[11/11] Anti-drift / sentinel / mühür...
+      Source text replay at query : OWNERSHIP TEXT control only; PKV arm YOK
+      Candidate search/retrieval  : YOK
+      Cartridge ID as address     : YOK
+      Cosine / ANN / top-k        : YOK
+      Router / classifier         : YOK
+      Relevance threshold         : YOK
+      Learned/fitted scorer       : YOK
+      Training / LoRA / optimizer : YOK
+      Model-native rotary_emb      : EVET
+      Original cartridge seal     : PASS
+      Weight sentinel             : PASS
+      Trainable tensors           : 0
+
+==========================================================================================================================================================================================
+TEST552R-OWN SONUÇ — OWNERSHIP GATE + TEST552 RoPE REPAIR
+==========================================================================================================================================================================================
+MODEL                              : mistralai/Mistral-7B-Instruct-v0.3
+G-R MODEL-NATIVE RoPE             : PASS
+CORRECT PKV REFERENCE             : 24/24
+PKV MISMATCH N                    : 168
+PKV FOREIGN-VALUE                 : 25/168 = 0.148810
+PKV REFUSAL                       : 134/168 = 0.797619
+SAME-SUBJECT WRONG-REL FOREIGN    : 0.333333
+SAME-SUBJECT WRONG-REL REFUSAL    : 0.597222
+FOREIGN-SUBJECT FOREIGN           : 0.010417
+FOREIGN-SUBJECT REFUSAL           : 0.947917
+OWNERSHIP DECISION                : PARTIAL
+TEST552 PANEL MATCH               : FAIL
+REPAIRED COT-SHR FIRST            : 2/24
+REPAIRED COT-SHR MIDDLE           : 2/24
+REPAIRED COT-SHR LAST             : 2/24
+REPAIRED COT-SHR SAME F=M=L       : 22/24
+CARTRIDGE SEAL                    : PASS
+WEIGHT SENTINEL                   : PASS
+TEST548 RESULT SHA                : 68e1594d7095cf7828286572a2ae6250bfcd5a7e3612e6db9c15a429bc4a8a87
+TEST551 RESULT SHA                : 69a6c6275298ee028ad9399dca869128989778fd34c5ad450ec9dc0b6c49c08b
+TEST552 RESULT SHA                : 603d858510fb438defbb5427c391264374387f33bc306c18d58e4e1161622f6e
+TEST552R-OWN ÖN KİLİT SHA         : ca5e75d5a20ed3285c4a6b58aadc49a6999d15216b3e3e506798eb6a761d1e4c
+OWNERSHIP PANEL SHA               : ca548716f1104d39d046d2cc1f7d59f8b975031add096f3db47d15b0fc2cb7da
+TEST552 EXPECTED PANEL SHA        : 0b5cccba3fef19842d277ad1c98edbad29fe0fe26814493331f0889203c9f5b9
+RECONSTRUCTED PANEL SHA           : 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+TEST552R-OWN RESULT SHA            : 7a5259c62a8451e6770311e6b20a597be226fbf121f98f4b99334795f5ec8ec8
+TOPLAM SÜRE                       : 313.19s
+SONRAKİ ADIM                      : QSF_PARTIAL_PRECONDITION__REPORT_SPLIT_AND_TEST_CAUTIOUSLY
+KARAR                              : OWNERSHIP_PARTIAL — AYRIŞTIRILMIŞ SINIR KOŞULU
+==========================================================================================================================================================================================
