@@ -1,0 +1,172 @@
+ 
+========================================================================================================================
+TEST564 — QWEN MAM · CUT CALIBRATION
+========================================================================================================================
+
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 100.07it/s]
+GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [4, 5, 6, 7, 8]
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+
+CALIBRATION START — 5 CUTS x 24 QUESTIONS
+
+====================================================================================================
+CUT 4
+CUT=04 CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+CUT=04 CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+CUT=04 CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+CUT=04 CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+CUT=04 CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+CUT=04 CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+CUT=04 CASE=02 FIRST  PASS | gold=Varos | answer='Varos'
+CUT=04 CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+CUT=04 CASE=02 LAST   PASS | gold=Varos | answer='Varos'
+CUT=04 CASE=03 FIRST  PASS | gold=Belnor | answer='Belnor'
+CUT=04 CASE=03 MIDDLE PASS | gold=Belnor | answer='Belnor'
+CUT=04 CASE=03 LAST   PASS | gold=Belnor | answer='Belnor'
+CUT=04 CASE=04 FIRST  PASS | gold=Selora | answer='Selora'
+CUT=04 CASE=04 MIDDLE PASS | gold=Selora | answer='Selora'
+CUT=04 CASE=04 LAST   PASS | gold=Selora | answer='Selora'
+CUT=04 CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+CUT=04 CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+CUT=04 CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+CUT=04 CASE=06 FIRST  PASS | gold=Keldin | answer='Keldin'
+CUT=04 CASE=06 MIDDLE PASS | gold=Keldin | answer='Keldin'
+CUT=04 CASE=06 LAST   PASS | gold=Keldin | answer='Keldin'
+CUT=04 CASE=07 FIRST  PASS | gold=Feron | answer='Feron'
+CUT=04 CASE=07 MIDDLE PASS | gold=Feron | answer='Feron'
+CUT=04 CASE=07 LAST   PASS | gold=Feron | answer='Feron'
+CUT=4 SCORE=24/24 COMPLETE=True TIME=12.79s
+
+====================================================================================================
+CUT 5
+CUT=05 CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+CUT=05 CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+CUT=05 CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+CUT=05 CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+CUT=05 CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+CUT=05 CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+CUT=05 CASE=02 FIRST  PASS | gold=Varos | answer='Varos'
+CUT=05 CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+CUT=05 CASE=02 LAST   PASS | gold=Varos | answer='Varos'
+CUT=05 CASE=03 FIRST  PASS | gold=Belnor | answer='Belnor'
+CUT=05 CASE=03 MIDDLE PASS | gold=Belnor | answer='Belnor'
+CUT=05 CASE=03 LAST   PASS | gold=Belnor | answer='Belnor'
+CUT=05 CASE=04 FIRST  PASS | gold=Selora | answer='Selora'
+CUT=05 CASE=04 MIDDLE PASS | gold=Selora | answer='Selora'
+CUT=05 CASE=04 LAST   PASS | gold=Selora | answer='Selora'
+CUT=05 CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+CUT=05 CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+CUT=05 CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+CUT=05 CASE=06 FIRST  PASS | gold=Keldin | answer='Keldin'
+CUT=05 CASE=06 MIDDLE PASS | gold=Keldin | answer='Keldin'
+CUT=05 CASE=06 LAST   PASS | gold=Keldin | answer='Keldin'
+CUT=05 CASE=07 FIRST  PASS | gold=Feron | answer='Feron'
+CUT=05 CASE=07 MIDDLE PASS | gold=Feron | answer='Feron'
+CUT=05 CASE=07 LAST   PASS | gold=Feron | answer='Feron'
+CUT=5 SCORE=24/24 COMPLETE=True TIME=12.91s
+
+====================================================================================================
+CUT 6
+CUT=06 CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+CUT=06 CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+CUT=06 CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+CUT=06 CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+CUT=06 CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+CUT=06 CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+CUT=06 CASE=02 FIRST  PASS | gold=Varos | answer='Varos'
+CUT=06 CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+CUT=06 CASE=02 LAST   PASS | gold=Varos | answer='Varos'
+CUT=06 CASE=03 FIRST  PASS | gold=Belnor | answer='Belnor'
+CUT=06 CASE=03 MIDDLE PASS | gold=Belnor | answer='Belnor'
+CUT=06 CASE=03 LAST   PASS | gold=Belnor | answer='Belnor'
+CUT=06 CASE=04 FIRST  PASS | gold=Selora | answer='Selora'
+CUT=06 CASE=04 MIDDLE PASS | gold=Selora | answer='Selora'
+CUT=06 CASE=04 LAST   PASS | gold=Selora | answer='Selora'
+CUT=06 CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+CUT=06 CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+CUT=06 CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+CUT=06 CASE=06 FIRST  PASS | gold=Keldin | answer='Keldin'
+CUT=06 CASE=06 MIDDLE PASS | gold=Keldin | answer='Keldin'
+CUT=06 CASE=06 LAST   PASS | gold=Keldin | answer='Keldin'
+CUT=06 CASE=07 FIRST  PASS | gold=Feron | answer='Feron'
+CUT=06 CASE=07 MIDDLE PASS | gold=Feron | answer='Feron'
+CUT=06 CASE=07 LAST   PASS | gold=Feron | answer='Feron'
+CUT=6 SCORE=24/24 COMPLETE=True TIME=12.79s
+
+====================================================================================================
+CUT 7
+CUT=07 CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+CUT=07 CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+CUT=07 CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+CUT=07 CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+CUT=07 CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+CUT=07 CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+CUT=07 CASE=02 FIRST  PASS | gold=Varos | answer='Varos'
+CUT=07 CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+CUT=07 CASE=02 LAST   PASS | gold=Varos | answer='Varos'
+CUT=07 CASE=03 FIRST  PASS | gold=Belnor | answer='Belnor'
+CUT=07 CASE=03 MIDDLE PASS | gold=Belnor | answer='Belnor'
+CUT=07 CASE=03 LAST   PASS | gold=Belnor | answer='Belnor'
+CUT=07 CASE=04 FIRST  PASS | gold=Selora | answer='Selora'
+CUT=07 CASE=04 MIDDLE PASS | gold=Selora | answer='Selora'
+CUT=07 CASE=04 LAST   PASS | gold=Selora | answer='Selora'
+CUT=07 CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+CUT=07 CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+CUT=07 CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+CUT=07 CASE=06 FIRST  PASS | gold=Keldin | answer='Keldin'
+CUT=07 CASE=06 MIDDLE PASS | gold=Keldin | answer='Keldin'
+CUT=07 CASE=06 LAST   PASS | gold=Keldin | answer='Keldin'
+CUT=07 CASE=07 FIRST  PASS | gold=Feron | answer='Feron'
+CUT=07 CASE=07 MIDDLE PASS | gold=Feron | answer='Feron'
+CUT=07 CASE=07 LAST   PASS | gold=Feron | answer='Feron'
+CUT=7 SCORE=24/24 COMPLETE=True TIME=12.97s
+
+====================================================================================================
+CUT 8
+CUT=08 CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+CUT=08 CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+CUT=08 CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+CUT=08 CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+CUT=08 CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+CUT=08 CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+CUT=08 CASE=02 FIRST  PASS | gold=Varos | answer='Varos'
+CUT=08 CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+CUT=08 CASE=02 LAST   PASS | gold=Varos | answer='Varos'
+CUT=08 CASE=03 FIRST  PASS | gold=Belnor | answer='Belnor'
+CUT=08 CASE=03 MIDDLE PASS | gold=Belnor | answer='Belnor'
+CUT=08 CASE=03 LAST   PASS | gold=Belnor | answer='Belnor'
+CUT=08 CASE=04 FIRST  PASS | gold=Selora | answer='Selora'
+CUT=08 CASE=04 MIDDLE PASS | gold=Selora | answer='Selora'
+CUT=08 CASE=04 LAST   PASS | gold=Selora | answer='Selora'
+CUT=08 CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+CUT=08 CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+CUT=08 CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+CUT=08 CASE=06 FIRST  PASS | gold=Keldin | answer='Keldin'
+CUT=08 CASE=06 MIDDLE PASS | gold=Keldin | answer='Keldin'
+CUT=08 CASE=06 LAST   PASS | gold=Keldin | answer='Keldin'
+CUT=08 CASE=07 FIRST  PASS | gold=Feron | answer='Feron'
+CUT=08 CASE=07 MIDDLE PASS | gold=Feron | answer='Feron'
+CUT=08 CASE=07 LAST   PASS | gold=Feron | answer='Feron'
+CUT=8 SCORE=24/24 COMPLETE=True TIME=13.1s
+
+========================================================================================================================
+TEST564 — FINAL CUT CALIBRATION
+========================================================================================================================
+CUT=04 SCORE=24/24 COMPLETE=True TIME=12.79s ERROR=None
+CUT=05 SCORE=24/24 COMPLETE=True TIME=12.91s ERROR=None
+CUT=06 SCORE=24/24 COMPLETE=True TIME=12.79s ERROR=None
+CUT=07 SCORE=24/24 COMPLETE=True TIME=12.97s ERROR=None
+CUT=08 SCORE=24/24 COMPLETE=True TIME=13.1s ERROR=None
+BEST CALIBRATION CUT: 6
+BEST SCORE: 24/24
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+WEIGHT SENTINEL: PASS
+TRAINABLE: 0
+TOTAL SECONDS: 72.28
+DECISION: READY FOR TEST565 VALIDATION
+
+
+========================================================================================================================
