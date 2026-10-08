@@ -1,0 +1,500 @@
+ ==================================================================================================================================================================================
+TEST551 — AKBASCORE MAM · LAST-CARTRIDGE CAPTURE X-RAY
+PAIRED FIRST↔LAST · T-BLOCK + P-RAW · LAYERWISE QK ATTENTION / V→O TRANSPORT / RESIDUAL TRAJECTORY
+QUESTION: CORRECT MEMORY BINDS EARLY THEN GETS LOST, OR NEVER WINS?
+SDPA UNCHANGED · NO FIX · NO STEERING · NO RETRIEVAL · NO ROUTER · NO SCORER · NO TRAINING
+==================================================================================================================================================================================
+
+[1/10] Donmuş Mistral...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 601/601 [00:00<00:00, 67.1kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 16.5MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 31.9MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 58.4kB/s  tokenizer.model: downloading bytes:   448kB, 44.6kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 46.6kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 2.95MB/s]Download complete:  12.4GB,  385MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  445MB/s  Fetching 3 files: 100% 3/3 [00:40<00:00, 40.69s/it]Loading weights: 100% 291/291 [00:03<00:00, 80.72it/s]generation_config.json: 100% 116/116 [00:00<00:00, 15.9kB/s]      mistralai/Mistral-7B-Instruct-v0.3 | NVIDIA A100-SXM4-40GB | Torch 2.11.0+cu130 | Transformers 5.18.0
+      32L H=4096 QH=32 KVH=8 HD=128 GROUP=4 | torch.bfloat16 | SDPA | trainable=0
+      LOCK SHA: b646a49da217fe39929408c428d9937b2681aeb851e8575cf2da6465690f3e54
+
+[2/10] Protokol...
+      Aynı target + aynı 4 distractor iki kez çalışır: TARGET FIRST ve TARGET LAST.
+      T-BLOCK ve P-RAW aynı paired düzeni görür.
+      SDPA değiştirilmez; X-ray gerçek forward'ın fiziksel cache K/V'si + query Q projectionı üzerinden hesaplanır.
+      Generation forward'ları X-ray hook snapshot'ını değiştiremez.
+      Ölçüm karar vermez, cache seçmez, maskeyi query'ye göre değiştirmez.
+      Ölçümler: target QK mass / strongest distractor, target V→O / strongest distractor, query residual norm.
+      Ana soru: doğru target erken/mid katmanda kazanıp sonra mı kayboluyor, yoksa hiç kazanamıyor mu?
+
+[3/10] TEST550 uyumlu 96 bağımsız native PKV forge...
+      01/24 Zorvan
+      02/24 Kelvar
+      03/24 Tarev
+      04/24 Belnor
+      05/24 Ravik
+      06/24 Nemor
+      07/24 Darsen
+      08/24 Feron
+      09/24 Larev
+      10/24 Torven
+      11/24 Selnor
+      12/24 Mirev
+      13/24 Varen
+      14/24 Kelor
+      15/24 Narev
+      16/24 Dervan
+      17/24 Calnor
+      18/24 Parel
+      19/24 Sorven
+      20/24 Barel
+      21/24 Ralen
+      22/24 Norel
+      23/24 Tervan
+      24/24 Karev
+      Cartridges: 96 | Length min/mean/max: 39 39.90 41
+
+[4/10] Paired k=5 panel...
+      Trials: 12 | PANEL SHA: 9c57a9f260e4e3fb19ae7537eb7b58cd67392337db6e14042608d941bc9b2925
+      T00 target=C40 FIRST=[40, 46, 13, 75, 20] LAST=[46, 13, 75, 20, 40]
+      T01 target=C54 FIRST=[54, 67, 56, 38, 1] LAST=[67, 56, 38, 1, 54]
+      T02 target=C90 FIRST=[90, 29, 93, 15, 17] LAST=[29, 93, 15, 17, 90]
+      T03 target=C49 FIRST=[49, 5, 11, 3, 74] LAST=[5, 11, 3, 74, 49]
+
+[5/10] Paired FIRST↔LAST X-ray...
+
+      TRIAL 01/12 C40 CURRENT  gold=Kareth
+      FIRST | T-BLOCK=FAIL 'Calven' | P-RAW=FAIL 'Calven'
+             L00 B QK=0.990 VO=0.983 | P QK=0.990 VO=0.984
+             L04 B QK=0.847 VO=0.466 | P QK=0.846 VO=0.465
+             L07 B QK=0.765 VO=0.684 | P QK=0.764 VO=0.680
+             L10 B QK=0.675 VO=0.566 | P QK=0.673 VO=0.563
+             L12 B QK=0.726 VO=0.625 | P QK=0.725 VO=0.620
+             L14 B QK=0.694 VO=0.394 | P QK=0.694 VO=0.392
+             L16 B QK=0.664 VO=0.577 | P QK=0.661 VO=0.570
+             L19 B QK=0.744 VO=0.412 | P QK=0.744 VO=0.411
+             L23 B QK=0.926 VO=0.727 | P QK=0.925 VO=0.726
+             L27 B QK=0.901 VO=0.542 | P QK=0.900 VO=0.539
+             L31 B QK=0.772 VO=0.653 | P QK=0.769 VO=0.656
+      LAST  | T-BLOCK=FAIL 'Calven' | P-RAW=FAIL 'Calven'
+             L00 B QK=1.029 VO=1.028 | P QK=1.029 VO=1.028
+             L04 B QK=1.069 VO=1.325 | P QK=1.071 VO=1.326
+             L07 B QK=1.089 VO=1.159 | P QK=1.090 VO=1.157
+             L10 B QK=1.138 VO=1.332 | P QK=1.139 VO=1.329
+             L12 B QK=1.115 VO=1.117 | P QK=1.113 VO=1.110
+             L14 B QK=1.197 VO=1.472 | P QK=1.200 VO=1.483
+             L16 B QK=1.181 VO=1.131 | P QK=1.181 VO=1.135
+             L19 B QK=1.146 VO=1.305 | P QK=1.148 VO=1.310
+             L23 B QK=1.023 VO=0.939 | P QK=1.024 VO=0.934
+             L27 B QK=1.066 VO=0.794 | P QK=1.066 VO=0.777
+             L31 B QK=1.024 VO=0.783 | P QK=1.017 VO=0.772
+
+      TRIAL 02/12 C54 FORMER   gold=Toren
+      FIRST | T-BLOCK=FAIL 'Dravel' | P-RAW=FAIL 'Dravel'
+             L00 B QK=0.943 VO=0.941 | P QK=0.943 VO=0.942
+             L04 B QK=0.845 VO=0.469 | P QK=0.844 VO=0.468
+             L07 B QK=0.765 VO=0.683 | P QK=0.765 VO=0.681
+             L10 B QK=0.672 VO=0.570 | P QK=0.675 VO=0.569
+             L12 B QK=0.706 VO=0.610 | P QK=0.708 VO=0.611
+             L14 B QK=0.660 VO=0.363 | P QK=0.661 VO=0.361
+             L16 B QK=0.596 VO=0.541 | P QK=0.600 VO=0.544
+             L19 B QK=0.707 VO=0.436 | P QK=0.708 VO=0.437
+             L23 B QK=0.920 VO=0.453 | P QK=0.918 VO=0.456
+             L27 B QK=0.856 VO=0.178 | P QK=0.857 VO=0.178
+             L31 B QK=0.748 VO=0.675 | P QK=0.748 VO=0.683
+      LAST  | T-BLOCK=FAIL 'Dravel' | P-RAW=FAIL 'Dravel'
+             L00 B QK=0.987 VO=0.985 | P QK=0.987 VO=0.986
+             L04 B QK=1.072 VO=1.334 | P QK=1.074 VO=1.336
+             L07 B QK=1.088 VO=1.144 | P QK=1.089 VO=1.145
+             L10 B QK=1.148 VO=1.355 | P QK=1.151 VO=1.357
+             L12 B QK=1.094 VO=1.110 | P QK=1.096 VO=1.115
+             L14 B QK=1.136 VO=1.301 | P QK=1.139 VO=1.311
+             L16 B QK=1.029 VO=1.013 | P QK=1.033 VO=1.023
+             L19 B QK=1.042 VO=0.554 | P QK=1.051 VO=0.589
+             L23 B QK=1.008 VO=0.597 | P QK=1.010 VO=0.610
+             L27 B QK=1.016 VO=0.234 | P QK=1.016 VO=0.229
+             L31 B QK=1.037 VO=1.148 | P QK=1.040 VO=1.136
+
+      TRIAL 03/12 C90 FORMER   gold=Velos
+      FIRST | T-BLOCK=FAIL 'Not provided (there is no information about the former capital of Tervan in' | P-RAW=FAIL 'Not provided (there is no information about the former capital of Tervan in'
+             L00 B QK=0.965 VO=0.964 | P QK=0.965 VO=0.965
+             L04 B QK=0.840 VO=0.457 | P QK=0.839 VO=0.454
+             L07 B QK=0.771 VO=0.682 | P QK=0.771 VO=0.678
+             L10 B QK=0.678 VO=0.581 | P QK=0.678 VO=0.580
+             L12 B QK=0.715 VO=0.606 | P QK=0.714 VO=0.602
+             L14 B QK=0.682 VO=0.411 | P QK=0.682 VO=0.411
+             L16 B QK=0.625 VO=0.606 | P QK=0.629 VO=0.609
+             L19 B QK=0.749 VO=0.398 | P QK=0.751 VO=0.393
+             L23 B QK=0.957 VO=1.004 | P QK=0.956 VO=1.002
+             L27 B QK=0.853 VO=0.213 | P QK=0.853 VO=0.211
+             L31 B QK=0.773 VO=0.488 | P QK=0.771 VO=0.500
+      LAST  | T-BLOCK=PASS 'Velos' | P-RAW=FAIL "Tervan's former capital is Belnor."
+             L00 B QK=1.005 VO=0.999 | P QK=1.005 VO=1.000
+             L04 B QK=1.081 VO=1.340 | P QK=1.082 VO=1.343
+             L07 B QK=1.073 VO=1.129 | P QK=1.074 VO=1.130
+             L10 B QK=1.154 VO=1.360 | P QK=1.156 VO=1.358
+             L12 B QK=1.078 VO=1.080 | P QK=1.082 VO=1.088
+             L14 B QK=1.151 VO=1.348 | P QK=1.154 VO=1.363
+             L16 B QK=1.001 VO=0.944 | P QK=1.003 VO=0.952
+             L19 B QK=1.078 VO=0.827 | P QK=1.075 VO=0.780
+             L23 B QK=1.059 VO=1.323 | P QK=1.059 VO=1.293
+             L27 B QK=1.037 VO=0.911 | P QK=1.036 VO=0.882
+             L31 B QK=1.030 VO=0.769 | P QK=1.032 VO=0.770
+
+      TRIAL 04/12 C49 NEAR     gold=Deran
+      FIRST | T-BLOCK=FAIL 'Tarev (from the information given, Tarev is the largest city' | P-RAW=FAIL 'Tarev (from the information given, Tarev is the largest city'
+             L00 B QK=0.932 VO=0.968 | P QK=0.932 VO=0.968
+             L04 B QK=0.838 VO=0.466 | P QK=0.838 VO=0.465
+             L07 B QK=0.767 VO=0.684 | P QK=0.767 VO=0.679
+             L10 B QK=0.680 VO=0.573 | P QK=0.680 VO=0.570
+             L12 B QK=0.736 VO=0.605 | P QK=0.735 VO=0.601
+             L14 B QK=0.720 VO=0.420 | P QK=0.720 VO=0.420
+             L16 B QK=0.722 VO=0.642 | P QK=0.720 VO=0.639
+             L19 B QK=0.904 VO=1.070 | P QK=0.904 VO=1.050
+             L23 B QK=0.970 VO=0.872 | P QK=0.970 VO=0.851
+             L27 B QK=0.871 VO=0.353 | P QK=0.873 VO=0.350
+             L31 B QK=0.881 VO=1.012 | P QK=0.879 VO=1.019
+      LAST  | T-BLOCK=PASS 'Deran' | P-RAW=PASS 'Deran'
+             L00 B QK=0.976 VO=1.003 | P QK=0.976 VO=1.003
+             L04 B QK=1.055 VO=1.295 | P QK=1.056 VO=1.302
+             L07 B QK=1.091 VO=1.167 | P QK=1.092 VO=1.169
+             L10 B QK=1.150 VO=1.350 | P QK=1.150 VO=1.349
+             L12 B QK=1.148 VO=1.135 | P QK=1.148 VO=1.136
+             L14 B QK=1.347 VO=1.913 | P QK=1.351 VO=1.931
+             L16 B QK=1.353 VO=1.321 | P QK=1.362 VO=1.334
+             L19 B QK=1.318 VO=3.911 | P QK=1.321 VO=4.013
+             L23 B QK=1.092 VO=2.450 | P QK=1.092 VO=2.495
+             L27 B QK=1.058 VO=0.794 | P QK=1.058 VO=0.777
+             L31 B QK=1.317 VO=2.030 | P QK=1.318 VO=2.028
+
+      TRIAL 05/12 C83 ROLE     gold=Ralen
+      FIRST | T-BLOCK=FAIL 'Varen' | P-RAW=FAIL 'Varen'
+             L00 B QK=0.990 VO=0.972 | P QK=0.990 VO=0.972
+             L04 B QK=0.838 VO=0.466 | P QK=0.838 VO=0.466
+             L07 B QK=0.771 VO=0.695 | P QK=0.773 VO=0.695
+             L10 B QK=0.689 VO=0.579 | P QK=0.689 VO=0.578
+             L12 B QK=0.754 VO=0.635 | P QK=0.756 VO=0.639
+             L14 B QK=0.737 VO=0.456 | P QK=0.736 VO=0.452
+             L16 B QK=0.740 VO=0.694 | P QK=0.740 VO=0.692
+             L19 B QK=0.841 VO=0.518 | P QK=0.846 VO=0.525
+             L23 B QK=0.951 VO=0.903 | P QK=0.951 VO=0.913
+             L27 B QK=0.855 VO=0.296 | P QK=0.856 VO=0.300
+             L31 B QK=0.812 VO=0.578 | P QK=0.813 VO=0.584
+      LAST  | T-BLOCK=PASS 'Ralen' | P-RAW=PASS 'Ralen'
+             L00 B QK=1.034 VO=1.014 | P QK=1.034 VO=1.014
+             L04 B QK=1.062 VO=1.283 | P QK=1.061 VO=1.280
+             L07 B QK=1.082 VO=1.154 | P QK=1.083 VO=1.152
+             L10 B QK=1.152 VO=1.329 | P QK=1.151 VO=1.325
+             L12 B QK=1.138 VO=1.119 | P QK=1.136 VO=1.114
+             L14 B QK=1.267 VO=1.673 | P QK=1.268 VO=1.683
+             L16 B QK=1.334 VO=1.336 | P QK=1.331 VO=1.330
+             L19 B QK=1.252 VO=1.489 | P QK=1.250 VO=1.494
+             L23 B QK=1.039 VO=1.040 | P QK=1.038 VO=1.035
+             L27 B QK=1.035 VO=0.701 | P QK=1.034 VO=0.694
+             L31 B QK=1.071 VO=0.765 | P QK=1.069 VO=0.767
+
+      TRIAL 06/12 C85 NEAR     gold=Serith
+      FIRST | T-BLOCK=FAIL 'Darsen (The capital of Norel is actually Kesven,' | P-RAW=FAIL 'Darsen (The capital of Norel is actually Kesven,'
+             L00 B QK=0.956 VO=0.965 | P QK=0.956 VO=0.964
+             L04 B QK=0.837 VO=0.443 | P QK=0.837 VO=0.442
+             L07 B QK=0.772 VO=0.679 | P QK=0.773 VO=0.679
+             L10 B QK=0.681 VO=0.582 | P QK=0.680 VO=0.579
+             L12 B QK=0.736 VO=0.625 | P QK=0.735 VO=0.619
+             L14 B QK=0.636 VO=0.321 | P QK=0.634 VO=0.316
+             L16 B QK=0.586 VO=0.502 | P QK=0.586 VO=0.502
+             L19 B QK=0.746 VO=0.669 | P QK=0.745 VO=0.667
+             L23 B QK=0.965 VO=1.896 | P QK=0.965 VO=1.910
+             L27 B QK=0.877 VO=0.302 | P QK=0.878 VO=0.298
+             L31 B QK=0.852 VO=1.512 | P QK=0.850 VO=1.500
+      LAST  | T-BLOCK=PASS 'Serith' | P-RAW=PASS 'Serith'
+             L00 B QK=1.000 VO=1.001 | P QK=1.000 VO=1.001
+             L04 B QK=1.075 VO=1.318 | P QK=1.075 VO=1.320
+             L07 B QK=1.084 VO=1.158 | P QK=1.084 VO=1.161
+             L10 B QK=1.146 VO=1.337 | P QK=1.148 VO=1.338
+             L12 B QK=1.137 VO=1.145 | P QK=1.139 VO=1.149
+             L14 B QK=1.163 VO=1.246 | P QK=1.165 VO=1.253
+             L16 B QK=1.094 VO=0.972 | P QK=1.096 VO=0.975
+             L19 B QK=1.248 VO=2.978 | P QK=1.249 VO=2.955
+             L23 B QK=1.117 VO=5.553 | P QK=1.117 VO=5.517
+             L27 B QK=1.091 VO=1.281 | P QK=1.090 VO=1.254
+             L31 B QK=1.300 VO=2.718 | P QK=1.302 VO=2.751
+
+      TRIAL 07/12 C94 FORMER   gold=Mirven
+      FIRST | T-BLOCK=FAIL 'Orsen (The former capital of Karev is given as Orsen,' | P-RAW=FAIL 'Orsen (The former capital of Karev is given as Orsen,'
+             L00 B QK=0.955 VO=0.983 | P QK=0.955 VO=0.982
+             L04 B QK=0.841 VO=0.458 | P QK=0.843 VO=0.457
+             L07 B QK=0.777 VO=0.690 | P QK=0.777 VO=0.685
+             L10 B QK=0.670 VO=0.575 | P QK=0.670 VO=0.574
+             L12 B QK=0.722 VO=0.621 | P QK=0.720 VO=0.617
+             L14 B QK=0.692 VO=0.399 | P QK=0.690 VO=0.396
+             L16 B QK=0.613 VO=0.580 | P QK=0.614 VO=0.587
+             L19 B QK=0.715 VO=0.357 | P QK=0.714 VO=0.349
+             L23 B QK=0.970 VO=1.870 | P QK=0.968 VO=1.819
+             L27 B QK=0.811 VO=0.193 | P QK=0.810 VO=0.193
+             L31 B QK=0.800 VO=0.817 | P QK=0.802 VO=0.803
+      LAST  | T-BLOCK=FAIL 'Talven' | P-RAW=FAIL 'Talven'
+             L00 B QK=0.999 VO=1.014 | P QK=1.000 VO=1.014
+             L04 B QK=1.082 VO=1.332 | P QK=1.082 VO=1.331
+             L07 B QK=1.083 VO=1.146 | P QK=1.084 VO=1.147
+             L10 B QK=1.151 VO=1.329 | P QK=1.151 VO=1.325
+             L12 B QK=1.088 VO=1.093 | P QK=1.088 VO=1.096
+             L14 B QK=1.156 VO=1.356 | P QK=1.159 VO=1.363
+             L16 B QK=1.001 VO=0.966 | P QK=1.003 VO=0.972
+             L19 B QK=1.024 VO=0.498 | P QK=1.024 VO=0.491
+             L23 B QK=1.061 VO=2.769 | P QK=1.059 VO=2.706
+             L27 B QK=1.000 VO=0.515 | P QK=1.002 VO=0.525
+             L31 B QK=1.056 VO=1.076 | P QK=1.057 VO=1.066
+
+      TRIAL 08/12 C34 FORMER   gold=Veyron
+      FIRST | T-BLOCK=FAIL 'Mirel (was the former capital of Larev)' | P-RAW=PASS 'Veyron'
+             L00 B QK=0.966 VO=0.985 | P QK=0.966 VO=0.985
+             L04 B QK=0.846 VO=0.473 | P QK=0.845 VO=0.469
+             L07 B QK=0.788 VO=0.706 | P QK=0.786 VO=0.697
+             L10 B QK=0.675 VO=0.580 | P QK=0.676 VO=0.578
+             L12 B QK=0.725 VO=0.620 | P QK=0.725 VO=0.612
+             L14 B QK=0.698 VO=0.431 | P QK=0.697 VO=0.426
+             L16 B QK=0.650 VO=0.574 | P QK=0.650 VO=0.578
+             L19 B QK=0.750 VO=0.543 | P QK=0.753 VO=0.539
+             L23 B QK=0.950 VO=0.573 | P QK=0.951 VO=0.570
+             L27 B QK=0.894 VO=0.169 | P QK=0.896 VO=0.173
+             L31 B QK=0.710 VO=0.530 | P QK=0.712 VO=0.549
+      LAST  | T-BLOCK=FAIL 'Mirel' | P-RAW=FAIL 'Mirel'
+             L00 B QK=1.013 VO=1.018 | P QK=1.013 VO=1.018
+             L04 B QK=1.084 VO=1.301 | P QK=1.085 VO=1.308
+             L07 B QK=1.062 VO=1.125 | P QK=1.063 VO=1.129
+             L10 B QK=1.149 VO=1.345 | P QK=1.147 VO=1.338
+             L12 B QK=1.089 VO=1.125 | P QK=1.090 VO=1.130
+             L14 B QK=1.171 VO=1.403 | P QK=1.175 VO=1.413
+             L16 B QK=1.013 VO=0.868 | P QK=1.015 VO=0.871
+             L19 B QK=1.040 VO=0.532 | P QK=1.042 VO=0.538
+             L23 B QK=1.027 VO=0.729 | P QK=1.027 VO=0.730
+             L27 B QK=1.051 VO=0.536 | P QK=1.051 VO=0.541
+             L31 B QK=0.982 VO=0.765 | P QK=0.981 VO=0.757
+
+      TRIAL 09/12 C64 CURRENT  gold=Verith
+      FIRST | T-BLOCK=FAIL 'Feron (The current capital of Calnor is given as Feron in the' | P-RAW=FAIL 'Feron (The current capital of Calnor is given as Feron in the'
+             L00 B QK=0.955 VO=0.972 | P QK=0.955 VO=0.972
+             L04 B QK=0.839 VO=0.464 | P QK=0.838 VO=0.461
+             L07 B QK=0.767 VO=0.697 | P QK=0.767 VO=0.696
+             L10 B QK=0.675 VO=0.570 | P QK=0.675 VO=0.567
+             L12 B QK=0.739 VO=0.633 | P QK=0.742 VO=0.638
+             L14 B QK=0.692 VO=0.372 | P QK=0.692 VO=0.369
+             L16 B QK=0.699 VO=0.605 | P QK=0.703 VO=0.608
+             L19 B QK=0.825 VO=0.514 | P QK=0.825 VO=0.508
+             L23 B QK=0.964 VO=1.677 | P QK=0.964 VO=1.693
+             L27 B QK=0.900 VO=0.363 | P QK=0.899 VO=0.366
+             L31 B QK=0.855 VO=0.592 | P QK=0.858 VO=0.602
+      LAST  | T-BLOCK=PASS 'Verith' | P-RAW=PASS 'Verith'
+             L00 B QK=0.999 VO=1.010 | P QK=0.999 VO=1.010
+             L04 B QK=1.054 VO=1.299 | P QK=1.056 VO=1.300
+             L07 B QK=1.091 VO=1.160 | P QK=1.092 VO=1.161
+             L10 B QK=1.148 VO=1.348 | P QK=1.150 VO=1.348
+             L12 B QK=1.130 VO=1.111 | P QK=1.129 VO=1.105
+             L14 B QK=1.186 VO=1.392 | P QK=1.188 VO=1.397
+             L16 B QK=1.286 VO=1.235 | P QK=1.289 VO=1.240
+             L19 B QK=1.171 VO=0.931 | P QK=1.178 VO=0.982
+             L23 B QK=1.094 VO=3.397 | P QK=1.097 VO=3.454
+             L27 B QK=1.091 VO=1.722 | P QK=1.092 VO=1.727
+             L31 B QK=1.218 VO=1.283 | P QK=1.226 VO=1.332
+
+      TRIAL 10/12 C95 ROLE     gold=Karev
+      FIRST | T-BLOCK=FAIL 'Selnor' | P-RAW=FAIL 'Selnor'
+             L00 B QK=0.978 VO=0.984 | P QK=0.978 VO=0.985
+             L04 B QK=0.836 VO=0.459 | P QK=0.837 VO=0.457
+             L07 B QK=0.768 VO=0.692 | P QK=0.769 VO=0.690
+             L10 B QK=0.683 VO=0.573 | P QK=0.684 VO=0.573
+             L12 B QK=0.745 VO=0.628 | P QK=0.745 VO=0.624
+             L14 B QK=0.730 VO=0.438 | P QK=0.730 VO=0.436
+             L16 B QK=0.726 VO=0.629 | P QK=0.726 VO=0.626
+             L19 B QK=0.853 VO=0.415 | P QK=0.855 VO=0.420
+             L23 B QK=0.940 VO=0.740 | P QK=0.940 VO=0.742
+             L27 B QK=0.865 VO=0.118 | P QK=0.867 VO=0.118
+             L31 B QK=0.781 VO=0.449 | P QK=0.781 VO=0.452
+      LAST  | T-BLOCK=PASS 'Karev' | P-RAW=PASS 'Karev'
+             L00 B QK=1.024 VO=1.021 | P QK=1.024 VO=1.021
+             L04 B QK=1.058 VO=1.293 | P QK=1.059 VO=1.292
+             L07 B QK=1.098 VO=1.171 | P QK=1.100 VO=1.173
+             L10 B QK=1.163 VO=1.356 | P QK=1.165 VO=1.355
+             L12 B QK=1.147 VO=1.133 | P QK=1.146 VO=1.128
+             L14 B QK=1.251 VO=1.624 | P QK=1.254 VO=1.639
+             L16 B QK=1.298 VO=1.255 | P QK=1.297 VO=1.256
+             L19 B QK=1.245 VO=1.400 | P QK=1.250 VO=1.442
+             L23 B QK=1.036 VO=0.975 | P QK=1.036 VO=0.969
+             L27 B QK=0.998 VO=0.139 | P QK=0.997 VO=0.139
+             L31 B QK=1.011 VO=0.616 | P QK=1.008 VO=0.620
+
+      TRIAL 11/12 C45 NEAR     gold=Neris
+      FIRST | T-BLOCK=FAIL 'Tervan (from the information given, Tervan is the largest city' | P-RAW=FAIL 'Tervan (from the information given, Tervan is the largest city'
+             L00 B QK=0.967 VO=0.983 | P QK=0.967 VO=0.983
+             L04 B QK=0.836 VO=0.461 | P QK=0.837 VO=0.461
+             L07 B QK=0.791 VO=0.708 | P QK=0.792 VO=0.705
+             L10 B QK=0.686 VO=0.581 | P QK=0.687 VO=0.582
+             L12 B QK=0.753 VO=0.624 | P QK=0.752 VO=0.622
+             L14 B QK=0.716 VO=0.443 | P QK=0.714 VO=0.437
+             L16 B QK=0.729 VO=0.748 | P QK=0.723 VO=0.738
+             L19 B QK=0.888 VO=0.787 | P QK=0.885 VO=0.761
+             L23 B QK=0.952 VO=0.636 | P QK=0.951 VO=0.642
+             L27 B QK=0.905 VO=0.324 | P QK=0.906 VO=0.325
+             L31 B QK=0.830 VO=0.708 | P QK=0.833 VO=0.718
+      LAST  | T-BLOCK=PASS 'Neris' | P-RAW=PASS 'Neris'
+             L00 B QK=1.014 VO=1.019 | P QK=1.014 VO=1.018
+             L04 B QK=1.070 VO=1.285 | P QK=1.072 VO=1.284
+             L07 B QK=1.079 VO=1.162 | P QK=1.081 VO=1.162
+             L10 B QK=1.156 VO=1.339 | P QK=1.157 VO=1.342
+             L12 B QK=1.149 VO=1.181 | P QK=1.150 VO=1.180
+             L14 B QK=1.335 VO=1.979 | P QK=1.331 VO=1.973
+             L16 B QK=1.397 VO=1.453 | P QK=1.387 VO=1.427
+             L19 B QK=1.400 VO=2.608 | P QK=1.398 VO=2.540
+             L23 B QK=1.032 VO=1.054 | P QK=1.032 VO=1.055
+             L27 B QK=1.072 VO=0.830 | P QK=1.073 VO=0.826
+             L31 B QK=1.100 VO=0.910 | P QK=1.108 VO=0.913
+
+      TRIAL 12/12 C16 CURRENT  gold=Selora
+      FIRST | T-BLOCK=FAIL 'Talvek' | P-RAW=FAIL 'Talvek'
+             L00 B QK=0.922 VO=0.944 | P QK=0.922 VO=0.944
+             L04 B QK=0.842 VO=0.468 | P QK=0.842 VO=0.468
+             L07 B QK=0.771 VO=0.689 | P QK=0.770 VO=0.686
+             L10 B QK=0.679 VO=0.576 | P QK=0.680 VO=0.577
+             L12 B QK=0.727 VO=0.624 | P QK=0.726 VO=0.622
+             L14 B QK=0.683 VO=0.396 | P QK=0.683 VO=0.396
+             L16 B QK=0.650 VO=0.587 | P QK=0.652 VO=0.588
+             L19 B QK=0.706 VO=0.244 | P QK=0.707 VO=0.251
+             L23 B QK=0.944 VO=0.236 | P QK=0.945 VO=0.241
+             L27 B QK=0.969 VO=4.471 | P QK=0.973 VO=4.592
+             L31 B QK=0.828 VO=0.805 | P QK=0.830 VO=0.806
+      LAST  | T-BLOCK=PASS 'Selora' | P-RAW=PASS 'Selora'
+             L00 B QK=0.965 VO=0.987 | P QK=0.965 VO=0.987
+             L04 B QK=1.063 VO=1.331 | P QK=1.063 VO=1.330
+             L07 B QK=1.101 VO=1.174 | P QK=1.100 VO=1.170
+             L10 B QK=1.159 VO=1.365 | P QK=1.160 VO=1.363
+             L12 B QK=1.124 VO=1.136 | P QK=1.125 VO=1.133
+             L14 B QK=1.191 VO=1.493 | P QK=1.193 VO=1.501
+             L16 B QK=1.188 VO=1.163 | P QK=1.191 VO=1.168
+             L19 B QK=1.117 VO=0.958 | P QK=1.124 VO=1.027
+             L23 B QK=1.019 VO=0.304 | P QK=1.019 VO=0.305
+             L27 B QK=1.192 VO=9.116 | P QK=1.194 VO=9.038
+             L31 B QK=1.152 VO=1.576 | P QK=1.162 VO=1.606
+
+[6/10] Katman agregasyonu...
+
+      T-BLOCK
+      L | FIRST_QK LAST_QK | FIRST_VO LAST_VO | ΔQK(L-F) ΔVO(L-F)
+      00 |    0.960   1.004 |    0.970   1.008 |   +0.044   +0.038
+      01 |    0.847   1.084 |    0.569   1.263 |   +0.238   +0.693
+      02 |    0.938   1.031 |    0.651   1.269 |   +0.093   +0.618
+      03 |    0.960   1.020 |    0.910   1.041 |   +0.060   +0.131
+      04 |    0.840   1.069 |    0.462   1.311 |   +0.228   +0.849
+      05 |    0.872   1.047 |    0.478   1.232 |   +0.175   +0.753
+      06 |    0.788   1.099 |    0.452   1.097 |   +0.312   +0.645
+      07 |    0.773   1.085 |    0.691   1.154 |   +0.313   +0.463
+      08 |    0.649   1.172 |    0.409   1.393 |   +0.523   +0.983
+      09 |    0.792   1.094 |    0.570   1.201 |   +0.302   +0.632
+      10 |    0.679   1.151 |    0.575   1.345 |   +0.473   +0.770
+      11 |    0.737   1.125 |    0.466   1.354 |   +0.388   +0.888
+      12 |    0.732   1.120 |    0.621   1.124 |   +0.388   +0.502
+      13 |    0.548   1.252 |    0.392   1.474 |   +0.704   +1.082
+      14 |    0.695   1.212 |    0.404   1.517 |   +0.517   +1.113
+      15 |    0.733   1.169 |    0.597   1.290 |   +0.436   +0.694
+      16 |    0.667   1.181 |    0.607   1.138 |   +0.515   +0.531
+      17 |    0.791   1.134 |    0.647   1.367 |   +0.343   +0.720
+      18 |    0.776   1.143 |    0.585   1.458 |   +0.367   +0.873
+      19 |    0.786   1.173 |    0.530   1.499 |   +0.388   +0.969
+      20 |    0.832   1.086 |    0.523   1.212 |   +0.254   +0.689
+      21 |    0.865   1.068 |    0.476   0.956 |   +0.203   +0.480
+      22 |    0.879   1.064 |    0.570   1.152 |   +0.184   +0.582
+      23 |    0.951   1.051 |    0.966   1.761 |   +0.100   +0.795
+      24 |    0.842   1.066 |    0.403   1.031 |   +0.224   +0.627
+      25 |    0.864   1.129 |    0.581   1.825 |   +0.265   +1.244
+      26 |    0.867   1.074 |    0.531   1.124 |   +0.207   +0.593
+      27 |    0.880   1.059 |    0.627   1.464 |   +0.179   +0.838
+      28 |    0.840   1.085 |    0.326   1.528 |   +0.244   +1.203
+      29 |    0.877   1.082 |    0.875   1.577 |   +0.205   +0.701
+      30 |    0.869   1.076 |    0.560   1.117 |   +0.207   +0.557
+      31 |    0.804   1.108 |    0.735   1.203 |   +0.305   +0.469
+
+      P-RAW
+      L | FIRST_QK LAST_QK | FIRST_VO LAST_VO | ΔQK(L-F) ΔVO(L-F)
+      00 |    0.960   1.004 |    0.970   1.008 |   +0.044   +0.038
+      01 |    0.846   1.085 |    0.570   1.261 |   +0.238   +0.692
+      02 |    0.939   1.033 |    0.651   1.270 |   +0.094   +0.618
+      03 |    0.960   1.023 |    0.911   1.043 |   +0.062   +0.132
+      04 |    0.840   1.070 |    0.461   1.313 |   +0.229   +0.851
+      05 |    0.872   1.049 |    0.477   1.235 |   +0.177   +0.758
+      06 |    0.787   1.101 |    0.451   1.103 |   +0.313   +0.652
+      07 |    0.773   1.086 |    0.688   1.155 |   +0.313   +0.467
+      08 |    0.650   1.174 |    0.409   1.396 |   +0.524   +0.987
+      09 |    0.792   1.094 |    0.572   1.195 |   +0.302   +0.624
+      10 |    0.679   1.152 |    0.574   1.344 |   +0.473   +0.770
+      11 |    0.738   1.125 |    0.467   1.348 |   +0.387   +0.881
+      12 |    0.732   1.120 |    0.619   1.124 |   +0.388   +0.505
+      13 |    0.548   1.251 |    0.394   1.472 |   +0.703   +1.078
+      14 |    0.694   1.215 |    0.401   1.526 |   +0.520   +1.125
+      15 |    0.733   1.171 |    0.594   1.295 |   +0.438   +0.701
+      16 |    0.667   1.182 |    0.607   1.140 |   +0.515   +0.533
+      17 |    0.792   1.134 |    0.650   1.366 |   +0.342   +0.716
+      18 |    0.776   1.144 |    0.587   1.469 |   +0.368   +0.882
+      19 |    0.786   1.176 |    0.526   1.513 |   +0.389   +0.987
+      20 |    0.833   1.087 |    0.525   1.225 |   +0.255   +0.700
+      21 |    0.865   1.069 |    0.475   0.955 |   +0.204   +0.480
+      22 |    0.879   1.066 |    0.570   1.167 |   +0.186   +0.597
+      23 |    0.950   1.051 |    0.964   1.759 |   +0.100   +0.795
+      24 |    0.842   1.067 |    0.401   1.034 |   +0.226   +0.633
+      25 |    0.864   1.130 |    0.584   1.828 |   +0.265   +1.245
+      26 |    0.867   1.074 |    0.527   1.126 |   +0.207   +0.599
+      27 |    0.881   1.059 |    0.637   1.451 |   +0.178   +0.814
+      28 |    0.841   1.085 |    0.325   1.520 |   +0.244   +1.196
+      29 |    0.878   1.082 |    0.873   1.576 |   +0.204   +0.703
+      30 |    0.870   1.076 |    0.557   1.120 |   +0.207   +0.563
+      31 |    0.804   1.110 |    0.739   1.210 |   +0.306   +0.471
+
+[7/10] Native-binding trajectory diagnosis...
+      T-BLOCK: FIRST_NEVER_BEATS_STRONGEST_DISTRACTOR
+               FIRST QK early_max=0.9600 mid_max=0.7917 late_mean=0.8553 | VO mid_max=0.6908 late_mean=0.5798
+      P-RAW  : FIRST_NEVER_BEATS_STRONGEST_DISTRACTOR
+               FIRST QK early_max=0.9604 mid_max=0.7924 late_mean=0.8558 | VO mid_max=0.6876 late_mean=0.5802
+      Diagnosis yalnız röntgen özeti; yeni routing/selection kuralı değildir.
+
+[8/10] Behavioral paired effect...
+      T-BLOCK: FIRST=0/12 LAST=8/12 | F→L gain=8 loss=0
+      P-RAW  : FIRST=1/12 LAST=7/12 | F→L gain=7 loss=1
+
+[9/10] Anti-drift / physical audit...
+      Original cartridge SHA unchanged      : PASS
+      SDPA inference implementation          : UNCHANGED
+      Paired target/distractors              : SAME; ONLY ORDER CHANGES
+      X-ray K/V source                       : ACTUAL FORWARD PHYSICAL CACHE
+      Generation overwrites X-ray snapshot   : YOK
+      X-ray changes model computation        : YOK
+      BOS/template surgery                   : YOK
+      Steering / intervention                : YOK
+      Query-dependent cartridge selection    : YOK
+      External score / cosine / ANN          : YOK
+      Router / classifier                    : YOK
+      Training / LoRA / optimizer            : YOK
+
+[10/10] Sentinel / mühür...
+      Cartridge seal            : PASS
+      Weight sentinel            : PASS
+      Trainable tensors          : 0
+
+==================================================================================================================================================================================
+TEST551 SONUÇ — LAST-CARTRIDGE CAPTURE X-RAY
+==================================================================================================================================================================================
+MODEL                         : mistralai/Mistral-7B-Instruct-v0.3
+T-BLOCK FIRST                   : 0/12
+T-BLOCK LAST                    : 8/12
+T-BLOCK FIRST→LAST GAINS        : 8
+T-BLOCK FIRST→LAST LOSSES       : 0
+T-BLOCK TRAJECTORY              : FIRST_NEVER_BEATS_STRONGEST_DISTRACTOR
+P-RAW FIRST                   : 1/12
+P-RAW LAST                    : 7/12
+P-RAW FIRST→LAST GAINS        : 7
+P-RAW FIRST→LAST LOSSES       : 1
+P-RAW TRAJECTORY              : FIRST_NEVER_BEATS_STRONGEST_DISTRACTOR
+FOCUS BAND                    : L7–L19
+XRAY K/V                      : ACTUAL PHYSICAL CACHE
+SDPA                          : UNCHANGED
+CARTRIDGE SEAL                : PASS
+WEIGHT SENTINEL               : PASS
+TEST548 RESULT SHA            : 68e1594d7095cf7828286572a2ae6250bfcd5a7e3612e6db9c15a429bc4a8a87
+TEST549 RESULT SHA            : f92d5ea0e4e29224ea0e72d163d4c855c18969be14622d151bf54f5fae674186
+TEST550 RESULT SHA            : 64de77d2668a88793762b1ed1114e6183f6d921a3729553b9e8c37270bfb26c1
+TEST551 ÖN KİLİT SHA          : b646a49da217fe39929408c428d9937b2681aeb851e8575cf2da6465690f3e54
+TEST551 RESULT SHA            : 69a6c6275298ee028ad9399dca869128989778fd34c5ad450ec9dc0b6c49c08b
+TOPLAM SÜRE                   : 83.43s
+KARAR                         : TEST551_LAST_CAPTURE_PHYSICS_MAPPED
+==================================================================================================================================================================================
