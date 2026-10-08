@@ -1,0 +1,216 @@
+ ============================================================================================================================================================
+TEST545 — AKBASCORE MAM · VARAN 1 · TRANSFORMATION-RESPONSE TRAJECTORY X-RAY
+STATIC vs LOCAL FULL-MODEL JVP RESPONSE · TRUE / NEAR / FAR / CROSS · RETRIEVAL YOK · SEÇİM YOK · EŞİK YOK
+============================================================================================================================================================
+
+[1/8] Donmuş Mistral...
+config.json: 100% 601/601 [00:00<00:00, 70.7kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 141k/141k [00:00<00:00, 16.0MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 85.5MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 57.0kB/s  tokenizer.model: downloading bytes:   448kB, 43.5kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 53.8kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 2.63MB/s]Download complete:  12.4GB, 1.07GB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  534MB/s  Fetching 3 files: 100% 3/3 [00:41<00:00, 41.51s/it]Loading weights: 100% 291/291 [00:03<00:00, 81.16it/s]generation_config.json: 100% 116/116 [00:00<00:00, 14.9kB/s]      mistralai/Mistral-7B-Instruct-v0.3 | NVIDIA A100-SXM4-40GB | 32L H=4096 QH=32 KVH=8 HD=128 | trainable=0
+      LOCK SHA: 3de15200c20583128707673e6d66bbb22c65d680a7382e76f783b13ddd367152
+
+[2/8] STATIC izleri...
+      01/24
+      02/24
+      03/24
+      04/24
+      05/24
+      06/24
+      07/24
+      08/24
+      09/24
+      10/24
+      11/24
+      12/24
+      13/24
+      14/24
+      15/24
+      16/24
+      17/24
+      18/24
+      19/24
+      20/24
+      21/24
+      22/24
+      23/24
+      24/24
+
+[3/8] LOCAL RESPONSE izleri · full-model native forward · sabit probe bank...
+      01/24 WRITE/NEAR/QUERY/PARA/TR
+      02/24 WRITE/NEAR/QUERY/PARA/TR
+      03/24 WRITE/NEAR/QUERY/PARA/TR
+      04/24 WRITE/NEAR/QUERY/PARA/TR
+      05/24 WRITE/NEAR/QUERY/PARA/TR
+      06/24 WRITE/NEAR/QUERY/PARA/TR
+      07/24 WRITE/NEAR/QUERY/PARA/TR
+      08/24 WRITE/NEAR/QUERY/PARA/TR
+      09/24 WRITE/NEAR/QUERY/PARA/TR
+      10/24 WRITE/NEAR/QUERY/PARA/TR
+      11/24 WRITE/NEAR/QUERY/PARA/TR
+      12/24 WRITE/NEAR/QUERY/PARA/TR
+      13/24 WRITE/NEAR/QUERY/PARA/TR
+      14/24 WRITE/NEAR/QUERY/PARA/TR
+      15/24 WRITE/NEAR/QUERY/PARA/TR
+      16/24 WRITE/NEAR/QUERY/PARA/TR
+      17/24 WRITE/NEAR/QUERY/PARA/TR
+      18/24 WRITE/NEAR/QUERY/PARA/TR
+      19/24 WRITE/NEAR/QUERY/PARA/TR
+      20/24 WRITE/NEAR/QUERY/PARA/TR
+      21/24 WRITE/NEAR/QUERY/PARA/TR
+      22/24 WRITE/NEAR/QUERY/PARA/TR
+      23/24 WRITE/NEAR/QUERY/PARA/TR
+      24/24 WRITE/NEAR/QUERY/PARA/TR
+
+[4/8] TRUE / NEAR / FAR / CROSS karşılaştırması...
+
+      STATIC
+      TRUE   +0.520113
+      NEAR   +0.483780
+      CROSS  +0.512919
+      FAR    +0.479012
+      PARA   +0.466502
+      TR     +0.341251
+      TRUE-NEAR  +0.036333
+      TRUE-CROSS +0.007194
+      TRUE-FAR   +0.041101
+
+      RESPONSE
+      TRUE   +0.330649
+      NEAR   +0.325876
+      CROSS  +0.329241
+      FAR    +0.324553
+      PARA   +0.319597
+      TR     +0.309772
+      TRUE-NEAR  +0.004773
+      TRUE-CROSS +0.001408
+      TRUE-FAR   +0.006096
+
+      TRAJECTORY
+      TRUE   +0.133860
+      NEAR   +0.129394
+      CROSS  +0.132186
+      FAR    +0.126816
+      PARA   +0.114533
+      TR     +0.096050
+      TRUE-NEAR  +0.004466
+      TRUE-CROSS +0.001675
+      TRUE-FAR   +0.007045
+
+[5/8] Kritik tersine-dönüş testi · STATIC NEAR>TRUE vakaları...
+      00 Zorvan   STATICΔ=+0.05020 RESPONSEΔ=+0.01135 TRAJΔ=+0.01552 trap=0 Rflip=0 Tflip=0
+      01 Kelvar   STATICΔ=+0.04617 RESPONSEΔ=+0.00993 TRAJΔ=+0.01202 trap=0 Rflip=0 Tflip=0
+      02 Tarev    STATICΔ=+0.02548 RESPONSEΔ=+0.00622 TRAJΔ=+0.00444 trap=0 Rflip=0 Tflip=0
+      03 Belnor   STATICΔ=+0.03136 RESPONSEΔ=+0.00282 TRAJΔ=+0.00061 trap=0 Rflip=0 Tflip=0
+      04 Ravik    STATICΔ=+0.02704 RESPONSEΔ=+0.00746 TRAJΔ=+0.00532 trap=0 Rflip=0 Tflip=0
+      05 Nemor    STATICΔ=+0.03319 RESPONSEΔ=+0.00646 TRAJΔ=+0.00742 trap=0 Rflip=0 Tflip=0
+      06 Darsen   STATICΔ=+0.04517 RESPONSEΔ=+0.00710 TRAJΔ=+0.00619 trap=0 Rflip=0 Tflip=0
+      07 Feron    STATICΔ=+0.04049 RESPONSEΔ=+0.00322 TRAJΔ=+0.00473 trap=0 Rflip=0 Tflip=0
+      08 Larev    STATICΔ=+0.03279 RESPONSEΔ=+0.00525 TRAJΔ=+0.00620 trap=0 Rflip=0 Tflip=0
+      09 Torven   STATICΔ=+0.03234 RESPONSEΔ=+0.00230 TRAJΔ=+0.00157 trap=0 Rflip=0 Tflip=0
+      10 Selnor   STATICΔ=+0.03836 RESPONSEΔ=+0.00708 TRAJΔ=+0.00563 trap=0 Rflip=0 Tflip=0
+      11 Mirev    STATICΔ=+0.02984 RESPONSEΔ=+0.00513 TRAJΔ=+0.00453 trap=0 Rflip=0 Tflip=0
+      12 Varen    STATICΔ=+0.02793 RESPONSEΔ=+0.00477 TRAJΔ=+0.00280 trap=0 Rflip=0 Tflip=0
+      13 Kelor    STATICΔ=+0.04046 RESPONSEΔ=+0.00940 TRAJΔ=+0.00908 trap=0 Rflip=0 Tflip=0
+      14 Narev    STATICΔ=+0.05630 RESPONSEΔ=+0.00900 TRAJΔ=+0.01008 trap=0 Rflip=0 Tflip=0
+      15 Dervan   STATICΔ=+0.02383 RESPONSEΔ=-0.00267 TRAJΔ=-0.00518 trap=0 Rflip=0 Tflip=0
+      16 Calnor   STATICΔ=+0.03219 RESPONSEΔ=+0.00310 TRAJΔ=+0.00010 trap=0 Rflip=0 Tflip=0
+      17 Parel    STATICΔ=+0.04582 RESPONSEΔ=+0.00240 TRAJΔ=+0.00243 trap=0 Rflip=0 Tflip=0
+      18 Sorven   STATICΔ=+0.01666 RESPONSEΔ=-0.00093 TRAJΔ=-0.00203 trap=0 Rflip=0 Tflip=0
+      19 Barel    STATICΔ=+0.01966 RESPONSEΔ=-0.00032 TRAJΔ=+0.00050 trap=0 Rflip=0 Tflip=0
+      20 Ralen    STATICΔ=+0.03865 RESPONSEΔ=+0.00503 TRAJΔ=+0.00264 trap=0 Rflip=0 Tflip=0
+      21 Norel    STATICΔ=+0.04209 RESPONSEΔ=+0.00597 TRAJΔ=+0.00649 trap=0 Rflip=0 Tflip=0
+      22 Tervan   STATICΔ=+0.06143 RESPONSEΔ=-0.00004 TRAJΔ=+0.00041 trap=0 Rflip=0 Tflip=0
+      23 Karev    STATICΔ=+0.03454 RESPONSEΔ=+0.00453 TRAJΔ=+0.00569 trap=0 Rflip=0 Tflip=0
+
+      STATIC NEAR>TRUE traps : 0/24
+      RESPONSE reversals     : 0/0
+      TRAJECTORY reversals   : 0/0
+
+[6/8] Katman profilleri — hiçbir layer seçilmiyor...
+      L00 STATIC TRUE-NEAR=-0.005485 RESPONSE TRUE-NEAR=-0.002743 TRAJECTORY=-0.035784
+      L01 STATIC TRUE-NEAR=-0.024595 RESPONSE TRUE-NEAR=-0.011846 TRAJECTORY=-0.032340
+      L02 STATIC TRUE-NEAR=-0.009168 RESPONSE TRUE-NEAR=-0.014951 TRAJECTORY=-0.030713
+      L03 STATIC TRUE-NEAR=-0.023754 RESPONSE TRUE-NEAR=-0.022505 TRAJECTORY=-0.001767
+      L04 STATIC TRUE-NEAR=+0.028392 RESPONSE TRUE-NEAR=+0.009546 TRAJECTORY=+0.035593
+      L05 STATIC TRUE-NEAR=+0.042605 RESPONSE TRUE-NEAR=+0.017143 TRAJECTORY=+0.042113
+      L06 STATIC TRUE-NEAR=+0.069325 RESPONSE TRUE-NEAR=+0.035613 TRAJECTORY=+0.047122
+      L07 STATIC TRUE-NEAR=+0.040688 RESPONSE TRUE-NEAR=+0.018843 TRAJECTORY=+0.030753
+      L08 STATIC TRUE-NEAR=+0.037596 RESPONSE TRUE-NEAR=+0.013410 TRAJECTORY=+0.010180
+      L09 STATIC TRUE-NEAR=+0.035716 RESPONSE TRUE-NEAR=-0.000517 TRAJECTORY=+0.004521
+      L10 STATIC TRUE-NEAR=+0.024756 RESPONSE TRUE-NEAR=+0.002946 TRAJECTORY=+0.003704
+      L11 STATIC TRUE-NEAR=+0.016510 RESPONSE TRUE-NEAR=-0.002446 TRAJECTORY=+0.009749
+      L12 STATIC TRUE-NEAR=+0.038624 RESPONSE TRUE-NEAR=+0.007781 TRAJECTORY=+0.017976
+      L13 STATIC TRUE-NEAR=+0.045715 RESPONSE TRUE-NEAR=+0.013088 TRAJECTORY=+0.017047
+      L14 STATIC TRUE-NEAR=+0.051116 RESPONSE TRUE-NEAR=+0.018168 TRAJECTORY=+0.013037
+      L15 STATIC TRUE-NEAR=+0.043034 RESPONSE TRUE-NEAR=+0.015193 TRAJECTORY=+0.007297
+      L16 STATIC TRUE-NEAR=+0.036321 RESPONSE TRUE-NEAR=+0.010230 TRAJECTORY=+0.004460
+      L17 STATIC TRUE-NEAR=+0.026047 RESPONSE TRUE-NEAR=+0.008589 TRAJECTORY=+0.000911
+      L18 STATIC TRUE-NEAR=+0.034548 RESPONSE TRUE-NEAR=+0.002412 TRAJECTORY=+0.001760
+      L19 STATIC TRUE-NEAR=+0.044687 RESPONSE TRUE-NEAR=+0.007477 TRAJECTORY=+0.004107
+      L20 STATIC TRUE-NEAR=+0.047161 RESPONSE TRUE-NEAR=+0.006419 TRAJECTORY=+0.001073
+      L21 STATIC TRUE-NEAR=+0.048636 RESPONSE TRUE-NEAR=+0.005085 TRAJECTORY=-0.000177
+      L22 STATIC TRUE-NEAR=+0.047295 RESPONSE TRUE-NEAR=+0.003947 TRAJECTORY=-0.000262
+      L23 STATIC TRUE-NEAR=+0.049707 RESPONSE TRUE-NEAR=+0.001825 TRAJECTORY=+0.002239
+      L24 STATIC TRUE-NEAR=+0.051405 RESPONSE TRUE-NEAR=+0.002316 TRAJECTORY=-0.003031
+      L25 STATIC TRUE-NEAR=+0.049082 RESPONSE TRUE-NEAR=+0.001028 TRAJECTORY=+0.002274
+      L26 STATIC TRUE-NEAR=+0.054276 RESPONSE TRUE-NEAR=+0.005305 TRAJECTORY=+0.002303
+      L27 STATIC TRUE-NEAR=+0.051972 RESPONSE TRUE-NEAR=+0.001660 TRAJECTORY=+0.001536
+      L28 STATIC TRUE-NEAR=+0.055293 RESPONSE TRUE-NEAR=+0.003999 TRAJECTORY=-0.008804
+      L29 STATIC TRUE-NEAR=+0.053488 RESPONSE TRUE-NEAR=-0.006805 TRAJECTORY=-0.006318
+      L30 STATIC TRUE-NEAR=+0.055622 RESPONSE TRUE-NEAR=+0.001089 TRAJECTORY=-0.002100
+      L31 STATIC TRUE-NEAR=+0.046043 RESPONSE TRUE-NEAR=+0.001439 TRAJECTORY=n/a
+
+[7/8] Dağıtık bütün-hat özeti...
+      STATIC_TRUE             : +0.52011287
+      STATIC_NEAR             : +0.48377979
+      STATIC_TRUE_NEAR        : +0.03633306
+      STATIC_TRUE_CROSS       : +0.00719406
+      STATIC_TRUE_FAR         : +0.04110056
+      RESPONSE_TRUE           : +0.33064878
+      RESPONSE_NEAR           : +0.32587570
+      RESPONSE_TRUE_NEAR      : +0.00477310
+      RESPONSE_TRUE_CROSS     : +0.00140828
+      RESPONSE_TRUE_FAR       : +0.00609567
+      TRAJECTORY_TRUE         : +0.13386030
+      TRAJECTORY_NEAR         : +0.12939385
+      TRAJECTORY_TRUE_NEAR    : +0.00446647
+      TRAJECTORY_TRUE_CROSS   : +0.00167465
+      TRAJECTORY_TRUE_FAR     : +0.00704457
+      RESPONSE_PARA           : +0.31959692
+      RESPONSE_TURKISH        : +0.30977225
+      TRAJECTORY_PARA         : +0.11453328
+      TRAJECTORY_TURKISH      : +0.09605037
+      STATIC_TRAPS            : 0
+      RESPONSE_REVERSALS      : 0
+      TRAJECTORY_REVERSALS    : 0
+
+[8/8] Sentinel / mühür...
+      Weight sentinel              : PASS
+      Trainable tensors            : 0
+      Retrieval / argmax / winner  : YOK
+      Threshold / router / scorer  : YOK
+      Memory-ID / token-ID address : YOK
+      Tek layer/head/probe adresi  : YOK
+      Gold selection               : YOK
+      Training/LoRA/optimizer      : YOK
+      Response                     : SABİT MERKEZİ FARK X-RAY
+
+============================================================================================================================================================
+TEST545 SONUÇ — TRANSFORMATION-RESPONSE TRAJECTORY X-RAY
+============================================================================================================================================================
+MODEL                         : mistralai/Mistral-7B-Instruct-v0.3
+DÜNYA                         : 24 | fixed probes: 8
+STATIC TRUE-NEAR             : +0.03633306
+RESPONSE TRUE-NEAR           : +0.00477310
+TRAJECTORY TRUE-NEAR         : +0.00446647
+STATIC NEAR>TRUE TRAPS       : 0
+RESPONSE REVERSALS           : 0/0
+TRAJECTORY REVERSALS         : 0/0
+WEIGHT SENTINEL              : PASS
+TEST544 RESULT SHA           : 4e22925805401354061dcf00aaeeb92beaa1991fbb93cfab845408c4dd7b253b
+TEST545 ÖN KİLİT SHA         : 3de15200c20583128707673e6d66bbb22c65d680a7382e76f783b13ddd367152
+TEST545 RESULT SHA           : 464d31f054d0e42c7bdbc5b936d17e81c14052e6bc240ec5dbefd63932d616f1
+TOPLAM SÜRE                  : 2305.96s
+KARAR                        : TEST545_TRANSFORMATION_RESPONSE_XRAY_TAMAMLANDI
+YORUM KURALI                 : Kritik sinyal STATIC NEAR>TRUE vakalarında RESPONSE/TRAJECTORY'nin TRUE>NEAR yönüne dönmesidir; tek layer/head/probe seçilmez.
+============================================================================================================================================================
