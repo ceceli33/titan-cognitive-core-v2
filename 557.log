@@ -1,0 +1,118 @@
+ ====================================================================================================================================================================
+TEST557 — AKBASCORE MAM · RESIDUAL-STATE vs K/V CAUSAL CHANNEL DISSECTION
+TEST556 CONTRACT PRESERVED · CUTS L13/L15 · SWITCH / STATE / KV / STATE+KV
+FROZEN MISTRAL · NO TRAINING · NO RETRIEVAL · NO ROUTER · NO QSF
+====================================================================================================================================================================
+
+[1/10] Frozen Mistral...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 601/601 [00:00<00:00, 72.8kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 16.3MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 68.1MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 57.1kB/s  tokenizer.model: downloading bytes:   448kB, 43.6kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 52.6kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 3.10MB/s]Download complete:  12.4GB, 1.06GB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  536MB/s  Fetching 3 files: 100% 3/3 [00:41<00:00, 41.31s/it]Loading weights: 100% 291/291 [00:03<00:00, 81.45it/s]generation_config.json: 100% 116/116 [00:00<00:00, 16.6kB/s]MODEL: mistralai/Mistral-7B-Instruct-v0.3
+GPU: NVIDIA A100-SXM4-40GB
+TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+NL=32 H=4096 QH=32 KVH=8 HD=128 DTYPE=torch.bfloat16
+ROPE: {'rope_theta': 1000000.0, 'rope_type': 'default'}
+TRAINABLE: 0
+
+[2/10] Panel provenance...
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+PANEL PROVENANCE: PASS
+
+[3/10] Mask contract...
+MASK CONTRACT: PASS | TOKENS=93 PREFIX=27 TARGET=13 HISTORY=53 FULL=66
+
+[4/10] Baseline replication...
+JOINT: {'FIRST': 24, 'MIDDLE': 24, 'LAST': 24}
+BLOCK: {'FIRST': 4, 'MIDDLE': 3, 'LAST': 6}
+BASELINE REPLICATION: PASS
+
+[5/10] L13/L15 channel dissection...
+CASE 00 complete
+CASE 01 complete
+CASE 02 complete
+CASE 03 complete
+PROGRESS 4/24 | elapsed=165.3s
+CASE 04 complete
+CASE 05 complete
+CASE 06 complete
+CASE 07 complete
+PROGRESS 8/24 | elapsed=228.9s
+CASE 08 complete
+CASE 09 complete
+CASE 10 complete
+CASE 11 complete
+PROGRESS 12/24 | elapsed=305.2s
+CASE 12 complete
+CASE 13 complete
+CASE 14 complete
+CASE 15 complete
+PROGRESS 16/24 | elapsed=385.2s
+CASE 16 complete
+CASE 17 complete
+CASE 18 complete
+CASE 19 complete
+PROGRESS 20/24 | elapsed=450.5s
+CASE 20 complete
+CASE 21 complete
+CASE 22 complete
+CASE 23 complete
+PROGRESS 24/24 | elapsed=498.8s
+
+[6/10] Integrity...
+SWITCH: 144 EXPECTED: 144
+RESULTS: 1296 EXPECTED: 1296
+RAW INTEGRITY: PASS
+
+[7/10] Channel scores...
+
+L13 SWITCH=20/72
+FULL     STATE=68/72 ΔS=+48 | KV=23/72 ΔK=+03 | STATE+KV=66/72 ΔSK=+46
+TARGET   STATE=45/72 ΔS=+25 | KV=19/72 ΔK=-01 | STATE+KV=46/72 ΔSK=+26
+HISTORY  STATE=43/72 ΔS=+23 | KV=22/72 ΔK=+02 | STATE+KV=41/72 ΔSK=+21
+
+L15 SWITCH=15/72
+FULL     STATE=28/72 ΔS=+13 | KV=21/72 ΔK=+06 | STATE+KV=65/72 ΔSK=+50
+TARGET   STATE=15/72 ΔS=+00 | KV=13/72 ΔK=-02 | STATE+KV=45/72 ΔSK=+30
+HISTORY  STATE=50/72 ΔS=+35 | KV=25/72 ΔK=+10 | STATE+KV=38/72 ΔSK=+23
+
+[8/10] Case-level causal decomposition...
+L13 FULL     STATE_ONLY=44 KV_ONLY=00 BOTH=05 NEITHER=03 | STATE+KV_GAIN=47 OVER_STATE=01 HARM=03
+L13 TARGET   STATE_ONLY=26 KV_ONLY=00 BOTH=00 NEITHER=26 | STATE+KV_GAIN=26 OVER_STATE=01 HARM=00
+L13 HISTORY  STATE_ONLY=26 KV_ONLY=01 BOTH=03 NEITHER=22 | STATE+KV_GAIN=27 OVER_STATE=00 HARM=02
+L15 FULL     STATE_ONLY=11 KV_ONLY=05 BOTH=09 NEITHER=32 | STATE+KV_GAIN=50 OVER_STATE=37 HARM=00
+L15 TARGET   STATE_ONLY=06 KV_ONLY=03 BOTH=01 NEITHER=47 | STATE+KV_GAIN=30 OVER_STATE=30 HARM=00
+L15 HISTORY  STATE_ONLY=22 KV_ONLY=01 BOTH=13 NEITHER=21 | STATE+KV_GAIN=27 OVER_STATE=01 HARM=13
+
+[9/10] Mechanism decision...
+L13 FULL    : ΔSTATE=+48 ΔKV=+3 ΔSTATE+KV=+46 => BOTH-ACTIVE / STATE-LARGER
+L13 TARGET  : ΔSTATE=+25 ΔKV=-1 ΔSTATE+KV=+26 => STATE-DOMINANT
+L13 HISTORY : ΔSTATE=+23 ΔKV=+2 ΔSTATE+KV=+21 => BOTH-ACTIVE / STATE-LARGER
+L15 FULL    : ΔSTATE=+13 ΔKV=+6 ΔSTATE+KV=+50 => BOTH-ACTIVE / STATE-LARGER
+L15 TARGET  : ΔSTATE=+0 ΔKV=-2 ΔSTATE+KV=+30 => NO POSITIVE CHANNEL EFFECT
+L15 HISTORY : ΔSTATE=+35 ΔKV=+10 ΔSTATE+KV=+23 => BOTH-ACTIVE / STATE-LARGER
+
+[10/10] Final research record...
+====================================================================================================================================================================
+TEST557 — FINAL RESEARCH RECORD
+====================================================================================================================================================================
+MODEL               : mistralai/Mistral-7B-Instruct-v0.3
+PANEL SHA           : 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+LOCK SHA            : ac47c2cb235eac39ca72d743ea93eb700480d89ee14e14e16f11dcfad2a95fe0
+RESULT SHA          : aede9833084de92a1fb602ba7ebceba1c4678d58f698db642391f5f1701f04a4
+CUTS                : [13, 15]
+JOINT BASELINE      : {'FIRST': 24, 'MIDDLE': 24, 'LAST': 24}
+BLOCK BASELINE      : {'FIRST': 4, 'MIDDLE': 3, 'LAST': 6}
+L13 SWITCH          : 20/72
+L13 FULL     STATE=68/72 KV=23/72 STATE+KV=66/72 | BOTH-ACTIVE / STATE-LARGER
+L13 TARGET   STATE=45/72 KV=19/72 STATE+KV=46/72 | STATE-DOMINANT
+L13 HISTORY  STATE=43/72 KV=22/72 STATE+KV=41/72 | BOTH-ACTIVE / STATE-LARGER
+L15 SWITCH          : 15/72
+L15 FULL     STATE=28/72 KV=21/72 STATE+KV=65/72 | BOTH-ACTIVE / STATE-LARGER
+L15 TARGET   STATE=15/72 KV=13/72 STATE+KV=45/72 | NO POSITIVE CHANNEL EFFECT
+L15 HISTORY  STATE=50/72 KV=25/72 STATE+KV=38/72 | BOTH-ACTIVE / STATE-LARGER
+WEIGHT SENTINEL     : PASS
+TRAINABLE           : 0
+TOTAL TIME          : 498.86s
+INTERPRETATION RULE : KV arm tests stored cut-layer K/V contribution during QUESTION readout; it does not recreate downstream write-time K/V.
+NEXT TEST           : TEST558 only after TEST557 interpretation
+====================================================================================================================================================================
