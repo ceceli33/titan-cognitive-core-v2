@@ -1,0 +1,225 @@
+ 
+====================================================================================================================================
+TEST565 — AKBASCORE MAM · QWEN FULL-LAYER X-RAY
+TEST564 BACKBONE PRESERVED · 28-LAYER DIAGNOSTICS → CAUSAL VALIDATION
+====================================================================================================================================
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 87.6kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 819kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 85.2MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 72.2MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 124MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.55MB/s]
+Download complete: 
+
+ 13.1GB,  524MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  340MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:43<00:00, 43.60s/it]
+Loading weights: 100%
+
+ 339/339 [00:04<00:00, 96.15it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 34.5kB/s]
+GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+
+[1/4] FULL-LAYER X-RAY — 28 LAYERS
+XRAY CASE=00 SLOT=FIRST  | L0 Hcos=0.99999 L6 Hcos=0.99994 L14 Hcos=0.99991 L27 Hcos=0.99951
+XRAY CASE=00 SLOT=MIDDLE | L0 Hcos=0.98602 L6 Hcos=0.91861 L14 Hcos=0.83984 L27 Hcos=0.58304
+XRAY CASE=00 SLOT=LAST   | L0 Hcos=0.97880 L6 Hcos=0.90113 L14 Hcos=0.80414 L27 Hcos=0.57682
+XRAY CASE=01 SLOT=FIRST  | L0 Hcos=0.99999 L6 Hcos=0.99992 L14 Hcos=0.99991 L27 Hcos=0.99966
+XRAY CASE=01 SLOT=MIDDLE | L0 Hcos=0.98593 L6 Hcos=0.91720 L14 Hcos=0.83042 L27 Hcos=0.62328
+XRAY CASE=01 SLOT=LAST   | L0 Hcos=0.98171 L6 Hcos=0.89810 L14 Hcos=0.80572 L27 Hcos=0.63785
+XRAY CASE=02 SLOT=FIRST  | L0 Hcos=0.99999 L6 Hcos=0.99995 L14 Hcos=0.99992 L27 Hcos=0.99964
+XRAY CASE=02 SLOT=MIDDLE | L0 Hcos=0.98833 L6 Hcos=0.93616 L14 Hcos=0.83614 L27 Hcos=0.64572
+XRAY CASE=02 SLOT=LAST   | L0 Hcos=0.98207 L6 Hcos=0.87933 L14 Hcos=0.72099 L27 Hcos=0.60738
+XRAY CASE=03 SLOT=FIRST  | L0 Hcos=0.99999 L6 Hcos=0.99995 L14 Hcos=0.99992 L27 Hcos=0.99961
+XRAY CASE=03 SLOT=MIDDLE | L0 Hcos=0.98565 L6 Hcos=0.87219 L14 Hcos=0.75516 L27 Hcos=0.61094
+XRAY CASE=03 SLOT=LAST   | L0 Hcos=0.97892 L6 Hcos=0.83813 L14 Hcos=0.70187 L27 Hcos=0.59549
+
+[2/4] LAYER STATISTICS
+L00 | Hcos=0.988949 Hrel=0.123206 Hnorm=1.0075 | Kcos=1.000000 Krel=0.00033 | Vcos=0.999997 Vrel=0.00231
+L01 | Hcos=0.987550 Hrel=0.131045 Hnorm=1.0057 | Kcos=0.999841 Krel=0.01464 | Vcos=0.982268 Vrel=0.15421
+L02 | Hcos=0.975827 Hrel=0.179983 Hnorm=0.9940 | Kcos=0.997583 Krel=0.05648 | Vcos=0.975508 Vrel=0.18060
+L03 | Hcos=0.961372 Hrel=0.230414 Hnorm=1.0115 | Kcos=0.998408 Krel=0.04583 | Vcos=0.943319 Vrel=0.27368
+L04 | Hcos=0.950818 Hrel=0.260138 Hnorm=1.0124 | Kcos=0.957324 Krel=0.23490 | Vcos=0.866723 Vrel=0.42223
+L05 | Hcos=0.942374 Hrel=0.276319 Hnorm=0.9902 | Kcos=0.951427 Krel=0.25072 | Vcos=0.843135 Vrel=0.45487
+L06 | Hcos=0.930052 Hrel=0.310955 Hnorm=1.0181 | Kcos=0.969309 Krel=0.20040 | Vcos=0.869406 Vrel=0.41296
+L07 | Hcos=0.909863 Hrel=0.358648 Hnorm=1.0380 | Kcos=0.965050 Krel=0.21432 | Vcos=0.867501 Vrel=0.42532
+L08 | Hcos=0.891591 Hrel=0.400166 Hnorm=1.0554 | Kcos=0.942086 Krel=0.27235 | Vcos=0.830446 Vrel=0.46590
+L09 | Hcos=0.889717 Hrel=0.392209 Hnorm=1.0237 | Kcos=0.933630 Krel=0.29212 | Vcos=0.768104 Vrel=0.55515
+L10 | Hcos=0.885778 Hrel=0.410436 Hnorm=1.0555 | Kcos=0.945921 Krel=0.26322 | Vcos=0.798738 Vrel=0.50979
+L11 | Hcos=0.863860 Hrel=0.450028 Hnorm=1.0616 | Kcos=0.909976 Krel=0.33569 | Vcos=0.796155 Vrel=0.49992
+L12 | Hcos=0.861414 Hrel=0.451853 Hnorm=1.0562 | Kcos=0.906071 Krel=0.34595 | Vcos=0.702252 Vrel=0.59733
+L13 | Hcos=0.860001 Hrel=0.457558 Hnorm=1.0636 | Kcos=0.971214 Krel=0.19399 | Vcos=0.721606 Vrel=0.59673
+L14 | Hcos=0.857828 Hrel=0.448253 Hnorm=1.0314 | Kcos=0.876621 Krel=0.39392 | Vcos=0.693096 Vrel=0.61026
+L15 | Hcos=0.847217 Hrel=0.472244 Hnorm=1.0501 | Kcos=0.936119 Krel=0.28944 | Vcos=0.692036 Vrel=0.60439
+L16 | Hcos=0.831590 Hrel=0.486789 Hnorm=1.0269 | Kcos=0.872131 Krel=0.40101 | Vcos=0.650731 Vrel=0.66127
+L17 | Hcos=0.823673 Hrel=0.496815 Hnorm=1.0232 | Kcos=0.842318 Krel=0.44595 | Vcos=0.624404 Vrel=0.67935
+L18 | Hcos=0.838121 Hrel=0.485150 Hnorm=1.0455 | Kcos=0.892724 Krel=0.36874 | Vcos=0.575374 Vrel=0.71396
+L19 | Hcos=0.838548 Hrel=0.479446 Hnorm=1.0311 | Kcos=0.957098 Krel=0.23876 | Vcos=0.710828 Vrel=0.60267
+L20 | Hcos=0.838720 Hrel=0.476089 Hnorm=1.0213 | Kcos=0.861886 Krel=0.41404 | Vcos=0.735588 Vrel=0.57950
+L21 | Hcos=0.841658 Hrel=0.469995 Hnorm=1.0137 | Kcos=0.892111 Krel=0.36911 | Vcos=0.768739 Vrel=0.55475
+L22 | Hcos=0.842767 Hrel=0.468114 Hnorm=1.0120 | Kcos=0.863349 Krel=0.41440 | Vcos=0.855727 Vrel=0.44946
+L23 | Hcos=0.849227 Hrel=0.465573 Hnorm=1.0293 | Kcos=0.897585 Krel=0.36049 | Vcos=0.916214 Vrel=0.35269
+L24 | Hcos=0.859603 Hrel=0.445002 Hnorm=1.0165 | Kcos=0.909961 Krel=0.33977 | Vcos=0.875127 Vrel=0.42440
+L25 | Hcos=0.854187 Hrel=0.450780 Hnorm=1.0084 | Kcos=0.926288 Krel=0.30866 | Vcos=0.899214 Vrel=0.37809
+L26 | Hcos=0.857955 Hrel=0.442458 Hnorm=1.0010 | Kcos=0.897260 Krel=0.36369 | Vcos=0.908310 Vrel=0.36305
+L27 | Hcos=0.739912 Hrel=0.548560 Hnorm=0.8420 | Kcos=0.999893 Krel=0.01211 | Vcos=0.902908 Vrel=0.37433
+
+XRAY PRIORITY (lower is better; heuristic only):
+L01 priority=0.178207 Hrel=0.131045 Krel=0.014637 Vrel=0.154207
+L02 priority=0.253329 Hrel=0.179983 Krel=0.056481 Vrel=0.180604
+L03 priority=0.338499 Hrel=0.230414 Krel=0.045827 Vrel=0.273682
+L04 priority=0.477472 Hrel=0.260138 Krel=0.234897 Vrel=0.422230
+L05 priority=0.525736 Hrel=0.276319 Krel=0.250717 Vrel=0.454874
+L06 priority=0.557154 Hrel=0.310955 Krel=0.200400 Vrel=0.412959
+L07 priority=0.643726 Hrel=0.358648 Krel=0.214316 Vrel=0.425320
+L08 priority=0.751794 Hrel=0.400166 Krel=0.272351 Vrel=0.465901
+L09 priority=0.805367 Hrel=0.392209 Krel=0.292116 Vrel=0.555150
+L10 priority=0.835878 Hrel=0.410436 Krel=0.263222 Vrel=0.509791
+CAUSAL CUT CANDIDATES: [1, 2, 3, 6]
+
+[3/4] CAUSAL CONSOLIDATION VALIDATION
+CUT=01 CASE=00 FIRST  PASS | margin=-11.125 | 'Melket'
+CUT=01 CASE=00 MIDDLE PASS | margin=-13.125 | 'Melket'
+CUT=01 CASE=00 LAST   PASS | margin=-13.125 | 'Melket'
+CUT=01 CASE=01 FIRST  PASS | margin=-23.375 | 'Branik'
+CUT=01 CASE=01 MIDDLE PASS | margin=-27.125 | 'Branik'
+CUT=01 CASE=01 LAST   PASS | margin=-29.062 | 'Branik'
+CUT=01 CASE=02 FIRST  PASS | margin=-13.250 | 'Varos'
+CUT=01 CASE=02 MIDDLE PASS | margin=-12.625 | 'Varos'
+CUT=01 CASE=02 LAST   PASS | margin=-13.000 | 'Varos'
+CUT=01 CASE=03 FIRST  PASS | margin=-15.500 | 'Belnor'
+CUT=01 CASE=03 MIDDLE PASS | margin=-15.188 | 'Belnor'
+CUT=01 CASE=03 LAST   PASS | margin=-16.250 | 'Belnor'
+CUT=01 CASE=04 FIRST  PASS | margin=-12.375 | 'Selora'
+CUT=01 CASE=04 MIDDLE PASS | margin=-12.125 | 'Selora'
+CUT=01 CASE=04 LAST   PASS | margin=-12.250 | 'Selora'
+CUT=01 CASE=05 FIRST  PASS | margin=-25.125 | 'Pareth'
+CUT=01 CASE=05 MIDDLE PASS | margin=-26.625 | 'Pareth'
+CUT=01 CASE=05 LAST   PASS | margin=-26.625 | 'Pareth'
+CUT=01 CASE=06 FIRST  PASS | margin=-22.375 | 'Keldin'
+CUT=01 CASE=06 MIDDLE PASS | margin=-22.625 | 'Keldin'
+CUT=01 CASE=06 LAST   PASS | margin=-23.125 | 'Keldin'
+CUT=01 CASE=07 FIRST  PASS | margin=-24.625 | 'Feron'
+CUT=01 CASE=07 MIDDLE PASS | margin=-24.750 | 'Feron'
+CUT=01 CASE=07 LAST   PASS | margin=-25.500 | 'Feron'
+CUT=01 SCORE=24/24 MEAN_FIRST_TOKEN_MARGIN=-19.203125 TIME=12.95s
+CUT=02 CASE=00 FIRST  PASS | margin=-11.125 | 'Melket'
+CUT=02 CASE=00 MIDDLE PASS | margin=-13.125 | 'Melket'
+CUT=02 CASE=00 LAST   PASS | margin=-12.750 | 'Melket'
+CUT=02 CASE=01 FIRST  PASS | margin=-23.750 | 'Branik'
+CUT=02 CASE=01 MIDDLE PASS | margin=-27.062 | 'Branik'
+CUT=02 CASE=01 LAST   PASS | margin=-28.500 | 'Branik'
+CUT=02 CASE=02 FIRST  PASS | margin=-13.250 | 'Varos'
+CUT=02 CASE=02 MIDDLE PASS | margin=-12.750 | 'Varos'
+CUT=02 CASE=02 LAST   PASS | margin=-13.125 | 'Varos'
+CUT=02 CASE=03 FIRST  PASS | margin=-15.375 | 'Belnor'
+CUT=02 CASE=03 MIDDLE PASS | margin=-15.375 | 'Belnor'
+CUT=02 CASE=03 LAST   PASS | margin=-15.250 | 'Belnor'
+CUT=02 CASE=04 FIRST  PASS | margin=-12.125 | 'Selora'
+CUT=02 CASE=04 MIDDLE PASS | margin=-12.125 | 'Selora'
+CUT=02 CASE=04 LAST   PASS | margin=-12.375 | 'Selora'
+CUT=02 CASE=05 FIRST  PASS | margin=-24.625 | 'Pareth'
+CUT=02 CASE=05 MIDDLE PASS | margin=-27.000 | 'Pareth'
+CUT=02 CASE=05 LAST   PASS | margin=-26.625 | 'Pareth'
+CUT=02 CASE=06 FIRST  PASS | margin=-22.375 | 'Keldin'
+CUT=02 CASE=06 MIDDLE PASS | margin=-22.750 | 'Keldin'
+CUT=02 CASE=06 LAST   PASS | margin=-23.500 | 'Keldin'
+CUT=02 CASE=07 FIRST  PASS | margin=-24.750 | 'Feron'
+CUT=02 CASE=07 MIDDLE PASS | margin=-24.875 | 'Feron'
+CUT=02 CASE=07 LAST   PASS | margin=-25.750 | 'Feron'
+CUT=02 SCORE=24/24 MEAN_FIRST_TOKEN_MARGIN=-19.1796875 TIME=12.93s
+CUT=03 CASE=00 FIRST  PASS | margin=-11.125 | 'Melket'
+CUT=03 CASE=00 MIDDLE PASS | margin=-13.125 | 'Melket'
+CUT=03 CASE=00 LAST   PASS | margin=-13.125 | 'Melket'
+CUT=03 CASE=01 FIRST  PASS | margin=-23.438 | 'Branik'
+CUT=03 CASE=01 MIDDLE PASS | margin=-26.875 | 'Branik'
+CUT=03 CASE=01 LAST   PASS | margin=-28.188 | 'Branik'
+CUT=03 CASE=02 FIRST  PASS | margin=-13.125 | 'Varos'
+CUT=03 CASE=02 MIDDLE PASS | margin=-12.625 | 'Varos'
+CUT=03 CASE=02 LAST   PASS | margin=-13.000 | 'Varos'
+CUT=03 CASE=03 FIRST  PASS | margin=-15.750 | 'Belnor'
+CUT=03 CASE=03 MIDDLE PASS | margin=-15.375 | 'Belnor'
+CUT=03 CASE=03 LAST   PASS | margin=-14.500 | 'Belnor'
+CUT=03 CASE=04 FIRST  PASS | margin=-12.125 | 'Selora'
+CUT=03 CASE=04 MIDDLE PASS | margin=-12.250 | 'Selora'
+CUT=03 CASE=04 LAST   PASS | margin=-12.125 | 'Selora'
+CUT=03 CASE=05 FIRST  PASS | margin=-25.125 | 'Pareth'
+CUT=03 CASE=05 MIDDLE PASS | margin=-26.625 | 'Pareth'
+CUT=03 CASE=05 LAST   PASS | margin=-26.750 | 'Pareth'
+CUT=03 CASE=06 FIRST  PASS | margin=-22.375 | 'Keldin'
+CUT=03 CASE=06 MIDDLE PASS | margin=-22.375 | 'Keldin'
+CUT=03 CASE=06 LAST   PASS | margin=-23.500 | 'Keldin'
+CUT=03 CASE=07 FIRST  PASS | margin=-24.500 | 'Feron'
+CUT=03 CASE=07 MIDDLE PASS | margin=-24.625 | 'Feron'
+CUT=03 CASE=07 LAST   PASS | margin=-25.625 | 'Feron'
+CUT=03 SCORE=24/24 MEAN_FIRST_TOKEN_MARGIN=-19.09375 TIME=13.01s
+CUT=06 CASE=00 FIRST  PASS | margin=-11.250 | 'Melket'
+CUT=06 CASE=00 MIDDLE PASS | margin=-13.000 | 'Melket'
+CUT=06 CASE=00 LAST   PASS | margin=-13.250 | 'Melket'
+CUT=06 CASE=01 FIRST  PASS | margin=-23.812 | 'Branik'
+CUT=06 CASE=01 MIDDLE PASS | margin=-26.688 | 'Branik'
+CUT=06 CASE=01 LAST   PASS | margin=-29.312 | 'Branik'
+CUT=06 CASE=02 FIRST  PASS | margin=-13.125 | 'Varos'
+CUT=06 CASE=02 MIDDLE PASS | margin=-12.625 | 'Varos'
+CUT=06 CASE=02 LAST   PASS | margin=-12.750 | 'Varos'
+CUT=06 CASE=03 FIRST  PASS | margin=-15.500 | 'Belnor'
+CUT=06 CASE=03 MIDDLE PASS | margin=-15.938 | 'Belnor'
+CUT=06 CASE=03 LAST   PASS | margin=-16.688 | 'Belnor'
+CUT=06 CASE=04 FIRST  PASS | margin=-12.125 | 'Selora'
+CUT=06 CASE=04 MIDDLE PASS | margin=-12.375 | 'Selora'
+CUT=06 CASE=04 LAST   PASS | margin=-12.375 | 'Selora'
+CUT=06 CASE=05 FIRST  PASS | margin=-25.625 | 'Pareth'
+CUT=06 CASE=05 MIDDLE PASS | margin=-26.125 | 'Pareth'
+CUT=06 CASE=05 LAST   PASS | margin=-27.000 | 'Pareth'
+CUT=06 CASE=06 FIRST  PASS | margin=-23.250 | 'Keldin'
+CUT=06 CASE=06 MIDDLE PASS | margin=-22.000 | 'Keldin'
+CUT=06 CASE=06 LAST   PASS | margin=-23.875 | 'Keldin'
+CUT=06 CASE=07 FIRST  PASS | margin=-24.750 | 'Feron'
+CUT=06 CASE=07 MIDDLE PASS | margin=-24.250 | 'Feron'
+CUT=06 CASE=07 LAST   PASS | margin=-25.500 | 'Feron'
+CUT=06 SCORE=24/24 MEAN_FIRST_TOKEN_MARGIN=-19.299479166666668 TIME=13.34s
+
+[4/4] FINAL X-RAY RESEARCH RECORD
+====================================================================================================================================
+TEST565 — FINAL
+====================================================================================================================================
+MODEL: Qwen/Qwen2.5-7B-Instruct ARCH: (28, 3584, 28, 4, 128)
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+XRAY CASES: [0, 1, 2, 3] XRAY ROWS: 336
+TOP XRAY LAYERS: [(1, 0.178207), (2, 0.253329), (3, 0.338499), (4, 0.477472), (5, 0.525736), (6, 0.557154), (7, 0.643726), (8, 0.751794), (9, 0.805367), (10, 0.835878)]
+CUT=01 SCORE=24/24 MARGIN=-19.203125 COMPLETE=True ERROR=None
+CUT=02 SCORE=24/24 MARGIN=-19.1796875 COMPLETE=True ERROR=None
+CUT=03 SCORE=24/24 MARGIN=-19.09375 COMPLETE=True ERROR=None
+CUT=06 SCORE=24/24 MARGIN=-19.299479166666668 COMPLETE=True ERROR=None
+SELECTED CUT: 3
+WEIGHT SENTINEL: PASS
+TRAINABLE: 0
+TOTAL SECONDS: 112.27
+DECISION: CANDIDATE READY FOR INDEPENDENT 72-QUESTION VALIDATION
+
+
+====================================================================================================================================
