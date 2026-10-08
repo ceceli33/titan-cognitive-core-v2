@@ -1,0 +1,110 @@
+ ================================================================================================================================================================
+TEST558 — AKBASCORE MAM · INDEPENDENT-CARTRIDGE COMPOSITION REPAIR
+TEST557 BACKBONE PRESERVED · INDEP vs JOINT · L13/L15 STATE-CACHE REPAIR
+FROZEN MISTRAL · NO TRAINING · NO RETRIEVAL · NO ROUTER · NO QSF
+================================================================================================================================================================
+
+[1/10] Frozen Mistral...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 601/601 [00:00<00:00, 74.7kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 16.3MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 91.5MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 57.0kB/s  tokenizer.model: downloading bytes:   448kB, 43.5kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 56.1kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 3.10MB/s]Download complete:  12.4GB,  243MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  307MB/s  Fetching 3 files: 100% 3/3 [00:41<00:00, 41.80s/it]Loading weights: 100% 291/291 [00:03<00:00, 76.50it/s]generation_config.json: 100% 116/116 [00:00<00:00, 15.4kB/s]MODEL: mistralai/Mistral-7B-Instruct-v0.3
+GPU: NVIDIA A100-SXM4-40GB
+TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+NL=32 H=4096 QH=32 KVH=8 HD=128 DTYPE=torch.bfloat16
+ROPE: {'rope_theta': 1000000.0, 'rope_type': 'default'}
+TRAINABLE: 0
+
+[2/10] Panel provenance...
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+PANEL PROVENANCE: PASS
+
+[3/10] Mask contract...
+MASK CONTRACT: PASS | TOKENS=93 PREFIX=27 FULL=66
+
+[4/10] TEST556/557 baseline replication...
+JOINT: {'FIRST': 24, 'MIDDLE': 24, 'LAST': 24}
+INDEP: {'FIRST': 4, 'MIDDLE': 3, 'LAST': 6}
+BASELINE REPLICATION: PASS
+
+[5/10] Independent-composition repair...
+CASE 00 complete
+CASE 01 complete
+CASE 02 complete
+CASE 03 complete
+PROGRESS 4/24 | elapsed=115.5s
+CASE 04 complete
+CASE 05 complete
+CASE 06 complete
+CASE 07 complete
+PROGRESS 8/24 | elapsed=140.0s
+CASE 08 complete
+CASE 09 complete
+CASE 10 complete
+CASE 11 complete
+PROGRESS 12/24 | elapsed=170.1s
+CASE 12 complete
+CASE 13 complete
+CASE 14 complete
+CASE 15 complete
+PROGRESS 16/24 | elapsed=203.1s
+CASE 16 complete
+CASE 17 complete
+CASE 18 complete
+CASE 19 complete
+PROGRESS 20/24 | elapsed=230.4s
+CASE 20 complete
+CASE 21 complete
+CASE 22 complete
+CASE 23 complete
+PROGRESS 24/24 | elapsed=251.2s
+
+[6/10] Integrity...
+ROWS: 504 EXPECTED: 504
+RAW INTEGRITY: PASS
+
+[7/10] Repair scores...
+INDEP                    FIRST=04/24 MIDDLE=03/24 LAST=06/24 TOTAL=13/72
+JOINT                    FIRST=24/24 MIDDLE=24/24 LAST=24/24 TOTAL=72/72
+STATE13                  FIRST=23/24 MIDDLE=17/24 LAST=18/24 TOTAL=58/72
+STATE15                  FIRST=22/24 MIDDLE=00/24 LAST=05/24 TOTAL=27/72
+KV15                     FIRST=10/24 MIDDLE=02/24 LAST=08/24 TOTAL=20/72
+STATE15_KV15             FIRST=23/24 MIDDLE=20/24 LAST=22/24 TOTAL=65/72
+STATE13_STATE15_KV15     FIRST=23/24 MIDDLE=23/24 LAST=22/24 TOTAL=68/72
+
+[8/10] Gain/loss vs INDEP + distance to JOINT...
+STATE13                  GAIN=48 LOSS=03 NET=+45 | OK-ID-JOINT=58/72 ANS-ID-JOINT=40/72
+STATE15                  GAIN=22 LOSS=08 NET=+14 | OK-ID-JOINT=27/72 ANS-ID-JOINT=17/72
+KV15                     GAIN=14 LOSS=07 NET=+07 | OK-ID-JOINT=20/72 ANS-ID-JOINT=18/72
+STATE15_KV15             GAIN=52 LOSS=00 NET=+52 | OK-ID-JOINT=65/72 ANS-ID-JOINT=48/72
+STATE13_STATE15_KV15     GAIN=56 LOSS=01 NET=+55 | OK-ID-JOINT=68/72 ANS-ID-JOINT=44/72
+
+[9/10] Engineering decision...
+BEST: STATE13_STATE15_KV15 68 /72
+JOINT: 72 /72
+INDEP: 13 /72
+DECISION: STRONG PARTIAL REPAIR — STATE13_STATE15_KV15=68/72, GAP TO JOINT=4
+CAUTION: JOINT hidden states/KV are oracle reference interventions; this test asks causal sufficiency for composition repair, not yet deployable independent reconstruction.
+
+[10/10] Final research record...
+================================================================================================================================================================
+TEST558 — FINAL RESEARCH RECORD
+================================================================================================================================================================
+MODEL                  : mistralai/Mistral-7B-Instruct-v0.3
+PANEL SHA              : 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+LOCK SHA               : c90f6b9087e9d5bfd451e5caffcf70d33aff27d5b18ed8fdeba4230664291141
+RESULT SHA             : b6f1b157bbd8592463404dfab80aa79fc4de60f6e1fa1357084b5b0024ebc14a
+INDEP                   : {'FIRST': 4, 'MIDDLE': 3, 'LAST': 6, 'TOTAL': 13}
+JOINT                   : {'FIRST': 24, 'MIDDLE': 24, 'LAST': 24, 'TOTAL': 72}
+STATE13                 : {'FIRST': 23, 'MIDDLE': 17, 'LAST': 18, 'TOTAL': 58}
+STATE15                 : {'FIRST': 22, 'MIDDLE': 0, 'LAST': 5, 'TOTAL': 27}
+KV15                    : {'FIRST': 10, 'MIDDLE': 2, 'LAST': 8, 'TOTAL': 20}
+STATE15_KV15            : {'FIRST': 23, 'MIDDLE': 20, 'LAST': 22, 'TOTAL': 65}
+STATE13_STATE15_KV15    : {'FIRST': 23, 'MIDDLE': 23, 'LAST': 22, 'TOTAL': 68}
+BEST REPAIR            : STATE13_STATE15_KV15 68/72
+ENGINEERING DECISION   : STRONG PARTIAL REPAIR — STATE13_STATE15_KV15=68/72, GAP TO JOINT=4
+WEIGHT SENTINEL        : PASS
+TRAINABLE              : 0
+TOTAL TIME             : 251.24s
+INTERPRETATION         : Oracle JOINT state/cache repair tests whether missing joint-write internal coordination is causally sufficient to repair independent composition.
+NEXT TEST              : TEST559 only after TEST558 interpretation
+================================================================================================================================================================
