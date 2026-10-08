@@ -1,0 +1,152 @@
+ ==============================================================================================================================================================
+TEST563 — AKBASCORE MAM · NATIVE-CONTEXT vs NUMERICAL-MEMORY SCALE CONTROL
+TEST562 WORKING BACKBONE PRESERVED · SAME 80 FACTS · DIRECT TEXT vs INCREMENTAL DC6 · 5/10/20/40/80
+FROZEN MISTRAL · NO TRAINING / RETRIEVAL / ROUTER / QSF · DIAGNOSTIC ONLY
+==============================================================================================================================================================
+
+[1/10] Frozen Mistral...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 601/601 [00:00<00:00, 71.5kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 13.0MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 89.1MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 57.1kB/s  tokenizer.model: downloading bytes:   448kB, 43.5kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 54.2kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 2.89MB/s]Download complete:  12.4GB,  109MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  504MB/s  Fetching 3 files: 100% 3/3 [00:41<00:00, 41.39s/it]Loading weights: 100% 291/291 [00:03<00:00, 81.18it/s]generation_config.json: 100% 116/116 [00:00<00:00, 14.9kB/s]MODEL: mistralai/Mistral-7B-Instruct-v0.3
+GPU: NVIDIA A100-SXM4-40GB
+TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+NL=32 H=4096 QH=32 KVH=8 HD=128 DTYPE=torch.bfloat16 CUT=6
+ROPE: {'rope_theta': 1000000.0, 'rope_type': 'default'}
+TRAINABLE: 0
+BANK SHA: c912551daf4d11d460b61a7958c7ce0ea778b82d791d7a713f5f7045e40c5d2a
+BANK RECORDS: 80
+
+[2/10] Provenance and mechanism contract...
+BANK PROVENANCE: PASS
+PREFIX: 27 CUT: 6
+CHECKPOINT: PASS
+INCREMENTAL APPEND: PASS
+
+[3/10] Build unchanged incremental DC6 scale snapshots...
+N=05 CACHE=130 elapsed=56.6s
+N=10 CACHE=233 elapsed=57.0s
+N=20 CACHE=438 elapsed=58.0s
+N=40 CACHE=854 elapsed=59.8s
+N=80 CACHE=1675 elapsed=63.5s
+MEMORY GROWTH: PASS
+
+[4/10] Native direct-text scale curve...
+NATIVE N=05: 05/05 | TOKENS≈153
+NATIVE N=10: 10/10 | TOKENS≈251
+NATIVE N=20: 20/20 | TOKENS≈446
+NATIVE N=40: 36/40 | TOKENS≈842
+NATIVE N=80: 67/80 | TOKENS≈1623
+
+[5/10] Incremental DC6 scale curve...
+DC6   N=05: 05/05
+DC6   N=10: 09/10
+DC6   N=20: 16/20
+DC6   N=40: 16/40
+DC6   N=80: 22/80
+
+[6/10] Paired native-vs-memory failures...
+N=05 BOTH=05 NATIVE_ONLY=00 DC6_ONLY=00 BOTH_FAIL=00
+N=10 BOTH=09 NATIVE_ONLY=01 DC6_ONLY=00 BOTH_FAIL=00
+N=20 BOTH=16 NATIVE_ONLY=04 DC6_ONLY=00 BOTH_FAIL=00
+N=40 BOTH=15 NATIVE_ONLY=21 DC6_ONLY=01 BOTH_FAIL=03
+N=80 BOTH=19 NATIVE_ONLY=48 DC6_ONLY=03 BOTH_FAIL=10
+
+[7/10] 80-record autopsy...
+IDX=06 NATIVE_ONLY GOLD=Korith1086 | NATIVE=Korith1086 | DC6=Tarvan1095
+IDX=07 NATIVE_ONLY GOLD=Nalal1087 | NATIVE=Nalal1087 | DC6=Feral1100
+IDX=09 NATIVE_ONLY GOLD=Calnor1089 | NATIVE=Calnor1089 | DC6=Torvek1082
+IDX=10 NATIVE_ONLY GOLD=Paror1090 | NATIVE=Paror1090 | DC6=Nalar1107
+IDX=15 DC6_ONLY    GOLD=Tarvan1095 | NATIVE=Deror1015's current capital is Tarvek11 | DC6=Tarvan1095
+IDX=17 NATIVE_ONLY GOLD=Raval1097 | NATIVE=Raval1097 | DC6=Feral1100
+IDX=18 NATIVE_ONLY GOLD=Nemar1098 | NATIVE=Nemar1098 | DC6=Nalik1107
+IDX=19 NATIVE_ONLY GOLD=Darnor1099 | NATIVE=Darnor1099 | DC6=Torvek1082
+IDX=22 NATIVE_ONLY GOLD=Tornor1102 | NATIVE=Tornor1102 | DC6=Torvek1082
+IDX=23 DC6_ONLY    GOLD=Selor1103 | NATIVE=Belith1116 | DC6=Selor1103
+IDX=24 BOTH_FAIL   GOLD=Mireth1104 | NATIVE=Mireth1124 | DC6=Mirar1124
+IDX=25 DC6_ONLY    GOLD=Varvek1105 | NATIVE=Varvek1095 | DC6=Varvek1105
+IDX=26 BOTH_FAIL   GOLD=Koren1106 | NATIVE=Darith1119 | DC6=Daror1106
+IDX=30 NATIVE_ONLY GOLD=Paral1110 | NATIVE=Paral1110 | DC6=Nalik1107
+IDX=32 BOTH_FAIL   GOLD=Barnor1112 | NATIVE=Barvek1092 | DC6=Barvek1092
+IDX=33 NATIVE_ONLY GOLD=Zoror1113 | NATIVE=Zoror1113 | DC6=Zoren1093
+IDX=34 NATIVE_ONLY GOLD=Keleth1114 | NATIVE=Keleth1114 | DC6=Kelik1094
+IDX=35 NATIVE_ONLY GOLD=Tarvek1115 | NATIVE=Tarvek1115 | DC6=Koren1106
+IDX=36 NATIVE_ONLY GOLD=Belen1116 | NATIVE=Belen1116 | DC6=Belith1116
+IDX=37 NATIVE_ONLY GOLD=Ravik1117 | NATIVE=Ravik1117 | DC6=Torvek1082
+IDX=38 NATIVE_ONLY GOLD=Nemvan1118 | NATIVE=Nemvan1118 | DC6=Nalik1107
+IDX=39 BOTH_FAIL   GOLD=Darith1119 | NATIVE=Bareth1039's current capital is Darith11 | DC6=Belith1116
+IDX=40 NATIVE_ONLY GOLD=Ferik1120 | NATIVE=Ferik1120 | DC6=Feral1100
+IDX=41 NATIVE_ONLY GOLD=Larvan1121 | NATIVE=Larvan1121 | DC6=Larar1101
+IDX=42 NATIVE_ONLY GOLD=Torith1122 | NATIVE=Torith1122 | DC6=Torith1102
+IDX=43 BOTH_FAIL   GOLD=Selal1123 | NATIVE=Belen1136 | DC6=Kelith1003 (provided information)
+IDX=45 NATIVE_ONLY GOLD=Varnor1125 | NATIVE=Varnor1125 | DC6=Varvek1105
+IDX=46 BOTH_FAIL   GOLD=Koror1126 | NATIVE=Darith1139 | DC6=Feral1100
+IDX=47 NATIVE_ONLY GOLD=Naleth1127 | NATIVE=Naleth1127 | DC6=Feral1100
+IDX=48 NATIVE_ONLY GOLD=Dervek1128 | NATIVE=Dervek1128 | DC6=Derar1108
+IDX=49 NATIVE_ONLY GOLD=Calen1129 | NATIVE=Calen1129 | DC6=Calith1109
+IDX=50 NATIVE_ONLY GOLD=Parik1130 | NATIVE=Parik1130 | DC6=Paral1110
+IDX=51 NATIVE_ONLY GOLD=Sorvan1131 | NATIVE=Sorvan1131 | DC6=Sorar1111
+IDX=52 NATIVE_ONLY GOLD=Barith1132 | NATIVE=Barith1132 | DC6=The current capital of Vareth1052 is Ravik11
+IDX=53 NATIVE_ONLY GOLD=Zoral1133 | NATIVE=Zoral1133 | DC6=Feral1100
+IDX=54 NATIVE_ONLY GOLD=Kelar1134 | NATIVE=Kelar1134 | DC6=Kelik1114
+IDX=55 BOTH_FAIL   GOLD=Tarnor1135 | NATIVE=Dervek1128 | DC6=Koren1106
+IDX=56 NATIVE_ONLY GOLD=Belor1136 | NATIVE=Belor1136 | DC6=Belen1116
+IDX=57 NATIVE_ONLY GOLD=Raveth1137 | NATIVE=Raveth1137 | DC6=Raval1107
+IDX=58 NATIVE_ONLY GOLD=Nemvek1138 | NATIVE=Nemvek1138 | DC6=Nemar1098
+IDX=59 BOTH_FAIL   GOLD=Daren1139 | NATIVE=Barith1132 | DC6=Darith1109
+IDX=60 NATIVE_ONLY GOLD=Fereth1140 | NATIVE=Fereth1140 | DC6=Feral1100
+IDX=61 NATIVE_ONLY GOLD=Larvek1141 | NATIVE=Larvek1141 | DC6=Larar1101
+IDX=62 NATIVE_ONLY GOLD=Toren1142 | NATIVE=Toren1142 | DC6=Tarith1122
+IDX=63 NATIVE_ONLY GOLD=Selik1143 | NATIVE=Selik1143 | DC6=Selor1103
+IDX=64 NATIVE_ONLY GOLD=Mirvan1144 | NATIVE=Mirvan1144 | DC6=Nalik1107
+IDX=65 NATIVE_ONLY GOLD=Varith1145 | NATIVE=Varith1145 | DC6=Nemvan1118
+IDX=66 NATIVE_ONLY GOLD=Koral1146 | NATIVE=Koral1146 | DC6=Ferik1100
+IDX=67 NATIVE_ONLY GOLD=Nalar1147 | NATIVE=Nalar1147 | DC6=Feral1100
+IDX=68 NATIVE_ONLY GOLD=Dernor1148 | NATIVE=Dernor1148 | DC6=Dervek1128
+IDX=69 NATIVE_ONLY GOLD=Calor1149 | NATIVE=Calor1149 | DC6=Torith1102
+IDX=70 NATIVE_ONLY GOLD=Pareth1150 | NATIVE=Pareth1150 | DC6=Parik1110
+IDX=71 NATIVE_ONLY GOLD=Sorvek1151 | NATIVE=Sorvek1151 | DC6=Sorar1111
+IDX=72 NATIVE_ONLY GOLD=Baren1152 | NATIVE=Baren1152 | DC6=Barith1112
+IDX=73 BOTH_FAIL   GOLD=Zorik1153 | NATIVE=Zoral1133 | DC6=Larvan1121
+IDX=74 NATIVE_ONLY GOLD=Kelvan1154 | NATIVE=Kelvan1154 | DC6=Kelar1134
+IDX=75 NATIVE_ONLY GOLD=Tarith1155 | NATIVE=Tarith1155 | DC6=Ferik1100
+IDX=76 NATIVE_ONLY GOLD=Belal1156 | NATIVE=Belal1156 | DC6=Belor1116
+IDX=77 NATIVE_ONLY GOLD=Ravar1157 | NATIVE=Ravar1157 | DC6=Raveth1137
+IDX=78 NATIVE_ONLY GOLD=Nemnor1158 | NATIVE=Nemnor1158 | DC6=Nemar1138
+IDX=79 BOTH_FAIL   GOLD=Daror1159 | NATIVE=Barvek1152 | DC6=Torvek1082
+
+[8/10] Capacity attribution...
+SIZE | NATIVE | DC6 | GAP
+05   | 05/05  | 05/05 | +00
+10   | 10/10  | 09/10 | +01
+20   | 20/20  | 16/20 | +04
+40   | 36/40  | 16/40 | +20
+80   | 67/80  | 22/80 | +45
+DIAGNOSIS: MIXED, MEMORY-DOMINANT SCALE LOSS — NATIVE ALSO LIMITED BUT DC6 ADDS LARGE DEGRADATION
+
+[9/10] Decision gate...
+IMPORTANT: Native control uses the same frozen Mistral, same facts, same questions and same greedy readout.
+IMPORTANT: Native text is a diagnostic upper/control condition; it is not part of the memory engine.
+IMPORTANT: DC6 mechanism is unchanged from TEST561/562.
+IMPORTANT: This test does not introduce retrieval, routing, training or a new memory mechanism.
+DECISION: MIXED, MEMORY-DOMINANT SCALE LOSS — NATIVE ALSO LIMITED BUT DC6 ADDS LARGE DEGRADATION
+
+[10/10] Final research record...
+==============================================================================================================================================================
+TEST563 — FINAL RESEARCH RECORD
+==============================================================================================================================================================
+MODEL                  : mistralai/Mistral-7B-Instruct-v0.3
+BANK SHA               : c912551daf4d11d460b61a7958c7ce0ea778b82d791d7a713f5f7045e40c5d2a
+LOCK SHA               : 8a8933a8972cddc2ed173b4cb868296a061bbe8045f01a80f5ae2b2ae5b15803
+RESULT SHA             : 41072d660a1b1437f56e3ba42afffa406adf2f78fe6c82de5e58390399309616
+N=05                    : NATIVE=5/5 DC6=5/5 GAP=+0 {'native_only': 0, 'dc6_only': 0, 'both': 5, 'both_fail': 0}
+N=10                    : NATIVE=10/10 DC6=9/10 GAP=+1 {'native_only': 1, 'dc6_only': 0, 'both': 9, 'both_fail': 0}
+N=20                    : NATIVE=20/20 DC6=16/20 GAP=+4 {'native_only': 4, 'dc6_only': 0, 'both': 16, 'both_fail': 0}
+N=40                    : NATIVE=36/40 DC6=16/40 GAP=+20 {'native_only': 21, 'dc6_only': 1, 'both': 15, 'both_fail': 3}
+N=80                    : NATIVE=67/80 DC6=22/80 GAP=+45 {'native_only': 48, 'dc6_only': 3, 'both': 19, 'both_fail': 10}
+DIAGNOSIS              : MIXED, MEMORY-DOMINANT SCALE LOSS — NATIVE ALSO LIMITED BUT DC6 ADDS LARGE DEGRADATION
+WEIGHT SENTINEL        : PASS
+TRAINABLE              : 0
+TOTAL TIME             : 159.40s
+INTERPRETATION         : Same frozen 7B model is tested on identical facts under native text context and unchanged incremental DC6 numerical memory, isolating model/readout scale limits from memory-specific scale loss.
+NEXT                    : Interpret TEST563 before any engine modification.
+==============================================================================================================================================================
