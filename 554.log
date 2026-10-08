@@ -1,0 +1,265 @@
+ ==========================================================================================================================================================================
+TEST554 — AKBASCORE MAM · CROSS-FACT CAUSALITY vs POSITIONAL GEOMETRY
+T-JOINT / T-BLOCK-SHR / P-SEQ-SHR · SAME TOKENS · SAME LOGICAL POSITIONS
+TEST553 NATIVE CARTRIDGE CONTRACT · NO RETRIEVAL · NO ROUTER · NO TRAINING · NO QSF
+==========================================================================================================================================================================
+
+[1/12] Frozen Mistral...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 601/601 [00:00<00:00, 76.0kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 15.8MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 89.5MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 57.1kB/s  tokenizer.model: downloading bytes:   448kB, 43.6kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 49.4kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 2.82MB/s]Download complete:  12.4GB,  259MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  588MB/s  Fetching 3 files: 100% 3/3 [00:41<00:00, 41.52s/it]Loading weights: 100% 291/291 [00:03<00:00, 80.51it/s]generation_config.json: 100% 116/116 [00:00<00:00, 14.7kB/s]MODEL=mistralai/Mistral-7B-Instruct-v0.3 | GPU=NVIDIA A100-SXM4-40GB
+Torch=2.11.0+cu130 | Transformers=5.18.0
+NL=32 H=4096 QH=32 KVH=8 HD=128 DTYPE=torch.bfloat16
+ROPE: {'rope_theta': 1000000.0, 'rope_type': 'default'}
+TRAINABLE: 0
+
+[2/12] TEST553 bağımsız kartuşları hazırlanıyor...
+      01/24 Zorvan
+      02/24 Kelvar
+      03/24 Tarev
+      04/24 Belnor
+      05/24 Ravik
+      06/24 Nemor
+      07/24 Darsen
+      08/24 Feron
+      09/24 Larev
+      10/24 Torven
+      11/24 Selnor
+      12/24 Mirev
+      13/24 Varen
+      14/24 Kelor
+      15/24 Narev
+      16/24 Dervan
+      17/24 Calnor
+      18/24 Parel
+      19/24 Sorven
+      20/24 Barel
+      21/24 Ralen
+      22/24 Norel
+      23/24 Tervan
+      24/24 Karev
+CARTRIDGES: 96
+
+[3/12] Canonical prefix / body token identity...
+PREFIX TOKENS=27 | BODY LENGTH=12..14
+PREFIX MAX NUMERICAL DELTA=0.00000000
+
+[4/12] TEST553 panelinin birebir kurulması...
+TEST553 PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+EXPECTED          : 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+PANEL PROVENANCE: PASS — exact TEST553 reconstructed panel
+
+[5/12] G-R — TEST553 model-native full-sequence RoPE doğrulaması...
+δ= 1 K maxΔ=0.18750000 V maxΔ=0.14062500
+δ= 2 K maxΔ=0.18750000 V maxΔ=0.12500000
+δ= 7 K maxΔ=0.12500000 V maxΔ=0.09765625
+δ=31 K maxΔ=0.18750000 V maxΔ=0.21875000
+G-R: PASS
+
+[6/12] G0 — N=1 TEST548 reduction...
+G0: {'T-JOINT': 24, 'T-BLOCK-SHR': 24, 'P-SEQ-SHR': 24} | SAME OUTPUT: 24 /24
+
+[7/12] MAIN MINIMAL PAIR — 24 × 3 positions × 3 arms...
+
+CASE 00 W00 CURRENT  GOLD=Melket QUERY='What is the current capital of Zorvan?'
+  FIRST  | JOINT='Melket' | BLOCK='Melket (according to the provided information, this is the current capital of' | PKV='The question asks for the current capital, but the information provided is about the former'
+  MIDDLE | JOINT='Melket' | BLOCK="Melket (according to the provided information, it's the current capital" | PKV='The question asks for the current capital, but the information provided states that the former'
+  LAST   | JOINT='Melket' | BLOCK="Melket (according to the provided information, it's the former capital" | PKV='Melket (as the information states that the former capital was Maros, imp'
+
+CASE 01 W01 FORMER   GOLD=Branik QUERY='What was the former capital of Kelvar?'
+  FIRST  | JOINT='Branik' | BLOCK='Branik' | PKV='Laven'
+  MIDDLE | JOINT='Branik' | BLOCK='Dravel' | PKV='Laven'
+  LAST   | JOINT='Branik' | BLOCK='Dravel' | PKV='Laven (typo in the question, should be "capital", not'
+
+CASE 02 W02 NEAR     GOLD=Varos QUERY='What is the largest city of Tarev?'
+  FIRST  | JOINT='Varos' | BLOCK='Selnor' | PKV='Selnor (since it was stated that Selnor is the capital of Ravik'
+  MIDDLE | JOINT='Varos' | BLOCK='Selnor' | PKV='Selnor'
+  LAST   | JOINT='Varos' | BLOCK='Selnor (The information provided has a typo, the correct capital of T' | PKV='Selnor (since it was stated that Selnor is the largest city of T'
+
+CASE 03 W03 ROLE     GOLD=Belnor QUERY='What is the current capital of Falven?'
+  FIRST  | JOINT='Belnor' | BLOCK='Kelvar' | PKV='Karev (since it is stated that Karev is the current capital'
+  MIDDLE | JOINT='Belnor' | BLOCK='Kelvar' | PKV='Karev (incorrect, but based on the provided information, the'
+  LAST   | JOINT='Belnor' | BLOCK='Kelvar' | PKV='Kelvar (since it is the current capital of Falven, as stated in'
+
+CASE 04 W04 CURRENT  GOLD=Selora QUERY='What is the current capital of Ravik?'
+  FIRST  | JOINT='Selora' | BLOCK='Kelor' | PKV='Kelor'
+  MIDDLE | JOINT='Selora' | BLOCK='Kelor' | PKV='Kelor'
+  LAST   | JOINT='Selora' | BLOCK='Selora' | PKV='Selora'
+
+CASE 05 W05 FORMER   GOLD=Pareth QUERY='What was the former capital of Nemor?'
+  FIRST  | JOINT='Pareth' | BLOCK='Pareth' | PKV='Talvek'
+  MIDDLE | JOINT='Pareth' | BLOCK='Talvek' | PKV='Talvek'
+  LAST   | JOINT='Pareth' | BLOCK='Talvek' | PKV='Talvek'
+
+CASE 06 W06 NEAR     GOLD=Keldin QUERY='What is the largest city of Darsen?'
+  FIRST  | JOINT='Keldin' | BLOCK='Keldin (assuming a mistake in the question, as Darsen' | PKV='The question is about Darsen, but the provided information is about Nore'
+  MIDDLE | JOINT='Keldin' | BLOCK='Keldin (assuming a mistake in the question, as the information provided' | PKV='Keldin (assuming a mistake in the question, as the question states'
+  LAST   | JOINT='Keldin' | BLOCK='Keldin' | PKV='Keldin'
+
+CASE 07 W07 ROLE     GOLD=Feron QUERY='What is the current capital of Belvik?'
+  FIRST  | JOINT='Feron' | BLOCK='Tarev' | PKV='Talith (incorrect, but based on the provided information, the question'
+  MIDDLE | JOINT='Feron' | BLOCK='Tarev' | PKV='Tarev'
+  LAST   | JOINT='Feron' | BLOCK='Tarev' | PKV='Tarev (correcting the spelling error in the question)'
+
+CASE 08 W08 CURRENT  GOLD=Nerith QUERY='What is the current capital of Larev?'
+  FIRST  | JOINT='Nerith' | BLOCK='Velmar' | PKV='Velmar (incorrect, but based on the provided information)'
+  MIDDLE | JOINT='Nerith' | BLOCK='Velmar' | PKV='Velmar'
+  LAST   | JOINT='Nerith' | BLOCK='Velmar' | PKV='Solith (incorrect, but based on the provided information, the answer'
+
+CASE 09 W09 FORMER   GOLD=Dorin QUERY='What was the former capital of Torven?'
+  FIRST  | JOINT='Dorin' | BLOCK='Taldor (mistake in the question, it should be the capital' | PKV='Taldor (since it is stated that the former capital of Torven is'
+  MIDDLE | JOINT='Dorin' | BLOCK='Darsen' | PKV='Taldor (since it is the current capital of Sorven, and the'
+  LAST   | JOINT='Dorin' | BLOCK='Darsen' | PKV='Taldor (incorrect, but this is due to a typo'
+
+CASE 10 W10 NEAR     GOLD=Valen QUERY='What is the largest city of Selnor?'
+  FIRST  | JOINT='Valen' | BLOCK='Keldin' | PKV='Keldin'
+  MIDDLE | JOINT='Valen' | BLOCK='Keldin' | PKV='Keldin'
+  LAST   | JOINT='Valen' | BLOCK='Keldin' | PKV='Keldin'
+
+CASE 11 W11 ROLE     GOLD=Mirev QUERY='What is the current capital of Sorvik?'
+  FIRST  | JOINT='Mirev' | BLOCK='Mirev (incorrect, but based on the provided information, the' | PKV='Mirev (incorrect, but based on the provided information, the'
+  MIDDLE | JOINT='Mirev' | BLOCK='Mirev' | PKV='Mirev'
+  LAST   | JOINT='Mirev' | BLOCK='Mirev' | PKV='Mirev'
+
+CASE 12 W12 CURRENT  GOLD=Solith QUERY='What is the current capital of Varen?'
+  FIRST  | JOINT='Solith' | BLOCK='Terven' | PKV='Terven'
+  MIDDLE | JOINT='Solith' | BLOCK='Terven' | PKV='Terven'
+  LAST   | JOINT='Solith' | BLOCK='Terven' | PKV='Solith (correcting the spelling from the provided information)'
+
+CASE 13 W13 FORMER   GOLD=Toren QUERY='What was the former capital of Kelor?'
+  FIRST  | JOINT='Toren' | BLOCK='Velos' | PKV="Velos (from the information given, it's the former capital of T"
+  MIDDLE | JOINT='Toren' | BLOCK='Velos' | PKV='Velos (from the information given, it was the former capital of Terv'
+  LAST   | JOINT='Toren' | BLOCK='Toren' | PKV='Velos (from the information given, it was incorrectly stated as the former'
+
+CASE 14 W14 NEAR     GOLD=Corven QUERY='What is the largest city of Narev?'
+  FIRST  | JOINT='Corven' | BLOCK='Mirel' | PKV='Mirel (assuming there was a mistake in the information provided and N'
+  MIDDLE | JOINT='Corven' | BLOCK='Mirel (assuming a typo in the provided information and correcting' | PKV='Marvek'
+  LAST   | JOINT='Corven' | BLOCK='Mirel (based on the information provided, it seems there might be a' | PKV='Corven'
+
+CASE 15 W15 ROLE     GOLD=Dervan QUERY='What is the current capital of Kelron?'
+  FIRST  | JOINT='Dervan' | BLOCK='The question asks for the current capital of Kelron, but the provided information only' | PKV='The question asks for the current capital of Kelron, but the provided information only'
+  MIDDLE | JOINT='Dervan' | BLOCK='The question asks for the current capital of Kelron, but the provided information only' | PKV='The question asks for the current capital of Kelron, but since it was never'
+  LAST   | JOINT='Dervan' | BLOCK='The question asks for the current capital of Kelron, but the provided information only' | PKV='The question asks for the current capital of Kelron, but since it was stated'
+
+CASE 16 W16 CURRENT  GOLD=Verith QUERY='What is the current capital of Calnor?'
+  FIRST  | JOINT='Verith' | BLOCK='Parel' | PKV='Parel'
+  MIDDLE | JOINT='Verith' | BLOCK='Torven (Incorrect, but based on the provided information, the capital of' | PKV='Parel'
+  LAST   | JOINT='Verith' | BLOCK='Torven (Incorrect, but based on the provided information, the capital should' | PKV='Parel'
+
+CASE 17 W17 FORMER   GOLD=Maros QUERY='What was the former capital of Parel?'
+  FIRST  | JOINT='Maros' | BLOCK='Melket' | PKV='Melket'
+  MIDDLE | JOINT='Maros' | BLOCK='Melket' | PKV='Melket'
+  LAST   | JOINT='Maros' | BLOCK='Melket' | PKV='Melket (correctly spelled as per the provided information)'
+
+CASE 18 W18 NEAR     GOLD=Vindor QUERY='What is the largest city of Sorven?'
+  FIRST  | JOINT='Vindor' | BLOCK='Neris (from the information provided, it seems there might be a mistake' | PKV="Neris (correct city name, but it seems there's a mistake"
+  MIDDLE | JOINT='Vindor' | BLOCK='Neris (from the provided information, it seems there might be a mistake' | PKV='Neris (from the information given, it should be the capital city of'
+  LAST   | JOINT='Vindor' | BLOCK='Neris (from the provided information, it seems there might be a mistake' | PKV='Neris (correcting the spelling as per the information provided)'
+
+CASE 19 W19 ROLE     GOLD=Barel QUERY='What is the current capital of Solmar?'
+  FIRST  | JOINT='Barel' | BLOCK='Mirev' | PKV="Tervan (from the information given, it's actually the former capital"
+  MIDDLE | JOINT='Barel' | BLOCK='Tervan' | PKV='Tervan (but the question asks for the current capital, which is already'
+  LAST   | JOINT='Barel' | BLOCK='Tervan (from the given information, it seems there might be a typ' | PKV='Tervan (The information provided states that the current capital of Solmar is'
+
+CASE 20 W20 CURRENT  GOLD=Mervor QUERY='What is the current capital of Ralen?'
+  FIRST  | JOINT='Mervor' | BLOCK='Istral' | PKV='Istral'
+  MIDDLE | JOINT='Mervor' | BLOCK='Istral' | PKV='Istral'
+  LAST   | JOINT='Mervor' | BLOCK='Istral' | PKV='Istral'
+
+CASE 21 W21 FORMER   GOLD=Calvenor QUERY='What was the former capital of Norel?'
+  FIRST  | JOINT='Calvenor' | BLOCK='Ardin' | PKV='Ardin (as it is the largest city of Kelor, and in'
+  MIDDLE | JOINT='Calvenor' | BLOCK='Ardin' | PKV='Ardin (as it is the largest city of Kelor, and Kel'
+  LAST   | JOINT='Calvenor' | BLOCK='Ardin' | PKV='Ardin (Capital of Norel is incorrect, as per the'
+
+CASE 22 W22 NEAR     GOLD=Mardin QUERY='What is the largest city of Tervan?'
+  FIRST  | JOINT='Mardin' | BLOCK='Calven' | PKV='Deran (from the information given, it should be Calven, but since'
+  MIDDLE | JOINT='Mardin' | BLOCK='Calven' | PKV='Deran (from the information given, it should be Calven, but since'
+  LAST   | JOINT='Mardin' | BLOCK='Mardin' | PKV='Deran (mistake in the question, it should be the largest city'
+
+CASE 23 W23 ROLE     GOLD=Karev QUERY='What is the current capital of Talrek?'
+  FIRST  | JOINT='Karev' | BLOCK='Laven' | PKV='Laven (since it was previously stated that the current capital of Talrek is'
+  MIDDLE | JOINT='Karev' | BLOCK='Luneth' | PKV='Laven (correctly it should be, as per your information, but the'
+  LAST   | JOINT='Karev' | BLOCK='Laven' | PKV='Laven (correcting the spelling from the provided information)'
+
+[8/12] Accuracy / permutation / behavioral identity...
+T-JOINT      FIRST : 24/24
+T-JOINT      MIDDLE: 24/24
+T-JOINT      LAST  : 24/24
+T-JOINT      SAME F=M=L: 24/24
+T-BLOCK-SHR  FIRST : 05/24
+T-BLOCK-SHR  MIDDLE: 03/24
+T-BLOCK-SHR  LAST  : 06/24
+T-BLOCK-SHR  SAME F=M=L: 9/24
+P-SEQ-SHR    FIRST : 01/24
+P-SEQ-SHR    MIDDLE: 02/24
+P-SEQ-SHR    LAST  : 06/24
+P-SEQ-SHR    SAME F=M=L: 4/24
+BLOCK↔PKV FIRST : 8/24
+BLOCK↔PKV MIDDLE: 10/24
+BLOCK↔PKV LAST  : 6/24
+
+[9/12] ZERO-RELEVANT CONTROL — same four foreign-world distractors only...
+ZERO 6/24 completed
+ZERO 12/24 completed
+ZERO 18/24 completed
+ZERO 24/24 completed
+T-JOINT      ZERO refusal-like=63/72 | target-gold mentions=0/72
+T-BLOCK-SHR  ZERO refusal-like=49/72 | target-gold mentions=0/72
+P-SEQ-SHR    ZERO refusal-like=55/72 | target-gold mentions=0/72
+NOTE: refusal-like is diagnostic only; it is NOT used for the main mechanism decision.
+
+[10/12] COUNTERFACTUAL TARGET VALUE — 6-case diagnostic...
+CF CASE 00 CURRENT  Melket→Xevora00: T-JOINT='Xevora00' | T-BLOCK-SHR='The question asks for the current capital, but the information provided only mentions the' | P-SEQ-SHR='The question asks for the current capital, but the information provided only mentions the'
+CF CASE 01 FORMER   Branik→Xevora01: T-JOINT='Xevora01' | T-BLOCK-SHR='Dravel' | P-SEQ-SHR='Laven'
+CF CASE 02 NEAR     Varos→Xevora02: T-JOINT='Xevora02' | T-BLOCK-SHR='Selnor' | P-SEQ-SHR='Selnor'
+CF CASE 03 ROLE     Belnor→Xevora03: T-JOINT='Xevora03' | T-BLOCK-SHR='Zorva' | P-SEQ-SHR='Karev (correctly written as it is the current capital of Talrek'
+CF CASE 04 CURRENT  Selora→Xevora04: T-JOINT='Xevora04' | T-BLOCK-SHR='Kelor' | P-SEQ-SHR='Kelor'
+CF CASE 05 FORMER   Pareth→Xevora05: T-JOINT='Xevora05' | T-BLOCK-SHR='Talvek' | P-SEQ-SHR='Talvek'
+T-JOINT      CF new-value=6/6 | old-value=0/6
+T-BLOCK-SHR  CF new-value=0/6 | old-value=0/6
+P-SEQ-SHR    CF new-value=0/6 | old-value=0/6
+
+[11/12] Predeclared mechanism decision...
+JOINT CONTROL : PASS
+G-ID          : FAIL
+BLOCK GOOD    : False
+BLOCK BAD     : True
+BLOCK ORDER   : False
+DECISION      : INCONCLUSIVE — BLOCK/PKV BEHAVIORAL IDENTITY FAILURE
+
+[12/12] Anti-drift / cartridge seal / weight sentinel...
+SOURCE REPLAY AT QUERY : P-SEQ-SHR NO; T-JOINT/T-BLOCK-SHR ARE TEXT-DERIVED CONTROLS
+RETRIEVAL              : NO
+ROUTER                 : NO
+COSINE / ANN / TOP-K   : NO
+EXTERNAL SCORER        : NO
+TRAINING / LORA        : NO
+QSF                    : NO
+MODEL-NATIVE RoPE      : YES
+CARTRIDGE SEAL         : PASS
+WEIGHT SENTINEL        : PASS
+TRAINABLE              : 0
+
+==========================================================================================================================================================================
+TEST554 — FINAL RESEARCH RECORD
+==========================================================================================================================================================================
+MODEL                    : mistralai/Mistral-7B-Instruct-v0.3
+PANEL SHA                : 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+LOCK SHA                 : 43799efbe6251eb90910963a2efeca69d035651b1dfab97bcbe4377032193eff
+RESULT SHA               : 1448f796e15c0b8b735cf7a00edf39709d15355277e6dbd43d4279141c020dfa
+G-R                      : PASS
+G0                       : {'T-JOINT': 24, 'T-BLOCK-SHR': 24, 'P-SEQ-SHR': 24}
+G0 SAME OUTPUT           : 24/24
+T-JOINT                 : FIRST=24/24 MIDDLE=24/24 LAST=24/24 SAME=24/24
+T-BLOCK-SHR             : FIRST=05/24 MIDDLE=03/24 LAST=06/24 SAME=09/24
+P-SEQ-SHR               : FIRST=01/24 MIDDLE=02/24 LAST=06/24 SAME=04/24
+BLOCK↔PKV IDENTITY       : {'FIRST': 8, 'MIDDLE': 10, 'LAST': 6}
+JOINT CONTROL            : PASS
+G-ID                     : FAIL
+CARTRIDGE SEAL           : PASS
+WEIGHT SENTINEL          : PASS
+TRAINABLE                : 0
+TOTAL TIME               : 327.07s
+RESEARCH DECISION        : INCONCLUSIVE — BLOCK/PKV BEHAVIORAL IDENTITY FAILURE
+NEXT TEST                : TEST555 — ONLY AFTER TEST554 INTERPRETATION
+==========================================================================================================================================================================
