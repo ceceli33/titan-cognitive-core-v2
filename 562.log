@@ -1,0 +1,164 @@
+ ==============================================================================================================================================================
+TEST562 — AKBASCORE MAM · CAPACITY vs CARTRIDGE INTEGRITY X-RAY
+TEST561 WORKING BACKBONE PRESERVED · SAME 80 CARTRIDGES · FULL vs PREFIX vs LOCAL-WINDOW READOUT
+FROZEN MISTRAL · NO TRAINING / RETRIEVAL / ROUTER / QSF · DIAGNOSTIC ONLY
+==============================================================================================================================================================
+
+[1/10] Frozen Mistral...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 601/601 [00:00<00:00, 68.7kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 15.8MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 38.3MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 58.4kB/s  tokenizer.model: downloading bytes:   448kB, 44.5kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 52.3kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 2.86MB/s]Download complete:  12.4GB,  424MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  596MB/s  Fetching 3 files: 100% 3/3 [00:40<00:00, 40.93s/it]Loading weights: 100% 291/291 [00:03<00:00, 79.97it/s]generation_config.json: 100% 116/116 [00:00<00:00, 14.7kB/s]MODEL: mistralai/Mistral-7B-Instruct-v0.3
+GPU: NVIDIA A100-SXM4-40GB
+TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+NL=32 H=4096 QH=32 KVH=8 HD=128 DTYPE=torch.bfloat16 CUT=6
+ROPE: {'rope_theta': 1000000.0, 'rope_type': 'default'}
+TRAINABLE: 0
+BANK SHA: c912551daf4d11d460b61a7958c7ce0ea778b82d791d7a713f5f7045e40c5d2a
+BANK RECORDS: 80
+
+[2/10] TEST561 provenance and mechanism contract...
+BANK PROVENANCE: PASS
+PREFIX: 27 CUT: 6
+CHECKPOINT: PASS
+INCREMENTAL APPEND: PASS
+
+[3/10] Rebuild exact 80-record incremental bank...
+APPEND 10/80 CACHE=233 elapsed=52.6s
+APPEND 20/80 CACHE=438 elapsed=53.6s
+APPEND 30/80 CACHE=646 elapsed=54.5s
+APPEND 40/80 CACHE=854 elapsed=55.5s
+APPEND 50/80 CACHE=1060 elapsed=56.4s
+APPEND 60/80 CACHE=1264 elapsed=57.4s
+APPEND 70/80 CACHE=1469 elapsed=58.4s
+APPEND 80/80 CACHE=1675 elapsed=59.3s
+FULL BANK GROWTH: PASS
+
+[4/10] Exact TEST561 full-bank replication...
+FULL 10/80 correct=7/10
+FULL 20/80 correct=13/20
+FULL 30/80 correct=20/30
+FULL 40/80 correct=21/40
+FULL 50/80 correct=22/50
+FULL 60/80 correct=22/60
+FULL 70/80 correct=22/70
+FULL 80/80 correct=22/80
+FULL80: 22 /80
+
+[5/10] Prefix-capacity curve...
+PREFIX N=05: 05/05
+PREFIX N=10: 09/10
+PREFIX N=20: 16/20
+PREFIX N=40: 16/40
+
+[6/10] Independent local-window reconstruction...
+LOCAL 00:05 = 05/05
+LOCAL 00:10 = 09/10
+LOCAL 00:20 = 16/20
+LOCAL 20:40 = 14/20
+LOCAL 40:60 = 16/20
+LOCAL 60:80 = 13/20
+
+[7/10] Failure recovery matrix...
+FULL FAILURES: 58
+RECOVERED IN FIXED SMALLER BANK: 40 / 58
+IDX=06 RECOVERED     GOLD=Korith1086 FULL=Tarvan1095 | 0:10=PASS:Korith1086, 0:20=PASS:Korith1086
+IDX=07 RECOVERED     GOLD=Nalal1087 FULL=Feral1100 | 0:10=PASS:Nalal1087, 0:20=PASS:Nalal1087
+IDX=09 NOT_RECOVERED GOLD=Calnor1089 FULL=Torvek1082 | 0:10=FAIL:Torvek1082, 0:20=FAIL:Torvek1082
+IDX=10 RECOVERED     GOLD=Paror1090 FULL=Nalar1107 | 0:20=PASS:Paror1090
+IDX=17 NOT_RECOVERED GOLD=Raval1097 FULL=Feral1100 | 0:20=FAIL:Nalal1087
+IDX=18 RECOVERED     GOLD=Nemar1098 FULL=Nalik1107 | 0:20=PASS:Nemar1098
+IDX=19 RECOVERED     GOLD=Darnor1099 FULL=Torvek1082 | 0:20=PASS:Darnor1099
+IDX=22 RECOVERED     GOLD=Tornor1102 FULL=Torvek1082 | 20:40=PASS:Tornor1102
+IDX=24 RECOVERED     GOLD=Mireth1104 FULL=Mirar1124 | 20:40=PASS:Mireth1104
+IDX=26 RECOVERED     GOLD=Koren1106 FULL=Daror1106 | 20:40=PASS:Koren1106
+IDX=30 NOT_RECOVERED GOLD=Paral1110 FULL=Nalik1107 | 20:40=FAIL:Paral1107
+IDX=32 NOT_RECOVERED GOLD=Barnor1112 FULL=Barvek1092 | 20:40=FAIL:Tornor1102
+IDX=33 RECOVERED     GOLD=Zoror1113 FULL=Zoren1093 | 20:40=PASS:Zoror1113
+IDX=34 NOT_RECOVERED GOLD=Keleth1114 FULL=Kelik1094 | 20:40=FAIL:Koren1106
+IDX=35 NOT_RECOVERED GOLD=Tarvek1115 FULL=Koren1106 | 20:40=FAIL:Dervan1108
+IDX=36 RECOVERED     GOLD=Belen1116 FULL=Belith1116 | 20:40=PASS:Belen1116
+IDX=37 RECOVERED     GOLD=Ravik1117 FULL=Torvek1082 | 20:40=PASS:Ravik1117
+IDX=38 NOT_RECOVERED GOLD=Nemvan1118 FULL=Nalik1107 | 20:40=FAIL:Sorar1111
+IDX=39 RECOVERED     GOLD=Darith1119 FULL=Belith1116 | 20:40=PASS:Darith1119
+IDX=40 RECOVERED     GOLD=Ferik1120 FULL=Feral1100 | 40:60=PASS:Ferik1120
+IDX=41 RECOVERED     GOLD=Larvan1121 FULL=Larar1101 | 40:60=PASS:Larvan1121
+IDX=42 RECOVERED     GOLD=Torith1122 FULL=Torith1102 | 40:60=PASS:Torith1122
+IDX=43 RECOVERED     GOLD=Selal1123 FULL=Kelith1003 (provided information) | 40:60=PASS:Selal1123
+IDX=45 RECOVERED     GOLD=Varnor1125 FULL=Varvek1105 | 40:60=PASS:Varnor1125
+IDX=46 RECOVERED     GOLD=Koror1126 FULL=Feral1100 | 40:60=PASS:Koror1126
+IDX=47 RECOVERED     GOLD=Naleth1127 FULL=Feral1100 | 40:60=PASS:Naleth1127
+IDX=48 RECOVERED     GOLD=Dervek1128 FULL=Derar1108 | 40:60=PASS:Dervek1128
+IDX=49 NOT_RECOVERED GOLD=Calen1129 FULL=Calith1109 | 40:60=FAIL:Torith1122
+IDX=50 NOT_RECOVERED GOLD=Parik1130 FULL=Paral1110 | 40:60=FAIL:Selal1123
+IDX=51 NOT_RECOVERED GOLD=Sorvan1131 FULL=Sorar1111 | 40:60=FAIL:Mirar1124
+IDX=52 RECOVERED     GOLD=Barith1132 FULL=The current capital of Vareth1052 is Ravik11 | 40:60=PASS:Barith1132
+IDX=53 RECOVERED     GOLD=Zoral1133 FULL=Feral1100 | 40:60=PASS:Zoral1133
+IDX=54 RECOVERED     GOLD=Kelar1134 FULL=Kelik1114 | 40:60=PASS:Kelar1134
+IDX=55 NOT_RECOVERED GOLD=Tarnor1135 FULL=Koren1106 | 40:60=FAIL:Naleth1127
+IDX=56 RECOVERED     GOLD=Belor1136 FULL=Belen1116 | 40:60=PASS:Belor1136
+IDX=57 RECOVERED     GOLD=Raveth1137 FULL=Raval1107 | 40:60=PASS:Raveth1137
+IDX=58 RECOVERED     GOLD=Nemvek1138 FULL=Nemar1098 | 40:60=PASS:Nemvek1138
+IDX=59 RECOVERED     GOLD=Daren1139 FULL=Darith1109 | 40:60=PASS:Daren1139
+IDX=60 RECOVERED     GOLD=Fereth1140 FULL=Feral1100 | 60:80=PASS:Fereth1140
+IDX=61 RECOVERED     GOLD=Larvek1141 FULL=Larar1101 | 60:80=PASS:Larvek1141
+IDX=62 RECOVERED     GOLD=Toren1142 FULL=Tarith1122 | 60:80=PASS:Toren1142
+IDX=63 RECOVERED     GOLD=Selik1143 FULL=Selor1103 | 60:80=PASS:Selik1143
+IDX=64 RECOVERED     GOLD=Mirvan1144 FULL=Nalik1107 | 60:80=PASS:Mirvan1144
+IDX=65 RECOVERED     GOLD=Varith1145 FULL=Nemvan1118 | 60:80=PASS:Varith1145
+IDX=66 RECOVERED     GOLD=Koral1146 FULL=Ferik1100 | 60:80=PASS:Koral1146
+IDX=67 RECOVERED     GOLD=Nalar1147 FULL=Feral1100 | 60:80=PASS:Nalar1147
+IDX=68 RECOVERED     GOLD=Dernor1148 FULL=Dervek1128 | 60:80=PASS:Dernor1148
+IDX=69 NOT_RECOVERED GOLD=Calor1149 FULL=Torith1102 | 60:80=FAIL:Toren1142
+IDX=70 NOT_RECOVERED GOLD=Pareth1150 FULL=Parik1110 | 60:80=FAIL:Pareth1143
+IDX=71 NOT_RECOVERED GOLD=Sorvek1151 FULL=Sorar1111 | 60:80=FAIL:Sorvek1144
+IDX=72 NOT_RECOVERED GOLD=Baren1152 FULL=Barith1112 | 60:80=FAIL:Varith1145
+IDX=73 RECOVERED     GOLD=Zorik1153 FULL=Larvan1121 | 60:80=PASS:Zorik1153
+IDX=74 NOT_RECOVERED GOLD=Kelvan1154 FULL=Kelar1134 | 60:80=FAIL:Kelvan1147
+IDX=75 NOT_RECOVERED GOLD=Tarith1155 FULL=Ferik1100 | 60:80=FAIL:Varith1145
+IDX=76 RECOVERED     GOLD=Belal1156 FULL=Belor1116 | 60:80=PASS:Belal1156
+IDX=77 NOT_RECOVERED GOLD=Ravar1157 FULL=Raveth1137 | 60:80=FAIL:Sorvek1151
+IDX=78 RECOVERED     GOLD=Nemnor1158 FULL=Nemar1138 | 60:80=PASS:Nemnor1158
+IDX=79 RECOVERED     GOLD=Daror1159 FULL=Torvek1082 | 60:80=PASS:Daror1159
+
+[8/10] Cartridge integrity vs scale diagnosis...
+FULL80             : 22/80
+FOUR FIXED 20 BANKS: 59/80
+LATE 60:80 LOCAL   : 13/20
+LATE 60:80 FULL80  : 0/20
+FAILED→RECOVERED   : 40/58
+DIAGNOSIS: SCALE-SENSITIVE READOUT/COMPOSITION — SUBSTANTIAL RECOVERY IN SMALLER BANKS
+
+[9/10] Interpretation gate...
+IMPORTANT: This test does not change the engine and does not introduce retrieval.
+IMPORTANT: Fixed local banks are diagnostic reconstructions from the same cartridge-generation mechanism.
+IMPORTANT: A recovery does not prove a 7B parameter-capacity limit; it demonstrates scale-dependent interference/readout failure in this frozen 7B system.
+IMPORTANT: Failure to recover points back toward cartridge/consolidation integrity rather than mere bank size.
+DECISION: SCALE-SENSITIVE READOUT/COMPOSITION — SUBSTANTIAL RECOVERY IN SMALLER BANKS
+
+[10/10] Final research record...
+==============================================================================================================================================================
+TEST562 — FINAL RESEARCH RECORD
+==============================================================================================================================================================
+MODEL                  : mistralai/Mistral-7B-Instruct-v0.3
+BANK SHA               : c912551daf4d11d460b61a7958c7ce0ea778b82d791d7a713f5f7045e40c5d2a
+LOCK SHA               : 98d2ea011ece56ea45dfe8509cee3da31d0f1f97893e6125ed48db00b892ff96
+RESULT SHA             : 4a65e566214dd4c729b68117d3c91514e7f2636fbc2b15a8e937d66133b04006
+FULL80                 : 22/80
+PREFIX 05               : 5/5
+PREFIX 10               : 9/10
+PREFIX 20               : 16/20
+PREFIX 40               : 16/40
+LOCAL 00:05             : 5/5
+LOCAL 00:10             : 9/10
+LOCAL 00:20             : 16/20
+LOCAL 20:40             : 14/20
+LOCAL 40:60             : 16/20
+LOCAL 60:80             : 13/20
+FAILED→RECOVERED       : 40/58
+DIAGNOSIS              : SCALE-SENSITIVE READOUT/COMPOSITION — SUBSTANTIAL RECOVERY IN SMALLER BANKS
+WEIGHT SENTINEL        : PASS
+TRAINABLE              : 0
+TOTAL TIME             : 141.51s
+INTERPRETATION         : Distinguishes scale-dependent readout/composition failure from irreversible cartridge damage using the unchanged TEST561 incremental DC6 mechanism.
+NEXT                    : TEST563 only after TEST562 interpretation.
+==============================================================================================================================================================
