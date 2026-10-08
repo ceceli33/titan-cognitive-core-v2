@@ -1,0 +1,332 @@
+ 
+====================================================================================================================================
+TEST568 — QWEN MAM · H POSITION CAUSAL X-RAY
+BASELINE: 76dcf80c891640314cbe1849ddffebfae287a23e
+====================================================================================================================================
+========================================================================================================================
+TEST564 — QWEN MAM · CUT CALIBRATION
+========================================================================================================================
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 89.6kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 960kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 85.4MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 75.7MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 136MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.19MB/s]
+Download complete: 
+
+ 13.1GB,  465MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  451MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:43<00:00, 43.24s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 100.24it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 33.6kB/s]
+GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [4, 5, 6, 7, 8]
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+
+TEST568 CONFIG | CUT: 3 ARMS: ['DC', 'H_FULL', 'H_BODY', 'H_PREFIX', 'H_FIRST', 'H_LAST', 'H_HEAD', 'H_TAIL', 'H_NONE']
+PANEL: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 | BACKBONE VERIFIED: 76dcf80c891640314cbe1849ddffebfae287a23e
+H_FULL=all available H | H_BODY=body H | H_PREFIX=prefix H
+H_FIRST/H_LAST=single body position | H_HEAD/H_TAIL=half body | H_NONE=no injection
+NOTE: append has no prefix tokens; H_PREFIX therefore injects only during first-cartridge init.
+
+================================================================================================================
+ARM: DC CUT: 3
+DC       CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+DC       CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+DC       CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+DC       CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+DC       CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+DC       CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+DC       CASE=02 FIRST  PASS | gold=Varos | answer='Varos'
+DC       CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+DC       CASE=02 LAST   PASS | gold=Varos | answer='Varos'
+DC       CASE=03 FIRST  PASS | gold=Belnor | answer='Belnor'
+DC       CASE=03 MIDDLE PASS | gold=Belnor | answer='Belnor'
+DC       CASE=03 LAST   PASS | gold=Belnor | answer='Belnor'
+DC       CASE=04 FIRST  PASS | gold=Selora | answer='Selora'
+DC       CASE=04 MIDDLE PASS | gold=Selora | answer='Selora'
+DC       CASE=04 LAST   PASS | gold=Selora | answer='Selora'
+DC       CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+DC       CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+DC       CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+DC       CASE=06 FIRST  PASS | gold=Keldin | answer='Keldin'
+DC       CASE=06 MIDDLE PASS | gold=Keldin | answer='Keldin'
+DC       CASE=06 LAST   PASS | gold=Keldin | answer='Keldin'
+DC       CASE=07 FIRST  PASS | gold=Feron | answer='Feron'
+DC       CASE=07 MIDDLE PASS | gold=Feron | answer='Feron'
+DC       CASE=07 LAST   PASS | gold=Feron | answer='Feron'
+RESULT ARM=DC       SCORE=24/24 FIRST=8/8 MIDDLE=8/8 LAST=8/8 COMPLETE=True TIME=13.89s
+
+================================================================================================================
+ARM: H_FULL CUT: 3
+H_FULL   CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+H_FULL   CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+H_FULL   CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+H_FULL   CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+H_FULL   CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+H_FULL   CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+H_FULL   CASE=02 FIRST  PASS | gold=Varos | answer='Varos'
+H_FULL   CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+H_FULL   CASE=02 LAST   PASS | gold=Varos | answer='Varos'
+H_FULL   CASE=03 FIRST  PASS | gold=Belnor | answer='Belnor'
+H_FULL   CASE=03 MIDDLE PASS | gold=Belnor | answer='Belnor'
+H_FULL   CASE=03 LAST   PASS | gold=Belnor | answer='Belnor'
+H_FULL   CASE=04 FIRST  PASS | gold=Selora | answer='Selora'
+H_FULL   CASE=04 MIDDLE PASS | gold=Selora | answer='Selora'
+H_FULL   CASE=04 LAST   PASS | gold=Selora | answer='Selora'
+H_FULL   CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+H_FULL   CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+H_FULL   CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+H_FULL   CASE=06 FIRST  PASS | gold=Keldin | answer='Keldin'
+H_FULL   CASE=06 MIDDLE PASS | gold=Keldin | answer='Keldin'
+H_FULL   CASE=06 LAST   PASS | gold=Keldin | answer='Keldin'
+H_FULL   CASE=07 FIRST  PASS | gold=Feron | answer='Feron'
+H_FULL   CASE=07 MIDDLE PASS | gold=Feron | answer='Feron'
+H_FULL   CASE=07 LAST   PASS | gold=Feron | answer='Feron'
+RESULT ARM=H_FULL   SCORE=24/24 FIRST=8/8 MIDDLE=8/8 LAST=8/8 COMPLETE=True TIME=12.0s
+
+================================================================================================================
+ARM: H_BODY CUT: 3
+H_BODY   CASE=00 FIRST  FAIL | gold=Melket | answer='The current capital of Zorvan is not directly stated in the given information.'
+H_BODY   CASE=00 MIDDLE PASS | gold=Melket | answer='The current capital of Zorvan is Melket. In the given list of'
+H_BODY   CASE=00 LAST   PASS | gold=Melket | answer='The current capital of Zorvan is Melket.'
+H_BODY   CASE=01 FIRST  FAIL | gold=Branik | answer='The former capital of Kelvar was Bran.Kelvar likely had multiple capitals throughout'
+H_BODY   CASE=01 MIDDLE PASS | gold=Branik | answer="The former capital of Kelvar was Branik. However, it's important to"
+H_BODY   CASE=01 LAST   PASS | gold=Branik | answer='The former capital of Kelvar was Branik.'
+H_BODY   CASE=02 FIRST  PASS | gold=Varos | answer='Based on the information provided, the largest city of Tarev is Varos'
+H_BODY   CASE=02 MIDDLE PASS | gold=Varos | answer="The largest city of Tarev is Varos. However, it's important"
+H_BODY   CASE=02 LAST   PASS | gold=Varos | answer='The largest city of Tarev is Varos.'
+H_BODY   CASE=03 FIRST  FAIL | gold=Belnor | answer="The current capital of Falven is Belvor. However, it's important to"
+H_BODY   CASE=03 MIDDLE PASS | gold=Belnor | answer='The current capital of Falven is Belnor.'
+H_BODY   CASE=03 LAST   PASS | gold=Belnor | answer='The current capital of Falven is Belnor.'
+H_BODY   CASE=04 FIRST  PASS | gold=Selora | answer='The current capital of Ravik is Selora. Selora is the capital city'
+H_BODY   CASE=04 MIDDLE PASS | gold=Selora | answer='The current capital of Ravik is Selora (also spelled as Selora or'
+H_BODY   CASE=04 LAST   PASS | gold=Selora | answer='The current capital of Ravik is Selora (also spelled as Selora or'
+H_BODY   CASE=05 FIRST  FAIL | gold=Pareth | answer='The former capital of Nemor was Pergamum. Pergamum'
+H_BODY   CASE=05 MIDDLE PASS | gold=Pareth | answer='The former capital of Nemor was Pareth (note the slight spelling difference from'
+H_BODY   CASE=05 LAST   PASS | gold=Pareth | answer='The former capital of Nemor was Pareth (correct spelling is Páre'
+H_BODY   CASE=06 FIRST  FAIL | gold=Keldin | answer='The largest city of Darsen is not directly provided in the given information.'
+H_BODY   CASE=06 MIDDLE PASS | gold=Keldin | answer='The largest city of Darsen is Keldin. This information is derived'
+H_BODY   CASE=06 LAST   PASS | gold=Keldin | answer='The largest city of Darsen is Keldin. The information provided states'
+H_BODY   CASE=07 FIRST  FAIL | gold=Feron | answer="The current capital of Belvik is Narev. However, it's important"
+H_BODY   CASE=07 MIDDLE PASS | gold=Feron | answer='The current capital of Belvik is Feron (also spelled Feron or F'
+H_BODY   CASE=07 LAST   PASS | gold=Feron | answer='The current capital of Belvik is Feron (previously stated as Feron'
+RESULT ARM=H_BODY   SCORE=18/24 FIRST=2/8 MIDDLE=8/8 LAST=8/8 COMPLETE=True TIME=22.12s
+
+================================================================================================================
+ARM: H_PREFIX CUT: 3
+H_PREFIX CASE=00 FIRST  FAIL | gold=Melket | answer='There is no information provided about the current capital of Zorvan.'
+H_PREFIX CASE=00 MIDDLE FAIL | gold=Melket | answer='There is no information provided about the current capital of Zorvan.'
+H_PREFIX CASE=00 LAST   FAIL | gold=Melket | answer='There is no information provided about the current capital of Zorvan.'
+H_PREFIX CASE=01 FIRST  FAIL | gold=Branik | answer='Kelvar did not have a former capital as it is a fictional location from the'
+H_PREFIX CASE=01 MIDDLE FAIL | gold=Branik | answer='Kelvar did not have a former capital as it is a fictional location from the'
+H_PREFIX CASE=01 LAST   FAIL | gold=Branik | answer='Kelvar did not have a former capital as it is a fictional location from the'
+H_PREFIX CASE=02 FIRST  FAIL | gold=Varos | answer='Tarev is not a recognized city or location. Please provide correct information.'
+H_PREFIX CASE=02 MIDDLE FAIL | gold=Varos | answer='Tarev is not a recognized city or location. Please provide correct information.'
+H_PREFIX CASE=02 LAST   FAIL | gold=Varos | answer='Tarev is not a recognized city or location. Please provide correct information.'
+H_PREFIX CASE=03 FIRST  FAIL | gold=Belnor | answer='There is no information provided about the capital of Falven.'
+H_PREFIX CASE=03 MIDDLE FAIL | gold=Belnor | answer='There is no information provided about the capital of Falven.'
+H_PREFIX CASE=03 LAST   FAIL | gold=Belnor | answer='There is no information provided about the capital of Falven.'
+H_PREFIX CASE=04 FIRST  FAIL | gold=Selora | answer='Ravik does not have a current capital as it is not a recognized country'
+H_PREFIX CASE=04 MIDDLE FAIL | gold=Selora | answer='Ravik does not have a current capital as it is not a recognized country'
+H_PREFIX CASE=04 LAST   FAIL | gold=Selora | answer='Ravik does not have a current capital as it is not a recognized country'
+H_PREFIX CASE=05 FIRST  FAIL | gold=Pareth | answer='Nemours'
+H_PREFIX CASE=05 MIDDLE FAIL | gold=Pareth | answer='Nemours'
+H_PREFIX CASE=05 LAST   FAIL | gold=Pareth | answer='Nemours'
+H_PREFIX CASE=06 FIRST  FAIL | gold=Keldin | answer='Darsen'
+H_PREFIX CASE=06 MIDDLE FAIL | gold=Keldin | answer='Darsen'
+H_PREFIX CASE=06 LAST   FAIL | gold=Keldin | answer='Darsen'
+H_PREFIX CASE=07 FIRST  FAIL | gold=Feron | answer='There is no information provided about the current capital of Belvik.'
+H_PREFIX CASE=07 MIDDLE FAIL | gold=Feron | answer='There is no information provided about the current capital of Belvik.'
+H_PREFIX CASE=07 LAST   FAIL | gold=Feron | answer='There is no information provided about the current capital of Belvik.'
+RESULT ARM=H_PREFIX SCORE=00/24 FIRST=0/8 MIDDLE=0/8 LAST=0/8 COMPLETE=True TIME=19.58s
+
+================================================================================================================
+ARM: H_FIRST CUT: 3
+H_FIRST  CASE=00 FIRST  FAIL | gold=Melket | answer='The current capital of Zorvan is a bit of a tricky question because Z'
+H_FIRST  CASE=00 MIDDLE FAIL | gold=Melket | answer='The current capital of Zorvan is a bit of a tricky question because Z'
+H_FIRST  CASE=00 LAST   FAIL | gold=Melket | answer='The current capital of Zorvan is a bit of a tricky question because Z'
+H_FIRST  CASE=01 FIRST  FAIL | gold=Branik | answer='The former capital of Kelvar is not directly stated in the given text. The'
+H_FIRST  CASE=01 MIDDLE FAIL | gold=Branik | answer='The former capital of Kelvar is not directly provided in the given text.1'
+H_FIRST  CASE=01 LAST   FAIL | gold=Branik | answer='The former capital of Kelvar is not directly stated in the given text. The'
+H_FIRST  CASE=02 FIRST  FAIL | gold=Varos | answer='The largest city of Tarev is not specified in the given text.T'
+H_FIRST  CASE=02 MIDDLE FAIL | gold=Varos | answer='The largest city of Tarev is not specified in the given text.T'
+H_FIRST  CASE=02 LAST   FAIL | gold=Varos | answer='The largest city of Tarev is not specified in the given text.T'
+H_FIRST  CASE=03 FIRST  FAIL | gold=Belnor | answer='The current capital of Falven is not a widely recognized or officially designated place,'
+H_FIRST  CASE=03 MIDDLE FAIL | gold=Belnor | answer='The current capital of Falven is not a widely recognized or officially designated place,'
+H_FIRST  CASE=03 LAST   FAIL | gold=Belnor | answer='The current capital of Falven is not readily available in my knowledge database. The'
+H_FIRST  CASE=04 FIRST  FAIL | gold=Selora | answer='The current capital of Ravik is not a widely recognized or officially named place.'
+H_FIRST  CASE=04 MIDDLE FAIL | gold=Selora | answer='The current capital of Ravik is not a widely recognized or officially named place.'
+H_FIRST  CASE=04 LAST   FAIL | gold=Selora | answer='The current capital of Ravik is not a widely recognized or officially named place.'
+H_FIRST  CASE=05 FIRST  FAIL | gold=Pareth | answer='The former capital of Nemor is Nemoresca.1\n\nNemores'
+H_FIRST  CASE=05 MIDDLE FAIL | gold=Pareth | answer='The former capital of Nemor is Nemoresca.1\n\nNemores'
+H_FIRST  CASE=05 LAST   FAIL | gold=Pareth | answer="The former capital of Nemor is Nemoresca.1 However, it's"
+H_FIRST  CASE=06 FIRST  FAIL | gold=Keldin | answer='The largest city of Darsen is Darmstadt.Darmstadt is'
+H_FIRST  CASE=06 MIDDLE FAIL | gold=Keldin | answer='The largest city of Darsen is Darmstadt.Darmstadt is'
+H_FIRST  CASE=06 LAST   FAIL | gold=Keldin | answer='The largest city of Darsen is Darmstadt.Darmstadt is'
+H_FIRST  CASE=07 FIRST  FAIL | gold=Feron | answer='The current capital of Belvik is Belvik itself. The town is located in'
+H_FIRST  CASE=07 MIDDLE FAIL | gold=Feron | answer='The current capital of Belvik is Belvik itself. The town is located in'
+H_FIRST  CASE=07 LAST   FAIL | gold=Feron | answer='The current capital of Belvik is Belvik itself. The town is located in'
+RESULT ARM=H_FIRST  SCORE=00/24 FIRST=0/8 MIDDLE=0/8 LAST=0/8 COMPLETE=True TIME=23.11s
+
+================================================================================================================
+ARM: H_LAST CUT: 3
+H_LAST   CASE=00 FIRST  FAIL | gold=Melket | answer='Cage is a\\nwell-known American country singer and songwriter.\\nHe is'
+H_LAST   CASE=00 MIDDLE FAIL | gold=Melket | answer='Cage is a\\nfree agent pitcher for the Texas Rangers.\\n\n\nC'
+H_LAST   CASE=00 LAST   FAIL | gold=Melket | answer='Cage is a\\nfree agent pitcher who has been with the team since'
+H_LAST   CASE=01 FIRST  FAIL | gold=Branik | answer='Ciroc is a brand of brandy that is produced in the Loire'
+H_LAST   CASE=01 MIDDLE FAIL | gold=Branik | answer='A: What is the correct answer to the following question: What is the capital'
+H_LAST   CASE=01 LAST   FAIL | gold=Branik | answer='Ciroc is a brand of brandy that is produced in the Loire'
+H_LAST   CASE=02 FIRST  FAIL | gold=Varos | answer='A: The correct answer is 10. When the temperature is below'
+H_LAST   CASE=02 MIDDLE FAIL | gold=Varos | answer='A: The correct answer is 10. When the temperature is 1'
+H_LAST   CASE=02 LAST   FAIL | gold=Varos | answer='A: The correct answer is 10. When the temperature is below'
+H_LAST   CASE=03 FIRST  FAIL | gold=Belnor | answer='A: The primary angle bisector of a triangle is a line that divides the'
+H_LAST   CASE=03 MIDDLE FAIL | gold=Belnor | answer='A: The primary angle bisector of a triangle can divide the angle into two'
+H_LAST   CASE=03 LAST   FAIL | gold=Belnor | answer='A: The correct answer is 10. The number 5 is pronounced'
+H_LAST   CASE=04 FIRST  FAIL | gold=Selora | answer='A: The answer is 2. When an integer is divided by another integer'
+H_LAST   CASE=04 MIDDLE FAIL | gold=Selora | answer='A: The correct answer is 10. The number 10 is'
+H_LAST   CASE=04 LAST   FAIL | gold=Selora | answer='A: The correct answer is 10. The number 10 is'
+H_LAST   CASE=05 FIRST  FAIL | gold=Pareth | answer='A: Yes, the work is still valid. The 95% confidence'
+H_LAST   CASE=05 MIDDLE FAIL | gold=Pareth | answer='A: Yes, the work is still valid. The reasoning behind the statement that'
+H_LAST   CASE=05 LAST   FAIL | gold=Pareth | answer='A: Yes, the work is still valid. The 95% confidence'
+H_LAST   CASE=06 FIRST  FAIL | gold=Keldin | answer='A: The correct answer is 10. The number 10 is'
+H_LAST   CASE=06 MIDDLE FAIL | gold=Keldin | answer='A: The correct answer is 10. When the temperature is 3'
+H_LAST   CASE=06 LAST   FAIL | gold=Keldin | answer='A: The correct answer is 10. When the temperature is 3'
+H_LAST   CASE=07 FIRST  FAIL | gold=Feron | answer='What is the degree of freedom for a start-up company in the context of a'
+H_LAST   CASE=07 MIDDLE FAIL | gold=Feron | answer='Cannabis plants have been moved from their native habitats to new areas through intentional'
+H_LAST   CASE=07 LAST   FAIL | gold=Feron | answer='Cannabis use is a vine-like flowering plant of the family Cannabace'
+RESULT ARM=H_LAST   SCORE=00/24 FIRST=0/8 MIDDLE=0/8 LAST=0/8 COMPLETE=True TIME=22.96s
+
+================================================================================================================
+ARM: H_HEAD CUT: 3
+H_HEAD   CASE=00 FIRST  FAIL | gold=Melket | answer="Zorvan is not a widely recognized place, and there isn't enough information"
+H_HEAD   CASE=00 MIDDLE FAIL | gold=Melket | answer='The current capital of Zorvan is not a widely recognized or officially designated city'
+H_HEAD   CASE=00 LAST   FAIL | gold=Melket | answer='The current capital of Zorvan is not a widely recognized or officially designated city'
+H_HEAD   CASE=01 FIRST  FAIL | gold=Branik | answer='There seems to be a typo in your question. The city name "Kelvar'
+H_HEAD   CASE=01 MIDDLE FAIL | gold=Branik | answer='It seems there might be a typo in your question.The name "Kelvar'
+H_HEAD   CASE=01 LAST   FAIL | gold=Branik | answer='There seems to be a typo in your question. The name "Kelvar"'
+H_HEAD   CASE=02 FIRST  FAIL | gold=Varos | answer='There seems to be a bit of confusion in your question. The name "T'
+H_HEAD   CASE=02 MIDDLE FAIL | gold=Varos | answer='There seems to be a typo in your question. The largest city in Tare'
+H_HEAD   CASE=02 LAST   FAIL | gold=Varos | answer='There seems to be a typo in your question. The largest city in Tare'
+H_HEAD   CASE=03 FIRST  FAIL | gold=Belnor | answer='The current capital of Larese (assuming you meant Lazio, a region'
+H_HEAD   CASE=03 MIDDLE FAIL | gold=Belnor | answer='The current capital of Larese (assuming you meant Lazio, a region'
+H_HEAD   CASE=03 LAST   FAIL | gold=Belnor | answer='The current capital of Larese (assuming you meant Lazio, a region'
+H_HEAD   CASE=04 FIRST  FAIL | gold=Selora | answer='The information provided in the question seems to be a mix of unrelated facts and does'
+H_HEAD   CASE=04 MIDDLE FAIL | gold=Selora | answer='The current capital of Ravik is not a widely recognized or officially designated city.'
+H_HEAD   CASE=04 LAST   FAIL | gold=Selora | answer='The current capital of Ravik is not a widely recognized or officially designated city.'
+H_HEAD   CASE=05 FIRST  FAIL | gold=Pareth | answer='The former capital of the Kingdom of Macedonia, which is now part of modern Greece'
+H_HEAD   CASE=05 MIDDLE FAIL | gold=Pareth | answer='The former capital of the Kingdom of Nemor was Nemora, an ancient city'
+H_HEAD   CASE=05 LAST   FAIL | gold=Pareth | answer='The former capital of Macedonia (now North Macedonia) was Skopje.1'
+H_HEAD   CASE=06 FIRST  FAIL | gold=Keldin | answer='There seems to be a bit of confusion in your question. The name "D'
+H_HEAD   CASE=06 MIDDLE FAIL | gold=Keldin | answer='There seems to be a typo in your question.The correct phrasing should be'
+H_HEAD   CASE=06 LAST   FAIL | gold=Keldin | answer='There seems to be a bit of confusion in your question.The largest city in'
+H_HEAD   CASE=07 FIRST  FAIL | gold=Feron | answer='The current capital of Belvik is Belvik. The town of Belvik is'
+H_HEAD   CASE=07 MIDDLE FAIL | gold=Feron | answer='There seems to be a bit of confusion in your question. The name "Bel'
+H_HEAD   CASE=07 LAST   FAIL | gold=Feron | answer='There seems to be a bit of confusion in your question. The name "Bel'
+RESULT ARM=H_HEAD   SCORE=00/24 FIRST=0/8 MIDDLE=0/8 LAST=0/8 COMPLETE=True TIME=23.12s
+
+================================================================================================================
+ARM: H_TAIL CUT: 3
+H_TAIL   CASE=00 FIRST  FAIL | gold=Melket | answer='The current capital of Zorvan, also known as Zavon or Z'
+H_TAIL   CASE=00 MIDDLE FAIL | gold=Melket | answer='The current capital of Zorvan, also known as Zorva or Z'
+H_TAIL   CASE=00 LAST   FAIL | gold=Melket | answer='The current capital of Zorvan, also known as Zorva or Z'
+H_TAIL   CASE=01 FIRST  FAIL | gold=Branik | answer='Based on the information provided in the riddle, the former capital of Kelvar'
+H_TAIL   CASE=01 MIDDLE FAIL | gold=Branik | answer='The passage does not explicitly state the former capital of Kelvar. The information provided'
+H_TAIL   CASE=01 LAST   FAIL | gold=Branik | answer='The passage does not explicitly state what the former capital of Kelvar was.1'
+H_TAIL   CASE=02 FIRST  FAIL | gold=Varos | answer='To determine the largest city of Tarev, we need to compare the sizes'
+H_TAIL   CASE=02 MIDDLE FAIL | gold=Varos | answer='The largest city in Tarev, based on the information provided in the sentences'
+H_TAIL   CASE=02 LAST   FAIL | gold=Varos | answer='The largest city in Tarev, based on the information provided in the given'
+H_TAIL   CASE=03 FIRST  FAIL | gold=Belnor | answer='The current capital of Falven is not a well-known or officially recognized country or'
+H_TAIL   CASE=03 MIDDLE FAIL | gold=Belnor | answer='Based on the information provided in the sentences, the current capital of Falven is'
+H_TAIL   CASE=03 LAST   FAIL | gold=Belnor | answer='Based on the information provided in the sentences, the current capital of Falven is'
+H_TAIL   CASE=04 FIRST  FAIL | gold=Selora | answer='The current capital of Ravik, as presented in the given context, is N'
+H_TAIL   CASE=04 MIDDLE FAIL | gold=Selora | answer='The current capital of Ravik, also known as Ravenna, is Ravenna'
+H_TAIL   CASE=04 LAST   FAIL | gold=Selora | answer='The current capital of Ravik, also known as Rwanda, is Kigali'
+H_TAIL   CASE=05 FIRST  FAIL | gold=Pareth | answer='Based on the information provided in the sentences, the former capital of Nemor is'
+H_TAIL   CASE=05 MIDDLE FAIL | gold=Pareth | answer='The former capital of Nemora, as described in the given poem, was Sol'
+H_TAIL   CASE=05 LAST   FAIL | gold=Pareth | answer='The former capital of Nemora in the world of Talismans, as described'
+H_TAIL   CASE=06 FIRST  FAIL | gold=Keldin | answer='Based on the information provided in the riddle, the largest city of Dars'
+H_TAIL   CASE=06 MIDDLE FAIL | gold=Keldin | answer='The question provided does not contain enough information to determine the largest city of Dars'
+H_TAIL   CASE=06 LAST   FAIL | gold=Keldin | answer="Based on the information provided in the sentences, it appears you're asking about the"
+H_TAIL   CASE=07 FIRST  FAIL | gold=Feron | answer='Based on the information provided in the list of cities, the current capital of Bel'
+H_TAIL   CASE=07 MIDDLE FAIL | gold=Feron | answer='Based on the information provided in the list, the current capital of Belvik is'
+H_TAIL   CASE=07 LAST   FAIL | gold=Feron | answer='Based on the information provided in the list of names, there is no current capital'
+RESULT ARM=H_TAIL   SCORE=00/24 FIRST=0/8 MIDDLE=0/8 LAST=0/8 COMPLETE=True TIME=23.07s
+
+================================================================================================================
+ARM: H_NONE CUT: 3
+H_NONE   CASE=00 FIRST  FAIL | gold=Melket | answer='The current capital of Zorvan is not widely recognized as a city with an'
+H_NONE   CASE=00 MIDDLE FAIL | gold=Melket | answer='The current capital of Zorvan is not widely recognized as a city with an'
+H_NONE   CASE=00 LAST   FAIL | gold=Melket | answer='The current capital of Zorvan is not widely recognized as a city with an'
+H_NONE   CASE=01 FIRST  FAIL | gold=Branik | answer='The former capital of Kelvar is not a widely recognized or established place, and'
+H_NONE   CASE=01 MIDDLE FAIL | gold=Branik | answer='The former capital of Kelvar is not a widely recognized or established place, and'
+H_NONE   CASE=01 LAST   FAIL | gold=Branik | answer='The former capital of Kelvar is not a widely recognized or established place, and'
+H_NONE   CASE=02 FIRST  FAIL | gold=Varos | answer='The largest city of Tarev is not specified in the given text. T'
+H_NONE   CASE=02 MIDDLE FAIL | gold=Varos | answer='The largest city of Tarev is not specified in the given text.T'
+H_NONE   CASE=02 LAST   FAIL | gold=Varos | answer='The largest city of Tarev is not specified in the given text.T'
+H_NONE   CASE=03 FIRST  FAIL | gold=Belnor | answer="The current capital of Falven is not a well-known place, and it's"
+H_NONE   CASE=03 MIDDLE FAIL | gold=Belnor | answer='The current capital of Falven is not readily available as "Falven" does'
+H_NONE   CASE=03 LAST   FAIL | gold=Belnor | answer='The current capital of Falven is not readily available as "Falven" does'
+H_NONE   CASE=04 FIRST  FAIL | gold=Selora | answer='The current capital of Ravik is not a well-known or officially recognized place,'
+H_NONE   CASE=04 MIDDLE FAIL | gold=Selora | answer='The current capital of Ravik is not a well-known or officially recognized place,'
+H_NONE   CASE=04 LAST   FAIL | gold=Selora | answer='The current capital of Ravik is not a well-known or officially recognized place,'
+H_NONE   CASE=05 FIRST  FAIL | gold=Pareth | answer='The former capital of Nemor is Nemoresca.17\n\nNem'
+H_NONE   CASE=05 MIDDLE FAIL | gold=Pareth | answer='The former capital of Nemor is Nemoresca.17\n\nNem'
+H_NONE   CASE=05 LAST   FAIL | gold=Pareth | answer='The former capital of Nemor is Nemoresca.17\n\nNem'
+H_NONE   CASE=06 FIRST  FAIL | gold=Keldin | answer='The largest city of Darsen is Düsseldorf. Düsseldorf is the largest'
+H_NONE   CASE=06 MIDDLE FAIL | gold=Keldin | answer='The largest city of Darsen is Düsseldorf. Düsseldorf (or'
+H_NONE   CASE=06 LAST   FAIL | gold=Keldin | answer='The largest city of Darsen is Düsseldorf. Düsseldorf (or'
+H_NONE   CASE=07 FIRST  FAIL | gold=Feron | answer='The current capital of Belvik is Belvik itself. The town is located in'
+H_NONE   CASE=07 MIDDLE FAIL | gold=Feron | answer='The current capital of Belvik is Belvik itself. The town is located in'
+H_NONE   CASE=07 LAST   FAIL | gold=Feron | answer='The current capital of Belvik is Belvik itself. The town is located in'
+RESULT ARM=H_NONE   SCORE=00/24 FIRST=0/8 MIDDLE=0/8 LAST=0/8 COMPLETE=True TIME=23.01s
+
+====================================================================================================================================
+TEST568 — FINAL H POSITION CAUSAL X-RAY
+====================================================================================================================================
+MODEL: Qwen/Qwen2.5-7B-Instruct GPU: NVIDIA A100-SXM4-40GB
+CUT: 3 PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 BASELINE BLOB: 76dcf80c891640314cbe1849ddffebfae287a23e
+DC       SCORE=24/24 LOST_VS_DC=00 ANSWER_ID_VS_DC=24/24 FIRST=8/8 MIDDLE=8/8 LAST=8/8
+H_FULL   SCORE=24/24 LOST_VS_DC=00 ANSWER_ID_VS_DC=24/24 FIRST=8/8 MIDDLE=8/8 LAST=8/8
+H_BODY   SCORE=18/24 LOST_VS_DC=06 ANSWER_ID_VS_DC=00/24 FIRST=2/8 MIDDLE=8/8 LAST=8/8
+H_PREFIX SCORE=00/24 LOST_VS_DC=24 ANSWER_ID_VS_DC=00/24 FIRST=0/8 MIDDLE=0/8 LAST=0/8
+H_FIRST  SCORE=00/24 LOST_VS_DC=24 ANSWER_ID_VS_DC=00/24 FIRST=0/8 MIDDLE=0/8 LAST=0/8
+H_LAST   SCORE=00/24 LOST_VS_DC=24 ANSWER_ID_VS_DC=00/24 FIRST=0/8 MIDDLE=0/8 LAST=0/8
+H_HEAD   SCORE=00/24 LOST_VS_DC=24 ANSWER_ID_VS_DC=00/24 FIRST=0/8 MIDDLE=0/8 LAST=0/8
+H_TAIL   SCORE=00/24 LOST_VS_DC=24 ANSWER_ID_VS_DC=00/24 FIRST=0/8 MIDDLE=0/8 LAST=0/8
+H_NONE   SCORE=00/24 LOST_VS_DC=24 ANSWER_ID_VS_DC=00/24 FIRST=0/8 MIDDLE=0/8 LAST=0/8
+LOCK SHA: baf2adb177f93ff0d14fbdab10e74d8d3b7c406486b4473b28e34f87c5709a71
+RESULT SHA: a3c2ac8a69163629412c1974bff54d770f39c8d3a5efee385fd62fead39414a5
+PANEL INTEGRITY: PASS
+WEIGHT SENTINEL: PASS TRAINABLE: 0
+TOTAL SECONDS: 184.83
+CAUTION: H_PREFIX only affects initial cartridge prefill; later cartridges contain body tokens only.
+CAUTION: Position masks retain native zero-embedding states outside the injected positions; this is not an information-theoretic isolation proof.
+DECISION: IDENTIFY H-SENSITIVE TOKEN REGIONS BEFORE TEST569
+
+
+====================================================================================================================================
