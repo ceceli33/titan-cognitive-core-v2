@@ -1,0 +1,417 @@
+ 
+==================================================================================================================================
+TEST567 — QWEN H/KV CAUSAL ABLATION · FIXED
+BASELINE GIT BLOB SHA: 76dcf80c891640314cbe1849ddffebfae287a23e
+SOURCE: https://raw.githubusercontent.com/ceceli33/titan-cognitive-core-v2/main/564_qwen_CALIBRATION_start.py
+==================================================================================================================================
+========================================================================================================================
+TEST564 — QWEN MAM · CUT CALIBRATION
+========================================================================================================================
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 84.9kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 943kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 39.1MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 71.0MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 132MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.53MB/s]
+Download complete: 
+
+ 13.1GB,  647MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  472MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:43<00:00, 43.22s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 100.13it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 31.4kB/s]
+GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [4, 5, 6, 7, 8]
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+
+TEST567 START | CUTS: [1, 3, 6] ARMS: ['DC', 'H_ONLY', 'KV_ONLY', 'ZERO'] PANEL: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+BACKBONE VERIFIED: 76dcf80c891640314cbe1849ddffebfae287a23e | ORIGINAL checkpoint/init/append/answer UNMODIFIED
+DC=H+KV | H_ONLY=H without independent early KV | KV_ONLY=independent early KV without H | ZERO=neither
+
+==============================================================================================================
+CUT 1
+
+ARM: DC CUT: 1
+CUT=01 DC      CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+CUT=01 DC      CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+CUT=01 DC      CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+CUT=01 DC      CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+CUT=01 DC      CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+CUT=01 DC      CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+CUT=01 DC      CASE=02 FIRST  PASS | gold=Varos | answer='Varos'
+CUT=01 DC      CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+CUT=01 DC      CASE=02 LAST   PASS | gold=Varos | answer='Varos'
+CUT=01 DC      CASE=03 FIRST  PASS | gold=Belnor | answer='Belnor'
+CUT=01 DC      CASE=03 MIDDLE PASS | gold=Belnor | answer='Belnor'
+CUT=01 DC      CASE=03 LAST   PASS | gold=Belnor | answer='Belnor'
+CUT=01 DC      CASE=04 FIRST  PASS | gold=Selora | answer='Selora'
+CUT=01 DC      CASE=04 MIDDLE PASS | gold=Selora | answer='Selora'
+CUT=01 DC      CASE=04 LAST   PASS | gold=Selora | answer='Selora'
+CUT=01 DC      CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+CUT=01 DC      CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+CUT=01 DC      CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+CUT=01 DC      CASE=06 FIRST  PASS | gold=Keldin | answer='Keldin'
+CUT=01 DC      CASE=06 MIDDLE PASS | gold=Keldin | answer='Keldin'
+CUT=01 DC      CASE=06 LAST   PASS | gold=Keldin | answer='Keldin'
+CUT=01 DC      CASE=07 FIRST  PASS | gold=Feron | answer='Feron'
+CUT=01 DC      CASE=07 MIDDLE PASS | gold=Feron | answer='Feron'
+CUT=01 DC      CASE=07 LAST   PASS | gold=Feron | answer='Feron'
+RESULT CUT=01 ARM=DC      SCORE=24/24 FIRST=8/8 MIDDLE=8/8 LAST=8/8 COMPLETE=True TIME=14.08s
+
+ARM: H_ONLY CUT: 1
+CUT=01 H_ONLY  CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+CUT=01 H_ONLY  CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+CUT=01 H_ONLY  CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+CUT=01 H_ONLY  CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+CUT=01 H_ONLY  CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+CUT=01 H_ONLY  CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+CUT=01 H_ONLY  CASE=02 FIRST  PASS | gold=Varos | answer='Varos'
+CUT=01 H_ONLY  CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+CUT=01 H_ONLY  CASE=02 LAST   PASS | gold=Varos | answer='Varos'
+CUT=01 H_ONLY  CASE=03 FIRST  PASS | gold=Belnor | answer='Belnor'
+CUT=01 H_ONLY  CASE=03 MIDDLE PASS | gold=Belnor | answer='Belnor'
+CUT=01 H_ONLY  CASE=03 LAST   PASS | gold=Belnor | answer='Belnor'
+CUT=01 H_ONLY  CASE=04 FIRST  PASS | gold=Selora | answer='Selora'
+CUT=01 H_ONLY  CASE=04 MIDDLE PASS | gold=Selora | answer='Selora'
+CUT=01 H_ONLY  CASE=04 LAST   PASS | gold=Selora | answer='Selora'
+CUT=01 H_ONLY  CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+CUT=01 H_ONLY  CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+CUT=01 H_ONLY  CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+CUT=01 H_ONLY  CASE=06 FIRST  PASS | gold=Keldin | answer='Keldin'
+CUT=01 H_ONLY  CASE=06 MIDDLE PASS | gold=Keldin | answer='Keldin'
+CUT=01 H_ONLY  CASE=06 LAST   PASS | gold=Keldin | answer='Keldin'
+CUT=01 H_ONLY  CASE=07 FIRST  PASS | gold=Feron | answer='Feron'
+CUT=01 H_ONLY  CASE=07 MIDDLE PASS | gold=Feron | answer='Feron'
+CUT=01 H_ONLY  CASE=07 LAST   PASS | gold=Feron | answer='Feron'
+RESULT CUT=01 ARM=H_ONLY  SCORE=24/24 FIRST=8/8 MIDDLE=8/8 LAST=8/8 COMPLETE=True TIME=12.22s
+
+ARM: KV_ONLY CUT: 1
+CUT=01 KV_ONLY CASE=00 FIRST  FAIL | gold=Melket | answer='As of my last update in 2021, Zorvan is'
+CUT=01 KV_ONLY CASE=00 MIDDLE FAIL | gold=Melket | answer="Zorvan is not a widely recognized name for a capital city. It's"
+CUT=01 KV_ONLY CASE=00 LAST   FAIL | gold=Melket | answer='Zorvan is not a recognized name for a country or a region within a'
+CUT=01 KV_ONLY CASE=01 FIRST  FAIL | gold=Branik | answer='I apologize, but there seems to be a misunderstanding in your question. "Kel'
+CUT=01 KV_ONLY CASE=01 MIDDLE FAIL | gold=Branik | answer='I apologize, but there seems to be a misunderstanding in your question. "Kel'
+CUT=01 KV_ONLY CASE=01 LAST   FAIL | gold=Branik | answer='I apologize, but your question "What was the former capital of Kelvar?"'
+CUT=01 KV_ONLY CASE=02 FIRST  FAIL | gold=Varos | answer='Tarev is a small town in Norway, and it is not the largest'
+CUT=01 KV_ONLY CASE=02 MIDDLE FAIL | gold=Varos | answer='Tarev is a small town in Croatia, and it is not a city'
+CUT=01 KV_ONLY CASE=02 LAST   FAIL | gold=Varos | answer='I apologize, but there seems to be a misunderstanding. "Tarev"'
+CUT=01 KV_ONLY CASE=03 FIRST  FAIL | gold=Belnor | answer='There seems to be a misunderstanding in your question. "Falven" is not'
+CUT=01 KV_ONLY CASE=03 MIDDLE FAIL | gold=Belnor | answer='There seems to be a misunderstanding in your question. "Falven" is not'
+CUT=01 KV_ONLY CASE=03 LAST   FAIL | gold=Belnor | answer='There seems to be a misunderstanding in your question. "Falven" is not'
+CUT=01 KV_ONLY CASE=04 FIRST  FAIL | gold=Selora | answer='There seems to be a misunderstanding in your question. "Ravik" is'
+CUT=01 KV_ONLY CASE=04 MIDDLE FAIL | gold=Selora | answer='There seems to be a misunderstanding in your question. "Ravik" is'
+CUT=01 KV_ONLY CASE=04 LAST   FAIL | gold=Selora | answer='There seems to be a misunderstanding in your question. "Ravik" is'
+CUT=01 KV_ONLY CASE=05 FIRST  FAIL | gold=Pareth | answer='There seems to be a misunderstanding in your question. "Nemor" is'
+CUT=01 KV_ONLY CASE=05 MIDDLE FAIL | gold=Pareth | answer='There seems to be a misunderstanding in your question. "Nemor" is'
+CUT=01 KV_ONLY CASE=05 LAST   FAIL | gold=Pareth | answer='There seems to be a misunderstanding in your question. "Nemor" is'
+CUT=01 KV_ONLY CASE=06 FIRST  FAIL | gold=Keldin | answer='I apologize, but your question is a bit unclear. There is no "D'
+CUT=01 KV_ONLY CASE=06 MIDDLE FAIL | gold=Keldin | answer='I apologize, but there seems to be a misunderstanding. "Darsen"'
+CUT=01 KV_ONLY CASE=06 LAST   FAIL | gold=Keldin | answer='I apologize, but there seems to be a misunderstanding. "Darsen"'
+CUT=01 KV_ONLY CASE=07 FIRST  FAIL | gold=Feron | answer='Belvik is a borough of Bærum Municipality, not directly a city'
+CUT=01 KV_ONLY CASE=07 MIDDLE FAIL | gold=Feron | answer='Belvik is a municipality in Norway. As of my last update, the current'
+CUT=01 KV_ONLY CASE=07 LAST   FAIL | gold=Feron | answer='As of my last update, the current capital of Belvik is Belvik.'
+RESULT CUT=01 ARM=KV_ONLY SCORE=00/24 FIRST=0/8 MIDDLE=0/8 LAST=0/8 COMPLETE=True TIME=23.53s
+
+ARM: ZERO CUT: 1
+CUT=01 ZERO    CASE=00 FIRST  FAIL | gold=Melket | answer='The current capital of Zorvan is not widely recognized as a city with an'
+CUT=01 ZERO    CASE=00 MIDDLE FAIL | gold=Melket | answer='The current capital of Zorvan is not widely recognized as a city with an'
+CUT=01 ZERO    CASE=00 LAST   FAIL | gold=Melket | answer='The current capital of Zorvan is not widely recognized as a city with an'
+CUT=01 ZERO    CASE=01 FIRST  FAIL | gold=Branik | answer='The former capital of Kelvar is not a widely recognized or established place, and'
+CUT=01 ZERO    CASE=01 MIDDLE FAIL | gold=Branik | answer='The former capital of Kelvar is not a widely recognized or established place, and'
+CUT=01 ZERO    CASE=01 LAST   FAIL | gold=Branik | answer='The former capital of Kelvar is not a widely recognized or established place, and'
+CUT=01 ZERO    CASE=02 FIRST  FAIL | gold=Varos | answer='The largest city of Tarev is not specified in the given text. T'
+CUT=01 ZERO    CASE=02 MIDDLE FAIL | gold=Varos | answer='The largest city of Tarev is not specified in the given text.T'
+CUT=01 ZERO    CASE=02 LAST   FAIL | gold=Varos | answer='The largest city of Tarev is not specified in the given text.T'
+CUT=01 ZERO    CASE=03 FIRST  FAIL | gold=Belnor | answer="The current capital of Falven is not a well-known place, and it's"
+CUT=01 ZERO    CASE=03 MIDDLE FAIL | gold=Belnor | answer='The current capital of Falven is not readily available as "Falven" does'
+CUT=01 ZERO    CASE=03 LAST   FAIL | gold=Belnor | answer='The current capital of Falven is not readily available as "Falven" does'
+CUT=01 ZERO    CASE=04 FIRST  FAIL | gold=Selora | answer='The current capital of Ravik is not a well-known or officially recognized place,'
+CUT=01 ZERO    CASE=04 MIDDLE FAIL | gold=Selora | answer='The current capital of Ravik is not a well-known or officially recognized place,'
+CUT=01 ZERO    CASE=04 LAST   FAIL | gold=Selora | answer='The current capital of Ravik is not a well-known or officially recognized place,'
+CUT=01 ZERO    CASE=05 FIRST  FAIL | gold=Pareth | answer='The former capital of Nemor is Nemoresca.17\n\nNem'
+CUT=01 ZERO    CASE=05 MIDDLE FAIL | gold=Pareth | answer='The former capital of Nemor is Nemoresca.17\n\nNem'
+CUT=01 ZERO    CASE=05 LAST   FAIL | gold=Pareth | answer='The former capital of Nemor is Nemoresca.17\n\nNem'
+CUT=01 ZERO    CASE=06 FIRST  FAIL | gold=Keldin | answer='The largest city of Darsen is Düsseldorf. Düsseldorf is the largest'
+CUT=01 ZERO    CASE=06 MIDDLE FAIL | gold=Keldin | answer='The largest city of Darsen is Düsseldorf. Düsseldorf (or'
+CUT=01 ZERO    CASE=06 LAST   FAIL | gold=Keldin | answer='The largest city of Darsen is Düsseldorf. Düsseldorf (or'
+CUT=01 ZERO    CASE=07 FIRST  FAIL | gold=Feron | answer='The current capital of Belvik is Belvik itself. The town is located in'
+CUT=01 ZERO    CASE=07 MIDDLE FAIL | gold=Feron | answer='The current capital of Belvik is Belvik itself. The town is located in'
+CUT=01 ZERO    CASE=07 LAST   FAIL | gold=Feron | answer='The current capital of Belvik is Belvik itself. The town is located in'
+RESULT CUT=01 ARM=ZERO    SCORE=00/24 FIRST=0/8 MIDDLE=0/8 LAST=0/8 COMPLETE=True TIME=23.48s
+
+==============================================================================================================
+CUT 3
+
+ARM: DC CUT: 3
+CUT=03 DC      CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+CUT=03 DC      CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+CUT=03 DC      CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+CUT=03 DC      CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+CUT=03 DC      CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+CUT=03 DC      CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+CUT=03 DC      CASE=02 FIRST  PASS | gold=Varos | answer='Varos'
+CUT=03 DC      CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+CUT=03 DC      CASE=02 LAST   PASS | gold=Varos | answer='Varos'
+CUT=03 DC      CASE=03 FIRST  PASS | gold=Belnor | answer='Belnor'
+CUT=03 DC      CASE=03 MIDDLE PASS | gold=Belnor | answer='Belnor'
+CUT=03 DC      CASE=03 LAST   PASS | gold=Belnor | answer='Belnor'
+CUT=03 DC      CASE=04 FIRST  PASS | gold=Selora | answer='Selora'
+CUT=03 DC      CASE=04 MIDDLE PASS | gold=Selora | answer='Selora'
+CUT=03 DC      CASE=04 LAST   PASS | gold=Selora | answer='Selora'
+CUT=03 DC      CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+CUT=03 DC      CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+CUT=03 DC      CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+CUT=03 DC      CASE=06 FIRST  PASS | gold=Keldin | answer='Keldin'
+CUT=03 DC      CASE=06 MIDDLE PASS | gold=Keldin | answer='Keldin'
+CUT=03 DC      CASE=06 LAST   PASS | gold=Keldin | answer='Keldin'
+CUT=03 DC      CASE=07 FIRST  PASS | gold=Feron | answer='Feron'
+CUT=03 DC      CASE=07 MIDDLE PASS | gold=Feron | answer='Feron'
+CUT=03 DC      CASE=07 LAST   PASS | gold=Feron | answer='Feron'
+RESULT CUT=03 ARM=DC      SCORE=24/24 FIRST=8/8 MIDDLE=8/8 LAST=8/8 COMPLETE=True TIME=12.84s
+
+ARM: H_ONLY CUT: 3
+CUT=03 H_ONLY  CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+CUT=03 H_ONLY  CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+CUT=03 H_ONLY  CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+CUT=03 H_ONLY  CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+CUT=03 H_ONLY  CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+CUT=03 H_ONLY  CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+CUT=03 H_ONLY  CASE=02 FIRST  PASS | gold=Varos | answer='Varos'
+CUT=03 H_ONLY  CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+CUT=03 H_ONLY  CASE=02 LAST   PASS | gold=Varos | answer='Varos'
+CUT=03 H_ONLY  CASE=03 FIRST  PASS | gold=Belnor | answer='Belnor'
+CUT=03 H_ONLY  CASE=03 MIDDLE PASS | gold=Belnor | answer='Belnor'
+CUT=03 H_ONLY  CASE=03 LAST   PASS | gold=Belnor | answer='Belnor'
+CUT=03 H_ONLY  CASE=04 FIRST  PASS | gold=Selora | answer='Selora'
+CUT=03 H_ONLY  CASE=04 MIDDLE PASS | gold=Selora | answer='Selora'
+CUT=03 H_ONLY  CASE=04 LAST   PASS | gold=Selora | answer='Selora'
+CUT=03 H_ONLY  CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+CUT=03 H_ONLY  CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+CUT=03 H_ONLY  CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+CUT=03 H_ONLY  CASE=06 FIRST  PASS | gold=Keldin | answer='Keldin'
+CUT=03 H_ONLY  CASE=06 MIDDLE PASS | gold=Keldin | answer='Keldin'
+CUT=03 H_ONLY  CASE=06 LAST   PASS | gold=Keldin | answer='Keldin'
+CUT=03 H_ONLY  CASE=07 FIRST  PASS | gold=Feron | answer='Feron'
+CUT=03 H_ONLY  CASE=07 MIDDLE PASS | gold=Feron | answer='Feron'
+CUT=03 H_ONLY  CASE=07 LAST   PASS | gold=Feron | answer='Feron'
+RESULT CUT=03 ARM=H_ONLY  SCORE=24/24 FIRST=8/8 MIDDLE=8/8 LAST=8/8 COMPLETE=True TIME=12.43s
+
+ARM: KV_ONLY CUT: 3
+CUT=03 KV_ONLY CASE=00 FIRST  FAIL | gold=Melket | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=00 MIDDLE FAIL | gold=Melket | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=00 LAST   FAIL | gold=Melket | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=01 FIRST  FAIL | gold=Branik | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=01 MIDDLE FAIL | gold=Branik | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=01 LAST   FAIL | gold=Branik | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=02 FIRST  FAIL | gold=Varos | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=02 MIDDLE FAIL | gold=Varos | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=02 LAST   FAIL | gold=Varos | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=03 FIRST  FAIL | gold=Belnor | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=03 MIDDLE FAIL | gold=Belnor | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=03 LAST   FAIL | gold=Belnor | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=04 FIRST  FAIL | gold=Selora | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=04 MIDDLE FAIL | gold=Selora | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=04 LAST   FAIL | gold=Selora | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=05 FIRST  FAIL | gold=Pareth | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=05 MIDDLE FAIL | gold=Pareth | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=05 LAST   FAIL | gold=Pareth | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=06 FIRST  FAIL | gold=Keldin | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=06 MIDDLE FAIL | gold=Keldin | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=06 LAST   FAIL | gold=Keldin | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=07 FIRST  FAIL | gold=Feron | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=07 MIDDLE FAIL | gold=Feron | answer='0000000000000000'
+CUT=03 KV_ONLY CASE=07 LAST   FAIL | gold=Feron | answer='0000000000000000'
+RESULT CUT=03 ARM=KV_ONLY SCORE=00/24 FIRST=0/8 MIDDLE=0/8 LAST=0/8 COMPLETE=True TIME=24.01s
+
+ARM: ZERO CUT: 3
+CUT=03 ZERO    CASE=00 FIRST  FAIL | gold=Melket | answer='The current capital of Zorvan is not widely recognized as a city with an'
+CUT=03 ZERO    CASE=00 MIDDLE FAIL | gold=Melket | answer='The current capital of Zorvan is not widely recognized as a city with an'
+CUT=03 ZERO    CASE=00 LAST   FAIL | gold=Melket | answer='The current capital of Zorvan is not widely recognized as a city with an'
+CUT=03 ZERO    CASE=01 FIRST  FAIL | gold=Branik | answer='The former capital of Kelvar is not a widely recognized or established place, and'
+CUT=03 ZERO    CASE=01 MIDDLE FAIL | gold=Branik | answer='The former capital of Kelvar is not a widely recognized or established place, and'
+CUT=03 ZERO    CASE=01 LAST   FAIL | gold=Branik | answer='The former capital of Kelvar is not a widely recognized or established place, and'
+CUT=03 ZERO    CASE=02 FIRST  FAIL | gold=Varos | answer='The largest city of Tarev is not specified in the given text. T'
+CUT=03 ZERO    CASE=02 MIDDLE FAIL | gold=Varos | answer='The largest city of Tarev is not specified in the given text.T'
+CUT=03 ZERO    CASE=02 LAST   FAIL | gold=Varos | answer='The largest city of Tarev is not specified in the given text.T'
+CUT=03 ZERO    CASE=03 FIRST  FAIL | gold=Belnor | answer="The current capital of Falven is not a well-known place, and it's"
+CUT=03 ZERO    CASE=03 MIDDLE FAIL | gold=Belnor | answer='The current capital of Falven is not readily available as "Falven" does'
+CUT=03 ZERO    CASE=03 LAST   FAIL | gold=Belnor | answer='The current capital of Falven is not readily available as "Falven" does'
+CUT=03 ZERO    CASE=04 FIRST  FAIL | gold=Selora | answer='The current capital of Ravik is not a well-known or officially recognized place,'
+CUT=03 ZERO    CASE=04 MIDDLE FAIL | gold=Selora | answer='The current capital of Ravik is not a well-known or officially recognized place,'
+CUT=03 ZERO    CASE=04 LAST   FAIL | gold=Selora | answer='The current capital of Ravik is not a well-known or officially recognized place,'
+CUT=03 ZERO    CASE=05 FIRST  FAIL | gold=Pareth | answer='The former capital of Nemor is Nemoresca.17\n\nNem'
+CUT=03 ZERO    CASE=05 MIDDLE FAIL | gold=Pareth | answer='The former capital of Nemor is Nemoresca.17\n\nNem'
+CUT=03 ZERO    CASE=05 LAST   FAIL | gold=Pareth | answer='The former capital of Nemor is Nemoresca.17\n\nNem'
+CUT=03 ZERO    CASE=06 FIRST  FAIL | gold=Keldin | answer='The largest city of Darsen is Düsseldorf. Düsseldorf is the largest'
+CUT=03 ZERO    CASE=06 MIDDLE FAIL | gold=Keldin | answer='The largest city of Darsen is Düsseldorf. Düsseldorf (or'
+CUT=03 ZERO    CASE=06 LAST   FAIL | gold=Keldin | answer='The largest city of Darsen is Düsseldorf. Düsseldorf (or'
+CUT=03 ZERO    CASE=07 FIRST  FAIL | gold=Feron | answer='The current capital of Belvik is Belvik itself. The town is located in'
+CUT=03 ZERO    CASE=07 MIDDLE FAIL | gold=Feron | answer='The current capital of Belvik is Belvik itself. The town is located in'
+CUT=03 ZERO    CASE=07 LAST   FAIL | gold=Feron | answer='The current capital of Belvik is Belvik itself. The town is located in'
+RESULT CUT=03 ARM=ZERO    SCORE=00/24 FIRST=0/8 MIDDLE=0/8 LAST=0/8 COMPLETE=True TIME=23.61s
+
+==============================================================================================================
+CUT 6
+
+ARM: DC CUT: 6
+CUT=06 DC      CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+CUT=06 DC      CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+CUT=06 DC      CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+CUT=06 DC      CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+CUT=06 DC      CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+CUT=06 DC      CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+CUT=06 DC      CASE=02 FIRST  PASS | gold=Varos | answer='Varos'
+CUT=06 DC      CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+CUT=06 DC      CASE=02 LAST   PASS | gold=Varos | answer='Varos'
+CUT=06 DC      CASE=03 FIRST  PASS | gold=Belnor | answer='Belnor'
+CUT=06 DC      CASE=03 MIDDLE PASS | gold=Belnor | answer='Belnor'
+CUT=06 DC      CASE=03 LAST   PASS | gold=Belnor | answer='Belnor'
+CUT=06 DC      CASE=04 FIRST  PASS | gold=Selora | answer='Selora'
+CUT=06 DC      CASE=04 MIDDLE PASS | gold=Selora | answer='Selora'
+CUT=06 DC      CASE=04 LAST   PASS | gold=Selora | answer='Selora'
+CUT=06 DC      CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+CUT=06 DC      CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+CUT=06 DC      CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+CUT=06 DC      CASE=06 FIRST  PASS | gold=Keldin | answer='Keldin'
+CUT=06 DC      CASE=06 MIDDLE PASS | gold=Keldin | answer='Keldin'
+CUT=06 DC      CASE=06 LAST   PASS | gold=Keldin | answer='Keldin'
+CUT=06 DC      CASE=07 FIRST  PASS | gold=Feron | answer='Feron'
+CUT=06 DC      CASE=07 MIDDLE PASS | gold=Feron | answer='Feron'
+CUT=06 DC      CASE=07 LAST   PASS | gold=Feron | answer='Feron'
+RESULT CUT=06 ARM=DC      SCORE=24/24 FIRST=8/8 MIDDLE=8/8 LAST=8/8 COMPLETE=True TIME=13.1s
+
+ARM: H_ONLY CUT: 6
+CUT=06 H_ONLY  CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+CUT=06 H_ONLY  CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+CUT=06 H_ONLY  CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+CUT=06 H_ONLY  CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+CUT=06 H_ONLY  CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+CUT=06 H_ONLY  CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+CUT=06 H_ONLY  CASE=02 FIRST  PASS | gold=Varos | answer='Varos'
+CUT=06 H_ONLY  CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+CUT=06 H_ONLY  CASE=02 LAST   PASS | gold=Varos | answer='Varos'
+CUT=06 H_ONLY  CASE=03 FIRST  PASS | gold=Belnor | answer='Belnor'
+CUT=06 H_ONLY  CASE=03 MIDDLE PASS | gold=Belnor | answer='Belnor'
+CUT=06 H_ONLY  CASE=03 LAST   PASS | gold=Belnor | answer='Belnor'
+CUT=06 H_ONLY  CASE=04 FIRST  PASS | gold=Selora | answer='Selora'
+CUT=06 H_ONLY  CASE=04 MIDDLE FAIL | gold=Selora | answer='Sorven'
+CUT=06 H_ONLY  CASE=04 LAST   PASS | gold=Selora | answer='Selora'
+CUT=06 H_ONLY  CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+CUT=06 H_ONLY  CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+CUT=06 H_ONLY  CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+CUT=06 H_ONLY  CASE=06 FIRST  PASS | gold=Keldin | answer='Keldin'
+CUT=06 H_ONLY  CASE=06 MIDDLE PASS | gold=Keldin | answer='Keldin'
+CUT=06 H_ONLY  CASE=06 LAST   PASS | gold=Keldin | answer='Keldin'
+CUT=06 H_ONLY  CASE=07 FIRST  PASS | gold=Feron | answer='Feron'
+CUT=06 H_ONLY  CASE=07 MIDDLE PASS | gold=Feron | answer='Feron'
+CUT=06 H_ONLY  CASE=07 LAST   PASS | gold=Feron | answer='Feron'
+RESULT CUT=06 ARM=H_ONLY  SCORE=23/24 FIRST=8/8 MIDDLE=7/8 LAST=8/8 COMPLETE=True TIME=12.47s
+
+ARM: KV_ONLY CUT: 6
+CUT=06 KV_ONLY CASE=00 FIRST  FAIL | gold=Melket | answer='0.00000000000000'
+CUT=06 KV_ONLY CASE=00 MIDDLE FAIL | gold=Melket | answer='0000000000000000'
+CUT=06 KV_ONLY CASE=00 LAST   FAIL | gold=Melket | answer='0.00000000000000'
+CUT=06 KV_ONLY CASE=01 FIRST  FAIL | gold=Branik | answer='What was the former capital of Kelvar?\n\nANSWER:\nThe former capital of'
+CUT=06 KV_ONLY CASE=01 MIDDLE FAIL | gold=Branik | answer='0.00000000000000'
+CUT=06 KV_ONLY CASE=01 LAST   FAIL | gold=Branik | answer='What was the former capital of Kelvar?\n\nAnswer:\nThe former capital of Kel'
+CUT=06 KV_ONLY CASE=02 FIRST  FAIL | gold=Varos | answer='What is the largest city of Tarev?\n\nAnswer:\nThe largest city of'
+CUT=06 KV_ONLY CASE=02 MIDDLE FAIL | gold=Varos | answer='What is the largest city of Tarev?\n\nAnswer:\nThe largest city of'
+CUT=06 KV_ONLY CASE=02 LAST   FAIL | gold=Varos | answer='What is the largest city of Tarev?\n\nAnswer:\nThe largest city of'
+CUT=06 KV_ONLY CASE=03 FIRST  FAIL | gold=Belnor | answer='What is the current capital of Falven?\n\nAnswer:\nThe current capital of Fal'
+CUT=06 KV_ONLY CASE=03 MIDDLE FAIL | gold=Belnor | answer='What is the current capital of Falven?\n\nAnswer:\nThe current capital of Fal'
+CUT=06 KV_ONLY CASE=03 LAST   FAIL | gold=Belnor | answer='0\n0\n0\n0\n0\n0\n0\n0'
+CUT=06 KV_ONLY CASE=04 FIRST  FAIL | gold=Selora | answer='What is the current capital of Ravik?\n\nAnswer:\nThe current capital of Rav'
+CUT=06 KV_ONLY CASE=04 MIDDLE FAIL | gold=Selora | answer='0.00000000000000'
+CUT=06 KV_ONLY CASE=04 LAST   FAIL | gold=Selora | answer='0.00000000000000'
+CUT=06 KV_ONLY CASE=05 FIRST  FAIL | gold=Pareth | answer='0.00000000000000'
+CUT=06 KV_ONLY CASE=05 MIDDLE FAIL | gold=Pareth | answer='What was the former capital of Nemor?\nWhat was the former capital of Nem'
+CUT=06 KV_ONLY CASE=05 LAST   FAIL | gold=Pareth | answer='What was the former capital of Nemor?\n\nAnswer:\nThe former capital of Nem'
+CUT=06 KV_ONLY CASE=06 FIRST  FAIL | gold=Keldin | answer='What is the largest city of Darsen?\n\nAnswer:\nThe largest city of'
+CUT=06 KV_ONLY CASE=06 MIDDLE FAIL | gold=Keldin | answer='0\n0\n0\n0\n0\n0\n0\n0'
+CUT=06 KV_ONLY CASE=06 LAST   FAIL | gold=Keldin | answer='What is the largest city of Darsen?\n\nAnswer:\nThe largest city of'
+CUT=06 KV_ONLY CASE=07 FIRST  FAIL | gold=Feron | answer='0.00000000000000'
+CUT=06 KV_ONLY CASE=07 MIDDLE FAIL | gold=Feron | answer='0.00000000000000'
+CUT=06 KV_ONLY CASE=07 LAST   FAIL | gold=Feron | answer='0.00000000000000'
+RESULT CUT=06 ARM=KV_ONLY SCORE=00/24 FIRST=0/8 MIDDLE=0/8 LAST=0/8 COMPLETE=True TIME=24.23s
+
+ARM: ZERO CUT: 6
+CUT=06 ZERO    CASE=00 FIRST  FAIL | gold=Melket | answer='The current capital of Zorvan is not widely recognized as a city with an'
+CUT=06 ZERO    CASE=00 MIDDLE FAIL | gold=Melket | answer='The current capital of Zorvan is not widely recognized as a city with an'
+CUT=06 ZERO    CASE=00 LAST   FAIL | gold=Melket | answer='The current capital of Zorvan is not widely recognized as a city with an'
+CUT=06 ZERO    CASE=01 FIRST  FAIL | gold=Branik | answer='The former capital of Kelvar is not a widely recognized or established place, and'
+CUT=06 ZERO    CASE=01 MIDDLE FAIL | gold=Branik | answer='The former capital of Kelvar is not a widely recognized or established place, and'
+CUT=06 ZERO    CASE=01 LAST   FAIL | gold=Branik | answer='The former capital of Kelvar is not a widely recognized or established place, and'
+CUT=06 ZERO    CASE=02 FIRST  FAIL | gold=Varos | answer='The largest city of Tarev is not specified in the given text. T'
+CUT=06 ZERO    CASE=02 MIDDLE FAIL | gold=Varos | answer='The largest city of Tarev is not specified in the given text.T'
+CUT=06 ZERO    CASE=02 LAST   FAIL | gold=Varos | answer='The largest city of Tarev is not specified in the given text.T'
+CUT=06 ZERO    CASE=03 FIRST  FAIL | gold=Belnor | answer="The current capital of Falven is not a well-known place, and it's"
+CUT=06 ZERO    CASE=03 MIDDLE FAIL | gold=Belnor | answer='The current capital of Falven is not readily available as "Falven" does'
+CUT=06 ZERO    CASE=03 LAST   FAIL | gold=Belnor | answer='The current capital of Falven is not readily available as "Falven" does'
+CUT=06 ZERO    CASE=04 FIRST  FAIL | gold=Selora | answer='The current capital of Ravik is not a well-known or officially recognized place,'
+CUT=06 ZERO    CASE=04 MIDDLE FAIL | gold=Selora | answer='The current capital of Ravik is not a well-known or officially recognized place,'
+CUT=06 ZERO    CASE=04 LAST   FAIL | gold=Selora | answer='The current capital of Ravik is not a well-known or officially recognized place,'
+CUT=06 ZERO    CASE=05 FIRST  FAIL | gold=Pareth | answer='The former capital of Nemor is Nemoresca.17\n\nNem'
+CUT=06 ZERO    CASE=05 MIDDLE FAIL | gold=Pareth | answer='The former capital of Nemor is Nemoresca.17\n\nNem'
+CUT=06 ZERO    CASE=05 LAST   FAIL | gold=Pareth | answer='The former capital of Nemor is Nemoresca.17\n\nNem'
+CUT=06 ZERO    CASE=06 FIRST  FAIL | gold=Keldin | answer='The largest city of Darsen is Düsseldorf. Düsseldorf is the largest'
+CUT=06 ZERO    CASE=06 MIDDLE FAIL | gold=Keldin | answer='The largest city of Darsen is Düsseldorf. Düsseldorf (or'
+CUT=06 ZERO    CASE=06 LAST   FAIL | gold=Keldin | answer='The largest city of Darsen is Düsseldorf. Düsseldorf (or'
+CUT=06 ZERO    CASE=07 FIRST  FAIL | gold=Feron | answer='The current capital of Belvik is Belvik itself. The town is located in'
+CUT=06 ZERO    CASE=07 MIDDLE FAIL | gold=Feron | answer='The current capital of Belvik is Belvik itself. The town is located in'
+CUT=06 ZERO    CASE=07 LAST   FAIL | gold=Feron | answer='The current capital of Belvik is Belvik itself. The town is located in'
+RESULT CUT=06 ARM=ZERO    SCORE=00/24 FIRST=0/8 MIDDLE=0/8 LAST=0/8 COMPLETE=True TIME=23.39s
+
+==================================================================================================================================
+TEST567 — FINAL CAUSAL ABLATION MATRIX
+==================================================================================================================================
+MODEL: Qwen/Qwen2.5-7B-Instruct GPU: NVIDIA A100-SXM4-40GB
+BASELINE GIT BLOB SHA: 76dcf80c891640314cbe1849ddffebfae287a23e
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+ARM DEFINITIONS: DC=H+KV | H_ONLY=H+native early KV | KV_ONLY=no H+independent early KV | ZERO=no H+native early KV
+CUT=01 DC=24/24 H_ONLY=24/24 KV_ONLY=00/24 ZERO=00/24
+  H_ONLY  VS DC | LOST=00 GAINED=00 ANSWER_IDENTITY=24/24
+  KV_ONLY VS DC | LOST=24 GAINED=00 ANSWER_IDENTITY=00/24
+  ZERO    VS DC | LOST=24 GAINED=00 ANSWER_IDENTITY=00/24
+CUT=03 DC=24/24 H_ONLY=24/24 KV_ONLY=00/24 ZERO=00/24
+  H_ONLY  VS DC | LOST=00 GAINED=00 ANSWER_IDENTITY=24/24
+  KV_ONLY VS DC | LOST=24 GAINED=00 ANSWER_IDENTITY=00/24
+  ZERO    VS DC | LOST=24 GAINED=00 ANSWER_IDENTITY=00/24
+CUT=06 DC=24/24 H_ONLY=23/24 KV_ONLY=00/24 ZERO=00/24
+  H_ONLY  VS DC | LOST=01 GAINED=00 ANSWER_IDENTITY=23/24
+  KV_ONLY VS DC | LOST=24 GAINED=00 ANSWER_IDENTITY=00/24
+  ZERO    VS DC | LOST=24 GAINED=00 ANSWER_IDENTITY=00/24
+LOCK SHA: 1c60ab182134c36c9f64790eacfe02a94f99818bbbb47012fcf32ce141aa7650
+RESULT SHA: 115e192f88e42d74fd83bd4b1d82f0c38cebd1ea965c42564e3d571df4a97075
+PANEL INTEGRITY: PASS
+WEIGHT SENTINEL: PASS TRAINABLE: 0
+TOTAL SECONDS: 220.13
+INTERPRETATION: H_ONLY and KV_ONLY are pathway ablations, not clean independent causal transplants.
+INTERPRETATION: Removing H changes upper states; removing early KV changes subsequent attention inputs.
+DECISION: REVIEW H/KV ABLATION MATRIX BEFORE TEST568
+
+
+==================================================================================================================================
