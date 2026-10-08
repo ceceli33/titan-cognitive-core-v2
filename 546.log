@@ -1,0 +1,223 @@
+ 
+================================================================================================================================================================
+TEST546A — AKBASCORE MAM · VARAN 1 · FULL-CONTEXT UPPER BOUND
+NATIVE RELATIONAL BINDING · CURRENT / NEAR / FORMER / ROLE / CROSS · DIRECT / PARAPHRASE / TURKISH
+RETRIEVAL YOK · CARTRIDGE YOK · ROUTER YOK · SCORER YOK · TRAINING YOK
+================================================================================================================================================================
+
+[1/8] Donmuş Mistral...
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 601/601 [00:00<00:00, 57.6kB/s]
+tokenizer_config.json: 100%
+
+ 141k/141k [00:00<00:00, 17.0MB/s]
+tokenizer.json: 100%
+
+ 1.96M/1.96M [00:00<00:00, 83.9MB/s]
+tokenizer.model: reconstructing file: 100%
+
+  587kB /  587kB, 57.0kB/s  
+tokenizer.model: downloading bytes: 
+
+  448kB, 43.5kB/s  
+special_tokens_map.json: 100%
+
+ 414/414 [00:00<00:00, 51.3kB/s]
+model.safetensors.index.json: 100%
+
+ 23.9k/23.9k [00:00<00:00, 2.95MB/s]
+Download complete: 
+
+ 12.4GB,  185MB/s  
+Reconstruction complete: 100%
+
+ 14.5GB / 14.5GB,  509MB/s  
+Fetching 3 files: 100%
+
+ 3/3 [00:41<00:00, 41.33s/it]
+Loading weights: 100%
+
+ 291/291 [00:03<00:00, 80.32it/s]
+generation_config.json: 100%
+
+ 116/116 [00:00<00:00, 15.8kB/s]
+      mistralai/Mistral-7B-Instruct-v0.3 | NVIDIA A100-SXM4-40GB | 32L H=4096 QH=32 KVH=8 HD=128 | trainable=0
+      LOCK SHA: 8b45e4a323afaea5b2915fbf9e2c6f4a8cd99256a2f2515d7d6b018a55ee5a74
+
+[2/8] Panel mühürü...
+      Worlds=24 | facts/world=5 | queries/world=12 | orders=2 | total generations=576
+      Gold cevaplar prompt içine konmuyor.
+      Panel response görülmeden sabit.
+      FORWARD ve REVERSE aynı olgular, yalnız sıra ters.
+
+[3/8] FORWARD context davranışı...
+      01/24 Zorvan
+      02/24 Kelvar
+      03/24 Tarev
+      04/24 Belnor
+      05/24 Ravik
+      06/24 Nemor
+      07/24 Darsen
+      08/24 Feron
+      09/24 Larev
+      10/24 Torven
+      11/24 Selnor
+      12/24 Mirev
+      13/24 Varen
+      14/24 Kelor
+      15/24 Narev
+      16/24 Dervan
+      17/24 Calnor
+      18/24 Parel
+      19/24 Sorven
+      20/24 Barel
+      21/24 Ralen
+      22/24 Norel
+      23/24 Tervan
+      24/24 Karev
+
+[4/8] REVERSE context davranışı...
+      01/24 Zorvan
+      02/24 Kelvar
+      03/24 Tarev
+      04/24 Belnor
+      05/24 Ravik
+      06/24 Nemor
+      07/24 Darsen
+      08/24 Feron
+      09/24 Larev
+      10/24 Torven
+      11/24 Selnor
+      12/24 Mirev
+      13/24 Varen
+      14/24 Kelor
+      15/24 Narev
+      16/24 Dervan
+      17/24 Calnor
+      18/24 Parel
+      19/24 Sorven
+      20/24 Barel
+      21/24 Ralen
+      22/24 Norel
+      23/24 Tervan
+      24/24 Karev
+
+[5/8] Önceden tanımlı davranış tablosu...
+
+      FORWARD
+      CURRENT_DIRECT   24/24 = 1.0000
+      CURRENT_PARA     22/24 = 0.9167
+      CURRENT_TR       23/24 = 0.9583
+      FORMER_DIRECT    24/24 = 1.0000
+      FORMER_PARA      24/24 = 1.0000
+      FORMER_TR        24/24 = 1.0000
+      NEAR_DIRECT      24/24 = 1.0000
+      NEAR_PARA        24/24 = 1.0000
+      NEAR_TR          24/24 = 1.0000
+      ROLE_DIRECT      24/24 = 1.0000
+      ROLE_PARA        23/24 = 0.9583
+      ROLE_TR          05/24 = 0.2083
+      ALL              265/288 = 0.9201
+
+      REVERSE
+      CURRENT_DIRECT   24/24 = 1.0000
+      CURRENT_PARA     24/24 = 1.0000
+      CURRENT_TR       24/24 = 1.0000
+      FORMER_DIRECT    24/24 = 1.0000
+      FORMER_PARA      24/24 = 1.0000
+      FORMER_TR        24/24 = 1.0000
+      NEAR_DIRECT      24/24 = 1.0000
+      NEAR_PARA        24/24 = 1.0000
+      NEAR_TR          24/24 = 1.0000
+      ROLE_DIRECT      03/24 = 0.1250
+      ROLE_PARA        05/24 = 0.2083
+      ROLE_TR          00/24 = 0.0000
+      ALL              224/288 = 0.7778
+
+[6/8] İlişki / dil / sıra dayanıklılığı...
+      CURRENT : 141/144 = 0.9792
+      FORMER  : 144/144 = 1.0000
+      NEAR    : 144/144 = 1.0000
+      ROLE    : 060/144 = 0.4167
+      DIRECT  : 171/192 = 0.8906
+      PARA    : 170/192 = 0.8854
+      TURKISH : 148/192 = 0.7708
+      BOTH ORDERS CORRECT : 220/288 = 0.7639
+      SAME OUTPUT         : 220/288 = 0.7639
+      CORRECTNESS FLIP    : 49/288 = 0.1701
+
+[7/8] Hataların çeldirici analizi...
+      Errors: 87/576
+      NEAR_VALUE    : 2
+      FORMER_VALUE  : 3
+      ROLE_SUBJECT  : 71
+      CROSS_VALUE   : 1
+      OTHER         : 10
+
+      İlk hata örnekleri:
+      W01 Kelvar   FORWARD CURRENT_PARA     gold=Nareth     out='Solven' class=NEAR_VALUE
+      W02 Tarev    FORWARD ROLE_TR          gold=Tarev      out='Tarev (city)' class=ROLE_SUBJECT
+      W03 Belnor   FORWARD ROLE_TR          gold=Belnor     out='Belnor (Belnor)' class=ROLE_SUBJECT
+      W04 Ravik    FORWARD ROLE_TR          gold=Ravik      out='Ravik (city)' class=ROLE_SUBJECT
+      W05 Nemor    FORWARD ROLE_TR          gold=Nemor      out='Calven (Nemor)' class=ROLE_SUBJECT
+      W06 Darsen   FORWARD ROLE_TR          gold=Darsen     out='Darsen (city)' class=ROLE_SUBJECT
+      W07 Feron    FORWARD ROLE_TR          gold=Feron      out='Feron (Feron)' class=ROLE_SUBJECT
+      W08 Larev    FORWARD ROLE_TR          gold=Larev      out='Larev (city)' class=ROLE_SUBJECT
+      W09 Torven   FORWARD CURRENT_PARA     gold=Elsar      out='Marvek' class=NEAR_VALUE
+      W09 Torven   FORWARD ROLE_TR          gold=Torven     out='Torven (city)' class=ROLE_SUBJECT
+      W10 Selnor   FORWARD ROLE_TR          gold=Selnor     out='Selnor (Selnor in English alphabet)' class=ROLE_SUBJECT
+      W11 Mirev    FORWARD ROLE_TR          gold=Mirev      out='Mirev (city)' class=ROLE_SUBJECT
+      W13 Kelor    FORWARD ROLE_TR          gold=Kelor      out='Kelor (city)' class=ROLE_SUBJECT
+      W15 Dervan   FORWARD ROLE_TR          gold=Dervan     out='Dervan (city in Kelron)' class=ROLE_SUBJECT
+      W16 Calnor   FORWARD ROLE_TR          gold=Calnor     out='Calnor (Calnor is the current capital of Parvek)' class=ROLE_SUBJECT
+      W17 Parel    FORWARD CURRENT_TR       gold=Dorven     out='Dorven (Dorven is the current capital of Parel)' class=ROLE_SUBJECT
+      W17 Parel    FORWARD ROLE_TR          gold=Parel      out='Parel (Parel)' class=ROLE_SUBJECT
+      W18 Sorven   FORWARD ROLE_TR          gold=Sorven     out='Sorven (Sorven)' class=ROLE_SUBJECT
+      W19 Barel    FORWARD ROLE_TR          gold=Barel      out='Barel (Capital of Solmar)' class=ROLE_SUBJECT
+      W20 Ralen    FORWARD ROLE_PARA        gold=Ralen      out='Valdor' class=CROSS_VALUE
+      W20 Ralen    FORWARD ROLE_TR          gold=Ralen      out='Ralen (city)' class=ROLE_SUBJECT
+      W21 Norel    FORWARD ROLE_TR          gold=Norel      out='Norel (Norel is the current capital of Darvek in' class=ROLE_SUBJECT
+      W23 Karev    FORWARD ROLE_TR          gold=Karev      out='Karev (city)' class=ROLE_SUBJECT
+      W00 Zorvan   REVERSE ROLE_DIRECT      gold=Zorvan     out="Zorvan (incorrect in context, but this is the question'" class=ROLE_SUBJECT
+
+[8/8] Sentinel / mühür...
+      Weight sentinel             : PASS
+      Trainable tensors           : 0
+      Retrieval / cartridge       : YOK
+      Router / scorer / threshold : YOK
+      Gold in prompt              : YOK
+      Training/LoRA/optimizer     : YOK
+
+================================================================================================================================================================
+TEST546A SONUÇ — FULL-CONTEXT UPPER BOUND
+================================================================================================================================================================
+MODEL                         : mistralai/Mistral-7B-Instruct-v0.3
+WORLDS                        : 24
+TOTAL GENERATIONS             : 576
+FORWARD ACC                   : 0.920139
+REVERSE ACC                   : 0.777778
+ALL ACC                       : 0.848958
+CURRENT                       : 0.979167
+FORMER                        : 1.000000
+NEAR                          : 1.000000
+ROLE                          : 0.416667
+DIRECT                        : 0.890625
+PARAPHRASE                    : 0.885417
+TURKISH                       : 0.770833
+BOTH ORDERS CORRECT           : 220/288
+SAME OUTPUT ACROSS ORDER      : 220/288
+CORRECTNESS FLIPS             : 49/288
+WEIGHT SENTINEL               : PASS
+TEST545 RESULT SHA            : 464d31f054d0e42c7bdbc5b936d17e81c14052e6bc240ec5dbefd63932d616f1
+TEST546A ÖN KİLİT SHA         : 8b45e4a323afaea5b2915fbf9e2c6f4a8cd99256a2f2515d7d6b018a55ee5a74
+TEST546A RESULT SHA           : d2601e1e9710872d76fb84dcee43b5ec095ceaec77ee573a8268f559ea43e798
+TOPLAM SÜRE                   : 155.84s
+KARAR                         : TEST546A_FULL_CONTEXT_UPPER_BOUND_TAMAMLANDI
+
+
+================================================================================================================================================================
