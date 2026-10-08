@@ -1,0 +1,107 @@
+ ============================================================================================================================================================
+TEST560 — AKBASCORE MAM · INCREMENTAL DEFERRED CONSOLIDATION
+TEST559 WORKING BACKBONE PRESERVED · BATCH DC6 vs APPEND-ONLY INCREMENTAL DC6
+FROZEN MISTRAL · SOURCE-FREE NUMERICAL MEMORY GROWTH · NO TRAINING / RETRIEVAL / ROUTER / QSF
+============================================================================================================================================================
+
+[1/10] Frozen Mistral...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 601/601 [00:00<00:00, 73.5kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 16.2MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 29.3MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 58.3kB/s  tokenizer.model: downloading bytes:   448kB, 44.5kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 51.5kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 3.07MB/s]Download complete:  12.4GB,  451MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  492MB/s  Fetching 3 files: 100% 3/3 [00:41<00:00, 41.09s/it]Loading weights: 100% 291/291 [00:03<00:00, 80.80it/s]generation_config.json: 100% 116/116 [00:00<00:00, 14.2kB/s]MODEL: mistralai/Mistral-7B-Instruct-v0.3
+GPU: NVIDIA A100-SXM4-40GB
+TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+NL=32 H=4096 QH=32 KVH=8 HD=128 DTYPE=torch.bfloat16 CUT=6
+ROPE: {'rope_theta': 1000000.0, 'rope_type': 'default'}
+TRAINABLE: 0
+
+[2/10] Panel provenance...
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+PANEL PROVENANCE: PASS
+
+[3/10] Numerical checkpoint and incremental contract...
+CHECKPOINT CONTRACT: PASS
+INCREMENTAL INIT: PASS
+INCREMENTAL APPEND: PASS
+PREFIX=27 CUT=6
+
+[4/10] TEST559 baseline replication...
+JOINT: {'FIRST': 24, 'MIDDLE': 24, 'LAST': 24}
+INDEP: {'FIRST': 4, 'MIDDLE': 3, 'LAST': 6}
+BASELINE REPLICATION: PASS
+
+[5/10] Batch vs incremental deferred consolidation...
+CASE 00 complete
+CASE 01 complete
+CASE 02 complete
+CASE 03 complete
+PROGRESS 4/24 | elapsed=103.5s
+CASE 04 complete
+CASE 05 complete
+CASE 06 complete
+CASE 07 complete
+PROGRESS 8/24 | elapsed=120.8s
+CASE 08 complete
+CASE 09 complete
+CASE 10 complete
+CASE 11 complete
+PROGRESS 12/24 | elapsed=137.6s
+CASE 12 complete
+CASE 13 complete
+CASE 14 complete
+CASE 15 complete
+PROGRESS 16/24 | elapsed=157.0s
+CASE 16 complete
+CASE 17 complete
+CASE 18 complete
+CASE 19 complete
+PROGRESS 20/24 | elapsed=175.8s
+CASE 20 complete
+CASE 21 complete
+CASE 22 complete
+CASE 23 complete
+PROGRESS 24/24 | elapsed=192.7s
+
+[6/10] Raw integrity...
+ROWS: 288 EXPECTED: 288
+RAW INTEGRITY: PASS
+
+[7/10] Composition scores...
+INDEP              FIRST=04/24 MIDDLE=03/24 LAST=06/24 TOTAL=13/72
+JOINT              FIRST=24/24 MIDDLE=24/24 LAST=24/24 TOTAL=72/72
+BATCH_DC6          FIRST=24/24 MIDDLE=24/24 LAST=24/24 TOTAL=72/72
+INCR_DC6           FIRST=24/24 MIDDLE=24/24 LAST=24/24 TOTAL=72/72
+
+[8/10] Incremental identity and gain/loss...
+BATCH_DC6          GAIN=59 LOSS=00 NET=+59 | ANS-ID-JOINT=71/72 ANS-ID-BATCH=72/72
+INCR_DC6           GAIN=59 LOSS=00 NET=+59 | ANS-ID-JOINT=71/72 ANS-ID-BATCH=72/72
+
+[9/10] Engineering decision...
+GATE JOINT: PASS
+GATE INDEP: PASS
+GATE BATCH_DC6: PASS
+BATCH_DC6: 72 /72
+INCR_DC6 : 72 /72
+DECISION: FULL INCREMENTAL CONSOLIDATION — APPEND-ONLY MEMORY MATCHES BATCH ACCURACY 72/72
+CAUTION: Incremental append exploits causal ordering: previously consolidated tokens are not recomputed when a later numerical cartridge is appended.
+CAUTION: H6 residual + L0–L6 KV remains an augmented numerical cartridge; strict KV-only sufficiency is not claimed.
+
+[10/10] Final research record...
+============================================================================================================================================================
+TEST560 — FINAL RESEARCH RECORD
+============================================================================================================================================================
+MODEL                  : mistralai/Mistral-7B-Instruct-v0.3
+PANEL SHA              : 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+LOCK SHA               : 9b8b78dddfdd401781e2bfab29c9e52e3227ef22bb132e22396a9d685cd32d56
+RESULT SHA             : 6a1d7453970b0e23e80abf31234b58c37fa39c42fc7971f5473b192dc11802a7
+INDEP                   : {'FIRST': 4, 'MIDDLE': 3, 'LAST': 6, 'TOTAL': 13}
+JOINT                   : {'FIRST': 24, 'MIDDLE': 24, 'LAST': 24, 'TOTAL': 72}
+BATCH_DC6               : {'FIRST': 24, 'MIDDLE': 24, 'LAST': 24, 'TOTAL': 72}
+INCR_DC6                : {'FIRST': 24, 'MIDDLE': 24, 'LAST': 24, 'TOTAL': 72}
+REFERENCE GATES        : {'JOINT': True, 'INDEP': True, 'BATCH_DC6': True}
+ENGINEERING DECISION   : FULL INCREMENTAL CONSOLIDATION — APPEND-ONLY MEMORY MATCHES BATCH ACCURACY 72/72
+WEIGHT SENTINEL        : PASS
+TRAINABLE              : 0
+TOTAL TIME             : 192.68s
+INTERPRETATION         : Tests whether independently forged numerical H6 cartridges can be appended sequentially to an existing consolidated memory without rebuilding prior memories.
+NEXT TEST              : TEST561 only after TEST560 interpretation
+============================================================================================================================================================
