@@ -1,0 +1,366 @@
+ 
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 82.9kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 795kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 38.0MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 70.7MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 132MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.22MB/s]
+Download complete: 
+
+ 13.1GB,  558MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  358MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:43<00:00, 43.15s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 100.19it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 31.6kB/s]
+GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+
+[1/5] JOINT natural reference — same 24 questions...
+JOINT CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+JOINT CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+JOINT CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+JOINT CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+JOINT CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+JOINT CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+JOINT CASE=02 FIRST  PASS | gold=Varos | answer='Varos'
+JOINT CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+JOINT CASE=02 LAST   PASS | gold=Varos | answer='Varos'
+JOINT CASE=03 FIRST  PASS | gold=Belnor | answer='Belnor'
+JOINT CASE=03 MIDDLE PASS | gold=Belnor | answer='Belnor'
+JOINT CASE=03 LAST   PASS | gold=Belnor | answer='Belnor'
+JOINT CASE=04 FIRST  PASS | gold=Selora | answer='Selora'
+JOINT CASE=04 MIDDLE PASS | gold=Selora | answer='Selora'
+JOINT CASE=04 LAST   PASS | gold=Selora | answer='Selora'
+JOINT CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+JOINT CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+JOINT CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+JOINT CASE=06 FIRST  PASS | gold=Keldin | answer='Keldin'
+JOINT CASE=06 MIDDLE PASS | gold=Keldin | answer='Keldin'
+JOINT CASE=06 LAST   PASS | gold=Keldin | answer='Keldin'
+JOINT CASE=07 FIRST  PASS | gold=Feron | answer='Feron'
+JOINT CASE=07 MIDDLE PASS | gold=Feron | answer='Feron'
+JOINT CASE=07 LAST   PASS | gold=Feron | answer='Feron'
+JOINT: {'FIRST': 8, 'MIDDLE': 8, 'LAST': 8} TOTAL: 24 /24
+
+[2/5] INDEP native independent KV reference...
+INDEP CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+INDEP CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+INDEP CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+INDEP CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+INDEP CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+INDEP CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+INDEP CASE=02 FIRST  FAIL | gold=Varos | answer='The largest city of Tarev is not provided in the given information.'
+INDEP CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+INDEP CASE=02 LAST   FAIL | gold=Varos | answer='Selora'
+INDEP CASE=03 FIRST  FAIL | gold=Belnor | answer='Karev'
+INDEP CASE=03 MIDDLE FAIL | gold=Belnor | answer='Karev'
+INDEP CASE=03 LAST   FAIL | gold=Belnor | answer='Karev'
+INDEP CASE=04 FIRST  FAIL | gold=Selora | answer='The current capital of Ravik is not provided in the given information.'
+INDEP CASE=04 MIDDLE FAIL | gold=Selora | answer='Selorov'
+INDEP CASE=04 LAST   FAIL | gold=Selora | answer='Selorva'
+INDEP CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+INDEP CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+INDEP CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+INDEP CASE=06 FIRST  FAIL | gold=Keldin | answer='The information provided does not specify the largest city of Darsen. It only'
+INDEP CASE=06 MIDDLE FAIL | gold=Keldin | answer='The information provided does not specify the largest city of Darsen. It only'
+INDEP CASE=06 LAST   FAIL | gold=Keldin | answer='Valdor'
+INDEP CASE=07 FIRST  FAIL | gold=Feron | answer='The current capital of Belvik is not provided in the given information.'
+INDEP CASE=07 MIDDLE FAIL | gold=Feron | answer='The current capital of Belvik is Narev.'
+INDEP CASE=07 LAST   FAIL | gold=Feron | answer='Tarev'
+INDEP: {'FIRST': 3, 'MIDDLE': 4, 'LAST': 3} TOTAL: 10 /24
+
+[3/5] CUT-wise DC and NOCROSS...
+
+==============================================================================================================
+CUT 1 ARM DC
+DC      CUT=01 CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+DC      CUT=01 CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+DC      CUT=01 CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+DC      CUT=01 CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+DC      CUT=01 CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+DC      CUT=01 CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+DC      CUT=01 CASE=02 FIRST  PASS | gold=Varos | answer='Varos'
+DC      CUT=01 CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+DC      CUT=01 CASE=02 LAST   PASS | gold=Varos | answer='Varos'
+DC      CUT=01 CASE=03 FIRST  PASS | gold=Belnor | answer='Belnor'
+DC      CUT=01 CASE=03 MIDDLE PASS | gold=Belnor | answer='Belnor'
+DC      CUT=01 CASE=03 LAST   PASS | gold=Belnor | answer='Belnor'
+DC      CUT=01 CASE=04 FIRST  PASS | gold=Selora | answer='Selora'
+DC      CUT=01 CASE=04 MIDDLE PASS | gold=Selora | answer='Selora'
+DC      CUT=01 CASE=04 LAST   PASS | gold=Selora | answer='Selora'
+DC      CUT=01 CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+DC      CUT=01 CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+DC      CUT=01 CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+DC      CUT=01 CASE=06 FIRST  PASS | gold=Keldin | answer='Keldin'
+DC      CUT=01 CASE=06 MIDDLE PASS | gold=Keldin | answer='Keldin'
+DC      CUT=01 CASE=06 LAST   PASS | gold=Keldin | answer='Keldin'
+DC      CUT=01 CASE=07 FIRST  PASS | gold=Feron | answer='Feron'
+DC      CUT=01 CASE=07 MIDDLE PASS | gold=Feron | answer='Feron'
+DC      CUT=01 CASE=07 LAST   PASS | gold=Feron | answer='Feron'
+ARM=DC CUT=1 SCORE=24/24 COMPLETE=True FIRST=8/8 MIDDLE=8/8 LAST=8/8
+
+==============================================================================================================
+CUT 1 ARM NOCROSS
+NOCROSS CUT=01 CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+NOCROSS CUT=01 CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+NOCROSS CUT=01 CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+NOCROSS CUT=01 CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+NOCROSS CUT=01 CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+NOCROSS CUT=01 CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+NOCROSS CUT=01 CASE=02 FIRST  FAIL | gold=Varos | answer='The largest city of Tarev is not provided in the given information.'
+NOCROSS CUT=01 CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+NOCROSS CUT=01 CASE=02 LAST   FAIL | gold=Varos | answer='Selora'
+NOCROSS CUT=01 CASE=03 FIRST  FAIL | gold=Belnor | answer='Karev'
+NOCROSS CUT=01 CASE=03 MIDDLE FAIL | gold=Belnor | answer='Karev'
+NOCROSS CUT=01 CASE=03 LAST   FAIL | gold=Belnor | answer='Karev'
+NOCROSS CUT=01 CASE=04 FIRST  FAIL | gold=Selora | answer='The current capital of Ravik is not provided in the given information.'
+NOCROSS CUT=01 CASE=04 MIDDLE FAIL | gold=Selora | answer='Selorov'
+NOCROSS CUT=01 CASE=04 LAST   FAIL | gold=Selora | answer='Selorva'
+NOCROSS CUT=01 CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+NOCROSS CUT=01 CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+NOCROSS CUT=01 CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+NOCROSS CUT=01 CASE=06 FIRST  FAIL | gold=Keldin | answer='The information provided does not specify the largest city of Darsen. It only'
+NOCROSS CUT=01 CASE=06 MIDDLE FAIL | gold=Keldin | answer='The information provided does not specify the largest city of Darsen. It only'
+NOCROSS CUT=01 CASE=06 LAST   FAIL | gold=Keldin | answer='Valdor'
+NOCROSS CUT=01 CASE=07 FIRST  FAIL | gold=Feron | answer='The current capital of Belvik is not provided in the given information.'
+NOCROSS CUT=01 CASE=07 MIDDLE FAIL | gold=Feron | answer='The current capital of Belvik is Narev.'
+NOCROSS CUT=01 CASE=07 LAST   FAIL | gold=Feron | answer='Tarev'
+ARM=NOCROSS CUT=1 SCORE=10/24 COMPLETE=True FIRST=3/8 MIDDLE=4/8 LAST=3/8
+CUT 1 SECONDS 29.27
+
+==============================================================================================================
+CUT 2 ARM DC
+DC      CUT=02 CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+DC      CUT=02 CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+DC      CUT=02 CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+DC      CUT=02 CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+DC      CUT=02 CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+DC      CUT=02 CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+DC      CUT=02 CASE=02 FIRST  PASS | gold=Varos | answer='Varos'
+DC      CUT=02 CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+DC      CUT=02 CASE=02 LAST   PASS | gold=Varos | answer='Varos'
+DC      CUT=02 CASE=03 FIRST  PASS | gold=Belnor | answer='Belnor'
+DC      CUT=02 CASE=03 MIDDLE PASS | gold=Belnor | answer='Belnor'
+DC      CUT=02 CASE=03 LAST   PASS | gold=Belnor | answer='Belnor'
+DC      CUT=02 CASE=04 FIRST  PASS | gold=Selora | answer='Selora'
+DC      CUT=02 CASE=04 MIDDLE PASS | gold=Selora | answer='Selora'
+DC      CUT=02 CASE=04 LAST   PASS | gold=Selora | answer='Selora'
+DC      CUT=02 CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+DC      CUT=02 CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+DC      CUT=02 CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+DC      CUT=02 CASE=06 FIRST  PASS | gold=Keldin | answer='Keldin'
+DC      CUT=02 CASE=06 MIDDLE PASS | gold=Keldin | answer='Keldin'
+DC      CUT=02 CASE=06 LAST   PASS | gold=Keldin | answer='Keldin'
+DC      CUT=02 CASE=07 FIRST  PASS | gold=Feron | answer='Feron'
+DC      CUT=02 CASE=07 MIDDLE PASS | gold=Feron | answer='Feron'
+DC      CUT=02 CASE=07 LAST   PASS | gold=Feron | answer='Feron'
+ARM=DC CUT=2 SCORE=24/24 COMPLETE=True FIRST=8/8 MIDDLE=8/8 LAST=8/8
+
+==============================================================================================================
+CUT 2 ARM NOCROSS
+NOCROSS CUT=02 CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+NOCROSS CUT=02 CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+NOCROSS CUT=02 CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+NOCROSS CUT=02 CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+NOCROSS CUT=02 CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+NOCROSS CUT=02 CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+NOCROSS CUT=02 CASE=02 FIRST  FAIL | gold=Varos | answer='The largest city of Tarev is not provided in the given information.'
+NOCROSS CUT=02 CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+NOCROSS CUT=02 CASE=02 LAST   FAIL | gold=Varos | answer='Selora'
+NOCROSS CUT=02 CASE=03 FIRST  FAIL | gold=Belnor | answer='Karev'
+NOCROSS CUT=02 CASE=03 MIDDLE FAIL | gold=Belnor | answer='Karev'
+NOCROSS CUT=02 CASE=03 LAST   FAIL | gold=Belnor | answer='Karev'
+NOCROSS CUT=02 CASE=04 FIRST  FAIL | gold=Selora | answer='The current capital of Ravik is not provided in the given information.'
+NOCROSS CUT=02 CASE=04 MIDDLE FAIL | gold=Selora | answer='Selorov'
+NOCROSS CUT=02 CASE=04 LAST   FAIL | gold=Selora | answer='Selorva'
+NOCROSS CUT=02 CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+NOCROSS CUT=02 CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+NOCROSS CUT=02 CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+NOCROSS CUT=02 CASE=06 FIRST  FAIL | gold=Keldin | answer='The information provided does not specify the largest city of Darsen. It only'
+NOCROSS CUT=02 CASE=06 MIDDLE FAIL | gold=Keldin | answer='The information provided does not specify the largest city of Darsen. It only'
+NOCROSS CUT=02 CASE=06 LAST   FAIL | gold=Keldin | answer='Valdor'
+NOCROSS CUT=02 CASE=07 FIRST  FAIL | gold=Feron | answer='The current capital of Belvik is not provided in the given information.'
+NOCROSS CUT=02 CASE=07 MIDDLE FAIL | gold=Feron | answer='The current capital of Belvik is Narev.'
+NOCROSS CUT=02 CASE=07 LAST   FAIL | gold=Feron | answer='Tarev'
+ARM=NOCROSS CUT=2 SCORE=10/24 COMPLETE=True FIRST=3/8 MIDDLE=4/8 LAST=3/8
+CUT 2 SECONDS 29.54
+
+==============================================================================================================
+CUT 3 ARM DC
+DC      CUT=03 CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+DC      CUT=03 CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+DC      CUT=03 CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+DC      CUT=03 CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+DC      CUT=03 CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+DC      CUT=03 CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+DC      CUT=03 CASE=02 FIRST  PASS | gold=Varos | answer='Varos'
+DC      CUT=03 CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+DC      CUT=03 CASE=02 LAST   PASS | gold=Varos | answer='Varos'
+DC      CUT=03 CASE=03 FIRST  PASS | gold=Belnor | answer='Belnor'
+DC      CUT=03 CASE=03 MIDDLE PASS | gold=Belnor | answer='Belnor'
+DC      CUT=03 CASE=03 LAST   PASS | gold=Belnor | answer='Belnor'
+DC      CUT=03 CASE=04 FIRST  PASS | gold=Selora | answer='Selora'
+DC      CUT=03 CASE=04 MIDDLE PASS | gold=Selora | answer='Selora'
+DC      CUT=03 CASE=04 LAST   PASS | gold=Selora | answer='Selora'
+DC      CUT=03 CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+DC      CUT=03 CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+DC      CUT=03 CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+DC      CUT=03 CASE=06 FIRST  PASS | gold=Keldin | answer='Keldin'
+DC      CUT=03 CASE=06 MIDDLE PASS | gold=Keldin | answer='Keldin'
+DC      CUT=03 CASE=06 LAST   PASS | gold=Keldin | answer='Keldin'
+DC      CUT=03 CASE=07 FIRST  PASS | gold=Feron | answer='Feron'
+DC      CUT=03 CASE=07 MIDDLE PASS | gold=Feron | answer='Feron'
+DC      CUT=03 CASE=07 LAST   PASS | gold=Feron | answer='Feron'
+ARM=DC CUT=3 SCORE=24/24 COMPLETE=True FIRST=8/8 MIDDLE=8/8 LAST=8/8
+
+==============================================================================================================
+CUT 3 ARM NOCROSS
+NOCROSS CUT=03 CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+NOCROSS CUT=03 CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+NOCROSS CUT=03 CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+NOCROSS CUT=03 CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+NOCROSS CUT=03 CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+NOCROSS CUT=03 CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+NOCROSS CUT=03 CASE=02 FIRST  FAIL | gold=Varos | answer='The largest city of Tarev is not provided in the given information.'
+NOCROSS CUT=03 CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+NOCROSS CUT=03 CASE=02 LAST   FAIL | gold=Varos | answer='Selora'
+NOCROSS CUT=03 CASE=03 FIRST  FAIL | gold=Belnor | answer='Karev'
+NOCROSS CUT=03 CASE=03 MIDDLE FAIL | gold=Belnor | answer='Karev'
+NOCROSS CUT=03 CASE=03 LAST   FAIL | gold=Belnor | answer='Karev'
+NOCROSS CUT=03 CASE=04 FIRST  FAIL | gold=Selora | answer='The current capital of Ravik is not provided in the given information.'
+NOCROSS CUT=03 CASE=04 MIDDLE FAIL | gold=Selora | answer='Selorov'
+NOCROSS CUT=03 CASE=04 LAST   FAIL | gold=Selora | answer='Selorva'
+NOCROSS CUT=03 CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+NOCROSS CUT=03 CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+NOCROSS CUT=03 CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+NOCROSS CUT=03 CASE=06 FIRST  FAIL | gold=Keldin | answer='The information provided does not specify the largest city of Darsen. It only'
+NOCROSS CUT=03 CASE=06 MIDDLE FAIL | gold=Keldin | answer='The information provided does not specify the largest city of Darsen. It only'
+NOCROSS CUT=03 CASE=06 LAST   FAIL | gold=Keldin | answer='Valdor'
+NOCROSS CUT=03 CASE=07 FIRST  FAIL | gold=Feron | answer='The current capital of Belvik is not provided in the given information.'
+NOCROSS CUT=03 CASE=07 MIDDLE FAIL | gold=Feron | answer='The current capital of Belvik is Narev.'
+NOCROSS CUT=03 CASE=07 LAST   FAIL | gold=Feron | answer='Tarev'
+ARM=NOCROSS CUT=3 SCORE=10/24 COMPLETE=True FIRST=3/8 MIDDLE=4/8 LAST=3/8
+CUT 3 SECONDS 29.44
+
+==============================================================================================================
+CUT 6 ARM DC
+DC      CUT=06 CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+DC      CUT=06 CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+DC      CUT=06 CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+DC      CUT=06 CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+DC      CUT=06 CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+DC      CUT=06 CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+DC      CUT=06 CASE=02 FIRST  PASS | gold=Varos | answer='Varos'
+DC      CUT=06 CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+DC      CUT=06 CASE=02 LAST   PASS | gold=Varos | answer='Varos'
+DC      CUT=06 CASE=03 FIRST  PASS | gold=Belnor | answer='Belnor'
+DC      CUT=06 CASE=03 MIDDLE PASS | gold=Belnor | answer='Belnor'
+DC      CUT=06 CASE=03 LAST   PASS | gold=Belnor | answer='Belnor'
+DC      CUT=06 CASE=04 FIRST  PASS | gold=Selora | answer='Selora'
+DC      CUT=06 CASE=04 MIDDLE PASS | gold=Selora | answer='Selora'
+DC      CUT=06 CASE=04 LAST   PASS | gold=Selora | answer='Selora'
+DC      CUT=06 CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+DC      CUT=06 CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+DC      CUT=06 CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+DC      CUT=06 CASE=06 FIRST  PASS | gold=Keldin | answer='Keldin'
+DC      CUT=06 CASE=06 MIDDLE PASS | gold=Keldin | answer='Keldin'
+DC      CUT=06 CASE=06 LAST   PASS | gold=Keldin | answer='Keldin'
+DC      CUT=06 CASE=07 FIRST  PASS | gold=Feron | answer='Feron'
+DC      CUT=06 CASE=07 MIDDLE PASS | gold=Feron | answer='Feron'
+DC      CUT=06 CASE=07 LAST   PASS | gold=Feron | answer='Feron'
+ARM=DC CUT=6 SCORE=24/24 COMPLETE=True FIRST=8/8 MIDDLE=8/8 LAST=8/8
+
+==============================================================================================================
+CUT 6 ARM NOCROSS
+NOCROSS CUT=06 CASE=00 FIRST  PASS | gold=Melket | answer='Melket'
+NOCROSS CUT=06 CASE=00 MIDDLE PASS | gold=Melket | answer='Melket'
+NOCROSS CUT=06 CASE=00 LAST   PASS | gold=Melket | answer='Melket'
+NOCROSS CUT=06 CASE=01 FIRST  PASS | gold=Branik | answer='Branik'
+NOCROSS CUT=06 CASE=01 MIDDLE PASS | gold=Branik | answer='Branik'
+NOCROSS CUT=06 CASE=01 LAST   PASS | gold=Branik | answer='Branik'
+NOCROSS CUT=06 CASE=02 FIRST  FAIL | gold=Varos | answer='The largest city of Tarev is not provided in the given information.'
+NOCROSS CUT=06 CASE=02 MIDDLE PASS | gold=Varos | answer='Varos'
+NOCROSS CUT=06 CASE=02 LAST   FAIL | gold=Varos | answer='Selora'
+NOCROSS CUT=06 CASE=03 FIRST  FAIL | gold=Belnor | answer='Karev'
+NOCROSS CUT=06 CASE=03 MIDDLE FAIL | gold=Belnor | answer='Karev'
+NOCROSS CUT=06 CASE=03 LAST   FAIL | gold=Belnor | answer='Karev'
+NOCROSS CUT=06 CASE=04 FIRST  FAIL | gold=Selora | answer='The current capital of Ravik is not provided in the given information.'
+NOCROSS CUT=06 CASE=04 MIDDLE FAIL | gold=Selora | answer='Selorov'
+NOCROSS CUT=06 CASE=04 LAST   FAIL | gold=Selora | answer='Selorva'
+NOCROSS CUT=06 CASE=05 FIRST  PASS | gold=Pareth | answer='Pareth'
+NOCROSS CUT=06 CASE=05 MIDDLE PASS | gold=Pareth | answer='Pareth'
+NOCROSS CUT=06 CASE=05 LAST   PASS | gold=Pareth | answer='Pareth'
+NOCROSS CUT=06 CASE=06 FIRST  FAIL | gold=Keldin | answer='The information provided does not specify the largest city of Darsen. It only'
+NOCROSS CUT=06 CASE=06 MIDDLE FAIL | gold=Keldin | answer='The information provided does not specify the largest city of Darsen. It only'
+NOCROSS CUT=06 CASE=06 LAST   FAIL | gold=Keldin | answer='Valdor'
+NOCROSS CUT=06 CASE=07 FIRST  FAIL | gold=Feron | answer='The current capital of Belvik is not provided in the given information.'
+NOCROSS CUT=06 CASE=07 MIDDLE FAIL | gold=Feron | answer='The current capital of Belvik is Narev.'
+NOCROSS CUT=06 CASE=07 LAST   FAIL | gold=Feron | answer='Tarev'
+ARM=NOCROSS CUT=6 SCORE=10/24 COMPLETE=True FIRST=3/8 MIDDLE=4/8 LAST=3/8
+CUT 6 SECONDS 29.71
+
+[4/5] Causal comparison and paired transitions...
+DC      CUT=01 GAIN=14 LOSS=00 NET=+14 OK-ID-JOINT=24/24 ANS-ID-JOINT=24/24
+NOCROSS CUT=01 GAIN=00 LOSS=00 NET=+00 OK-ID-JOINT=10/24 ANS-ID-JOINT=10/24
+DC      CUT=02 GAIN=14 LOSS=00 NET=+14 OK-ID-JOINT=24/24 ANS-ID-JOINT=24/24
+NOCROSS CUT=02 GAIN=00 LOSS=00 NET=+00 OK-ID-JOINT=10/24 ANS-ID-JOINT=10/24
+DC      CUT=03 GAIN=14 LOSS=00 NET=+14 OK-ID-JOINT=24/24 ANS-ID-JOINT=24/24
+NOCROSS CUT=03 GAIN=00 LOSS=00 NET=+00 OK-ID-JOINT=10/24 ANS-ID-JOINT=10/24
+DC      CUT=06 GAIN=14 LOSS=00 NET=+14 OK-ID-JOINT=24/24 ANS-ID-JOINT=24/24
+NOCROSS CUT=06 GAIN=00 LOSS=00 NET=+00 OK-ID-JOINT=10/24 ANS-ID-JOINT=10/24
+
+[5/5] Final research record...
+====================================================================================================================================
+TEST566 — FINAL RESEARCH RECORD
+====================================================================================================================================
+MODEL: Qwen/Qwen2.5-7B-Instruct GPU: NVIDIA A100-SXM4-40GB
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 INTEGRITY: PASS
+JOINT   FIRST=08/8 MIDDLE=08/8 LAST=08/8 TOTAL=24/24
+INDEP   FIRST=03/8 MIDDLE=04/8 LAST=03/8 TOTAL=10/24
+DC      CUT=01 FIRST=08/8 MIDDLE=08/8 LAST=08/8 TOTAL=24/24
+NOCROSS CUT=01 FIRST=03/8 MIDDLE=04/8 LAST=03/8 TOTAL=10/24
+DC      CUT=02 FIRST=08/8 MIDDLE=08/8 LAST=08/8 TOTAL=24/24
+NOCROSS CUT=02 FIRST=03/8 MIDDLE=04/8 LAST=03/8 TOTAL=10/24
+DC      CUT=03 FIRST=08/8 MIDDLE=08/8 LAST=08/8 TOTAL=24/24
+NOCROSS CUT=03 FIRST=03/8 MIDDLE=04/8 LAST=03/8 TOTAL=10/24
+DC      CUT=06 FIRST=08/8 MIDDLE=08/8 LAST=08/8 TOTAL=24/24
+NOCROSS CUT=06 FIRST=03/8 MIDDLE=04/8 LAST=03/8 TOTAL=10/24
+WEIGHT SENTINEL: PASS TRAINABLE: 0
+TOTAL SECONDS: 188.76
+LOCK SHA: 5929121d234a8689d0a2dbbb21e1708fbc888df3376b17984e7e699145578a62
+RESULT SHA: e1442c3b08426e3d381641ccdbac697e51e88791dcb65c25c254c9846e56349c
+INTERPRETATION: INDEP is native isolated KV concatenation. NOCROSS is independently reconstructed checkpoint KV concatenation; both prohibit cross-cartridge attention during memory construction.
+CAUTION: NOCROSS is not an exact DC ablation: independent upper-layer reconstruction may also change local numerical states. Interpret DC-NOCROSS differences as a mechanism-screening result, not isolated proof of cross-attention necessity.
+CAUTION: Same panel as TEST564; this is calibration, not independent validation. Correctness alone does not establish numerical identity to JOINT.
+DECISION: CAUSAL SCREEN COMPLETE — REVIEW DC vs NOCROSS vs INDEP BEFORE TEST567
+
+
+====================================================================================================================================
