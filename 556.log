@@ -1,0 +1,282 @@
+ ========================================================================================================================================================================
+TEST556 — AKBASCORE MAM · LAYERWISE CAUSAL STATE TRANSPLANT — CORRECTED REPLICATION
+JOINT / BLOCK / SWITCH-ONLY / FULL / TARGET / HISTORY
+TEST555 ARCHITECTURE PRESERVED · CORRECT SCOPE AGGREGATION · CASE-LEVEL IDENTITY
+FROZEN MISTRAL · SAME TOKENS · SAME LOGICAL POSITIONS · NO TRAINING
+========================================================================================================================================================================
+
+[1/11] Frozen Mistral...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 601/601 [00:00<00:00, 75.8kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 15.5MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 92.9MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 57.1kB/s  tokenizer.model: downloading bytes:   448kB, 43.6kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 53.2kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 2.96MB/s]Download complete:  12.4GB,  181MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  287MB/s  Fetching 3 files: 100% 3/3 [00:41<00:00, 41.61s/it]Loading weights: 100% 291/291 [00:03<00:00, 80.64it/s]generation_config.json: 100% 116/116 [00:00<00:00, 15.5kB/s]MODEL: mistralai/Mistral-7B-Instruct-v0.3
+GPU: NVIDIA A100-SXM4-40GB
+TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+NL=32 H=4096 QH=32 KVH=8 HD=128 DTYPE=torch.bfloat16
+ROPE: {'rope_theta': 1000000.0, 'rope_type': 'default'}
+TRAINABLE: 0
+DECODER SIGNATURE: (hidden_states: torch.Tensor, attention_mask: torch.Tensor | None = None, position_ids: torch.LongTensor | None = None, past_key_values: transformers.cache_utils.Cache | None = None, use_cache: bool | None = False, position_embeddings: tuple[torch.Tensor, torch.Tensor] | None = None, **kwargs: Unpack[transformers.utils.generic.TransformersKwargs]) -> torch.Tensor
+
+[2/11] TEST553 panel provenance...
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+EXPECTED : 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+PANEL PROVENANCE: PASS
+
+[3/11] Attention-mask / scope validation...
+MASK CONTRACT: PASS | TOKENS=93 PREFIX=27 TARGET=13 HISTORY=53 FULL=66
+
+[4/11] Baseline validation — JOINT vs BLOCK...
+CASE 00 CURRENT  JOINT=1/1/1 BLOCK=1/1/1
+CASE 01 FORMER   JOINT=1/1/1 BLOCK=0/0/0
+CASE 02 NEAR     JOINT=1/1/1 BLOCK=0/0/0
+CASE 03 ROLE     JOINT=1/1/1 BLOCK=0/0/0
+CASE 04 CURRENT  JOINT=1/1/1 BLOCK=0/0/1
+CASE 05 FORMER   JOINT=1/1/1 BLOCK=1/0/0
+CASE 06 NEAR     JOINT=1/1/1 BLOCK=1/1/1
+CASE 07 ROLE     JOINT=1/1/1 BLOCK=0/0/0
+CASE 08 CURRENT  JOINT=1/1/1 BLOCK=0/0/0
+CASE 09 FORMER   JOINT=1/1/1 BLOCK=0/0/0
+CASE 10 NEAR     JOINT=1/1/1 BLOCK=0/0/0
+CASE 11 ROLE     JOINT=1/1/1 BLOCK=1/1/1
+CASE 12 CURRENT  JOINT=1/1/1 BLOCK=0/0/0
+CASE 13 FORMER   JOINT=1/1/1 BLOCK=0/0/1
+CASE 14 NEAR     JOINT=1/1/1 BLOCK=0/0/0
+CASE 15 ROLE     JOINT=1/1/1 BLOCK=0/0/0
+CASE 16 CURRENT  JOINT=1/1/1 BLOCK=0/0/0
+CASE 17 FORMER   JOINT=1/1/1 BLOCK=0/0/0
+CASE 18 NEAR     JOINT=1/1/1 BLOCK=0/0/0
+CASE 19 ROLE     JOINT=1/1/1 BLOCK=0/0/0
+CASE 20 CURRENT  JOINT=1/1/1 BLOCK=0/0/0
+CASE 21 FORMER   JOINT=1/1/1 BLOCK=0/0/0
+CASE 22 NEAR     JOINT=1/1/1 BLOCK=0/0/1
+CASE 23 ROLE     JOINT=1/1/1 BLOCK=0/0/0
+JOINT: {'FIRST': 24, 'MIDDLE': 24, 'LAST': 24}
+BLOCK: {'FIRST': 4, 'MIDDLE': 3, 'LAST': 6}
+JOINT GATE: PASS
+BLOCK GATE: PASS
+
+[5/11] Causal transplant — 32 layers × SWITCH + FULL/TARGET/HISTORY...
+
+CASE 00 CURRENT  GOLD=Melket
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+
+CASE 01 FORMER   GOLD=Branik
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+
+CASE 02 NEAR     GOLD=Varos
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+
+CASE 03 ROLE     GOLD=Belnor
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+PROGRESS 4/24 | elapsed=518.2s
+
+CASE 04 CURRENT  GOLD=Selora
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+
+CASE 05 FORMER   GOLD=Pareth
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+
+CASE 06 NEAR     GOLD=Keldin
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+
+CASE 07 ROLE     GOLD=Feron
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+PROGRESS 8/24 | elapsed=889.7s
+
+CASE 08 CURRENT  GOLD=Nerith
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+
+CASE 09 FORMER   GOLD=Dorin
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+
+CASE 10 NEAR     GOLD=Valen
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+
+CASE 11 ROLE     GOLD=Mirev
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+PROGRESS 12/24 | elapsed=1277.0s
+
+CASE 12 CURRENT  GOLD=Solith
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+
+CASE 13 FORMER   GOLD=Toren
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+
+CASE 14 NEAR     GOLD=Corven
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+
+CASE 15 ROLE     GOLD=Dervan
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+PROGRESS 16/24 | elapsed=1755.6s
+
+CASE 16 CURRENT  GOLD=Verith
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+
+CASE 17 FORMER   GOLD=Maros
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+
+CASE 18 NEAR     GOLD=Vindor
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+
+CASE 19 ROLE     GOLD=Barel
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+PROGRESS 20/24 | elapsed=2205.0s
+
+CASE 20 CURRENT  GOLD=Mervor
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+
+CASE 21 FORMER   GOLD=Calvenor
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+
+CASE 22 NEAR     GOLD=Mardin
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+
+CASE 23 ROLE     GOLD=Karev
+  FIRST  complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  MIDDLE complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+  LAST   complete | 32 layers | SWITCH + FULL/TARGET/HISTORY
+PROGRESS 24/24 | elapsed=2530.4s
+
+[6/11] Raw-result integrity...
+SWITCH ROWS : 2304 EXPECTED: 2304
+RESULT ROWS : 6912 EXPECTED: 6912
+SCOPE COUNTS: {'FULL': 2304, 'TARGET': 2304, 'HISTORY': 2304}
+RAW RESULT INTEGRITY: PASS
+
+[7/11] Correct layerwise aggregation...
+SWITCH  : L00=72/72 L01=72/72 L02=72/72 L03=72/72 L04=72/72 L05=72/72 L06=72/72 L07=71/72 L08=67/72 L09=61/72 L10=56/72 L11=45/72 L12=25/72 L13=20/72 L14=17/72 L15=15/72 L16=15/72 L17=14/72 L18=13/72 L19=13/72 L20=13/72 L21=13/72 L22=13/72 L23=13/72 L24=13/72 L25=13/72 L26=13/72 L27=13/72 L28=13/72 L29=13/72 L30=13/72 L31=13/72
+FULL    : L00=72/72 L01=72/72 L02=72/72 L03=72/72 L04=72/72 L05=72/72 L06=72/72 L07=71/72 L08=71/72 L09=71/72 L10=71/72 L11=71/72 L12=66/72 L13=68/72 L14=65/72 L15=28/72 L16=28/72 L17=30/72 L18=29/72 L19=16/72 L20=14/72 L21=16/72 L22=16/72 L23=16/72 L24=16/72 L25=15/72 L26=15/72 L27=16/72 L28=16/72 L29=17/72 L30=17/72 L31=13/72
+TARGET  : L00=72/72 L01=72/72 L02=72/72 L03=72/72 L04=72/72 L05=72/72 L06=71/72 L07=72/72 L08=72/72 L09=72/72 L10=72/72 L11=63/72 L12=46/72 L13=45/72 L14=42/72 L15=15/72 L16=11/72 L17=14/72 L18=18/72 L19=13/72 L20=13/72 L21=13/72 L22=13/72 L23=14/72 L24=14/72 L25=14/72 L26=14/72 L27=15/72 L28=16/72 L29=16/72 L30=15/72 L31=13/72
+HISTORY : L00=72/72 L01=72/72 L02=72/72 L03=72/72 L04=72/72 L05=72/72 L06=72/72 L07=72/72 L08=72/72 L09=72/72 L10=66/72 L11=59/72 L12=49/72 L13=43/72 L14=42/72 L15=50/72 L16=50/72 L17=33/72 L18=31/72 L19=16/72 L20=16/72 L21=16/72 L22=14/72 L23=14/72 L24=14/72 L25=14/72 L26=14/72 L27=14/72 L28=14/72 L29=14/72 L30=14/72 L31=13/72
+
+[8/11] Causal increment over SWITCH-only...
+FULL     BEST L=13 | transplant=68/72 | switch=20/72 | Δ=+48
+TARGET   BEST L=13 | transplant=45/72 | switch=20/72 | Δ=+25
+HISTORY  BEST L=15 | transplant=50/72 | switch=15/72 | Δ=+35
+
+[9/11] FULL / TARGET / HISTORY localization + exact outcome identity...
+L00 SW=72 F=72 T=72 H=72 /72 | ΔF=+00 ΔT=+00 ΔH=+00 | OK-ID F/T=72 F/H=72 T/H=72 | ANS-ID F/T=72 F/H=72 T/H=72
+L01 SW=72 F=72 T=72 H=72 /72 | ΔF=+00 ΔT=+00 ΔH=+00 | OK-ID F/T=72 F/H=72 T/H=72 | ANS-ID F/T=72 F/H=72 T/H=72
+L02 SW=72 F=72 T=72 H=72 /72 | ΔF=+00 ΔT=+00 ΔH=+00 | OK-ID F/T=72 F/H=72 T/H=72 | ANS-ID F/T=72 F/H=72 T/H=72
+L03 SW=72 F=72 T=72 H=72 /72 | ΔF=+00 ΔT=+00 ΔH=+00 | OK-ID F/T=72 F/H=72 T/H=72 | ANS-ID F/T=72 F/H=72 T/H=72
+L04 SW=72 F=72 T=72 H=72 /72 | ΔF=+00 ΔT=+00 ΔH=+00 | OK-ID F/T=72 F/H=72 T/H=72 | ANS-ID F/T=72 F/H=72 T/H=72
+L05 SW=72 F=72 T=72 H=72 /72 | ΔF=+00 ΔT=+00 ΔH=+00 | OK-ID F/T=72 F/H=72 T/H=72 | ANS-ID F/T=72 F/H=72 T/H=72
+L06 SW=72 F=72 T=71 H=72 /72 | ΔF=+00 ΔT=-01 ΔH=+00 | OK-ID F/T=71 F/H=72 T/H=71 | ANS-ID F/T=71 F/H=72 T/H=71
+L07 SW=71 F=71 T=72 H=72 /72 | ΔF=+00 ΔT=+01 ΔH=+01 | OK-ID F/T=71 F/H=71 T/H=72 | ANS-ID F/T=69 F/H=69 T/H=71
+L08 SW=67 F=71 T=72 H=72 /72 | ΔF=+04 ΔT=+05 ΔH=+05 | OK-ID F/T=71 F/H=71 T/H=72 | ANS-ID F/T=69 F/H=69 T/H=71
+L09 SW=61 F=71 T=72 H=72 /72 | ΔF=+10 ΔT=+11 ΔH=+11 | OK-ID F/T=71 F/H=71 T/H=72 | ANS-ID F/T=70 F/H=70 T/H=70
+L10 SW=56 F=71 T=72 H=66 /72 | ΔF=+15 ΔT=+16 ΔH=+10 | OK-ID F/T=71 F/H=67 T/H=66 | ANS-ID F/T=66 F/H=50 T/H=48
+L11 SW=45 F=71 T=63 H=59 /72 | ΔF=+26 ΔT=+18 ΔH=+14 | OK-ID F/T=62 F/H=60 T/H=50 | ANS-ID F/T=57 F/H=50 T/H=40
+L12 SW=25 F=66 T=46 H=49 /72 | ΔF=+41 ΔT=+21 ΔH=+24 | OK-ID F/T=48 F/H=55 T/H=33 | ANS-ID F/T=34 F/H=45 T/H=25
+L13 SW=20 F=68 T=45 H=43 /72 | ΔF=+48 ΔT=+25 ΔH=+23 | OK-ID F/T=47 F/H=47 T/H=28 | ANS-ID F/T=32 F/H=40 T/H=20
+L14 SW=17 F=65 T=42 H=42 /72 | ΔF=+48 ΔT=+25 ΔH=+25 | OK-ID F/T=47 F/H=45 T/H=24 | ANS-ID F/T=34 F/H=40 T/H=19
+L15 SW=15 F=28 T=15 H=50 /72 | ΔF=+13 ΔT=+00 ΔH=+35 | OK-ID F/T=49 F/H=50 T/H=37 | ANS-ID F/T=18 F/H=42 T/H=19
+L16 SW=15 F=28 T=11 H=50 /72 | ΔF=+13 ΔT=-04 ΔH=+35 | OK-ID F/T=53 F/H=50 T/H=33 | ANS-ID F/T=16 F/H=44 T/H=17
+L17 SW=14 F=30 T=14 H=33 /72 | ΔF=+16 ΔT=+00 ΔH=+19 | OK-ID F/T=56 F/H=65 T/H=53 | ANS-ID F/T=25 F/H=60 T/H=24
+L18 SW=13 F=29 T=18 H=31 /72 | ΔF=+16 ΔT=+05 ΔH=+18 | OK-ID F/T=57 F/H=60 T/H=49 | ANS-ID F/T=30 F/H=58 T/H=25
+L19 SW=13 F=16 T=13 H=16 /72 | ΔF=+03 ΔT=+00 ΔH=+03 | OK-ID F/T=69 F/H=68 T/H=67 | ANS-ID F/T=47 F/H=65 T/H=44
+L20 SW=13 F=14 T=13 H=16 /72 | ΔF=+01 ΔT=+00 ΔH=+03 | OK-ID F/T=71 F/H=68 T/H=67 | ANS-ID F/T=53 F/H=66 T/H=49
+L21 SW=13 F=16 T=13 H=16 /72 | ΔF=+03 ΔT=+00 ΔH=+03 | OK-ID F/T=69 F/H=70 T/H=67 | ANS-ID F/T=51 F/H=69 T/H=49
+L22 SW=13 F=16 T=13 H=14 /72 | ΔF=+03 ΔT=+00 ΔH=+01 | OK-ID F/T=69 F/H=68 T/H=67 | ANS-ID F/T=53 F/H=64 T/H=53
+L23 SW=13 F=16 T=14 H=14 /72 | ΔF=+03 ΔT=+01 ΔH=+01 | OK-ID F/T=70 F/H=68 T/H=68 | ANS-ID F/T=56 F/H=65 T/H=52
+L24 SW=13 F=16 T=14 H=14 /72 | ΔF=+03 ΔT=+01 ΔH=+01 | OK-ID F/T=70 F/H=68 T/H=68 | ANS-ID F/T=55 F/H=64 T/H=50
+L25 SW=13 F=15 T=14 H=14 /72 | ΔF=+02 ΔT=+01 ΔH=+01 | OK-ID F/T=71 F/H=69 T/H=68 | ANS-ID F/T=58 F/H=66 T/H=54
+L26 SW=13 F=15 T=14 H=14 /72 | ΔF=+02 ΔT=+01 ΔH=+01 | OK-ID F/T=71 F/H=69 T/H=68 | ANS-ID F/T=56 F/H=65 T/H=52
+L27 SW=13 F=16 T=15 H=14 /72 | ΔF=+03 ΔT=+02 ΔH=+01 | OK-ID F/T=71 F/H=70 T/H=69 | ANS-ID F/T=57 F/H=70 T/H=55
+L28 SW=13 F=16 T=16 H=14 /72 | ΔF=+03 ΔT=+03 ΔH=+01 | OK-ID F/T=70 F/H=70 T/H=68 | ANS-ID F/T=60 F/H=68 T/H=57
+L29 SW=13 F=17 T=16 H=14 /72 | ΔF=+04 ΔT=+03 ΔH=+01 | OK-ID F/T=71 F/H=69 T/H=68 | ANS-ID F/T=62 F/H=67 T/H=60
+L30 SW=13 F=17 T=15 H=14 /72 | ΔF=+04 ΔT=+02 ΔH=+01 | OK-ID F/T=70 F/H=69 T/H=69 | ANS-ID F/T=61 F/H=67 T/H=60
+L31 SW=13 F=13 T=13 H=13 /72 | ΔF=+00 ΔT=+00 ΔH=+00 | OK-ID F/T=72 F/H=72 T/H=72 | ANS-ID F/T=72 F/H=72 T/H=72
+
+BEST FULL   : L13 68/72 Δ=+48 GAIN=49 LOSS=1
+BEST TARGET : L13 45/72 Δ=+25 GAIN=26 LOSS=1
+BEST HISTORY: L15 50/72 Δ=+35 GAIN=35 LOSS=0
+
+[10/11] Conservative mechanism decision...
+DECISION: TARGET AND HISTORY TRANSPLANTS BOTH HELP; HISTORY HAS LARGER MAXIMUM NET EFFECT
+TARGET DOMINATES AT >=1 POSITIVE LAYER: True
+HISTORY DOMINATES AT >=1 POSITIVE LAYER: True
+CAUTION: transplant patches decoder-layer output hidden states only.
+CAUTION: cached K/V at and before the cut remain BLOCK-derived.
+CAUTION: SWITCH isolates timing of restored cross-fact attention access.
+CAUTION: TRANSPLANT-SWITCH isolates added effect of JOINT hidden-state replacement.
+CAUTION: positive effects establish causal sufficiency of the intervention, not a unique physical representation.
+
+[11/11] Anti-drift / final research record...
+WEIGHT SENTINEL: PASS
+TRAINABLE: 0
+RETRIEVAL: NO
+ROUTER: NO
+COSINE / ANN / TOP-K: NO
+EXTERNAL SCORER: NO
+TRAINING / LORA: NO
+QSF: NO
+
+========================================================================================================================================================================
+TEST556 — FINAL RESEARCH RECORD
+========================================================================================================================================================================
+MODEL                    : mistralai/Mistral-7B-Instruct-v0.3
+PANEL SHA                : 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+LOCK SHA                 : 90cb34b33c9cb6e6082bbcd700dc3b9821250d791678874fe2dd4d5283c606f0
+RESULT SHA               : 15e09b6f2d157458ac38dde6f4a83e2a01f8a77e3d7bbd7fac1380e39fe2775c
+TEST555 AGGREGATION BUG  : FIXED — RESULTS FILTERED BY LAYER + SCOPE
+RAW SWITCH ROWS          : 2304
+RAW TRANSPLANT ROWS      : 6912
+JOINT BASELINE           : {'FIRST': 24, 'MIDDLE': 24, 'LAST': 24}
+BLOCK BASELINE           : {'FIRST': 4, 'MIDDLE': 3, 'LAST': 6}
+BEST FULL                : L13 68/72 SW=20/72 Δ=+48 GAIN=49 LOSS=1
+BEST TARGET              : L13 45/72 SW=20/72 Δ=+25 GAIN=26 LOSS=1
+BEST HISTORY             : L15 50/72 SW=15/72 Δ=+35 GAIN=35 LOSS=0
+TARGET DOMINATES          : True
+HISTORY DOMINATES         : True
+WEIGHT SENTINEL           : True
+TRAINABLE                 : 0
+TOTAL TIME                : 2530.58s
+RESEARCH DECISION         : TARGET AND HISTORY TRANSPLANTS BOTH HELP; HISTORY HAS LARGER MAXIMUM NET EFFECT
+NEXT TEST                 : TEST557 — ONLY AFTER TEST556 INTERPRETATION
+========================================================================================================================================================================
