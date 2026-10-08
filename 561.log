@@ -1,0 +1,169 @@
+ ==============================================================================================================================================================
+TEST561 — AKBASCORE MAM · FINAL ENGINE VALIDATION
+TEST560 BACKBONE PRESERVED · LONG APPEND CHAIN · EARLY/MIDDLE/LATE RETENTION
+FROZEN MISTRAL · SOURCE-FREE INCREMENTAL DC6 · NO TRAINING / RETRIEVAL / ROUTER / QSF
+==============================================================================================================================================================
+
+[1/10] Frozen Mistral...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 601/601 [00:00<00:00, 73.5kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 16.6MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 31.8MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 58.3kB/s  tokenizer.model: downloading bytes:   448kB, 44.5kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 40.1kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 3.18MB/s]Download complete:  12.4GB, 23.7MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  157MB/s  Fetching 3 files: 100% 3/3 [00:47<00:00, 13.00s/it]Loading weights: 100% 291/291 [00:03<00:00, 80.73it/s]generation_config.json: 100% 116/116 [00:00<00:00, 15.4kB/s]MODEL: mistralai/Mistral-7B-Instruct-v0.3
+GPU: NVIDIA A100-SXM4-40GB
+TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+NL=32 H=4096 QH=32 KVH=8 HD=128 DTYPE=torch.bfloat16 CUT=6
+ROPE: {'rope_theta': 1000000.0, 'rope_type': 'default'}
+TRAINABLE: 0
+BANK SHA: c912551daf4d11d460b61a7958c7ce0ea778b82d791d7a713f5f7045e40c5d2a
+BANK RECORDS: 80
+
+[2/10] Bank provenance and probe schedule...
+N=05 PROBES=[0, 1, 2, 3, 4]
+N=10 PROBES=[0, 1, 2, 3, 5, 6, 7, 8, 9, 4]
+N=20 PROBES=[0, 1, 3, 4, 5, 8, 11, 14, 15, 16, 18, 19]
+N=40 PROBES=[0, 3, 6, 9, 10, 16, 23, 29, 30, 33, 36, 39]
+N=80 PROBES=[0, 6, 13, 19, 20, 33, 46, 59, 60, 66, 73, 79]
+PROBE SHA: f7d511f1e98ea2e8c14f2f1e5e7c2a61ab4dbaa5aabe4af11dfa8911eeb1372c
+
+[3/10] TEST560 mechanism contract...
+CHECKPOINT: PASS
+INIT: PASS
+APPEND: PASS
+PREFIX: 27 CUT: 6
+
+[4/10] Growing incremental memory bank...
+N=05 CACHE=130 APPEND=0.094s TOTAL=58.0s
+N=10 CACHE=233 APPEND=0.095s TOTAL=58.5s
+N=20 CACHE=438 APPEND=0.096s TOTAL=59.4s
+N=40 CACHE=854 APPEND=0.096s TOTAL=61.4s
+N=80 CACHE=1675 APPEND=0.094s TOTAL=65.2s
+GROWTH CONTRACT: PASS
+
+[5/10] Early / middle / late retention...
+N=05 IDX=00 EARLY  PASS | GOLD=Feror1080 | OUT=Feror1080
+N=05 IDX=01 MIDDLE PASS | GOLD=Lareth1081 | OUT=Lareth1081
+N=05 IDX=02 MIDDLE PASS | GOLD=Torvek1082 | OUT=Torvek1082
+N=05 IDX=03 LATE   PASS | GOLD=Selen1083 | OUT=Selen1083
+N=05 IDX=04 LATE   PASS | GOLD=Mirik1084 | OUT=Mirik1084
+N=10 IDX=00 EARLY  PASS | GOLD=Feror1080 | OUT=Feror1080
+N=10 IDX=01 EARLY  PASS | GOLD=Lareth1081 | OUT=Lareth1081
+N=10 IDX=02 MIDDLE PASS | GOLD=Torvek1082 | OUT=Torvek1082
+N=10 IDX=03 MIDDLE PASS | GOLD=Selen1083 | OUT=Selen1083
+N=10 IDX=05 MIDDLE PASS | GOLD=Varvan1085 | OUT=Varvan1085
+N=10 IDX=06 MIDDLE PASS | GOLD=Korith1086 | OUT=Korith1086
+N=10 IDX=07 LATE   PASS | GOLD=Nalal1087 | OUT=Nalal1087
+N=10 IDX=08 LATE   PASS | GOLD=Derar1088 | OUT=Derar1088
+N=10 IDX=09 LATE   FAIL | GOLD=Calnor1089 | OUT=Torvek1082
+N=10 IDX=04 MIDDLE PASS | GOLD=Mirik1084 | OUT=Mirik1084
+N=20 IDX=00 EARLY  PASS | GOLD=Feror1080 | OUT=Feror1080
+N=20 IDX=01 EARLY  PASS | GOLD=Lareth1081 | OUT=Lareth1081
+N=20 IDX=03 EARLY  PASS | GOLD=Selen1083 | OUT=Selen1083
+N=20 IDX=04 EARLY  PASS | GOLD=Mirik1084 | OUT=Mirik1084
+N=20 IDX=05 MIDDLE PASS | GOLD=Varvan1085 | OUT=Varvan1085
+N=20 IDX=08 MIDDLE PASS | GOLD=Derar1088 | OUT=Derar1088
+N=20 IDX=11 MIDDLE PASS | GOLD=Soreth1091 | OUT=Soreth1091
+N=20 IDX=14 MIDDLE PASS | GOLD=Kelik1094 | OUT=Kelik1094
+N=20 IDX=15 LATE   PASS | GOLD=Tarvan1095 | OUT=Tarvan1095
+N=20 IDX=16 LATE   PASS | GOLD=Belith1096 | OUT=Belith1096
+N=20 IDX=18 LATE   PASS | GOLD=Nemar1098 | OUT=Nemar1098
+N=20 IDX=19 LATE   PASS | GOLD=Darnor1099 | OUT=Darnor1099
+N=40 IDX=00 EARLY  PASS | GOLD=Feror1080 | OUT=Feror1080
+N=40 IDX=03 EARLY  PASS | GOLD=Selen1083 | OUT=Selen1083
+N=40 IDX=06 EARLY  FAIL | GOLD=Korith1086 | OUT=Torvek1082
+N=40 IDX=09 EARLY  FAIL | GOLD=Calnor1089 | OUT=Torvek1082
+N=40 IDX=10 MIDDLE FAIL | GOLD=Paror1090 | OUT=Nalar1098
+N=40 IDX=16 MIDDLE FAIL | GOLD=Belith1096 | OUT=Mirik1084
+N=40 IDX=23 MIDDLE FAIL | GOLD=Selor1103 | OUT=Selen1083
+N=40 IDX=29 MIDDLE FAIL | GOLD=Calith1109 | OUT=Calith1089
+N=40 IDX=30 LATE   FAIL | GOLD=Paral1110 | OUT=Nalik1107
+N=40 IDX=33 LATE   FAIL | GOLD=Zoror1113 | OUT=Zoren1093
+N=40 IDX=36 LATE   FAIL | GOLD=Belen1116 | OUT=Belith1096
+N=40 IDX=39 LATE   PASS | GOLD=Darith1119 | OUT=Darith1119
+N=80 IDX=00 EARLY  PASS | GOLD=Feror1080 | OUT=Feror1080
+N=80 IDX=06 EARLY  FAIL | GOLD=Korith1086 | OUT=Tarvan1095
+N=80 IDX=13 EARLY  PASS | GOLD=Zoren1093 | OUT=Zoren1093
+N=80 IDX=19 EARLY  FAIL | GOLD=Darnor1099 | OUT=Torvek1082
+N=80 IDX=20 MIDDLE PASS | GOLD=Feral1100 | OUT=Feral1100
+N=80 IDX=33 MIDDLE FAIL | GOLD=Zoror1113 | OUT=Zoren1093
+N=80 IDX=46 MIDDLE FAIL | GOLD=Koror1126 | OUT=Feral1100
+N=80 IDX=59 MIDDLE FAIL | GOLD=Daren1139 | OUT=Darith1109
+N=80 IDX=60 LATE   FAIL | GOLD=Fereth1140 | OUT=Feral1100
+N=80 IDX=66 LATE   FAIL | GOLD=Koral1146 | OUT=Ferik1100
+N=80 IDX=73 LATE   FAIL | GOLD=Zorik1153 | OUT=Larvan1121
+N=80 IDX=79 LATE   FAIL | GOLD=Daror1159 | OUT=Torvek1082
+
+[6/10] Retention scores...
+N=05 TOTAL=05/05 EARLY=1/1 MIDDLE=2/2 LATE=2/2
+N=10 TOTAL=09/10 EARLY=2/2 MIDDLE=5/5 LATE=2/3
+N=20 TOTAL=12/12 EARLY=4/4 MIDDLE=4/4 LATE=4/4
+N=40 TOTAL=03/12 EARLY=2/4 MIDDLE=0/4 LATE=1/4
+N=80 TOTAL=03/12 EARLY=2/4 MIDDLE=1/4 LATE=0/4
+
+[7/10] Final-bank exhaustive readout...
+FINAL READOUT 10/80 | correct=7/10
+FINAL READOUT 20/80 | correct=13/20
+FINAL READOUT 30/80 | correct=20/30
+FINAL READOUT 40/80 | correct=21/40
+FINAL READOUT 50/80 | correct=22/50
+FINAL READOUT 60/80 | correct=22/60
+FINAL READOUT 70/80 | correct=22/70
+FINAL READOUT 80/80 | correct=22/80
+FINAL N=80: TOTAL=22/80 EARLY=13/20 MIDDLE=9/40 LATE=0/20
+
+[8/10] Failure and append-cost diagnostics...
+FINAL FAILURES: 58
+IDX=06 GOLD=Korith1086 OUT=Tarvan1095
+IDX=07 GOLD=Nalal1087 OUT=Feral1100
+IDX=09 GOLD=Calnor1089 OUT=Torvek1082
+IDX=10 GOLD=Paror1090 OUT=Nalar1107
+IDX=17 GOLD=Raval1097 OUT=Feral1100
+IDX=18 GOLD=Nemar1098 OUT=Nalik1107
+IDX=19 GOLD=Darnor1099 OUT=Torvek1082
+IDX=22 GOLD=Tornor1102 OUT=Torvek1082
+IDX=24 GOLD=Mireth1104 OUT=Mirar1124
+IDX=26 GOLD=Koren1106 OUT=Daror1106
+IDX=30 GOLD=Paral1110 OUT=Nalik1107
+IDX=32 GOLD=Barnor1112 OUT=Barvek1092
+IDX=33 GOLD=Zoror1113 OUT=Zoren1093
+IDX=34 GOLD=Keleth1114 OUT=Kelik1094
+IDX=35 GOLD=Tarvek1115 OUT=Koren1106
+IDX=36 GOLD=Belen1116 OUT=Belith1116
+IDX=37 GOLD=Ravik1117 OUT=Torvek1082
+IDX=38 GOLD=Nemvan1118 OUT=Nalik1107
+IDX=39 GOLD=Darith1119 OUT=Belith1116
+IDX=40 GOLD=Ferik1120 OUT=Feral1100
+APPEND 1..05 SEGMENT MEAN=0.0927s MAX=0.0956s
+APPEND 1..10 SEGMENT MEAN=0.0956s MAX=0.0967s
+APPEND 1..20 SEGMENT MEAN=0.0952s MAX=0.0965s
+APPEND 1..40 SEGMENT MEAN=0.0965s MAX=0.1078s
+APPEND 1..80 SEGMENT MEAN=0.0966s MAX=0.1200s
+
+[9/10] Final engine decision...
+STAGE PROBES : FAIL
+BAND RETENTION: FAIL
+FINAL EXHAUSTIVE: 22/80
+DECISION: ENGINE VALIDATION NOT YET COMPLETE — FINAL 22/80
+CAUTION: This validates append-only retention for one deterministic 80-record synthetic factual bank; it is not yet a general capacity bound.
+CAUTION: Memory cartridge remains augmented H6 residual + L0-L6 KV; strict KV-only memory is not claimed.
+
+[10/10] Final research record...
+==============================================================================================================================================================
+TEST561 — FINAL RESEARCH RECORD
+==============================================================================================================================================================
+MODEL                  : mistralai/Mistral-7B-Instruct-v0.3
+BANK SHA               : c912551daf4d11d460b61a7958c7ce0ea778b82d791d7a713f5f7045e40c5d2a
+PROBE SHA              : f7d511f1e98ea2e8c14f2f1e5e7c2a61ab4dbaa5aabe4af11dfa8911eeb1372c
+LOCK SHA               : f5b56e5e7049ff7fc9b98921e4ae4cbdf9707433edf1f2b10c711970ce901e4d
+RESULT SHA             : 76f72456001d6c32acaf2f16a310efa0ef9111de442c2da1c63432023471b9e9
+N=05                    : {'TOTAL': 5, 'N': 5, 'EARLY': (1, 1), 'MIDDLE': (2, 2), 'LATE': (2, 2)}
+N=10                    : {'TOTAL': 9, 'N': 10, 'EARLY': (2, 2), 'MIDDLE': (5, 5), 'LATE': (2, 3)}
+N=20                    : {'TOTAL': 12, 'N': 12, 'EARLY': (4, 4), 'MIDDLE': (4, 4), 'LATE': (4, 4)}
+N=40                    : {'TOTAL': 3, 'N': 12, 'EARLY': (2, 4), 'MIDDLE': (0, 4), 'LATE': (1, 4)}
+N=80                    : {'TOTAL': 3, 'N': 12, 'EARLY': (2, 4), 'MIDDLE': (1, 4), 'LATE': (0, 4)}
+FINAL EXHAUSTIVE        : {'TOTAL': 22, 'EARLY': 13, 'MIDDLE': 9, 'LATE': 0}
+ENGINEERING DECISION   : ENGINE VALIDATION NOT YET COMPLETE — FINAL 22/80
+WEIGHT SENTINEL        : PASS
+TRAINABLE              : 0
+TOTAL TIME             : 103.42s
+INTERPRETATION         : Final validation of long append-only numerical memory growth and retention of early, middle and late records without replaying source text or recomputing prior memories.
+NEXT                    : If PASS, freeze research engine version and build demo.
+==============================================================================================================================================================
