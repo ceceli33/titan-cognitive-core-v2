@@ -1,0 +1,98 @@
+ config.json: 100% 601/601 [00:00<00:00, 73.8kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 141k/141k [00:00<00:00, 15.8MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 82.7MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 57.0kB/s  tokenizer.model: downloading bytes:   448kB, 43.5kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 54.3kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 2.93MB/s]Download complete:  12.4GB,  124MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  461MB/s  Fetching 3 files: 100% 3/3 [00:41<00:00, 41.71s/it]Loading weights: 100% 291/291 [00:03<00:00, 80.72it/s]generation_config.json: 100% 116/116 [00:00<00:00, 15.1kB/s]{
+  "setup": {
+    "case": 0,
+    "position": "MIDDLE",
+    "cartridges": [
+      {
+        "id": 10,
+        "type": "FORMER",
+        "fact": "The former capital of Tarev was Cedran.",
+        "is_target": false
+      },
+      {
+        "id": 93,
+        "type": "NEAR",
+        "fact": "The largest city of Karev is Dareth.",
+        "is_target": false
+      },
+      {
+        "id": 0,
+        "type": "CURRENT",
+        "fact": "The current capital of Zorvan is Melket.",
+        "is_target": true
+      },
+      {
+        "id": 70,
+        "type": "FORMER",
+        "fact": "The former capital of Parel was Maros.",
+        "is_target": false
+      },
+      {
+        "id": 50,
+        "type": "FORMER",
+        "fact": "The former capital of Varen was Malvek.",
+        "is_target": false
+      }
+    ],
+    "question": "What is the current capital of Zorvan?",
+    "expected": "Melket",
+    "events": [
+      {
+        "step": 1,
+        "cartridge_id": 10,
+        "position": 1,
+        "cache_tokens": 41,
+        "source_replayed_in_consolidation": false,
+        "prior_tokens_recomputed": false
+      },
+      {
+        "step": 2,
+        "cartridge_id": 93,
+        "position": 2,
+        "cache_tokens": 55,
+        "source_replayed_in_consolidation": false,
+        "prior_tokens_recomputed": false
+      },
+      {
+        "step": 3,
+        "cartridge_id": 0,
+        "position": 3,
+        "cache_tokens": 68,
+        "source_replayed_in_consolidation": false,
+        "prior_tokens_recomputed": false
+      },
+      {
+        "step": 4,
+        "cartridge_id": 70,
+        "position": 4,
+        "cache_tokens": 80,
+        "source_replayed_in_consolidation": false,
+        "prior_tokens_recomputed": false
+      },
+      {
+        "step": 5,
+        "cartridge_id": 50,
+        "position": 5,
+        "cache_tokens": 93,
+        "source_replayed_in_consolidation": false,
+        "prior_tokens_recomputed": false
+      }
+    ],
+    "elapsed_seconds": 1.944,
+    "weights_updated": false,
+    "source_replay_during_consolidation": false,
+    "prior_memory_recomputed": false
+  },
+  "answer": {
+    "question": "What is the current capital of Zorvan?",
+    "answer": "Melket",
+    "reference_question": true,
+    "expected": "Melket",
+    "correct": true,
+    "elapsed_seconds": 0.252,
+    "source_text_supplied_to_query": false,
+    "model_weights_changed": false
+  }
+}
