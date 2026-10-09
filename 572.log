@@ -1,0 +1,258 @@
+ ====================================================================================================================================
+TEST572 — MEMORY SCALE × TWO-HOP REASONING × UNKNOWN CONTROL
+====================================================================================================================================
+========================================================================================================================
+TEST564 — QWEN MAM · CUT CALIBRATION
+========================================================================================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 75.8kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 873kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 44.9MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 73.0MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 134MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.19MB/s]Download complete:  13.1GB,  233MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  429MB/s  Fetching 4 files: 100% 4/4 [00:42<00:00, 42.79s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.27it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.0kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [4, 5, 6, 7, 8]
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+CUT: 3 NEW FACT SHA: cf5e4f95b28cd31391bc4fb9a9ae443d3d604f0ea3af19a37951f1f4a7ffeefa PREFIX: 33 CARTRIDGE POOL: 192
+SIZES: [5, 10, 20, 40] FAMILIES: ['DIRECT', 'HOP2', 'UNKNOWN'] REPEATS: 8 ARMS: ['DC', 'H_FULL']
+TOTAL TASKS: 96 TOTAL ANSWERS: 192
+
+================================================================================================================
+SIZE=5 ARM=DC
+N=05 DC      DIRECT  REP=00 PASS | gold=BPLKYQQK | answer='BPLKYQQK'
+N=05 DC      DIRECT  REP=01 PASS | gold=BZMTSTBP | answer='BZMTSTBP'
+N=05 DC      DIRECT  REP=02 PASS | gold=BJGRKRRD | answer='BJGRKRRD'
+N=05 DC      DIRECT  REP=03 PASS | gold=BFRVYLCG | answer='BFRVYLCG'
+N=05 DC      DIRECT  REP=04 PASS | gold=BWNSKFMH | answer='BWNSKFMH'
+N=05 DC      DIRECT  REP=05 PASS | gold=BWVQGBJK | answer='BWVQGBJK'
+N=05 DC      DIRECT  REP=06 PASS | gold=BBRYSKBC | answer='BBRYSKBC'
+N=05 DC      DIRECT  REP=07 PASS | gold=BMWNZJJG | answer='BMWNZJJG'
+N=05 DC      HOP2    REP=00 PASS | gold=CHVLHTFM | answer='CHVLHTFM'
+N=05 DC      HOP2    REP=01 FAIL | gold=CTNRPHCV | answer='CTFDWVTW'
+N=05 DC      HOP2    REP=02 PASS | gold=CTBNDZXW | answer='CTBNDZXW'
+N=05 DC      HOP2    REP=03 PASS | gold=CFGVJRLQ | answer='CFGVJRLQ'
+N=05 DC      HOP2    REP=04 PASS | gold=CBKDYFXM | answer='CBKDYFXM'
+N=05 DC      HOP2    REP=05 PASS | gold=CXJKPQJH | answer='CXJKPQJH'
+N=05 DC      HOP2    REP=06 PASS | gold=CDMNJSFT | answer='CDMNJSFT'
+N=05 DC      HOP2    REP=07 PASS | gold=CLPFLXQS | answer='CLPFLXQS'
+N=05 DC      UNKNOWN REP=00 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=05 DC      UNKNOWN REP=01 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=05 DC      UNKNOWN REP=02 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=05 DC      UNKNOWN REP=03 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=05 DC      UNKNOWN REP=04 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=05 DC      UNKNOWN REP=05 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=05 DC      UNKNOWN REP=06 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=05 DC      UNKNOWN REP=07 PASS | gold=UNKNOWN | answer='UNKNOWN'
+ARM TIME: 15.51 s
+
+================================================================================================================
+SIZE=5 ARM=H_FULL
+N=05 H_FULL  DIRECT  REP=00 FAIL | gold=BPLKYQQK | answer='UNKNOWN'
+N=05 H_FULL  DIRECT  REP=01 PASS | gold=BZMTSTBP | answer='BZMTSTBP'
+N=05 H_FULL  DIRECT  REP=02 PASS | gold=BJGRKRRD | answer='BJGRKRRD'
+N=05 H_FULL  DIRECT  REP=03 FAIL | gold=BFRVYLCG | answer='UNKNOWN'
+N=05 H_FULL  DIRECT  REP=04 PASS | gold=BWNSKFMH | answer='BWNSKFMH'
+N=05 H_FULL  DIRECT  REP=05 PASS | gold=BWVQGBJK | answer='BWVQGBJK'
+N=05 H_FULL  DIRECT  REP=06 PASS | gold=BBRYSKBC | answer='BBRYSKBC'
+N=05 H_FULL  DIRECT  REP=07 PASS | gold=BMWNZJJG | answer='BMWNZJJG'
+N=05 H_FULL  HOP2    REP=00 PASS | gold=CHVLHTFM | answer='CHVLHTFM'
+N=05 H_FULL  HOP2    REP=01 FAIL | gold=CTNRPHCV | answer='UNKNOWN'
+N=05 H_FULL  HOP2    REP=02 PASS | gold=CTBNDZXW | answer='CTBNDZXW'
+N=05 H_FULL  HOP2    REP=03 FAIL | gold=CFGVJRLQ | answer='UNKNOWN'
+N=05 H_FULL  HOP2    REP=04 FAIL | gold=CBKDYFXM | answer='UNKNOWN'
+N=05 H_FULL  HOP2    REP=05 PASS | gold=CXJKPQJH | answer='CXJKPQJH'
+N=05 H_FULL  HOP2    REP=06 PASS | gold=CDMNJSFT | answer='CDMNJSFT'
+N=05 H_FULL  HOP2    REP=07 PASS | gold=CLPFLXQS | answer='CLPFLXQS'
+N=05 H_FULL  UNKNOWN REP=00 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=05 H_FULL  UNKNOWN REP=01 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=05 H_FULL  UNKNOWN REP=02 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=05 H_FULL  UNKNOWN REP=03 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=05 H_FULL  UNKNOWN REP=04 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=05 H_FULL  UNKNOWN REP=05 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=05 H_FULL  UNKNOWN REP=06 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=05 H_FULL  UNKNOWN REP=07 PASS | gold=UNKNOWN | answer='UNKNOWN'
+ARM TIME: 12.81 s
+
+================================================================================================================
+SIZE=10 ARM=DC
+N=10 DC      DIRECT  REP=00 PASS | gold=BMLRJRRR | answer='BMLRJRRR'
+N=10 DC      DIRECT  REP=01 PASS | gold=BZZNXXBB | answer='BZZNXXBB'
+N=10 DC      DIRECT  REP=02 PASS | gold=BKTVDGRT | answer='BKTVDGRT'
+N=10 DC      DIRECT  REP=03 PASS | gold=BSNXQSNK | answer='BSNXQSNK'
+N=10 DC      DIRECT  REP=04 PASS | gold=BNNWZXCF | answer='BNNWZXCF'
+N=10 DC      DIRECT  REP=05 FAIL | gold=BPPTVJRR | answer='UNKNOWN'
+N=10 DC      DIRECT  REP=06 PASS | gold=BPKQCNZK | answer='BPKQCNZK'
+N=10 DC      DIRECT  REP=07 PASS | gold=BLBGPJVQ | answer='BLBGPJVQ'
+N=10 DC      HOP2    REP=00 PASS | gold=CNGZSDHB | answer='CNGZSDHB'
+N=10 DC      HOP2    REP=01 FAIL | gold=CMPKMYDB | answer='BZZNXXBB'
+N=10 DC      HOP2    REP=02 PASS | gold=CBCJYCSR | answer='CBCJYCSR'
+N=10 DC      HOP2    REP=03 PASS | gold=CBJSDTSN | answer='CBJSDTSN'
+N=10 DC      HOP2    REP=04 PASS | gold=CCRSBDJR | answer='CCRSBDJR'
+N=10 DC      HOP2    REP=05 FAIL | gold=CWVTGCLZ | answer='BPPTVJRR'
+N=10 DC      HOP2    REP=06 FAIL | gold=CQDDDPCD | answer='UNKNOWN'
+N=10 DC      HOP2    REP=07 PASS | gold=CJGHCDMY | answer='CJGHCDMY'
+N=10 DC      UNKNOWN REP=00 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=10 DC      UNKNOWN REP=01 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=10 DC      UNKNOWN REP=02 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=10 DC      UNKNOWN REP=03 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=10 DC      UNKNOWN REP=04 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=10 DC      UNKNOWN REP=05 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=10 DC      UNKNOWN REP=06 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=10 DC      UNKNOWN REP=07 PASS | gold=UNKNOWN | answer='UNKNOWN'
+ARM TIME: 23.87 s
+
+================================================================================================================
+SIZE=10 ARM=H_FULL
+N=10 H_FULL  DIRECT  REP=00 FAIL | gold=BMLRJRRR | answer='UNKNOWN'
+N=10 H_FULL  DIRECT  REP=01 PASS | gold=BZZNXXBB | answer='BZZNXXBB'
+N=10 H_FULL  DIRECT  REP=02 PASS | gold=BKTVDGRT | answer='BKTVDGRT'
+N=10 H_FULL  DIRECT  REP=03 PASS | gold=BSNXQSNK | answer='BSNXQSNK'
+N=10 H_FULL  DIRECT  REP=04 PASS | gold=BNNWZXCF | answer='BNNWZXCF'
+N=10 H_FULL  DIRECT  REP=05 FAIL | gold=BPPTVJRR | answer='UNKNOWN'
+N=10 H_FULL  DIRECT  REP=06 FAIL | gold=BPKQCNZK | answer='UNKNOWN'
+N=10 H_FULL  DIRECT  REP=07 PASS | gold=BLBGPJVQ | answer='BLBGPJVQ'
+N=10 H_FULL  HOP2    REP=00 PASS | gold=CNGZSDHB | answer='CNGZSDHB'
+N=10 H_FULL  HOP2    REP=01 FAIL | gold=CMPKMYDB | answer='CDFWTJWK'
+N=10 H_FULL  HOP2    REP=02 FAIL | gold=CBCJYCSR | answer='UNKNOWN'
+N=10 H_FULL  HOP2    REP=03 FAIL | gold=CBJSDTSN | answer='UNKNOWN'
+N=10 H_FULL  HOP2    REP=04 PASS | gold=CCRSBDJR | answer='CCRSBDJR'
+N=10 H_FULL  HOP2    REP=05 FAIL | gold=CWVTGCLZ | answer='BPPTVJRR'
+N=10 H_FULL  HOP2    REP=06 PASS | gold=CQDDDPCD | answer='CQDDDPCD'
+N=10 H_FULL  HOP2    REP=07 FAIL | gold=CJGHCDMY | answer='UNKNOWN'
+N=10 H_FULL  UNKNOWN REP=00 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=10 H_FULL  UNKNOWN REP=01 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=10 H_FULL  UNKNOWN REP=02 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=10 H_FULL  UNKNOWN REP=03 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=10 H_FULL  UNKNOWN REP=04 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=10 H_FULL  UNKNOWN REP=05 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=10 H_FULL  UNKNOWN REP=06 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=10 H_FULL  UNKNOWN REP=07 PASS | gold=UNKNOWN | answer='UNKNOWN'
+ARM TIME: 22.34 s
+
+================================================================================================================
+SIZE=20 ARM=DC
+N=20 DC      DIRECT  REP=00 FAIL | gold=BQZJNKZR | answer="AWLVSBZS's relay destination is BQZJNKZR."
+N=20 DC      DIRECT  REP=01 PASS | gold=BHXRFPLV | answer='BHXRFPLV'
+N=20 DC      DIRECT  REP=02 FAIL | gold=BZDPRHHC | answer='UNKNOWN'
+N=20 DC      DIRECT  REP=03 PASS | gold=BVKKHTXY | answer='BVKKHTXY'
+N=20 DC      DIRECT  REP=04 PASS | gold=BJDXMZXZ | answer='BJDXMZXZ'
+N=20 DC      DIRECT  REP=05 PASS | gold=BYGXXQBH | answer='BYGXXQBH'
+N=20 DC      DIRECT  REP=06 PASS | gold=BLZJNFLS | answer='BLZJNFLS'
+N=20 DC      DIRECT  REP=07 FAIL | gold=BPLKYQQK | answer='UNKNOWN'
+N=20 DC      HOP2    REP=00 FAIL | gold=CJWKQBQL | answer='UNKNOWN'
+N=20 DC      HOP2    REP=01 FAIL | gold=CTFDWVTW | answer='UNKNOWN'
+N=20 DC      HOP2    REP=02 PASS | gold=CXGZKSNQ | answer='CXGZKSNQ'
+N=20 DC      HOP2    REP=03 FAIL | gold=CHQSLXRL | answer='UNKNOWN'
+N=20 DC      HOP2    REP=04 FAIL | gold=CNMHYZZL | answer='UNKNOWN'
+N=20 DC      HOP2    REP=05 PASS | gold=CGQNVKZF | answer='CGQNVKZF'
+N=20 DC      HOP2    REP=06 PASS | gold=CCSTZGQQ | answer='CCSTZGQQ'
+N=20 DC      HOP2    REP=07 FAIL | gold=CHVLHTFM | answer='BPLKYQQK'
+N=20 DC      UNKNOWN REP=00 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=20 DC      UNKNOWN REP=01 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=20 DC      UNKNOWN REP=02 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=20 DC      UNKNOWN REP=03 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=20 DC      UNKNOWN REP=04 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=20 DC      UNKNOWN REP=05 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=20 DC      UNKNOWN REP=06 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=20 DC      UNKNOWN REP=07 PASS | gold=UNKNOWN | answer='UNKNOWN'
+ARM TIME: 44.42 s
+
+================================================================================================================
+SIZE=20 ARM=H_FULL
+N=20 H_FULL  DIRECT  REP=00 FAIL | gold=BQZJNKZR | answer='UNKNOWN'
+N=20 H_FULL  DIRECT  REP=01 PASS | gold=BHXRFPLV | answer='BHXRFPLV'
+N=20 H_FULL  DIRECT  REP=02 FAIL | gold=BZDPRHHC | answer='UNKNOWN'
+N=20 H_FULL  DIRECT  REP=03 FAIL | gold=BVKKHTXY | answer='UNKNOWN'
+N=20 H_FULL  DIRECT  REP=04 PASS | gold=BJDXMZXZ | answer='BJDXMZXZ'
+N=20 H_FULL  DIRECT  REP=05 PASS | gold=BYGXXQBH | answer='BYGXXQBH'
+N=20 H_FULL  DIRECT  REP=06 FAIL | gold=BLZJNFLS | answer='UNKNOWN'
+N=20 H_FULL  DIRECT  REP=07 FAIL | gold=BPLKYQQK | answer='UNKNOWN'
+N=20 H_FULL  HOP2    REP=00 FAIL | gold=CJWKQBQL | answer='BQZJNKZR'
+N=20 H_FULL  HOP2    REP=01 FAIL | gold=CTFDWVTW | answer='UNKNOWN'
+N=20 H_FULL  HOP2    REP=02 PASS | gold=CXGZKSNQ | answer='CXGZKSNQ'
+N=20 H_FULL  HOP2    REP=03 FAIL | gold=CHQSLXRL | answer='UNKNOWN'
+N=20 H_FULL  HOP2    REP=04 FAIL | gold=CNMHYZZL | answer='UNKNOWN'
+N=20 H_FULL  HOP2    REP=05 PASS | gold=CGQNVKZF | answer='CGQNVKZF'
+N=20 H_FULL  HOP2    REP=06 FAIL | gold=CCSTZGQQ | answer='UNKNOWN'
+N=20 H_FULL  HOP2    REP=07 FAIL | gold=CHVLHTFM | answer='BPLKYQQK'
+N=20 H_FULL  UNKNOWN REP=00 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=20 H_FULL  UNKNOWN REP=01 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=20 H_FULL  UNKNOWN REP=02 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=20 H_FULL  UNKNOWN REP=03 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=20 H_FULL  UNKNOWN REP=04 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=20 H_FULL  UNKNOWN REP=05 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=20 H_FULL  UNKNOWN REP=06 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=20 H_FULL  UNKNOWN REP=07 PASS | gold=UNKNOWN | answer='UNKNOWN'
+ARM TIME: 41.63 s
+
+================================================================================================================
+SIZE=40 ARM=DC
+N=40 DC      DIRECT  REP=00 FAIL | gold=BWVQGBJK | answer='BWBXMVJK'
+N=40 DC      DIRECT  REP=01 PASS | gold=BBRYSKBC | answer='BBRYSKBC'
+N=40 DC      DIRECT  REP=02 PASS | gold=BMWNZJJG | answer='BMWNZJJG'
+N=40 DC      DIRECT  REP=03 FAIL | gold=BHJTSPGP | answer='UNKNOWN'
+N=40 DC      DIRECT  REP=04 PASS | gold=BSJCMYPC | answer='BSJCMYPC'
+N=40 DC      DIRECT  REP=05 PASS | gold=BJRDJJWG | answer='BJRDJJWG'
+N=40 DC      DIRECT  REP=06 PASS | gold=BWFSGQWZ | answer='BWFSGQWZ'
+N=40 DC      DIRECT  REP=07 PASS | gold=BRVCFJJM | answer='BRVCFJJM'
+N=40 DC      HOP2    REP=00 FAIL | gold=CXJKPQJH | answer='UNKNOWN'
+N=40 DC      HOP2    REP=01 FAIL | gold=CDMNJSFT | answer='CBMNJSFT UNKNOWN'
+N=40 DC      HOP2    REP=02 FAIL | gold=CLPFLXQS | answer='UNKNOWN'
+N=40 DC      HOP2    REP=03 FAIL | gold=CJBCSCPL | answer='UNKNOWN'
+N=40 DC      HOP2    REP=04 FAIL | gold=CGLKCZRY | answer='UNKNOWN'
+N=40 DC      HOP2    REP=05 FAIL | gold=CNPRHSVV | answer='UNKNOWN'
+N=40 DC      HOP2    REP=06 FAIL | gold=CSXFFQWB | answer='UNKNOWN'
+N=40 DC      HOP2    REP=07 FAIL | gold=CHWSDGLW | answer='CMPKMYDB'
+N=40 DC      UNKNOWN REP=00 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=40 DC      UNKNOWN REP=01 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=40 DC      UNKNOWN REP=02 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=40 DC      UNKNOWN REP=03 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=40 DC      UNKNOWN REP=04 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=40 DC      UNKNOWN REP=05 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=40 DC      UNKNOWN REP=06 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=40 DC      UNKNOWN REP=07 PASS | gold=UNKNOWN | answer='UNKNOWN'
+ARM TIME: 85.65 s
+
+================================================================================================================
+SIZE=40 ARM=H_FULL
+N=40 H_FULL  DIRECT  REP=00 FAIL | gold=BWVQGBJK | answer='UNKNOWN'
+N=40 H_FULL  DIRECT  REP=01 PASS | gold=BBRYSKBC | answer='BBRYSKBC'
+N=40 H_FULL  DIRECT  REP=02 FAIL | gold=BMWNZJJG | answer='UNKNOWN'
+N=40 H_FULL  DIRECT  REP=03 FAIL | gold=BHJTSPGP | answer='UNKNOWN'
+N=40 H_FULL  DIRECT  REP=04 PASS | gold=BSJCMYPC | answer='BSJCMYPC'
+N=40 H_FULL  DIRECT  REP=05 PASS | gold=BJRDJJWG | answer='BJRDJJWG'
+N=40 H_FULL  DIRECT  REP=06 FAIL | gold=BWFSGQWZ | answer='UNKNOWN'
+N=40 H_FULL  DIRECT  REP=07 FAIL | gold=BRVCFJJM | answer='UNKNOWN'
+N=40 H_FULL  HOP2    REP=00 FAIL | gold=CXJKPQJH | answer='BWVQGBJK'
+N=40 H_FULL  HOP2    REP=01 FAIL | gold=CDMNJSFT | answer='CBMNJSFT'
+N=40 H_FULL  HOP2    REP=02 FAIL | gold=CLPFLXQS | answer='BMWNZJJG'
+N=40 H_FULL  HOP2    REP=03 FAIL | gold=CJBCSCPL | answer='UNKNOWN'
+N=40 H_FULL  HOP2    REP=04 FAIL | gold=CGLKCZRY | answer='UNKNOWN'
+N=40 H_FULL  HOP2    REP=05 FAIL | gold=CNPRHSVV | answer='UNKNOWN'
+N=40 H_FULL  HOP2    REP=06 FAIL | gold=CSXFFQWB | answer='UNKNOWN'
+N=40 H_FULL  HOP2    REP=07 FAIL | gold=CHWSDGLW | answer='UNKNOWN'
+N=40 H_FULL  UNKNOWN REP=00 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=40 H_FULL  UNKNOWN REP=01 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=40 H_FULL  UNKNOWN REP=02 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=40 H_FULL  UNKNOWN REP=03 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=40 H_FULL  UNKNOWN REP=04 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=40 H_FULL  UNKNOWN REP=05 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=40 H_FULL  UNKNOWN REP=06 PASS | gold=UNKNOWN | answer='UNKNOWN'
+N=40 H_FULL  UNKNOWN REP=07 PASS | gold=UNKNOWN | answer='UNKNOWN'
+ARM TIME: 80.31 s
+
+====================================================================================================================================
+TEST572 — SCALE / REASONING / UNKNOWN SCORECARD
+====================================================================================================================================
+N=05 DC      DIRECT=8/8 | HOP2=7/8 | UNKNOWN=8/8
+N=05 H_FULL  DIRECT=6/8 | HOP2=5/8 | UNKNOWN=8/8
+N=10 DC      DIRECT=7/8 | HOP2=5/8 | UNKNOWN=8/8
+N=10 H_FULL  DIRECT=5/8 | HOP2=3/8 | UNKNOWN=8/8
+N=20 DC      DIRECT=5/8 | HOP2=3/8 | UNKNOWN=8/8
+N=20 H_FULL  DIRECT=3/8 | HOP2=2/8 | UNKNOWN=8/8
+N=40 DC      DIRECT=6/8 | HOP2=0/8 | UNKNOWN=8/8
+N=40 H_FULL  DIRECT=3/8 | HOP2=0/8 | UNKNOWN=8/8
+ANSWER ID H_FULL vs DC: 71 / 96
+LOCK SHA: 0989eaea722086f8ac6eae635a1bed534288feac7535833828ecdd05f7fde056
+RESULT SHA: 8efc22b0d4f3be43f2d39097e0f93a4b0c3ab43d51786380ab584a46789d0a90
+PANEL INTEGRITY: PASS
+WEIGHT SENTINEL: PASS TRAINABLE: 0
+TOTAL SECONDS: 328.62
+NOTE: UNKNOWN is strict abstention; failure is informative, not automatically a memory-corruption event.
+====================================================================================================================================
