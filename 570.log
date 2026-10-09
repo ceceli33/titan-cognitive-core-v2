@@ -1,0 +1,258 @@
+ 
+====================================================================================================================================
+TEST570 — QWEN MAM · HELD-OUT PANEL VALIDATION
+====================================================================================================================================
+========================================================================================================================
+TEST564 — QWEN MAM · CUT CALIBRATION
+========================================================================================================================
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 79.2kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 954kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 85.8MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 68.6MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 122MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.52MB/s]
+Download complete: 
+
+ 13.1GB,  274MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  506MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:43<00:00, 43.78s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 101.96it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 30.1kB/s]
+GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [4, 5, 6, 7, 8]
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+TEST: 570 CUT: 3 HELD-OUT WORLDS: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23] ARMS: ['DC', 'H_FULL', 'PREFIX_SWAP']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 BASELINE BLOB: 76dcf80c891640314cbe1849ddffebfae287a23e PREFIX TOKENS: 29
+TOTAL QUESTIONS: 144
+IMPORTANT: HELD-OUT EVALUATION CASES FROM EXISTING FACT POOL; NOT NEW-FACT EXTERNAL VALIDATION.
+
+PREFIX DONOR DIAGNOSTIC
+CI=14 DONOR=31 PREFIX_IDENTICAL=True MAX_ABS=0 MEAN_ABS=0
+CI=27 DONOR=44 PREFIX_IDENTICAL=True MAX_ABS=0 MEAN_ABS=0
+CI=28 DONOR=45 PREFIX_IDENTICAL=False MAX_ABS=32 MEAN_ABS=0.00475386018
+CI=30 DONOR=47 PREFIX_IDENTICAL=False MAX_ABS=32 MEAN_ABS=0.00475386018
+CI=32 DONOR=49 PREFIX_IDENTICAL=False MAX_ABS=32 MEAN_ABS=0.00475386018
+CI=35 DONOR=52 PREFIX_IDENTICAL=False MAX_ABS=32 MEAN_ABS=0.00475386018
+CI=38 DONOR=55 PREFIX_IDENTICAL=False MAX_ABS=32 MEAN_ABS=0.00475386018
+CI=39 DONOR=56 PREFIX_IDENTICAL=False MAX_ABS=32 MEAN_ABS=0.00475386018
+CI=41 DONOR=58 PREFIX_IDENTICAL=True MAX_ABS=0 MEAN_ABS=0
+CI=45 DONOR=62 PREFIX_IDENTICAL=True MAX_ABS=0 MEAN_ABS=0
+CI=47 DONOR=64 PREFIX_IDENTICAL=False MAX_ABS=32 MEAN_ABS=0.00475386018
+CI=48 DONOR=65 PREFIX_IDENTICAL=False MAX_ABS=32 MEAN_ABS=0.00475386018
+CI=49 DONOR=66 PREFIX_IDENTICAL=True MAX_ABS=0 MEAN_ABS=0
+CI=54 DONOR=71 PREFIX_IDENTICAL=False MAX_ABS=32 MEAN_ABS=0.00475386018
+CI=57 DONOR=74 PREFIX_IDENTICAL=False MAX_ABS=32 MEAN_ABS=0.00475386018
+CI=58 DONOR=75 PREFIX_IDENTICAL=False MAX_ABS=32 MEAN_ABS=0.00475386018
+CI=63 DONOR=80 PREFIX_IDENTICAL=True MAX_ABS=0 MEAN_ABS=0
+CI=64 DONOR=81 PREFIX_IDENTICAL=True MAX_ABS=0 MEAN_ABS=0
+CI=67 DONOR=84 PREFIX_IDENTICAL=True MAX_ABS=0 MEAN_ABS=0
+CI=70 DONOR=87 PREFIX_IDENTICAL=False MAX_ABS=32 MEAN_ABS=0.00475386018
+CI=73 DONOR=90 PREFIX_IDENTICAL=True MAX_ABS=0 MEAN_ABS=0
+CI=79 DONOR=00 PREFIX_IDENTICAL=False MAX_ABS=32 MEAN_ABS=0.00475386018
+CI=80 DONOR=01 PREFIX_IDENTICAL=True MAX_ABS=0 MEAN_ABS=0
+CI=86 DONOR=07 PREFIX_IDENTICAL=True MAX_ABS=0 MEAN_ABS=0
+CI=87 DONOR=08 PREFIX_IDENTICAL=True MAX_ABS=0 MEAN_ABS=0
+CI=89 DONOR=10 PREFIX_IDENTICAL=True MAX_ABS=0 MEAN_ABS=0
+CI=91 DONOR=12 PREFIX_IDENTICAL=False MAX_ABS=32 MEAN_ABS=0.00475386018
+CI=95 DONOR=16 PREFIX_IDENTICAL=True MAX_ABS=0 MEAN_ABS=0
+PREFIX_SWAP CHECK: NONIDENTICAL PREFIX STATES DETECTED.
+
+================================================================================================================
+ARM: DC CUT: 3
+DC          CASE=08 FIRST  PASS | gold=Nerith | answer='Nerith'
+DC          CASE=08 MIDDLE PASS | gold=Nerith | answer='Nerith'
+DC          CASE=08 LAST   PASS | gold=Nerith | answer='Nerith'
+DC          CASE=09 FIRST  PASS | gold=Dorin | answer='Dorin'
+DC          CASE=09 MIDDLE PASS | gold=Dorin | answer='Dorin'
+DC          CASE=09 LAST   PASS | gold=Dorin | answer='Dorin'
+DC          CASE=10 FIRST  PASS | gold=Valen | answer='Valen'
+DC          CASE=10 MIDDLE PASS | gold=Valen | answer='Valen'
+DC          CASE=10 LAST   PASS | gold=Valen | answer='Valen'
+DC          CASE=11 FIRST  PASS | gold=Mirev | answer='Mirev'
+DC          CASE=11 MIDDLE PASS | gold=Mirev | answer='Mirev'
+DC          CASE=11 LAST   PASS | gold=Mirev | answer='Mirev'
+DC          CASE=12 FIRST  PASS | gold=Solith | answer='Solith'
+DC          CASE=12 MIDDLE PASS | gold=Solith | answer='Solith'
+DC          CASE=12 LAST   PASS | gold=Solith | answer='Solith'
+DC          CASE=13 FIRST  PASS | gold=Toren | answer='Toren'
+DC          CASE=13 MIDDLE PASS | gold=Toren | answer='Toren'
+DC          CASE=13 LAST   PASS | gold=Toren | answer='Toren'
+DC          CASE=14 FIRST  PASS | gold=Corven | answer='Corven'
+DC          CASE=14 MIDDLE PASS | gold=Corven | answer='Corven'
+DC          CASE=14 LAST   PASS | gold=Corven | answer='Corven'
+DC          CASE=15 FIRST  PASS | gold=Dervan | answer='Dervan'
+DC          CASE=15 MIDDLE PASS | gold=Dervan | answer='Dervan'
+DC          CASE=15 LAST   PASS | gold=Dervan | answer='Dervan'
+DC          CASE=16 FIRST  PASS | gold=Verith | answer='Verith'
+DC          CASE=16 MIDDLE PASS | gold=Verith | answer='Verith'
+DC          CASE=16 LAST   PASS | gold=Verith | answer='Verith'
+DC          CASE=17 FIRST  PASS | gold=Maros | answer='Maros'
+DC          CASE=17 MIDDLE PASS | gold=Maros | answer='Maros'
+DC          CASE=17 LAST   PASS | gold=Maros | answer='Maros'
+DC          CASE=18 FIRST  PASS | gold=Vindor | answer='Vindor'
+DC          CASE=18 MIDDLE PASS | gold=Vindor | answer='Vindor'
+DC          CASE=18 LAST   PASS | gold=Vindor | answer='Vindor'
+DC          CASE=19 FIRST  PASS | gold=Barel | answer='Barel'
+DC          CASE=19 MIDDLE PASS | gold=Barel | answer='Barel'
+DC          CASE=19 LAST   PASS | gold=Barel | answer='Barel'
+DC          CASE=20 FIRST  PASS | gold=Mervor | answer='Mervor'
+DC          CASE=20 MIDDLE PASS | gold=Mervor | answer='Mervor'
+DC          CASE=20 LAST   PASS | gold=Mervor | answer='Mervor'
+DC          CASE=21 FIRST  PASS | gold=Calvenor | answer='Calvenor'
+DC          CASE=21 MIDDLE PASS | gold=Calvenor | answer='Calvenor'
+DC          CASE=21 LAST   PASS | gold=Calvenor | answer='Calvenor'
+DC          CASE=22 FIRST  PASS | gold=Mardin | answer='Mardin'
+DC          CASE=22 MIDDLE PASS | gold=Mardin | answer='Mardin'
+DC          CASE=22 LAST   PASS | gold=Mardin | answer='Mardin'
+DC          CASE=23 FIRST  PASS | gold=Karev | answer='Karev'
+DC          CASE=23 MIDDLE PASS | gold=Karev | answer='Karev'
+DC          CASE=23 LAST   PASS | gold=Karev | answer='Karev'
+RESULT ARM=DC          SCORE=48/48 FIRST=16/16 MIDDLE=16/16 LAST=16/16 COMPLETE=True TIME=26.54s
+
+================================================================================================================
+ARM: H_FULL CUT: 3
+H_FULL      CASE=08 FIRST  PASS | gold=Nerith | answer='Nerith'
+H_FULL      CASE=08 MIDDLE PASS | gold=Nerith | answer='Nerith'
+H_FULL      CASE=08 LAST   PASS | gold=Nerith | answer='Nerith'
+H_FULL      CASE=09 FIRST  PASS | gold=Dorin | answer='Dorin'
+H_FULL      CASE=09 MIDDLE PASS | gold=Dorin | answer='Dorin'
+H_FULL      CASE=09 LAST   PASS | gold=Dorin | answer='Dorin'
+H_FULL      CASE=10 FIRST  PASS | gold=Valen | answer='Valen'
+H_FULL      CASE=10 MIDDLE PASS | gold=Valen | answer='Valen'
+H_FULL      CASE=10 LAST   PASS | gold=Valen | answer='Valen'
+H_FULL      CASE=11 FIRST  PASS | gold=Mirev | answer='Mirev'
+H_FULL      CASE=11 MIDDLE PASS | gold=Mirev | answer='Mirev'
+H_FULL      CASE=11 LAST   PASS | gold=Mirev | answer='Mirev'
+H_FULL      CASE=12 FIRST  PASS | gold=Solith | answer='Solith'
+H_FULL      CASE=12 MIDDLE PASS | gold=Solith | answer='Solith'
+H_FULL      CASE=12 LAST   PASS | gold=Solith | answer='Solith'
+H_FULL      CASE=13 FIRST  PASS | gold=Toren | answer='Toren'
+H_FULL      CASE=13 MIDDLE PASS | gold=Toren | answer='Toren'
+H_FULL      CASE=13 LAST   PASS | gold=Toren | answer='Toren'
+H_FULL      CASE=14 FIRST  PASS | gold=Corven | answer='Corven'
+H_FULL      CASE=14 MIDDLE PASS | gold=Corven | answer='Corven'
+H_FULL      CASE=14 LAST   PASS | gold=Corven | answer='Corven'
+H_FULL      CASE=15 FIRST  PASS | gold=Dervan | answer='Dervan'
+H_FULL      CASE=15 MIDDLE PASS | gold=Dervan | answer='Dervan'
+H_FULL      CASE=15 LAST   PASS | gold=Dervan | answer='Dervan'
+H_FULL      CASE=16 FIRST  PASS | gold=Verith | answer='Verith'
+H_FULL      CASE=16 MIDDLE PASS | gold=Verith | answer='Verith'
+H_FULL      CASE=16 LAST   PASS | gold=Verith | answer='Verith'
+H_FULL      CASE=17 FIRST  PASS | gold=Maros | answer='Maros'
+H_FULL      CASE=17 MIDDLE PASS | gold=Maros | answer='Maros'
+H_FULL      CASE=17 LAST   PASS | gold=Maros | answer='Maros'
+H_FULL      CASE=18 FIRST  PASS | gold=Vindor | answer='Vindor'
+H_FULL      CASE=18 MIDDLE PASS | gold=Vindor | answer='Vindor'
+H_FULL      CASE=18 LAST   PASS | gold=Vindor | answer='Vindor'
+H_FULL      CASE=19 FIRST  PASS | gold=Barel | answer='Barel'
+H_FULL      CASE=19 MIDDLE PASS | gold=Barel | answer='Barel'
+H_FULL      CASE=19 LAST   PASS | gold=Barel | answer='Barel'
+H_FULL      CASE=20 FIRST  PASS | gold=Mervor | answer='Mervor'
+H_FULL      CASE=20 MIDDLE PASS | gold=Mervor | answer='Mervor'
+H_FULL      CASE=20 LAST   PASS | gold=Mervor | answer='Mervor'
+H_FULL      CASE=21 FIRST  PASS | gold=Calvenor | answer='Calvenor'
+H_FULL      CASE=21 MIDDLE PASS | gold=Calvenor | answer='Calvenor'
+H_FULL      CASE=21 LAST   PASS | gold=Calvenor | answer='Calvenor'
+H_FULL      CASE=22 FIRST  PASS | gold=Mardin | answer='Mardin'
+H_FULL      CASE=22 MIDDLE PASS | gold=Mardin | answer='Mardin'
+H_FULL      CASE=22 LAST   PASS | gold=Mardin | answer='Mardin'
+H_FULL      CASE=23 FIRST  PASS | gold=Karev | answer='Karev'
+H_FULL      CASE=23 MIDDLE PASS | gold=Karev | answer='Karev'
+H_FULL      CASE=23 LAST   PASS | gold=Karev | answer='Karev'
+RESULT ARM=H_FULL      SCORE=48/48 FIRST=16/16 MIDDLE=16/16 LAST=16/16 COMPLETE=True TIME=17.78s
+
+================================================================================================================
+ARM: PREFIX_SWAP CUT: 3
+PREFIX_SWAP CASE=08 FIRST  PASS | gold=Nerith | answer='Nerith'
+PREFIX_SWAP CASE=08 MIDDLE PASS | gold=Nerith | answer='Nerith'
+PREFIX_SWAP CASE=08 LAST   PASS | gold=Nerith | answer='Nerith'
+PREFIX_SWAP CASE=09 FIRST  PASS | gold=Dorin | answer='Dorin'
+PREFIX_SWAP CASE=09 MIDDLE PASS | gold=Dorin | answer='Dorin'
+PREFIX_SWAP CASE=09 LAST   PASS | gold=Dorin | answer='Dorin'
+PREFIX_SWAP CASE=10 FIRST  PASS | gold=Valen | answer='Valen'
+PREFIX_SWAP CASE=10 MIDDLE PASS | gold=Valen | answer='Valen'
+PREFIX_SWAP CASE=10 LAST   PASS | gold=Valen | answer='Valen'
+PREFIX_SWAP CASE=11 FIRST  PASS | gold=Mirev | answer='Mirev'
+PREFIX_SWAP CASE=11 MIDDLE PASS | gold=Mirev | answer='Mirev'
+PREFIX_SWAP CASE=11 LAST   PASS | gold=Mirev | answer='Mirev'
+PREFIX_SWAP CASE=12 FIRST  PASS | gold=Solith | answer='Solith'
+PREFIX_SWAP CASE=12 MIDDLE PASS | gold=Solith | answer='Solith'
+PREFIX_SWAP CASE=12 LAST   PASS | gold=Solith | answer='Solith'
+PREFIX_SWAP CASE=13 FIRST  PASS | gold=Toren | answer='Toren'
+PREFIX_SWAP CASE=13 MIDDLE PASS | gold=Toren | answer='Toren'
+PREFIX_SWAP CASE=13 LAST   PASS | gold=Toren | answer='Toren'
+PREFIX_SWAP CASE=14 FIRST  PASS | gold=Corven | answer='Corven'
+PREFIX_SWAP CASE=14 MIDDLE PASS | gold=Corven | answer='Corven'
+PREFIX_SWAP CASE=14 LAST   PASS | gold=Corven | answer='Corven'
+PREFIX_SWAP CASE=15 FIRST  PASS | gold=Dervan | answer='Dervan'
+PREFIX_SWAP CASE=15 MIDDLE PASS | gold=Dervan | answer='Dervan'
+PREFIX_SWAP CASE=15 LAST   PASS | gold=Dervan | answer='Dervan'
+PREFIX_SWAP CASE=16 FIRST  PASS | gold=Verith | answer='Verith'
+PREFIX_SWAP CASE=16 MIDDLE PASS | gold=Verith | answer='Verith'
+PREFIX_SWAP CASE=16 LAST   PASS | gold=Verith | answer='Verith'
+PREFIX_SWAP CASE=17 FIRST  PASS | gold=Maros | answer='Maros'
+PREFIX_SWAP CASE=17 MIDDLE PASS | gold=Maros | answer='Maros'
+PREFIX_SWAP CASE=17 LAST   PASS | gold=Maros | answer='Maros'
+PREFIX_SWAP CASE=18 FIRST  PASS | gold=Vindor | answer='Vindor'
+PREFIX_SWAP CASE=18 MIDDLE PASS | gold=Vindor | answer='Vindor'
+PREFIX_SWAP CASE=18 LAST   PASS | gold=Vindor | answer='Vindor'
+PREFIX_SWAP CASE=19 FIRST  PASS | gold=Barel | answer='Barel'
+PREFIX_SWAP CASE=19 MIDDLE PASS | gold=Barel | answer='Barel'
+PREFIX_SWAP CASE=19 LAST   PASS | gold=Barel | answer='Barel'
+PREFIX_SWAP CASE=20 FIRST  PASS | gold=Mervor | answer='Mervor'
+PREFIX_SWAP CASE=20 MIDDLE PASS | gold=Mervor | answer='Mervor'
+PREFIX_SWAP CASE=20 LAST   PASS | gold=Mervor | answer='Mervor'
+PREFIX_SWAP CASE=21 FIRST  PASS | gold=Calvenor | answer='Calvenor'
+PREFIX_SWAP CASE=21 MIDDLE PASS | gold=Calvenor | answer='Calvenor'
+PREFIX_SWAP CASE=21 LAST   PASS | gold=Calvenor | answer='Calvenor'
+PREFIX_SWAP CASE=22 FIRST  PASS | gold=Mardin | answer='Mardin'
+PREFIX_SWAP CASE=22 MIDDLE PASS | gold=Mardin | answer='Mardin'
+PREFIX_SWAP CASE=22 LAST   PASS | gold=Mardin | answer='Mardin'
+PREFIX_SWAP CASE=23 FIRST  PASS | gold=Karev | answer='Karev'
+PREFIX_SWAP CASE=23 MIDDLE PASS | gold=Karev | answer='Karev'
+PREFIX_SWAP CASE=23 LAST   PASS | gold=Karev | answer='Karev'
+RESULT ARM=PREFIX_SWAP SCORE=48/48 FIRST=16/16 MIDDLE=16/16 LAST=16/16 COMPLETE=True TIME=16.69s
+
+====================================================================================================================================
+TEST570 — FINAL HELD-OUT VALIDATION
+====================================================================================================================================
+MODEL: Qwen/Qwen2.5-7B-Instruct GPU: NVIDIA A100-SXM4-40GB CUT: 3
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 BASELINE BLOB: 76dcf80c891640314cbe1849ddffebfae287a23e
+DC          SCORE=48/48 ANSWER_ID_VS_DC=48/48 LOST=00 GAINED=00 FIRST=16/16 MIDDLE=16/16 LAST=16/16
+H_FULL      SCORE=48/48 ANSWER_ID_VS_DC=48/48 LOST=00 GAINED=00 FIRST=16/16 MIDDLE=16/16 LAST=16/16
+PREFIX_SWAP SCORE=48/48 ANSWER_ID_VS_DC=48/48 LOST=00 GAINED=00 FIRST=16/16 MIDDLE=16/16 LAST=16/16
+LOCK SHA: fe907f5418362869c43f292d315fe29f309bbf7e4d7a1f57f275ff58ef2cd17a
+RESULT SHA: dcd2b65461249213afd38184a4692ea14f38fc4ec7d4ab4d36af464351f4f246
+PANEL INTEGRITY: PASS
+WEIGHT SENTINEL: PASS TRAINABLE: 0
+PREFIX_SWAP NONTRIVIAL: YES
+TOTAL SECONDS: 61.71
+SCOPE: HELD-OUT EVALUATION WORLDS WITHIN THE ORIGINAL 96-CARTRIDGE FACT POOL.
+DECISION: NEXT — COMPLETELY NEW FACTS / INDEPENDENT PANEL / INCREMENTAL EQUIVALENCE.
+
+
+====================================================================================================================================
