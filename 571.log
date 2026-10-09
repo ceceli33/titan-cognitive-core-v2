@@ -1,0 +1,166 @@
+ 
+====================================================================================================================================
+TEST571 — QWEN NEW-FACT EXTERNAL VALIDATION + REBUILD INTEGRITY
+====================================================================================================================================
+========================================================================================================================
+TEST564 — QWEN MAM · CUT CALIBRATION
+========================================================================================================================
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 83.0kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 964kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 57.0MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 75.5MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 129MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.08MB/s]
+Download complete: 
+
+ 13.1GB,  559MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  462MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:42<00:00, 42.65s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 97.58it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 30.6kB/s]
+GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [4, 5, 6, 7, 8]
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+MODEL: Qwen/Qwen2.5-7B-Instruct CUT: 3 NEW WORLDS: 12 NEW CARTRIDGES: 48
+OLD PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 NEW PANEL SHA: c098d53d1eaa33496b2f99f486fe01173b7d967356b0f40b47dbdf12f0685087 NEW FACT SHA: 9b3ef02c874e239b64e298a3860f85a193387e9e78785a09721bd2a8385f465c
+CASES: 12 POSITIONS: ['FIRST', 'MIDDLE', 'LAST'] ARMS: ['DC', 'H_FULL'] TOTAL ANSWERS: 72
+FACTS: NEW SYNTHETIC NAMES; SAME FACT/QUESTION GRAMMAR AS TEST564
+CONTROL: TWO INDEPENDENT SERIAL REBUILDS; NOT A PARALLEL BATCH EQUIVALENCE TEST
+
+================================================================================================================
+ARM: DC
+DC      CASE=00 FIRST  PASS | gold=Pavrik | answer='Pavrik'
+DC      CASE=00 MIDDLE PASS | gold=Pavrik | answer='Pavrik'
+DC      CASE=00 LAST   PASS | gold=Pavrik | answer='Pavrik'
+DC      CASE=01 FIRST  PASS | gold=Vandrel | answer='Vandrel'
+DC      CASE=01 MIDDLE PASS | gold=Vandrel | answer='Vandrel'
+DC      CASE=01 LAST   PASS | gold=Vandrel | answer='Vandrel'
+DC      CASE=02 FIRST  PASS | gold=Moxerin | answer='Moxerin'
+DC      CASE=02 MIDDLE PASS | gold=Moxerin | answer='Moxerin'
+DC      CASE=02 LAST   PASS | gold=Moxerin | answer='Moxerin'
+DC      CASE=03 FIRST  PASS | gold=Delmara | answer='Delmara'
+DC      CASE=03 MIDDLE PASS | gold=Delmara | answer='Delmara'
+DC      CASE=03 LAST   PASS | gold=Delmara | answer='Delmara'
+DC      CASE=04 FIRST  PASS | gold=Tarmel | answer='Tarmel'
+DC      CASE=04 MIDDLE PASS | gold=Tarmel | answer='Tarmel'
+DC      CASE=04 LAST   PASS | gold=Tarmel | answer='Tarmel'
+DC      CASE=05 FIRST  PASS | gold=Kavreth | answer='Kavreth'
+DC      CASE=05 MIDDLE PASS | gold=Kavreth | answer='Kavreth'
+DC      CASE=05 LAST   PASS | gold=Kavreth | answer='Kavreth'
+DC      CASE=06 FIRST  PASS | gold=Vosmera | answer='Vosmera'
+DC      CASE=06 MIDDLE PASS | gold=Vosmera | answer='Vosmera'
+DC      CASE=06 LAST   PASS | gold=Vosmera | answer='Vosmera'
+DC      CASE=07 FIRST  PASS | gold=Helvaron | answer='Helvaron'
+DC      CASE=07 MIDDLE PASS | gold=Helvaron | answer='Helvaron'
+DC      CASE=07 LAST   PASS | gold=Helvaron | answer='Helvaron'
+DC      CASE=08 FIRST  PASS | gold=Bolmera | answer='Bolmera'
+DC      CASE=08 MIDDLE PASS | gold=Bolmera | answer='Bolmera'
+DC      CASE=08 LAST   PASS | gold=Bolmera | answer='Bolmera'
+DC      CASE=09 FIRST  PASS | gold=Qeldren | answer='Qeldren'
+DC      CASE=09 MIDDLE PASS | gold=Qeldren | answer='Qeldren'
+DC      CASE=09 LAST   PASS | gold=Qeldren | answer='Qeldren'
+DC      CASE=10 FIRST  PASS | gold=Raskira | answer='Raskira'
+DC      CASE=10 MIDDLE PASS | gold=Raskira | answer='Raskira'
+DC      CASE=10 LAST   PASS | gold=Raskira | answer='Raskira'
+DC      CASE=11 FIRST  PASS | gold=Luvarek | answer='Luvarek'
+DC      CASE=11 MIDDLE PASS | gold=Luvarek | answer='Luvarek'
+DC      CASE=11 LAST   PASS | gold=Luvarek | answer='Luvarek'
+REBUILD DC      CASE=00 FIRST  BITWISE PASS
+REBUILD DC      CASE=00 MIDDLE BITWISE PASS
+REBUILD DC      CASE=00 LAST   BITWISE PASS
+REBUILD DC      CASE=05 FIRST  BITWISE PASS
+REBUILD DC      CASE=05 MIDDLE BITWISE PASS
+REBUILD DC      CASE=05 LAST   BITWISE PASS
+REBUILD DC      CASE=11 FIRST  BITWISE PASS
+REBUILD DC      CASE=11 MIDDLE BITWISE PASS
+REBUILD DC      CASE=11 LAST   BITWISE PASS
+RESULT DC SCORE=36/36 FIRST=12/12 MIDDLE=12/12 LAST=12/12 COMPLETE=True
+
+================================================================================================================
+ARM: H_FULL
+H_FULL  CASE=00 FIRST  PASS | gold=Pavrik | answer='Pavrik'
+H_FULL  CASE=00 MIDDLE PASS | gold=Pavrik | answer='Pavrik'
+H_FULL  CASE=00 LAST   PASS | gold=Pavrik | answer='Pavrik'
+H_FULL  CASE=01 FIRST  PASS | gold=Vandrel | answer='Vandrel'
+H_FULL  CASE=01 MIDDLE PASS | gold=Vandrel | answer='Vandrel'
+H_FULL  CASE=01 LAST   PASS | gold=Vandrel | answer='Vandrel'
+H_FULL  CASE=02 FIRST  PASS | gold=Moxerin | answer='Moxerin'
+H_FULL  CASE=02 MIDDLE PASS | gold=Moxerin | answer='Moxerin'
+H_FULL  CASE=02 LAST   PASS | gold=Moxerin | answer='Moxerin'
+H_FULL  CASE=03 FIRST  PASS | gold=Delmara | answer='Delmara'
+H_FULL  CASE=03 MIDDLE PASS | gold=Delmara | answer='Delmara'
+H_FULL  CASE=03 LAST   PASS | gold=Delmara | answer='Delmara'
+H_FULL  CASE=04 FIRST  PASS | gold=Tarmel | answer='Tarmel'
+H_FULL  CASE=04 MIDDLE PASS | gold=Tarmel | answer='Tarmel'
+H_FULL  CASE=04 LAST   PASS | gold=Tarmel | answer='Tarmel'
+H_FULL  CASE=05 FIRST  PASS | gold=Kavreth | answer='Kavreth'
+H_FULL  CASE=05 MIDDLE PASS | gold=Kavreth | answer='Kavreth'
+H_FULL  CASE=05 LAST   PASS | gold=Kavreth | answer='Kavreth'
+H_FULL  CASE=06 FIRST  PASS | gold=Vosmera | answer='Vosmera'
+H_FULL  CASE=06 MIDDLE PASS | gold=Vosmera | answer='Vosmera'
+H_FULL  CASE=06 LAST   PASS | gold=Vosmera | answer='Vosmera'
+H_FULL  CASE=07 FIRST  PASS | gold=Helvaron | answer='Helvaron'
+H_FULL  CASE=07 MIDDLE PASS | gold=Helvaron | answer='Helvaron'
+H_FULL  CASE=07 LAST   PASS | gold=Helvaron | answer='Helvaron'
+H_FULL  CASE=08 FIRST  PASS | gold=Bolmera | answer='Bolmera'
+H_FULL  CASE=08 MIDDLE PASS | gold=Bolmera | answer='Bolmera'
+H_FULL  CASE=08 LAST   PASS | gold=Bolmera | answer='Bolmera'
+H_FULL  CASE=09 FIRST  PASS | gold=Qeldren | answer='Qeldren'
+H_FULL  CASE=09 MIDDLE PASS | gold=Qeldren | answer='Qeldren'
+H_FULL  CASE=09 LAST   PASS | gold=Qeldren | answer='Qeldren'
+H_FULL  CASE=10 FIRST  PASS | gold=Raskira | answer='Raskira'
+H_FULL  CASE=10 MIDDLE PASS | gold=Raskira | answer='Raskira'
+H_FULL  CASE=10 LAST   PASS | gold=Raskira | answer='Raskira'
+H_FULL  CASE=11 FIRST  PASS | gold=Luvarek | answer='Luvarek'
+H_FULL  CASE=11 MIDDLE PASS | gold=Luvarek | answer='Luvarek'
+H_FULL  CASE=11 LAST   PASS | gold=Luvarek | answer='Luvarek'
+REBUILD H_FULL  CASE=00 FIRST  BITWISE PASS
+REBUILD H_FULL  CASE=00 MIDDLE BITWISE PASS
+REBUILD H_FULL  CASE=00 LAST   BITWISE PASS
+REBUILD H_FULL  CASE=05 FIRST  BITWISE PASS
+REBUILD H_FULL  CASE=05 MIDDLE BITWISE PASS
+REBUILD H_FULL  CASE=05 LAST   BITWISE PASS
+REBUILD H_FULL  CASE=11 FIRST  BITWISE PASS
+REBUILD H_FULL  CASE=11 MIDDLE BITWISE PASS
+REBUILD H_FULL  CASE=11 LAST   BITWISE PASS
+RESULT H_FULL SCORE=36/36 FIRST=12/12 MIDDLE=12/12 LAST=12/12 COMPLETE=True
+
+====================================================================================================================================
+TEST571 — FINAL NEW-FACT VALIDATION
+====================================================================================================================================
+DC      SCORE=36/36 ANSWER_ID_VS_DC=36/36 FIRST=12/12 MIDDLE=12/12 LAST=12/12
+H_FULL  SCORE=36/36 ANSWER_ID_VS_DC=36/36 FIRST=12/12 MIDDLE=12/12 LAST=12/12
+LOCK SHA: 3bd63dcd1b09d949020d564769e28814c851135d11642196575244105ec4687b
+RESULT SHA: 472ed9676fd8d84ae71fc0ee0db719e81e353dfa6bcdbb3a055b696402fb2bb9
+NEW PANEL INTEGRITY: PASS
+SERIAL REBUILD BITWISE: PASS
+WEIGHT SENTINEL: PASS TRAINABLE: 0
+TOTAL SECONDS: 56.18
+SCOPE: NEW SYNTHETIC FACTS, EXISTING QUESTION GRAMMAR, SERIAL REBUILD ONLY
+
+
+====================================================================================================================================
