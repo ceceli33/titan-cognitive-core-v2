@@ -1,0 +1,121 @@
+ ============================================================================================================================================
+TEST574 — AKBASCORE MAM · QWEN MECHANISM & FORWARD AUDIT · FIXED
+============================================================================================================================================
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+config.json: 100% 663/663 [00:00<00:00, 79.7kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 976kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 43.3MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 74.9MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 132MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.63MB/s]Download complete:  13.1GB,  113MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  465MB/s  Fetching 4 files: 100% 4/4 [00:42<00:00, 42.66s/it]Loading weights: 100% 339/339 [00:04<00:00, 92.33it/s]generation_config.json: 100% 243/243 [00:00<00:00, 31.7kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+BASE BLOB: b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71 PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 CUT: 3
+GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+[1/9] Full weight fingerprint...
+WEIGHT SHA BEFORE: b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786
+[2/9] Attention-mask geometry...
+PASS | PANEL_AND_LENGTH | {'tokens': 82, 'keys': [10, 93, 0, 70, 50]}
+PASS | MASK_SHAPES | {'shape': [1, 1, 82, 82]}
+PASS | JOINT_CAUSAL | {}
+PASS | INDEP_DIFFERS | {}
+PASS | INDEP_PREFIX_ACCESS | {}
+PASS | INDEP_SELF_0 | {'cartridge': 10}
+PASS | INDEP_CROSS_BLOCK_0_1 | {'from_cartridge': 10, 'to_cartridge': 93}
+PASS | INDEP_CROSS_BLOCK_0_2 | {'from_cartridge': 10, 'to_cartridge': 0}
+PASS | INDEP_CROSS_BLOCK_0_3 | {'from_cartridge': 10, 'to_cartridge': 70}
+PASS | INDEP_CROSS_BLOCK_0_4 | {'from_cartridge': 10, 'to_cartridge': 50}
+PASS | INDEP_SELF_1 | {'cartridge': 93}
+PASS | INDEP_CROSS_BLOCK_1_0 | {'from_cartridge': 93, 'to_cartridge': 10}
+PASS | INDEP_CROSS_BLOCK_1_2 | {'from_cartridge': 93, 'to_cartridge': 0}
+PASS | INDEP_CROSS_BLOCK_1_3 | {'from_cartridge': 93, 'to_cartridge': 70}
+PASS | INDEP_CROSS_BLOCK_1_4 | {'from_cartridge': 93, 'to_cartridge': 50}
+PASS | INDEP_SELF_2 | {'cartridge': 0}
+PASS | INDEP_CROSS_BLOCK_2_0 | {'from_cartridge': 0, 'to_cartridge': 10}
+PASS | INDEP_CROSS_BLOCK_2_1 | {'from_cartridge': 0, 'to_cartridge': 93}
+PASS | INDEP_CROSS_BLOCK_2_3 | {'from_cartridge': 0, 'to_cartridge': 70}
+PASS | INDEP_CROSS_BLOCK_2_4 | {'from_cartridge': 0, 'to_cartridge': 50}
+PASS | INDEP_SELF_3 | {'cartridge': 70}
+PASS | INDEP_CROSS_BLOCK_3_0 | {'from_cartridge': 70, 'to_cartridge': 10}
+PASS | INDEP_CROSS_BLOCK_3_1 | {'from_cartridge': 70, 'to_cartridge': 93}
+PASS | INDEP_CROSS_BLOCK_3_2 | {'from_cartridge': 70, 'to_cartridge': 0}
+PASS | INDEP_CROSS_BLOCK_3_4 | {'from_cartridge': 70, 'to_cartridge': 50}
+PASS | INDEP_SELF_4 | {'cartridge': 50}
+PASS | INDEP_CROSS_BLOCK_4_0 | {'from_cartridge': 50, 'to_cartridge': 10}
+PASS | INDEP_CROSS_BLOCK_4_1 | {'from_cartridge': 50, 'to_cartridge': 93}
+PASS | INDEP_CROSS_BLOCK_4_2 | {'from_cartridge': 50, 'to_cartridge': 0}
+PASS | INDEP_CROSS_BLOCK_4_3 | {'from_cartridge': 50, 'to_cartridge': 70}
+[3/9] Mask propagation to transformer and attention modules...
+PASS | JOINT_LAYER_MASK | {'observed_layers': 28, 'expected_layers': 28}
+PASS | JOINT_ATTENTION_MASK | {'observed_layers': 28, 'expected_layers': 28}
+PASS | INDEP_LAYER_MASK | {'observed_layers': 28, 'expected_layers': 28}
+PASS | INDEP_ATTENTION_MASK | {'observed_layers': 28, 'expected_layers': 28}
+[4/9] H3 checkpoint and injection...
+PASS | H3_CHECKPOINT | {'cartridge': 10, 'shape': [1, 40, 3584]}
+PASS | H3_INJECTION_FORWARD | {'cut': 3, 'observed': 1, 'pre_injection_max_abs': 8262.0}
+PASS | INIT_EARLY_KV_L0 | {}
+PASS | INIT_EARLY_KV_L1 | {}
+PASS | INIT_EARLY_KV_L2 | {}
+PASS | INIT_EARLY_KV_L3 | {}
+[5/9] Incremental append and immutable historical KV...
+PASS | APPEND_1_BITWISE | {'cartridge': 93, 'old_tokens': 40, 'new_tokens': 50}
+PASS | APPEND_1_EARLY_KV_L0 | {}
+PASS | APPEND_1_EARLY_KV_L1 | {}
+PASS | APPEND_1_EARLY_KV_L2 | {}
+PASS | APPEND_1_EARLY_KV_L3 | {}
+PASS | APPEND_1_UPPER_KV_LENGTHS | {'layers': 24}
+PASS | APPEND_2_BITWISE | {'cartridge': 0, 'old_tokens': 50, 'new_tokens': 61}
+PASS | APPEND_2_EARLY_KV_L0 | {}
+PASS | APPEND_2_EARLY_KV_L1 | {}
+PASS | APPEND_2_EARLY_KV_L2 | {}
+PASS | APPEND_2_EARLY_KV_L3 | {}
+PASS | APPEND_2_UPPER_KV_LENGTHS | {'layers': 24}
+PASS | APPEND_3_BITWISE | {'cartridge': 70, 'old_tokens': 61, 'new_tokens': 71}
+PASS | APPEND_3_EARLY_KV_L0 | {}
+PASS | APPEND_3_EARLY_KV_L1 | {}
+PASS | APPEND_3_EARLY_KV_L2 | {}
+PASS | APPEND_3_EARLY_KV_L3 | {}
+PASS | APPEND_3_UPPER_KV_LENGTHS | {'layers': 24}
+PASS | APPEND_4_BITWISE | {'cartridge': 50, 'old_tokens': 71, 'new_tokens': 82}
+PASS | APPEND_4_EARLY_KV_L0 | {}
+PASS | APPEND_4_EARLY_KV_L1 | {}
+PASS | APPEND_4_EARLY_KV_L2 | {}
+PASS | APPEND_4_EARLY_KV_L3 | {}
+PASS | APPEND_4_UPPER_KV_LENGTHS | {'layers': 24}
+[6/9] Batch DC3 assembly and upper-layer propagation...
+PASS | BATCH_H3_ASSEMBLY | {'shape': [1, 82, 3584]}
+PASS | BATCH_H3_INJECTION | {'count': 1}
+PASS | BATCH_UPPER_MASK_PROPAGATION | {'layers': 24}
+PASS | BATCH_ATTENTION_MASK_PROPAGATION | {'layers': 24}
+PASS | BATCH_EARLY_KV_L0 | {}
+PASS | BATCH_EARLY_KV_L1 | {}
+PASS | BATCH_EARLY_KV_L2 | {}
+PASS | BATCH_EARLY_KV_L3 | {}
+[7/9] Source-free ASK forward audit...
+PASS | ASK_ALL_HAVE_CACHE | {'forward_calls': 12}
+PASS | ASK_NO_EMBEDDED_SOURCE | {'forward_calls': 12}
+PASS | ASK_TOKEN_LENGTHS | {'max_input': 21}
+PASS | ASK_FIRST_QUERY_TOKENS | {'expected_query_tokens': 21}
+PASS | ASK_NO_SOURCE_REPLAY | {'total_ask_tokens': 92}
+PASS | ASK_DC_CORRECT | {'gold': 'Melket', 'batch': 'Melket', 'incremental': 'Melket', 'joint': 'Melket', 'indep': 'Melket'}
+[8/9] Cross-arm numerical diagnostics...
+PASS | BATCH_INCREMENTAL_KV_SHAPES | {'layers': 28}
+BATCH/INCR EXACT LAYERS: 4 / 28
+JOINT/BATCH EXACT LAYERS: 0 / 28
+[9/9] Final integrity and record...
+PASS | FULL_WEIGHT_SHA_UNCHANGED | {'before': 'b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786', 'after': 'b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786'}
+PASS | SENTINEL_UNCHANGED | {}
+PASS | ZERO_TRAINABLE | {'count': 0}
+PASS | AUDIT_COMPLETENESS | {'counters': {'mask_forward': 2, 'mask_layers': 56, 'attention_layers': 56, 'inject_forward': 1, 'inject_layers': 1, 'ask_forward': 12, 'ask_input_tokens': 92, 'append_checks': 4, 'early_kv_checks': 24, 'upper_kv_checks': 96}}
+============================================================================================================================================
+TEST574 — FINAL MECHANISM AUDIT
+============================================================================================================================================
+MODEL: Qwen/Qwen2.5-7B-Instruct CUT: 3 PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+AUDITS: 83 PASS: 83 FAIL: 0
+FORWARD COUNTERS: {'mask_forward': 2, 'mask_layers': 56, 'attention_layers': 56, 'inject_forward': 1, 'inject_layers': 1, 'ask_forward': 12, 'ask_input_tokens': 92, 'append_checks': 4, 'early_kv_checks': 24, 'upper_kv_checks': 96}
+FULL WEIGHT SHA: b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786 PASS
+LOCK SHA: 7c694bd1da5833d6efad8fb28a0c6a3209317a8826a398f166974b53abb5a203
+RESULT SHA: b3fa9108d0d83227c9a6591f7540530501f951bc9daf894d99a227a5066559ab
+OUTPUT: /content/AKBASCORE_TEST574_QWEN_MECHANISM_AUDIT.json SECONDS: 150.15
+NOTE: ASK audit covers instrumented forward arguments, not every possible external information channel.
+NOTE: KV numerical differences are diagnostics, not automatic failure criteria.
+============================================================================================================================================
