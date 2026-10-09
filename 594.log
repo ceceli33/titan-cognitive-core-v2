@@ -1,0 +1,185 @@
+ 
+================================================================================================================================================= 
+TEST594 — AKBASCORE MAM · TOKENWISE CODE-SELECTION INTERFERENCE X-RAY
+=================================================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+
+[1/15] MODEL / PINNED BASELINE
+MODEL_REUSED: NO — LOADING PINNED BASELINE
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 1.52k/1.52k [00:00<00:00, 172kB/s]
+model.safetensors.index.json: 100%
+
+ 480k/480k [00:00<00:00, 45.0MB/s]
+Download complete: 
+
+ 27.4GB,  345MB/s  
+Reconstruction complete: 100%
+
+ 31.4GB / 31.4GB,  552MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [01:26<00:00, 86.54s/it]
+Loading weights: 100%
+
+ 351/351 [00:07<00:00, 42.09it/s]
+generation_config.json: 100%
+
+ 181/181 [00:00<00:00, 21.9kB/s]
+tokenizer_config.json: 100%
+
+ 1.28k/1.28k [00:00<00:00, 155kB/s]
+tokenizer.json: 100%
+
+ 4.61M/4.61M [00:00<00:00, 53.3MB/s]
+GATE MODEL_FROZEN PASS
+PARAMETERS: 15706484224 TRAINABLE: 0
+
+[2/15] CANONICAL PANEL
+GATE PANEL_LOCK PASS
+PREFIX_TOKENS: 31 BODY_LENGTHS: [24, 24, 24, 23, 23, 23, 23, 23] CUT: 3
+
+[3/15] MLA ROTARY TRANSPORT
+
+[4/15] EIGHT INDEPENDENT WRITES
+GATE WRITE_INDEPENDENT PASS
+WRITE_LENGTHS: [55, 55, 55, 54, 54, 54, 54, 54]
+
+[5/15] INIT — TEST588 ENGINE
+
+[6/15] APPEND — TEST588 ENGINE
+
+[7/15] TWO ORDERS / EIGHT STAGES
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) LENGTHS [55, 79, 103, 126, 149, 172, 195, 218] INIT_DELTA 0.0 APPEND_CALLS [1, 1, 1, 1, 1, 1, 1] PRESERVED [True, True, True, True, True, True, True]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) LENGTHS [54, 77, 100, 123, 146, 170, 194, 218] INIT_DELTA 0.0 APPEND_CALLS [1, 1, 1, 1, 1, 1, 1] PRESERVED [True, True, True, True, True, True, True]
+GATE INIT_EXACT_BOTH PASS
+GATE APPEND_PRESERVED_ALL PASS
+
+[8/15] JOINT REFERENCES
+
+[9/15] GREEDY / COMPLETED BEAM READOUT
+BEAM_WIDTH: 4 BEAM_STEPS: 48 COMPLETED_ONLY: YES GOLD_INJECTION: NO
+
+[10/15] THREE FROZEN MEMORY STATES — BASE6 / LUMEX / PAVORA
+STATE_LENGTHS: {'BASE6': 172, 'LUMEX7': 195, 'PAVORA7': 195} PAVORA_APPEND_CALLS: 1 PRESERVED: True
+GATE PAVORA_CONTROL_PRESERVED PASS
+
+[11/15] THREE-STATE AUTONOMOUS READOUT — NO GOLD INJECTION
+STATE BASE6 STATION ZENTRA-865 EXPECTED HV-2064 GREEDY 'The access code for the fictional station ZENTRA-865 is HV-2064.' SELECTED 'HV-2064' EXACT True
+ RANK 1 LOGP -0.040412 EOS True CODE 'HV-2064'
+ RANK 2 LOGP -3.550351 EOS True CODE 'HV-2064'
+ RANK 3 LOGP -6.044071 EOS True CODE 'BM-7391'
+ RANK 4 LOGP -6.403816 EOS True CODE 'HV-2064'
+STATE LUMEX7 STATION ZENTRA-865 EXPECTED HV-2064 GREEDY 'The access code for the fictional station ZENTRA-865 is RP-6402.' SELECTED 'RP-6402' EXACT False
+ RANK 1 LOGP -0.284534 EOS True CODE 'RP-6402'
+ RANK 2 LOGP -2.283738 EOS True CODE 'HV-2064'
+ RANK 3 LOGP -3.050778 EOS True CODE 'HV-2064'
+ RANK 4 LOGP -3.549758 EOS True CODE 'HV-2064'
+STATE PAVORA7 STATION ZENTRA-865 EXPECTED HV-2064 GREEDY 'The access code for the fictional station ZENTRA-865 is HV-2064.' SELECTED 'HV-2064' EXACT True
+ RANK 1 LOGP -0.159135 EOS True CODE 'HV-2064'
+ RANK 2 LOGP -2.136893 EOS True CODE 'HV-2064'
+ RANK 3 LOGP -4.709925 EOS True CODE 'HV-2064'
+ RANK 4 LOGP -4.973586 EOS True CODE 'HV-2064'
+STATE BASE6 STATION MIREX-204 EXPECTED KT-9173 GREEDY 'The access code for the fictional station MIREX-204 is KT-9173.' SELECTED 'KT-9173' EXACT True
+ RANK 1 LOGP -0.086193 EOS True CODE 'KT-9173'
+ RANK 2 LOGP -2.58564 EOS True CODE 'KT-9173'
+ RANK 3 LOGP -6.944004 EOS True CODE 'KM-9173'
+ RANK 4 LOGP -7.52043 EOS True CODE 'KT-9173'
+STATE LUMEX7 STATION MIREX-204 EXPECTED KT-9173 GREEDY 'The access code for the fictional station MIREX-204 is KT-9173.' SELECTED 'KT-9173' EXACT True
+ RANK 1 LOGP -0.094662 EOS True CODE 'KT-9173'
+ RANK 2 LOGP -2.58998 EOS True CODE 'KT-9173'
+ RANK 3 LOGP -6.310346 EOS True CODE 'KT-9173'
+ RANK 4 LOGP -6.455499 EOS True CODE 'KT-9173'
+STATE PAVORA7 STATION MIREX-204 EXPECTED KT-9173 GREEDY 'The access code for the fictional station MIREX-204 is KT-9173.' SELECTED 'KT-9173' EXACT True
+ RANK 1 LOGP -0.078781 EOS True CODE 'KT-9173'
+ RANK 2 LOGP -2.826291 EOS True CODE 'KT-9173'
+ RANK 3 LOGP -6.558946 EOS True CODE 'KT-9173'
+ RANK 4 LOGP -7.735843 EOS True CODE 'KT-9173'
+
+[12/15] TOKENWISE BRANCH POINT — GREEDY PATHS / COMMON TEXT PREFIX
+PATH ZENTRA-865 BASE6 TEXT ' The access code for the fictional station ZENTRA-865 is HV-2064.'
+PATH ZENTRA-865 LUMEX7 TEXT ' The access code for the fictional station ZENTRA-865 is RP-6402.'
+PATH ZENTRA-865 PAVORA7 TEXT ' The access code for the fictional station ZENTRA-865 is HV-2064.'
+FIRST_GREEDY_DIVERGENCE ZENTRA-865 15 COMMON_PREFIX ' The access code for the fictional station ZENTRA-865 is'
+ BRANCH BASE6 STEPS [{'step': 13, 'token': 20, 'piece': '5', 'top': [('5', -4e-06), ('<｜end▁of▁sentence｜>', -13.000004), ('6', -14.125004), ('4', -14.500004), ('3', -15.000004)]}, {'step': 14, 'token': 317, 'piece': ' is', 'top': [(' is', -6.5e-05), (':', -10.000065), (',', -11.500065), (' in', -12.250065), (' according', -14.250065)]}, {'step': 15, 'token': 79759, 'piece': ' HV', 'top': [(' HV', -0.001216), (':', -6.751215), (' "', -10.751216), (' **', -11.876216), (' not', -12.251216)]}, {'step': 16, 'token': 12, 'piece': '-', 'top': [('-', -0.0), ('2', -15.75), ('<｜end▁of▁sentence｜>', -16.125), ('‑', -16.375), (' ', -16.625)]}, {'step': 17, 'token': 17, 'piece': '2', 'top': [('2', -0.000146), ('<｜end▁of▁sentence｜>', -8.875146), (' ', -12.125146), ('1', -15.125146), ('7', -15.625146)]}, {'step': 18, 'token': 15, 'piece': '0', 'top': [('0', -0.0), ('<｜end▁of▁sentence｜>', -15.875), ('1', -16.875), ('2', -17.625), (',', -18.5)]}, {'step': 19, 'token': 21, 'piece': '6', 'top': [('6', -0.0), ('7', -16.125), ('5', -16.375), ('<｜end▁of▁sentence｜>', -16.625), ('9', -17.125)]}, {'step': 20, 'token': 19, 'piece': '4', 'top': [('4', -1.3e-05), ('<｜end▁of▁sentence｜>', -11.375013), ('5', -14.125013), ('3', -14.375013), ('7', -16.250013)]}]
+ BRANCH LUMEX7 STEPS [{'step': 13, 'token': 20, 'piece': '5', 'top': [('5', -6e-06), ('<｜end▁of▁sentence｜>', -13.125006), ('4', -13.750006), ('6', -13.875006), ('3', -14.125006)]}, {'step': 14, 'token': 317, 'piece': ' is', 'top': [(' is', -5e-05), (':', -10.50005), (',', -11.25005), (' in', -12.25005), (' (', -14.00005)]}, {'step': 15, 'token': 57103, 'piece': ' RP', 'top': [(' RP', -0.24771), (' HV', -2.24771), (':', -2.49771), (' RV', -4.24771), (' ', -4.87271)]}, {'step': 16, 'token': 12, 'piece': '-', 'top': [('-', -0.0), (' -', -15.625), ('1', -16.375), ('6', -16.625), ('<｜end▁of▁sentence｜>', -16.875)]}, {'step': 17, 'token': 21, 'piece': '6', 'top': [('6', -4.7e-05), ('<｜end▁of▁sentence｜>', -10.375047), (' ', -12.500047), ('1', -12.625047), ('7', -13.000047)]}, {'step': 18, 'token': 19, 'piece': '4', 'top': [('4', -5e-06), ('5', -13.125006), ('<｜end▁of▁sentence｜>', -13.875006), ('7', -14.250006), ('2', -14.375006)]}, {'step': 19, 'token': 15, 'piece': '0', 'top': [('0', -8e-06), ('<｜end▁of▁sentence｜>', -12.875008), ('1', -13.125008), ('2', -13.625008), ('9', -14.375008)]}, {'step': 20, 'token': 17, 'piece': '2', 'top': [('2', -2e-06), ('1', -14.250002), ('<｜end▁of▁sentence｜>', -14.375002), ('3', -15.000002), ('0', -15.375002)]}]
+ BRANCH PAVORA7 STEPS [{'step': 13, 'token': 20, 'piece': '5', 'top': [('5', -5e-06), ('3', -13.500005), ('6', -13.750005), ('<｜end▁of▁sentence｜>', -13.875005), ('4', -13.875005)]}, {'step': 14, 'token': 317, 'piece': ' is', 'top': [(' is', -0.000101), (':', -9.750101), (',', -10.500101), (' in', -11.750101), (' was', -13.500101)]}, {'step': 15, 'token': 79759, 'piece': ' HV', 'top': [(' HV', -0.011851), (':', -4.511851), (' ', -8.636851), (' RV', -8.761851), (' **', -8.886851)]}, {'step': 16, 'token': 12, 'piece': '-', 'top': [('-', -2e-06), (' ', -13.500002), ('2', -14.250002), (' -', -16.500002), ('‑', -17.125002)]}, {'step': 17, 'token': 17, 'piece': '2', 'top': [('2', -2.3e-05), ('<｜end▁of▁sentence｜>', -10.750023), (' ', -13.750023), ('1', -14.750023), ('8', -15.750023)]}, {'step': 18, 'token': 15, 'piece': '0', 'top': [('0', -0.0), ('1', -16.625), ('9', -17.0), ('4', -17.25), ('2', -17.25)]}, {'step': 19, 'token': 21, 'piece': '6', 'top': [('6', -1e-06), ('5', -14.750001), ('7', -14.875001), ('<｜end▁of▁sentence｜>', -15.375001), ('9', -15.875001)]}, {'step': 20, 'token': 19, 'piece': '4', 'top': [('4', -8e-06), ('<｜end▁of▁sentence｜>', -12.375009), ('5', -12.875009), ('3', -14.000009), ('7', -15.125009)]}]
+PATH MIREX-204 BASE6 TEXT ' The access code for the fictional station MIREX-204 is KT-9173.'
+PATH MIREX-204 LUMEX7 TEXT ' The access code for the fictional station MIREX-204 is KT-9173.'
+PATH MIREX-204 PAVORA7 TEXT ' The access code for the fictional station MIREX-204 is KT-9173.'
+FIRST_GREEDY_DIVERGENCE MIREX-204 23 COMMON_PREFIX ' The access code for the fictional station MIREX-204 is KT-9173.'
+ BRANCH BASE6 STEPS [{'step': 21, 'token': 18, 'piece': '3', 'top': [('3', -2e-06), ('<｜end▁of▁sentence｜>', -13.375002), ('7', -18.125002), ('2', -18.250002), ('4', -18.562502)]}, {'step': 22, 'token': 13, 'piece': '.', 'top': [('.', -1.1e-05), ('<｜end▁of▁sentence｜>', -11.50001), (',', -14.75001), (' (', -15.50001), ('..', -16.125011)]}, {'step': 23, 'token': 100001, 'piece': '<｜end▁of▁sentence｜>', 'top': [('<｜end▁of▁sentence｜>', -0.001059), (' (', -7.501059), (' Answer', -8.00106), ('\n', -9.62606), (' The', -10.00106)]}]
+ BRANCH LUMEX7 STEPS [{'step': 21, 'token': 18, 'piece': '3', 'top': [('3', -2e-06), ('<｜end▁of▁sentence｜>', -13.250002), ('2', -18.000002), ('7', -18.250002), ('.', -18.562502)]}, {'step': 22, 'token': 13, 'piece': '.', 'top': [('.', -1.5e-05), ('<｜end▁of▁sentence｜>', -11.250015), (',', -13.875015), (' (', -14.875015), ('..', -15.375015)]}, {'step': 23, 'token': 100001, 'piece': '<｜end▁of▁sentence｜>', 'top': [('<｜end▁of▁sentence｜>', -0.002552), (' (', -6.502552), (' Answer', -7.502552), (' The', -8.502552), ('\n', -8.752552)]}]
+ BRANCH PAVORA7 STEPS [{'step': 21, 'token': 18, 'piece': '3', 'top': [('3', -1e-06), ('<｜end▁of▁sentence｜>', -14.000001), ('2', -17.5), ('7', -18.25), ('4', -18.5)]}, {'step': 22, 'token': 13, 'piece': '.', 'top': [('.', -1.5e-05), ('<｜end▁of▁sentence｜>', -11.250014), (',', -14.000014), (' (', -15.250014), ('..', -15.500014)]}, {'step': 23, 'token': 100001, 'piece': '<｜end▁of▁sentence｜>', 'top': [('<｜end▁of▁sentence｜>', -0.002319), (' (', -6.502319), (' Answer', -7.752319), (' The', -9.002318), ('\n', -9.002318)]}]
+
+[13/15] MATCHED-PREFIX TARGET-CODE LOG-LIKELIHOOD — DIAGNOSTIC TEACHER FORCING ONLY
+PROBE_STATION ZENTRA-865 PREFIX 'The access code for the fictional station ZENTRA-865 is ' CORRECT HV-2064 DISTRACTOR RP-6402
+ STATE BASE6 CORRECT_LOGP -5.407393 DISTRACTOR_LOGP -29.877169 CORRECT_MINUS_DISTRACTOR 24.469776 CORRECT_TOKENS 6 DISTRACTOR_TOKENS 6
+  CORRECT_TOKEN_TRACE [('HV', -5.406685, 2, ' HV'), ('-', -6e-05, 1, '-'), ('2', -0.000461, 1, '2'), ('0', -7e-06, 1, '0'), ('6', -4e-06, 1, '6'), ('4', -0.000176, 1, '4')]
+  DISTRACTOR_TOKEN_TRACE [('RP', -29.750435, 70652, ' HV'), ('-', -0.007658, 1, '-'), ('6', -0.107427, 1, '6'), ('4', -0.009517, 1, '4'), ('0', -0.001241, 1, '0'), ('2', -0.000891, 1, '2')]
+ STATE LUMEX7 CORRECT_LOGP -6.667783 DISTRACTOR_LOGP -14.792792 CORRECT_MINUS_DISTRACTOR 8.125009 CORRECT_TOKENS 6 DISTRACTOR_TOKENS 6
+  CORRECT_TOKEN_TRACE [('HV', -6.667589, 18, '2'), ('-', -4.6e-05, 1, '-'), ('2', -7.3e-05, 1, '2'), ('0', -4e-06, 1, '0'), ('6', -5e-06, 1, '6'), ('4', -6.6e-05, 1, '4')]
+  DISTRACTOR_TOKEN_TRACE [('RP', -14.792589, 323, '2'), ('-', -2e-05, 1, '-'), ('6', -0.000134, 1, '6'), ('4', -1.5e-05, 1, '4'), ('0', -2.5e-05, 1, '0'), ('2', -9e-06, 1, '2')]
+ STATE PAVORA7 CORRECT_LOGP -4.95533 DISTRACTOR_LOGP -21.314854 CORRECT_MINUS_DISTRACTOR 16.359524 CORRECT_TOKENS 6 DISTRACTOR_TOKENS 6
+  CORRECT_TOKEN_TRACE [('HV', -4.955102, 5, '2'), ('-', -4.1e-05, 1, '-'), ('2', -0.000113, 1, '2'), ('0', -2e-06, 1, '0'), ('6', -9e-06, 1, '6'), ('4', -6.3e-05, 1, '4')]
+  DISTRACTOR_TOKEN_TRACE [('RP', -21.314478, 3867, '2'), ('-', -3.5e-05, 1, '-'), ('6', -0.00026, 1, '6'), ('4', -2.8e-05, 1, '4'), ('0', -4e-05, 1, '0'), ('2', -1.3e-05, 1, '2')]
+PROBE_STATION MIREX-204 PREFIX 'The access code for the fictional station MIREX-204 is ' CORRECT KT-9173 DISTRACTOR BM-7391
+ STATE BASE6 CORRECT_LOGP -9.632685 DISTRACTOR_LOGP -38.760673 CORRECT_MINUS_DISTRACTOR 29.127988 CORRECT_TOKENS 6 DISTRACTOR_TOKENS 6
+  CORRECT_TOKEN_TRACE [('KT', -9.632247, 22, ' K'), ('-', -3e-05, 1, '-'), ('9', -0.000388, 1, '9'), ('1', -2e-06, 1, '1'), ('7', -1e-06, 1, '7'), ('3', -1.7e-05, 1, '3')]
+  DISTRACTOR_TOKEN_TRACE [('BM', -37.132248, 92127, ' K'), ('-', -0.004043, 1, '-'), ('7', -1.621771, 2, '9'), ('3', -0.001451, 1, '3'), ('9', -0.000394, 1, '9'), ('1', -0.000766, 1, '1')]
+ STATE LUMEX7 CORRECT_LOGP -9.519014 DISTRACTOR_LOGP -44.336566 CORRECT_MINUS_DISTRACTOR 34.817551 CORRECT_TOKENS 6 DISTRACTOR_TOKENS 6
+  CORRECT_TOKEN_TRACE [('KT', -9.518549, 35, ' K'), ('-', -4.9e-05, 1, '-'), ('9', -0.000396, 1, '9'), ('1', -2e-06, 1, '1'), ('7', -2e-06, 1, '7'), ('3', -1.7e-05, 1, '3')]
+  DISTRACTOR_TOKEN_TRACE [('BM', -35.456051, 91570, ' K'), ('-', -0.003613, 1, '-'), ('7', -8.876477, 6, '9'), ('3', -0.000104, 1, '3'), ('9', -3.5e-05, 1, '9'), ('1', -0.000284, 1, '1')]
+ STATE PAVORA7 CORRECT_LOGP -9.892453 DISTRACTOR_LOGP -41.647734 CORRECT_MINUS_DISTRACTOR 31.755281 CORRECT_TOKENS 6 DISTRACTOR_TOKENS 6
+  CORRECT_TOKEN_TRACE [('KT', -9.891806, 38, ' K'), ('-', -5.9e-05, 1, '-'), ('9', -0.000569, 1, '9'), ('1', -2e-06, 1, '1'), ('7', -2e-06, 1, '7'), ('3', -1.6e-05, 1, '3')]
+  DISTRACTOR_TOKEN_TRACE [('BM', -35.141808, 90224, ' K'), ('-', -0.002361, 1, '-'), ('7', -6.503132, 2, '9'), ('3', -9.9e-05, 1, '3'), ('9', -5.1e-05, 1, '9'), ('1', -0.000283, 1, '1')]
+INTERPRETATION: MATCHED PREFIX PROBES ARE TEACHER-FORCED DIAGNOSTICS, NOT AUTONOMOUS GENERATION OR A GOLD-AWARE DECODER.
+INTERPRETATION: RAW SEQUENCE LOG-LIKELIHOODS DEPEND ON TOKENIZATION AND LENGTH. REPORT TOKEN COUNTS; DO NOT ASSUME EQUAL LENGTH.
+INTERPRETATION: A FLIPPED MARGIN LOCATES A CONDITIONAL CODE PREFERENCE, NOT A CAUSAL MODEL LAYER.
+GATE THREE_STATE_PANEL_COMPLETE PASS
+GATE ORIGINAL_ZENTRA_ERROR_REPRODUCED PASS
+GATE LUMEX_CORRECT_CANDIDATE_VISIBLE PASS
+GATE TOKEN_PROBES_COMPLETE PASS
+
+[14/15] INTEGRITY
+GATE CACHE_VALID PASS
+GATE HOOK_COUNTS PASS
+GATE HOOKS_CLEAN PASS
+GATE FINGERPRINT_UNCHANGED PASS
+GATE WEIGHTS_FROZEN PASS
+CUDA_ALLOCATED_GIB: 29.387 CUDA_PEAK_GIB: 29.963
+
+[15/15] FINAL
+GATE MODEL_FROZEN PASS
+GATE PANEL_LOCK PASS
+GATE WRITE_INDEPENDENT PASS
+GATE INIT_EXACT_BOTH PASS
+GATE APPEND_PRESERVED_ALL PASS
+GATE PAVORA_CONTROL_PRESERVED PASS
+GATE THREE_STATE_PANEL_COMPLETE PASS
+GATE ORIGINAL_ZENTRA_ERROR_REPRODUCED PASS
+GATE LUMEX_CORRECT_CANDIDATE_VISIBLE PASS
+GATE TOKEN_PROBES_COMPLETE PASS
+GATE CACHE_VALID PASS
+GATE HOOK_COUNTS PASS
+GATE HOOKS_CLEAN PASS
+GATE FINGERPRINT_UNCHANGED PASS
+GATE WEIGHTS_FROZEN PASS
+INFRASTRUCTURE_STATUS: PASS
+ERROR_REPRODUCTION_STATUS: PASS
+STATUS: PASS — TOKENWISE DIAGNOSTIC COMPLETE
+ENGINE: TEST593 / TEST592 / TEST588 CUT3 WRITE/INIT/APPEND UNCHANGED
+GOLD_CANDIDATE_INJECTION: NO
+FORCED_FIRST_TOKEN: NO
+SOURCE_REPLAY_DURING_APPEND_OR_ASK: NO
+COMPRESSION: NOT YET
+AUTONOMOUS_READOUTS: 6 GREEDY_PATHS: 6 CONDITIONAL_CODE_PROBES: 12
+ELAPSED_SECONDS: 179.53
+
+
+=================================================================================================================================================
