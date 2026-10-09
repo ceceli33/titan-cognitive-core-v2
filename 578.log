@@ -1,0 +1,160 @@
+ 
+============================================================================================================================
+TEST578 — AKBASCORE MAM · DEEPSEEK MLA X-RAY · FROZEN BF16
+============================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+
+[1/9] PINNED CONFIG / MODEL REUSE
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 1.52k/1.52k [00:00<00:00, 189kB/s]
+MODEL_REUSED: NO — LOADING TEST577 BASELINE
+
+model.safetensors.index.json: 100%
+
+ 480k/480k [00:00<00:00, 42.7MB/s]
+Download complete: 
+
+ 27.4GB,  182MB/s  
+Reconstruction complete: 100%
+
+ 31.4GB / 31.4GB,  566MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [01:25<00:00, 85.98s/it]
+Loading weights: 100%
+
+ 351/351 [00:08<00:00, 41.94it/s]
+generation_config.json: 100%
+
+ 181/181 [00:00<00:00, 23.9kB/s]
+LOAD missing_keys 0 []
+LOAD unexpected_keys 0 []
+LOAD mismatched_keys 0 []
+LOAD error_msgs 0 []
+PARAMETERS: 15706484224 TRAINABLE: 0
+CUDA_ALLOCATED_GIB: 29.276
+
+[2/9] FIXED TOKENIZER / INPUT
+
+tokenizer_config.json: 100%
+
+ 1.28k/1.28k [00:00<00:00, 167kB/s]
+tokenizer.json: 100%
+
+ 4.61M/4.61M [00:00<00:00, 69.3MB/s]
+PROMPT: '<｜begin▁of▁sentence｜>User: Reply with exactly one word: READY\n\nAssistant:' SHAPE: (1, 15)
+
+[3/9] ATTENTION HOOK — KWARGS AWARE
+FORWARD_LOGITS: {'shape': (1, 1, 102400), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 0 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 1 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 2 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 3 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 4 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 5 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 6 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 7 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 8 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 9 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 10 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 11 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 12 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 13 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 14 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 15 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 16 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 17 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 18 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 19 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 20 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 21 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 22 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 23 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 24 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 25 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+ATTENTION_INPUT 26 {'shape': (1, 15, 2048), 'dtype': 'torch.bfloat16', 'finite': True}
+
+[4/9] FULL VS INCREMENTAL — LAYERWISE RESIDUAL X-RAY
+FULL_TOP1: 4460 ' Set'
+INCREMENTAL_TOP1: 4460 ' Set'
+LOGIT_COMPARISON: {'max': 2.931396484375, 'mean': 0.5314355492591858, 'cos': 0.9963386058807373}
+LAYER 0 MAX: 0.000977 MEAN: 2.2e-05 COS: 1.0
+LAYER 1 MAX: 0.001953 MEAN: 0.000218 COS: 0.99999428
+LAYER 2 MAX: 0.00293 MEAN: 0.000347 COS: 0.99999189
+LAYER 3 MAX: 0.003906 MEAN: 0.000673 COS: 0.99998152
+LAYER 4 MAX: 0.015625 MEAN: 0.000919 COS: 0.99997449
+LAYER 5 MAX: 0.007812 MEAN: 0.001452 COS: 0.99994779
+LAYER 6 MAX: 0.03125 MEAN: 0.001924 COS: 0.99992037
+LAYER 7 MAX: 0.03125 MEAN: 0.002737 COS: 0.99988568
+LAYER 8 MAX: 0.03125 MEAN: 0.003974 COS: 0.99985123
+LAYER 9 MAX: 0.07251 MEAN: 0.015755 COS: 0.9983961
+LAYER 10 MAX: 0.091797 MEAN: 0.019766 COS: 0.99829632
+LAYER 11 MAX: 0.195312 MEAN: 0.046106 COS: 0.99272549
+LAYER 12 MAX: 0.3125 MEAN: 0.063444 COS: 0.98964751
+LAYER 13 MAX: 0.5 MEAN: 0.062722 COS: 0.99106383
+LAYER 14 MAX: 0.4375 MEAN: 0.074811 COS: 0.98933399
+LAYER 15 MAX: 0.5 MEAN: 0.076902 COS: 0.98964226
+LAYER 16 MAX: 0.75 MEAN: 0.09499 COS: 0.99047935
+LAYER 17 MAX: 0.625 MEAN: 0.0981 COS: 0.99187291
+LAYER 18 MAX: 0.75 MEAN: 0.115879 COS: 0.99120718
+LAYER 19 MAX: 0.875 MEAN: 0.13542 COS: 0.99016458
+LAYER 20 MAX: 1.0 MEAN: 0.148259 COS: 0.99044025
+LAYER 21 MAX: 1.5 MEAN: 0.162663 COS: 0.99097347
+LAYER 22 MAX: 2.0 MEAN: 0.187482 COS: 0.99034703
+LAYER 23 MAX: 3.0 MEAN: 0.210735 COS: 0.99259174
+LAYER 24 MAX: 2.0 MEAN: 0.246684 COS: 0.99292272
+LAYER 25 MAX: 3.5 MEAN: 0.280595 COS: 0.99483842
+LAYER 26 MAX: 1.75 MEAN: 0.30731 COS: 0.99211895
+FIRST_LAYER_MAX_DIFF_GT_0.01: 4
+
+[5/9] CACHE STRUCTURE / INCREMENTAL GROWTH
+CACHE INCREMENTAL TYPE: DynamicCache LENGTH: 15 LAYERS: 27
+ L 0 K: {'shape': (1, 1, 15, 512), 'dtype': 'torch.bfloat16', 'finite': True} R: {'shape': (1, 1, 15, 64), 'dtype': 'torch.bfloat16', 'finite': True}
+ L 1 K: {'shape': (1, 1, 15, 512), 'dtype': 'torch.bfloat16', 'finite': True} R: {'shape': (1, 1, 15, 64), 'dtype': 'torch.bfloat16', 'finite': True}
+ L 2 K: {'shape': (1, 1, 15, 512), 'dtype': 'torch.bfloat16', 'finite': True} R: {'shape': (1, 1, 15, 64), 'dtype': 'torch.bfloat16', 'finite': True}
+ L 3 K: {'shape': (1, 1, 15, 512), 'dtype': 'torch.bfloat16', 'finite': True} R: {'shape': (1, 1, 15, 64), 'dtype': 'torch.bfloat16', 'finite': True}
+ L 6 K: {'shape': (1, 1, 15, 512), 'dtype': 'torch.bfloat16', 'finite': True} R: {'shape': (1, 1, 15, 64), 'dtype': 'torch.bfloat16', 'finite': True}
+ L 13 K: {'shape': (1, 1, 15, 512), 'dtype': 'torch.bfloat16', 'finite': True} R: {'shape': (1, 1, 15, 64), 'dtype': 'torch.bfloat16', 'finite': True}
+ L 26 K: {'shape': (1, 1, 15, 512), 'dtype': 'torch.bfloat16', 'finite': True} R: {'shape': (1, 1, 15, 64), 'dtype': 'torch.bfloat16', 'finite': True}
+
+[6/9] CACHE PREFIX IMMUTABILITY
+PREFIX_MAX_ABS_DIFF: 0.0 MEAN_OF_COMPONENT_MEANS: 0.0 COMPONENTS: 54
+
+[7/9] ROTARY / POSITION SHIFT X-RAY
+ROTARY_TYPE: Tensor R0: {'shape': (1, 15, 32), 'dtype': 'torch.complex64', 'finite': True} R1: {'shape': (1, 15, 32), 'dtype': 'torch.complex64', 'finite': True}
+ROTARY_SHIFT_PLUS_ONE: {'max': 0.9564490914344788, 'mean': 0.0757470354437828, 'cos': 0.979131817817688}
+
+[8/9] SHORT GREEDY / MEMORY AUDIT
+
+/tmp/ipykernel_4082/2915016342.py:36: UserWarning: Casting complex values to real discards the imaginary part (Triggered internally at /pytorch/aten/src/ATen/native/Copy.cpp:308.)
+  a=a.detach().float();b=b.detach().float()
+
+GENERATED: ' Set'
+CUDA_ALLOCATED_GIB: 29.284
+CUDA_PEAK_GIB: 29.963
+
+[9/9] FINAL AUDIT
+GATE MODEL PASS
+GATE PROMPT PASS
+GATE ATTENTION_27 PASS
+GATE RESIDUAL_27 PASS
+GATE TOP1_MATCH PASS
+GATE CACHE_27 PASS
+GATE CACHE_LENGTH PASS
+GATE PREFIX_IMMUTABLE PASS
+GATE ROTARY_SHIFT PASS
+GATE GENERATE PASS
+FIRST_RESIDUAL_DIVERGENCE: 4
+STATUS: PASS — DEEPSEEK MLA X-RAY COMPLETE
+MODEL_FROZEN: True
+MAM_WRITE_INIT_APPEND_ASK: NOT MODIFIED
+CUT_SELECTED: NO
+ELAPSED_SECONDS: 102.93
+
+
+============================================================================================================================
