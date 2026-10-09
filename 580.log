@@ -1,0 +1,86 @@
+ 
+==============================================================================================================================
+TEST580 — AKBASCORE MAM · DEEPSEEK SINGLE CARTRIDGE WRITE → INIT → ASK
+==============================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+
+[1/9] REUSE TEST579 MODEL
+MODEL_REUSED: NO — LOADING TEST579 BASELINE
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 1.52k/1.52k [00:00<00:00, 188kB/s]
+model.safetensors.index.json: 100%
+
+ 480k/480k [00:00<00:00, 46.8MB/s]
+Download complete: 
+
+ 27.4GB,  268MB/s  
+Reconstruction complete: 100%
+
+ 31.4GB / 31.4GB,  590MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [01:27<00:00, 37.23s/it]
+Loading weights: 100%
+
+ 351/351 [00:07<00:00, 42.64it/s]
+generation_config.json: 100%
+
+ 181/181 [00:00<00:00, 17.5kB/s]
+tokenizer_config.json: 100%
+
+ 1.28k/1.28k [00:00<00:00, 181kB/s]
+tokenizer.json: 100%
+
+ 4.61M/4.61M [00:00<00:00, 103MB/s]
+PARAMETERS: 15706484224 TRAINABLE: 0
+
+[2/9] PILOT FACT / QUESTION / CONTROLS
+FACT: The access code for the fictional station VELORA-731 is QN-4826.
+QUESTION: What is the access code for the fictional station VELORA-731? Answer with the code only.
+SOURCE_TOKEN_COUNT: 36 ASK_TOKEN_COUNT: 30
+
+[3/9] WRITE — NATIVE MLA CACHE + RESIDUAL CAPTURE
+WRITE_CACHE_LENGTH: 36
+WRITE_CACHE_LAYER0: (1, 1, 36, 512) (1, 1, 36, 64)
+WRITE_RESIDUALS: 27 SOURCE_SHA256: eb83b10a08defa3e
+
+[4/9] INIT — NUMERICAL CACHE RECONSTRUCTION
+INIT_CACHE_LENGTH: 36 LAYERS: 27
+
+[5/9] ASK — SOURCE-FREE QUESTION WITH CARTRIDGE
+MEMORY_ANSWER: 'QN-4826'
+
+[6/9] CONTROL — NO MEMORY
+NO_MEMORY_ANSWER: '1908'
+
+[7/9] CONTROL — NATIVE TEXT CONTEXT
+NATIVE_TEXT_ANSWER: 'QN-4826'
+
+[8/9] EXACT ANSWER / CACHE AUDIT
+MEMORY_EXACT: True NO_MEMORY_NEGATIVE: True NATIVE_EXACT: True
+CACHE_INTEGRITY: True HOOKS_CLEAN: True
+
+[9/9] FINAL AUDIT
+GATE MODEL_FROZEN PASS
+GATE WRITE PASS
+GATE INIT PASS
+GATE MEMORY_EXACT PASS
+GATE NO_MEMORY_NEGATIVE PASS
+GATE NATIVE_EXACT PASS
+GATE SOURCE_FREE_ASK PASS
+GATE CACHE_INTEGRITY PASS
+GATE HOOKS_CLEAN PASS
+STATUS: PASS — SINGLE CARTRIDGE SOURCE-FREE RECALL
+MODEL_FROZEN: True
+CARTRIDGE_KIND: NATIVE UNCOMPRESSED MLA CACHE + CAPTURED RESIDUAL
+CUT_SELECTED: NO
+APPEND_IMPLEMENTED: NO
+ELAPSED_SECONDS: 107.99
+
+
+==============================================================================================================================
