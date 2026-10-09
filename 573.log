@@ -1,0 +1,388 @@
+ 
+============================================================================================================================================
+TEST573 — AKBASCORE MAM · QWEN CROSS-MODEL REPLICATION
+============================================================================================================================================
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 82.0kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 790kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 38.9MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 64.7MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 108MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.53MB/s]
+Download complete: 
+
+ 13.1GB, 1.06GB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  486MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:43<00:00, 43.29s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 98.28it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 34.3kB/s]
+GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+BASE BLOB: b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71
+MODEL: Qwen/Qwen2.5-7B-Instruct
+CUT: 3 PREFIX: 29
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 CASES: 24 SLOTS: ['FIRST', 'MIDDLE', 'LAST']
+ARMS: ['JOINT', 'INDEP', 'BATCH_DC3', 'INCR_DC3'] EXPECTED ANSWERS: 288
+[1/8] Full parameter SHA-256...
+WEIGHT SHA BEFORE: b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786
+[2/8] Protocol provenance...
+LOCK SHA: 8c20c8c9d0342636660b129b3c168ae42809858a6f7a68d0f3c46fe5e3f535d3
+SOURCE AUDIT: {'query_template': '\nQUESTION:\nAUDIT_QUESTION\n\nANSWER:\n<|im_end|>\n<|im_start|>assistant\n', 'source_fact_in_query_template': False, 'query_uses': 'answer(memory, question) with only question-token input and installed numerical KV', 'source_replay_at_ask': False}
+[3/8] Preflight: four arms on first panel case...
+PREFLIGHT CACHE LENGTHS: {'JOINT': 82, 'INDEP': 82, 'BATCH_DC3': 82, 'INCR_DC3': 82}
+[4/8] Running complete 72-case panel × 4 arms...
+CASE=00 FIRST  JOINT      PASS | gold=Melket | answer='Melket'
+CASE=00 FIRST  INDEP      PASS | gold=Melket | answer='Melket'
+CASE=00 FIRST  BATCH_DC3  PASS | gold=Melket | answer='Melket'
+CASE=00 FIRST  INCR_DC3   PASS | gold=Melket | answer='Melket'
+CASE=00 MIDDLE JOINT      PASS | gold=Melket | answer='Melket'
+CASE=00 MIDDLE INDEP      PASS | gold=Melket | answer='Melket'
+CASE=00 MIDDLE BATCH_DC3  PASS | gold=Melket | answer='Melket'
+CASE=00 MIDDLE INCR_DC3   PASS | gold=Melket | answer='Melket'
+CASE=00 LAST   JOINT      PASS | gold=Melket | answer='Melket'
+CASE=00 LAST   INDEP      PASS | gold=Melket | answer='Melket'
+CASE=00 LAST   BATCH_DC3  PASS | gold=Melket | answer='Melket'
+CASE=00 LAST   INCR_DC3   PASS | gold=Melket | answer='Melket'
+CASE=01 FIRST  JOINT      PASS | gold=Branik | answer='Branik'
+CASE=01 FIRST  INDEP      PASS | gold=Branik | answer='Branik'
+CASE=01 FIRST  BATCH_DC3  PASS | gold=Branik | answer='Branik'
+CASE=01 FIRST  INCR_DC3   PASS | gold=Branik | answer='Branik'
+CASE=01 MIDDLE JOINT      PASS | gold=Branik | answer='Branik'
+CASE=01 MIDDLE INDEP      PASS | gold=Branik | answer='Branik'
+CASE=01 MIDDLE BATCH_DC3  PASS | gold=Branik | answer='Branik'
+CASE=01 MIDDLE INCR_DC3   PASS | gold=Branik | answer='Branik'
+CASE=01 LAST   JOINT      PASS | gold=Branik | answer='Branik'
+CASE=01 LAST   INDEP      PASS | gold=Branik | answer='Branik'
+CASE=01 LAST   BATCH_DC3  PASS | gold=Branik | answer='Branik'
+CASE=01 LAST   INCR_DC3   PASS | gold=Branik | answer='Branik'
+CASE=02 FIRST  JOINT      PASS | gold=Varos | answer='Varos'
+CASE=02 FIRST  INDEP      PASS | gold=Varos | answer='Varos'
+CASE=02 FIRST  BATCH_DC3  PASS | gold=Varos | answer='Varos'
+CASE=02 FIRST  INCR_DC3   PASS | gold=Varos | answer='Varos'
+CASE=02 MIDDLE JOINT      PASS | gold=Varos | answer='Varos'
+CASE=02 MIDDLE INDEP      PASS | gold=Varos | answer='Varos'
+CASE=02 MIDDLE BATCH_DC3  PASS | gold=Varos | answer='Varos'
+CASE=02 MIDDLE INCR_DC3   PASS | gold=Varos | answer='Varos'
+CASE=02 LAST   JOINT      PASS | gold=Varos | answer='Varos'
+CASE=02 LAST   INDEP      FAIL | gold=Varos | answer='Serith'
+CASE=02 LAST   BATCH_DC3  PASS | gold=Varos | answer='Varos'
+CASE=02 LAST   INCR_DC3   PASS | gold=Varos | answer='Varos'
+CASE=03 FIRST  JOINT      PASS | gold=Belnor | answer='Belnor'
+CASE=03 FIRST  INDEP      FAIL | gold=Belnor | answer='Karev'
+CASE=03 FIRST  BATCH_DC3  PASS | gold=Belnor | answer='Belnor'
+CASE=03 FIRST  INCR_DC3   PASS | gold=Belnor | answer='Belnor'
+CASE=03 MIDDLE JOINT      PASS | gold=Belnor | answer='Belnor'
+CASE=03 MIDDLE INDEP      FAIL | gold=Belnor | answer='Karev'
+CASE=03 MIDDLE BATCH_DC3  PASS | gold=Belnor | answer='Belnor'
+CASE=03 MIDDLE INCR_DC3   PASS | gold=Belnor | answer='Belnor'
+CASE=03 LAST   JOINT      PASS | gold=Belnor | answer='Belnor'
+CASE=03 LAST   INDEP      FAIL | gold=Belnor | answer='Nerith'
+CASE=03 LAST   BATCH_DC3  PASS | gold=Belnor | answer='Belnor'
+CASE=03 LAST   INCR_DC3   PASS | gold=Belnor | answer='Belnor'
+PROGRESS 4/24 | ELAPSED=14.7s
+CASE=04 FIRST  JOINT      PASS | gold=Selora | answer='Selora'
+CASE=04 FIRST  INDEP      FAIL | gold=Selora | answer='Selorath'
+CASE=04 FIRST  BATCH_DC3  PASS | gold=Selora | answer='Selora'
+CASE=04 FIRST  INCR_DC3   PASS | gold=Selora | answer='Selora'
+CASE=04 MIDDLE JOINT      PASS | gold=Selora | answer='Selora'
+CASE=04 MIDDLE INDEP      FAIL | gold=Selora | answer='Selorov'
+CASE=04 MIDDLE BATCH_DC3  PASS | gold=Selora | answer='Selora'
+CASE=04 MIDDLE INCR_DC3   PASS | gold=Selora | answer='Selora'
+CASE=04 LAST   JOINT      PASS | gold=Selora | answer='Selora'
+CASE=04 LAST   INDEP      FAIL | gold=Selora | answer='Sorven'
+CASE=04 LAST   BATCH_DC3  PASS | gold=Selora | answer='Selora'
+CASE=04 LAST   INCR_DC3   PASS | gold=Selora | answer='Selora'
+CASE=05 FIRST  JOINT      PASS | gold=Pareth | answer='Pareth'
+CASE=05 FIRST  INDEP      PASS | gold=Pareth | answer='Pareth'
+CASE=05 FIRST  BATCH_DC3  PASS | gold=Pareth | answer='Pareth'
+CASE=05 FIRST  INCR_DC3   PASS | gold=Pareth | answer='Pareth'
+CASE=05 MIDDLE JOINT      PASS | gold=Pareth | answer='Pareth'
+CASE=05 MIDDLE INDEP      PASS | gold=Pareth | answer='Pareth'
+CASE=05 MIDDLE BATCH_DC3  PASS | gold=Pareth | answer='Pareth'
+CASE=05 MIDDLE INCR_DC3   PASS | gold=Pareth | answer='Pareth'
+CASE=05 LAST   JOINT      PASS | gold=Pareth | answer='Pareth'
+CASE=05 LAST   INDEP      PASS | gold=Pareth | answer='Pareth'
+CASE=05 LAST   BATCH_DC3  PASS | gold=Pareth | answer='Pareth'
+CASE=05 LAST   INCR_DC3   PASS | gold=Pareth | answer='Pareth'
+CASE=06 FIRST  JOINT      PASS | gold=Keldin | answer='Keldin'
+CASE=06 FIRST  INDEP      FAIL | gold=Keldin | answer='The information provided does not specify the largest city of Darsen. It only'
+CASE=06 FIRST  BATCH_DC3  PASS | gold=Keldin | answer='Keldin'
+CASE=06 FIRST  INCR_DC3   PASS | gold=Keldin | answer='Keldin'
+CASE=06 MIDDLE JOINT      PASS | gold=Keldin | answer='Keldin'
+CASE=06 MIDDLE INDEP      PASS | gold=Keldin | answer='Keldin'
+CASE=06 MIDDLE BATCH_DC3  PASS | gold=Keldin | answer='Keldin'
+CASE=06 MIDDLE INCR_DC3   PASS | gold=Keldin | answer='Keldin'
+CASE=06 LAST   JOINT      PASS | gold=Keldin | answer='Keldin'
+CASE=06 LAST   INDEP      FAIL | gold=Keldin | answer='Valdor'
+CASE=06 LAST   BATCH_DC3  PASS | gold=Keldin | answer='Keldin'
+CASE=06 LAST   INCR_DC3   PASS | gold=Keldin | answer='Keldin'
+CASE=07 FIRST  JOINT      PASS | gold=Feron | answer='Feron'
+CASE=07 FIRST  INDEP      FAIL | gold=Feron | answer='Narev'
+CASE=07 FIRST  BATCH_DC3  PASS | gold=Feron | answer='Feron'
+CASE=07 FIRST  INCR_DC3   PASS | gold=Feron | answer='Feron'
+CASE=07 MIDDLE JOINT      PASS | gold=Feron | answer='Feron'
+CASE=07 MIDDLE INDEP      FAIL | gold=Feron | answer='Narev'
+CASE=07 MIDDLE BATCH_DC3  PASS | gold=Feron | answer='Feron'
+CASE=07 MIDDLE INCR_DC3   PASS | gold=Feron | answer='Feron'
+CASE=07 LAST   JOINT      PASS | gold=Feron | answer='Feron'
+CASE=07 LAST   INDEP      FAIL | gold=Feron | answer='Tarev'
+CASE=07 LAST   BATCH_DC3  PASS | gold=Feron | answer='Feron'
+CASE=07 LAST   INCR_DC3   PASS | gold=Feron | answer='Feron'
+PROGRESS 8/24 | ELAPSED=29.9s
+CASE=08 FIRST  JOINT      PASS | gold=Nerith | answer='Nerith'
+CASE=08 FIRST  INDEP      PASS | gold=Nerith | answer='Nerith'
+CASE=08 FIRST  BATCH_DC3  PASS | gold=Nerith | answer='Nerith'
+CASE=08 FIRST  INCR_DC3   PASS | gold=Nerith | answer='Nerith'
+CASE=08 MIDDLE JOINT      PASS | gold=Nerith | answer='Nerith'
+CASE=08 MIDDLE INDEP      PASS | gold=Nerith | answer='Nerith'
+CASE=08 MIDDLE BATCH_DC3  PASS | gold=Nerith | answer='Nerith'
+CASE=08 MIDDLE INCR_DC3   PASS | gold=Nerith | answer='Nerith'
+CASE=08 LAST   JOINT      PASS | gold=Nerith | answer='Nerith'
+CASE=08 LAST   INDEP      PASS | gold=Nerith | answer='Nerith'
+CASE=08 LAST   BATCH_DC3  PASS | gold=Nerith | answer='Nerith'
+CASE=08 LAST   INCR_DC3   PASS | gold=Nerith | answer='Nerith'
+CASE=09 FIRST  JOINT      PASS | gold=Dorin | answer='Dorin'
+CASE=09 FIRST  INDEP      PASS | gold=Dorin | answer='Dorin'
+CASE=09 FIRST  BATCH_DC3  PASS | gold=Dorin | answer='Dorin'
+CASE=09 FIRST  INCR_DC3   PASS | gold=Dorin | answer='Dorin'
+CASE=09 MIDDLE JOINT      PASS | gold=Dorin | answer='Dorin'
+CASE=09 MIDDLE INDEP      PASS | gold=Dorin | answer='Dorin'
+CASE=09 MIDDLE BATCH_DC3  PASS | gold=Dorin | answer='Dorin'
+CASE=09 MIDDLE INCR_DC3   PASS | gold=Dorin | answer='Dorin'
+CASE=09 LAST   JOINT      PASS | gold=Dorin | answer='Dorin'
+CASE=09 LAST   INDEP      FAIL | gold=Dorin | answer='Seren'
+CASE=09 LAST   BATCH_DC3  PASS | gold=Dorin | answer='Dorin'
+CASE=09 LAST   INCR_DC3   PASS | gold=Dorin | answer='Dorin'
+CASE=10 FIRST  JOINT      PASS | gold=Valen | answer='Valen'
+CASE=10 FIRST  INDEP      FAIL | gold=Valen | answer='The information provided does not specify the largest city of Selnor. It only'
+CASE=10 FIRST  BATCH_DC3  PASS | gold=Valen | answer='Valen'
+CASE=10 FIRST  INCR_DC3   PASS | gold=Valen | answer='Valen'
+CASE=10 MIDDLE JOINT      PASS | gold=Valen | answer='Valen'
+CASE=10 MIDDLE INDEP      FAIL | gold=Valen | answer='The information provided does not specify the largest city of Selnor. It only'
+CASE=10 MIDDLE BATCH_DC3  PASS | gold=Valen | answer='Valen'
+CASE=10 MIDDLE INCR_DC3   PASS | gold=Valen | answer='Valen'
+CASE=10 LAST   JOINT      PASS | gold=Valen | answer='Valen'
+CASE=10 LAST   INDEP      FAIL | gold=Valen | answer='Vindor'
+CASE=10 LAST   BATCH_DC3  PASS | gold=Valen | answer='Valen'
+CASE=10 LAST   INCR_DC3   PASS | gold=Valen | answer='Valen'
+CASE=11 FIRST  JOINT      PASS | gold=Mirev | answer='Mirev'
+CASE=11 FIRST  INDEP      PASS | gold=Mirev | answer='Mirev'
+CASE=11 FIRST  BATCH_DC3  PASS | gold=Mirev | answer='Mirev'
+CASE=11 FIRST  INCR_DC3   PASS | gold=Mirev | answer='Mirev'
+CASE=11 MIDDLE JOINT      PASS | gold=Mirev | answer='Mirev'
+CASE=11 MIDDLE INDEP      PASS | gold=Mirev | answer='Mirev'
+CASE=11 MIDDLE BATCH_DC3  PASS | gold=Mirev | answer='Mirev'
+CASE=11 MIDDLE INCR_DC3   PASS | gold=Mirev | answer='Mirev'
+CASE=11 LAST   JOINT      PASS | gold=Mirev | answer='Mirev'
+CASE=11 LAST   INDEP      FAIL | gold=Mirev | answer='Kareth'
+CASE=11 LAST   BATCH_DC3  PASS | gold=Mirev | answer='Mirev'
+CASE=11 LAST   INCR_DC3   PASS | gold=Mirev | answer='Mirev'
+PROGRESS 12/24 | ELAPSED=46.1s
+CASE=12 FIRST  JOINT      PASS | gold=Solith | answer='Solith'
+CASE=12 FIRST  INDEP      FAIL | gold=Solith | answer='Nareth'
+CASE=12 FIRST  BATCH_DC3  PASS | gold=Solith | answer='Solith'
+CASE=12 FIRST  INCR_DC3   PASS | gold=Solith | answer='Solith'
+CASE=12 MIDDLE JOINT      PASS | gold=Solith | answer='Solith'
+CASE=12 MIDDLE INDEP      PASS | gold=Solith | answer='Solith'
+CASE=12 MIDDLE BATCH_DC3  PASS | gold=Solith | answer='Solith'
+CASE=12 MIDDLE INCR_DC3   PASS | gold=Solith | answer='Solith'
+CASE=12 LAST   JOINT      PASS | gold=Solith | answer='Solith'
+CASE=12 LAST   INDEP      FAIL | gold=Solith | answer='Nareth'
+CASE=12 LAST   BATCH_DC3  PASS | gold=Solith | answer='Solith'
+CASE=12 LAST   INCR_DC3   PASS | gold=Solith | answer='Solith'
+CASE=13 FIRST  JOINT      PASS | gold=Toren | answer='Toren'
+CASE=13 FIRST  INDEP      FAIL | gold=Toren | answer='Sareth'
+CASE=13 FIRST  BATCH_DC3  PASS | gold=Toren | answer='Toren'
+CASE=13 FIRST  INCR_DC3   PASS | gold=Toren | answer='Toren'
+CASE=13 MIDDLE JOINT      PASS | gold=Toren | answer='Toren'
+CASE=13 MIDDLE INDEP      FAIL | gold=Toren | answer='Velos'
+CASE=13 MIDDLE BATCH_DC3  PASS | gold=Toren | answer='Toren'
+CASE=13 MIDDLE INCR_DC3   PASS | gold=Toren | answer='Toren'
+CASE=13 LAST   JOINT      PASS | gold=Toren | answer='Toren'
+CASE=13 LAST   INDEP      FAIL | gold=Toren | answer='Velos'
+CASE=13 LAST   BATCH_DC3  PASS | gold=Toren | answer='Toren'
+CASE=13 LAST   INCR_DC3   PASS | gold=Toren | answer='Toren'
+CASE=14 FIRST  JOINT      PASS | gold=Corven | answer='Corven'
+CASE=14 FIRST  INDEP      PASS | gold=Corven | answer='Corven'
+CASE=14 FIRST  BATCH_DC3  PASS | gold=Corven | answer='Corven'
+CASE=14 FIRST  INCR_DC3   PASS | gold=Corven | answer='Corven'
+CASE=14 MIDDLE JOINT      PASS | gold=Corven | answer='Corven'
+CASE=14 MIDDLE INDEP      FAIL | gold=Corven | answer='Kesmar'
+CASE=14 MIDDLE BATCH_DC3  PASS | gold=Corven | answer='Corven'
+CASE=14 MIDDLE INCR_DC3   PASS | gold=Corven | answer='Corven'
+CASE=14 LAST   JOINT      PASS | gold=Corven | answer='Corven'
+CASE=14 LAST   INDEP      PASS | gold=Corven | answer='Corven'
+CASE=14 LAST   BATCH_DC3  PASS | gold=Corven | answer='Corven'
+CASE=14 LAST   INCR_DC3   PASS | gold=Corven | answer='Corven'
+CASE=15 FIRST  JOINT      PASS | gold=Dervan | answer='Dervan'
+CASE=15 FIRST  INDEP      PASS | gold=Dervan | answer='Dervan'
+CASE=15 FIRST  BATCH_DC3  PASS | gold=Dervan | answer='Dervan'
+CASE=15 FIRST  INCR_DC3   PASS | gold=Dervan | answer='Dervan'
+CASE=15 MIDDLE JOINT      PASS | gold=Dervan | answer='Dervan'
+CASE=15 MIDDLE INDEP      PASS | gold=Dervan | answer='Dervan'
+CASE=15 MIDDLE BATCH_DC3  PASS | gold=Dervan | answer='Dervan'
+CASE=15 MIDDLE INCR_DC3   PASS | gold=Dervan | answer='Dervan'
+CASE=15 LAST   JOINT      PASS | gold=Dervan | answer='Dervan'
+CASE=15 LAST   INDEP      PASS | gold=Dervan | answer='Dervan'
+CASE=15 LAST   BATCH_DC3  PASS | gold=Dervan | answer='Dervan'
+CASE=15 LAST   INCR_DC3   PASS | gold=Dervan | answer='Dervan'
+PROGRESS 16/24 | ELAPSED=60.6s
+CASE=16 FIRST  JOINT      PASS | gold=Verith | answer='Verith'
+CASE=16 FIRST  INDEP      PASS | gold=Verith | answer='Verith'
+CASE=16 FIRST  BATCH_DC3  PASS | gold=Verith | answer='Verith'
+CASE=16 FIRST  INCR_DC3   PASS | gold=Verith | answer='Verith'
+CASE=16 MIDDLE JOINT      PASS | gold=Verith | answer='Verith'
+CASE=16 MIDDLE INDEP      PASS | gold=Verith | answer='Verith'
+CASE=16 MIDDLE BATCH_DC3  PASS | gold=Verith | answer='Verith'
+CASE=16 MIDDLE INCR_DC3   PASS | gold=Verith | answer='Verith'
+CASE=16 LAST   JOINT      PASS | gold=Verith | answer='Verith'
+CASE=16 LAST   INDEP      FAIL | gold=Verith | answer='Parel'
+CASE=16 LAST   BATCH_DC3  PASS | gold=Verith | answer='Verith'
+CASE=16 LAST   INCR_DC3   PASS | gold=Verith | answer='Verith'
+CASE=17 FIRST  JOINT      PASS | gold=Maros | answer='Maros'
+CASE=17 FIRST  INDEP      FAIL | gold=Maros | answer='Sovran'
+CASE=17 FIRST  BATCH_DC3  PASS | gold=Maros | answer='Maros'
+CASE=17 FIRST  INCR_DC3   PASS | gold=Maros | answer='Maros'
+CASE=17 MIDDLE JOINT      PASS | gold=Maros | answer='Maros'
+CASE=17 MIDDLE INDEP      FAIL | gold=Maros | answer='Sovran'
+CASE=17 MIDDLE BATCH_DC3  PASS | gold=Maros | answer='Maros'
+CASE=17 MIDDLE INCR_DC3   PASS | gold=Maros | answer='Maros'
+CASE=17 LAST   JOINT      PASS | gold=Maros | answer='Maros'
+CASE=17 LAST   INDEP      FAIL | gold=Maros | answer='Sovran'
+CASE=17 LAST   BATCH_DC3  PASS | gold=Maros | answer='Maros'
+CASE=17 LAST   INCR_DC3   PASS | gold=Maros | answer='Maros'
+CASE=18 FIRST  JOINT      PASS | gold=Vindor | answer='Vindor'
+CASE=18 FIRST  INDEP      FAIL | gold=Vindor | answer='Neris'
+CASE=18 FIRST  BATCH_DC3  PASS | gold=Vindor | answer='Vindor'
+CASE=18 FIRST  INCR_DC3   PASS | gold=Vindor | answer='Vindor'
+CASE=18 MIDDLE JOINT      PASS | gold=Vindor | answer='Vindor'
+CASE=18 MIDDLE INDEP      FAIL | gold=Vindor | answer='Neris'
+CASE=18 MIDDLE BATCH_DC3  PASS | gold=Vindor | answer='Vindor'
+CASE=18 MIDDLE INCR_DC3   PASS | gold=Vindor | answer='Vindor'
+CASE=18 LAST   JOINT      PASS | gold=Vindor | answer='Vindor'
+CASE=18 LAST   INDEP      FAIL | gold=Vindor | answer='Neris'
+CASE=18 LAST   BATCH_DC3  PASS | gold=Vindor | answer='Vindor'
+CASE=18 LAST   INCR_DC3   PASS | gold=Vindor | answer='Vindor'
+CASE=19 FIRST  JOINT      PASS | gold=Barel | answer='Barel'
+CASE=19 FIRST  INDEP      FAIL | gold=Barel | answer='Tervan'
+CASE=19 FIRST  BATCH_DC3  PASS | gold=Barel | answer='Barel'
+CASE=19 FIRST  INCR_DC3   PASS | gold=Barel | answer='Barel'
+CASE=19 MIDDLE JOINT      PASS | gold=Barel | answer='Barel'
+CASE=19 MIDDLE INDEP      FAIL | gold=Barel | answer='Mirev'
+CASE=19 MIDDLE BATCH_DC3  PASS | gold=Barel | answer='Barel'
+CASE=19 MIDDLE INCR_DC3   PASS | gold=Barel | answer='Barel'
+CASE=19 LAST   JOINT      PASS | gold=Barel | answer='Barel'
+CASE=19 LAST   INDEP      FAIL | gold=Barel | answer='Mirev'
+CASE=19 LAST   BATCH_DC3  PASS | gold=Barel | answer='Barel'
+CASE=19 LAST   INCR_DC3   PASS | gold=Barel | answer='Barel'
+PROGRESS 20/24 | ELAPSED=75.3s
+CASE=20 FIRST  JOINT      PASS | gold=Mervor | answer='Mervor'
+CASE=20 FIRST  INDEP      FAIL | gold=Mervor | answer='The information provided does not specify the current capital of Ralen. The capital of'
+CASE=20 FIRST  BATCH_DC3  PASS | gold=Mervor | answer='Mervor'
+CASE=20 FIRST  INCR_DC3   PASS | gold=Mervor | answer='Mervor'
+CASE=20 MIDDLE JOINT      PASS | gold=Mervor | answer='Mervor'
+CASE=20 MIDDLE INDEP      FAIL | gold=Mervor | answer='Feron'
+CASE=20 MIDDLE BATCH_DC3  PASS | gold=Mervor | answer='Mervor'
+CASE=20 MIDDLE INCR_DC3   PASS | gold=Mervor | answer='Mervor'
+CASE=20 LAST   JOINT      PASS | gold=Mervor | answer='Mervor'
+CASE=20 LAST   INDEP      FAIL | gold=Mervor | answer='Feron'
+CASE=20 LAST   BATCH_DC3  PASS | gold=Mervor | answer='Mervor'
+CASE=20 LAST   INCR_DC3   PASS | gold=Mervor | answer='Mervor'
+CASE=21 FIRST  JOINT      PASS | gold=Calvenor | answer='Calvenor'
+CASE=21 FIRST  INDEP      PASS | gold=Calvenor | answer='Calvenor'
+CASE=21 FIRST  BATCH_DC3  PASS | gold=Calvenor | answer='Calvenor'
+CASE=21 FIRST  INCR_DC3   PASS | gold=Calvenor | answer='Calvenor'
+CASE=21 MIDDLE JOINT      PASS | gold=Calvenor | answer='Calvenor'
+CASE=21 MIDDLE INDEP      PASS | gold=Calvenor | answer='Calvenor'
+CASE=21 MIDDLE BATCH_DC3  PASS | gold=Calvenor | answer='Calvenor'
+CASE=21 MIDDLE INCR_DC3   PASS | gold=Calvenor | answer='Calvenor'
+CASE=21 LAST   JOINT      PASS | gold=Calvenor | answer='Calvenor'
+CASE=21 LAST   INDEP      PASS | gold=Calvenor | answer='Calvenor'
+CASE=21 LAST   BATCH_DC3  PASS | gold=Calvenor | answer='Calvenor'
+CASE=21 LAST   INCR_DC3   PASS | gold=Calvenor | answer='Calvenor'
+CASE=22 FIRST  JOINT      PASS | gold=Mardin | answer='Mardin'
+CASE=22 FIRST  INDEP      FAIL | gold=Mardin | answer='Elasar'
+CASE=22 FIRST  BATCH_DC3  PASS | gold=Mardin | answer='Mardin'
+CASE=22 FIRST  INCR_DC3   PASS | gold=Mardin | answer='Mardin'
+CASE=22 MIDDLE JOINT      PASS | gold=Mardin | answer='Mardin'
+CASE=22 MIDDLE INDEP      PASS | gold=Mardin | answer='Mardin'
+CASE=22 MIDDLE BATCH_DC3  PASS | gold=Mardin | answer='Mardin'
+CASE=22 MIDDLE INCR_DC3   PASS | gold=Mardin | answer='Mardin'
+CASE=22 LAST   JOINT      PASS | gold=Mardin | answer='Mardin'
+CASE=22 LAST   INDEP      FAIL | gold=Mardin | answer='Elsar'
+CASE=22 LAST   BATCH_DC3  PASS | gold=Mardin | answer='Mardin'
+CASE=22 LAST   INCR_DC3   PASS | gold=Mardin | answer='Mardin'
+CASE=23 FIRST  JOINT      PASS | gold=Karev | answer='Karev'
+CASE=23 FIRST  INDEP      PASS | gold=Karev | answer='Karev'
+CASE=23 FIRST  BATCH_DC3  PASS | gold=Karev | answer='Karev'
+CASE=23 FIRST  INCR_DC3   PASS | gold=Karev | answer='Karev'
+CASE=23 MIDDLE JOINT      PASS | gold=Karev | answer='Karev'
+CASE=23 MIDDLE INDEP      FAIL | gold=Karev | answer='Luneth'
+CASE=23 MIDDLE BATCH_DC3  PASS | gold=Karev | answer='Karev'
+CASE=23 MIDDLE INCR_DC3   PASS | gold=Karev | answer='Karev'
+CASE=23 LAST   JOINT      PASS | gold=Karev | answer='Karev'
+CASE=23 LAST   INDEP      FAIL | gold=Karev | answer='Luneth'
+CASE=23 LAST   BATCH_DC3  PASS | gold=Karev | answer='Karev'
+CASE=23 LAST   INCR_DC3   PASS | gold=Karev | answer='Karev'
+PROGRESS 24/24 | ELAPSED=91.0s
+[5/8] Scorecard...
+JOINT        FIRST=24/24 MIDDLE=24/24 LAST=24/24 TOTAL=72/72
+INDEP        FIRST=12/24 MIDDLE=13/24 LAST=07/24 TOTAL=32/72
+BATCH_DC3    FIRST=24/24 MIDDLE=24/24 LAST=24/24 TOTAL=72/72
+INCR_DC3     FIRST=24/24 MIDDLE=24/24 LAST=24/24 TOTAL=72/72
+[6/8] Paired comparisons...
+BATCH_DC3: GAIN=40 LOSS=0 NET=+40 ANS-ID-JOINT=72/72 ANS-ID-BATCH=72/72
+INCR_DC3: GAIN=40 LOSS=0 NET=+40 ANS-ID-JOINT=72/72 ANS-ID-BATCH=72/72
+[7/8] Integrity and full weight verification...
+PANEL INTEGRITY: PASS
+WEIGHT SENTINEL: PASS
+FULL WEIGHT SHA: PASS
+TRAINABLE: 0
+WEIGHT SHA AFTER: b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786
+[8/8] Saving research record...
+============================================================================================================================================
+TEST573 — FINAL RESEARCH RECORD
+MODEL: Qwen/Qwen2.5-7B-Instruct CUT: 3
+MISTRAL TEST560 PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+QWEN LOCK SHA: 8c20c8c9d0342636660b129b3c168ae42809858a6f7a68d0f3c46fe5e3f535d3
+QWEN RESULT SHA: 4baefb417ea9b7a9b625e3ac49a92e46d16e08f8a4797de449f280dabf535cb8
+JOINT {'FIRST': 24, 'MIDDLE': 24, 'LAST': 24, 'TOTAL': 72}
+INDEP {'FIRST': 12, 'MIDDLE': 13, 'LAST': 7, 'TOTAL': 32}
+BATCH_DC3 {'FIRST': 24, 'MIDDLE': 24, 'LAST': 24, 'TOTAL': 72}
+INCR_DC3 {'FIRST': 24, 'MIDDLE': 24, 'LAST': 24, 'TOTAL': 72}
+INTEGRITY: PASS | FULL WEIGHT SHA: PASS | TRAINABLE: 0
+OUTPUT: /content/AKBASCORE_TEST573_QWEN_CROSS_MODEL_REPLICATION.json
+SECONDS: 138.63
+CAUTION: Cross-model replication tests the same panel and protocol, not identical tokenizer states or identical cut layers.
+CAUTION: Source-free ASK is guaranteed by the answer() code path; this test does not instrument every forward call with a recorder.
+CAUTION: Correctness is evaluated by whole-word matching; raw generations are preserved for independent review.
+
+
+============================================================================================================================================
