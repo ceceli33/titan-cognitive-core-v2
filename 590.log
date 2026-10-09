@@ -1,0 +1,500 @@
+ 
+================================================================================================================================================= 
+TEST590 — AKBASCORE MAM · DEEPSEEK MLA EIGHT-CARTRIDGE INCREMENTAL RETENTION
+=================================================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+
+[1/15] MODEL / PINNED BASELINE
+MODEL_REUSED: NO — LOADING PINNED BASELINE
+
+config.json: 100%
+
+ 1.52k/1.52k [00:00<00:00, 152kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+model.safetensors.index.json: 100%
+
+ 480k/480k [00:00<00:00, 45.3MB/s]
+Download complete: 
+
+ 27.4GB, 1.23GB/s  
+Reconstruction complete: 100%
+
+ 31.4GB / 31.4GB,  551MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [01:26<00:00, 86.58s/it]
+Loading weights: 100%
+
+ 351/351 [00:08<00:00, 42.23it/s]
+generation_config.json: 100%
+
+ 181/181 [00:00<00:00, 23.1kB/s]
+tokenizer_config.json: 100%
+
+ 1.28k/1.28k [00:00<00:00, 166kB/s]
+tokenizer.json: 100%
+
+ 4.61M/4.61M [00:00<00:00, 103MB/s]
+GATE MODEL_FROZEN PASS
+PARAMETERS: 15706484224 TRAINABLE: 0
+
+[2/15] CANONICAL PANEL
+GATE PANEL_LOCK PASS
+PREFIX_TOKENS: 31 BODY_LENGTHS: [24, 24, 24, 23, 23, 23, 23, 23] CUT: 3
+
+[3/15] MLA ROTARY TRANSPORT
+
+[4/15] EIGHT INDEPENDENT WRITES
+GATE WRITE_INDEPENDENT PASS
+WRITE_LENGTHS: [55, 55, 55, 54, 54, 54, 54, 54]
+
+[5/15] INIT — TEST588 ENGINE
+
+[6/15] APPEND — TEST588 ENGINE
+
+[7/15] TWO ORDERS / EIGHT STAGES
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) LENGTHS [55, 79, 103, 126, 149, 172, 195, 218] INIT_DELTA 0.0 APPEND_CALLS [1, 1, 1, 1, 1, 1, 1] PRESERVED [True, True, True, True, True, True, True]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) LENGTHS [54, 77, 100, 123, 146, 170, 194, 218] INIT_DELTA 0.0 APPEND_CALLS [1, 1, 1, 1, 1, 1, 1] PRESERVED [True, True, True, True, True, True, True]
+GATE INIT_EXACT_BOTH PASS
+GATE APPEND_PRESERVED_ALL PASS
+
+[8/15] JOINT REFERENCES
+
+[9/15] GREEDY / COMPLETED BEAM READOUT
+BEAM_WIDTH: 4 BEAM_STEPS: 48 COMPLETED_ONLY: YES GOLD_INJECTION: NO
+
+[10/15] INCREMENTAL RETENTION
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 1 STATION VELORA-731 GOLD QN-4826
+ GREEDY 'QN-4826' EXACT True
+ AUTONOMOUS 'QN-4826' EXACT True
+ CANDIDATES [('QN-4826', -0.06481, True), ('The access code for the fictional station VELORA-731 is QN-4826.', -2.83619, True), ('QN-4826.', -6.56546, True), ('The access code for VELORA-731 is QN-4826.', -7.90909, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 2 STATION VELORA-731 GOLD QN-4826
+ GREEDY 'The access code for the fictional station VELORA-731 is QN-4826.' EXACT False
+ AUTONOMOUS 'QN-4826' EXACT True
+ CANDIDATES [('The access code for the fictional station VELORA-731 is QN-4826.', -0.58568, True), ('QN-4826', -0.82887, True), ('The access code for VELORA-731 is QN-4826.', -6.41079, True), ('The access code for the fictional station VELORA-731 is QN-4826. Answer: QN-4826.', -7.87823, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 2 STATION MIREX-204 GOLD KT-9173
+ GREEDY 'KT-9173' EXACT True
+ AUTONOMOUS 'KT-9173' EXACT True
+ CANDIDATES [('KT-9173', -0.37693, True), ('The access code for the fictional station MIREX-204 is KT-9173.', -1.39119, True), ('QT-9173', -3.48249, True), ('QK-9173', -4.13487, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 3 STATION VELORA-731 GOLD QN-4826
+ GREEDY 'The access code for the fictional station VELORA-731 is QN-4826.' EXACT False
+ AUTONOMOUS 'QN-4826' EXACT True
+ CANDIDATES [('The access code for the fictional station VELORA-731 is QN-4826.', -0.3308, True), ('QN-4826', -1.32667, True), ('RP-6402', -6.10935, True), ('VELORA-731 access code: QN-4826', -6.44973, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 3 STATION MIREX-204 GOLD KT-9173
+ GREEDY 'The access code for the fictional station MIREX-204 is KT-9173.' EXACT False
+ AUTONOMOUS 'KT-9173' EXACT True
+ CANDIDATES [('The access code for the fictional station MIREX-204 is KT-9173.', -0.25792, True), ('KT-9173', -1.5053, True), ('The access code for MIREX-204 is KT-9173.', -7.79455, True), ('The access code for the fictional station MIREX-204 is KT-9173. (ANSWER)', -9.11491, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 3 STATION TALVEX-583 GOLD RP-6402
+ GREEDY 'RP-6402' EXACT True
+ AUTONOMOUS 'RP-6402' EXACT True
+ CANDIDATES [('RP-6402', -0.2092, True), ('The access code for the fictional station TALVEX-583 is RP-6402.', -1.70544, True), ('RP-6402.', -5.20943, True), ('RP-', -8.07741, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 4 STATION VELORA-731 GOLD QN-4826
+ GREEDY 'The access code for the fictional station VELORA-731 is QN-4826.' EXACT False
+ AUTONOMOUS 'QN-4826' EXACT True
+ CANDIDATES [('The access code for the fictional station VELORA-731 is QN-4826.', -0.02758, True), ('QN-4826', -4.02445, True), ('The access code for VELORA-731 is QN-4826.', -6.82013, True), ('The access code for the fictional station VELORA-731 is QN-4826. (ANSWER)', -8.24756, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 4 STATION MIREX-204 GOLD KT-9173
+ GREEDY 'The access code for the fictional station MIREX-204 is KT-9173.' EXACT False
+ AUTONOMOUS 'KT-9173' EXACT True
+ CANDIDATES [('The access code for the fictional station MIREX-204 is KT-9173.', -0.012, True), ('KT-9173', -5.26082, True), ('DX-1857', -6.77218, True), ('The access code for the fictional station MIREX-204 is KT-9173. Answer: KT-9173.', -7.2932, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 4 STATION TALVEX-583 GOLD RP-6402
+ GREEDY 'The access code for the fictional station TALVEX-583 is RP-6402.' EXACT False
+ AUTONOMOUS 'RP-6402' EXACT True
+ CANDIDATES [('The access code for the fictional station TALVEX-583 is RP-6402.', -0.08289, True), ('RP-6402', -2.58201, True), ('The access code for TALVEX-583 is RP-6402.', -7.36798, True), ('Access code for TALVEX-583: RP-6402', -7.46854, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 4 STATION NORVIA-926 GOLD DX-1857
+ GREEDY 'The access code for the fictional station NORVIA-926 is DX-1857.' EXACT False
+ AUTONOMOUS 'DX-1857' EXACT True
+ CANDIDATES [('The access code for the fictional station NORVIA-926 is DX-1857.', -0.05202, True), ('DX-1857', -3.0519, True), ('The access code for the fictional station NORVIA-926 is: DX-1857.', -7.08256, True), ('Access code for the fictional station NORVIA-926 is DX-1857.', -7.65509, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 5 STATION VELORA-731 GOLD QN-4826
+ GREEDY 'The access code for the fictional station VELORA-731 is QN-4826.' EXACT False
+ AUTONOMOUS 'QN-4826' EXACT True
+ CANDIDATES [('The access code for the fictional station VELORA-731 is QN-4826.', -0.1042, True), ('QN-4826', -3.09216, True), ('BM-7391', -4.09852, True), ('VELORA-731 access code: QN-4826', -4.90742, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 5 STATION MIREX-204 GOLD KT-9173
+ GREEDY 'The access code for the fictional station MIREX-204 is KT-9173.' EXACT False
+ AUTONOMOUS 'KT-9173' EXACT True
+ CANDIDATES [('The access code for the fictional station MIREX-204 is KT-9173.', -0.03693, True), ('KT-9173', -3.78454, True), ('Access code for MIREX-204: KT-9173', -6.68521, True), ('MIREX-204 access code: KT-9173', -6.80873, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 5 STATION TALVEX-583 GOLD RP-6402
+ GREEDY 'The access code for the fictional station TALVEX-583 is RP-6402.' EXACT False
+ AUTONOMOUS 'RP-6402' EXACT True
+ CANDIDATES [('The access code for the fictional station TALVEX-583 is RP-6402.', -0.05857, True), ('RP-6402', -3.05341, True), ('The access code for TALVEX-583 is RP-6402.', -5.83646, True), ('Access code for TALVEX-583: RP-6402', -7.10196, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 5 STATION NORVIA-926 GOLD DX-1857
+ GREEDY 'The access code for the fictional station NORVIA-926 is DX-1857.' EXACT False
+ AUTONOMOUS 'DX-1857' EXACT True
+ CANDIDATES [('The access code for the fictional station NORVIA-926 is DX-1857.', -0.13214, True), ('DX-1857', -2.13004, True), ('The access code for the fictional station NORVIA-926 is: DX-1857.', -7.29418, True), ('Access code for NORVIA-926: DX-1857', -7.50389, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 5 STATION CALDOR-417 GOLD BM-7391
+ GREEDY 'BM-7391' EXACT True
+ AUTONOMOUS 'BM-7391' EXACT True
+ CANDIDATES [('BM-7391', -0.25544, True), ('The access code for the fictional station CALDOR-417 is BM-7391.', -1.51233, True), ('Access code for CALDOR-417: BM-7391', -6.94904, True), ('Access code for the fictional station CALDOR-417 is BM-7391.', -7.54496, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 6 STATION VELORA-731 GOLD QN-4826
+ GREEDY 'The access code for the fictional station VELORA-731 is QN-4826.' EXACT False
+ AUTONOMOUS 'QN-4826' EXACT True
+ CANDIDATES [('The access code for the fictional station VELORA-731 is QN-4826.', -0.11357, True), ('QN-4826', -2.85643, True), ('VELORA-731 access code: QN-4826', -4.10989, True), ('VELORA-731 access code is QN-4826.', -6.08743, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 6 STATION MIREX-204 GOLD KT-9173
+ GREEDY 'The access code for the fictional station MIREX-204 is KT-9173.' EXACT False
+ AUTONOMOUS 'KT-9173' EXACT True
+ CANDIDATES [('The access code for the fictional station MIREX-204 is KT-9173.', -0.08619, True), ('KT-9173', -2.58564, True), ('KM-9173', -6.944, True), ('Access code for the fictional station MIREX-204 is KT-9173.', -7.52043, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 6 STATION TALVEX-583 GOLD RP-6402
+ GREEDY 'The access code for the fictional station TALVEX-583 is RP-6402.' EXACT False
+ AUTONOMOUS 'RP-6402' EXACT True
+ CANDIDATES [('The access code for the fictional station TALVEX-583 is RP-6402.', -0.0592, True), ('RP-6402', -3.05586, True), ('The access code for TALVEX-583 is RP-6402.', -6.33745, True), ('RX-6402', -6.81317, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 6 STATION NORVIA-926 GOLD DX-1857
+ GREEDY 'The access code for the fictional station NORVIA-926 is DX-1857.' EXACT False
+ AUTONOMOUS 'DX-1857' EXACT True
+ CANDIDATES [('The access code for the fictional station NORVIA-926 is DX-1857.', -0.31858, True), ('DX-1857', -1.31635, True), ('The access code for fictional station NORVIA-926 is DX-1857.', -7.32809, True), ('The access code for the fictional station NORVIA-926 is: DX-1857.', -7.4554, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 6 STATION CALDOR-417 GOLD BM-7391
+ GREEDY 'BM-7391' EXACT True
+ AUTONOMOUS 'BM-7391' EXACT True
+ CANDIDATES [('BM-7391', -0.57869, True), ('The access code for the fictional station CALDOR-417 is BM-7391.', -0.83131, True), ('The access code for CALDOR-417 is BM-7391.', -7.61015, True), ('Access code for CALDOR-417: BM-7391', -7.88811, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 6 STATION ZENTRA-865 GOLD HV-2064
+ GREEDY 'The access code for the fictional station ZENTRA-865 is HV-2064.' EXACT False
+ AUTONOMOUS 'HV-2064' EXACT True
+ CANDIDATES [('The access code for the fictional station ZENTRA-865 is HV-2064.', -0.04041, True), ('HV-2064', -3.55035, True), ('BM-7391', -6.04407, True), ('Access code for ZENTRA-865: HV-2064', -6.40382, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 7 STATION VELORA-731 GOLD QN-4826
+ GREEDY 'The access code for the fictional station VELORA-731 is QN-4826.' EXACT False
+ AUTONOMOUS 'QN-4826' EXACT True
+ CANDIDATES [('The access code for the fictional station VELORA-731 is QN-4826.', -0.1449, True), ('QN-4826', -2.87977, True), ('VELORA-731 access code: QN-4826', -3.58655, True), ('VELORA-731: QN-4826', -5.43357, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 7 STATION MIREX-204 GOLD KT-9173
+ GREEDY 'The access code for the fictional station MIREX-204 is KT-9173.' EXACT False
+ AUTONOMOUS 'KT-9173' EXACT True
+ CANDIDATES [('The access code for the fictional station MIREX-204 is KT-9173.', -0.09466, True), ('KT-9173', -2.58998, True), ('MIREX-204 access code: KT-9173', -6.31035, True), ('MIREX-204: KT-9173', -6.4555, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 7 STATION TALVEX-583 GOLD RP-6402
+ GREEDY 'The access code for the fictional station TALVEX-583 is RP-6402.' EXACT False
+ AUTONOMOUS 'RP-6402' EXACT True
+ CANDIDATES [('The access code for the fictional station TALVEX-583 is RP-6402.', -0.33008, True), ('RP-6402', -1.32255, True), ('The access code for TALVEX-583 is RP-6402.', -5.59767, True), ('RX-6402', -6.57911, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 7 STATION NORVIA-926 GOLD DX-1857
+ GREEDY 'The access code for the fictional station NORVIA-926 is DX-1857.' EXACT False
+ AUTONOMOUS 'DX-1857' EXACT True
+ CANDIDATES [('The access code for the fictional station NORVIA-926 is DX-1857.', -0.39517, True), ('DX-1857', -1.14106, True), ('The access code for the fictional station NORVIA-926 is: DX-1857.', -6.31072, True), ('The access code for fictional station NORVIA-926 is DX-1857.', -7.15463, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 7 STATION CALDOR-417 GOLD BM-7391
+ GREEDY 'BM-7391' EXACT True
+ AUTONOMOUS 'BM-7391' EXACT True
+ CANDIDATES [('BM-7391', -0.5799, True), ('The access code for the fictional station CALDOR-417 is BM-7391.', -0.83469, True), ('The access code for fictional station CALDOR-417 is BM-7391.', -7.33938, True), ('The access code for CALDOR-417 is BM-7391.', -7.36198, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 7 STATION ZENTRA-865 GOLD HV-2064
+ GREEDY 'The access code for the fictional station ZENTRA-865 is RP-6402.' EXACT False
+ AUTONOMOUS 'RP-6402' EXACT False
+ CANDIDATES [('The access code for the fictional station ZENTRA-865 is RP-6402.', -0.28453, True), ('The access code for the fictional station ZENTRA-865 is HV-2064.', -2.28374, True), ('The access code for the fictional station ZENTRA-865 is: HV-2064.', -3.05078, True), ('The access code for the fictional station ZENTRA-865 is: HV-2064', -3.54976, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 7 STATION LUMEX-392 GOLD FS-5817
+ GREEDY 'FS-5817' EXACT True
+ AUTONOMOUS 'FS-5817' EXACT True
+ CANDIDATES [('FS-5817', -0.39535, True), ('The access code for the fictional station LUMEX-392 is FS-5817.', -1.15265, True), ('FS-5817.', -5.89585, True), ('The access code for LUMEX-392 is FS-5817.', -5.91717, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 8 STATION VELORA-731 GOLD QN-4826
+ GREEDY 'The access code for the fictional station VELORA-731 is QN-4826.' EXACT False
+ AUTONOMOUS 'QN-4826' EXACT True
+ CANDIDATES [('The access code for the fictional station VELORA-731 is QN-4826.', -0.19783, True), ('QN-4826', -2.17877, True), ('VELORA-731 access code: QN-4826', -4.17068, True), ('VELORA-731: The access code is QN-4826.', -5.55498, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 8 STATION MIREX-204 GOLD KT-9173
+ GREEDY 'The access code for the fictional station MIREX-204 is KT-9173.' EXACT False
+ AUTONOMOUS 'KT-9173' EXACT True
+ CANDIDATES [('The access code for the fictional station MIREX-204 is KT-9173.', -0.13756, True), ('KT-9173', -2.1333, True), ('KM-9173', -7.16711, True), ('The access code for the fictional station MIREX-204 is KT-9173. (End)', -7.89545, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 8 STATION TALVEX-583 GOLD RP-6402
+ GREEDY 'The access code for the fictional station TALVEX-583 is RP-6402.' EXACT False
+ AUTONOMOUS 'RP-6402' EXACT True
+ CANDIDATES [('The access code for the fictional station TALVEX-583 is RP-6402.', -0.08188, True), ('RP-6402', -2.82434, True), ('The access code for TALVEX-583 is RP-6402.', -5.59943, True), ('The access code for the fictional station TALVEX-583 is RP-6402. (RP-6402)', -7.46464, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 8 STATION NORVIA-926 GOLD DX-1857
+ GREEDY 'The access code for the fictional station NORVIA-926 is DX-1857.' EXACT False
+ AUTONOMOUS 'DX-1857' EXACT True
+ CANDIDATES [('The access code for the fictional station NORVIA-926 is DX-1857.', -0.39431, True), ('DX-1857', -1.13926, True), ('The access code for the fictional station NORVIA-926 is: DX-1857.', -6.72282, True), ('The access code for fictional station NORVIA-926 is DX-1857.', -6.90808, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 8 STATION CALDOR-417 GOLD BM-7391
+ GREEDY 'BM-7391' EXACT True
+ AUTONOMOUS 'BM-7391' EXACT True
+ CANDIDATES [('BM-7391', -0.31502, True), ('The access code for the fictional station CALDOR-417 is BM-7391.', -1.32014, True), ('The access code for fictional station CALDOR-417 is BM-7391.', -7.82548, True), ('The access code for the fictional station CALDOR-417 is BM-7391. (Answer: BM-7391)', -9.29592, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 8 STATION ZENTRA-865 GOLD HV-2064
+ GREEDY 'The access code for the fictional station ZENTRA-865 is HV-2064.' EXACT False
+ AUTONOMOUS 'HV-2064' EXACT True
+ CANDIDATES [('The access code for the fictional station ZENTRA-865 is HV-2064.', -0.05974, True), ('HV-2064', -4.27776, True), ('The access code for the fictional station ZENTRA-865 is: HV-2064.', -4.4468, True), ('The access code for the fictional station ZENTRA-865 is: HV-2064', -5.19565, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 8 STATION LUMEX-392 GOLD FS-5817
+ GREEDY 'The access code for the fictional station LUMEX-392 is FS-5817.' EXACT False
+ AUTONOMOUS 'FS-5817' EXACT True
+ CANDIDATES [('The access code for the fictional station LUMEX-392 is FS-5817.', -0.04066, True), ('WC-9432', -4.28104, True), ('The access code for the fictional station LUMEX-392 is HV-2064.', -5.54177, True), ('The access code for the fictional station LUMEX-392 is: FS-5817.', -5.89346, True)]
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 8 STATION PAVORA-648 GOLD WC-9432
+ GREEDY 'The access code for the fictional station PAVORA-648 is WC-9432.' EXACT False
+ AUTONOMOUS 'WC-9432' EXACT True
+ CANDIDATES [('The access code for the fictional station PAVORA-648 is WC-9432.', -0.58821, True), ('WC-9432', -0.83263, True), ('The access code for PAVORA-648 is WC-9432.', -5.85527, True), ('Access code for PAVORA-648: WC-9432', -6.98167, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 1 STATION PAVORA-648 GOLD WC-9432
+ GREEDY 'WC-9432' EXACT True
+ AUTONOMOUS 'WC-9432' EXACT True
+ CANDIDATES [('WC-9432', -0.00847, True), ('The access code for the fictional station PAVORA-648 is WC-9432.', -5.02137, True), ('WC-9432.', -7.50966, True), ('WC-', -8.63266, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 2 STATION PAVORA-648 GOLD WC-9432
+ GREEDY 'The access code for the fictional station PAVORA-648 is WC-9432.' EXACT False
+ AUTONOMOUS 'WC-9432' EXACT True
+ CANDIDATES [('The access code for the fictional station PAVORA-648 is WC-9432.', -0.06197, True), ('WC-9432', -4.55252, True), ('The access code for the fictional station PAVORA-648 is WC-9432. Answer: WC-9432.', -6.51634, True), ('The access code for the fictional station PAVORA-648 is WC-9432. Answer: WC-9432', -8.01624, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 2 STATION LUMEX-392 GOLD FS-5817
+ GREEDY 'FS-5817' EXACT True
+ AUTONOMOUS 'FS-5817' EXACT True
+ CANDIDATES [('FS-5817', -0.03332, True), ('The access code for the fictional station LUMEX-392 is FS-5817.', -4.02635, True), ('FS-5817.', -4.28543, True), ('fs-5817', -7.51935, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 3 STATION PAVORA-648 GOLD WC-9432
+ GREEDY 'The access code for the fictional station PAVORA-648 is WC-9432.' EXACT False
+ AUTONOMOUS 'WC-9432' EXACT True
+ CANDIDATES [('The access code for the fictional station PAVORA-648 is WC-9432.', -0.02358, True), ('HV-2064', -4.77491, True), ('The access code for the fictional station PAVORA-648 is WC-9432. Answer: WC-9432.', -6.83907, True), ('The access code for PAVORA-648 is WC-9432.', -7.07959, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 3 STATION LUMEX-392 GOLD FS-5817
+ GREEDY 'The access code for the fictional station LUMEX-392 is FS-5817.' EXACT False
+ AUTONOMOUS 'FS-5817' EXACT True
+ CANDIDATES [('The access code for the fictional station LUMEX-392 is FS-5817.', -0.32032, True), ('FS-5817', -1.31717, True), ('The access code for LUMEX-392 is FS-5817.', -6.84045, True), ('The access code for the fictional station LUMEX-392 is FS-5817. Answer: FS-5817.', -9.62765, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 3 STATION ZENTRA-865 GOLD HV-2064
+ GREEDY 'The access code for the fictional station ZENTRA-865 is HV-2064.' EXACT False
+ AUTONOMOUS 'HV-2064' EXACT True
+ CANDIDATES [('The access code for the fictional station ZENTRA-865 is HV-2064.', -0.69833, True), ('HV-2064', -0.71876, True), ('HV-2064.', -4.46883, True), ('Access code for ZENTRA-865: HV-2064', -7.29406, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 4 STATION PAVORA-648 GOLD WC-9432
+ GREEDY 'The access code for the fictional station PAVORA-648 is WC-9432.' EXACT False
+ AUTONOMOUS 'WC-9432' EXACT True
+ CANDIDATES [('The access code for the fictional station PAVORA-648 is WC-9432.', -0.02347, True), ('BM-7391', -4.52715, True), ('The access code for fictional station PAVORA-648 is WC-9432.', -7.02389, True), ('The access code for the fictional station PAVORA-648 is WC-9432. Answer: WC-9432.', -7.65414, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 4 STATION LUMEX-392 GOLD FS-5817
+ GREEDY 'The access code for the fictional station LUMEX-392 is FS-5817.' EXACT False
+ AUTONOMOUS 'FS-5817' EXACT True
+ CANDIDATES [('The access code for the fictional station LUMEX-392 is FS-5817.', -0.04128, True), ('FS-5817', -3.53895, True), ('BM-7391', -6.04203, True), ('The access code for LUMEX-392 is FS-5817.', -6.80471, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 4 STATION ZENTRA-865 GOLD HV-2064
+ GREEDY 'The access code for the fictional station ZENTRA-865 is HV-2064.' EXACT False
+ AUTONOMOUS 'HV-2064' EXACT True
+ CANDIDATES [('The access code for the fictional station ZENTRA-865 is HV-2064.', -0.01367, True), ('BM-7391', -5.27197, True), ('HV-2064', -5.76483, True), ('The access code for ZENTRA-865 is HV-2064.', -6.77436, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 4 STATION CALDOR-417 GOLD BM-7391
+ GREEDY 'The access code for the fictional station CALDOR-417 is BM-7391.' EXACT False
+ AUTONOMOUS 'BM-7391' EXACT True
+ CANDIDATES [('BM-7391', -0.69463, True), ('The access code for the fictional station CALDOR-417 is BM-7391.', -0.6968, True), ('The access code for fictional station CALDOR-417 is BM-7391.', -7.44736, True), ('The access code for CALDOR-417 is BM-7391.', -8.22361, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 5 STATION PAVORA-648 GOLD WC-9432
+ GREEDY 'The access code for the fictional station PAVORA-648 is WC-9432.' EXACT False
+ AUTONOMOUS 'WC-9432' EXACT True
+ CANDIDATES [('The access code for the fictional station PAVORA-648 is WC-9432.', -0.02221, True), ('WC-9432', -5.76681, True), ('The access code for PAVORA-648 is WC-9432.', -6.05326, True), ('Access code for PAVORA-648: WC-9432', -6.38303, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 5 STATION LUMEX-392 GOLD FS-5817
+ GREEDY 'The access code for the fictional station LUMEX-392 is FS-5817.' EXACT False
+ AUTONOMOUS 'FS-5817' EXACT True
+ CANDIDATES [('The access code for the fictional station LUMEX-392 is FS-5817.', -0.10855, True), ('FS-5817', -2.35526, True), ('The access code for LUMEX-392 is FS-5817.', -6.62121, True), ('LUMEX-392: FS-5817', -7.79135, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 5 STATION ZENTRA-865 GOLD HV-2064
+ GREEDY 'The access code for the fictional station ZENTRA-865 is HV-2064.' EXACT False
+ AUTONOMOUS 'HV-2064' EXACT True
+ CANDIDATES [('The access code for the fictional station ZENTRA-865 is HV-2064.', -0.02686, True), ('HV-2064', -4.26882, True), ('The access code for ZENTRA-865 is HV-2064.', -5.03673, True), ('Access code for ZENTRA-865: HV-2064', -6.58816, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 5 STATION CALDOR-417 GOLD BM-7391
+ GREEDY 'The access code for the fictional station CALDOR-417 is BM-7391.' EXACT False
+ AUTONOMOUS 'BM-7391' EXACT True
+ CANDIDATES [('The access code for the fictional station CALDOR-417 is BM-7391.', -0.31983, True), ('BM-7391', -1.3166, True), ('The access code for fictional station CALDOR-417 is BM-7391.', -7.074, True), ('The access code for the fictional station CALDOR-417 is: BM-7391', -7.79463, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 5 STATION NORVIA-926 GOLD DX-1857
+ GREEDY 'The access code for the fictional station NORVIA-926 is DX-1857.' EXACT False
+ AUTONOMOUS 'DX-1857' EXACT True
+ CANDIDATES [('The access code for the fictional station NORVIA-926 is DX-1857.', -0.04347, True), ('DX-1857', -3.54106, True), ('Access code for the fictional station NORVIA-926 is DX-1857.', -6.32155, True), ('The access code for the fictional station NORVIA-926 is: DX-1857.', -6.51887, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 6 STATION PAVORA-648 GOLD WC-9432
+ GREEDY 'The access code for the fictional station PAVORA-648 is WC-9432.' EXACT False
+ AUTONOMOUS 'WC-9432' EXACT True
+ CANDIDATES [('The access code for the fictional station PAVORA-648 is WC-9432.', -0.01233, True), ('BM-7391', -6.7616, True), ('The access code for PAVORA-648 is WC-9432.', -6.78865, True), ('The access code for fictional station PAVORA-648 is WC-9432.', -7.01463, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 6 STATION LUMEX-392 GOLD FS-5817
+ GREEDY 'The access code for the fictional station LUMEX-392 is FS-5817.' EXACT False
+ AUTONOMOUS 'FS-5817' EXACT True
+ CANDIDATES [('The access code for the fictional station LUMEX-392 is FS-5817.', -0.25697, True), ('FS-5817', -1.50561, True), ('The access code for LUMEX-392 is FS-5817.', -7.51962, True), ('LUMEX-392: FS-5817', -8.65701, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 6 STATION ZENTRA-865 GOLD HV-2064
+ GREEDY 'The access code for the fictional station ZENTRA-865 is HV-2064.' EXACT False
+ AUTONOMOUS 'HV-2064' EXACT True
+ CANDIDATES [('The access code for the fictional station ZENTRA-865 is HV-2064.', -0.00785, True), ('HV-2064', -6.00815, True), ('The access code for ZENTRA-865 is HV-2064.', -6.26948, True), ('Access code for ZENTRA-865: HV-2064', -6.95321, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 6 STATION CALDOR-417 GOLD BM-7391
+ GREEDY 'The access code for the fictional station CALDOR-417 is BM-7391.' EXACT False
+ AUTONOMOUS 'BM-7391' EXACT True
+ CANDIDATES [('The access code for the fictional station CALDOR-417 is BM-7391.', -0.16316, True), ('BM-7391', -1.91208, True), ('The access code for fictional station CALDOR-417 is BM-7391.', -7.41532, True), ('Access code for the fictional station CALDOR-417 is BM-7391.', -8.25895, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 6 STATION NORVIA-926 GOLD DX-1857
+ GREEDY 'The access code for the fictional station NORVIA-926 is DX-1857.' EXACT False
+ AUTONOMOUS 'DX-1857' EXACT True
+ CANDIDATES [('The access code for the fictional station NORVIA-926 is DX-1857.', -0.06832, True), ('DX-1857', -2.81812, True), ('Access code for the fictional station NORVIA-926 is DX-1857.', -7.09004, True), ('DV-1857', -7.44033, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 6 STATION TALVEX-583 GOLD RP-6402
+ GREEDY 'The access code for the fictional station TALVEX-583 is RP-6402.' EXACT False
+ AUTONOMOUS 'RP-6402' EXACT True
+ CANDIDATES [('The access code for the fictional station TALVEX-583 is RP-6402.', -0.00833, True), ('RP-6402', -6.00894, True), ('BM-7391', -6.76106, True), ('The access code for TALVEX-583 is RP-6402.', -7.28957, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 7 STATION PAVORA-648 GOLD WC-9432
+ GREEDY 'The access code for the fictional station PAVORA-648 is WC-9432.' EXACT False
+ AUTONOMOUS 'WC-9432' EXACT True
+ CANDIDATES [('The access code for the fictional station PAVORA-648 is WC-9432.', -0.0418, True), ('WC-9432', -4.53153, True), ('The access code for fictional station PAVORA-648 is WC-9432.', -5.29324, True), ('Access code for PAVORA-648: WC-9432', -5.63011, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 7 STATION LUMEX-392 GOLD FS-5817
+ GREEDY 'The access code for the fictional station LUMEX-392 is FS-5817.' EXACT False
+ AUTONOMOUS 'FS-5817' EXACT True
+ CANDIDATES [('The access code for the fictional station LUMEX-392 is FS-5817.', -0.48498, True), ('FS-5817', -0.97936, True), ('The access code for LUMEX-392 is FS-5817.', -5.99699, True), ('The access code for fictional station LUMEX-392 is FS-5817.', -6.98715, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 7 STATION ZENTRA-865 GOLD HV-2064
+ GREEDY 'The access code for the fictional station ZENTRA-865 is HV-2064.' EXACT False
+ AUTONOMOUS 'HV-2064' EXACT True
+ CANDIDATES [('The access code for the fictional station ZENTRA-865 is HV-2064.', -0.03548, True), ('HV-2064', -4.27784, True), ('The access code for ZENTRA-865 is HV-2064.', -4.54637, True), ('Access code for ZENTRA-865: HV-2064', -5.95962, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 7 STATION CALDOR-417 GOLD BM-7391
+ GREEDY 'The access code for the fictional station CALDOR-417 is BM-7391.' EXACT False
+ AUTONOMOUS 'BM-7391' EXACT True
+ CANDIDATES [('The access code for the fictional station CALDOR-417 is BM-7391.', -0.48144, True), ('BM-7391', -0.97722, True), ('The access code for fictional station CALDOR-417 is BM-7391.', -6.48532, True), ('Access code for CALDOR-417: BM-7391', -7.86097, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 7 STATION NORVIA-926 GOLD DX-1857
+ GREEDY 'The access code for the fictional station NORVIA-926 is DX-1857.' EXACT False
+ AUTONOMOUS 'DX-1857' EXACT True
+ CANDIDATES [('The access code for the fictional station NORVIA-926 is DX-1857.', -0.58466, True), ('DX-1857', -0.83006, True), ('The access code for fictional station NORVIA-926 is DX-1857.', -6.84086, True), ('The access code for the fictional station NORVIA-926 is: DX-1857.', -7.53028, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 7 STATION TALVEX-583 GOLD RP-6402
+ GREEDY 'The access code for the fictional station TALVEX-583 is RP-6402.' EXACT False
+ AUTONOMOUS 'RP-6402' EXACT True
+ CANDIDATES [('The access code for the fictional station TALVEX-583 is RP-6402.', -0.06849, True), ('RP-6402', -3.06239, True), ('Access code for TALVEX-583: RP-6402', -5.64012, True), ('The access code for TALVEX-583 is RP-6402.', -5.84242, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 7 STATION MIREX-204 GOLD KT-9173
+ GREEDY 'The access code for the fictional station MIREX-204 is KT-9173.' EXACT False
+ AUTONOMOUS 'KT-9173' EXACT True
+ CANDIDATES [('The access code for the fictional station MIREX-204 is KT-9173.', -0.17995, True), ('KT-9173', -1.91864, True), ('The access code for fictional station MIREX-204 is KT-9173.', -4.93177, True), ('Access code for the fictional station MIREX-204 is KT-9173.', -6.7234, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 8 STATION PAVORA-648 GOLD WC-9432
+ GREEDY 'The access code for the fictional station PAVORA-648 is WC-9432.' EXACT False
+ AUTONOMOUS 'WC-9432' EXACT True
+ CANDIDATES [('The access code for the fictional station PAVORA-648 is WC-9432.', -0.08639, True), ('WC-9432', -3.07153, True), ('The access code for PAVORA-648 is WC-9432.', -5.10654, True), ('The access code for fictional station PAVORA-648 is WC-9432.', -5.3381, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 8 STATION LUMEX-392 GOLD FS-5817
+ GREEDY 'FS-5817' EXACT True
+ AUTONOMOUS 'FS-5817' EXACT True
+ CANDIDATES [('FS-5817', -0.57915, True), ('The access code for the fictional station LUMEX-392 is FS-5817.', -0.84059, True), ('The access code for LUMEX-392 is FS-5817.', -5.85124, True), ('The access code for fictional station LUMEX-392 is FS-5817.', -6.3423, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 8 STATION ZENTRA-865 GOLD HV-2064
+ GREEDY 'The access code for the fictional station ZENTRA-865 is HV-2064.' EXACT False
+ AUTONOMOUS 'HV-2064' EXACT True
+ CANDIDATES [('The access code for the fictional station ZENTRA-865 is HV-2064.', -0.06993, True), ('HV-2064', -3.30037, True), ('The access code for ZENTRA-865 is HV-2064.', -4.0788, True), ('Access code for ZENTRA-865: HV-2064', -5.47103, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 8 STATION CALDOR-417 GOLD BM-7391
+ GREEDY 'The access code for the fictional station CALDOR-417 is BM-7391.' EXACT False
+ AUTONOMOUS 'BM-7391' EXACT True
+ CANDIDATES [('The access code for the fictional station CALDOR-417 is BM-7391.', -0.47903, True), ('BM-7391', -0.97632, True), ('The access code for fictional station CALDOR-417 is BM-7391.', -6.98351, True), ('The access code for the fictional station CALDOR-417 is BM-7391. (Answer: BM-7391)', -10.2467, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 8 STATION NORVIA-926 GOLD DX-1857
+ GREEDY 'The access code for the fictional station NORVIA-926 is DX-1857.' EXACT False
+ AUTONOMOUS 'DX-1857' EXACT True
+ CANDIDATES [('The access code for the fictional station NORVIA-926 is DX-1857.', -0.16721, True), ('DX-1857', -1.91256, True), ('The access code for fictional station NORVIA-926 is DX-1857.', -6.17593, True), ('The access code for the fictional station NORVIA-926 is: DX-1857.', -7.14184, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 8 STATION TALVEX-583 GOLD RP-6402
+ GREEDY 'The access code for the fictional station TALVEX-583 is RP-6402.' EXACT False
+ AUTONOMOUS 'RP-6402' EXACT True
+ CANDIDATES [('The access code for the fictional station TALVEX-583 is RP-6402.', -0.04584, True), ('RP-6402', -3.78753, True), ('The access code for TALVEX-583 is RP-6402.', -5.57663, True), ('Access code for TALVEX-583: RP-6402', -5.65045, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 8 STATION MIREX-204 GOLD KT-9173
+ GREEDY 'The access code for the fictional station MIREX-204 is KT-9173.' EXACT False
+ AUTONOMOUS 'KT-9173' EXACT True
+ CANDIDATES [('The access code for the fictional station MIREX-204 is KT-9173.', -0.05417, True), ('KT-9173', -3.3002, True), ('Access code for the fictional station MIREX-204 is KT-9173.', -6.13408, True), ('Access code for MIREX-204: KT-9173', -6.18504, True)]
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 8 STATION VELORA-731 GOLD QN-4826
+ GREEDY 'The access code for the fictional station VELORA-731 is QN-4826.' EXACT False
+ AUTONOMOUS 'QN-4826' EXACT True
+ CANDIDATES [('The access code for the fictional station VELORA-731 is QN-4826.', -0.03816, True), ('QN-4826', -4.27918, True), ('The access code for VELORA-731 is QN-4826.', -5.04726, True), ('KT-9173', -5.52982, True)]
+
+[11/15] JOINT / FIRST / APPEND
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM joint STATION VELORA-731 GOLD QN-4826 GREEDY 'QN-4826' SELECTED 'QN-4826' EXACT True
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM joint STATION MIREX-204 GOLD KT-9173 GREEDY 'KT-9173' SELECTED 'KT-9173' EXACT True
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM joint STATION TALVEX-583 GOLD RP-6402 GREEDY 'RP-6402' SELECTED 'RP-6402' EXACT True
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM joint STATION NORVIA-926 GOLD DX-1857 GREEDY 'DX-1857' SELECTED 'DX-1857' EXACT True
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM joint STATION CALDOR-417 GOLD BM-7391 GREEDY 'BM-7391' SELECTED 'BM-7391' EXACT True
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM joint STATION ZENTRA-865 GOLD HV-2064 GREEDY 'HV-2064' SELECTED 'HV-2064' EXACT True
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM joint STATION LUMEX-392 GOLD FS-5817 GREEDY 'The access code for the fictional station LUMEX-392 is FS-5817.' SELECTED 'FS-5817' EXACT True
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM joint STATION PAVORA-648 GOLD WC-9432 GREEDY 'WC-9432' SELECTED 'WC-9432' EXACT True
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM first STATION VELORA-731 GOLD QN-4826 GREEDY 'QN-4826' SELECTED 'QN-4826' EXACT True
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM first STATION MIREX-204 GOLD KT-9173 GREEDY 'QN-4826' SELECTED 'QN-4826' EXACT False
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM first STATION TALVEX-583 GOLD RP-6402 GREEDY 'QN-4826' SELECTED 'QN-4826' EXACT False
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM first STATION NORVIA-926 GOLD DX-1857 GREEDY 'QN-4826' SELECTED 'QN-4826' EXACT False
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM first STATION CALDOR-417 GOLD BM-7391 GREEDY 'QN-4826' SELECTED 'QN-4826' EXACT False
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM first STATION ZENTRA-865 GOLD HV-2064 GREEDY 'QN-4826' SELECTED 'QN-4826' EXACT False
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM first STATION LUMEX-392 GOLD FS-5817 GREEDY 'QN-4826' SELECTED 'QN-4826' EXACT False
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM first STATION PAVORA-648 GOLD WC-9432 GREEDY 'QN-4826' SELECTED 'QN-4826' EXACT False
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM append STATION VELORA-731 GOLD QN-4826 GREEDY 'The access code for the fictional station VELORA-731 is QN-4826.' SELECTED 'QN-4826' EXACT True
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM append STATION MIREX-204 GOLD KT-9173 GREEDY 'The access code for the fictional station MIREX-204 is KT-9173.' SELECTED 'KT-9173' EXACT True
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM append STATION TALVEX-583 GOLD RP-6402 GREEDY 'The access code for the fictional station TALVEX-583 is RP-6402.' SELECTED 'RP-6402' EXACT True
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM append STATION NORVIA-926 GOLD DX-1857 GREEDY 'The access code for the fictional station NORVIA-926 is DX-1857.' SELECTED 'DX-1857' EXACT True
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM append STATION CALDOR-417 GOLD BM-7391 GREEDY 'BM-7391' SELECTED 'BM-7391' EXACT True
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM append STATION ZENTRA-865 GOLD HV-2064 GREEDY 'The access code for the fictional station ZENTRA-865 is HV-2064.' SELECTED 'HV-2064' EXACT True
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM append STATION LUMEX-392 GOLD FS-5817 GREEDY 'The access code for the fictional station LUMEX-392 is FS-5817.' SELECTED 'FS-5817' EXACT True
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) ARM append STATION PAVORA-648 GOLD WC-9432 GREEDY 'The access code for the fictional station PAVORA-648 is WC-9432.' SELECTED 'WC-9432' EXACT True
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM joint STATION VELORA-731 GOLD QN-4826 GREEDY 'The access code for the fictional station VELORA-731 is QN-4826.' SELECTED 'QN-4826' EXACT True
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM joint STATION MIREX-204 GOLD KT-9173 GREEDY 'BM-7391' SELECTED 'BM-7391' EXACT False
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM joint STATION TALVEX-583 GOLD RP-6402 GREEDY 'The access code for the fictional station TALVEX-583 is RP-6402.' SELECTED 'RP-6402' EXACT True
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM joint STATION NORVIA-926 GOLD DX-1857 GREEDY 'The access code for the fictional station NORVIA-926 is DX-1857.' SELECTED 'DX-1857' EXACT True
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM joint STATION CALDOR-417 GOLD BM-7391 GREEDY 'BM-7391' SELECTED 'BM-7391' EXACT True
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM joint STATION ZENTRA-865 GOLD HV-2064 GREEDY 'HV-2064' SELECTED 'HV-2064' EXACT True
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM joint STATION LUMEX-392 GOLD FS-5817 GREEDY 'FS-5817' SELECTED 'FS-5817' EXACT True
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM joint STATION PAVORA-648 GOLD WC-9432 GREEDY 'WC-9432' SELECTED 'WC-9432' EXACT True
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM first STATION VELORA-731 GOLD QN-4826 GREEDY 'WC-9432' SELECTED 'WC-9432' EXACT False
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM first STATION MIREX-204 GOLD KT-9173 GREEDY 'WC-9432' SELECTED 'WC-9432' EXACT False
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM first STATION TALVEX-583 GOLD RP-6402 GREEDY 'WC-9432' SELECTED 'WC-9432' EXACT False
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM first STATION NORVIA-926 GOLD DX-1857 GREEDY 'WC-9432' SELECTED 'WC-9432' EXACT False
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM first STATION CALDOR-417 GOLD BM-7391 GREEDY 'WC-9432' SELECTED 'WC-9432' EXACT False
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM first STATION ZENTRA-865 GOLD HV-2064 GREEDY 'WC-9432' SELECTED 'WC-9432' EXACT False
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM first STATION LUMEX-392 GOLD FS-5817 GREEDY 'WC-9432' SELECTED 'WC-9432' EXACT False
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM first STATION PAVORA-648 GOLD WC-9432 GREEDY 'WC-9432' SELECTED 'WC-9432' EXACT True
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM append STATION VELORA-731 GOLD QN-4826 GREEDY 'The access code for the fictional station VELORA-731 is QN-4826.' SELECTED 'QN-4826' EXACT True
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM append STATION MIREX-204 GOLD KT-9173 GREEDY 'The access code for the fictional station MIREX-204 is KT-9173.' SELECTED 'KT-9173' EXACT True
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM append STATION TALVEX-583 GOLD RP-6402 GREEDY 'The access code for the fictional station TALVEX-583 is RP-6402.' SELECTED 'RP-6402' EXACT True
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM append STATION NORVIA-926 GOLD DX-1857 GREEDY 'The access code for the fictional station NORVIA-926 is DX-1857.' SELECTED 'DX-1857' EXACT True
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM append STATION CALDOR-417 GOLD BM-7391 GREEDY 'The access code for the fictional station CALDOR-417 is BM-7391.' SELECTED 'BM-7391' EXACT True
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM append STATION ZENTRA-865 GOLD HV-2064 GREEDY 'The access code for the fictional station ZENTRA-865 is HV-2064.' SELECTED 'HV-2064' EXACT True
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM append STATION LUMEX-392 GOLD FS-5817 GREEDY 'FS-5817' SELECTED 'FS-5817' EXACT True
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) ARM append STATION PAVORA-648 GOLD WC-9432 GREEDY 'The access code for the fictional station PAVORA-648 is WC-9432.' SELECTED 'WC-9432' EXACT True
+
+[12/15] SCORES
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 1 AUTONOMOUS_EXACT 1 / 1 GREEDY_EXACT 1 / 1 WRONG_GREEDY 0
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 2 AUTONOMOUS_EXACT 2 / 2 GREEDY_EXACT 1 / 2 WRONG_GREEDY 0
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 3 AUTONOMOUS_EXACT 3 / 3 GREEDY_EXACT 1 / 3 WRONG_GREEDY 0
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 4 AUTONOMOUS_EXACT 4 / 4 GREEDY_EXACT 0 / 4 WRONG_GREEDY 0
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 5 AUTONOMOUS_EXACT 5 / 5 GREEDY_EXACT 1 / 5 WRONG_GREEDY 0
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 6 AUTONOMOUS_EXACT 6 / 6 GREEDY_EXACT 1 / 6 WRONG_GREEDY 0
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 7 AUTONOMOUS_EXACT 6 / 7 GREEDY_EXACT 2 / 7 WRONG_GREEDY 1
+ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 8 AUTONOMOUS_EXACT 8 / 8 GREEDY_EXACT 1 / 8 WRONG_GREEDY 0
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 1 AUTONOMOUS_EXACT 1 / 1 GREEDY_EXACT 1 / 1 WRONG_GREEDY 0
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 2 AUTONOMOUS_EXACT 2 / 2 GREEDY_EXACT 1 / 2 WRONG_GREEDY 0
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 3 AUTONOMOUS_EXACT 3 / 3 GREEDY_EXACT 0 / 3 WRONG_GREEDY 0
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 4 AUTONOMOUS_EXACT 4 / 4 GREEDY_EXACT 0 / 4 WRONG_GREEDY 0
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 5 AUTONOMOUS_EXACT 5 / 5 GREEDY_EXACT 0 / 5 WRONG_GREEDY 0
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 6 AUTONOMOUS_EXACT 6 / 6 GREEDY_EXACT 0 / 6 WRONG_GREEDY 0
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 7 AUTONOMOUS_EXACT 7 / 7 GREEDY_EXACT 0 / 7 WRONG_GREEDY 0
+ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 8 AUTONOMOUS_EXACT 8 / 8 GREEDY_EXACT 1 / 8 WRONG_GREEDY 0
+ARM joint AUTONOMOUS_EXACT 15 / 16 GREEDY_EXACT 11 / 16 WRONG_GREEDY 1
+ARM first AUTONOMOUS_EXACT 2 / 16 GREEDY_EXACT 2 / 16 WRONG_GREEDY 14
+ARM append AUTONOMOUS_EXACT 16 / 16 GREEDY_EXACT 2 / 16 WRONG_GREEDY 0
+GATE INCREMENTAL_PANEL_COMPLETE PASS
+GATE INCREMENTAL_RETENTION_ALL FAIL
+GATE EIGHT_CARTRIDGE_FINAL_16 PASS
+GATE JOINT_REFERENCE_16 FAIL
+GATE FINAL_NO_WRONG_GREEDY PASS
+GATE FINAL_COMPLETED_CANDIDATES PASS
+
+[13/15] FAILURE / ORDER SENSITIVITY
+FAIL ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 7 ARM incremental STATION ZENTRA-865 EXPECTED HV-2064 SELECTED 'RP-6402' GREEDY 'The access code for the fictional station ZENTRA-865 is RP-6402.'
+FAIL ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 8 ARM first STATION MIREX-204 EXPECTED KT-9173 SELECTED 'QN-4826' GREEDY 'QN-4826'
+FAIL ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 8 ARM first STATION TALVEX-583 EXPECTED RP-6402 SELECTED 'QN-4826' GREEDY 'QN-4826'
+FAIL ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 8 ARM first STATION NORVIA-926 EXPECTED DX-1857 SELECTED 'QN-4826' GREEDY 'QN-4826'
+FAIL ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 8 ARM first STATION CALDOR-417 EXPECTED BM-7391 SELECTED 'QN-4826' GREEDY 'QN-4826'
+FAIL ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 8 ARM first STATION ZENTRA-865 EXPECTED HV-2064 SELECTED 'QN-4826' GREEDY 'QN-4826'
+FAIL ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 8 ARM first STATION LUMEX-392 EXPECTED FS-5817 SELECTED 'QN-4826' GREEDY 'QN-4826'
+FAIL ORDER (0, 1, 2, 3, 4, 5, 6, 7) STAGE 8 ARM first STATION PAVORA-648 EXPECTED WC-9432 SELECTED 'QN-4826' GREEDY 'QN-4826'
+FAIL ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 8 ARM joint STATION MIREX-204 EXPECTED KT-9173 SELECTED 'BM-7391' GREEDY 'BM-7391'
+FAIL ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 8 ARM first STATION VELORA-731 EXPECTED QN-4826 SELECTED 'WC-9432' GREEDY 'WC-9432'
+FAIL ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 8 ARM first STATION MIREX-204 EXPECTED KT-9173 SELECTED 'WC-9432' GREEDY 'WC-9432'
+FAIL ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 8 ARM first STATION TALVEX-583 EXPECTED RP-6402 SELECTED 'WC-9432' GREEDY 'WC-9432'
+FAIL ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 8 ARM first STATION NORVIA-926 EXPECTED DX-1857 SELECTED 'WC-9432' GREEDY 'WC-9432'
+FAIL ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 8 ARM first STATION CALDOR-417 EXPECTED BM-7391 SELECTED 'WC-9432' GREEDY 'WC-9432'
+FAIL ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 8 ARM first STATION ZENTRA-865 EXPECTED HV-2064 SELECTED 'WC-9432' GREEDY 'WC-9432'
+FAIL ORDER (7, 6, 5, 4, 3, 2, 1, 0) STAGE 8 ARM first STATION LUMEX-392 EXPECTED FS-5817 SELECTED 'WC-9432' GREEDY 'WC-9432'
+ORDER_COMPARE VELORA-731 FORWARD 'QN-4826' REVERSE 'QN-4826' MATCH True
+ORDER_COMPARE MIREX-204 FORWARD 'KT-9173' REVERSE 'KT-9173' MATCH True
+ORDER_COMPARE TALVEX-583 FORWARD 'RP-6402' REVERSE 'RP-6402' MATCH True
+ORDER_COMPARE NORVIA-926 FORWARD 'DX-1857' REVERSE 'DX-1857' MATCH True
+ORDER_COMPARE CALDOR-417 FORWARD 'BM-7391' REVERSE 'BM-7391' MATCH True
+ORDER_COMPARE ZENTRA-865 FORWARD 'HV-2064' REVERSE 'HV-2064' MATCH True
+ORDER_COMPARE LUMEX-392 FORWARD 'FS-5817' REVERSE 'FS-5817' MATCH True
+ORDER_COMPARE PAVORA-648 FORWARD 'WC-9432' REVERSE 'WC-9432' MATCH True
+
+[14/15] INTEGRITY
+GATE CACHE_VALID PASS
+GATE HOOK_COUNTS PASS
+GATE HOOKS_CLEAN PASS
+GATE FINGERPRINT_UNCHANGED PASS
+GATE WEIGHTS_FROZEN PASS
+CUDA_ALLOCATED_GIB: 29.372 CUDA_PEAK_GIB: 29.961
+
+[15/15] FINAL
+GATE MODEL_FROZEN PASS
+GATE PANEL_LOCK PASS
+GATE WRITE_INDEPENDENT PASS
+GATE INIT_EXACT_BOTH PASS
+GATE APPEND_PRESERVED_ALL PASS
+GATE INCREMENTAL_PANEL_COMPLETE PASS
+GATE INCREMENTAL_RETENTION_ALL FAIL
+GATE EIGHT_CARTRIDGE_FINAL_16 PASS
+GATE JOINT_REFERENCE_16 FAIL
+GATE FINAL_NO_WRONG_GREEDY PASS
+GATE FINAL_COMPLETED_CANDIDATES PASS
+GATE CACHE_VALID PASS
+GATE HOOK_COUNTS PASS
+GATE HOOKS_CLEAN PASS
+GATE FINGERPRINT_UNCHANGED PASS
+GATE WEIGHTS_FROZEN PASS
+INFRASTRUCTURE_STATUS: PASS
+INCREMENTAL_RETENTION_STATUS: FAIL
+EIGHT_CARTRIDGE_READOUT_STATUS: PASS
+STRICT_BEHAVIOR_STATUS: FAIL
+STATUS: DIAGNOSTIC COMPLETE — EIGHT-CARTRIDGE RETENTION NOT YET VERIFIED
+ENGINE: TEST588 CUT3 WRITE/INIT/APPEND PRESERVED
+GOLD_CANDIDATE_INJECTION: NO
+FORCED_FIRST_TOKEN: NO
+SOURCE_REPLAY_DURING_APPEND_OR_ASK: NO
+COMPRESSION: NOT YET
+INCREMENTAL_QUESTIONS: 72 FINAL_APPEND_QUESTIONS: 16 TOTAL_READOUTS: 120
+ELAPSED_SECONDS: 884.93
+
+
+=================================================================================================================================================
