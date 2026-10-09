@@ -1,0 +1,112 @@
+ 
+==============================================================================================================
+TEST576-B — AKBASCORE MAM · DEEPSEEK BUILT-IN STATIC AUDIT
+==============================================================================================================
+PYTHON: 3.13.15 TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+GPU: NVIDIA A100-SXM4-40GB
+
+[1/7] PINNED CONFIG
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 1.52k/1.52k [00:00<00:00, 148kB/s]
+configuration_deepseek.py: 100%
+
+ 10.3k/10.3k [00:00<00:00, 1.26MB/s]
+MODEL_TYPE: deepseek_v2 LAYERS: 27 HIDDEN: 2048
+CONFIG_CLASS: transformers_modules.deepseek_hyphen_ai.DeepSeek_hyphen_V2_hyphen_Lite_hyphen_Chat.85864749cd611b4353ce1decdb286193298f64c7.configuration_deepseek DeepseekV2Config
+
+[2/7] BUILT-IN CLASS RESOLUTION
+CLASS: transformers.models.deepseek_v2.modeling_deepseek_v2 DeepseekV2ForCausalLM
+SOURCE: /usr/local/lib/python3.13/dist-packages/transformers/models/deepseek_v2/modeling_deepseek_v2.py
+INIT_SIGNATURE: (self, config)
+FORWARD_SIGNATURE: (self, input_ids: torch.LongTensor | None = None, attention_mask: torch.Tensor | None = None, position_ids: torch.LongTensor | None = None, past_key_values: transformers.cache_utils.Cache | None = None, inputs_embeds: torch.FloatTensor | None = None, labels: torch.LongTensor | None = None, use_cache: bool | None = None, logits_to_keep: int | torch.Tensor = 0, **kwargs: Unpack[transformers.utils.generic.TransformersKwargs]) -> transformers.modeling_outputs.CausalLMOutputWithPast
+
+[3/7] ATTENTION / DECODER SOURCE INSPECTION
+DeepseekV2Attention : /usr/local/lib/python3.13/dist-packages/transformers/models/deepseek_v2/modeling_deepseek_v2.py
+ FORWARD: (self, hidden_states: torch.Tensor, attention_mask: torch.Tensor | None = None, past_key_values: transformers.cache_utils.Cache | None = None, position_embeddings: tuple[torch.Tensor, torch.Tensor] | None = None, **kwargs) -> tuple[torch.Tensor, torch.Tensor | None, tuple[torch.Tensor] | None]
+ INIT: (self, config: transformers.models.deepseek_v2.configuration_deepseek_v2.DeepseekV2Config, layer_idx: int)
+DeepseekV2DecoderLayer : /usr/local/lib/python3.13/dist-packages/transformers/models/deepseek_v2/modeling_deepseek_v2.py
+ FORWARD: (self, hidden_states: torch.Tensor, attention_mask: torch.Tensor | None = None, position_ids: torch.LongTensor | None = None, past_key_values: transformers.cache_utils.Cache | None = None, use_cache: bool | None = False, position_embeddings: tuple[torch.Tensor, torch.Tensor] | None = None, **kwargs: Unpack[transformers.utils.generic.TransformersKwargs]) -> torch.Tensor
+ INIT: (self, config: transformers.models.deepseek_v2.configuration_deepseek_v2.DeepseekV2Config, layer_idx: int)
+DeepseekV2Model : /usr/local/lib/python3.13/dist-packages/transformers/models/deepseek_v2/modeling_deepseek_v2.py
+ FORWARD: (self, input_ids: torch.LongTensor | None = None, attention_mask: torch.Tensor | None = None, position_ids: torch.LongTensor | None = None, past_key_values: transformers.cache_utils.Cache | None = None, inputs_embeds: torch.FloatTensor | None = None, use_cache: bool | None = None, **kwargs: Unpack[transformers.utils.generic.TransformersKwargs]) -> transformers.modeling_outputs.BaseModelOutputWithPast
+ INIT: (self, config: transformers.models.deepseek_v2.configuration_deepseek_v2.DeepseekV2Config)
+DeepseekV2RotaryEmbedding : /usr/local/lib/python3.13/dist-packages/transformers/models/deepseek_v2/modeling_deepseek_v2.py
+ FORWARD: (self, x, position_ids)
+ INIT: (self, config: transformers.models.deepseek_v2.configuration_deepseek_v2.DeepseekV2Config, device=None)
+DeepseekV2YarnRotaryEmbedding : NOT_EXPOSED
+
+[4/7] MLA / ROPE SOURCE MARKERS
+kv_lora_rank: 8
+qk_nope_head_dim: 10
+qk_rope_head_dim: 9
+kv_a_proj_with_mqa: 2
+kv_b_proj: 2
+q_proj: 2
+q_a_proj: 2
+q_b_proj: 2
+rotary_emb: 4
+apply_rotary_pos_emb: 0
+past_key_values: 23
+cache_position: 0
+DynamicCache: 2
+Yarn: 0
+YaRN: 0
+flash_attention: 0
+
+[5/7] CACHE / FORWARD CONTRACT
+FORWARD DeepseekV2Attention LINES: 52
+ 005: past_key_values: Cache | None = None,
+ 006: position_embeddings: tuple[torch.Tensor, torch.Tensor] | None = None,
+ 025: q_pe, k_pe = apply_rotary_emb(q_pe, k_pe, position_embeddings.to(q_pe.device))
+ 028: if past_key_values is not None:
+ 029: k_nope, k_pe = past_key_values.update(k_nope, k_pe, self.layer_idx)
+ 036: self.config._attn_implementation, eager_attention_forward
+FORWARD DeepseekV2Model LINES: 54
+ 008: position_ids: torch.LongTensor | None = None,
+ 009: past_key_values: Cache | None = None,
+ 011: use_cache: bool | None = None,
+ 020: if use_cache and past_key_values is None:
+ 021: past_key_values = DynamicCache(config=self.config)
+ 023: if position_ids is None:
+ 024: past_seen_tokens = past_key_values.get_seq_length() if past_key_values is not None else 0
+ 025: position_ids = torch.arange(inputs_embeds.shape[1], device=inputs_embeds.device) + past_seen_tokens
+ 026: position_ids = position_ids.unsqueeze(0)
+ 032: past_key_values=past_key_values,
+ 033: position_ids=position_ids,
+ 037: position_embeddings = self.rotary_emb(hidden_states, position_ids=position_ids)
+ 043: position_embeddings=position_embeddings,
+ 044: position_ids=position_ids,
+ 045: past_key_values=past_key_values,
+ 046: use_cache=use_cache,
+ 053: past_key_values=past_key_values,
+FORWARD DeepseekV2ForCausalLM LINES: 57
+ 007: position_ids: torch.LongTensor | None = None,
+ 008: past_key_values: Cache | None = None,
+ 011: use_cache: bool | None = None,
+ 035: position_ids=position_ids,
+ 036: past_key_values=past_key_values,
+ 038: use_cache=use_cache,
+ 054: past_key_values=outputs.past_key_values,
+
+[6/7] SOURCE FINGERPRINT / GPU ALLOCATION
+BUILTIN_MODELING_SOURCE_SHA256: 6ca1149e539f3ac69922f51f47370b4451ba4da5e757c67a648faa214307d1ac
+SOURCE_LINES: 659
+CUDA_ALLOCATED_GIB: 0.0
+WEIGHTS_DOWNLOADED_BY_THIS_TEST: NO
+MODEL_INSTANTIATED: NO
+
+[7/7] GATES
+GATE CONFIG PASS
+GATE BUILTIN_CLASS PASS
+GATE MLA_MARKERS PASS
+GATE STATIC_ONLY PASS
+STATUS: PASS — STATIC ARCHITECTURE AUDIT
+NEXT: CHECK BUILT-IN WEIGHT LOADING COMPATIBILITY BEFORE GPU FORWARD
+
+
+==============================================================================================================
