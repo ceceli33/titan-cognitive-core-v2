@@ -1,0 +1,107 @@
+ 
+========================================================================================================================================
+TEST582 — AKBASCORE MAM · DEEPSEEK INDEPENDENT INIT / CUT ISOLATION
+========================================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+
+[1/10] MODEL / TEST581 REUSE
+MODEL_REUSED: NO — LOADING TEST581 BASELINE
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 1.52k/1.52k [00:00<00:00, 180kB/s]
+model.safetensors.index.json: 100%
+
+ 480k/480k [00:00<00:00, 47.6MB/s]
+Download complete: 
+
+ 27.4GB,  198MB/s  
+Reconstruction complete: 100%
+
+ 31.4GB / 31.4GB,  563MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [01:27<00:00, 87.25s/it]
+Loading weights: 100%
+
+ 351/351 [00:08<00:00, 42.01it/s]
+generation_config.json: 100%
+
+ 181/181 [00:00<00:00, 22.6kB/s]
+tokenizer_config.json: 100%
+
+ 1.28k/1.28k [00:00<00:00, 163kB/s]
+tokenizer.json: 100%
+
+ 4.61M/4.61M [00:00<00:00, 106MB/s]
+PARAMETERS: 15706484224 TRAINABLE: 0
+
+[2/10] FIXED FACT / QUESTION
+SOURCE_TOKENS: 36 ASK_TOKENS: 30
+
+[3/10] WRITE — NATIVE CACHE / FULL CUT STATES
+WRITE_CACHE: 36 LAYERS: 27 CUT_STATES: 27
+
+[4/10] REFERENCE — NATIVE CACHE ASK
+NATIVE_ANSWER: 'QN-4826'
+
+[5/10] CUT REBUILD — SOURCE TOKENS ABSENT
+CUT 1 HOOK 1 UPPER_CACHE_MAX 0.0 HYBRID 'QN-4826' INDEPENDENT 'QN-4826' LOWER_ZERO_NATIVE 'QN-4826'
+CUT 3 HOOK 1 UPPER_CACHE_MAX 0.0 HYBRID 'QN-4826' INDEPENDENT 'QN-4826' LOWER_ZERO_NATIVE 'QN-4826'
+CUT 6 HOOK 1 UPPER_CACHE_MAX 0.0 HYBRID 'QN-4826' INDEPENDENT 'The access code for the fictional station VELORA-731 is QN-4826.' LOWER_ZERO_NATIVE 'The access code for the fictional station VELORA-731 is QN-4826.'
+CUT 9 HOOK 1 UPPER_CACHE_MAX 0.0 HYBRID 'QN-4826' INDEPENDENT 'The access code for the fictional station VELORA-731 is QN-4827.' LOWER_ZERO_NATIVE 'The access code for the fictional station VELORA-731 is QN-4827.'
+CUT 12 HOOK 1 UPPER_CACHE_MAX 0.0 HYBRID 'QN-4826' INDEPENDENT 'What is the access code for the fictional station VELORA-731? Answer with the code.' LOWER_ZERO_NATIVE 'What is the access code for the fictional station VELORA-731? Answer with the code.'
+CUT 16 HOOK 1 UPPER_CACHE_MAX 0.0 HYBRID 'QN-4826' INDEPENDENT 'What is a fictional station only?\n\nThis fictional station is a fictional space station, which is part of a fictional' LOWER_ZERO_NATIVE 'What is a fictional station only?\n\nThis fictional station is a fictional space station, which is part of a fictional'
+CUT 20 HOOK 1 UPPER_CACHE_MAX 0.0 HYBRID 'QN-4826' INDEPENDENT "What is a fictional code?\n\nThe code you provided is fictional. It's a hypothetical scenario that doesn'" LOWER_ZERO_NATIVE "What is a fictional code?\n\nThe code you provided is fictional. It's a hypothetical scenario that doesn'"
+
+[6/10] INDEPENDENT INIT SUMMARY
+CUT 1 INDEPENDENT_EXACT True LOWER_ZERO_NATIVE_EXACT True
+CUT 3 INDEPENDENT_EXACT True LOWER_ZERO_NATIVE_EXACT True
+CUT 6 INDEPENDENT_EXACT False LOWER_ZERO_NATIVE_EXACT False
+CUT 9 INDEPENDENT_EXACT False LOWER_ZERO_NATIVE_EXACT False
+CUT 12 INDEPENDENT_EXACT False LOWER_ZERO_NATIVE_EXACT False
+CUT 16 INDEPENDENT_EXACT False LOWER_ZERO_NATIVE_EXACT False
+CUT 20 INDEPENDENT_EXACT False LOWER_ZERO_NATIVE_EXACT False
+INDEPENDENT_PASS_COUNT: 2 / 7
+
+[7/10] NEGATIVE CONTROL — NO MEMORY
+NO_MEMORY: '1908'
+
+[8/10] CUT SELECTION — INDEPENDENT FIRST
+RANK 1 CUT 1 INDEPENDENT True HYBRID True UPPER_MAX 0.0
+RANK 2 CUT 3 INDEPENDENT True HYBRID True UPPER_MAX 0.0
+RANK 3 CUT 6 INDEPENDENT False HYBRID True UPPER_MAX 0.0
+RANK 4 CUT 9 INDEPENDENT False HYBRID True UPPER_MAX 0.0
+RANK 5 CUT 12 INDEPENDENT False HYBRID True UPPER_MAX 0.0
+RANK 6 CUT 16 INDEPENDENT False HYBRID True UPPER_MAX 0.0
+RANK 7 CUT 20 INDEPENDENT False HYBRID True UPPER_MAX 0.0
+BEST_DIAGNOSTIC_CUT: 1 INDEPENDENT_EXACT: True
+
+[9/10] AUDIT
+CUDA_ALLOCATED_GIB: 29.288
+CUDA_PEAK_GIB: 29.963
+
+[10/10] FINAL
+GATE MODEL_FROZEN PASS
+GATE SOURCE_FREE_ASK PASS
+GATE WRITE PASS
+GATE NATIVE_EXACT PASS
+GATE CUT_REBUILD PASS
+GATE INDEPENDENT_ANY PASS
+GATE NO_MEMORY_NEGATIVE PASS
+GATE HOOKS_CLEAN PASS
+GATE WEIGHTS_FROZEN PASS
+GATE CACHE_INTEGRITY PASS
+CUT_REBUILD_COUNT: 7 / 7
+INDEPENDENT_EXACT_COUNT: 2 / 7
+STATUS: PASS — INDEPENDENT CUT INIT PILOT
+CARTRIDGE: FULL CUT RESIDUAL + REPLAYED UPPER MLA CACHE
+COMPRESSION: NOT YET
+APPEND: NOT YET
+ELAPSED_SECONDS: 133.66
+
+
+========================================================================================================================================
