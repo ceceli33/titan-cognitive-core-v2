@@ -1,0 +1,137 @@
+ 
+==============================================================================================================================
+TEST579 — AKBASCORE MAM · DEEPSEEK CUT REPLAY / MOE / COMPLEX ROTARY
+==============================================================================================================================
+GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+
+[1/10] PINNED REVISION / MODEL
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 1.52k/1.52k [00:00<00:00, 165kB/s]
+MODEL_REUSED: NO — LOADING FROZEN BASELINE
+
+model.safetensors.index.json: 100%
+
+ 480k/480k [00:00<00:00, 49.0MB/s]
+Download complete: 
+
+ 27.4GB, 17.8MB/s  
+Reconstruction complete: 100%
+
+ 31.4GB / 31.4GB,  415MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [01:31<00:00, 39.73s/it]
+Loading weights: 100%
+
+ 351/351 [00:07<00:00, 42.40it/s]
+generation_config.json: 100%
+
+ 181/181 [00:00<00:00, 24.9kB/s]
+PARAMETERS: 15706484224 TRAINABLE: 0
+
+[2/10] TOKENIZER / FIXED INPUT
+
+tokenizer_config.json: 100%
+
+ 1.28k/1.28k [00:00<00:00, 172kB/s]
+tokenizer.json: 100%
+
+ 4.61M/4.61M [00:00<00:00, 110MB/s]
+PROMPT: '<｜begin▁of▁sentence｜>User: Reply with exactly one word: READY\n\nAssistant:' TOKENS: 15
+
+[3/10] NATIVE REFERENCE / ALL CUT INPUTS
+REFERENCE_TOP1: 4460 ' Set'
+REFERENCE_CACHE_LENGTH: 15
+CUT_INPUT 0 (1, 15, 2048) torch.bfloat16
+CUT_INPUT 1 (1, 15, 2048) torch.bfloat16
+CUT_INPUT 2 (1, 15, 2048) torch.bfloat16
+CUT_INPUT 3 (1, 15, 2048) torch.bfloat16
+CUT_INPUT 4 (1, 15, 2048) torch.bfloat16
+CUT_INPUT 6 (1, 15, 2048) torch.bfloat16
+CUT_INPUT 9 (1, 15, 2048) torch.bfloat16
+CUT_INPUT 12 (1, 15, 2048) torch.bfloat16
+CUT_INPUT 16 (1, 15, 2048) torch.bfloat16
+CUT_INPUT 20 (1, 15, 2048) torch.bfloat16
+CUT_INPUT 26 (1, 15, 2048) torch.bfloat16
+
+[4/10] CUT REPLAY — SAME TOKEN LENGTH / SAME POSITION / SAME MODEL
+CUT 0 HOOK 1 MAX 0.0 MEAN 0.0 COS 1.000000119 TOP1_MATCH True
+CUT 1 HOOK 1 MAX 0.0 MEAN 0.0 COS 1.000000119 TOP1_MATCH True
+CUT 2 HOOK 1 MAX 0.0 MEAN 0.0 COS 1.000000119 TOP1_MATCH True
+CUT 3 HOOK 1 MAX 0.0 MEAN 0.0 COS 1.000000119 TOP1_MATCH True
+CUT 4 HOOK 1 MAX 0.0 MEAN 0.0 COS 1.000000119 TOP1_MATCH True
+CUT 6 HOOK 1 MAX 0.0 MEAN 0.0 COS 1.000000119 TOP1_MATCH True
+CUT 9 HOOK 1 MAX 0.0 MEAN 0.0 COS 1.000000119 TOP1_MATCH True
+CUT 12 HOOK 1 MAX 0.0 MEAN 0.0 COS 1.000000119 TOP1_MATCH True
+CUT 16 HOOK 1 MAX 0.0 MEAN 0.0 COS 1.000000119 TOP1_MATCH True
+CUT 20 HOOK 1 MAX 0.0 MEAN 0.0 COS 1.000000119 TOP1_MATCH True
+CUT 26 HOOK 1 MAX 0.0 MEAN 0.0 COS 1.000000119 TOP1_MATCH True
+CUT_REPLAY_PASS_COUNT: 11 / 11
+
+[5/10] NEGATIVE CONTROL — ZERO RESIDUAL AT CUT
+ZERO_CUT 3 {'max': 34.25, 'cos': 0.0, 'top1': 0, 'calls': 1}
+ZERO_CUT 6 {'max': 34.25, 'cos': 0.0, 'top1': 0, 'calls': 1}
+ZERO_CUT 12 {'max': 34.25, 'cos': 0.0, 'top1': 0, 'calls': 1}
+
+[6/10] FULL VS INCREMENTAL / CUT INPUT DIVERGENCE
+INCREMENTAL_LOGIT_DIFF: {'max': 2.931396484375, 'mean': 0.5314355492591858, 'cos': 0.9963427186012268}
+CUT_INPUT_DIFF 0 MAX 0.0 MEAN 0.0 COS 1.0
+CUT_INPUT_DIFF 1 MAX 0.0009766 MEAN 2.17e-05 COS 0.999999702
+CUT_INPUT_DIFF 2 MAX 0.0019531 MEAN 0.0002183 COS 0.999993622
+CUT_INPUT_DIFF 3 MAX 0.0029297 MEAN 0.0003466 COS 0.999991417
+CUT_INPUT_DIFF 4 MAX 0.0039062 MEAN 0.0006728 COS 0.999981105
+CUT_INPUT_DIFF 6 MAX 0.0078125 MEAN 0.0014516 COS 0.999947131
+CUT_INPUT_DIFF 9 MAX 0.03125 MEAN 0.0039743 COS 0.99985075
+CUT_INPUT_DIFF 12 MAX 0.1953125 MEAN 0.0461065 COS 0.992725015
+CUT_INPUT_DIFF 16 MAX 0.5 MEAN 0.0769018 COS 0.989641786
+CUT_INPUT_DIFF 20 MAX 0.875 MEAN 0.1354196 COS 0.99016422
+CUT_INPUT_DIFF 26 MAX 3.5 MEAN 0.2805951 COS 0.994838059
+
+[7/10] MOE ROUTER X-RAY
+LAYER 0 MOE: {'mlp': 'DeepseekV2MLP', 'gate': None}
+LAYER 1 MOE: {'mlp': 'DeepseekV2Moe', 'gate': 'DeepseekV2TopkRouter'}
+LAYER 2 MOE: {'mlp': 'DeepseekV2Moe', 'gate': 'DeepseekV2TopkRouter'}
+LAYER 3 MOE: {'mlp': 'DeepseekV2Moe', 'gate': 'DeepseekV2TopkRouter'}
+LAYER 6 MOE: {'mlp': 'DeepseekV2Moe', 'gate': 'DeepseekV2TopkRouter'}
+LAYER 9 MOE: {'mlp': 'DeepseekV2Moe', 'gate': 'DeepseekV2TopkRouter'}
+LAYER 12 MOE: {'mlp': 'DeepseekV2Moe', 'gate': 'DeepseekV2TopkRouter'}
+LAYER 16 MOE: {'mlp': 'DeepseekV2Moe', 'gate': 'DeepseekV2TopkRouter'}
+LAYER 20 MOE: {'mlp': 'DeepseekV2Moe', 'gate': 'DeepseekV2TopkRouter'}
+LAYER 26 MOE: {'mlp': 'DeepseekV2Moe', 'gate': 'DeepseekV2TopkRouter'}
+
+[8/10] COMPLEX ROTARY — PHASE SHIFT / INVERSE
+ROTARY_SHAPES: (1, 15, 32) (1, 15, 32) DTYPE: torch.complex64
+PHASE_SHIFT: {'max': 0.958851158618927, 'mean': 0.12117399275302887, 'relative': 0.12117399275302887}
+PHASE_INVERSE: {'max': 1.884864389012364e-07, 'mean': 3.44069341906561e-08, 'relative': 3.44069341906561e-08}
+ROTARY_MAGNITUDE_DIFF: 5.960464477539063e-08
+
+[9/10] CLEANUP / HOOK AUDIT
+HOOKS_CLEAN: True
+CUDA_ALLOCATED_GIB: 29.283
+CUDA_PEAK_GIB: 29.959
+
+[10/10] FINAL AUDIT
+GATE MODEL PASS
+GATE PROMPT PASS
+GATE REFERENCE PASS
+GATE CUT_REPLAY PASS
+GATE NEGATIVE_CONTROL PASS
+GATE INCREMENTAL_CACHE PASS
+GATE MOE_STRUCTURE PASS
+GATE ROTARY_INVERSE PASS
+GATE HOOKS_CLEAN PASS
+CUT_CANDIDATES: [0, 1, 2, 3, 4, 6, 9, 12, 16, 20, 26]
+CUT_REPLAY_PASS_COUNT: 11 / 11
+STATUS: PASS — CUT REPLAY / MOE / ROTARY
+WEIGHTS_FROZEN: True
+MAM_MEMORY_TRANSFER: NOT YET
+CUT_SELECTED: NO
+ELAPSED_SECONDS: 111.94
+
+
+==============================================================================================================================
