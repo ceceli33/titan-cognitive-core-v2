@@ -1,0 +1,190 @@
+============================================================================================================================================
+AKBASCORE MAM · Persistent numerical memory for frozen language models — READABLE RUN LOG
+Discovered and developed by Mustafa Akbaş · AkbasCore AI Teknoloji · 9 October 2026 · Mersin, Türkiye
+AKBASCORE RESEARCH SOFTWARE LICENSE · Copyright © 2026 Mustafa Akbaş · https://github.com/ceceli33/titan-cognitive-core-v2
+============================================================================================================================================
+Public technical demonstration of the AKBASCORE MAM architecture on a second transformer model family. Mustafa Akbaş (AkbasCore AI Teknoloji) discovered and developed this numerical-memory mechanism (first public record: DOI 10.5281/zenodo.23245358, 8 October 2026); this Qwen2.5-7B replication record is dated 9 October 2026.
+A new numerical-memory paradigm for frozen language models.
+Derived from MAMQWEN-20261009-062622-0002-C00M_FULL_RUN_LOG_payload.json (SHA-256 7826790cedfe1a189a85f23792bfd733e6468b063c42612302f3bfc1523eef45). Manifest: run_manifest_MAMQWEN-20261009-062622-0002-C00M.json.
+This is a LIVE run of the frozen Qwen2.5-7B incremental-DC3 engine (566.py, verified section). It is not TEST575; the sealed TEST575 values are reproduced verbatim, never recomputed.
+Cross-Model Replication — From Mistral-7B (DC6) to Qwen2.5-7B (DC3). The AKBASCORE MAM architecture has been independently implemented and validated across two transformer model families, using model-specific consolidation boundaries.
+Two model families are experimental evidence that the architecture transfers across models; they are not evidence that it works in every language model. The earlier record is cited as a reference only; every number in this demonstration comes from Qwen2.5-7B-Instruct.
+Earlier record: AKBASCORE MAM v1.0 — Source-Free Persistent Memory for Frozen LLMs via DC6 Consolidation (Mistral-7B) · DOI 10.5281/zenodo.23245358 · https://doi.org/10.5281/zenodo.23245358
+RUN ID                        : MAMQWEN-20261009-062622-0002-C00M
+START UTC                     : 2026-10-09T06:26:22.269+00:00
+END UTC                       : 2026-10-09T06:26:23.851+00:00
+SEALED UTC                    : 2026-10-09T06:26:23.947+00:00
+VERDICT                       : CASE_00_MIDDLE_CORRECT_APPEND_ONLY_VERIFIED_SOURCE_FREE_QUERY
+MODEL                         : Qwen/Qwen2.5-7B-Instruct · frozen · bfloat16 · attention sdpa
+ARCHITECTURE                  : 28 layers · hidden 3584 · 28 Q heads · 4 KV heads · head 128
+GPU                           : NVIDIA A100-SXM4-40GB (TEST575 reference GPU: NVIDIA A100-SXM4-40GB; same: True)
+TORCH / TRANSFORMERS / GRADIO : 2.11.0+cu130 / 5.18.0 / 6.29.0
+ENGINE FILE                   : 566.py · git blob b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71 (= TEST575 base blob) · SHA-256 0155cda553e5f08ed2bec53611e49898a5ca24e0d270c3a1274e661bc205bdcd
+ENGINE SECTION                : executed as in TEST575 · SHA-256 36a6c43f6e5f70add79b19c966c99985b03bfcdf8a4cb232312861d2b883bd60
+CONSOLIDATION CUT             : layer 3 (cartridge = H3 residual + layers 0–3 K/V; layers 4–27 consolidate)
+PANEL                         : locked 24-case panel · SHA-256 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+TEST575 LOCK                  : 76a28d6f10b2c1e431311629b8b3e74f6bceb7048a6e84d5295a35c86cfce4d1
+TEST575 RESULT SHA            : 579b3fb45f6fc7987694d21a313bb2980b279beb7a7e2de4d23aa69999b8581e
+FULL-WEIGHT SHA-256           : b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786 (TEST575 reference b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786)
+
+CASE
+--------------------------------------------------------------------------------------------------------------------------------------------
+case 00 · target position MIDDLE (slot 3 of 5) · question: What is the current capital of Zorvan?
+expected answer (audit metadata): Melket
+C1 · cartridge #10 · FORMER   · 11 body tokens · The former capital of Tarev was Cedran.
+C2 · cartridge #93 · NEAR     · 10 body tokens · The largest city of Karev is Dareth.
+C3 · cartridge #00 · CURRENT  · 11 body tokens · The current capital of Zorvan is Melket.   ← TARGET
+C4 · cartridge #70 · FORMER   · 10 body tokens · The former capital of Parel was Maros.
+C5 · cartridge #50 · FORMER   · 11 body tokens · The former capital of Varen was Malvek.
+
+WRITE + APPEND-ONLY CONSOLIDATION · load_case()  [LIVE]
+--------------------------------------------------------------------------------------------------------------------------------------------
+step 1 · init   · cartridge #10 · memory 0 → 40 tokens (+40) · 85.8 ms
+         forward: token ids n=40 · no cache
+         forward: embeddings n=40 (all zero) · no cache
+step 2 · append · cartridge #93 · memory 40 → 50 tokens (+10) · 89.3 ms
+         forward: token ids n=39 · no cache
+         forward: embeddings n=10 (all zero) · cache 40
+         previously consolidated rows 0…39: bitwise unchanged = True · SHA c95e885a96790039… → c95e885a96790039…
+step 3 · append · cartridge #00 · memory 50 → 61 tokens (+11) · 86.7 ms
+         forward: token ids n=40 · no cache
+         forward: embeddings n=11 (all zero) · cache 50
+         previously consolidated rows 0…49: bitwise unchanged = True · SHA 2e8c558bd8297eac… → 2e8c558bd8297eac…
+step 4 · append · cartridge #70 · memory 61 → 71 tokens (+10) · 89.7 ms
+         forward: token ids n=39 · no cache
+         forward: embeddings n=10 (all zero) · cache 61
+         previously consolidated rows 0…60: bitwise unchanged = True · SHA 6f7dd6cf550f1f77… → 6f7dd6cf550f1f77…
+step 5 · append · cartridge #50 · memory 71 → 82 tokens (+11) · 91.5 ms
+         forward: token ids n=40 · no cache
+         forward: embeddings n=11 (all zero) · cache 71
+         previously consolidated rows 0…70: bitwise unchanged = True · SHA ab73482b4ffb1b6a… → ab73482b4ffb1b6a…
+final memory: 82 tokens × 28 layers · 4 KV heads × 128 · 4.48 MiB (bfloat16) · SHA 49600f2d930808002a78c587…
+source token-id forwards during load: 5 (one per cartridge, each its own fact) · consolidation forwards with all-zero input embeddings: 5
+
+SOURCE-FREE QUESTION · ask()  [LIVE]
+--------------------------------------------------------------------------------------------------------------------------------------------
+question: What is the current capital of Zorvan?
+answer  : Melket
+expected: Melket · CORRECT (re-derived: True)
+query input = question template only: 21 token ids over the installed memory (82 tokens) · generation forwards 2 · 116 ms
+repeat ask(): identical answer = True · memory SHA unchanged by querying = True
+sealed TEST575 INCR_DC3 answer for this case and position: Melket · live answer identical: True (reported, not a gate)
+
+SEALED TEST575 REFERENCE · QWEN2.5-7B (archived comparative controls; not produced by this run)
+--------------------------------------------------------------------------------------------------------------------------------------------
+INCR_DC3      FIRST 24/24 · MIDDLE 24/24 · LAST 24/24 · TOTAL 72/72 · answer identity with JOINT 72/72 · append-only incremental consolidation at layer 3 (this engine; the arm run live)
+BATCH_DC3     FIRST 24/24 · MIDDLE 24/24 · LAST 24/24 · TOTAL 72/72 · answer identity with JOINT 72/72 · all five cartridges consolidated in one pass (shared upper-layer attention)
+JOINT         FIRST 24/24 · MIDDLE 24/24 · LAST 24/24 · TOTAL 72/72 · answer identity with JOINT 72/72 · facts processed together as text (upper bound, not a memory)
+NATIVE_INDEP  FIRST 10/24 · MIDDLE 10/24 · LAST  6/24 · TOTAL 26/72 · answer identity with JOINT 26/72 · independently written native K/V, RoPE re-phased, no consolidation (control)
+BATCH_BLOCK3  FIRST 10/24 · MIDDLE 11/24 · LAST  7/24 · TOTAL 28/72 · answer identity with JOINT 22/72 · counterfactual: same H3 and layers 0–3 K/V, cross-cartridge attention blocked in layers 4–27
+counterfactual (BATCH_BLOCK3 vs BATCH_DC3): layers 0–3 K/V identical 72/72 · upper-layer K/V changed 72/72 · answer changed 50/72
+incremental DC3 vs native independent K/V: gain 46 · loss 0 · gates 21/21 PASS · trainable 0
+scale probe (TEST572, same CUT3 mechanism · direct recall · 8 tasks per memory size · separate fact panel with an UNKNOWN option (sealed)): direct recall 5: 8/8 · 10: 7/8 · 20: 5/8 · 40: 6/8 · two-hop 5: 7/8 · 10: 5/8 · 20: 3/8 · 40: 0/8
+TEST572 lock 0989eaea722086f8ac6eae635a1bed534288feac7535833828ecdd05f7fde056 · result 8efc22b0d4f3be43f2d39097e0f93a4b0c3ab43d51786380ab584a46789d0a90
+
+FROZEN MODEL
+--------------------------------------------------------------------------------------------------------------------------------------------
+weight_sha_startup: b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786
+sentinel_startup  : 6e344d7345d86161c772b0e239fd281059166a3e92d08746e175806433b606ab
+sentinel_before   : 6e344d7345d86161c772b0e239fd281059166a3e92d08746e175806433b606ab
+sentinel_after    : 6e344d7345d86161c772b0e239fd281059166a3e92d08746e175806433b606ab
+guard_startup     : a24946e5cd9766c40d0e901234de018701195dc1d74804525f1fe9b19fa19e8e
+guard_before      : a24946e5cd9766c40d0e901234de018701195dc1d74804525f1fe9b19fa19e8e
+guard_after       : a24946e5cd9766c40d0e901234de018701195dc1d74804525f1fe9b19fa19e8e
+trainable tensors=0 · lora=False · optimizer=False · training_mode=False · foreign hooks outside API calls 0→0 · residual hooks on layers/attention 0→0
+TEST575 full-weight SHA-256 over (name, shape, dtype, raw bytes) of every parameter
+all-parameter guard: SHA-256 over (name, shape, dtype, sum, |sum|, sum of squares) of every parameter tensor
+TEST566 sentinel: SHA-256 over 16 slices × 256 values of 7 weight tensors (o_proj of layers 0/7/14/21/27, final norm, lm_head)
+recording-only forward pre-hook on the causal-LM module, attached only during an engine API call
+append observer: wraps the adapter's init(·,3)/append(·,·,3) calls during load_case() only; calls them unchanged; compares prior K/V rows bitwise
+
+DEMONSTRATED IN THIS RUN
+--------------------------------------------------------------------------------------------------------------------------------------------
+• Five source facts are written independently by frozen Qwen2.5-7B-Instruct: each fact is read once and stored as a numerical cartridge (layer-3 residual H3 + layers 0–3 K/V).
+• The cartridges are appended one by one into one consolidated numerical memory. For each append, layers 4–27 are computed only for the new tokens, attending to the existing memory; layers 0–3 keys are re-phased to the new positions with the model's own rotary embedding.
+• Measured in every run: the consolidation forward receives all-zero input embeddings plus the stored H3 (no token ids); no earlier cartridge's source is read again; every previously consolidated K/V row is bitwise identical after each append.
+• The question is answered from the numerical memory: the query forward receives only the question-template tokens over the installed memory.
+• Model weights are unchanged (all-parameter guard before and after the run; full-weight SHA-256 at start-up equal to the TEST575 reference).
+
+ARCHIVED
+--------------------------------------------------------------------------------------------------------------------------------------------
+• TEST575 sealed results on the locked panel (24 five-cartridge cases × FIRST/MIDDLE/LAST = 72): append-only incremental DC3 72/72, batch DC3 72/72, joint text 72/72, native independent K/V 26/72, counterfactual BATCH_BLOCK3 28/72; incremental and batch answers identical to the joint-text answers in 72/72; 21/21 gates. These are reference values; single live runs do not recompute them. The optional live replay reports its own score separately.
+• TEST575 counterfactual: with the same H3 and the same layers 0–3 K/V but cross-cartridge attention blocked in layers 4–27, the upper-layer K/V changed in 72/72 cases and the answer changed in 50/72.
+• TEST572 scale probe of the same CUT3 mechanism (separate fact panel with an UNKNOWN option): direct recall 8/8, 7/8, 5/8, 6/8 with 5, 10, 20, 40 cartridges in memory.
+• Cross-model reference: the earlier Mistral-7B (DC6) record, DOI 10.5281/zenodo.23245358. Cited as a reference only; it is not a Qwen result.
+
+NOT ESTABLISHED
+--------------------------------------------------------------------------------------------------------------------------------------------
+• Large memory populations: direct recall is 6/8 at 40 cartridges (TEST572); larger populations are not measured for Qwen.
+• Multi-step inference that combines several cartridges: two-hop recall falls from 7/8 at 5 cartridges to 0/8 at 40 (TEST572).
+• Strict KV-only sufficiency: the cartridge is augmented (H3 residual + layers 0–3 K/V).
+• Questions outside the locked panel template: free-text questions are shown but not scored.
+• Order-free consolidation: the append uses causal order; equal accuracy at FIRST/MIDDLE/LAST was measured in TEST575 on this panel.
+• Generality beyond the two tested model families: each family needs its own consolidation boundary; other models are not tested.
+
+TECHNICAL NOTES
+--------------------------------------------------------------------------------------------------------------------------------------------
+• Writing cartridge k reads only fact k (inside the fixed instruction template) once; this is the write event of that cartridge.
+• The 29-token instruction prefix is written with the first cartridge; later cartridges contribute their body rows only.
+• Expected answers come from panel construction and are audit metadata; they are not an input to writing, consolidation or answering.
+• The engine is the verified section of 566.py (git blob b117c4b37dc5…), executed unchanged as in TEST575; the demo adapter only calls init(·,3), append(·,·,3) and answer(·,·) in the TEST575 incremental order.
+• Hashes are artifact-integrity seals; they are not scientific proof or third-party verification.
+
+PRE-SEAL CHECKS
+--------------------------------------------------------------------------------------------------------------------------------------------
+PASS · 566.py git blob = TEST575 base blob · SHA-256 = embedded reference
+PASS · model, architecture, consolidation cut (layer 3) and 29-token prefix as in TEST575
+PASS · locked panel (SHA-256) · 96 cartridges · 24 cases
+PASS · full-weight SHA-256 at start-up = TEST575 reference
+PASS · weight sentinel before run = value at initialisation
+PASS · all-parameter guard before run = value at startup
+PASS · trainable tensors = 0, eval mode, no LoRA, no optimizer
+PASS · no foreign forward/backward hooks outside API calls · no residual hooks on layers/attention
+PASS · case in 0..23 and position in FIRST/MIDDLE/LAST
+PASS · five cartridges; target cartridge at the selected position
+PASS · load_case(): five consolidation steps in the selected order (one init + four appends)
+PASS · engine setup echoes the same cartridges, question and expected answer
+PASS · step 1: write = one token-id forward of cartridge 1's own fact (no cache); consolidation = one all-zero-embedding forward over the same rows
+PASS · step 2: write = one token-id forward of cartridge 2's own fact only (no cache)
+PASS · step 2: consolidation forward = all-zero embeddings for the 10 new rows only, over the existing 40-token memory
+PASS · step 2: previously consolidated rows 0…39 bitwise unchanged after the append
+PASS · step 2: memory grows by exactly the new rows (+10)
+PASS · step 3: write = one token-id forward of cartridge 3's own fact only (no cache)
+PASS · step 3: consolidation forward = all-zero embeddings for the 11 new rows only, over the existing 50-token memory
+PASS · step 3: previously consolidated rows 0…49 bitwise unchanged after the append
+PASS · step 3: memory grows by exactly the new rows (+11)
+PASS · step 4: write = one token-id forward of cartridge 4's own fact only (no cache)
+PASS · step 4: consolidation forward = all-zero embeddings for the 10 new rows only, over the existing 61-token memory
+PASS · step 4: previously consolidated rows 0…60 bitwise unchanged after the append
+PASS · step 4: memory grows by exactly the new rows (+10)
+PASS · step 5: write = one token-id forward of cartridge 5's own fact only (no cache)
+PASS · step 5: consolidation forward = all-zero embeddings for the 11 new rows only, over the existing 71-token memory
+PASS · step 5: previously consolidated rows 0…70 bitwise unchanged after the append
+PASS · step 5: memory grows by exactly the new rows (+11)
+PASS · no source text replayed: exactly five token-id forwards during load, each the own fact of the cartridge being written, each once
+PASS · adapter flags: weights not updated · no source replay in consolidation · prior memory not recomputed
+PASS · engine event log: cache sizes match the measured memory growth
+PASS · final memory length = prefix + all five body lengths
+PASS · final memory SHA-256 = SHA-256 recorded after the last append
+PASS · memory profile: 28 layers × T rows · 4 KV heads × 128
+PASS · query forward input = question-template tokens only, over the installed memory
+PASS · generation forwards: one new token each, over the growing cache
+PASS · ask(): reference question of this case; engine flags: no source text, weights unchanged
+PASS · correctness re-derived from the answer text = engine result
+PASS · repeat ask(): same forward pattern and identical answer (greedy decoding)
+PASS · memory unchanged by querying (SHA-256 before = after)
+PASS · all-parameter guard after run = before run = startup (weights unchanged)
+PASS · weight sentinel after run = value at initialisation
+PASS · trainable tensors = 0, no foreign hooks and no residual hooks after run
+
+TIMING (seconds)
+--------------------------------------------------------------------------------------------------------------------------------------------
+guard                   : 0.523
+load_case               : 0.611
+ask                     : 0.116
+ask_repeat              : 0.114
+engine_total            : 1.555
+peak GPU memory 18.26 GiB
+
+Raw forward records and the memory profile are in MAMQWEN-20261009-062622-0002-C00M_FULL_RUN_LOG_payload.json and MAMQWEN-20261009-062622-0002-C00M_RAW_RECORDS.jsonl.
+============================================================================================================================================
