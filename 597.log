@@ -1,0 +1,87 @@
+ 
+========================================================================================================================
+TEST597 - DEEPSEEK MLA CUT3 / TARGETED 3-FAIL DIAGNOSTIC
+========================================================================================================================
+SOURCE_VERIFIED 560.py 35d95a929a4e043a9af346c67fc103da47a792b5
+SOURCE_VERIFIED 590.py 09ae7a6862956128465efc7e76cdca1e478a1a52
+SOURCE_PANEL_BASE: 24 worlds
+GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+MODEL_LOADING PINNED REVISION
+
+config.json: 100%
+
+ 1.52k/1.52k [00:00<00:00, 184kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+model.safetensors.index.json: 100%
+
+ 480k/480k [00:00<00:00, 47.6MB/s]
+Download complete: 
+
+ 27.4GB,  215MB/s  
+Reconstruction complete: 100%
+
+ 31.4GB / 31.4GB,  550MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [01:29<00:00, 37.95s/it]
+Loading weights: 100%
+
+ 351/351 [00:08<00:00, 41.54it/s]
+generation_config.json: 100%
+
+ 181/181 [00:00<00:00, 21.6kB/s]
+tokenizer_config.json: 100%
+
+ 1.28k/1.28k [00:00<00:00, 161kB/s]
+tokenizer.json: 100%
+
+ 4.61M/4.61M [00:00<00:00, 110MB/s]
+GATE MODEL_FROZEN PASS
+PANEL_SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+GATE PANEL_SHA_560_575 PASS
+CARTRIDGES 96 PREFIX 28 BODY_LENGTHS [10, 11, 12, 13]
+ENGINE_FUNCTIONS_READY; TEST596 WRITE/INIT/APPEND UNCHANGED; TARGETED FAILURE TRIAGE
+CASE 11 SLOT FIRST ARM INCR_DC3_MLA PASS GOLD Mirev ANSWER 'Mirev'
+CASE 11 SLOT MIDDLE ARM INCR_DC3_MLA PASS GOLD Mirev ANSWER 'Mirev'
+CASE 11 SLOT LAST ARM INCR_DC3_MLA FAIL GOLD Mirev ANSWER 'Kareth'
+DIAG {"case": 11, "slot": "LAST", "arm": "INCR_DC3_MLA", "gold": "Mirev", "greedy": "kareth", "greedy_correct": false, "completed_candidates": [{"rank": 1, "raw": "Kareth", "name": "kareth", "ended": true, "logp": -0.0967791, "tokens": 3}, {"rank": 2, "raw": "The current capital of Sorvik is Kareth.", "name": "the current capital of sorvik is kareth", "ended": true, "logp": -3.3175326, "tokens": 11}, {"rank": 3, "raw": "Kareth.", "name": "kareth", "ended": true, "logp": -3.5970429, "tokens": 4}, {"rank": 4, "raw": "Mirev", "name": "mirev", "ended": true, "logp": -4.1053018, "tokens": 4}], "gold_blind_completed_choice": "kareth", "gold_blind_choice_correct": false, "gold_in_candidates": true}
+CASE 11 SLOT LAST ARM JOINT PASS GOLD Mirev ANSWER 'Mirev'
+DIAG {"case": 11, "slot": "LAST", "arm": "JOINT", "gold": "Mirev", "greedy": "mirev", "greedy_correct": true, "completed_candidates": [{"rank": 1, "raw": "Mirev", "name": "mirev", "ended": true, "logp": -0.0452667, "tokens": 4}, {"rank": 2, "raw": "Mirev.", "name": "mirev", "ended": true, "logp": -3.2953294, "tokens": 5}, {"rank": 3, "raw": "The current capital of Sorvik is Mirev.", "name": "the current capital of sorvik is mirev", "ended": true, "logp": -5.0888722, "tokens": 12}, {"rank": 4, "raw": "The capital of Sorvik is Mirev.", "name": "the capital of sorvik is mirev", "ended": true, "logp": -7.8926197, "tokens": 11}], "gold_blind_completed_choice": "mirev", "gold_blind_choice_correct": true, "gold_in_candidates": true}
+CASE 11 SLOT LAST ARM NATIVE_INDEP_MLA FAIL GOLD Mirev ANSWER 'The current capital of Sorvik is Mirev.'
+DIAG {"case": 11, "slot": "LAST", "arm": "NATIVE_INDEP_MLA", "gold": "Mirev", "greedy": "the current capital of sorvik is mirev", "greedy_correct": false, "completed_candidates": [{"rank": 1, "raw": "Kareth", "name": "kareth", "ended": true, "logp": -1.218507, "tokens": 3}, {"rank": 2, "raw": "Mirev", "name": "mirev", "ended": true, "logp": -1.4916516, "tokens": 4}, {"rank": 3, "raw": "The current capital of Sorvik is Mirev.", "name": "the current capital of sorvik is mirev", "ended": true, "logp": -1.6303443, "tokens": 12}, {"rank": 4, "raw": "The current capital of Sorvik is Orel.", "name": "the current capital of sorvik is orel", "ended": true, "logp": -2.6350308, "tokens": 11}], "gold_blind_completed_choice": "kareth", "gold_blind_choice_correct": false, "gold_in_candidates": true}
+CASE_COMPLETE 11
+CASE 14 SLOT FIRST ARM INCR_DC3_MLA PASS GOLD Corven ANSWER 'Corven'
+CASE 14 SLOT MIDDLE ARM INCR_DC3_MLA PASS GOLD Corven ANSWER 'Corven'
+CASE 14 SLOT LAST ARM INCR_DC3_MLA FAIL GOLD Corven ANSWER 'Marvek'
+DIAG {"case": 14, "slot": "LAST", "arm": "INCR_DC3_MLA", "gold": "Corven", "greedy": "marvek", "greedy_correct": false, "completed_candidates": [{"rank": 1, "raw": "Marvek", "name": "marvek", "ended": true, "logp": -0.0095852, "tokens": 4}, {"rank": 2, "raw": "Marvek.", "name": "marvek", "ended": true, "logp": -5.0097946, "tokens": 5}, {"rank": 3, "raw": "The largest city of Narev is Corven.", "name": "the largest city of narev is corven", "ended": true, "logp": -6.8831481, "tokens": 12}, {"rank": 4, "raw": "Marvek is the largest city of Narev.", "name": "marvek is the largest city of narev", "ended": true, "logp": -7.2788547, "tokens": 13}], "gold_blind_completed_choice": "marvek", "gold_blind_choice_correct": false, "gold_in_candidates": false}
+CASE 14 SLOT LAST ARM JOINT PASS GOLD Corven ANSWER 'Corven'
+DIAG {"case": 14, "slot": "LAST", "arm": "JOINT", "gold": "Corven", "greedy": "corven", "greedy_correct": true, "completed_candidates": [{"rank": 1, "raw": "Corven", "name": "corven", "ended": true, "logp": -0.179897, "tokens": 3}, {"rank": 2, "raw": "Marvek", "name": "marvek", "ended": true, "logp": -1.9339284, "tokens": 4}, {"rank": 3, "raw": "Corven.", "name": "corven", "ended": true, "logp": -4.4299908, "tokens": 4}, {"rank": 4, "raw": "Marvek.", "name": "marvek", "ended": true, "logp": -5.9339914, "tokens": 5}], "gold_blind_completed_choice": "corven", "gold_blind_choice_correct": true, "gold_in_candidates": true}
+CASE 14 SLOT LAST ARM NATIVE_INDEP_MLA FAIL GOLD Corven ANSWER 'Marvek'
+DIAG {"case": 14, "slot": "LAST", "arm": "NATIVE_INDEP_MLA", "gold": "Corven", "greedy": "marvek", "greedy_correct": false, "completed_candidates": [{"rank": 1, "raw": "Marvek", "name": "marvek", "ended": true, "logp": -0.5138543, "tokens": 4}, {"rank": 2, "raw": "Corven", "name": "corven", "ended": true, "logp": -1.5128569, "tokens": 3}, {"rank": 3, "raw": "The largest city of Narev is Marvek.", "name": "the largest city of narev is marvek", "ended": true, "logp": -2.9443567, "tokens": 13}, {"rank": 4, "raw": "The largest city of Narev is Corven.", "name": "the largest city of narev is corven", "ended": true, "logp": -3.1942459, "tokens": 12}], "gold_blind_completed_choice": "marvek", "gold_blind_choice_correct": false, "gold_in_candidates": true}
+CASE_COMPLETE 14
+CASE 23 SLOT FIRST ARM INCR_DC3_MLA PASS GOLD Karev ANSWER 'Karev'
+CASE 23 SLOT MIDDLE ARM INCR_DC3_MLA FAIL GOLD Karev ANSWER 'Luneth'
+DIAG {"case": 23, "slot": "MIDDLE", "arm": "INCR_DC3_MLA", "gold": "Karev", "greedy": "luneth", "greedy_correct": false, "completed_candidates": [{"rank": 1, "raw": "Luneth", "name": "luneth", "ended": true, "logp": -0.6375182, "tokens": 3}, {"rank": 2, "raw": "The current capital of Talrek is Luneth.", "name": "the current capital of talrek is luneth", "ended": true, "logp": -1.2591176, "tokens": 11}, {"rank": 3, "raw": "Luneth.", "name": "luneth", "ended": true, "logp": -2.1376732, "tokens": 4}, {"rank": 4, "raw": "Tarev", "name": "tarev", "ended": true, "logp": -3.4885967, "tokens": 4}], "gold_blind_completed_choice": "luneth", "gold_blind_choice_correct": false, "gold_in_candidates": false}
+CASE 23 SLOT MIDDLE ARM JOINT PASS GOLD Karev ANSWER 'Karev'
+DIAG {"case": 23, "slot": "MIDDLE", "arm": "JOINT", "gold": "Karev", "greedy": "karev", "greedy_correct": true, "completed_candidates": [{"rank": 1, "raw": "Karev", "name": "karev", "ended": true, "logp": -0.2858812, "tokens": 4}, {"rank": 2, "raw": "Karev.", "name": "karev", "ended": true, "logp": -1.5361316, "tokens": 5}, {"rank": 3, "raw": "The current capital of Talrek is Karev.", "name": "the current capital of talrek is karev", "ended": true, "logp": -4.1120881, "tokens": 12}, {"rank": 4, "raw": "Luneth", "name": "luneth", "ended": true, "logp": -4.6714484, "tokens": 3}], "gold_blind_completed_choice": "karev", "gold_blind_choice_correct": true, "gold_in_candidates": true}
+CASE 23 SLOT MIDDLE ARM NATIVE_INDEP_MLA FAIL GOLD Karev ANSWER 'The current capital of Talrek is Laven.'
+DIAG {"case": 23, "slot": "MIDDLE", "arm": "NATIVE_INDEP_MLA", "gold": "Karev", "greedy": "the current capital of talrek is laven", "greedy_correct": false, "completed_candidates": [{"rank": 1, "raw": "Karev", "name": "karev", "ended": true, "logp": -1.8813246, "tokens": 4}, {"rank": 2, "raw": "The current capital of Talrek is Laven.", "name": "the current capital of talrek is laven", "ended": true, "logp": -1.9786889, "tokens": 11}, {"rank": 3, "raw": "The current capital of Talrek is Luneth.", "name": "the current capital of talrek is luneth", "ended": true, "logp": -1.9846159, "tokens": 11}, {"rank": 4, "raw": "The current capital of Talrek is not mentioned in the provided information.", "name": "the current capital of talrek is not mentioned in the provided information", "ended": true, "logp": -3.982264, "tokens": 15}], "gold_blind_completed_choice": "karev", "gold_blind_choice_correct": true, "gold_in_candidates": true}
+CASE 23 SLOT LAST ARM INCR_DC3_MLA PASS GOLD Karev ANSWER 'Karev'
+CASE_COMPLETE 23
+SCORES {"INCR_DC3_MLA": {"correct": 6, "total": 9, "by_slot": {"FIRST": 3, "MIDDLE": 2, "LAST": 1}}, "JOINT": {"correct": 3, "total": 3, "by_slot": {"FIRST": 0, "MIDDLE": 1, "LAST": 2}}, "NATIVE_INDEP_MLA": {"correct": 0, "total": 3, "by_slot": {"FIRST": 0, "MIDDLE": 0, "LAST": 0}}}
+GATE HOOKS_CLEAN PASS
+GATE FINGERPRINT_UNCHANGED PASS
+GATE WEIGHTS_FROZEN PASS
+GATE TARGET_PANEL_COMPLETE PASS
+GATE TEST596_NINE_REPLAY_MATCH PASS
+GATE TEST596_FAILURES_REPRODUCED PASS
+GATE ALL_GOLD_VISIBLE_IN_BEAM FAIL
+GATE GOLD_BLIND_CHOICES_ALL_CORRECT FAIL
+RESULT_FILE /content/AKBASCORE_TEST597_DEEPSEEK_FAILURE_DIAGNOSTIC.json ELAPSED 147.03 s
+INFRASTRUCTURE PASS
+DIAGNOSTIC_DECISION NO_VERIFIED_READOUT_FIX_DEMO_WITH_69_72_DISCLOSURE
+
+
+NOTE: gold is used ONLY for evaluation; no gold-based selection, no changes to TEST596 engine, no source replay during APPEND/ASK.
