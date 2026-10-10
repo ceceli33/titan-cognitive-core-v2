@@ -1,0 +1,16 @@
+ ========================================================================================================================
+TEST596 - DEEPSEEK MLA CUT3 / EXACT TEST560-575 PANEL TRANSFER
+========================================================================================================================
+SOURCE_VERIFIED 560.py 35d95a929a4e043a9af346c67fc103da47a792b5
+SOURCE_VERIFIED 590.py 09ae7a6862956128465efc7e76cdca1e478a1a52
+SOURCE_PANEL_BASE: 24 worlds
+GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+MODEL_LOADING PINNED REVISION
+config.json: 100% 1.52k/1.52k [00:00<00:00, 186kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+model.safetensors.index.json: 100% 480k/480k [00:00<00:00, 39.6MB/s]Download complete:  27.4GB,  549MB/s  Reconstruction complete: 100% 31.4GB / 31.4GB,  577MB/s  Fetching 4 files: 100% 4/4 [01:28<00:00, 37.32s/it]Loading weights: 100% 351/351 [00:07<00:00, 42.32it/s]generation_config.json: 100% 181/181 [00:00<00:00, 24.5kB/s]tokenizer_config.json: 100% 1.28k/1.28k [00:00<00:00, 154kB/s]tokenizer.json: 100% 4.61M/4.61M [00:00<00:00, 57.5MB/s]GATE MODEL_FROZEN PASS
+PANEL_SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+GATE PANEL_SHA_560_575 PASS
+CARTRIDGES 96 PREFIX 28 BODY_LENGTHS [10, 11, 12, 13]
+DEEPSEEK_DEMO_BACKEND_READY; no Gradio; functions: demo_cases, demo_status, demo_load_case, demo_ask, demo_run_case, demo_verify_all, demo_export, demo_selftest
+REFERENCE_TEST596: 69/72; TEST597: no verified readout fix; not claiming 72/72
