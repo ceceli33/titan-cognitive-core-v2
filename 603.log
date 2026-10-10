@@ -1,0 +1,146 @@
+ 
+SOURCE_VERIFIED 575.py 569c92c61224ea408cdb6e81dbe45dde06dc05fd
+SOURCE_VERIFIED 566.py b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 59.8kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 828kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 35.3MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 64.4MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 133MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.25MB/s]
+Download complete: 
+
+ 13.1GB,  737MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  467MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:42<00:00, 42.24s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 100.77it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 30.5kB/s]
+GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+==============================================================================================================================
+TEST603 — FRAME-MATCHED RESIDUAL ASSOCIATION + GAUSSIAN RFF SUPERPOSITION
+==============================================================================================================================
+PASS PANEL_SHA {'sha': '69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45'}
+PASS ARCH {}
+PASS FROZEN {}
+PASS WEIGHT_SHA_REFERENCE {'sha': 'b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786'}
+[1/6] Capture native residuals for 96 cartridges...
+CARTRIDGE 1 / 96
+CARTRIDGE 17 / 96
+CARTRIDGE 33 / 96
+CARTRIDGE 49 / 96
+CARTRIDGE 65 / 96
+CARTRIDGE 81 / 96
+PASS CARTRIDGES {}
+[2/6] Question representations in fact frame...
+QUESTION 0 TARGET 0 TOKENS 10
+QUESTION 1 TARGET 6 TOKENS 9
+QUESTION 2 TARGET 9 TOKENS 10
+QUESTION 3 TARGET 15 TOKENS 9
+QUESTION 4 TARGET 16 TOKENS 9
+QUESTION 5 TARGET 22 TOKENS 9
+QUESTION 6 TARGET 25 TOKENS 10
+QUESTION 7 TARGET 31 TOKENS 9
+QUESTION 8 TARGET 32 TOKENS 10
+QUESTION 9 TARGET 38 TOKENS 9
+QUESTION 10 TARGET 41 TOKENS 10
+QUESTION 11 TARGET 47 TOKENS 9
+QUESTION 12 TARGET 48 TOKENS 9
+QUESTION 13 TARGET 54 TOKENS 9
+QUESTION 14 TARGET 57 TOKENS 10
+QUESTION 15 TARGET 63 TOKENS 9
+QUESTION 16 TARGET 64 TOKENS 9
+QUESTION 17 TARGET 70 TOKENS 9
+QUESTION 18 TARGET 73 TOKENS 9
+QUESTION 19 TARGET 79 TOKENS 9
+QUESTION 20 TARGET 80 TOKENS 9
+QUESTION 21 TARGET 86 TOKENS 10
+QUESTION 22 TARGET 89 TOKENS 10
+QUESTION 23 TARGET 95 TOKENS 9
+[3/6] Label-free PCA and calibration...
+LOCKED (3, 0, 8.0) CALIBRATION {'cfg': [3, 0, 8.0], 'hit5': 12, 'hit1': 12, 'rank_sum': 12, 'order': 1}
+[4/6] Holdout and identity controls...
+CASE 0 CAL RANK 1 TOP5 [0, 3, 2, 68, 88] TARGET 0
+CASE 1 CAL RANK 1 TOP5 [6, 54, 46, 4, 14] TARGET 6
+CASE 2 CAL RANK 1 TOP5 [9, 89, 33, 17, 57] TARGET 9
+CASE 3 CAL RANK 1 TOP5 [15, 28, 20, 39, 4] TARGET 15
+CASE 4 CAL RANK 1 TOP5 [16, 19, 18, 47, 31] TARGET 16
+CASE 5 CAL RANK 1 TOP5 [22, 20, 74, 23, 14] TARGET 22
+CASE 6 CAL RANK 1 TOP5 [25, 93, 61, 13, 77] TARGET 25
+CASE 7 CAL RANK 1 TOP5 [31, 12, 15, 56, 47] TARGET 31
+CASE 8 CAL RANK 1 TOP5 [32, 35, 34, 8, 11] TARGET 32
+CASE 9 CAL RANK 1 TOP5 [38, 36, 39, 74, 54] TARGET 38
+CASE 10 CAL RANK 1 TOP5 [41, 13, 85, 65, 69] TARGET 41
+CASE 11 CAL RANK 1 TOP5 [47, 75, 72, 59, 31] TARGET 47
+CASE 12 HOLD RANK 1 TOP5 [48, 51, 50, 68, 76] TARGET 48
+CASE 13 HOLD RANK 1 TOP5 [54, 6, 46, 52, 14] TARGET 54
+CASE 14 HOLD RANK 1 TOP5 [57, 85, 33, 9, 65] TARGET 57
+CASE 15 HOLD RANK 1 TOP5 [63, 52, 4, 7, 55] TARGET 63
+CASE 16 HOLD RANK 1 TOP5 [64, 67, 75, 20, 66] TARGET 64
+CASE 17 HOLD RANK 1 TOP5 [70, 22, 78, 68, 82] TARGET 70
+CASE 18 HOLD RANK 1 TOP5 [73, 5, 37, 57, 1] TARGET 73
+CASE 19 HOLD RANK 1 TOP5 [79, 48, 92, 75, 36] TARGET 79
+CASE 20 HOLD RANK 1 TOP5 [80, 83, 82, 68, 51] TARGET 80
+CASE 21 HOLD RANK 1 TOP5 [86, 84, 58, 87, 83] TARGET 86
+CASE 22 HOLD RANK 1 TOP5 [89, 17, 9, 61, 49] TARGET 89
+CASE 23 HOLD RANK 1 TOP5 [95, 28, 75, 44, 15] TARGET 95
+HOLDOUT_RECALL5 12 /12 RECALL1 12 /12 ALL_RECALL5 24 /24 HUB_MAX 4
+SELF_RETRIEVAL1 96 /96
+[5/6] Gaussian RFF: exp(beta*cos) kernel superposition, distinct from TEST602 linear pilot...
+RFF_SUPER {'M': 2048, 'D': 2048, 'rff_top1_vs_oracle': 8, 'rff_holdout5': 9, 'super_top1_vs_rff': 11, 'super_top1_vs_oracle': 10, 'super_holdout1': 7, 'super_holdout5': 7, 'negative_direct': 6379, 'negative_super': 6628, 'mse_vs_direct': 0.03341393545269966}
+RFF_SUPER {'M': 2048, 'D': 8192, 'rff_top1_vs_oracle': 8, 'rff_holdout5': 9, 'super_top1_vs_rff': 16, 'super_top1_vs_oracle': 9, 'super_holdout1': 5, 'super_holdout5': 9, 'negative_direct': 6379, 'negative_super': 6321, 'mse_vs_direct': 0.013637948781251907}
+RFF_SUPER {'M': 8192, 'D': 2048, 'rff_top1_vs_oracle': 8, 'rff_holdout5': 7, 'super_top1_vs_rff': 5, 'super_top1_vs_oracle': 4, 'super_holdout1': 2, 'super_holdout5': 7, 'negative_direct': 6708, 'negative_super': 7060, 'mse_vs_direct': 0.05135605111718178}
+RFF_SUPER {'M': 8192, 'D': 8192, 'rff_top1_vs_oracle': 8, 'rff_holdout5': 7, 'super_top1_vs_rff': 10, 'super_top1_vs_oracle': 7, 'super_holdout1': 3, 'super_holdout5': 7, 'negative_direct': 6708, 'negative_super': 6999, 'mse_vs_direct': 0.026499580591917038}
+[6/6] Selected cartridges -> unchanged CUT3 init/append/answer; holdout 12...
+END_TO_END 12 RETRIEVED [55, 59, 6, 68, 16] ANSWER_OK 0 ANSWER Kelor
+END_TO_END 13 RETRIEVED [66, 42, 54, 15, 26] ANSWER_OK 1 ANSWER Toren
+END_TO_END 14 RETRIEVED [57, 85, 41, 33, 65] ANSWER_OK 1 ANSWER Corven
+END_TO_END 15 RETRIEVED [56, 6, 4, 76, 55] ANSWER_OK 0 ANSWER The information provided does not contain the current capital of Kelron.
+END_TO_END 16 RETRIEVED [32, 59, 55, 72, 91] ANSWER_OK 0 ANSWER The information provided does not include the current capital of Calnor.
+END_TO_END 17 RETRIEVED [22, 70, 67, 84, 56] ANSWER_OK 1 ANSWER Maros
+END_TO_END 18 RETRIEVED [73, 53, 33, 82, 57] ANSWER_OK 1 ANSWER Vindor
+END_TO_END 19 RETRIEVED [79, 88, 32, 55, 16] ANSWER_OK 1 ANSWER Barel
+END_TO_END 20 RETRIEVED [82, 32, 75, 55, 72] ANSWER_OK 0 ANSWER Kesven
+END_TO_END 21 RETRIEVED [84, 58, 87, 86, 22] ANSWER_OK 1 ANSWER Calvenor
+END_TO_END 22 RETRIEVED [33, 89, 91, 17, 53] ANSWER_OK 1 ANSWER Mardin
+END_TO_END 23 RETRIEVED [32, 59, 39, 76, 55] ANSWER_OK 0 ANSWER The information provided does not include the current capital of Talrek.
+E2E_ANSWER 7 /12 E2E_RETRIEVAL 7 /12 E2E_ERRORS 0
+PASS WEIGHT_UNCHANGED {}
+PASS SENTINEL_UNCHANGED {}
+PASS ZERO_TRAINABLE {}
+PASS NO_HOOKS {'hooks': []}
+==============================================================================================================================
+TEST603 FINAL {'oracle_holdout_recall5': 12, 'oracle_holdout_recall1': 12, 'oracle_all_recall5': 24, 'self_retrieval1': 96, 'max_hub': 4, 'rff_super_holdout5': 7, 'end_to_end_answer': 7, 'end_to_end_n': 12, 'seconds': 118.96}
+RESULT_SHA d4698a58609751ad2f416c51549a878b33b5956496fb52a40d491d32e29a1612
+OUTPUT /content/AKBASCORE_TEST603_EXP_RFF_CUT3.json
+DECISION REPORT RFF AND CUT3 RESULTS SEPARATELY; NO SCALING CLAIM
+
+
+==============================================================================================================================
