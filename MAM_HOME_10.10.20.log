@@ -1,0 +1,236 @@
+============================================================================================================================================
+AKBASCORE MAM-BÇ · External associative memory for a frozen language model — READABLE RUN LOG
+Discovered and developed by Mustafa Akbaş · AkbasCore AI Teknoloji · 10 October 2026 · Mersin, Türkiye
+AKBASCORE RESEARCH SOFTWARE LICENSE · Copyright © 2026 Mustafa Akbaş · https://github.com/ceceli33/titan-cognitive-core-v2
+============================================================================================================================================
+Public technical demonstration of AKBASCORE MAM-BÇ: frame-matched residual access (FRAM) to an external bank of numerical cartridges, attached to frozen Qwen2.5-7B-Instruct through the CUT3 memory. Mustafa Akbaş (AkbasCore AI Teknoloji) discovered and developed this numerical-memory mechanism (earlier public records: DOI 10.5281/zenodo.23245358, 8 October 2026; DOI 10.5281/zenodo.23257347, 9 October 2026); this record is dated 10 October 2026.
+Scientific question: Can a language model answer from numerical memory cartridges that are stored outside the model, selected and attached to it, without changing its weights and without giving it the source text again?
+Derived from MAMBC-20261010-130929-0001-C12_FULL_RUN_LOG_payload.json (SHA-256 cb076fbaba98850a4ff41ee9ad27de1e95b561d4d0a4e1d4e72e283ed3ab5ea6). Manifest: run_manifest_MAMBC-20261010-130929-0001-C12.json.
+This is a LIVE run of the frozen Qwen2.5-7B CUT3 + FRAM engine (610.py executed up to its acceptance stage; RAW COLAB DEMO helpers). It is not TEST610 itself; sealed TEST610 and TEST575 values are reproduced verbatim, never recomputed.
+RUN ID                        : MAMBC-20261010-130929-0001-C12
+START UTC                     : 2026-10-10T13:09:29.294+00:00
+END UTC                       : 2026-10-10T13:09:32.488+00:00
+SEALED UTC                    : 2026-10-10T13:09:32.600+00:00
+VERDICT                       : CASE_12_CORRECT_CUT3_FRAM_DISK_RELOAD_VERIFIED_SOURCE_FREE_QUERY
+MODEL                         : Qwen/Qwen2.5-7B-Instruct · frozen · bfloat16 · attention sdpa
+ARCHITECTURE                  : 28 layers · hidden 3584 · 28 Q heads · 4 KV heads · head 128
+GPU                           : NVIDIA A100-SXM4-40GB (TEST610 reference GPU: NVIDIA A100-SXM4-40GB; same: True)
+TORCH / TRANSFORMERS / GRADIO : 2.11.0+cu130 / 5.18.0 / 6.29.0
+ENGINE FILE                   : 610.py · git blob 4a92e751fe0ea39c89b792338a0f2342547ce6d3 · SHA-256 a62611a4ffd91c2fcf03796c31da2af11ccd8141345655b562f3a614568af3e7
+ENGINE SECTION                : executed up to [6/7] · SHA-256 5026f9d3682f9b4ba5957565fb7f721c0b297cc7eaa8d9e6d13b3c71c0d2694d
+SOURCE FILES                  : 566.py b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71 · 575.py 569c92c61224ea408cdb6e81dbe45dde06dc05fd (git blobs verified by 610.py)
+HELPERS                       : RAW COLAB DEMO helper section · SHA-256 0e0a8c6e96221d1142a1d65ce95531e9e106f0a07f899100a63c5d5be0e2e979
+FRAM LOCK                     : layer 3 · rank 0 · β 8.0 (calibration cases 0–11, 24 configurations)
+CUT3 MEMORY                   : cartridge = H3 residual + layers 0–3 K/V; layers 4–27 consolidate
+PANEL                         : locked 24-case panel · SHA-256 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+TEST610 RESULT SHA            : 7d033e8a5c262f7861c8ada4efb07245e9bef4450715781e6d0a853c94d194f4
+FULL-WEIGHT SHA-256           : b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786 (reference b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786)
+
+CASE
+--------------------------------------------------------------------------------------------------------------------------------------------
+case 12 (HOLD) · question: What is the current capital of Varen?
+target cartridge #48 · expected answer (audit metadata): Solith
+
+FRAM RETRIEVAL  [LIVE · engine scores]
+--------------------------------------------------------------------------------------------------------------------------------------------
+exact FRAM kernel: target rank 1 of 96 · top-5 [48, 51, 50, 68, 76] · target score 0.464792 · best other 0.447861
+locked reference ranking (used for the CUT3 selection of panel questions): target rank 1 · top-5 [48, 51, 19, 50, 3] · target present: True
+engine order of the CUT3 memory (sorted ids, as in TEST610): [3, 19, 48, 50, 51]
+   #03 · ROLE     · 12 body tokens · The current capital of Pelnor is Zorvan.
+   #19 · ROLE     · 10 body tokens · The current capital of Nerik is Ravik.
+   #48 · CURRENT  · 10 body tokens · The current capital of Varen is Solith.   ← TARGET
+   #50 · FORMER   · 11 body tokens · The former capital of Varen was Malvek.
+   #51 · ROLE     · 10 body tokens · The current capital of Cordan is Varen.
+
+CUT3 WRITE + APPEND-ONLY CONSOLIDATION · build_cut3(ids, 3)  [LIVE]
+--------------------------------------------------------------------------------------------------------------------------------------------
+step 1 · init   · cartridge #03 · memory 0 → 41 tokens (+41) · 115.5 ms
+         forward: token ids n=41 · no cache
+         forward: embeddings n=41 (all zero) · no cache
+step 2 · append · cartridge #19 · memory 41 → 51 tokens (+10) · 89.3 ms
+         forward: token ids n=39 · no cache
+         forward: embeddings n=10 (all zero) · cache 41
+         previously consolidated rows 0…40: bitwise unchanged = True · SHA 80b6c4e83a39f70a… → 80b6c4e83a39f70a…
+step 3 · append · cartridge #48 · memory 51 → 61 tokens (+10) · 87.3 ms
+         forward: token ids n=39 · no cache
+         forward: embeddings n=10 (all zero) · cache 51
+         previously consolidated rows 0…50: bitwise unchanged = True · SHA 7196ba601884123f… → 7196ba601884123f…
+step 4 · append · cartridge #50 · memory 61 → 72 tokens (+11) · 85.1 ms
+         forward: token ids n=40 · no cache
+         forward: embeddings n=11 (all zero) · cache 61
+         previously consolidated rows 0…60: bitwise unchanged = True · SHA 90afb07faf8d38d4… → 90afb07faf8d38d4…
+step 5 · append · cartridge #51 · memory 72 → 82 tokens (+10) · 100.0 ms
+         forward: token ids n=39 · no cache
+         forward: embeddings n=10 (all zero) · cache 72
+         previously consolidated rows 0…71: bitwise unchanged = True · SHA 148bbfa4a32056aa… → 148bbfa4a32056aa…
+final memory: 82 tokens × 28 layers · tensor [1, 4, 82, 128] · 4702208 bytes (4.48 MiB, bfloat16) · SHA 48fdfdbf70d40d444d15ea5d…
+
+SOURCE-FREE QUESTION · answer(memory, question)  [LIVE]
+--------------------------------------------------------------------------------------------------------------------------------------------
+answer  : Solith
+expected: Solith · CORRECT (re-derived: True)
+query input = question template only: 20 token ids over the installed memory (82 tokens) · generation forwards 2 · 114 ms
+repeat: identical answer = True · memory SHA unchanged by querying = True
+sealed TEST610 answer for this case: 'Solith' · live identical: True (reported, not a gate)
+
+DISK · save_session → load_session → answer  [LIVE]
+--------------------------------------------------------------------------------------------------------------------------------------------
+file MAMBC-20261010-130929-0001-C12_CUT3_SESSION.pt · 4721267 bytes · SHA-256 1edabb8a69491deda592c4cb5b41c3c8a7ec7b4d03bf0cee0d4fa6677006e43c · recomputed after write: True
+in-memory K/V 4702208 bytes · file overhead 19059 bytes · fact text found in the file: False · expected answer string found in the file: False
+reload: ids equal True · K/V bitwise equal in all 28 layers True · memory SHA equal True · answer after reload 'Solith' · identical True
+
+NEGATIVE CONTROL · target cartridge removed  [LIVE · diagnostic]
+--------------------------------------------------------------------------------------------------------------------------------------------
+memory of [3, 19, 50, 51] (72 tokens) · answer 'Malvek' · expected answer produced: False
+
+START-UP IN THIS RUNTIME (610.py procedure, before any run)
+--------------------------------------------------------------------------------------------------------------------------------------------
+FRAM holdout Recall@1 12/12 · Recall@5 12/12 · all Recall@5 24/24 · self-retrieval 96/96 · hub max 4
+reference ranking holdout Recall@1 11/12 · Recall@5 12/12 · baseline CUT3 audit 12/12 correct
+
+SEALED REFERENCES (archived; not produced by this run)
+--------------------------------------------------------------------------------------------------------------------------------------------
+TEST610 · DEMO_READY_96 · criteria 15/15 · holdout 12/12 · panel 23/24 · 191.36 s · result 7d033e8a5c262f7861c8ada4efb07245e9bef4450715781e6d0a853c94d194f4
+TEST610 negative controls: case 12 → 'Malvek' leak False · case 15 → 'Nareth' leak False · case 18 → 'Marvek' leak False · case 21 → 'Sareth' leak False
+TEST575 (different experiment) · JOINT 72/72 · INCR_DC3 72/72 · BATCH_DC3 72/72 · NATIVE_INDEP 26/72 · BATCH_BLOCK3 28/72 · counterfactual upper K/V changed 72/72 · answer changed 50/72
+
+FROZEN MODEL
+--------------------------------------------------------------------------------------------------------------------------------------------
+weight_sha_startup: b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786
+sentinel_startup  : 6e344d7345d86161c772b0e239fd281059166a3e92d08746e175806433b606ab
+sentinel_before   : 6e344d7345d86161c772b0e239fd281059166a3e92d08746e175806433b606ab
+sentinel_after    : 6e344d7345d86161c772b0e239fd281059166a3e92d08746e175806433b606ab
+guard_startup     : a24946e5cd9766c40d0e901234de018701195dc1d74804525f1fe9b19fa19e8e
+guard_before      : a24946e5cd9766c40d0e901234de018701195dc1d74804525f1fe9b19fa19e8e
+guard_after       : a24946e5cd9766c40d0e901234de018701195dc1d74804525f1fe9b19fa19e8e
+trainable tensors=0 · lora=False · optimizer=False · training_mode=False · foreign hooks outside engine calls 0→0 · hooks on layers/attention/q_proj 0→0
+610.py weight_sha(): SHA-256 over (name, shape, dtype, raw bytes) of every parameter, computed by the engine at start-up
+all-parameter guard: SHA-256 over (name, shape, dtype, sum, |sum|, sum of squares) of every parameter tensor
+TEST566 sentinel: SHA-256 over 16 slices × 256 values of 7 weight tensors (o_proj of layers 0/7/14/21/27, final norm, lm_head)
+recording-only forward pre-hook on the causal-LM module, attached only during an engine call
+append observer: wraps the engine's init(·,3)/append(·,·,3) while build_cut3 runs; calls them unchanged; compares prior K/V rows bitwise
+
+DEMONSTRATED IN THIS RUN
+--------------------------------------------------------------------------------------------------------------------------------------------
+• At start-up the frozen model's layer-3 residual of each of the 96 facts is captured once and kept as the cartridge bank's retrieval key (FRAM). The configuration (layer 3, rank 0, β = 8) is locked on calibration cases 0–11 before any CUT3 memory is built.
+• For the selected case the five top-ranked cartridges of the locked reference ranking are written by the engine (one token-id forward of the instruction prefix + that cartridge's own fact) and consolidated append-only into one CUT3 memory; earlier K/V rows are compared bitwise after every append.
+• The question is answered from the numerical memory: the query forward receives only the question-template tokens over the installed memory.
+• The CUT3 memory is saved to a file, its SHA-256 is recomputed, the file is reloaded, the reloaded K/V tensors are compared bitwise with the original in all 28 layers, and the answer is generated again from the reloaded memory.
+• Negative control in every run: the same question over the memory built without the target cartridge; leakage of the expected answer is reported.
+• Model weights are unchanged (all-parameter guard before and after every run; full-weight SHA-256 at start-up equal to the reference).
+
+ARCHIVED
+--------------------------------------------------------------------------------------------------------------------------------------------
+• TEST610 (sealed demo acceptance, 610.log): decision DEMO_READY_96 · 15/15 acceptance criteria · holdout 12/12 · whole panel 23/24 (one incorrect answer, case 08) · FRAM holdout Recall@1 12/12, Recall@5 12/12 · self-retrieval 96/96 · four negative controls without leakage of the expected answer · weights unchanged · trainable parameters 0 · hooks 0.
+• TEST575 (sealed, 575.log; a different experiment): JOINT 72/72 · INCR_DC3 72/72 · BATCH_DC3 72/72 · counterfactual upper-layer K/V changed 72/72 · answer changed 50/72.
+
+NOT ESTABLISHED
+--------------------------------------------------------------------------------------------------------------------------------------------
+• Compressed superposition memory is not validated: the 6,144-item scaling experiments do not show that 6,144 independent CUT3 cartridges work end to end.
+• A persistent store of all 96 consolidated CUT3 cartridges: in this implementation the five selected cartridges are written from their facts when a session memory is built; the saved and reloaded object is the five-cartridge session memory.
+• The four TEST610 negative controls show no leakage of the expected answer; four cases do not exclude every alternative causal explanation.
+• Free-text questions outside the locked panel are answered but not scored.
+• Memory populations larger than 96 cartridges and inference that combines several cartridges are not tested by this demonstration.
+• Other language models: this demonstration runs Qwen2.5-7B-Instruct only.
+
+TECHNICAL NOTES
+--------------------------------------------------------------------------------------------------------------------------------------------
+• Retrieval for the 24 panel questions uses the locked reference ranking of TEST610: positive random features (M = 8192) superposed with D = 8192 random sign codes over the 96 cartridges. At this size the superposed matrix is larger than the features it encodes; it is a ranking procedure, not a memory saving. The exact FRAM kernel is shown alongside and is used for free-text questions.
+• Expected answers come from panel construction and are audit metadata; they are not an input to retrieval, writing, consolidation or answering.
+• Engine: 610.py verbatim (git blob 4a92e751fe0e…), executed up to its acceptance stage; it downloads 566.py and 575.py and verifies their git blobs. The save / reload / retrieve helpers are the RAW COLAB DEMO helper section, verbatim.
+• Hashes are artifact-integrity seals; they are not scientific proof or third-party verification.
+
+PRE-SEAL CHECKS
+--------------------------------------------------------------------------------------------------------------------------------------------
+PASS · 610.py git blob = repository blob · SHA-256 = embedded reference
+PASS · RAW COLAB DEMO helper section SHA-256 = embedded reference
+PASS · 566.py and 575.py git blobs verified by 610.py = expected
+PASS · model, architecture, CUT3 and 29-token prefix
+PASS · locked panel (SHA-256) · 96 cartridges · 24 cases
+PASS · FRAM configuration locked on calibration cases 0–11 = (layer 3, rank 0, β 8) · reference M = D = 8192
+PASS · start-up FRAM in this runtime: holdout R@1 12/12 · R@5 12/12 · all R@5 24/24 · self-retrieval 96/96
+PASS · start-up reference ranking 11/12 · 12/12 and baseline CUT3 audit 12/12
+PASS · full-weight SHA-256 at start-up = reference
+PASS · weight sentinel before run = value at initialisation
+PASS · all-parameter guard before run = value at start-up
+PASS · trainable tensors = 0, eval mode, no LoRA, no optimizer
+PASS · no foreign hooks outside engine calls · no hooks on decoder layers, attention or q_proj
+PASS · case in 0..23
+PASS · 96 finite exact-FRAM scores and 96 finite reference scores
+PASS · exact-FRAM scores recomputed in this run from the start-up features reproduce the start-up ranking (rank and top-5; consistency check)
+PASS · five distinct cartridge ids in 0..95 selected by the locked reference ranking
+PASS · memory: 5 consolidation steps in engine order (one init + 4 appends)
+PASS · memory: step 1 = one token-id forward of the instruction prefix + cartridge 1's own fact (no cache) + one all-zero-embedding forward over the same rows
+PASS · memory: step 2 write = one token-id forward of the instruction prefix + cartridge 2's own fact only (no cache)
+PASS · memory: step 2 consolidation = all-zero embeddings for the 10 new rows only, over the existing 41-token memory
+PASS · memory: step 2 previously consolidated rows 0…40 bitwise unchanged
+PASS · memory: step 2 memory grows by exactly the new rows (+10)
+PASS · memory: step 3 write = one token-id forward of the instruction prefix + cartridge 3's own fact only (no cache)
+PASS · memory: step 3 consolidation = all-zero embeddings for the 10 new rows only, over the existing 51-token memory
+PASS · memory: step 3 previously consolidated rows 0…50 bitwise unchanged
+PASS · memory: step 3 memory grows by exactly the new rows (+10)
+PASS · memory: step 4 write = one token-id forward of the instruction prefix + cartridge 4's own fact only (no cache)
+PASS · memory: step 4 consolidation = all-zero embeddings for the 11 new rows only, over the existing 61-token memory
+PASS · memory: step 4 previously consolidated rows 0…60 bitwise unchanged
+PASS · memory: step 4 memory grows by exactly the new rows (+11)
+PASS · memory: step 5 write = one token-id forward of the instruction prefix + cartridge 5's own fact only (no cache)
+PASS · memory: step 5 consolidation = all-zero embeddings for the 10 new rows only, over the existing 72-token memory
+PASS · memory: step 5 previously consolidated rows 0…71 bitwise unchanged
+PASS · memory: step 5 memory grows by exactly the new rows (+10)
+PASS · memory: no other text read: exactly 5 token-id forwards, each the instruction prefix + the own fact of the cartridge being written, each once
+PASS · final memory length = prefix + all five body lengths
+PASS · final memory SHA-256 = SHA-256 recorded after the last append
+PASS · memory = 28 layers × (K, V) of shape [1, 4, T, 128]
+PASS · memory bytes = layers × 2 × KV heads × head dim × T × element size
+PASS · answer: query forward input = question-template tokens only, over the installed 82-token memory
+PASS · answer: generation forwards = one new token each, over the growing cache
+PASS · correctness re-derived from the answer text = engine hit()
+PASS · repeat answer(): same forward pattern and identical answer (greedy decoding)
+PASS · memory unchanged by querying (SHA-256 before = after)
+PASS · session file written: size and SHA-256 recomputed from disk = save_session() report
+PASS · the session file contains none of the five fact texts and not the question text
+PASS · reloaded cartridge ids = saved ids (engine order)
+PASS · reloaded K/V bitwise equal to the original in all 28 layers
+PASS · reloaded memory SHA-256 = original memory SHA-256
+PASS · answer after reload: query forward input = question-template tokens only, over the installed 82-token memory
+PASS · answer after reload: generation forwards = one new token each, over the growing cache
+PASS · answer from the reloaded memory = answer before saving
+PASS · control: 4 consolidation steps in engine order (one init + 3 appends)
+PASS · control: step 1 = one token-id forward of the instruction prefix + cartridge 1's own fact (no cache) + one all-zero-embedding forward over the same rows
+PASS · control: step 2 write = one token-id forward of the instruction prefix + cartridge 2's own fact only (no cache)
+PASS · control: step 2 consolidation = all-zero embeddings for the 10 new rows only, over the existing 41-token memory
+PASS · control: step 2 previously consolidated rows 0…40 bitwise unchanged
+PASS · control: step 2 memory grows by exactly the new rows (+10)
+PASS · control: step 3 write = one token-id forward of the instruction prefix + cartridge 3's own fact only (no cache)
+PASS · control: step 3 consolidation = all-zero embeddings for the 11 new rows only, over the existing 51-token memory
+PASS · control: step 3 previously consolidated rows 0…50 bitwise unchanged
+PASS · control: step 3 memory grows by exactly the new rows (+11)
+PASS · control: step 4 write = one token-id forward of the instruction prefix + cartridge 4's own fact only (no cache)
+PASS · control: step 4 consolidation = all-zero embeddings for the 10 new rows only, over the existing 62-token memory
+PASS · control: step 4 previously consolidated rows 0…61 bitwise unchanged
+PASS · control: step 4 memory grows by exactly the new rows (+10)
+PASS · control: no other text read: exactly 4 token-id forwards, each the instruction prefix + the own fact of the cartridge being written, each once
+PASS · control memory excludes the target cartridge
+PASS · control: query forward input = question-template tokens only, over the installed 72-token memory
+PASS · control: generation forwards = one new token each, over the growing cache
+PASS · all-parameter guard after run = before run = start-up (weights unchanged)
+PASS · weight sentinel after run = value at initialisation
+PASS · trainable tensors = 0, no foreign hooks and no hooks on layers/attention/q_proj after run
+
+TIMING (seconds)
+--------------------------------------------------------------------------------------------------------------------------------------------
+guard                   : 0.524
+retrieval               : 0.014
+build_cut3              : 0.651
+answer                  : 0.114
+answer_repeat           : 0.114
+save                    : 0.041
+load                    : 0.017
+answer_reload           : 0.115
+build_control           : 0.466
+answer_control          : 0.149
+engine_total            : 3.164
+peak GPU memory 18.27 GiB
+
+Raw forward records and the memory profile are in MAMBC-20261010-130929-0001-C12_FULL_RUN_LOG_payload.json and MAMBC-20261010-130929-0001-C12_RAW_RECORDS.jsonl.
+============================================================================================================================================
