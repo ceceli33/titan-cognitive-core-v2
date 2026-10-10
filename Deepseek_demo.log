@@ -1,0 +1,189 @@
+============================================================================================================================================
+AKBASCORE MAM · Persistent numerical memory for frozen language models — READABLE RUN LOG
+Discovered and developed by Mustafa Akbaş · AkbasCore AI Teknoloji · 10 October 2026 · Mersin, Türkiye
+AKBASCORE RESEARCH SOFTWARE LICENSE · Copyright © 2026 Mustafa Akbaş · https://github.com/ceceli33/titan-cognitive-core-v2
+============================================================================================================================================
+Public technical demonstration of the AKBASCORE MAM architecture on a third transformer model family. Mustafa Akbaş (AkbasCore AI Teknoloji) discovered and developed this numerical-memory mechanism (first public record: DOI 10.5281/zenodo.23245358, 8 October 2026; second model family: DOI 10.5281/zenodo.23257347, 9 October 2026); this DeepSeek-V2-Lite-Chat record is dated 10 October 2026.
+A new numerical-memory paradigm for frozen language models.
+Derived from MAMDSK-20261010-194411-0001-C00M_FULL_RUN_LOG_payload.json (SHA-256 6102e3cb88a35d4e331b00d9e15115c59d6478cb47fbe496633145905de4681f). Manifest: run_manifest_MAMDSK-20261010-194411-0001-C00M.json.
+This is a LIVE run of the frozen DeepSeek-V2-Lite-Chat incremental MLA DC3 engine (596.py, unchanged). It is not TEST596; the TEST596 reference values are reproduced verbatim, never recomputed.
+Cross-Model Replication — Third Model Family: DeepSeek-V2-Lite-Chat (MLA, DC3). After Mistral-7B (DC6) and Qwen2.5-7B (DC3), the AKBASCORE MAM architecture has been implemented on DeepSeek-V2-Lite-Chat, a model family with multi-head latent attention, using a model-specific consolidation boundary and the same write → init → append → ask cycle.
+On the shared 72-question panel the DeepSeek result is 69/72; the three failed cases are reported in full.
+Three model families are experimental evidence that the architecture transfers across models; they are not evidence that it works in every language model. Earlier records are cited as references only; every number in this demonstration comes from DeepSeek-V2-Lite-Chat.
+Earlier records (references only): AKBASCORE MAM v1.0 — Source-Free Persistent Memory for Frozen LLMs via DC6 Consolidation (Mistral-7B) · DOI 10.5281/zenodo.23245358 · https://doi.org/10.5281/zenodo.23245358 · AKBASCORE MAM v1.1 — Cross-Model Replication: Source-Free Persistent Memory for Frozen LLMs on Qwen2.5-7B (DC3) · DOI 10.5281/zenodo.23257347 · https://doi.org/10.5281/zenodo.23257347
+RUN ID                        : MAMDSK-20261010-194411-0001-C00M
+START UTC                     : 2026-10-10T19:44:11.179+00:00
+END UTC                       : 2026-10-10T19:44:15.520+00:00
+SEALED UTC                    : 2026-10-10T19:44:15.619+00:00
+VERDICT                       : CASE_00_MIDDLE_CORRECT_APPEND_ONLY_VERIFIED_SOURCE_FREE_QUERY
+MODEL                         : deepseek-ai/DeepSeek-V2-Lite-Chat · revision 85864749cd611b4353ce1decdb286193298f64c7 · frozen · bfloat16 · attention eager
+ARCHITECTURE                  : 27 layers · hidden 2048 · multi-head latent attention, cache per token and layer: latent 512 + rotary 64
+GPU                           : NVIDIA A100-SXM4-40GB (TEST596 reference GPU: NVIDIA A100-SXM4-40GB; same: True)
+TORCH / TRANSFORMERS / GRADIO : 2.11.0+cu130 / 5.18.0 / 6.29.0
+ENGINE FILE                   : 596.py · git blob 85067b4f1cd0a1a941c0b88752f813360600c6b1 · SHA-256 f0c02654eddbf04756b9a33ee2b6433a5523c91dec00b3253ab415648f06e85f (executed unchanged)
+ENGINE SOURCES                : 560.py blob 35d95a929a4e043a9af346c67fc103da47a792b5, 590.py blob 09ae7a6862956128465efc7e76cdca1e478a1a52 (verified by the engine)
+CONSOLIDATION CUT             : layer 3 (cartridge = H3 residual + layers 0–3 MLA cache (latent 512 + rotary 64); layers 4–26 consolidate)
+PANEL                         : locked 24-case panel (shared with the earlier records) · SHA-256 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+TEST596 REFERENCE             : INCR_DC3_MLA 69/72 · reference record stored in 596.py (REFERENCE['TEST596']); the three failures were reproduced in TEST597 (597.log)
+TEST597 LOG SHA-256           : 1ea5991a5230b2172e456f578ad264e36840d86a59860b753c06814770a8de37
+SCORING                       : exact normalized name match (the 596.py scoring rule: casefold, punctuation removed, whole answer = gold name)
+
+CASE
+--------------------------------------------------------------------------------------------------------------------------------------------
+case 00 · target position MIDDLE (slot 3 of 5) · question: What is the current capital of Zorvan?
+expected answer (audit metadata): Melket
+C1 · cartridge #10 · FORMER   · 12 body tokens · The former capital of Tarev was Cedran.
+C2 · cartridge #93 · NEAR     · 12 body tokens · The largest city of Karev is Dareth.
+C3 · cartridge #00 · CURRENT  · 12 body tokens · The current capital of Zorvan is Melket.   ← TARGET
+C4 · cartridge #70 · FORMER   · 11 body tokens · The former capital of Parel was Maros.
+C5 · cartridge #50 · FORMER   · 12 body tokens · The former capital of Varen was Malvek.
+
+WRITE + APPEND-ONLY CONSOLIDATION · load_case()  [LIVE]
+--------------------------------------------------------------------------------------------------------------------------------------------
+step 1 · init   · cartridge #10 · memory 0 → 40 tokens (+40) · 151.8 ms
+         forward: token ids n=40 · no cache
+         forward: embeddings n=40 (all zero) · no cache
+step 2 · append · cartridge #93 · memory 40 → 52 tokens (+12) · 131.2 ms
+         forward: token ids n=40 · no cache
+         forward: embeddings n=12 (all zero) · cache 40
+         previously consolidated rows 0…39: bitwise unchanged = True · SHA 9a1023e59de208f9… → 9a1023e59de208f9…
+step 3 · append · cartridge #00 · memory 52 → 64 tokens (+12) · 111.4 ms
+         forward: token ids n=40 · no cache
+         forward: embeddings n=12 (all zero) · cache 52
+         previously consolidated rows 0…51: bitwise unchanged = True · SHA 3476ef91ccde425d… → 3476ef91ccde425d…
+step 4 · append · cartridge #70 · memory 64 → 75 tokens (+11) · 113.0 ms
+         forward: token ids n=39 · no cache
+         forward: embeddings n=11 (all zero) · cache 64
+         previously consolidated rows 0…63: bitwise unchanged = True · SHA ebea0b35e7b6f9ff… → ebea0b35e7b6f9ff…
+step 5 · append · cartridge #50 · memory 75 → 87 tokens (+12) · 113.3 ms
+         forward: token ids n=40 · no cache
+         forward: embeddings n=12 (all zero) · cache 75
+         previously consolidated rows 0…74: bitwise unchanged = True · SHA e0a1c9bdd9cd26de… → e0a1c9bdd9cd26de…
+final memory: 87 tokens × 27 layers · MLA latent 512 + rotary 64 · 2.58 MiB (bfloat16) · SHA 42911ae2b0b57468822a0c13…
+source token-id forwards during load: 5 (one per cartridge, each its own fact; the engine performs the five writes before consolidation) · consolidation forwards with all-zero input embeddings: 5
+
+SOURCE-FREE QUESTION · ask()  [LIVE]
+--------------------------------------------------------------------------------------------------------------------------------------------
+question: What is the current capital of Zorvan?
+answer  : Melket
+expected: Melket · CORRECT (re-derived: True)
+query input = question template only: 23 token ids over the installed memory (87 tokens) · generation forwards 2 · 387 ms
+repeat ask(): identical answer = True · memory SHA unchanged by querying = True
+TEST596 reference for this case and position: correct · live outcome identical: True (reported, not a gate)
+
+TEST596 REFERENCE · DEEPSEEK-V2-LITE-CHAT (archived; not produced by this run)
+--------------------------------------------------------------------------------------------------------------------------------------------
+INCR_DC3_MLA  FIRST 24/24 · MIDDLE 23/24 · LAST 22/24 · TOTAL 69/72 · append-only incremental consolidation at layer 3, multi-head latent attention cache (this engine; the arm run live)
+failed case 11 LAST   · expected Mirev · answered Kareth
+failed case 14 LAST   · expected Corven · answered Marvek
+failed case 23 MIDDLE · expected Karev · answered Luneth
+TEST597 (three failed slots, failures reproduced: True): JOINT 3/3 · INCR_DC3_MLA 0/3 · NATIVE_INDEP_MLA 0/3 · readout fix verified: False
+TEST597 log SHA-256 1ea5991a5230b2172e456f578ad264e36840d86a59860b753c06814770a8de37 · program git blob 87b1642008505a50d5ef8659257de1b375367186 · decision NO_VERIFIED_READOUT_FIX_DEMO_WITH_69_72_DISCLOSURE
+
+FROZEN MODEL
+--------------------------------------------------------------------------------------------------------------------------------------------
+sentinel_startup  : 6b5d1584f55bfdae7763e2d0e4f507d4353a964f41189a07a0e9e6374320163b
+sentinel_before   : 6b5d1584f55bfdae7763e2d0e4f507d4353a964f41189a07a0e9e6374320163b
+sentinel_after    : 6b5d1584f55bfdae7763e2d0e4f507d4353a964f41189a07a0e9e6374320163b
+guard_startup     : f1892b18b924b9e42287a9f7265f55f5d64a04c1658e6e53d6c61326e90cba91
+guard_before      : f1892b18b924b9e42287a9f7265f55f5d64a04c1658e6e53d6c61326e90cba91
+guard_after       : f1892b18b924b9e42287a9f7265f55f5d64a04c1658e6e53d6c61326e90cba91
+trainable tensors=0 · lora=False · optimizer=False · training_mode=False · foreign hooks outside API calls 0→0 · residual hooks on layers/attention 0→0
+model weights pinned by Hugging Face revision 85864749cd611b4353ce1decdb286193298f64c7
+all-parameter guard: SHA-256 over (name, shape, dtype, sum, |sum|, sum of squares) of every parameter tensor
+engine weight fingerprint (596.py fingerprint(): SHA-256 over 8 slices × 128 values of the first parameter of layers 0/3/6/12/20/26)
+recording-only forward pre-hook on the causal-LM module, attached only during an engine API call
+write/append observer: wraps the engine's own write_cartridge/init_cartridge/append_cartridge during load_case() only; calls them unchanged; compares prior cache rows bitwise
+
+DEMONSTRATED IN THIS RUN
+--------------------------------------------------------------------------------------------------------------------------------------------
+• Five source facts are written independently by frozen DeepSeek-V2-Lite-Chat (pinned revision): each fact is read once and stored as a numerical cartridge (layer-3 residual H3 + layers 0–3 MLA cache: latent c_KV 512 + rotary key 64).
+• The cartridges are appended one by one into one consolidated numerical memory. For each append, layers 4–26 are computed only for the new tokens, attending to the existing memory; the rotary part of layers 0–3 is re-phased to the new positions with the model's own rotary embedding.
+• Measured in every run: the consolidation forward receives all-zero input embeddings plus the stored H3 (no token ids); no earlier cartridge's source is read again; every previously consolidated cache row is bitwise identical after each append.
+• The question is answered from the numerical memory: the query forward receives only the question-template tokens over the installed memory.
+• Model weights are unchanged (all-parameter guard before and after the run; the engine's own weight fingerprint unchanged).
+
+ARCHIVED
+--------------------------------------------------------------------------------------------------------------------------------------------
+• TEST596 reference on the shared locked panel (24 five-cartridge cases × FIRST/MIDDLE/LAST = 72): append-only incremental MLA DC3 69/72 (FIRST 24/24, MIDDLE 23/24, LAST 22/24). Reference values; single live runs do not recompute them. The optional live replay reports its own score and compares it with this reference.
+• The three failed cases, kept in full: case 11 LAST (expected Mirev, answered Kareth), case 14 LAST (expected Corven, answered Marvek), case 23 MIDDLE (expected Karev, answered Luneth).
+• TEST597 reproduced the three failures. On these three slots the joint-text control answered 3/3 and native independent MLA cartridges 0/3. No verified readout fix was found, so no score above 69/72 is claimed.
+• Earlier records of the same architecture: Mistral-7B (DC6), DOI 10.5281/zenodo.23245358; Qwen2.5-7B (DC3), DOI 10.5281/zenodo.23257347. Cited as references only; they are not DeepSeek results.
+
+NOT ESTABLISHED
+--------------------------------------------------------------------------------------------------------------------------------------------
+• Error-free readout on this model: 3 of 72 panel questions are answered with a distractor name (69/72).
+• Memories larger than five cartridges are not established for DeepSeek in this record.
+• Strict cache-only sufficiency: the cartridge is augmented (H3 residual + layers 0–3 MLA cache).
+• Questions outside the locked panel template: free-text questions are shown but not scored.
+• Multi-step inference that combines several cartridges.
+• Generality beyond the three tested model families: each family needs its own consolidation boundary; other models are not tested.
+
+TECHNICAL NOTES
+--------------------------------------------------------------------------------------------------------------------------------------------
+• Writing cartridge k reads only fact k (inside the DeepSeek chat template) once; this is the write event of that cartridge. The engine writes the five cartridges first, then initialises and appends.
+• The 28-token instruction prefix is written with the first cartridge; later cartridges contribute their body rows only.
+• Expected answers come from panel construction and are audit metadata; they are not an input to writing, consolidation or answering.
+• Scoring follows the engine: exact normalized name match (the 596.py scoring rule: casefold, punctuation removed, whole answer = gold name).
+• The engine is 596.py (git blob 85067b4f1cd0…), executed unchanged; its demo API (demo_load_case, demo_ask, demo_verify_all) is called directly.
+• Hashes are artifact-integrity seals; they are not scientific proof or third-party verification.
+
+PRE-SEAL CHECKS
+--------------------------------------------------------------------------------------------------------------------------------------------
+PASS · 596.py git blob and SHA-256 = embedded reference · engine sources verified
+PASS · model at pinned revision, architecture, consolidation cut (layer 3) and 28-token prefix as in TEST596
+PASS · locked panel (SHA-256) · 96 cartridges · 24 cases
+PASS · engine gates all PASS (model frozen, panel SHA)
+PASS · weight sentinel before run = value at initialisation
+PASS · all-parameter guard before run = value at startup
+PASS · trainable tensors = 0, eval mode, no LoRA, no optimizer
+PASS · no foreign forward/backward hooks outside API calls · no residual hooks on layers/attention
+PASS · case in 0..23 and position in FIRST/MIDDLE/LAST
+PASS · five cartridges; target cartridge at the selected position
+PASS · load_case(): five consolidation steps in the selected order (one init + four appends)
+PASS · engine setup echoes the same cartridges, question and expected answer
+PASS · step 1: write = one token-id forward of cartridge 1's own fact (no cache); consolidation = one all-zero-embedding forward over the same rows
+PASS · step 2: write = one token-id forward of cartridge 2's own fact only (no cache)
+PASS · step 2: consolidation forward = all-zero embeddings for the 12 new rows only, over the existing 40-token memory
+PASS · step 2: previously consolidated rows 0…39 bitwise unchanged after the append
+PASS · step 2: memory grows by exactly the new rows (+12)
+PASS · step 3: write = one token-id forward of cartridge 3's own fact only (no cache)
+PASS · step 3: consolidation forward = all-zero embeddings for the 12 new rows only, over the existing 52-token memory
+PASS · step 3: previously consolidated rows 0…51 bitwise unchanged after the append
+PASS · step 3: memory grows by exactly the new rows (+12)
+PASS · step 4: write = one token-id forward of cartridge 4's own fact only (no cache)
+PASS · step 4: consolidation forward = all-zero embeddings for the 11 new rows only, over the existing 64-token memory
+PASS · step 4: previously consolidated rows 0…63 bitwise unchanged after the append
+PASS · step 4: memory grows by exactly the new rows (+11)
+PASS · step 5: write = one token-id forward of cartridge 5's own fact only (no cache)
+PASS · step 5: consolidation forward = all-zero embeddings for the 12 new rows only, over the existing 75-token memory
+PASS · step 5: previously consolidated rows 0…74 bitwise unchanged after the append
+PASS · step 5: memory grows by exactly the new rows (+12)
+PASS · no source text replayed: exactly five token-id forwards during load, each the own fact of the cartridge being written, each once
+PASS · adapter flags: weights not updated · no source replay in consolidation · prior memory not recomputed
+PASS · engine event log: cache sizes match the measured memory growth
+PASS · final memory length = prefix + all five body lengths
+PASS · final memory SHA-256 = SHA-256 recorded after the last append
+PASS · memory profile: 27 layers × T rows · MLA latent 512 + rotary 64
+PASS · engine step flags: one H3 injection per step, init identical to the cartridge's own cache, append-only flag True
+PASS · query forward input = question-template tokens only, over the installed memory
+PASS · generation forwards: one new token each, over the growing cache
+PASS · ask(): reference question of this case; engine flags: no source text, weights unchanged
+PASS · correctness re-derived from the answer text (exact normalized name match) = engine result
+PASS · repeat ask(): same forward pattern and identical answer (greedy decoding)
+PASS · memory unchanged by querying (SHA-256 before = after)
+PASS · all-parameter guard after run = before run = startup (weights unchanged)
+PASS · weight sentinel after run = value at initialisation
+PASS · trainable tensors = 0, no foreign hooks and no residual hooks after run
+
+TIMING (seconds)
+--------------------------------------------------------------------------------------------------------------------------------------------
+guard                   : 0.914
+load_case               : 2.513
+ask                     : 0.387
+ask_repeat              : 0.285
+engine_total            : 4.314
+peak GPU memory 32.04 GiB
+
+Raw forward records and the memory profile are in MAMDSK-20261010-194411-0001-C00M_FULL_RUN_LOG_payload.json and MAMDSK-20261010-194411-0001-C00M_RAW_RECORDS.jsonl.
+============================================================================================================================================
