@@ -1,0 +1,193 @@
+ SOURCE_VERIFIED 575.py 569c92c61224ea408cdb6e81dbe45dde06dc05fd
+SOURCE_VERIFIED 566.py b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+config.json: 100% 663/663 [00:00<00:00, 88.7kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 961kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 81.0MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 59.7MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 131MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.12MB/s]Download complete:  13.1GB,  207MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  502MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.73s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.13it/s]generation_config.json: 100% 243/243 [00:00<00:00, 32.2kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+==============================================================================================================================
+TEST607 — FRAME-MATCHED RESIDUAL ASSOCIATION + POSITIVE RANDOM FEATURES SUPERPOSITION
+==============================================================================================================================
+PASS PANEL_SHA {'sha': '69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45'}
+PASS ARCH {}
+PASS FROZEN {}
+PASS WEIGHT_SHA_REFERENCE {'sha': 'b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786'}
+[1/6] Capture native residuals for 96 cartridges...
+CARTRIDGE 1 / 96
+CARTRIDGE 17 / 96
+CARTRIDGE 33 / 96
+CARTRIDGE 49 / 96
+CARTRIDGE 65 / 96
+CARTRIDGE 81 / 96
+PASS CARTRIDGES {}
+[2/6] Question representations in fact frame...
+QUESTION 0 TARGET 0 TOKENS 10
+QUESTION 1 TARGET 6 TOKENS 9
+QUESTION 2 TARGET 9 TOKENS 10
+QUESTION 3 TARGET 15 TOKENS 9
+QUESTION 4 TARGET 16 TOKENS 9
+QUESTION 5 TARGET 22 TOKENS 9
+QUESTION 6 TARGET 25 TOKENS 10
+QUESTION 7 TARGET 31 TOKENS 9
+QUESTION 8 TARGET 32 TOKENS 10
+QUESTION 9 TARGET 38 TOKENS 9
+QUESTION 10 TARGET 41 TOKENS 10
+QUESTION 11 TARGET 47 TOKENS 9
+QUESTION 12 TARGET 48 TOKENS 9
+QUESTION 13 TARGET 54 TOKENS 9
+QUESTION 14 TARGET 57 TOKENS 10
+QUESTION 15 TARGET 63 TOKENS 9
+QUESTION 16 TARGET 64 TOKENS 9
+QUESTION 17 TARGET 70 TOKENS 9
+QUESTION 18 TARGET 73 TOKENS 9
+QUESTION 19 TARGET 79 TOKENS 9
+QUESTION 20 TARGET 80 TOKENS 9
+QUESTION 21 TARGET 86 TOKENS 10
+QUESTION 22 TARGET 89 TOKENS 10
+QUESTION 23 TARGET 95 TOKENS 9
+[3/6] Label-free PCA and calibration...
+LOCKED (3, 0, 8.0) CALIBRATION {'cfg': [3, 0, 8.0], 'hit5': 12, 'hit1': 12, 'rank_sum': 12, 'order': 1}
+[4/6] Holdout and identity controls...
+CASE 0 CAL RANK 1 TOP5 [0, 3, 2, 68, 88] TARGET 0
+CASE 1 CAL RANK 1 TOP5 [6, 54, 46, 4, 14] TARGET 6
+CASE 2 CAL RANK 1 TOP5 [9, 89, 33, 17, 57] TARGET 9
+CASE 3 CAL RANK 1 TOP5 [15, 28, 20, 39, 4] TARGET 15
+CASE 4 CAL RANK 1 TOP5 [16, 19, 18, 47, 31] TARGET 16
+CASE 5 CAL RANK 1 TOP5 [22, 20, 74, 23, 14] TARGET 22
+CASE 6 CAL RANK 1 TOP5 [25, 93, 61, 13, 77] TARGET 25
+CASE 7 CAL RANK 1 TOP5 [31, 12, 15, 56, 47] TARGET 31
+CASE 8 CAL RANK 1 TOP5 [32, 35, 34, 8, 11] TARGET 32
+CASE 9 CAL RANK 1 TOP5 [38, 36, 39, 74, 54] TARGET 38
+CASE 10 CAL RANK 1 TOP5 [41, 13, 85, 65, 69] TARGET 41
+CASE 11 CAL RANK 1 TOP5 [47, 75, 72, 59, 31] TARGET 47
+CASE 12 HOLD RANK 1 TOP5 [48, 51, 50, 68, 76] TARGET 48
+CASE 13 HOLD RANK 1 TOP5 [54, 6, 46, 52, 14] TARGET 54
+CASE 14 HOLD RANK 1 TOP5 [57, 85, 33, 9, 65] TARGET 57
+CASE 15 HOLD RANK 1 TOP5 [63, 52, 4, 7, 55] TARGET 63
+CASE 16 HOLD RANK 1 TOP5 [64, 67, 75, 20, 66] TARGET 64
+CASE 17 HOLD RANK 1 TOP5 [70, 22, 78, 68, 82] TARGET 70
+CASE 18 HOLD RANK 1 TOP5 [73, 5, 37, 57, 1] TARGET 73
+CASE 19 HOLD RANK 1 TOP5 [79, 48, 92, 75, 36] TARGET 79
+CASE 20 HOLD RANK 1 TOP5 [80, 83, 82, 68, 51] TARGET 80
+CASE 21 HOLD RANK 1 TOP5 [86, 84, 58, 87, 83] TARGET 86
+CASE 22 HOLD RANK 1 TOP5 [89, 17, 9, 61, 49] TARGET 89
+CASE 23 HOLD RANK 1 TOP5 [95, 28, 75, 44, 15] TARGET 95
+HOLDOUT_RECALL5 12 /12 RECALL1 12 /12 ALL_RECALL5 24 /24 HUB_MAX 4
+SELF_RETRIEVAL1 96 /96
+[5/7] Native generated fact cartridges, no feature-mixture distractors...
+PASS FRAM_LOCK {'cfg': [3, 0, 8.0]}
+PASS UNIQUE_NATIVE_FACTS {'unique': 6144}
+NATIVE_FACT_CAPTURE 384 / 6048
+NATIVE_FACT_CAPTURE 768 / 6048
+NATIVE_FACT_CAPTURE 1152 / 6048
+NATIVE_FACT_CAPTURE 1536 / 6048
+NATIVE_FACT_CAPTURE 1920 / 6048
+NATIVE_FACT_CAPTURE 2304 / 6048
+NATIVE_FACT_CAPTURE 2688 / 6048
+NATIVE_FACT_CAPTURE 3072 / 6048
+NATIVE_FACT_CAPTURE 3456 / 6048
+NATIVE_FACT_CAPTURE 3840 / 6048
+NATIVE_FACT_CAPTURE 4224 / 6048
+NATIVE_FACT_CAPTURE 4608 / 6048
+NATIVE_FACT_CAPTURE 4992 / 6048
+NATIVE_FACT_CAPTURE 5376 / 6048
+NATIVE_FACT_CAPTURE 5760 / 6048
+PASS NATIVE_REPRESENTATIONS {'n': 6144}
+[6/7] Exact FRAM ceiling, coarse direct features and centered superposition...
+NATIVE_ORACLE {'N': 96, 'arm': 'EXACT_FRAM', 'hold_r1': 12, 'hold_r5': 12, 'hold_r64': 12, 'all_r5': 24}
+NATIVE_ORACLE {'N': 384, 'arm': 'EXACT_FRAM', 'hold_r1': 12, 'hold_r5': 12, 'hold_r64': 12, 'all_r5': 24}
+NATIVE_ORACLE {'N': 1536, 'arm': 'EXACT_FRAM', 'hold_r1': 12, 'hold_r5': 12, 'hold_r64': 12, 'all_r5': 24}
+NATIVE_ORACLE {'N': 6144, 'arm': 'EXACT_FRAM', 'hold_r1': 12, 'hold_r5': 12, 'hold_r64': 12, 'all_r5': 24}
+PASS FEATURE_FINITE_0 {'seed': 0}
+NATIVE_DIRECT {'N': 96, 'arm': 'DIRECT_POSITIVE', 'omega_seed': 0, 'hold_r1': 6, 'hold_r5': 11, 'hold_r64': 12}
+CENTERED_ENERGY {'N': 96, 'omega_seed': 0, 'median': 20.88129425048828, 'max': 66.67536163330078}
+CENTERED_SUPER {'N': 96, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 512, 'code_seed': 0, 'hold_r1': 5, 'hold_r5': 8, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 4194304, 'feature_bank_bytes': 786432, 'codebook_stored_bytes': 0, 'seconds': 0.017}
+CENTERED_SUPER {'N': 96, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 512, 'code_seed': 1, 'hold_r1': 4, 'hold_r5': 8, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 4194304, 'feature_bank_bytes': 786432, 'codebook_stored_bytes': 0, 'seconds': 0.011}
+CENTERED_SUPER {'N': 96, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 512, 'code_seed': 2, 'hold_r1': 6, 'hold_r5': 10, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 4194304, 'feature_bank_bytes': 786432, 'codebook_stored_bytes': 0, 'seconds': 0.011}
+CENTERED_SUPER {'N': 96, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 1024, 'code_seed': 0, 'hold_r1': 6, 'hold_r5': 10, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 8388608, 'feature_bank_bytes': 786432, 'codebook_stored_bytes': 0, 'seconds': 0.012}
+CENTERED_SUPER {'N': 96, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 1024, 'code_seed': 1, 'hold_r1': 4, 'hold_r5': 8, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 8388608, 'feature_bank_bytes': 786432, 'codebook_stored_bytes': 0, 'seconds': 0.012}
+CENTERED_SUPER {'N': 96, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 1024, 'code_seed': 2, 'hold_r1': 6, 'hold_r5': 9, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 8388608, 'feature_bank_bytes': 786432, 'codebook_stored_bytes': 0, 'seconds': 0.012}
+NATIVE_DIRECT {'N': 384, 'arm': 'DIRECT_POSITIVE', 'omega_seed': 0, 'hold_r1': 5, 'hold_r5': 11, 'hold_r64': 12}
+CENTERED_ENERGY {'N': 384, 'omega_seed': 0, 'median': 39.038705825805664, 'max': 97.15446472167969}
+CENTERED_SUPER {'N': 384, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 512, 'code_seed': 0, 'hold_r1': 3, 'hold_r5': 6, 'hold_r64': 11, 'rerank_hold5': 11, 'super_bytes': 4194304, 'feature_bank_bytes': 3145728, 'codebook_stored_bytes': 0, 'seconds': 0.019}
+CENTERED_SUPER {'N': 384, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 512, 'code_seed': 1, 'hold_r1': 2, 'hold_r5': 7, 'hold_r64': 11, 'rerank_hold5': 11, 'super_bytes': 4194304, 'feature_bank_bytes': 3145728, 'codebook_stored_bytes': 0, 'seconds': 0.019}
+CENTERED_SUPER {'N': 384, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 512, 'code_seed': 2, 'hold_r1': 2, 'hold_r5': 5, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 4194304, 'feature_bank_bytes': 3145728, 'codebook_stored_bytes': 0, 'seconds': 0.019}
+CENTERED_SUPER {'N': 384, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 1024, 'code_seed': 0, 'hold_r1': 5, 'hold_r5': 8, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 8388608, 'feature_bank_bytes': 3145728, 'codebook_stored_bytes': 0, 'seconds': 0.025}
+CENTERED_SUPER {'N': 384, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 1024, 'code_seed': 1, 'hold_r1': 2, 'hold_r5': 8, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 8388608, 'feature_bank_bytes': 3145728, 'codebook_stored_bytes': 0, 'seconds': 0.025}
+CENTERED_SUPER {'N': 384, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 1024, 'code_seed': 2, 'hold_r1': 2, 'hold_r5': 5, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 8388608, 'feature_bank_bytes': 3145728, 'codebook_stored_bytes': 0, 'seconds': 0.024}
+NATIVE_DIRECT {'N': 1536, 'arm': 'DIRECT_POSITIVE', 'omega_seed': 0, 'hold_r1': 4, 'hold_r5': 10, 'hold_r64': 12}
+CENTERED_ENERGY {'N': 1536, 'omega_seed': 0, 'median': 124.65649795532227, 'max': 295.7674560546875}
+CENTERED_SUPER {'N': 1536, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 512, 'code_seed': 0, 'hold_r1': 2, 'hold_r5': 3, 'hold_r64': 8, 'rerank_hold5': 8, 'super_bytes': 4194304, 'feature_bank_bytes': 12582912, 'codebook_stored_bytes': 0, 'seconds': 0.053}
+CENTERED_SUPER {'N': 1536, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 512, 'code_seed': 1, 'hold_r1': 1, 'hold_r5': 1, 'hold_r64': 8, 'rerank_hold5': 8, 'super_bytes': 4194304, 'feature_bank_bytes': 12582912, 'codebook_stored_bytes': 0, 'seconds': 0.053}
+CENTERED_SUPER {'N': 1536, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 512, 'code_seed': 2, 'hold_r1': 2, 'hold_r5': 4, 'hold_r64': 7, 'rerank_hold5': 7, 'super_bytes': 4194304, 'feature_bank_bytes': 12582912, 'codebook_stored_bytes': 0, 'seconds': 0.052}
+CENTERED_SUPER {'N': 1536, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 1024, 'code_seed': 0, 'hold_r1': 3, 'hold_r5': 6, 'hold_r64': 10, 'rerank_hold5': 10, 'super_bytes': 8388608, 'feature_bank_bytes': 12582912, 'codebook_stored_bytes': 0, 'seconds': 0.074}
+CENTERED_SUPER {'N': 1536, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 1024, 'code_seed': 1, 'hold_r1': 1, 'hold_r5': 2, 'hold_r64': 9, 'rerank_hold5': 9, 'super_bytes': 8388608, 'feature_bank_bytes': 12582912, 'codebook_stored_bytes': 0, 'seconds': 0.074}
+CENTERED_SUPER {'N': 1536, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 1024, 'code_seed': 2, 'hold_r1': 2, 'hold_r5': 4, 'hold_r64': 8, 'rerank_hold5': 8, 'super_bytes': 8388608, 'feature_bank_bytes': 12582912, 'codebook_stored_bytes': 0, 'seconds': 0.075}
+NATIVE_DIRECT {'N': 6144, 'arm': 'DIRECT_POSITIVE', 'omega_seed': 0, 'hold_r1': 4, 'hold_r5': 8, 'hold_r64': 12}
+CENTERED_ENERGY {'N': 6144, 'omega_seed': 0, 'median': 515.4999084472656, 'max': 1200.320068359375}
+CENTERED_SUPER {'N': 6144, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 512, 'code_seed': 0, 'hold_r1': 0, 'hold_r5': 0, 'hold_r64': 1, 'rerank_hold5': 1, 'super_bytes': 4194304, 'feature_bank_bytes': 50331648, 'codebook_stored_bytes': 0, 'seconds': 0.207}
+CENTERED_SUPER {'N': 6144, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 512, 'code_seed': 1, 'hold_r1': 0, 'hold_r5': 1, 'hold_r64': 3, 'rerank_hold5': 3, 'super_bytes': 4194304, 'feature_bank_bytes': 50331648, 'codebook_stored_bytes': 0, 'seconds': 0.208}
+CENTERED_SUPER {'N': 6144, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 512, 'code_seed': 2, 'hold_r1': 1, 'hold_r5': 2, 'hold_r64': 3, 'rerank_hold5': 3, 'super_bytes': 4194304, 'feature_bank_bytes': 50331648, 'codebook_stored_bytes': 0, 'seconds': 0.21}
+CENTERED_SUPER {'N': 6144, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 1024, 'code_seed': 0, 'hold_r1': 0, 'hold_r5': 1, 'hold_r64': 2, 'rerank_hold5': 2, 'super_bytes': 8388608, 'feature_bank_bytes': 50331648, 'codebook_stored_bytes': 0, 'seconds': 0.291}
+CENTERED_SUPER {'N': 6144, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 1024, 'code_seed': 1, 'hold_r1': 0, 'hold_r5': 1, 'hold_r64': 2, 'rerank_hold5': 2, 'super_bytes': 8388608, 'feature_bank_bytes': 50331648, 'codebook_stored_bytes': 0, 'seconds': 0.291}
+CENTERED_SUPER {'N': 6144, 'arm': 'CENTERED_SUPER', 'omega_seed': 0, 'D': 1024, 'code_seed': 2, 'hold_r1': 1, 'hold_r5': 1, 'hold_r64': 3, 'rerank_hold5': 3, 'super_bytes': 8388608, 'feature_bank_bytes': 50331648, 'codebook_stored_bytes': 0, 'seconds': 0.29}
+PASS FEATURE_FINITE_1 {'seed': 1}
+NATIVE_DIRECT {'N': 96, 'arm': 'DIRECT_POSITIVE', 'omega_seed': 1, 'hold_r1': 8, 'hold_r5': 11, 'hold_r64': 12}
+CENTERED_ENERGY {'N': 96, 'omega_seed': 1, 'median': 10.48471975326538, 'max': 39.504066467285156}
+CENTERED_SUPER {'N': 96, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 512, 'code_seed': 0, 'hold_r1': 4, 'hold_r5': 11, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 4194304, 'feature_bank_bytes': 786432, 'codebook_stored_bytes': 0, 'seconds': 0.016}
+CENTERED_SUPER {'N': 96, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 512, 'code_seed': 1, 'hold_r1': 9, 'hold_r5': 10, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 4194304, 'feature_bank_bytes': 786432, 'codebook_stored_bytes': 0, 'seconds': 0.012}
+CENTERED_SUPER {'N': 96, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 512, 'code_seed': 2, 'hold_r1': 7, 'hold_r5': 10, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 4194304, 'feature_bank_bytes': 786432, 'codebook_stored_bytes': 0, 'seconds': 0.011}
+CENTERED_SUPER {'N': 96, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 1024, 'code_seed': 0, 'hold_r1': 6, 'hold_r5': 12, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 8388608, 'feature_bank_bytes': 786432, 'codebook_stored_bytes': 0, 'seconds': 0.013}
+CENTERED_SUPER {'N': 96, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 1024, 'code_seed': 1, 'hold_r1': 8, 'hold_r5': 11, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 8388608, 'feature_bank_bytes': 786432, 'codebook_stored_bytes': 0, 'seconds': 0.012}
+CENTERED_SUPER {'N': 96, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 1024, 'code_seed': 2, 'hold_r1': 7, 'hold_r5': 9, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 8388608, 'feature_bank_bytes': 786432, 'codebook_stored_bytes': 0, 'seconds': 0.012}
+NATIVE_DIRECT {'N': 384, 'arm': 'DIRECT_POSITIVE', 'omega_seed': 1, 'hold_r1': 8, 'hold_r5': 9, 'hold_r64': 12}
+CENTERED_ENERGY {'N': 384, 'omega_seed': 1, 'median': 20.802477836608887, 'max': 58.131019592285156}
+CENTERED_SUPER {'N': 384, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 512, 'code_seed': 0, 'hold_r1': 4, 'hold_r5': 9, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 4194304, 'feature_bank_bytes': 3145728, 'codebook_stored_bytes': 0, 'seconds': 0.019}
+CENTERED_SUPER {'N': 384, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 512, 'code_seed': 1, 'hold_r1': 4, 'hold_r5': 8, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 4194304, 'feature_bank_bytes': 3145728, 'codebook_stored_bytes': 0, 'seconds': 0.019}
+CENTERED_SUPER {'N': 384, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 512, 'code_seed': 2, 'hold_r1': 4, 'hold_r5': 7, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 4194304, 'feature_bank_bytes': 3145728, 'codebook_stored_bytes': 0, 'seconds': 0.019}
+CENTERED_SUPER {'N': 384, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 1024, 'code_seed': 0, 'hold_r1': 5, 'hold_r5': 10, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 8388608, 'feature_bank_bytes': 3145728, 'codebook_stored_bytes': 0, 'seconds': 0.025}
+CENTERED_SUPER {'N': 384, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 1024, 'code_seed': 1, 'hold_r1': 6, 'hold_r5': 9, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 8388608, 'feature_bank_bytes': 3145728, 'codebook_stored_bytes': 0, 'seconds': 0.024}
+CENTERED_SUPER {'N': 384, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 1024, 'code_seed': 2, 'hold_r1': 6, 'hold_r5': 7, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 8388608, 'feature_bank_bytes': 3145728, 'codebook_stored_bytes': 0, 'seconds': 0.024}
+NATIVE_DIRECT {'N': 1536, 'arm': 'DIRECT_POSITIVE', 'omega_seed': 1, 'hold_r1': 8, 'hold_r5': 9, 'hold_r64': 12}
+CENTERED_ENERGY {'N': 1536, 'omega_seed': 1, 'median': 62.795034408569336, 'max': 173.5437469482422}
+CENTERED_SUPER {'N': 1536, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 512, 'code_seed': 0, 'hold_r1': 1, 'hold_r5': 5, 'hold_r64': 11, 'rerank_hold5': 11, 'super_bytes': 4194304, 'feature_bank_bytes': 12582912, 'codebook_stored_bytes': 0, 'seconds': 0.054}
+CENTERED_SUPER {'N': 1536, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 512, 'code_seed': 1, 'hold_r1': 2, 'hold_r5': 5, 'hold_r64': 10, 'rerank_hold5': 10, 'super_bytes': 4194304, 'feature_bank_bytes': 12582912, 'codebook_stored_bytes': 0, 'seconds': 0.054}
+CENTERED_SUPER {'N': 1536, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 512, 'code_seed': 2, 'hold_r1': 2, 'hold_r5': 4, 'hold_r64': 10, 'rerank_hold5': 10, 'super_bytes': 4194304, 'feature_bank_bytes': 12582912, 'codebook_stored_bytes': 0, 'seconds': 0.053}
+CENTERED_SUPER {'N': 1536, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 1024, 'code_seed': 0, 'hold_r1': 5, 'hold_r5': 9, 'hold_r64': 12, 'rerank_hold5': 12, 'super_bytes': 8388608, 'feature_bank_bytes': 12582912, 'codebook_stored_bytes': 0, 'seconds': 0.074}
+CENTERED_SUPER {'N': 1536, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 1024, 'code_seed': 1, 'hold_r1': 5, 'hold_r5': 6, 'hold_r64': 11, 'rerank_hold5': 11, 'super_bytes': 8388608, 'feature_bank_bytes': 12582912, 'codebook_stored_bytes': 0, 'seconds': 0.074}
+CENTERED_SUPER {'N': 1536, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 1024, 'code_seed': 2, 'hold_r1': 3, 'hold_r5': 6, 'hold_r64': 11, 'rerank_hold5': 11, 'super_bytes': 8388608, 'feature_bank_bytes': 12582912, 'codebook_stored_bytes': 0, 'seconds': 0.075}
+NATIVE_DIRECT {'N': 6144, 'arm': 'DIRECT_POSITIVE', 'omega_seed': 1, 'hold_r1': 7, 'hold_r5': 9, 'hold_r64': 10}
+CENTERED_ENERGY {'N': 6144, 'omega_seed': 1, 'median': 220.53495025634766, 'max': 626.146728515625}
+CENTERED_SUPER {'N': 6144, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 512, 'code_seed': 0, 'hold_r1': 0, 'hold_r5': 0, 'hold_r64': 2, 'rerank_hold5': 2, 'super_bytes': 4194304, 'feature_bank_bytes': 50331648, 'codebook_stored_bytes': 0, 'seconds': 0.209}
+CENTERED_SUPER {'N': 6144, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 512, 'code_seed': 1, 'hold_r1': 0, 'hold_r5': 1, 'hold_r64': 4, 'rerank_hold5': 4, 'super_bytes': 4194304, 'feature_bank_bytes': 50331648, 'codebook_stored_bytes': 0, 'seconds': 0.207}
+CENTERED_SUPER {'N': 6144, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 512, 'code_seed': 2, 'hold_r1': 0, 'hold_r5': 1, 'hold_r64': 4, 'rerank_hold5': 4, 'super_bytes': 4194304, 'feature_bank_bytes': 50331648, 'codebook_stored_bytes': 0, 'seconds': 0.21}
+CENTERED_SUPER {'N': 6144, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 1024, 'code_seed': 0, 'hold_r1': 0, 'hold_r5': 1, 'hold_r64': 3, 'rerank_hold5': 3, 'super_bytes': 8388608, 'feature_bank_bytes': 50331648, 'codebook_stored_bytes': 0, 'seconds': 0.296}
+CENTERED_SUPER {'N': 6144, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 1024, 'code_seed': 1, 'hold_r1': 1, 'hold_r5': 3, 'hold_r64': 6, 'rerank_hold5': 6, 'super_bytes': 8388608, 'feature_bank_bytes': 50331648, 'codebook_stored_bytes': 0, 'seconds': 0.296}
+CENTERED_SUPER {'N': 6144, 'arm': 'CENTERED_SUPER', 'omega_seed': 1, 'D': 1024, 'code_seed': 2, 'hold_r1': 1, 'hold_r5': 2, 'hold_r64': 3, 'rerank_hold5': 3, 'super_bytes': 8388608, 'feature_bank_bytes': 50331648, 'codebook_stored_bytes': 0, 'seconds': 0.296}
+[7/7] Frozen CUT3 96-real reference, final integrity and evidence audit...
+PASS REFERENCE_RECALL5 {}
+END_TO_END 12 OK 0 RETRIEVED [48, 51, 19, 50, 3]
+END_TO_END 13 OK 0 RETRIEVED [54, 66, 94, 70, 46]
+END_TO_END 14 OK 0 RETRIEVED [57, 21, 33, 93, 58]
+END_TO_END 15 OK 0 RETRIEVED [63, 15, 4, 16, 55]
+END_TO_END 16 OK 0 RETRIEVED [64, 75, 19, 15, 20]
+END_TO_END 17 OK 0 RETRIEVED [70, 34, 66, 94, 54]
+END_TO_END 18 OK 0 RETRIEVED [73, 37, 57, 33, 53]
+END_TO_END 19 OK 0 RETRIEVED [79, 19, 48, 31, 15]
+END_TO_END 20 OK 0 RETRIEVED [80, 83, 64, 40, 19]
+END_TO_END 21 OK 0 RETRIEVED [86, 58, 66, 94, 55]
+END_TO_END 22 OK 0 RETRIEVED [17, 89, 91, 61, 88]
+END_TO_END 23 OK 0 RETRIEVED [95, 64, 47, 75, 19]
+PASS WEIGHT_UNCHANGED {}
+PASS SENTINEL_UNCHANGED {}
+PASS ZERO_TRAINABLE {}
+PASS NO_HOOKS {'hooks': []}
+==============================================================================================================================
+TEST607 FINAL {'native_count': 6144, 'largest_N': 6144, 'reference_cut3_correct': 0, 'reference_cut3_total': 12, 'seconds': 383.54, 'caveat': 'New native fact representations are Qwen forward activations, not independently validated CUT3 checkpoints; all end-to-end answers use original 96 only.'}
+RESULT_SHA fc606cf8d18040fcfc11827d919823b1ae95fff8c08775d7fc5ae9c14bb6e5f7
+OUTPUT /content/AKBASCORE_TEST607_SUPERPOSITION_SCALING.json
+DECISION NATIVE REPRESENTATION CAPACITY + CENTERED SUPERPOSITION; DO NOT CLAIM 6144 CUT3 CARTRIDGES
+==============================================================================================================================
