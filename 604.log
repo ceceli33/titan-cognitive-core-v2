@@ -1,0 +1,117 @@
+ SOURCE_VERIFIED 575.py 569c92c61224ea408cdb6e81dbe45dde06dc05fd
+SOURCE_VERIFIED 566.py b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 92.1kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 847kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 43.9MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 76.1MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 137MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.78MB/s]Download complete:  13.1GB,  896MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  482MB/s  Fetching 4 files: 100% 4/4 [00:42<00:00, 42.75s/it]Loading weights: 100% 339/339 [00:03<00:00, 97.24it/s]generation_config.json: 100% 243/243 [00:00<00:00, 31.7kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+==============================================================================================================================
+TEST604 — FRAME-MATCHED RESIDUAL ASSOCIATION + POSITIVE RANDOM FEATURES SUPERPOSITION
+==============================================================================================================================
+PASS PANEL_SHA {'sha': '69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45'}
+PASS ARCH {}
+PASS FROZEN {}
+PASS WEIGHT_SHA_REFERENCE {'sha': 'b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786'}
+[1/6] Capture native residuals for 96 cartridges...
+CARTRIDGE 1 / 96
+CARTRIDGE 17 / 96
+CARTRIDGE 33 / 96
+CARTRIDGE 49 / 96
+CARTRIDGE 65 / 96
+CARTRIDGE 81 / 96
+PASS CARTRIDGES {}
+[2/6] Question representations in fact frame...
+QUESTION 0 TARGET 0 TOKENS 10
+QUESTION 1 TARGET 6 TOKENS 9
+QUESTION 2 TARGET 9 TOKENS 10
+QUESTION 3 TARGET 15 TOKENS 9
+QUESTION 4 TARGET 16 TOKENS 9
+QUESTION 5 TARGET 22 TOKENS 9
+QUESTION 6 TARGET 25 TOKENS 10
+QUESTION 7 TARGET 31 TOKENS 9
+QUESTION 8 TARGET 32 TOKENS 10
+QUESTION 9 TARGET 38 TOKENS 9
+QUESTION 10 TARGET 41 TOKENS 10
+QUESTION 11 TARGET 47 TOKENS 9
+QUESTION 12 TARGET 48 TOKENS 9
+QUESTION 13 TARGET 54 TOKENS 9
+QUESTION 14 TARGET 57 TOKENS 10
+QUESTION 15 TARGET 63 TOKENS 9
+QUESTION 16 TARGET 64 TOKENS 9
+QUESTION 17 TARGET 70 TOKENS 9
+QUESTION 18 TARGET 73 TOKENS 9
+QUESTION 19 TARGET 79 TOKENS 9
+QUESTION 20 TARGET 80 TOKENS 9
+QUESTION 21 TARGET 86 TOKENS 10
+QUESTION 22 TARGET 89 TOKENS 10
+QUESTION 23 TARGET 95 TOKENS 9
+[3/6] Label-free PCA and calibration...
+LOCKED (3, 0, 8.0) CALIBRATION {'cfg': [3, 0, 8.0], 'hit5': 12, 'hit1': 12, 'rank_sum': 12, 'order': 1}
+[4/6] Holdout and identity controls...
+CASE 0 CAL RANK 1 TOP5 [0, 3, 2, 68, 88] TARGET 0
+CASE 1 CAL RANK 1 TOP5 [6, 54, 46, 4, 14] TARGET 6
+CASE 2 CAL RANK 1 TOP5 [9, 89, 33, 17, 57] TARGET 9
+CASE 3 CAL RANK 1 TOP5 [15, 28, 20, 39, 4] TARGET 15
+CASE 4 CAL RANK 1 TOP5 [16, 19, 18, 47, 31] TARGET 16
+CASE 5 CAL RANK 1 TOP5 [22, 20, 74, 23, 14] TARGET 22
+CASE 6 CAL RANK 1 TOP5 [25, 93, 61, 13, 77] TARGET 25
+CASE 7 CAL RANK 1 TOP5 [31, 12, 15, 56, 47] TARGET 31
+CASE 8 CAL RANK 1 TOP5 [32, 35, 34, 8, 11] TARGET 32
+CASE 9 CAL RANK 1 TOP5 [38, 36, 39, 74, 54] TARGET 38
+CASE 10 CAL RANK 1 TOP5 [41, 13, 85, 65, 69] TARGET 41
+CASE 11 CAL RANK 1 TOP5 [47, 75, 72, 59, 31] TARGET 47
+CASE 12 HOLD RANK 1 TOP5 [48, 51, 50, 68, 76] TARGET 48
+CASE 13 HOLD RANK 1 TOP5 [54, 6, 46, 52, 14] TARGET 54
+CASE 14 HOLD RANK 1 TOP5 [57, 85, 33, 9, 65] TARGET 57
+CASE 15 HOLD RANK 1 TOP5 [63, 52, 4, 7, 55] TARGET 63
+CASE 16 HOLD RANK 1 TOP5 [64, 67, 75, 20, 66] TARGET 64
+CASE 17 HOLD RANK 1 TOP5 [70, 22, 78, 68, 82] TARGET 70
+CASE 18 HOLD RANK 1 TOP5 [73, 5, 37, 57, 1] TARGET 73
+CASE 19 HOLD RANK 1 TOP5 [79, 48, 92, 75, 36] TARGET 79
+CASE 20 HOLD RANK 1 TOP5 [80, 83, 82, 68, 51] TARGET 80
+CASE 21 HOLD RANK 1 TOP5 [86, 84, 58, 87, 83] TARGET 86
+CASE 22 HOLD RANK 1 TOP5 [89, 17, 9, 61, 49] TARGET 89
+CASE 23 HOLD RANK 1 TOP5 [95, 28, 75, 44, 15] TARGET 95
+HOLDOUT_RECALL5 12 /12 RECALL1 12 /12 ALL_RECALL5 24 /24 HUB_MAX 4
+SELF_RETRIEVAL1 96 /96
+[5/6] Positive random features + coded superposition: separate kernel and code errors...
+POSITIVE_SUPER {'beta': 2.0, 'M': 2048, 'D': 2048, 'direct_hold1': 11, 'direct_hold5': 12, 'direct_top1_vs_exact': 20, 'super_hold1': 1, 'super_hold5': 3, 'super_top1_vs_direct': 1, 'super_top1_vs_exact': 1, 'negative_decoded': 0, 'decoded_count': 21504, 'mse_vs_direct': 0.015600393526256084, 'mean_direct_error': 0.031432267278432846}
+POSITIVE_SUPER {'beta': 2.0, 'M': 2048, 'D': 8192, 'direct_hold1': 11, 'direct_hold5': 12, 'direct_top1_vs_exact': 20, 'super_hold1': 1, 'super_hold5': 2, 'super_top1_vs_direct': 4, 'super_top1_vs_exact': 3, 'negative_decoded': 0, 'decoded_count': 21504, 'mse_vs_direct': 0.0032616883981972933, 'mean_direct_error': 0.031432267278432846}
+POSITIVE_SUPER {'beta': 2.0, 'M': 8192, 'D': 2048, 'direct_hold1': 12, 'direct_hold5': 12, 'direct_top1_vs_exact': 23, 'super_hold1': 0, 'super_hold5': 0, 'super_top1_vs_direct': 1, 'super_top1_vs_exact': 1, 'negative_decoded': 0, 'decoded_count': 21504, 'mse_vs_direct': 0.010361822322010994, 'mean_direct_error': 0.014100336469709873}
+POSITIVE_SUPER {'beta': 2.0, 'M': 8192, 'D': 8192, 'direct_hold1': 12, 'direct_hold5': 12, 'direct_top1_vs_exact': 23, 'super_hold1': 1, 'super_hold5': 4, 'super_top1_vs_direct': 4, 'super_top1_vs_exact': 4, 'negative_decoded': 0, 'decoded_count': 21504, 'mse_vs_direct': 0.0031317686662077904, 'mean_direct_error': 0.014100336469709873}
+POSITIVE_SUPER {'beta': 4.0, 'M': 2048, 'D': 2048, 'direct_hold1': 8, 'direct_hold5': 12, 'direct_top1_vs_exact': 18, 'super_hold1': 0, 'super_hold5': 5, 'super_top1_vs_direct': 3, 'super_top1_vs_exact': 1, 'negative_decoded': 435, 'decoded_count': 21504, 'mse_vs_direct': 0.2511969804763794, 'mean_direct_error': 0.023851566016674042}
+POSITIVE_SUPER {'beta': 4.0, 'M': 2048, 'D': 8192, 'direct_hold1': 8, 'direct_hold5': 12, 'direct_top1_vs_exact': 18, 'super_hold1': 3, 'super_hold5': 8, 'super_top1_vs_direct': 13, 'super_top1_vs_exact': 9, 'negative_decoded': 84, 'decoded_count': 21504, 'mse_vs_direct': 0.0281368400901556, 'mean_direct_error': 0.023851566016674042}
+POSITIVE_SUPER {'beta': 4.0, 'M': 8192, 'D': 2048, 'direct_hold1': 12, 'direct_hold5': 12, 'direct_top1_vs_exact': 23, 'super_hold1': 3, 'super_hold5': 7, 'super_top1_vs_direct': 8, 'super_top1_vs_exact': 8, 'negative_decoded': 205, 'decoded_count': 21504, 'mse_vs_direct': 0.07261934876441956, 'mean_direct_error': 0.020334061235189438}
+POSITIVE_SUPER {'beta': 4.0, 'M': 8192, 'D': 8192, 'direct_hold1': 12, 'direct_hold5': 12, 'direct_top1_vs_exact': 23, 'super_hold1': 8, 'super_hold5': 10, 'super_top1_vs_direct': 19, 'super_top1_vs_exact': 18, 'negative_decoded': 160, 'decoded_count': 21504, 'mse_vs_direct': 0.04486757516860962, 'mean_direct_error': 0.020334061235189438}
+POSITIVE_SUPER {'beta': 8.0, 'M': 2048, 'D': 2048, 'direct_hold1': 8, 'direct_hold5': 12, 'direct_top1_vs_exact': 20, 'super_hold1': 6, 'super_hold5': 12, 'super_top1_vs_direct': 14, 'super_top1_vs_exact': 13, 'negative_decoded': 1511, 'decoded_count': 21504, 'mse_vs_direct': 0.20552878081798553, 'mean_direct_error': 0.2299475073814392}
+POSITIVE_SUPER {'beta': 8.0, 'M': 2048, 'D': 8192, 'direct_hold1': 8, 'direct_hold5': 12, 'direct_top1_vs_exact': 20, 'super_hold1': 10, 'super_hold5': 12, 'super_top1_vs_direct': 17, 'super_top1_vs_exact': 21, 'negative_decoded': 599, 'decoded_count': 21504, 'mse_vs_direct': 0.04807346686720848, 'mean_direct_error': 0.2299475073814392}
+POSITIVE_SUPER {'beta': 8.0, 'M': 8192, 'D': 2048, 'direct_hold1': 12, 'direct_hold5': 12, 'direct_top1_vs_exact': 23, 'super_hold1': 11, 'super_hold5': 12, 'super_top1_vs_direct': 19, 'super_top1_vs_exact': 20, 'negative_decoded': 1230, 'decoded_count': 21504, 'mse_vs_direct': 0.17672640085220337, 'mean_direct_error': 0.10784387588500977}
+POSITIVE_SUPER {'beta': 8.0, 'M': 8192, 'D': 8192, 'direct_hold1': 12, 'direct_hold5': 12, 'direct_top1_vs_exact': 23, 'super_hold1': 11, 'super_hold5': 12, 'super_top1_vs_direct': 21, 'super_top1_vs_exact': 20, 'negative_decoded': 918, 'decoded_count': 21504, 'mse_vs_direct': 0.1184937134385109, 'mean_direct_error': 0.10784387588500977}
+LOCKED_SUPER_CONFIG (8.0, 8192, 8192) NOT_TUNED_ON_HOLDOUT
+[6/6] Selected cartridges -> unchanged CUT3 init/append/answer; holdout 12...
+END_TO_END 12 RETRIEVED [48, 51, 19, 50, 3] ANSWER_OK 1 ANSWER Solith
+END_TO_END 13 RETRIEVED [54, 66, 94, 70, 46] ANSWER_OK 1 ANSWER Toren
+END_TO_END 14 RETRIEVED [57, 21, 33, 93, 58] ANSWER_OK 1 ANSWER Corven
+END_TO_END 15 RETRIEVED [63, 15, 4, 16, 55] ANSWER_OK 1 ANSWER Dervan
+END_TO_END 16 RETRIEVED [64, 75, 19, 15, 20] ANSWER_OK 1 ANSWER Verith
+END_TO_END 17 RETRIEVED [70, 34, 66, 94, 54] ANSWER_OK 1 ANSWER Maros
+END_TO_END 18 RETRIEVED [73, 37, 57, 33, 53] ANSWER_OK 1 ANSWER Vindor
+END_TO_END 19 RETRIEVED [79, 19, 48, 31, 15] ANSWER_OK 1 ANSWER Barel
+END_TO_END 20 RETRIEVED [80, 83, 64, 40, 19] ANSWER_OK 1 ANSWER Mervor
+END_TO_END 21 RETRIEVED [86, 58, 66, 94, 55] ANSWER_OK 1 ANSWER Calvenor
+END_TO_END 22 RETRIEVED [17, 89, 91, 61, 88] ANSWER_OK 1 ANSWER Mardin
+END_TO_END 23 RETRIEVED [95, 64, 47, 75, 19] ANSWER_OK 1 ANSWER Karev
+E2E_ANSWER 12 /12 E2E_RETRIEVAL 12 /12 E2E_ERRORS 0
+PASS WEIGHT_UNCHANGED {}
+PASS SENTINEL_UNCHANGED {}
+PASS ZERO_TRAINABLE {}
+PASS NO_HOOKS {'hooks': []}
+==============================================================================================================================
+TEST604 FINAL {'oracle_holdout_recall5': 12, 'oracle_holdout_recall1': 12, 'oracle_all_recall5': 24, 'self_retrieval1': 96, 'max_hub': 4, 'positive_super_holdout5': 12, 'end_to_end_answer': 12, 'end_to_end_n': 12, 'seconds': 119.39}
+RESULT_SHA f68cc95d4fa52abe3c7743e788d9579ff2ab952ce96bcd6ac752a72a824b88dc
+OUTPUT /content/AKBASCORE_TEST604_POSITIVE_FEATURE_CUT3.json
+DECISION REPORT POSITIVE FEATURE, CODED SUPERPOSITION AND CUT3 SEPARATELY; NO SCALING CLAIM
+==============================================================================================================================
