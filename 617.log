@@ -1,0 +1,150 @@
+ TEST617_SOURCE_LOCK a62611a4ffd91c2fcf03796c31da2af11ccd8141345655b562f3a614568af3e7
+SOURCE_VERIFIED 575.py 569c92c61224ea408cdb6e81dbe45dde06dc05fd
+SOURCE_VERIFIED 566.py b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+config.json: 100% 663/663 [00:00<00:00, 84.1kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 995kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 88.9MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 75.4MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 133MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.80MB/s]Download complete:  13.1GB,  168MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  455MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.31s/it]Loading weights: 100% 339/339 [00:03<00:00, 101.05it/s]generation_config.json: 100% 243/243 [00:00<00:00, 29.7kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+==============================================================================================================================
+TEST610 — FINAL DEMO ACCEPTANCE · FROZEN CUT3 + FRAM 96 CARTRIDGES
+==============================================================================================================================
+PASS PANEL_SHA {'sha': '69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45'}
+PASS ARCH {}
+PASS FROZEN {}
+PASS WEIGHT_SHA_REFERENCE {'sha': 'b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786'}
+[1/8] Capture native residuals for 96 cartridges...
+CARTRIDGE 1 / 96
+CARTRIDGE 17 / 96
+CARTRIDGE 33 / 96
+CARTRIDGE 49 / 96
+CARTRIDGE 65 / 96
+CARTRIDGE 81 / 96
+PASS CARTRIDGES {}
+[2/8] Question representations in fact frame...
+QUESTION 0 TARGET 0 TOKENS 10
+QUESTION 1 TARGET 6 TOKENS 9
+QUESTION 2 TARGET 9 TOKENS 10
+QUESTION 3 TARGET 15 TOKENS 9
+QUESTION 4 TARGET 16 TOKENS 9
+QUESTION 5 TARGET 22 TOKENS 9
+QUESTION 6 TARGET 25 TOKENS 10
+QUESTION 7 TARGET 31 TOKENS 9
+QUESTION 8 TARGET 32 TOKENS 10
+QUESTION 9 TARGET 38 TOKENS 9
+QUESTION 10 TARGET 41 TOKENS 10
+QUESTION 11 TARGET 47 TOKENS 9
+QUESTION 12 TARGET 48 TOKENS 9
+QUESTION 13 TARGET 54 TOKENS 9
+QUESTION 14 TARGET 57 TOKENS 10
+QUESTION 15 TARGET 63 TOKENS 9
+QUESTION 16 TARGET 64 TOKENS 9
+QUESTION 17 TARGET 70 TOKENS 9
+QUESTION 18 TARGET 73 TOKENS 9
+QUESTION 19 TARGET 79 TOKENS 9
+QUESTION 20 TARGET 80 TOKENS 9
+QUESTION 21 TARGET 86 TOKENS 10
+QUESTION 22 TARGET 89 TOKENS 10
+QUESTION 23 TARGET 95 TOKENS 9
+[3/8] Label-free PCA and calibration...
+LOCKED (3, 0, 8.0) CALIBRATION {'cfg': [3, 0, 8.0], 'hit5': 12, 'hit1': 12, 'rank_sum': 12, 'order': 1}
+[4/8] Holdout and identity controls...
+CASE 0 CAL RANK 1 TOP5 [0, 3, 2, 68, 88] TARGET 0
+CASE 1 CAL RANK 1 TOP5 [6, 54, 46, 4, 14] TARGET 6
+CASE 2 CAL RANK 1 TOP5 [9, 89, 33, 17, 57] TARGET 9
+CASE 3 CAL RANK 1 TOP5 [15, 28, 20, 39, 4] TARGET 15
+CASE 4 CAL RANK 1 TOP5 [16, 19, 18, 47, 31] TARGET 16
+CASE 5 CAL RANK 1 TOP5 [22, 20, 74, 23, 14] TARGET 22
+CASE 6 CAL RANK 1 TOP5 [25, 93, 61, 13, 77] TARGET 25
+CASE 7 CAL RANK 1 TOP5 [31, 12, 15, 56, 47] TARGET 31
+CASE 8 CAL RANK 1 TOP5 [32, 35, 34, 8, 11] TARGET 32
+CASE 9 CAL RANK 1 TOP5 [38, 36, 39, 74, 54] TARGET 38
+CASE 10 CAL RANK 1 TOP5 [41, 13, 85, 65, 69] TARGET 41
+CASE 11 CAL RANK 1 TOP5 [47, 75, 72, 59, 31] TARGET 47
+CASE 12 HOLD RANK 1 TOP5 [48, 51, 50, 68, 76] TARGET 48
+CASE 13 HOLD RANK 1 TOP5 [54, 6, 46, 52, 14] TARGET 54
+CASE 14 HOLD RANK 1 TOP5 [57, 85, 33, 9, 65] TARGET 57
+CASE 15 HOLD RANK 1 TOP5 [63, 52, 4, 7, 55] TARGET 63
+CASE 16 HOLD RANK 1 TOP5 [64, 67, 75, 20, 66] TARGET 64
+CASE 17 HOLD RANK 1 TOP5 [70, 22, 78, 68, 82] TARGET 70
+CASE 18 HOLD RANK 1 TOP5 [73, 5, 37, 57, 1] TARGET 73
+CASE 19 HOLD RANK 1 TOP5 [79, 48, 92, 75, 36] TARGET 79
+CASE 20 HOLD RANK 1 TOP5 [80, 83, 82, 68, 51] TARGET 80
+CASE 21 HOLD RANK 1 TOP5 [86, 84, 58, 87, 83] TARGET 86
+CASE 22 HOLD RANK 1 TOP5 [89, 17, 9, 61, 49] TARGET 89
+CASE 23 HOLD RANK 1 TOP5 [95, 28, 75, 44, 15] TARGET 95
+HOLDOUT_RECALL5 12 /12 RECALL1 12 /12 ALL_RECALL5 24 /24 HUB_MAX 4
+SELF_RETRIEVAL1 96 /96
+[5/7] CUT3 baseline and reference retrieval...
+PASS FRAM_LOCK_BEFORE_CUT3 {'cfg': [3, 0, 8.0]}
+REFERENCE_606_LOCKED {'hold_r1': 11, 'hold_r5': 12, 'expected_r1': 11, 'expected_r5': 12}
+PASS REFERENCE_RECALL5 {'hold_r1': 11, 'hold_r5': 12}
+CUT3_AUDIT BASELINE 12 TARGET 48 PRESENT 1 SHAPE True OK 1 GOLD 'Solith' RAW 'Solith'
+CUT3_AUDIT BASELINE 13 TARGET 54 PRESENT 1 SHAPE True OK 1 GOLD 'Toren' RAW 'Toren'
+CUT3_AUDIT BASELINE 14 TARGET 57 PRESENT 1 SHAPE True OK 1 GOLD 'Corven' RAW 'Corven'
+CUT3_AUDIT BASELINE 15 TARGET 63 PRESENT 1 SHAPE True OK 1 GOLD 'Dervan' RAW 'Dervan'
+CUT3_AUDIT BASELINE 16 TARGET 64 PRESENT 1 SHAPE True OK 1 GOLD 'Verith' RAW 'Verith'
+CUT3_AUDIT BASELINE 17 TARGET 70 PRESENT 1 SHAPE True OK 1 GOLD 'Maros' RAW 'Maros'
+CUT3_AUDIT BASELINE 18 TARGET 73 PRESENT 1 SHAPE True OK 1 GOLD 'Vindor' RAW 'Vindor'
+CUT3_AUDIT BASELINE 19 TARGET 79 PRESENT 1 SHAPE True OK 1 GOLD 'Barel' RAW 'Barel'
+CUT3_AUDIT BASELINE 20 TARGET 80 PRESENT 1 SHAPE True OK 1 GOLD 'Mervor' RAW 'Mervor'
+CUT3_AUDIT BASELINE 21 TARGET 86 PRESENT 1 SHAPE True OK 1 GOLD 'Calvenor' RAW 'Calvenor'
+CUT3_AUDIT BASELINE 22 TARGET 89 PRESENT 1 SHAPE True OK 1 GOLD 'Mardin' RAW 'Mardin'
+CUT3_AUDIT BASELINE 23 TARGET 95 PRESENT 1 SHAPE True OK 1 GOLD 'Karev' RAW 'Karev'
+CUT3_AUDIT_SUMMARY BASELINE {'correct': 12, 'total': 12, 'errors': 0, 'retrieval': 12}
+BASELINE_STATUS {'correct': 12, 'errors': 0, 'retrieved': 12}
+TEST617_BASELINE_PASS {"native_cartridges": 96, "fram_hold_r1": 12, "fram_hold_r5": 12, "cut3_hold_correct": 12}
+TEST617_NEW_RECORD_GENERATOR 1440 PASS
+TEST617_NATIVE_CAPTURE 144 /1440 elapsed_s 141.97
+TEST617_NATIVE_CAPTURE 288 /1440 elapsed_s 147.12
+TEST617_NATIVE_CAPTURE 432 /1440 elapsed_s 152.12
+TEST617_NATIVE_CAPTURE 576 /1440 elapsed_s 157.18
+TEST617_NATIVE_CAPTURE 720 /1440 elapsed_s 162.28
+TEST617_NATIVE_CAPTURE 864 /1440 elapsed_s 167.32
+TEST617_NATIVE_CAPTURE 1008 /1440 elapsed_s 172.42
+TEST617_NATIVE_CAPTURE 1152 /1440 elapsed_s 177.46
+TEST617_NATIVE_CAPTURE 1296 /1440 elapsed_s 182.62
+TEST617_NATIVE_CAPTURE 1440 /1440 elapsed_s 187.69
+TEST617_NEW_QUESTION_CAPTURE 12 /60
+TEST617_NEW_QUESTION_CAPTURE 24 /60
+TEST617_NEW_QUESTION_CAPTURE 36 /60
+TEST617_NEW_QUESTION_CAPTURE 48 /60
+TEST617_NEW_QUESTION_CAPTURE 60 /60
+TEST617_CSR {"cartridges": 1536, "k": 48, "bytes": 323588, "mib": 0.3086}
+TEST617_FULL_NATIVE 6 /60 elapsed_s 191.94
+TEST617_FULL_NATIVE 12 /60 elapsed_s 193.43
+TEST617_FULL_NATIVE 18 /60 elapsed_s 194.94
+TEST617_FULL_NATIVE 24 /60 elapsed_s 196.38
+TEST617_FULL_NATIVE 30 /60 elapsed_s 197.83
+TEST617_FULL_NATIVE 36 /60 elapsed_s 199.28
+TEST617_FULL_NATIVE 42 /60 elapsed_s 200.71
+TEST617_FULL_NATIVE 48 /60 elapsed_s 202.13
+TEST617_FULL_NATIVE 54 /60 elapsed_s 203.54
+TEST617_FULL_NATIVE 60 /60 elapsed_s 205.02
+TEST617_FULL_NATIVE_SUMMARY {"new_positive_queries": 48, "r1": 44, "r5": 48, "r16": 48, "median_rank": 1.0}
+TEST617_ROUTE_RESULT {"weighted": false, "budget": 4, "positive_total": 48, "candidate_hit": 0, "r1": 0, "r5": 0, "mean_raw_candidates": 1535.75, "mean_posting_visits": 35817.017, "route_p50_ms": 4.1472, "route_p95_ms": 4.4261, "csr_bytes": 323588}
+TEST617_ROUTE_RESULT {"weighted": false, "budget": 8, "positive_total": 48, "candidate_hit": 1, "r1": 0, "r5": 1, "mean_raw_candidates": 1535.75, "mean_posting_visits": 35817.017, "route_p50_ms": 4.1472, "route_p95_ms": 4.4261, "csr_bytes": 323588}
+TEST617_ROUTE_RESULT {"weighted": false, "budget": 16, "positive_total": 48, "candidate_hit": 1, "r1": 0, "r5": 1, "mean_raw_candidates": 1535.75, "mean_posting_visits": 35817.017, "route_p50_ms": 4.1472, "route_p95_ms": 4.4261, "csr_bytes": 323588}
+TEST617_ROUTE_RESULT {"weighted": false, "budget": 24, "positive_total": 48, "candidate_hit": 3, "r1": 2, "r5": 3, "mean_raw_candidates": 1535.75, "mean_posting_visits": 35817.017, "route_p50_ms": 4.1472, "route_p95_ms": 4.4261, "csr_bytes": 323588}
+TEST617_ROUTE_RESULT {"weighted": false, "budget": 32, "positive_total": 48, "candidate_hit": 5, "r1": 4, "r5": 5, "mean_raw_candidates": 1535.75, "mean_posting_visits": 35817.017, "route_p50_ms": 4.1472, "route_p95_ms": 4.4261, "csr_bytes": 323588}
+TEST617_ROUTE_RESULT {"weighted": false, "budget": 48, "positive_total": 48, "candidate_hit": 6, "r1": 5, "r5": 6, "mean_raw_candidates": 1535.75, "mean_posting_visits": 35817.017, "route_p50_ms": 4.1472, "route_p95_ms": 4.4261, "csr_bytes": 323588}
+TEST617_ROUTE_RESULT {"weighted": false, "budget": 64, "positive_total": 48, "candidate_hit": 6, "r1": 5, "r5": 6, "mean_raw_candidates": 1535.75, "mean_posting_visits": 35817.017, "route_p50_ms": 4.1472, "route_p95_ms": 4.4261, "csr_bytes": 323588}
+TEST617_ROUTE_RESULT {"weighted": false, "budget": 96, "positive_total": 48, "candidate_hit": 7, "r1": 6, "r5": 7, "mean_raw_candidates": 1535.75, "mean_posting_visits": 35817.017, "route_p50_ms": 4.1472, "route_p95_ms": 4.4261, "csr_bytes": 323588}
+TEST617_ROUTE_RESULT {"weighted": false, "budget": 128, "positive_total": 48, "candidate_hit": 9, "r1": 8, "r5": 9, "mean_raw_candidates": 1535.75, "mean_posting_visits": 35817.017, "route_p50_ms": 4.1472, "route_p95_ms": 4.4261, "csr_bytes": 323588}
+TEST617_ROUTE_RESULT {"weighted": false, "budget": 256, "positive_total": 48, "candidate_hit": 17, "r1": 16, "r5": 17, "mean_raw_candidates": 1535.75, "mean_posting_visits": 35817.017, "route_p50_ms": 4.1472, "route_p95_ms": 4.4261, "csr_bytes": 323588}
+TEST617_ROUTE_RESULT {"weighted": true, "budget": 4, "positive_total": 48, "candidate_hit": 2, "r1": 2, "r5": 2, "mean_raw_candidates": 1535.75, "mean_posting_visits": 35817.017, "route_p50_ms": 4.2165, "route_p95_ms": 4.4136, "csr_bytes": 323588}
+TEST617_ROUTE_RESULT {"weighted": true, "budget": 8, "positive_total": 48, "candidate_hit": 2, "r1": 2, "r5": 2, "mean_raw_candidates": 1535.75, "mean_posting_visits": 35817.017, "route_p50_ms": 4.2165, "route_p95_ms": 4.4136, "csr_bytes": 323588}
+TEST617_ROUTE_RESULT {"weighted": true, "budget": 16, "positive_total": 48, "candidate_hit": 2, "r1": 2, "r5": 2, "mean_raw_candidates": 1535.75, "mean_posting_visits": 35817.017, "route_p50_ms": 4.2165, "route_p95_ms": 4.4136, "csr_bytes": 323588}
+TEST617_ROUTE_RESULT {"weighted": true, "budget": 24, "positive_total": 48, "candidate_hit": 2, "r1": 2, "r5": 2, "mean_raw_candidates": 1535.75, "mean_posting_visits": 35817.017, "route_p50_ms": 4.2165, "route_p95_ms": 4.4136, "csr_bytes": 323588}
+TEST617_ROUTE_RESULT {"weighted": true, "budget": 32, "positive_total": 48, "candidate_hit": 3, "r1": 3, "r5": 3, "mean_raw_candidates": 1535.75, "mean_posting_visits": 35817.017, "route_p50_ms": 4.2165, "route_p95_ms": 4.4136, "csr_bytes": 323588}
+TEST617_ROUTE_RESULT {"weighted": true, "budget": 48, "positive_total": 48, "candidate_hit": 5, "r1": 4, "r5": 5, "mean_raw_candidates": 1535.75, "mean_posting_visits": 35817.017, "route_p50_ms": 4.2165, "route_p95_ms": 4.4136, "csr_bytes": 323588}
+TEST617_ROUTE_RESULT {"weighted": true, "budget": 64, "positive_total": 48, "candidate_hit": 5, "r1": 4, "r5": 5, "mean_raw_candidates": 1535.75, "mean_posting_visits": 35817.017, "route_p50_ms": 4.2165, "route_p95_ms": 4.4136, "csr_bytes": 323588}
+TEST617_ROUTE_RESULT {"weighted": true, "budget": 96, "positive_total": 48, "candidate_hit": 7, "r1": 6, "r5": 7, "mean_raw_candidates": 1535.75, "mean_posting_visits": 35817.017, "route_p50_ms": 4.2165, "route_p95_ms": 4.4136, "csr_bytes": 323588}
+TEST617_ROUTE_RESULT {"weighted": true, "budget": 128, "positive_total": 48, "candidate_hit": 8, "r1": 7, "r5": 8, "mean_raw_candidates": 1535.75, "mean_posting_visits": 35817.017, "route_p50_ms": 4.2165, "route_p95_ms": 4.4136, "csr_bytes": 323588}
+TEST617_ROUTE_RESULT {"weighted": true, "budget": 256, "positive_total": 48, "candidate_hit": 17, "r1": 16, "r5": 17, "mean_raw_candidates": 1535.75, "mean_posting_visits": 35817.017, "route_p50_ms": 4.2165, "route_p95_ms": 4.4136, "csr_bytes": 323588}
+TEST617_NEGATIVE_CONTROL {"negative_count": 12, "positive_count": 48, "negative_top_score_min": 0.393752, "negative_top_score_median": 0.404441, "negative_top_score_max": 0.414747, "positive_gold_score_min": 0.487357, "positive_gold_score_median": 0.496758, "positive_gold_score_max": 0.504098, "abstention_verified": false, "interpretation": "Diagnostic score distributions only. No calibrated unknown-answer rejection rule."}
+TEST617_FINAL {"test": 617, "bank_size": 1536, "new_positive_questions": 48, "negative_questions": 12, "full_native": {"r1": 44, "r5": 48, "r16": 48, "median_rank": 1.0}, "locked_budget16": {"weighted": false, "budget": 16, "positive_total": 48, "candidate_hit": 1, "r1": 0, "r5": 1, "mean_raw_candidates": 1535.75, "mean_posting_visits": 35817.017, "route_p50_ms": 4.1472, "route_p95_ms": 4.4261, "csr_bytes": 323588}, "best_observed": {"weighted": false, "budget": 256, "positive_total": 48, "candidate_hit": 17, "r1": 16, "r5": 17, "mean_raw_candidates": 1535.75, "mean_posting_visits": 35817.017, "route_p50_ms": 4.1472, "route_p95_ms": 4.4261, "csr_bytes": 323588}, "negative_control": {"negative_count": 12, "positive_count": 48, "negative_top_score_min": 0.393752, "negative_top_score_median": 0.404441, "negative_top_score_max": 0.414747, "positive_gold_score_min": 0.487357, "positive_gold_score_median": 0.496758, "positive_gold_score_max": 0.504098, "abstention_verified": false, "interpretation": "Diagnostic score distributions only. No calibrated unknown-answer rejection rule."}, "integrity": {"weight_unchanged": true, "sentinel_unchanged": true, "zero_trainable": true, "no_remaining_hooks": true}, "output": "/content/TEST617_RESULT.json"}
+TEST617_STATUS COMPLETE
