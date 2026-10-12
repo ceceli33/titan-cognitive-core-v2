@@ -1,0 +1,164 @@
+ BOOTSTRAP_TEST626_SHA256 b31481abebb73b98567253ff7d40b2d510e9e89beb512ff7f0bfc47a69fbb9b8
+BOOTSTRAP_TEST624_SHA256 39438a48217f8ed52db7df94ab5c9631dd9b3a09acf15f404eaa75f30d922387
+==============================================================================================================
+TEST624 / 1453 PHYSICAL CUT3 / NATIVE GEOMETRIC INDEX
+==============================================================================================================
+SOURCE_VERIFIED 575.py 569c92c61224ea408cdb6e81dbe45dde06dc05fd
+SOURCE_VERIFIED 566.py b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 82.0kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 1.00MB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 53.4MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 71.9MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 131MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.67MB/s]Download complete:  13.1GB,  114MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  345MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00,  8.46s/it]Loading weights: 100% 339/339 [00:03<00:00, 101.08it/s]generation_config.json: 100% 243/243 [00:00<00:00, 31.6kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+==============================================================================================================================
+TEST610 — FINAL DEMO ACCEPTANCE · FROZEN CUT3 + FRAM 96 CARTRIDGES
+==============================================================================================================================
+PASS PANEL_SHA {'sha': '69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45'}
+PASS ARCH {}
+PASS FROZEN {}
+PASS WEIGHT_SHA_REFERENCE {'sha': 'b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786'}
+[1/8] Capture native residuals for 96 cartridges...
+CARTRIDGE 1 / 96
+CARTRIDGE 17 / 96
+CARTRIDGE 33 / 96
+CARTRIDGE 49 / 96
+CARTRIDGE 65 / 96
+CARTRIDGE 81 / 96
+PASS CARTRIDGES {}
+[2/8] Question representations in fact frame...
+QUESTION 0 TARGET 0 TOKENS 10
+QUESTION 1 TARGET 6 TOKENS 9
+QUESTION 2 TARGET 9 TOKENS 10
+QUESTION 3 TARGET 15 TOKENS 9
+QUESTION 4 TARGET 16 TOKENS 9
+QUESTION 5 TARGET 22 TOKENS 9
+QUESTION 6 TARGET 25 TOKENS 10
+QUESTION 7 TARGET 31 TOKENS 9
+QUESTION 8 TARGET 32 TOKENS 10
+QUESTION 9 TARGET 38 TOKENS 9
+QUESTION 10 TARGET 41 TOKENS 10
+QUESTION 11 TARGET 47 TOKENS 9
+QUESTION 12 TARGET 48 TOKENS 9
+QUESTION 13 TARGET 54 TOKENS 9
+QUESTION 14 TARGET 57 TOKENS 10
+QUESTION 15 TARGET 63 TOKENS 9
+QUESTION 16 TARGET 64 TOKENS 9
+QUESTION 17 TARGET 70 TOKENS 9
+QUESTION 18 TARGET 73 TOKENS 9
+QUESTION 19 TARGET 79 TOKENS 9
+QUESTION 20 TARGET 80 TOKENS 9
+QUESTION 21 TARGET 86 TOKENS 10
+QUESTION 22 TARGET 89 TOKENS 10
+QUESTION 23 TARGET 95 TOKENS 9
+[3/8] Label-free PCA and calibration...
+LOCKED (3, 0, 8.0) CALIBRATION {'cfg': [3, 0, 8.0], 'hit5': 12, 'hit1': 12, 'rank_sum': 12, 'order': 1}
+[4/8] Holdout and identity controls...
+CASE 0 CAL RANK 1 TOP5 [0, 3, 2, 68, 88] TARGET 0
+CASE 1 CAL RANK 1 TOP5 [6, 54, 46, 4, 14] TARGET 6
+CASE 2 CAL RANK 1 TOP5 [9, 89, 33, 17, 57] TARGET 9
+CASE 3 CAL RANK 1 TOP5 [15, 28, 20, 39, 4] TARGET 15
+CASE 4 CAL RANK 1 TOP5 [16, 19, 18, 47, 31] TARGET 16
+CASE 5 CAL RANK 1 TOP5 [22, 20, 74, 23, 14] TARGET 22
+CASE 6 CAL RANK 1 TOP5 [25, 93, 61, 13, 77] TARGET 25
+CASE 7 CAL RANK 1 TOP5 [31, 12, 15, 56, 47] TARGET 31
+CASE 8 CAL RANK 1 TOP5 [32, 35, 34, 8, 11] TARGET 32
+CASE 9 CAL RANK 1 TOP5 [38, 36, 39, 74, 54] TARGET 38
+CASE 10 CAL RANK 1 TOP5 [41, 13, 85, 65, 69] TARGET 41
+CASE 11 CAL RANK 1 TOP5 [47, 75, 72, 59, 31] TARGET 47
+CASE 12 HOLD RANK 1 TOP5 [48, 51, 50, 68, 76] TARGET 48
+CASE 13 HOLD RANK 1 TOP5 [54, 6, 46, 52, 14] TARGET 54
+CASE 14 HOLD RANK 1 TOP5 [57, 85, 33, 9, 65] TARGET 57
+CASE 15 HOLD RANK 1 TOP5 [63, 52, 4, 7, 55] TARGET 63
+CASE 16 HOLD RANK 1 TOP5 [64, 67, 75, 20, 66] TARGET 64
+CASE 17 HOLD RANK 1 TOP5 [70, 22, 78, 68, 82] TARGET 70
+CASE 18 HOLD RANK 1 TOP5 [73, 5, 37, 57, 1] TARGET 73
+CASE 19 HOLD RANK 1 TOP5 [79, 48, 92, 75, 36] TARGET 79
+CASE 20 HOLD RANK 1 TOP5 [80, 83, 82, 68, 51] TARGET 80
+CASE 21 HOLD RANK 1 TOP5 [86, 84, 58, 87, 83] TARGET 86
+CASE 22 HOLD RANK 1 TOP5 [89, 17, 9, 61, 49] TARGET 89
+CASE 23 HOLD RANK 1 TOP5 [95, 28, 75, 44, 15] TARGET 95
+HOLDOUT_RECALL5 12 /12 RECALL1 12 /12 ALL_RECALL5 24 /24 HUB_MAX 4
+SELF_RETRIEVAL1 96 /96
+[5/7] CUT3 baseline and reference retrieval...
+PASS FRAM_LOCK_BEFORE_CUT3 {'cfg': [3, 0, 8.0]}
+REFERENCE_606_LOCKED {'hold_r1': 11, 'hold_r5': 12, 'expected_r1': 11, 'expected_r5': 12}
+PASS REFERENCE_RECALL5 {'hold_r1': 11, 'hold_r5': 12}
+CUT3_AUDIT BASELINE 12 TARGET 48 PRESENT 1 SHAPE True OK 1 GOLD 'Solith' RAW 'Solith'
+CUT3_AUDIT BASELINE 13 TARGET 54 PRESENT 1 SHAPE True OK 1 GOLD 'Toren' RAW 'Toren'
+CUT3_AUDIT BASELINE 14 TARGET 57 PRESENT 1 SHAPE True OK 1 GOLD 'Corven' RAW 'Corven'
+CUT3_AUDIT BASELINE 15 TARGET 63 PRESENT 1 SHAPE True OK 1 GOLD 'Dervan' RAW 'Dervan'
+CUT3_AUDIT BASELINE 16 TARGET 64 PRESENT 1 SHAPE True OK 1 GOLD 'Verith' RAW 'Verith'
+CUT3_AUDIT BASELINE 17 TARGET 70 PRESENT 1 SHAPE True OK 1 GOLD 'Maros' RAW 'Maros'
+CUT3_AUDIT BASELINE 18 TARGET 73 PRESENT 1 SHAPE True OK 1 GOLD 'Vindor' RAW 'Vindor'
+CUT3_AUDIT BASELINE 19 TARGET 79 PRESENT 1 SHAPE True OK 1 GOLD 'Barel' RAW 'Barel'
+CUT3_AUDIT BASELINE 20 TARGET 80 PRESENT 1 SHAPE True OK 1 GOLD 'Mervor' RAW 'Mervor'
+CUT3_AUDIT BASELINE 21 TARGET 86 PRESENT 1 SHAPE True OK 1 GOLD 'Calvenor' RAW 'Calvenor'
+CUT3_AUDIT BASELINE 22 TARGET 89 PRESENT 1 SHAPE True OK 1 GOLD 'Mardin' RAW 'Mardin'
+CUT3_AUDIT BASELINE 23 TARGET 95 PRESENT 1 SHAPE True OK 1 GOLD 'Karev' RAW 'Karev'
+CUT3_AUDIT_SUMMARY BASELINE {'correct': 12, 'total': 12, 'errors': 0, 'retrieval': 12}
+BASELINE_STATUS {'correct': 12, 'errors': 0, 'retrieved': 12}
+BASELINE_LOCK {'source_sha256': 'a62611a4ffd91c2fcf03796c31da2af11ccd8141345655b562f3a614568af3e7', 'original_cartridges': 96, 'fram_hold_r1': 12, 'fram_hold_r5': 12}
+[1/7] PHYSICAL CUT3 WRITE: 1453 real independent files
+PHYSICAL_WRITE 100 / 1453 disk_GB 0.231 elapsed_s 177.17
+PHYSICAL_WRITE 200 / 1453 disk_GB 0.508 elapsed_s 189.62
+PHYSICAL_WRITE 300 / 1453 disk_GB 0.785 elapsed_s 202.09
+PHYSICAL_WRITE 400 / 1453 disk_GB 1.062 elapsed_s 214.67
+PHYSICAL_WRITE 500 / 1453 disk_GB 1.338 elapsed_s 227.16
+PHYSICAL_WRITE 600 / 1453 disk_GB 1.614 elapsed_s 239.7
+PHYSICAL_WRITE 700 / 1453 disk_GB 1.891 elapsed_s 252.2
+PHYSICAL_WRITE 800 / 1453 disk_GB 2.167 elapsed_s 264.67
+PHYSICAL_WRITE 900 / 1453 disk_GB 2.444 elapsed_s 277.51
+PHYSICAL_WRITE 1000 / 1453 disk_GB 2.721 elapsed_s 290.05
+PHYSICAL_WRITE 1100 / 1453 disk_GB 2.998 elapsed_s 302.58
+PHYSICAL_WRITE 1200 / 1453 disk_GB 3.274 elapsed_s 315.12
+PHYSICAL_WRITE 1300 / 1453 disk_GB 3.55 elapsed_s 327.67
+PHYSICAL_WRITE 1400 / 1453 disk_GB 3.827 elapsed_s 340.21
+PHYSICAL_WRITE 1453 / 1453 disk_GB 3.973 elapsed_s 346.95
+[2/7] LABEL-FREE PCA128 + FAISS IVF128
+PCA_MS 138.85
+PROJECTION_MS 81.25
+INDEX {'cartridges': 1453, 'native_positions': 26738, 'ivf_lists': 128, 'index_build_ms': 26.21}
+[3/7] FROZEN QUERY PANEL: 48 NEW SYNTHETIC CARTRIDGE QUESTIONS
+============================================================================================================
+TEST626 — FROZEN 1453 CUT3 / LABEL-FREE NATIVE QUERY-CONTRAST RERANK
+============================================================================================================
+================================================================================================================
+TEST627 — PEAK50 LOCKED / 1453 PHYSICAL CUT3 / LOSSLESS STORAGE AUDIT
+================================================================================================================
+[1/7] LOCKED PEAK50 ROUTING / ORIGINAL 48 + ALTERNATE 48
+LOCKED_ROUTE 16 /96 correct 16
+LOCKED_ROUTE 32 /96 correct 32
+LOCKED_ROUTE 48 /96 correct 48
+LOCKED_ROUTE 64 /96 correct 64
+LOCKED_ROUTE 80 /96 correct 80
+LOCKED_ROUTE 96 /96 correct 96
+[2/7] PHYSICAL DISK + SHA + FROZEN ANSWERS / 96
+PHYSICAL_E2E 16 /96 correct 16
+PHYSICAL_E2E 32 /96 correct 32
+PHYSICAL_E2E 48 /96 correct 48
+PHYSICAL_E2E 64 /96 correct 64
+PHYSICAL_E2E 80 /96 correct 80
+PHYSICAL_E2E 96 /96 correct 96
+[3/7] ALL 1453 PHYSICAL FILE SIZES + SHA256
+FILE_AUDIT 300 /1453
+FILE_AUDIT 600 /1453
+FILE_AUDIT 900 /1453
+FILE_AUDIT 1200 /1453
+[4/7] TENSOR STRUCTURE / ALL FILES; LOSSLESS GZIP ON 32 PREDECLARED SAMPLES
+TENSOR_AUDIT 300 /1453
+TENSOR_AUDIT 600 /1453
+TENSOR_AUDIT 900 /1453
+TENSOR_AUDIT 1200 /1453
+TEST627_STORAGE {"cartridges": 1453, "disk_pool_bytes": 3973450961, "disk_pool_GB_decimal": 3.973451, "avg_file_bytes": 2734653.1, "median_file_bytes": 2768949.0, "min_file_bytes": 2252853, "max_file_bytes": 2883637, "total_tensor_payload_bytes": 3949568000, "file_container_overhead_bytes": 23882961, "avg_tensors_per_file": 56.0, "tensor_dtype_bytes": {"torch.bfloat16": 3949568000}, "lossless_gzip_sample_files": 32, "gzip_sample_ratio": 0.796091, "gzip_sample_estimated_pool_bytes": 3163230461, "gzip_sample_estimate_not_measured_full_pool": true, "gzip_sample_all_bitwise_restored": true, "gzip_compress_p50_ms": 241.874, "gzip_decompress_p50_ms": 18.952}
+[5/7] INTEGRITY / NO TRAINING / NO HOOKS
+[6/7] FINAL
+TEST627_E2E {"ORIGINAL": {"cases": 48, "selected_correct": 48, "answer_correct": 48, "errors": 0, "touched_mean": 102.0, "address_p50_ms": 23.8674, "load_p50_ms": 17.8692, "answer_p50_ms": 236.6135}, "ALTERNATE": {"cases": 48, "selected_correct": 48, "answer_correct": 48, "errors": 0, "touched_mean": 117.104, "address_p50_ms": 25.045, "load_p50_ms": 17.5035, "answer_p50_ms": 235.2036}}
+TEST627_INTEGRITY {"source_sha_lock": true, "manifest_1453_sha_verified": true, "weight_unchanged": true, "sentinel_unchanged": true, "zero_trainable": true, "no_hooks": true, "tensor_load_errors_zero": true, "lossless_sample_bitwise": true}
+TEST627_STORAGE_SUMMARY {"cartridges": 1453, "disk_pool_bytes": 3973450961, "disk_pool_GB_decimal": 3.973451, "avg_file_bytes": 2734653.1, "median_file_bytes": 2768949.0, "min_file_bytes": 2252853, "max_file_bytes": 2883637, "total_tensor_payload_bytes": 3949568000, "file_container_overhead_bytes": 23882961, "avg_tensors_per_file": 56.0, "tensor_dtype_bytes": {"torch.bfloat16": 3949568000}, "lossless_gzip_sample_files": 32, "gzip_sample_ratio": 0.796091, "gzip_sample_estimated_pool_bytes": 3163230461, "gzip_sample_estimate_not_measured_full_pool": true, "gzip_sample_all_bitwise_restored": true, "gzip_compress_p50_ms": 241.874, "gzip_decompress_p50_ms": 18.952}
+[7/7] DEMO ACCEPTANCE
+TEST627_DECISION READY_FOR_DEMO_WITH_DISCLOSED_NONBLIND_LIMITATION
+TEST627_OUTPUT /content/AKBASCORE_TEST624/TEST627_RESULT.json
+TEST627_STATUS COMPLETE
