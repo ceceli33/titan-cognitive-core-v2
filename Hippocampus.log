@@ -1,0 +1,208 @@
+============================================================================================================================================
+AKBASCORE MAM — The Silicon Hippocampus — READABLE RUN LOG
+Physical memory cartridges for a frozen language model · WRITE · SSD · READ
+Discovered and developed by Mustafa Akbaş · AkbasCore AI Teknoloji · 12 October 2026 · Mersin, Türkiye
+AKBASCORE RESEARCH SOFTWARE LICENSE · Copyright © 2026 Mustafa Akbaş · https://github.com/ceceli33/titan-cognitive-core-v2
+============================================================================================================================================
+Public technical demonstration of AKBASCORE MAM: physical CUT3 memory cartridges written by frozen Qwen2.5-7B-Instruct, stored as independent files, addressed from the question by a label-free geometric index and answered from without the source text. Mustafa Akbaş (AkbasCore AI Teknoloji) discovered and developed this memory mechanism (earlier public records: DOI 10.5281/zenodo.23245358, 8 October 2026; DOI 10.5281/zenodo.23257347, 9 October 2026; DOI 10.5281/zenodo.23282902, 10 October 2026); this record is dated 12 October 2026.
+Scientific question: Can a frozen language model keep each fact as its own internal key/value state in an independent file on disk, find the right file later from the question alone, and answer from it without being given the source text again?
+“The Silicon Hippocampus” names the role of the system: a memory is formed once (WRITE), kept outside the model (SSD) and recalled later (READ). It is a name, not a claim of biological equivalence.
+Derived from MAMSH-20261012-053712-0001-C00_FULL_RUN_LOG_payload.json (SHA-256 f85289a8b93a2ad66b1912ea7fdb22a17b4782b12cc0e41abdd81af28a798048). Manifest: run_manifest_MAMSH-20261012-053712-0001-C00.json.
+This is a LIVE run of the locked TEST627 demo engine of this runtime. Start-up values were produced by the same engine in this runtime; sealed 627.log / 626.log values are reproduced verbatim, never recomputed.
+RUN ID                        : MAMSH-20261012-053712-0001-C00
+START UTC                     : 2026-10-12T05:37:12.809+00:00
+END UTC                       : 2026-10-12T05:37:15.631+00:00
+SEALED UTC                    : 2026-10-12T05:37:15.803+00:00
+VERDICT                       : CASE_00_CORRECT_WRITE_REVERIFIED_SSD_READ_SOURCE_FREE_ANSWER
+MODEL                         : Qwen/Qwen2.5-7B-Instruct · frozen · bfloat16 · attention sdpa
+ARCHITECTURE                  : 28 layers · hidden 3584 · 28 Q heads · 4 KV heads · head 128
+GPU                           : NVIDIA A100-SXM4-40GB (TEST627 reference GPU: NVIDIA A100-SXM4-40GB; same: True)
+TORCH / TRANSFORMERS / GRADIO : 2.11.0+cu130 / 5.18.0 / 6.29.0
+ENGINE                        : TEST627 demo engine · SHA-256 ab53e2d58fb3dc5f11409a5112e92feea8762544e4b30b8a77a39b60332de4d1 · git blob 66c5abfd024091eebd86a5f3676010dceddd6959
+ENGINE CHAIN                  : 626.py b31481abebb73b98567253ff7d40b2d510e9e89beb512ff7f0bfc47a69fbb9b8 · 624.py 39438a48217f8ed52db7df94ab5c9631dd9b3a09acf15f404eaa75f30d922387 · 610.py a62611a4ffd91c2fcf03796c31da2af11ccd8141345655b562f3a614568af3e7
+SOURCE FILES                  : 566.py b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71 · 575.py 569c92c61224ea408cdb6e81dbe45dde06dc05fd (git blobs verified by 610.py)
+CARTRIDGE BANK                : 1453 physical CUT3 files (96 original + 1357 synthetic facts) · pool /content/AKBASCORE_TEST624/cut3_pool
+ADDRESS INDEX                 : PCA128 + FAISS IVF128 over 26738 native layer-3 positions (label-free)
+LOCKED READ                   : nprobe 2 · token_k 16 · budget 16 · reranker PEAK50
+ENGINE RESULT                 : AKBASCORE_MAM_DEMO_ENGINE_RESULT.json · SHA-256 dd9829c18aedd59a7a1e9547c82cab860e84cbe4f52a918974afa1f1b0046764
+FULL-WEIGHT SHA-256           : b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786 (reference b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786)
+
+CASE (predeclared rotation over the 48 new-wording questions of the engine)
+--------------------------------------------------------------------------------------------------------------------------------------------
+case 00 · question: Name the present capital of ZX624196.
+fact of the case (used only by WRITE): The current capital of ZX624196 is Fgvrkerflc.
+expected answer (audit metadata; not an input to WRITE, addressing, selection or answering): Fgvrkerflc
+
+A · WRITE  [LIVE re-execution of the engine's init(fact, 3) for this fact]
+--------------------------------------------------------------------------------------------------------------------------------------------
+forward 1: token ids n=48 · no cache
+forward 2: embeddings n=48 (all zero) · no cache
+rows 48 = 29 instruction tokens + 19 fact tokens · 28 layers × (K, V) = 56 tensors [1, 4, 48, 128] bfloat16 · 2752512 bytes · 105.9 ms
+start-up file cut3_00292.pt · 2768949 bytes · SHA-256 f0ac51cf332ad128ba6e170e6604f251b75885be0309ec9e0c4accd3e5a5211b (manifest match: True) · written at start-up in 83.8 ms
+live re-write bitwise identical to the start-up file in all 28 layers: True · fact text in file: False · answer word in file: False · question in file: False
+
+B · SSD  [LIVE]
+--------------------------------------------------------------------------------------------------------------------------------------------
+files in pool 1453 · manifest 1453 · size mismatches 0 · total 3973450961 bytes (3.973 GB)
+file sizes: min 2252853 · median 2768949 · max 2883637 bytes · SHA-256 of all 1453 files verified by the engine at start-up: True
+
+C · READ — address  [LIVE · engine functions candidate626 / features626 / rerank626, locked PEAK50]
+--------------------------------------------------------------------------------------------------------------------------------------------
+question frame forward: token ids n=42 · no cache (instruction prefix + question only)
+13 question vectors → PCA128 → IVF128 (nprobe 2, token_k 16) → touched 103 of 1453 cartridges → 16 candidates → PEAK50
+    1. #0292 · PEAK50 0.652334 · FRAM 0.485204 · peak 0.819465   ← SELECTED   (expected cartridge, audit)
+    2. #0293 · PEAK50 0.646763 · FRAM 0.483914 · peak 0.809612
+    3. #0291 · PEAK50 0.643462 · FRAM 0.477332 · peak 0.809593
+    4. #0289 · PEAK50 0.642713 · FRAM 0.480323 · peak 0.805102
+    5. #0290 · PEAK50 0.642046 · FRAM 0.476398 · peak 0.807694
+    6. #0294 · PEAK50 0.639686 · FRAM 0.474188 · peak 0.805185
+    7. #0295 · PEAK50 0.639452 · FRAM 0.478382 · peak 0.800522
+    8. #0288 · PEAK50 0.638311 · FRAM 0.472928 · peak 0.803695
+    9. #0287 · PEAK50 0.635635 · FRAM 0.471251 · peak 0.800019
+   10. #0286 · PEAK50 0.634336 · FRAM 0.470806 · peak 0.797865
+   11. #0492 · PEAK50 0.629970 · FRAM 0.468596 · peak 0.791345
+   12. #0392 · PEAK50 0.628264 · FRAM 0.463532 · peak 0.792997
+   13. #1292 · PEAK50 0.626896 · FRAM 0.465633 · peak 0.788160
+   14. #0192 · PEAK50 0.626031 · FRAM 0.464379 · peak 0.787683
+   15. #0792 · PEAK50 0.622095 · FRAM 0.459921 · peak 0.784268
+   16. #0592 · PEAK50 0.620331 · FRAM 0.457444 · peak 0.783218
+timing: question encode 41.5 ms · FAISS 0.85 ms · TOP2 20.93 ms · PEAK50 6.08 ms · address total 27.9 ms
+selected #0292 · expected cartridge among the candidates: True · selected = expected: True
+
+D · READ — load + answer  [LIVE · sha627 + torch.load + answer(memory, question)]
+--------------------------------------------------------------------------------------------------------------------------------------------
+file cut3_00292.pt · SHA-256 = manifest True · load 19.4 ms · 48 rows
+answer forward 1: token ids n=24 · cache 48 — question template only
+answer  : Fgvrkerflc
+expected: Fgvrkerflc · CORRECT (re-derived: True) · 249 ms · generation forwards 6
+start-up engine row for this question: selected #292 · answer 'Fgvrkerflc' · live identical: selection True · answer True (reported, not a gate)
+
+E · CONTROL — runner-up file  [LIVE · diagnostic]
+--------------------------------------------------------------------------------------------------------------------------------------------
+runner-up #0293 (cut3_00293.pt) · answer 'ZX624196 does not have a listed capital.' · expected answer produced: False · runner-up is the expected cartridge: False
+
+START-UP IN THIS RUNTIME (TEST627 demo engine, before any RUN)
+--------------------------------------------------------------------------------------------------------------------------------------------
+ORIGINAL : selected 48/48 · answered 48/48 · errors 0 · address p50 23.7969 ms · load p50 17.2924 ms · answer p50 235.2958 ms
+ALTERNATE: selected 48/48 · answered 48/48 · errors 0 · address p50 23.6759 ms · load p50 17.2912 ms · answer p50 239.0562 ms
+integrity: source_sha_lock True · manifest_1453_sha_verified True · weight_unchanged True · sentinel_unchanged True · zero_trainable True · no_hooks True · tensor_load_errors_zero True · lossless_sample_bitwise True
+storage: 1453 files · 3973450961 bytes · avg 2734653.1 · tensor payload 3949568000 · lossless gzip sample (32 files) ratio 0.796091 (estimate for the full pool, not measured)
+index: 26738 positions · IVF lists 128 (0–1411 per list) · index 13970459 bytes · PCA basis 1835008 bytes · native layer-3 vectors 383315968 bytes · build 27.1 ms
+WRITE at start-up: 1453 files · p50 83.5 ms per file · total 121.6 s
+engine limitations (verbatim): Original 48 questions and alternative 48 wording questions reuse the same previously exposed 48 facts: NOT an independent record holdout. | PEAK50 was chosen after inspecting TEST626 validation results; this test is confirmation on previously exposed facts, not blind generalization. | Lossless gzip ratio extrapolation is from 32 deterministic sampled files only, not actual compressed full pool. | Gzip samples are in-memory, original disk files unchanged; compression adds decompression latency and requires integration testing before deployment. | Disk read may be OS page-cache served, not verified cold SSD. | 1453 physical cartridges do not demonstrate million-cartridge scalability. | Storage report excludes model VRAM/RAM and Python allocator overhead.
+
+SEALED REFERENCES (archived; not produced by this run)
+--------------------------------------------------------------------------------------------------------------------------------------------
+TEST627 · READY_FOR_DEMO_WITH_DISCLOSED_NONBLIND_LIMITATION · 627.log SHA-256 c909ce23d98bfc883641c82144adceacdaf7de13fc56e00a6153fbbb46c00687
+   ORIGINAL : selected 48/48 · answered 48/48 · errors 0 · address p50 23.8674 ms · load p50 17.8692 ms · answer p50 236.6135 ms
+   ALTERNATE: selected 48/48 · answered 48/48 · errors 0 · address p50 25.045 ms · load p50 17.5035 ms · answer p50 235.2036 ms
+TEST626 · own pre-declared rule locked PEAK25 (47/48 + 47/48 answered) · FRAM-only new wording 40/48 · PEAK50 new wording 48/48 · 626.log SHA-256 653ff1a90a9ad0acd611d0040f1f6d83e710e2c22a4a6c14a945ad05656bc4b8
+
+FROZEN MODEL
+--------------------------------------------------------------------------------------------------------------------------------------------
+weight_sha_startup: b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786
+sentinel_startup  : 6e344d7345d86161c772b0e239fd281059166a3e92d08746e175806433b606ab
+sentinel_before   : 6e344d7345d86161c772b0e239fd281059166a3e92d08746e175806433b606ab
+sentinel_after    : 6e344d7345d86161c772b0e239fd281059166a3e92d08746e175806433b606ab
+guard_startup     : a24946e5cd9766c40d0e901234de018701195dc1d74804525f1fe9b19fa19e8e
+guard_before      : a24946e5cd9766c40d0e901234de018701195dc1d74804525f1fe9b19fa19e8e
+guard_after       : a24946e5cd9766c40d0e901234de018701195dc1d74804525f1fe9b19fa19e8e
+trainable tensors=0 · lora=False · optimizer=False · training_mode=False · foreign hooks outside engine calls 0→0 · hooks on layers/attention/q_proj 0→0
+weight_sha(): SHA-256 over (name, shape, dtype, raw bytes) of every parameter, computed by the engine at start-up
+all-parameter guard: SHA-256 over (name, shape, dtype, sum, |sum|, sum of squares) of every parameter tensor
+TEST566 sentinel: SHA-256 over 16 slices × 256 values of 7 weight tensors (o_proj of layers 0/7/14/21/27, final norm, lm_head)
+recording-only forward pre-hook on the causal-LM module, attached only during an engine call
+
+DEMONSTRATED IN THIS RUN
+--------------------------------------------------------------------------------------------------------------------------------------------
+• WRITE (re-executed live for the fact of the case): the engine's init(fact, 3) runs one token-id forward of the instruction prefix + the fact and one all-zero-embedding forward; the resulting 28 × (K, V) cartridge is compared bitwise with the file written at start-up.
+• SSD: all 1,453 cartridge files are present with the manifest sizes; the file of the case and the selected file are re-hashed against the SHA-256 manifest; the files contain no fact text.
+• READ: from the question alone (one question-frame forward, no fact text), the label-free PCA128 + FAISS IVF128 address and the locked PEAK50 rule select one cartridge; its file is loaded from disk and the frozen model answers over it.
+• The model input while answering is the question template only, over the loaded cartridge; the source text is not given again.
+• Control in every run: the same question over the runner-up candidate's file (diagnostic; whether the expected answer appears is reported).
+• Model weights are unchanged (all-parameter guard before and after every run; full-weight SHA-256 at start-up equal to the reference).
+
+PRODUCED AT START-UP IN THIS RUNTIME
+--------------------------------------------------------------------------------------------------------------------------------------------
+• At start-up in this runtime the locked engine wrote the 1,453 cartridge files, built the PCA128 + FAISS IVF128 index without labels, ran its PEAK50 acceptance on 48 original + 48 new-wording questions answered from the disk files, and audited all 1,453 files (sizes, SHA-256, tensor structure).
+
+ARCHIVED
+--------------------------------------------------------------------------------------------------------------------------------------------
+• TEST627 (sealed, 627.log): READY_FOR_DEMO_WITH_DISCLOSED_NONBLIND_LIMITATION · original wording 48/48 · new wording 48/48 · 0 errors · 1,453 files · 3,973,450,961 bytes · integrity 8/8.
+• TEST626 (sealed, 626.log): its own pre-declared rule locked PEAK25 (47/48 + 47/48 answered); FRAM-only ranking chose the right file for 40/48 new-wording questions; PEAK50 was fixed afterwards.
+
+NOT ESTABLISHED
+--------------------------------------------------------------------------------------------------------------------------------------------
+• Blind generalisation: the 96 questions reuse the same 48 facts, and PEAK50 was fixed after the TEST626 results were known.
+• Behaviour at millions of cartridges: 1,453 files do not demonstrate it.
+• Cold-SSD latency: disk reads may be served from the operating-system page cache.
+• Facts outside the synthetic capital-of-country template and other language models.
+• Hardware other than the NVIDIA A100 40 GB (Colab) used for TEST627 and this demonstration; timings on other machines are not measured.
+
+TECHNICAL NOTES
+--------------------------------------------------------------------------------------------------------------------------------------------
+• A cartridge is much larger than its text (about 2.7 MB per fact): it stores the model's own working state, not a compact text copy.
+• The RAM side holds the PCA basis, the FAISS IVF index and the native layer-3 vectors used for reranking; these are reported with their sizes.
+• The lossless gzip figure is measured on 32 sample files only; the full-pool value is an estimate.
+• Expected answers come from the panel construction and are audit metadata; they are not an input to WRITE, addressing, selection or answering.
+• Hashes are artifact-integrity seals; they are not scientific proof or third-party verification.
+
+PRE-SEAL CHECKS
+--------------------------------------------------------------------------------------------------------------------------------------------
+PASS · TEST627 demo engine SHA-256 and git blob = embedded reference
+PASS · 626.py · 624.py · 610.py executed by the engine = SHA-256 references
+PASS · 566.py and 575.py git blobs verified by 610.py = expected
+PASS · model, architecture, CUT3 and 29-token instruction prefix
+PASS · 1453 cartridges · PCA128 · IVF128 · every native position indexed
+PASS · locked READ setting nprobe 2 · token_k 16 · budget 16 · PEAK50
+PASS · TEST627 engine at start-up in this runtime: status COMPLETE · integrity 8/8
+PASS · full-weight SHA-256 at start-up = reference
+PASS · weight sentinel before run = value at initialisation
+PASS · all-parameter guard before run = value at start-up
+PASS · trainable tensors = 0, eval mode, no LoRA, no optimizer
+PASS · no foreign hooks outside engine calls · no hooks on decoder layers, attention or q_proj
+PASS · case in 0..47 of the engine's 48 new-wording questions
+PASS · WRITE: forward 1 = token ids of the instruction prefix + this fact only (no cache)
+PASS · WRITE: forward 2 = all-zero input embeddings over the same rows (no cache); no other forward
+PASS · cartridge = 28 layers × (K, V) of shape [1, 4, T, 128] with T = instruction prefix + fact tokens
+PASS · cartridge bytes = layers × 2 × KV heads × head dim × T × element size
+PASS · start-up file of this fact: SHA-256 recomputed from disk = manifest
+PASS · WRITE comparison covers all 56 tensors (28 layers × K and V), compared as raw bytes
+PASS · live re-write bitwise identical to the start-up file in all 28 layers (K and V)
+PASS · memory SHA-256 of the re-write = memory SHA-256 of the file
+PASS · the cartridge file contains neither the fact text, nor the answer word, nor the question
+PASS · SSD: 1453 independent cartridge files present · 1453 manifest entries · every size = manifest
+PASS · SSD: total pool bytes = sum of the manifest sizes = engine storage report
+PASS · READ: exactly one model forward to read the question = instruction prefix + question only (no cache, no fact text)
+PASS · READ: 1–16 distinct candidate cartridges in 0..1452, ranked by PEAK50
+PASS · READ: PEAK50 score = 0.5 × FRAM + 0.5 × peak for every candidate (re-derived)
+PASS · READ: candidate626 returned min(16, touched) candidates and PEAK50 ranks exactly that set (nothing merged, added or dropped)
+PASS · READ: order re-derived with the engine's rule — PEAK50 score descending, ties by cartridge id
+PASS · READ reproduces the TEST627 engine's start-up record of this question in this runtime: same selected cartridge and same top-5
+PASS · READ: selected file SHA-256 recomputed from disk = manifest
+PASS · answer: model input = question-template tokens only, over the loaded 48-row cartridge (no fact text, no source text)
+PASS · answer: generation forwards = one new token each, over the growing cache
+PASS · correctness re-derived from the answer text = engine hit()
+PASS · control: runner-up file SHA-256 = manifest
+PASS · control: model input = question-template tokens only, over the loaded 47-row cartridge (no fact text, no source text)
+PASS · control: generation forwards = one new token each, over the growing cache
+PASS · all-parameter guard after run = before run = start-up (weights unchanged)
+PASS · weight sentinel after run = value at initialisation
+PASS · trainable tensors = 0, no foreign hooks and no hooks on layers/attention/q_proj after run
+
+TIMING (seconds)
+--------------------------------------------------------------------------------------------------------------------------------------------
+guard                   : 0.529
+write                   : 0.106
+write_compare_load      : 0.018
+ssd_stat                : 0.041
+address                 : 0.028
+question_encode         : 0.042
+load                    : 0.019
+answer                  : 0.249
+control                 : 0.583
+engine_total            : 2.787
+peak GPU memory 18.27 GiB
+
+Raw forward records are in MAMSH-20261012-053712-0001-C00_FULL_RUN_LOG_payload.json and MAMSH-20261012-053712-0001-C00_RAW_RECORDS.jsonl.
+============================================================================================================================================
