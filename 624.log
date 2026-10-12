@@ -1,0 +1,208 @@
+==============================================================================================================
+TEST624 / 1453 PHYSICAL CUT3 / NATIVE GEOMETRIC INDEX
+==============================================================================================================
+SOURCE_VERIFIED 575.py 569c92c61224ea408cdb6e81dbe45dde06dc05fd
+SOURCE_VERIFIED 566.py b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+config.json: 100%
+ 663/663 [00:00<00:00, 75.4kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100%
+ 7.30k/7.30k [00:00<00:00, 948kB/s]
+vocab.json: 100%
+ 2.78M/2.78M [00:00<00:00, 43.5MB/s]
+merges.txt: 100%
+ 1.67M/1.67M [00:00<00:00, 70.2MB/s]
+tokenizer.json: 100%
+ 7.03M/7.03M [00:00<00:00, 124MB/s]
+model.safetensors.index.json: 100%
+ 27.8k/27.8k [00:00<00:00, 3.52MB/s]
+Download complete: 
+ 13.1GB,  377MB/s  
+Reconstruction complete: 100%
+ 15.2GB / 15.2GB,  257MB/s  
+Fetching 4 files: 100%
+ 4/4 [00:42<00:00, 42.53s/it]
+Loading weights: 100%
+ 339/339 [00:03<00:00, 98.53it/s]
+generation_config.json: 100%
+ 243/243 [00:00<00:00, 31.0kB/s]
+GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+==============================================================================================================================
+TEST610 — FINAL DEMO ACCEPTANCE · FROZEN CUT3 + FRAM 96 CARTRIDGES
+==============================================================================================================================
+PASS PANEL_SHA {'sha': '69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45'}
+PASS ARCH {}
+PASS FROZEN {}
+PASS WEIGHT_SHA_REFERENCE {'sha': 'b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786'}
+[1/8] Capture native residuals for 96 cartridges...
+CARTRIDGE 1 / 96
+CARTRIDGE 17 / 96
+CARTRIDGE 33 / 96
+CARTRIDGE 49 / 96
+CARTRIDGE 65 / 96
+CARTRIDGE 81 / 96
+PASS CARTRIDGES {}
+[2/8] Question representations in fact frame...
+QUESTION 0 TARGET 0 TOKENS 10
+QUESTION 1 TARGET 6 TOKENS 9
+QUESTION 2 TARGET 9 TOKENS 10
+QUESTION 3 TARGET 15 TOKENS 9
+QUESTION 4 TARGET 16 TOKENS 9
+QUESTION 5 TARGET 22 TOKENS 9
+QUESTION 6 TARGET 25 TOKENS 10
+QUESTION 7 TARGET 31 TOKENS 9
+QUESTION 8 TARGET 32 TOKENS 10
+QUESTION 9 TARGET 38 TOKENS 9
+QUESTION 10 TARGET 41 TOKENS 10
+QUESTION 11 TARGET 47 TOKENS 9
+QUESTION 12 TARGET 48 TOKENS 9
+QUESTION 13 TARGET 54 TOKENS 9
+QUESTION 14 TARGET 57 TOKENS 10
+QUESTION 15 TARGET 63 TOKENS 9
+QUESTION 16 TARGET 64 TOKENS 9
+QUESTION 17 TARGET 70 TOKENS 9
+QUESTION 18 TARGET 73 TOKENS 9
+QUESTION 19 TARGET 79 TOKENS 9
+QUESTION 20 TARGET 80 TOKENS 9
+QUESTION 21 TARGET 86 TOKENS 10
+QUESTION 22 TARGET 89 TOKENS 10
+QUESTION 23 TARGET 95 TOKENS 9
+[3/8] Label-free PCA and calibration...
+LOCKED (3, 0, 8.0) CALIBRATION {'cfg': [3, 0, 8.0], 'hit5': 12, 'hit1': 12, 'rank_sum': 12, 'order': 1}
+[4/8] Holdout and identity controls...
+CASE 0 CAL RANK 1 TOP5 [0, 3, 2, 68, 88] TARGET 0
+CASE 1 CAL RANK 1 TOP5 [6, 54, 46, 4, 14] TARGET 6
+CASE 2 CAL RANK 1 TOP5 [9, 89, 33, 17, 57] TARGET 9
+CASE 3 CAL RANK 1 TOP5 [15, 28, 20, 39, 4] TARGET 15
+CASE 4 CAL RANK 1 TOP5 [16, 19, 18, 47, 31] TARGET 16
+CASE 5 CAL RANK 1 TOP5 [22, 20, 74, 23, 14] TARGET 22
+CASE 6 CAL RANK 1 TOP5 [25, 93, 61, 13, 77] TARGET 25
+CASE 7 CAL RANK 1 TOP5 [31, 12, 15, 56, 47] TARGET 31
+CASE 8 CAL RANK 1 TOP5 [32, 35, 34, 8, 11] TARGET 32
+CASE 9 CAL RANK 1 TOP5 [38, 36, 39, 74, 54] TARGET 38
+CASE 10 CAL RANK 1 TOP5 [41, 13, 85, 65, 69] TARGET 41
+CASE 11 CAL RANK 1 TOP5 [47, 75, 72, 59, 31] TARGET 47
+CASE 12 HOLD RANK 1 TOP5 [48, 51, 50, 68, 76] TARGET 48
+CASE 13 HOLD RANK 1 TOP5 [54, 6, 46, 52, 14] TARGET 54
+CASE 14 HOLD RANK 1 TOP5 [57, 85, 33, 9, 65] TARGET 57
+CASE 15 HOLD RANK 1 TOP5 [63, 52, 4, 7, 55] TARGET 63
+CASE 16 HOLD RANK 1 TOP5 [64, 67, 75, 20, 66] TARGET 64
+CASE 17 HOLD RANK 1 TOP5 [70, 22, 78, 68, 82] TARGET 70
+CASE 18 HOLD RANK 1 TOP5 [73, 5, 37, 57, 1] TARGET 73
+CASE 19 HOLD RANK 1 TOP5 [79, 48, 92, 75, 36] TARGET 79
+CASE 20 HOLD RANK 1 TOP5 [80, 83, 82, 68, 51] TARGET 80
+CASE 21 HOLD RANK 1 TOP5 [86, 84, 58, 87, 83] TARGET 86
+CASE 22 HOLD RANK 1 TOP5 [89, 17, 9, 61, 49] TARGET 89
+CASE 23 HOLD RANK 1 TOP5 [95, 28, 75, 44, 15] TARGET 95
+HOLDOUT_RECALL5 12 /12 RECALL1 12 /12 ALL_RECALL5 24 /24 HUB_MAX 4
+SELF_RETRIEVAL1 96 /96
+[5/7] CUT3 baseline and reference retrieval...
+PASS FRAM_LOCK_BEFORE_CUT3 {'cfg': [3, 0, 8.0]}
+REFERENCE_606_LOCKED {'hold_r1': 11, 'hold_r5': 12, 'expected_r1': 11, 'expected_r5': 12}
+PASS REFERENCE_RECALL5 {'hold_r1': 11, 'hold_r5': 12}
+CUT3_AUDIT BASELINE 12 TARGET 48 PRESENT 1 SHAPE True OK 1 GOLD 'Solith' RAW 'Solith'
+CUT3_AUDIT BASELINE 13 TARGET 54 PRESENT 1 SHAPE True OK 1 GOLD 'Toren' RAW 'Toren'
+CUT3_AUDIT BASELINE 14 TARGET 57 PRESENT 1 SHAPE True OK 1 GOLD 'Corven' RAW 'Corven'
+CUT3_AUDIT BASELINE 15 TARGET 63 PRESENT 1 SHAPE True OK 1 GOLD 'Dervan' RAW 'Dervan'
+CUT3_AUDIT BASELINE 16 TARGET 64 PRESENT 1 SHAPE True OK 1 GOLD 'Verith' RAW 'Verith'
+CUT3_AUDIT BASELINE 17 TARGET 70 PRESENT 1 SHAPE True OK 1 GOLD 'Maros' RAW 'Maros'
+CUT3_AUDIT BASELINE 18 TARGET 73 PRESENT 1 SHAPE True OK 1 GOLD 'Vindor' RAW 'Vindor'
+CUT3_AUDIT BASELINE 19 TARGET 79 PRESENT 1 SHAPE True OK 1 GOLD 'Barel' RAW 'Barel'
+CUT3_AUDIT BASELINE 20 TARGET 80 PRESENT 1 SHAPE True OK 1 GOLD 'Mervor' RAW 'Mervor'
+CUT3_AUDIT BASELINE 21 TARGET 86 PRESENT 1 SHAPE True OK 1 GOLD 'Calvenor' RAW 'Calvenor'
+CUT3_AUDIT BASELINE 22 TARGET 89 PRESENT 1 SHAPE True OK 1 GOLD 'Mardin' RAW 'Mardin'
+CUT3_AUDIT BASELINE 23 TARGET 95 PRESENT 1 SHAPE True OK 1 GOLD 'Karev' RAW 'Karev'
+CUT3_AUDIT_SUMMARY BASELINE {'correct': 12, 'total': 12, 'errors': 0, 'retrieval': 12}
+BASELINE_STATUS {'correct': 12, 'errors': 0, 'retrieved': 12}
+BASELINE_LOCK {'source_sha256': 'a62611a4ffd91c2fcf03796c31da2af11ccd8141345655b562f3a614568af3e7', 'original_cartridges': 96, 'fram_hold_r1': 12, 'fram_hold_r5': 12}
+[1/7] PHYSICAL CUT3 WRITE: 1453 real independent files
+PHYSICAL_WRITE 100 / 1453 disk_GB 0.231 elapsed_s 180.42
+PHYSICAL_WRITE 200 / 1453 disk_GB 0.508 elapsed_s 193.58
+PHYSICAL_WRITE 300 / 1453 disk_GB 0.785 elapsed_s 206.72
+PHYSICAL_WRITE 400 / 1453 disk_GB 1.062 elapsed_s 219.85
+PHYSICAL_WRITE 500 / 1453 disk_GB 1.338 elapsed_s 233.08
+PHYSICAL_WRITE 600 / 1453 disk_GB 1.614 elapsed_s 246.39
+PHYSICAL_WRITE 700 / 1453 disk_GB 1.891 elapsed_s 259.68
+PHYSICAL_WRITE 800 / 1453 disk_GB 2.167 elapsed_s 272.95
+PHYSICAL_WRITE 900 / 1453 disk_GB 2.444 elapsed_s 286.46
+PHYSICAL_WRITE 1000 / 1453 disk_GB 2.721 elapsed_s 299.74
+PHYSICAL_WRITE 1100 / 1453 disk_GB 2.998 elapsed_s 313.06
+PHYSICAL_WRITE 1200 / 1453 disk_GB 3.274 elapsed_s 326.45
+PHYSICAL_WRITE 1300 / 1453 disk_GB 3.55 elapsed_s 339.64
+PHYSICAL_WRITE 1400 / 1453 disk_GB 3.827 elapsed_s 352.84
+PHYSICAL_WRITE 1453 / 1453 disk_GB 3.973 elapsed_s 359.94
+[2/7] LABEL-FREE PCA128 + FAISS IVF128
+PCA_MS 144.47
+PROJECTION_MS 91.63
+INDEX {'cartridges': 1453, 'native_positions': 26738, 'ivf_lists': 128, 'index_build_ms': 28.28}
+[3/7] FROZEN QUERY PANEL: 48 NEW SYNTHETIC CARTRIDGE QUESTIONS
+[4/7] FIXED IVF SELECTIVITY SWEEP — NO LABELS IN ROUTING
+SWEEP NARROW {"setting": {"nprobe": 2, "token_k": 16, "budget": 16}, "questions": 48, "selected_correct": 40, "recall5": 48, "gold_in_candidates": 48, "mean_touched": 102.0, "mean_touched_fraction": 0.0702, "mean_posting_visits": 15725.188, "address_p50_ms": 21.2775, "address_p95_ms": 24.095, "faiss_p50_ms": 0.8227, "top2_p50_ms": 17.9686, "fram_p50_ms": 2.4734}
+SWEEP MEDIUM {"setting": {"nprobe": 8, "token_k": 64, "budget": 16}, "questions": 48, "selected_correct": 40, "recall5": 48, "gold_in_candidates": 48, "mean_touched": 341.667, "mean_touched_fraction": 0.235146, "mean_posting_visits": 41136.167, "address_p50_ms": 62.6562, "address_p95_ms": 74.0868, "faiss_p50_ms": 1.3904, "top2_p50_ms": 58.6794, "fram_p50_ms": 2.493}
+SWEEP WIDE {"setting": {"nprobe": 32, "token_k": 128, "budget": 32}, "questions": 48, "selected_correct": 40, "recall5": 48, "gold_in_candidates": 48, "mean_touched": 572.583, "mean_touched_fraction": 0.39407, "mean_posting_visits": 101518.812, "address_p50_ms": 107.5419, "address_p95_ms": 123.5591, "faiss_p50_ms": 2.393, "top2_p50_ms": 100.2223, "fram_p50_ms": 4.9433}
+[5/7] PHYSICAL DISK LOAD + FROZEN CUT3 ANSWER: NARROW AND WIDE
+DISK_ANSWER NARROW 0 SELECT 292 GOLD 292 OK 1
+DISK_ANSWER NARROW 1 SELECT 273 GOLD 273 OK 1
+DISK_ANSWER NARROW 2 SELECT 928 GOLD 928 OK 1
+DISK_ANSWER NARROW 3 SELECT 136 GOLD 136 OK 1
+DISK_ANSWER NARROW 4 SELECT 333 GOLD 333 OK 1
+DISK_ANSWER NARROW 5 SELECT 543 GOLD 543 OK 1
+DISK_ANSWER NARROW 6 SELECT 1262 GOLD 1262 OK 1
+DISK_ANSWER NARROW 7 SELECT 1053 GOLD 1049 OK 0
+DISK_ANSWER NARROW 8 SELECT 486 GOLD 486 OK 1
+DISK_ANSWER NARROW 9 SELECT 1192 GOLD 1192 OK 1
+DISK_ANSWER NARROW 10 SELECT 527 GOLD 527 OK 1
+DISK_ANSWER NARROW 11 SELECT 1388 GOLD 1388 OK 1
+DISK_ANSWER NARROW 12 SELECT 983 GOLD 983 OK 1
+DISK_ANSWER NARROW 13 SELECT 255 GOLD 255 OK 1
+DISK_ANSWER NARROW 14 SELECT 103 GOLD 103 OK 1
+DISK_ANSWER NARROW 15 SELECT 1015 GOLD 1015 OK 1
+DISK_ANSWER NARROW 16 SELECT 1333 GOLD 1334 OK 0
+DISK_ANSWER NARROW 17 SELECT 504 GOLD 503 OK 0
+DISK_ANSWER NARROW 18 SELECT 786 GOLD 786 OK 1
+DISK_ANSWER NARROW 19 SELECT 1452 GOLD 1452 OK 1
+DISK_ANSWER NARROW 20 SELECT 1336 GOLD 1336 OK 1
+DISK_ANSWER NARROW 21 SELECT 1196 GOLD 1196 OK 1
+DISK_ANSWER NARROW 22 SELECT 1396 GOLD 1396 OK 1
+DISK_ANSWER NARROW 23 SELECT 128 GOLD 128 OK 1
+E2E NARROW {'cases': 24, 'selected_correct': 21, 'answer_correct': 21, 'errors': 0, 'disk_load_verify_p50_ms': 18.2211, 'answer_p50_ms': 247.7534}
+DISK_ANSWER WIDE 0 SELECT 292 GOLD 292 OK 1
+DISK_ANSWER WIDE 1 SELECT 273 GOLD 273 OK 1
+DISK_ANSWER WIDE 2 SELECT 928 GOLD 928 OK 1
+DISK_ANSWER WIDE 3 SELECT 136 GOLD 136 OK 1
+DISK_ANSWER WIDE 4 SELECT 333 GOLD 333 OK 1
+DISK_ANSWER WIDE 5 SELECT 543 GOLD 543 OK 1
+DISK_ANSWER WIDE 6 SELECT 1262 GOLD 1262 OK 1
+DISK_ANSWER WIDE 7 SELECT 1053 GOLD 1049 OK 0
+DISK_ANSWER WIDE 8 SELECT 486 GOLD 486 OK 1
+DISK_ANSWER WIDE 9 SELECT 1192 GOLD 1192 OK 1
+DISK_ANSWER WIDE 10 SELECT 527 GOLD 527 OK 1
+DISK_ANSWER WIDE 11 SELECT 1388 GOLD 1388 OK 1
+DISK_ANSWER WIDE 12 SELECT 983 GOLD 983 OK 1
+DISK_ANSWER WIDE 13 SELECT 255 GOLD 255 OK 1
+DISK_ANSWER WIDE 14 SELECT 103 GOLD 103 OK 1
+DISK_ANSWER WIDE 15 SELECT 1015 GOLD 1015 OK 1
+DISK_ANSWER WIDE 16 SELECT 1333 GOLD 1334 OK 0
+DISK_ANSWER WIDE 17 SELECT 504 GOLD 503 OK 0
+DISK_ANSWER WIDE 18 SELECT 786 GOLD 786 OK 1
+DISK_ANSWER WIDE 19 SELECT 1452 GOLD 1452 OK 1
+DISK_ANSWER WIDE 20 SELECT 1336 GOLD 1336 OK 1
+DISK_ANSWER WIDE 21 SELECT 1196 GOLD 1196 OK 1
+DISK_ANSWER WIDE 22 SELECT 1396 GOLD 1396 OK 1
+DISK_ANSWER WIDE 23 SELECT 128 GOLD 128 OK 1
+E2E WIDE {'cases': 24, 'selected_correct': 21, 'answer_correct': 21, 'errors': 0, 'disk_load_verify_p50_ms': 18.0923, 'answer_p50_ms': 247.5301}
+[6/7] INTEGRITY / ROUNDTRIP / WEIGHTS / HOOKS
+[7/7] FINAL
+TEST624_STORAGE {"cartridges": 1453, "disk_pool_bytes": 3973450961, "native_activation_bytes": 383315968, "faiss_index_bytes": 13970459, "pca_basis_bytes": 1835008, "pca_center_bytes": 14336, "owner_bytes": 106952, "index_auxiliary_bytes": 15926755, "index_plus_native_activation_bytes": 399242723, "excludes_model_ram_vram": true, "excludes_python_allocator_overhead": true}
+TEST624_RETRIEVAL {"NARROW": {"setting": {"nprobe": 2, "token_k": 16, "budget": 16}, "questions": 48, "selected_correct": 40, "recall5": 48, "gold_in_candidates": 48, "mean_touched": 102.0, "mean_touched_fraction": 0.0702, "mean_posting_visits": 15725.188, "address_p50_ms": 21.2775, "address_p95_ms": 24.095, "faiss_p50_ms": 0.8227, "top2_p50_ms": 17.9686, "fram_p50_ms": 2.4734}, "MEDIUM": {"setting": {"nprobe": 8, "token_k": 64, "budget": 16}, "questions": 48, "selected_correct": 40, "recall5": 48, "gold_in_candidates": 48, "mean_touched": 341.667, "mean_touched_fraction": 0.235146, "mean_posting_visits": 41136.167, "address_p50_ms": 62.6562, "address_p95_ms": 74.0868, "faiss_p50_ms": 1.3904, "top2_p50_ms": 58.6794, "fram_p50_ms": 2.493}, "WIDE": {"setting": {"nprobe": 32, "token_k": 128, "budget": 32}, "questions": 48, "selected_correct": 40, "recall5": 48, "gold_in_candidates": 48, "mean_touched": 572.583, "mean_touched_fraction": 0.39407, "mean_posting_visits": 101518.812, "address_p50_ms": 107.5419, "address_p95_ms": 123.5591, "faiss_p50_ms": 2.393, "top2_p50_ms": 100.2223, "fram_p50_ms": 4.9433}}
+TEST624_DISK_ANSWER {'NARROW': {'cases': 24, 'selected_correct': 21, 'answer_correct': 21, 'errors': 0, 'disk_load_verify_p50_ms': 18.2211, 'answer_p50_ms': 247.7534}, 'WIDE': {'cases': 24, 'selected_correct': 21, 'answer_correct': 21, 'errors': 0, 'disk_load_verify_p50_ms': 18.0923, 'answer_p50_ms': 247.5301}}
+TEST624_INTEGRITY {"source_sha_lock": true, "weight_unchanged": true, "sentinel_unchanged": true, "zero_trainable": true, "no_remaining_hooks": true, "manifest_1453_sha_verified": true, "roundtrip_8_bitwise": true}
+TEST624_OUTPUT /content/AKBASCORE_TEST610_DEMO_ACCEPTANCE.json
+TEST624_STATUS COMPLETE
+TEST624_ELAPSED_S 445.64
