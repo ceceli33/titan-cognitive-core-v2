@@ -1,0 +1,219 @@
+ 
+TEST619_SOURCE_LOCK a62611a4ffd91c2fcf03796c31da2af11ccd8141345655b562f3a614568af3e7
+SOURCE_VERIFIED 575.py 569c92c61224ea408cdb6e81dbe45dde06dc05fd
+SOURCE_VERIFIED 566.py b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 87.9kB/s]
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 930kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 43.9MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 73.1MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 134MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.48MB/s]
+Download complete: 
+
+ 13.1GB,  145MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  457MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:43<00:00, 43.62s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 98.76it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 31.4kB/s]
+GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+==============================================================================================================================
+TEST610 — FINAL DEMO ACCEPTANCE · FROZEN CUT3 + FRAM 96 CARTRIDGES
+==============================================================================================================================
+PASS PANEL_SHA {'sha': '69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45'}
+PASS ARCH {}
+PASS FROZEN {}
+PASS WEIGHT_SHA_REFERENCE {'sha': 'b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786'}
+[1/8] Capture native residuals for 96 cartridges...
+CARTRIDGE 1 / 96
+CARTRIDGE 17 / 96
+CARTRIDGE 33 / 96
+CARTRIDGE 49 / 96
+CARTRIDGE 65 / 96
+CARTRIDGE 81 / 96
+PASS CARTRIDGES {}
+[2/8] Question representations in fact frame...
+QUESTION 0 TARGET 0 TOKENS 10
+QUESTION 1 TARGET 6 TOKENS 9
+QUESTION 2 TARGET 9 TOKENS 10
+QUESTION 3 TARGET 15 TOKENS 9
+QUESTION 4 TARGET 16 TOKENS 9
+QUESTION 5 TARGET 22 TOKENS 9
+QUESTION 6 TARGET 25 TOKENS 10
+QUESTION 7 TARGET 31 TOKENS 9
+QUESTION 8 TARGET 32 TOKENS 10
+QUESTION 9 TARGET 38 TOKENS 9
+QUESTION 10 TARGET 41 TOKENS 10
+QUESTION 11 TARGET 47 TOKENS 9
+QUESTION 12 TARGET 48 TOKENS 9
+QUESTION 13 TARGET 54 TOKENS 9
+QUESTION 14 TARGET 57 TOKENS 10
+QUESTION 15 TARGET 63 TOKENS 9
+QUESTION 16 TARGET 64 TOKENS 9
+QUESTION 17 TARGET 70 TOKENS 9
+QUESTION 18 TARGET 73 TOKENS 9
+QUESTION 19 TARGET 79 TOKENS 9
+QUESTION 20 TARGET 80 TOKENS 9
+QUESTION 21 TARGET 86 TOKENS 10
+QUESTION 22 TARGET 89 TOKENS 10
+QUESTION 23 TARGET 95 TOKENS 9
+[3/8] Label-free PCA and calibration...
+LOCKED (3, 0, 8.0) CALIBRATION {'cfg': [3, 0, 8.0], 'hit5': 12, 'hit1': 12, 'rank_sum': 12, 'order': 1}
+[4/8] Holdout and identity controls...
+CASE 0 CAL RANK 1 TOP5 [0, 3, 2, 68, 88] TARGET 0
+CASE 1 CAL RANK 1 TOP5 [6, 54, 46, 4, 14] TARGET 6
+CASE 2 CAL RANK 1 TOP5 [9, 89, 33, 17, 57] TARGET 9
+CASE 3 CAL RANK 1 TOP5 [15, 28, 20, 39, 4] TARGET 15
+CASE 4 CAL RANK 1 TOP5 [16, 19, 18, 47, 31] TARGET 16
+CASE 5 CAL RANK 1 TOP5 [22, 20, 74, 23, 14] TARGET 22
+CASE 6 CAL RANK 1 TOP5 [25, 93, 61, 13, 77] TARGET 25
+CASE 7 CAL RANK 1 TOP5 [31, 12, 15, 56, 47] TARGET 31
+CASE 8 CAL RANK 1 TOP5 [32, 35, 34, 8, 11] TARGET 32
+CASE 9 CAL RANK 1 TOP5 [38, 36, 39, 74, 54] TARGET 38
+CASE 10 CAL RANK 1 TOP5 [41, 13, 85, 65, 69] TARGET 41
+CASE 11 CAL RANK 1 TOP5 [47, 75, 72, 59, 31] TARGET 47
+CASE 12 HOLD RANK 1 TOP5 [48, 51, 50, 68, 76] TARGET 48
+CASE 13 HOLD RANK 1 TOP5 [54, 6, 46, 52, 14] TARGET 54
+CASE 14 HOLD RANK 1 TOP5 [57, 85, 33, 9, 65] TARGET 57
+CASE 15 HOLD RANK 1 TOP5 [63, 52, 4, 7, 55] TARGET 63
+CASE 16 HOLD RANK 1 TOP5 [64, 67, 75, 20, 66] TARGET 64
+CASE 17 HOLD RANK 1 TOP5 [70, 22, 78, 68, 82] TARGET 70
+CASE 18 HOLD RANK 1 TOP5 [73, 5, 37, 57, 1] TARGET 73
+CASE 19 HOLD RANK 1 TOP5 [79, 48, 92, 75, 36] TARGET 79
+CASE 20 HOLD RANK 1 TOP5 [80, 83, 82, 68, 51] TARGET 80
+CASE 21 HOLD RANK 1 TOP5 [86, 84, 58, 87, 83] TARGET 86
+CASE 22 HOLD RANK 1 TOP5 [89, 17, 9, 61, 49] TARGET 89
+CASE 23 HOLD RANK 1 TOP5 [95, 28, 75, 44, 15] TARGET 95
+HOLDOUT_RECALL5 12 /12 RECALL1 12 /12 ALL_RECALL5 24 /24 HUB_MAX 4
+SELF_RETRIEVAL1 96 /96
+[5/7] CUT3 baseline and reference retrieval...
+PASS FRAM_LOCK_BEFORE_CUT3 {'cfg': [3, 0, 8.0]}
+REFERENCE_606_LOCKED {'hold_r1': 11, 'hold_r5': 12, 'expected_r1': 11, 'expected_r5': 12}
+PASS REFERENCE_RECALL5 {'hold_r1': 11, 'hold_r5': 12}
+CUT3_AUDIT BASELINE 12 TARGET 48 PRESENT 1 SHAPE True OK 1 GOLD 'Solith' RAW 'Solith'
+CUT3_AUDIT BASELINE 13 TARGET 54 PRESENT 1 SHAPE True OK 1 GOLD 'Toren' RAW 'Toren'
+CUT3_AUDIT BASELINE 14 TARGET 57 PRESENT 1 SHAPE True OK 1 GOLD 'Corven' RAW 'Corven'
+CUT3_AUDIT BASELINE 15 TARGET 63 PRESENT 1 SHAPE True OK 1 GOLD 'Dervan' RAW 'Dervan'
+CUT3_AUDIT BASELINE 16 TARGET 64 PRESENT 1 SHAPE True OK 1 GOLD 'Verith' RAW 'Verith'
+CUT3_AUDIT BASELINE 17 TARGET 70 PRESENT 1 SHAPE True OK 1 GOLD 'Maros' RAW 'Maros'
+CUT3_AUDIT BASELINE 18 TARGET 73 PRESENT 1 SHAPE True OK 1 GOLD 'Vindor' RAW 'Vindor'
+CUT3_AUDIT BASELINE 19 TARGET 79 PRESENT 1 SHAPE True OK 1 GOLD 'Barel' RAW 'Barel'
+CUT3_AUDIT BASELINE 20 TARGET 80 PRESENT 1 SHAPE True OK 1 GOLD 'Mervor' RAW 'Mervor'
+CUT3_AUDIT BASELINE 21 TARGET 86 PRESENT 1 SHAPE True OK 1 GOLD 'Calvenor' RAW 'Calvenor'
+CUT3_AUDIT BASELINE 22 TARGET 89 PRESENT 1 SHAPE True OK 1 GOLD 'Mardin' RAW 'Mardin'
+CUT3_AUDIT BASELINE 23 TARGET 95 PRESENT 1 SHAPE True OK 1 GOLD 'Karev' RAW 'Karev'
+CUT3_AUDIT_SUMMARY BASELINE {'correct': 12, 'total': 12, 'errors': 0, 'retrieval': 12}
+BASELINE_STATUS {'correct': 12, 'errors': 0, 'retrieved': 12}
+TEST619_BASELINE {'cartridges': 96, 'fram_r1': 12, 'fram_r5': 12, 'cut3_baseline': 12}
+CAPTURE 240 /1440 elapsed 191.65
+CAPTURE 480 /1440 elapsed 200.15
+CAPTURE 720 /1440 elapsed 208.67
+CAPTURE 960 /1440 elapsed 217.21
+CAPTURE 1200 /1440 elapsed 225.84
+CAPTURE 1440 /1440 elapsed 234.51
+QUESTION_CAPTURE 24 /96
+QUESTION_CAPTURE 48 /96
+QUESTION_CAPTURE 72 /96
+QUESTION_CAPTURE 96 /96
+GEOMETRY_BANK {"cartridges": 1536, "tokens": 27492, "dimension": 3584, "native_token_bytes": 394125312, "device": "cuda"}
+SHARED_PREFIX_GEOMETRY {"0": {"n": 1440, "max_l2": 0.0, "median_l2": 0.0, "fraction_near_1e-5": 1.0}, "1": {"n": 1440, "max_l2": 0.0, "median_l2": 0.0, "fraction_near_1e-5": 1.0}, "2": {"n": 1440, "max_l2": 0.0, "median_l2": 0.0, "fraction_near_1e-5": 1.0}, "3": {"n": 1440, "max_l2": 0.0, "median_l2": 0.0, "fraction_near_1e-5": 1.0}, "4": {"n": 1440, "max_l2": 0.0, "median_l2": 0.0, "fraction_near_1e-5": 1.0}}
+GEOMETRY_PROGRESS 8 /96 split DIAG elapsed_s 240.88
+GEOMETRY_PROGRESS 16 /96 split DIAG elapsed_s 243.51
+GEOMETRY_PROGRESS 24 /96 split DIAG elapsed_s 246.07
+GEOMETRY_PROGRESS 32 /96 split DIAG elapsed_s 248.63
+GEOMETRY_PROGRESS 40 /96 split DIAG elapsed_s 251.19
+GEOMETRY_PROGRESS 48 /96 split DIAG elapsed_s 253.72
+GEOMETRY_PROGRESS 56 /96 split VALID elapsed_s 256.25
+GEOMETRY_PROGRESS 64 /96 split VALID elapsed_s 258.77
+GEOMETRY_PROGRESS 72 /96 split VALID elapsed_s 261.26
+GEOMETRY_PROGRESS 80 /96 split VALID elapsed_s 263.76
+GEOMETRY_PROGRESS 88 /96 split VALID elapsed_s 266.35
+GEOMETRY_PROGRESS 96 /96 split VALID elapsed_s 268.87
+TEST619_RESULT {"split": "DIAG", "method": "MEAN", "budget": 16, "n": 48, "gold_in_candidates": 12, "native_top1_contained": 14, "native_top5_contained": 1, "reranked_gold_r1": 11, "reranked_gold_r5": 12}
+TEST619_RESULT {"split": "DIAG", "method": "MEAN", "budget": 32, "n": 48, "gold_in_candidates": 18, "native_top1_contained": 21, "native_top5_contained": 4, "reranked_gold_r1": 17, "reranked_gold_r5": 18}
+TEST619_RESULT {"split": "DIAG", "method": "MEAN", "budget": 64, "n": 48, "gold_in_candidates": 25, "native_top1_contained": 28, "native_top5_contained": 8, "reranked_gold_r1": 24, "reranked_gold_r5": 25}
+TEST619_RESULT {"split": "DIAG", "method": "MEAN", "budget": 128, "n": 48, "gold_in_candidates": 31, "native_top1_contained": 34, "native_top5_contained": 12, "reranked_gold_r1": 30, "reranked_gold_r5": 31}
+TEST619_RESULT {"split": "DIAG", "method": "MAX_PAIR", "budget": 16, "n": 48, "gold_in_candidates": 2, "native_top1_contained": 2, "native_top5_contained": 2, "reranked_gold_r1": 1, "reranked_gold_r5": 2}
+TEST619_RESULT {"split": "DIAG", "method": "MAX_PAIR", "budget": 32, "n": 48, "gold_in_candidates": 4, "native_top1_contained": 4, "native_top5_contained": 3, "reranked_gold_r1": 3, "reranked_gold_r5": 4}
+TEST619_RESULT {"split": "DIAG", "method": "MAX_PAIR", "budget": 64, "n": 48, "gold_in_candidates": 5, "native_top1_contained": 5, "native_top5_contained": 5, "reranked_gold_r1": 4, "reranked_gold_r5": 5}
+TEST619_RESULT {"split": "DIAG", "method": "MAX_PAIR", "budget": 128, "n": 48, "gold_in_candidates": 7, "native_top1_contained": 7, "native_top5_contained": 7, "reranked_gold_r1": 6, "reranked_gold_r5": 7}
+TEST619_RESULT {"split": "DIAG", "method": "MAX_AVG", "budget": 16, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 41, "reranked_gold_r1": 44, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "DIAG", "method": "MAX_AVG", "budget": 32, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 45, "reranked_gold_r1": 44, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "DIAG", "method": "MAX_AVG", "budget": 64, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 44, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "DIAG", "method": "MAX_AVG", "budget": 128, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 44, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "DIAG", "method": "TOP2_SOFT", "budget": 16, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 44, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "DIAG", "method": "TOP2_SOFT", "budget": 32, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 44, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "DIAG", "method": "TOP2_SOFT", "budget": 64, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 44, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "DIAG", "method": "TOP2_SOFT", "budget": 128, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 44, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "DIAG", "method": "TOP4_SOFT", "budget": 16, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 44, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "DIAG", "method": "TOP4_SOFT", "budget": 32, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 44, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "DIAG", "method": "TOP4_SOFT", "budget": 64, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 44, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "DIAG", "method": "TOP4_SOFT", "budget": 128, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 44, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "DIAG", "method": "CONTRAST", "budget": 16, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 41, "reranked_gold_r1": 44, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "DIAG", "method": "CONTRAST", "budget": 32, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 45, "reranked_gold_r1": 44, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "DIAG", "method": "CONTRAST", "budget": 64, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 44, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "DIAG", "method": "CONTRAST", "budget": 128, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 44, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "DIAG", "method": "NATIVE_REFERENCE", "budget": 16, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 44, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "DIAG", "method": "NATIVE_REFERENCE", "budget": 32, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 44, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "DIAG", "method": "NATIVE_REFERENCE", "budget": 64, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 44, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "DIAG", "method": "NATIVE_REFERENCE", "budget": 128, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 44, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "VALID", "method": "MEAN", "budget": 16, "n": 48, "gold_in_candidates": 8, "native_top1_contained": 11, "native_top5_contained": 1, "reranked_gold_r1": 8, "reranked_gold_r5": 8}
+TEST619_RESULT {"split": "VALID", "method": "MEAN", "budget": 32, "n": 48, "gold_in_candidates": 15, "native_top1_contained": 18, "native_top5_contained": 2, "reranked_gold_r1": 15, "reranked_gold_r5": 15}
+TEST619_RESULT {"split": "VALID", "method": "MEAN", "budget": 64, "n": 48, "gold_in_candidates": 17, "native_top1_contained": 20, "native_top5_contained": 4, "reranked_gold_r1": 17, "reranked_gold_r5": 17}
+TEST619_RESULT {"split": "VALID", "method": "MEAN", "budget": 128, "n": 48, "gold_in_candidates": 25, "native_top1_contained": 28, "native_top5_contained": 10, "reranked_gold_r1": 25, "reranked_gold_r5": 25}
+TEST619_RESULT {"split": "VALID", "method": "MAX_PAIR", "budget": 16, "n": 48, "gold_in_candidates": 1, "native_top1_contained": 1, "native_top5_contained": 1, "reranked_gold_r1": 1, "reranked_gold_r5": 1}
+TEST619_RESULT {"split": "VALID", "method": "MAX_PAIR", "budget": 32, "n": 48, "gold_in_candidates": 2, "native_top1_contained": 2, "native_top5_contained": 1, "reranked_gold_r1": 2, "reranked_gold_r5": 2}
+TEST619_RESULT {"split": "VALID", "method": "MAX_PAIR", "budget": 64, "n": 48, "gold_in_candidates": 4, "native_top1_contained": 4, "native_top5_contained": 2, "reranked_gold_r1": 4, "reranked_gold_r5": 4}
+TEST619_RESULT {"split": "VALID", "method": "MAX_PAIR", "budget": 128, "n": 48, "gold_in_candidates": 9, "native_top1_contained": 9, "native_top5_contained": 9, "reranked_gold_r1": 9, "reranked_gold_r5": 9}
+TEST619_RESULT {"split": "VALID", "method": "MAX_AVG", "budget": 16, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 42, "reranked_gold_r1": 45, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "VALID", "method": "MAX_AVG", "budget": 32, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 45, "reranked_gold_r1": 45, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "VALID", "method": "MAX_AVG", "budget": 64, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 45, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "VALID", "method": "MAX_AVG", "budget": 128, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 45, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "VALID", "method": "TOP2_SOFT", "budget": 16, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 45, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "VALID", "method": "TOP2_SOFT", "budget": 32, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 45, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "VALID", "method": "TOP2_SOFT", "budget": 64, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 45, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "VALID", "method": "TOP2_SOFT", "budget": 128, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 45, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "VALID", "method": "TOP4_SOFT", "budget": 16, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 45, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "VALID", "method": "TOP4_SOFT", "budget": 32, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 45, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "VALID", "method": "TOP4_SOFT", "budget": 64, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 45, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "VALID", "method": "TOP4_SOFT", "budget": 128, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 45, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "VALID", "method": "CONTRAST", "budget": 16, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 42, "reranked_gold_r1": 45, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "VALID", "method": "CONTRAST", "budget": 32, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 45, "reranked_gold_r1": 45, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "VALID", "method": "CONTRAST", "budget": 64, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 45, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "VALID", "method": "CONTRAST", "budget": 128, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 45, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "VALID", "method": "NATIVE_REFERENCE", "budget": 16, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 45, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "VALID", "method": "NATIVE_REFERENCE", "budget": 32, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 45, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "VALID", "method": "NATIVE_REFERENCE", "budget": 64, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 45, "reranked_gold_r5": 48}
+TEST619_RESULT {"split": "VALID", "method": "NATIVE_REFERENCE", "budget": 128, "n": 48, "gold_in_candidates": 48, "native_top1_contained": 48, "native_top5_contained": 48, "reranked_gold_r1": 45, "reranked_gold_r5": 48}
+TEST619_FINAL {"summary_at_budget32": {"DIAG": {"MEAN": {"gold": 18, "native_top5": 4, "reranked_r1": 17, "reranked_r5": 18}, "MAX_PAIR": {"gold": 4, "native_top5": 3, "reranked_r1": 3, "reranked_r5": 4}, "MAX_AVG": {"gold": 48, "native_top5": 45, "reranked_r1": 44, "reranked_r5": 48}, "TOP2_SOFT": {"gold": 48, "native_top5": 48, "reranked_r1": 44, "reranked_r5": 48}, "TOP4_SOFT": {"gold": 48, "native_top5": 48, "reranked_r1": 44, "reranked_r5": 48}, "CONTRAST": {"gold": 48, "native_top5": 45, "reranked_r1": 44, "reranked_r5": 48}, "NATIVE_REFERENCE": {"gold": 48, "native_top5": 48, "reranked_r1": 44, "reranked_r5": 48}, "native_full": {"r1": 44, "r5": 48}}, "VALID": {"MEAN": {"gold": 15, "native_top5": 2, "reranked_r1": 15, "reranked_r5": 15}, "MAX_PAIR": {"gold": 2, "native_top5": 1, "reranked_r1": 2, "reranked_r5": 2}, "MAX_AVG": {"gold": 48, "native_top5": 45, "reranked_r1": 45, "reranked_r5": 48}, "TOP2_SOFT": {"gold": 48, "native_top5": 48, "reranked_r1": 45, "reranked_r5": 48}, "TOP4_SOFT": {"gold": 48, "native_top5": 48, "reranked_r1": 45, "reranked_r5": 48}, "CONTRAST": {"gold": 48, "native_top5": 45, "reranked_r1": 45, "reranked_r5": 48}, "NATIVE_REFERENCE": {"gold": 48, "native_top5": 48, "reranked_r1": 45, "reranked_r5": 48}, "native_full": {"r1": 45, "r5": 48}}}, "shared_prefix": {"0": {"n": 1440, "max_l2": 0.0, "median_l2": 0.0, "fraction_near_1e-5": 1.0}, "1": {"n": 1440, "max_l2": 0.0, "median_l2": 0.0, "fraction_near_1e-5": 1.0}, "2": {"n": 1440, "max_l2": 0.0, "median_l2": 0.0, "fraction_near_1e-5": 1.0}, "3": {"n": 1440, "max_l2": 0.0, "median_l2": 0.0, "fraction_near_1e-5": 1.0}, "4": {"n": 1440, "max_l2": 0.0, "median_l2": 0.0, "fraction_near_1e-5": 1.0}}, "integrity": {"source_sha_lock": true, "weight_unchanged": true, "sentinel_unchanged": true, "zero_trainable": true, "no_remaining_hooks": true}, "elapsed_s": 316.6, "json": "/content/TEST619_NATIVE_RESULT.json"}
+
+
+TEST619_NATIVE_STATUS COMPLETE
