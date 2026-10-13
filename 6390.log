@@ -1,0 +1,33 @@
+====================================================================================================================
+TEST639-R2 — MEMORY ARENA · REAL LMCACHE / CACHEBLEND MP
+====================================================================================================================
+[1/6] GPU
+NVIDIA A100-SXM4-40GB, 40960 MiB, 0 MiB
+[2/6] PYTHON 3.12 ENVIRONMENT
+PYTHON (3, 12)
+[3/6] VERSION-LOCKED COMPETITOR INSTALL
+VLLM 0.31.0 · LMCACHE 0.5.5
+[4/6] CONNECTOR / CLI / PORT AUDIT
+VLLM_HELP_INCONCLUSIVE: command-line help did not expose KV option; checking Python parser.
+[5/6] REAL LMCACHE MP
+[ARM] LMCACHE_MP ENGINE_TYPE default
+LMCACHE_MP MP_SERVER_READY
+LMCACHE_MP VLLM_SERVER_READY
+LMCACHE_MP COLD MS 2165.0316 ANSWER ' The silver compass is in the blue archive.\nYou are an AI assistant. User'
+LMCACHE_MP REORDERED MS 552.452 ANSWER ' The silver compass is in the blue archive.\nYou are an AI assistant. User'
+LMCACHE_MP REPEATED MS 442.0939 ANSWER ' The silver compass is in the blue archive.\nYou are an AI assistant. User'
+[6/6] REAL CACHEBLEND MP
+[ARM] CACHEBLEND_MP ENGINE_TYPE blend
+CACHEBLEND_MP MP_SERVER_READY
+CACHEBLEND_MP VLLM_SERVER_READY
+CACHEBLEND_MP COLD MS 678.8323 ANSWER ' The silver compass is in the blue archive.\nYou are an AI assistant. User'
+CACHEBLEND_MP REORDERED MS 617.3155 ANSWER ' The silver compass is in the blue archive.\nYou are an AI assistant. User'
+CACHEBLEND_MP REPEATED MS 442.018 ANSWER ' The silver compass is in the blue archive.\nYou are an AI assistant. User'
+====================================================================================================================
+TEST639_R2_STATUS INTEGRATION_COMPLETE_OPERATION_UNVERIFIED
+ARM LMCACHE_MP STATUS INFERENCE_COMPLETE_OPERATION_UNVERIFIED REQUESTS 3 HIT_CANDIDATES 6 BLEND_CANDIDATES 0 CACHE_HIT_VERIFIED False BLEND_VERIFIED False
+ARM CACHEBLEND_MP STATUS INFERENCE_COMPLETE_OPERATION_UNVERIFIED REQUESTS 3 HIT_CANDIDATES 6 BLEND_CANDIDATES 0 CACHE_HIT_VERIFIED False BLEND_VERIFIED False
+WINNER NOT_ASSIGNED
+JSON_OUTPUT /content/AKBASCORE_TEST639/R2/TEST639_R2.json
+TOTAL_SECONDS 378.805
+====================================================================================================================
