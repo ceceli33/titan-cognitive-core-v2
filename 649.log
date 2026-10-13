@@ -1,0 +1,216 @@
+ ============================================================================================================================
+TEST649 — NATIVE RELATIONAL CONSOLIDATION · FROZEN QWEN · CUT3
+============================================================================================================================
+PASS TEST566_SOURCE_BLOB
+PASS BASELINE_BOUNDARY
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 82.3kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 928kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 59.0MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 74.3MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 128MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.75MB/s]Download complete:  13.1GB,  536MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  466MB/s  Fetching 4 files: 100% 4/4 [00:42<00:00, 42.26s/it]Loading weights: 100% 339/339 [00:03<00:00, 98.96it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.6kB/s]GPU: NVIDIA L4 TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+PASS FROZEN_BACKBONE
+PASS MODEL_ARCH
+PASS BASELINE_PANEL
+PASS BASELINE_SENTINEL
+SOURCE GITHUB_VERIFIED BLOB b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71 GPU NVIDIA L4
+RELATIONAL_PANEL_SHA256 71a57b5ea9649a92789bc725027c4930c12a4f90d2aab6bdec2a20ce9470a0b6 CASES 12
+PASS SEALED_PANEL_UNCHANGED
+============================================================================================================================
+RUNNING 12 SEALED CASES × 12 ARMS
+============================================================================================================================
+CASE 00 ARM NONE       OK    FAIL GOLD=Fkxcwvxqn ANSWER='To determine the region where the owner of the artifact Akjqhctqc lives, we need to follow the information provided'
+CASE 00 ARM A_ONLY     OK    FAIL GOLD=Fkxcwvxqn ANSWER='No information provided about the region where the owner lives.'
+CASE 00 ARM B_ONLY     OK    PASS GOLD=Fkxcwvxqn ANSWER='Fkxcwvxqn'
+CASE 00 ARM JOINT_AB   OK    PASS GOLD=Fkxcwvxqn ANSWER='Fkxcwvxqn'
+CASE 00 ARM JOINT_BA   OK    PASS GOLD=Fkxcwvxqn ANSWER='Fkxcwvxqn'
+CASE 00 ARM INDEP_AB   OK    PASS GOLD=Fkxcwvxqn ANSWER='Fkxcwvxqn'
+CASE 00 ARM DC_AB      OK    PASS GOLD=Fkxcwvxqn ANSWER='Fkxcwvxqn'
+CASE 00 ARM DC_BA      OK    PASS GOLD=Fkxcwvxqn ANSWER='Fkxcwvxqn'
+PASS BLOCK_H3_SHAPE
+CASE 00 ARM DC_BLOCK   OK    PASS GOLD=Fkxcwvxqn ANSWER='Fkxcwvxqn'
+CASE 00 ARM DC_B2      OK    PASS GOLD=Lpzyueufe ANSWER='Lpzyueufe'
+CASE 00 ARM JOINT_B2   OK    PASS GOLD=Lpzyueufe ANSWER='Lpzyueufe'
+CASE 00 ARM DC_WRONG   OK    FAIL GOLD=Fkxcwvxqn ANSWER='Bccuzhqys'
+CASE 01 ARM NONE       OK    FAIL GOLD=Nnhxbymwr ANSWER='To determine the region where the owner of artifact Csfgyxswp lives, we need to follow the information provided'
+CASE 01 ARM A_ONLY     OK    FAIL GOLD=Nnhxbymwr ANSWER='No information provided about the region where the owner lives.'
+CASE 01 ARM B_ONLY     OK    PASS GOLD=Nnhxbymwr ANSWER='Nnhxbymwr'
+CASE 01 ARM JOINT_AB   OK    PASS GOLD=Nnhxbymwr ANSWER='Nnhxbymwr'
+CASE 01 ARM JOINT_BA   OK    PASS GOLD=Nnhxbymwr ANSWER='Nnhxbymwr'
+CASE 01 ARM INDEP_AB   OK    PASS GOLD=Nnhxbymwr ANSWER='Nnhxbymwr'
+CASE 01 ARM DC_AB      OK    PASS GOLD=Nnhxbymwr ANSWER='Nnhxbymwr'
+CASE 01 ARM DC_BA      OK    PASS GOLD=Nnhxbymwr ANSWER='Nnhxbymwr'
+PASS BLOCK_H3_SHAPE
+CASE 01 ARM DC_BLOCK   OK    PASS GOLD=Nnhxbymwr ANSWER='Nnhxbymwr'
+CASE 01 ARM DC_B2      OK    PASS GOLD=Xtryptazm ANSWER='Xtryptazm'
+CASE 01 ARM JOINT_B2   OK    PASS GOLD=Xtryptazm ANSWER='Xtryptazm'
+CASE 01 ARM DC_WRONG   OK    FAIL GOLD=Nnhxbymwr ANSWER='The information provided does not specify the region where the owner of artifact Csfgyxswp lives.'
+CASE 02 ARM NONE       OK    FAIL GOLD=Zwcnjdazu ANSWER='To answer the question "In which region does the owner of artifact Wdvhzlxfh live?", we need to'
+CASE 02 ARM A_ONLY     OK    FAIL GOLD=Zwcnjdazu ANSWER='No information provided about the region where the owner lives.'
+CASE 02 ARM B_ONLY     OK    PASS GOLD=Zwcnjdazu ANSWER='Zwcnjdazu'
+CASE 02 ARM JOINT_AB   OK    PASS GOLD=Zwcnjdazu ANSWER='Zwcnjdazu'
+CASE 02 ARM JOINT_BA   OK    PASS GOLD=Zwcnjdazu ANSWER='Zwcnjdazu'
+CASE 02 ARM INDEP_AB   OK    PASS GOLD=Zwcnjdazu ANSWER='Zwcnjdazu'
+CASE 02 ARM DC_AB      OK    PASS GOLD=Zwcnjdazu ANSWER='Zwcnjdazu'
+CASE 02 ARM DC_BA      OK    PASS GOLD=Zwcnjdazu ANSWER='Zwcnjdazu'
+PASS BLOCK_H3_SHAPE
+CASE 02 ARM DC_BLOCK   OK    PASS GOLD=Zwcnjdazu ANSWER='Zwcnjdazu'
+CASE 02 ARM DC_B2      OK    PASS GOLD=Xcmfjsskm ANSWER='Xcmfjsskm'
+CASE 02 ARM JOINT_B2   OK    PASS GOLD=Xcmfjsskm ANSWER='Xcmfjsskm'
+CASE 02 ARM DC_WRONG   OK    FAIL GOLD=Zwcnjdazu ANSWER='Hnfgajhcr'
+CASE 03 ARM NONE       OK    FAIL GOLD=Yjmrytmag ANSWER='To determine the region where the owner of artifact Eyyvcpdcj lives, we need to follow the information provided'
+CASE 03 ARM A_ONLY     OK    FAIL GOLD=Yjmrytmag ANSWER='No information provided about the region where the owner lives.'
+CASE 03 ARM B_ONLY     OK    PASS GOLD=Yjmrytmag ANSWER='Yjmrytmag'
+CASE 03 ARM JOINT_AB   OK    PASS GOLD=Yjmrytmag ANSWER='Yjmrytmag'
+CASE 03 ARM JOINT_BA   OK    PASS GOLD=Yjmrytmag ANSWER='Yjmrytmag'
+CASE 03 ARM INDEP_AB   OK    PASS GOLD=Yjmrytmag ANSWER='Yjmrytmag'
+CASE 03 ARM DC_AB      OK    PASS GOLD=Yjmrytmag ANSWER='Yjmrytmag'
+CASE 03 ARM DC_BA      OK    PASS GOLD=Yjmrytmag ANSWER='Yjmrytmag'
+PASS BLOCK_H3_SHAPE
+CASE 03 ARM DC_BLOCK   OK    PASS GOLD=Yjmrytmag ANSWER='Yjmrytmag'
+CASE 03 ARM DC_B2      OK    PASS GOLD=Kswepeymb ANSWER='Kswepeymb'
+CASE 03 ARM JOINT_B2   OK    PASS GOLD=Kswepeymb ANSWER='Kswepeymb'
+CASE 03 ARM DC_WRONG   OK    FAIL GOLD=Yjmrytmag ANSWER='No information provided about the region where the owner of artifact Eyyvcpdcj lives.'
+CASE 04 ARM NONE       OK    FAIL GOLD=Uruhdrhzc ANSWER='To determine the region where the owner of artifact Htqnfkumn lives, we need to follow the information provided'
+CASE 04 ARM A_ONLY     OK    FAIL GOLD=Uruhdrhzc ANSWER='No information provided about the region where the owner lives.'
+CASE 04 ARM B_ONLY     OK    PASS GOLD=Uruhdrhzc ANSWER='Uruhdrhzc'
+CASE 04 ARM JOINT_AB   OK    PASS GOLD=Uruhdrhzc ANSWER='Uruhdrhzc'
+CASE 04 ARM JOINT_BA   OK    PASS GOLD=Uruhdrhzc ANSWER='Uruhdrhzc'
+CASE 04 ARM INDEP_AB   OK    PASS GOLD=Uruhdrhzc ANSWER='Uruhdrhzc'
+CASE 04 ARM DC_AB      OK    PASS GOLD=Uruhdrhzc ANSWER='Uruhdrhzc'
+CASE 04 ARM DC_BA      OK    PASS GOLD=Uruhdrhzc ANSWER='Uruhdrhzc'
+PASS BLOCK_H3_SHAPE
+CASE 04 ARM DC_BLOCK   OK    PASS GOLD=Uruhdrhzc ANSWER='Uruhdrhzc'
+CASE 04 ARM DC_B2      OK    PASS GOLD=Vhyynnjsa ANSWER='Vhyynnjsa'
+CASE 04 ARM JOINT_B2   OK    PASS GOLD=Vhyynnjsa ANSWER='Vhyynnjsa'
+CASE 04 ARM DC_WRONG   OK    FAIL GOLD=Uruhdrhzc ANSWER='No information provided about the region where the owner of artifact Htqnfkumn lives.'
+CASE 05 ARM NONE       OK    FAIL GOLD=Gcmgjqdaa ANSWER='To answer the question about which region the owner of the artifact Mesqcvufm lives in, we need to follow'
+CASE 05 ARM A_ONLY     OK    FAIL GOLD=Gcmgjqdaa ANSWER='No information provided about the region where the owner lives.'
+CASE 05 ARM B_ONLY     OK    PASS GOLD=Gcmgjqdaa ANSWER='Gcmgjqdaa'
+CASE 05 ARM JOINT_AB   OK    PASS GOLD=Gcmgjqdaa ANSWER='Gcmgjqdaa'
+CASE 05 ARM JOINT_BA   OK    PASS GOLD=Gcmgjqdaa ANSWER='Gcmgjqdaa'
+CASE 05 ARM INDEP_AB   OK    PASS GOLD=Gcmgjqdaa ANSWER='Gcmgjqdaa'
+CASE 05 ARM DC_AB      OK    PASS GOLD=Gcmgjqdaa ANSWER='Gcmgjqdaa'
+CASE 05 ARM DC_BA      OK    PASS GOLD=Gcmgjqdaa ANSWER='Gcmgjqdaa'
+PASS BLOCK_H3_SHAPE
+CASE 05 ARM DC_BLOCK   OK    PASS GOLD=Gcmgjqdaa ANSWER='Gcmgjqdaa'
+CASE 05 ARM DC_B2      OK    PASS GOLD=Eaghgrwhj ANSWER='Eaghgrwhj'
+CASE 05 ARM JOINT_B2   OK    PASS GOLD=Eaghgrwhj ANSWER='Eaghgrwhj'
+CASE 05 ARM DC_WRONG   OK    FAIL GOLD=Gcmgjqdaa ANSWER='No information provided about the region where the owner of artifact Mesqcvufm lives.'
+CASE 06 ARM NONE       OK    FAIL GOLD=Yjaxvsrkz ANSWER='To determine the region where the owner of artifact Fnebhbznv lives, we need to follow the information provided'
+CASE 06 ARM A_ONLY     OK    FAIL GOLD=Yjaxvsrkz ANSWER='Undalvwze'
+CASE 06 ARM B_ONLY     OK    PASS GOLD=Yjaxvsrkz ANSWER='Yjaxvsrkz'
+CASE 06 ARM JOINT_AB   OK    PASS GOLD=Yjaxvsrkz ANSWER='Yjaxvsrkz'
+CASE 06 ARM JOINT_BA   OK    PASS GOLD=Yjaxvsrkz ANSWER='Yjaxvsrkz'
+CASE 06 ARM INDEP_AB   OK    PASS GOLD=Yjaxvsrkz ANSWER='Yjaxvsrkz'
+CASE 06 ARM DC_AB      OK    PASS GOLD=Yjaxvsrkz ANSWER='Yjaxvsrkz'
+CASE 06 ARM DC_BA      OK    PASS GOLD=Yjaxvsrkz ANSWER='Yjaxvsrkz'
+PASS BLOCK_H3_SHAPE
+CASE 06 ARM DC_BLOCK   OK    PASS GOLD=Yjaxvsrkz ANSWER='Yjaxvsrkz'
+CASE 06 ARM DC_B2      OK    PASS GOLD=Dptwpcych ANSWER='Dptwpcych'
+CASE 06 ARM JOINT_B2   OK    PASS GOLD=Dptwpcych ANSWER='Dptwpcych'
+CASE 06 ARM DC_WRONG   OK    FAIL GOLD=Yjaxvsrkz ANSWER='Undalvwze'
+CASE 07 ARM NONE       OK    FAIL GOLD=Zwzprfqgk ANSWER='To answer the question about the region where the owner of the artifact "Phslvdzuk" lives, we need'
+CASE 07 ARM A_ONLY     OK    FAIL GOLD=Zwzprfqgk ANSWER='No information provided about the region where the owner lives.'
+CASE 07 ARM B_ONLY     OK    PASS GOLD=Zwzprfqgk ANSWER='Zwzprfqgk'
+CASE 07 ARM JOINT_AB   OK    PASS GOLD=Zwzprfqgk ANSWER='Zwzprfqgk'
+CASE 07 ARM JOINT_BA   OK    PASS GOLD=Zwzprfqgk ANSWER='Zwzprfqgk'
+CASE 07 ARM INDEP_AB   OK    PASS GOLD=Zwzprfqgk ANSWER='Zwzprfqgk'
+CASE 07 ARM DC_AB      OK    PASS GOLD=Zwzprfqgk ANSWER='Zwzprfqgk'
+CASE 07 ARM DC_BA      OK    PASS GOLD=Zwzprfqgk ANSWER='Zwzprfqgk'
+PASS BLOCK_H3_SHAPE
+CASE 07 ARM DC_BLOCK   OK    PASS GOLD=Zwzprfqgk ANSWER='Zwzprfqgk'
+CASE 07 ARM DC_B2      OK    PASS GOLD=Ssfezchus ANSWER='Ssfezchus'
+CASE 07 ARM JOINT_B2   OK    PASS GOLD=Ssfezchus ANSWER='Ssfezchus'
+CASE 07 ARM DC_WRONG   OK    FAIL GOLD=Zwzprfqgk ANSWER='Rqmyupzbd'
+CASE 08 ARM NONE       OK    FAIL GOLD=Qvkgdpfuw ANSWER='To answer the question about the region where the owner of artifact Semxxzqlg lives, we need to follow a'
+CASE 08 ARM A_ONLY     OK    FAIL GOLD=Qvkgdpfuw ANSWER='No information provided about the region where the owner lives.'
+CASE 08 ARM B_ONLY     OK    PASS GOLD=Qvkgdpfuw ANSWER='Qvkgdpfuw'
+CASE 08 ARM JOINT_AB   OK    PASS GOLD=Qvkgdpfuw ANSWER='Qvkgdpfuw'
+CASE 08 ARM JOINT_BA   OK    PASS GOLD=Qvkgdpfuw ANSWER='Qvkgdpfuw'
+CASE 08 ARM INDEP_AB   OK    PASS GOLD=Qvkgdpfuw ANSWER='Qvkgdpfuw'
+CASE 08 ARM DC_AB      OK    PASS GOLD=Qvkgdpfuw ANSWER='Qvkgdpfuw'
+CASE 08 ARM DC_BA      OK    PASS GOLD=Qvkgdpfuw ANSWER='Qvkgdpfuw'
+PASS BLOCK_H3_SHAPE
+CASE 08 ARM DC_BLOCK   OK    PASS GOLD=Qvkgdpfuw ANSWER='Qvkgdpfuw'
+CASE 08 ARM DC_B2      OK    PASS GOLD=Tcvngbate ANSWER='Tcvngbate'
+CASE 08 ARM JOINT_B2   OK    PASS GOLD=Tcvngbate ANSWER='Tcvngbate'
+CASE 08 ARM DC_WRONG   OK    FAIL GOLD=Qvkgdpfuw ANSWER='Qkysjgkpw'
+CASE 09 ARM NONE       OK    FAIL GOLD=Vewdmcepq ANSWER='To answer the question "In which region does the owner of artifact Znauwqads live?", we need to'
+CASE 09 ARM A_ONLY     OK    FAIL GOLD=Vewdmcepq ANSWER='No information provided about the region where the owner lives.'
+CASE 09 ARM B_ONLY     OK    PASS GOLD=Vewdmcepq ANSWER='Vewdmcepq'
+CASE 09 ARM JOINT_AB   OK    PASS GOLD=Vewdmcepq ANSWER='Vewdmcepq'
+CASE 09 ARM JOINT_BA   OK    PASS GOLD=Vewdmcepq ANSWER='Vewdmcepq'
+CASE 09 ARM INDEP_AB   OK    PASS GOLD=Vewdmcepq ANSWER='Vewdmcepq'
+CASE 09 ARM DC_AB      OK    PASS GOLD=Vewdmcepq ANSWER='Vewdmcepq'
+CASE 09 ARM DC_BA      OK    PASS GOLD=Vewdmcepq ANSWER='Vewdmcepq'
+PASS BLOCK_H3_SHAPE
+CASE 09 ARM DC_BLOCK   OK    PASS GOLD=Vewdmcepq ANSWER='Vewdmcepq'
+CASE 09 ARM DC_B2      OK    PASS GOLD=Kqpxmdbde ANSWER='Kqpxmdbde'
+CASE 09 ARM JOINT_B2   OK    PASS GOLD=Kqpxmdbde ANSWER='Kqpxmdbde'
+CASE 09 ARM DC_WRONG   OK    FAIL GOLD=Vewdmcepq ANSWER='No information provided about the region where the owner of artifact Znauwqads lives.'
+CASE 10 ARM NONE       OK    FAIL GOLD=Lmxbylbtf ANSWER='To determine the region where the owner of artifact Hnjjlezfh lives, we need to follow a logical sequence of'
+CASE 10 ARM A_ONLY     OK    FAIL GOLD=Lmxbylbtf ANSWER='No information provided about the region where the owner lives.'
+CASE 10 ARM B_ONLY     OK    PASS GOLD=Lmxbylbtf ANSWER='Lmxbylbtf'
+CASE 10 ARM JOINT_AB   OK    PASS GOLD=Lmxbylbtf ANSWER='Lmxbylbtf'
+CASE 10 ARM JOINT_BA   OK    PASS GOLD=Lmxbylbtf ANSWER='Lmxbylbtf'
+CASE 10 ARM INDEP_AB   OK    PASS GOLD=Lmxbylbtf ANSWER='Lmxbylbtf'
+CASE 10 ARM DC_AB      OK    PASS GOLD=Lmxbylbtf ANSWER='Lmxbylbtf'
+CASE 10 ARM DC_BA      OK    PASS GOLD=Lmxbylbtf ANSWER='Lmxbylbtf'
+PASS BLOCK_H3_SHAPE
+CASE 10 ARM DC_BLOCK   OK    PASS GOLD=Lmxbylbtf ANSWER='Lmxbylbtf'
+CASE 10 ARM DC_B2      OK    PASS GOLD=Ljahrarbn ANSWER='Ljahrarbn'
+CASE 10 ARM JOINT_B2   OK    PASS GOLD=Ljahrarbn ANSWER='Ljahrarbn'
+CASE 10 ARM DC_WRONG   OK    FAIL GOLD=Lmxbylbtf ANSWER='No information provided about the region where the owner of artifact Hnjjlezfh lives.'
+CASE 11 ARM NONE       OK    FAIL GOLD=Ujursbswp ANSWER='To answer the question "In which region does the owner of artifact Xkrvdgjdg live?", we need to'
+CASE 11 ARM A_ONLY     OK    FAIL GOLD=Ujursbswp ANSWER='No information provided about the region where the owner lives.'
+CASE 11 ARM B_ONLY     OK    PASS GOLD=Ujursbswp ANSWER='Ujursbswp'
+CASE 11 ARM JOINT_AB   OK    PASS GOLD=Ujursbswp ANSWER='Ujursbswp'
+CASE 11 ARM JOINT_BA   OK    PASS GOLD=Ujursbswp ANSWER='Ujursbswp'
+CASE 11 ARM INDEP_AB   OK    PASS GOLD=Ujursbswp ANSWER='Ujursbswp'
+CASE 11 ARM DC_AB      OK    PASS GOLD=Ujursbswp ANSWER='Ujursbswp'
+CASE 11 ARM DC_BA      OK    PASS GOLD=Ujursbswp ANSWER='Ujursbswp'
+PASS BLOCK_H3_SHAPE
+CASE 11 ARM DC_BLOCK   OK    PASS GOLD=Ujursbswp ANSWER='Ujursbswp'
+CASE 11 ARM DC_B2      OK    PASS GOLD=Pyvnvgxhm ANSWER='Pyvnvgxhm'
+CASE 11 ARM JOINT_B2   OK    PASS GOLD=Pyvnvgxhm ANSWER='Pyvnvgxhm'
+CASE 11 ARM DC_WRONG   OK    FAIL GOLD=Ujursbswp ANSWER='No information provided about the region where the owner of artifact Xkrvdgjdg lives.'
+============================================================================================================================
+SCORING — ONLY AFTER ALL MODEL OUTPUTS HAVE BEEN GENERATED
+============================================================================================================================
+NONE         00/12 ERRORS=0
+A_ONLY       00/12 ERRORS=0
+B_ONLY       12/12 ERRORS=0
+JOINT_AB     12/12 ERRORS=0
+JOINT_BA     12/12 ERRORS=0
+INDEP_AB     12/12 ERRORS=0
+DC_AB        12/12 ERRORS=0
+DC_BA        12/12 ERRORS=0
+DC_BLOCK     12/12 ERRORS=0
+DC_B2        12/12 ERRORS=0
+JOINT_B2     12/12 ERRORS=0
+DC_WRONG     00/12 ERRORS=0
+CAUSAL CASE=00 JOINT=True DC=True CF=True CONTROLS=False FLIP=True SYNTHESIS=False
+CAUSAL CASE=01 JOINT=True DC=True CF=True CONTROLS=False FLIP=True SYNTHESIS=False
+CAUSAL CASE=02 JOINT=True DC=True CF=True CONTROLS=False FLIP=True SYNTHESIS=False
+CAUSAL CASE=03 JOINT=True DC=True CF=True CONTROLS=False FLIP=True SYNTHESIS=False
+CAUSAL CASE=04 JOINT=True DC=True CF=True CONTROLS=False FLIP=True SYNTHESIS=False
+CAUSAL CASE=05 JOINT=True DC=True CF=True CONTROLS=False FLIP=True SYNTHESIS=False
+CAUSAL CASE=06 JOINT=True DC=True CF=True CONTROLS=False FLIP=True SYNTHESIS=False
+CAUSAL CASE=07 JOINT=True DC=True CF=True CONTROLS=False FLIP=True SYNTHESIS=False
+CAUSAL CASE=08 JOINT=True DC=True CF=True CONTROLS=False FLIP=True SYNTHESIS=False
+CAUSAL CASE=09 JOINT=True DC=True CF=True CONTROLS=False FLIP=True SYNTHESIS=False
+CAUSAL CASE=10 JOINT=True DC=True CF=True CONTROLS=False FLIP=True SYNTHESIS=False
+CAUSAL CASE=11 JOINT=True DC=True CF=True CONTROLS=False FLIP=True SYNTHESIS=False
+============================================================================================================================
+TEST649_FINAL
+PANEL_SHA256 71a57b5ea9649a92789bc725027c4930c12a4f90d2aab6bdec2a20ce9470a0b6
+CAUSAL_RELATIONAL_SYNTHESIS 0/12
+INTEGRITY {'source_blob': True, 'panel_sealed': True, 'model_frozen': True, 'sentinel_unchanged': True, 'optimizer_absent': True, 'errors': 0}
+RESULT_FILE /content/AKBASCORE_TEST649/TEST649_results.json
+RESULT_SHA256 6cfb7e10fbcd3b4ebaaf8a7b15c66feabec43061fa23cda853306cc292050e5d
+TEST649_EXECUTION_STATUS PASS
+TEST649_SYNTHESIS_STATUS NOT_DEMONSTRATED
+============================================================================================================================
