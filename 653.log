@@ -1,0 +1,207 @@
+ ====================================================================================================================
+TEST653 — NATIVE CUDA DYNAMIC KV FABRIC / SOURCE-LOCKED QWEN
+====================================================================================================================
+PASS CUDA_AVAILABLE
+PASS NINJA
+PASS NVCC
+PASS CXX
+BUILDING NATIVE KV EXTENSION
+PASS NATIVE_BITWISE_29_7
+PASS NATIVE_BITWISE_43_31
+PASS NATIVE_BITWISE_1_1
+PASS TEST566_BLOB
+PASS TEST566_BOUNDARY
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 83.0kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 900kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 78.9MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 71.6MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 127MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.66MB/s]Download complete:  13.1GB,  188MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  413MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.59s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.10it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.3kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+PASS FROZEN
+PASS ARCH
+PASS PANEL_LOCK
+PASS SENTINEL
+BASE GITHUB_VERIFIED BLOB b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71 GPU NVIDIA A100-SXM4-40GB
+PASS TEST650_PANEL_LOCK
+CASE 0 CAUSAL KV ABLATION
+  B_ONLY FAIL 'Ggawbalhf' 
+  NATIVE_AB PASS 'Uymzbqqqy' 
+  NATIVE_CF PASS 'Qtjgqsmrr' 
+  BASE_DC_AB PASS 'Uymzbqqqy' 
+  BASE_DC_CF PASS 'Qtjgqsmrr' 
+  JOINT_AB PASS 'Uymzbqqqy' 
+  JOINT_CF PASS 'Qtjgqsmrr' 
+  A DROP_B 0 GOLD_LOST 'Qtjgqsmrr' 
+  A DROP_B 1 GOLD_RETAINED 'Uymzbqqqy' 
+  A DROP_B 2 GOLD_RETAINED 'Uymzbqqqy' 
+  A DROP_B 3 GOLD_RETAINED 'Uymzbqqqy' 
+  CF DROP_B 0 GOLD_RETAINED 'Qtjgqsmrr' 
+  CF DROP_B 1 GOLD_LOST 'Uymzbqqqy' 
+  CF DROP_B 2 GOLD_RETAINED 'Qtjgqsmrr' 
+  CF DROP_B 3 GOLD_RETAINED 'Qtjgqsmrr' 
+CASE 1 CAUSAL KV ABLATION
+  B_ONLY FAIL 'Tgnnjrdtc' 
+  NATIVE_AB PASS 'Gfurgabvw' 
+  NATIVE_CF PASS 'Hfgrumvwm' 
+  BASE_DC_AB PASS 'Gfurgabvw' 
+  BASE_DC_CF PASS 'Hfgrumvwm' 
+  JOINT_AB PASS 'Gfurgabvw' 
+  JOINT_CF PASS 'Hfgrumvwm' 
+  A DROP_B 0 GOLD_LOST 'Tgnnjrdtc' 
+  A DROP_B 1 GOLD_RETAINED 'Gfurgabvw' 
+  A DROP_B 2 GOLD_RETAINED 'Gfurgabvw' 
+  A DROP_B 3 GOLD_RETAINED 'Gfurgabvw' 
+  CF DROP_B 0 GOLD_RETAINED 'Hfgrumvwm' 
+  CF DROP_B 1 GOLD_LOST 'Bdclazasz lives in region Tgnnjrdtc.' 
+  CF DROP_B 2 GOLD_RETAINED 'Hfgrumvwm' 
+  CF DROP_B 3 GOLD_RETAINED 'Hfgrumvwm' 
+CASE 2 CAUSAL KV ABLATION
+  B_ONLY FAIL 'Kxbpfdkjm' 
+  NATIVE_AB PASS 'Azgdnghvt' 
+  NATIVE_CF PASS 'Wrvhxsaje' 
+  BASE_DC_AB PASS 'Azgdnghvt' 
+  BASE_DC_CF PASS 'Wrvhxsaje' 
+  JOINT_AB PASS 'Azgdnghvt' 
+  JOINT_CF PASS 'Wrvhxsaje' 
+  A DROP_B 0 GOLD_LOST 'Dleqmfdpj' 
+  A DROP_B 1 GOLD_RETAINED 'Azgdnghvt' 
+  A DROP_B 2 GOLD_RETAINED 'Azgdnghvt' 
+  A DROP_B 3 GOLD_RETAINED 'Azgdnghvt' 
+  CF DROP_B 0 GOLD_RETAINED 'Wrvhxsaje' 
+  CF DROP_B 1 GOLD_LOST 'Azgdnghvt' 
+  CF DROP_B 2 GOLD_RETAINED 'Wrvhxsaje' 
+  CF DROP_B 3 GOLD_RETAINED 'Wrvhxsaje' 
+CASE 3 CAUSAL KV ABLATION
+  B_ONLY FAIL 'Rrxwykdlj' 
+  NATIVE_AB PASS 'Zkaxlvnjp' 
+  NATIVE_CF PASS 'Gsltsmzga' 
+  BASE_DC_AB PASS 'Zkaxlvnjp' 
+  BASE_DC_CF PASS 'Gsltsmzga' 
+  JOINT_AB PASS 'Zkaxlvnjp' 
+  JOINT_CF PASS 'Gsltsmzga' 
+  A DROP_B 0 GOLD_LOST 'Gsltsmzga' 
+  A DROP_B 1 GOLD_RETAINED 'Zkaxlvnjp' 
+  A DROP_B 2 GOLD_RETAINED 'Zkaxlvnjp' 
+  A DROP_B 3 GOLD_RETAINED 'Zkaxlvnjp' 
+  CF DROP_B 0 GOLD_RETAINED 'Gsltsmzga' 
+  CF DROP_B 1 GOLD_LOST 'Zkaxlvnjp' 
+  CF DROP_B 2 GOLD_RETAINED 'Gsltsmzga' 
+  CF DROP_B 3 GOLD_RETAINED 'Gsltsmzga' 
+CASE 4 CAUSAL KV ABLATION
+  B_ONLY FAIL 'Srmhyukbw' 
+  NATIVE_AB PASS 'Urslysjts' 
+  NATIVE_CF PASS 'Ezxydplvw' 
+  BASE_DC_AB PASS 'Urslysjts' 
+  BASE_DC_CF PASS 'Ezxydplvw' 
+  JOINT_AB PASS 'Urslysjts' 
+  JOINT_CF PASS 'Ezxydplvw' 
+  A DROP_B 0 GOLD_LOST 'Ezxydplvw' 
+  A DROP_B 1 GOLD_RETAINED 'Urslysjts' 
+  A DROP_B 2 GOLD_RETAINED 'Urslysjts' 
+  A DROP_B 3 GOLD_RETAINED 'Urslysjts' 
+  CF DROP_B 0 GOLD_RETAINED 'Ezxydplvw' 
+  CF DROP_B 1 GOLD_LOST 'Urslysjts' 
+  CF DROP_B 2 GOLD_RETAINED 'Ezxydplvw' 
+  CF DROP_B 3 GOLD_RETAINED 'Ezxydplvw' 
+CASE 5 CAUSAL KV ABLATION
+  B_ONLY FAIL 'Jkksbalmg' 
+  NATIVE_AB PASS 'Hmdkhtdxf' 
+  NATIVE_CF PASS 'Yhxrpmckz' 
+  BASE_DC_AB PASS 'Hmdkhtdxf' 
+  BASE_DC_CF PASS 'Yhxrpmckz' 
+  JOINT_AB PASS 'Hmdkhtdxf' 
+  JOINT_CF PASS 'Yhxrpmckz' 
+  A DROP_B 0 GOLD_LOST 'Jkksbalmg' 
+  A DROP_B 1 GOLD_RETAINED 'Hmdkhtdxf' 
+  A DROP_B 2 GOLD_RETAINED 'Hmdkhtdxf' 
+  A DROP_B 3 GOLD_RETAINED 'Hmdkhtdxf' 
+  CF DROP_B 0 GOLD_RETAINED 'Yhxrpmckz' 
+  CF DROP_B 1 GOLD_LOST 'Jkksbalmg' 
+  CF DROP_B 2 GOLD_RETAINED 'Yhxrpmckz' 
+  CF DROP_B 3 GOLD_RETAINED 'Yhxrpmckz' 
+CASE 6 CAUSAL KV ABLATION
+  B_ONLY FAIL 'Cbpgruare' 
+  NATIVE_AB PASS 'Fjlthlfls' 
+  NATIVE_CF PASS 'Dnugltlzs' 
+  BASE_DC_AB PASS 'Fjlthlfls' 
+  BASE_DC_CF PASS 'Dnugltlzs' 
+  JOINT_AB PASS 'Fjlthlfls' 
+  JOINT_CF PASS 'Dnugltlzs' 
+  A DROP_B 0 GOLD_LOST 'Cbpgruare' 
+  A DROP_B 1 GOLD_RETAINED 'Fjlthlfls' 
+  A DROP_B 2 GOLD_RETAINED 'Fjlthlfls' 
+  A DROP_B 3 GOLD_RETAINED 'Fjlthlfls' 
+  CF DROP_B 0 GOLD_LOST 'Qjqyebsjq lives in region Dnugltlzs.' 
+  CF DROP_B 1 GOLD_LOST 'Fjlthlfls' 
+  CF DROP_B 2 GOLD_RETAINED 'Dnugltlzs' 
+  CF DROP_B 3 GOLD_RETAINED 'Dnugltlzs' 
+CASE 7 CAUSAL KV ABLATION
+  B_ONLY FAIL 'The information provided does not specify which owner corresponds to which artifact, so we cannot' 
+  NATIVE_AB PASS 'Ypljllltu' 
+  NATIVE_CF PASS 'Ggqbtdege' 
+  BASE_DC_AB PASS 'Ypljllltu' 
+  BASE_DC_CF PASS 'Ggqbtdege' 
+  JOINT_AB PASS 'Ypljllltu' 
+  JOINT_CF PASS 'Ggqbtdege' 
+  A DROP_B 0 GOLD_LOST 'Ggqbtdege' 
+  A DROP_B 1 GOLD_RETAINED 'Ypljllltu' 
+  A DROP_B 2 GOLD_RETAINED 'Ypljllltu' 
+  A DROP_B 3 GOLD_RETAINED 'Ypljllltu' 
+  CF DROP_B 0 GOLD_RETAINED 'Ggqbtdege' 
+  CF DROP_B 1 GOLD_LOST 'Ypljllltu' 
+  CF DROP_B 2 GOLD_RETAINED 'Ggqbtdege' 
+  CF DROP_B 3 GOLD_RETAINED 'Ggqbtdege' 
+CAUSAL 0 PASS A_CRITICAL True CF_CRITICAL True NONCRITICAL True True
+CAUSAL 1 PASS A_CRITICAL True CF_CRITICAL True NONCRITICAL True True
+CAUSAL 2 PASS A_CRITICAL True CF_CRITICAL True NONCRITICAL True True
+CAUSAL 3 PASS A_CRITICAL True CF_CRITICAL True NONCRITICAL True True
+CAUSAL 4 PASS A_CRITICAL True CF_CRITICAL True NONCRITICAL True True
+CAUSAL 5 PASS A_CRITICAL True CF_CRITICAL True NONCRITICAL True True
+CAUSAL 6 NOT_DEMONSTRATED A_CRITICAL True CF_CRITICAL True NONCRITICAL True False
+CAUSAL 7 PASS A_CRITICAL True CF_CRITICAL True NONCRITICAL True True
+====================================================================================================================
+TEST653_FINAL
+{
+  "B_ONLY": {
+    "correct": 0,
+    "total": 8,
+    "errors": 0
+  },
+  "NATIVE_AB": {
+    "correct": 8,
+    "total": 8,
+    "errors": 0
+  },
+  "NATIVE_CF": {
+    "correct": 8,
+    "total": 8,
+    "errors": 0
+  },
+  "BASE_DC_AB": {
+    "correct": 8,
+    "total": 8,
+    "errors": 0
+  },
+  "BASE_DC_CF": {
+    "correct": 8,
+    "total": 8,
+    "errors": 0
+  },
+  "JOINT_AB": {
+    "correct": 8,
+    "total": 8,
+    "errors": 0
+  },
+  "JOINT_CF": {
+    "correct": 8,
+    "total": 8,
+    "errors": 0
+  }
+}
+CAUSAL_CANDIDATE_ABLATION 7 / 8
+WEIGHTS_FROZEN True SENTINEL True
+RESULT /content/AKBASCORE_TEST653/TEST653_results.json SHA256 fbf23a7060372caa2615d22a3c6e7c10765b77d294587dcd6b85a6b7c86bf09a
+STATUS EXPERIMENT_COMPLETE
+LIMITATION: This is causal candidate-deletion analysis, NOT attention attribution, learned routing, autonomous retrieval or full native inference.
