@@ -1,0 +1,197 @@
+ ============================================================================================================== 
+TEST650 — CUDA LATENT LOOP / SOURCE-LOCKED QWEN
+==============================================================================================================
+PASS CUDA_AVAILABLE
+INSTALLING NINJA
+PASS NINJA_AVAILABLE
+PASS CUDA_TOOLKIT_NVCC
+PASS CXX_COMPILER
+PASS TEST566_GIT_BLOB
+PASS TEST566_BOUNDARY
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 84.2kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 948kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 84.5MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 71.5MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 127MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.11MB/s]Download complete:  13.1GB,  286MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  442MB/s  Fetching 4 files: 100% 4/4 [00:44<00:00,  8.74s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.15it/s]generation_config.json: 100% 243/243 [00:00<00:00, 30.2kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+PASS FROZEN
+PASS ARCH
+PASS PANEL_LOCK
+PASS SENTINEL
+BASE GITHUB_VERIFIED BLOB b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71 GPU NVIDIA A100-SXM4-40GB
+BUILDING NATIVE CUDA EXTENSION
+PASS NATIVE_BLEND_0.0
+PASS NATIVE_ENDPOINT_0.0
+PASS NATIVE_BLEND_0.5
+PASS NATIVE_BLEND_1.0
+PASS NATIVE_ENDPOINT_1.0
+PANEL db8b211abed216793bf2e4010eb006c862a74202d7512ae53a8a463fe929d466 CASES 8
+CASE 0 CAPTURE
+PASS STATE_FINITE_0
+PASS STATE_NONZERO_0
+STATE_DELTA 0 A_CF 0.507945 A_WRONG 0.939761
+  B_ONLY FAIL 'Ggawbalhf' 
+  ZERO_A FAIL 'Ggawbalhf' 
+  WRONG_A FAIL 'Ggawbalhf' 
+  TRUE_A FAIL 'Ggawbalhf' 
+  TRUE_CF FAIL 'Ggawbalhf' 
+  DC_AB PASS 'Uymzbqqqy' 
+  DC_CF PASS 'Qtjgqsmrr' 
+  JOINT_AB PASS 'Uymzbqqqy' 
+  JOINT_CF PASS 'Qtjgqsmrr' 
+CASE 1 CAPTURE
+PASS STATE_FINITE_1
+PASS STATE_NONZERO_1
+STATE_DELTA 1 A_CF 0.698934 A_WRONG 1.478865
+  B_ONLY FAIL 'Tgnnjrdtc' 
+  ZERO_A FAIL 'Tgnnjrdtc' 
+  WRONG_A FAIL 'Tgnnjrdtc' 
+  TRUE_A FAIL 'Tgnnjrdtc' 
+  TRUE_CF FAIL 'Tgnnjrdtc' 
+  DC_AB PASS 'Gfurgabvw' 
+  DC_CF PASS 'Hfgrumvwm' 
+  JOINT_AB PASS 'Gfurgabvw' 
+  JOINT_CF PASS 'Hfgrumvwm' 
+CASE 2 CAPTURE
+PASS STATE_FINITE_2
+PASS STATE_NONZERO_2
+STATE_DELTA 2 A_CF 0.555213 A_WRONG 1.241892
+  B_ONLY FAIL 'Kxbpfdkjm' 
+  ZERO_A FAIL 'Kxbpfdkjm' 
+  WRONG_A FAIL 'Kxbpfdkjm' 
+  TRUE_A FAIL 'Kxbpfdkjm' 
+  TRUE_CF FAIL 'Kxbpfdkjm' 
+  DC_AB PASS 'Azgdnghvt' 
+  DC_CF PASS 'Wrvhxsaje' 
+  JOINT_AB PASS 'Azgdnghvt' 
+  JOINT_CF PASS 'Wrvhxsaje' 
+CASE 3 CAPTURE
+PASS STATE_FINITE_3
+PASS STATE_NONZERO_3
+STATE_DELTA 3 A_CF 0.743968 A_WRONG 1.248607
+  B_ONLY FAIL 'Rrxwykdlj' 
+  ZERO_A FAIL 'The information provided does not specify which person owns the artifact Fjqhhdrmy' 
+  WRONG_A FAIL 'Rrxwykdlj' 
+  TRUE_A FAIL 'Rrxwykdlj' 
+  TRUE_CF FAIL 'Rrxwykdlj' 
+  DC_AB PASS 'Zkaxlvnjp' 
+  DC_CF PASS 'Gsltsmzga' 
+  JOINT_AB PASS 'Zkaxlvnjp' 
+  JOINT_CF PASS 'Gsltsmzga' 
+CASE 4 CAPTURE
+PASS STATE_FINITE_4
+PASS STATE_NONZERO_4
+STATE_DELTA 4 A_CF 0.525689 A_WRONG 1.04025
+  B_ONLY FAIL 'Srmhyukbw' 
+  ZERO_A FAIL 'Srmhyukbw' 
+  WRONG_A FAIL 'Srmhyukbw' 
+  TRUE_A FAIL 'Srmhyukbw' 
+  TRUE_CF FAIL 'Srmhyukbw' 
+  DC_AB PASS 'Urslysjts' 
+  DC_CF PASS 'Ezxydplvw' 
+  JOINT_AB PASS 'Urslysjts' 
+  JOINT_CF PASS 'Ezxydplvw' 
+CASE 5 CAPTURE
+PASS STATE_FINITE_5
+PASS STATE_NONZERO_5
+STATE_DELTA 5 A_CF 0.489236 A_WRONG 1.083
+  B_ONLY FAIL 'Jkksbalmg' 
+  ZERO_A FAIL 'Jkksbalmg' 
+  WRONG_A FAIL 'Jkksbalmg' 
+  TRUE_A FAIL 'Jkksbalmg' 
+  TRUE_CF FAIL 'Jkksbalmg' 
+  DC_AB PASS 'Hmdkhtdxf' 
+  DC_CF PASS 'Yhxrpmckz' 
+  JOINT_AB PASS 'Hmdkhtdxf' 
+  JOINT_CF PASS 'Yhxrpmckz' 
+CASE 6 CAPTURE
+PASS STATE_FINITE_6
+PASS STATE_NONZERO_6
+STATE_DELTA 6 A_CF 0.653598 A_WRONG 1.044989
+  B_ONLY FAIL 'Cbpgruare' 
+  ZERO_A FAIL 'Cbpgruare' 
+  WRONG_A FAIL 'Cbpgruare' 
+  TRUE_A FAIL 'Cbpgruare' 
+  TRUE_CF FAIL 'Cbpgruare' 
+  DC_AB PASS 'Fjlthlfls' 
+  DC_CF PASS 'Dnugltlzs' 
+  JOINT_AB PASS 'Fjlthlfls' 
+  JOINT_CF PASS 'Dnugltlzs' 
+CASE 7 CAPTURE
+PASS STATE_FINITE_7
+PASS STATE_NONZERO_7
+STATE_DELTA 7 A_CF 0.696045 A_WRONG 0.997374
+  B_ONLY FAIL 'The information provided does not specify which owner corresponds to which artifact, so we cannot' 
+  ZERO_A FAIL 'Nsbtlfsuc' 
+  WRONG_A FAIL 'The information provided does not specify which owner corresponds to which artifact, so we cannot' 
+  TRUE_A FAIL 'The information provided does not specify which owner corresponds to which artifact, so we cannot' 
+  TRUE_CF FAIL 'The information provided does not specify which owner corresponds to which artifact, so we cannot' 
+  DC_AB PASS 'Ypljllltu' 
+  DC_CF PASS 'Ggqbtdege' 
+  JOINT_AB PASS 'Ypljllltu' 
+  JOINT_CF PASS 'Ggqbtdege' 
+CAUSAL 0 NOT_DEMONSTRATED
+CAUSAL 1 NOT_DEMONSTRATED
+CAUSAL 2 NOT_DEMONSTRATED
+CAUSAL 3 NOT_DEMONSTRATED
+CAUSAL 4 NOT_DEMONSTRATED
+CAUSAL 5 NOT_DEMONSTRATED
+CAUSAL 6 NOT_DEMONSTRATED
+CAUSAL 7 NOT_DEMONSTRATED
+============================================================================================================== 
+TEST650_FINAL
+ {
+  "B_ONLY": {
+    "correct": 0,
+    "total": 8,
+    "errors": 0
+  },
+  "ZERO_A": {
+    "correct": 0,
+    "total": 8,
+    "errors": 0
+  },
+  "WRONG_A": {
+    "correct": 0,
+    "total": 8,
+    "errors": 0
+  },
+  "TRUE_A": {
+    "correct": 0,
+    "total": 8,
+    "errors": 0
+  },
+  "TRUE_CF": {
+    "correct": 0,
+    "total": 8,
+    "errors": 0
+  },
+  "DC_AB": {
+    "correct": 8,
+    "total": 8,
+    "errors": 0
+  },
+  "DC_CF": {
+    "correct": 8,
+    "total": 8,
+    "errors": 0
+  },
+  "JOINT_AB": {
+    "correct": 8,
+    "total": 8,
+    "errors": 0
+  },
+  "JOINT_CF": {
+    "correct": 8,
+    "total": 8,
+    "errors": 0
+  }
+}
+CAUSAL_RESIDUAL_TRANSFER 0 / 8
+SYNTHESIS_STATUS NOT_DEMONSTRATED
+WEIGHTS_FROZEN True SENTINEL True
+REPORT /content/AKBASCORE_TEST650/TEST650_results.json SHA256 8f0a120ce0d7d1aac0fae10678de080049c72100d2c40bb1c9e6b11dcf45085b
+STATUS EXPERIMENT_COMPLETE
+IMPORTANT: CUDA KERNEL BLENDS ONE RESIDUAL TOKEN. NO DYNAMIC KV LOOP OR FULL C++ INFERENCE IS CLAIMED.
