@@ -1,0 +1,174 @@
+ ====================================================================================================================
+TEST651 — NATIVE CUDA DYNAMIC KV FABRIC / SOURCE-LOCKED QWEN
+====================================================================================================================
+PASS CUDA_AVAILABLE
+PASS NINJA
+PASS NVCC
+PASS CXX
+BUILDING NATIVE KV EXTENSION
+PASS NATIVE_BITWISE_29_7
+PASS NATIVE_BITWISE_43_31
+PASS NATIVE_BITWISE_1_1
+PASS TEST566_BLOB
+PASS TEST566_BOUNDARY
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+config.json: 100% 663/663 [00:00<00:00, 72.5kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 954kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 81.3MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 73.0MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 128MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.29MB/s]Download complete:  13.1GB,  219MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  462MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.93s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.10it/s]generation_config.json: 100% 243/243 [00:00<00:00, 31.6kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+PASS FROZEN
+PASS ARCH
+PASS PANEL_LOCK
+PASS SENTINEL
+BASE GITHUB_VERIFIED BLOB b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71 GPU NVIDIA A100-SXM4-40GB
+PASS TEST650_PANEL_LOCK
+CASE 0 BUILDING KV FABRIC
+PASS KV_PARITY_AB_0
+PASS KV_PARITY_CF_0
+  B_ONLY FAIL 'Ggawbalhf' 
+  INDEP_AB FAIL 'Qtjgqsmrr' 
+  NATIVE_AB PASS 'Uymzbqqqy' 
+  NATIVE_CF PASS 'Qtjgqsmrr' 
+  BASE_DC_AB PASS 'Uymzbqqqy' 
+  BASE_DC_CF PASS 'Qtjgqsmrr' 
+  JOINT_AB PASS 'Uymzbqqqy' 
+  JOINT_CF PASS 'Qtjgqsmrr' 
+CASE 1 BUILDING KV FABRIC
+PASS KV_PARITY_AB_1
+PASS KV_PARITY_CF_1
+  B_ONLY FAIL 'Tgnnjrdtc' 
+  INDEP_AB FAIL 'Region Umjrcnqgd' 
+  NATIVE_AB PASS 'Gfurgabvw' 
+  NATIVE_CF PASS 'Hfgrumvwm' 
+  BASE_DC_AB PASS 'Gfurgabvw' 
+  BASE_DC_CF PASS 'Hfgrumvwm' 
+  JOINT_AB PASS 'Gfurgabvw' 
+  JOINT_CF PASS 'Hfgrumvwm' 
+CASE 2 BUILDING KV FABRIC
+PASS KV_PARITY_AB_2
+PASS KV_PARITY_CF_2
+  B_ONLY FAIL 'Kxbpfdkjm' 
+  INDEP_AB PASS 'Azgdnghvt' 
+  NATIVE_AB PASS 'Azgdnghvt' 
+  NATIVE_CF PASS 'Wrvhxsaje' 
+  BASE_DC_AB PASS 'Azgdnghvt' 
+  BASE_DC_CF PASS 'Wrvhxsaje' 
+  JOINT_AB PASS 'Azgdnghvt' 
+  JOINT_CF PASS 'Wrvhxsaje' 
+CASE 3 BUILDING KV FABRIC
+PASS KV_PARITY_AB_3
+PASS KV_PARITY_CF_3
+  B_ONLY FAIL 'Rrxwykdlj' 
+  INDEP_AB FAIL 'region Zkaxlvnjp' 
+  NATIVE_AB PASS 'Zkaxlvnjp' 
+  NATIVE_CF PASS 'Gsltsmzga' 
+  BASE_DC_AB PASS 'Zkaxlvnjp' 
+  BASE_DC_CF PASS 'Gsltsmzga' 
+  JOINT_AB PASS 'Zkaxlvnjp' 
+  JOINT_CF PASS 'Gsltsmzga' 
+CASE 4 BUILDING KV FABRIC
+PASS KV_PARITY_AB_4
+PASS KV_PARITY_CF_4
+  B_ONLY FAIL 'Srmhyukbw' 
+  INDEP_AB PASS 'Urslysjts' 
+  NATIVE_AB PASS 'Urslysjts' 
+  NATIVE_CF PASS 'Ezxydplvw' 
+  BASE_DC_AB PASS 'Urslysjts' 
+  BASE_DC_CF PASS 'Ezxydplvw' 
+  JOINT_AB PASS 'Urslysjts' 
+  JOINT_CF PASS 'Ezxydplvw' 
+CASE 5 BUILDING KV FABRIC
+PASS KV_PARITY_AB_5
+PASS KV_PARITY_CF_5
+  B_ONLY FAIL 'Jkksbalmg' 
+  INDEP_AB FAIL 'Jkksbalmg' 
+  NATIVE_AB PASS 'Hmdkhtdxf' 
+  NATIVE_CF PASS 'Yhxrpmckz' 
+  BASE_DC_AB PASS 'Hmdkhtdxf' 
+  BASE_DC_CF PASS 'Yhxrpmckz' 
+  JOINT_AB PASS 'Hmdkhtdxf' 
+  JOINT_CF PASS 'Yhxrpmckz' 
+CASE 6 BUILDING KV FABRIC
+PASS KV_PARITY_AB_6
+PASS KV_PARITY_CF_6
+  B_ONLY FAIL 'Cbpgruare' 
+  INDEP_AB FAIL 'Dnugltlzs' 
+  NATIVE_AB PASS 'Fjlthlfls' 
+  NATIVE_CF PASS 'Dnugltlzs' 
+  BASE_DC_AB PASS 'Fjlthlfls' 
+  BASE_DC_CF PASS 'Dnugltlzs' 
+  JOINT_AB PASS 'Fjlthlfls' 
+  JOINT_CF PASS 'Dnugltlzs' 
+CASE 7 BUILDING KV FABRIC
+PASS KV_PARITY_AB_7
+PASS KV_PARITY_CF_7
+  B_ONLY FAIL 'The information provided does not specify which owner corresponds to which artifact, so we cannot' 
+  INDEP_AB FAIL 'Apshkurnl' 
+  NATIVE_AB PASS 'Ypljllltu' 
+  NATIVE_CF PASS 'Ggqbtdege' 
+  BASE_DC_AB PASS 'Ypljllltu' 
+  BASE_DC_CF PASS 'Ggqbtdege' 
+  JOINT_AB PASS 'Ypljllltu' 
+  JOINT_CF PASS 'Ggqbtdege' 
+CAUSAL 0 PASS
+CAUSAL 1 PASS
+CAUSAL 2 NOT_DEMONSTRATED
+CAUSAL 3 PASS
+CAUSAL 4 NOT_DEMONSTRATED
+CAUSAL 5 PASS
+CAUSAL 6 PASS
+CAUSAL 7 PASS
+====================================================================================================================
+TEST651_FINAL
+{
+  "B_ONLY": {
+    "correct": 0,
+    "total": 8,
+    "errors": 0
+  },
+  "INDEP_AB": {
+    "correct": 2,
+    "total": 8,
+    "errors": 0
+  },
+  "NATIVE_AB": {
+    "correct": 8,
+    "total": 8,
+    "errors": 0
+  },
+  "NATIVE_CF": {
+    "correct": 8,
+    "total": 8,
+    "errors": 0
+  },
+  "BASE_DC_AB": {
+    "correct": 8,
+    "total": 8,
+    "errors": 0
+  },
+  "BASE_DC_CF": {
+    "correct": 8,
+    "total": 8,
+    "errors": 0
+  },
+  "JOINT_AB": {
+    "correct": 8,
+    "total": 8,
+    "errors": 0
+  },
+  "JOINT_CF": {
+    "correct": 8,
+    "total": 8,
+    "errors": 0
+  }
+}
+NATIVE_KV_BITWISE_PARITY 16 / 16
+CAUSAL_KV_LINK 6 / 8
+SYNTHESIS_STATUS NOT_DEMONSTRATED
+WEIGHTS_FROZEN True SENTINEL True
+RESULT /content/AKBASCORE_TEST651/TEST651_results.json SHA256 a45d8598c68a7e2980152c1d24d546f6a640687159f280580762833a96068386
+STATUS EXPERIMENT_COMPLETE
+LIMITATION: Native CUDA performs KV append; RoPE, H3 continuation and model forward use verified PyTorch. No autonomous retrieval loop is claimed.
