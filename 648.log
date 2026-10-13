@@ -1,0 +1,347 @@
+ ====================================================================================================================================
+TEST648 — BLIND LATENT TWO-CARTRIDGE SYNTHESIS
+START 2026-10-13T13:56:17.330520+00:00
+====================================================================================================================================
+[1/12] ENVIRONMENT
+GPU NVIDIA L4 TORCH 2.11.0+cu130 CUDA 13.0
+[2/12] SOURCE VERIFICATION
+SOURCE_VERIFIED c2c77b170365a08499bbc55d523bb04d46a12a6c
+[3/12] LOCKED ENGINE REUSE / COLD BOOT
+COLD_BOOT_LOCKED_ENGINE
+============================================================================================================================================
+AKBASCORE MAM — The Silicon Hippocampus — Qwen2.5-7B-Instruct · PART 1 / 3 · ENGINE
+Discovered and developed by Mustafa Akbaş · AkbasCore AI Teknoloji · 12 October 2026 · Mersin, Türkiye
+AKBASCORE RESEARCH SOFTWARE LICENSE · Copyright © 2026 Mustafa Akbaş · https://github.com/ceceli33/titan-cognitive-core-v2
+============================================================================================================================================
+[1/7] CPU self-test PASS (32 checks)
+[2/7] Engine source verified · TEST627 demo engine · SHA-256 ab53e2d58fb3dc5f11409a5112e92feea8762544e4b30b8a77a39b60332de4d1 · git blob 66c5abfd024091eebd86a5f3676010dceddd6959
+[3/7] Engine chain verified · 626.py SHA-256 b31481abebb73b98… · 624.py SHA-256 39438a48217f8ed5… (placed at the engine's local paths)
+[4/7] Executing the TEST627 demo engine unchanged in its own module namespace. Duration on an A100: several minutes (no fixed estimate; the
+      measured duration is printed at the end). The engine prints its own progress lines; they mean:
+        SOURCE_VERIFIED … / TEST566 … / TEST610 … / CASE …   → model load + 96-cartridge TEST610 baseline (610.py)
+        [1/7] PHYSICAL CUT3 WRITE · PHYSICAL_WRITE n / 1453  → A · WRITE: the frozen model writes the 1,453 cartridge files (624.py)
+        [2/7] LABEL-FREE PCA128 + FAISS IVF128 · INDEX {…}   → RAM address index built without labels (624.py)
+        [3/7] FROZEN QUERY PANEL                             → the 48 predeclared questions are encoded (624.py)
+        TEST627 … [1/7] LOCKED PEAK50 ROUTING · LOCKED_ROUTE n/96 → C · READ address on 48 original + 48 new-wording questions
+        [2/7] PHYSICAL DISK + SHA + FROZEN ANSWERS · PHYSICAL_E2E → D · answers from the disk files
+        [3/7] FILE_AUDIT · [4/7] TENSOR_AUDIT                → B · SSD: sizes, SHA-256 and tensor structure of all 1,453 files
+        [5/7]–[7/7] · TEST627_STATUS COMPLETE                → integrity, result JSON, start-up acceptance decision
+      start UTC 2026-10-13T13:56:27.801+00:00 · the following lines are printed by the engine itself
+BOOTSTRAP_TEST626_SHA256 b31481abebb73b98567253ff7d40b2d510e9e89beb512ff7f0bfc47a69fbb9b8
+BOOTSTRAP_TEST624_SHA256 39438a48217f8ed52db7df94ab5c9631dd9b3a09acf15f404eaa75f30d922387
+==============================================================================================================
+TEST624 / 1453 PHYSICAL CUT3 / NATIVE GEOMETRIC INDEX
+==============================================================================================================
+SOURCE_VERIFIED 575.py 569c92c61224ea408cdb6e81dbe45dde06dc05fd
+SOURCE_VERIFIED 566.py b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+config.json: 100% 663/663 [00:00<00:00, 86.2kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 925kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 85.6MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 76.3MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 133MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.69MB/s]Download complete:  13.1GB,  852MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  394MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 18.41s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.94it/s]generation_config.json: 100% 243/243 [00:00<00:00, 34.4kB/s]GPU: NVIDIA L4 TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+==============================================================================================================================
+TEST610 — FINAL DEMO ACCEPTANCE · FROZEN CUT3 + FRAM 96 CARTRIDGES
+==============================================================================================================================
+PASS PANEL_SHA {'sha': '69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45'}
+PASS ARCH {}
+PASS FROZEN {}
+PASS WEIGHT_SHA_REFERENCE {'sha': 'b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786'}
+[1/8] Capture native residuals for 96 cartridges...
+CARTRIDGE 1 / 96
+CARTRIDGE 17 / 96
+CARTRIDGE 33 / 96
+CARTRIDGE 49 / 96
+CARTRIDGE 65 / 96
+CARTRIDGE 81 / 96
+PASS CARTRIDGES {}
+[2/8] Question representations in fact frame...
+QUESTION 0 TARGET 0 TOKENS 10
+QUESTION 1 TARGET 6 TOKENS 9
+QUESTION 2 TARGET 9 TOKENS 10
+QUESTION 3 TARGET 15 TOKENS 9
+QUESTION 4 TARGET 16 TOKENS 9
+QUESTION 5 TARGET 22 TOKENS 9
+QUESTION 6 TARGET 25 TOKENS 10
+QUESTION 7 TARGET 31 TOKENS 9
+QUESTION 8 TARGET 32 TOKENS 10
+QUESTION 9 TARGET 38 TOKENS 9
+QUESTION 10 TARGET 41 TOKENS 10
+QUESTION 11 TARGET 47 TOKENS 9
+QUESTION 12 TARGET 48 TOKENS 9
+QUESTION 13 TARGET 54 TOKENS 9
+QUESTION 14 TARGET 57 TOKENS 10
+QUESTION 15 TARGET 63 TOKENS 9
+QUESTION 16 TARGET 64 TOKENS 9
+QUESTION 17 TARGET 70 TOKENS 9
+QUESTION 18 TARGET 73 TOKENS 9
+QUESTION 19 TARGET 79 TOKENS 9
+QUESTION 20 TARGET 80 TOKENS 9
+QUESTION 21 TARGET 86 TOKENS 10
+QUESTION 22 TARGET 89 TOKENS 10
+QUESTION 23 TARGET 95 TOKENS 9
+[3/8] Label-free PCA and calibration...
+LOCKED (3, 0, 8.0) CALIBRATION {'cfg': [3, 0, 8.0], 'hit5': 12, 'hit1': 12, 'rank_sum': 12, 'order': 1}
+[4/8] Holdout and identity controls...
+CASE 0 CAL RANK 1 TOP5 [0, 3, 2, 68, 88] TARGET 0
+CASE 1 CAL RANK 1 TOP5 [6, 54, 46, 4, 14] TARGET 6
+CASE 2 CAL RANK 1 TOP5 [9, 89, 33, 17, 57] TARGET 9
+CASE 3 CAL RANK 1 TOP5 [15, 28, 20, 39, 4] TARGET 15
+CASE 4 CAL RANK 1 TOP5 [16, 19, 18, 47, 31] TARGET 16
+CASE 5 CAL RANK 1 TOP5 [22, 20, 74, 23, 14] TARGET 22
+CASE 6 CAL RANK 1 TOP5 [25, 93, 61, 13, 77] TARGET 25
+CASE 7 CAL RANK 1 TOP5 [31, 12, 15, 56, 47] TARGET 31
+CASE 8 CAL RANK 1 TOP5 [32, 35, 34, 8, 11] TARGET 32
+CASE 9 CAL RANK 1 TOP5 [38, 36, 39, 74, 54] TARGET 38
+CASE 10 CAL RANK 1 TOP5 [41, 13, 85, 65, 69] TARGET 41
+CASE 11 CAL RANK 1 TOP5 [47, 75, 72, 59, 31] TARGET 47
+CASE 12 HOLD RANK 1 TOP5 [48, 51, 50, 68, 76] TARGET 48
+CASE 13 HOLD RANK 1 TOP5 [54, 6, 46, 52, 14] TARGET 54
+CASE 14 HOLD RANK 1 TOP5 [57, 85, 33, 9, 65] TARGET 57
+CASE 15 HOLD RANK 1 TOP5 [63, 52, 4, 7, 55] TARGET 63
+CASE 16 HOLD RANK 1 TOP5 [64, 67, 75, 20, 66] TARGET 64
+CASE 17 HOLD RANK 1 TOP5 [70, 22, 78, 68, 82] TARGET 70
+CASE 18 HOLD RANK 1 TOP5 [73, 5, 37, 57, 1] TARGET 73
+CASE 19 HOLD RANK 1 TOP5 [79, 48, 92, 75, 36] TARGET 79
+CASE 20 HOLD RANK 1 TOP5 [80, 83, 82, 68, 51] TARGET 80
+CASE 21 HOLD RANK 1 TOP5 [86, 84, 58, 87, 83] TARGET 86
+CASE 22 HOLD RANK 1 TOP5 [89, 17, 9, 61, 49] TARGET 89
+CASE 23 HOLD RANK 1 TOP5 [95, 28, 75, 44, 15] TARGET 95
+HOLDOUT_RECALL5 12 /12 RECALL1 12 /12 ALL_RECALL5 24 /24 HUB_MAX 4
+SELF_RETRIEVAL1 96 /96
+[5/7] CUT3 baseline and reference retrieval...
+PASS FRAM_LOCK_BEFORE_CUT3 {'cfg': [3, 0, 8.0]}
+REFERENCE_606_LOCKED {'hold_r1': 11, 'hold_r5': 12, 'expected_r1': 11, 'expected_r5': 12}
+PASS REFERENCE_RECALL5 {'hold_r1': 11, 'hold_r5': 12}
+CUT3_AUDIT BASELINE 12 TARGET 48 PRESENT 1 SHAPE True OK 1 GOLD 'Solith' RAW 'Solith'
+CUT3_AUDIT BASELINE 13 TARGET 54 PRESENT 1 SHAPE True OK 1 GOLD 'Toren' RAW 'Toren'
+CUT3_AUDIT BASELINE 14 TARGET 57 PRESENT 1 SHAPE True OK 1 GOLD 'Corven' RAW 'Corven'
+CUT3_AUDIT BASELINE 15 TARGET 63 PRESENT 1 SHAPE True OK 1 GOLD 'Dervan' RAW 'Dervan'
+CUT3_AUDIT BASELINE 16 TARGET 64 PRESENT 1 SHAPE True OK 1 GOLD 'Verith' RAW 'Verith'
+CUT3_AUDIT BASELINE 17 TARGET 70 PRESENT 1 SHAPE True OK 1 GOLD 'Maros' RAW 'Maros'
+CUT3_AUDIT BASELINE 18 TARGET 73 PRESENT 1 SHAPE True OK 1 GOLD 'Vindor' RAW 'Vindor'
+CUT3_AUDIT BASELINE 19 TARGET 79 PRESENT 1 SHAPE True OK 1 GOLD 'Barel' RAW 'Barel'
+CUT3_AUDIT BASELINE 20 TARGET 80 PRESENT 1 SHAPE True OK 1 GOLD 'Mervor' RAW 'Mervor'
+CUT3_AUDIT BASELINE 21 TARGET 86 PRESENT 1 SHAPE True OK 1 GOLD 'Calvenor' RAW 'Calvenor'
+CUT3_AUDIT BASELINE 22 TARGET 89 PRESENT 1 SHAPE True OK 1 GOLD 'Mardin' RAW 'Mardin'
+CUT3_AUDIT BASELINE 23 TARGET 95 PRESENT 1 SHAPE True OK 1 GOLD 'Karev' RAW 'Karev'
+CUT3_AUDIT_SUMMARY BASELINE {'correct': 12, 'total': 12, 'errors': 0, 'retrieval': 12}
+BASELINE_STATUS {'correct': 12, 'errors': 0, 'retrieved': 12}
+BASELINE_LOCK {'source_sha256': 'a62611a4ffd91c2fcf03796c31da2af11ccd8141345655b562f3a614568af3e7', 'original_cartridges': 96, 'fram_hold_r1': 12, 'fram_hold_r5': 12}
+[1/7] PHYSICAL CUT3 WRITE: 1453 real independent files
+PHYSICAL_WRITE 100 / 1453 disk_GB 0.231 elapsed_s 197.14
+PHYSICAL_WRITE 200 / 1453 disk_GB 0.508 elapsed_s 220.51
+PHYSICAL_WRITE 300 / 1453 disk_GB 0.785 elapsed_s 243.95
+PHYSICAL_WRITE 400 / 1453 disk_GB 1.062 elapsed_s 267.43
+PHYSICAL_WRITE 500 / 1453 disk_GB 1.338 elapsed_s 290.95
+PHYSICAL_WRITE 600 / 1453 disk_GB 1.614 elapsed_s 314.45
+PHYSICAL_WRITE 700 / 1453 disk_GB 1.891 elapsed_s 337.9
+PHYSICAL_WRITE 800 / 1453 disk_GB 2.167 elapsed_s 361.39
+PHYSICAL_WRITE 900 / 1453 disk_GB 2.444 elapsed_s 385.11
+PHYSICAL_WRITE 1000 / 1453 disk_GB 2.721 elapsed_s 408.63
+PHYSICAL_WRITE 1100 / 1453 disk_GB 2.998 elapsed_s 432.12
+PHYSICAL_WRITE 1200 / 1453 disk_GB 3.274 elapsed_s 455.6
+PHYSICAL_WRITE 1300 / 1453 disk_GB 3.55 elapsed_s 479.1
+PHYSICAL_WRITE 1400 / 1453 disk_GB 3.827 elapsed_s 502.61
+PHYSICAL_WRITE 1453 / 1453 disk_GB 3.973 elapsed_s 515.16
+[2/7] LABEL-FREE PCA128 + FAISS IVF128
+PCA_MS 139.02
+PROJECTION_MS 81.72
+INDEX {'cartridges': 1453, 'native_positions': 26738, 'ivf_lists': 128, 'index_build_ms': 27.93}
+[3/7] FROZEN QUERY PANEL: 48 NEW SYNTHETIC CARTRIDGE QUESTIONS
+============================================================================================================
+TEST626 — FROZEN 1453 CUT3 / LABEL-FREE NATIVE QUERY-CONTRAST RERANK
+============================================================================================================
+================================================================================================================
+TEST627 — PEAK50 LOCKED / 1453 PHYSICAL CUT3 / LOSSLESS STORAGE AUDIT
+================================================================================================================
+[1/7] LOCKED PEAK50 ROUTING / ORIGINAL 48 + ALTERNATE 48
+LOCKED_ROUTE 16 /96 correct 16
+LOCKED_ROUTE 32 /96 correct 32
+LOCKED_ROUTE 48 /96 correct 48
+LOCKED_ROUTE 64 /96 correct 64
+LOCKED_ROUTE 80 /96 correct 80
+LOCKED_ROUTE 96 /96 correct 96
+[2/7] PHYSICAL DISK + SHA + FROZEN ANSWERS / 96
+PHYSICAL_E2E 16 /96 correct 16
+PHYSICAL_E2E 32 /96 correct 32
+PHYSICAL_E2E 48 /96 correct 48
+PHYSICAL_E2E 64 /96 correct 64
+PHYSICAL_E2E 80 /96 correct 80
+PHYSICAL_E2E 96 /96 correct 96
+[3/7] ALL 1453 PHYSICAL FILE SIZES + SHA256
+FILE_AUDIT 300 /1453
+FILE_AUDIT 600 /1453
+FILE_AUDIT 900 /1453
+FILE_AUDIT 1200 /1453
+[4/7] TENSOR STRUCTURE / ALL FILES; LOSSLESS GZIP ON 32 PREDECLARED SAMPLES
+TENSOR_AUDIT 300 /1453
+TENSOR_AUDIT 600 /1453
+TENSOR_AUDIT 900 /1453
+TENSOR_AUDIT 1200 /1453
+TEST627_STORAGE {"cartridges": 1453, "disk_pool_bytes": 3973450961, "disk_pool_GB_decimal": 3.973451, "avg_file_bytes": 2734653.1, "median_file_bytes": 2768949.0, "min_file_bytes": 2252853, "max_file_bytes": 2883637, "total_tensor_payload_bytes": 3949568000, "file_container_overhead_bytes": 23882961, "avg_tensors_per_file": 56.0, "tensor_dtype_bytes": {"torch.bfloat16": 3949568000}, "lossless_gzip_sample_files": 32, "gzip_sample_ratio": 0.795999, "gzip_sample_estimated_pool_bytes": 3162862118, "gzip_sample_estimate_not_measured_full_pool": true, "gzip_sample_all_bitwise_restored": true, "gzip_compress_p50_ms": 241.2475, "gzip_decompress_p50_ms": 18.914}
+[5/7] INTEGRITY / NO TRAINING / NO HOOKS
+[6/7] FINAL
+TEST627_E2E {"ORIGINAL": {"cases": 48, "selected_correct": 48, "answer_correct": 48, "errors": 0, "touched_mean": 93.5, "address_p50_ms": 21.6441, "load_p50_ms": 17.7136, "answer_p50_ms": 427.5882}, "ALTERNATE": {"cases": 48, "selected_correct": 48, "answer_correct": 48, "errors": 0, "touched_mean": 108.854, "address_p50_ms": 23.5835, "load_p50_ms": 17.4097, "answer_p50_ms": 427.4286}}
+TEST627_INTEGRITY {"source_sha_lock": true, "manifest_1453_sha_verified": true, "weight_unchanged": true, "sentinel_unchanged": true, "zero_trainable": true, "no_hooks": true, "tensor_load_errors_zero": true, "lossless_sample_bitwise": true}
+TEST627_STORAGE_SUMMARY {"cartridges": 1453, "disk_pool_bytes": 3973450961, "disk_pool_GB_decimal": 3.973451, "avg_file_bytes": 2734653.1, "median_file_bytes": 2768949.0, "min_file_bytes": 2252853, "max_file_bytes": 2883637, "total_tensor_payload_bytes": 3949568000, "file_container_overhead_bytes": 23882961, "avg_tensors_per_file": 56.0, "tensor_dtype_bytes": {"torch.bfloat16": 3949568000}, "lossless_gzip_sample_files": 32, "gzip_sample_ratio": 0.795999, "gzip_sample_estimated_pool_bytes": 3162862118, "gzip_sample_estimate_not_measured_full_pool": true, "gzip_sample_all_bitwise_restored": true, "gzip_compress_p50_ms": 241.2475, "gzip_decompress_p50_ms": 18.914}
+[7/7] DEMO ACCEPTANCE
+TEST627_DECISION READY_FOR_DEMO_WITH_DISCLOSED_NONBLIND_LIMITATION
+TEST627_OUTPUT /content/AKBASCORE_TEST624/AKBASCORE_MAM_DEMO_ENGINE_RESULT.json
+TEST627_STATUS COMPLETE
+DEMO_ENGINE_OUTPUT /content/AKBASCORE_TEST624/AKBASCORE_MAM_DEMO_ENGINE_RESULT.json
+      engine finished · 652 s measured · end UTC 2026-10-13T14:07:19.950+00:00
+[5/7] Measurement adapter · TEST566 weight sentinel · all-parameter guard · start-up gates …
+[6/7] Full-weight SHA-256 (engine, start-up) b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786 · reference b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786
+[7/7] Engine lock PASS · 15 checks · init 652.1s · start-up acceptance: original 48/48 · new wording 48/48 answered from disk
+PART 1 / 3 complete. Now run PART 2 / 3 in the next cell.
+============================================================================================================================================
+ENGINE_BOOT_SECONDS 653.896
+ENGINE_LOCK_PASS ab53e2d58fb3dc5f11409a5112e92feea8762544e4b30b8a77a39b60332de4d1 CARTRIDGES 1453
+[4/12] PREDECLARED BLIND TASKS — SAME SEED AS TEST647
+BLIND_SEAL fe8ce098fa952ed10091046859352b152ccd84ed91c4d7247d8705806384fe66
+[5/12] REFERENCE ROUTING CONTROL — 48/48
+REFERENCE 12 /48 12
+REFERENCE 24 /48 24
+REFERENCE 36 /48 36
+REFERENCE 48 /48 48
+[6/12] BLIND ROUTING — FREEZE ALL SELECTED IDS
+ROUTE 1 / 16 ROUTED [771, 1344]
+ROUTE 2 / 16 ROUTED [448, 1032]
+ROUTE 3 / 16 ROUTED [227, 1227]
+ROUTE 4 / 16 ROUTED [1432, 949]
+ROUTE 5 / 16 ROUTED [554, 134]
+ROUTE 6 / 16 ROUTED [1305, 1235]
+ROUTE 7 / 16 ROUTED [1241, 149]
+ROUTE 8 / 16 ROUTED [461, 272]
+ROUTE 9 / 16 ROUTED [1093, 1082]
+ROUTE 10 / 16 ROUTED [1205, 1367]
+ROUTE 11 / 16 ROUTED [1047, 1027]
+ROUTE 12 / 16 ROUTED [754, 281]
+ROUTE 13 / 16 ROUTED [1269, 965]
+ROUTE 14 / 16 ROUTED [255, 656]
+ROUTE 15 / 16 ROUTED [1196, 546]
+ROUTE 16 / 16 ROUTED [1396, 1246]
+ROUTING_SHA 2b7342e66a57fb7c4a5a5a8ecfe602b6333d64cf87d93fc5c41c33d6e05a7e42
+[7/12] PHYSICAL CUT3 LOADER / NATIVE KV FUSION
+FUSION_READY ARMS ('AB', 'BA', 'A', 'B', 'NONE')
+[8/12] LATENT FUSION SELFTEST — PHYSICAL STRUCTURE
+FUSION_SELFTEST_PASS A 49 B 48 AB 68
+[9/12] BLIND MODEL GENERATION — AB / BA / A / B / NONE
+GENERATE 1 / 16 AB OK 'Qmnflewlxq'
+GENERATE 1 / 16 BA OK 'Qmnflewlxq Qmnflewlxq'
+GENERATE 1 / 16 A OK 'Qmnflewlxq'
+GENERATE 1 / 16 B OK 'Mpguzefyzs'
+GENERATE 1 / 16 NONE OK 'To answer this question, we need to identify the present capitals of the codes ZX'
+GENERATE 2 / 16 AB OK 'Tbknscnprn'
+GENERATE 2 / 16 BA OK 'Tbknscnprn'
+GENERATE 2 / 16 A OK 'Tbknscnprn, Tbknscnprn'
+GENERATE 2 / 16 B OK 'Htkmpwkqbn'
+GENERATE 2 / 16 NONE OK 'To answer this question, we need to identify the present capitals of the codes ZX'
+GENERATE 3 / 16 AB OK 'Mpcflbdeug'
+GENERATE 3 / 16 BA OK 'Mpcflbdeug'
+GENERATE 3 / 16 A OK 'Zfnbfuetxs Zfnbfuetxs'
+GENERATE 3 / 16 B OK 'Mpcflbdeug'
+GENERATE 3 / 16 NONE OK 'To answer this question, we need to identify the present capitals of the codes ZX'
+GENERATE 4 / 16 AB OK 'Qkwzsjtqlh Qkwzsjtqlh'
+GENERATE 4 / 16 BA OK 'Pqdmncpagz'
+GENERATE 4 / 16 A OK 'Pqdmncpagz'
+GENERATE 4 / 16 B OK 'Qkwzsjtqlh'
+GENERATE 4 / 16 NONE OK 'To answer this question, we need to identify the present capitals of the codes ZX'
+GENERATE 5 / 16 AB OK 'Hfrfhmfxsb'
+GENERATE 5 / 16 BA OK 'Yvzkshntxy'
+GENERATE 5 / 16 A OK 'Yvzkshntxy'
+GENERATE 5 / 16 B OK "Hfrfhmfxsb, ZX624458's capital"
+GENERATE 5 / 16 NONE OK 'To answer this question, we need to identify the present capitals of the codes ZX'
+GENERATE 6 / 16 AB OK 'Utljsjrspj'
+GENERATE 6 / 16 BA OK 'Utljsjrspj'
+GENERATE 6 / 16 A OK 'Utljsjrspj'
+GENERATE 6 / 16 B OK 'Rvyjqseucz'
+GENERATE 6 / 16 NONE OK 'To answer this question, we need to identify the present capital of ZX62'
+GENERATE 7 / 16 AB OK 'Kumuezsrvk'
+GENERATE 7 / 16 BA OK 'Kumuezsrvk, Mgeguzsler'
+GENERATE 7 / 16 A OK 'The present capital of ZX625145 is Kumuezsrvk'
+GENERATE 7 / 16 B OK 'Mgeguzsler'
+GENERATE 7 / 16 NONE OK 'To answer this question, we need to identify the present capitals of the codes ZX'
+GENERATE 8 / 16 AB OK 'Embcukawve'
+GENERATE 8 / 16 BA OK 'Embcukawve'
+GENERATE 8 / 16 A OK 'Lwpwuwbssx'
+GENERATE 8 / 16 B OK 'Embcukawve'
+GENERATE 8 / 16 NONE OK 'To answer this question, we need to identify the present capitals of the codes ZX'
+GENERATE 9 / 16 AB OK 'Vbsswxqjyb'
+GENERATE 9 / 16 BA OK 'Sjewtgmywxq'
+GENERATE 9 / 16 A OK 'Sjewtgmywx'
+GENERATE 9 / 16 B OK 'Vbsswxqjyb'
+GENERATE 9 / 16 NONE OK 'To answer this question, we need to identify the present capitals of the codes ZX'
+GENERATE 10 / 16 AB OK 'Fjrktjkwzb'
+GENERATE 10 / 16 BA OK 'Fjrktjkwzb'
+GENERATE 10 / 16 A OK 'Fjrktjkwzb'
+GENERATE 10 / 16 B OK 'Lzqvkjmdbg'
+GENERATE 10 / 16 NONE OK 'To answer this question, we need to identify the present capitals of the codes ZX'
+GENERATE 11 / 16 AB OK 'Bcztrvegga'
+GENERATE 11 / 16 BA OK 'Vambuggdzt'
+GENERATE 11 / 16 A OK 'Vambuggdzt'
+GENERATE 11 / 16 B OK 'The information provided does not include the capitals for ZX624951'
+GENERATE 11 / 16 NONE OK 'To answer this question, we need to identify the present capitals of the codes ZX'
+GENERATE 12 / 16 AB OK 'Fzencfbuue'
+GENERATE 12 / 16 BA OK 'Dpgnlmdgdx'
+GENERATE 12 / 16 A OK 'Dpgnlmdgdx'
+GENERATE 12 / 16 B OK 'Fzencfbuue'
+GENERATE 12 / 16 NONE OK 'To answer this question, we need to identify the present capitals of the codes ZX'
+GENERATE 13 / 16 AB OK 'Ekfqjruulh'
+GENERATE 13 / 16 BA OK 'Leefrnfyff'
+GENERATE 13 / 16 A OK 'Leefrnfyff'
+GENERATE 13 / 16 B OK 'Ekfqjruulh'
+GENERATE 13 / 16 NONE OK 'To answer this question, we need to identify the countries or regions represented by the'
+GENERATE 14 / 16 AB OK 'Yypyvfzarl'
+GENERATE 14 / 16 BA OK 'Yypyvfzarl'
+GENERATE 14 / 16 A OK 'Yypyvfzarl'
+GENERATE 14 / 16 B OK 'Fqqpcbpgxq'
+GENERATE 14 / 16 NONE OK 'To answer this question, we need to identify the countries or regions corresponding to the'
+GENERATE 15 / 16 AB OK 'Rvsdbgbrmv'
+GENERATE 15 / 16 BA OK 'Rvsdbgbrmv'
+GENERATE 15 / 16 A OK 'Zqftphkvxd'
+GENERATE 15 / 16 B OK 'The information provided does not include the capitals for ZX625100'
+GENERATE 15 / 16 NONE OK 'To answer this question, we need to identify the present capital of ZX62'
+GENERATE 16 / 16 AB OK 'Tevgvlkapp'
+GENERATE 16 / 16 BA OK 'Tevgbvynj, Espptbvynj'
+GENERATE 16 / 16 A OK 'Espptbvynj'
+GENERATE 16 / 16 B OK 'Tevgvlkapp'
+GENERATE 16 / 16 NONE OK 'To answer this question, we need to identify the present capitals of the codes ZX'
+GENERATION_FROZEN c5c5252d54403ce949891c0c345a6bdd826a68df9843c68cb191708cf47bf99a
+[10/12] POST-HOC SCORING — NO ANSWER MODIFICATION
+EVAL 1 / 16 SOURCES True AB False BA False A False B False NONE False
+EVAL 2 / 16 SOURCES True AB False BA False A False B False NONE False
+EVAL 3 / 16 SOURCES False AB False BA False A False B False NONE False
+EVAL 4 / 16 SOURCES True AB False BA False A False B False NONE False
+EVAL 5 / 16 SOURCES True AB False BA False A False B False NONE False
+EVAL 6 / 16 SOURCES False AB False BA False A False B False NONE False
+EVAL 7 / 16 SOURCES True AB False BA False A False B False NONE False
+EVAL 8 / 16 SOURCES True AB False BA False A False B False NONE False
+EVAL 9 / 16 SOURCES True AB False BA False A False B False NONE False
+EVAL 10 / 16 SOURCES True AB False BA False A False B False NONE False
+EVAL 11 / 16 SOURCES False AB False BA False A False B False NONE False
+EVAL 12 / 16 SOURCES True AB False BA False A False B False NONE False
+EVAL 13 / 16 SOURCES True AB False BA False A False B False NONE False
+EVAL 14 / 16 SOURCES True AB False BA False A False B False NONE False
+EVAL 15 / 16 SOURCES False AB False BA False A False B False NONE False
+EVAL 16 / 16 SOURCES True AB False BA False A False B False NONE False
+[11/12] CAUSAL CONTRIBUTION / ABLATION SUMMARY
+ARM_METRICS {"AB": {"both_ordered": 0, "both_present": 0, "first_correct": 7, "second_correct": 7, "errors": 0}, "BA": {"both_ordered": 0, "both_present": 1, "first_correct": 7, "second_correct": 8, "errors": 0}, "A": {"both_ordered": 0, "both_present": 0, "first_correct": 6, "second_correct": 9, "errors": 0}, "B": {"both_ordered": 0, "both_present": 0, "first_correct": 9, "second_correct": 4, "errors": 0}, "NONE": {"both_ordered": 0, "both_present": 0, "first_correct": 0, "second_correct": 0, "errors": 0}}
+FUSION_UNIQUE 0 / 16
+[12/12] FINAL ENGINE INTEGRITY / REPORT
+====================================================================================================================================
+TEST648_STATUS PASS
+REFERENCE 48 /48
+BLIND_BOTH_SOURCES 12 / 16
+LATENT AB 0 / 16 BOTH_PRESENT 0 / 16
+LATENT BA 0 / 16 BOTH_PRESENT 1 / 16
+LATENT A 0 / 16 BOTH_PRESENT 0 / 16
+LATENT B 0 / 16 BOTH_PRESENT 0 / 16
+LATENT NONE 0 / 16 BOTH_PRESENT 0 / 16
+FUSION_UNIQUE 0 / 16
+INTEGRITY {"source_verified": true, "engine_verified": true, "engine_lock": true, "weight_unchanged": true, "sentinel_unchanged": true, "zero_trainable": true, "no_optimizer": true, "no_foreign_hooks": true, "no_residual_hooks": true}
+RESULT /content/AKBASCORE_TEST648/TEST648_RESULT.json
+====================================================================================================================================
