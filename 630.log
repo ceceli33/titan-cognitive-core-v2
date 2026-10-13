@@ -1,0 +1,55 @@
+ ========================================================================================================================
+TEST630 — AKBASCORE MAM · SOURCE-ISOLATED PHYSICAL CARTRIDGE RELOAD
+========================================================================================================================
+SOURCE GITHUB_VERIFIED SHA256 0155cda553e5f08ed2bec53611e49898a5ca24e0d270c3a1274e661bc205bdcd BLOB b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 90.5kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 1.01MB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 44.5MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 75.8MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 130MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 2.72MB/s]Download complete:  13.1GB, 58.2MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  441MB/s  Fetching 4 files: 100% 4/4 [00:44<00:00,  8.94s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.93it/s]generation_config.json: 100% 243/243 [00:00<00:00, 34.3kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+=========================================================================================================
+CARTRIDGE 0 PHASE_A SOURCE-AVAILABLE FOR ONE-TIME FORGING
+PHASE_B BLOCKING ORIGINAL SOURCE TOKEN ACCESS
+ARM FULL_KV STATUS PASS BITWISE True CORRECT True BYTES 2310321
+ARM LOWER_KV_H3 STATUS PASS BITWISE True CORRECT True BYTES 618192
+ARM H3_ONLY STATUS INCOMPLETE_REPRESENTATION BITWISE None CORRECT None BYTES 288396
+=========================================================================================================
+CARTRIDGE 23 PHASE_A SOURCE-AVAILABLE FOR ONE-TIME FORGING
+PHASE_B BLOCKING ORIGINAL SOURCE TOKEN ACCESS
+ARM FULL_KV STATUS PASS BITWISE True CORRECT True BYTES 2310321
+ARM LOWER_KV_H3 STATUS PASS BITWISE True CORRECT True BYTES 618192
+ARM H3_ONLY STATUS INCOMPLETE_REPRESENTATION BITWISE None CORRECT None BYTES 288396
+=========================================================================================================
+CARTRIDGE 47 PHASE_A SOURCE-AVAILABLE FOR ONE-TIME FORGING
+PHASE_B BLOCKING ORIGINAL SOURCE TOKEN ACCESS
+ARM FULL_KV STATUS PASS BITWISE True CORRECT True BYTES 2310321
+ARM LOWER_KV_H3 STATUS PASS BITWISE True CORRECT True BYTES 618192
+ARM H3_ONLY STATUS INCOMPLETE_REPRESENTATION BITWISE None CORRECT None BYTES 288396
+=========================================================================================================
+CARTRIDGE 71 PHASE_A SOURCE-AVAILABLE FOR ONE-TIME FORGING
+PHASE_B BLOCKING ORIGINAL SOURCE TOKEN ACCESS
+ARM FULL_KV STATUS PASS BITWISE True CORRECT True BYTES 2310321
+ARM LOWER_KV_H3 STATUS PASS BITWISE True CORRECT True BYTES 618192
+ARM H3_ONLY STATUS INCOMPLETE_REPRESENTATION BITWISE None CORRECT None BYTES 288396
+=========================================================================================================
+CARTRIDGE 95 PHASE_A SOURCE-AVAILABLE FOR ONE-TIME FORGING
+PHASE_B BLOCKING ORIGINAL SOURCE TOKEN ACCESS
+ARM FULL_KV STATUS PASS BITWISE True CORRECT True BYTES 2252977
+ARM LOWER_KV_H3 STATUS PASS BITWISE True CORRECT True BYTES 602832
+ARM H3_ONLY STATUS INCOMPLETE_REPRESENTATION BITWISE None CORRECT None BYTES 281228
+========================================================================================================================
+TEST630_STATUS COMPLETE
+SOURCE_ISOLATED_CASES 5 / 5
+MODEL_UNCHANGED True
+RESULT FULL_KV COMPLETE_KV 5/5 BITWISE 5/5 CORRECT 5/5 MEAN_DISK_BYTES 2298852.2
+RESULT LOWER_KV_H3 COMPLETE_KV 5/5 BITWISE 5/5 CORRECT 5/5 MEAN_DISK_BYTES 615120.0
+RESULT H3_ONLY COMPLETE_KV 0/5 BITWISE 0/5 CORRECT 0/5 MEAN_DISK_BYTES 286962.4
+IMPORTANT H3_ONLY_INCOMPLETE is an expected structural finding, not an invented reconstruction success.
+CAUTION Same-process source isolation; independent process cold start remains untested.
+JSON_OUTPUT /content/AKBASCORE_TEST630/TEST630_SOURCE_ISOLATED_RELOAD.json
+CSV_OUTPUT /content/AKBASCORE_TEST630/TEST630_DEMO_COMPARISON.csv
+TOTAL_SECONDS 71.595
+========================================================================================================================
