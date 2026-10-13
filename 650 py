@@ -1,0 +1,242 @@
+
+# TEST650 — AKBASCORE MAM / NATIVE CUDA LATENT TRANSFER PROBE
+# TEST649/TEST566 source-locked backbone; CUDA owns the state-transfer kernel.
+# Qwen forward remains PyTorch for reference parity. This is NOT a fully native inference engine.
+# Four steps: (1) native parity, (2) latent capture, (3) true/zero/wrong transfer, (4) causal counterfactual.
+# One Colab cell: paste this entire file into a cell or run %run TEST650_REVIEWED.py
+import os,sys,re,json,time,random,hashlib,urllib.request,traceback,gc,shutil,subprocess,importlib.util
+from pathlib import Path
+import torch
+TEST='650';SEED650=6502026;CASES650=8;CUT650=3;ALPHA650=0.5;MAX_NEW650=16
+ROOT650=Path('/content/AKBASCORE_TEST650');ROOT650.mkdir(parents=True,exist_ok=True)
+URL650='https://raw.githubusercontent.com/ceceli33/titan-cognitive-core-v2/main/566.py'
+BLOB650='b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71'
+BOUND650='# TEST566 ADDITIONS — original TEST564 checkpoint/init/append/answer remain unchanged.'
+def blob650(b):return hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()
+def gate650(n,v):print(('PASS' if v else 'FAIL'),n,flush=True);assert v,n
+print('='*110,'\nTEST650 — CUDA LATENT LOOP / SOURCE-LOCKED QWEN\n'+'='*110)
+gate650('CUDA_AVAILABLE',torch.cuda.is_available())
+# Fail before model download if native compilation cannot be prepared.
+if importlib.util.find_spec('ninja') is None:
+    print('INSTALLING NINJA',flush=True)
+    subprocess.check_call([sys.executable,'-m','pip','install','-q','ninja'])
+from torch.utils.cpp_extension import load_inline,CUDA_HOME
+import ninja
+nvcc650=shutil.which('nvcc') or (str(Path(CUDA_HOME)/'bin'/'nvcc') if CUDA_HOME else None)
+gate650('NINJA_AVAILABLE',shutil.which('ninja') is not None or importlib.util.find_spec('ninja') is not None)
+gate650('CUDA_TOOLKIT_NVCC',bool(nvcc650 and Path(nvcc650).is_file()))
+gate650('CXX_COMPILER',bool(shutil.which('c++') or shutil.which('g++')))
+os.environ.setdefault('MAX_JOBS','2')
+p=Path('/content/566.py')
+if p.exists() and blob650(p.read_bytes())==BLOB650:raw=p.read_bytes();origin='LOCAL_VERIFIED'
+else:
+    req=urllib.request.Request(URL650,headers={'User-Agent':'AKBASCORE-TEST650'})
+    with urllib.request.urlopen(req,timeout=120) as f:raw=f.read()
+    origin='GITHUB_VERIFIED'
+gate650('TEST566_GIT_BLOB',blob650(raw)==BLOB650)
+src=raw.decode('utf-8');gate650('TEST566_BOUNDARY',src.count(BOUND650)==1)
+exec(compile(src.split(BOUND650,1)[0],'566.py','exec'),globals())
+gate650('FROZEN',all(not x.requires_grad for x in model.parameters()))
+gate650('ARCH', (NL,H,QH,KVH,HD)==(28,3584,28,4,128))
+gate650('PANEL_LOCK',PANEL_SHA=='69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45')
+gate650('SENTINEL',sentinel()==S0)
+print('BASE',origin,'BLOB',blob650(raw),'GPU',torch.cuda.get_device_name(0),flush=True)
+# Minimal C++/CUDA extension. Native kernel transforms one BF16 hidden-state row on device.
+# No Python arithmetic or Python answer fusion in the transfer operation.
+CPP650=r'''
+#include <torch/extension.h>
+void blend_cuda(torch::Tensor dst,torch::Tensor src,double alpha);
+void blend(torch::Tensor dst,torch::Tensor src,double alpha){
+ TORCH_CHECK(dst.is_cuda()&&src.is_cuda(),"CUDA only");
+ TORCH_CHECK(dst.is_contiguous()&&src.is_contiguous(),"contiguous required");
+ TORCH_CHECK(dst.scalar_type()==torch::kBFloat16&&src.scalar_type()==torch::kBFloat16,"BF16 required");
+ TORCH_CHECK(dst.sizes()==src.sizes(),"shape mismatch");
+ TORCH_CHECK(dst.device()==src.device(),"device mismatch");
+ TORCH_CHECK(dst.dim()==1,"1D hidden vector required");
+ TORCH_CHECK(alpha>=0.0&&alpha<=1.0,"invalid alpha");
+ blend_cuda(dst,src,alpha);
+}
+PYBIND11_MODULE(TORCH_EXTENSION_NAME,m){m.def("blend",&blend,"CUDA BF16 state transfer");}
+'''
+CUDA650=r'''
+#include <torch/extension.h>
+#include <ATen/cuda/CUDAContext.h>
+#include <c10/cuda/CUDAException.h>
+#include <cuda_bf16.h>
+#include <cuda_runtime.h>
+__global__ void blend_kernel(__nv_bfloat16* d,const __nv_bfloat16* s,int n,float a){
+ int i=blockIdx.x*blockDim.x+threadIdx.x;
+ if(i<n){float x=__bfloat162float(d[i]);float y=__bfloat162float(s[i]);d[i]=__float2bfloat16_rn((1.f-a)*x+a*y);}
+}
+void blend_cuda(torch::Tensor dst,torch::Tensor src,double alpha){
+ int n=dst.numel();blend_kernel<<<(n+255)/256,256,0,at::cuda::getCurrentCUDAStream()>>>(
+ reinterpret_cast<__nv_bfloat16*>(dst.data_ptr<at::BFloat16>()),
+ reinterpret_cast<const __nv_bfloat16*>(src.data_ptr<at::BFloat16>()),n,(float)alpha);
+ C10_CUDA_KERNEL_LAUNCH_CHECK();
+}
+'''
+print('BUILDING NATIVE CUDA EXTENSION',flush=True)
+native650=load_inline(name='akbascore_latent650_v2',cpp_sources=[CPP650],cuda_sources=[CUDA650],functions=None,extra_cflags=['-O2'],extra_cuda_cflags=['-O2'],with_cuda=True,verbose=True)
+# STEP 1: native numerical sanity against PyTorch reference, including alpha endpoints.
+x=torch.randn(H,device=DEVICE,dtype=DTYPE);y=torch.randn_like(x)
+for a in (0.,.5,1.):
+    z=x.clone();native650.blend(z,y,a)
+    ref=((1-a)*x.float()+a*y.float()).to(DTYPE)
+    gate650('NATIVE_BLEND_'+str(a),bool(torch.allclose(z,ref,atol=.015,rtol=.005)))
+    if a in (0.,1.):gate650('NATIVE_ENDPOINT_'+str(a),bool(torch.equal(z,x if a==0. else y)))
+# Independent, competition-rich cases. A and A' flip owner, B contains four competing owners/regions.
+# This tests one-token residual transfer, not a recurrent KV-memory engine.
+rng=random.Random(SEED650);alphabet='ABCDEFGHJKLMNPQRSTUVWXYZ';seen=set()
+def word650():
+    while True:
+        s=''.join(rng.choice(alphabet) for _ in range(9)).capitalize()
+        if s not in seen:seen.add(s);return s
+PANEL650=[];CAR650=[]
+def add650(s):
+    ids=tok(source(s),add_special_tokens=False).input_ids
+    if ids[:P]!=PIDS:raise RuntimeError('PREFIX_MISMATCH')
+    i=len(CAR650);CAR650.append(dict(fact=s,body=ids[P:]));return i
+for i in range(CASES650):
+    obj=word650();owners=[word650() for _ in range(4)];regions=[word650() for _ in range(4)]
+    a=add650(f'The owner of artifact {obj} is {owners[0]}.')
+    acf=add650(f'The owner of artifact {obj} is {owners[1]}.')
+    bs=[add650(f'{owners[j]} lives in region {regions[j]}.') for j in range(4)]
+    PANEL650.append(dict(case=i,object=obj,owners=owners,regions=regions,a=a,acf=acf,bs=bs,
+        q=f'In which region does the owner of artifact {obj} live?',
+        qa=f'Who owns artifact {obj}?'))
+CAR=CAR650;MAX_NEW=MAX_NEW650
+panel_sha=hashlib.sha256(json.dumps(PANEL650,sort_keys=True).encode()).hexdigest()
+print('PANEL',panel_sha,'CASES',CASES650,flush=True)
+@torch.no_grad()
+def memory650(keys):
+    m=init(keys[0],CUT650)
+    for ci in keys[1:]:m=append(m,ci,CUT650)
+    n=P+sum(len(CAR[ci]['body']) for ci in keys)
+    if len(m)!=NL or any(k.shape!=(1,KVH,n,HD) or v.shape!=(1,KVH,n,HD) for k,v in m):raise RuntimeError('CACHE_SHAPE')
+    return m
+# STEP 2: capture only the LAST query-token residual after layer CUT3. No answer text is transferred.
+@torch.no_grad()
+def capture650(memory,q):
+    state={}
+    def hook(module,args,out):
+        h=out[0] if isinstance(out,(tuple,list)) else out
+        state['h']=h[:,-1,:].detach().contiguous().clone()
+    handle=model.model.layers[CUT650].register_forward_hook(hook)
+    try:
+        cache=cache_build(memory);n=memory[0][0].shape[-2]
+        ids=tok(suffix(q),add_special_tokens=False).input_ids
+        pos=torch.arange(n,n+len(ids),device=DEVICE)
+        model(input_ids=torch.tensor([ids],device=DEVICE),past_key_values=cache,
+              attention_mask=torch.ones((1,n+len(ids)),device=DEVICE,dtype=torch.long),
+              position_ids=pos.unsqueeze(0),cache_position=pos,use_cache=True,return_dict=True)
+    finally:handle.remove()
+    if 'h' not in state or state['h'].shape!=(1,H):raise RuntimeError('STATE_CAPTURE_FAILED')
+    return state['h']
+# STEP 3: second-pass query runs against B-only cache. At CUT3, native CUDA blends the last query-token state.
+# Remaining 24 layers compute normally; B cache never contains A text or A KV.
+@torch.no_grad()
+def answer650(memory,q,latent=None,alpha=ALPHA650):
+    state={'calls':0};handle=None
+    if latent is not None:
+        def inject(module,args,out):
+            h=out[0] if isinstance(out,(tuple,list)) else out
+            if h.shape[0]!=1 or h.shape[-1]!=H:raise RuntimeError('INJECTION_SHAPE')
+            # Avoid in-place changes to the model output and to unrelated tokens.
+            updated=h.clone();dst=updated[0,-1,:].contiguous().clone()
+            native650.blend(dst,latent.reshape(-1).contiguous(),alpha)
+            updated[0,-1,:]=dst;state['calls']+=1
+            return replace(out,updated)
+        handle=model.model.layers[CUT650].register_forward_hook(inject)
+    try:
+        cache=cache_build(memory);n=memory[0][0].shape[-2]
+        ids=tok(suffix(q),add_special_tokens=False).input_ids
+        pos=torch.arange(n,n+len(ids),device=DEVICE)
+        out=model(input_ids=torch.tensor([ids],device=DEVICE),past_key_values=cache,
+            attention_mask=torch.ones((1,n+len(ids)),device=DEVICE,dtype=torch.long),
+            position_ids=pos.unsqueeze(0),cache_position=pos,use_cache=True,return_dict=True)
+    finally:
+        if handle is not None:handle.remove()
+    if latent is not None and state['calls']!=1:raise RuntimeError('INJECTION_COVERAGE')
+    cache=out.past_key_values;next_id=out.logits[:,-1,:].argmax(-1,keepdim=True);gen=[]
+    stop={tok.eos_token_id,tok.convert_tokens_to_ids('<|im_end|>')}
+    for _ in range(MAX_NEW650):
+        t=int(next_id.item())
+        if t in stop:break
+        gen.append(t);n=cache.get_seq_length();pos=torch.tensor([n],device=DEVICE)
+        out=model(input_ids=next_id,past_key_values=cache,attention_mask=torch.ones((1,n+1),device=DEVICE,dtype=torch.long),
+            position_ids=pos.unsqueeze(0),cache_position=pos,use_cache=True,return_dict=True)
+        cache=out.past_key_values;next_id=out.logits[:,-1,:].argmax(-1,keepdim=True)
+    return tok.decode(gen,skip_special_tokens=True).strip()
+def norm650(s):return re.sub(r'[^a-z]','',s.casefold())
+def exact650(a,b):return norm650(a)==norm650(b)
+ARMS650=('B_ONLY','ZERO_A','WRONG_A','TRUE_A','TRUE_CF','DC_AB','DC_CF','JOINT_AB','JOINT_CF')
+@torch.no_grad()
+def joint650(keys):
+    ids=list(PIDS)
+    for ci in keys:ids.extend(CAR[ci]['body'])
+    n=len(ids);pos=torch.arange(n,device=DEVICE)
+    out=model(input_ids=torch.tensor([ids],device=DEVICE),attention_mask=torch.ones((1,n),device=DEVICE,dtype=torch.long),position_ids=pos.unsqueeze(0),cache_position=pos,use_cache=True,return_dict=True)
+    return clone(out.past_key_values)
+def validate650(memory,keys):
+    n=P+sum(len(CAR[i]['body']) for i in keys)
+    if len(memory)!=NL or any(k.shape!=(1,KVH,n,HD) or v.shape!=(1,KVH,n,HD) or not torch.isfinite(k).all() or not torch.isfinite(v).all() for k,v in memory):raise RuntimeError('CACHE_VALIDATION_FAILED')
+    return memory
+RAW650=[];START650=time.perf_counter()
+for z in PANEL650:
+    print('CASE',z['case'],'CAPTURE',flush=True)
+    try:
+        ma=memory650([z['a']]);mcf=memory650([z['acf']]);mb=memory650(z['bs'])
+        # WRONG is a separate case's artifact/owner state, not the counterfactual of this case.
+        zw=PANEL650[(z['case']+1)%CASES650];mw=memory650([zw['a']])
+        sa=capture650(ma,z['qa']);scf=capture650(mcf,z['qa']);sw=capture650(mw,zw['qa'])
+        gate650('STATE_FINITE_'+str(z['case']),bool(torch.isfinite(sa).all() and torch.isfinite(scf).all()))
+        gate650('STATE_NONZERO_'+str(z['case']),bool(sa.norm()>0 and scf.norm()>0 and sw.norm()>0))
+        print('STATE_DELTA',z['case'],'A_CF',round(float((sa.float()-scf.float()).norm()),6),'A_WRONG',round(float((sa.float()-sw.float()).norm()),6),flush=True)
+        # Wrong state comes from a different case; CF state changes the owner of this artifact.
+        arms={
+            'B_ONLY':lambda:answer650(mb,z['q']),
+            'TRUE_A':lambda:answer650(mb,z['q'],sa),
+            'ZERO_A':lambda:answer650(mb,z['q'],torch.zeros_like(sa)),
+            'WRONG_A':lambda:answer650(mb,z['q'],sw),
+            'TRUE_CF':lambda:answer650(mb,z['q'],scf),
+            'DC_AB':lambda:answer650(memory650([z['a']]+z['bs']),z['q']),
+            'DC_CF':lambda:answer650(memory650([z['acf']]+z['bs']),z['q']),
+            'JOINT_AB':lambda:answer650(validate650(joint650([z['a']]+z['bs']),[z['a']]+z['bs']),z['q']),
+            'JOINT_CF':lambda:answer650(validate650(joint650([z['acf']]+z['bs']),[z['acf']]+z['bs']),z['q'])}
+        for arm in ARMS650:
+            gold=z['regions'][1] if arm in ('TRUE_CF','DC_CF','JOINT_CF') else z['regions'][0]
+            t=time.perf_counter()
+            try:ans=arms[arm]();err=None
+            except Exception as e:ans='';err=type(e).__name__+': '+str(e)
+            rec=dict(case=z['case'],arm=arm,gold=gold,answer=ans,exact=err is None and exact650(ans,gold),error=err,seconds=round(time.perf_counter()-t,3))
+            RAW650.append(rec);print(' ',arm,'PASS' if rec['exact'] else 'FAIL',repr(ans),err or '',flush=True)
+    except Exception as e:
+        print('CASE_FATAL',z['case'],traceback.format_exc(),flush=True)
+        for arm in ARMS650:
+            if not any(r['case']==z['case'] and r['arm']==arm for r in RAW650):
+                RAW650.append(dict(case=z['case'],arm=arm,gold='',answer='',exact=False,error='CASE_FATAL: '+str(e)))
+    gc.collect();torch.cuda.empty_cache()
+# STEP 4: evaluate causal discrimination, not merely a correct answer.
+SCORES650={a:dict(correct=sum(r['exact'] for r in RAW650 if r['arm']==a),total=CASES650,
+                    errors=sum(bool(r['error']) for r in RAW650 if r['arm']==a)) for a in ARMS650}
+CAUSAL650=[]
+for z in PANEL650:
+    r={v['arm']:v for v in RAW650 if v['case']==z['case']}
+    ok=bool(r['TRUE_A']['exact'] and r['TRUE_CF']['exact'] and
+            not r['B_ONLY']['exact'] and not r['ZERO_A']['exact'] and not r['WRONG_A']['exact'] and
+            norm650(r['TRUE_A']['answer'])!=norm650(r['TRUE_CF']['answer']) and
+            r['DC_AB']['exact'] and r['DC_CF']['exact'] and r['JOINT_AB']['exact'] and r['JOINT_CF']['exact'])
+    CAUSAL650.append(dict(case=z['case'],pass_causal=ok))
+    print('CAUSAL',z['case'],'PASS' if ok else 'NOT_DEMONSTRATED',flush=True)
+report=dict(test=TEST,base_blob=BLOB650,panel_sha256=panel_sha,cut=CUT650,alpha=ALPHA650,
+    native='CUDA BF16 residual blend only; Qwen forward via PyTorch',scores=SCORES650,causal=CAUSAL650,
+    raw=RAW650,model_frozen=all(not p.requires_grad for p in model.parameters()),sentinel_unchanged=sentinel()==S0,
+    seconds=round(time.perf_counter()-START650,2))
+path=ROOT650/'TEST650_results.json';path.write_text(json.dumps(report,indent=2,ensure_ascii=False),encoding='utf-8')
+print('='*110,'\nTEST650_FINAL\n',json.dumps(SCORES650,indent=2),flush=True)
+print('CAUSAL_RESIDUAL_TRANSFER',sum(x['pass_causal'] for x in CAUSAL650),'/',CASES650)
+print('SYNTHESIS_STATUS','RESIDUAL_TRANSFER_EVIDENCE_ONLY' if all(x['pass_causal'] for x in CAUSAL650) else 'NOT_DEMONSTRATED')
+print('WEIGHTS_FROZEN',report['model_frozen'],'SENTINEL',report['sentinel_unchanged'])
+print('REPORT',path,'SHA256',hashlib.sha256(path.read_bytes()).hexdigest())
+print('STATUS','EXPERIMENT_COMPLETE' if report['sentinel_unchanged'] and not any(r['error'] for r in RAW650) else 'ERRORS_PRESENT')
+print('IMPORTANT: CUDA KERNEL BLENDS ONE RESIDUAL TOKEN. NO DYNAMIC KV LOOP OR FULL C++ INFERENCE IS CLAIMED.')
