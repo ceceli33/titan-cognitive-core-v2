@@ -1,0 +1,185 @@
+ ====================================================================================================================
+TEST652 — NATIVE CUDA DYNAMIC KV FABRIC / SOURCE-LOCKED QWEN
+====================================================================================================================
+PASS CUDA_AVAILABLE
+PASS NINJA
+PASS NVCC
+PASS CXX
+BUILDING NATIVE KV EXTENSION
+PASS NATIVE_BITWISE_29_7
+PASS NATIVE_BITWISE_43_31
+PASS NATIVE_BITWISE_1_1
+PASS TEST566_BLOB
+PASS TEST566_BOUNDARY
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 77.8kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 890kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 57.1MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 70.5MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 132MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.47MB/s]Download complete:  13.1GB,  439MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  502MB/s  Fetching 4 files: 100% 4/4 [00:42<00:00, 42.72s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.62it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.1kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+PASS FROZEN
+PASS ARCH
+PASS PANEL_LOCK
+PASS SENTINEL
+BASE GITHUB_VERIFIED BLOB b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71 GPU NVIDIA A100-SXM4-40GB
+PASS TEST650_PANEL_LOCK
+PASS NATIVE_COSINE_PARITY
+CASE 0 LATENT ROUTING
+ ROUTE A MEAN INDEX 3 SCORES [0.2946905, 0.299813, 0.3077312, 0.3231599]
+ ROUTE A MAX INDEX 3 SCORES [0.6431126, 0.6474272, 0.6465194, 0.6593823]
+ ROUTE CF MEAN INDEX 3 SCORES [0.2944165, 0.299476, 0.3074181, 0.3224832]
+ ROUTE CF MAX INDEX 3 SCORES [0.6423128, 0.6475612, 0.645561, 0.6587686]
+  B_ONLY FAIL 'Ggawbalhf' 
+  DC_ALL PASS 'Uymzbqqqy' 
+  JOINT_ALL PASS 'Uymzbqqqy' 
+  ROUTE_MEAN FAIL 'Ggawbalhf' 
+  ROUTE_MAX FAIL 'Ggawbalhf' 
+  ROUTE_MEAN_CF FAIL 'Ggawbalhf' 
+  ROUTE_MAX_CF FAIL 'Ggawbalhf' 
+CASE 1 LATENT ROUTING
+ ROUTE A MEAN INDEX 3 SCORES [0.2966239, 0.2967324, 0.3018094, 0.3020014]
+ ROUTE A MAX INDEX 3 SCORES [0.6394033, 0.639181, 0.6426731, 0.6609749]
+ ROUTE CF MEAN INDEX 3 SCORES [0.2962181, 0.2967481, 0.3014814, 0.3017954]
+ ROUTE CF MAX INDEX 3 SCORES [0.6384782, 0.6385473, 0.6417813, 0.659934]
+  B_ONLY FAIL 'Tgnnjrdtc' 
+  DC_ALL PASS 'Gfurgabvw' 
+  JOINT_ALL PASS 'Gfurgabvw' 
+  ROUTE_MEAN FAIL 'Tgnnjrdtc' 
+  ROUTE_MAX FAIL 'Tgnnjrdtc' 
+  ROUTE_MEAN_CF FAIL 'Tgnnjrdtc' 
+  ROUTE_MAX_CF FAIL 'Tgnnjrdtc' 
+CASE 2 LATENT ROUTING
+ ROUTE A MEAN INDEX 3 SCORES [0.2934028, 0.2978087, 0.3041007, 0.3266228]
+ ROUTE A MAX INDEX 0 SCORES [0.6487563, 0.644154, 0.6382914, 0.6256101]
+ ROUTE CF MEAN INDEX 3 SCORES [0.2932726, 0.2978641, 0.3039433, 0.3265502]
+ ROUTE CF MAX INDEX 0 SCORES [0.6487389, 0.644086, 0.6383376, 0.6257824]
+  B_ONLY FAIL 'Kxbpfdkjm' 
+  DC_ALL PASS 'Azgdnghvt' 
+  JOINT_ALL PASS 'Azgdnghvt' 
+  ROUTE_MEAN FAIL 'Kxbpfdkjm' 
+  ROUTE_MAX PASS 'Azgdnghvt' 
+  ROUTE_MEAN_CF FAIL 'Kxbpfdkjm' 
+  ROUTE_MAX_CF FAIL 'Azgdnghvt' 
+CASE 3 LATENT ROUTING
+ ROUTE A MEAN INDEX 3 SCORES [0.2922075, 0.2867157, 0.2939772, 0.2969309]
+ ROUTE A MAX INDEX 2 SCORES [0.6276568, 0.6344039, 0.6497768, 0.6383215]
+ ROUTE CF MEAN INDEX 3 SCORES [0.2921689, 0.2880299, 0.2939312, 0.2970707]
+ ROUTE CF MAX INDEX 2 SCORES [0.6278802, 0.6358109, 0.6502499, 0.6387709]
+  B_ONLY FAIL 'Rrxwykdlj' 
+  DC_ALL PASS 'Zkaxlvnjp' 
+  JOINT_ALL PASS 'Zkaxlvnjp' 
+  ROUTE_MEAN FAIL 'Rrxwykdlj' 
+  ROUTE_MAX FAIL 'Degrqvxek' 
+  ROUTE_MEAN_CF FAIL 'Rrxwykdlj' 
+  ROUTE_MAX_CF FAIL 'Degrqvxek' 
+CASE 4 LATENT ROUTING
+ ROUTE A MEAN INDEX 3 SCORES [0.2931052, 0.2842635, 0.2806824, 0.2936414]
+ ROUTE A MAX INDEX 0 SCORES [0.648347, 0.6338486, 0.643314, 0.6416109]
+ ROUTE CF MEAN INDEX 3 SCORES [0.2935928, 0.2846763, 0.2814522, 0.2942806]
+ ROUTE CF MAX INDEX 0 SCORES [0.6494158, 0.635553, 0.6449537, 0.6431051]
+  B_ONLY FAIL 'Srmhyukbw' 
+  DC_ALL PASS 'Urslysjts' 
+  JOINT_ALL PASS 'Urslysjts' 
+  ROUTE_MEAN FAIL 'Srmhyukbw' 
+  ROUTE_MAX PASS 'Urslysjts' 
+  ROUTE_MEAN_CF FAIL 'Srmhyukbw' 
+  ROUTE_MAX_CF FAIL 'Urslysjts' 
+CASE 5 LATENT ROUTING
+ ROUTE A MEAN INDEX 1 SCORES [0.2741738, 0.3051756, 0.3028089, 0.2981831]
+ ROUTE A MAX INDEX 2 SCORES [0.6310865, 0.6443297, 0.6450154, 0.639543]
+ ROUTE CF MEAN INDEX 1 SCORES [0.2750252, 0.3057901, 0.3035298, 0.2991032]
+ ROUTE CF MAX INDEX 2 SCORES [0.6323723, 0.6460672, 0.646677, 0.6412585]
+  B_ONLY FAIL 'Jkksbalmg' 
+  DC_ALL PASS 'Hmdkhtdxf' 
+  JOINT_ALL PASS 'Hmdkhtdxf' 
+  ROUTE_MEAN FAIL 'Yhxrpmckz' 
+  ROUTE_MAX FAIL 'The information provided does not specify the region where the owner of artifact Gvvz' 
+  ROUTE_MEAN_CF PASS 'Yhxrpmckz' 
+  ROUTE_MAX_CF FAIL 'Jkksbalmg' 
+CASE 6 LATENT ROUTING
+ ROUTE A MEAN INDEX 3 SCORES [0.2986024, 0.2946348, 0.2912562, 0.3128413]
+ ROUTE A MAX INDEX 2 SCORES [0.641564, 0.6368563, 0.6550383, 0.6498909]
+ ROUTE CF MEAN INDEX 3 SCORES [0.2989669, 0.2951724, 0.291449, 0.3133831]
+ ROUTE CF MAX INDEX 2 SCORES [0.6422051, 0.6380067, 0.6560407, 0.6510546]
+  B_ONLY FAIL 'Cbpgruare' 
+  DC_ALL PASS 'Fjlthlfls' 
+  JOINT_ALL PASS 'Fjlthlfls' 
+  ROUTE_MEAN FAIL 'Zhnaxabnd' 
+  ROUTE_MAX FAIL 'Cbpgruare' 
+  ROUTE_MEAN_CF FAIL 'Zhnaxabnd' 
+  ROUTE_MAX_CF FAIL 'Cbpgruare' 
+CASE 7 LATENT ROUTING
+ ROUTE A MEAN INDEX 1 SCORES [0.2882281, 0.303022, 0.2839911, 0.2755502]
+ ROUTE A MAX INDEX 3 SCORES [0.6389954, 0.6466224, 0.6471311, 0.6487131]
+ ROUTE CF MEAN INDEX 1 SCORES [0.2880197, 0.3032537, 0.2839337, 0.2756395]
+ ROUTE CF MAX INDEX 3 SCORES [0.6383508, 0.6464283, 0.6471394, 0.6482493]
+  B_ONLY FAIL 'The information provided does not specify which owner corresponds to which artifact, so we cannot' 
+  DC_ALL PASS 'Ypljllltu' 
+  JOINT_ALL PASS 'Ypljllltu' 
+  ROUTE_MEAN FAIL 'Ggqbtdege' 
+  ROUTE_MAX FAIL 'Apshkurnl' 
+  ROUTE_MEAN_CF PASS 'Ggqbtdege' 
+  ROUTE_MAX_CF FAIL 'Apshkurnl' 
+CAUSAL 0 MEAN NOT_DEMONSTRATED
+CAUSAL 0 MAX NOT_DEMONSTRATED
+CAUSAL 1 MEAN NOT_DEMONSTRATED
+CAUSAL 1 MAX NOT_DEMONSTRATED
+CAUSAL 2 MEAN NOT_DEMONSTRATED
+CAUSAL 2 MAX NOT_DEMONSTRATED
+CAUSAL 3 MEAN NOT_DEMONSTRATED
+CAUSAL 3 MAX NOT_DEMONSTRATED
+CAUSAL 4 MEAN NOT_DEMONSTRATED
+CAUSAL 4 MAX NOT_DEMONSTRATED
+CAUSAL 5 MEAN NOT_DEMONSTRATED
+CAUSAL 5 MAX NOT_DEMONSTRATED
+CAUSAL 6 MEAN NOT_DEMONSTRATED
+CAUSAL 6 MAX NOT_DEMONSTRATED
+CAUSAL 7 MEAN NOT_DEMONSTRATED
+CAUSAL 7 MAX NOT_DEMONSTRATED
+====================================================================================================================
+TEST652_FINAL
+{
+  "B_ONLY": {
+    "correct": 0,
+    "total": 8,
+    "errors": 0
+  },
+  "DC_ALL": {
+    "correct": 8,
+    "total": 8,
+    "errors": 0
+  },
+  "JOINT_ALL": {
+    "correct": 8,
+    "total": 8,
+    "errors": 0
+  },
+  "ROUTE_MEAN": {
+    "correct": 0,
+    "total": 8,
+    "errors": 0
+  },
+  "ROUTE_MAX": {
+    "correct": 2,
+    "total": 8,
+    "errors": 0
+  },
+  "ROUTE_MEAN_CF": {
+    "correct": 2,
+    "total": 8,
+    "errors": 0
+  },
+  "ROUTE_MAX_CF": {
+    "correct": 0,
+    "total": 8,
+    "errors": 0
+  }
+}
+LATENT_ROUTING {'A_MEAN': 0, 'A_MAX': 2, 'CF_MEAN': 2, 'CF_MAX': 0}
+CAUSAL_LATENT_ROUTING 0 / 16
+WEIGHTS_FROZEN True SENTINEL True
+RESULT /content/AKBASCORE_TEST652/TEST652_results.json SHA256 33e9a705e5e0240c4fa87ceb9aef40ccbae55f5f61eb393d52a320271b66477c
+STATUS EXPERIMENT_COMPLETE
+LIMITATION: Frozen H3 cosine is a candidate readout, not a proven semantic router. A remains in final DC3 memory; routing independence is not established.
