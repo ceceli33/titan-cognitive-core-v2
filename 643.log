@@ -1,0 +1,40 @@
+========================================================================================================================
+TEST643 — AKBASCORE STANDALONE NATIVE C++ / CUDA FOUNDATION
+START 2026-10-13T11:53:56.846306+00:00
+========================================================================================================================
+[1/9] ENVIRONMENT
+GPU NVIDIA A100-SXM4-40GB
+TORCH 2.11.0+cu130 TRANSFORMERS 5.18.0
+CUDA 13.0
+NVCC Build cuda_13.0.r13.0/compiler.36424714_0
+[2/9] VERIFIED HIPPOCAMPUS SOURCE
+SOURCE VERIFIED c2c77b170365a08499bbc55d523bb04d46a12a6c
+[3/9] STARTING LOCKED ENGINE
+COLD START — LOADING MODEL AND REBUILDING ORIGINAL PHYSICAL CARTRIDGE BANK
+THE ORIGINAL ENGINE MAY TAKE SEVERAL MINUTES
+============================================================================================================================================
+AKBASCORE MAM — The Silicon Hippocampus — Qwen2.5-7B-Instruct · PART 1 / 3 · ENGINE
+Discovered and developed by Mustafa Akbaş · AkbasCore AI Teknoloji · 12 October 2026 · Mersin, Türkiye
+AKBASCORE RESEARCH SOFTWARE LICENSE · Copyright © 2026 Mustafa Akbaş · https://github.com/ceceli33/titan-cognitive-core-v2
+============================================================================================================================================
+[1/7] CPU self-test PASS (32 checks)
+[2/7] Engine source verified · TEST627 demo engine · SHA-256 ab53e2d58fb3dc5f11409a5112e92feea8762544e4b30b8a77a39b60332de4d1 · git blob 66c5abfd024091eebd86a5f3676010dceddd6959
+[3/7] Engine chain verified · 626.py SHA-256 b31481abebb73b98… · 624.py SHA-256 39438a48217f8ed5… (placed at the engine's local paths)
+[4/7] Executing the TEST627 demo engine unchanged in its own module namespace. Duration on an A100: several minutes (no fixed estimate; the
+      measured duration is printed at the end). The engine prints its own progress lines; they mean:
+        SOURCE_VERIFIED … / TEST566 … / TEST610 … / CASE …   → model load + 96-cartridge TEST610 baseline (610.py)
+        [1/7] PHYSICAL CUT3 WRITE · PHYSICAL_WRITE n / 1453  → A · WRITE: the frozen model writes the 1,453 cartridge files (624.py)
+        [2/7] LABEL-FREE PCA128 + FAISS IVF128 · INDEX {…}   → RAM address index built without labels (624.py)
+        [3/7] FROZEN QUERY PANEL                             → the 48 predeclared questions are encoded (624.py)
+        TEST627 … [1/7] LOCKED PEAK50 ROUTING · LOCKED_ROUTE n/96 → C · READ address on 48 original + 48 new-wording questions
+        [2/7] PHYSICAL DISK + SHA + FROZEN ANSWERS · PHYSICAL_E2E → D · answers from the disk files
+        [3/7] FILE_AUDIT · [4/7] TENSOR_AUDIT                → B · SSD: sizes, SHA-256 and tensor structure of all 1,453 files
+        [5/7]–[7/7] · TEST627_STATUS COMPLETE                → integrity, result JSON, start-up acceptance decision
+      start UTC 2026-10-13T11:54:12.053+00:00 · the following lines are printed by the engine itself
+BOOTSTRAP_TEST626_SHA256 b31481abebb73b98567253ff7d40b2d510e9e89beb512ff7f0bfc47a69fbb9b8
+BOOTSTRAP_TEST624_SHA256 39438a48217f8ed52db7df94ab5c9631dd9b3a09acf15f404eaa75f30d922387
+==============================================================================================================
+TEST624 / 1453 PHYSICAL CUT3 / NATIVE GEOMETRIC INDEX
+==============================================================================================================
+SOURCE_VERIFIED 575.py 569c92c61224ea408cdb6e81dbe45dde06dc05fd
+SOURCE_VERIFIED 566.py b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71
