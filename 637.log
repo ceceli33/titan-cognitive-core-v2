@@ -1,0 +1,57 @@
+ ======================================================================================================================
+TEST637 — MEMORY ARENA · COMPETITOR READINESS & PROTOCOL LOCK
+======================================================================================================================
+SOURCE GITHUB_VERIFIED SHA256 0155cda553e5f08ed2bec53611e49898a5ca24e0d270c3a1274e661bc205bdcd GIT_BLOB b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 86.1kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 810kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 36.2MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 70.8MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 131MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.46MB/s]Download complete:  13.1GB,  512MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  475MB/s  Fetching 4 files: 100% 4/4 [00:42<00:00, 42.90s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.55it/s]generation_config.json: 100% 243/243 [00:00<00:00, 30.8kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+[1/5] ENVIRONMENT & COMPETITOR DETECTION
+COMPETITOR AKBASCORE_MAM STATUS PENDING_VALIDATION PACKAGE_DETECTED False
+COMPETITOR NATIVE_JOINT STATUS PENDING_VALIDATION PACKAGE_DETECTED False
+COMPETITOR FULL_KV_RELOAD STATUS READY_PREVIOUS_TEST635 PACKAGE_DETECTED False
+COMPETITOR VLLM_PREFIX STATUS NOT_TESTED PACKAGE_DETECTED False
+COMPETITOR LMCACHE STATUS NOT_TESTED PACKAGE_DETECTED False
+COMPETITOR SGLANG_RADIX STATUS NOT_TESTED PACKAGE_DETECTED False
+COMPETITOR CACHEBLEND STATUS NOT_TESTED PACKAGE_DETECTED False
+COMPETITOR TEXT_RAG STATUS NOT_TESTED PACKAGE_DETECTED False
+[2/5] FROZEN MATCH PANEL
+CASES 3 PHYSICAL_CARTRIDGES 56
+[3/5] FORGING SOURCE-ISOLATED PHYSICAL CUT3 CARTRIDGES
+FORGED 16 / 56
+FORGED 32 / 56
+FORGED 48 / 56
+FORGED 56 / 56
+[4/5] SOURCE-DEPENDENT NATIVE + DC BITWISE REFERENCE
+REFERENCE 0 N 5 BITWISE True NATIVE_CORRECT True
+REFERENCE 1 N 20 BITWISE True NATIVE_CORRECT True
+REFERENCE 2 N 40 BITWISE True NATIVE_CORRECT True
+[5/5] SOURCE-BLOCKED MAM INFERENCE + FINAL PROTOCOL
+MAM 0 N 5 CORRECT True NATIVE_EQUAL True
+MAM 1 N 20 CORRECT True NATIVE_EQUAL True
+MAM 2 N 40 CORRECT True NATIVE_EQUAL False
+======================================================================================================================
+TEST637_STATUS COMPLETE
+CONTROL_CASES 3 /3
+MAM_CORRECT 3 /3
+NATIVE_CORRECT 3 /3
+DC_DISK_BITWISE 3 /3
+NATIVE_MAM_ANSWER_EQUAL 2 /3
+MODEL_UNCHANGED True
+PROTOCOL_SHA256 808bf7ca7b0a8cfbe8de910b35fca63f4af7b26d40c1c6186d53e00062baa719
+ARENA_ENTRY AKBASCORE_MAM READY DETECTED N/A
+ARENA_ENTRY NATIVE_JOINT READY DETECTED N/A
+ARENA_ENTRY FULL_KV_RELOAD READY_PREVIOUS_TEST635 DETECTED N/A
+ARENA_ENTRY VLLM_PREFIX NOT_TESTED DETECTED False
+ARENA_ENTRY LMCACHE NOT_TESTED DETECTED False
+ARENA_ENTRY SGLANG_RADIX NOT_TESTED DETECTED False
+ARENA_ENTRY CACHEBLEND NOT_TESTED DETECTED False
+ARENA_ENTRY TEXT_RAG NOT_TESTED DETECTED False
+JSON_OUTPUT /content/AKBASCORE_TEST637/TEST637_ARENA_PROTOCOL_FINAL.json
+CSV_OUTPUT /content/AKBASCORE_TEST637/TEST637_READINESS.csv
+TOTAL_SECONDS 81.108
+======================================================================================================================
