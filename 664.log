@@ -1,0 +1,765 @@
+ ====================================================================================================================
+TEST664 — REFLECTIVE RETRY / FEEDBACK CAUSAL AUDIT
+====================================================================================================================
+PASS CUDA_AVAILABLE
+PASS NINJA
+PASS NVCC
+PASS CXX
+BUILDING NATIVE KV EXTENSION
+PASS NATIVE_BITWISE_29_7
+PASS NATIVE_BITWISE_43_31
+PASS NATIVE_BITWISE_1_1
+PASS TEST566_BLOB
+PASS TEST566_BOUNDARY
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+config.json: 100% 663/663 [00:00<00:00, 79.5kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 906kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 35.2MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 72.4MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 128MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.23MB/s]Download complete:  13.1GB,  460MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  363MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.21s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.98it/s]generation_config.json: 100% 243/243 [00:00<00:00, 30.9kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+PASS FROZEN
+PASS ARCH
+PASS PANEL_LOCK
+PASS SENTINEL
+BASE GITHUB_VERIFIED BLOB b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71 GPU NVIDIA A100-SXM4-40GB
+PASS TEST650_PANEL_LOCK
+TEST664_PANEL_SHA e0686148d6fd88050a097ee5441ce99a4bb068a463408742bc476c83aaba6c05 CASES 12
+CASE 0 base TEXT_JOINT DIRECT PASS 0 ANSWER 'UNKNOWN' GOLD 'Hwbkvzrwh'
+CASE 0 base TEXT_JOINT STEPWISE PASS 1 ANSWER 'Hwbkvzrwh' GOLD 'Hwbkvzrwh'
+CASE 0 base TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'Hwbkvzrwh' GOLD 'Hwbkvzrwh'
+CASE 0 base TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'Hwbkvzrwh' GOLD 'Hwbkvzrwh'
+CASE 0 base TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'Hwbkvzrwh' GOLD 'Hwbkvzrwh'
+CASE 0 swap TEXT_JOINT DIRECT PASS 0 ANSWER 'UNKNOWN' GOLD 'Cnhxuzffp'
+CASE 0 swap TEXT_JOINT STEPWISE PASS 0 ANSWER 'Hwbkvzrwh' GOLD 'Cnhxuzffp'
+CASE 0 swap TEXT_JOINT BLIND_RETRY PASS 0 ANSWER 'Hwbkvzrwh' GOLD 'Cnhxuzffp'
+CASE 0 swap TEXT_JOINT FEEDBACK_RETRY PASS 0 ANSWER 'Hwbkvzrwh' GOLD 'Cnhxuzffp'
+CASE 0 swap TEXT_JOINT DECOY_FEEDBACK PASS 0 ANSWER 'Hwbkvzrwh' GOLD 'Cnhxuzffp'
+CASE 0 missing TEXT_JOINT DIRECT PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 0 missing TEXT_JOINT STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 0 missing TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 0 missing TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 0 missing TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 0 base DC_CUT3 DIRECT PASS 0 ANSWER 'UNKNOWN' GOLD 'Hwbkvzrwh'
+CASE 0 base DC_CUT3 STEPWISE PASS 1 ANSWER 'Hwbkvzrwh' GOLD 'Hwbkvzrwh'
+CASE 0 base DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'Hwbkvzrwh' GOLD 'Hwbkvzrwh'
+CASE 0 base DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'Hwbkvzrwh' GOLD 'Hwbkvzrwh'
+CASE 0 base DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'Hwbkvzrwh' GOLD 'Hwbkvzrwh'
+CASE 0 swap DC_CUT3 DIRECT PASS 0 ANSWER 'UNKNOWN' GOLD 'Cnhxuzffp'
+CASE 0 swap DC_CUT3 STEPWISE PASS 0 ANSWER 'Hwbkvzrwh' GOLD 'Cnhxuzffp'
+CASE 0 swap DC_CUT3 BLIND_RETRY PASS 0 ANSWER 'Hwbkvzrwh' GOLD 'Cnhxuzffp'
+CASE 0 swap DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'Cnhxuzffp' GOLD 'Cnhxuzffp'
+CASE 0 swap DC_CUT3 DECOY_FEEDBACK PASS 0 ANSWER 'Hwbkvzrwh' GOLD 'Cnhxuzffp'
+CASE 0 missing DC_CUT3 DIRECT PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 0 missing DC_CUT3 STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 0 missing DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 0 missing DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 0 missing DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 1 base TEXT_JOINT DIRECT PASS 0 ANSWER 'UNKNOWN' GOLD 'Gwphuwhkc'
+CASE 1 base TEXT_JOINT STEPWISE PASS 1 ANSWER 'Gwphuwhkc' GOLD 'Gwphuwhkc'
+CASE 1 base TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'Gwphuwhkc' GOLD 'Gwphuwhkc'
+CASE 1 base TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'Gwphuwhkc' GOLD 'Gwphuwhkc'
+CASE 1 base TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'Gwphuwhkc' GOLD 'Gwphuwhkc'
+CASE 1 swap TEXT_JOINT DIRECT PASS 0 ANSWER 'Zrgdzbhpf' GOLD 'Yzbmdgpxf'
+CASE 1 swap TEXT_JOINT STEPWISE PASS 1 ANSWER 'Yzbmdgpxf' GOLD 'Yzbmdgpxf'
+CASE 1 swap TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'Yzbmdgpxf' GOLD 'Yzbmdgpxf'
+CASE 1 swap TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'Yzbmdgpxf' GOLD 'Yzbmdgpxf'
+CASE 1 swap TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'Yzbmdgpxf' GOLD 'Yzbmdgpxf'
+CASE 1 missing TEXT_JOINT DIRECT PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 1 missing TEXT_JOINT STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 1 missing TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 1 missing TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 1 missing TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 1 base DC_CUT3 DIRECT PASS 0 ANSWER 'UNKNOWN' GOLD 'Gwphuwhkc'
+CASE 1 base DC_CUT3 STEPWISE PASS 0 ANSWER 'Yzbmdgpxf' GOLD 'Gwphuwhkc'
+CASE 1 base DC_CUT3 BLIND_RETRY PASS 0 ANSWER 'Yzbmdgpxf' GOLD 'Gwphuwhkc'
+CASE 1 base DC_CUT3 FEEDBACK_RETRY PASS 0 ANSWER 'Yzbmdgpxf' GOLD 'Gwphuwhkc'
+CASE 1 base DC_CUT3 DECOY_FEEDBACK PASS 0 ANSWER 'UNKNOWN' GOLD 'Gwphuwhkc'
+CASE 1 swap DC_CUT3 DIRECT PASS 1 ANSWER 'Yzbmdgpxf' GOLD 'Yzbmdgpxf'
+CASE 1 swap DC_CUT3 STEPWISE PASS 1 ANSWER 'Yzbmdgpxf' GOLD 'Yzbmdgpxf'
+CASE 1 swap DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'Yzbmdgpxf' GOLD 'Yzbmdgpxf'
+CASE 1 swap DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'Yzbmdgpxf' GOLD 'Yzbmdgpxf'
+CASE 1 swap DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'Yzbmdgpxf' GOLD 'Yzbmdgpxf'
+CASE 1 missing DC_CUT3 DIRECT PASS 0 ANSWER 'Yzbmdgpxf' GOLD 'UNKNOWN'
+CASE 1 missing DC_CUT3 STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 1 missing DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 1 missing DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 1 missing DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 2 base TEXT_JOINT DIRECT PASS 0 ANSWER 'Huuwftdnp' GOLD 'Xxymmqdsh'
+CASE 2 base TEXT_JOINT STEPWISE PASS 1 ANSWER 'Xxymmqdsh' GOLD 'Xxymmqdsh'
+CASE 2 base TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'Xxymmqdsh' GOLD 'Xxymmqdsh'
+CASE 2 base TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'Xxymmqdsh' GOLD 'Xxymmqdsh'
+CASE 2 base TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'Xxymmqdsh' GOLD 'Xxymmqdsh'
+CASE 2 swap TEXT_JOINT DIRECT PASS 0 ANSWER 'Huuwftdnp' GOLD 'Eauvyvavx'
+CASE 2 swap TEXT_JOINT STEPWISE PASS 1 ANSWER 'Eauvyvavx' GOLD 'Eauvyvavx'
+CASE 2 swap TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'Eauvyvavx' GOLD 'Eauvyvavx'
+CASE 2 swap TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'Eauvyvavx' GOLD 'Eauvyvavx'
+CASE 2 swap TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'Eauvyvavx' GOLD 'Eauvyvavx'
+CASE 2 missing TEXT_JOINT DIRECT PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 2 missing TEXT_JOINT STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 2 missing TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 2 missing TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 2 missing TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 2 base DC_CUT3 DIRECT PASS 0 ANSWER 'Huuwftdnp' GOLD 'Xxymmqdsh'
+CASE 2 base DC_CUT3 STEPWISE PASS 1 ANSWER 'Xxymmqdsh' GOLD 'Xxymmqdsh'
+CASE 2 base DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'Xxymmqdsh' GOLD 'Xxymmqdsh'
+CASE 2 base DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'Xxymmqdsh' GOLD 'Xxymmqdsh'
+CASE 2 base DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'Xxymmqdsh' GOLD 'Xxymmqdsh'
+CASE 2 swap DC_CUT3 DIRECT PASS 0 ANSWER 'Huuwftdnp' GOLD 'Eauvyvavx'
+CASE 2 swap DC_CUT3 STEPWISE PASS 1 ANSWER 'Eauvyvavx' GOLD 'Eauvyvavx'
+CASE 2 swap DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'Eauvyvavx' GOLD 'Eauvyvavx'
+CASE 2 swap DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'Eauvyvavx' GOLD 'Eauvyvavx'
+CASE 2 swap DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'Eauvyvavx' GOLD 'Eauvyvavx'
+CASE 2 missing DC_CUT3 DIRECT PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 2 missing DC_CUT3 STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 2 missing DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 2 missing DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 2 missing DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 3 base TEXT_JOINT DIRECT PASS 0 ANSWER 'UNKNOWN' GOLD 'Dykfvwrtk'
+CASE 3 base TEXT_JOINT STEPWISE PASS 1 ANSWER 'Dykfvwrtk' GOLD 'Dykfvwrtk'
+CASE 3 base TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'Dykfvwrtk' GOLD 'Dykfvwrtk'
+CASE 3 base TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'Dykfvwrtk' GOLD 'Dykfvwrtk'
+CASE 3 base TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'Dykfvwrtk' GOLD 'Dykfvwrtk'
+CASE 3 swap TEXT_JOINT DIRECT PASS 0 ANSWER 'UNKNOWN' GOLD 'Bzxmhwpcr'
+CASE 3 swap TEXT_JOINT STEPWISE PASS 1 ANSWER 'Bzxmhwpcr' GOLD 'Bzxmhwpcr'
+CASE 3 swap TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'Bzxmhwpcr' GOLD 'Bzxmhwpcr'
+CASE 3 swap TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'Bzxmhwpcr' GOLD 'Bzxmhwpcr'
+CASE 3 swap TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'Bzxmhwpcr' GOLD 'Bzxmhwpcr'
+CASE 3 missing TEXT_JOINT DIRECT PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 3 missing TEXT_JOINT STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 3 missing TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 3 missing TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 3 missing TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 3 base DC_CUT3 DIRECT PASS 0 ANSWER 'UNKNOWN' GOLD 'Dykfvwrtk'
+CASE 3 base DC_CUT3 STEPWISE PASS 1 ANSWER 'Dykfvwrtk' GOLD 'Dykfvwrtk'
+CASE 3 base DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'Dykfvwrtk' GOLD 'Dykfvwrtk'
+CASE 3 base DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'Dykfvwrtk' GOLD 'Dykfvwrtk'
+CASE 3 base DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'Dykfvwrtk' GOLD 'Dykfvwrtk'
+CASE 3 swap DC_CUT3 DIRECT PASS 0 ANSWER 'UNKNOWN' GOLD 'Bzxmhwpcr'
+CASE 3 swap DC_CUT3 STEPWISE PASS 1 ANSWER 'Bzxmhwpcr' GOLD 'Bzxmhwpcr'
+CASE 3 swap DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'Bzxmhwpcr' GOLD 'Bzxmhwpcr'
+CASE 3 swap DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'Bzxmhwpcr' GOLD 'Bzxmhwpcr'
+CASE 3 swap DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'Bzxmhwpcr' GOLD 'Bzxmhwpcr'
+CASE 3 missing DC_CUT3 DIRECT PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 3 missing DC_CUT3 STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 3 missing DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 3 missing DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 3 missing DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 4 base TEXT_JOINT DIRECT PASS 1 ANSWER 'Tsqjjpnzg' GOLD 'Tsqjjpnzg'
+CASE 4 base TEXT_JOINT STEPWISE PASS 1 ANSWER 'Tsqjjpnzg' GOLD 'Tsqjjpnzg'
+CASE 4 base TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'Tsqjjpnzg' GOLD 'Tsqjjpnzg'
+CASE 4 base TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'Tsqjjpnzg' GOLD 'Tsqjjpnzg'
+CASE 4 base TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'Tsqjjpnzg' GOLD 'Tsqjjpnzg'
+CASE 4 swap TEXT_JOINT DIRECT PASS 1 ANSWER 'Lyywgvelv' GOLD 'Lyywgvelv'
+CASE 4 swap TEXT_JOINT STEPWISE PASS 1 ANSWER 'Lyywgvelv' GOLD 'Lyywgvelv'
+CASE 4 swap TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'Lyywgvelv' GOLD 'Lyywgvelv'
+CASE 4 swap TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'Lyywgvelv' GOLD 'Lyywgvelv'
+CASE 4 swap TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'Lyywgvelv' GOLD 'Lyywgvelv'
+CASE 4 missing TEXT_JOINT DIRECT PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 4 missing TEXT_JOINT STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 4 missing TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 4 missing TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 4 missing TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 4 base DC_CUT3 DIRECT PASS 0 ANSWER 'UNKNOWN' GOLD 'Tsqjjpnzg'
+CASE 4 base DC_CUT3 STEPWISE PASS 1 ANSWER 'Tsqjjpnzg' GOLD 'Tsqjjpnzg'
+CASE 4 base DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'Tsqjjpnzg' GOLD 'Tsqjjpnzg'
+CASE 4 base DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'Tsqjjpnzg' GOLD 'Tsqjjpnzg'
+CASE 4 base DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'Tsqjjpnzg' GOLD 'Tsqjjpnzg'
+CASE 4 swap DC_CUT3 DIRECT PASS 0 ANSWER 'UNKNOWN' GOLD 'Lyywgvelv'
+CASE 4 swap DC_CUT3 STEPWISE PASS 1 ANSWER 'Lyywgvelv' GOLD 'Lyywgvelv'
+CASE 4 swap DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'Lyywgvelv' GOLD 'Lyywgvelv'
+CASE 4 swap DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'Lyywgvelv' GOLD 'Lyywgvelv'
+CASE 4 swap DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'Lyywgvelv' GOLD 'Lyywgvelv'
+CASE 4 missing DC_CUT3 DIRECT PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 4 missing DC_CUT3 STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 4 missing DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 4 missing DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 4 missing DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 5 base TEXT_JOINT DIRECT PASS 0 ANSWER 'UNKNOWN' GOLD 'Pmlhunwxs'
+CASE 5 base TEXT_JOINT STEPWISE PASS 0 ANSWER 'Juqyaeevx' GOLD 'Pmlhunwxs'
+CASE 5 base TEXT_JOINT BLIND_RETRY PASS 0 ANSWER 'Juqyaeevx' GOLD 'Pmlhunwxs'
+CASE 5 base TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'Pmlhunwxs' GOLD 'Pmlhunwxs'
+CASE 5 base TEXT_JOINT DECOY_FEEDBACK PASS 0 ANSWER 'Juqyaeevx' GOLD 'Pmlhunwxs'
+CASE 5 swap TEXT_JOINT DIRECT PASS 1 ANSWER 'Jgnrrbgml' GOLD 'Jgnrrbgml'
+CASE 5 swap TEXT_JOINT STEPWISE PASS 1 ANSWER 'Jgnrrbgml' GOLD 'Jgnrrbgml'
+CASE 5 swap TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'Jgnrrbgml' GOLD 'Jgnrrbgml'
+CASE 5 swap TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'Jgnrrbgml' GOLD 'Jgnrrbgml'
+CASE 5 swap TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'Jgnrrbgml' GOLD 'Jgnrrbgml'
+CASE 5 missing TEXT_JOINT DIRECT PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 5 missing TEXT_JOINT STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 5 missing TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 5 missing TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 5 missing TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 5 base DC_CUT3 DIRECT PASS 0 ANSWER 'UNKNOWN' GOLD 'Pmlhunwxs'
+CASE 5 base DC_CUT3 STEPWISE PASS 1 ANSWER 'Pmlhunwxs' GOLD 'Pmlhunwxs'
+CASE 5 base DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'Pmlhunwxs' GOLD 'Pmlhunwxs'
+CASE 5 base DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'Pmlhunwxs' GOLD 'Pmlhunwxs'
+CASE 5 base DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'Pmlhunwxs' GOLD 'Pmlhunwxs'
+CASE 5 swap DC_CUT3 DIRECT PASS 0 ANSWER 'UNKNOWN' GOLD 'Jgnrrbgml'
+CASE 5 swap DC_CUT3 STEPWISE PASS 0 ANSWER 'Xgnrrbgml' GOLD 'Jgnrrbgml'
+CASE 5 swap DC_CUT3 BLIND_RETRY PASS 0 ANSWER 'Xgnrrbgml' GOLD 'Jgnrrbgml'
+CASE 5 swap DC_CUT3 FEEDBACK_RETRY PASS 0 ANSWER 'Xgnrrbgml' GOLD 'Jgnrrbgml'
+CASE 5 swap DC_CUT3 DECOY_FEEDBACK PASS 0 ANSWER 'Xmwecqnhj belongs to region Jgnrrbgml.' GOLD 'Jgnrrbgml'
+CASE 5 missing DC_CUT3 DIRECT PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 5 missing DC_CUT3 STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 5 missing DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 5 missing DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 5 missing DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 6 base TEXT_JOINT DIRECT PASS 1 ANSWER 'Zkfsqxsfw' GOLD 'Zkfsqxsfw'
+CASE 6 base TEXT_JOINT STEPWISE PASS 0 ANSWER 'Cbgxqstus' GOLD 'Zkfsqxsfw'
+CASE 6 base TEXT_JOINT BLIND_RETRY PASS 0 ANSWER 'Cbgxqstus' GOLD 'Zkfsqxsfw'
+CASE 6 base TEXT_JOINT FEEDBACK_RETRY PASS 0 ANSWER 'Cbgxqstus' GOLD 'Zkfsqxsfw'
+CASE 6 base TEXT_JOINT DECOY_FEEDBACK PASS 0 ANSWER 'Cbgxqstus' GOLD 'Zkfsqxsfw'
+CASE 6 swap TEXT_JOINT DIRECT PASS 0 ANSWER 'UNKNOWN' GOLD 'Ygahzdtkm'
+CASE 6 swap TEXT_JOINT STEPWISE PASS 1 ANSWER 'Ygahzdtkm' GOLD 'Ygahzdtkm'
+CASE 6 swap TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'Ygahzdtkm' GOLD 'Ygahzdtkm'
+CASE 6 swap TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'Ygahzdtkm' GOLD 'Ygahzdtkm'
+CASE 6 swap TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'Ygahzdtkm' GOLD 'Ygahzdtkm'
+CASE 6 missing TEXT_JOINT DIRECT PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 6 missing TEXT_JOINT STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 6 missing TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 6 missing TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 6 missing TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 6 base DC_CUT3 DIRECT PASS 1 ANSWER 'Zkfsqxsfw' GOLD 'Zkfsqxsfw'
+CASE 6 base DC_CUT3 STEPWISE PASS 0 ANSWER 'UNKNOWN' GOLD 'Zkfsqxsfw'
+CASE 6 base DC_CUT3 BLIND_RETRY PASS 0 ANSWER 'UNKNOWN' GOLD 'Zkfsqxsfw'
+CASE 6 base DC_CUT3 FEEDBACK_RETRY PASS 0 ANSWER 'Cbgxqstus' GOLD 'Zkfsqxsfw'
+CASE 6 base DC_CUT3 DECOY_FEEDBACK PASS 0 ANSWER 'Cbgxqstus' GOLD 'Zkfsqxsfw'
+CASE 6 swap DC_CUT3 DIRECT PASS 0 ANSWER 'Zkfsqxsfw' GOLD 'Ygahzdtkm'
+CASE 6 swap DC_CUT3 STEPWISE PASS 0 ANSWER 'UNKNOWN' GOLD 'Ygahzdtkm'
+CASE 6 swap DC_CUT3 BLIND_RETRY PASS 0 ANSWER 'UNKNOWN' GOLD 'Ygahzdtkm'
+CASE 6 swap DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'Ygahzdtkm' GOLD 'Ygahzdtkm'
+CASE 6 swap DC_CUT3 DECOY_FEEDBACK PASS 0 ANSWER 'UNKNOWN' GOLD 'Ygahzdtkm'
+CASE 6 missing DC_CUT3 DIRECT PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 6 missing DC_CUT3 STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 6 missing DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 6 missing DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 6 missing DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 7 base TEXT_JOINT DIRECT PASS 0 ANSWER 'UNKNOWN' GOLD 'Yffcgkeph'
+CASE 7 base TEXT_JOINT STEPWISE PASS 1 ANSWER 'Yffcgkeph' GOLD 'Yffcgkeph'
+CASE 7 base TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'Yffcgkeph' GOLD 'Yffcgkeph'
+CASE 7 base TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'Yffcgkeph' GOLD 'Yffcgkeph'
+CASE 7 base TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'Yffcgkeph' GOLD 'Yffcgkeph'
+CASE 7 swap TEXT_JOINT DIRECT PASS 0 ANSWER 'UNKNOWN' GOLD 'Vazfmugtx'
+CASE 7 swap TEXT_JOINT STEPWISE PASS 1 ANSWER 'Vazfmugtx' GOLD 'Vazfmugtx'
+CASE 7 swap TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'Vazfmugtx' GOLD 'Vazfmugtx'
+CASE 7 swap TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'Vazfmugtx' GOLD 'Vazfmugtx'
+CASE 7 swap TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'Vazfmugtx' GOLD 'Vazfmugtx'
+CASE 7 missing TEXT_JOINT DIRECT PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 7 missing TEXT_JOINT STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 7 missing TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 7 missing TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 7 missing TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 7 base DC_CUT3 DIRECT PASS 0 ANSWER 'UNKNOWN' GOLD 'Yffcgkeph'
+CASE 7 base DC_CUT3 STEPWISE PASS 1 ANSWER 'Yffcgkeph' GOLD 'Yffcgkeph'
+CASE 7 base DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'Yffcgkeph' GOLD 'Yffcgkeph'
+CASE 7 base DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'Yffcgkeph' GOLD 'Yffcgkeph'
+CASE 7 base DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'Yffcgkeph' GOLD 'Yffcgkeph'
+CASE 7 swap DC_CUT3 DIRECT PASS 0 ANSWER 'UNKNOWN' GOLD 'Vazfmugtx'
+CASE 7 swap DC_CUT3 STEPWISE PASS 1 ANSWER 'Vazfmugtx' GOLD 'Vazfmugtx'
+CASE 7 swap DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'Vazfmugtx' GOLD 'Vazfmugtx'
+CASE 7 swap DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'Vazfmugtx' GOLD 'Vazfmugtx'
+CASE 7 swap DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'Vazfmugtx' GOLD 'Vazfmugtx'
+CASE 7 missing DC_CUT3 DIRECT PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 7 missing DC_CUT3 STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 7 missing DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 7 missing DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 7 missing DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 8 base TEXT_JOINT DIRECT PASS 1 ANSWER 'Ltvlchxpc' GOLD 'Ltvlchxpc'
+CASE 8 base TEXT_JOINT STEPWISE PASS 0 ANSWER 'UNKNOWN' GOLD 'Ltvlchxpc'
+CASE 8 base TEXT_JOINT BLIND_RETRY PASS 0 ANSWER 'UNKNOWN' GOLD 'Ltvlchxpc'
+CASE 8 base TEXT_JOINT FEEDBACK_RETRY PASS 0 ANSWER 'UNKNOWN' GOLD 'Ltvlchxpc'
+CASE 8 base TEXT_JOINT DECOY_FEEDBACK PASS 0 ANSWER 'UNKNOWN' GOLD 'Ltvlchxpc'
+CASE 8 swap TEXT_JOINT DIRECT PASS 1 ANSWER 'Gcjufzfev' GOLD 'Gcjufzfev'
+CASE 8 swap TEXT_JOINT STEPWISE PASS 0 ANSWER 'UNKNOWN' GOLD 'Gcjufzfev'
+CASE 8 swap TEXT_JOINT BLIND_RETRY PASS 0 ANSWER 'UNKNOWN' GOLD 'Gcjufzfev'
+CASE 8 swap TEXT_JOINT FEEDBACK_RETRY PASS 0 ANSWER 'UNKNOWN' GOLD 'Gcjufzfev'
+CASE 8 swap TEXT_JOINT DECOY_FEEDBACK PASS 0 ANSWER 'UNKNOWN' GOLD 'Gcjufzfev'
+CASE 8 missing TEXT_JOINT DIRECT PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 8 missing TEXT_JOINT STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 8 missing TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 8 missing TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 8 missing TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 8 base DC_CUT3 DIRECT PASS 1 ANSWER 'Ltvlchxpc' GOLD 'Ltvlchxpc'
+CASE 8 base DC_CUT3 STEPWISE PASS 0 ANSWER 'UNKNOWN' GOLD 'Ltvlchxpc'
+CASE 8 base DC_CUT3 BLIND_RETRY PASS 0 ANSWER 'UNKNOWN' GOLD 'Ltvlchxpc'
+CASE 8 base DC_CUT3 FEEDBACK_RETRY PASS 0 ANSWER 'UNKNOWN' GOLD 'Ltvlchxpc'
+CASE 8 base DC_CUT3 DECOY_FEEDBACK PASS 0 ANSWER 'UNKNOWN' GOLD 'Ltvlchxpc'
+CASE 8 swap DC_CUT3 DIRECT PASS 1 ANSWER 'Gcjufzfev' GOLD 'Gcjufzfev'
+CASE 8 swap DC_CUT3 STEPWISE PASS 1 ANSWER 'Gcjufzfev' GOLD 'Gcjufzfev'
+CASE 8 swap DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'Gcjufzfev' GOLD 'Gcjufzfev'
+CASE 8 swap DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'Gcjufzfev' GOLD 'Gcjufzfev'
+CASE 8 swap DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'Gcjufzfev' GOLD 'Gcjufzfev'
+CASE 8 missing DC_CUT3 DIRECT PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 8 missing DC_CUT3 STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 8 missing DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 8 missing DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 8 missing DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 9 base TEXT_JOINT DIRECT PASS 0 ANSWER 'Zwyzrsqrk' GOLD 'Cpyyskssr'
+CASE 9 base TEXT_JOINT STEPWISE PASS 1 ANSWER 'Cpyyskssr' GOLD 'Cpyyskssr'
+CASE 9 base TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'Cpyyskssr' GOLD 'Cpyyskssr'
+CASE 9 base TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'Cpyyskssr' GOLD 'Cpyyskssr'
+CASE 9 base TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'Cpyyskssr' GOLD 'Cpyyskssr'
+CASE 9 swap TEXT_JOINT DIRECT PASS 1 ANSWER 'Zwyzrsqrk' GOLD 'Zwyzrsqrk'
+CASE 9 swap TEXT_JOINT STEPWISE PASS 1 ANSWER 'Zwyzrsqrk' GOLD 'Zwyzrsqrk'
+CASE 9 swap TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'Zwyzrsqrk' GOLD 'Zwyzrsqrk'
+CASE 9 swap TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'Zwyzrsqrk' GOLD 'Zwyzrsqrk'
+CASE 9 swap TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'Zwyzrsqrk' GOLD 'Zwyzrsqrk'
+CASE 9 missing TEXT_JOINT DIRECT PASS 0 ANSWER 'Zwyzrsqrk' GOLD 'UNKNOWN'
+CASE 9 missing TEXT_JOINT STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 9 missing TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 9 missing TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 9 missing TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 9 base DC_CUT3 DIRECT PASS 0 ANSWER 'Zwyzrsqrk' GOLD 'Cpyyskssr'
+CASE 9 base DC_CUT3 STEPWISE PASS 0 ANSWER 'UNKNOWN' GOLD 'Cpyyskssr'
+CASE 9 base DC_CUT3 BLIND_RETRY PASS 0 ANSWER 'UNKNOWN' GOLD 'Cpyyskssr'
+CASE 9 base DC_CUT3 FEEDBACK_RETRY PASS 0 ANSWER 'Zwyzrsqrk' GOLD 'Cpyyskssr'
+CASE 9 base DC_CUT3 DECOY_FEEDBACK PASS 0 ANSWER 'Zwyzrsqrk' GOLD 'Cpyyskssr'
+CASE 9 swap DC_CUT3 DIRECT PASS 1 ANSWER 'Zwyzrsqrk' GOLD 'Zwyzrsqrk'
+CASE 9 swap DC_CUT3 STEPWISE PASS 1 ANSWER 'Zwyzrsqrk' GOLD 'Zwyzrsqrk'
+CASE 9 swap DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'Zwyzrsqrk' GOLD 'Zwyzrsqrk'
+CASE 9 swap DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'Zwyzrsqrk' GOLD 'Zwyzrsqrk'
+CASE 9 swap DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'Zwyzrsqrk' GOLD 'Zwyzrsqrk'
+CASE 9 missing DC_CUT3 DIRECT PASS 0 ANSWER 'Zwyzrsqrk' GOLD 'UNKNOWN'
+CASE 9 missing DC_CUT3 STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 9 missing DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 9 missing DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 9 missing DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 10 base TEXT_JOINT DIRECT PASS 0 ANSWER 'Epvgvextd' GOLD 'Bkzyvtwtb'
+CASE 10 base TEXT_JOINT STEPWISE PASS 1 ANSWER 'Bkzyvtwtb' GOLD 'Bkzyvtwtb'
+CASE 10 base TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'Bkzyvtwtb' GOLD 'Bkzyvtwtb'
+CASE 10 base TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'Bkzyvtwtb' GOLD 'Bkzyvtwtb'
+CASE 10 base TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'Bkzyvtwtb' GOLD 'Bkzyvtwtb'
+CASE 10 swap TEXT_JOINT DIRECT PASS 1 ANSWER 'Epvgvextd' GOLD 'Epvgvextd'
+CASE 10 swap TEXT_JOINT STEPWISE PASS 1 ANSWER 'Epvgvextd' GOLD 'Epvgvextd'
+CASE 10 swap TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'Epvgvextd' GOLD 'Epvgvextd'
+CASE 10 swap TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'Epvgvextd' GOLD 'Epvgvextd'
+CASE 10 swap TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'Epvgvextd' GOLD 'Epvgvextd'
+CASE 10 missing TEXT_JOINT DIRECT PASS 0 ANSWER 'Epvgvextd' GOLD 'UNKNOWN'
+CASE 10 missing TEXT_JOINT STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 10 missing TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 10 missing TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 10 missing TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 10 base DC_CUT3 DIRECT PASS 1 ANSWER 'Bkzyvtwtb' GOLD 'Bkzyvtwtb'
+CASE 10 base DC_CUT3 STEPWISE PASS 1 ANSWER 'Bkzyvtwtb' GOLD 'Bkzyvtwtb'
+CASE 10 base DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'Bkzyvtwtb' GOLD 'Bkzyvtwtb'
+CASE 10 base DC_CUT3 FEEDBACK_RETRY PASS 0 ANSWER 'UNKNOWN' GOLD 'Bkzyvtwtb'
+CASE 10 base DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'Bkzyvtwtb' GOLD 'Bkzyvtwtb'
+CASE 10 swap DC_CUT3 DIRECT PASS 0 ANSWER 'Bkzyvtwtb' GOLD 'Epvgvextd'
+CASE 10 swap DC_CUT3 STEPWISE PASS 1 ANSWER 'Epvgvextd' GOLD 'Epvgvextd'
+CASE 10 swap DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'Epvgvextd' GOLD 'Epvgvextd'
+CASE 10 swap DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'Epvgvextd' GOLD 'Epvgvextd'
+CASE 10 swap DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'Epvgvextd' GOLD 'Epvgvextd'
+CASE 10 missing DC_CUT3 DIRECT PASS 0 ANSWER 'Epvgvextd' GOLD 'UNKNOWN'
+CASE 10 missing DC_CUT3 STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 10 missing DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 10 missing DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 10 missing DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 11 base TEXT_JOINT DIRECT PASS 0 ANSWER 'Vwpmsaumb' GOLD 'Wzebextup'
+CASE 11 base TEXT_JOINT STEPWISE PASS 0 ANSWER 'UNKNOWN' GOLD 'Wzebextup'
+CASE 11 base TEXT_JOINT BLIND_RETRY PASS 0 ANSWER 'UNKNOWN' GOLD 'Wzebextup'
+CASE 11 base TEXT_JOINT FEEDBACK_RETRY PASS 0 ANSWER 'UNKNOWN' GOLD 'Wzebextup'
+CASE 11 base TEXT_JOINT DECOY_FEEDBACK PASS 0 ANSWER 'UNKNOWN' GOLD 'Wzebextup'
+CASE 11 swap TEXT_JOINT DIRECT PASS 1 ANSWER 'Vwpmsaumb' GOLD 'Vwpmsaumb'
+CASE 11 swap TEXT_JOINT STEPWISE PASS 1 ANSWER 'Vwpmsaumb' GOLD 'Vwpmsaumb'
+CASE 11 swap TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'Vwpmsaumb' GOLD 'Vwpmsaumb'
+CASE 11 swap TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'Vwpmsaumb' GOLD 'Vwpmsaumb'
+CASE 11 swap TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'Vwpmsaumb' GOLD 'Vwpmsaumb'
+CASE 11 missing TEXT_JOINT DIRECT PASS 0 ANSWER 'Vwpmsaumb' GOLD 'UNKNOWN'
+CASE 11 missing TEXT_JOINT STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 11 missing TEXT_JOINT BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 11 missing TEXT_JOINT FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 11 missing TEXT_JOINT DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 11 base DC_CUT3 DIRECT PASS 0 ANSWER 'Vwpmsaumb' GOLD 'Wzebextup'
+CASE 11 base DC_CUT3 STEPWISE PASS 1 ANSWER 'Wzebextup' GOLD 'Wzebextup'
+CASE 11 base DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'Wzebextup' GOLD 'Wzebextup'
+CASE 11 base DC_CUT3 FEEDBACK_RETRY PASS 0 ANSWER 'UNKNOWN' GOLD 'Wzebextup'
+CASE 11 base DC_CUT3 DECOY_FEEDBACK PASS 0 ANSWER 'UNKNOWN' GOLD 'Wzebextup'
+CASE 11 swap DC_CUT3 DIRECT PASS 1 ANSWER 'Vwpmsaumb' GOLD 'Vwpmsaumb'
+CASE 11 swap DC_CUT3 STEPWISE PASS 1 ANSWER 'Vwpmsaumb' GOLD 'Vwpmsaumb'
+CASE 11 swap DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'Vwpmsaumb' GOLD 'Vwpmsaumb'
+CASE 11 swap DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'Vwpmsaumb' GOLD 'Vwpmsaumb'
+CASE 11 swap DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'Vwpmsaumb' GOLD 'Vwpmsaumb'
+CASE 11 missing DC_CUT3 DIRECT PASS 0 ANSWER 'Vwpmsaumb' GOLD 'UNKNOWN'
+CASE 11 missing DC_CUT3 STEPWISE PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 11 missing DC_CUT3 BLIND_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 11 missing DC_CUT3 FEEDBACK_RETRY PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+CASE 11 missing DC_CUT3 DECOY_FEEDBACK PASS 1 ANSWER 'UNKNOWN' GOLD 'UNKNOWN'
+====================================================================================================================
+TEST664_FINAL
+{
+  "TEXT_JOINT_DIRECT_base": {
+    "n": 12,
+    "correct": 3,
+    "unknown": 5,
+    "mean_seconds": 0.3463
+  },
+  "TEXT_JOINT_DIRECT_swap": {
+    "n": 12,
+    "correct": 6,
+    "unknown": 4,
+    "mean_seconds": 0.2238
+  },
+  "TEXT_JOINT_DIRECT_missing": {
+    "n": 12,
+    "correct": 9,
+    "unknown": 9,
+    "mean_seconds": 0.1585
+  },
+  "TEXT_JOINT_STEPWISE_base": {
+    "n": 12,
+    "correct": 8,
+    "unknown": 2,
+    "mean_seconds": 0.8961
+  },
+  "TEXT_JOINT_STEPWISE_swap": {
+    "n": 12,
+    "correct": 10,
+    "unknown": 1,
+    "mean_seconds": 0.8893
+  },
+  "TEXT_JOINT_STEPWISE_missing": {
+    "n": 12,
+    "correct": 12,
+    "unknown": 12,
+    "mean_seconds": 0.3121
+  },
+  "TEXT_JOINT_BLIND_RETRY_base": {
+    "n": 12,
+    "correct": 8,
+    "unknown": 2,
+    "mean_seconds": 0.8927
+  },
+  "TEXT_JOINT_BLIND_RETRY_swap": {
+    "n": 12,
+    "correct": 10,
+    "unknown": 1,
+    "mean_seconds": 0.8867
+  },
+  "TEXT_JOINT_BLIND_RETRY_missing": {
+    "n": 12,
+    "correct": 12,
+    "unknown": 12,
+    "mean_seconds": 0.31
+  },
+  "TEXT_JOINT_FEEDBACK_RETRY_base": {
+    "n": 12,
+    "correct": 9,
+    "unknown": 2,
+    "mean_seconds": 0.8981
+  },
+  "TEXT_JOINT_FEEDBACK_RETRY_swap": {
+    "n": 12,
+    "correct": 10,
+    "unknown": 1,
+    "mean_seconds": 0.8815
+  },
+  "TEXT_JOINT_FEEDBACK_RETRY_missing": {
+    "n": 12,
+    "correct": 12,
+    "unknown": 12,
+    "mean_seconds": 0.3082
+  },
+  "TEXT_JOINT_DECOY_FEEDBACK_base": {
+    "n": 12,
+    "correct": 8,
+    "unknown": 2,
+    "mean_seconds": 0.8906
+  },
+  "TEXT_JOINT_DECOY_FEEDBACK_swap": {
+    "n": 12,
+    "correct": 10,
+    "unknown": 1,
+    "mean_seconds": 0.883
+  },
+  "TEXT_JOINT_DECOY_FEEDBACK_missing": {
+    "n": 12,
+    "correct": 12,
+    "unknown": 12,
+    "mean_seconds": 0.3079
+  },
+  "DC_CUT3_DIRECT_base": {
+    "n": 12,
+    "correct": 3,
+    "unknown": 6,
+    "mean_seconds": 1.5169
+  },
+  "DC_CUT3_DIRECT_swap": {
+    "n": 12,
+    "correct": 4,
+    "unknown": 5,
+    "mean_seconds": 1.5426
+  },
+  "DC_CUT3_DIRECT_missing": {
+    "n": 12,
+    "correct": 8,
+    "unknown": 8,
+    "mean_seconds": 1.408
+  },
+  "DC_CUT3_STEPWISE_base": {
+    "n": 12,
+    "correct": 8,
+    "unknown": 3,
+    "mean_seconds": 0.8126
+  },
+  "DC_CUT3_STEPWISE_swap": {
+    "n": 12,
+    "correct": 9,
+    "unknown": 1,
+    "mean_seconds": 0.8819
+  },
+  "DC_CUT3_STEPWISE_missing": {
+    "n": 12,
+    "correct": 12,
+    "unknown": 12,
+    "mean_seconds": 0.3093
+  },
+  "DC_CUT3_BLIND_RETRY_base": {
+    "n": 12,
+    "correct": 8,
+    "unknown": 3,
+    "mean_seconds": 0.8141
+  },
+  "DC_CUT3_BLIND_RETRY_swap": {
+    "n": 12,
+    "correct": 9,
+    "unknown": 1,
+    "mean_seconds": 0.8802
+  },
+  "DC_CUT3_BLIND_RETRY_missing": {
+    "n": 12,
+    "correct": 12,
+    "unknown": 12,
+    "mean_seconds": 0.3073
+  },
+  "DC_CUT3_FEEDBACK_RETRY_base": {
+    "n": 12,
+    "correct": 6,
+    "unknown": 3,
+    "mean_seconds": 0.8988
+  },
+  "DC_CUT3_FEEDBACK_RETRY_swap": {
+    "n": 12,
+    "correct": 11,
+    "unknown": 0,
+    "mean_seconds": 0.9304
+  },
+  "DC_CUT3_FEEDBACK_RETRY_missing": {
+    "n": 12,
+    "correct": 12,
+    "unknown": 12,
+    "mean_seconds": 0.3077
+  },
+  "DC_CUT3_DECOY_FEEDBACK_base": {
+    "n": 12,
+    "correct": 7,
+    "unknown": 3,
+    "mean_seconds": 0.8789
+  },
+  "DC_CUT3_DECOY_FEEDBACK_swap": {
+    "n": 12,
+    "correct": 9,
+    "unknown": 1,
+    "mean_seconds": 0.9447
+  },
+  "DC_CUT3_DECOY_FEEDBACK_missing": {
+    "n": 12,
+    "correct": 12,
+    "unknown": 12,
+    "mean_seconds": 0.3085
+  }
+}
+CAUSAL_SWITCH {
+  "TEXT_JOINT_DIRECT": {
+    "n": 12,
+    "causal_switch": 2
+  },
+  "TEXT_JOINT_STEPWISE": {
+    "n": 12,
+    "causal_switch": 7
+  },
+  "TEXT_JOINT_BLIND_RETRY": {
+    "n": 12,
+    "causal_switch": 7
+  },
+  "TEXT_JOINT_FEEDBACK_RETRY": {
+    "n": 12,
+    "causal_switch": 8
+  },
+  "TEXT_JOINT_DECOY_FEEDBACK": {
+    "n": 12,
+    "causal_switch": 7
+  },
+  "DC_CUT3_DIRECT": {
+    "n": 12,
+    "causal_switch": 1
+  },
+  "DC_CUT3_STEPWISE": {
+    "n": 12,
+    "causal_switch": 6
+  },
+  "DC_CUT3_BLIND_RETRY": {
+    "n": 12,
+    "causal_switch": 6
+  },
+  "DC_CUT3_FEEDBACK_RETRY": {
+    "n": 12,
+    "causal_switch": 5
+  },
+  "DC_CUT3_DECOY_FEEDBACK": {
+    "n": 12,
+    "causal_switch": 5
+  }
+}
+RETRY_TRANSITIONS {
+  "TEXT_JOINT_base": {
+    "n": 12,
+    "feedback_repairs": 1,
+    "feedback_regressions": 0,
+    "decoy_repairs": 0,
+    "decoy_regressions": 0,
+    "feedback_changes": 1,
+    "blind_matches_stepwise": 12
+  },
+  "TEXT_JOINT_swap": {
+    "n": 12,
+    "feedback_repairs": 0,
+    "feedback_regressions": 0,
+    "decoy_repairs": 0,
+    "decoy_regressions": 0,
+    "feedback_changes": 0,
+    "blind_matches_stepwise": 12
+  },
+  "TEXT_JOINT_missing": {
+    "n": 12,
+    "feedback_repairs": 0,
+    "feedback_regressions": 0,
+    "decoy_repairs": 0,
+    "decoy_regressions": 0,
+    "feedback_changes": 0,
+    "blind_matches_stepwise": 12
+  },
+  "DC_CUT3_base": {
+    "n": 12,
+    "feedback_repairs": 0,
+    "feedback_regressions": 2,
+    "decoy_repairs": 0,
+    "decoy_regressions": 1,
+    "feedback_changes": 4,
+    "blind_matches_stepwise": 12
+  },
+  "DC_CUT3_swap": {
+    "n": 12,
+    "feedback_repairs": 2,
+    "feedback_regressions": 0,
+    "decoy_repairs": 0,
+    "decoy_regressions": 0,
+    "feedback_changes": 2,
+    "blind_matches_stepwise": 12
+  },
+  "DC_CUT3_missing": {
+    "n": 12,
+    "feedback_repairs": 0,
+    "feedback_regressions": 0,
+    "decoy_repairs": 0,
+    "decoy_regressions": 0,
+    "feedback_changes": 0,
+    "blind_matches_stepwise": 12
+  }
+}
+TRACE_AUDIT {
+  "TEXT_JOINT_base_STEPWISE": {
+    "n": 12,
+    "completed_four": 10,
+    "stopped_early": 1
+  },
+  "TEXT_JOINT_base_FEEDBACK_RETRY": {
+    "n": 12,
+    "completed_four": 10,
+    "stopped_early": 1
+  },
+  "TEXT_JOINT_base_DECOY_FEEDBACK": {
+    "n": 12,
+    "completed_four": 10,
+    "stopped_early": 1
+  },
+  "TEXT_JOINT_swap_STEPWISE": {
+    "n": 12,
+    "completed_four": 11,
+    "stopped_early": 1
+  },
+  "TEXT_JOINT_swap_FEEDBACK_RETRY": {
+    "n": 12,
+    "completed_four": 11,
+    "stopped_early": 1
+  },
+  "TEXT_JOINT_swap_DECOY_FEEDBACK": {
+    "n": 12,
+    "completed_four": 11,
+    "stopped_early": 1
+  },
+  "TEXT_JOINT_missing_STEPWISE": {
+    "n": 12,
+    "completed_four": 0,
+    "stopped_early": 12
+  },
+  "TEXT_JOINT_missing_FEEDBACK_RETRY": {
+    "n": 12,
+    "completed_four": 0,
+    "stopped_early": 12
+  },
+  "TEXT_JOINT_missing_DECOY_FEEDBACK": {
+    "n": 12,
+    "completed_four": 0,
+    "stopped_early": 12
+  },
+  "DC_CUT3_base_STEPWISE": {
+    "n": 12,
+    "completed_four": 9,
+    "stopped_early": 3
+  },
+  "DC_CUT3_base_FEEDBACK_RETRY": {
+    "n": 12,
+    "completed_four": 9,
+    "stopped_early": 1
+  },
+  "DC_CUT3_base_DECOY_FEEDBACK": {
+    "n": 12,
+    "completed_four": 9,
+    "stopped_early": 2
+  },
+  "DC_CUT3_swap_STEPWISE": {
+    "n": 12,
+    "completed_four": 11,
+    "stopped_early": 1
+  },
+  "DC_CUT3_swap_FEEDBACK_RETRY": {
+    "n": 12,
+    "completed_four": 12,
+    "stopped_early": 0
+  },
+  "DC_CUT3_swap_DECOY_FEEDBACK": {
+    "n": 12,
+    "completed_four": 11,
+    "stopped_early": 0
+  },
+  "DC_CUT3_missing_STEPWISE": {
+    "n": 12,
+    "completed_four": 0,
+    "stopped_early": 12
+  },
+  "DC_CUT3_missing_FEEDBACK_RETRY": {
+    "n": 12,
+    "completed_four": 0,
+    "stopped_early": 12
+  },
+  "DC_CUT3_missing_DECOY_FEEDBACK": {
+    "n": 12,
+    "completed_four": 0,
+    "stopped_early": 12
+  }
+}
+WEIGHTS_FROZEN True SENTINEL True ERRORS 0
+RESULT /content/AKBASCORE_TEST664/TEST664_results.json SHA256 46fdd27d63625ae55293190915871a182b6657a33a5c5c94eae3f47b5ee87bbe
+STATUS EXPERIMENT_COMPLETE
