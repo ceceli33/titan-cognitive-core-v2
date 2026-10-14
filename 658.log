@@ -1,0 +1,206 @@
+ ====================================================================================================================
+TEST658 — NATIVE CUDA DYNAMIC KV FABRIC / SOURCE-LOCKED QWEN
+====================================================================================================================
+PASS CUDA_AVAILABLE
+PASS NINJA
+PASS NVCC
+PASS CXX
+BUILDING NATIVE KV EXTENSION
+PASS NATIVE_BITWISE_29_7
+PASS NATIVE_BITWISE_43_31
+PASS NATIVE_BITWISE_1_1
+PASS TEST566_BLOB
+PASS TEST566_BOUNDARY
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 84.0kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 978kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 74.9MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 70.7MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 132MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.46MB/s]Download complete:  13.1GB,  664MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  404MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.13s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.68it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.7kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+PASS FROZEN
+PASS ARCH
+PASS PANEL_LOCK
+PASS SENTINEL
+BASE GITHUB_VERIFIED BLOB b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71 GPU NVIDIA A100-SXM4-40GB
+PASS TEST650_PANEL_LOCK
+CASE 0 BASE BASE_ORDER A GOLD_SLOT 0 SELECTED 0 GOLD_REGION Uymzbqqqy SCORES [0.81104, 0.77106, 0.78532, 0.78302] GOLD_MARGIN 0.025716
+  ORACLE_ONE STRICT 1 REGION 1 'Uymzbqqqy' 
+  ROUTED_ONE STRICT 1 REGION 1 'Uymzbqqqy' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 0 BASE BASE_ORDER CF GOLD_SLOT 1 SELECTED 1 GOLD_REGION Qtjgqsmrr SCORES [0.74439, 0.80559, 0.76739, 0.78093] GOLD_MARGIN 0.024666
+  ORACLE_ONE STRICT 1 REGION 1 'Qtjgqsmrr' 
+  ROUTED_ONE STRICT 1 REGION 1 'Qtjgqsmrr' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 0 BASE SLOT_SWAP01 A GOLD_SLOT 1 SELECTED 1 GOLD_REGION Uymzbqqqy SCORES [0.77106, 0.81104, 0.78532, 0.78302] GOLD_MARGIN 0.025716
+  ORACLE_ONE STRICT 1 REGION 1 'Uymzbqqqy' 
+  ROUTED_ONE STRICT 1 REGION 1 'Uymzbqqqy' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 0 BASE SLOT_SWAP01 CF GOLD_SLOT 0 SELECTED 0 GOLD_REGION Qtjgqsmrr SCORES [0.80559, 0.74439, 0.76739, 0.78093] GOLD_MARGIN 0.024666
+  ORACLE_ONE STRICT 1 REGION 1 'Qtjgqsmrr' 
+  ROUTED_ONE STRICT 1 REGION 1 'Qtjgqsmrr' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 0 SEMANTIC_SWAP BASE_ORDER A GOLD_SLOT 0 SELECTED 0 GOLD_REGION Qtjgqsmrr SCORES [0.80897, 0.77612, 0.78532, 0.78302] GOLD_MARGIN 0.023646
+  ORACLE_ONE STRICT 1 REGION 1 'Qtjgqsmrr' 
+  ROUTED_ONE STRICT 1 REGION 1 'Qtjgqsmrr' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 0 SEMANTIC_SWAP BASE_ORDER CF GOLD_SLOT 1 SELECTED 1 GOLD_REGION Uymzbqqqy SCORES [0.74334, 0.80998, 0.76739, 0.78093] GOLD_MARGIN 0.029058
+  ORACLE_ONE STRICT 1 REGION 1 'Uymzbqqqy' 
+  ROUTED_ONE STRICT 1 REGION 1 'Uymzbqqqy' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 0 SEMANTIC_SWAP SLOT_SWAP01 A GOLD_SLOT 1 SELECTED 1 GOLD_REGION Qtjgqsmrr SCORES [0.77612, 0.80897, 0.78532, 0.78302] GOLD_MARGIN 0.023646
+  ORACLE_ONE STRICT 1 REGION 1 'Qtjgqsmrr' 
+  ROUTED_ONE STRICT 1 REGION 1 'Qtjgqsmrr' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 0 SEMANTIC_SWAP SLOT_SWAP01 CF GOLD_SLOT 0 SELECTED 0 GOLD_REGION Uymzbqqqy SCORES [0.80998, 0.74334, 0.76739, 0.78093] GOLD_MARGIN 0.029058
+  ORACLE_ONE STRICT 1 REGION 1 'Uymzbqqqy' 
+  ROUTED_ONE STRICT 1 REGION 1 'Uymzbqqqy' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE_ERROR 1 Traceback (most recent call last):
+  File "/tmp/ipykernel_719/4160085116.py", line 213, in <cell line: 0>
+    b_sem=[add658(f'{owners[0]} lives in region {regions[1]}.'),add658(f'{owners[1]} lives in region {regions[0]}.')]+list(z['bs'][2:])
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_719/4160085116.py", line 117, in add658
+    ids=tok(source(s),add_special_tokens=False).input_ids
+            ~~~~~~^^^
+TypeError: 'str' object is not callable
+
+CASE_ERROR 2 Traceback (most recent call last):
+  File "/tmp/ipykernel_719/4160085116.py", line 213, in <cell line: 0>
+    b_sem=[add658(f'{owners[0]} lives in region {regions[1]}.'),add658(f'{owners[1]} lives in region {regions[0]}.')]+list(z['bs'][2:])
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_719/4160085116.py", line 117, in add658
+    ids=tok(source(s),add_special_tokens=False).input_ids
+            ~~~~~~^^^
+TypeError: 'str' object is not callable
+
+CASE_ERROR 3 Traceback (most recent call last):
+  File "/tmp/ipykernel_719/4160085116.py", line 213, in <cell line: 0>
+    b_sem=[add658(f'{owners[0]} lives in region {regions[1]}.'),add658(f'{owners[1]} lives in region {regions[0]}.')]+list(z['bs'][2:])
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_719/4160085116.py", line 117, in add658
+    ids=tok(source(s),add_special_tokens=False).input_ids
+            ~~~~~~^^^
+TypeError: 'str' object is not callable
+
+CASE_ERROR 4 Traceback (most recent call last):
+  File "/tmp/ipykernel_719/4160085116.py", line 213, in <cell line: 0>
+    b_sem=[add658(f'{owners[0]} lives in region {regions[1]}.'),add658(f'{owners[1]} lives in region {regions[0]}.')]+list(z['bs'][2:])
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_719/4160085116.py", line 117, in add658
+    ids=tok(source(s),add_special_tokens=False).input_ids
+            ~~~~~~^^^
+TypeError: 'str' object is not callable
+
+CASE_ERROR 5 Traceback (most recent call last):
+  File "/tmp/ipykernel_719/4160085116.py", line 213, in <cell line: 0>
+    b_sem=[add658(f'{owners[0]} lives in region {regions[1]}.'),add658(f'{owners[1]} lives in region {regions[0]}.')]+list(z['bs'][2:])
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_719/4160085116.py", line 117, in add658
+    ids=tok(source(s),add_special_tokens=False).input_ids
+            ~~~~~~^^^
+TypeError: 'str' object is not callable
+
+CASE_ERROR 6 Traceback (most recent call last):
+  File "/tmp/ipykernel_719/4160085116.py", line 213, in <cell line: 0>
+    b_sem=[add658(f'{owners[0]} lives in region {regions[1]}.'),add658(f'{owners[1]} lives in region {regions[0]}.')]+list(z['bs'][2:])
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_719/4160085116.py", line 117, in add658
+    ids=tok(source(s),add_special_tokens=False).input_ids
+            ~~~~~~^^^
+TypeError: 'str' object is not callable
+
+CASE_ERROR 7 Traceback (most recent call last):
+  File "/tmp/ipykernel_719/4160085116.py", line 213, in <cell line: 0>
+    b_sem=[add658(f'{owners[0]} lives in region {regions[1]}.'),add658(f'{owners[1]} lives in region {regions[0]}.')]+list(z['bs'][2:])
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ipykernel_719/4160085116.py", line 117, in add658
+    ids=tok(source(s),add_special_tokens=False).input_ids
+            ~~~~~~^^^
+TypeError: 'str' object is not callable
+
+====================================================================================================================
+TEST658_FINAL
+{
+  "BASE/BASE_ORDER": {
+    "ORACLE_ONE": {
+      "strict": 2,
+      "region": 2,
+      "n": 2
+    },
+    "ROUTED_ONE": {
+      "strict": 2,
+      "region": 2,
+      "n": 2
+    },
+    "A_ONLY": {
+      "strict": 0,
+      "region": 0,
+      "n": 2
+    },
+    "routing_correct": 2,
+    "routing_n": 2
+  },
+  "BASE/SLOT_SWAP01": {
+    "ORACLE_ONE": {
+      "strict": 2,
+      "region": 2,
+      "n": 2
+    },
+    "ROUTED_ONE": {
+      "strict": 2,
+      "region": 2,
+      "n": 2
+    },
+    "A_ONLY": {
+      "strict": 0,
+      "region": 0,
+      "n": 2
+    },
+    "routing_correct": 2,
+    "routing_n": 2
+  },
+  "SEMANTIC_SWAP/BASE_ORDER": {
+    "ORACLE_ONE": {
+      "strict": 2,
+      "region": 2,
+      "n": 2
+    },
+    "ROUTED_ONE": {
+      "strict": 2,
+      "region": 2,
+      "n": 2
+    },
+    "A_ONLY": {
+      "strict": 0,
+      "region": 0,
+      "n": 2
+    },
+    "routing_correct": 2,
+    "routing_n": 2
+  },
+  "SEMANTIC_SWAP/SLOT_SWAP01": {
+    "ORACLE_ONE": {
+      "strict": 2,
+      "region": 2,
+      "n": 2
+    },
+    "ROUTED_ONE": {
+      "strict": 2,
+      "region": 2,
+      "n": 2
+    },
+    "A_ONLY": {
+      "strict": 0,
+      "region": 0,
+      "n": 2
+    },
+    "routing_correct": 2,
+    "routing_n": 2
+  }
+}
+SLOT_IDENTITY_INVARIANCE 4 / 4
+WEIGHTS_FROZEN True SENTINEL True
+RESULT /content/AKBASCORE_TEST658/TEST658_results.json SHA256 8fb6fd888f6ffc334dc25b3b2586094d77e1a9b50a75dddac6c22a1b11e70e56
+STATUS ERRORS_PRESENT
