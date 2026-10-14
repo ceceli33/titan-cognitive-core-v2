@@ -1,0 +1,156 @@
+ ====================================================================================================================
+TEST657 — NATIVE CUDA DYNAMIC KV FABRIC / SOURCE-LOCKED QWEN
+====================================================================================================================
+PASS CUDA_AVAILABLE
+PASS NINJA
+PASS NVCC
+PASS CXX
+BUILDING NATIVE KV EXTENSION
+PASS NATIVE_BITWISE_29_7
+PASS NATIVE_BITWISE_43_31
+PASS NATIVE_BITWISE_1_1
+PASS TEST566_BLOB
+PASS TEST566_BOUNDARY
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 83.8kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 832kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 84.3MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 70.0MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 130MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.41MB/s]Download complete:  13.1GB,  307MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  478MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.62s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.87it/s]generation_config.json: 100% 243/243 [00:00<00:00, 31.8kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+PASS FROZEN
+PASS ARCH
+PASS PANEL_LOCK
+PASS SENTINEL
+BASE GITHUB_VERIFIED BLOB b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71 GPU NVIDIA A100-SXM4-40GB
+PASS TEST650_PANEL_LOCK
+CASE 0 A GOLD 0 SELECTED 0 RANK [0, 2, 3, 1] SCORES [0.81104, 0.77106, 0.78532, 0.78302] GOLD_MARGIN 0.025716 B1_MINUS_B0 -0.039973 PERM24_INVARIANT True
+  ORACLE_ONE STRICT 1 REGION 1 'Uymzbqqqy' 
+  ROUTED_ONE STRICT 1 REGION 1 'Uymzbqqqy' 
+  ORACLE_ALL_ORIG STRICT 1 REGION 1 'Uymzbqqqy' 
+  ORACLE_ALL_SWAP01 STRICT 1 REGION 1 'Uymzbqqqy' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 0 CF GOLD 1 SELECTED 1 RANK [1, 3, 2, 0] SCORES [0.74439, 0.80559, 0.76739, 0.78093] GOLD_MARGIN 0.024666 B1_MINUS_B0 0.061206 PERM24_INVARIANT True
+  ORACLE_ONE STRICT 1 REGION 1 'Qtjgqsmrr' 
+  ROUTED_ONE STRICT 1 REGION 1 'Qtjgqsmrr' 
+  ORACLE_ALL_ORIG STRICT 1 REGION 1 'Qtjgqsmrr' 
+  ORACLE_ALL_SWAP01 STRICT 1 REGION 1 'Qtjgqsmrr' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 1 A GOLD 0 SELECTED 0 RANK [0, 2, 3, 1] SCORES [0.8237, 0.80331, 0.81347, 0.80629] GOLD_MARGIN 0.010234 B1_MINUS_B0 -0.020391 PERM24_INVARIANT True
+  ORACLE_ONE STRICT 1 REGION 1 'Gfurgabvw' 
+  ROUTED_ONE STRICT 1 REGION 1 'Gfurgabvw' 
+  ORACLE_ALL_ORIG STRICT 1 REGION 1 'Gfurgabvw' 
+  ORACLE_ALL_SWAP01 STRICT 1 REGION 1 'Gfurgabvw' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 1 CF GOLD 1 SELECTED 1 RANK [1, 3, 2, 0] SCORES [0.77363, 0.81133, 0.78965, 0.79503] GOLD_MARGIN 0.016304 B1_MINUS_B0 0.037701 PERM24_INVARIANT True
+  ORACLE_ONE STRICT 1 REGION 1 'Hfgrumvwm' 
+  ROUTED_ONE STRICT 1 REGION 1 'Hfgrumvwm' 
+  ORACLE_ALL_ORIG STRICT 1 REGION 1 'Hfgrumvwm' 
+  ORACLE_ALL_SWAP01 STRICT 1 REGION 1 'Hfgrumvwm' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 2 A GOLD 0 SELECTED 0 RANK [0, 2, 3, 1] SCORES [0.80456, 0.73605, 0.76428, 0.74908] GOLD_MARGIN 0.040277 B1_MINUS_B0 -0.068505 PERM24_INVARIANT True
+  ORACLE_ONE STRICT 1 REGION 1 'Azgdnghvt' 
+  ROUTED_ONE STRICT 1 REGION 1 'Azgdnghvt' 
+  ORACLE_ALL_ORIG STRICT 1 REGION 1 'Azgdnghvt' 
+  ORACLE_ALL_SWAP01 STRICT 1 REGION 1 'Azgdnghvt' 
+  A_ONLY STRICT 0 REGION 0 'The information provided does not specify the region where the owner of artifact Buglppt' 
+CASE 2 CF GOLD 1 SELECTED 1 RANK [1, 0, 2, 3] SCORES [0.78175, 0.79162, 0.77997, 0.76084] GOLD_MARGIN 0.00987 B1_MINUS_B0 0.00987 PERM24_INVARIANT True
+  ORACLE_ONE STRICT 1 REGION 1 'Wrvhxsaje' 
+  ROUTED_ONE STRICT 1 REGION 1 'Wrvhxsaje' 
+  ORACLE_ALL_ORIG STRICT 1 REGION 1 'Wrvhxsaje' 
+  ORACLE_ALL_SWAP01 STRICT 1 REGION 1 'Wrvhxsaje' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where Snhvgqxqn lives.' 
+CASE 3 A GOLD 0 SELECTED 0 RANK [0, 3, 2, 1] SCORES [0.82587, 0.73909, 0.80055, 0.80613] GOLD_MARGIN 0.019739 B1_MINUS_B0 -0.086779 PERM24_INVARIANT True
+  ORACLE_ONE STRICT 1 REGION 1 'Zkaxlvnjp' 
+  ROUTED_ONE STRICT 1 REGION 1 'Zkaxlvnjp' 
+  ORACLE_ALL_ORIG STRICT 1 REGION 1 'Zkaxlvnjp' 
+  ORACLE_ALL_SWAP01 STRICT 1 REGION 1 'Zkaxlvnjp' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 3 CF GOLD 1 SELECTED 1 RANK [1, 3, 2, 0] SCORES [0.76452, 0.80247, 0.77669, 0.78382] GOLD_MARGIN 0.018646 B1_MINUS_B0 0.037944 PERM24_INVARIANT True
+  ORACLE_ONE STRICT 1 REGION 1 'Gsltsmzga' 
+  ROUTED_ONE STRICT 1 REGION 1 'Gsltsmzga' 
+  ORACLE_ALL_ORIG STRICT 1 REGION 1 'Gsltsmzga' 
+  ORACLE_ALL_SWAP01 STRICT 1 REGION 1 'Gsltsmzga' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where Utayakusl lives.' 
+CASE 4 A GOLD 0 SELECTED 0 RANK [0, 1, 3, 2] SCORES [0.80558, 0.77809, 0.75804, 0.77611] GOLD_MARGIN 0.027487 B1_MINUS_B0 -0.027487 PERM24_INVARIANT True
+  ORACLE_ONE STRICT 1 REGION 1 'Urslysjts' 
+  ROUTED_ONE STRICT 1 REGION 1 'Urslysjts' 
+  ORACLE_ALL_ORIG STRICT 1 REGION 1 'Urslysjts' 
+  ORACLE_ALL_SWAP01 STRICT 1 REGION 1 'Urslysjts' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 4 CF GOLD 1 SELECTED 1 RANK [1, 3, 0, 2] SCORES [0.75556, 0.81081, 0.74902, 0.76693] GOLD_MARGIN 0.043873 B1_MINUS_B0 0.055249 PERM24_INVARIANT True
+  ORACLE_ONE STRICT 1 REGION 1 'Ezxydplvw' 
+  ROUTED_ONE STRICT 1 REGION 1 'Ezxydplvw' 
+  ORACLE_ALL_ORIG STRICT 1 REGION 1 'Ezxydplvw' 
+  ORACLE_ALL_SWAP01 STRICT 1 REGION 1 'Ezxydplvw' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 5 A GOLD 0 SELECTED 1 RANK [1, 3, 2, 0] SCORES [0.79152, 0.8443, 0.79574, 0.80295] GOLD_MARGIN -0.052775 B1_MINUS_B0 0.052775 PERM24_INVARIANT True
+  ORACLE_ONE STRICT 1 REGION 1 'Hmdkhtdxf' 
+  ROUTED_ONE STRICT 0 REGION 0 'Yhxrpmckz' 
+  ORACLE_ALL_ORIG STRICT 1 REGION 1 'Hmdkhtdxf' 
+  ORACLE_ALL_SWAP01 STRICT 1 REGION 1 'Hmdkhtdxf' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 5 CF GOLD 1 SELECTED 1 RANK [1, 3, 2, 0] SCORES [0.73083, 0.87328, 0.77843, 0.79561] GOLD_MARGIN 0.077666 B1_MINUS_B0 0.14245 PERM24_INVARIANT True
+  ORACLE_ONE STRICT 1 REGION 1 'Yhxrpmckz' 
+  ROUTED_ONE STRICT 1 REGION 1 'Yhxrpmckz' 
+  ORACLE_ALL_ORIG STRICT 1 REGION 1 'Yhxrpmckz' 
+  ORACLE_ALL_SWAP01 STRICT 1 REGION 1 'Yhxrpmckz' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 6 A GOLD 0 SELECTED 0 RANK [0, 1, 3, 2] SCORES [0.8145, 0.79758, 0.74063, 0.78816] GOLD_MARGIN 0.016926 B1_MINUS_B0 -0.016926 PERM24_INVARIANT True
+  ORACLE_ONE STRICT 1 REGION 1 'Fjlthlfls' 
+  ROUTED_ONE STRICT 1 REGION 1 'Fjlthlfls' 
+  ORACLE_ALL_ORIG STRICT 1 REGION 1 'Fjlthlfls' 
+  ORACLE_ALL_SWAP01 STRICT 1 REGION 1 'Fjlthlfls' 
+  A_ONLY STRICT 0 REGION 0 'Kwndfketj' 
+CASE 6 CF GOLD 1 SELECTED 1 RANK [1, 3, 0, 2] SCORES [0.76869, 0.82865, 0.72388, 0.77848] GOLD_MARGIN 0.050174 B1_MINUS_B0 0.059968 PERM24_INVARIANT True
+  ORACLE_ONE STRICT 1 REGION 1 'Dnugltlzs' 
+  ROUTED_ONE STRICT 1 REGION 1 'Dnugltlzs' 
+  ORACLE_ALL_ORIG STRICT 1 REGION 1 'Dnugltlzs' 
+  ORACLE_ALL_SWAP01 STRICT 0 REGION 1 'Qjqyebsjq lives in region Dnugltlzs.' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 7 A GOLD 0 SELECTED 1 RANK [1, 0, 3, 2] SCORES [0.81975, 0.8339, 0.76371, 0.78179] GOLD_MARGIN -0.014157 B1_MINUS_B0 0.014157 PERM24_INVARIANT True
+  ORACLE_ONE STRICT 1 REGION 1 'Ypljllltu' 
+  ROUTED_ONE STRICT 0 REGION 0 'Ggqbtdege' 
+  ORACLE_ALL_ORIG STRICT 1 REGION 1 'Ypljllltu' 
+  ORACLE_ALL_SWAP01 STRICT 1 REGION 1 'Ypljllltu' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 7 CF GOLD 1 SELECTED 1 RANK [1, 0, 3, 2] SCORES [0.76525, 0.85057, 0.74833, 0.75925] GOLD_MARGIN 0.085319 B1_MINUS_B0 0.085319 PERM24_INVARIANT True
+  ORACLE_ONE STRICT 1 REGION 1 'Ggqbtdege' 
+  ROUTED_ONE STRICT 1 REGION 1 'Ggqbtdege' 
+  ORACLE_ALL_ORIG STRICT 1 REGION 1 'Ggqbtdege' 
+  ORACLE_ALL_SWAP01 STRICT 1 REGION 1 'Ggqbtdege' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+====================================================================================================================
+TEST657_FINAL
+{
+  "ORACLE_ONE": {
+    "strict": 16,
+    "region": 16,
+    "n": 16
+  },
+  "ROUTED_ONE": {
+    "strict": 14,
+    "region": 14,
+    "n": 16
+  },
+  "ORACLE_ALL_ORIG": {
+    "strict": 16,
+    "region": 16,
+    "n": 16
+  },
+  "ORACLE_ALL_SWAP01": {
+    "strict": 15,
+    "region": 16,
+    "n": 16
+  },
+  "A_ONLY": {
+    "strict": 0,
+    "region": 0,
+    "n": 16
+  }
+}
+ROUTING_ACCURACY {'A': 6, 'CF': 8} B1_PREFERRED {'A': 2, 'CF': 8} INDEX_INVARIANCE 16 / 16
+WEIGHTS_FROZEN True SENTINEL True
+RESULT /content/AKBASCORE_TEST657/TEST657_results.json SHA256 c8d4a83680c5850ad413acad3519bba9cfba153259bf2c552838cb88a5eff808
+STATUS EXPERIMENT_COMPLETE
