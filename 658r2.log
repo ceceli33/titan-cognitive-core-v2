@@ -1,0 +1,367 @@
+ ====================================================================================================================
+TEST658 — NATIVE CUDA DYNAMIC KV FABRIC / SOURCE-LOCKED QWEN
+====================================================================================================================
+PASS CUDA_AVAILABLE
+PASS NINJA
+PASS NVCC
+PASS CXX
+BUILDING NATIVE KV EXTENSION
+PASS NATIVE_BITWISE_29_7
+PASS NATIVE_BITWISE_43_31
+PASS NATIVE_BITWISE_1_1
+PASS TEST566_BLOB
+PASS TEST566_BOUNDARY
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+config.json: 100% 663/663 [00:00<00:00, 82.3kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 1.06MB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 85.8MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 69.4MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 128MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.50MB/s]Download complete:  13.1GB,  154MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  497MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.81s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.06it/s]generation_config.json: 100% 243/243 [00:00<00:00, 29.5kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+PASS FROZEN
+PASS ARCH
+PASS PANEL_LOCK
+PASS SENTINEL
+BASE GITHUB_VERIFIED BLOB b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71 GPU NVIDIA A100-SXM4-40GB
+PASS TEST650_PANEL_LOCK
+CASE 0 BASE BASE_ORDER A GOLD_SLOT 0 SELECTED 0 GOLD_REGION Uymzbqqqy SCORES [0.81104, 0.77106, 0.78532, 0.78302] GOLD_MARGIN 0.025716
+  ORACLE_ONE STRICT 1 REGION 1 'Uymzbqqqy' 
+  ROUTED_ONE STRICT 1 REGION 1 'Uymzbqqqy' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 0 BASE BASE_ORDER CF GOLD_SLOT 1 SELECTED 1 GOLD_REGION Qtjgqsmrr SCORES [0.74439, 0.80559, 0.76739, 0.78093] GOLD_MARGIN 0.024666
+  ORACLE_ONE STRICT 1 REGION 1 'Qtjgqsmrr' 
+  ROUTED_ONE STRICT 1 REGION 1 'Qtjgqsmrr' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 0 BASE SLOT_SWAP01 A GOLD_SLOT 1 SELECTED 1 GOLD_REGION Uymzbqqqy SCORES [0.77106, 0.81104, 0.78532, 0.78302] GOLD_MARGIN 0.025716
+  ORACLE_ONE STRICT 1 REGION 1 'Uymzbqqqy' 
+  ROUTED_ONE STRICT 1 REGION 1 'Uymzbqqqy' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 0 BASE SLOT_SWAP01 CF GOLD_SLOT 0 SELECTED 0 GOLD_REGION Qtjgqsmrr SCORES [0.80559, 0.74439, 0.76739, 0.78093] GOLD_MARGIN 0.024666
+  ORACLE_ONE STRICT 1 REGION 1 'Qtjgqsmrr' 
+  ROUTED_ONE STRICT 1 REGION 1 'Qtjgqsmrr' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 0 SEMANTIC_SWAP BASE_ORDER A GOLD_SLOT 0 SELECTED 0 GOLD_REGION Qtjgqsmrr SCORES [0.80897, 0.77612, 0.78532, 0.78302] GOLD_MARGIN 0.023646
+  ORACLE_ONE STRICT 1 REGION 1 'Qtjgqsmrr' 
+  ROUTED_ONE STRICT 1 REGION 1 'Qtjgqsmrr' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 0 SEMANTIC_SWAP BASE_ORDER CF GOLD_SLOT 1 SELECTED 1 GOLD_REGION Uymzbqqqy SCORES [0.74334, 0.80998, 0.76739, 0.78093] GOLD_MARGIN 0.029058
+  ORACLE_ONE STRICT 1 REGION 1 'Uymzbqqqy' 
+  ROUTED_ONE STRICT 1 REGION 1 'Uymzbqqqy' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 0 SEMANTIC_SWAP SLOT_SWAP01 A GOLD_SLOT 1 SELECTED 1 GOLD_REGION Qtjgqsmrr SCORES [0.77612, 0.80897, 0.78532, 0.78302] GOLD_MARGIN 0.023646
+  ORACLE_ONE STRICT 1 REGION 1 'Qtjgqsmrr' 
+  ROUTED_ONE STRICT 1 REGION 1 'Qtjgqsmrr' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 0 SEMANTIC_SWAP SLOT_SWAP01 CF GOLD_SLOT 0 SELECTED 0 GOLD_REGION Uymzbqqqy SCORES [0.80998, 0.74334, 0.76739, 0.78093] GOLD_MARGIN 0.029058
+  ORACLE_ONE STRICT 1 REGION 1 'Uymzbqqqy' 
+  ROUTED_ONE STRICT 1 REGION 1 'Uymzbqqqy' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 1 BASE BASE_ORDER A GOLD_SLOT 0 SELECTED 0 GOLD_REGION Gfurgabvw SCORES [0.8237, 0.80331, 0.81347, 0.80629] GOLD_MARGIN 0.010234
+  ORACLE_ONE STRICT 1 REGION 1 'Gfurgabvw' 
+  ROUTED_ONE STRICT 1 REGION 1 'Gfurgabvw' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 1 BASE BASE_ORDER CF GOLD_SLOT 1 SELECTED 1 GOLD_REGION Hfgrumvwm SCORES [0.77363, 0.81133, 0.78965, 0.79503] GOLD_MARGIN 0.016304
+  ORACLE_ONE STRICT 1 REGION 1 'Hfgrumvwm' 
+  ROUTED_ONE STRICT 1 REGION 1 'Hfgrumvwm' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 1 BASE SLOT_SWAP01 A GOLD_SLOT 1 SELECTED 1 GOLD_REGION Gfurgabvw SCORES [0.80331, 0.8237, 0.81347, 0.80629] GOLD_MARGIN 0.010234
+  ORACLE_ONE STRICT 1 REGION 1 'Gfurgabvw' 
+  ROUTED_ONE STRICT 1 REGION 1 'Gfurgabvw' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 1 BASE SLOT_SWAP01 CF GOLD_SLOT 0 SELECTED 0 GOLD_REGION Hfgrumvwm SCORES [0.81133, 0.77363, 0.78965, 0.79503] GOLD_MARGIN 0.016304
+  ORACLE_ONE STRICT 1 REGION 1 'Hfgrumvwm' 
+  ROUTED_ONE STRICT 1 REGION 1 'Hfgrumvwm' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 1 SEMANTIC_SWAP BASE_ORDER A GOLD_SLOT 0 SELECTED 0 GOLD_REGION Hfgrumvwm SCORES [0.82951, 0.78772, 0.81347, 0.80629] GOLD_MARGIN 0.016043
+  ORACLE_ONE STRICT 1 REGION 1 'Hfgrumvwm' 
+  ROUTED_ONE STRICT 1 REGION 1 'Hfgrumvwm' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 1 SEMANTIC_SWAP BASE_ORDER CF GOLD_SLOT 1 SELECTED 1 GOLD_REGION Gfurgabvw SCORES [0.77487, 0.80407, 0.78965, 0.79503] GOLD_MARGIN 0.009039
+  ORACLE_ONE STRICT 1 REGION 1 'Gfurgabvw' 
+  ROUTED_ONE STRICT 1 REGION 1 'Gfurgabvw' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 1 SEMANTIC_SWAP SLOT_SWAP01 A GOLD_SLOT 1 SELECTED 1 GOLD_REGION Hfgrumvwm SCORES [0.78772, 0.82951, 0.81347, 0.80629] GOLD_MARGIN 0.016043
+  ORACLE_ONE STRICT 1 REGION 1 'Hfgrumvwm' 
+  ROUTED_ONE STRICT 1 REGION 1 'Hfgrumvwm' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 1 SEMANTIC_SWAP SLOT_SWAP01 CF GOLD_SLOT 0 SELECTED 0 GOLD_REGION Gfurgabvw SCORES [0.80407, 0.77487, 0.78965, 0.79503] GOLD_MARGIN 0.009039
+  ORACLE_ONE STRICT 1 REGION 1 'Gfurgabvw' 
+  ROUTED_ONE STRICT 1 REGION 1 'Gfurgabvw' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 2 BASE BASE_ORDER A GOLD_SLOT 0 SELECTED 0 GOLD_REGION Azgdnghvt SCORES [0.80456, 0.73605, 0.76428, 0.74908] GOLD_MARGIN 0.040277
+  ORACLE_ONE STRICT 1 REGION 1 'Azgdnghvt' 
+  ROUTED_ONE STRICT 1 REGION 1 'Azgdnghvt' 
+  A_ONLY STRICT 0 REGION 0 'The information provided does not specify the region where the owner of artifact Buglppt' 
+CASE 2 BASE BASE_ORDER CF GOLD_SLOT 1 SELECTED 1 GOLD_REGION Wrvhxsaje SCORES [0.78175, 0.79162, 0.77997, 0.76084] GOLD_MARGIN 0.00987
+  ORACLE_ONE STRICT 1 REGION 1 'Wrvhxsaje' 
+  ROUTED_ONE STRICT 1 REGION 1 'Wrvhxsaje' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where Snhvgqxqn lives.' 
+CASE 2 BASE SLOT_SWAP01 A GOLD_SLOT 1 SELECTED 1 GOLD_REGION Azgdnghvt SCORES [0.73605, 0.80456, 0.76428, 0.74908] GOLD_MARGIN 0.040277
+  ORACLE_ONE STRICT 1 REGION 1 'Azgdnghvt' 
+  ROUTED_ONE STRICT 1 REGION 1 'Azgdnghvt' 
+  A_ONLY STRICT 0 REGION 0 'The information provided does not specify the region where the owner of artifact Buglppt' 
+CASE 2 BASE SLOT_SWAP01 CF GOLD_SLOT 0 SELECTED 0 GOLD_REGION Wrvhxsaje SCORES [0.79162, 0.78175, 0.77997, 0.76084] GOLD_MARGIN 0.00987
+  ORACLE_ONE STRICT 1 REGION 1 'Wrvhxsaje' 
+  ROUTED_ONE STRICT 1 REGION 1 'Wrvhxsaje' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where Snhvgqxqn lives.' 
+CASE 2 SEMANTIC_SWAP BASE_ORDER A GOLD_SLOT 0 SELECTED 0 GOLD_REGION Wrvhxsaje SCORES [0.79697, 0.74416, 0.76428, 0.74908] GOLD_MARGIN 0.032691
+  ORACLE_ONE STRICT 1 REGION 1 'Wrvhxsaje' 
+  ROUTED_ONE STRICT 1 REGION 1 'Wrvhxsaje' 
+  A_ONLY STRICT 0 REGION 0 'The information provided does not specify the region where the owner of artifact Buglppt' 
+CASE 2 SEMANTIC_SWAP BASE_ORDER CF GOLD_SLOT 1 SELECTED 1 GOLD_REGION Azgdnghvt SCORES [0.77469, 0.79933, 0.77997, 0.76084] GOLD_MARGIN 0.019361
+  ORACLE_ONE STRICT 1 REGION 1 'Azgdnghvt' 
+  ROUTED_ONE STRICT 1 REGION 1 'Azgdnghvt' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where Snhvgqxqn lives.' 
+CASE 2 SEMANTIC_SWAP SLOT_SWAP01 A GOLD_SLOT 1 SELECTED 1 GOLD_REGION Wrvhxsaje SCORES [0.74416, 0.79697, 0.76428, 0.74908] GOLD_MARGIN 0.032691
+  ORACLE_ONE STRICT 1 REGION 1 'Wrvhxsaje' 
+  ROUTED_ONE STRICT 1 REGION 1 'Wrvhxsaje' 
+  A_ONLY STRICT 0 REGION 0 'The information provided does not specify the region where the owner of artifact Buglppt' 
+CASE 2 SEMANTIC_SWAP SLOT_SWAP01 CF GOLD_SLOT 0 SELECTED 0 GOLD_REGION Azgdnghvt SCORES [0.79933, 0.77469, 0.77997, 0.76084] GOLD_MARGIN 0.019361
+  ORACLE_ONE STRICT 1 REGION 1 'Azgdnghvt' 
+  ROUTED_ONE STRICT 1 REGION 1 'Azgdnghvt' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where Snhvgqxqn lives.' 
+CASE 3 BASE BASE_ORDER A GOLD_SLOT 0 SELECTED 0 GOLD_REGION Zkaxlvnjp SCORES [0.82587, 0.73909, 0.80055, 0.80613] GOLD_MARGIN 0.019739
+  ORACLE_ONE STRICT 1 REGION 1 'Zkaxlvnjp' 
+  ROUTED_ONE STRICT 1 REGION 1 'Zkaxlvnjp' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 3 BASE BASE_ORDER CF GOLD_SLOT 1 SELECTED 1 GOLD_REGION Gsltsmzga SCORES [0.76452, 0.80247, 0.77669, 0.78382] GOLD_MARGIN 0.018646
+  ORACLE_ONE STRICT 1 REGION 1 'Gsltsmzga' 
+  ROUTED_ONE STRICT 1 REGION 1 'Gsltsmzga' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where Utayakusl lives.' 
+CASE 3 BASE SLOT_SWAP01 A GOLD_SLOT 1 SELECTED 1 GOLD_REGION Zkaxlvnjp SCORES [0.73909, 0.82587, 0.80055, 0.80613] GOLD_MARGIN 0.019739
+  ORACLE_ONE STRICT 1 REGION 1 'Zkaxlvnjp' 
+  ROUTED_ONE STRICT 1 REGION 1 'Zkaxlvnjp' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 3 BASE SLOT_SWAP01 CF GOLD_SLOT 0 SELECTED 0 GOLD_REGION Gsltsmzga SCORES [0.80247, 0.76452, 0.77669, 0.78382] GOLD_MARGIN 0.018646
+  ORACLE_ONE STRICT 1 REGION 1 'Gsltsmzga' 
+  ROUTED_ONE STRICT 1 REGION 1 'Gsltsmzga' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where Utayakusl lives.' 
+CASE 3 SEMANTIC_SWAP BASE_ORDER A GOLD_SLOT 0 SELECTED 0 GOLD_REGION Gsltsmzga SCORES [0.81098, 0.76183, 0.80055, 0.80613] GOLD_MARGIN 0.004852
+  ORACLE_ONE STRICT 1 REGION 1 'Gsltsmzga' 
+  ROUTED_ONE STRICT 1 REGION 1 'Gsltsmzga' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 3 SEMANTIC_SWAP BASE_ORDER CF GOLD_SLOT 1 SELECTED 1 GOLD_REGION Zkaxlvnjp SCORES [0.75386, 0.81749, 0.77669, 0.78382] GOLD_MARGIN 0.033666
+  ORACLE_ONE STRICT 1 REGION 1 'Zkaxlvnjp' 
+  ROUTED_ONE STRICT 1 REGION 1 'Zkaxlvnjp' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where Utayakusl lives.' 
+CASE 3 SEMANTIC_SWAP SLOT_SWAP01 A GOLD_SLOT 1 SELECTED 1 GOLD_REGION Gsltsmzga SCORES [0.76183, 0.81098, 0.80055, 0.80613] GOLD_MARGIN 0.004852
+  ORACLE_ONE STRICT 1 REGION 1 'Gsltsmzga' 
+  ROUTED_ONE STRICT 1 REGION 1 'Gsltsmzga' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 3 SEMANTIC_SWAP SLOT_SWAP01 CF GOLD_SLOT 0 SELECTED 0 GOLD_REGION Zkaxlvnjp SCORES [0.81749, 0.75386, 0.77669, 0.78382] GOLD_MARGIN 0.033666
+  ORACLE_ONE STRICT 1 REGION 1 'Zkaxlvnjp' 
+  ROUTED_ONE STRICT 1 REGION 1 'Zkaxlvnjp' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where Utayakusl lives.' 
+CASE 4 BASE BASE_ORDER A GOLD_SLOT 0 SELECTED 0 GOLD_REGION Urslysjts SCORES [0.80558, 0.77809, 0.75804, 0.77611] GOLD_MARGIN 0.027487
+  ORACLE_ONE STRICT 1 REGION 1 'Urslysjts' 
+  ROUTED_ONE STRICT 1 REGION 1 'Urslysjts' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 4 BASE BASE_ORDER CF GOLD_SLOT 1 SELECTED 1 GOLD_REGION Ezxydplvw SCORES [0.75556, 0.81081, 0.74902, 0.76693] GOLD_MARGIN 0.043873
+  ORACLE_ONE STRICT 1 REGION 1 'Ezxydplvw' 
+  ROUTED_ONE STRICT 1 REGION 1 'Ezxydplvw' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 4 BASE SLOT_SWAP01 A GOLD_SLOT 1 SELECTED 1 GOLD_REGION Urslysjts SCORES [0.77809, 0.80558, 0.75804, 0.77611] GOLD_MARGIN 0.027487
+  ORACLE_ONE STRICT 1 REGION 1 'Urslysjts' 
+  ROUTED_ONE STRICT 1 REGION 1 'Urslysjts' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 4 BASE SLOT_SWAP01 CF GOLD_SLOT 0 SELECTED 0 GOLD_REGION Ezxydplvw SCORES [0.81081, 0.75556, 0.74902, 0.76693] GOLD_MARGIN 0.043873
+  ORACLE_ONE STRICT 1 REGION 1 'Ezxydplvw' 
+  ROUTED_ONE STRICT 1 REGION 1 'Ezxydplvw' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 4 SEMANTIC_SWAP BASE_ORDER A GOLD_SLOT 0 SELECTED 0 GOLD_REGION Ezxydplvw SCORES [0.83326, 0.73963, 0.75804, 0.77611] GOLD_MARGIN 0.05715
+  ORACLE_ONE STRICT 1 REGION 1 'Ezxydplvw' 
+  ROUTED_ONE STRICT 1 REGION 1 'Ezxydplvw' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 4 SEMANTIC_SWAP BASE_ORDER CF GOLD_SLOT 1 SELECTED 0 GOLD_REGION Urslysjts SCORES [0.78703, 0.77612, 0.74902, 0.76693] GOLD_MARGIN -0.010913
+  ORACLE_ONE STRICT 1 REGION 1 'Urslysjts' 
+  ROUTED_ONE STRICT 0 REGION 0 'Ezxydplvw' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 4 SEMANTIC_SWAP SLOT_SWAP01 A GOLD_SLOT 1 SELECTED 1 GOLD_REGION Ezxydplvw SCORES [0.73963, 0.83326, 0.75804, 0.77611] GOLD_MARGIN 0.05715
+  ORACLE_ONE STRICT 1 REGION 1 'Ezxydplvw' 
+  ROUTED_ONE STRICT 1 REGION 1 'Ezxydplvw' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 4 SEMANTIC_SWAP SLOT_SWAP01 CF GOLD_SLOT 0 SELECTED 1 GOLD_REGION Urslysjts SCORES [0.77612, 0.78703, 0.74902, 0.76693] GOLD_MARGIN -0.010913
+  ORACLE_ONE STRICT 1 REGION 1 'Urslysjts' 
+  ROUTED_ONE STRICT 0 REGION 0 'Ezxydplvw' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 5 BASE BASE_ORDER A GOLD_SLOT 0 SELECTED 1 GOLD_REGION Hmdkhtdxf SCORES [0.79152, 0.8443, 0.79574, 0.80295] GOLD_MARGIN -0.052775
+  ORACLE_ONE STRICT 1 REGION 1 'Hmdkhtdxf' 
+  ROUTED_ONE STRICT 0 REGION 0 'Yhxrpmckz' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 5 BASE BASE_ORDER CF GOLD_SLOT 1 SELECTED 1 GOLD_REGION Yhxrpmckz SCORES [0.73083, 0.87328, 0.77843, 0.79561] GOLD_MARGIN 0.077666
+  ORACLE_ONE STRICT 1 REGION 1 'Yhxrpmckz' 
+  ROUTED_ONE STRICT 1 REGION 1 'Yhxrpmckz' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 5 BASE SLOT_SWAP01 A GOLD_SLOT 1 SELECTED 0 GOLD_REGION Hmdkhtdxf SCORES [0.8443, 0.79152, 0.79574, 0.80295] GOLD_MARGIN -0.052775
+  ORACLE_ONE STRICT 1 REGION 1 'Hmdkhtdxf' 
+  ROUTED_ONE STRICT 0 REGION 0 'Yhxrpmckz' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 5 BASE SLOT_SWAP01 CF GOLD_SLOT 0 SELECTED 0 GOLD_REGION Yhxrpmckz SCORES [0.87328, 0.73083, 0.77843, 0.79561] GOLD_MARGIN 0.077666
+  ORACLE_ONE STRICT 1 REGION 1 'Yhxrpmckz' 
+  ROUTED_ONE STRICT 1 REGION 1 'Yhxrpmckz' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 5 SEMANTIC_SWAP BASE_ORDER A GOLD_SLOT 0 SELECTED 0 GOLD_REGION Yhxrpmckz SCORES [0.83415, 0.81907, 0.79574, 0.80295] GOLD_MARGIN 0.015078
+  ORACLE_ONE STRICT 1 REGION 1 'Yhxrpmckz' 
+  ROUTED_ONE STRICT 1 REGION 1 'Yhxrpmckz' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 5 SEMANTIC_SWAP BASE_ORDER CF GOLD_SLOT 1 SELECTED 1 GOLD_REGION Hmdkhtdxf SCORES [0.77707, 0.84326, 0.77843, 0.79561] GOLD_MARGIN 0.047646
+  ORACLE_ONE STRICT 1 REGION 1 'Hmdkhtdxf' 
+  ROUTED_ONE STRICT 1 REGION 1 'Hmdkhtdxf' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 5 SEMANTIC_SWAP SLOT_SWAP01 A GOLD_SLOT 1 SELECTED 1 GOLD_REGION Yhxrpmckz SCORES [0.81907, 0.83415, 0.79574, 0.80295] GOLD_MARGIN 0.015078
+  ORACLE_ONE STRICT 1 REGION 1 'Yhxrpmckz' 
+  ROUTED_ONE STRICT 1 REGION 1 'Yhxrpmckz' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 5 SEMANTIC_SWAP SLOT_SWAP01 CF GOLD_SLOT 0 SELECTED 0 GOLD_REGION Hmdkhtdxf SCORES [0.84326, 0.77707, 0.77843, 0.79561] GOLD_MARGIN 0.047646
+  ORACLE_ONE STRICT 1 REGION 1 'Hmdkhtdxf' 
+  ROUTED_ONE STRICT 1 REGION 1 'Hmdkhtdxf' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 6 BASE BASE_ORDER A GOLD_SLOT 0 SELECTED 0 GOLD_REGION Fjlthlfls SCORES [0.8145, 0.79758, 0.74063, 0.78816] GOLD_MARGIN 0.016926
+  ORACLE_ONE STRICT 1 REGION 1 'Fjlthlfls' 
+  ROUTED_ONE STRICT 1 REGION 1 'Fjlthlfls' 
+  A_ONLY STRICT 0 REGION 0 'Kwndfketj' 
+CASE 6 BASE BASE_ORDER CF GOLD_SLOT 1 SELECTED 1 GOLD_REGION Dnugltlzs SCORES [0.76869, 0.82865, 0.72388, 0.77848] GOLD_MARGIN 0.050174
+  ORACLE_ONE STRICT 1 REGION 1 'Dnugltlzs' 
+  ROUTED_ONE STRICT 1 REGION 1 'Dnugltlzs' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 6 BASE SLOT_SWAP01 A GOLD_SLOT 1 SELECTED 1 GOLD_REGION Fjlthlfls SCORES [0.79758, 0.8145, 0.74063, 0.78816] GOLD_MARGIN 0.016926
+  ORACLE_ONE STRICT 1 REGION 1 'Fjlthlfls' 
+  ROUTED_ONE STRICT 1 REGION 1 'Fjlthlfls' 
+  A_ONLY STRICT 0 REGION 0 'Kwndfketj' 
+CASE 6 BASE SLOT_SWAP01 CF GOLD_SLOT 0 SELECTED 0 GOLD_REGION Dnugltlzs SCORES [0.82865, 0.76869, 0.72388, 0.77848] GOLD_MARGIN 0.050174
+  ORACLE_ONE STRICT 1 REGION 1 'Dnugltlzs' 
+  ROUTED_ONE STRICT 1 REGION 1 'Dnugltlzs' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 6 SEMANTIC_SWAP BASE_ORDER A GOLD_SLOT 0 SELECTED 0 GOLD_REGION Dnugltlzs SCORES [0.81512, 0.8001, 0.74063, 0.78816] GOLD_MARGIN 0.015019
+  ORACLE_ONE STRICT 1 REGION 1 'Dnugltlzs' 
+  ROUTED_ONE STRICT 1 REGION 1 'Dnugltlzs' 
+  A_ONLY STRICT 0 REGION 0 'Kwndfketj' 
+CASE 6 SEMANTIC_SWAP BASE_ORDER CF GOLD_SLOT 1 SELECTED 1 GOLD_REGION Fjlthlfls SCORES [0.7674, 0.83194, 0.72388, 0.77848] GOLD_MARGIN 0.053464
+  ORACLE_ONE STRICT 1 REGION 1 'Fjlthlfls' 
+  ROUTED_ONE STRICT 1 REGION 1 'Fjlthlfls' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 6 SEMANTIC_SWAP SLOT_SWAP01 A GOLD_SLOT 1 SELECTED 1 GOLD_REGION Dnugltlzs SCORES [0.8001, 0.81512, 0.74063, 0.78816] GOLD_MARGIN 0.015019
+  ORACLE_ONE STRICT 1 REGION 1 'Dnugltlzs' 
+  ROUTED_ONE STRICT 1 REGION 1 'Dnugltlzs' 
+  A_ONLY STRICT 0 REGION 0 'Kwndfketj' 
+CASE 6 SEMANTIC_SWAP SLOT_SWAP01 CF GOLD_SLOT 0 SELECTED 0 GOLD_REGION Fjlthlfls SCORES [0.83194, 0.7674, 0.72388, 0.77848] GOLD_MARGIN 0.053464
+  ORACLE_ONE STRICT 1 REGION 1 'Fjlthlfls' 
+  ROUTED_ONE STRICT 1 REGION 1 'Fjlthlfls' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 7 BASE BASE_ORDER A GOLD_SLOT 0 SELECTED 1 GOLD_REGION Ypljllltu SCORES [0.81975, 0.8339, 0.76371, 0.78179] GOLD_MARGIN -0.014157
+  ORACLE_ONE STRICT 1 REGION 1 'Ypljllltu' 
+  ROUTED_ONE STRICT 0 REGION 0 'Ggqbtdege' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 7 BASE BASE_ORDER CF GOLD_SLOT 1 SELECTED 1 GOLD_REGION Ggqbtdege SCORES [0.76525, 0.85057, 0.74833, 0.75925] GOLD_MARGIN 0.085319
+  ORACLE_ONE STRICT 1 REGION 1 'Ggqbtdege' 
+  ROUTED_ONE STRICT 1 REGION 1 'Ggqbtdege' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 7 BASE SLOT_SWAP01 A GOLD_SLOT 1 SELECTED 0 GOLD_REGION Ypljllltu SCORES [0.8339, 0.81975, 0.76371, 0.78179] GOLD_MARGIN -0.014157
+  ORACLE_ONE STRICT 1 REGION 1 'Ypljllltu' 
+  ROUTED_ONE STRICT 0 REGION 0 'Ggqbtdege' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 7 BASE SLOT_SWAP01 CF GOLD_SLOT 0 SELECTED 0 GOLD_REGION Ggqbtdege SCORES [0.85057, 0.76525, 0.74833, 0.75925] GOLD_MARGIN 0.085319
+  ORACLE_ONE STRICT 1 REGION 1 'Ggqbtdege' 
+  ROUTED_ONE STRICT 1 REGION 1 'Ggqbtdege' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 7 SEMANTIC_SWAP BASE_ORDER A GOLD_SLOT 0 SELECTED 0 GOLD_REGION Ggqbtdege SCORES [0.85644, 0.78469, 0.76371, 0.78179] GOLD_MARGIN 0.071754
+  ORACLE_ONE STRICT 1 REGION 1 'Ggqbtdege' 
+  ROUTED_ONE STRICT 1 REGION 1 'Ggqbtdege' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 7 SEMANTIC_SWAP BASE_ORDER CF GOLD_SLOT 1 SELECTED 1 GOLD_REGION Ypljllltu SCORES [0.80168, 0.80175, 0.74833, 0.75925] GOLD_MARGIN 6.5e-05
+  ORACLE_ONE STRICT 1 REGION 1 'Ypljllltu' 
+  ROUTED_ONE STRICT 1 REGION 1 'Ypljllltu' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 7 SEMANTIC_SWAP SLOT_SWAP01 A GOLD_SLOT 1 SELECTED 1 GOLD_REGION Ggqbtdege SCORES [0.78469, 0.85644, 0.76371, 0.78179] GOLD_MARGIN 0.071754
+  ORACLE_ONE STRICT 1 REGION 1 'Ggqbtdege' 
+  ROUTED_ONE STRICT 1 REGION 1 'Ggqbtdege' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 7 SEMANTIC_SWAP SLOT_SWAP01 CF GOLD_SLOT 0 SELECTED 0 GOLD_REGION Ypljllltu SCORES [0.80175, 0.80168, 0.74833, 0.75925] GOLD_MARGIN 6.5e-05
+  ORACLE_ONE STRICT 1 REGION 1 'Ypljllltu' 
+  ROUTED_ONE STRICT 1 REGION 1 'Ypljllltu' 
+  A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+====================================================================================================================
+TEST658_FINAL
+{
+  "BASE/BASE_ORDER": {
+    "ORACLE_ONE": {
+      "strict": 16,
+      "region": 16,
+      "n": 16
+    },
+    "ROUTED_ONE": {
+      "strict": 14,
+      "region": 14,
+      "n": 16
+    },
+    "A_ONLY": {
+      "strict": 0,
+      "region": 0,
+      "n": 16
+    },
+    "routing_correct": 14,
+    "routing_n": 16
+  },
+  "BASE/SLOT_SWAP01": {
+    "ORACLE_ONE": {
+      "strict": 16,
+      "region": 16,
+      "n": 16
+    },
+    "ROUTED_ONE": {
+      "strict": 14,
+      "region": 14,
+      "n": 16
+    },
+    "A_ONLY": {
+      "strict": 0,
+      "region": 0,
+      "n": 16
+    },
+    "routing_correct": 14,
+    "routing_n": 16
+  },
+  "SEMANTIC_SWAP/BASE_ORDER": {
+    "ORACLE_ONE": {
+      "strict": 16,
+      "region": 16,
+      "n": 16
+    },
+    "ROUTED_ONE": {
+      "strict": 15,
+      "region": 15,
+      "n": 16
+    },
+    "A_ONLY": {
+      "strict": 0,
+      "region": 0,
+      "n": 16
+    },
+    "routing_correct": 15,
+    "routing_n": 16
+  },
+  "SEMANTIC_SWAP/SLOT_SWAP01": {
+    "ORACLE_ONE": {
+      "strict": 16,
+      "region": 16,
+      "n": 16
+    },
+    "ROUTED_ONE": {
+      "strict": 15,
+      "region": 15,
+      "n": 16
+    },
+    "A_ONLY": {
+      "strict": 0,
+      "region": 0,
+      "n": 16
+    },
+    "routing_correct": 15,
+    "routing_n": 16
+  }
+}
+SLOT_IDENTITY_INVARIANCE 32 / 32
+WEIGHTS_FROZEN True SENTINEL True
+RESULT /content/AKBASCORE_TEST658/TEST658_results.json SHA256 2884c8c19760b26d25478dfa5fbe44fe13a8a4fa690d46f334733e541423ffa4
+STATUS EXPERIMENT_COMPLETE
