@@ -1,460 +1,2184 @@
-# AKBASCORE MAM — The Silicon Hippocampus
+# AKBASCORE MAM — THE SILICON HIPPOCAMPUS
 
-**Physical memory cartridges for a frozen language model: WRITE · SSD · READ**
+### Model-Native Numerical Memory for Frozen Language Models
 
-Mustafa Akbaş · AkbasCore AI Teknoloji · Mersin, Türkiye · 12 October 2026
-License: AKBASCORE RESEARCH SOFTWARE LICENSE — [`LICENSE`](LICENSE)
+**Physical Memory Cartridges · WRITE · SSD · READ · Native CUT3 Injection · Append-Only Consolidation · Multi-Hop Relational Synthesis**
 
-**Full technical report (PDF):** [`docs/AKBASCORE_MAM_The_Silicon_Hippocampus_Technical_Report.pdf`](docs/AKBASCORE_MAM_The_Silicon_Hippocampus_Technical_Report.pdf) · Zenodo DOI: *to be added after Zenodo publication*
+**Mustafa Akbaş**  
+AkbasCore AI Teknoloji  
+Mersin, Türkiye  
+October 2026
+
+**License:** [AKBASCORE RESEARCH SOFTWARE LICENSE](LICENSE)
 
 ---
 
-## Summary
+## Overview
 
-AKBASCORE MAM is a model-native memory architecture for a frozen language model. In this release, **frozen Qwen2.5-7B-Instruct** works as follows:
+AKBASCORE MAM is an experimental model-native memory architecture for frozen language models.
 
-- **WRITE:** the model reads each fact once and its own attention key/value state is kept as a **CUT3 cartridge**.
-- **SSD:** every cartridge is stored as an independent file with a SHA-256 manifest.
-- **READ:** later, the model receives **only the question**. Its native layer-3 representation addresses the cartridge bank through a label-free **PCA128 + FAISS IVF128** index, and the locked **PEAK50** rule selects one cartridge. The file is verified, loaded into the attention cache, and the model answers. The source text is not given to the model again.
+The system investigates whether knowledge can be converted into numerical representations derived from a language model's internal computations, stored outside its learned parameters, and subsequently used during inference without reintroducing the original source text into the answering prompt.
 
-The model weights are not changed: no training, no fine-tuning, no LoRA, no optimizer, and no hooks left on the model.
+The research currently demonstrates two complementary capabilities.
 
-“The Silicon Hippocampus” is the name of the architecture's role — form a memory once, keep it outside the model, recall it later. It is not a claim of biological equivalence.
+### 1. Physical Silicon Hippocampus — WRITE · SSD · READ
 
-### Measured in the published run ([`Hippocampus.log`](Hippocampus.log))
+A frozen Qwen2.5-7B-Instruct model:
 
-**Pool and start-up acceptance**
+1. Reads source facts and creates independent numerical CUT3 memory cartridges.
+2. Stores the cartridges as physical files with SHA-256 integrity manifests.
+3. Locates relevant cartridges through native geometric memory addressing.
+4. Loads selected numerical memories into the attention cache.
+5. Answers questions without receiving the original source text again.
 
-| Quantity | Value |
+The published physical-memory experiment contains **1,453 independent cartridges** and reports **96/96 correct selections and answers** across two question-wording panels covering the same 48 synthetic facts.
+
+### 2. Silicon Hippocampus v1.4 — Native Multi-Cartridge Consolidation
+
+The new research extension investigates how multiple independently written numerical cartridges can be combined and used together.
+
+It introduces an experimental pathway for:
+
+- Independent numerical cartridge writing.
+- Native append-only memory consolidation.
+- Internal layer-3 residual representation injection.
+- Attention K/V memory reconstruction.
+- Preservation of previously written memory rows.
+- Source-free question answering.
+- Direct factual retrieval.
+- Predefined multi-hop relational question sequences.
+- Missing-cartridge evaluation.
+- Counterfactual memory replacement.
+- Numerical memory X-Ray visualization.
+- DC_CUT3 versus TEXT_JOINT comparison.
+- Scientific verification and reproducible research records.
+
+The new demonstration includes two fictional experimental scenarios, nine memory conditions per scenario, two memory representations, and seven scientific JPEG figures.
+
+**The v1.4 extension does not replace or invalidate the earlier physical-memory architecture. Both research lines remain part of AKBASCORE MAM.**
+
+### Fundamental Principle
+
+The model weights remain frozen.
+
+No training, fine-tuning, LoRA, optimizer or learned-parameter modification is required for the demonstrated memory operations.
+
+The system operates through numerical attention-memory representations.
+
+The term **Silicon Hippocampus** describes the proposed computational role of external numerical memory. It does not imply biological equivalence to the human hippocampus.
+
+---
+
+# PART I — PHYSICAL SILICON HIPPOCAMPUS
+
+## 1. Architecture — WRITE · SSD · READ
+
+The original physical-memory architecture consists of three stages.
+
+```text
+                    AKBASCORE MAM
+                 THE SILICON HIPPOCAMPUS
+
+                         WRITE
+                           |
+                           v
+                      SOURCE FACT
+                           |
+                           v
+                 FROZEN QWEN2.5-7B
+                           |
+                           v
+                  NATIVE CUT3 MEMORY
+                           |
+                           v
+                 28 LAYERS OF K/V
+                           |
+                           v
+                 PHYSICAL CARTRIDGE
+                           |
+                           v
+                         SSD
+                           |
+                           v
+                 1,453 MEMORY FILES
+                           |
+                           |
+                           v
+                         READ
+                           |
+                           v
+                       QUESTION
+                           |
+                           v
+                 NATIVE LAYER-3 QUERY
+                           |
+                           v
+                        PCA128
+                           |
+                           v
+                    FAISS IVF128
+                           |
+                           v
+                    TOP2 CANDIDATES
+                           |
+                           v
+                         PEAK50
+                           |
+                           v
+                  SELECTED CARTRIDGE
+                           |
+                           v
+                 SHA-256 VERIFICATION
+                           |
+                           v
+                 ATTENTION CACHE LOAD
+                           |
+                           v
+                  FROZEN MODEL ANSWER
+```
+
+The source text is used during cartridge construction.
+
+During READ, the selected cartridge supplies numerical attention memory, while the answering input contains the question template.
+
+### Model Configuration
+
+| Property | Configuration |
 |---|---|
-| Physical cartridge files | 1,453 (96 original + 1,357 synthetic facts) |
-| Disk pool | 3,973,450,961 bytes |
-| Start-up acceptance, original wording (48 questions) | 48/48 correct file selected · 48/48 correct answers from disk · 0 errors |
-| Start-up acceptance, new wording (48 questions) | 48/48 correct file selected · 48/48 correct answers from disk · 0 errors |
-| Integrity at start-up | 8/8 (source SHA lock, manifest SHA of all 1,453 files, weights, sentinel, zero trainable, no hooks, tensor load, lossless sample) |
+| Model | Qwen/Qwen2.5-7B-Instruct |
+| Transformer layers | 28 |
+| Hidden dimension | 3,584 |
+| Query attention heads | 28 |
+| Key/value attention heads | 4 |
+| Attention head dimension | 128 |
+| Precision | bfloat16 |
+| Attention implementation | SDPA |
+| Model parameters | 7,615,616,512 |
+| Fine-tuning | None |
+| LoRA | None |
+| Optimizer | None |
+| Weight modification | None |
 
-**Live RUN, case 00**
+Full-weight SHA-256:
 
-| Quantity | Value |
-|---|---|
-| WRITE | re-executed; bitwise identical to the stored file in all 28 layers |
-| READ | correct file #0292 selected · answer “Fgvrkerflc” = expected |
-| Sealing checks | 43/43 PASS (40 in the sealed payload + 3 sealing-stage checks) |
-| Pipeline time (`engine_total`) | 2.787 s |
-
-The 2.787 s figure is the whole audited RUN pipeline for one question. It includes integrity checks, the weight guard and the control answer, so it is not normal inference throughput. Per-stage timings are given in [Measured results](#measured-results).
-
----
-
-## Contents
-
-1. [Architecture](#architecture)
-2. [WRITE — how a cartridge is formed](#write--how-a-cartridge-is-formed)
-3. [SSD — the physical cartridge pool](#ssd--the-physical-cartridge-pool)
-4. [READ — geometric address, PEAK50 selection, answer](#read--geometric-address-peak50-selection-answer)
-5. [Why this is not text RAG](#why-this-is-not-text-rag)
-6. [Integrity controls and fail-closed branches](#integrity-controls-and-fail-closed-branches)
-7. [Storage, RAM and GPU memory](#storage-ram-and-gpu-memory)
-8. [Measured results](#measured-results)
-9. [How PEAK50 was locked](#how-peak50-was-locked)
-10. [Scientific scope and next validation steps](#scientific-scope-and-next-validation-steps)
-11. [Running the demonstration (Google Colab)](#running-the-demonstration-google-colab)
-12. [Outputs, figures and logs](#outputs-figures-and-logs)
-13. [Source files and engine chain](#source-files-and-engine-chain)
-14. [License](#license)
-15. [Citation](#citation)
+`b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786`
 
 ---
 
-## Architecture
+## 2. WRITE — Creating Numerical Memory Cartridges
 
-```
-                     A · WRITE  (once per fact, before any question)
-  fact text ─► frozen Qwen2.5-7B ─► CUT3: 28 × (K, V) bf16 ─► cut3_XXXXX.pt + SHA-256 manifest
-                 │                                                   │
-                 │ native layer-3 residual rows                      ▼
-                 ▼                                          B · SSD: 1,453 independent files
-     RAM: PCA128 basis + FAISS IVF128 (label-free)                   │
-                 │                                                   │
-                     C · READ  (every question; source text not given)
-  question ─► frozen Qwen (question frame only) ─► layer-3 question rows
-          ─► PCA128 → IVF128 (nprobe 2, token_k 16) → touched cartridges
-          ─► TOP2 → 16 candidates ─► PEAK50 → 1 cartridge
-          ─► SHA-256 check + torch.load ─► attention cache ─► frozen model answers
-```
+Each source fact is placed after a fixed 29-token instruction prefix.
 
-Model: `Qwen/Qwen2.5-7B-Instruct`, bfloat16, 28 layers, hidden 3584, 28 query heads, 4 KV heads, head dimension 128. Full-weight SHA-256 `b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786`.
+The native CUT3 engine constructs the numerical memory through two forward passes.
 
-![Figure 1 — WRITE, SSD and READ architecture of the Silicon Hippocampus with the live values of case 00](docs/figures/fig_01_write_ssd_read.jpg)
+### Forward Pass 1 — Source Processing
 
-*Figure 1 — The Silicon Hippocampus: WRITE · SSD · READ overall architecture, rendered by the demo for live RUN `MAMSH-20261012-053712-0001-C00` (case 00). [PDF version](docs/figures/fig_01_write_ssd_read.pdf).*
+The frozen model processes the instruction prefix and the source fact.
 
+The system captures:
 
----
+- Layer-3 hidden states, H3.
+- Attention key tensors from layers 0–3.
+- Attention value tensors from layers 0–3.
 
-## WRITE — how a cartridge is formed
+The original model parameters remain unchanged.
 
-Every fact is placed after a fixed 29-token instruction prefix (system prompt + `INFORMATION:`). The engine function `init(ci, 3)` (566.py) then runs two forward passes.
+### Forward Pass 2 — Numerical Memory Construction
 
-1. **Forward 1 — token ids, no cache.**
-   - Input: the instruction prefix plus the fact tokens (*T* rows; case 00: 29 + 19 = 48).
-   - The model returns its key/value cache for all layers, and a forward hook captures the **layer-3 hidden state H3** for every row.
-   - The **K/V of layers 0–3** are taken from this pass.
-2. **Forward 2 — all-zero input embeddings, no cache.**
-   - Input: *T* rows of zeros. A hook on layer 3 replaces its output with H3.
-   - The **K/V of layers 4–27** are taken from this pass. They are therefore produced from the layer-3 state alone, not from re-reading the text.
-3. **Cartridge:**
-   - 28 layers × (K, V) = **56 tensors**, each of shape `[1, 4, T, 128]` in bfloat16.
-   - Size: 28 × 2 × 4 × 128 × 2 bytes = **57,344 bytes per row**. Case 00: 48 rows = 2,752,512 bytes.
-4. **File:**
-   - The 56 tensors are saved with `torch.save` as `cut3_XXXXX.pt`. Case 00: `cut3_00292.pt`, 2,768,949 bytes, of which 16,437 bytes are container overhead.
-   - The SHA-256 of every file is recorded in `CUT3_MANIFEST.json`.
+The engine performs a second forward pass using zero-valued input embeddings.
 
-During the same start-up the engine also captures the native layer-3 residual rows of each fact span and normalises them in the locked TEST610 frame: centred by the mean of the 96 original cartridges, then unit-normalised. These rows are the address keys. They contain no labels.
+The stored H3 representations are introduced at the layer-3 boundary.
 
-**Live re-verification in every RUN.** The demo calls `init(fact, 3)` again for the fact of the case. It records every model forward and checks the following:
+The model then computes the higher-layer attention states.
 
-- exactly two forwards: token ids of prefix + fact, then all-zero embeddings over the same rows;
-- the cartridge shape;
-- the byte count;
-- the 56 tensors compared with the stored file **as raw bytes**.
+The resulting cartridge contains:
 
-In the published run all 56 tensors were bitwise identical. If a comparison fails, a second live re-write is made first. This separates nondeterministic re-execution (the two live re-writes differ from each other) from a stored-memory mismatch (the re-writes agree with each other but not with the file). Both comparisons are written to the failure record, and the run stops without sealing.
+- 28 transformer layers.
+- 28 key tensors.
+- 28 value tensors.
+- 56 numerical tensors in total.
+- bfloat16 precision.
 
-The cartridge file contains tensors only. For case 00 the fact text, the answer word and the question were each checked to be absent from the file bytes.
+Each tensor has the shape:
 
----
-
-## SSD — the physical cartridge pool
-
-| Property | Value |
-|---|---|
-| Files | 1,453 independent `.pt` files |
-| Total | 3,973,450,961 bytes |
-| File size | min 2,252,853 · median 2,768,949 · max 2,883,637 bytes |
-| Tensor payload | 3,949,568,000 bytes, all bfloat16 · 56 tensors per file |
-| Write at start-up | 1,453 files · median 83.5 ms per file · 121.6 s summed over files (`init` + save + SHA-256) |
-| Integrity at start-up | size and SHA-256 of all 1,453 files equal to the manifest; every file loads with the expected tensor structure |
-| Integrity in each RUN | 1,453 files present with the manifest sizes; the written and selected files re-hashed against the manifest |
-| Lossless gzip sample | ratio 0.796091 on 32 predeclared files, bitwise restored. The full-pool value is an estimate and was not measured |
-
-
-![Figure 2 — formation of one CUT3 cartridge in two forward passes and its storage as a physical file](docs/figures/fig_02_write_ssd.jpg)
-
-*Figure 2 — WRITE → SSD: how one physical CUT3 cartridge (`cut3_00292.pt`) is formed and stored, with the live bitwise re-verification of case 00. [PDF version](docs/figures/fig_02_write_ssd.pdf).*
-
----
-
-## READ — geometric address, PEAK50 selection, answer
-
-### 1. Question frame
-The question is placed after the same instruction prefix (`PREFIX + question + "\n\n"`) and read in **one forward pass** with no cache. The layer-3 residual rows of the question span are taken and normalised in the same frame as the cartridge keys. Case 00: 42 input tokens, 13 question rows. No fact text is part of this input; the demo verifies the exact token ids.
-
-### 2. Label-free geometric address (RAM)
-- **PCA128:**
-  - fitted with `torch.pca_lowrank` on 2,048 native positions sampled with a fixed seed, using the stored cartridge positions only;
-  - question rows are projected as `(q − CENTER) @ BASIS`.
-- **FAISS `IndexIVFFlat`:**
-  - inner product, 128 inverted lists over all 26,738 native positions of the 1,453 cartridges;
-  - search with `nprobe = 2`, `token_k = 16` nearest positions per question row.
-- **Touched set:** the cartridges that own the returned positions. Case 00: 103 of 1,453.
-- **TOP2 candidate score:** for each question row *t*, the two highest similarities inside cartridge *c* form
-  `TOP2(c) = mean_t [ (log Σ_{2 best j} exp(β·s_tj) − log n_c) / β ]`, with β = 8.
-  The touched cartridges are ordered by TOP2, ties broken by cartridge id, and the first **16** become candidates.
-
-### 3. PEAK50 selection
-Let `s_tj = q_t · k_j` be the full-dimension similarity between question row *t* and cartridge row *j*. For each candidate *c* with *n_c* rows:
-
-```
-FRAM(c)   = mean_t [ ( logsumexp_j(β · s_tj) − log n_c ) / β ]      β = 8
-peak(c)   = mean_t   max_j s_tj
-PEAK50(c) = 0.5 · FRAM(c) + 0.5 · peak(c)
+```text
+[1, 4, T, 128]
 ```
 
-Candidates are ranked by PEAK50 in descending order, ties broken by cartridge id, and the first is selected (`features626` + `rerank626` with the locked setting `('PEAK50', 0.5, 0.0)`).
+Where `T` represents the number of memory rows.
 
-In every RUN the demo checks that:
+The numerical payload requires:
 
-- the ranked set equals the `candidate626` set (no candidate added, merged or dropped);
-- its size is min(16, touched);
-- every score re-derives as 0.5 · FRAM + 0.5 · peak;
-- the order follows the engine's tie rule;
-- the selected cartridge and the top-5 equal the engine's own start-up record for the same question.
+```text
+28 layers × 2 tensors × 4 heads × 128 dimensions × 2 bytes
 
-### 4. Load and answer
-- The selected file's SHA-256 is recomputed and compared with the manifest. The file is loaded with `torch.load(weights_only=True)`, and the 56 tensors are moved to the GPU as the attention cache.
-- `answer(memory, question)` gives the model **only the question template**:
-  `"\nQUESTION:\n{q}\n\nANSWER:\n<|im_end|>\n<|im_start|>assistant\n"`.
-- Positions continue after the *T* cartridge rows. Decoding is greedy, up to 16 new tokens.
-- The instruction prefix and the fact enter only through the loaded K/V. No fact token is input at READ time.
-- Case 00: 24 question-template tokens over the 48-row cartridge, then 6 one-token generation steps → “Fgvrkerflc” (expected “Fgvrkerflc”).
+= 57,344 bytes per memory row
+```
 
-**Control.** The same question is asked over the runner-up candidate's file (#0293 in case 00). It produced “ZX624196 does not have a listed capital.”, not the expected answer.
+### Published Case-00 Cartridge
 
+| Measurement | Value |
+|---|---:|
+| Instruction prefix | 29 tokens |
+| Fact | 19 tokens |
+| Total memory rows | 48 |
+| Numerical payload | 2,752,512 bytes |
+| Physical file size | 2,768,949 bytes |
+| File-container overhead | 16,437 bytes |
 
-![Figure 3 — question-native addressing, PEAK50 candidates, disk load, answer and runner-up control](docs/figures/fig_03_read.jpg)
+The cartridge is saved as:
 
-*Figure 3 — READ: question-native addressing, the 16 PEAK50 candidates, disk load, the answer and the runner-up control for case 00. [PDF version](docs/figures/fig_03_read.pdf).*
+`cut3_00292.pt`
 
----
+The physical file contains numerical tensors.
 
-## Why this is not text RAG
+Its SHA-256 is recorded in the cartridge manifest.
 
-| | Text RAG | AKBASCORE MAM |
-|---|---|---|
-| What is stored | text chunks (plus an embedding per chunk) | the model's own attention K/V state for each fact (CUT3 cartridge) |
-| How it is found | similarity between external text embeddings | the frozen model's native layer-3 question rows against native layer-3 cartridge rows (PCA128 + IVF128, then PEAK50) |
-| What enters the model at answer time | retrieved text pasted into the prompt and processed again | the cartridge's K/V loaded into the attention cache; the prompt holds only the question template |
-| Encoder | usually a separate embedding model | the same frozen model |
-| Training | none, or a separately trained retriever | none |
-| Dependencies | text store / vector service | per-fact `.pt` files with a SHA-256 manifest; an in-process FAISS index; no SQL, no vector-database service |
+### Live WRITE Verification
 
----
+The original demonstration re-executes the cartridge-writing operation.
 
-## Integrity controls and fail-closed branches
+It verifies:
 
-**Engine locks (checked at start-up):**
-- TEST627 demo engine SHA-256 `ab53e2d5…` (embedded verbatim);
-- 626.py, 624.py and 610.py SHA-256;
-- 566.py and 575.py git blobs;
-- model and architecture;
-- full-weight SHA-256;
-- TEST610 baseline;
-- 1,453 files with manifest sizes;
-- index size;
-- locked READ setting;
-- engine status COMPLETE with 8/8 integrity;
-- zero trainable tensors, no LoRA, no optimizer, no hooks on decoder layers, attention or `q_proj`.
+1. The expected two forward passes.
+2. The expected input structure.
+3. The cartridge tensor shapes.
+4. The numerical byte count.
+5. Bitwise equality against the stored cartridge.
+6. The absence of the tested source strings from the serialized file bytes.
 
-**Frozen-model checks in every RUN:** full-weight SHA-256 at start-up; TEST566 sentinel and an all-parameter guard (sums, absolute sums, sums of squares of every parameter) before and after the run; trainable tensors; hooks. A recording-only forward pre-hook is attached only while an engine call runs; it records the kind and length of every model input and the installed cache length.
+In the published case-00 run, all 56 tensors were bitwise identical to the stored cartridge.
 
-**Fail-closed branches.** Each of the following aborts the run with no seal and no figures, and preserves the raw outputs gathered so far. All 13 are exercised by the GPU-free self-test before the interface starts:
+If the comparison fails, the engine performs a second live reconstruction to distinguish possible execution nondeterminism from a stored-memory mismatch.
 
-1. changed weight guard
-2. WRITE result not bitwise identical to its file
-3. extra model forward during WRITE
-4. fact text inside a cartridge file
-5. pool file size different from the manifest
-6. fact tokens in the question frame
-7. a PEAK50 score that does not re-derive
-8. ranked set different from the `candidate626` set
-9. live READ that does not reproduce the engine's start-up record
-10. selected file whose SHA-256 differs from the manifest
-11. fact tokens in the answering input
-12. hook left on a decoder layer
-13. engine start-up status other than COMPLETE
+An unresolved mismatch prevents successful sealing.
 
 ---
 
-## Storage, RAM and GPU memory
+## 3. SSD — Physical Memory Storage
 
-These quantities are kept separate.
+The published physical-memory experiment contains:
 
-| Where | What | Size |
-|---|---|---|
-| Disk (SSD) | 1,453 cartridge files | 3,973,450,961 bytes |
-| RAM — address index | FAISS IVF128 (serialized) | 13,970,459 bytes |
-| RAM — address index | PCA128 basis (3584 × 128, float32) | 1,835,008 bytes |
-| RAM — reranking data | native layer-3 rows of all positions (26,738 × 3584, float32) | 383,315,968 bytes |
-| GPU | frozen model weights (bfloat16) and the loaded cartridge | peak PyTorch allocation in the case-00 RUN: 18.27 GiB, model included |
+**1,453 independent numerical memory cartridges.**
 
-The storage report excludes model RAM/VRAM and Python allocator overhead.
+The pool consists of:
+
+- 96 original cartridges.
+- 1,357 additional synthetic-fact cartridges.
+
+### Measured Storage
+
+| Property | Result |
+|---|---:|
+| Physical cartridge files | 1,453 |
+| Total disk storage | 3,973,450,961 bytes |
+| Numerical tensor payload | 3,949,568,000 bytes |
+| Minimum file size | 2,252,853 bytes |
+| Median file size | 2,768,949 bytes |
+| Maximum file size | 2,883,637 bytes |
+| Median write time | 83.5 ms |
+| Summed writing and storage time | 121.6 seconds |
+
+Each cartridge is stored independently.
+
+The system uses SHA-256 manifests to verify file identity and integrity.
+
+At start-up, all 1,453 physical files are checked against the manifest.
+
+### Lossless Compression Experiment
+
+A predeclared sample of 32 files was tested using gzip compression.
+
+Measured compression ratio:
+
+`0.796091`
+
+The compressed files were restored bitwise.
+
+This ratio applies to the measured sample.
+
+It is not a direct measurement of compression across the complete 1,453-file pool.
 
 ---
 
-## Measured results
+## 4. READ — Native Geometric Memory Addressing
 
-### Start-up acceptance in the published runtime ([`Hippocampus.log`](Hippocampus.log))
+The READ system identifies a relevant physical memory cartridge from the question.
 
-The locked TEST627 engine ran at start-up in the same runtime. Questions are answered from the disk files.
+The source fact is not inserted into the answering prompt.
 
-| Panel (48 questions) | Correct file | Correct answer | Errors |
-|---|---|---|---|
-| Original wording | 48/48 | 48/48 | 0 |
-| New wording | 48/48 | 48/48 | 0 |
+The frozen model's own layer-3 representations are used to construct the memory address.
 
-| Panel — median per question | Address | Load | Answer |
-|---|---|---|---|
+### 4.1 Question Encoding
+
+The question is processed using the established instruction frame.
+
+The model performs one forward pass.
+
+Layer-3 residual representations from the question span are extracted.
+
+These representations are normalized in the same frame used for the cartridge address keys.
+
+The published case-00 experiment used:
+
+- 42 input tokens.
+- 13 question positions.
+
+### 4.2 PCA128
+
+The native representations are projected into a 128-dimensional space.
+
+The PCA basis is fitted using:
+
+`2,048 sampled native positions`
+
+with a fixed random seed.
+
+The projection is:
+
+```text
+(q - CENTER) @ BASIS
+```
+
+### 4.3 FAISS IVF128
+
+The memory-addressing index uses:
+
+`FAISS IndexIVFFlat`
+
+with inner-product similarity.
+
+| Parameter | Value |
+|---|---:|
+| Native indexed positions | 26,738 |
+| Physical cartridges | 1,453 |
+| PCA dimensions | 128 |
+| IVF lists | 128 |
+| nprobe | 2 |
+| token_k | 16 |
+| Candidate budget | 16 |
+
+The question representations identify candidate cartridge positions.
+
+The original case-00 experiment touched 103 of the 1,453 cartridges.
+
+### 4.4 TOP2 Candidate Ranking
+
+For each question position, the two strongest matching positions inside a cartridge are evaluated.
+
+The score is aggregated across question positions.
+
+The touched cartridges are ranked.
+
+The top 16 become candidates for final reranking.
+
+### 4.5 PEAK50 Selection
+
+The final selection uses the locked PEAK50 rule.
+
+Let:
+
+```text
+s_tj = q_t · k_j
+```
+
+The FRAM score is:
+
+```text
+FRAM(c) =
+mean_t [
+    (logsumexp_j(beta * s_tj) - log(n_c)) / beta
+]
+```
+
+The peak score is:
+
+```text
+peak(c) =
+mean_t max_j(s_tj)
+```
+
+The combined rule is:
+
+```text
+PEAK50(c) =
+0.5 * FRAM(c) + 0.5 * peak(c)
+
+beta = 8
+```
+
+Candidates are ranked in descending order.
+
+Ties are broken by cartridge ID.
+
+The highest-ranked cartridge is selected.
+
+### 4.6 Physical Memory Loading
+
+The selected file is verified using SHA-256.
+
+The numerical tensors are loaded into GPU memory.
+
+The model subsequently answers using the loaded attention memory.
+
+The original source text is not provided again.
+
+The answering template is:
+
+```text
+QUESTION:
+{question}
+
+ANSWER:
+```
+
+Generation uses greedy decoding with a limit of 16 new tokens.
+
+### Case-00 Result
+
+Question:
+
+```text
+Name the present capital of ZX624196.
+```
+
+Selected cartridge:
+
+`#0292`
+
+Raw answer:
+
+`Fgvrkerflc`
+
+Expected answer:
+
+`Fgvrkerflc`
+
+Result:
+
+**Correct cartridge selected. Correct answer generated.**
+
+The runner-up cartridge was also tested as a control.
+
+It did not produce the expected answer.
+
+---
+
+## 5. Physical Memory — Published Results
+
+The published experiment is documented in:
+
+[Hippocampus.log](Hippocampus.log)
+
+### Start-Up Acceptance
+
+| Evaluation | Correct cartridge | Correct answer | Errors |
+|---|---:|---:|---:|
+| Original question wording | 48/48 | 48/48 | 0 |
+| New question wording | 48/48 | 48/48 | 0 |
+
+Combined reported result:
+
+**96/96 correct cartridge selections and 96/96 correct answers.**
+
+These are two wordings of the same 48 synthetic facts.
+
+They are not 96 independent unseen facts.
+
+### Start-Up Latency
+
+Median per question:
+
+| Panel | Address | Load | Answer |
+|---|---:|---:|---:|
 | Original wording | 23.80 ms | 17.29 ms | 235.30 ms |
 | New wording | 23.68 ms | 17.29 ms | 239.06 ms |
 
-Start-up integrity: 8/8.
+### Archived TEST627 Results
 
-### Archived TEST627 record ([`627.log`](627.log))
+The earlier TEST627 record reported:
 
-Reproduced from the archived log; not re-run in the published runtime.
-
-| Panel (48 questions) | Correct file | Correct answer | Errors |
-|---|---|---|---|
-| Original wording | 48/48 | 48/48 | 0 |
-| New wording | 48/48 | 48/48 | 0 |
-
-| Panel — median per question | Address | Load | Answer |
-|---|---|---|---|
+| Panel | Address | Load | Answer |
+|---|---:|---:|---:|
 | Original wording | 23.87 ms | 17.87 ms | 236.61 ms |
 | New wording | 25.05 ms | 17.50 ms | 235.20 ms |
 
-Decision: `READY_FOR_DEMO_WITH_DISCLOSED_NONBLIND_LIMITATION`. 627.log SHA-256 `c909ce23d98bfc883641c82144adceacdaf7de13fc56e00a6153fbbb46c00687`.
+The archived TEST627 measurements were not rerun as part of the published case-00 experiment.
 
-### Live RUN `MAMSH-20261012-053712-0001-C00` (case 00)
+### Live Case-00 Measurements
 
-- **Verdict:** `CASE_00_CORRECT_WRITE_REVERIFIED_SSD_READ_SOURCE_FREE_ANSWER`.
-- **Seal:** 43/43 checks PASS · payload SHA-256 `f85289a8b93a2ad66b1912ea7fdb22a17b4782b12cc0e41abdd81af28a798048`.
-  - The sealed payload lists **40** checks (`checks_pre_seal`). Three further sealing-stage checks run after the payload is assembled: claim scan of the payload, payload SHA-256 after writing, and SHA-256 of the copied engine result. Figure 4 shows the resulting total of **43** under the label “pre-seal”. Evidence-ZIP checks follow after sealing.
-- **Question:** “Name the present capital of ZX624196.” · selected #0292, the expected cartridge.
+Run:
 
-| Stage (one run; scopes differ, not summed) | Measured |
-|---|---|
-| WRITE `init(fact, 3)` — two forwards | 105.9 ms |
-| Question encode — one question-frame forward | 41.5 ms |
-| Address — FAISS 0.85 + TOP2 20.93 + PEAK50 features/rerank 6.08 (TEST627 scope) | 27.9 ms |
-| Load — SHA-256 + `torch.load` + copy to GPU (may be served from the OS page cache) | 19.4 ms |
-| Answer — question template + 6 generation steps | 249 ms |
-| Whole audited pipeline (`engine_total`: integrity, WRITE re-check, SSD stat, READ, control, weight guard) | 2.787 s |
+`MAMSH-20261012-053712-0001-C00`
 
-All three panels above are separate measurements: they come from different runs and are not merged into one success count.
+| Stage | Measured time |
+|---|---:|
+| WRITE | 105.9 ms |
+| Question encoding | 41.5 ms |
+| Native addressing | 27.9 ms |
+| Cartridge loading | 19.4 ms |
+| Answer generation | 249 ms |
+| Complete audited pipeline | 2.787 seconds |
 
+The complete pipeline includes additional verification and control operations.
 
-![Figure 4 — start-up acceptance, archived TEST627 record, live case 00 and experimental scope, shown as separate columns](docs/figures/fig_04_results.jpg)
+It should not be interpreted as ordinary inference throughput.
 
-*Figure 4 — RESULTS: runtime acceptance, archived TEST627, live run and experimental scope. The three columns are separate measurements and are not merged into one success count. [PDF version](docs/figures/fig_04_results.pdf).*
+### Sealing and Verification
+
+Published result:
+
+**43/43 sealing checks PASS.**
+
+The sealed payload contains 40 checks.
+
+Three additional sealing-stage checks produce the final total of 43.
+
+Payload SHA-256:
+
+`f85289a8b93a2ad66b1912ea7fdb22a17b4782b12cc0e41abdd81af28a798048`
 
 ---
 
-## How PEAK50 was locked
+## 6. How PEAK50 Was Established
 
-**TEST624** (`nprobe 2 · token_k 16 · budget 16`): the correct cartridge was among the 16 candidates for 48/48 questions, but the original FRAM ranking selected it for 40/48.
+The memory-addressing research progressed through several experimental stages.
 
-**TEST626** compared eight predeclared reranking rules on the same candidate sets:
+### TEST624
 
-| | Result |
+Configuration:
+
+```text
+nprobe = 2
+token_k = 16
+candidate budget = 16
+```
+
+The correct cartridge appeared among the 16 candidates for:
+
+`48/48 questions`
+
+However, the original FRAM ranking selected the correct cartridge for:
+
+`40/48 questions`
+
+### TEST626
+
+Eight predeclared reranking rules were compared.
+
+| Evaluation | Result |
 |---|---|
-| Calibration (24 questions) | FRAM 21/24; every PEAK/CONTRAST variant 24/24 |
-| Rule locked by TEST626's own predeclared tie-break | PEAK25 |
-| New-wording panel (48) | FRAM 40/48 · PEAK25 47/48 · PEAK50 48/48 |
+| Calibration panel | 24 questions |
+| FRAM calibration | 21/24 |
+| PEAK/CONTRAST variants | 24/24 |
+| Rule selected by original tie-break | PEAK25 |
+| New-wording FRAM | 40/48 |
+| New-wording PEAK25 | 47/48 |
+| New-wording PEAK50 | 48/48 |
 | Disk answers with PEAK25 | 47/48 + 47/48 |
 
-**TEST627** fixed PEAK50 after these results and confirmed 48/48 + 48/48 on the same 48 facts. TEST627's own limitation record states that it is a confirmation on previously exposed facts.
+### TEST627
+
+PEAK50 was subsequently fixed.
+
+The experiment confirmed:
+
+`48/48 + 48/48`
+
+on the same 48 facts.
+
+The archived record explicitly identifies this as a confirmation on previously exposed facts rather than a blind holdout.
+
+The later Silicon Hippocampus v1.4 experiments investigate a separate capability.
+
+They do not replace the PEAK50 research.
 
 ---
 
-## Scientific scope and next validation steps
+## 7. Physical Memory Integrity
 
-**What the record establishes.** On an A100, a frozen Qwen2.5-7B-Instruct:
+The original system includes multiple verification layers.
 
-- writes 1,453 facts as independent K/V cartridge files;
-- reproduces a cartridge bit for bit on demand;
-- addresses the pool from the question alone with a label-free native index;
-- answers 96 questions from the selected files without the source text;
-- leaves its weights unchanged throughout.
+### Start-Up Verification
 
-**Scope of the present panel.** The 96 questions are two wordings of the same 48 synthetic capital-of-country facts, and PEAK50 was fixed after TEST626. The panel is therefore a confirmation panel, not a blind holdout.
+- Source SHA-256 locks.
+- Cartridge manifest verification.
+- All 1,453 physical file checks.
+- Frozen model verification.
+- Full-weight SHA-256.
+- Sentinel checks.
+- Zero trainable parameters.
+- Expected tensor structures.
+- Native addressing configuration.
+- Locked PEAK50 selection.
 
-**Next validation targets** (not yet completed):
+### Runtime Verification
 
-1. a preregistered blind holdout with new facts, new templates and new question wordings;
-2. cold-SSD latency, with the page cache excluded;
-3. consumer hardware;
-4. pools of 10⁴–10⁶ cartridges, with touched-set growth measured directly;
-5. other fact types and other models;
-6. answers that combine several cartridges.
+- Bitwise cartridge reconstruction.
+- Model forward-pass auditing.
+- Source-text exclusion checks.
+- Candidate-set integrity.
+- Score reconstruction.
+- Selected-file SHA-256.
+- Answering-input verification.
+- Model-weight guards.
+- Decoder-hook checks.
+- Experimental output sealing.
 
----
+### Fail-Closed Conditions
 
-## Running the demonstration (Google Colab)
+The original demonstration includes 13 tested failure branches:
 
-Runtime: **Runtime → Change runtime type → GPU A100 (40 GB)**, about 5 GB of free disk. Internet access is needed for the Hugging Face model and the locked engine chain.
+1. Modified model-weight guard.
+2. Nonidentical cartridge reconstruction.
+3. Unexpected forward passes.
+4. Source text detected in cartridge bytes.
+5. Cartridge manifest size mismatch.
+6. Source tokens entering the question frame.
+7. Incorrect PEAK50 score reconstruction.
+8. Candidate-set inconsistency.
+9. Live READ mismatch.
+10. Cartridge SHA-256 mismatch.
+11. Source tokens entering the answering input.
+12. Residual hooks remaining on decoder layers.
+13. Incomplete engine initialization.
 
-**Three cells (recommended):**
-
-1. **[`HIPPOCAMPUS_part1.py`](HIPPOCAMPUS_part1.py)** — engine. Verifies the embedded TEST627 engine and the 626.py / 624.py / 610.py chain, then executes the engine unchanged:
-   - model load and TEST610 baseline;
-   - WRITE of 1,453 files;
-   - PCA128 + IVF128 index;
-   - PEAK50 acceptance on 96 questions from disk;
-   - audit of all files.
-
-   Before the engine starts, a guide maps the engine's own progress lines to these stages. The measured start-up duration is printed at the end.
-2. **[`HIPPOCAMPUS_part2.py`](HIPPOCAMPUS_part2.py)** — fail-closed RUN pipeline and figures.
-3. **[`HIPPOCAMPUS_part3.py`](HIPPOCAMPUS_part3.py)** — GPU-free self-test (13 fail-closed branches), then a public Gradio link.
-
-Run the three cells **in order, in the same runtime**. Do not restart the runtime between them.
-
-**One cell:** [`HIPPOCAMPUS_full.py`](HIPPOCAMPUS_full.py) contains the three parts in order. Paste it into a single cell and run it.
-
-The Gradio link printed at the end is a temporary share URL of that Colab session. It stops working when the session ends; it is not a permanent public address.
-
-In the interface, press **RUN**. There is nothing to type or choose. RUN *n* uses case (*n* − 1) mod 48 of the engine's 48 new-wording questions; this rotation is predeclared. Each RUN goes through these stages: integrity → WRITE re-check → SSD → READ address → load + answer → control → verification → seal → figures → package.
-
----
-
-## Outputs, figures and logs
-
-Every RUN produces:
-
-- **Four figures** (JPEG 300 dpi + vector PDF; the copies from the published run are in [`docs/figures/`](docs/figures/)):
-  - `fig_01_write_ssd_read` — WRITE · SSD · READ architecture with the live values;
-  - `fig_02_write_ssd` — formation and storage of one cartridge;
-  - `fig_03_read` — address, PEAK50 candidates, load, answer, control;
-  - `fig_04_results` — start-up acceptance, archived record and this run side by side, with limits.
-- `fig_01_TR` — Turkish version of Fig. 1.
-- The sealed payload (`*_FULL_RUN_LOG_payload.json`), the readable run log (`*_READABLE_RUN_LOG.txt`), the run manifest, a summary, raw forward records (`.jsonl`) and the engine's start-up result JSON.
-- An evidence ZIP containing all of the above, checked after sealing.
-
-The demo's verification panel recomputes on demand the full-weight SHA-256, the weight guard and the SHA-256 of all 1,453 cartridge files.
-
-**Published run log:** [`Hippocampus.log`](Hippocampus.log). Related logs: [`627.log`](627.log) · [`626.log`](626.log) · [`624.log`](624.log).
+The GPU-free self-test exercises these branches before the original Gradio interface starts.
 
 ---
 
-## Source files and engine chain
+## 8. Physical Memory — Storage, RAM and GPU
+
+The original experiment measured the following resource requirements.
+
+| Location | Component | Size |
+|---|---|---:|
+| SSD | 1,453 physical cartridges | 3,973,450,961 bytes |
+| RAM | Serialized FAISS IVF128 index | 13,970,459 bytes |
+| RAM | PCA128 basis | 1,835,008 bytes |
+| RAM | Native layer-3 reranking rows | 383,315,968 bytes |
+| GPU | Frozen model and loaded cartridge | 18.27 GiB peak allocation |
+
+The GPU value comes from the published case-00 run.
+
+These quantities refer to different resource categories and should not be added together as if they represented a single memory allocation.
+
+---
+
+# PART II — SILICON HIPPOCAMPUS v1.4
+
+## 9. Native Internal Tensor Memory Injection & Multi-Hop Relational Synthesis
+
+**Research extension: 14 October 2026**
+
+Silicon Hippocampus v1.4 extends the earlier AKBASCORE MAM research from selecting and loading individual physical cartridges to experimentally consolidating multiple independently written numerical memories.
+
+The central research question is:
+
+**Can a frozen language model use multiple independently written numerical memory cartridges to answer questions requiring information distributed across those memories?**
+
+The experiment investigates this through a native numerical-memory pathway.
+
+The underlying model remains frozen.
+
+The established engine is preserved.
+
+The new demonstrator adds experimental controls, measurements, visualization and an interactive research interface.
+
+### Public Implementation
+
+**Three-part Google Colab version:**
+
+1. [HIPPOCAMPUS_1.4_part1.py](HIPPOCAMPUS_1.4_part1.py)
+2. [HIPPOCAMPUS_1.4_part2.py](HIPPOCAMPUS_1.4_part2.py)
+3. [HIPPOCAMPUS_1.4_part3.py](HIPPOCAMPUS_1.4_part3.py)
+
+**Complete single-file version:**
+
+[HIPPOCAMPUS_1.4_full.py](HIPPOCAMPUS_1.4_full.py)
+
+**Published experimental log:**
+
+[HIPPOCAMPUS_1.4_log](HIPPOCAMPUS_1.4_log)
+
+---
+
+## 10. v1.4 Architecture
+
+The new experimental pathway is:
+
+```text
+                   INDEPENDENT SOURCE FACTS
+
+                    FACT A    FACT B    FACT C
+                       |         |         |
+                       v         v         v
+                   FROZEN QWEN2.5-7B-INSTRUCT
+                       |         |         |
+                       v         v         v
+                  CARTRIDGE  CARTRIDGE  CARTRIDGE
+                      A          B          C
+                       |         |         |
+                       +---------+---------+
+                                 |
+                                 v
+                      NATIVE CONSOLIDATION
+                                 |
+                                 v
+                       CONSOLIDATED MEMORY
+                                 |
+                                 v
+                         DC_CUT3 INJECTION
+                                 |
+                                 v
+                       FROZEN TRANSFORMER
+                                 |
+                                 v
+                         QUESTION ANSWERING
+                                 |
+                     +-----------+-----------+
+                     |                       |
+                     v                       v
+                DIRECT ANSWERS         STAGED RELATIONAL
+                                           QUESTIONS
+```
+
+The model weights are not modified.
+
+The system operates through the numerical representations associated with the transformer's attention computation.
+
+### Two Experimental Phases
+
+**Phase 1 — Memory Construction**
+
+Each source fact is processed.
+
+The engine creates independent numerical cartridges.
+
+The cartridges are consolidated into a combined attention memory.
+
+**Phase 2 — Memory Use**
+
+The model receives question templates.
+
+The source facts are not reintroduced as ordinary prompt text.
+
+The model answers using the consolidated numerical memory.
+
+Rebuilding the memory requires processing the source facts again.
+
+The phrase "read once" therefore applies to the construction of a particular memory build, not to every possible future reconstruction.
+
+---
+
+## 11. Independent Numerical Cartridge Writing
+
+Each cartridge is created from an independent source fact.
+
+The system captures:
+
+- Layer-3 residual representations.
+- Attention K/V tensors from layers 0–3.
+- Numerical representations needed for consolidation.
+
+The first cartridge includes the established instruction prefix.
+
+Subsequent cartridges contribute their fact-specific memory rows.
+
+The original source text is not retained as an ordinary text document inside the numerical attention-memory payload.
+
+### Numerical Structure
+
+Model:
+
+`Qwen/Qwen2.5-7B-Instruct`
+
+Hidden dimension:
+
+`3584`
+
+Attention K/V tensor structure:
+
+```text
+[1, 4, T, 128]
+```
+
+Precision:
+
+`bfloat16`
+
+The model contains 28 transformer layers.
+
+The native CUT3 boundary is at layer 3.
+
+---
+
+## 12. Native Append-Only Consolidation
+
+The new experimental engine combines independently written cartridges into one numerical memory.
+
+The first cartridge initializes the memory.
+
+Additional cartridges are appended.
+
+```text
+CARTRIDGE A
+     |
+     v
+MEMORY A
+     |
+     + CARTRIDGE B
+     |
+     v
+MEMORY AB
+     |
+     + CARTRIDGE C
+     |
+     v
+MEMORY ABC
+```
+
+During append operations, the engine computes higher-layer attention states for the newly added memory rows.
+
+Previously written rows remain part of the memory.
+
+The experiment explicitly checks whether those earlier rows remain unchanged.
+
+It also compares the stepwise memory with the memory generated by the original native engine pathway.
+
+### 12.1 AKBASCORE Memory Measurements
+
+Condition:
+
+`ABC · DC_CUT3`
+
+| Cartridge | Source tokens | Added rows | Numerical bytes | Operation |
+|---|---:|---:|---:|---|
+| A | 24 | 53 | 814,080 | Initialize |
+| B | 27 | 27 | 414,720 | Append |
+| C | 29 | 29 | 445,440 | Append |
+
+Final consolidated memory:
+
+**109 rows**
+
+**6,250,496 bytes**
+
+Approximately:
+
+**5.96 MiB**
+
+Measured operations:
+
+| Operation | Time |
+|---|---:|
+| Initialize A | 1,296.1 ms |
+| Append B | 177.0 ms |
+| Append C | 91.6 ms |
+
+Memory SHA-256:
+
+`9833210806512527df5e549ec16963520c0889c30e87d710323c2fede759816f`
+
+### 12.2 MATRIX Memory Measurements
+
+Condition:
+
+`ABC · DC_CUT3`
+
+| Cartridge | Source tokens | Added rows | Numerical bytes | Operation |
+|---|---:|---:|---:|---|
+| A | 25 | 54 | 829,440 | Initialize |
+| B | 36 | 36 | 552,960 | Append |
+| C | 25 | 25 | 384,000 | Append |
+
+Final consolidated memory:
+
+**115 rows**
+
+**6,594,560 bytes**
+
+Approximately:
+
+**6.29 MiB**
+
+Measured operations:
+
+| Operation | Time |
+|---|---:|
+| Initialize A | 74.7 ms |
+| Append B | 90.7 ms |
+| Append C | 88.8 ms |
+
+Memory SHA-256:
+
+`d6feb1d33a850332537f647f10e03c4af87615a6d6b0411189ab4e03d164c83e`
+
+### 12.3 Consolidation Verification
+
+The published v1.4 run reports:
+
+| Verification | AKBASCORE | MATRIX |
+|---|---|---|
+| Earlier rows unchanged | PASS | PASS |
+| Layer 0–3 K/V matches cartridge | PASS | PASS |
+| Stepwise memory equals native engine memory | PASS | PASS |
+| Frozen model weights | PASS | PASS |
+| Sentinel unchanged | PASS | PASS |
+
+These results establish the reported numerical consistency of the tested consolidation operations.
+
+They do not establish that every possible memory combination will behave correctly.
+
+---
+
+## 13. Native DC_CUT3 Injection
+
+The consolidated numerical memory is incorporated into the frozen model through the native DC_CUT3 pathway.
+
+The procedure uses:
+
+1. Stored layer-3 residual representations.
+2. Numerical attention K/V tensors.
+3. Native layer-3 injection.
+4. Higher-layer memory computation.
+5. Frozen transformer inference.
+
+The original model parameters remain unchanged.
+
+The memory is numerical rather than a retrieved text passage pasted into the answering prompt.
+
+The engine uses the transformer's own attention-memory structures.
+
+This distinction is important.
+
+AKBASCORE MAM does not eliminate attention caches.
+
+It investigates how independently constructed numerical memory can be maintained and introduced into the frozen model's computation.
+
+---
+
+## 14. Demonstration A — Mustafa Akbaş / AKBASCORE
+
+The first v1.4 demonstration uses a fictional knowledge domain.
+
+Three independent cartridges establish a relational sequence.
+
+### Cartridge A — Activation
+
+```text
+In the interplanetary data network, Mustafa Akbaş
+successfully activates the AKBASCORE MAM architecture.
+```
+
+### Cartridge B — Conversion
+
+```text
+The AKBASCORE MAM architecture converts dibekgoz
+crystal resonance into Morvex energy through
+layer-3 tensor injection.
+```
+
+### Cartridge C — Effect
+
+```text
+When Morvex energy combines in layer-3 tensors,
+it causes reversal of time flow in the target
+system without modifying its frozen neural weights.
+```
+
+### Relational Structure
+
+```text
+Mustafa Akbaş
+      |
+      v
+AKBASCORE MAM
+      |
+      v
+Dibekgoz crystal resonance
+      |
+      v
+Morvex energy
+      |
+      v
+Reversal of time flow
+```
+
+This is a fictional scenario.
+
+It is not a claim about real-world physics.
+
+### 14.1 Direct Question Results
+
+Condition:
+
+`ABC · DC_CUT3`
+
+| Category | Raw answer | Result |
+|---|---|---|
+| Activation | AKBASCORE MAM | Correct |
+| Conversion | Morvex | Correct |
+| Effect | reversal of time flow | Correct |
+| Final | reversal of time flow | Correct |
+
+### 14.2 Staged Three-Step Relational Chain
+
+The experiment uses three predefined questions.
+
+Each subsequent question incorporates the preceding model answer.
+
+Observed sequence:
+
+```text
+HOP 1
+AKBASCORE MAM
+
+HOP 2
+Morvex
+
+HOP 3
+reversal of time flow
+```
+
+Result:
+
+**3/3 expected answers.**
+
+This is an externally specified question sequence.
+
+It is not autonomous planning.
+
+### 14.3 Counterfactual Memory
+
+The experiment substitutes an alternative final effect.
+
+Original:
+
+`reversal of time flow`
+
+Counterfactual:
+
+`temporal stasis`
+
+| Condition | Final answer |
+|---|---|
+| ABC | reversal of time flow |
+| ABC_CF | temporal stasis |
+
+The model produced the expected changed answer.
+
+### 14.4 Free-Form Synthesis
+
+The experiment also requested a longer explanatory answer.
+
+The raw output was:
+
+```text
+Mustafa Akbaş produces the final effect in the target
+system by converting dib
+```
+
+The response reached the 16-token generation limit.
+
+It was therefore classified as:
+
+`UNSCORED`
+
+The published demonstration does not claim successful unrestricted long-form synthesis.
+
+---
+
+## 15. Demonstration B — The Matrix / Neo
+
+The second demonstration uses a fictional scenario inspired by The Matrix.
+
+Three independent cartridges establish the relationship between a cartridge upload, stored knowledge and a resulting ability.
+
+### Cartridge A — Upload
+
+```text
+Inside the Matrix, Tank presses the AKBASCORE neural
+cartridge injection button and uploads cartridge
+MX-71 into Neo.
+```
+
+### Cartridge B — Knowledge
+
+```text
+Cartridge MX-71 contains Kung Fu knowledge, which
+the AKBASCORE MAM interface injects into Neo
+through layer-3 tensors without changing the
+model weights.
+```
+
+### Cartridge C — Ability
+
+```text
+When Neo uses the Kung Fu knowledge from cartridge
+MX-71 inside the Matrix, Neo gains bullet-dodge
+ability.
+```
+
+### Relational Structure
+
+```text
+Tank
+  |
+  v
+Cartridge MX-71
+  |
+  v
+Kung Fu knowledge
+  |
+  v
+Neo
+  |
+  v
+Bullet-dodge ability
+```
+
+### 15.1 Direct Question Results
+
+Condition:
+
+`ABC · DC_CUT3`
+
+| Category | Raw answer | Result |
+|---|---|---|
+| Activation | Tank | Correct |
+| Content | Kung Fu knowledge | Correct |
+| Injection layer | 3 | Correct |
+| Effect | bullet-dodge ability | Correct |
+| Final | bullet-dodge ability | Correct |
+
+### 15.2 Staged Three-Step Relational Chain
+
+Observed sequence:
+
+```text
+HOP 1
+MX-71
+
+HOP 2
+Kung Fu knowledge
+
+HOP 3
+bullet-dodge ability
+```
+
+Result:
+
+**3/3 expected answers.**
+
+### 15.3 Counterfactual Memory
+
+Original:
+
+`bullet-dodge ability`
+
+Counterfactual:
+
+`slow-motion perception`
+
+| Condition | Final answer |
+|---|---|
+| ABC | bullet-dodge ability |
+| ABC_CF | slow-motion perception |
+
+The model produced the expected changed answer.
+
+### 15.4 Free-Form Synthesis
+
+The raw synthesis output was:
+
+```text
+Tank uploads cartridge MX-71 into Neo. The AKBASCORE M
+```
+
+The output reached the 16-token limit.
+
+It was classified as:
+
+`UNSCORED`
+
+### 15.5 Information Overlap
+
+Cartridge C explicitly mentions MX-71 and Kung Fu knowledge.
+
+Consequently, some relational answers remain available even when cartridge B is absent.
+
+This is an important limitation.
+
+The demonstration does not establish complete independence between all cartridge contents.
+
+---
+
+## 16. Missing-Cartridge and Counterfactual Controls
+
+The v1.4 demonstration evaluates nine memory conditions.
+
+| Condition | Available memory |
+|---|---|
+| NONE | No factual cartridge |
+| A | Cartridge A |
+| B | Cartridge B |
+| C | Cartridge C |
+| AB | Cartridges A and B |
+| AC | Cartridges A and C |
+| BC | Cartridges B and C |
+| ABC | Complete memory |
+| ABC_CF | Complete memory with counterfactual C |
+
+These conditions are evaluated using two pathways:
+
+**DC_CUT3**
+
+Native numerical-memory consolidation.
+
+**TEXT_JOINT**
+
+Text-based comparison control.
+
+The experiments evaluate:
+
+- Direct factual answers.
+- Correct abstention.
+- Unsupported answers.
+- Missing information.
+- Complete relational chains.
+- Counterfactual final answers.
+
+### 16.1 Complete Memory
+
+Under ABC, both demonstrations produced the expected direct answers and staged three-step chains.
+
+Under ABC_CF, both demonstrations produced the expected counterfactual final answers.
+
+### 16.2 Missing Memory
+
+The NONE condition produced the expected abstentions for the evaluated factual questions.
+
+However, incomplete-memory conditions did not always produce correct abstention.
+
+Examples include:
+
+- AKBASCORE B produced answers unsupported by the available cartridge set.
+- AKBASCORE BC completed the relational chain despite missing cartridge A.
+- MATRIX AC completed the relational chain despite missing cartridge B.
+- MATRIX BC produced a chain whose final result was unsupported under the evaluation rule.
+
+These outcomes are preserved in the published log.
+
+The system does not currently demonstrate perfect missing-information detection.
+
+### 16.3 Audit Categories
+
+The demonstration distinguishes:
+
+| Status | Meaning |
+|---|---|
+| CORRECT_KNOWN | Expected answer produced from available information |
+| CORRECT_ABSTENTION | Appropriate UNKNOWN response |
+| UNSUPPORTED | Answer produced despite missing required information |
+| MISSED | Available answer not produced |
+| WRONG | Different incorrect answer |
+| UNSCORED | Not evaluated for correctness |
+
+The audit categories are applied after generation.
+
+Expected answers are evaluation metadata, not intended as generation-time answers.
+
+---
+
+## 17. DC_CUT3 Versus TEXT_JOINT
+
+The new demonstration compares numerical-memory consolidation against a text-based control.
+
+The published Figure 6 reports:
+
+**93/99 identical raw answers between DC_CUT3 and TEXT_JOINT.**
+
+The audit-status totals were also identical between the two methods.
+
+This result is scientifically important.
+
+It demonstrates substantial behavioral agreement between the two pathways on the evaluated panel.
+
+It does not establish that DC_CUT3 produces superior answers.
+
+The experiment instead documents that:
+
+1. The native numerical-memory pathway executes.
+2. The numerical memory has a distinct internal representation.
+3. The frozen model can answer questions using that representation.
+4. The tested behavioral outputs largely agree with the text-based control.
+5. Missing-memory behavior remains imperfect.
+
+The numerical and behavioral results must be interpreted separately.
+
+---
+
+## 18. Internal Neural Memory X-Ray
+
+The v1.4 demonstrator includes an internal numerical memory X-Ray.
+
+The X-Ray visualizes actual K/V tensors from the executed experiment.
+
+For the AKBASCORE ABC condition:
+
+| Property | Value |
+|---|---:|
+| Transformer layers | 28 |
+| Memory rows | 109 |
+| K/V heads | 4 |
+| Head dimension | 128 |
+| Precision | bfloat16 |
+| K/V memory | 6,250,496 bytes |
+| Approximate size | 5.96 MiB |
+
+### Key Heatmap
+
+The first heatmap displays the layerwise structure of attention key representations.
+
+### Value Heatmap
+
+The second heatmap displays the layerwise structure of attention value representations.
+
+The visualization uses per-row vector norms and layerwise display normalization.
+
+### Cartridge Boundaries
+
+The X-Ray distinguishes:
+
+- Instruction prefix.
+- Cartridge A.
+- Cartridge B.
+- Cartridge C.
+- Layer-3 injection boundary.
+- Lower-layer stored representations.
+- Higher-layer consolidated representations.
+
+### Numerical Comparison
+
+A separate graph compares DC_CUT3 memory with TEXT_JOINT memory across transformer layers.
+
+The plotted differences are measured from numerical tensors.
+
+They are not randomly generated illustrative values.
+
+However, numerical representation differences do not independently establish superior reasoning performance.
+
+---
+
+## 19. Seven-Figure Scientific Demonstration
+
+The new v1.4 demonstrator produces seven scientific JPEG figures.
+
+The figures are designed for high-resolution academic presentation.
+
+They document the architecture, measured numerical memory, direct answers, relational chains, experimental controls and verification.
+
+### Figure 1 — Silicon Hippocampus Architecture
+
+**From Source Fact to Source-Free Answer**
+
+The figure documents:
+
+- Independent cartridge writing.
+- Numerical memory representation.
+- Append-only consolidation.
+- Native CUT3 injection.
+- Frozen transformer computation.
+- Source-free question answering.
+
+### Figure 2 — Cartridge Creation and Consolidation
+
+**Measured Numerical Memory Construction**
+
+The figure documents:
+
+- Independent A/B/C cartridge creation.
+- Source token counts.
+- Memory row counts.
+- Numerical payload sizes.
+- Initialization and append times.
+- Earlier-row preservation.
+- Native engine equivalence.
+
+### Figure 3 — Internal Neural Memory X-Ray
+
+**Layerwise Numerical Memory Structure**
+
+The figure documents:
+
+- Real K/V tensor heatmaps.
+- All 28 transformer layers.
+- Cartridge boundaries.
+- Layer-3 injection boundary.
+- Memory size.
+- Numerical comparison with TEXT_JOINT.
+
+### Figure 4 — Mustafa Akbaş Experiment
+
+**Three Cartridges and a Relational Chain**
+
+The figure documents:
+
+- Complete cartridge texts.
+- Direct questions.
+- Raw model answers.
+- Audit results.
+- Three-stage relational sequence.
+- Generation-limit disclosure.
+
+### Figure 5 — The Matrix / Neo Experiment
+
+**Numerical Memory and Frozen Model Answers**
+
+The figure documents:
+
+- Cartridge upload.
+- Kung Fu knowledge.
+- Layer-3 injection.
+- Direct questions.
+- Raw model answers.
+- Three-stage relational sequence.
+- Known information overlap.
+
+### Figure 6 — Causal Controls
+
+**Missing Memory, Counterfactuals and Multi-Hop Evaluation**
+
+The figure documents:
+
+- Nine memory conditions.
+- Direct answers.
+- Missing-information behavior.
+- Unsupported answers.
+- Counterfactual replacements.
+- Staged relational chains.
+- DC_CUT3 versus TEXT_JOINT.
+- Separate historical TEST677 results.
+
+### Figure 7 — Verification and Research Record
+
+**Model Integrity and Experimental Provenance**
+
+The figure documents:
+
+- Model configuration.
+- GPU and software environment.
+- Source SHA-256.
+- Model-weight integrity.
+- Memory integrity.
+- Runtime measurements.
+- Experimental limitations.
+- Research references.
+
+### Research Output Package
+
+The demonstrator provides research outputs including:
+
+- Seven scientific JPEG figures.
+- Raw model answers.
+- Experimental measurements.
+- Numerical memory metadata.
+- Integrity records.
+- SHA-256 information.
+- Experimental logs.
+- A consolidated evidence ZIP.
+
+For academic publication, the original high-resolution JPEG files should be used rather than screenshots.
+
+The public experimental log is available here:
+
+[HIPPOCAMPUS_1.4_log](HIPPOCAMPUS_1.4_log)
+
+---
+
+## 20. Interactive Gradio Research Laboratory
+
+Silicon Hippocampus v1.4 includes an interactive Gradio demonstration.
+
+The interface provides access to the experimental scenarios and memory operations.
+
+### Experimental Scenarios
+
+**Demonstration A**
+
+Mustafa Akbaş / AKBASCORE.
+
+**Demonstration B**
+
+The Matrix / Neo.
+
+### Interface Capabilities
+
+The application includes:
+
+1. Scenario selection.
+2. Cartridge text inspection.
+3. Cartridge text editing.
+4. Scenario reset.
+5. Memory-condition selection.
+6. Native DC_CUT3 execution.
+7. TEXT_JOINT comparison.
+8. Direct question answering.
+9. Staged relational question sequences.
+10. Missing-cartridge controls.
+11. Counterfactual evaluation.
+12. Numerical memory measurements.
+13. Internal K/V tensor visualization.
+14. Scientific JPEG generation.
+15. Experimental log inspection.
+16. Downloadable research records.
+
+The interface is an experimental research tool.
+
+It is not presented as a production-ready general-purpose artificial intelligence system.
+
+### Reproducibility
+
+The application is available as both a three-part implementation and a complete single-file implementation.
+
+#### Three-Part Google Colab Version
+
+Run these files in order within the same runtime:
+
+**Part 1 — Engine and Initialization**
+
+[HIPPOCAMPUS_1.4_part1.py](HIPPOCAMPUS_1.4_part1.py)
+
+**Part 2 — Read-Only Measurement and Experimental Evaluation**
+
+[HIPPOCAMPUS_1.4_part2.py](HIPPOCAMPUS_1.4_part2.py)
+
+**Part 3 — Seven Scientific Figures and Gradio Interface**
+
+[HIPPOCAMPUS_1.4_part3.py](HIPPOCAMPUS_1.4_part3.py)
+
+#### Complete Single-File Version
+
+[HIPPOCAMPUS_1.4_full.py](HIPPOCAMPUS_1.4_full.py)
+
+The full version contains the complete demonstration.
+
+#### Published Experimental Log
+
+[HIPPOCAMPUS_1.4_log](HIPPOCAMPUS_1.4_log)
+
+The published log records the executed A100 experiment.
+
+The temporary Gradio share link depends on the active Colab session.
+
+It is not a permanent hosted service.
+
+---
+
+## 21. v1.4 — Measured Experimental Environment
+
+Published run:
+
+`MAM14-20261014-220212-0001`
+
+Execution date:
+
+`14 October 2026`
+
+GPU:
+
+`NVIDIA A100-SXM4-40GB`
+
+### Environment
+
+| Component | Configuration |
+|---|---|
+| Model | Qwen/Qwen2.5-7B-Instruct |
+| Precision | bfloat16 |
+| Attention | SDPA |
+| GPU | NVIDIA A100-SXM4-40GB |
+| PyTorch | 2.11.0+cu130 |
+| Transformers | 5.18.0 |
+| Gradio | 6.29.0 |
+| Memory mechanism | Native DC_CUT3 |
+| Model weights | Frozen |
+| LoRA | Disabled |
+| Trainable parameters | 0 |
+
+Measured demonstration duration:
+
+**57.6 seconds**
+
+### Model Integrity
+
+Full-weight SHA-256:
+
+`b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786`
+
+Equal to the TEST575 reference:
+
+`True`
+
+Sentinel unchanged:
+
+`True`
+
+All-parameter guard unchanged:
+
+`True`
+
+All runs frozen:
+
+`True`
+
+### Source Integrity
+
+Embedded v1.4 engine SHA-256:
+
+`fe6ddcc0d61e70f5590a0ce696cb0e4f561f901e79ceafc703d8138598be188b`
+
+TEST664 source SHA-256:
+
+`a6dcd8142446ab82fe7996bd512d59fc34525e6a092a68f069dad07a2a286eb5`
+
+TEST664 panel SHA-256:
+
+`e0686148d6fd88050a097ee5441ce99a4bb068a463408742bc476c83aaba6c05`
+
+TEST566 git blob:
+
+`b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71`
+
+These identifiers document the source chain used by the experiment.
+
+Hash verification establishes file identity and integrity.
+
+It does not independently prove the semantic correctness of model-generated answers.
+
+---
+
+# PART III — RESEARCH COMPARISON AND SCIENTIFIC SCOPE
+
+## 22. Why AKBASCORE MAM Is Not Conventional Text RAG
+
+The original physical-memory architecture and the new consolidation experiments differ from conventional text retrieval followed by prompt augmentation.
+
+| Property | Conventional Text RAG | AKBASCORE MAM |
+|---|---|---|
+| Stored information | Text passages and embeddings | Numerical attention-memory cartridges |
+| Representation | Text and retrieval vectors | Frozen model's own internal numerical states |
+| Retrieval | Text or embedding similarity | Native geometric addressing in the physical-memory system |
+| Answer-time input | Retrieved text inserted into prompt | Numerical attention memory and question template |
+| Encoder | Often a separate embedding model | The same frozen language model |
+| Training | Optional | None in the demonstrated memory operations |
+| Physical storage | Text/vector database | Independent numerical cartridge files |
+| Multi-record use | Retrieved text passages | Experimental numerical cartridge consolidation |
+| Internal inspection | Retrieved context | Layerwise K/V tensor measurements |
+
+The system still uses transformer attention-memory structures.
+
+The distinction concerns how the memory is constructed, represented, stored, selected, consolidated and used.
+
+---
+
+## 23. Two Complementary Research Capabilities
+
+The physical-memory architecture and the v1.4 consolidation architecture address different problems.
+
+| Capability | Physical Silicon Hippocampus | Silicon Hippocampus v1.4 |
+|---|---|---|
+| Primary objective | Retrieve a relevant physical cartridge | Consolidate multiple numerical cartridges |
+| Memory organization | Independent SSD files | Combined numerical attention memory |
+| Published cartridge count | 1,453 | Three per demonstration |
+| Address mechanism | PCA128 + FAISS IVF128 + PEAK50 | Experimental memory-condition selection |
+| Main evaluation | Cartridge selection and factual answering | Relational answering and memory controls |
+| Question structure | Direct factual questions | Direct and staged relational questions |
+| Counterfactual evaluation | Not the main published case-00 objective | Included |
+| Missing-memory controls | Address and file-integrity controls | NONE/A/B/C/AB/AC/BC/ABC/ABC_CF |
+| Numerical X-Ray | Cartridge-level tensor verification | Layerwise consolidated-memory visualization |
+| Model weights | Frozen | Frozen |
+
+These are separate experimental achievements.
+
+Their results must not be combined into a single success percentage.
+
+---
+
+## 24. Scientific Achievements
+
+The published AKBASCORE MAM research demonstrates the following capabilities under the documented experimental conditions.
+
+### Physical Memory
+
+- Independent numerical cartridge construction.
+- Physical SSD cartridge storage.
+- SHA-256 file verification.
+- Native geometric memory addressing.
+- PCA128 projection.
+- FAISS IVF128 candidate search.
+- TOP2 candidate ranking.
+- PEAK50 final selection.
+- Source-free factual answering.
+- Bitwise cartridge reconstruction.
+- Frozen model-weight preservation.
+
+### Multi-Cartridge Memory
+
+- Independent A/B/C cartridge writing.
+- Native numerical memory consolidation.
+- Append-only memory construction.
+- Earlier-row preservation in measured runs.
+- Native memory equivalence checks.
+- Layer-3 residual injection.
+- Attention K/V memory construction.
+- Direct question answering from consolidated memory.
+- Predefined three-step relational question sequences.
+- Counterfactual memory replacement.
+- Missing-cartridge evaluation.
+- Unsupported-answer detection during auditing.
+- Layerwise numerical memory X-Ray.
+- DC_CUT3 versus TEXT_JOINT comparison.
+- Seven-figure scientific visualization.
+- Public experimental logs and source code.
+
+These are experimental capabilities, not claims of universal reliability.
+
+---
+
+## 25. Scientific Limitations
+
+The project explicitly distinguishes verified numerical operations from broader claims about reasoning.
+
+### Physical-Memory Limitations
+
+The original 96-question result consists of two wordings over the same 48 synthetic facts.
+
+The PEAK50 rule was fixed after earlier experiments involving those facts.
+
+Therefore, the published acceptance panel is not a blind holdout.
+
+The reported SSD loading times may benefit from operating-system page caching.
+
+Large-scale retrieval behavior beyond the published 1,453-cartridge pool remains untested in this record.
+
+### Multi-Cartridge Limitations
+
+The v1.4 demonstrations use two fictional scenarios.
+
+The three-step relational chains are externally predefined.
+
+They do not establish autonomous planning.
+
+Some incomplete-memory conditions produce unsupported answers.
+
+Cartridge contents are not always informationally independent.
+
+DC_CUT3 and TEXT_JOINT produce largely identical answers on the tested panel.
+
+The experiment does not establish numerical-memory behavioral superiority over the text-based control.
+
+The 16-token generation limit prevents a reliable evaluation of unrestricted long-form synthesis.
+
+### General Limitations
+
+The current research does not establish:
+
+- Artificial general intelligence.
+- Human-equivalent memory.
+- Autonomous scientific reasoning.
+- Perfect missing-information detection.
+- Universal cross-model portability.
+- General-purpose reasoning superiority.
+- Production-scale reliability.
+- Successful generalization to arbitrary unseen domains.
+
+These boundaries are part of the research record.
+
+---
+
+## 26. Future Research Directions
+
+The next research stages include:
+
+1. Preregistered blind holdout evaluations.
+2. New facts and new question templates.
+3. Larger relational-memory benchmarks.
+4. Reduced information overlap between cartridges.
+5. More reliable missing-information detection.
+6. Independent cross-model replication.
+7. Larger physical cartridge pools.
+8. Cold-SSD latency measurement.
+9. Consumer GPU evaluation.
+10. Longer-context memory experiments.
+11. More complex multi-cartridge relationships.
+12. Generalization beyond fictional scenarios.
+13. Independent scientific reproduction.
+14. Stronger controls for causal attribution.
+15. Evaluation of unrestricted natural-language synthesis.
+
+These are future research objectives.
+
+They are not presented as completed results.
+
+---
+
+# PART IV — RUNNING THE DEMONSTRATIONS
+
+## 27. Original Physical Silicon Hippocampus
+
+The original physical-memory demonstration remains available.
+
+### Three-Part Google Colab Version
+
+Run the following files in order:
+
+1. [HIPPOCAMPUS_part1.py](HIPPOCAMPUS_part1.py)
+2. [HIPPOCAMPUS_part2.py](HIPPOCAMPUS_part2.py)
+3. [HIPPOCAMPUS_part3.py](HIPPOCAMPUS_part3.py)
+
+The three parts must run within the same Colab runtime.
+
+Do not restart the runtime between parts.
+
+### Complete Single-File Version
+
+[HIPPOCAMPUS_full.py](HIPPOCAMPUS_full.py)
+
+### Original Demonstration Workflow
+
+The original demonstration performs:
+
+```text
+ENGINE INITIALIZATION
+        |
+        v
+SOURCE VERIFICATION
+        |
+        v
+MODEL LOAD
+        |
+        v
+1,453 CARTRIDGE WRITES
+        |
+        v
+SSD MANIFEST VERIFICATION
+        |
+        v
+PCA128 / FAISS IVF128
+        |
+        v
+PEAK50 ACCEPTANCE
+        |
+        v
+GRADIO INTERFACE
+        |
+        v
+LIVE WRITE / SSD / READ
+        |
+        v
+INTEGRITY CHECKS
+        |
+        v
+FIGURES AND EVIDENCE PACKAGE
+```
+
+The original interface rotates through the predefined question panel.
+
+It performs the established integrity and answer-verification operations.
+
+### Original Published Log
+
+[Hippocampus.log](Hippocampus.log)
+
+Related records:
+
+- [627.log](627.log)
+- [626.log](626.log)
+- [624.log](624.log)
+
+---
+
+## 28. Silicon Hippocampus v1.4
+
+### Recommended Runtime
+
+Google Colab with an NVIDIA A100 GPU.
+
+The published execution used:
+
+`NVIDIA A100-SXM4-40GB`
+
+### Three-Part Version
+
+**Part 1 — Engine and Initialization**
+
+[HIPPOCAMPUS_1.4_part1.py](HIPPOCAMPUS_1.4_part1.py)
+
+**Part 2 — Measurement and Evaluation**
+
+[HIPPOCAMPUS_1.4_part2.py](HIPPOCAMPUS_1.4_part2.py)
+
+**Part 3 — Scientific Figures and Gradio**
+
+[HIPPOCAMPUS_1.4_part3.py](HIPPOCAMPUS_1.4_part3.py)
+
+Execute all three parts in order.
+
+Use the same runtime.
+
+### Complete Version
+
+[HIPPOCAMPUS_1.4_full.py](HIPPOCAMPUS_1.4_full.py)
+
+This file provides the complete demonstration in one Python source.
+
+### Published Experimental Record
+
+[HIPPOCAMPUS_1.4_log](HIPPOCAMPUS_1.4_log)
+
+### Reproduction Principles
+
+For faithful reproduction:
+
+- Preserve the original engine.
+- Preserve the native CUT3 operations.
+- Preserve the experimental question panels.
+- Preserve the numerical precision.
+- Preserve the model configuration.
+- Preserve the integrity checks.
+- Preserve raw model outputs.
+- Do not substitute expected answers for generated answers.
+- Do not merge historical and current measurements.
+- Do not present unexecuted results as measured results.
+
+---
+
+## 29. Outputs and Research Records
+
+### Original Physical-Memory Demonstration
+
+The original demonstration produces:
+
+- Four scientific figures.
+- A Turkish version of the architecture figure.
+- Raw experimental logs.
+- Sealed JSON payloads.
+- Forward-pass records.
+- SHA-256 manifests.
+- Verification summaries.
+- An evidence ZIP.
+
+The original figures are generated during execution.
+
+### Silicon Hippocampus v1.4
+
+The new demonstration produces:
+
+- Seven scientific JPEG figures.
+- Raw model outputs.
+- Numerical memory measurements.
+- K/V tensor visualizations.
+- Memory-condition comparisons.
+- Counterfactual results.
+- Experimental metadata.
+- Integrity verification.
+- SHA-256 records.
+- A consolidated research package.
+
+The seven figures correspond to:
+
+1. Silicon Hippocampus architecture.
+2. Cartridge creation and consolidation.
+3. Internal neural memory X-Ray.
+4. Mustafa Akbaş experiment.
+5. The Matrix / Neo experiment.
+6. Causal controls and relational chains.
+7. Verification and research record.
+
+The repository links in this README point to the available source files and logs.
+
+Generated figures are not linked to nonexistent repository paths.
+
+---
+
+## 30. Source Files and Research Chain
+
+### Original Physical-Memory System
 
 | File | Role |
 |---|---|
-| [`HIPPOCAMPUS_part1.py`](HIPPOCAMPUS_part1.py) | engine cell: locks, embedded TEST627 demo engine, measurement adapter |
-| [`HIPPOCAMPUS_part2.py`](HIPPOCAMPUS_part2.py) | RUN pipeline, sealing, figures |
-| [`HIPPOCAMPUS_part3.py`](HIPPOCAMPUS_part3.py) | self-test and Gradio interface |
-| [`HIPPOCAMPUS_full.py`](HIPPOCAMPUS_full.py) | single-cell version |
-| [`627.py`](627.py) | TEST627: locked PEAK50 + physical CUT3 acceptance and storage audit |
-| [`626.py`](626.py) | TEST626: candidate features and reranking rules |
-| [`624.py`](624.py) | TEST624: 1,453 physical CUT3 files, PCA128 + FAISS IVF128 |
-| [`610.py`](610.py) | TEST610: frozen Qwen CUT3 baseline (96 cartridges) |
-| [`566.py`](566.py), [`575.py`](575.py) | CUT3 `checkpoint` / `init` / `append` / `answer`; verified by git blob |
+| [HIPPOCAMPUS_part1.py](HIPPOCAMPUS_part1.py) | Engine initialization and physical-memory construction |
+| [HIPPOCAMPUS_part2.py](HIPPOCAMPUS_part2.py) | RUN pipeline, verification and figures |
+| [HIPPOCAMPUS_part3.py](HIPPOCAMPUS_part3.py) | Self-test and Gradio interface |
+| [HIPPOCAMPUS_full.py](HIPPOCAMPUS_full.py) | Complete original demonstration |
+| [627.py](627.py) | Locked PEAK50 and physical-memory acceptance |
+| [626.py](626.py) | Candidate features and reranking |
+| [624.py](624.py) | Physical cartridge pool and FAISS addressing |
+| [610.py](610.py) | Frozen Qwen CUT3 baseline |
+| [566.py](566.py) | Native CUT3 memory operations |
+| [575.py](575.py) | Memory consolidation reference |
+
+### Silicon Hippocampus v1.4
+
+| File | Role |
+|---|---|
+| [HIPPOCAMPUS_1.4_part1.py](HIPPOCAMPUS_1.4_part1.py) | v1.4 engine and initialization |
+| [HIPPOCAMPUS_1.4_part2.py](HIPPOCAMPUS_1.4_part2.py) | Read-only measurement and experimental evaluation |
+| [HIPPOCAMPUS_1.4_part3.py](HIPPOCAMPUS_1.4_part3.py) | Seven scientific figures and Gradio interface |
+| [HIPPOCAMPUS_1.4_full.py](HIPPOCAMPUS_1.4_full.py) | Complete single-file v1.4 demonstration |
+| [HIPPOCAMPUS_1.4_log](HIPPOCAMPUS_1.4_log) | Published A100 experimental record |
+| [664.py](664.py) | Verified engine research source |
+| [677.py](677.py) | Multi-cartridge and missing-memory experimental controls |
+
+### Research Continuity
+
+The project preserves its chronological experimental history.
+
+The original physical-memory results remain independently documented.
+
+The v1.4 consolidation results are added as a new research stage.
+
+Earlier results are not retroactively replaced by later demonstrations.
 
 ---
 
-## License
+# PART V — LICENSE AND CITATION
 
-The software and materials in this release are governed by the **AKBASCORE RESEARCH SOFTWARE LICENSE** in [`LICENSE`](LICENSE). That file is the authoritative text.
+## 31. License
 
-In short, as stated there:
+The software and materials in this repository are governed by the:
 
-- Research, education, evaluation, modification and derivative works are permitted.
-- Commercial use is permitted without a separate license where the user, together with its affiliates, has combined consolidated annual gross revenue below **USD 50,000,000** in its most recently completed fiscal year.
-- At or above USD 50,000,000, commercial use of covered material requires a **separate commercial license** from the copyright holder.
-- The threshold refers to annual gross revenue, not company valuation, investment raised, market capitalization or assets.
-- This release does not change the terms of earlier releases.
+**AKBASCORE RESEARCH SOFTWARE LICENSE**
 
-Third-party models, libraries and dependencies, including Qwen2.5-7B-Instruct, PyTorch, Transformers, FAISS and Gradio, remain under their own licenses.
+Authoritative license text:
 
-Commercial licensing inquiries: Mustafa Akbaş, via this repository.
+[LICENSE](LICENSE)
+
+The LICENSE file is the controlling legal document.
+
+### Research and Educational Use
+
+The license permits research, education, evaluation, modification and derivative works under its stated conditions.
+
+### Commercial Revenue Threshold
+
+Commercial use of covered material is permitted without a separate commercial license when the user, together with its affiliates, has combined consolidated annual gross revenue below:
+
+## USD 50,000,000
+
+**Fifty million United States dollars.**
+
+The threshold is based on combined consolidated annual gross revenue in the most recently completed fiscal year.
+
+It is not based on:
+
+- Company valuation.
+- Investment raised.
+- Market capitalization.
+- Total assets.
+
+At or above USD 50,000,000 in annual gross revenue, commercial use of covered material requires a separate commercial license from the copyright holder.
+
+### License Continuity
+
+This research extension does not change the terms of earlier releases.
+
+The authoritative terms remain those in the repository's LICENSE file.
+
+Third-party models and dependencies remain subject to their respective licenses.
+
+These include:
+
+- Qwen2.5-7B-Instruct.
+- PyTorch.
+- Transformers.
+- FAISS.
+- Gradio.
+
+### Commercial Licensing
+
+Mustafa Akbaş  
+AkbasCore AI Teknoloji  
+Mersin, Türkiye
+
+Commercial licensing inquiries may be directed through this repository.
 
 ---
 
-## Citation
+## 32. Citation and Permanent Research Records
 
-Earlier public records in this line, as listed in the published run log:
+Earlier public records in the AKBASCORE MAM research line are preserved.
 
-- AKBASCORE MAM v1.0 (Mistral-7B, DC6): DOI [10.5281/zenodo.23245358](https://doi.org/10.5281/zenodo.23245358)
-- AKBASCORE MAM v1.1 (Qwen2.5-7B-Instruct, DC3): DOI [10.5281/zenodo.23257347](https://doi.org/10.5281/zenodo.23257347)
-- AKBASCORE MAM v1.2.0 (Qwen2.5-7B CUT3 + FRAM): DOI [10.5281/zenodo.23282902](https://doi.org/10.5281/zenodo.23282902)
+### AKBASCORE MAM v1.0
 
-Citation template — add the DOI line once Zenodo has assigned it:
+**Mistral-7B — DC6**
+
+DOI:
+
+[10.5281/zenodo.23245358](https://doi.org/10.5281/zenodo.23245358)
+
+### AKBASCORE MAM v1.1
+
+**Qwen2.5-7B-Instruct — DC3**
+
+DOI:
+
+[10.5281/zenodo.23257347](https://doi.org/10.5281/zenodo.23257347)
+
+### AKBASCORE MAM v1.2.0
+
+**Qwen2.5-7B — CUT3 + FRAM**
+
+DOI:
+
+[10.5281/zenodo.23282902](https://doi.org/10.5281/zenodo.23282902)
+
+### Physical Silicon Hippocampus
+
+**WRITE · SSD · READ**
+
+Frozen Qwen2.5-7B-Instruct.
+
+1,453 independent numerical memory cartridges.
+
+PCA128 · FAISS IVF128 · PEAK50.
+
+Published experimental record:
+
+[Hippocampus.log](Hippocampus.log)
+
+### Silicon Hippocampus v1.4
+
+**Native Internal Tensor Memory Injection & Multi-Hop Relational Synthesis**
+
+Independent numerical cartridge writing.
+
+Native append-only consolidation.
+
+Frozen transformer inference.
+
+Missing-memory and counterfactual controls.
+
+Internal numerical memory X-Ray.
+
+Seven-figure scientific demonstration.
+
+Published experimental record:
+
+[HIPPOCAMPUS_1.4_log](HIPPOCAMPUS_1.4_log)
+
+A permanent DOI can be added after the corresponding versioned research artifact is deposited.
+
+### BibTeX
 
 ```bibtex
-@techreport{akbas_2026_mam_silicon_hippocampus,
+@techreport{akbas2026siliconhippocampus,
   author      = {Akbaş, Mustafa},
-  title       = {{AKBASCORE MAM — The Silicon Hippocampus: Physical Key/Value Memory Cartridges Written, Stored and Recalled by a Frozen Qwen2.5-7B-Instruct}},
+  title       = {{AKBASCORE MAM — The Silicon Hippocampus:
+                 Physical Numerical Memory Cartridges,
+                 Native CUT3 Consolidation and
+                 Multi-Hop Relational Synthesis}},
   institution = {AkbasCore AI Teknoloji},
   address     = {Mersin, Türkiye},
   type        = {Technical Research Report / Software Experimental Record},
@@ -464,4 +2188,63 @@ Citation template — add the DOI line once Zenodo has assigned it:
 }
 ```
 
-Copyright © 2026 Mustafa Akbaş
+---
+
+## 33. Research Statement
+
+AKBASCORE MAM investigates whether numerical representations derived from a frozen language model can serve as externally maintained, reusable memory.
+
+The research began with the construction of independent numerical attention-memory cartridges.
+
+The Physical Silicon Hippocampus established an experimental WRITE · SSD · READ pathway, including physical storage, native geometric addressing and source-free factual answering.
+
+The Silicon Hippocampus v1.4 extension investigates a complementary capability: consolidating multiple independently written numerical cartridges and using the resulting memory to answer relational questions.
+
+The project distinguishes five research problems:
+
+**Memory Construction**
+
+How information is transformed into numerical memory.
+
+**Memory Storage**
+
+How numerical memories are maintained independently of the model weights.
+
+**Memory Retrieval**
+
+How the system identifies relevant stored information.
+
+**Memory Consolidation**
+
+How independently written memories can be combined while preserving earlier numerical states.
+
+**Memory-Based Reasoning**
+
+How a frozen model uses available memory to answer factual and relational questions, and how reliably it recognizes missing information.
+
+The published experiments demonstrate specific capabilities under controlled conditions.
+
+They also document limitations, including unsupported answers, incomplete-memory failures and substantial behavioral agreement with text-based controls.
+
+The research does not claim biological equivalence, artificial general intelligence or universal reasoning superiority.
+
+AKBASCORE MAM remains an ongoing investigation into the computational possibilities and boundaries of model-native numerical memory.
+
+---
+
+## AKBASCORE AI TECHNOLOGY
+
+### MAM — THE SILICON HIPPOCAMPUS
+
+**Physical Memory · Native Tensor Injection · Append-Only Consolidation · Relational Synthesis**
+
+Research and development:
+
+**Mustafa Akbaş**
+
+AkbasCore AI Teknoloji  
+Mersin, Türkiye
+
+**Copyright © 2026 Mustafa Akbaş**
+
+All rights governed by the AKBASCORE RESEARCH SOFTWARE LICENSE.
