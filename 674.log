@@ -1,0 +1,138 @@
+ ====================================================================================================================
+TEST674 — TARGET 1 / HELDOUT RELATIONAL MEMORY VALIDATION
+FROZEN QWEN / LOCKED TEST664 ENGINE / NATIVE CUDA CUT3
+====================================================================================================================
+PASS TEST664_SOURCE_LOCK
+PASS SOURCE_BOUNDARIES
+====================================================================================================================
+TEST664 — REFLECTIVE RETRY / FEEDBACK CAUSAL AUDIT
+====================================================================================================================
+PASS CUDA_AVAILABLE
+PASS NINJA
+PASS NVCC
+PASS CXX
+BUILDING NATIVE KV EXTENSION
+PASS NATIVE_BITWISE_29_7
+PASS NATIVE_BITWISE_43_31
+PASS NATIVE_BITWISE_1_1
+PASS TEST566_BLOB
+PASS TEST566_BOUNDARY
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+config.json: 100% 663/663 [00:00<00:00, 77.5kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 975kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 39.7MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 70.9MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 133MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.37MB/s]Download complete:  13.1GB,  973MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  485MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.29s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.28it/s]generation_config.json: 100% 243/243 [00:00<00:00, 30.0kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+PASS FROZEN
+PASS ARCH
+PASS PANEL_LOCK
+PASS SENTINEL
+BASE GITHUB_VERIFIED BLOB b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71 GPU NVIDIA A100-SXM4-40GB
+PASS TEST650_PANEL_LOCK
+TEST664_PANEL_SHA e0686148d6fd88050a097ee5441ce99a4bb068a463408742bc476c83aaba6c05 CASES 12
+PASS ORIGINAL_PANEL_LOCK
+PASS ORIGINAL_PANEL_VARIABLE
+PASS ORIGINAL_PANEL_SIZE
+PASS FROZEN_WEIGHTS
+PASS BASELINE_SENTINEL
+PASS MODEL_EVAL
+====================================================================================================================
+PHASE 1 — GENERATE NEW RELATIONAL MEMORY CASES
+====================================================================================================================
+PASS NEW_PANEL_SIZE
+PASS NEW_CARTRIDGE_COUNT
+PASS NEW_ENTITIES
+PASS PANEL_NOT_IDENTICAL
+PASS ENTITY_DISJOINT
+PASS UNIQUE_NEW_ENTITIES
+PASS CASE_LOCK_0
+PASS CASE_LOCK_1
+PASS CASE_LOCK_2
+PASS CASE_LOCK_3
+PASS CASE_LOCK_4
+PASS CASE_LOCK_5
+PASS CASE_LOCK_6
+PASS CASE_LOCK_7
+PASS CASE_LOCK_8
+PASS CASE_LOCK_9
+PASS CASE_LOCK_10
+PASS CASE_LOCK_11
+HELDOUT_SEED 6742026
+HELDOUT_CASES 12
+HELDOUT_CARTRIDGES 204
+HELDOUT_PANEL_SHA256 415e40a8abc9b72bb511acc94262db7691d95c0c50ae21a8d0eae1c03e229881
+MANIFEST_LOCKED /content/AKBASCORE_TEST674/TEST674_heldout_manifest.json
+====================================================================================================================
+PHASE 2 — FROZEN MODEL / DIRECT + FOUR-HOP RETRIEVAL
+====================================================================================================================
+PROGRESS 1 /12 ROWS 30 ERRORS 0
+PROGRESS 2 /12 ROWS 60 ERRORS 0
+PROGRESS 3 /12 ROWS 90 ERRORS 0
+PROGRESS 4 /12 ROWS 120 ERRORS 0
+PROGRESS 5 /12 ROWS 150 ERRORS 0
+PROGRESS 6 /12 ROWS 180 ERRORS 0
+PROGRESS 7 /12 ROWS 210 ERRORS 0
+PROGRESS 8 /12 ROWS 240 ERRORS 0
+PROGRESS 9 /12 ROWS 270 ERRORS 0
+PROGRESS 10 /12 ROWS 300 ERRORS 0
+PROGRESS 11 /12 ROWS 330 ERRORS 0
+PROGRESS 12 /12 ROWS 360 ERRORS 0
+====================================================================================================================
+PHASE 3 — VALIDATION / COMPARATIVE SCIENTIFIC AUDIT
+====================================================================================================================
+PASS DIRECT_ROW_COUNT
+PASS CHAIN_ROW_COUNT
+PASS TOTAL_ROW_COUNT
+PASS UNIQUE_ROWS
+PASS ZERO_ERRORS
+PASS FINAL_FROZEN
+PASS FINAL_SENTINEL
+PASS FINAL_MODEL_EVAL
+PASS ORIGINAL_PANEL_UNCHANGED
+PASS HELDOUT_PANEL_UNCHANGED
+PASS PAIR_COUNT
+====================================================================================================================
+TEST674_FINAL — TARGET 1 / HELDOUT RELATIONAL MEMORY
+====================================================================================================================
+TEXT_JOINT_base          DIRECT= 0/12 CHAIN= 8/12 TERMINAL=10/12 PERSON=12/12 ORG= 9/12 CITY=12/12 REGION=10/12
+TEXT_JOINT_swap          DIRECT= 6/12 CHAIN= 9/12 TERMINAL=10/12 PERSON=12/12 ORG=10/12 CITY=11/12 REGION=10/12
+TEXT_JOINT_missing       DIRECT= 5/12 CHAIN=12/12 TERMINAL=12/12 PERSON=12/12 ORG= 0/12 CITY= 0/12 REGION= 0/12
+DC_CUT3_base             DIRECT= 0/12 CHAIN= 5/12 TERMINAL= 6/12 PERSON=12/12 ORG= 9/12 CITY=10/12 REGION= 6/12
+DC_CUT3_swap             DIRECT= 4/12 CHAIN= 9/12 TERMINAL= 9/12 PERSON=11/12 ORG=10/12 CITY=10/12 REGION= 9/12
+DC_CUT3_missing          DIRECT= 6/12 CHAIN=12/12 TERMINAL=12/12 PERSON=12/12 ORG= 0/12 CITY= 0/12 REGION= 0/12
+--------------------------------------------------------------------------------------------------------------------
+TEXT_JOINT vs DC_CUT3
+PAIRED_ROWS 180
+BOTH_CORRECT 132
+DC_ONLY_CORRECT 3
+TEXT_ONLY_CORRECT 13
+EXACT_OUTPUT_MATCH 155
+EXACT_OUTPUT_MATCH_PCT 86.11
+--------------------------------------------------------------------------------------------------------------------
+FAILURE AUDIT
+TOTAL_FAILED_ROWS 80
+TEXT_JOINT base FAILURES 17
+TEXT_JOINT swap FAILURES 11
+TEXT_JOINT missing FAILURES 7
+DC_CUT3 base FAILURES 23
+DC_CUT3 swap FAILURES 16
+DC_CUT3 missing FAILURES 6
+--------------------------------------------------------------------------------------------------------------------
+INTEGRITY
+SOURCE_LOCK True
+ORIGINAL_PANEL_LOCK True
+HELDOUT_PANEL_LOCK True
+MODEL_FROZEN True
+SENTINEL_UNCHANGED True
+NEW_CARTRIDGES 204
+DIRECT_ROWS 72 /72
+CHAIN_ROWS 288 /288
+TOTAL_ROWS 360 /360
+ERRORS 0
+HELDOUT_MANIFEST /content/AKBASCORE_TEST674/TEST674_heldout_manifest.json
+RESULT /content/AKBASCORE_TEST674/TEST674_results.json
+RESULT_SHA256 06e8a9f8be49aedbcb4587e6907b1564d367c1cf44e6b2b12658aec3bfd44803
+STATUS EXPERIMENT_COMPLETE
+PASS TEST674_COMPLETED
