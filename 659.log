@@ -1,0 +1,126 @@
+ ====================================================================================================================
+TEST659 — FOUR-CARTRIDGE SYNTHESIS / SOURCE-LOCKED QWEN
+====================================================================================================================
+PASS CUDA_AVAILABLE
+PASS NINJA
+PASS NVCC
+PASS CXX
+BUILDING NATIVE KV EXTENSION
+PASS NATIVE_BITWISE_29_7
+PASS NATIVE_BITWISE_43_31
+PASS NATIVE_BITWISE_1_1
+PASS TEST566_BLOB
+PASS TEST566_BOUNDARY
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+config.json: 100% 663/663 [00:00<00:00, 80.4kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 932kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 38.0MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 76.5MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 135MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.33MB/s]Download complete:  13.1GB,  544MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  468MB/s  Fetching 4 files: 100% 4/4 [00:42<00:00, 42.99s/it]Loading weights: 100% 339/339 [00:03<00:00, 101.82it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.3kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+PASS FROZEN
+PASS ARCH
+PASS PANEL_LOCK
+PASS SENTINEL
+BASE GITHUB_VERIFIED BLOB b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71 GPU NVIDIA A100-SXM4-40GB
+PASS TEST650_PANEL_LOCK
+CHAIN_PANEL_SHA 8a16a1eb35991b6a12cacbf0ef6892da9be8a40457defddca01ea5cbff68f8f8
+CASE 0 ORACLE_4 STRICT 1 REGION 1 GOLD Uamksyuet ANSWER 'Uamksyuet' ERROR 
+CASE 0 CF_4 STRICT 1 REGION 1 GOLD Sypajgkvu ANSWER 'Sypajgkvu' ERROR 
+CASE 0 MISSING_0 STRICT 1 REGION 1 GOLD Uamksyuet ANSWER 'Uamksyuet' ERROR 
+CASE 0 MISSING_1 STRICT 1 REGION 1 GOLD Uamksyuet ANSWER 'Uamksyuet' ERROR 
+CASE 0 MISSING_2 STRICT 1 REGION 1 GOLD Uamksyuet ANSWER 'Uamksyuet' ERROR 
+CASE 0 MISSING_3 STRICT 0 REGION 0 GOLD Uamksyuet ANSWER 'Tfjtaqnq' ERROR 
+CASE 0 REVERSE_4 STRICT 1 REGION 1 GOLD Uamksyuet ANSWER 'Uamksyuet' ERROR 
+CASE 1 ORACLE_4 STRICT 1 REGION 1 GOLD Ydebrebqj ANSWER 'Ydebrebqj' ERROR 
+CASE 1 CF_4 STRICT 1 REGION 1 GOLD Zuruxeebd ANSWER 'Zuruxeebd' ERROR 
+CASE 1 MISSING_0 STRICT 1 REGION 1 GOLD Ydebrebqj ANSWER 'Ydebrebqj' ERROR 
+CASE 1 MISSING_1 STRICT 1 REGION 1 GOLD Ydebrebqj ANSWER 'Ydebrebqj' ERROR 
+CASE 1 MISSING_2 STRICT 1 REGION 1 GOLD Ydebrebqj ANSWER 'Ydebrebqj' ERROR 
+CASE 1 MISSING_3 STRICT 0 REGION 0 GOLD Ydebrebqj ANSWER 'Kwqeggfym' ERROR 
+CASE 1 REVERSE_4 STRICT 1 REGION 1 GOLD Ydebrebqj ANSWER 'Ydebrebqj' ERROR 
+CASE 2 ORACLE_4 STRICT 1 REGION 1 GOLD Vkuqesqab ANSWER 'Vkuqesqab' ERROR 
+CASE 2 CF_4 STRICT 1 REGION 1 GOLD Retcghgva ANSWER 'Retcghgva' ERROR 
+CASE 2 MISSING_0 STRICT 1 REGION 1 GOLD Vkuqesqab ANSWER 'Vkuqesqab' ERROR 
+CASE 2 MISSING_1 STRICT 1 REGION 1 GOLD Vkuqesqab ANSWER 'Vkuqesqab' ERROR 
+CASE 2 MISSING_2 STRICT 1 REGION 1 GOLD Vkuqesqab ANSWER 'Vkuqesqab' ERROR 
+CASE 2 MISSING_3 STRICT 0 REGION 0 GOLD Vkuqesqab ANSWER 'Wcvkwlzzs' ERROR 
+CASE 2 REVERSE_4 STRICT 1 REGION 1 GOLD Vkuqesqab ANSWER 'Vkuqesqab' ERROR 
+CASE 3 ORACLE_4 STRICT 1 REGION 1 GOLD Jekatnjtg ANSWER 'Jekatnjtg' ERROR 
+CASE 3 CF_4 STRICT 1 REGION 1 GOLD Evuununpd ANSWER 'Evuununpd' ERROR 
+CASE 3 MISSING_0 STRICT 1 REGION 1 GOLD Jekatnjtg ANSWER 'Jekatnjtg' ERROR 
+CASE 3 MISSING_1 STRICT 1 REGION 1 GOLD Jekatnjtg ANSWER 'Jekatnjtg' ERROR 
+CASE 3 MISSING_2 STRICT 1 REGION 1 GOLD Jekatnjtg ANSWER 'Jekatnjtg' ERROR 
+CASE 3 MISSING_3 STRICT 0 REGION 0 GOLD Jekatnjtg ANSWER 'Sjhcwaygg' ERROR 
+CASE 3 REVERSE_4 STRICT 1 REGION 1 GOLD Jekatnjtg ANSWER 'Jekatnjtg' ERROR 
+CASE 4 ORACLE_4 STRICT 1 REGION 1 GOLD Ellybnrse ANSWER 'Ellybnrse' ERROR 
+CASE 4 CF_4 STRICT 1 REGION 1 GOLD Apzzgrklt ANSWER 'Apzzgrklt' ERROR 
+CASE 4 MISSING_0 STRICT 1 REGION 1 GOLD Ellybnrse ANSWER 'Ellybnrse' ERROR 
+CASE 4 MISSING_1 STRICT 1 REGION 1 GOLD Ellybnrse ANSWER 'Ellybnrse' ERROR 
+CASE 4 MISSING_2 STRICT 1 REGION 1 GOLD Ellybnrse ANSWER 'Ellybnrse' ERROR 
+CASE 4 MISSING_3 STRICT 0 REGION 0 GOLD Ellybnrse ANSWER 'Dzggzwckp' ERROR 
+CASE 4 REVERSE_4 STRICT 1 REGION 1 GOLD Ellybnrse ANSWER 'Ellybnrse' ERROR 
+CASE 5 ORACLE_4 STRICT 1 REGION 1 GOLD Mcczwvfdq ANSWER 'Mcczwvfdq' ERROR 
+CASE 5 CF_4 STRICT 1 REGION 1 GOLD Sajnsxhgv ANSWER 'Sajnsxhgv' ERROR 
+CASE 5 MISSING_0 STRICT 1 REGION 1 GOLD Mcczwvfdq ANSWER 'Mcczwvfdq' ERROR 
+CASE 5 MISSING_1 STRICT 1 REGION 1 GOLD Mcczwvfdq ANSWER 'Mcczwvfdq' ERROR 
+CASE 5 MISSING_2 STRICT 1 REGION 1 GOLD Mcczwvfdq ANSWER 'Mcczwvfdq' ERROR 
+CASE 5 MISSING_3 STRICT 0 REGION 0 GOLD Mcczwvfdq ANSWER 'Ttnpuyced' ERROR 
+CASE 5 REVERSE_4 STRICT 1 REGION 1 GOLD Mcczwvfdq ANSWER 'Mcczwvfdq' ERROR 
+CASE 6 ORACLE_4 STRICT 1 REGION 1 GOLD Xmnhampvb ANSWER 'Xmnhampvb' ERROR 
+CASE 6 CF_4 STRICT 1 REGION 1 GOLD Qzbzgmbpn ANSWER 'Qzbzgmbpn' ERROR 
+CASE 6 MISSING_0 STRICT 1 REGION 1 GOLD Xmnhampvb ANSWER 'Xmnhampvb' ERROR 
+CASE 6 MISSING_1 STRICT 1 REGION 1 GOLD Xmnhampvb ANSWER 'Xmnhampvb' ERROR 
+CASE 6 MISSING_2 STRICT 1 REGION 1 GOLD Xmnhampvb ANSWER 'Xmnhampvb' ERROR 
+CASE 6 MISSING_3 STRICT 0 REGION 0 GOLD Xmnhampvb ANSWER 'Dkargjvky' ERROR 
+CASE 6 REVERSE_4 STRICT 1 REGION 1 GOLD Xmnhampvb ANSWER 'Xmnhampvb' ERROR 
+CASE 7 ORACLE_4 STRICT 1 REGION 1 GOLD Jrzqdjxsj ANSWER 'Jrzqdjxsj' ERROR 
+CASE 7 CF_4 STRICT 1 REGION 1 GOLD Tnsnqmxkq ANSWER 'Tnsnqmxkq' ERROR 
+CASE 7 MISSING_0 STRICT 1 REGION 1 GOLD Jrzqdjxsj ANSWER 'Jrzqdjxsj' ERROR 
+CASE 7 MISSING_1 STRICT 1 REGION 1 GOLD Jrzqdjxsj ANSWER 'Jrzqdjxsj' ERROR 
+CASE 7 MISSING_2 STRICT 1 REGION 1 GOLD Jrzqdjxsj ANSWER 'Jrzqdjxsj' ERROR 
+CASE 7 MISSING_3 STRICT 0 REGION 0 GOLD Jrzqdjxsj ANSWER 'Crznnwhvw' ERROR 
+CASE 7 REVERSE_4 STRICT 1 REGION 1 GOLD Jrzqdjxsj ANSWER 'Jrzqdjxsj' ERROR 
+====================================================================================================================
+TEST659_FINAL
+{
+  "ORACLE_4": {
+    "strict": 8,
+    "region": 8,
+    "n": 8
+  },
+  "CF_4": {
+    "strict": 8,
+    "region": 8,
+    "n": 8
+  },
+  "MISSING_0": {
+    "strict": 8,
+    "region": 8,
+    "n": 8
+  },
+  "MISSING_1": {
+    "strict": 8,
+    "region": 8,
+    "n": 8
+  },
+  "MISSING_2": {
+    "strict": 8,
+    "region": 8,
+    "n": 8
+  },
+  "MISSING_3": {
+    "strict": 0,
+    "region": 0,
+    "n": 8
+  },
+  "REVERSE_4": {
+    "strict": 8,
+    "region": 8,
+    "n": 8
+  }
+}
+MISSING_EDGE_LEAKS 24 / 32 WEIGHTS_FROZEN True SENTINEL True
+RESULT /content/AKBASCORE_TEST659/TEST659_results.json SHA256 c719ed0d792698ac86c7d6f7a0a507c7be046ffb328202a91b8162e08562a150
+STATUS EXPERIMENT_COMPLETE
