@@ -1,0 +1,144 @@
+ ====================================================================================================================
+TEST675 — AKBASCORE MATRIX / THREE-CARTRIDGE RELATIONAL MEMORY DEMO
+FROZEN QWEN / LOCKED TEST664 ENGINE / NATIVE CUDA CUT3
+====================================================================================================================
+PASS TEST664_SOURCE_LOCK
+PASS SOURCE_BOUNDARIES
+====================================================================================================================
+TEST664 — REFLECTIVE RETRY / FEEDBACK CAUSAL AUDIT
+====================================================================================================================
+PASS CUDA_AVAILABLE
+PASS NINJA
+PASS NVCC
+PASS CXX
+BUILDING NATIVE KV EXTENSION
+PASS NATIVE_BITWISE_29_7
+PASS NATIVE_BITWISE_43_31
+PASS NATIVE_BITWISE_1_1
+PASS TEST566_BLOB
+PASS TEST566_BOUNDARY
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 89.7kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 967kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 44.0MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 76.0MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 136MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 2.53MB/s]Download complete:  13.1GB,  659MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  462MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00,  8.97s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.00it/s]generation_config.json: 100% 243/243 [00:00<00:00, 31.1kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+PASS FROZEN
+PASS ARCH
+PASS PANEL_LOCK
+PASS SENTINEL
+BASE GITHUB_VERIFIED BLOB b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71 GPU NVIDIA A100-SXM4-40GB
+PASS TEST650_PANEL_LOCK
+TEST664_PANEL_SHA e0686148d6fd88050a097ee5441ce99a4bb068a463408742bc476c83aaba6c05 CASES 12
+PASS ORIGINAL_PANEL_LOCK
+PASS FROZEN_WEIGHTS
+PASS BASELINE_SENTINEL
+PASS MODEL_EVAL
+====================================================================================================================
+PHASE 1 — MATRIX MEMORY CARTRIDGES
+====================================================================================================================
+PASS CARTRIDGE_A
+PASS CARTRIDGE_B
+PASS CARTRIDGE_C
+PASS COUNTERFACTUAL_C
+CARTRIDGES 3
+CONDITIONS 8
+REPRESENTATIONS ('TEXT_JOINT', 'DC_CUT3')
+MANIFEST /content/AKBASCORE_TEST675/TEST675_manifest.json
+====================================================================================================================
+PHASE 2 — MATRIX CARTRIDGE MEMORY EXPERIMENT
+====================================================================================================================
+PROGRESS TEXT_JOINT ABC ROWS 8 ERRORS 0
+PROGRESS TEXT_JOINT AB ROWS 16 ERRORS 0
+PROGRESS TEXT_JOINT AC ROWS 24 ERRORS 0
+PROGRESS TEXT_JOINT BC ROWS 32 ERRORS 0
+PROGRESS TEXT_JOINT ABC_COUNTERFACTUAL ROWS 40 ERRORS 0
+PROGRESS TEXT_JOINT A ROWS 48 ERRORS 0
+PROGRESS TEXT_JOINT B ROWS 56 ERRORS 0
+PROGRESS TEXT_JOINT C ROWS 64 ERRORS 0
+PROGRESS DC_CUT3 ABC ROWS 72 ERRORS 0
+PROGRESS DC_CUT3 AB ROWS 80 ERRORS 0
+PROGRESS DC_CUT3 AC ROWS 88 ERRORS 0
+PROGRESS DC_CUT3 BC ROWS 96 ERRORS 0
+PROGRESS DC_CUT3 ABC_COUNTERFACTUAL ROWS 104 ERRORS 0
+PROGRESS DC_CUT3 A ROWS 112 ERRORS 0
+PROGRESS DC_CUT3 B ROWS 120 ERRORS 0
+PROGRESS DC_CUT3 C ROWS 128 ERRORS 0
+====================================================================================================================
+PHASE 3 — CAUSAL ABLATION / COUNTERFACTUAL AUDIT
+====================================================================================================================
+PASS ROW_COUNT
+PASS ZERO_ERRORS
+PASS FINAL_FROZEN
+PASS FINAL_SENTINEL
+PASS FINAL_PANEL_LOCK
+====================================================================================================================
+TEST675_FINAL — MATRIX MEMORY CARTRIDGE DEMO
+====================================================================================================================
+--------------------------------------------------------------------------------------------------------------------
+REPRESENTATION TEXT_JOINT
+ABC                    CORRECT=5/7 UNSUPPORTED=0 WRONG=2 ABSTAIN=0
+AB                     CORRECT=7/7 UNSUPPORTED=0 WRONG=0 ABSTAIN=0
+AC                     CORRECT=3/7 UNSUPPORTED=3 WRONG=1 ABSTAIN=0
+BC                     CORRECT=4/7 UNSUPPORTED=2 WRONG=1 ABSTAIN=0
+ABC_COUNTERFACTUAL     CORRECT=6/7 UNSUPPORTED=0 WRONG=1 ABSTAIN=0
+A                      CORRECT=7/7 UNSUPPORTED=0 WRONG=0 ABSTAIN=0
+B                      CORRECT=6/7 UNSUPPORTED=1 WRONG=0 ABSTAIN=0
+C                      CORRECT=3/7 UNSUPPORTED=3 WRONG=1 ABSTAIN=0
+--------------------------------------------------------------------------------------------------------------------
+REPRESENTATION DC_CUT3
+ABC                    CORRECT=5/7 UNSUPPORTED=0 WRONG=2 ABSTAIN=0
+AB                     CORRECT=6/7 UNSUPPORTED=0 WRONG=1 ABSTAIN=0
+AC                     CORRECT=3/7 UNSUPPORTED=3 WRONG=1 ABSTAIN=0
+BC                     CORRECT=4/7 UNSUPPORTED=2 WRONG=1 ABSTAIN=0
+ABC_COUNTERFACTUAL     CORRECT=6/7 UNSUPPORTED=0 WRONG=1 ABSTAIN=0
+A                      CORRECT=7/7 UNSUPPORTED=0 WRONG=0 ABSTAIN=0
+B                      CORRECT=6/7 UNSUPPORTED=1 WRONG=0 ABSTAIN=0
+C                      CORRECT=3/7 UNSUPPORTED=3 WRONG=1 ABSTAIN=0
+====================================================================================================================
+MATRIX — FINAL SYNTHESIS
+====================================================================================================================
+
+ TEXT_JOINT / ABC
+NEO: AkbasCore neural cartridge
+
+ TEXT_JOINT / AB
+NEO: AkbasCore neural cartridge injection
+
+ TEXT_JOINT / AC
+NEO: Kung Fu knowledge integrated through the AkbasCore layer-3 memory interface
+
+ TEXT_JOINT / BC
+NEO: AkbasCore neural cartridge
+
+ TEXT_JOINT / ABC_COUNTERFACTUAL
+NEO: UNKNOWN
+
+ DC_CUT3 / ABC
+NEO: AkbasCore
+
+ DC_CUT3 / AB
+NEO: AkbasCore
+
+ DC_CUT3 / AC
+NEO: Kung Fu knowledge integrated through the AkbasCore layer-3 memory interface enables
+
+ DC_CUT3 / BC
+NEO: AkbasCore
+
+ DC_CUT3 / ABC_COUNTERFACTUAL
+NEO: UNKNOWN
+====================================================================================================================
+INTEGRITY
+====================================================================================================================
+MODEL_FROZEN True
+SENTINEL_UNCHANGED True
+PANEL_LOCK_VALID True
+TOTAL_ROWS 128
+ERRORS 0
+RESULT /content/AKBASCORE_TEST675/TEST675_results.json
+RESULT_SHA256 73b275a7339be68649bce5d751fd951852fbc803255051a57555e0e683808d5a
+STATUS EXPERIMENT_COMPLETE
+PASS TEST675_COMPLETED
