@@ -1,0 +1,214 @@
+ ========================================================================================================================
+TEST677 — AKBASCORE MAM / SYNTHETIC UNIQUE DOMAIN
+FROZEN QWEN / LOCKED TEST664 / NATIVE CUDA CUT3
+========================================================================================================================
+PASS TEST664_SOURCE_LOCK
+PASS SOURCE_BOUNDARIES
+====================================================================================================================
+TEST664 — REFLECTIVE RETRY / FEEDBACK CAUSAL AUDIT
+====================================================================================================================
+PASS CUDA_AVAILABLE
+PASS NINJA
+PASS NVCC
+PASS CXX
+BUILDING NATIVE KV EXTENSION
+PASS NATIVE_BITWISE_29_7
+PASS NATIVE_BITWISE_43_31
+PASS NATIVE_BITWISE_1_1
+PASS TEST566_BLOB
+PASS TEST566_BOUNDARY
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 86.6kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 978kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 83.2MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 74.3MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 122MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.26MB/s]Download complete:  13.1GB,  284MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  428MB/s  Fetching 4 files: 100% 4/4 [00:43<00:00, 43.61s/it]Loading weights: 100% 339/339 [00:03<00:00, 100.68it/s]generation_config.json: 100% 243/243 [00:00<00:00, 29.3kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+PASS FROZEN
+PASS ARCH
+PASS PANEL_LOCK
+PASS SENTINEL
+BASE GITHUB_VERIFIED BLOB b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71 GPU NVIDIA A100-SXM4-40GB
+PASS TEST650_PANEL_LOCK
+TEST664_PANEL_SHA e0686148d6fd88050a097ee5441ce99a4bb068a463408742bc476c83aaba6c05 CASES 12
+PASS ORIGINAL_PANEL_LOCK
+PASS MODEL_FROZEN
+PASS BASELINE_SENTINEL
+PASS MODEL_EVAL
+========================================================================================================================
+PHASE 1 — USER PANEL + BLIND SYNTHETIC PANEL GENERATION
+========================================================================================================================
+PASS CASE_COUNT
+PASS UNIQUE_CASE_IDS
+CASES 13 CONDITIONS 9 REPRESENTATIONS ('TEXT_JOINT', 'DC_CUT3')
+MANIFEST_SHA256 c60466f54db06cefec17888e5b38729c09013cab6a39a72f0868dfe8ac3d5a33
+========================================================================================================================
+PHASE 2 — FROZEN MODEL / ATOMIC + THREE-HOP + SYNTHESIS
+========================================================================================================================
+PROGRESS AKBASCORE TEXT_JOINT ROWS 99 ERRORS 0
+PROGRESS AKBASCORE DC_CUT3 ROWS 198 ERRORS 0
+PROGRESS BLIND_00 TEXT_JOINT ROWS 297 ERRORS 0
+PROGRESS BLIND_00 DC_CUT3 ROWS 396 ERRORS 0
+PROGRESS BLIND_01 TEXT_JOINT ROWS 495 ERRORS 0
+PROGRESS BLIND_01 DC_CUT3 ROWS 594 ERRORS 0
+PROGRESS BLIND_02 TEXT_JOINT ROWS 693 ERRORS 0
+PROGRESS BLIND_02 DC_CUT3 ROWS 792 ERRORS 0
+PROGRESS BLIND_03 TEXT_JOINT ROWS 891 ERRORS 0
+PROGRESS BLIND_03 DC_CUT3 ROWS 990 ERRORS 0
+PROGRESS BLIND_04 TEXT_JOINT ROWS 1089 ERRORS 0
+PROGRESS BLIND_04 DC_CUT3 ROWS 1188 ERRORS 0
+PROGRESS BLIND_05 TEXT_JOINT ROWS 1287 ERRORS 0
+PROGRESS BLIND_05 DC_CUT3 ROWS 1386 ERRORS 0
+PROGRESS BLIND_06 TEXT_JOINT ROWS 1485 ERRORS 0
+PROGRESS BLIND_06 DC_CUT3 ROWS 1584 ERRORS 0
+PROGRESS BLIND_07 TEXT_JOINT ROWS 1683 ERRORS 0
+PROGRESS BLIND_07 DC_CUT3 ROWS 1782 ERRORS 0
+PROGRESS BLIND_08 TEXT_JOINT ROWS 1881 ERRORS 0
+PROGRESS BLIND_08 DC_CUT3 ROWS 1980 ERRORS 0
+PROGRESS BLIND_09 TEXT_JOINT ROWS 2079 ERRORS 0
+PROGRESS BLIND_09 DC_CUT3 ROWS 2178 ERRORS 0
+PROGRESS BLIND_10 TEXT_JOINT ROWS 2277 ERRORS 0
+PROGRESS BLIND_10 DC_CUT3 ROWS 2376 ERRORS 0
+PROGRESS BLIND_11 TEXT_JOINT ROWS 2475 ERRORS 0
+PROGRESS BLIND_11 DC_CUT3 ROWS 2574 ERRORS 0
+========================================================================================================================
+PHASE 3 — SCIENTIFIC AUDIT / ZERO LEAKAGE / FINAL SUMMARY
+========================================================================================================================
+PASS ROW_COUNT
+PASS ZERO_ERRORS
+PASS UNIQUE_ROWS
+PASS FINAL_FROZEN
+PASS FINAL_SENTINEL
+PASS ORIGINAL_PANEL_UNCHANGED
+PASS MANIFEST_UNCHANGED
+========================================================================================================================
+TEST677_FINAL — SYNTHETIC UNIQUE DOMAIN
+========================================================================================================================
+------------------------------------------------------------------------------------------------------------------------
+REPRESENTATION TEXT_JOINT
+NONE      KNOWN=0/0 ABSTAIN=130/130 UNSUPPORTED=0 WRONG=0 MISSED=0
+A         KNOWN=26/26 ABSTAIN=104/104 UNSUPPORTED=0 WRONG=0 MISSED=0
+B         KNOWN=39/39 ABSTAIN=63/91 UNSUPPORTED=28 WRONG=0 MISSED=0
+C         KNOWN=26/26 ABSTAIN=76/104 UNSUPPORTED=28 WRONG=0 MISSED=0
+AB        KNOWN=78/78 ABSTAIN=38/52 UNSUPPORTED=14 WRONG=0 MISSED=0
+AC        KNOWN=52/52 ABSTAIN=39/78 UNSUPPORTED=39 WRONG=0 MISSED=0
+BC        KNOWN=78/78 ABSTAIN=22/52 UNSUPPORTED=30 WRONG=0 MISSED=0
+ABC       KNOWN=130/130 ABSTAIN=0/0 UNSUPPORTED=0 WRONG=0 MISSED=0
+ABC_CF    KNOWN=130/130 ABSTAIN=0/0 UNSUPPORTED=0 WRONG=0 MISSED=0
+------------------------------------------------------------------------------------------------------------------------
+REPRESENTATION DC_CUT3
+NONE      KNOWN=0/0 ABSTAIN=130/130 UNSUPPORTED=0 WRONG=0 MISSED=0
+A         KNOWN=26/26 ABSTAIN=104/104 UNSUPPORTED=0 WRONG=0 MISSED=0
+B         KNOWN=39/39 ABSTAIN=63/91 UNSUPPORTED=28 WRONG=0 MISSED=0
+C         KNOWN=26/26 ABSTAIN=76/104 UNSUPPORTED=28 WRONG=0 MISSED=0
+AB        KNOWN=78/78 ABSTAIN=38/52 UNSUPPORTED=14 WRONG=0 MISSED=0
+AC        KNOWN=52/52 ABSTAIN=42/78 UNSUPPORTED=36 WRONG=0 MISSED=0
+BC        KNOWN=78/78 ABSTAIN=21/52 UNSUPPORTED=31 WRONG=0 MISSED=0
+ABC       KNOWN=130/130 ABSTAIN=0/0 UNSUPPORTED=0 WRONG=0 MISSED=0
+ABC_CF    KNOWN=130/130 ABSTAIN=0/0 UNSUPPORTED=0 WRONG=0 MISSED=0
+========================================================================================================================
+USER PANEL — MUSTAFA AKBAŞ / DIBEKGOZ / MORVEX
+========================================================================================================================
+
+ TEXT_JOINT NONE
+CHAIN_AB EXPECTED: None PRED: UNKNOWN STATUS: CORRECT_ABSTENTION
+CHAIN_BC EXPECTED: None PRED: UNKNOWN STATUS: CORRECT_ABSTENTION
+CHAIN_ABC EXPECTED: None PRED: UNKNOWN STATUS: CORRECT_ABSTENTION
+SYNTHESIS EXPECTED: None PRED: UNKNOWN STATUS: UNSCORED
+
+ TEXT_JOINT ABC
+CHAIN_AB EXPECTED: Morvex PRED: Morvex STATUS: CORRECT_KNOWN
+CHAIN_BC EXPECTED: reversal of time flow PRED: reversal of time flow STATUS: CORRECT_KNOWN
+CHAIN_ABC EXPECTED: reversal of time flow PRED: reversal of time flow STATUS: CORRECT_KNOWN
+SYNTHESIS EXPECTED: None PRED: Mustafa Akbaş produces the final effect in the target system by converting dib STATUS: UNSCORED
+
+ TEXT_JOINT AB
+CHAIN_AB EXPECTED: Morvex PRED: Morvex STATUS: CORRECT_KNOWN
+CHAIN_BC EXPECTED: None PRED: Morvex energy STATUS: UNSUPPORTED
+CHAIN_ABC EXPECTED: None PRED: Morvex energy STATUS: UNSUPPORTED
+SYNTHESIS EXPECTED: None PRED: UNKNOWN STATUS: UNSCORED
+
+ TEXT_JOINT AC
+CHAIN_AB EXPECTED: None PRED: UNKNOWN STATUS: CORRECT_ABSTENTION
+CHAIN_BC EXPECTED: None PRED: UNKNOWN STATUS: CORRECT_ABSTENTION
+CHAIN_ABC EXPECTED: None PRED: reversal of time flow STATUS: UNSUPPORTED
+SYNTHESIS EXPECTED: None PRED: UNKNOWN STATUS: UNSCORED
+
+ TEXT_JOINT BC
+CHAIN_AB EXPECTED: None PRED: Morvex STATUS: UNSUPPORTED
+CHAIN_BC EXPECTED: reversal of time flow PRED: reversal of time flow STATUS: CORRECT_KNOWN
+CHAIN_ABC EXPECTED: None PRED: reversal of time flow STATUS: UNSUPPORTED
+SYNTHESIS EXPECTED: None PRED: UNKNOWN STATUS: UNSCORED
+
+ TEXT_JOINT ABC_CF
+CHAIN_AB EXPECTED: Morvex PRED: Morvex STATUS: CORRECT_KNOWN
+CHAIN_BC EXPECTED: AltEffectfsppgdmk PRED: AltEffectfsppgdmk STATUS: CORRECT_KNOWN
+CHAIN_ABC EXPECTED: AltEffectfsppgdmk PRED: AltEffectfsppgdmk STATUS: CORRECT_KNOWN
+SYNTHESIS EXPECTED: None PRED: Mustafa Akbaş produces the final effect in the target system by converting dib STATUS: UNSCORED
+
+ DC_CUT3 NONE
+CHAIN_AB EXPECTED: None PRED: UNKNOWN STATUS: CORRECT_ABSTENTION
+CHAIN_BC EXPECTED: None PRED: UNKNOWN STATUS: CORRECT_ABSTENTION
+CHAIN_ABC EXPECTED: None PRED: UNKNOWN STATUS: CORRECT_ABSTENTION
+SYNTHESIS EXPECTED: None PRED: UNKNOWN STATUS: UNSCORED
+
+ DC_CUT3 ABC
+CHAIN_AB EXPECTED: Morvex PRED: Morvex STATUS: CORRECT_KNOWN
+CHAIN_BC EXPECTED: reversal of time flow PRED: reversal of time flow STATUS: CORRECT_KNOWN
+CHAIN_ABC EXPECTED: reversal of time flow PRED: reversal of time flow STATUS: CORRECT_KNOWN
+SYNTHESIS EXPECTED: None PRED: Mustafa Akbaş produces the final effect in the target system by converting dib STATUS: UNSCORED
+
+ DC_CUT3 AB
+CHAIN_AB EXPECTED: Morvex PRED: Morvex STATUS: CORRECT_KNOWN
+CHAIN_BC EXPECTED: None PRED: Morvex energy STATUS: UNSUPPORTED
+CHAIN_ABC EXPECTED: None PRED: Morvex energy STATUS: UNSUPPORTED
+SYNTHESIS EXPECTED: None PRED: UNKNOWN STATUS: UNSCORED
+
+ DC_CUT3 AC
+CHAIN_AB EXPECTED: None PRED: UNKNOWN STATUS: CORRECT_ABSTENTION
+CHAIN_BC EXPECTED: None PRED: UNKNOWN STATUS: CORRECT_ABSTENTION
+CHAIN_ABC EXPECTED: None PRED: reversal of time flow STATUS: UNSUPPORTED
+SYNTHESIS EXPECTED: None PRED: UNKNOWN STATUS: UNSCORED
+
+ DC_CUT3 BC
+CHAIN_AB EXPECTED: None PRED: Morvex STATUS: UNSUPPORTED
+CHAIN_BC EXPECTED: reversal of time flow PRED: reversal of time flow STATUS: CORRECT_KNOWN
+CHAIN_ABC EXPECTED: None PRED: reversal of time flow STATUS: UNSUPPORTED
+SYNTHESIS EXPECTED: None PRED: UNKNOWN STATUS: UNSCORED
+
+ DC_CUT3 ABC_CF
+CHAIN_AB EXPECTED: Morvex PRED: Morvex STATUS: CORRECT_KNOWN
+CHAIN_BC EXPECTED: AltEffectfsppgdmk PRED: AltEffectfsppgdmk STATUS: CORRECT_KNOWN
+CHAIN_ABC EXPECTED: AltEffectfsppgdmk PRED: AltEffectfsppgdmk STATUS: CORRECT_KNOWN
+SYNTHESIS EXPECTED: None PRED: Mustafa Akbaş produces the final effect in the target system by converting dib STATUS: UNSCORED
+========================================================================================================================
+BLIND PANEL — THREE-HOP ACCURACY
+========================================================================================================================
+TEXT_JOINT   NONE      12/12
+TEXT_JOINT   ABC       12/12
+TEXT_JOINT   AB        0/12
+TEXT_JOINT   AC        0/12
+TEXT_JOINT   BC        0/12
+TEXT_JOINT   ABC_CF    12/12
+DC_CUT3      NONE      12/12
+DC_CUT3      ABC       12/12
+DC_CUT3      AB        0/12
+DC_CUT3      AC        0/12
+DC_CUT3      BC        0/12
+DC_CUT3      ABC_CF    12/12
+========================================================================================================================
+INTEGRITY
+========================================================================================================================
+MODEL_FROZEN True
+SENTINEL_UNCHANGED True
+MANIFEST_LOCK True
+TOTAL_ROWS 2574
+PAIRED_ROWS 1287
+EXACT_OUTPUT_MATCH 1271 / 1287
+ERRORS 0
+MANIFEST /content/AKBASCORE_TEST677/TEST677_manifest.json
+RESULT /content/AKBASCORE_TEST677/TEST677_results.json
+RESULT_SHA256 99fabcb799fa6fc0840efe6fb8dad5c6558916c09398742135d86ddef3336638
+STATUS EXPERIMENT_COMPLETE
+PASS TEST677_COMPLETED
