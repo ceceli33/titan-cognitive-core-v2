@@ -1,0 +1,295 @@
+==============================================================================================================
+AKBASCORE AI TECHNOLOGY — MAM SILICON HIPPOCAMPUS v1.4
+Native Internal Tensor Memory Injection & Multi-Hop Relational Synthesis
+==============================================================================================================
+run MAM14-20261014-220212-0001 · started 2026-10-14T22:02:12+00:00 (2026-10-14T22:02:12.123+00:00 UTC) · finished 2026-10-14T22:03:09.719+00:00 · 57.6 s
+model Qwen/Qwen2.5-7B-Instruct · bfloat16 · sdpa · NVIDIA A100-SXM4-40GB · torch 2.11.0+cu130 · transformers 5.18.0 · gradio 6.29.0
+v1.4 engine SHA-256 fe6ddcc0d61e70f5590a0ce696cb0e4f561f901e79ceafc703d8138598be188b · TEST664 SHA-256 a6dcd8142446ab82fe7996bd512d59fc34525e6a092a68f069dad07a2a286eb5 · panel e0686148d6fd88050a097ee5441ce99a4bb068a463408742bc476c83aaba6c05 · TEST566 blob b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71
+full-weight SHA-256 b441b005d826d45f2778291696ac5ae22dfb3421defb37c539904d8d38f93786 · equal to TEST575 reference: True
+sentinel unchanged: True · all-parameter guard unchanged: True · all runs frozen: True
+==============================================================================================================
+[AKBASCORE] measured DC_CUT3 build (ABC): 109 rows · 6250496 bytes · memory SHA-256 9833210806512527df5e549ec16963520c0889c30e87d710323c2fede759816f · engine path identical True
+   A #252 body 24 tok · rows 53 · H3 [1, 53, 3584] · K/V L0–3 [1, 4, 53, 128] · 814080 B · init 1296.1 ms · prior rows unchanged None · L0–3 rows = cartridge True
+   B #253 body 27 tok · rows 27 · H3 [1, 56, 3584] · K/V L0–3 [1, 4, 56, 128] · 414720 B · append 177.0 ms · prior rows unchanged True · L0–3 rows = cartridge True
+   C #254 body 29 tok · rows 29 · H3 [1, 58, 3584] · K/V L0–3 [1, 4, 58, 128] · 445440 B · append 91.6 ms · prior rows unchanged True · L0–3 rows = cartridge True
+   final question on the measured memory → 'reversal of time flow'
+[MATRIX] measured DC_CUT3 build (ABC): 115 rows · 6594560 bytes · memory SHA-256 d6feb1d33a850332537f647f10e03c4af87615a6d6b0411189ab4e03d164c83e · engine path identical True
+   A #256 body 25 tok · rows 54 · H3 [1, 54, 3584] · K/V L0–3 [1, 4, 54, 128] · 829440 B · init 74.7 ms · prior rows unchanged None · L0–3 rows = cartridge True
+   B #257 body 36 tok · rows 36 · H3 [1, 65, 3584] · K/V L0–3 [1, 4, 65, 128] · 552960 B · append 90.7 ms · prior rows unchanged True · L0–3 rows = cartridge True
+   C #258 body 25 tok · rows 25 · H3 [1, 54, 3584] · K/V L0–3 [1, 4, 54, 128] · 384000 B · append 88.8 ms · prior rows unchanged True · L0–3 rows = cartridge True
+   final question on the measured memory → 'bullet-dodge ability'
+==============================================================================================================
+[AKBASCORE · ABC · DC_CUT3] engine run SHA-256 c47b24bf3f2aa89c966f825e25e8709be51f1efcbf494f0e1aa078356b505859 · scored True
+   ACTIVATION  CORRECT_KNOWN       raw='AKBASCORE MAM'
+   CONVERSION  CORRECT_KNOWN       raw='Morvex'
+   EFFECT      CORRECT_KNOWN       raw='reversal of time flow'
+   FINAL       CORRECT_KNOWN       raw='reversal of time flow'
+   SYNTHESIS   UNSCORED            raw='Mustafa Akbaş produces the final effect in the target system by converting dib' [16-token limit reached]
+   STAGED      'AKBASCORE MAM' → 'Morvex' → 'reversal of time flow' · chain CORRECT_KNOWN
+[MATRIX · ABC · DC_CUT3] engine run SHA-256 b159f6870eaa7d7a2e3446f037fc048b096726b24365c0b716febbec5d1006fb · scored True
+   ACTIVATION  CORRECT_KNOWN       raw='Tank'
+   CONTENT     CORRECT_KNOWN       raw='Kung Fu knowledge'
+   INJECTION   CORRECT_KNOWN       raw='3'
+   EFFECT      CORRECT_KNOWN       raw='bullet-dodge ability'
+   FINAL       CORRECT_KNOWN       raw='bullet-dodge ability'
+   SYNTHESIS   UNSCORED            raw='Tank uploads cartridge MX-71 into Neo. The AKBASCORE M' [16-token limit reached]
+   STAGED      'MX-71' → 'Kung Fu knowledge' → 'bullet-dodge ability' · chain CORRECT_KNOWN
+[AKBASCORE · NONE · DC_CUT3] engine run SHA-256 fc7dc2c2212604ba2d905e030950c06d145b53bbac78b4b5fbcbc8cb048ff84b · scored True
+   ACTIVATION  CORRECT_ABSTENTION  raw='UNKNOWN'
+   CONVERSION  CORRECT_ABSTENTION  raw='UNKNOWN'
+   EFFECT      CORRECT_ABSTENTION  raw='UNKNOWN'
+   FINAL       CORRECT_ABSTENTION  raw='UNKNOWN'
+   SYNTHESIS   UNSCORED            raw='UNKNOWN'
+   STAGED      'UNKNOWN' · chain CORRECT_ABSTENTION
+[AKBASCORE · A · DC_CUT3] engine run SHA-256 b9fffa3fa6f3ae12ca6e8059117f75a8bd31744fd7e38eaf9c9c0d7466799bf3 · scored True
+   ACTIVATION  CORRECT_KNOWN       raw='AKBASCORE MAM'
+   CONVERSION  CORRECT_ABSTENTION  raw='UNKNOWN'
+   EFFECT      CORRECT_ABSTENTION  raw='UNKNOWN'
+   FINAL       CORRECT_ABSTENTION  raw='UNKNOWN'
+   SYNTHESIS   UNSCORED            raw='UNKNOWN'
+   STAGED      'AKBASCORE MAM' → 'UNKNOWN' · chain CORRECT_ABSTENTION
+[AKBASCORE · B · DC_CUT3] engine run SHA-256 1bd6a11ce626eb7d8713acfe410a550cfeee5ca29606a483e27341e5e23154e3 · scored True
+   ACTIVATION  UNSUPPORTED         raw='AKBASCORE MAM'
+   CONVERSION  UNSUPPORTED         raw='Morvex'
+   EFFECT      UNSUPPORTED         raw='Morvex energy'
+   FINAL       UNSUPPORTED         raw='Morvex energy'
+   SYNTHESIS   UNSCORED            raw='UNKNOWN'
+   STAGED      'AKBASCORE MAM' → 'Morvex' → 'UNKNOWN' · chain CORRECT_ABSTENTION
+[AKBASCORE · C · DC_CUT3] engine run SHA-256 9632e367c443d9e10ed1c9872cd93ceef61e22c8d0decf999a696cfeb5c5ddf6 · scored True
+   ACTIVATION  CORRECT_ABSTENTION  raw='UNKNOWN'
+   CONVERSION  CORRECT_ABSTENTION  raw='UNKNOWN'
+   EFFECT      CORRECT_ABSTENTION  raw='UNKNOWN'
+   FINAL       CORRECT_ABSTENTION  raw='UNKNOWN'
+   SYNTHESIS   UNSCORED            raw='UNKNOWN'
+   STAGED      'UNKNOWN' · chain CORRECT_ABSTENTION
+[AKBASCORE · AB · DC_CUT3] engine run SHA-256 41d64edea4ca05bfebf669f6a3fa8cd7e33c3a319853fc5e7e2b93260f58a15b · scored True
+   ACTIVATION  CORRECT_KNOWN       raw='AKBASCORE MAM'
+   CONVERSION  CORRECT_KNOWN       raw='Morvex'
+   EFFECT      UNSUPPORTED         raw='Morvex energy'
+   FINAL       UNSUPPORTED         raw='Morvex energy'
+   SYNTHESIS   UNSCORED            raw='UNKNOWN'
+   STAGED      'AKBASCORE MAM' → 'Morvex' → 'UNKNOWN' · chain CORRECT_ABSTENTION
+[AKBASCORE · AC · DC_CUT3] engine run SHA-256 e636c95b8d86b61007f9b4eb64142f6bd5b4fbde7f8e54b60a033a8ae1dbb88c · scored True
+   ACTIVATION  CORRECT_KNOWN       raw='AKBASCORE MAM'
+   CONVERSION  CORRECT_ABSTENTION  raw='UNKNOWN'
+   EFFECT      CORRECT_ABSTENTION  raw='UNKNOWN'
+   FINAL       UNSUPPORTED         raw='reversal of time flow'
+   SYNTHESIS   UNSCORED            raw='UNKNOWN'
+   STAGED      'AKBASCORE MAM' → 'UNKNOWN' · chain CORRECT_ABSTENTION
+[AKBASCORE · BC · DC_CUT3] engine run SHA-256 4373f987a13a827b0ca3319b0ec4c5391ae31739182f64a05a74464e0a38bdc0 · scored True
+   ACTIVATION  UNSUPPORTED         raw='AKBASCORE MAM'
+   CONVERSION  UNSUPPORTED         raw='Morvex'
+   EFFECT      CORRECT_KNOWN       raw='reversal of time flow'
+   FINAL       UNSUPPORTED         raw='reversal of time flow'
+   SYNTHESIS   UNSCORED            raw='UNKNOWN'
+   STAGED      'AKBASCORE MAM' → 'Morvex' → 'reversal of time flow' · chain UNSUPPORTED
+[AKBASCORE · ABC_CF · DC_CUT3] engine run SHA-256 39e7cd0398c8a2e85d657d94802bcdce5168e211330353d3385892117a8bb51e · scored True
+   ACTIVATION  CORRECT_KNOWN       raw='AKBASCORE MAM'
+   CONVERSION  CORRECT_KNOWN       raw='Morvex'
+   EFFECT      CORRECT_KNOWN       raw='temporal stasis'
+   FINAL       CORRECT_KNOWN       raw='temporal stasis'
+   SYNTHESIS   UNSCORED            raw='Mustafa Akbaş produces the final effect in the target system by converting dib' [16-token limit reached]
+   STAGED      'AKBASCORE MAM' → 'Morvex' → 'temporal stasis' · chain CORRECT_KNOWN
+[MATRIX · NONE · DC_CUT3] engine run SHA-256 86cc178596f90875e237069f2eb17eba275276edbb37ba699fc062f5fc35eee0 · scored True
+   ACTIVATION  CORRECT_ABSTENTION  raw='UNKNOWN'
+   CONTENT     CORRECT_ABSTENTION  raw='UNKNOWN'
+   INJECTION   CORRECT_ABSTENTION  raw='UNKNOWN'
+   EFFECT      CORRECT_ABSTENTION  raw='Unknown'
+   FINAL       CORRECT_ABSTENTION  raw='Unknown'
+   SYNTHESIS   UNSCORED            raw='UNKNOWN'
+   STAGED      'UNKNOWN' · chain CORRECT_ABSTENTION
+[MATRIX · A · DC_CUT3] engine run SHA-256 6f8f2e9dff6781972ab698e3b4c70a67f9383f16375685539995e7afa10e4689 · scored True
+   ACTIVATION  CORRECT_KNOWN       raw='Tank'
+   CONTENT     CORRECT_ABSTENTION  raw='UNKNOWN'
+   INJECTION   CORRECT_ABSTENTION  raw='UNKNOWN'
+   EFFECT      CORRECT_ABSTENTION  raw='UNKNOWN'
+   FINAL       CORRECT_ABSTENTION  raw='UNKNOWN'
+   SYNTHESIS   UNSCORED            raw='Tank uploads cartridge MX-71 into Neo by pressing the AKBASCORE' [16-token limit reached]
+   STAGED      'MX-71' → 'UNKNOWN' · chain CORRECT_ABSTENTION
+[MATRIX · B · DC_CUT3] engine run SHA-256 60a7c0aec7fb575ffab614b1fe72f21d34fb85dff139d72ed76a83b6428bccd8 · scored True
+   ACTIVATION  CORRECT_ABSTENTION  raw='UNKNOWN'
+   CONTENT     CORRECT_KNOWN       raw='Kung Fu knowledge'
+   INJECTION   CORRECT_KNOWN       raw='3'
+   EFFECT      UNSUPPORTED         raw='Kung Fu knowledge'
+   FINAL       UNSUPPORTED         raw='Kung Fu'
+   SYNTHESIS   UNSCORED            raw='UNKNOWN'
+   STAGED      'UNKNOWN' · chain CORRECT_ABSTENTION
+[MATRIX · C · DC_CUT3] engine run SHA-256 ec1a71338ed008d92fae785abf8229eb0b228433c05dfcad4e7483ec2f21d643 · scored True
+   ACTIVATION  CORRECT_ABSTENTION  raw='UNKNOWN'
+   CONTENT     CORRECT_KNOWN       raw='Kung Fu knowledge'
+   INJECTION   CORRECT_ABSTENTION  raw='UNKNOWN'
+   EFFECT      CORRECT_KNOWN       raw='bullet-dodge'
+   FINAL       UNSUPPORTED         raw='bullet-dodge'
+   SYNTHESIS   UNSCORED            raw='UNKNOWN'
+   STAGED      'MX-71' → 'Kung Fu' → 'bullet-dodge' · chain UNSUPPORTED
+[MATRIX · AB · DC_CUT3] engine run SHA-256 1a19a57e62f5701fd1a30b7d3342d6bfdadfa285e471d1c462d4d79b17d250aa · scored True
+   ACTIVATION  CORRECT_KNOWN       raw='Tank'
+   CONTENT     CORRECT_KNOWN       raw='Kung Fu knowledge'
+   INJECTION   CORRECT_KNOWN       raw='3'
+   EFFECT      CORRECT_ABSTENTION  raw='UNKNOWN'
+   FINAL       UNSUPPORTED         raw='Kung Fu knowledge'
+   SYNTHESIS   UNSCORED            raw='Tank uploads cartridge MX-71 into Neo. The AKBASCORE M' [16-token limit reached]
+   STAGED      'MX-71' → 'Kung Fu knowledge' → 'Kung Fu knowledge' · chain UNSUPPORTED
+[MATRIX · AC · DC_CUT3] engine run SHA-256 f10ca09f0788916c43934a28d8d607640e85f09a52de23dfb001d5da22b0f707 · scored True
+   ACTIVATION  CORRECT_KNOWN       raw='Tank'
+   CONTENT     CORRECT_KNOWN       raw='Kung Fu knowledge'
+   INJECTION   CORRECT_ABSTENTION  raw='UNKNOWN'
+   EFFECT      CORRECT_KNOWN       raw='bullet-dodge'
+   FINAL       CORRECT_KNOWN       raw='bullet-dodge'
+   SYNTHESIS   UNSCORED            raw='Tank uploads cartridge MX-71 into Neo. The cartridge is injected using the' [16-token limit reached]
+   STAGED      'MX-71' → 'Kung Fu knowledge' → 'bullet-dodge ability' · chain CORRECT_KNOWN
+[MATRIX · BC · DC_CUT3] engine run SHA-256 1d1a4a8e9f2e2a133a0c628d1df62d33f41006f6ea0baa977b9e8f5e6ebfe017 · scored True
+   ACTIVATION  CORRECT_ABSTENTION  raw='UNKNOWN'
+   CONTENT     CORRECT_KNOWN       raw='Kung Fu knowledge'
+   INJECTION   CORRECT_KNOWN       raw='3'
+   EFFECT      CORRECT_KNOWN       raw='bullet-dodge ability'
+   FINAL       UNSUPPORTED         raw='bullet-dodge'
+   SYNTHESIS   UNSCORED            raw='UNKNOWN'
+   STAGED      'MX-71' → 'Kung Fu knowledge' → 'bullet-dodge ability' · chain UNSUPPORTED
+[MATRIX · ABC_CF · DC_CUT3] engine run SHA-256 b21c42eaf4b71ace5cb414f8f3095295ce088300db05802728b34980b82ec7c8 · scored True
+   ACTIVATION  CORRECT_KNOWN       raw='Tank'
+   CONTENT     CORRECT_KNOWN       raw='Kung Fu knowledge'
+   INJECTION   CORRECT_KNOWN       raw='3'
+   EFFECT      CORRECT_KNOWN       raw='slow-motion perception'
+   FINAL       CORRECT_KNOWN       raw='slow-motion perception'
+   SYNTHESIS   UNSCORED            raw='Tank uploads cartridge MX-71 into Neo. The AKBASCORE M' [16-token limit reached]
+   STAGED      'MX-71' → 'Kung Fu knowledge' → 'slow-motion perception' · chain CORRECT_KNOWN
+[AKBASCORE · NONE · TEXT_JOINT] engine run SHA-256 0684593c012ece65f58b1fb200e3a38b8d7bb89ce286487adc3ca1457363426d · scored True
+   ACTIVATION  CORRECT_ABSTENTION  raw='UNKNOWN'
+   CONVERSION  CORRECT_ABSTENTION  raw='UNKNOWN'
+   EFFECT      CORRECT_ABSTENTION  raw='UNKNOWN'
+   FINAL       CORRECT_ABSTENTION  raw='UNKNOWN'
+   SYNTHESIS   UNSCORED            raw='UNKNOWN'
+   STAGED      'UNKNOWN' · chain CORRECT_ABSTENTION
+[AKBASCORE · A · TEXT_JOINT] engine run SHA-256 9b7e80934f44233390c8607f19c3efc265a80b69b793945989cd29d498415daf · scored True
+   ACTIVATION  CORRECT_KNOWN       raw='AKBASCORE MAM'
+   CONVERSION  CORRECT_ABSTENTION  raw='UNKNOWN'
+   EFFECT      CORRECT_ABSTENTION  raw='UNKNOWN'
+   FINAL       CORRECT_ABSTENTION  raw='UNKNOWN'
+   SYNTHESIS   UNSCORED            raw='UNKNOWN'
+   STAGED      'AKBASCORE MAM' → 'UNKNOWN' · chain CORRECT_ABSTENTION
+[AKBASCORE · B · TEXT_JOINT] engine run SHA-256 2505374a3c115078db8cf1a5bbe739e2bd7efa0d4f16dfccb6a2a93b16ba2ee5 · scored True
+   ACTIVATION  UNSUPPORTED         raw='AKBASCORE MAM'
+   CONVERSION  UNSUPPORTED         raw='Morvex'
+   EFFECT      UNSUPPORTED         raw='Morvex energy'
+   FINAL       UNSUPPORTED         raw='Morvex energy'
+   SYNTHESIS   UNSCORED            raw='UNKNOWN'
+   STAGED      'AKBASCORE MAM' → 'Morvex' → 'UNKNOWN' · chain CORRECT_ABSTENTION
+[AKBASCORE · C · TEXT_JOINT] engine run SHA-256 579b680d8bb11fb53fc60912d384a5c8d68d5502e1e6e16a392809d0a3fb43ac · scored True
+   ACTIVATION  CORRECT_ABSTENTION  raw='UNKNOWN'
+   CONVERSION  CORRECT_ABSTENTION  raw='UNKNOWN'
+   EFFECT      CORRECT_ABSTENTION  raw='UNKNOWN'
+   FINAL       CORRECT_ABSTENTION  raw='UNKNOWN'
+   SYNTHESIS   UNSCORED            raw='UNKNOWN'
+   STAGED      'UNKNOWN' · chain CORRECT_ABSTENTION
+[AKBASCORE · AB · TEXT_JOINT] engine run SHA-256 0d4801043390bbff95a679b8ba538446d959915c9d8c86fda408f4a29147e8c0 · scored True
+   ACTIVATION  CORRECT_KNOWN       raw='AKBASCORE MAM'
+   CONVERSION  CORRECT_KNOWN       raw='Morvex'
+   EFFECT      UNSUPPORTED         raw='Morvex energy'
+   FINAL       UNSUPPORTED         raw='Morvex energy'
+   SYNTHESIS   UNSCORED            raw='UNKNOWN'
+   STAGED      'AKBASCORE MAM' → 'Morvex' → 'UNKNOWN' · chain CORRECT_ABSTENTION
+[AKBASCORE · AC · TEXT_JOINT] engine run SHA-256 8df9cfb7d45cb962aee0d7992da26c07abf7dcbff79b9096c2df8e7f44adb739 · scored True
+   ACTIVATION  CORRECT_KNOWN       raw='AKBASCORE MAM'
+   CONVERSION  CORRECT_ABSTENTION  raw='UNKNOWN'
+   EFFECT      CORRECT_ABSTENTION  raw='UNKNOWN'
+   FINAL       UNSUPPORTED         raw='reversal of time flow'
+   SYNTHESIS   UNSCORED            raw='UNKNOWN'
+   STAGED      'AKBASCORE MAM' → 'UNKNOWN' · chain CORRECT_ABSTENTION
+[AKBASCORE · BC · TEXT_JOINT] engine run SHA-256 f563304aa0c39de16cfa2ff83014be5854fef9cbe84ae2eeb3d833bc7cfae88f · scored True
+   ACTIVATION  UNSUPPORTED         raw='AKBASCORE MAM'
+   CONVERSION  UNSUPPORTED         raw='Morvex'
+   EFFECT      CORRECT_KNOWN       raw='reversal of time flow'
+   FINAL       UNSUPPORTED         raw='reversal of time flow'
+   SYNTHESIS   UNSCORED            raw='UNKNOWN'
+   STAGED      'AKBASCORE MAM' → 'Morvex' → 'reversal of time flow' · chain UNSUPPORTED
+[AKBASCORE · ABC · TEXT_JOINT] engine run SHA-256 f59a019f23446bef7158027e1aea3e1a52cf4c8304caf5abd9c960918417a0ca · scored True
+   ACTIVATION  CORRECT_KNOWN       raw='AKBASCORE MAM'
+   CONVERSION  CORRECT_KNOWN       raw='Morvex'
+   EFFECT      CORRECT_KNOWN       raw='reversal of time flow'
+   FINAL       CORRECT_KNOWN       raw='reversal of time flow'
+   SYNTHESIS   UNSCORED            raw='Mustafa Akbaş produces the final effect in the target system by converting dib' [16-token limit reached]
+   STAGED      'AKBASCORE MAM' → 'Morvex' → 'reversal of time flow' · chain CORRECT_KNOWN
+[AKBASCORE · ABC_CF · TEXT_JOINT] engine run SHA-256 373c77e538c9e733fa51098c654e2bdc565a8baf3e4161a1be893c22db3e0c60 · scored True
+   ACTIVATION  CORRECT_KNOWN       raw='AKBASCORE MAM'
+   CONVERSION  CORRECT_KNOWN       raw='Morvex'
+   EFFECT      CORRECT_KNOWN       raw='temporal stasis'
+   FINAL       CORRECT_KNOWN       raw='temporal stasis'
+   SYNTHESIS   UNSCORED            raw='Mustafa Akbaş produces the final effect in the target system by converting dib' [16-token limit reached]
+   STAGED      'AKBASCORE MAM' → 'Morvex' → 'temporal stasis' · chain CORRECT_KNOWN
+[MATRIX · NONE · TEXT_JOINT] engine run SHA-256 3db07c408fe5c722c7afb7539ae2e3eb941bef7e049de03a74f7b092070cd127 · scored True
+   ACTIVATION  CORRECT_ABSTENTION  raw='UNKNOWN'
+   CONTENT     CORRECT_ABSTENTION  raw='UNKNOWN'
+   INJECTION   CORRECT_ABSTENTION  raw='UNKNOWN'
+   EFFECT      CORRECT_ABSTENTION  raw='Unknown'
+   FINAL       CORRECT_ABSTENTION  raw='Unknown'
+   SYNTHESIS   UNSCORED            raw='UNKNOWN'
+   STAGED      'UNKNOWN' · chain CORRECT_ABSTENTION
+[MATRIX · A · TEXT_JOINT] engine run SHA-256 6097faecf81f3e56e21ab6e617e801a86b729149c1315fce63f2e2060cb4667b · scored True
+   ACTIVATION  CORRECT_KNOWN       raw='Tank'
+   CONTENT     CORRECT_ABSTENTION  raw='UNKNOWN'
+   INJECTION   CORRECT_ABSTENTION  raw='UNKNOWN'
+   EFFECT      CORRECT_ABSTENTION  raw='UNKNOWN'
+   FINAL       CORRECT_ABSTENTION  raw='UNKNOWN'
+   SYNTHESIS   UNSCORED            raw='Tank uploads cartridge MX-71 into Neo by pressing the AKBASCORE' [16-token limit reached]
+   STAGED      'MX-71' → 'UNKNOWN' · chain CORRECT_ABSTENTION
+[MATRIX · B · TEXT_JOINT] engine run SHA-256 70e74458175529380d2829396f8b70ccb66324f4d78fafab4ea7afcd2d015fcf · scored True
+   ACTIVATION  CORRECT_ABSTENTION  raw='UNKNOWN'
+   CONTENT     CORRECT_KNOWN       raw='Kung Fu knowledge'
+   INJECTION   CORRECT_KNOWN       raw='3'
+   EFFECT      UNSUPPORTED         raw='Kung Fu knowledge'
+   FINAL       UNSUPPORTED         raw='Kung Fu'
+   SYNTHESIS   UNSCORED            raw='UNKNOWN'
+   STAGED      'UNKNOWN' · chain CORRECT_ABSTENTION
+[MATRIX · C · TEXT_JOINT] engine run SHA-256 c66c752dd0a76bf03209898726d148d943e5e66b5e970737d97177fedc8d2181 · scored True
+   ACTIVATION  CORRECT_ABSTENTION  raw='UNKNOWN'
+   CONTENT     CORRECT_KNOWN       raw='Kung Fu knowledge'
+   INJECTION   CORRECT_ABSTENTION  raw='UNKNOWN'
+   EFFECT      CORRECT_KNOWN       raw='bullet-dodge'
+   FINAL       UNSUPPORTED         raw='bullet-dodge'
+   SYNTHESIS   UNSCORED            raw='UNKNOWN'
+   STAGED      'MX-71' → 'Kung Fu' → 'bullet-dodge' · chain UNSUPPORTED
+[MATRIX · AB · TEXT_JOINT] engine run SHA-256 4a10b0d86d72d021f81692f1330c9bdf87ac2a3cc258d8373f683908c46b787f · scored True
+   ACTIVATION  CORRECT_KNOWN       raw='Tank'
+   CONTENT     CORRECT_KNOWN       raw='Kung Fu knowledge'
+   INJECTION   CORRECT_KNOWN       raw='3'
+   EFFECT      CORRECT_ABSTENTION  raw='Unknown'
+   FINAL       UNSUPPORTED         raw='Kung Fu'
+   SYNTHESIS   UNSCORED            raw='Tank uploads cartridge MX-71 into Neo. The AKBASCORE M' [16-token limit reached]
+   STAGED      'MX-71' → 'Kung Fu knowledge' → 'Kung Fu knowledge' · chain UNSUPPORTED
+[MATRIX · AC · TEXT_JOINT] engine run SHA-256 864a5d990142d420b38147d80c6867dbf8d78e258695a2828098d07ffe6fb663 · scored True
+   ACTIVATION  CORRECT_KNOWN       raw='Tank'
+   CONTENT     CORRECT_KNOWN       raw='Kung Fu knowledge'
+   INJECTION   CORRECT_ABSTENTION  raw='UNKNOWN'
+   EFFECT      CORRECT_KNOWN       raw='bullet-dodge ability'
+   FINAL       CORRECT_KNOWN       raw='bullet-dodge'
+   SYNTHESIS   UNSCORED            raw='Tank uploads cartridge MX-71 into Neo. The injection is done using the' [16-token limit reached]
+   STAGED      'MX-71' → 'Kung Fu knowledge' → 'bullet-dodge ability' · chain CORRECT_KNOWN
+[MATRIX · BC · TEXT_JOINT] engine run SHA-256 d982ab5775a27703ed1f71095cde3c39516128a6a5e94e7caeb74e4ce50a80f2 · scored True
+   ACTIVATION  CORRECT_ABSTENTION  raw='UNKNOWN'
+   CONTENT     CORRECT_KNOWN       raw='Kung Fu knowledge'
+   INJECTION   CORRECT_KNOWN       raw='3'
+   EFFECT      CORRECT_KNOWN       raw='bullet-dodge ability'
+   FINAL       UNSUPPORTED         raw='bullet-dodge ability'
+   SYNTHESIS   UNSCORED            raw='UNKNOWN'
+   STAGED      'MX-71' → 'Kung Fu knowledge' → 'bullet-dodge ability' · chain UNSUPPORTED
+[MATRIX · ABC · TEXT_JOINT] engine run SHA-256 2bfd306bfb1f49749ac867c45c472d6c251d720b688c71aaef9e8e78e0a59dd4 · scored True
+   ACTIVATION  CORRECT_KNOWN       raw='Tank'
+   CONTENT     CORRECT_KNOWN       raw='Kung Fu knowledge'
+   INJECTION   CORRECT_KNOWN       raw='3'
+   EFFECT      CORRECT_KNOWN       raw='bullet-dodge ability'
+   FINAL       CORRECT_KNOWN       raw='bullet-dodge ability'
+   SYNTHESIS   UNSCORED            raw='Tank uploads cartridge MX-71 into Neo. The AKBASCORE M' [16-token limit reached]
+   STAGED      'MX-71' → 'Kung Fu knowledge' → 'bullet-dodge ability' · chain CORRECT_KNOWN
+[MATRIX · ABC_CF · TEXT_JOINT] engine run SHA-256 96d1bf35f664961b74a8b44dedb322fde99e8dc24982e339cf898d863a699ea8 · scored True
+   ACTIVATION  CORRECT_KNOWN       raw='Tank'
+   CONTENT     CORRECT_KNOWN       raw='Kung Fu knowledge'
+   INJECTION   CORRECT_KNOWN       raw='3'
+   EFFECT      CORRECT_KNOWN       raw='slow-motion perception'
+   FINAL       CORRECT_KNOWN       raw='slow-motion perception'
+   SYNTHESIS   UNSCORED            raw='Tank uploads cartridge MX-71 into Neo, which contains Kung Fu knowledge' [16-token limit reached]
+   STAGED      'MX-71' → 'Kung Fu knowledge' → 'slow-motion perception' · chain CORRECT_KNOWN
+==============================================================================================================
+Scope: fictional scenarios · predefined external three-step question sequence (not autonomous planning) · 16-token generation limit ·
+expected answers are audit metadata used only after generation · hashes show file identity, not correctness · TEST677 values are a sealed earlier record.
+==============================================================================================================
