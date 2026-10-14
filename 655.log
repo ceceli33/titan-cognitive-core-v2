@@ -1,0 +1,149 @@
+ ====================================================================================================================
+TEST655 — NATIVE CUDA DYNAMIC KV FABRIC / SOURCE-LOCKED QWEN
+====================================================================================================================
+PASS CUDA_AVAILABLE
+PASS NINJA
+PASS NVCC
+PASS CXX
+BUILDING NATIVE KV EXTENSION
+PASS NATIVE_BITWISE_29_7
+PASS NATIVE_BITWISE_43_31
+PASS NATIVE_BITWISE_1_1
+PASS TEST566_BLOB
+PASS TEST566_BOUNDARY
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+config.json: 100% 663/663 [00:00<00:00, 82.3kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 1.02MB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 44.1MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 77.3MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 135MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.44MB/s]Download complete:  13.1GB, 51.9MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  393MB/s  Fetching 4 files: 100% 4/4 [00:45<00:00,  8.78s/it]Loading weights: 100% 339/339 [00:03<00:00, 99.74it/s]generation_config.json: 100% 243/243 [00:00<00:00, 34.8kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+PASS FROZEN
+PASS ARCH
+PASS PANEL_LOCK
+PASS SENTINEL
+BASE GITHUB_VERIFIED BLOB b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71 GPU NVIDIA A100-SXM4-40GB
+PASS TEST650_PANEL_LOCK
+CASE 0 H3_RANK [3, 2, 1, 0] SCORES [0.70418, 0.73196, 0.73902, 0.74842]
+  A ORACLE_ALL STRICT 1 REGION 1 'Uymzbqqqy' 
+  A ORACLE_ONE STRICT 1 REGION 1 'Uymzbqqqy' 
+  A LATENT_ONE STRICT 0 REGION 0 'Ggawbalhf' 
+  A RANDOM_ONE STRICT 1 REGION 1 'Uymzbqqqy' 
+  A A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+  CF ORACLE_ALL STRICT 1 REGION 1 'Qtjgqsmrr' 
+  CF ORACLE_ONE STRICT 1 REGION 1 'Qtjgqsmrr' 
+  CF LATENT_ONE STRICT 0 REGION 0 'Ggawbalhf' 
+  CF RANDOM_ONE STRICT 1 REGION 1 'Qtjgqsmrr' 
+  CF A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 1 H3_RANK [3, 2, 1, 0] SCORES [0.74261, 0.75961, 0.76237, 0.77293]
+  A ORACLE_ALL STRICT 1 REGION 1 'Gfurgabvw' 
+  A ORACLE_ONE STRICT 1 REGION 1 'Gfurgabvw' 
+  A LATENT_ONE STRICT 0 REGION 0 'Tgnnjrdtc' 
+  A RANDOM_ONE STRICT 1 REGION 1 'Gfurgabvw' 
+  A A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+  CF ORACLE_ALL STRICT 1 REGION 1 'Hfgrumvwm' 
+  CF ORACLE_ONE STRICT 1 REGION 1 'Hfgrumvwm' 
+  CF LATENT_ONE STRICT 0 REGION 0 'Tgnnjrdtc' 
+  CF RANDOM_ONE STRICT 0 REGION 0 'Umjrcnqgd' 
+  CF A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 2 H3_RANK [0, 2, 3, 1] SCORES [0.72461, 0.69377, 0.71838, 0.69638]
+  A ORACLE_ALL STRICT 1 REGION 1 'Azgdnghvt' 
+  A ORACLE_ONE STRICT 1 REGION 1 'Azgdnghvt' 
+  A LATENT_ONE STRICT 1 REGION 1 'Azgdnghvt' 
+  A RANDOM_ONE STRICT 0 REGION 0 'Wrvhxsaje' 
+  A A_ONLY STRICT 0 REGION 0 'The information provided does not specify the region where the owner of artifact Buglppt' 
+  CF ORACLE_ALL STRICT 1 REGION 1 'Wrvhxsaje' 
+  CF ORACLE_ONE STRICT 1 REGION 1 'Wrvhxsaje' 
+  CF LATENT_ONE STRICT 0 REGION 0 'Azgdnghvt' 
+  CF RANDOM_ONE STRICT 1 REGION 1 'Wrvhxsaje' 
+  CF A_ONLY STRICT 0 REGION 0 'No information provided about the region where Snhvgqxqn lives.' 
+CASE 3 H3_RANK [3, 2, 0, 1] SCORES [0.74434, 0.70619, 0.75729, 0.75854]
+  A ORACLE_ALL STRICT 1 REGION 1 'Zkaxlvnjp' 
+  A ORACLE_ONE STRICT 1 REGION 1 'Zkaxlvnjp' 
+  A LATENT_ONE STRICT 0 REGION 0 'Rrxwykdlj' 
+  A RANDOM_ONE STRICT 0 REGION 0 'Degrqvxek' 
+  A A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+  CF ORACLE_ALL STRICT 1 REGION 1 'Gsltsmzga' 
+  CF ORACLE_ONE STRICT 1 REGION 1 'Gsltsmzga' 
+  CF LATENT_ONE STRICT 0 REGION 0 'Rrxwykdlj' 
+  CF RANDOM_ONE STRICT 0 REGION 0 'Zkaxlvnjp' 
+  CF A_ONLY STRICT 0 REGION 0 'No information provided about the region where Utayakusl lives.' 
+CASE 4 H3_RANK [1, 3, 2, 0] SCORES [0.71404, 0.73038, 0.71717, 0.72942]
+  A ORACLE_ALL STRICT 1 REGION 1 'Urslysjts' 
+  A ORACLE_ONE STRICT 1 REGION 1 'Urslysjts' 
+  A LATENT_ONE STRICT 0 REGION 0 'Ezxydplvw' 
+  A RANDOM_ONE STRICT 0 REGION 0 'Srmhyukbw' 
+  A A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+  CF ORACLE_ALL STRICT 1 REGION 1 'Ezxydplvw' 
+  CF ORACLE_ONE STRICT 1 REGION 1 'Ezxydplvw' 
+  CF LATENT_ONE STRICT 1 REGION 1 'Ezxydplvw' 
+  CF RANDOM_ONE STRICT 0 REGION 0 'Urslysjts' 
+  CF A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 5 H3_RANK [1, 3, 2, 0] SCORES [0.71258, 0.81298, 0.7597, 0.76809]
+  A ORACLE_ALL STRICT 1 REGION 1 'Hmdkhtdxf' 
+  A ORACLE_ONE STRICT 1 REGION 1 'Hmdkhtdxf' 
+  A LATENT_ONE STRICT 0 REGION 0 'Yhxrpmckz' 
+  A RANDOM_ONE STRICT 0 REGION 0 'The information provided does not specify the region where the owner of artifact Gvvz' 
+  A A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+  CF ORACLE_ALL STRICT 1 REGION 1 'Yhxrpmckz' 
+  CF ORACLE_ONE STRICT 1 REGION 1 'Yhxrpmckz' 
+  CF LATENT_ONE STRICT 1 REGION 1 'Yhxrpmckz' 
+  CF RANDOM_ONE STRICT 0 REGION 0 'Jkksbalmg' 
+  CF A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 6 H3_RANK [1, 3, 0, 2] SCORES [0.73941, 0.76542, 0.71695, 0.74771]
+  A ORACLE_ALL STRICT 1 REGION 1 'Fjlthlfls' 
+  A ORACLE_ONE STRICT 1 REGION 1 'Fjlthlfls' 
+  A LATENT_ONE STRICT 0 REGION 0 'Dnugltlzs' 
+  A RANDOM_ONE STRICT 0 REGION 0 'Cbpgruare' 
+  A A_ONLY STRICT 0 REGION 0 'Kwndfketj' 
+  CF ORACLE_ALL STRICT 1 REGION 1 'Dnugltlzs' 
+  CF ORACLE_ONE STRICT 1 REGION 1 'Dnugltlzs' 
+  CF LATENT_ONE STRICT 1 REGION 1 'Dnugltlzs' 
+  CF RANDOM_ONE STRICT 1 REGION 1 'Dnugltlzs' 
+  CF A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+CASE 7 H3_RANK [1, 0, 3, 2] SCORES [0.7322, 0.78783, 0.71779, 0.73081]
+  A ORACLE_ALL STRICT 1 REGION 1 'Ypljllltu' 
+  A ORACLE_ONE STRICT 1 REGION 1 'Ypljllltu' 
+  A LATENT_ONE STRICT 0 REGION 0 'Ggqbtdege' 
+  A RANDOM_ONE STRICT 1 REGION 1 'Ypljllltu' 
+  A A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+  CF ORACLE_ALL STRICT 1 REGION 1 'Ggqbtdege' 
+  CF ORACLE_ONE STRICT 1 REGION 1 'Ggqbtdege' 
+  CF LATENT_ONE STRICT 1 REGION 1 'Ggqbtdege' 
+  CF RANDOM_ONE STRICT 0 REGION 0 'Nsbtlfsuc' 
+  CF A_ONLY STRICT 0 REGION 0 'No information provided about the region where the owner lives.' 
+====================================================================================================================
+TEST655_FINAL
+{
+  "ORACLE_ALL": {
+    "strict": 16,
+    "region": 16,
+    "n": 16
+  },
+  "ORACLE_ONE": {
+    "strict": 16,
+    "region": 16,
+    "n": 16
+  },
+  "LATENT_ONE": {
+    "strict": 5,
+    "region": 5,
+    "n": 16
+  },
+  "RANDOM_ONE": {
+    "strict": 6,
+    "region": 6,
+    "n": 16
+  },
+  "A_ONLY": {
+    "strict": 0,
+    "region": 0,
+    "n": 16
+  }
+}
+NUMERIC_ROUTING_ACCURACY A 1 / 8 CF 4 / 8
+WEIGHTS_FROZEN True SENTINEL True
+RESULT /content/AKBASCORE_TEST655/TEST655_results.json SHA256 575d4db4748b90312997b189d867fc20b6ef0c2ca5979ed26c83fb45b66a15aa
+STATUS EXPERIMENT_COMPLETE
+INTERPRETATION: Oracle success with latent failure isolates selection under this readout; it does NOT prove a fundamental Transformer limit.
