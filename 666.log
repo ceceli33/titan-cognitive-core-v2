@@ -1,0 +1,276 @@
+ ========================================================================================================================
+TEST666 — EVIDENCE–DECISION AUDIT / EPISTEMIC BRAKE FOUNDATION
+SOURCE: https://raw.githubusercontent.com/ceceli33/titan-cognitive-core-v2/main/664.py
+POLICY: ORIGINAL TEST664 ENGINE AND PANEL / READ-ONLY EXPERIMENTAL EXTENSION
+========================================================================================================================
+SOURCE_SHA256: a6dcd8142446ab82fe7996bd512d59fc34525e6a092a68f069dad07a2a286eb5
+PASS TEST664_SOURCE_LOCK
+PASS EXPERIMENT_BOUNDARY
+PASS PANEL_SOURCE_START
+PASS PANEL_SOURCE_END
+====================================================================================================================
+TEST664 — REFLECTIVE RETRY / FEEDBACK CAUSAL AUDIT
+====================================================================================================================
+PASS CUDA_AVAILABLE
+PASS NINJA
+PASS NVCC
+PASS CXX
+BUILDING NATIVE KV EXTENSION
+PASS NATIVE_BITWISE_29_7
+PASS NATIVE_BITWISE_43_31
+PASS NATIVE_BITWISE_1_1
+PASS TEST566_BLOB
+PASS TEST566_BOUNDARY
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+config.json: 100% 663/663 [00:00<00:00, 80.4kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 952kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 84.5MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 76.7MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 127MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 2.93MB/s]Download complete:  13.1GB,  178MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  458MB/s  Fetching 4 files: 100% 4/4 [00:48<00:00, 14.75s/it]Loading weights: 100% 339/339 [00:03<00:00, 98.65it/s]generation_config.json: 100% 243/243 [00:00<00:00, 32.8kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+PASS FROZEN
+PASS ARCH
+PASS PANEL_LOCK
+PASS SENTINEL
+BASE GITHUB_VERIFIED BLOB b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71 GPU NVIDIA A100-SXM4-40GB
+PASS TEST650_PANEL_LOCK
+TEST664_PANEL_SHA e0686148d6fd88050a097ee5441ce99a4bb068a463408742bc476c83aaba6c05 CASES 12
+PASS TEST664_PANEL_LOCK
+PASS FROZEN_WEIGHTS
+PASS BASELINE_SENTINEL
+PASS PANEL_SIZE
+========================================================================================================================
+TEST666 — EXPERIMENT
+CASES: 12
+CONDITIONS: base / swap / missing
+REPRESENTATIONS: TEXT_JOINT / DC_CUT3
+POLICY: OBSERVE, DO NOT CORRECT
+========================================================================================================================
+CASE 0 COND base REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 0 COND swap REP TEXT_JOINT FIRST 0 ACCESS 0 DIVERGENCE 3 NEUTRAL 0 CRITIC 0 CHANGED 0
+CASE 0 COND missing REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 0 COND base REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 0 COND swap REP DC_CUT3 FIRST 0 ACCESS 0 DIVERGENCE 3 NEUTRAL 0 CRITIC 0 CHANGED 0
+CASE 0 COND missing REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 1 COND base REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 0 CHANGED 1
+CASE 1 COND swap REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 1 COND missing REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 1 COND base REP DC_CUT3 FIRST 0 ACCESS 0 DIVERGENCE 2 NEUTRAL 0 CRITIC 0 CHANGED 1
+CASE 1 COND swap REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 1 COND missing REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 2 COND base REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 0 CRITIC 1 CHANGED 0
+CASE 2 COND swap REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 2 COND missing REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 2 COND base REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 2 COND swap REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 2 COND missing REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 3 COND base REP TEXT_JOINT FIRST 1 ACCESS 0 DIVERGENCE 1 NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 3 COND swap REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 3 COND missing REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 3 COND base REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 3 COND swap REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 3 COND missing REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 4 COND base REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 4 COND swap REP TEXT_JOINT FIRST 1 ACCESS 0 DIVERGENCE 1 NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 4 COND missing REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 4 COND base REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 4 COND swap REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 4 COND missing REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 5 COND base REP TEXT_JOINT FIRST 0 ACCESS 0 DIVERGENCE 2 NEUTRAL 0 CRITIC 1 CHANGED 1
+CASE 5 COND swap REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 5 COND missing REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 5 COND base REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 5 COND swap REP DC_CUT3 FIRST 0 ACCESS 0 DIVERGENCE 3 NEUTRAL 1 CRITIC 1 CHANGED 1
+CASE 5 COND missing REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 6 COND base REP TEXT_JOINT FIRST 0 ACCESS 0 DIVERGENCE 1 NEUTRAL 0 CRITIC 0 CHANGED 0
+CASE 6 COND swap REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 6 COND missing REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 6 COND base REP DC_CUT3 FIRST 0 ACCESS 0 DIVERGENCE 0 NEUTRAL 0 CRITIC 0 CHANGED 0
+CASE 6 COND swap REP DC_CUT3 FIRST 0 ACCESS 0 DIVERGENCE 0 NEUTRAL 0 CRITIC 0 CHANGED 0
+CASE 6 COND missing REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 7 COND base REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 7 COND swap REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 7 COND missing REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 7 COND base REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 7 COND swap REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 0 CRITIC 0 CHANGED 1
+CASE 7 COND missing REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 8 COND base REP TEXT_JOINT FIRST 0 ACCESS 0 DIVERGENCE 1 NEUTRAL 0 CRITIC 0 CHANGED 0
+CASE 8 COND swap REP TEXT_JOINT FIRST 0 ACCESS 0 DIVERGENCE 1 NEUTRAL 0 CRITIC 0 CHANGED 0
+CASE 8 COND missing REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 8 COND base REP DC_CUT3 FIRST 0 ACCESS 0 DIVERGENCE 2 NEUTRAL 0 CRITIC 0 CHANGED 0
+CASE 8 COND swap REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 8 COND missing REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 9 COND base REP TEXT_JOINT FIRST 1 ACCESS 0 DIVERGENCE 1 NEUTRAL 0 CRITIC 1 CHANGED 0
+CASE 9 COND swap REP TEXT_JOINT FIRST 1 ACCESS 0 DIVERGENCE 1 NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 9 COND missing REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 9 COND base REP DC_CUT3 FIRST 0 ACCESS 0 DIVERGENCE 0 NEUTRAL 0 CRITIC 0 CHANGED 1
+CASE 9 COND swap REP DC_CUT3 FIRST 1 ACCESS 0 DIVERGENCE 1 NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 9 COND missing REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 10 COND base REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 10 COND swap REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 0 CHANGED 1
+CASE 10 COND missing REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 10 COND base REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 10 COND swap REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 0 CHANGED 1
+CASE 10 COND missing REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 11 COND base REP TEXT_JOINT FIRST 0 ACCESS 0 DIVERGENCE 3 NEUTRAL 0 CRITIC 0 CHANGED 0
+CASE 11 COND swap REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 11 COND missing REP TEXT_JOINT FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 11 COND base REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 11 COND swap REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+CASE 11 COND missing REP DC_CUT3 FIRST 1 ACCESS 1 DIVERGENCE None NEUTRAL 1 CRITIC 1 CHANGED 0
+========================================================================================================================
+TEST666 — ANALYSIS
+========================================================================================================================
+========================================================================================================================
+TEST666_FINAL
+========================================================================================================================
+SUMMARY {
+  "TEXT_JOINT_base": {
+    "n": 12,
+    "first_correct": 8,
+    "evidence_access_all": 6,
+    "accessible_but_wrong": 0,
+    "neutral_correct": 6,
+    "critic_correct": 8,
+    "critic_changed": 2,
+    "correct_preserved": 7,
+    "correct_damaged": 1,
+    "wrong_repaired": 1
+  },
+  "TEXT_JOINT_swap": {
+    "n": 12,
+    "first_correct": 10,
+    "evidence_access_all": 8,
+    "accessible_but_wrong": 0,
+    "neutral_correct": 10,
+    "critic_correct": 9,
+    "critic_changed": 1,
+    "correct_preserved": 9,
+    "correct_damaged": 1,
+    "wrong_repaired": 0
+  },
+  "TEXT_JOINT_missing": {
+    "n": 12,
+    "first_correct": 12,
+    "evidence_access_all": 12,
+    "accessible_but_wrong": 0,
+    "neutral_correct": 12,
+    "critic_correct": 12,
+    "critic_changed": 0,
+    "correct_preserved": 12,
+    "correct_damaged": 0,
+    "wrong_repaired": 0
+  },
+  "DC_CUT3_base": {
+    "n": 12,
+    "first_correct": 8,
+    "evidence_access_all": 8,
+    "accessible_but_wrong": 0,
+    "neutral_correct": 8,
+    "critic_correct": 8,
+    "critic_changed": 2,
+    "correct_preserved": 8,
+    "correct_damaged": 0,
+    "wrong_repaired": 0
+  },
+  "DC_CUT3_swap": {
+    "n": 12,
+    "first_correct": 9,
+    "evidence_access_all": 8,
+    "accessible_but_wrong": 0,
+    "neutral_correct": 9,
+    "critic_correct": 8,
+    "critic_changed": 3,
+    "correct_preserved": 7,
+    "correct_damaged": 2,
+    "wrong_repaired": 1
+  },
+  "DC_CUT3_missing": {
+    "n": 12,
+    "first_correct": 12,
+    "evidence_access_all": 12,
+    "accessible_but_wrong": 0,
+    "neutral_correct": 12,
+    "critic_correct": 12,
+    "critic_changed": 0,
+    "correct_preserved": 12,
+    "correct_damaged": 0,
+    "wrong_repaired": 0
+  }
+}
+ERROR_ORIGIN {
+  "TEXT_JOINT_base": {
+    "None": 6,
+    "1": 4,
+    "2": 1,
+    "3": 1
+  },
+  "TEXT_JOINT_swap": {
+    "3": 1,
+    "None": 8,
+    "1": 3
+  },
+  "TEXT_JOINT_missing": {
+    "None": 12
+  },
+  "DC_CUT3_base": {
+    "None": 8,
+    "2": 2,
+    "0": 2
+  },
+  "DC_CUT3_swap": {
+    "3": 2,
+    "None": 8,
+    "0": 1,
+    "1": 1
+  },
+  "DC_CUT3_missing": {
+    "None": 12
+  }
+}
+DECISION_STABILITY {
+  "TEXT_JOINT_base": {
+    "neutral_answer_changes": 2,
+    "unsupported_critic_answer_changes": 2
+  },
+  "TEXT_JOINT_swap": {
+    "neutral_answer_changes": 1,
+    "unsupported_critic_answer_changes": 1
+  },
+  "TEXT_JOINT_missing": {
+    "neutral_answer_changes": 0,
+    "unsupported_critic_answer_changes": 0
+  },
+  "DC_CUT3_base": {
+    "neutral_answer_changes": 1,
+    "unsupported_critic_answer_changes": 2
+  },
+  "DC_CUT3_swap": {
+    "neutral_answer_changes": 2,
+    "unsupported_critic_answer_changes": 3
+  },
+  "DC_CUT3_missing": {
+    "neutral_answer_changes": 0,
+    "unsupported_critic_answer_changes": 0
+  }
+}
+CAUSAL_SWITCH {
+  "TEXT_JOINT": {
+    "n": 12,
+    "correct_causal_switches": 7
+  },
+  "DC_CUT3": {
+    "n": 12,
+    "correct_causal_switches": 6
+  }
+}
+EXPECTED_ROWS 72
+ACTUAL_ROWS 72
+WEIGHTS_FROZEN True
+SENTINEL_UNCHANGED True
+ERRORS 0
+RESULT /content/AKBASCORE_TEST666/TEST666_results.json
+SHA256 e07978f9b090a20e0e1d231506299c99583d2564495543b0d58033fe8368ed67
+STATUS EXPERIMENT_COMPLETE
+PASS TEST666_COMPLETED
