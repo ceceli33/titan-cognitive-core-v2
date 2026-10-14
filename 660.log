@@ -1,0 +1,135 @@
+ ====================================================================================================================
+TEST660 — CAUSAL MULTI-CHAIN SYNTHESIS / SOURCE-LOCKED QWEN
+====================================================================================================================
+PASS CUDA_AVAILABLE
+PASS NINJA
+PASS NVCC
+PASS CXX
+BUILDING NATIVE KV EXTENSION
+PASS NATIVE_BITWISE_29_7
+PASS NATIVE_BITWISE_43_31
+PASS NATIVE_BITWISE_1_1
+PASS TEST566_BLOB
+PASS TEST566_BOUNDARY
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 663/663 [00:00<00:00, 87.7kB/s]tokenizer_config.json: 100% 7.30k/7.30k [00:00<00:00, 948kB/s]vocab.json: 100% 2.78M/2.78M [00:00<00:00, 47.9MB/s]merges.txt: 100% 1.67M/1.67M [00:00<00:00, 72.4MB/s]tokenizer.json: 100% 7.03M/7.03M [00:00<00:00, 131MB/s]model.safetensors.index.json: 100% 27.8k/27.8k [00:00<00:00, 3.19MB/s]Download complete:  13.1GB,  267MB/s  Reconstruction complete: 100% 15.2GB / 15.2GB,  473MB/s  Fetching 4 files: 100% 4/4 [00:42<00:00, 42.65s/it]Loading weights: 100% 339/339 [00:03<00:00, 101.77it/s]generation_config.json: 100% 243/243 [00:00<00:00, 33.2kB/s]GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+PASS FROZEN
+PASS ARCH
+PASS PANEL_LOCK
+PASS SENTINEL
+BASE GITHUB_VERIFIED BLOB b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71 GPU NVIDIA A100-SXM4-40GB
+PASS TEST650_PANEL_LOCK
+MULTICHAIN_PANEL_SHA 1561438e3c5771a07e9c8a362fddd37591421bc61be38b9f439e2993e9f34eb3
+CASE 0 ORACLE_ALL STRICT 0 REGION 0 UNKNOWN 0 ANSWER 'Ymxbwshzs' ERROR 
+CASE 0 REVERSE_ALL STRICT 0 REGION 0 UNKNOWN 1 ANSWER 'UNKNOWN' ERROR 
+CASE 0 TARGET_ONLY STRICT 1 REGION 1 UNKNOWN 0 ANSWER 'Jcdqjetzn' ERROR 
+CASE 0 CF_TARGET_REGION STRICT 0 REGION 0 UNKNOWN 0 ANSWER 'Ymxbwshzs' ERROR 
+CASE 0 CF_CROSS_REGION STRICT 1 REGION 1 UNKNOWN 0 ANSWER 'Dzvrbulnj' ERROR 
+CASE 0 MISSING_0 STRICT 0 REGION 0 UNKNOWN 1 ANSWER 'UNKNOWN' ERROR 
+CASE 0 MISSING_1 STRICT 0 REGION 0 UNKNOWN 1 ANSWER 'UNKNOWN' ERROR 
+CASE 0 MISSING_2 STRICT 0 REGION 0 UNKNOWN 0 ANSWER 'Ymxbwshzs' ERROR 
+CASE 0 MISSING_3 STRICT 0 REGION 0 UNKNOWN 0 ANSWER 'Dzvrbulnj' ERROR 
+CASE 0 DISTRACTORS_ONLY STRICT 0 REGION 0 UNKNOWN 1 ANSWER 'UNKNOWN' ERROR 
+CASE 1 ORACLE_ALL STRICT 1 REGION 1 UNKNOWN 0 ANSWER 'Rjhnkvlwj' ERROR 
+CASE 1 REVERSE_ALL STRICT 1 REGION 1 UNKNOWN 0 ANSWER 'Rjhnkvlwj' ERROR 
+CASE 1 TARGET_ONLY STRICT 1 REGION 1 UNKNOWN 0 ANSWER 'Rjhnkvlwj' ERROR 
+CASE 1 CF_TARGET_REGION STRICT 1 REGION 1 UNKNOWN 0 ANSWER 'Qacsttlvy' ERROR 
+CASE 1 CF_CROSS_REGION STRICT 1 REGION 1 UNKNOWN 0 ANSWER 'Bzwzjfltr' ERROR 
+CASE 1 MISSING_0 STRICT 0 REGION 0 UNKNOWN 1 ANSWER 'UNKNOWN' ERROR 
+CASE 1 MISSING_1 STRICT 1 REGION 1 UNKNOWN 0 ANSWER 'Rjhnkvlwj' ERROR 
+CASE 1 MISSING_2 STRICT 1 REGION 1 UNKNOWN 0 ANSWER 'Rjhnkvlwj' ERROR 
+CASE 1 MISSING_3 STRICT 0 REGION 0 UNKNOWN 0 ANSWER 'Vzfztuusb' ERROR 
+CASE 1 DISTRACTORS_ONLY STRICT 0 REGION 0 UNKNOWN 1 ANSWER 'UNKNOWN' ERROR 
+CASE 2 ORACLE_ALL STRICT 1 REGION 1 UNKNOWN 0 ANSWER 'Rwmmqtsrd' ERROR 
+CASE 2 REVERSE_ALL STRICT 1 REGION 1 UNKNOWN 0 ANSWER 'Rwmmqtsrd' ERROR 
+CASE 2 TARGET_ONLY STRICT 1 REGION 1 UNKNOWN 0 ANSWER 'Rwmmqtsrd' ERROR 
+CASE 2 CF_TARGET_REGION STRICT 0 REGION 0 UNKNOWN 1 ANSWER 'UNKNOWN' ERROR 
+CASE 2 CF_CROSS_REGION STRICT 0 REGION 0 UNKNOWN 1 ANSWER 'UNKNOWN' ERROR 
+CASE 2 MISSING_0 STRICT 0 REGION 0 UNKNOWN 1 ANSWER 'UNKNOWN' ERROR 
+CASE 2 MISSING_1 STRICT 0 REGION 0 UNKNOWN 1 ANSWER 'UNKNOWN' ERROR 
+CASE 2 MISSING_2 STRICT 0 REGION 0 UNKNOWN 0 ANSWER 'Llfwpfycn' ERROR 
+CASE 2 MISSING_3 STRICT 0 REGION 0 UNKNOWN 0 ANSWER 'Llfwpfycn' ERROR 
+CASE 2 DISTRACTORS_ONLY STRICT 0 REGION 0 UNKNOWN 1 ANSWER 'UNKNOWN' ERROR 
+CASE 3 ORACLE_ALL STRICT 0 REGION 0 UNKNOWN 1 ANSWER 'UNKNOWN' ERROR 
+CASE 3 REVERSE_ALL STRICT 0 REGION 0 UNKNOWN 1 ANSWER 'UNKNOWN' ERROR 
+CASE 3 TARGET_ONLY STRICT 1 REGION 1 UNKNOWN 0 ANSWER 'Jlaujwwqk' ERROR 
+CASE 3 CF_TARGET_REGION STRICT 0 REGION 0 UNKNOWN 0 ANSWER 'Djmhrxhym' ERROR 
+CASE 3 CF_CROSS_REGION STRICT 0 REGION 0 UNKNOWN 1 ANSWER 'UNKNOWN' ERROR 
+CASE 3 MISSING_0 STRICT 0 REGION 0 UNKNOWN 1 ANSWER 'UNKNOWN' ERROR 
+CASE 3 MISSING_1 STRICT 0 REGION 0 UNKNOWN 1 ANSWER 'UNKNOWN' ERROR 
+CASE 3 MISSING_2 STRICT 0 REGION 0 UNKNOWN 1 ANSWER 'UNKNOWN' ERROR 
+CASE 3 MISSING_3 STRICT 0 REGION 0 UNKNOWN 0 ANSWER 'Djmhrxhym' ERROR 
+CASE 3 DISTRACTORS_ONLY STRICT 0 REGION 0 UNKNOWN 1 ANSWER 'UNKNOWN' ERROR 
+====================================================================================================================
+TEST660_FINAL
+{
+  "ORACLE_ALL": {
+    "n": 4,
+    "strict": 2,
+    "region": 2,
+    "unknown": 1
+  },
+  "REVERSE_ALL": {
+    "n": 4,
+    "strict": 2,
+    "region": 2,
+    "unknown": 2
+  },
+  "TARGET_ONLY": {
+    "n": 4,
+    "strict": 4,
+    "region": 4,
+    "unknown": 0
+  },
+  "CF_TARGET_REGION": {
+    "n": 4,
+    "strict": 1,
+    "region": 1,
+    "unknown": 1
+  },
+  "CF_CROSS_REGION": {
+    "n": 4,
+    "strict": 2,
+    "region": 2,
+    "unknown": 2
+  },
+  "MISSING_0": {
+    "n": 4,
+    "strict": 0,
+    "region": 0,
+    "unknown": 4
+  },
+  "MISSING_1": {
+    "n": 4,
+    "strict": 1,
+    "region": 1,
+    "unknown": 3
+  },
+  "MISSING_2": {
+    "n": 4,
+    "strict": 1,
+    "region": 1,
+    "unknown": 1
+  },
+  "MISSING_3": {
+    "n": 4,
+    "strict": 0,
+    "region": 0,
+    "unknown": 0
+  },
+  "DISTRACTORS_ONLY": {
+    "n": 4,
+    "strict": 0,
+    "region": 0,
+    "unknown": 4
+  }
+}
+POSITIVE 11 / 20 MISSING_EDGE_LEAKS 2 / 20 UNKNOWN_CORRECT 12 / 20 WEIGHTS_FROZEN True SENTINEL True
+RESULT /content/AKBASCORE_TEST660/TEST660_results.json SHA256 0c1a0ba13b2739d951e9228afc84c609ebaa41a094410a27c0f916882d1b6bea
+STATUS EXPERIMENT_COMPLETE
