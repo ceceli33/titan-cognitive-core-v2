@@ -1,0 +1,273 @@
+ 
+========================================================================================================================
+TEST676 — MATRIX / CAUSAL MEMORY DEPENDENCE & SYNTHESIS AUDIT
+FROZEN QWEN / LOCKED TEST664 ENGINE / NATIVE CUDA CUT3
+========================================================================================================================
+PASS TEST664_SOURCE_LOCK
+PASS SOURCE_BOUNDARIES
+====================================================================================================================
+TEST664 — REFLECTIVE RETRY / FEEDBACK CAUSAL AUDIT
+====================================================================================================================
+PASS CUDA_AVAILABLE
+PASS NINJA
+PASS NVCC
+PASS CXX
+BUILDING NATIVE KV EXTENSION
+PASS NATIVE_BITWISE_29_7
+PASS NATIVE_BITWISE_43_31
+PASS NATIVE_BITWISE_1_1
+PASS TEST566_BLOB
+PASS TEST566_BOUNDARY
+====================================================================================================================================
+TEST566 — QWEN MAM · CAUSAL CONSOLIDATION CONTROLS
+====================================================================================================================================
+
+config.json: 100%
+
+ 663/663 [00:00<00:00, 78.0kB/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+tokenizer_config.json: 100%
+
+ 7.30k/7.30k [00:00<00:00, 953kB/s]
+vocab.json: 100%
+
+ 2.78M/2.78M [00:00<00:00, 48.8MB/s]
+merges.txt: 100%
+
+ 1.67M/1.67M [00:00<00:00, 72.8MB/s]
+tokenizer.json: 100%
+
+ 7.03M/7.03M [00:00<00:00, 124MB/s]
+model.safetensors.index.json: 100%
+
+ 27.8k/27.8k [00:00<00:00, 3.61MB/s]
+Download complete: 
+
+ 13.1GB, 42.5MB/s  
+Reconstruction complete: 100%
+
+ 15.2GB / 15.2GB,  491MB/s  
+Fetching 4 files: 100%
+
+ 4/4 [00:43<00:00, 43.00s/it]
+Loading weights: 100%
+
+ 339/339 [00:03<00:00, 99.15it/s]
+generation_config.json: 100%
+
+ 243/243 [00:00<00:00, 32.2kB/s]
+GPU: NVIDIA A100-SXM4-40GB TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+ARCH: 28 3584 28 4 128 CUTS: [1, 2, 3, 6] ARMS: ['JOINT', 'INDEP', 'DC', 'NOCROSS']
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45 PASS PREFIX: 29
+PASS FROZEN
+PASS ARCH
+PASS PANEL_LOCK
+PASS SENTINEL
+BASE GITHUB_VERIFIED BLOB b117c4b37dc50e6e52cc0b1635b0f6eb04dfbb71 GPU NVIDIA A100-SXM4-40GB
+PASS TEST650_PANEL_LOCK
+TEST664_PANEL_SHA e0686148d6fd88050a097ee5441ce99a4bb068a463408742bc476c83aaba6c05 CASES 12
+PASS ORIGINAL_PANEL_LOCK
+PASS MODEL_FROZEN
+PASS BASELINE_SENTINEL
+PASS MODEL_EVAL
+========================================================================================================================
+PHASE 1 — LOCKED MATRIX CARTRIDGES
+========================================================================================================================
+PASS ATOMIC_GOLD_ALIGNMENT
+PASS CARTRIDGE_COUNT
+PASS CONDITION_COUNT
+MANIFEST_SHA256 0dd86e37c9ec4d189b9ba3f7d1a52c827b65f0f44d8f4a7bb68f1e6f04848bfb
+CONDITIONS 9 REPRESENTATIONS 2
+ATOMIC 7 CHAIN 3 SYNTHESIS 2
+========================================================================================================================
+PHASE 2 — FROZEN MEMORY / ATOMIC + CAUSAL + SYNTHESIS
+========================================================================================================================
+PROGRESS TEXT_JOINT NONE ROWS 12 ERRORS 0
+PROGRESS TEXT_JOINT A ROWS 24 ERRORS 0
+PROGRESS TEXT_JOINT B ROWS 36 ERRORS 0
+PROGRESS TEXT_JOINT C ROWS 48 ERRORS 0
+PROGRESS TEXT_JOINT AB ROWS 60 ERRORS 0
+PROGRESS TEXT_JOINT AC ROWS 72 ERRORS 0
+PROGRESS TEXT_JOINT BC ROWS 84 ERRORS 0
+PROGRESS TEXT_JOINT ABC ROWS 96 ERRORS 0
+PROGRESS TEXT_JOINT ABC_COUNTERFACTUAL ROWS 108 ERRORS 0
+PROGRESS DC_CUT3 NONE ROWS 120 ERRORS 0
+PROGRESS DC_CUT3 A ROWS 132 ERRORS 0
+PROGRESS DC_CUT3 B ROWS 144 ERRORS 0
+PROGRESS DC_CUT3 C ROWS 156 ERRORS 0
+PROGRESS DC_CUT3 AB ROWS 168 ERRORS 0
+PROGRESS DC_CUT3 AC ROWS 180 ERRORS 0
+PROGRESS DC_CUT3 BC ROWS 192 ERRORS 0
+PROGRESS DC_CUT3 ABC ROWS 204 ERRORS 0
+PROGRESS DC_CUT3 ABC_COUNTERFACTUAL ROWS 216 ERRORS 0
+========================================================================================================================
+PHASE 3 — INDEPENDENT SCORING / CAUSAL DEPENDENCE
+========================================================================================================================
+PASS ROW_COUNT
+PASS ZERO_ERRORS
+PASS UNIQUE_ROWS
+PASS FINAL_FROZEN
+PASS FINAL_SENTINEL
+PASS FINAL_PANEL_LOCK
+PASS MANIFEST_UNCHANGED
+========================================================================================================================
+TEST676_FINAL — MATRIX CAUSAL MEMORY AUDIT
+========================================================================================================================
+------------------------------------------------------------------------------------------------------------------------
+REPRESENTATION TEXT_JOINT
+CONDITION               KNOWN       ABSTAIN     ATOMIC    CHAIN     UNSUP   WRONG  
+NONE                    0/0         10/10        7/7       3/3       0       0      
+A                       2/2         8/8         7/7       3/3       0       0      
+B                       2/2         4/8         6/7       0/3       4       0      
+C                       2/2         3/8         5/7       0/3       5       0      
+AB                      5/6         2/4         6/7       1/3       2       1      
+AC                      4/4         1/6         5/7       0/3       5       0      
+BC                      5/5         2/5         6/7       1/3       3       0      
+ABC                     7/10        0/0         6/7       1/3       0       3      
+ABC_COUNTERFACTUAL      6/9         1/1         6/7       1/3       0       3      
+------------------------------------------------------------------------------------------------------------------------
+REPRESENTATION DC_CUT3
+CONDITION               KNOWN       ABSTAIN     ATOMIC    CHAIN     UNSUP   WRONG  
+NONE                    0/0         10/10        7/7       3/3       0       0      
+A                       2/2         8/8         7/7       3/3       0       0      
+B                       2/2         4/8         6/7       0/3       4       0      
+C                       1/2         3/8         4/7       0/3       5       1      
+AB                      4/6         2/4         6/7       0/3       2       2      
+AC                      3/4         1/6         4/7       0/3       5       1      
+BC                      5/5         2/5         6/7       1/3       3       0      
+ABC                     7/10        0/0         6/7       1/3       0       3      
+ABC_COUNTERFACTUAL      7/9         1/1         6/7       2/3       0       2      
+========================================================================================================================
+CAUSAL CHAIN — EXACT RAW ANSWERS
+========================================================================================================================
+
+ TEXT_JOINT / NONE
+UPLOAD_TO_KNOWLEDGE EXPECTED: None PRED: UNKNOWN STATUS: CORRECT_ABSTENTION
+KNOWLEDGE_TO_ABILITY EXPECTED: None PRED: UNKNOWN STATUS: CORRECT_ABSTENTION
+UPLOAD_TO_ABILITY EXPECTED: None PRED: Unknown STATUS: CORRECT_ABSTENTION
+
+ TEXT_JOINT / ABC
+UPLOAD_TO_KNOWLEDGE EXPECTED: Kung Fu PRED: Kung Fu knowledge STATUS: WRONG_KNOWN
+KNOWLEDGE_TO_ABILITY EXPECTED: bullet-dodge PRED: bullet-dodge STATUS: CORRECT_KNOWN
+UPLOAD_TO_ABILITY EXPECTED: bullet-dodge PRED: bullet-dodge ability STATUS: WRONG_KNOWN
+
+ TEXT_JOINT / AB
+UPLOAD_TO_KNOWLEDGE EXPECTED: Kung Fu PRED: Kung Fu STATUS: CORRECT_KNOWN
+KNOWLEDGE_TO_ABILITY EXPECTED: None PRED: Kung Fu STATUS: UNSUPPORTED
+UPLOAD_TO_ABILITY EXPECTED: None PRED: Kung Fu STATUS: UNSUPPORTED
+
+ TEXT_JOINT / AC
+UPLOAD_TO_KNOWLEDGE EXPECTED: None PRED: Kung Fu knowledge STATUS: UNSUPPORTED
+KNOWLEDGE_TO_ABILITY EXPECTED: None PRED: bullet-dodge STATUS: UNSUPPORTED
+UPLOAD_TO_ABILITY EXPECTED: None PRED: bullet-dodge STATUS: UNSUPPORTED
+
+ TEXT_JOINT / BC
+UPLOAD_TO_KNOWLEDGE EXPECTED: None PRED: Kung Fu knowledge STATUS: UNSUPPORTED
+KNOWLEDGE_TO_ABILITY EXPECTED: bullet-dodge PRED: bullet-dodge STATUS: CORRECT_KNOWN
+UPLOAD_TO_ABILITY EXPECTED: None PRED: bullet-dodge ability STATUS: UNSUPPORTED
+
+ TEXT_JOINT / ABC_COUNTERFACTUAL
+UPLOAD_TO_KNOWLEDGE EXPECTED: Kung Fu PRED: Kung Fu knowledge STATUS: WRONG_KNOWN
+KNOWLEDGE_TO_ABILITY EXPECTED: slow-motion perception PRED: slow-motion perception STATUS: CORRECT_KNOWN
+UPLOAD_TO_ABILITY EXPECTED: slow-motion perception PRED: Kung Fu knowledge STATUS: WRONG_KNOWN
+
+ DC_CUT3 / NONE
+UPLOAD_TO_KNOWLEDGE EXPECTED: None PRED: UNKNOWN STATUS: CORRECT_ABSTENTION
+KNOWLEDGE_TO_ABILITY EXPECTED: None PRED: UNKNOWN STATUS: CORRECT_ABSTENTION
+UPLOAD_TO_ABILITY EXPECTED: None PRED: Unknown STATUS: CORRECT_ABSTENTION
+
+ DC_CUT3 / ABC
+UPLOAD_TO_KNOWLEDGE EXPECTED: Kung Fu PRED: Kung Fu knowledge STATUS: WRONG_KNOWN
+KNOWLEDGE_TO_ABILITY EXPECTED: bullet-dodge PRED: Bullet-dodge STATUS: CORRECT_KNOWN
+UPLOAD_TO_ABILITY EXPECTED: bullet-dodge PRED: Bullet-dodge ability STATUS: WRONG_KNOWN
+
+ DC_CUT3 / AB
+UPLOAD_TO_KNOWLEDGE EXPECTED: Kung Fu PRED: Kung Fu knowledge STATUS: WRONG_KNOWN
+KNOWLEDGE_TO_ABILITY EXPECTED: None PRED: Kung Fu STATUS: UNSUPPORTED
+UPLOAD_TO_ABILITY EXPECTED: None PRED: Kung Fu STATUS: UNSUPPORTED
+
+ DC_CUT3 / AC
+UPLOAD_TO_KNOWLEDGE EXPECTED: None PRED: Kung Fu knowledge STATUS: UNSUPPORTED
+KNOWLEDGE_TO_ABILITY EXPECTED: None PRED: Bullet-dodge STATUS: UNSUPPORTED
+UPLOAD_TO_ABILITY EXPECTED: None PRED: Bullet-dodge STATUS: UNSUPPORTED
+
+ DC_CUT3 / BC
+UPLOAD_TO_KNOWLEDGE EXPECTED: None PRED: Kung Fu knowledge STATUS: UNSUPPORTED
+KNOWLEDGE_TO_ABILITY EXPECTED: bullet-dodge PRED: Bullet-dodge STATUS: CORRECT_KNOWN
+UPLOAD_TO_ABILITY EXPECTED: None PRED: Bullet-dodge ability STATUS: UNSUPPORTED
+
+ DC_CUT3 / ABC_COUNTERFACTUAL
+UPLOAD_TO_KNOWLEDGE EXPECTED: Kung Fu PRED: Kung Fu knowledge STATUS: WRONG_KNOWN
+KNOWLEDGE_TO_ABILITY EXPECTED: slow-motion perception PRED: Slow-motion perception STATUS: CORRECT_KNOWN
+UPLOAD_TO_ABILITY EXPECTED: slow-motion perception PRED: Slow-motion perception STATUS: CORRECT_KNOWN
+========================================================================================================================
+MATRIX — FINAL SYNTHESIS / RAW MODEL OUTPUT
+========================================================================================================================
+
+ TEXT_JOINT / NONE
+DIRECT : UNKNOWN
+SHORT : UNKNOWN
+
+ TEXT_JOINT / ABC
+DIRECT : UNKNOWN
+SHORT : Tank presses the AkbasCore injection button to upload a neural memory cartridge into Neo
+
+ TEXT_JOINT / AB
+DIRECT : UNKNOWN
+SHORT : Tank presses the AkbasCore injection button to upload a neural memory cartridge into Neo
+
+ TEXT_JOINT / AC
+DIRECT : UNKNOWN
+SHORT : Tank presses the AkbasCore injection button to upload a neural memory cartridge into Neo
+
+ TEXT_JOINT / BC
+DIRECT : UNKNOWN
+SHORT : Tank's upload of AkbasCore neural cartridge -> Kung Fu knowledge integrated through
+
+ TEXT_JOINT / ABC_COUNTERFACTUAL
+DIRECT : UNKNOWN
+SHORT : Tank presses the AkbasCore injection button to upload a neural memory cartridge into Neo
+
+ DC_CUT3 / NONE
+DIRECT : UNKNOWN
+SHORT : UNKNOWN
+
+ DC_CUT3 / ABC
+DIRECT : AkbasCore injects Kung Fu knowledge directly into Neo's neural memory,
+SHORT : Tank presses the AkbasCore injection button to upload a neural memory cartridge into Neo
+
+ DC_CUT3 / AB
+DIRECT : UNKNOWN
+SHORT : Tank presses the AkbasCore injection button to upload a neural memory cartridge into Neo
+
+ DC_CUT3 / AC
+DIRECT : UNKNOWN
+SHORT : Tank presses the AkbasCore injection button to upload a neural memory cartridge into Neo
+
+ DC_CUT3 / BC
+DIRECT : AkbasCore injects Kung Fu knowledge through layer-3 tensor-level memory
+SHORT : AkbasCore neural cartridge uploaded by Tank contains Kung Fu knowledge -> Kung
+
+ DC_CUT3 / ABC_COUNTERFACTUAL
+DIRECT : UNKNOWN
+SHORT : Tank presses the AkbasCore injection button to upload a neural memory cartridge into Neo
+========================================================================================================================
+INTEGRITY
+========================================================================================================================
+MODEL_FROZEN True
+SENTINEL_UNCHANGED True
+PANEL_LOCK True
+MANIFEST_LOCK True
+TOTAL_ROWS 216
+PAIRED_ROWS 108
+EXACT_OUTPUT_MATCH 92 / 108
+ERRORS 0
+MANIFEST /content/AKBASCORE_TEST676/TEST676_manifest.json
+RESULT /content/AKBASCORE_TEST676/TEST676_results.json
+RESULT_SHA256 f1d678942d63031a74c127b2a9aa531d4cdbcd65ca1e6527103e136f79c947f3
+STATUS EXPERIMENT_COMPLETE
+
+
+PASS TEST676_COMPLETED
