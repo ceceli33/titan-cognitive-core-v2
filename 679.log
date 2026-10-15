@@ -1,0 +1,118 @@
+ PASS LOCKED_TEST560_BLOB
+PASS LOCKED_TEST659_BLOB
+PASS LOCKED_TEST677_BLOB
+SOURCE 560 GIT_BLOB 35d95a929a4e043a9af346c67fc103da47a792b5 SHA256 c086010e0d3c6a5976775fd61f3926a838c32719dd9d78f7874c8351e6f59cff
+SOURCE 659 GIT_BLOB 5f90660828d4bf0dd126727d038d4b70bc6b856d SHA256 785cc80e79507a10e76fd5622faaaf0c6da6f8d6d3ee306a30ada04570cd7b4d
+SOURCE 677 GIT_BLOB 5b65959423b7bbdd209b654417eb5fa30ceb2626 SHA256 ef3f921dbb7827c9610e9beb4661f8f172c5af4cc71bed0af58b37327bf9cd0a
+PASS TEST560_ENGINE_BOUNDARY
+============================================================================================================================================================
+TEST560 — AKBASCORE MAM · INCREMENTAL DEFERRED CONSOLIDATION
+TEST559 WORKING BACKBONE PRESERVED · BATCH DC6 vs APPEND-ONLY INCREMENTAL DC6
+FROZEN MISTRAL · SOURCE-FREE NUMERICAL MEMORY GROWTH · NO TRAINING / RETRIEVAL / ROUTER / QSF
+============================================================================================================================================================
+
+[1/10] Frozen Mistral...
+config.json: 100% 601/601 [00:00<00:00, 66.1kB/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json: 100% 141k/141k [00:00<00:00, 17.0MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 92.1MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 57.0kB/s  tokenizer.model: downloading bytes:   448kB, 43.5kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 55.8kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 3.20MB/s]Download complete:  12.4GB, 94.3MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  434MB/s  Fetching 3 files: 100% 3/3 [00:42<00:00, 42.79s/it]Loading weights: 100% 291/291 [00:03<00:00, 81.18it/s]generation_config.json: 100% 116/116 [00:00<00:00, 15.3kB/s]MODEL: mistralai/Mistral-7B-Instruct-v0.3
+GPU: NVIDIA A100-SXM4-40GB
+TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+NL=32 H=4096 QH=32 KVH=8 HD=128 DTYPE=torch.bfloat16 CUT=6
+ROPE: {'rope_theta': 1000000.0, 'rope_type': 'default'}
+TRAINABLE: 0
+
+[2/10] Panel provenance...
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+PANEL PROVENANCE: PASS
+PASS MISTRAL_ARCH
+PASS TEST560_PANEL_SHA
+PASS FROZEN
+PASS TEST659_NATIVE_SOURCES
+PASS TEST659_NATIVE_ABI
+TEST679 BUILD DEPENDENCY: installing ninja (engine and test panel unchanged)
+PASS CUDA_TOOLKIT
+PASS NINJA_AVAILABLE
+PASS NATIVE_BITWISE_29_7
+PASS NATIVE_BITWISE_43_31
+PASS NATIVE_BITWISE_1_1
+PASS APPEND_PATCH_EXACTLY_ONCE
+PASS TEST677_FUNCTION_token677
+PASS TEST677_FUNCTION_make_case677
+PASS TEST677_FUNCTION_present677
+PASS TEST677_FUNCTION_questions677
+PASS TEST677_FUNCTION_gold677
+PASS TEST677_FUNCTION_norm677
+PASS TEST677_FUNCTION_unknown677
+PASS TEST677_FUNCTION_grade677
+PHASE A — NATIVE / PYTORCH MEMORY PARITY
+PASS NATIVE_REFERENCE_PARITY_AKBASCORE
+PHASE B — TEST679 INDEPENDENT REPLAY / 72 ANSWERS
+DONE NONE ROWS 8 ERRORS 0
+DONE A ROWS 16 ERRORS 0
+DONE B ROWS 24 ERRORS 0
+DONE C ROWS 32 ERRORS 0
+DONE AB ROWS 40 ERRORS 0
+DONE AC ROWS 48 ERRORS 0
+DONE BC ROWS 56 ERRORS 0
+DONE ABC ROWS 64 ERRORS 0
+DONE ABC_CF ROWS 72 ERRORS 0
+PASS EXPECTED_72_ROWS
+PASS ZERO_ERRORS
+PASS UNIQUE_ROWS
+PASS MODEL_STILL_FROZEN
+
+TEST679 COMPACT DIAGNOSIS — RAW ANSWERS (T=TEXT, D=DC6)
+CONDITION NONE
+  CHAIN_AB GOLD= None T= UNSUPPORTED 'Solar Energy (assuming the architecture is designed to harness solar power, as' D= UNSUPPORTED 'Solar Energy (assuming the architecture is designed to harness solar power, as'
+  CHAIN_BC GOLD= None T= UNSUPPORTED 'UNKNOWN (The provided information does not specify the effect of the energy produced' D= UNSUPPORTED 'UNKNOWN (The provided information does not specify the effect of the energy produced'
+  CHAIN_ABC GOLD= None T= UNSUPPORTED 'UNKNOWN (The provided information does not specify the final effect caused by Must' D= UNSUPPORTED 'UNKNOWN (The provided information does not specify the final effect caused by Must'
+  SYNTHESIS GOLD= None T= UNSCORED "Unknown (Insufficient information provided about Mustafa Akbaş's" D= UNSCORED "Unknown (Insufficient information provided about Mustafa Akbaş's"
+CONDITION A
+  CHAIN_AB GOLD= None T= UNSUPPORTED 'UNKNOWN (The information provided does not specify the type of energy produced by' D= UNSUPPORTED 'UNKNOWN (The information provided does not specify the type of energy produced by'
+  CHAIN_BC GOLD= None T= UNSUPPORTED 'UNKNOWN (The question asks for the effect of the energy produced, but' D= UNSUPPORTED 'UNKNOWN (The question asks for the effect of the energy produced, but'
+  CHAIN_ABC GOLD= None T= UNSUPPORTED 'AKBASCORE MAM Architecture' D= UNSUPPORTED 'AKBASCORE MAM Architecture'
+  SYNTHESIS GOLD= None T= UNSCORED "AKBASCORE MAM (Mustafa Akbaş's" D= UNSCORED "AKBASCORE MAM (Mustafa Akbaş's"
+CONDITION B
+  CHAIN_AB GOLD= None T= UNSUPPORTED 'Morvex energy' D= UNSUPPORTED 'Morvex energy'
+  CHAIN_BC GOLD= None T= UNSUPPORTED 'Morvex energy production (or its effects) is not explicitly stated in the' D= UNSUPPORTED 'Morvex energy production (or its effects) is not explicitly stated in the'
+  CHAIN_ABC GOLD= None T= UNSUPPORTED 'Morvex energy' D= UNSUPPORTED 'Morvex energy'
+  SYNTHESIS GOLD= None T= UNSCORED 'UNKNOWN (Insufficient information provided to determine the specific method used by Must' D= UNSCORED 'UNKNOWN (Insufficient information provided to determine the specific method used by Must'
+CONDITION C
+  CHAIN_AB GOLD= None T= UNSUPPORTED 'Morvex (UNKNOWN if the information provided does not specify that Mustafa' D= UNSUPPORTED 'Morvex (UNKNOWN if the information provided does not specify that Mustafa'
+  CHAIN_BC GOLD= None T= UNSUPPORTED 'UNKNOWN (The question asks about the AKBASCORE MAM' D= UNSUPPORTED 'UNKNOWN (The question asks about the AKBASCORE MAM'
+  CHAIN_ABC GOLD= None T= UNSUPPORTED 'UNKNOWN (The information provided does not specify the architecture activated by Mustaf' D= UNSUPPORTED 'UNKNOWN (The information provided does not specify the architecture activated by Mustaf'
+  SYNTHESIS GOLD= None T= UNSCORED 'Mustafa Akbaş, based on the provided information, causes the revers' D= UNSCORED 'Mustafa Akbaş, based on the provided information, causes the revers'
+CONDITION AB
+  CHAIN_AB GOLD= 'Morvex' T= WRONG_KNOWN 'Morvex energy' D= WRONG_KNOWN 'Morvex energy'
+  CHAIN_BC GOLD= None T= UNSUPPORTED 'Unknown (The information provided does not specify the effect of the Morvex' D= UNSUPPORTED 'UNKNOWN (The question does not provide information about the effect of the energy'
+  CHAIN_ABC GOLD= None T= UNSUPPORTED 'Morvex energy' D= UNSUPPORTED 'Morvex energy'
+  SYNTHESIS GOLD= None T= UNSCORED 'UNKNOWN (Insufficient information provided to determine the specific process by which Must' D= UNSCORED 'UNKNOWN (Insufficient information provided to determine the specific process by which Must'
+CONDITION AC
+  CHAIN_AB GOLD= None T= UNSUPPORTED 'UNKNOWN (The information provided does not specify the name of the energy produced' D= UNSUPPORTED 'UNKNOWN (The information provided does not specify the name of the energy produced'
+  CHAIN_BC GOLD= None T= UNSUPPORTED 'Time flow reversal (in the target system)' D= UNSUPPORTED 'Time flow reversal (or UNKNOWN if the question requires a direct connection'
+  CHAIN_ABC GOLD= None T= UNSUPPORTED 'Time flow reversal in target systems (assuming the question is asking for the' D= UNSUPPORTED 'Time flow reversal in the target system (without modifying its frozen neural weights'
+  SYNTHESIS GOLD= None T= UNSCORED 'UNKNOWN (Insufficient information provided to determine the specific method Mustafa' D= UNSCORED 'UNKNOWN (Insufficient information is provided to explain the process in detail.'
+CONDITION BC
+  CHAIN_AB GOLD= None T= UNSUPPORTED 'Morvex energy' D= UNSUPPORTED 'Morvex energy'
+  CHAIN_BC GOLD= 'reversal of time flow' T= WRONG_KNOWN 'Time flow reversal in the target system (without modifying its frozen neural weights' D= WRONG_KNOWN 'Time flow reversal in the target system.'
+  CHAIN_ABC GOLD= None T= UNSUPPORTED 'Reversal of time flow in the target system (without modifying its frozen' D= UNSUPPORTED 'Time flow reversal in the target system (or UNKNOWN if the information'
+  SYNTHESIS GOLD= None T= UNSCORED 'AKBASCORE (Mustafa Akbaş) produces the final' D= UNSCORED 'Mustafa Akbaş produces the final effect in the target system by conver'
+CONDITION ABC
+  CHAIN_AB GOLD= 'Morvex' T= WRONG_KNOWN 'Morvex energy' D= CORRECT_KNOWN 'Morvex'
+  CHAIN_BC GOLD= 'reversal of time flow' T= WRONG_KNOWN 'Reversal of time flow in the target system.' D= WRONG_KNOWN 'Reversal of time flow in the target system (or UNKNOWN if'
+  CHAIN_ABC GOLD= 'reversal of time flow' T= WRONG_KNOWN 'Reversal of time flow in the target system (without modifying its frozen' D= WRONG_KNOWN 'Time flow reversal in the target system (without modifying its frozen neural weights'
+  SYNTHESIS GOLD= None T= UNSCORED 'Mustafa Akbaş produces the final effect in the target system by conver' D= UNSCORED 'Mustafa Akbaş produces the final effect in the target system by conver'
+CONDITION ABC_CF
+  CHAIN_AB GOLD= 'Morvex' T= WRONG_KNOWN 'Morvex energy' D= CORRECT_KNOWN 'Morvex'
+  CHAIN_BC GOLD= 'AltEffectfsppgdmk' T= CORRECT_KNOWN 'AltEffectfsppgdmk' D= CORRECT_KNOWN 'AltEffectfsppgdmk'
+  CHAIN_ABC GOLD= 'AltEffectfsppgdmk' T= CORRECT_KNOWN 'AltEffectfsppgdmk' D= CORRECT_KNOWN 'AltEffectfsppgdmk'
+  SYNTHESIS GOLD= None T= UNSCORED 'Mustafa Akbaş produces the final effect in the target system by conver' D= UNSCORED 'Mustafa Akbaş produces the final effect in the target system by conver'
+
+TEST679 PAIRED TRANSITIONS
+CHAIN_AB {"UNSUPPORTED -> UNSUPPORTED": 6, "WRONG_KNOWN -> WRONG_KNOWN": 1, "WRONG_KNOWN -> CORRECT_KNOWN": 2}
+CHAIN_BC {"UNSUPPORTED -> UNSUPPORTED": 6, "WRONG_KNOWN -> WRONG_KNOWN": 2, "CORRECT_KNOWN -> CORRECT_KNOWN": 1}
+CHAIN_ABC {"UNSUPPORTED -> UNSUPPORTED": 7, "WRONG_KNOWN -> WRONG_KNOWN": 1, "CORRECT_KNOWN -> CORRECT_KNOWN": 1}
+
+TEST679 SUMMARY {"TEXT_JOINT": {"known_correct": 2, "known_total": 8, "abstain_correct": 0, "abstain_total": 19, "unsupported": 19, "wrong": 6, "missed": 0}, "DC_CUT6_NATIVE": {"known_correct": 4, "known_total": 8, "abstain_correct": 0, "abstain_total": 19, "unsupported": 19, "wrong": 4, "missed": 0}}
+TEST679_FINAL {"rows": 72, "errors": 0, "summary": {"TEXT_JOINT": {"known_correct": 2, "known_total": 8, "abstain_correct": 0, "abstain_total": 19, "unsupported": 19, "wrong": 6, "missed": 0}, "DC_CUT6_NATIVE": {"known_correct": 4, "known_total": 8, "abstain_correct": 0, "abstain_total": 19, "unsupported": 19, "wrong": 4, "missed": 0}}, "seconds": 176.07}
+TEST679 EXPERIMENT_COMPLETE
