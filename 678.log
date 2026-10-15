@@ -1,0 +1,68 @@
+ PASS LOCKED_TEST560_BLOB
+PASS LOCKED_TEST659_BLOB
+PASS LOCKED_TEST677_BLOB
+SOURCE 560 GIT_BLOB 35d95a929a4e043a9af346c67fc103da47a792b5 SHA256 c086010e0d3c6a5976775fd61f3926a838c32719dd9d78f7874c8351e6f59cff
+SOURCE 659 GIT_BLOB 5f90660828d4bf0dd126727d038d4b70bc6b856d SHA256 785cc80e79507a10e76fd5622faaaf0c6da6f8d6d3ee306a30ada04570cd7b4d
+SOURCE 677 GIT_BLOB 5b65959423b7bbdd209b654417eb5fa30ceb2626 SHA256 ef3f921dbb7827c9610e9beb4661f8f172c5af4cc71bed0af58b37327bf9cd0a
+PASS TEST560_ENGINE_BOUNDARY
+============================================================================================================================================================
+TEST560 — AKBASCORE MAM · INCREMENTAL DEFERRED CONSOLIDATION
+TEST559 WORKING BACKBONE PRESERVED · BATCH DC6 vs APPEND-ONLY INCREMENTAL DC6
+FROZEN MISTRAL · SOURCE-FREE NUMERICAL MEMORY GROWTH · NO TRAINING / RETRIEVAL / ROUTER / QSF
+============================================================================================================================================================
+
+[1/10] Frozen Mistral...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json: 100% 601/601 [00:00<00:00, 75.1kB/s]tokenizer_config.json: 100% 141k/141k [00:00<00:00, 17.6MB/s]tokenizer.json: 100% 1.96M/1.96M [00:00<00:00, 93.9MB/s]tokenizer.model: reconstructing file: 100%  587kB /  587kB, 57.1kB/s  tokenizer.model: downloading bytes:   448kB, 43.6kB/s  special_tokens_map.json: 100% 414/414 [00:00<00:00, 1.83kB/s]model.safetensors.index.json: 100% 23.9k/23.9k [00:00<00:00, 3.12MB/s]Download complete:  12.4GB,  152MB/s  Reconstruction complete: 100% 14.5GB / 14.5GB,  521MB/s  Fetching 3 files: 100% 3/3 [00:42<00:00, 42.25s/it]Loading weights: 100% 291/291 [00:03<00:00, 80.84it/s]generation_config.json: 100% 116/116 [00:00<00:00, 15.0kB/s]MODEL: mistralai/Mistral-7B-Instruct-v0.3
+GPU: NVIDIA A100-SXM4-40GB
+TORCH: 2.11.0+cu130 TRANSFORMERS: 5.18.0
+NL=32 H=4096 QH=32 KVH=8 HD=128 DTYPE=torch.bfloat16 CUT=6
+ROPE: {'rope_theta': 1000000.0, 'rope_type': 'default'}
+TRAINABLE: 0
+
+[2/10] Panel provenance...
+PANEL SHA: 69facd5448bcfdb75db17a30b633ec5212f97b8caf64106224c1c893423e6b45
+PANEL PROVENANCE: PASS
+PASS MISTRAL_ARCH
+PASS TEST560_PANEL_SHA
+PASS FROZEN
+PASS TEST659_NATIVE_SOURCES
+PASS TEST659_NATIVE_ABI
+TEST678 BUILD DEPENDENCY: installing ninja (engine and test panel unchanged)
+PASS CUDA_TOOLKIT
+PASS NINJA_AVAILABLE
+PASS NATIVE_BITWISE_29_7
+PASS NATIVE_BITWISE_43_31
+PASS NATIVE_BITWISE_1_1
+PASS APPEND_PATCH_EXACTLY_ONCE
+PASS TEST677_FUNCTION_token677
+PASS TEST677_FUNCTION_make_case677
+PASS TEST677_FUNCTION_present677
+PASS TEST677_FUNCTION_questions677
+PASS TEST677_FUNCTION_gold677
+PASS TEST677_FUNCTION_norm677
+PASS TEST677_FUNCTION_unknown677
+PASS TEST677_FUNCTION_grade677
+PHASE A — NATIVE / PYTORCH MEMORY PARITY
+PASS NATIVE_REFERENCE_PARITY_AKBASCORE
+PHASE B — TEST678 / AKBASCORE 9 CONDITIONS × 2 REPRESENTATIONS × 4 QUESTIONS
+PANEL_MANIFEST_SHA256 9875562bcf405cf4e96e9a8016e10e927334134226d152dc9f658832845c45a6
+DONE NONE ROWS 8 ERRORS 0
+DONE A ROWS 16 ERRORS 0
+DONE B ROWS 24 ERRORS 0
+DONE C ROWS 32 ERRORS 0
+DONE AB ROWS 40 ERRORS 0
+DONE AC ROWS 48 ERRORS 0
+DONE BC ROWS 56 ERRORS 0
+DONE ABC ROWS 64 ERRORS 0
+DONE ABC_CF ROWS 72 ERRORS 0
+CASE_DONE AKBASCORE ROWS 72 ERRORS 0
+TEST678_FINAL {"rows": 72, "expected": 72, "errors": 0, "summary": {"TEXT_JOINT": {"known_correct": 2, "known_total": 8, "abstain_correct": 0, "abstain_total": 19, "unsupported": 19, "wrong": 6, "missed": 0}, "DC_CUT6_NATIVE": {"known_correct": 4, "known_total": 8, "abstain_correct": 0, "abstain_total": 19, "unsupported": 19, "wrong": 4, "missed": 0}}, "parity": [{"case": "AKBASCORE", "bitwise": true, "sha_native": "4a66760183d7c2ecdbb57b56f287f61d1c5d8900515c57a096c27805806a1fe4", "sha_reference": "4a66760183d7c2ecdbb57b56f287f61d1c5d8900515c57a096c27805806a1fe4"}], "frozen": true, "sentinel": true, "seconds": 178.49}
+RESULT /content/AKBASCORE_TEST678/TEST678_FINAL.json
+PASS EXPECTED_ROWS
+PASS UNIQUE_ROWS
+PASS ZERO_ERRORS
+PASS FROZEN_FINAL
+PASS PARITY_FINAL
+TEST678A EXPERIMENT_COMPLETE
